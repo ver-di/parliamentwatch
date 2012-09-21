@@ -61,6 +61,13 @@ function pw_dialogues_feeds_processor_targets_alter(&$targets, $entity_type, $bu
       );
     }
   }
+
+  if (isset($targets['uid'])) {
+    $targets['uid:uuid'] = array(
+      'name' => t('uid (by UUID)', array('@label' => $instance['label'])),
+      'callback' => 'pw_dialogues_feeds_set_target',
+    );
+  }
 }
 
 /**
@@ -95,13 +102,18 @@ function pw_dialogues_feeds_set_target($source, $entity, $target, $value, $mappi
   $field = isset($entity->target) ? $entity->target : array();
   foreach ($entity_ids as $entity_id) {
     if ($entity_id) {
-      $field[$language][$iterator]['target_id'] = $entity_id;
+      if ($info) {
+        $field[$language][$iterator]['target_id'] = $entity_id;
+      }
+      else {
+        $field = $entity_id;
+      }
     }
     else {
       unset($entity->feeds_item->hash);
     }
 
-    if ($info['cardinality'] == 1) {
+    if (!$info || $info['cardinality'] == 1) {
       break;
     }
     $iterator++;

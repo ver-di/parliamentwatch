@@ -269,7 +269,7 @@ function dialogues_feeds_importer_default() {
           ),
           1 => array(
             'source' => 'xpathparser:2',
-            'target' => 'uid',
+            'target' => 'uid:uuid',
             'unique' => FALSE,
           ),
           2 => array(
