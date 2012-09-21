@@ -43,6 +43,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:9' => '@id',
           'xpathparser:10' => 'message[1]/text',
           'xpathparser:11' => 'message[1]/keyworded_text',
+          'xpathparser:16' => 'message[1]/sender.external_id',
         ),
         'rawXML' => array(
           'xpathparser:12' => 0,
@@ -59,6 +60,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:9' => 0,
           'xpathparser:10' => 0,
           'xpathparser:11' => 0,
+          'xpathparser:16' => 0,
         ),
         'context' => '//dialogue',
         'exp' => array(
@@ -79,6 +81,7 @@ function dialogues_feeds_importer_default() {
             'xpathparser:9' => 0,
             'xpathparser:10' => 0,
             'xpathparser:11' => 0,
+            'xpathparser:16' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -159,6 +162,11 @@ function dialogues_feeds_importer_default() {
           13 => array(
             'source' => 'xpathparser:11',
             'target' => 'body:summary',
+            'unique' => FALSE,
+          ),
+          14 => array(
+            'source' => 'xpathparser:16',
+            'target' => 'uid:uuid',
             'unique' => FALSE,
           ),
         ),
