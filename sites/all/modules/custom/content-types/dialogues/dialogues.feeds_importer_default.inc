@@ -44,6 +44,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:10' => 'message[1]/text',
           'xpathparser:11' => 'message[1]/keyworded_text',
           'xpathparser:16' => 'message[1]/sender.external_id',
+          'xpathparser:17' => 'message[1]/status=1',
         ),
         'rawXML' => array(
           'xpathparser:12' => 0,
@@ -61,6 +62,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:10' => 0,
           'xpathparser:11' => 0,
           'xpathparser:16' => 0,
+          'xpathparser:17' => 0,
         ),
         'context' => '//dialogue',
         'exp' => array(
@@ -82,6 +84,7 @@ function dialogues_feeds_importer_default() {
             'xpathparser:10' => 0,
             'xpathparser:11' => 0,
             'xpathparser:16' => 0,
+            'xpathparser:17' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -169,6 +172,11 @@ function dialogues_feeds_importer_default() {
             'target' => 'uid:uuid',
             'unique' => FALSE,
           ),
+          15 => array(
+            'source' => 'xpathparser:17',
+            'target' => 'status',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '1',
         'input_format' => 'filtered_html',
@@ -218,6 +226,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:14' => '../@id',
           'xpathparser:15' => 'annotation',
           'xpathparser:16' => 'text',
+          'xpathparser:17' => 'status=1',
         ),
         'rawXML' => array(
           'xpathparser:1' => 0,
@@ -236,6 +245,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:14' => 0,
           'xpathparser:15' => 0,
           'xpathparser:16' => 0,
+          'xpathparser:17' => 0,
         ),
         'context' => '//dialogue/message[position()>1]',
         'exp' => array(
@@ -258,6 +268,7 @@ function dialogues_feeds_importer_default() {
             'xpathparser:14' => 0,
             'xpathparser:15' => 0,
             'xpathparser:16' => 0,
+            'xpathparser:17' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -352,7 +363,7 @@ function dialogues_feeds_importer_default() {
           ),
           16 => array(
             'source' => 'xpathparser:17',
-            'target' => 'cid:feeds_entity_by_guid',
+            'target' => 'status',
             'unique' => FALSE,
           ),
         ),
