@@ -289,3 +289,19 @@ function pw_blocks_custom_sapi_submit($form, $form_state){
     drupal_goto('search/persons/'.$form_state['values']['keys_1']);
   }
 }
+
+function _pw_blocks_get_consituencies($user){
+  //print_r($user->field_user_constituency['und']);
+  foreach($user->field_user_constituency['und'] as $tid){
+    $term = taxonomy_term_load($tid['tid']);
+    //print_r($term);
+    $term_parl = taxonomy_term_load($term->field_parliament['und'][0]['tid']);
+    if($term->field_constituency_nr['und'][0]['value']>0){
+     $terms[] = '<strong>'.$term_parl->name."</strong>: ".$term->name." (".$term->field_constituency_nr['und'][0]['value'].")";
+    }else{
+     $terms[] = '<strong>'.$term_parl->name."</strong>: ".$term->name." ";
+    }
+  }
+  $list = rtrim(implode(', ',$terms),',');
+  return $list;
+}
