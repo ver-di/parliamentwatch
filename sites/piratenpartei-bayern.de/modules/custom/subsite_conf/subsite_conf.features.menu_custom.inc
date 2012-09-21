@@ -18,14 +18,6 @@ function subsite_conf_menu_default_menu_custom() {
     'language' => 'und',
     'i18n_mode' => '0',
   );
-  // Exported menu: menu-menu-about-us
-  $menus['menu-menu-about-us'] = array(
-    'menu_name' => 'menu-menu-about-us',
-    'title' => 'About us',
-    'description' => '',
-    'language' => 'und',
-    'i18n_mode' => '0',
-  );
   // Exported menu: menu-parliaments
   $menus['menu-parliaments'] = array(
     'menu_name' => 'menu-parliaments',
@@ -36,7 +28,6 @@ function subsite_conf_menu_default_menu_custom() {
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('About us');
   t('Main menu');
   t('Parliaments');
 
