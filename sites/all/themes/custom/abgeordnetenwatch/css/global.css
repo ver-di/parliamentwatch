@@ -6,6 +6,9 @@ body {
     font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
     color: #333;
 }
+.report_message{
+	cursor: pointer;
+}
 .container-12 .block .omega-grid,
 .container-16 .block .omega-grid,
 .container-24 .block .omega-grid {
