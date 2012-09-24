@@ -14,8 +14,13 @@ div.horizontal-tabs .even {
 }
 div.horizontal-tabs .label-inline {
     display: block;
-    float: left;
+    float: left; /* LTR */
     width: 30%;
+}
+div.horizontal-tabs .value {
+    display: block;
+    float: left; /* LTR */
+    width: 70%;
 }
 div.horizontal-tabs .fieldset-description {
     font-family: 'Times New Roman', Georgia, serif;

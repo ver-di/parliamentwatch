@@ -11,7 +11,8 @@ div.horizontal-tabs .label-inline {
     -moz-box-shadow: 2px -1px 2px -1px #dedede;
     box-shadow: 2px -1px 2px -1px #dedede;
 }
-div.horizontal-tabs .label-inline {
+div.horizontal-tabs .label-inline,
+div.horizontal-tabs .value {
     float: right;
 }
 #region-content .horizontal-tabs ul.horizontal-tabs-list li {
