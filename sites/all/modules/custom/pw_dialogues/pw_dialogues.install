@@ -22,4 +22,5 @@ function pw_dialogues_enable() {
  */
 function pw_dialogues_uninstall() {
   variable_del('pw_dialogues_last_import');
+  variable_del('pw_dialogues_source');
 }

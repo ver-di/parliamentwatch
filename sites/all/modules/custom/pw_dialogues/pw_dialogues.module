@@ -6,42 +6,91 @@
  */
 
 /**
- * The XML API URL to import from.
- */
-define('PW_DIALOGUES_SOURCE', 'http://mod.parliamentwatch.org/piraten/api/dialogue');
-
-/**
  * A buffer of overlap between the imports in seconds.
  */
 define('PW_DIALOGUES_IMPORT_BUFFER', 60 * 60);
 
 /**
+ * Implements hook_menu().
+ */
+function pw_dialogues_menu() {
+  $menu['admin/config/services/pw-dialogues'] = array(
+    'title' => 'Dialogue importer',
+    'description' => 'Configure the source URL for the dialogue importer.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_dialogues_settings_form'),
+    'access arguments' => array('import dialogue_importer feeds'),
+  );
+
+  return $menu;
+}
+
+/**
+ * Form constructor for the dialogues importer settings form.
+ *
+ * @ingroup forms
+ */
+function pw_dialogues_settings_form($form, &$form_state) {
+  $form['pw_dialogues_source'] = array(
+    '#type' => 'textfield',
+    '#title' => t('XML source API'),
+    '#default_value' => variable_get('pw_dialogues_source', ''),
+    '#description' => t('If set, dialogues will be imported from this URL during cron runs.'),
+    '#element_validate' => array('pw_dialogues_validate_url'),
+    '#size' => 100,
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Form element validation handler for pw_dialogues_settings_form().
+ */
+function pw_dialogues_validate_url(&$element, &$form_state) {
+  $value = trim($element['#value']);
+  form_set_value($element, $value, $form_state);
+
+  if ($value != '' && !valid_url($value, TRUE)) {
+    form_error($element, t('The URL %url is not valid.', array('%url' => $value)));
+  }
+}
+
+/**
  * Implements hook_cron().
  */
 function pw_dialogues_cron() {
-  $source = PW_DIALOGUES_SOURCE;
-  if ($last_import = variable_get('pw_dialogues_last_import', 0)) {
-    $source .= '?updated_since=' . date('Y-m-d\\TH:i:s', $last_import - PW_DIALOGUES_IMPORT_BUFFER);
+  if ($source = variable_get('pw_dialogues_source')) {
+    // Append the updated_since GET parameter to the source URL.
+    if ($last_import = variable_get('pw_dialogues_last_import', 0)) {
+      $updated_since = date('Y-m-d\\TH:i:s', $last_import - PW_DIALOGUES_IMPORT_BUFFER);
+      if (strpos($source, '?') === FALSE) {
+        $source .= '?updated_since=' . $updated_since;
+      }
+      else {
+        $source .= '&updated_since' . $updated_since;
+      }
+    }
+
+    variable_set('pw_dialogues_last_import', REQUEST_TIME);
+
+    // Import dialogues.
+    $dialogue_feed = feeds_source('dialogue_importer');
+    $dialogue_feed->addConfig(array(
+      'FeedsHTTPFetcher' => array(
+        'source' => $source,
+      ),
+    ));
+    while (FEEDS_BATCH_COMPLETE != $dialogue_feed->import());
+
+    // Import messages.
+    $message_feed = feeds_source('dialogue_message_importer');
+    $message_feed->addConfig(array(
+      'FeedsHTTPFetcher' => array(
+        'source' => $source,
+      ),
+    ));
+    while (FEEDS_BATCH_COMPLETE != $message_feed->import());
   }
-  variable_set('pw_dialogues_last_import', REQUEST_TIME);
-
-  // Import dialogues.
-  $dialogue_feed = feeds_source('dialogue_importer');
-  $dialogue_feed->addConfig(array(
-    'FeedsHTTPFetcher' => array(
-      'source' => $source,
-    ),
-  ));
-  while (FEEDS_BATCH_COMPLETE != $dialogue_feed->import());
-
-  // Import messages.
-  $message_feed = feeds_source('dialogue_message_importer');
-  $message_feed->addConfig(array(
-    'FeedsHTTPFetcher' => array(
-      'source' => $source,
-    ),
-  ));
-  while (FEEDS_BATCH_COMPLETE != $message_feed->import());
 }
 
 /**
