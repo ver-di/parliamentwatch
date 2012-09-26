@@ -1,4 +1,9 @@
-#zone-menu-wrapper {
+#zone-menu-wrapper,
+button,
+input[type="reset"],
+input[type="submit"],
+input[type="button"],
+a.form-submit {
     background: #a4a974; /* Old browsers */
     background: -moz-linear-gradient(top,  #a4a974 0%, #919756 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4a974), color-stop(100%,#919756)); /* Chrome,Safari4+ */
@@ -27,12 +32,67 @@ h1#page-title {
     color: #919756;
 }
 .node-blogpost.node-teaser,
+.block-submenutree .view-mode-teaser,
 .views-table tr.odd,
 .views-table tr.even,
 .node-results li,
-.group-result .panel-flexible {
+.group-result .panel-flexible,
+.pw-list-item,
+hr,
+#region-content ol.search-results li,
+.search-results article {
     border-bottom: 1px dotted #919756;
 }
 #block-delta-blocks-feed-icons .feed-link {
     color: #919756;
+}
+
+
+
+/* icons */
+
+#region-content .item-list ul.pager li.pager-previous a,
+#region-content .item-list ul.pager li.pager-first span,
+#region-content .item-list ul.pager li.pager-first a,
+#region-content .item-list ul.pager li.pager-last a,
+#region-content .item-list ul.pager li.pager-last span,
+#region-content .item-list ul.pager li.pager-next a,
+#region-postscript-fourth a,
+.comment-reply,
+.comment .submitted .author,
+#block-delta-blocks-feed-icons .content,
+#views_slideshow_cycle_div_slider-block_1 .icon-share,
+#comment-form #edit-author--2,
+#forward-form #edit-instructions p:first-child,
+#block-views-blog-block-1 .views-row,
+.comment-count,
+.icon-taxonomy,
+#floatbox ul.arrow-items li,
+#floatbox h3,
+a#text_resize_decrease,
+a#text_resize_reset,
+a#text_resize_increase,
+a.print-page,
+a.print_mail,
+a.print-pdf,
+#block-system-user-menu .first a,
+#block-system-user-menu .last a,
+#region-user-second .block h2,
+.field-name-anchor-to-top a,
+.arrow-item,
+.back,
+.read-more a,
+a.read-more,
+.read-codex a,
+a.read-codex,
+.link-profile a,
+a.link-profile,
+.link-committees a,
+a.link-committees,
+.link-poll a,
+a.link-poll,
+blockquote:before,
+.collapse-processed .fieldset-title {
+    background-image: url("../images/sprite.png");
+    background-repeat: no-repeat;
 }
