@@ -102,10 +102,24 @@ function rate_voteas_voting_form($form, &$form_state, $node){
         'effect' => 'fade',
     ),
   /);*/
+  $form['rate_csv_text'] = array(
+    //'#name' => 'files[' . implode('_', $element['#parents']) . ']',
+    '#type' => 'textarea',
+    '#title' => t('Voting resulys'),
+    '#description'=> t('Use this field to copy and paste voting results from a CSV file. Format Example(user_name,"Frontname Lastname")'),
+    //'#title_display' => 'invisible',
+    '#size' => 22,
+    //'#theme_wrappers' => array(),
+    '#weight' => -10,
+    //'#upload_validators' => array(
+        //'file_validate_extensions' => array('csv'),
+      //),
+  	);
   $form['rate_upload'] = array(
     //'#name' => 'files[' . implode('_', $element['#parents']) . ']',
     '#type' => 'managed_file',
     '#title' => t('Choose a file'),
+    '#description'=> t('the columns in the csv should be seperated by a comma with double qotes as text delimiter. (user_name,vote)'),
     '#title_display' => 'invisible',
     '#size' => 22,
     '#theme_wrappers' => array(),
@@ -159,6 +173,23 @@ function rate_voteas_voting_form_submit($form, &$form_state){
     //echo "<pre>".print_r($votes,1)."</pre>";
     //die();
     fclose($handle);
+  }else if($form_state['values']['rate_csv_texst']){
+    $data_row = explode("\n",$form_state['values']['rate_csv_texst']);
+    foreach($data_row as $data_set){
+      $user = user_load_by_name($data_set[0]);
+      if($user){
+        $option = array_search($data_set[1], $form_state['values']['rate_widget_options']);
+        $vote = array();
+        $vote['entity_id'] = $nid;
+        $vote['uid'] = $user->uid;
+        $vote['value'] = $option;
+        $vote['tag'] = $form_state['values']['rate_widget_info']->tag;
+        $vote['value_type'] = $form_state['values']['rate_widget_info']->value_type;
+        $votes[] = $vote;
+      }
+    }
+  }else{
+    return;
   }
 
   /**
