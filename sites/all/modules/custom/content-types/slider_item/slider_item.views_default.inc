@@ -133,7 +133,7 @@ drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', arr
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'clearfix';
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Webform form body */
+  /* Field: Webform: Webform form body */
   $handler->display->display_options['fields']['webform_form_body']['id'] = 'webform_form_body';
   $handler->display->display_options['fields']['webform_form_body']['table'] = 'node';
   $handler->display->display_options['fields']['webform_form_body']['field'] = 'webform_form_body';
@@ -146,6 +146,10 @@ drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', arr
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="close">close</span>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Weight: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -161,7 +165,7 @@ drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', arr
     'slider_item' => 'slider_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Langue */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -172,6 +176,21 @@ drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', arr
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $translatables['slider'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Zurücksetzen'),
+    t('Artikel sortieren nach'),
+    t('aufsteigend'),
+    t('absteigend'),
+    t('<?php
+drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
+?>'),
+    t('[field_slider_teaserbody]<div class="item"></div>'),
+    t('<span class="close">close</span>'),
+    t('Block'),
+  );
   $export['slider'] = $view;
 
   return $export;
