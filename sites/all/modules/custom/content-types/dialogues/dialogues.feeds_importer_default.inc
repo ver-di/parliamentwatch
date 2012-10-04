@@ -370,7 +370,7 @@ function dialogues_feeds_importer_default() {
         'author' => 0,
       ),
     ),
-    'content_type' => '',
+    'content_type' => 'dialogue',
     'update' => 0,
     'import_period' => '-1',
     'expire_period' => 3600,
