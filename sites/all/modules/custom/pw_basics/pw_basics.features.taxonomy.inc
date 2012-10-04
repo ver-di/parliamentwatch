@@ -134,15 +134,15 @@ function pw_basics_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'pw_widget_values' => array(
-      'name' => 'PW Widget Values',
-      'machine_name' => 'pw_widget_values',
+    'political_roles' => array(
+      'name' => 'Political Roles',
+      'machine_name' => 'political_roles',
       'description' => '',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
       'language' => 'und',
-      'i18n_mode' => '0',
+      'i18n_mode' => '1',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -159,11 +159,11 @@ function pw_basics_taxonomy_default_vocabularies() {
         ),
       ),
     ),
-    'subjects' => array(
-      'name' => 'Subjects',
-      'machine_name' => 'subjects',
-      'description' => 'Subjects for question form',
-      'hierarchy' => '1',
+    'pw_widget_values' => array(
+      'name' => 'PW Widget Values',
+      'machine_name' => 'pw_widget_values',
+      'description' => '',
+      'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
       'language' => 'und',

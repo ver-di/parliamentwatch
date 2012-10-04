@@ -46,12 +46,19 @@ function pw_basics_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
-        'default' => array(
+        'colorbox' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '0',
+        ),
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -120,6 +127,12 @@ function pw_basics_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'colorbox' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -158,6 +171,92 @@ function pw_basics_field_default_fields() {
     ),
   );
 
+  // Exported field: 'taxonomy_term-committee-field_committee_chairman'
+  $fields['taxonomy_term-committee-field_committee_chairman'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_committee_chairman',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'ASC',
+            'field' => 'group_audience:gid',
+            'property' => 'uid',
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'handler_submit' => 'Change handler',
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'committee',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 4,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_committee_chairman',
+      'label' => 'Chairman',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_select',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'taxonomy_term-committee-field_committee_picture'
   $fields['taxonomy_term-committee-field_committee_picture'] = array(
     'field_config' => array(
@@ -181,7 +280,7 @@ function pw_basics_field_default_fields() {
       ),
       'module' => 'image',
       'settings' => array(
-        'default_image' => '251',
+        'default_image' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -206,7 +305,7 @@ function pw_basics_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '5',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -216,7 +315,7 @@ function pw_basics_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
-        'default_image' => '250',
+        'default_image' => '183',
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -233,8 +332,8 @@ function pw_basics_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'audio' => 0,
             0 => 0,
+            'audio' => 0,
             'default' => 0,
             'image' => 'image',
             'video' => 0,
@@ -319,8 +418,94 @@ function pw_basics_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
-        'type' => 'options_buttons',
-        'weight' => '3',
+        'type' => 'options_select',
+        'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-committee-field_committee_vice_chairman'
+  $fields['taxonomy_term-committee-field_committee_vice_chairman'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_committee_vice_chairman',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'ASC',
+            'field' => 'group_audience:gid',
+            'property' => 'uid',
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'handler_submit' => 'Change handler',
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'committee',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 5,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_committee_vice_chairman',
+      'label' => 'Vice Chairman',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_select',
+        'weight' => '7',
       ),
     ),
   );
@@ -391,7 +576,7 @@ function pw_basics_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '3',
       ),
     ),
   );
@@ -929,6 +1114,7 @@ function pw_basics_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Chairman');
   t('Color');
   t('Committee Type');
   t('Number');
@@ -936,6 +1122,7 @@ function pw_basics_field_default_fields() {
   t('Picture');
   t('Valid Date');
   t('Value');
+  t('Vice Chairman');
   t('Zipcodes');
   t('constituency number or similar identifier ');
 
