@@ -218,6 +218,7 @@ features[variable][] = path_breadcrumbs_home_link_enabled
 features[variable][] = path_breadcrumbs_home_link_title
 features[variable][] = path_breadcrumbs_internal_render
 features[variable][] = path_breadcrumbs_rich_snippets
+features[variable][] = pathauto_node_pattern
 features[variable][] = pathauto_punctuation_underscore
 features[variable][] = pathauto_separator
 features[variable][] = pathauto_user_pattern
