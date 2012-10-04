@@ -1,17 +1,47 @@
 <?php
 /**
  * @file
- * subsite_blocks.features.fe_block_settings.inc
+ * subsite_conf.features.fe_block_settings.inc
  */
 
 /**
  * Implements hook_default_fe_block_settings().
  */
-function subsite_blocks_default_fe_block_settings() {
+function subsite_conf_default_fe_block_settings() {
   $export = array();
 
   // bartik
   $theme = array();
+
+  $theme['block-metanavi_addthis'] = array(
+    'module' => 'block',
+    'theme' => 'bartik',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => 'Share',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'metanavi_addthis',
+  );
+
+  $theme['block-social_media_footer'] = array(
+    'module' => 'block',
+    'theme' => 'bartik',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'social_media_footer',
+  );
 
   $theme['delta_blocks-breadcrumb'] = array(
     'module' => 'delta_blocks',
@@ -25,6 +55,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => 4,
+    'i18n_mode' => '0',
   );
 
   $theme['delta_blocks-messages'] = array(
@@ -39,6 +70,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['forward-form'] = array(
@@ -53,6 +85,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['locale-language'] = array(
@@ -67,6 +100,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['nice_menus-1'] = array(
@@ -81,6 +115,22 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['nice_menus-2'] = array(
+    'module' => 'nice_menus',
+    'delta' => '2',
+    'theme' => 'bartik',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '<none>',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['print-print-links'] = array(
@@ -95,6 +145,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => 4,
+    'i18n_mode' => '0',
   );
 
   $theme['search-form'] = array(
@@ -109,6 +160,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-help'] = array(
@@ -123,6 +175,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-main'] = array(
@@ -137,6 +190,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-navigation'] = array(
@@ -151,6 +205,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-powered-by'] = array(
@@ -165,6 +220,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['text_resize-0'] = array(
@@ -179,6 +235,22 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => '1',
+    'i18n_mode' => '0',
+  );
+
+  $theme['views--exp-profile_list_rev-page'] = array(
+    'module' => 'views',
+    'delta' => '-exp-profile_list_rev-page',
+    'theme' => 'bartik',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['views-slider-block'] = array(
@@ -191,14 +263,75 @@ function subsite_blocks_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
+    'title' => '<none>',
+    'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['webform-client-block-339'] = array(
+    'module' => 'webform',
+    'delta' => 'client-block-339',
+    'theme' => 'bartik',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['webform-client-block-343'] = array(
+    'module' => 'webform',
+    'delta' => 'client-block-343',
+    'theme' => 'bartik',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $export['bartik'] = $theme;
 
   // dailwatch
   $theme = array();
+
+  $theme['block-metanavi_addthis'] = array(
+    'module' => 'block',
+    'theme' => 'dailwatch',
+    'status' => '1',
+    'weight' => '0',
+    'region' => 'user_second',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => 'Share',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'metanavi_addthis',
+  );
+
+  $theme['block-social_media_footer'] = array(
+    'module' => 'block',
+    'theme' => 'dailwatch',
+    'status' => '1',
+    'weight' => '0',
+    'region' => 'postscript_fourth',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'social_media_footer',
+  );
 
   $theme['delta_blocks-breadcrumb'] = array(
     'module' => 'delta_blocks',
@@ -212,6 +345,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => 4,
+    'i18n_mode' => '0',
   );
 
   $theme['delta_blocks-messages'] = array(
@@ -226,6 +360,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['forward-form'] = array(
@@ -240,6 +375,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Social Media',
     'cache' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['locale-language'] = array(
@@ -254,6 +390,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Language',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['nice_menus-1'] = array(
@@ -268,34 +405,52 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['nice_menus-2'] = array(
+    'module' => 'nice_menus',
+    'delta' => '2',
+    'theme' => 'dailwatch',
+    'status' => '1',
+    'weight' => '0',
+    'region' => 'menu',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '<none>',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['print-print-links'] = array(
     'module' => 'print',
     'delta' => 'print-links',
     'theme' => 'dailwatch',
-    'status' => '1',
+    'status' => 0,
     'weight' => '-26',
-    'region' => 'user_second',
+    'region' => '',
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
     'title' => 'Print',
     'cache' => 4,
+    'i18n_mode' => '0',
   );
 
   $theme['search-form'] = array(
     'module' => 'search',
     'delta' => 'form',
     'theme' => 'dailwatch',
-    'status' => '1',
+    'status' => 0,
     'weight' => '-26',
-    'region' => 'sidebar_second',
+    'region' => '',
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-help'] = array(
@@ -310,6 +465,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-main'] = array(
@@ -324,6 +480,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-navigation'] = array(
@@ -338,6 +495,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-powered-by'] = array(
@@ -352,6 +510,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['text_resize-0'] = array(
@@ -366,6 +525,22 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Text resize',
     'cache' => '1',
+    'i18n_mode' => '0',
+  );
+
+  $theme['views--exp-profile_list_rev-page'] = array(
+    'module' => 'views',
+    'delta' => '-exp-profile_list_rev-page',
+    'theme' => 'dailwatch',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['views-slider-block'] = array(
@@ -380,12 +555,73 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['webform-client-block-339'] = array(
+    'module' => 'webform',
+    'delta' => 'client-block-339',
+    'theme' => 'dailwatch',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['webform-client-block-343'] = array(
+    'module' => 'webform',
+    'delta' => 'client-block-343',
+    'theme' => 'dailwatch',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '<none>',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $export['dailwatch'] = $theme;
 
   // seven
   $theme = array();
+
+  $theme['block-metanavi_addthis'] = array(
+    'module' => 'block',
+    'theme' => 'seven',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => 'Share',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'metanavi_addthis',
+  );
+
+  $theme['block-social_media_footer'] = array(
+    'module' => 'block',
+    'theme' => 'seven',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'social_media_footer',
+  );
 
   $theme['delta_blocks-breadcrumb'] = array(
     'module' => 'delta_blocks',
@@ -399,6 +635,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => 4,
+    'i18n_mode' => '0',
   );
 
   $theme['delta_blocks-messages'] = array(
@@ -413,6 +650,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['forward-form'] = array(
@@ -427,6 +665,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Social Media',
     'cache' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['locale-language'] = array(
@@ -441,6 +680,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Language',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['nice_menus-1'] = array(
@@ -455,6 +695,22 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['nice_menus-2'] = array(
+    'module' => 'nice_menus',
+    'delta' => '2',
+    'theme' => 'seven',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '<none>',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['print-print-links'] = array(
@@ -469,6 +725,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Print',
     'cache' => 4,
+    'i18n_mode' => '0',
   );
 
   $theme['search-form'] = array(
@@ -483,6 +740,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-help'] = array(
@@ -497,6 +755,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-main'] = array(
@@ -511,6 +770,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-navigation'] = array(
@@ -525,6 +785,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['system-powered-by'] = array(
@@ -539,6 +800,7 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['text_resize-0'] = array(
@@ -553,6 +815,22 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Text resize',
     'cache' => '1',
+    'i18n_mode' => '0',
+  );
+
+  $theme['views--exp-profile_list_rev-page'] = array(
+    'module' => 'views',
+    'delta' => '-exp-profile_list_rev-page',
+    'theme' => 'seven',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $theme['views-slider-block'] = array(
@@ -567,6 +845,37 @@ function subsite_blocks_default_fe_block_settings() {
     'pages' => '',
     'title' => '<none>',
     'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['webform-client-block-339'] = array(
+    'module' => 'webform',
+    'delta' => 'client-block-339',
+    'theme' => 'seven',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
+  );
+
+  $theme['webform-client-block-343'] = array(
+    'module' => 'webform',
+    'delta' => 'client-block-343',
+    'theme' => 'seven',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
   );
 
   $export['seven'] = $theme;
