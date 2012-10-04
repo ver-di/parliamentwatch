@@ -22,6 +22,7 @@ function profiles_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['css_class'] = 'pager-full';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -34,8 +35,8 @@ function profiles_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['row_class'] = 'profiles-list-compact';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -210,7 +211,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'row link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'Profil ansehen';
+  $handler->display->display_options['fields']['view_user']['text'] = 'Go to profile';
   /* Field: | more info end */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
@@ -429,7 +430,7 @@ function profiles_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'politicians/%';
+  $handler->display->display_options['path'] = 'politicians_old/%';
   $translatables['profile_list_rev'] = array(
     t('Master'),
     t('more'),
@@ -442,8 +443,8 @@ function profiles_views_default_views() {
     t('- All -'),
     t('Offset'),
     t('« first'),
-    t('zurück'),
-    t('weiter'),
+    t('prev'),
+    t('next'),
     t('last »'),
     t('term from field_user_parliament'),
     t('Get all revisions from an user.'),
@@ -459,7 +460,7 @@ function profiles_views_default_views() {
     t('<h3>[field_user_fname]'),
     t('[field_user_lname-revision_id]</h3>'),
     t('[field_user_lname]</h3>'),
-    t('Profil ansehen'),
+    t('Go to profile'),
     t('</div>'),
     t('All'),
     t('Last name (field_user_lname)'),
@@ -475,7 +476,7 @@ function profiles_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Profile Questions & Answers';
+  $view->human_name = 'Questions & Answers';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -483,6 +484,7 @@ function profiles_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Questions & Answers';
+  $handler->display->display_options['css_class'] = 'pager-load-more';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -697,9 +699,22 @@ function profiles_views_default_views() {
     'dialogue' => 'dialogue',
   );
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Profile */
+  $handler = $view->new_display('block', 'Profile', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+
+  /* Display: Frontpage */
+  $handler = $view->new_display('block', 'Frontpage', 'block_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
   $translatables['profile_questions_answers'] = array(
     t('Master'),
     t('Questions & Answers'),
@@ -735,7 +750,8 @@ function profiles_views_default_views() {
 <strong>No answer yet</strong>'),
     t('<div class="anchor-to-top clearfix"><a href="#page">to the top</a></div>'),
     t('All'),
-    t('Block'),
+    t('Profile'),
+    t('Frontpage'),
   );
   $export['profile_questions_answers'] = $view;
 

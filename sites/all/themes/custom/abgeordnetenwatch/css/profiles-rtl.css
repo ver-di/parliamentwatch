@@ -9,21 +9,18 @@ table.views-view-grid td.col-last {
 table.views-view-grid td.col-first {
     border-right: 0 none;
 }
-.user-profile .field-name-field-user-fname,
-.user-profile .field-name-field-user-lname {
-    float: right;
-}
 .user-profile .field-name-field-user-fname {
     margin-left: 0.8ex;
 }
 .profiles-list-compact-wrapper .row {
-    margin: 0 0 2px -12px;    
+    margin-left: -12px;    
 }
 .col-last .profiles-list-compact-wrapper h3 {
     text-align: left;   
 }
 .col-last .profiles-list-compact-wrapper .row {
-    margin: 0 -12px 2px 0;
+    margin-right: -12px;
+    margin-left: 0;
     text-align: right;
 }
 .profiles-list-compact-wrapper:hover .element-hidden {

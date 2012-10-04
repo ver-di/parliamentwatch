@@ -10,6 +10,85 @@
 function profiles_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'user-user-field_profile_node_connector'
+  $fields['user-user-field_profile_node_connector'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_profile_node_connector',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'direction' => 'ASC',
+            'field' => 'body:value',
+            'property' => 'title',
+            'type' => 'property',
+          ),
+          'target_bundles' => array(
+            'user_profile_metadata' => 'user_profile_metadata',
+          ),
+        ),
+        'handler_submit' => 'Change handler',
+        'target_type' => 'node',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '22',
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_profile_node_connector',
+      'label' => 'profile_node_connector',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'path' => '',
+          'size' => 60,
+        ),
+        'type' => 'entityreference_autocomplete',
+        'weight' => '26',
+      ),
+    ),
+  );
+
   // Exported field: 'user-user-field_user_answers_give'
   $fields['user-user-field_user_answers_give'] = array(
     'field_config' => array(
@@ -37,15 +116,15 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 20,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '20',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -108,13 +187,19 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '17',
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '16',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -142,7 +227,7 @@ function profiles_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '7',
+        'weight' => '13',
       ),
     ),
   );
@@ -164,11 +249,7 @@ function profiles_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'user',
-      'default_value' => array(
-        0 => array(
-          'value' => '-',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -176,13 +257,19 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '13',
+          'weight' => '15',
         ),
         'full' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '11',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -200,9 +287,11 @@ function profiles_field_default_fields() {
       'widget' => array(
         'active' => 0,
         'module' => 'number',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'number',
-        'weight' => '13',
+        'weight' => '16',
       ),
     ),
   );
@@ -261,6 +350,12 @@ function profiles_field_default_fields() {
           'type' => 'i18n_taxonomy_term_reference_link',
           'weight' => '6',
         ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
@@ -275,7 +370,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '18',
+        'weight' => '19',
       ),
     ),
   );
@@ -346,6 +441,12 @@ function profiles_field_default_fields() {
           'type' => 'i18n_taxonomy_term_reference_plain',
           'weight' => '15',
         ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
@@ -360,7 +461,67 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '19',
+        'weight' => '20',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_user_first_letter_lname'
+  $fields['user-user-field_user_first_letter_lname'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_first_letter_lname',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => 255,
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '21',
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_user_first_letter_lname',
+      'label' => 'user_first_letter_lname',
+      'required' => FALSE,
+      'settings' => array(
+        'text_processing' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'size' => 60,
+        ),
+        'type' => 'text_textfield',
+        'weight' => '25',
       ),
     ),
   );
@@ -412,6 +573,12 @@ function profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'text_plain',
           'weight' => '2',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -468,7 +635,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -508,13 +675,19 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '12',
+          'weight' => '14',
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '10',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -530,7 +703,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '6',
+        'weight' => '11',
       ),
     ),
   );
@@ -565,11 +738,7 @@ function profiles_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'user',
-      'default_value' => array(
-        0 => array(
-          'value' => '-',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -587,6 +756,12 @@ function profiles_field_default_fields() {
           'type' => 'text_default',
           'weight' => '14',
         ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
@@ -594,6 +769,44 @@ function profiles_field_default_fields() {
       'label' => 'Professional qualification',
       'required' => 0,
       'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'ds_code' => 'ds_code',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'ds_code' => array(
+                'weight' => '-5',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
         'text_processing' => '0',
         'user_register_form' => 1,
       ),
@@ -601,10 +814,12 @@ function profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '16',
+        'weight' => '17',
       ),
     ),
   );
@@ -656,6 +871,12 @@ function profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'text_plain',
           'weight' => '3',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -712,7 +933,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -752,13 +973,19 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '16',
         ),
         'full' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '12',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -772,9 +999,11 @@ function profiles_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'options_select',
-        'weight' => '11',
+        'weight' => '15',
       ),
     ),
   );
@@ -828,6 +1057,12 @@ function profiles_field_default_fields() {
           'type' => 'link_default',
           'weight' => '10',
         ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
@@ -859,7 +1094,7 @@ function profiles_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '17',
+        'weight' => '18',
       ),
     ),
   );
@@ -918,6 +1153,12 @@ function profiles_field_default_fields() {
           'type' => 'i18n_taxonomy_term_reference_plain',
           'weight' => '3',
         ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
@@ -932,7 +1173,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '10',
       ),
     ),
   );
@@ -991,6 +1232,12 @@ function profiles_field_default_fields() {
           'type' => 'i18n_taxonomy_term_reference_plain',
           'weight' => '4',
         ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'entity_type' => 'user',
       'field_name' => 'field_user_party',
@@ -1004,7 +1251,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '20',
+        'weight' => '21',
       ),
     ),
   );
@@ -1062,6 +1309,12 @@ function profiles_field_default_fields() {
           'type' => 'file_rendered',
           'weight' => '1',
         ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
@@ -1098,6 +1351,73 @@ function profiles_field_default_fields() {
         ),
         'type' => 'media_generic',
         'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_user_political_roles'
+  $fields['user-user-field_user_political_roles'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_political_roles',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'political_roles',
+            'parent' => '0',
+          ),
+        ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '23',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'field_name' => 'field_user_political_roles',
+      'label' => 'Political Roles',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_buttons',
+        'weight' => '22',
       ),
     ),
   );
@@ -1140,13 +1460,19 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '18',
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '17',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1203,7 +1529,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -1235,15 +1561,15 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 19,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1282,10 +1608,13 @@ function profiles_field_default_fields() {
   t('Marriage status');
   t('Parliament');
   t('Party');
+  t('Political Roles');
   t('Professional qualification');
   t('Profile picture');
   t('Pseudonym');
   t('Questions Get');
+  t('profile_node_connector');
+  t('user_first_letter_lname');
 
   return $fields;
 }

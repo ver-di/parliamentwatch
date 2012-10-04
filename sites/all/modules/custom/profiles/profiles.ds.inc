@@ -17,15 +17,21 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'questions_and_answers' => array(
-      'weight' => '5',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'question_form_anonymous' => array(
+    'question_form' => array(
       'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_minimal',
+      ),
+    ),
+    'questions_and_answers' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_minimal',
+      ),
     ),
     'field_user_constituency' => array(
       'ft' => array(
@@ -73,7 +79,7 @@ function profiles_ds_field_settings_info() {
         'func' => 'theme_ds_field_expert',
         'ow' => TRUE,
         'ow-el' => 'div',
-        'ow-cl' => 'file-image push-bottom-l float-left',
+        'ow-cl' => 'file-image float-left push-bottom-l',
       ),
     ),
   );
@@ -184,6 +190,20 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'question_form';
+  $ds_field->label = 'Question form';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'webform|client-block-339',
+    'block_render' => '1',
+  );
+  $export['question_form'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'question_form_anonymous';
   $ds_field->label = 'Question form anonymous';
   $ds_field->field_type = 6;
@@ -239,15 +259,15 @@ function profiles_ds_layout_settings_info() {
         5 => 'field_user_lname',
         6 => 'field_user_party',
         7 => 'group_user_basics',
-        8 => 'questions_and_answers',
+        8 => 'group_user_commitee',
         9 => 'field_user_commitee',
-        10 => 'group_user_commitee',
-        11 => 'question_form_anonymous',
+        10 => 'questions_and_answers',
+        11 => 'question_form',
         12 => 'field_user_more',
-        13 => 'group_user_basics_basics',
-        14 => 'group_user_commitee_tab',
-        15 => 'group_user_basics_additional',
-        16 => 'field_user_job_skills',
+        13 => 'group_user_commitee_tab',
+        14 => 'group_user_basics_basics',
+        15 => 'field_user_job_skills',
+        16 => 'group_user_basics_additional',
         17 => 'field_user_constituency',
       ),
     ),
@@ -260,15 +280,15 @@ function profiles_ds_layout_settings_info() {
       'field_user_lname' => 'ds_content',
       'field_user_party' => 'ds_content',
       'group_user_basics' => 'ds_content',
-      'questions_and_answers' => 'ds_content',
-      'field_user_commitee' => 'ds_content',
       'group_user_commitee' => 'ds_content',
-      'question_form_anonymous' => 'ds_content',
+      'field_user_commitee' => 'ds_content',
+      'questions_and_answers' => 'ds_content',
+      'question_form' => 'ds_content',
       'field_user_more' => 'ds_content',
-      'group_user_basics_basics' => 'ds_content',
       'group_user_commitee_tab' => 'ds_content',
-      'group_user_basics_additional' => 'ds_content',
+      'group_user_basics_basics' => 'ds_content',
       'field_user_job_skills' => 'ds_content',
+      'group_user_basics_additional' => 'ds_content',
       'field_user_constituency' => 'ds_content',
     ),
     'classes' => array(),

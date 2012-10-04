@@ -35,13 +35,13 @@ table.views-view-grid .row-last td {
 
 .user-profile .field-name-field-user-fname,
 .user-profile .field-name-field-user-lname {
-    float: left;
+    display: inline;
 }
 .user-profile .field-name-field-user-fname {
     margin-right: 0.8ex;
 }
-.user-profile .field-name-field-user-lname:after {
-    content: ",\0000a0";
+.user-profile .field-name-field-user-party:before {
+    content: "\0000a0,";
 }
 .page-user #page-title {
     display: none;
@@ -54,15 +54,15 @@ table.views-view-grid .row-last td {
     position: relative;    
 }
 .profiles-list-compact-wrapper .row {
-    background: #fff;
-    margin: 0 -12px 2px 0;
+    margin-right: -12px;
     padding: 0 12px;  
 }
 .col-last .profiles-list-compact-wrapper h3 {
     text-align: right;   
 }
 .col-last .profiles-list-compact-wrapper .row {
-    margin: 0 0 2px -12px;
+    margin-left: -12px;
+    margin-right: 0;
     text-align: right;
 }
 .profiles-list-compact-wrapper:hover .element-hidden {
