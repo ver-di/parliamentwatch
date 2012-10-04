@@ -10,6 +10,79 @@
 function subsite_conf_default_fe_block_settings() {
   $export = array();
 
+  $export['version'] = '1.0';
+
+  // Theme independent visibility settings.
+  $export['visibility'] = array(
+    'block-metanavi_addthis' => array(
+      'machine_name' => 'metanavi_addthis',
+      'module' => 'block',
+    ),
+    'block-social_media_footer' => array(
+      'machine_name' => 'social_media_footer',
+      'module' => 'block',
+    ),
+    'delta_blocks-breadcrumb' => array(
+      'delta' => 'breadcrumb',
+      'module' => 'delta_blocks',
+    ),
+    'delta_blocks-messages' => array(
+      'delta' => 'messages',
+      'module' => 'delta_blocks',
+    ),
+    'forward-form' => array(
+      'delta' => 'form',
+      'module' => 'forward',
+    ),
+    'locale-language' => array(
+      'delta' => 'language',
+      'module' => 'locale',
+    ),
+    'nice_menus-1' => array(
+      'delta' => '1',
+      'module' => 'nice_menus',
+    ),
+    'nice_menus-2' => array(
+      'delta' => '2',
+      'module' => 'nice_menus',
+    ),
+    'print-print-links' => array(
+      'delta' => 'print-links',
+      'module' => 'print',
+    ),
+    'search-form' => array(
+      'delta' => 'form',
+      'module' => 'search',
+    ),
+    'system-help' => array(
+      'delta' => 'help',
+      'module' => 'system',
+    ),
+    'system-main' => array(
+      'delta' => 'main',
+      'module' => 'system',
+    ),
+    'system-navigation' => array(
+      'delta' => 'navigation',
+      'module' => 'system',
+    ),
+    'system-powered-by' => array(
+      'delta' => 'powered-by',
+      'module' => 'system',
+    ),
+    'text_resize-0' => array(
+      'module' => 'text_resize',
+    ),
+    'views--exp-profile_list_rev-page' => array(
+      'delta' => '-exp-profile_list_rev-page',
+      'module' => 'views',
+    ),
+    'views-slider-block' => array(
+      'delta' => 'slider-block',
+      'module' => 'views',
+    ),
+  );
+
   // bartik
   $theme = array();
 
@@ -268,37 +341,7 @@ function subsite_conf_default_fe_block_settings() {
     'i18n_mode' => '0',
   );
 
-  $theme['webform-client-block-339'] = array(
-    'module' => 'webform',
-    'delta' => 'client-block-339',
-    'theme' => 'bartik',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $theme['webform-client-block-343'] = array(
-    'module' => 'webform',
-    'delta' => 'client-block-343',
-    'theme' => 'bartik',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $export['bartik'] = $theme;
+  $export['theme']['bartik'] = $theme;
 
   // dailwatch
   $theme = array();
@@ -558,37 +601,7 @@ function subsite_conf_default_fe_block_settings() {
     'i18n_mode' => '0',
   );
 
-  $theme['webform-client-block-339'] = array(
-    'module' => 'webform',
-    'delta' => 'client-block-339',
-    'theme' => 'dailwatch',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $theme['webform-client-block-343'] = array(
-    'module' => 'webform',
-    'delta' => 'client-block-343',
-    'theme' => 'dailwatch',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '<none>',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $export['dailwatch'] = $theme;
+  $export['theme']['dailwatch'] = $theme;
 
   // seven
   $theme = array();
@@ -848,43 +861,13 @@ function subsite_conf_default_fe_block_settings() {
     'i18n_mode' => '0',
   );
 
-  $theme['webform-client-block-339'] = array(
-    'module' => 'webform',
-    'delta' => 'client-block-339',
-    'theme' => 'seven',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $theme['webform-client-block-343'] = array(
-    'module' => 'webform',
-    'delta' => 'client-block-343',
-    'theme' => 'seven',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $export['seven'] = $theme;
+  $export['theme']['seven'] = $theme;
 
   $theme_default = variable_get('theme_default', 'garland');
   $themes = list_themes();
   foreach ($export as $theme_key => $settings) {
     if ($theme_key != $theme_default && empty($themes[$theme_key]->status)) {
-      unset($export[$theme_key]);
+      unset($export['theme'][$theme_key]);
     }
   }
   return $export;
