@@ -4,7 +4,7 @@ input[type="reset"],
 input[type="submit"],
 input[type="button"],
 a.form-submit {
-    background: #F6891F !important;
+    background: #F6891F;
     filter: none;
 }
 a {
