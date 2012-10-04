@@ -102,6 +102,9 @@ h4 {
 .subline {
     font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
 }
+.bg-white {
+    background: #fff;
+}
 p {
     margin-bottom: 1em;
 }
@@ -149,6 +152,12 @@ blockquote p:last-child {
     clear: both;
 }
 
+.push-bottom-xxs {
+    margin-bottom: 2px;
+}
+.push-bottom-xs {
+    margin-bottom: 4px;
+}
 .push-bottom-s {
     margin-bottom: 12px;
 }
