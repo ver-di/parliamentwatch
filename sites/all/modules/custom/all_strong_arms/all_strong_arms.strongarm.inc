@@ -13,9 +13,37 @@ function all_strong_arms_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_page';
+  $strongarm->value = 'edit-submenutree';
+  $export['additional_settings__active_tab_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_pw_poll';
   $strongarm->value = 'edit-print';
   $export['additional_settings__active_tab_pw_poll'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_slider_item';
+  $strongarm->value = 'edit-weight-settings';
+  $export['additional_settings__active_tab_slider_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_trustee';
+  $strongarm->value = 'edit-weight-settings';
+  $export['additional_settings__active_tab_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_user_profile_metadata';
+  $strongarm->value = 'edit-submission';
+  $export['additional_settings__active_tab_user_profile_metadata'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -48,6 +76,220 @@ function all_strong_arms_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_caption_trim';
+  $strongarm->value = '0';
+  $export['colorbox_caption_trim'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_caption_trim_length';
+  $strongarm->value = '75';
+  $export['colorbox_caption_trim_length'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_compression_type';
+  $strongarm->value = 'min';
+  $export['colorbox_compression_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_custom_settings_activate';
+  $strongarm->value = '0';
+  $export['colorbox_custom_settings_activate'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_fixed';
+  $strongarm->value = 1;
+  $export['colorbox_fixed'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_initialheight';
+  $strongarm->value = '100';
+  $export['colorbox_initialheight'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_initialwidth';
+  $strongarm->value = '300';
+  $export['colorbox_initialwidth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_inline';
+  $strongarm->value = 1;
+  $export['colorbox_inline'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_load';
+  $strongarm->value = 1;
+  $export['colorbox_load'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_login';
+  $strongarm->value = 0;
+  $export['colorbox_login'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_login_links';
+  $strongarm->value = '0';
+  $export['colorbox_login_links'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_maxheight';
+  $strongarm->value = '100%';
+  $export['colorbox_maxheight'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_maxwidth';
+  $strongarm->value = '100%';
+  $export['colorbox_maxwidth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_opacity';
+  $strongarm->value = '0.85';
+  $export['colorbox_opacity'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_overlayclose';
+  $strongarm->value = 1;
+  $export['colorbox_overlayclose'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_pages';
+  $strongarm->value = 'admin*
+img_assist*
+imce*
+node/add/*
+node/*/edit';
+  $export['colorbox_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_path';
+  $strongarm->value = 'sites/all/libraries/colorbox';
+  $export['colorbox_path'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_scrolling';
+  $strongarm->value = '1';
+  $export['colorbox_scrolling'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_slideshow';
+  $strongarm->value = '0';
+  $export['colorbox_slideshow'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_slideshowauto';
+  $strongarm->value = 1;
+  $export['colorbox_slideshowauto'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_slideshowspeed';
+  $strongarm->value = '2500';
+  $export['colorbox_slideshowspeed'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_style';
+  $strongarm->value = 'sites/all/libraries/colorbox/example4';
+  $export['colorbox_style'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_text_close';
+  $strongarm->value = 'Close';
+  $export['colorbox_text_close'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_text_current';
+  $strongarm->value = '{current} of {total}';
+  $export['colorbox_text_current'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_text_next';
+  $strongarm->value = 'Next »';
+  $export['colorbox_text_next'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_text_previous';
+  $strongarm->value = '« Prev';
+  $export['colorbox_text_previous'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_text_start';
+  $strongarm->value = 'start slideshow';
+  $export['colorbox_text_start'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_text_stop';
+  $strongarm->value = 'stop slideshow';
+  $export['colorbox_text_stop'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_transition_speed';
+  $strongarm->value = '350';
+  $export['colorbox_transition_speed'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'colorbox_transition_type';
+  $strongarm->value = 'elastic';
+  $export['colorbox_transition_type'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_page';
   $strongarm->value = '0';
   $export['comment_anonymous_page'] = $strongarm;
@@ -65,6 +307,13 @@ function all_strong_arms_strongarm() {
   $strongarm->name = 'comment_anonymous_slider_item';
   $strongarm->value = '0';
   $export['comment_anonymous_slider_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_anonymous_user_profile_metadata';
+  $strongarm->value = 0;
+  $export['comment_anonymous_user_profile_metadata'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -97,6 +346,13 @@ function all_strong_arms_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_mode_user_profile_metadata';
+  $strongarm->value = 1;
+  $export['comment_default_mode_user_profile_metadata'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_webform';
   $strongarm->value = 1;
   $export['comment_default_mode_webform'] = $strongarm;
@@ -114,6 +370,13 @@ function all_strong_arms_strongarm() {
   $strongarm->name = 'comment_default_per_page_slider_item';
   $strongarm->value = '50';
   $export['comment_default_per_page_slider_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_default_per_page_user_profile_metadata';
+  $strongarm->value = '50';
+  $export['comment_default_per_page_user_profile_metadata'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -139,6 +402,13 @@ function all_strong_arms_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_form_location_user_profile_metadata';
+  $strongarm->value = 1;
+  $export['comment_form_location_user_profile_metadata'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_form_location_webform';
   $strongarm->value = 1;
   $export['comment_form_location_webform'] = $strongarm;
@@ -147,7 +417,7 @@ function all_strong_arms_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_page';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['comment_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -170,6 +440,13 @@ function all_strong_arms_strongarm() {
   $strongarm->name = 'comment_preview_slider_item';
   $strongarm->value = '1';
   $export['comment_preview_slider_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_preview_user_profile_metadata';
+  $strongarm->value = '1';
+  $export['comment_preview_user_profile_metadata'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -216,9 +493,23 @@ function all_strong_arms_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'comment_subject_field_user_profile_metadata';
+  $strongarm->value = 1;
+  $export['comment_subject_field_user_profile_metadata'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_subject_field_webform';
   $strongarm->value = 1;
   $export['comment_subject_field_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'comment_user_profile_metadata';
+  $strongarm->value = '2';
+  $export['comment_user_profile_metadata'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -250,7 +541,8 @@ webform-client-form-6
 forward-form
 comment-form
 webform-client-form-14
-webform-client-form-796';
+webform-client-form-339
+webform-client-form-343';
   $export['compact_forms_ids'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -936,7 +1228,7 @@ webform-client-form-796';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'features_tools_disable_features_page_js';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['features_tools_disable_features_page_js'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1048,6 +1340,10 @@ webform-client-form-796';
           'default' => array(
             'weight' => '14',
             'visible' => FALSE,
+          ),
+          'colorbox' => array(
+            'weight' => '1',
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -1383,7 +1679,7 @@ webform-client-form-796';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_page';
-  $strongarm->value = FALSE;
+  $strongarm->value = 0;
   $export['node_submitted_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1524,9 +1820,9 @@ webform-client-form-796';
   $strongarm->api_version = 1;
   $strongarm->name = 'search_active_modules';
   $strongarm->value = array(
-    'ds_search' => 'ds_search',
-    'user' => 'user',
-    'node' => 0,
+    'node' => 'node',
+    'ds_search' => 0,
+    'user' => 0,
   );
   $export['search_active_modules'] = $strongarm;
 
@@ -1541,7 +1837,7 @@ webform-client-form-796';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_default_module';
-  $strongarm->value = 'ds_search';
+  $strongarm->value = 'node';
   $export['search_default_module'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1578,6 +1874,20 @@ webform-client-form-796';
   $strongarm->name = 'site_frontpage';
   $strongarm->value = 'node';
   $export['site_frontpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_display_page';
+  $strongarm->value = '2';
+  $export['submenutree_display_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_enable_page';
+  $strongarm->value = 1;
+  $export['submenutree_enable_page'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1645,6 +1955,41 @@ webform-client-form-796';
     2 => 'webform',
   );
   $export['webform_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_enabled_slider_item';
+  $strongarm->value = '1';
+  $export['weight_enabled_slider_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_enabled_trustee';
+  $strongarm->value = '1';
+  $export['weight_enabled_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_range_page';
+  $strongarm->value = '20';
+  $export['weight_range_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_range_slider_item';
+  $strongarm->value = '10';
+  $export['weight_range_slider_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_range_trustee';
+  $strongarm->value = '20';
+  $export['weight_range_trustee'] = $strongarm;
 
   return $export;
 }
