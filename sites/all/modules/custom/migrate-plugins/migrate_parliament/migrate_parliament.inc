@@ -25,7 +25,7 @@ class ParliamentTermMigration extends BasicMigrateParliament {
 		    $query->condition('p.project_cmd', 974);
 			break;		
 		case 'dailwatch.ie':
-		    $query->condition('p.project_cmd', array(233, 486, 30073, 30988));
+		    $query->condition('p.project_cmd', array(233, 486, 30073, 30988)); # , 1036, 1010, 1475
 			break;		
 		case 'piratenpartei-bayern.de':
 		    $query->condition('p.project_cmd', array(1036, 1010, 1475));

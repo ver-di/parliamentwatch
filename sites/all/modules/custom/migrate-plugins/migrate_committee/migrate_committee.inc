@@ -14,11 +14,12 @@ class CommitteeTermMigration extends BasicMigrateCommittee {
     parent::__construct();
 
 	$this->dependencies = array('ParliamentTerm');
+	$this->dependencies = array('Politician');
 
     $query = Database::getConnection('default', 'parlamentwatch')
             ->select('legacy_committee', 'c');
     $query->join('legacy_projects', 'p', 'c.cmd = p.cmd');
-    $query->fields('c', array('id', 'committee', 'txt','first_lang' , 'second_lang','committee_2nd_lang'));
+    $query->fields('c', array('id', 'committee', 'committee_type', 'txt','first_lang' , 'second_lang','committee_2nd_lang'));
     $query->fields('p', array('project', 'startdate'));
 	switch(variable_get('site_name')){
 		case 'abgeordnetenwatch.de':
@@ -53,6 +54,7 @@ class CommitteeTermMigration extends BasicMigrateCommittee {
     $this->addFieldMapping('description', 'txt');
     $this->addFieldMapping('field_committee_picture', 'picture'); 
     $this->addFieldMapping('field_parliament', 'project')->arguments(array('create_term' => TRUE));
+    $this->addFieldMapping('field_committee_type', 'committee_type')->arguments(array('create_term' => TRUE));
     // $this->addFieldMapping('language','first_lang');
   }
 
