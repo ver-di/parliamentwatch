@@ -96,8 +96,8 @@ function pw_dialogues_cron() {
     foreach ($users as $uid) {
       // Query comments and nodes resulting in two arrays, keyed by 'answer' and
       // 'question' with the corresponding counts as values.
-      $comment_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(cid) AS count FROM {comment} AS c LEFT JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = "comment" AND f.entity_id = c.cid WHERE uid = %d GROUP BY f.field_dialogue_message_type_value', $uid)->fetchAllKeyed();
-      $node_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(nid) AS count FROM {node} AS n INNER JOIN {field_data_field_dialogue_recipient} AS r ON r.entity_type = "node" AND r.entity_id = n.nid LEFT JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = "node" AND f.entity_id = n.nid WHERE r.field_dialogue_recipient_target_id = %d GROUP BY f.field_dialogue_message_type_value', $uid)->fetchAllKeyed();
+      $comment_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(cid) AS count FROM {comment} AS c LEFT JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = "comment" AND f.entity_id = c.cid WHERE uid = %d AND c.status = 1 GROUP BY f.field_dialogue_message_type_value', $uid)->fetchAllKeyed();
+      $node_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(nid) AS count FROM {node} AS n INNER JOIN {field_data_field_dialogue_recipient} AS r ON r.entity_type = "node" AND r.entity_id = n.nid LEFT JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = "node" AND f.entity_id = n.nid WHERE r.field_dialogue_recipient_target_id = %d AND n.status = 1 GROUP BY f.field_dialogue_message_type_value', $uid)->fetchAllKeyed();
 
       // Load the politician and update the fields.
       $account = user_load($uid);
