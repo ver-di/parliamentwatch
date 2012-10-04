@@ -247,6 +247,7 @@ function rate_voteas_voting_form_submit($form, &$form_state){
       $party_url = chart_url($data);
       print $party_url;
       $party_tmp_image = file_get_contents('http:'.$party_url);
+      $party_img_name_cleanup = array(' ','/');
       $party_file = file_save_data($party_tmp_image, 'public://'.$nid.'_'.str_replace(' ','_',$party).'.png', FILE_EXISTS_REPLACE);
       //$party_file['title'] = $party;
       $node->field_pw_party_chart[LANGUAGE_NONE][$i]['fid'] = $party_file->fid;

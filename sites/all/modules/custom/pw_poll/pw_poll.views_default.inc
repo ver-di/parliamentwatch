@@ -23,6 +23,7 @@ function pw_poll_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Votes';
+  $handler->display->display_options['css_class'] = 'pager-load-more';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -96,7 +97,9 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_class'] = 'float-right link-poll';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'Détails du vote';
+  $handler->display->display_options['fields']['view_node']['text'] = 'Details to vote';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
@@ -107,9 +110,8 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 ';
-  $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count ';
-  $handler->display->display_options['fields']['comment_count']['suffix'] = 'commentaires';
+  $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
+  $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -141,6 +143,21 @@ function pw_poll_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'votes/%';
+
+  /* Display: Frontpage */
+  $handler = $view->new_display('block', 'Frontpage', 'block_1');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '2';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['defaults']['header'] = FALSE;
   $translatables['pw_polls_list'] = array(
     t('Master'),
     t('Votes'),
@@ -163,11 +180,11 @@ function pw_poll_views_default_views() {
     <div class="poll-behavior"><span class="icon absent"></span>absent</div>
     <div class="poll-behavior"><span class="icon blank"></span>blank</div>
 </div>'),
-    t('Détails du vote'),
+    t('Details to vote'),
     t('.'),
     t(','),
-    t('commentaires'),
     t('Page'),
+    t('Frontpage'),
   );
   $export['pw_polls_list'] = $view;
 
