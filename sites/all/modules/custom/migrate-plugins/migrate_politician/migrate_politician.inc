@@ -99,7 +99,7 @@ class PoliticianMigration extends BasicMigratePolitician {
 
       $handler = entity_translation_get_handler('user', $entity, TRUE); // get the translation handler in place
       // This is the array structure for the field you are translating, in my case the name was "name_field" and the language target, English. $value is the translated string.
-      $entity->field_user_first_letter_lname['und'][0]['value'] = substr($this->sourceValues->last_name, 0,1);
+      $entity->field_user_first_letter_lname['und'][0]['value'] = substr($this->sourceValues->last_name, '1','2');
       $entity->field_user_fname[$this->sourceValues->first_lang][0]['value'] = $this->sourceValues->first_name;
       $entity->field_user_lname[$this->sourceValues->first_lang][0]['value'] = $this->sourceValues->last_name;
       $entity->field_user_fname[$this->sourceValues->second_lang][0]['value'] = $this->sourceValues->first_name_2nd_lang;
