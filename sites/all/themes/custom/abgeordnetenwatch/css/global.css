@@ -95,9 +95,9 @@ h4 {
     line-height: 1.5em;
     margin-bottom: 0;
 }
-.subtitle {
+.subtitle,
+.small {
     font-size: 11px;
-    
 }
 .subline {
     font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
@@ -149,6 +149,9 @@ blockquote p:last-child {
     clear: both;
 }
 
+.push-bottom-s {
+    margin-bottom: 12px;
+}
 .push-bottom-l {
     margin-bottom: 28px;
 }
@@ -284,6 +287,7 @@ h1#page-title {
 }
 .node-blogpost.node-teaser,
 .block-submenutree .view-mode-teaser,
+.block-submenutree .node-teaser,
 .views-table tr.odd,
 .views-table tr.even,
 .node-results li,
@@ -487,6 +491,36 @@ a.tagadelic.level4 {
     width: auto;
 }
 
+/* pager views load more */
+
+#region-content .item-list ul.pager-load-more li.pager-next {
+    position: relative;
+    display: block;
+    margin: 0;
+}
+#region-content .item-list ul.pager-load-more li.pager-next a {
+    border: 1px solid #d2d2d2;
+    background: #f4f4f4; /* Old browsers */
+    background-image: -moz-linear-gradient(top,  #f4f4f4 0%, #ececec 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#ececec)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top,  #f4f4f4 0%,#ececec 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top,  #f4f4f4 0%,#ececec 100%); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top,  #f4f4f4 0%,#ececec 100%); /* IE10+ */
+    background-image: linear-gradient(to bottom,  #f4f4f4 0%,#ececec 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
+    -webkit-border-radius: 0px 0px 3px 3px;
+    border-radius: 0px 0px 3px 3px;    
+    display: block;
+    float: none;
+    line-height: 26px;
+    text-align: center;
+}
+.pager-load-more .ajax-progress {
+    position: absolute;
+    left: 19px;
+    top: 3px;
+}
+
 /* top anchor */
 
 .anchor-to-top {
@@ -501,6 +535,57 @@ a.tagadelic.level4 {
     font-size: 11px;
     line-height: 24px;
     font-weight: normal;
+}
+
+
+/* quicktabs */
+
+#region-content .quicktabs-style-nostyle ul.quicktabs-tabs {
+    margin: 0;
+    padding: 0;
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #d2d2d2;
+    margin-bottom: 23px;
+}
+#region-content .quicktabs-style-nostyle .quicktabs-tabs li {
+    display: table-cell;
+    padding: 0;
+    padding-right: 3px;
+}
+#region-content .quicktabs-style-nostyle .quicktabs-tabs li.last {
+    padding-right: 0;
+}
+#region-content .quicktabs-style-nostyle .quicktabs-tabs a {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    border: 1px solid #d2d2d2;
+    border-bottom: 0;
+    line-height: 36px;
+    background: #f9f9f9; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f9f9f9 0%, #ececec 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ececec)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f9f9f9 0%,#ececec 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f9f9f9 0%,#ececec 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f9f9f9 0%,#ececec 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f9f9f9 0%,#ececec 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
+    -webkit-border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0px 0px;   
+
+}
+#region-content .quicktabs-style-nostyle .quicktabs-tabs li.active a {
+    background: #f1f1f1; /* Old browsers */
+    background: -moz-linear-gradient(top,  #f1f1f1 0%, #dadada 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1f1), color-stop(100%,#dadada)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f1f1f1 0%,#dadada 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f1f1f1 0%,#dadada 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f1f1f1 0%,#dadada 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f1f1f1 0%,#dadada 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#dadada',GradientType=0 ); /* IE6-9 */
 }
 
 /* /////////////////////////// region-user-second /////////////////////////// */
@@ -1015,6 +1100,7 @@ form:after {
     min-height: 1%;
 }
 textarea,
+.form-textarea-wrapper textarea,
 select,
 input[type="date"],
 input[type="datetime"],
@@ -1118,6 +1204,20 @@ a.form-submit:hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', endColorstr='#999999',GradientType=0 ); /* IE6-9 */
 
 }
+
+.webform-component-checkboxes {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 0.8em;
+}
+.webform-component-checkboxes .form-checkboxes {
+    position: absolute;
+    left: 0;
+}
+form .webform-component-checkboxes .description {
+    margin-top: 0;
+}
+
 .views-exposed-widget button, input[type="reset"],
 .views-exposed-widget input[type="submit"],
 .views-exposed-widget input[type="button"],
@@ -1461,30 +1561,43 @@ blockquote:before,
 /* reset the alpha-reset.css for lists in the content and display them how they appear in the wysiwig */
 
 #region-content ol,
-#region-content ul {
+#region-content ul,
+#colorbox ol,
+#colorbox ul {
     unicode-bidi: embed;
 }
-#region-content li {
+#region-content li,
+#colorbox li {
     display:list-item;
 }
 #region-content ul,
-#region-content ol {
+#region-content ol,
+#colorbox ul,
+#colorbox ol {
     margin: 1.12em 0;
 }
 #region-content ol,
-#region-content ul {
+#region-content ul,
+#colorbox ol,
+#colorbox ul {
     margin-left: 40px; /* LTR */
 }
-#region-content ol {
+#region-content ol,
+#colorbox ol {
     list-style-type:decimal;
 }
-#region-content ul {
+#region-content ul,
+#colorbox ul {
     list-style-type:disc;
 }
 #region-content ol ul,
 #region-content ul ol,
 #region-content ul ul,
-#region-content ol ol {
+#region-content ol ol,
+#colorbox ol ul,
+#colorbox ul ol,
+#colorbox ul ul,
+#colorbox ol ol {
     margin-top:0;
     margin-bottom:0;
 }
