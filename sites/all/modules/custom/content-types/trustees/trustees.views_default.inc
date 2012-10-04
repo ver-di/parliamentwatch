@@ -22,7 +22,6 @@ function trustees_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Board of Trustees';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -42,7 +41,7 @@ function trustees_views_default_views() {
   $handler->display->display_options['fields']['field_trustee_image']['table'] = 'field_data_field_trustee_image';
   $handler->display->display_options['fields']['field_trustee_image']['field'] = 'field_trustee_image';
   $handler->display->display_options['fields']['field_trustee_image']['label'] = '';
-  $handler->display->display_options['fields']['field_trustee_image']['element_class'] = 'float-left';
+  $handler->display->display_options['fields']['field_trustee_image']['element_class'] = 'file-image float-left';
   $handler->display->display_options['fields']['field_trustee_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_trustee_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_trustee_image']['click_sort_column'] = 'fid';
@@ -77,6 +76,10 @@ function trustees_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  /* Sort criterion: Weight: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -92,24 +95,20 @@ function trustees_views_default_views() {
     'trustee' => 'trustee',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'about/trustees';
-  $handler->display->display_options['menu']['title'] = 'Board of Trustees';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['name'] = 'main-menu';
-  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['block_description'] = 'Board of Trustees';
   $translatables['Trustees'] = array(
     t('Master'),
-    t('Board of Trustees'),
     t('more'),
     t('Apply'),
     t('Zurücksetzen'),
     t('Artikel sortieren nach'),
     t('aufsteigend'),
     t('absteigend'),
-    t('Page'),
+    t('Block'),
+    t('Board of Trustees'),
   );
   $export['Trustees'] = $view;
 
