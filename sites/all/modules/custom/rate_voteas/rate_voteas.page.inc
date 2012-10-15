@@ -145,7 +145,7 @@ function rate_voteas_voting_form_submit($form, &$form_state){
     }else{
       $nid = arg(2);
     }
-  db_query("DELETE FROM {votingapi_vote} WHERE entity_id=:nid",array(":nid"=>$nid));
+    //db_query("DELETE FROM {votingapi_vote} WHERE entity_id=:nid",array(":nid"=>$nid));
   //Get file contents from csv determine user and save vote
   
   //echo "<pre>RATE WIDGET:".print_r($form_state['values']['rate_widget_info'],1)."</pre>";

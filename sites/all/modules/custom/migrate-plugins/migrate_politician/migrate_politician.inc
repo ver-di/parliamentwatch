@@ -70,9 +70,7 @@ class PoliticianMigration extends BasicMigratePolitician {
     $this->addFieldMapping('field_user_party', 'party')->arguments(array('create_term' => TRUE));
     $this->addFieldMapping('field_user_political_roles', 'political_roles')->separator(';')->arguments(array('create_term' => TRUE));
     $this->addFieldMapping('field_user_picture', 'url_picture');
-	if(variable_get('site_name') != 'dailwatch.ie'){
-	    $this->addFieldMapping('field_user_more', 'links')->separator('|');
-	}
+    $this->addFieldMapping('field_user_more', 'links')->separator('|');
     $this->addFieldMapping('language')->defaultValue('en-gb');
   }
 

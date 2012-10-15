@@ -72,11 +72,11 @@ $sites['piratenpartei-bayern.de'] = 'piratenpartei-bayern.de';
 			
 $sites['dailwatch.ie'] = 'dailwatch.ie';
 			
-$sites['20121008.de.web1.parliamentwatch.org'] = 'abgeordnetenwatch.de';
+$sites['abgeordnetenwatch.de'] = 'abgeordnetenwatch.de';
 			
-$sites['20121008.ie.web1.parliamentwatch.org'] = 'dailwatch.ie';
+$sites['dailwatch.ie'] = 'dailwatch.ie';
 			
-$sites['20121008.tn.web1.parliamentwatch.org'] = 'marsad.tn';
+$sites['marsad.tn'] = 'marsad.tn';
 			
-$sites['20121008.pp.web1.parliamentwatch.org'] = 'piratenpartei-bayern.de';
+$sites['piratenpartei-bayern.de'] = 'piratenpartei-bayern.de';
 			

@@ -18,7 +18,7 @@ class ConstituencyTermMigration extends BasicMigrateConstituency {
     $query = Database::getConnection('default', 'parlamentwatch')
             ->select('legacy_constituency', 'c');
     $query->join('legacy_projects', 'p', 'c.cmd = p.cmd');
-    $query->fields('c', array('id', 'constituency', 'constituency_nr', 'area_codes'));
+    $query->fields('c', array('id', 'constituency', 'constituency_nr', 'zipcodes'));
     $query->fields('p', array('project', 'startdate'));
 	switch(variable_get('site_name')){
 		case 'abgeordnetenwatch.de':
@@ -53,8 +53,7 @@ class ConstituencyTermMigration extends BasicMigrateConstituency {
     $this->addFieldMapping('name', 'constituency');
     $this->addFieldMapping('field_constituency_nr', 'constituency_nr');
     $this->addFieldMapping('field_parliament', 'project');
-    $this->addFieldMapping('field_constituency_area_codes', 'area_codes')->separator(',')->arguments(array('create_term' => TRUE));
-    $this->addFieldMapping('field_voc_constituency_zip', 'area_codes')->separator(',')->arguments(array('create_term' => TRUE));
+    $this->addFieldMapping('field_voc_constituency_zip', 'zipcodes')->separator(',')->arguments(array('create_term' => TRUE));
   }
 
   public function prepareRow($current_row) {
