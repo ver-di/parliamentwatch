@@ -1,11 +1,10 @@
-Dáil Éireann|politicians/dail
-Seanad|politicians/seanad
+Teachtaí Dála|politicians/dail
 Vótaí|votes/dail
 Coistí|committees/dail
-Maidir linn|about/about-us
+Maidir linn|about/about
 - Ceisteanna coitianta|about/faq
 - An smaoineamh|about/idea
 - Cód iompair|about/code-conduct
-- Bhord na nIontaobhaithe|about/trustees
+- Bhord na nIontaobhaithe|about/board-trustees
 - Cosaint Sonraí|about/data-protection
 - Déan Teagmháil Linn|about/contact

@@ -201,7 +201,7 @@ libraries[jquery_cycle][download][url] = "https://github.com/malsup/cycle.git"
 ; TinyMCE
 libraries[tinymce][directory_name] = "tinymce"
 libraries[tinymce][download][type] = "get"
-libraries[tinymce][download][url] = "https://github.com/tinymce/tinymce/zipball/3.5.2"
+libraries[tinymce][download][url] = "http://github.com/downloads/tinymce/tinymce/tinymce_3.5.7.zip"
 
 ; socialshareprivacy
 libraries[socialshareprivacy][directory_name] = "socialshareprivacy"

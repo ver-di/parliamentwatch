@@ -6,7 +6,7 @@ body {
     font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
     color: #333;
 }
-.report_message{
+.report_message {
 	cursor: pointer;
 }
 .container-12 .block .omega-grid,
@@ -239,6 +239,14 @@ a.read-codex {
 a.read-codex:hover {
     background-position: -528px -2140px;
 }
+
+.ajax-progress {
+    display: inline-block;
+    margin-bottom: -8px;
+    position: relative;
+    top: -4px;
+}
+
 .back {
     color: #f63;
     text-decoration: none;
@@ -319,6 +327,11 @@ h1#page-title {
     margin-bottom: 35px;
 }
 
+/* colorbox */
+
+#cboxNode {
+    padding: 20px;
+}
 
 /* //////////////////////////// search ///////////////////// */
 
@@ -500,6 +513,17 @@ a.tagadelic.level4 {
     width: auto;
 }
 
+/* hack */
+.not-front .pager-last #custom-load-more {
+    padding-right: 0 !important;
+    background: transparent !important;
+}
+.not-front .pager-first #custom-load-more {
+    padding-left: 0 !important;
+    background: transparent !important;
+}
+
+
 /* pager views load more */
 
 #region-content .item-list ul.pager-load-more li.pager-next {
@@ -528,6 +552,12 @@ a.tagadelic.level4 {
     position: absolute;
     left: 19px;
     top: 3px;
+}
+#region-content .item-list ul.pager.pager-load-more a span {
+    background: url(../images/sprite.png) right -3311px no-repeat;
+    padding-right: 19px;
+    color: #333;
+    font-weight: normal;
 }
 
 /* top anchor */
@@ -595,6 +625,24 @@ a.tagadelic.level4 {
     background: -ms-linear-gradient(top,  #f1f1f1 0%,#dadada 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #f1f1f1 0%,#dadada 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#dadada',GradientType=0 ); /* IE6-9 */
+}
+
+/* frontpage */
+
+#quicktabs-homepage_tabs a span {
+    background-image: url(../images/sprite.png);
+    padding-left: 29px;
+    display: inline-block;
+    line-height: 36px;
+}
+#quicktabs-tab-homepage_tabs-0 span {
+    background-position: -409px -3084px;
+}
+#quicktabs-tab-homepage_tabs-1 span {
+    background-position: -449px -3042px;
+}
+#quicktabs-tab-homepage_tabs-2 span {
+    background-position: -368px -3120px;
 }
 
 /* /////////////////////////// region-user-second /////////////////////////// */
@@ -1090,6 +1138,11 @@ img.no-outline {
 #node_pw_poll_full_group_fieldset_polls_per_party legend {
     padding-bottom: 1em;
 }
+.view-pw-polls-list .link-poll {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+}
 
 
 
@@ -1270,6 +1323,11 @@ form .webform-component-checkboxes .description {
 }
 .answer {
     padding: 25px 24px;
+}
+.comment.answer .bg-white {
+    margin-left: -24px;
+    padding: 2px 24px;
+    width: 100%;
 }
 
 
