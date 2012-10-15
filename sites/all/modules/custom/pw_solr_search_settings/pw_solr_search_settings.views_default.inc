@@ -22,7 +22,7 @@ function pw_solr_search_settings_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'profile_list_solr';
+  $handler->display->display_options['title'] = 'Find your politician';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -67,7 +67,7 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['separator'] = '';
   $handler->display->display_options['fields']['uid']['link_to_entity'] = 0;
-  /* Field: Indexed User: Profile picture » The file. */
+  /* Field: Profile picture: The file. (indexed) */
   $handler->display->display_options['fields']['field_user_picture_file']['id'] = 'field_user_picture_file';
   $handler->display->display_options['fields']['field_user_picture_file']['table'] = 'search_api_index_pw_user_solr';
   $handler->display->display_options['fields']['field_user_picture_file']['field'] = 'field_user_picture_file';
@@ -276,6 +276,14 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['sorts']['field_user_first_letter_lname']['id'] = 'field_user_first_letter_lname';
   $handler->display->display_options['sorts']['field_user_first_letter_lname']['table'] = 'search_api_index_pw_user_solr';
   $handler->display->display_options['sorts']['field_user_first_letter_lname']['field'] = 'field_user_first_letter_lname';
+  $handler->display->display_options['sorts']['field_user_first_letter_lname']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_user_first_letter_lname']['expose']['label'] = 'Last name';
+  /* Sort criterion: Indexed User: Answers Give */
+  $handler->display->display_options['sorts']['field_user_answers_give']['id'] = 'field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give']['table'] = 'search_api_index_pw_user_solr';
+  $handler->display->display_options['sorts']['field_user_answers_give']['field'] = 'field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_user_answers_give']['expose']['label'] = 'Answers';
   /* Contextual filter: Indexed User: Committee */
   $handler->display->display_options['arguments']['field_user_commitee']['id'] = 'field_user_commitee';
   $handler->display->display_options['arguments']['field_user_commitee']['table'] = 'search_api_index_pw_user_solr';
@@ -701,11 +709,35 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['hide_admin_links'] = TRUE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'arrow-item pw-list-item clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = 'By the way, you can have a look on questions and answers, and severals activities of the politicians by viewing their profiles.';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Constituency: Zipcodes (indexed) */
   $handler->display->display_options['relationships']['field_user_constituency_field_voc_constituency_zip']['id'] = 'field_user_constituency_field_voc_constituency_zip';
   $handler->display->display_options['relationships']['field_user_constituency_field_voc_constituency_zip']['table'] = 'search_api_index_pw_user_solr';
   $handler->display->display_options['relationships']['field_user_constituency_field_voc_constituency_zip']['field'] = 'field_user_constituency_field_voc_constituency_zip';
+  $handler->display->display_options['relationships']['field_user_constituency_field_voc_constituency_zip']['label'] = 'Area Code';
+  /* Relationship: Taxonomy term: Zipcodes */
+  $handler->display->display_options['relationships']['field_voc_constituency_zip']['id'] = 'field_voc_constituency_zip';
+  $handler->display->display_options['relationships']['field_voc_constituency_zip']['table'] = 'entity_taxonomy_term';
+  $handler->display->display_options['relationships']['field_voc_constituency_zip']['field'] = 'field_voc_constituency_zip';
+  $handler->display->display_options['relationships']['field_voc_constituency_zip']['relationship'] = 'field_user_constituency_field_voc_constituency_zip';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed User: Revision ID */
   $handler->display->display_options['fields']['vid']['id'] = 'vid';
@@ -720,25 +752,32 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['fields']['uid']['label'] = '';
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['separator'] = '';
   $handler->display->display_options['fields']['uid']['link_to_entity'] = 0;
-  /* Field: Indexed User: Profile picture » The file. */
-  $handler->display->display_options['fields']['field_user_picture_file']['id'] = 'field_user_picture_file';
-  $handler->display->display_options['fields']['field_user_picture_file']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_picture_file']['field'] = 'field_user_picture_file';
-  $handler->display->display_options['fields']['field_user_picture_file']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture_file']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture_file']['alter']['text'] = '<div class="profiles-list-compact-wrapper">[field_user_picture_file]';
-  $handler->display->display_options['fields']['field_user_picture_file']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture_file']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_user_picture_file']['display'] = 'view';
-  $handler->display->display_options['fields']['field_user_picture_file']['view_mode'] = 'pw_file_portrait_m';
+  /* Field: Indexed User: Profile picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'search_api_index_pw_user_solr';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['alter']['path'] = 'user/[uid]';
+  $handler->display->display_options['fields']['field_user_picture']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'float-left file-image';
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'file_view_mode' => 'pw_file_portrait_s',
+  );
   /* Field: Indexed User: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'search_api_index_pw_user_solr';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname']['alter']['text'] = '<strong>[field_user_fname]';
+  $handler->display->display_options['fields']['field_user_fname']['alter']['text'] = '<h4>[field_user_fname]';
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
   /* Field: Indexed User: Last name */
@@ -753,132 +792,26 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['label'] = '';
   $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_party]</strong>';
+  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_party]</h4>';
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_class'] = 'field-party';
   $handler->display->display_options['fields']['field_user_party']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_user_party']['view_mode'] = 'full';
-  /* Field: Indexed User: Answers Give */
-  $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give']['label'] = 'Answers';
-  $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
-    'thousand_separator' => ' ',
-    'prefix_suffix' => 1,
-  );
-  /* Field: Indexed User: Questions Get */
-  $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get']['label'] = 'Questions';
-  $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
-    'thousand_separator' => ' ',
-    'prefix_suffix' => 1,
-  );
-  /* Field: |more info start */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['ui_name'] = '|more info start';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="element-hidden profile-list-compact-info">';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Field: Indexed User: Profile picture */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['alter']['path'] = 'user/[uid]';
-  $handler->display->display_options['fields']['field_user_picture']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'profile-image';
-  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_l',
-  );
-  /* Field: Indexed User: First Name */
-  $handler->display->display_options['fields']['field_user_fname_1']['id'] = 'field_user_fname_1';
-  $handler->display->display_options['fields']['field_user_fname_1']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_fname_1']['field'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname_1']['label'] = '';
-  $handler->display->display_options['fields']['field_user_fname_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname_1']['alter']['text'] = '<h3>[field_user_fname_1]';
-  $handler->display->display_options['fields']['field_user_fname_1']['element_label_colon'] = FALSE;
-  /* Field: Indexed User: Last name */
-  $handler->display->display_options['fields']['field_user_lname_1']['id'] = 'field_user_lname_1';
-  $handler->display->display_options['fields']['field_user_lname_1']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_lname_1']['field'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname_1']['label'] = '';
-  $handler->display->display_options['fields']['field_user_lname_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_lname_1']['alter']['text'] = '[field_user_lname_1]</h3>';
-  $handler->display->display_options['fields']['field_user_lname_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_lname_1']['element_default_classes'] = FALSE;
-  /* Field: Indexed User: Party */
-  $handler->display->display_options['fields']['field_user_party_1']['id'] = 'field_user_party_1';
-  $handler->display->display_options['fields']['field_user_party_1']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_party_1']['field'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party_1']['label'] = '';
-  $handler->display->display_options['fields']['field_user_party_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_party_1']['element_wrapper_class'] = 'row party';
-  $handler->display->display_options['fields']['field_user_party_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party_1']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_user_party_1']['view_mode'] = 'full';
-  /* Field: Indexed User: Constituency */
-  $handler->display->display_options['fields']['field_user_constituency']['id'] = 'field_user_constituency';
-  $handler->display->display_options['fields']['field_user_constituency']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_constituency']['field'] = 'field_user_constituency';
-  $handler->display->display_options['fields']['field_user_constituency']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_constituency']['element_wrapper_class'] = 'row constituency';
-  $handler->display->display_options['fields']['field_user_constituency']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_constituency']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_user_constituency']['view_mode'] = 'full';
-  /* Field: Indexed User: Additional information */
-  $handler->display->display_options['fields']['field_user_more']['id'] = 'field_user_more';
-  $handler->display->display_options['fields']['field_user_more']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_more']['field'] = 'field_user_more';
-  $handler->display->display_options['fields']['field_user_more']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_user_more']['delta_offset'] = '0';
-  /* Field: | more info end */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['ui_name'] = '| more info end';
-  $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '</div>';
-  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  /* Field: | compact end */
-  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
-  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_2']['ui_name'] = '| compact end';
-  $handler->display->display_options['fields']['nothing_2']['label'] = '';
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '</div>';
-  $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
-  /* Field: Indexed User: Committee */
-  $handler->display->display_options['fields']['field_user_commitee']['id'] = 'field_user_commitee';
-  $handler->display->display_options['fields']['field_user_commitee']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_commitee']['field'] = 'field_user_commitee';
-  $handler->display->display_options['fields']['field_user_commitee']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_commitee']['link_to_entity'] = 1;
-  $handler->display->display_options['fields']['field_user_commitee']['view_mode'] = 'full';
+  /* Field: Indexed User: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_pw_user_solr';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = '';
+  $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['url']['alter']['text'] = 'Go to profile';
+  $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['url']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['url']['element_wrapper_class'] = 'link-profile float-right';
+  $handler->display->display_options['fields']['url']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 1;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Constituency: Zipcodes (indexed) */
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['id'] = 'field_user_constituency_field_voc_constituency_zip';
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['field'] = 'field_user_constituency_field_voc_constituency_zip';
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['validate_options']['vocabularies'] = array(
-    'zipcodes' => 'zipcodes',
-  );
-  $handler->display->display_options['arguments']['field_user_constituency_field_voc_constituency_zip']['break_phrase'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed User: User roles */
@@ -888,16 +821,17 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['filters']['roles']['value'] = array(
     181527986 => '181527986',
   );
-  /* Filter criterion: Constituency: Zipcodes (indexed) */
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['id'] = 'field_user_constituency_field_voc_constituency_zip';
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['field'] = 'field_user_constituency_field_voc_constituency_zip';
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['expose']['operator_id'] = 'field_user_constituency_field_voc_constituency_zip_op';
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['expose']['label'] = 'Area Codes (indexed)';
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['expose']['operator'] = 'field_user_constituency_field_voc_constituency_zip_op';
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['expose']['identifier'] = 'field_user_constituency_field_voc_constituency_zip';
-  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip']['expose']['remember_roles'] = array(
+  /* Filter criterion: Constituency » Zipcodes: Name (indexed) */
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['id'] = 'field_user_constituency_field_voc_constituency_zip_name';
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['table'] = 'search_api_index_pw_user_solr';
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['field'] = 'field_user_constituency_field_voc_constituency_zip_name';
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['expose']['operator_id'] = 'field_user_constituency_field_voc_constituency_zip_name_op';
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['expose']['label'] = 'Area Code';
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['expose']['operator'] = 'field_user_constituency_field_voc_constituency_zip_name_op';
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['expose']['identifier'] = 'field_user_constituency_field_voc_constituency_zip_name';
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['field_user_constituency_field_voc_constituency_zip_name']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -906,7 +840,7 @@ function pw_solr_search_settings_views_default_views() {
   );
   $translatables['profile_list_solr'] = array(
     t('Master'),
-    t('profile_list_solr'),
+    t('Find your politician'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -937,6 +871,8 @@ function pw_solr_search_settings_views_default_views() {
     t('[field_user_answers_give]'),
     t('Go to profile'),
     t('</div>'),
+    t('Last name'),
+    t('Answers'),
     t('All'),
     t('user_first_letter_lname'),
     t('Profiles list parliament'),
@@ -946,16 +882,13 @@ function pw_solr_search_settings_views_default_views() {
     t('Search Politicians'),
     t('Search by first or last name'),
     t('Profile list constituencies'),
+    t('By the way, you can have a look on questions and answers, and severals activities of the politicians by viewing their profiles.'),
+    t('Area Code'),
     t('Zipcodes'),
     t('Revision ID'),
     t(','),
-    t('<strong>[field_user_fname]'),
-    t('[field_user_party]</strong>'),
-    t('Answers'),
-    t('Questions'),
-    t('Constituency'),
-    t('Additional information'),
-    t('Area Codes (indexed)'),
+    t('<h4>[field_user_fname]'),
+    t('[field_user_party]</h4>'),
   );
   $export['profile_list_solr'] = $view;
 

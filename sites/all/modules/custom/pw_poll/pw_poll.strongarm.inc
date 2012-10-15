@@ -117,7 +117,7 @@ function pw_poll_strongarm() {
       'displayed_just_voted' => '2',
       'description' => '',
       'description_in_compact' => TRUE,
-      'value_type' => 'percent',
+      'value_type' => 'points',
       'translate' => TRUE,
     ),
   );
