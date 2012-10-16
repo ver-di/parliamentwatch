@@ -3,7 +3,7 @@
  * @file
  * Code for the pw poll feature.
  */
-
+define('FILE_DEFAULT_ALLOWED_EXTENSIONS', 'png');
 include_once 'pw_poll.features.inc';
 
 /**
@@ -66,7 +66,7 @@ function _pw_poll_prepare_poll_data($node){
           $votes[] = $vote;
         }
       }
-      echo "<pre>".print_r($votes,1)."</pre>";
+      //echo "<pre>".print_r($votes,1)."</pre>";
 
       fclose($handle);
     }
@@ -88,7 +88,7 @@ function _pw_poll_prepare_poll_data($node){
       }
 
     }
-    echo "<pre>".print_r($votes,1)."</pre>";
+    //echo "<pre>".print_r($votes,1)."</pre>";
   }
   $results = votingapi_set_votes($votes);
   if(count($results)){
@@ -97,9 +97,9 @@ function _pw_poll_prepare_poll_data($node){
     //Get Overview Chart from Google Chart API and save to node object
     $overview_chart = pw_blocks_get_chart($nid, 'total', TRUE);
     $overview_url = chart_url($overview_chart['overview']);
-    $overview_tmp_image = file_get_contents('http:'.$overview_url);
-    $overview_file = file_save_data($overview_tmp_image, 'public://'.$node->nid.'_overview.png', FILE_EXISTS_REPLACE);
-    $overview_file['title'] = t('Overview');
+    $overview_tmp_image = file_get_contents('http:'.$overview_url.'&t=.png');
+    $overview_file = file_save_data($overview_tmp_image, 'public://'.$node->nid.'_overview.png', FILE_EXISTS_RENAME);
+    $overview_file->title = t('Overview');
     $node->field_pw_overview_chart[LANGUAGE_NONE]['0']['fid'] = $overview_file->fid;
     //$node->field_pw_overview_chart[LANGUAGE_NONE]['0']['fid'] = $overview_tmp_imag
     $node->field_pw_overview_chart[LANGUAGE_NONE]['0']['title'] = t('Overview');
@@ -114,7 +114,7 @@ function _pw_poll_prepare_poll_data($node){
       //$party_chart = pw_blocks_get_chart($nid, 'party', TRUE);
       $party_url = chart_url($data);
       print $party_url;
-      $party_tmp_image = file_get_contents('http:'.$party_url);
+      $party_tmp_image = file_get_contents('http:'.$party_url.".&.png");
       $party_img_name_cleanup = array(' ','/');
       $party_file = file_save_data($party_tmp_image, 'public://'.$node->nid.'_'.str_replace(' ','_',$party).'.png', FILE_EXISTS_REPLACE);
       //$party_file['title'] = $party;
