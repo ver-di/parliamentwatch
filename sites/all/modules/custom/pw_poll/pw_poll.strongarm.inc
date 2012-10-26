@@ -51,6 +51,9 @@ function pw_poll_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'colorbox' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -117,7 +120,11 @@ function pw_poll_strongarm() {
       'displayed_just_voted' => '2',
       'description' => '',
       'description_in_compact' => TRUE,
+<<<<<<< HEAD
       'value_type' => 'points',
+=======
+      'value_type' => 'option',
+>>>>>>> pw_poll stuff
       'translate' => TRUE,
     ),
   );

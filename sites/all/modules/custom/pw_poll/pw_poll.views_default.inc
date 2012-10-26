@@ -73,8 +73,9 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['field_pw_overview_chart']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_pw_overview_chart']['settings'] = array(
     'image_style' => '',
-    'image_link' => 'content',
+    'image_link' => '',
   );
+  $handler->display->display_options['fields']['field_pw_overview_chart']['delta_offset'] = '0';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -93,6 +94,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['element_type'] = 'div';
   $handler->display->display_options['fields']['view_node']['element_class'] = 'float-right link-poll';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
@@ -105,6 +107,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['element_type'] = 'div';
   $handler->display->display_options['fields']['comment_count']['element_class'] = 'comment-count clear-both';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
@@ -130,13 +133,6 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'pw_poll' => 'pw_poll',
-  );
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
   /* Display: Page */
@@ -407,6 +403,7 @@ if($record->value == 0){
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'user-constituency';
   $translatables['user_constituency'] = array(
     t('Master'),
