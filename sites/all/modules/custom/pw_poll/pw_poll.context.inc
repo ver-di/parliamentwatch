@@ -54,24 +54,7 @@ function pw_poll_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'system-main' => array(
-          'module' => 'system',
-          'delta' => 'main',
-          'region' => 'content',
-          'weight' => '-8',
-        ),
-        'views--exp-user_constituency-page' => array(
-          'module' => 'views',
-          'delta' => '-exp-user_constituency-page',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 1;
   $export['pw_voting'] = $context;
 
