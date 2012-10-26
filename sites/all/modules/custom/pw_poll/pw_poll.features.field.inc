@@ -57,7 +57,7 @@ function pw_poll_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -133,10 +133,9 @@ function pw_poll_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'file',
           'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 17,
+          'type' => 'hidden',
+          'weight' => '17',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -229,7 +228,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -334,10 +333,9 @@ function pw_poll_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 18,
+          'type' => 'hidden',
+          'weight' => '18',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -506,10 +504,9 @@ function pw_poll_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 16,
+          'type' => 'hidden',
+          'weight' => '16',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -598,12 +595,7 @@ function pw_poll_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'pw_poll',
-      'default_value' => array(
-        0 => array(
-          'vname' => 'user_constituency|page',
-          'vargs' => '',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -618,7 +610,7 @@ function pw_poll_field_default_fields() {
           'module' => 'viewfield',
           'settings' => array(),
           'type' => 'viewfield_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -636,14 +628,24 @@ function pw_poll_field_default_fields() {
       'settings' => array(
         'allowed_views' => array(
           'Trustees' => 0,
+          'answers' => 0,
+          'feeds_log' => 0,
+          'media_default' => 0,
+          'menu_existing_content_selection' => 0,
           'og_list' => 0,
           'og_members' => 0,
           'og_nodes' => 0,
           'og_user_groups' => 0,
-          'profile_list' => 0,
+          'profile_list_rev' => 0,
+          'profile_list_solr' => 'profile_list_solr',
+          'profile_questions_answers' => 0,
+          'pw_commitee_terms' => 0,
+          'pw_polls_list' => 0,
           'rules_scheduler' => 0,
           'slider' => 0,
           'user_constituency' => 'user_constituency',
+          'users_export_find' => 0,
+          'weight' => 0,
         ),
         'force_default' => 0,
         'user_register_form' => FALSE,
