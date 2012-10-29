@@ -152,7 +152,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
       //print_r($rec);
       //$chart['#legends'][$rec['value']] = $options[$rec['value']];
       $chart['#data'][$rec['value']] = $rec['votes'];
-      $chart['#labels'][] = $rec['votes'];
+      $chart['#labels'][$rec['value']] = $rec['votes'];
       
       if($rec['votes'] > $max_count){
         $max_count = $rec['votes'];
@@ -188,7 +188,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
         $parties[$rec['tid']]['name'] = $rec['name'];
         $parties[$rec['tid']]['id'] = $rec['tid'];
         $parties[$rec['tid']]['data'][$rec['value']] = $rec['votes'];
-        $parties[$rec['tid']]['labels'][] = $rec['votes'];
+        $parties[$rec['tid']]['labels'][$rec['value']] = $rec['votes'];
         $parties[$rec['tid']]['legends'][$rec['value']] = $options[$rec['value']];
       
     }
@@ -198,11 +198,16 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
    
     
     foreach($parties as $party){
+      
       foreach($options as $key => $option){
         if(is_numeric($key) && !array_key_exists($key, $party['data'])){
           $party['data'][$key] = 0;
+          $party['labels'][$key] = 0;
         }
       }
+      ksort($party['data']);
+      ksort($party['labels']);
+      //echo "<pre>".print_r($party,1)."</pre>";
       $party_title = $party['name'];
 	  if(strlen($party_title) > 10){
 		$party_title = substr($party_title, 0 , 15).' ...';
@@ -223,6 +228,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
       );
       $chart['#legends'] = $options['legends'];
       $chart['#data'] = $party['data'];
+      
       if($raw){
         $charts[$party['name']] = $chart;
       }else{
