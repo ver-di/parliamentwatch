@@ -133,7 +133,7 @@ function all_strong_arms_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'colorbox_load';
-  $strongarm->value = 1;
+  $strongarm->value = TRUE;
   $export['colorbox_load'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -540,9 +540,14 @@ node/*/edit';
 webform-client-form-6
 forward-form
 comment-form
+webform-client-form-12
 webform-client-form-14
-webform-client-form-339
-webform-client-form-343';
+webform-client-form-15
+webform-client-form-17
+webform-client-form-18
+webform-client-form-25
+views-exposed-form-profile-list-solr-block-2
+views-exposed-form-profile-list-solr-constituency';
   $export['compact_forms_ids'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1221,7 +1226,7 @@ webform-client-form-343';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'error_level';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['error_level'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1332,6 +1337,9 @@ webform-client-form-343';
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'colorbox' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -1342,8 +1350,8 @@ webform-client-form-343';
             'visible' => FALSE,
           ),
           'colorbox' => array(
-            'weight' => '1',
-            'visible' => TRUE,
+            'weight' => '13',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -1893,7 +1901,7 @@ webform-client-form-343';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'submenutree_enable_page';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['submenutree_enable_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1995,7 +2003,7 @@ webform-client-form-343';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'weight_range_trustee';
-  $strongarm->value = '20';
+  $strongarm->value = '10';
   $export['weight_range_trustee'] = $strongarm;
 
   return $export;

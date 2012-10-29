@@ -1266,6 +1266,13 @@ a.form-submit:hover {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', endColorstr='#999999',GradientType=0 ); /* IE6-9 */
 
 }
+button.big,
+input[type="submit"].big,
+input[type="button"].big,
+a.form-submit.big {
+    font: 15px/23px Lucida Grande, Helvetica, Arial, bold sans-serif;
+    letter-spacing: 0;
+}
 
 .webform-component-checkboxes {
     position: relative;
@@ -1668,3 +1675,4 @@ blockquote:before,
     margin-top:0;
     margin-bottom:0;
 }
+
