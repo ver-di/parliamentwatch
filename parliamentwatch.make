@@ -7,8 +7,6 @@ projects[drupal][version] = "7.15"
 ; Modules
 projects[addressfield][subdir] = "contrib"
 projects[addressfield][version] = "1.0-beta3"
-projects[addthis][subdir] = "contrib"
-projects[addthis][version] = "4.0-alpha1"
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = "3.0-rc2"
 projects[backup_migrate][subdir] = "contrib"
