@@ -82,6 +82,7 @@ function slider_item_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['pause_when_hidden'] = 1;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
+  $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
@@ -92,6 +93,7 @@ function slider_item_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<?php
 drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
+drupal_add_js(\'sites/all/themes/custom/abgeordnetenwatch/js/slider.js\');
 ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Field: Content: Beschreibung mit LInk */
@@ -186,6 +188,7 @@ drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', arr
     t('absteigend'),
     t('<?php
 drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
+drupal_add_js(\'sites/all/themes/custom/abgeordnetenwatch/js/slider.js\');
 ?>'),
     t('[field_slider_teaserbody]<div class="item"></div>'),
     t('<span class="close">close</span>'),
