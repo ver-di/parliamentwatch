@@ -12,7 +12,6 @@ include_once 'pw_poll.features.inc';
   
 function pw_poll_node_insert($node){
 	if($node->type == 'pw_poll'){
-    db_query("UPDATE field_data_field_pw_views_reference SET field_pw_views_reference_vargs =:tid WHERE entity_id =:nid",array(':tid'=>$node->field_pw_parmliament['und'][0]['tid'],':nid'=>$node->nid));
 		$node = _pw_poll_prepare_poll_data($node);
 	}
 }
@@ -23,8 +22,7 @@ function pw_poll_node_insert($node){
 
 function pw_poll_node_update($node){
 	if($node->type == 'pw_poll'){
-		db_query("UPDATE field_data_field_pw_views_reference SET field_pw_views_reference_vargs =:tid WHERE entity_id =:nid",array(':tid'=>$node->field_pw_parmliament['und'][0]['tid'],':nid'=>$node->nid));
-    $node = _pw_poll_prepare_poll_data($node);
+		$node = _pw_poll_prepare_poll_data($node);
 	}
 }
 
