@@ -15,7 +15,6 @@ dependencies[] = image
 dependencies[] = pw_basics
 dependencies[] = pw_blocks
 dependencies[] = rate
-dependencies[] = rate_voteas
 dependencies[] = strongarm
 dependencies[] = viewfield
 dependencies[] = votingapi
