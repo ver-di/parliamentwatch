@@ -61,7 +61,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Overview Chart */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_pw_overview_chart']['id'] = 'field_pw_overview_chart';
   $handler->display->display_options['fields']['field_pw_overview_chart']['table'] = 'field_data_field_pw_overview_chart';
   $handler->display->display_options['fields']['field_pw_overview_chart']['field'] = 'field_pw_overview_chart';
@@ -70,12 +70,6 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['field_pw_overview_chart']['element_class'] = 'file-image float-left no-outline';
   $handler->display->display_options['fields']['field_pw_overview_chart']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pw_overview_chart']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_overview_chart']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_pw_overview_chart']['delta_offset'] = '0';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
