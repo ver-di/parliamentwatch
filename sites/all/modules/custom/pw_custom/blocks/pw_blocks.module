@@ -210,10 +210,10 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
       //echo "<pre>".print_r($party,1)."</pre>";
       $party_title = $party['name'];
 	  if(strlen($party_title) > 10){
-		$party_title = substr($party_title, 0 , 15).' ...';
+		//$party_title = substr($party_title, 0 , 15).' ...';
 	  }
       $chart = array(
-        '#title'=> $party_title,
+        '#title'=> '',
         '#type'=>CHART_TYPE_BAR_V,
         '#chart_id'=>$party['id'],
         '#size' => chart_size(200, 200),
@@ -226,13 +226,13 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
         '#bar_size' => 'a',
         '#labels'=>$party['labels']
       );
-      $chart['#legends'] = $options['legends'];
+      //$chart['#legends'] = $options['legends'];
       $chart['#data'] = $party['data'];
       
       if($raw){
         $charts[$party['name']] = $chart;
       }else{
-        $output .= theme('chart',array('chart'=>$chart));
+        $output .= "<span class='party'>".$party_title."</span>" .theme('chart',array('chart'=>$chart));
       }
       
     }
