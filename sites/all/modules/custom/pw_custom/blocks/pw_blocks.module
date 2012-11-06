@@ -133,7 +133,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
         '#size' => chart_size(200, 200),
         '#adjust_resolution' => TRUE,
         '#data_colors' => $colors,
-        '#legends' => $options['legends'],
+        //'#legends' => $options['legends'],
         '#bar_size' => 'a',
     );
     $query = "SELECT count(vv.vote_id) as votes, vv.value , count(*) as total
