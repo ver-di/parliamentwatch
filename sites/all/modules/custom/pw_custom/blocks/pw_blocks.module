@@ -232,7 +232,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
       if($raw){
         $charts[$party['name']] = $chart;
       }else{
-        $output .= "<span class='party'>".$party_title."</span>" .theme('chart',array('chart'=>$chart));
+        $output .= "<div class='pw-poll-chart-wrapper'><span class='party'>".$party_title."</span>" .theme('chart',array('chart'=>$chart))."</div>";
       }
       
     }
