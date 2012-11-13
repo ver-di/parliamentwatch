@@ -43,7 +43,7 @@ function pw_committees_strongarm() {
           ),
           'full' => array(
             'weight' => '1',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
         ),
       ),

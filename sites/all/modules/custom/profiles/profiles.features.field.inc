@@ -425,8 +425,8 @@ function profiles_field_default_fields() {
             'textformatter_comma_override' => 0,
             'textformatter_comma_tag' => '0',
             'textformatter_contrib' => array(),
-            'textformatter_separator_custom' => '',
-            'textformatter_separator_custom_class' => 'textformatter-separator',
+            'textformatter_separator_custom' => ',',
+            'textformatter_separator_custom_class' => '',
             'textformatter_separator_custom_tag' => 'span',
             'textformatter_term_plain' => 1,
             'textformatter_type' => 'comma',
@@ -551,7 +551,7 @@ function profiles_field_default_fields() {
       'settings' => array(
         'max_length' => '255',
       ),
-      'translatable' => '1',
+      'translatable' => '0',
       'type' => 'text',
     ),
     'field_instance' => array(
@@ -849,7 +849,7 @@ function profiles_field_default_fields() {
       'settings' => array(
         'max_length' => '255',
       ),
-      'translatable' => '1',
+      'translatable' => '0',
       'type' => 'text',
     ),
     'field_instance' => array(
@@ -1396,10 +1396,11 @@ function profiles_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'i18n_taxonomy',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '23',
+          'type' => 'i18n_taxonomy_term_reference_plain',
+          'weight' => '7',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1412,11 +1413,13 @@ function profiles_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
+        'module' => 'taxonomy',
         'settings' => array(
+          'autocomplete_path' => 'taxonomy/autocomplete',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => 60,
         ),
-        'type' => 'options_buttons',
+        'type' => 'taxonomy_autocomplete',
         'weight' => '22',
       ),
     ),

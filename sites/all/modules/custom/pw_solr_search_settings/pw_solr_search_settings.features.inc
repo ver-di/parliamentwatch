@@ -164,7 +164,7 @@ function pw_solr_search_settings_default_search_api_index() {
     "name" : "pw_user_solr",
     "machine_name" : "pw_user_solr",
     "description" : null,
-    "server" : "pw_solr_stage_apachesolr",
+    "server" : "pw_db_server",
     "item_type" : "user",
     "options" : {
       "index_directly" : 1,
@@ -195,13 +195,9 @@ function pw_solr_search_settings_default_search_api_index() {
         "search_api_viewed" : { "type" : "text" },
         "field_user_constituency:field_committee_vice_chairman" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "user" },
         "field_user_constituency:field_parliament" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_user_constituency:field_constituency_area_codes" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "taxonomy_term"
-        },
         "field_user_picture:file" : { "type" : "integer", "entity_type" : "file" },
         "field_user_constituency:field_constituency_area_codes:tid" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
-        "field_user_constituency:field_constituency_area_codes:name" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_user_constituency:field_constituency_area_codes:name" : { "type" : "list\\u003Clist\\u003Cstring\\u003E\\u003E" },
         "field_user_constituency:field_voc_constituency_zip:name" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
         "field_user_constituency:field_voc_constituency_zip:field_constituency_area_codes" : {
           "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",

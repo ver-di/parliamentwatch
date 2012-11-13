@@ -17,20 +17,20 @@ function trustees_context_default_contexts() {
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
-    'views' => array(
+    'path' => array(
       'values' => array(
-        'Trustees' => 'Trustees',
+        'about/board-trustees' => 'about/board-trustees',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'webform-client-block-5353' => array(
-          'module' => 'webform',
-          'delta' => 'client-block-5353',
+        'views-Trustees-block_1' => array(
+          'module' => 'views',
+          'delta' => 'Trustees-block_1',
           'region' => 'content',
-          'weight' => '9',
+          'weight' => '-10',
         ),
       ),
     ),

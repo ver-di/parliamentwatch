@@ -50,7 +50,7 @@ function pw_content_authoring_layout_image_default_styles() {
   $styles['pw_portrait_l'] = array(
     'name' => 'pw_portrait_l',
     'effects' => array(
-      2 => array(
+      1 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',

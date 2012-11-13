@@ -51,14 +51,14 @@ function pw_basics_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '0',
+          'weight' => '1',
         ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -138,7 +138,7 @@ function pw_basics_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -234,7 +234,7 @@ function pw_basics_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '5',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -305,7 +305,7 @@ function pw_basics_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '5',
+          'weight' => '8',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -332,8 +332,8 @@ function pw_basics_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            0 => 0,
             'audio' => 0,
+            0 => 0,
             'default' => 0,
             'image' => 'image',
             'video' => 0,
@@ -348,6 +348,84 @@ function pw_basics_field_default_fields() {
         ),
         'type' => 'media_generic',
         'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-committee-field_committee_spokesman'
+  $fields['taxonomy_term-committee-field_committee_spokesman'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_committee_spokesman',
+      'foreign keys' => array(
+        'node' => array(
+          'columns' => array(
+            'target_id' => 'nid',
+          ),
+          'table' => 'node',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'committee',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'entityreference',
+          'settings' => array(
+            'link' => FALSE,
+          ),
+          'type' => 'entityreference_label',
+          'weight' => 6,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
+      ),
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_committee_spokesman',
+      'label' => 'Spokesman',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '8',
       ),
     ),
   );
@@ -403,7 +481,7 @@ function pw_basics_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '6',
+          'weight' => '9',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -487,7 +565,7 @@ function pw_basics_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '7',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -561,7 +639,7 @@ function pw_basics_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => '10',
         ),
       ),
       'entity_type' => 'taxonomy_term',
@@ -577,6 +655,75 @@ function pw_basics_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-constituency-field_constituency_area_codes'
+  $fields['taxonomy_term-constituency-field_constituency_area_codes'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_constituency_area_codes',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'area_codex',
+            'parent' => '0',
+          ),
+        ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'constituency',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_link',
+          'weight' => 3,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_constituency_area_codes',
+      'label' => 'Area Codes',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'autocomplete_path' => 'taxonomy/autocomplete',
+          'size' => 60,
+        ),
+        'type' => 'taxonomy_autocomplete',
+        'weight' => '35',
       ),
     ),
   );
@@ -793,9 +940,10 @@ function pw_basics_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 0,
+          'weight' => 4,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'taxonomy_term',
       'field_name' => 'field_voc_constituency_zip',
       'label' => 'Zipcodes',
@@ -811,7 +959,7 @@ function pw_basics_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '31',
+        'weight' => '36',
       ),
     ),
   );
@@ -1113,6 +1261,7 @@ function pw_basics_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Area Codes');
   t('Body');
   t('Chairman');
   t('Color');
@@ -1120,6 +1269,7 @@ function pw_basics_field_default_fields() {
   t('Number');
   t('Parliament');
   t('Picture');
+  t('Spokesman');
   t('Valid Date');
   t('Value');
   t('Vice Chairman');

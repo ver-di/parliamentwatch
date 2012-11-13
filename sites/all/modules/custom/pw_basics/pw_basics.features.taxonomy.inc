@@ -9,6 +9,31 @@
  */
 function pw_basics_taxonomy_default_vocabularies() {
   return array(
+    'area_codex' => array(
+      'name' => 'Area Codes',
+      'machine_name' => 'area_codex',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'language' => 'und',
+      'i18n_mode' => '0',
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'committee' => array(
       'name' => 'Committee',
       'machine_name' => 'committee',
@@ -17,7 +42,7 @@ function pw_basics_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => '0',
       'language' => 'und',
-      'i18n_mode' => '1',
+      'i18n_mode' => '4',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -217,7 +242,7 @@ function pw_basics_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => '0',
       'language' => 'und',
-      'i18n_mode' => '0',
+      'i18n_mode' => '1',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

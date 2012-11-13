@@ -1482,11 +1482,6 @@ views-exposed-form-profile-list-solr-constituency';
       ),
       'file' => 'includes/locale.inc',
     ),
-    'language-default' => array(
-      'callbacks' => array(
-        'language' => 'language_from_default',
-      ),
-    ),
   );
   $export['language_negotiation_language_content'] = $strongarm;
 

@@ -135,9 +135,10 @@ function profiles_field_group_info() {
   $field_group->parent_name = 'group_user_commitee';
   $field_group->data = array(
     'label' => 'Political Roles',
-    'weight' => '13',
+    'weight' => '1',
     'children' => array(
       0 => 'field_user_commitee',
+      1 => 'field_user_political_roles',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

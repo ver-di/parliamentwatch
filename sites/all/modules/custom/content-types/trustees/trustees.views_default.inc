@@ -94,22 +94,19 @@ function trustees_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'trustee' => 'trustee',
   );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'und' => 'und',
+  );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['block_description'] = 'Board of Trustees';
-  $translatables['Trustees'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Zurücksetzen'),
-    t('Artikel sortieren nach'),
-    t('aufsteigend'),
-    t('absteigend'),
-    t('Block'),
-    t('Board of Trustees'),
-  );
   $export['Trustees'] = $view;
 
   return $export;
