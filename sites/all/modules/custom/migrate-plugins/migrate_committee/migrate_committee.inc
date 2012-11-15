@@ -19,7 +19,7 @@ class CommitteeTermMigration extends BasicMigrateCommittee {
     $query = Database::getConnection('default', 'parlamentwatch')
             ->select('legacy_committee', 'c');
     $query->join('legacy_projects', 'p', 'c.cmd = p.cmd');
-    $query->fields('c', array('id', 'committee', 'committee_type', 'txt','first_lang' , 'second_lang','committee_2nd_lang'));
+    $query->fields('c', array('id', 'committee', 'committee_type', 'picture_url', 'txt', 'first_lang' , 'second_lang','committee_2nd_lang', 'vorsitz_uid', 'stellv_uid', 'sprecher_uid'));
     $query->fields('p', array('project', 'startdate'));
 	switch(variable_get('site_name')){
 		case 'abgeordnetenwatch.de':
@@ -52,10 +52,14 @@ class CommitteeTermMigration extends BasicMigrateCommittee {
     $this->destination = new MigrateDestinationTerm('committee');
     $this->addFieldMapping('name', 'committee'); 
     $this->addFieldMapping('description', 'txt');
-    $this->addFieldMapping('field_committee_picture', 'picture'); 
+    $this->addFieldMapping('field_committee_picture', 'picture_url'); 
     $this->addFieldMapping('field_parliament', 'project')->arguments(array('create_term' => TRUE));
     $this->addFieldMapping('field_committee_type', 'committee_type')->arguments(array('create_term' => TRUE));
-    // $this->addFieldMapping('language','first_lang');
+	$this->addFieldMapping('field_committee_chairman', 'vorsitz_uid')->sourceMigration('politician');
+	$this->addFieldMapping('field_committee_vice_chairman', 'stellv_uid')->sourceMigration('politician');
+	$this->addFieldMapping('field_committee_spokesman', 'sprecher_uid')->sourceMigration('politician');
+	// $this->addFieldMapping('field_committee_chairman', 'stellvsprecher1_uid')->sourceMigration('politician');
+	// $this->addFieldMapping('field_committee_chairman', 'stellvsprecher2_uid')->sourceMigration('politician');
   }
 
  /* public function complete($current_row) {
