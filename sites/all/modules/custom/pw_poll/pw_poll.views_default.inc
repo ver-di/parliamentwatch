@@ -61,7 +61,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Overview Chart */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_pw_overview_chart']['id'] = 'field_pw_overview_chart';
   $handler->display->display_options['fields']['field_pw_overview_chart']['table'] = 'field_data_field_pw_overview_chart';
   $handler->display->display_options['fields']['field_pw_overview_chart']['field'] = 'field_pw_overview_chart';
@@ -70,11 +70,6 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['field_pw_overview_chart']['element_class'] = 'file-image float-left no-outline';
   $handler->display->display_options['fields']['field_pw_overview_chart']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pw_overview_chart']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_overview_chart']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['settings'] = array(
-    'image_style' => '',
-    'image_link' => 'content',
-  );
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -93,6 +88,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['element_type'] = 'div';
   $handler->display->display_options['fields']['view_node']['element_class'] = 'float-right link-poll';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
@@ -105,6 +101,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['element_type'] = 'div';
   $handler->display->display_options['fields']['comment_count']['element_class'] = 'comment-count clear-both';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
@@ -130,13 +127,6 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'pw_poll' => 'pw_poll',
-  );
-  /* Filter criterion: Content: Language */
-  $handler->display->display_options['filters']['language']['id'] = 'language';
-  $handler->display->display_options['filters']['language']['table'] = 'node';
-  $handler->display->display_options['filters']['language']['field'] = 'language';
-  $handler->display->display_options['filters']['language']['value'] = array(
-    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
   /* Display: Page */
@@ -201,6 +191,7 @@ function pw_poll_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'User Constituency';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
@@ -344,6 +335,7 @@ $term = taxonomy_term_load($view->result[0]-> _field_data[\'uid\'][\'entity\']->
 $sql = "SELECT value FROM {votingapi_vote} WHERE entity_id=:nid AND uid=:uid";
 $result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$row->field_user_fname));
 $record = $result->fetchObject();
+
 if($record->value == 0){
  return t(\'yes\');
 }else if($record->value == 1){
@@ -371,6 +363,23 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['field_user_lname_value']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['sorts']['field_user_lname_value']['field'] = 'field_user_lname_value';
   $handler->display->display_options['sorts']['field_user_lname_value']['order'] = 'DESC';
+  /* Contextual filter: Taxonomy term: Parliament (field_parliament) */
+  $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
+  $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['relationship'] = 'field_user_constituency_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_parliament_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['vocabularies'] = array(
+    'parliaments' => 'parliaments',
+  );
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate']['fail'] = 'empty';
   /* Filter criterion: User: Active */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
@@ -386,28 +395,33 @@ if($record->value == 0){
     181527986 => '181527986',
   );
   /* Filter criterion: User: Constituency (field_user_constituency) */
-  $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['operator_id'] = 'field_user_constituency_tid_op';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['label'] = 'Constituency';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['operator'] = 'field_user_constituency_tid_op';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['identifier'] = 'field_user_constituency_tid';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['id'] = 'field_user_constituency_tid_1';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['table'] = 'field_data_field_user_constituency';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['field'] = 'field_user_constituency_tid';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['value'] = '';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['expose']['operator_id'] = 'field_user_constituency_tid_1_op';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['expose']['label'] = 'Constituency (field_user_constituency)';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['expose']['operator'] = 'field_user_constituency_tid_1_op';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['expose']['identifier'] = 'field_user_constituency_tid_1';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
     181527986 => 0,
     51622513 => 0,
   );
-  $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
+  $handler->display->display_options['filters']['field_user_constituency_tid_1']['vocabulary'] = 'constituency';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'user-constituency';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $translatables['user_constituency'] = array(
     t('Master'),
     t('User Constituency'),
@@ -432,8 +446,10 @@ if($record->value == 0){
     t('[field_user_party]</h4>'),
     t('<span class="result [php]">[php]</span>'),
     t('Consulter le profil'),
-    t('Constituency'),
+    t('All'),
+    t('Constituency (field_user_constituency)'),
     t('Page'),
+    t('Block'),
   );
   $export['user_constituency'] = $view;
 

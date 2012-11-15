@@ -133,7 +133,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
         '#size' => chart_size(200, 200),
         '#adjust_resolution' => TRUE,
         '#data_colors' => $colors,
-        '#legends' => $options['legends'],
+        //'#legends' => $options['legends'],
         '#bar_size' => 'a',
     );
     $query = "SELECT count(vv.vote_id) as votes, vv.value , count(*) as total
@@ -152,7 +152,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
       //print_r($rec);
       //$chart['#legends'][$rec['value']] = $options[$rec['value']];
       $chart['#data'][$rec['value']] = $rec['votes'];
-      $chart['#labels'][] = $rec['votes'];
+      $chart['#labels'][$rec['value']] = $rec['votes'];
       
       if($rec['votes'] > $max_count){
         $max_count = $rec['votes'];
@@ -182,13 +182,13 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
     $result = db_query($query,$args);
     $gid = "";
     $chart = array();
-    
+    $parties = array();
     while($rec = $result->fetchAssoc()){
         
         $parties[$rec['tid']]['name'] = $rec['name'];
         $parties[$rec['tid']]['id'] = $rec['tid'];
         $parties[$rec['tid']]['data'][$rec['value']] = $rec['votes'];
-        $parties[$rec['tid']]['labels'][] = $rec['votes'];
+        $parties[$rec['tid']]['labels'][$rec['value']] = $rec['votes'];
         $parties[$rec['tid']]['legends'][$rec['value']] = $options[$rec['value']];
       
     }
@@ -198,17 +198,22 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
    
     
     foreach($parties as $party){
+      
       foreach($options as $key => $option){
         if(is_numeric($key) && !array_key_exists($key, $party['data'])){
           $party['data'][$key] = 0;
+          $party['labels'][$key] = 0;
         }
       }
+      ksort($party['data']);
+      ksort($party['labels']);
+      //echo "<pre>".print_r($party,1)."</pre>";
       $party_title = $party['name'];
 	  if(strlen($party_title) > 10){
-		$party_title = substr($party_title, 0 , 15).' ...';
+		//$party_title = substr($party_title, 0 , 15).' ...';
 	  }
       $chart = array(
-        '#title'=> $party_title,
+        '#title'=> '',
         '#type'=>CHART_TYPE_BAR_V,
         '#chart_id'=>$party['id'],
         '#size' => chart_size(200, 200),
@@ -221,12 +226,13 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
         '#bar_size' => 'a',
         '#labels'=>$party['labels']
       );
-      $chart['#legends'] = $options['legends'];
+      //$chart['#legends'] = $options['legends'];
       $chart['#data'] = $party['data'];
+      
       if($raw){
         $charts[$party['name']] = $chart;
       }else{
-        $output .= theme('chart',array('chart'=>$chart));
+        $output .= "<div class='pw-poll-chart-wrapper'><span class='party'>".$party_title."</span>" .theme('chart',array('chart'=>$chart))."</div>";
       }
       
     }

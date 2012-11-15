@@ -18,7 +18,7 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'poll_votes_per_party_block_ds' => array(
-      'weight' => '2',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -31,6 +31,12 @@ function pw_poll_ds_field_settings_info() {
       'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'clear-both comments',
+      ),
     ),
     'body' => array(
       'ft' => array(
@@ -136,8 +142,8 @@ function pw_poll_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'pw_poll_votes_total',
-        1 => 'group_fieldset_polls_per_party',
-        2 => 'poll_votes_per_party_block_ds',
+        1 => 'poll_votes_per_party_block_ds',
+        2 => 'group_fieldset_polls_per_party',
         3 => 'field_pw_views_reference',
         4 => 'body',
         5 => 'comments',
@@ -145,8 +151,8 @@ function pw_poll_ds_layout_settings_info() {
     ),
     'fields' => array(
       'pw_poll_votes_total' => 'ds_content',
-      'group_fieldset_polls_per_party' => 'ds_content',
       'poll_votes_per_party_block_ds' => 'ds_content',
+      'group_fieldset_polls_per_party' => 'ds_content',
       'field_pw_views_reference' => 'ds_content',
       'body' => 'ds_content',
       'comments' => 'ds_content',

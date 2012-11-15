@@ -22,7 +22,7 @@ function pw_committees_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Commissions';
+  $handler->display->display_options['title'] = 'Committees';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -30,11 +30,22 @@ function pw_committees_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '11';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'suiv';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['first'] = 'first';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Relationship: Taxonomy term: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['required'] = TRUE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -50,22 +61,20 @@ function pw_committees_views_default_views() {
   $handler->display->display_options['fields']['field_committee_picture']['table'] = 'field_data_field_committee_picture';
   $handler->display->display_options['fields']['field_committee_picture']['field'] = 'field_committee_picture';
   $handler->display->display_options['fields']['field_committee_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_committee_picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_committee_picture']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_committee_picture']['element_class'] = 'file-image float-left';
   $handler->display->display_options['fields']['field_committee_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_committee_picture']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_committee_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_committee_picture']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_committee_picture']['settings'] = array(
-    'image_style' => 'pw_landscape_l',
-    'image_link' => 'content',
+    'file_view_mode' => 'pw_file_portrait_l',
   );
   /* Field: Taxonomy term: Term description */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['description']['field'] = 'description';
   $handler->display->display_options['fields']['description']['label'] = '';
-  $handler->display->display_options['fields']['description']['exclude'] = TRUE;
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['description']['element_default_classes'] = FALSE;
   /* Field: Taxonomy term: Term ID */
@@ -75,12 +84,13 @@ function pw_committees_views_default_views() {
   $handler->display->display_options['fields']['tid']['label'] = '';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'page de la commission';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'committee details';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'taxonomy/term/[tid]';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
@@ -94,6 +104,14 @@ function pw_committees_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'committee' => 'committee',
+  );
+  /* Filter criterion: Entity translation: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'entity_translation';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['relationship'] = 'entity_translations';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
   /* Display: Page */

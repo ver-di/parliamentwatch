@@ -32,19 +32,9 @@
 #views_slideshow_cycle_div_slider-block_0 form { /* newsletter box with same block in content */
     margin-bottom: 9px;
 }
-#webform-component-slider-newsletter-email {
+#views_slideshow_cycle_main_slider-block input.form-email {
     float: left;
     margin-right: 7px;
-}
-#webform-client-form-5332 #edit-submitted-newsletter-order-email {
-    width: 307px;
-    margin-right: 3px;
-    float: left;
-}
-#webform-client-form-5332 #edit-actions {
-    position: relative;
-    bottom: 0;
-    float: left;
 }
 #views_slideshow_cycle_div_slider-block_1 {
     background: url(/sites/all/themes/custom/abgeordnetenwatch/images/slider/slider_1.jpg);
