@@ -99,26 +99,6 @@ a#text_resize_increase:hover {
     background-position: -164px -828px;
 }
 
-
-/* slider */
-
-#views_slideshow_cycle_div_slider-block_0 {
-    background: url(/sites/all/themes/custom/abgeordnetenwatch/images/slider/slider_6.jpg);
-}
-#views_slideshow_cycle_div_slider-block_1 {
-    background: url(/sites/all/themes/custom/abgeordnetenwatch/images/slider/slider_4.jpg);
-}
-#views_slideshow_cycle_div_slider-block_2 {
-    background: url(/sites/all/themes/custom/abgeordnetenwatch/images/slider/slider_1.jpg)
-}
-#views_slideshow_cycle_main_slider-block .form-submit.big {
-    margin: 10px auto 0;
-}
-#views_slideshow_cycle_main_slider-block #paypal-donate {
-    text-align: center;
-}
-
-
 /* icons */
 
 #region-content .item-list ul.pager li.pager-previous a,
