@@ -17,6 +17,17 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'pw_poll';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'poll_legend_block' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'legend',
+      ),
+    ),
     'poll_votes_per_party_block_ds' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -28,7 +39,7 @@ function pw_poll_ds_field_settings_info() {
       'format' => 'default',
     ),
     'comments' => array(
-      'weight' => '4',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -50,6 +61,14 @@ function pw_poll_ds_field_settings_info() {
         'fi' => TRUE,
         'fi-el' => 'p',
         'fi-cl' => '',
+      ),
+    ),
+    'field_pw_views_reference' => array(
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'lb' => 'How did your TDs vote',
+        'lb-el' => 'h3',
+        'lb-col' => TRUE,
       ),
     ),
   );
@@ -91,6 +110,20 @@ function pw_poll_ds_field_settings_info() {
  */
 function pw_poll_ds_custom_fields_info() {
   $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'poll_legend_block';
+  $ds_field->label = 'Poll legend block';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->properties = array(
+    'block' => 'block|4',
+    'block_render' => '3',
+  );
+  $export['poll_legend_block'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -144,15 +177,17 @@ function pw_poll_ds_layout_settings_info() {
         0 => 'pw_poll_votes_total',
         1 => 'poll_votes_per_party_block_ds',
         2 => 'group_fieldset_polls_per_party',
-        3 => 'field_pw_views_reference',
-        4 => 'body',
-        5 => 'comments',
+        3 => 'poll_legend_block',
+        4 => 'field_pw_views_reference',
+        5 => 'body',
+        6 => 'comments',
       ),
     ),
     'fields' => array(
       'pw_poll_votes_total' => 'ds_content',
       'poll_votes_per_party_block_ds' => 'ds_content',
       'group_fieldset_polls_per_party' => 'ds_content',
+      'poll_legend_block' => 'ds_content',
       'field_pw_views_reference' => 'ds_content',
       'body' => 'ds_content',
       'comments' => 'ds_content',

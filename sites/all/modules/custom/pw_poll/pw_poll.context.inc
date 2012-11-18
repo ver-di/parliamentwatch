@@ -17,20 +17,33 @@ function pw_poll_context_default_contexts() {
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
-    'menu' => array(
+    'path' => array(
       'values' => array(
-        'node/20' => 'node/20',
+        'votes' => 'votes',
+        'votes/*' => 'votes/*',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-pw_polls_list-block' => array(
-          'module' => 'views',
-          'delta' => 'pw_polls_list-block',
+        'delta_blocks-messages' => array(
+          'module' => 'delta_blocks',
+          'delta' => 'messages',
           'region' => 'content',
           'weight' => '-10',
+        ),
+        'block-4' => array(
+          'module' => 'block',
+          'delta' => '4',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-8',
         ),
       ),
     ),

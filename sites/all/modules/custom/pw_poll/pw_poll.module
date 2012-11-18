@@ -85,32 +85,30 @@ function _pw_poll_prepare_poll_data($node){
     //echo "<pre>".print_r($votes,1)."</pre>";
   }
   $results = votingapi_set_votes($votes);
-  /*if(count($results)){
+  if(count($results)){
     //Get Overview Chart from Google Chart API and save to node object
     $overview_chart = pw_blocks_get_chart($node->nid, 'total', TRUE);
+    $overview_url = chart_url($overview_chart['overview']);
+    $overview_tmp_image = file_get_contents('http:'.$overview_url);
+    $overview_file = file_save_data($overview_tmp_image, NULL, 'public://'.$node->nid.'_overview.png', FILE_EXISTS_RENAME);
+    $overview_file->title = t('Overview');
     
-    //$overview_url = chart_url($overview_chart['overview']);
-
-    //$overview_tmp_image = file_get_contents('http:'.$overview_url);
-    //$overview_file = file_save_data($overview_tmp_image, NULL, 'public://'.$node->nid.'_overview.png', FILE_EXISTS_RENAME);
-    //$overview_file->title = t('Overview');
-    
-    //$node->field_pw_overview_chart[LANGUAGE_NONE]['0'] = $overview_file;
+    $node->field_pw_overview_chart[LANGUAGE_NONE]['0'] = (array)$overview_file;
 
 
     $party_charts = pw_blocks_get_chart($node->nid, 'party', TRUE);
     $i = 0;
     foreach($party_charts as $party => $data){
       
-      //$party_url = chart_url($data);
-      //$party_tmp_image = file_get_contents('http:'.$party_url); 
-      //$party_img_name_cleanup = array(' ','/');
-      //$party_file = file_save_data($party_tmp_image, NULL,  'public://'.$node->nid.'_'.str_replace(' ','_',$party).'.png', FILE_EXISTS_REPLACE);
-      //$party_file->title = $party;
-      //$node->field_pw_party_chart[LANGUAGE_NONE][$i] = (array)$party_file;
+      $party_url = chart_url($data);
+      $party_tmp_image = file_get_contents('http:'.$party_url); 
+      $party_img_name_cleanup = array(' ','/');
+      $party_file = file_save_data($party_tmp_image, NULL,  'public://'.$node->nid.'_'.str_replace(' ','_',$party).'.png', FILE_EXISTS_REPLACE);
+      $party_file->title = $party;
+      $node->field_pw_party_chart[LANGUAGE_NONE][$i] = (array)$party_file;
       $i++;
     }
-  }*/
+  }
   //$node = node_save($node);
   return $node;
 }
