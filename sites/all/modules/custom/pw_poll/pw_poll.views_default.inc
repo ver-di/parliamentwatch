@@ -87,21 +87,19 @@ function pw_poll_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Overview Chart */
-  $handler->display->display_options['fields']['field_pw_overview_chart']['id'] = 'field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['table'] = 'field_data_field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['field'] = 'field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['label'] = '';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_class'] = 'file-image float-left no-outline';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_overview_chart']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['settings'] = array(
-    'image_style' => '',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_pw_overview_chart']['delta_offset'] = '0';
+  /* Field: Global PHP: Overview Chart */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Global PHP: Overview Chart';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+print pw_blocks_get_chart($row->nid.\'total\');
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -143,6 +141,15 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
   $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';

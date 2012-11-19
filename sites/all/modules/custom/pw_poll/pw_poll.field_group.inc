@@ -32,7 +32,7 @@ function pw_poll_field_group_info() {
         'classes' => '',
         'description' => '',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'open',
     ),
   );
   $export['group_fieldset_polls_per_party|node|pw_poll|default'] = $field_group;
