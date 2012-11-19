@@ -24,17 +24,11 @@ function pw_poll_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Votes';
   $handler->display->display_options['css_class'] = 'pager-load-more';
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['link_display'] = 'page_1';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort votes by';
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '11';
   $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
@@ -46,6 +40,25 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div class="poll legend">
+    <div class="poll-behavior"><span class="icon yes"></span>yes</div>
+    <div class="poll-behavior"><span class="icon no"></span>no</div>
+    <div class="poll-behavior"><span class="icon absent"></span>absent</div>
+    <div class="poll-behavior"><span class="icon blank"></span>blank</div>
+</div>';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -57,50 +70,19 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Field: Content: Parmliament */
-  $handler->display->display_options['fields']['field_pw_parmliament']['id'] = 'field_pw_parmliament';
-  $handler->display->display_options['fields']['field_pw_parmliament']['table'] = 'field_data_field_pw_parmliament';
-  $handler->display->display_options['fields']['field_pw_parmliament']['field'] = 'field_pw_parmliament';
-  $handler->display->display_options['fields']['field_pw_parmliament']['label'] = '';
-  $handler->display->display_options['fields']['field_pw_parmliament']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_pw_parmliament']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_parmliament']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_parmliament']['type'] = 'i18n_taxonomy_term_reference_plain';
-  /* Field: Content: Date */
-  $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
-  $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
-  $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
-  $handler->display->display_options['fields']['field_pw_poll_date']['label'] = 'Vote from';
-  $handler->display->display_options['fields']['field_pw_poll_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['alter']['text'] = '[field_pw_poll_date], [field_pw_parmliament]';
-  $handler->display->display_options['fields']['field_pw_poll_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'light';
-  $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: Overview Chart */
-  $handler->display->display_options['fields']['field_pw_overview_chart']['id'] = 'field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['table'] = 'field_data_field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['field'] = 'field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['label'] = '';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_class'] = 'file-image float-left no-outline';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_overview_chart']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['settings'] = array(
-    'image_style' => '',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_pw_overview_chart']['delta_offset'] = '0';
+  /* Field: Global PHP:Overview Chart */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Global PHP:Overview Chart';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+print pw_blocks_get_chart($row->nid,"total");
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -119,6 +101,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['element_type'] = 'div';
   $handler->display->display_options['fields']['view_node']['element_class'] = 'float-right link-poll';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
@@ -131,30 +114,19 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['element_type'] = 'div';
   $handler->display->display_options['fields']['comment_count']['element_class'] = 'comment-count clear-both';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['comment_count']['empty'] = 'no comments yet';
-  $handler->display->display_options['fields']['comment_count']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['comment_count']['separator'] = '';
   $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
   $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
-  /* Sort criterion: Content: Date (field_pw_poll_date) */
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['expose']['label'] = 'Date';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -176,7 +148,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['path'] = 'votes/%';
 
   /* Display: Frontpage */
-  $handler = $view->new_display('block', 'Frontpage', 'block_frontpage');
+  $handler = $view->new_display('block', 'Frontpage', 'block_1');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
@@ -184,24 +156,18 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '2';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
   $handler->display->display_options['defaults']['header'] = FALSE;
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date (field_pw_poll_date) */
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
-  $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
   $translatables['pw_polls_list'] = array(
     t('Master'),
     t('Votes'),
     t('more'),
     t('Apply'),
     t('Reset'),
-    t('Sort votes by'),
+    t('Sort by'),
     t('Asc'),
     t('Desc'),
     t('Items per page'),
@@ -211,13 +177,15 @@ function pw_poll_views_default_views() {
     t('zurück'),
     t('weiter'),
     t('last »'),
-    t('Vote from'),
-    t('[field_pw_poll_date], [field_pw_parmliament]'),
+    t('<div class="poll legend">
+    <div class="poll-behavior"><span class="icon yes"></span>yes</div>
+    <div class="poll-behavior"><span class="icon no"></span>no</div>
+    <div class="poll-behavior"><span class="icon absent"></span>absent</div>
+    <div class="poll-behavior"><span class="icon blank"></span>blank</div>
+</div>'),
     t('Details to vote'),
-    t('no comments yet'),
     t('.'),
-    t('Title'),
-    t('Date'),
+    t(','),
     t('Page'),
     t('Frontpage'),
   );
