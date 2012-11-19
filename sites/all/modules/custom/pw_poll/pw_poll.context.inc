@@ -74,7 +74,7 @@ function pw_poll_context_default_contexts() {
           'module' => 'system',
           'delta' => 'main',
           'region' => 'content',
-          'weight' => '-8',
+          'weight' => '-45',
         ),
       ),
     ),
