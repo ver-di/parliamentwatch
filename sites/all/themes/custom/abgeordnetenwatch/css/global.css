@@ -98,6 +98,7 @@ h4 {
 .subtitle,
 .small {
     font-size: 11px;
+    line-height: 1.3em;
 }
 .subline {
     font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
@@ -163,6 +164,12 @@ blockquote p:last-child {
 }
 .push-bottom-l {
     margin-bottom: 28px;
+}
+.push-left-xl {
+    margin-left: 105px;
+}
+.portrait-l {
+    width: 140px;
 }
 
 .light,
@@ -922,20 +929,20 @@ a#text_resize_increase:hover {
 
 /* /////////////////////////// views /////////////////// */
 
-.views-exposed-form .views-exposed-widget {
-    float: none;
+.views-exposed-widgets {
+    margin-bottom: 0.8em;
 }
-#region-content .views-exposed-form .views-exposed-widget {
-    float: right;
-    padding: 1em 0 1.5em 1em;
+.views-exposed-form .views-exposed-widget {
+    padding: 0.5em 0 0 1em;
 }
 #region-content .views-exposed-form .views-exposed-widget label {
     display: block;
     font-size: 11px;
     line-height: 16px;
+    margin-bottom: 4px;
     font-weight: normal;
 }
-#region-content .form-item-sort-order {
+#region-content .views-widget-sort-order {
     display: none;
 }
 button:focus,
@@ -962,6 +969,9 @@ textarea:active {
 .view-filters input[type="text"] {
     font-size: 11px;
     height: 1.8em;
+}
+.view-filters select {
+    width: 100%;
 }
 #region-sidebar-second select {
     width: 80%;
@@ -995,6 +1005,7 @@ textarea:active {
 .field-name-field-image-copyright {
     color: #666;
     font-size: 10px;
+    word-wrap: break-word;
 }
 .file-image img {
     outline: 1px solid #ccc;
@@ -1088,6 +1099,9 @@ img.no-outline {
 
 /* polls */
 
+.node-type-pw-poll .legend {
+    margin-bottom: 3em;
+}
 .poll-behavior {
     display: inline-block;
     font-size: 11px;
@@ -1097,9 +1111,9 @@ img.no-outline {
     margin-right: 57px;
 }
 .poll.legend {
-    margin-bottom: 27px;
+    margin-bottom: 20px;
 }
-.poll-behavior .result {
+.poll-behavior span {
     display: inline-block;
     padding: 0 3px;
 }
@@ -1118,9 +1132,9 @@ img.no-outline {
 }
 .poll-behavior .icon {
     display: inline-block;
-    width: 12px;
+    width: 6px;
     height: 12px;
-    margin: 0 7px;
+    margin: 0 7px -2px;
 }
 .node-type-pw-poll .field-name-field-pw-views-reference {
     margin-bottom: 40px;
@@ -1128,20 +1142,23 @@ img.no-outline {
 .node-type-pw-poll .field-name-field-pw-views-reference .icon-taxonomy {
     margin-left: 97px;
 }
-#region-content #views-exposed-form-user-constituency-page .views-exposed-form .views-exposed-widget {
-    padding: 0;
-}
-#region-content #views-exposed-form-user-constituency-page.ctools-auto-submit-full-form,
-#region-content #views-exposed-form-user-constituency-page .views-exposed-form .views-exposed-widget {
-    float: none;
-}
 #node_pw_poll_full_group_fieldset_polls_per_party legend {
-    padding-bottom: 1em;
+    padding-bottom: 1.3em;
 }
-.view-pw-polls-list .link-poll {
+html.js fieldset.collapsed {
+    height: auto;
+}
+.pw-poll-chart-wrapper {
+    float: left;
+    margin-bottom: 1em;
+    width: 33%;
+    position: relative;
+    padding-top: 3em;
+}
+.node-type-pw-poll span.party {
+    display: block;
     position: absolute;
-    bottom: 15px;
-    right: 20px;
+    top: 0;
 }
 
 
@@ -1343,6 +1360,9 @@ form .webform-component-checkboxes .description {
 #comments {
     margin-top: 28px;
 }
+#comments .comment {
+    margin-bottom: 3em;
+}
 #comments .mandatory {
     bottom: 71px;
     color: #666666;
@@ -1498,7 +1518,7 @@ form .webform-component-checkboxes .description {
 #region-content .comment ul.links {
     border-top: 1px solid #fff;
     margin: 0;
-    padding: 10px;
+    padding: 1.8em 10px;
 }
 .links.inline a,
 .submitted {
