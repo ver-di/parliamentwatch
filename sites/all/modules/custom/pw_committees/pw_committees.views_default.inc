@@ -124,7 +124,7 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Sonraí coiste';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'committee details';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'taxonomy/term/[tid]';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
@@ -161,7 +161,7 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
     t('next'),
     t('last'),
     t('.'),
-    t('Sonraí coiste'),
+    t('committee details'),
     t('Page'),
   );
   $export['pw_commitee_terms'] = $view;
