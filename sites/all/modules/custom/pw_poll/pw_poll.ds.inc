@@ -18,7 +18,7 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'poll_legend_block' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -33,7 +33,7 @@ function pw_poll_ds_field_settings_info() {
       'format' => 'default',
     ),
     'comments' => array(
-      'weight' => '3',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -55,6 +55,14 @@ function pw_poll_ds_field_settings_info() {
         'fi' => TRUE,
         'fi-el' => 'p',
         'fi-cl' => '',
+      ),
+    ),
+    'field_pw_views_reference' => array(
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'lb' => 'How did your TDs vote',
+        'lb-el' => 'h3',
+        'lb-col' => TRUE,
       ),
     ),
   );
@@ -165,8 +173,8 @@ function pw_poll_ds_layout_settings_info() {
         2 => 'poll_legend_block',
         3 => 'group_fieldset_polls_per_party',
         4 => 'field_pw_views_reference',
-        5 => 'comments',
-        6 => 'body',
+        5 => 'body',
+        6 => 'comments',
       ),
     ),
     'fields' => array(
@@ -175,8 +183,8 @@ function pw_poll_ds_layout_settings_info() {
       'poll_legend_block' => 'ds_content',
       'group_fieldset_polls_per_party' => 'ds_content',
       'field_pw_views_reference' => 'ds_content',
-      'comments' => 'ds_content',
       'body' => 'ds_content',
+      'comments' => 'ds_content',
     ),
     'classes' => array(),
   );

@@ -22,7 +22,7 @@ function pw_poll_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Vótaí';
+  $handler->display->display_options['title'] = 'Votes';
   $handler->display->display_options['css_class'] = 'pager-load-more';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -96,7 +96,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-print pw_blocks_get_chart($row->nid.\'total\');
+print pw_blocks_get_chart($row->nid,\'total\');
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
@@ -205,7 +205,7 @@ print pw_blocks_get_chart($row->nid.\'total\');
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
   $translatables['pw_polls_list'] = array(
     t('Master'),
-    t('Vótaí'),
+    t('Votes'),
     t('more'),
     t('iarratas a dhéanamh'),
     t('Reset'),

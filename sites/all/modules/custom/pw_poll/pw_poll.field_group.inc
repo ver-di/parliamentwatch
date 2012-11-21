@@ -21,7 +21,7 @@ function pw_poll_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Show voting results in detail',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'poll_votes_per_party_block_ds',
     ),
@@ -32,7 +32,7 @@ function pw_poll_field_group_info() {
         'classes' => '',
         'description' => '',
       ),
-      'formatter' => 'open',
+      'formatter' => 'collapsed',
     ),
   );
   $export['group_fieldset_polls_per_party|node|pw_poll|default'] = $field_group;
