@@ -216,7 +216,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:4' => 'tags/tags_item',
           'xpathparser:5' => 'sender',
           'xpathparser:6' => 'recipient.external_id',
-          'xpathparser:7' => '1',
+          'xpathparser:7' => 'status=1',
           'xpathparser:8' => 'inserted_date',
           'xpathparser:9' => 'sender',
           'xpathparser:10' => 'type',
@@ -226,7 +226,6 @@ function dialogues_feeds_importer_default() {
           'xpathparser:14' => '../@id',
           'xpathparser:15' => 'keyworded_text',
           'xpathparser:16' => 'text',
-          'xpathparser:17' => 'status=1',
         ),
         'rawXML' => array(
           'xpathparser:1' => 0,
@@ -245,7 +244,6 @@ function dialogues_feeds_importer_default() {
           'xpathparser:14' => 0,
           'xpathparser:15' => 0,
           'xpathparser:16' => 0,
-          'xpathparser:17' => 0,
         ),
         'context' => '//dialogue/message[position()>1]',
         'exp' => array(
@@ -268,7 +266,6 @@ function dialogues_feeds_importer_default() {
             'xpathparser:14' => 0,
             'xpathparser:15' => 0,
             'xpathparser:16' => 0,
-            'xpathparser:17' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -359,11 +356,6 @@ function dialogues_feeds_importer_default() {
           15 => array(
             'source' => 'xpathparser:16',
             'target' => 'comment_body',
-            'unique' => FALSE,
-          ),
-          16 => array(
-            'source' => 'xpathparser:17',
-            'target' => 'status',
             'unique' => FALSE,
           ),
         ),
