@@ -129,7 +129,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
     $chart = array(
         '#title'=> '',
         '#type'=>CHART_TYPE_BAR_V,
-        '#chart_id'=>$type,
+        '#chart_id'=> 'overview'.$nid,
         '#size' => chart_size(200, 200),
         '#adjust_resolution' => TRUE,
         '#data_colors' => $colors,
@@ -195,7 +195,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
     
     
     
-   
+    
     
     foreach($parties as $party){
       
