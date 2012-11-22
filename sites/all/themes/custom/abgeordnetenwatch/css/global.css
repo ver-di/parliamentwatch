@@ -318,8 +318,6 @@ h1#page-title {
 .node-blogpost.node-teaser,
 .block-submenutree .view-mode-teaser,
 .block-submenutree .node-teaser,
-.views-table tr.odd,
-.views-table tr.even,
 .node-results li,
 .group-result .panel-flexible,
 .pw-list-item {
@@ -331,9 +329,6 @@ h1#page-title {
 }
 .node.view-mode-full {
     border-bottom: 0;
-}
-.views-table td {
-    padding: 2em 1em 1.5em 0;
 }
 
 #region-sidebar-second .block {

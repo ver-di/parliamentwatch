@@ -1,3 +1,23 @@
+/* user page */
+
+.field-group-htab .content-wrapper {
+    padding: 0 10px;
+}
+
+.view-id-polls_profile .view-header {
+    padding: 0 10px;
+}
+.view-id-polls_profile table {
+    width: 100%;
+}
+.view-id-polls_profile td {
+    padding: 5px 10px;
+}
+
+
+
+
+
 table.views-view-grid {
     width: 100%;
     margin-bottom: 30px;
