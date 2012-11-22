@@ -17,8 +17,13 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'qa_link_counter' => array(
+    'qa_asking_anchor' => array(
       'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'qa_link_counter' => array(
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -29,7 +34,7 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'question_form' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -37,7 +42,7 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'questions_and_answers' => array(
-      'weight' => '7',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -206,6 +211,34 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'qa_asking_anchor';
+  $ds_field->label = 'Q & A ask anckor';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'block|5',
+    'block_render' => '3',
+  );
+  $export['qa_asking_anchor'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'qa_link_counter';
+  $ds_field->label = 'Q&A link and counter';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|qa_link_counter-block',
+    'block_render' => '3',
+  );
+  $export['qa_link_counter'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'question_form';
   $ds_field->label = 'Question form';
   $ds_field->field_type = 6;
@@ -272,21 +305,22 @@ function profiles_ds_layout_settings_info() {
         2 => 'field_user_picture',
         3 => 'field_user_fname',
         4 => 'group_user_name',
-        5 => 'field_user_parliament',
-        6 => 'field_user_lname',
-        7 => 'qa_link_counter',
+        5 => 'field_user_lname',
+        6 => 'field_user_parliament',
+        7 => 'qa_asking_anchor',
         8 => 'field_user_party',
-        9 => 'group_user_basics',
-        10 => 'group_user_commitee',
-        11 => 'field_user_commitee',
+        9 => 'qa_link_counter',
+        10 => 'field_user_commitee',
+        11 => 'group_user_basics',
         12 => 'field_user_political_roles',
-        13 => 'questions_and_answers',
-        14 => 'question_form',
-        15 => 'field_user_more',
-        16 => 'group_user_basics_basics',
-        17 => 'field_user_job_skills',
-        18 => 'group_user_basics_additional',
-        19 => 'field_user_constituency',
+        13 => 'group_user_commitee',
+        14 => 'questions_and_answers',
+        15 => 'question_form',
+        16 => 'field_user_more',
+        17 => 'group_user_basics_basics',
+        18 => 'field_user_job_skills',
+        19 => 'group_user_basics_additional',
+        20 => 'field_user_constituency',
       ),
     ),
     'fields' => array(
@@ -295,14 +329,15 @@ function profiles_ds_layout_settings_info() {
       'field_user_picture' => 'ds_content',
       'field_user_fname' => 'ds_content',
       'group_user_name' => 'ds_content',
-      'field_user_parliament' => 'ds_content',
       'field_user_lname' => 'ds_content',
-      'qa_link_counter' => 'ds_content',
+      'field_user_parliament' => 'ds_content',
+      'qa_asking_anchor' => 'ds_content',
       'field_user_party' => 'ds_content',
-      'group_user_basics' => 'ds_content',
-      'group_user_commitee' => 'ds_content',
+      'qa_link_counter' => 'ds_content',
       'field_user_commitee' => 'ds_content',
+      'group_user_basics' => 'ds_content',
       'field_user_political_roles' => 'ds_content',
+      'group_user_commitee' => 'ds_content',
       'questions_and_answers' => 'ds_content',
       'question_form' => 'ds_content',
       'field_user_more' => 'ds_content',

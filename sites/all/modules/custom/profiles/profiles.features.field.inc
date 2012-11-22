@@ -66,7 +66,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '22',
+          'weight' => '26',
         ),
       ),
       'entity_type' => 'user',
@@ -118,7 +118,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '24',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -187,7 +187,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '21',
         ),
         'full' => array(
           'label' => 'above',
@@ -257,7 +257,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '18',
         ),
         'full' => array(
           'label' => 'inline',
@@ -504,7 +504,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '21',
+          'weight' => '25',
         ),
       ),
       'entity_type' => 'user',
@@ -675,7 +675,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '17',
         ),
         'full' => array(
           'label' => 'above',
@@ -973,7 +973,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '20',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1463,7 +1463,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '22',
         ),
         'full' => array(
           'label' => 'above',
@@ -1566,7 +1566,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '23',
         ),
         'user_search' => array(
           'label' => 'above',
