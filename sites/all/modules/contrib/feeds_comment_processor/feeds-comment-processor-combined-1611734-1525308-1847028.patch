@@ -1,8 +1,21 @@
 diff --git a/FeedsCommentProcessor.inc b/FeedsCommentProcessor.inc
-index 4d21b04..7f39f02 100644
+index 4d21b04..ca3d79a 100644
 --- a/FeedsCommentProcessor.inc
 +++ b/FeedsCommentProcessor.inc
-@@ -121,13 +121,17 @@ class FeedsCommentProcessor extends FeedsProcessor {
+@@ -79,7 +79,12 @@ class FeedsCommentProcessor extends FeedsProcessor {
+    * Save a comment.
+    */
+   public function entitySave($comment) {
++    // comment_submit() overrides the created and changed properties.
++    $created = $comment->created;
+     comment_submit($comment);
++    $comment->created = $created;
++    $comment->changed = $created;
++
+     comment_save($comment);
+   }
+ 
+@@ -121,13 +126,17 @@ class FeedsCommentProcessor extends FeedsProcessor {
     * Override parent::configDefaults().
     */
    public function configDefaults() {
@@ -21,7 +34,7 @@ index 4d21b04..7f39f02 100644
    }
  
    /**
-@@ -135,6 +139,16 @@ class FeedsCommentProcessor extends FeedsProcessor {
+@@ -135,6 +144,16 @@ class FeedsCommentProcessor extends FeedsProcessor {
     */
    public function configForm(&$form_state) {
      $form = array();
@@ -38,7 +51,7 @@ index 4d21b04..7f39f02 100644
      $format_options = array(filter_default_format() => t('Default format'));
      $formats = filter_formats();
      foreach ($formats as $format) {
-@@ -147,6 +161,7 @@ class FeedsCommentProcessor extends FeedsProcessor {
+@@ -147,6 +166,7 @@ class FeedsCommentProcessor extends FeedsProcessor {
        '#options' => $format_options,
        '#default_value' => $this->config['input_format'],
      );
@@ -46,7 +59,7 @@ index 4d21b04..7f39f02 100644
      $author = user_load($this->config['author']);
      $form['author'] = array(
        '#type' => 'textfield',
-@@ -155,6 +170,7 @@ class FeedsCommentProcessor extends FeedsProcessor {
+@@ -155,6 +175,7 @@ class FeedsCommentProcessor extends FeedsProcessor {
        '#autocomplete_path' => 'user/autocomplete',
        '#default_value' => empty($author->name) ?  'anonymous' : check_plain($author->name),
      );
@@ -54,7 +67,7 @@ index 4d21b04..7f39f02 100644
      $period = drupal_map_assoc(array(FEEDS_EXPIRE_NEVER, 3600, 10800, 21600, 43200, 86400, 259200, 604800, 604800 * 4, 604800 * 12, 604800 * 24, 31536000), 'feeds_format_expire');
      $form['expire'] = array(
        '#type' => 'select',
-@@ -163,6 +179,7 @@ class FeedsCommentProcessor extends FeedsProcessor {
+@@ -163,6 +184,7 @@ class FeedsCommentProcessor extends FeedsProcessor {
        '#description' => t('Select after how much time comments should be deleted. The comment\'s published date will be used for determining the comment\'s age, see Mapping settings.'),
        '#default_value' => $this->config['expire'],
      );
@@ -62,7 +75,7 @@ index 4d21b04..7f39f02 100644
      $form['update_existing'] = array(
        '#type' => 'radios',
        '#title' => t('Update existing comments'),
-@@ -194,8 +211,13 @@ class FeedsCommentProcessor extends FeedsProcessor {
+@@ -194,12 +216,20 @@ class FeedsCommentProcessor extends FeedsProcessor {
     */
    public function setTargetElement(FeedsSource $source, $target_comment, $target_element, $value) {
      switch ($target_element) {
@@ -78,7 +91,14 @@ index 4d21b04..7f39f02 100644
          break;
        case 'guid':
          $target_comment->feeds_comment_item->guid = $value;
-@@ -219,6 +241,10 @@ class FeedsCommentProcessor extends FeedsProcessor {
+         break;
++      case 'created':
++        $target_comment->created = feeds_to_unixtime($value, REQUEST_TIME);
++        break;
+       default:
+         parent::setTargetElement($source, $target_comment, $target_element, $value);
+         break;
+@@ -219,6 +249,10 @@ class FeedsCommentProcessor extends FeedsProcessor {
          'name' => t('Node ID'),
          'description' => t('The nid to which this comment is a reply.'),
        ),
@@ -89,7 +109,7 @@ index 4d21b04..7f39f02 100644
        'uid' => array(
          'name' => t('User ID'),
          'description' => t('The Drupal user ID of the comment author.'),
-@@ -227,10 +253,6 @@ class FeedsCommentProcessor extends FeedsProcessor {
+@@ -227,10 +261,6 @@ class FeedsCommentProcessor extends FeedsProcessor {
          'name' => t('Title'),
          'description' => t('The title of the comment.'),
        ),
@@ -100,7 +120,7 @@ index 4d21b04..7f39f02 100644
        'hostname' => array(
          'name' => t('Hostname'),
          'description' => t('The author\'s host name.'),
-@@ -264,6 +286,7 @@ class FeedsCommentProcessor extends FeedsProcessor {
+@@ -264,6 +294,7 @@ class FeedsCommentProcessor extends FeedsProcessor {
  
      // Let other modules expose mapping targets.
      self::loadMappers();
