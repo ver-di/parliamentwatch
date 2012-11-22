@@ -431,6 +431,44 @@ function profiles_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'politicians_old/%';
+  $translatables['profile_list_rev'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('prev'),
+    t('next'),
+    t('last »'),
+    t('term from field_user_parliament'),
+    t('Get all revisions from an user.'),
+    t('<div class="profiles-list-compact-wrapper">'),
+    t('[field_user_picture-revision_id_1]'),
+    t('<strong>[field_user_fname-revision_id_1]'),
+    t('<strong>[field_user_fname]'),
+    t('[field_user_lname-revision_id_1], '),
+    t('[field_user_lname], '),
+    t('[field_user_party-revision_id]</strong>'),
+    t('<div class="element-hidden profile-list-compact-info">'),
+    t('<h3>[field_user_fname-revision_id]'),
+    t('<h3>[field_user_fname]'),
+    t('[field_user_lname-revision_id]</h3>'),
+    t('[field_user_lname]</h3>'),
+    t('Go to profile'),
+    t('</div>'),
+    t('All'),
+    t('Last name (field_user_lname)'),
+    t('Last name'),
+    t('Active'),
+    t('Constituency'),
+    t('Page'),
+  );
   $export['profile_list_rev'] = $view;
 
   $view = new view();
@@ -843,7 +881,242 @@ function profiles_views_default_views() {
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'dialogue' => 'dialogue',
   );
+  $translatables['profile_questions_answers'] = array(
+    t('Master'),
+    t('Questions & Answers'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('zurück'),
+    t('weiter'),
+    t('last »'),
+    t('Comments'),
+    t('content author'),
+    t('User entity referenced from field_dialogue_recipient'),
+    t('<div class="question">'),
+    t('Topic'),
+    t('Question from'),
+    t('[field_dialogue_sender_name]<br/><span class="subline">[created]</span>
+'),
+    t('anonymous<br/><span class="subline">[created]</span>'),
+    t('</div>'),
+    t('<div class="comment answer clearfix">'),
+    t('<div class="file-image float-left">[field_user_picture]</div>
+<h3>Answer from [field_user_fname] [field_user_lname]</h3>
+<p class="date">[created_1]</p>
+<div class="content clear-both">[comment_body]</div>'),
+    t('<div class="file-image float-left">[field_user_picture]</div>
+<strong>No answer yet</strong>'),
+    t('<div class="anchor-to-top clearfix"><a href="#page">to the top</a></div>'),
+    t('All'),
+    t('Profile'),
+    t('Frontpage'),
+    t('Colorbox'),
+    t('[field_dialogue_sender_name]<br/><span class="subline">[created]</span>'),
+  );
   $export['profile_questions_answers'] = $view;
+
+  $view = new view();
+  $view->name = 'qa_link_counter';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'comment';
+  $view->human_name = 'Q&A Link and Counter';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Relationship: Comment: Content */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'comment';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
+  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['relationship'] = 'nid';
+  /* Field: Anchor: Ask a question */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Anchor: Ask a question';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = '#block-webform-client-block-17';
+  $handler->display->display_options['fields']['nothing_1']['element_type'] = 'span';
+  $handler->display->display_options['fields']['nothing_1']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  /* Field: | bubble start */
+  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
+  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_2']['ui_name'] = '| bubble start';
+  $handler->display->display_options['fields']['nothing_2']['label'] = '';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="bubble tiny">';
+  $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
+  /* Field: Anchor: go to Q and A */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Anchor: go to Q and A';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'go to Questions and Answers';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '#block-views-profile-questions-answers-block';
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Field: User: Questions Get */
+  $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['relationship'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['fields']['field_user_questions_get']['label'] = '';
+  $handler->display->display_options['fields']['field_user_questions_get']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[field_user_questions_get] question(s)';
+  $handler->display->display_options['fields']['field_user_questions_get']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  /* Field: User: Answers Give */
+  $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['relationship'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['fields']['field_user_answers_give']['label'] = '';
+  $handler->display->display_options['fields']['field_user_answers_give']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_answers_give']['alter']['text'] = '[field_user_questions_get], [field_user_answers_give] answer(s)';
+  $handler->display->display_options['fields']['field_user_answers_give']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_answers_give']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_user_answers_give']['element_wrapper_class'] = 'small light';
+  $handler->display->display_options['fields']['field_user_answers_give']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  /* Field: | bubble end */
+  $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
+  $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_3']['ui_name'] = '| bubble end';
+  $handler->display->display_options['fields']['nothing_3']['label'] = '';
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '</div>';
+  $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
+  /* Sort criterion: Comment: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'comment';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Field: Recipient (field_dialogue_recipient) */
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['relationship'] = 'nid';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_argument_options']['user'] = TRUE;
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'dialogue' => 'dialogue',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Comment: Approved */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'comment';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
+  $handler->display->display_options['filters']['status_node']['table'] = 'node';
+  $handler->display->display_options['filters']['status_node']['field'] = 'status';
+  $handler->display->display_options['filters']['status_node']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['status_node']['value'] = 1;
+  $handler->display->display_options['filters']['status_node']['group'] = 1;
+  $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['relationship'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    181527986 => '181527986',
+  );
+
+  /* Display: Q and A Counter and Link */
+  $handler = $view->new_display('block', 'Q and A Counter and Link', 'block');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $translatables['qa_link_counter'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('prev'),
+    t('next'),
+    t('last »'),
+    t('Content'),
+    t('User entity referenced from field_dialogue_recipient'),
+    t('Ask a Question'),
+    t('<div class="bubble tiny">'),
+    t('go to Questions and Answers'),
+    t('[field_user_questions_get] question(s)'),
+    t('[field_user_questions_get], [field_user_answers_give] answer(s)'),
+    t('</div>'),
+    t('All'),
+    t('Q and A Counter and Link'),
+  );
+  $export['qa_link_counter'] = $view;
 
   return $export;
 }

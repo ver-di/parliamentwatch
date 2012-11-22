@@ -3,7 +3,7 @@ button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"],
-a.form-submit {
+.form-submit {
     background: #a4a974; /* Old browsers */
     background: -moz-linear-gradient(top,  #a4a974 0%, #919756 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4a974), color-stop(100%,#919756)); /* Chrome,Safari4+ */
@@ -162,7 +162,8 @@ a.link-committees,
 .link-poll a,
 a.link-poll,
 blockquote:before,
-.collapse-processed .fieldset-title {
+.collapse-processed .fieldset-title,
+.bubble {
     background-image: url("../images/sprite.png");
     background-repeat: no-repeat;
 }

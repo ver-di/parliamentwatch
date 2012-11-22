@@ -149,6 +149,9 @@ blockquote p:last-child {
 .float-right {
     float: right;
 }
+.center {
+    text-align: center;
+}
 .clear-both {
     clear: both;
 }
@@ -167,6 +170,9 @@ blockquote p:last-child {
 }
 .push-left-xl {
     margin-left: 105px;
+}
+.push-left-xxl {
+    margin-left: 154px;
 }
 .portrait-l {
     width: 140px;
@@ -961,9 +967,6 @@ textarea:active {
 .views-field-field-press-article-medium div {
     color: #999;
 }
-.view-content {
-    clear: both;
-}
 .view-filters textarea,
 .view-filters select,
 .view-filters input[type="text"] {
@@ -1194,7 +1197,8 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"],
-a.form-submit {
+.form-submit,
+.form-submit {
     border: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
@@ -1241,7 +1245,7 @@ button,
 input[type="reset"],
 input[type="submit"],
 input[type="button"],
-a.form-submit {
+.form-submit {
     background: #ff6733; /* Old browsers */
     background-image: #ff8157; /* Old browsers */
     background-image: -moz-linear-gradient(top,  #ff8157 0%, #ff6c3f 64%, #ff622d 65%, #ff602b 100%); /* FF3.6+ */
@@ -1272,7 +1276,8 @@ button:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
-a.form-submit:hover {
+a.form-submit:hover,
+span.form-submit:hover {
     background: #ababab; /* Old browsers */
     background-image: -moz-linear-gradient(top,  #ababab 0%, #9d9d9d 70%, #999999 70%, #999999 100%); /* FF3.6+ */
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ababab), color-stop(70%,#9d9d9d), color-stop(70%,#999999), color-stop(100%,#999999)); /* Chrome,Safari4+ */
@@ -1286,11 +1291,24 @@ a.form-submit:hover {
 button.big,
 input[type="submit"].big,
 input[type="button"].big,
-a.form-submit.big {
-    font: 15px/23px Lucida Grande, Helvetica, Arial, bold sans-serif;
+a.form-submit.big,
+span.form-submit.big {
+    font: 15px/38px Lucida Grande, Helvetica, Arial, bold sans-serif;
     letter-spacing: 0;
+    padding: 0 10px;
+    display: inline-block;
+    height: 2.5em;
 }
-
+.form-submit.big.link-question {
+    padding: 0 30px;
+}
+.form-submit.big.link-question a {
+    background: url(../images/sprite.png) -308px -3184px no-repeat;
+    padding-left: 34px;
+    color: #fff;
+    font-weight: normal;
+    display: inline-block;
+}
 .webform-component-checkboxes {
     position: relative;
     padding-left: 20px;
@@ -1498,7 +1516,12 @@ form .webform-component-checkboxes .description {
 .bubble {
     min-height: 20px;
     padding-left: 34px;
-    background-position: -650px -2847px;
+    background-position: -650px -2849px;
+}
+.bubble.tiny {
+    min-height: auto;
+    padding-left: 24px;
+    background-position: -252px -3251px;
 }
 .comment .submitted .author {
     float: left;

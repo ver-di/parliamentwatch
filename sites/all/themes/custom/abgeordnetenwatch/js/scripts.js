@@ -12,6 +12,7 @@ jQuery(document).ready(function() {
 		alert('Vielen Dank! Ein Moderator wird sich darum kümmern.');
     });
 
+
 ////// Navigation highlighting
 
     jQuery("#nice-menu-1 li").mouseenter(function(){
@@ -19,7 +20,27 @@ jQuery(document).ready(function() {
     }).mouseleave(function(){
         jQuery("#nice-menu-1 li.active-invisible").removeClass('active-invisible').addClass('active-trail');
     });
+    
+    
+////// Scroll to "Questions and Answers"
+
+    function goToByScroll(id){
+        jQuery('html,body').animate({scrollTop: jQuery("#"+id).offset().top},'1000');
+    }
+    jQuery(".page-user .link-qa").click(function () {
+        goToByScroll("block-views-profile-questions-answers-block");
+        return false;
+    });
+    jQuery(".page-user .link-question").click(function () {
+        goToByScroll("block-webform-client-block-17");
+        return false;
+    });
+    jQuery(".anchor-to-top a").click(function () {
+        goToByScroll("page");
+        return false;
+    });
 
 });
+
 
 
