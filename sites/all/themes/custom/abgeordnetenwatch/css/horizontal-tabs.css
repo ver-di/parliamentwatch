@@ -9,7 +9,8 @@ div.horizontal-tabs {
   position: relative; /* IE6/7 */
   font-size: 11px;
 }
-div.horizontal-tabs .odd {
+div.horizontal-tabs div.even,
+div.horizontal-tabs tr.odd {
   background: #dbdbdb;
 }
 div.horizontal-tabs .label-inline {
@@ -21,6 +22,12 @@ div.horizontal-tabs .value {
     display: block;
     float: left; /* LTR */
     width: 70%;
+}
+div.horizontal-tabs .fieldset-description,
+div.horizontal-tabs h3 {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 18px;
+    display: inline-block;
 }
 div.horizontal-tabs .fieldset-description {
     font-family: 'Times New Roman', Georgia, serif;
@@ -135,9 +142,16 @@ div.field-group-htabs-wrapper .field-group-format-wrapper {
   padding: 0 0 0.6em;
 }
 div.horizontal-tabs-panes a { 
-  color: #666;
-  font-weight: bold;
+  color: #333;
+  font-weight: normal;
 }
+div.horizontal-tabs-panes .link-poll a,
+div.horizontal-tabs-panes a.link-poll {
+    font-weight: bold;
+    background-position: -341px -1818px;
+    color: #666;
+}
+
 /*hide*/
 .horizontal-tabs .horizontal-tab-hidden {
   display: block;

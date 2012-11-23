@@ -11,6 +11,483 @@ function profiles_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'polls_profile';
+  $view->description = '';
+  $view->tag = 'profile';
+  $view->base_table = 'node';
+  $view->human_name = 'Polls for the profile';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+    'field_pw_poll_date' => 'field_pw_poll_date',
+    'php' => 'php',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_pw_poll_date' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'php' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['override'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  /* Relationship: Content: Votes */
+  $handler->display->display_options['relationships']['votingapi_vote']['id'] = 'votingapi_vote';
+  $handler->display->display_options['relationships']['votingapi_vote']['table'] = 'node';
+  $handler->display->display_options['relationships']['votingapi_vote']['field'] = 'votingapi_vote';
+  $handler->display->display_options['relationships']['votingapi_vote']['votingapi'] = array(
+    'value_type' => '',
+    'tag' => '',
+  );
+  $handler->display->display_options['relationships']['votingapi_vote']['current_user'] = 0;
+  /* Relationship: Votes: User */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'votingapi_vote';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['relationship'] = 'votingapi_vote';
+  /* Field: User: First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['label'] = '';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'title';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'poll-behavior';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+if(is_numeric(arg(1))){
+        $nid = arg(1);
+      }else{
+        $nid = arg(2);
+      }
+
+$sql = "SELECT entity_id, value FROM {votingapi_vote} WHERE entity_id=:nid AND uid=:uid";
+$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$data->_entity_properties[\'uid\']));
+$record = $result->fetchObject();
+
+if($record->value == 0){
+ echo t(\'yes\');
+}else if($record->value == 1){
+ echo t(\'no\');
+}else if($record->value == 2){
+ echo t(\'absent\');
+}else{
+ echo t(\'blank\');
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Sort criterion: Content: Date (field_pw_poll_date) */
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
+  /* Contextual filter: Votes: User */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'votingapi_vote';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['relationship'] = 'votingapi_vote';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pw_poll' => 'pw_poll',
+  );
+
+  /* Display: Last */
+  $handler = $view->new_display('block', 'Last', 'block_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'content-wrapper';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Voting behavior of [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['label'] = 'Info';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior. Sea te choro perfecto, per eu meis nonumy percipit.';
+  $handler->display->display_options['fields']['nothing_1']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing_1']['element_class'] = 'info-content element-hidden';
+  $handler->display->display_options['fields']['nothing_1']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['nothing_1']['element_label_class'] = 'info-title';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'ic-info';
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  /* Field: Content: Overview Chart */
+  $handler->display->display_options['fields']['field_pw_overview_chart']['id'] = 'field_pw_overview_chart';
+  $handler->display->display_options['fields']['field_pw_overview_chart']['table'] = 'field_data_field_pw_overview_chart';
+  $handler->display->display_options['fields']['field_pw_overview_chart']['field'] = 'field_pw_overview_chart';
+  $handler->display->display_options['fields']['field_pw_overview_chart']['label'] = '';
+  $handler->display->display_options['fields']['field_pw_overview_chart']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_overview_chart']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_pw_overview_chart']['element_wrapper_class'] = 'float-left';
+  $handler->display->display_options['fields']['field_pw_overview_chart']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_overview_chart']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_pw_overview_chart']['settings'] = array(
+    'image_style' => '',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_pw_overview_chart']['delta_offset'] = '0';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['label'] = '';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'push-bottom-s';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['php']['alter']['text'] = '[field_user_fname] [field_user_lname] voted with [php]';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'push-bottom-s';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+if(is_numeric(arg(1))){
+        $nid = arg(1);
+      }else{
+        $nid = arg(2);
+      }
+
+$sql = "SELECT entity_id, value FROM {votingapi_vote} WHERE entity_id=:nid AND uid=:uid";
+$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$data->_entity_properties[\'uid\']));
+$record = $result->fetchObject();
+
+if($record->value == 0){
+ echo t(\'yes\');
+}else if($record->value == 1){
+ echo t(\'no\');
+}else if($record->value == 2){
+ echo t(\'absent\');
+}else{
+ echo t(\'blank\');
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '155';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '155',
+  );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'link-poll';
+  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'Details to vote';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['block_description'] = 'Poll profile: Last poll';
+
+  /* Display: Archive */
+  $handler = $view->new_display('block', 'Archive', 'block');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Voting Archive of [field_user_fname] [field_user_lname] <a href="/print/polls/archive/[uid]" class="ic-print external">print</a></h3>';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['label'] = '';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'title';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'poll-behavior';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+if(is_numeric(arg(1))){
+        $nid = arg(1);
+      }else{
+        $nid = arg(2);
+      }
+
+$sql = "SELECT entity_id, value FROM {votingapi_vote} WHERE entity_id=:nid AND uid=:uid";
+$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$data->_entity_properties[\'uid\']));
+$record = $result->fetchObject();
+
+if($record->value == 0){
+ echo t(\'yes\');
+}else if($record->value == 1){
+ echo t(\'no\');
+}else if($record->value == 2){
+ echo t(\'absent\');
+}else{
+ echo t(\'blank\');
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  $handler->display->display_options['block_description'] = 'Poll profile: Archive';
+
+  /* Display: Print Page */
+  $handler = $view->new_display('page', 'Print Page', 'page_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['path'] = 'polls/archive/%';
+  $translatables['polls_profile'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Votes'),
+    t('Individual voter'),
+    t('All'),
+    t('Last'),
+    t('Voting behavior of [field_user_fname] [field_user_lname]'),
+    t('Info'),
+    t('Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior. Sea te choro perfecto, per eu meis nonumy percipit.'),
+    t('[field_user_fname] [field_user_lname] voted with [php]'),
+    t('Details to vote'),
+    t('Poll profile: Last poll'),
+    t('Archive'),
+    t('<h3>Voting Archive of [field_user_fname] [field_user_lname] <a href="/print/polls/archive/[uid]" class="ic-print external">print</a></h3>'),
+    t('Poll profile: Archive'),
+    t('Print Page'),
+  );
+  $export['polls_profile'] = $view;
+
+  $view = new view();
   $view->name = 'profile_list_rev';
   $view->description = '';
   $view->tag = 'default';
@@ -924,10 +1401,10 @@ function profiles_views_default_views() {
   $export['profile_questions_answers'] = $view;
 
   $view = new view();
-  $view->name = 'qa_link_counter';
+  $view->name = 'qa_counter_link';
   $view->description = '';
   $view->tag = 'default';
-  $view->base_table = 'comment';
+  $view->base_table = 'users';
   $view->human_name = 'Q&A Link and Counter';
   $view->core = 7;
   $view->api_version = '3.0';
@@ -935,169 +1412,89 @@ function profiles_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'bubble tiny';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: Comment: Content */
-  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['table'] = 'comment';
-  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
-  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['relationship'] = 'nid';
-  /* Field: Anchor: Ask a question */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Anchor: Ask a question';
-  $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Ask a Question';
-  $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = '#block-webform-client-block-17';
-  $handler->display->display_options['fields']['nothing_1']['element_type'] = 'span';
-  $handler->display->display_options['fields']['nothing_1']['element_class'] = 'form-submit big link-question';
-  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'center push-bottom-l';
-  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
   /* Field: Anchor: go to Q and A */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Anchor: go to Q and A';
   $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'go to Questions and Answers';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '#block-views-profile-questions-answers-block';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Field: User: Answers Give */
   $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['fields']['field_user_answers_give']['label'] = '';
   $handler->display->display_options['fields']['field_user_answers_give']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_answers_give']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_answers_give']['alter']['text'] = '[field_user_answers_give] answer(s)';
   $handler->display->display_options['fields']['field_user_answers_give']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['field_user_answers_give']['element_wrapper_class'] = 'small light';
   $handler->display->display_options['fields']['field_user_answers_give']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
-    'thousand_separator' => '',
+    'thousand_separator' => ' ',
     'prefix_suffix' => 0,
   );
   /* Field: User: Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['fields']['field_user_questions_get']['label'] = '';
   $handler->display->display_options['fields']['field_user_questions_get']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[field_user_questions_get] question(s), [field_user_answers_give]';
+  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[nothing]<br/>
+[field_user_questions_get] question(s), [field_user_answers_give]';
   $handler->display->display_options['fields']['field_user_questions_get']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_questions_get']['element_wrapper_class'] = 'bubble tiny';
   $handler->display->display_options['fields']['field_user_questions_get']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 0,
   );
-  /* Sort criterion: Comment: Post date */
+  /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'comment';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Field: Recipient (field_dialogue_recipient) */
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['relationship'] = 'nid';
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_argument_options']['user'] = TRUE;
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Comment: Approved */
+  /* Contextual filter: User: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: User: Active */
   $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'comment';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
-  /* Display: Q and A Counter and Link */
-  $handler = $view->new_display('block', 'Q and A Counter and Link', 'block');
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Anchor: go to Q and A */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Anchor: go to Q and A';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'go to Questions and Answers';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = '#block-views-profile-questions-answers-block';
-  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Field: User: Answers Give */
-  $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give']['relationship'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['fields']['field_user_answers_give']['label'] = '';
-  $handler->display->display_options['fields']['field_user_answers_give']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_answers_give']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_answers_give']['alter']['text'] = '[field_user_answers_give] answer(s)';
-  $handler->display->display_options['fields']['field_user_answers_give']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['field_user_answers_give']['element_wrapper_class'] = 'small light';
-  $handler->display->display_options['fields']['field_user_answers_give']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 0,
-  );
-  /* Field: User: Questions Get */
-  $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get']['relationship'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['fields']['field_user_questions_get']['label'] = '';
-  $handler->display->display_options['fields']['field_user_questions_get']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[field_user_questions_get] question(s), [field_user_answers_give]';
-  $handler->display->display_options['fields']['field_user_questions_get']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 0,
-  );
-  $translatables['qa_link_counter'] = array(
+  $translatables['qa_counter_link'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -1105,23 +1502,14 @@ function profiles_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('prev'),
-    t('next'),
-    t('last »'),
-    t('Content'),
-    t('User entity referenced from field_dialogue_recipient'),
-    t('Ask a Question'),
     t('go to Questions and Answers'),
     t('[field_user_answers_give] answer(s)'),
-    t('[field_user_questions_get] question(s), [field_user_answers_give]'),
+    t('[nothing]<br/>
+[field_user_questions_get] question(s), [field_user_answers_give]'),
     t('All'),
-    t('Q and A Counter and Link'),
+    t('Block'),
   );
-  $export['qa_link_counter'] = $view;
+  $export['qa_counter_link'] = $view;
 
   return $export;
 }

@@ -20,6 +20,20 @@ jQuery(document).ready(function() {
     }).mouseleave(function(){
         jQuery("#nice-menu-1 li.active-invisible").removeClass('active-invisible').addClass('active-trail');
     });
+
+
+////// Info icon
+
+    jQuery(".info-title").click(function(){
+        jQuery(".info-title + .info-content").fadeToggle("slow", "linear");
+    });
+
+
+////// Print icon
+
+    jQuery(".external").click(function(){
+        jQuery(this).attr('target', '_blank');
+    });
     
     
 ////// Scroll to "Questions and Answers"

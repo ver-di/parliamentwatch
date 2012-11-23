@@ -3,9 +3,15 @@
 .field-group-htab .content-wrapper {
     padding: 0 10px;
 }
-
+.field-group-htab h4,
+.field-group-htab h4 a {
+    font-family: 'Times New Roman',Georgia,serif;
+    font-size: 16px;
+    margin-bottom: 0;
+    font-weight: normal;
+}
 .view-id-polls_profile .view-header {
-    padding: 0 10px;
+    padding: 0 10px 0.8em;
 }
 .view-id-polls_profile table {
     width: 100%;

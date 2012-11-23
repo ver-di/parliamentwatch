@@ -252,6 +252,38 @@ a.read-codex {
 a.read-codex:hover {
     background-position: -528px -2140px;
 }
+.ic-print a,
+a.ic-print {
+    text-indent: -5000em;
+    background-position: -480px -502px;
+    display: inline-block;
+    width: 16px;
+    height: 18px;
+    vertical-align: middle;
+    margin: 0 5px;
+}
+.ic-info {
+    position: relative;
+    display: inline;
+}
+.ic-info .info-title {
+    text-indent: -5000em;
+    background-position: -640px -41px;
+    display: inline-block;
+    width: 19px;
+    height: 18px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+.ic-info .info-content {
+    position: absolute;
+    background: #ccc;
+    color: #fff;
+    padding: 20px;
+    right: 30px;
+    top: -3px;
+    width: 260px;
+}
 
 .ajax-progress {
     display: inline-block;
@@ -1511,7 +1543,7 @@ form .webform-component-checkboxes .description {
 .bubble {
     min-height: 20px;
     padding-left: 34px;
-    background-position: -650px -2849px;
+    background-position: -651px -2847px;
 }
 .bubble.tiny {
     min-height: auto;
@@ -1648,6 +1680,9 @@ a.link-committees,
 a.link-poll,
 .link-report a,
 a.link-report,
+.ic-print a,
+a.ic-print,
+.ic-info .info-title,
 blockquote:before,
 .collapse-processed .fieldset-title {
     background-image: url("../images/sprite.png");
