@@ -112,7 +112,7 @@ function pw_blocks_get_accordian_data($uid = NULL, $tid = NULL, $vid = NULL){
   
 }
 
-function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
+function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL, $height = 200, $width = 200){
   $output = '';
   $charts = array();
   $node = node_load($nid);
@@ -131,6 +131,8 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
         '#type'=>CHART_TYPE_BAR_V,
         '#chart_id'=> 'overview'.$nid,
         '#size' => chart_size(200, 200),
+        '#chart_id'=>$type,
+        '#size' => chart_size($width, $height),
         '#adjust_resolution' => TRUE,
         '#data_colors' => $colors,
         //'#legends' => $options['legends'],
@@ -216,7 +218,7 @@ function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL){
         '#title'=> '',
         '#type'=>CHART_TYPE_BAR_V,
         '#chart_id'=>$party['id'],
-        '#size' => chart_size(200, 200),
+        '#size' => chart_size($width, $height),
         '#adjust_resolution' => TRUE,
         '#mixed_axis_labels' => array(
         CHART_AXIS_Y_LEFT => array(),
