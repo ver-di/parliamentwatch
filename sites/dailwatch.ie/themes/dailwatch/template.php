@@ -15,7 +15,9 @@ function dailwatch_qt_quicktabs_tabset($vars) {
       if ($key == $vars['tabset']['#options']['active']) {
         $item['class'] = array('active');
       }
-      $item['data'] = "<span>".drupal_render($tab)."</span>";
+      $tab['#title'] = "<span>".$tab['#title']."</span>";
+      $tab['#options']['html'] = TRUE;
+      $item['data'] = drupal_render($tab);
   
       $variables['items'][] = $item;
     }
