@@ -21,7 +21,7 @@ function pw_poll_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Show voting results in detail',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'poll_votes_per_party_block_ds',
     ),

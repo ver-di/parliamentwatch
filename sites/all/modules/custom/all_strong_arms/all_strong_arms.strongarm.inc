@@ -56,7 +56,7 @@ function all_strong_arms_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cache';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['cache'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1029,6 +1029,9 @@ views-exposed-form-profile-list-solr-constituency';
     'group_polls_party|node|pw_poll|default' => TRUE,
     'group_fieldset_polls_per_party|node|pw_poll|default' => FALSE,
     'group_question_forms|user|user|default' => TRUE,
+    'group_user_polls|user|user|default' => FALSE,
+    'group_user_polls_last|user|user|default' => FALSE,
+    'group_user_polls_archive|user|user|default' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -1724,7 +1727,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_compression';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['page_compression'] = $strongarm;
 
   $strongarm = new stdClass();

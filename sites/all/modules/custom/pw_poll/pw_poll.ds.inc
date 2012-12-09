@@ -17,17 +17,26 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'pw_poll';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'poll_legend_block' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'poll_votes_per_party_block_ds' => array(
+    'poll_details' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
-    'pw_poll_votes_total' => array(
+    'poll_legend_block' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'legend',
+      ),
+    ),
+    'poll_votes_per_party_block_ds' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
@@ -60,7 +69,7 @@ function pw_poll_ds_field_settings_info() {
     'field_pw_views_reference' => array(
       'ft' => array(
         'func' => 'theme_ds_field_expert',
-        'lb' => 'How did your TDs vote',
+        'lb' => 'How did your constituency representatives vote?',
         'lb-el' => 'h3',
         'lb-col' => TRUE,
       ),
@@ -168,20 +177,20 @@ function pw_poll_ds_layout_settings_info() {
     'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'pw_poll_votes_total',
-        1 => 'poll_votes_per_party_block_ds',
-        2 => 'poll_legend_block',
-        3 => 'group_fieldset_polls_per_party',
+        0 => 'poll_votes_per_party_block_ds',
+        1 => 'poll_details',
+        2 => 'group_fieldset_polls_per_party',
+        3 => 'poll_legend_block',
         4 => 'field_pw_views_reference',
         5 => 'body',
         6 => 'comments',
       ),
     ),
     'fields' => array(
-      'pw_poll_votes_total' => 'ds_content',
       'poll_votes_per_party_block_ds' => 'ds_content',
-      'poll_legend_block' => 'ds_content',
+      'poll_details' => 'ds_content',
       'group_fieldset_polls_per_party' => 'ds_content',
+      'poll_legend_block' => 'ds_content',
       'field_pw_views_reference' => 'ds_content',
       'body' => 'ds_content',
       'comments' => 'ds_content',

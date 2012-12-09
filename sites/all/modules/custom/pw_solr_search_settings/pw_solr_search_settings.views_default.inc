@@ -1353,7 +1353,7 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['fields']['php']['field'] = 'php';
   $handler->display->display_options['fields']['php']['label'] = '';
   $handler->display->display_options['fields']['php']['element_type'] = 'span';
-  $handler->display->display_options['fields']['php']['element_class'] = '[php]';
+  $handler->display->display_options['fields']['php']['element_class'] = 'block [php]';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'poll-behavior';
@@ -1446,7 +1446,7 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_constituency_field_constituency_area_codes_name']['field'] = 'field_user_constituency_field_constituency_area_codes_name';
   $handler->display->display_options['filters']['field_user_constituency_field_constituency_area_codes_name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_constituency_field_constituency_area_codes_name']['expose']['operator_id'] = 'field_user_constituency_field_constituency_area_codes_name_op';
-  $handler->display->display_options['filters']['field_user_constituency_field_constituency_area_codes_name']['expose']['label'] = 'Constituency or Area';
+  $handler->display->display_options['filters']['field_user_constituency_field_constituency_area_codes_name']['expose']['label'] = 'Constituency or Area ';
   $handler->display->display_options['filters']['field_user_constituency_field_constituency_area_codes_name']['expose']['description'] = 'Find out how the TDs from your constituency voted, by filling in your constituency or area:';
   $handler->display->display_options['filters']['field_user_constituency_field_constituency_area_codes_name']['expose']['operator'] = 'field_user_constituency_field_constituency_area_codes_name_op';
   $handler->display->display_options['filters']['field_user_constituency_field_constituency_area_codes_name']['expose']['identifier'] = 'field_user_constituency_field_constituency_area_codes_name';
@@ -1650,10 +1650,11 @@ if($record->value == 0){
     t('<h4>[field_user_fname] [field_user_lname], [field_user_party]</h4>'),
     t('<h4>[field_user_fname] [field_user_lname]</h4>'),
     t('[field_user_questions_get], [field_user_answers_give] answer(s)'),
-    t('Constituency or Area'),
+    t('Constituency or Area '),
     t('Find out how the TDs from your constituency voted, by filling in your constituency or area:'),
     t('Profiles list constituency search page'),
     t('No results found'),
+    t('Constituency or Area'),
   );
   $export['profile_list_solr'] = $view;
 

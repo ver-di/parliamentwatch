@@ -135,14 +135,12 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-if(is_numeric(arg(1))){
-        $nid = arg(1);
-      }else{
-        $nid = arg(2);
-      }
 
+$uid = arg(2);
+
+$nid = $row->nid;
 $sql = "SELECT entity_id, value FROM {votingapi_vote} WHERE entity_id=:nid AND uid=:uid";
-$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$data->_entity_properties[\'uid\']));
+$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$uid));
 $record = $result->fetchObject();
 
 if($record->value == 0){
@@ -158,6 +156,15 @@ if($record->value == 0){
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   /* Sort criterion: Content: Date (field_pw_poll_date) */
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
@@ -190,7 +197,7 @@ if($record->value == 0){
   );
 
   /* Display: Last */
-  $handler = $view->new_display('block', 'Last', 'block_1');
+  $handler = $view->new_display('block', 'Last', 'last');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -207,6 +214,17 @@ if($record->value == 0){
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['label'] = '';
+  $handler->display->display_options['fields']['title_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '600';
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -225,6 +243,15 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -239,6 +266,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['label'] = 'Info';
+  $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior. Sea te choro perfecto, per eu meis nonumy percipit.';
   $handler->display->display_options['fields']['nothing_1']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_class'] = 'info-content element-hidden';
@@ -248,21 +276,34 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'ic-info';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
-  /* Field: Content: Overview Chart */
-  $handler->display->display_options['fields']['field_pw_overview_chart']['id'] = 'field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['table'] = 'field_data_field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['field'] = 'field_pw_overview_chart';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['label'] = '';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_wrapper_class'] = 'float-left';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_overview_chart']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_pw_overview_chart']['settings'] = array(
-    'image_style' => '',
-    'image_link' => 'content',
-  );
-  $handler->display->display_options['fields']['field_pw_overview_chart']['delta_offset'] = '0';
+  /* Field: Global PHP: Overview Chart */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Global PHP: Overview Chart';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['php_1']['alter']['text'] = '[php_1]
+<div class="poll-behavior"><span class="icon yes"></span>yes</div>
+<div class="poll-behavior"><span class="icon no"></span>no</div>
+<div class="poll-behavior"><span class="icon absent"></span>absent</div>
+<div class="poll-behavior"><span class="icon blank"></span>blank</div>
+
+';
+  $handler->display->display_options['fields']['php_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['php_1']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['php_1']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['php_1']['alter']['alt'] = '[title_1]';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'float-left';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+print pw_blocks_get_chart($row->nid,\'total\', NULL, 105,128);
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -291,27 +332,28 @@ if($record->value == 0){
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['php']['alter']['text'] = '[field_user_fname] [field_user_lname] voted with [php]';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'push-bottom-s';
-  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-if(is_numeric(arg(1))){
-        $nid = arg(1);
-      }else{
-        $nid = arg(2);
-      }
-
+  /* Field: Global PHP: User Vote */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Global PHP: User Vote';
+  $handler->display->display_options['fields']['php_2']['label'] = '';
+  $handler->display->display_options['fields']['php_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['php_2']['alter']['text'] = '[field_user_fname] [field_user_lname] voted with <span class="inline [php_2]">[php_2]</span>';
+  $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_2']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php_2']['element_wrapper_class'] = 'poll-behavior push-bottom-s';
+  $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php
+if(arg(1) == \'user\'){
+$uid = arg(2);
+}else{
+$uid = arg(1);
+}
+$nid = $row->nid;
 $sql = "SELECT entity_id, value FROM {votingapi_vote} WHERE entity_id=:nid AND uid=:uid";
-$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$data->_entity_properties[\'uid\']));
+$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$uid));
 $record = $result->fetchObject();
 
 if($record->value == 0){
@@ -325,8 +367,8 @@ if($record->value == 0){
 }
 
 ?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -335,6 +377,8 @@ if($record->value == 0){
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '155';
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'description';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
@@ -362,7 +406,7 @@ if($record->value == 0){
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Voting Archive of [field_user_fname] [field_user_lname] <a href="/print/polls/archive/[uid]" class="ic-print external">print</a></h3>';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Voting Archive of [field_user_fname] [field_user_lname] <a href="/print/polls/archive/[uid]" class="ic-print external" title="print voting archive">print</a></h3>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -418,20 +462,20 @@ if($record->value == 0){
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
   $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['php']['alter']['text'] = '<span class="poll-behavior"><span class="block [php]">[php]</span></span>';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'poll-behavior';
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-if(is_numeric(arg(1))){
-        $nid = arg(1);
-      }else{
-        $nid = arg(2);
-      }
-
+if(arg(1) == \'user\'){
+$uid = arg(2);
+}else{
+$uid = arg(1);
+}
+$nid = $row->nid;
 $sql = "SELECT entity_id, value FROM {votingapi_vote} WHERE entity_id=:nid AND uid=:uid";
-$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$data->_entity_properties[\'uid\']));
+$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$uid));
 $record = $result->fetchObject();
 
 if($record->value == 0){
@@ -456,11 +500,109 @@ if($record->value == 0){
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['block_description'] = 'Poll profile: Archive';
 
   /* Display: Print Page */
   $handler = $view->new_display('page', 'Print Page', 'page_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
+  /* Field: User: Last name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['label'] = '';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'title';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Field: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['php']['alter']['text'] = '<span class="poll-behavior"><span class="block [php]">[php]</span></span>';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+
+$uid = arg(2);
+
+$nid = $row->nid;
+$sql = "SELECT entity_id, value FROM {votingapi_vote} WHERE entity_id=:nid AND uid=:uid";
+$result  = db_query($sql,array(\':nid\'=>$nid,\':uid\'=>$uid));
+$record = $result->fetchObject();
+
+if($record->value == 0){
+ echo t(\'yes\');
+}else if($record->value == 1){
+ echo t(\'no\');
+}else if($record->value == 2){
+ echo t(\'absent\');
+}else{
+ echo t(\'blank\');
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['path'] = 'polls/archive/%';
   $translatables['polls_profile'] = array(
     t('Master'),
@@ -477,11 +619,20 @@ if($record->value == 0){
     t('Voting behavior of [field_user_fname] [field_user_lname]'),
     t('Info'),
     t('Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior. Sea te choro perfecto, per eu meis nonumy percipit.'),
-    t('[field_user_fname] [field_user_lname] voted with [php]'),
+    t('[php_1]
+<div class="poll-behavior"><span class="icon yes"></span>yes</div>
+<div class="poll-behavior"><span class="icon no"></span>no</div>
+<div class="poll-behavior"><span class="icon absent"></span>absent</div>
+<div class="poll-behavior"><span class="icon blank"></span>blank</div>
+
+'),
+    t('[title_1]'),
+    t('[field_user_fname] [field_user_lname] voted with <span class="inline [php_2]">[php_2]</span>'),
     t('Details to vote'),
     t('Poll profile: Last poll'),
     t('Archive'),
-    t('<h3>Voting Archive of [field_user_fname] [field_user_lname] <a href="/print/polls/archive/[uid]" class="ic-print external">print</a></h3>'),
+    t('<h3>Voting Archive of [field_user_fname] [field_user_lname] <a href="/print/polls/archive/[uid]" class="ic-print external" title="print voting archive">print</a></h3>'),
+    t('<span class="poll-behavior"><span class="block [php]">[php]</span></span>'),
     t('Poll profile: Archive'),
     t('Print Page'),
   );
@@ -974,8 +1125,10 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['pager']['options']['tags']['first'] = 'first';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
@@ -1370,10 +1523,10 @@ if($record->value == 0){
     t('Items per page'),
     t('- All -'),
     t('Offset'),
-    t('« first'),
-    t('zurück'),
-    t('weiter'),
-    t('last »'),
+    t('first'),
+    t('prev'),
+    t('next'),
+    t('last'),
     t('Comments'),
     t('content author'),
     t('User entity referenced from field_dialogue_recipient'),
@@ -1395,6 +1548,10 @@ if($record->value == 0){
     t('All'),
     t('Profile'),
     t('Frontpage'),
+    t('« first'),
+    t('zurück'),
+    t('weiter'),
+    t('last »'),
     t('Colorbox'),
     t('[field_dialogue_sender_name]<br/><span class="subline">[created]</span>'),
   );

@@ -476,7 +476,7 @@ function pw_poll_field_default_fields() {
       'indexes' => array(),
       'module' => 'date',
       'settings' => array(
-        'cache_count' => '4',
+        'cache_count' => '1',
         'cache_enabled' => 1,
         'granularity' => array(
           'day' => 'day',
@@ -506,9 +506,16 @@ function pw_poll_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '21',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => 21,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -539,7 +546,7 @@ function pw_poll_field_default_fields() {
           'input_format_custom' => '',
           'label_position' => 'above',
           'text_parts' => array(),
-          'year_range' => '-3:+1',
+          'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
         'weight' => '1',

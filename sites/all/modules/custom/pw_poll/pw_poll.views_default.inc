@@ -47,6 +47,15 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -60,25 +69,13 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Field: Content: Parmliament */
-  $handler->display->display_options['fields']['field_pw_parmliament']['id'] = 'field_pw_parmliament';
-  $handler->display->display_options['fields']['field_pw_parmliament']['table'] = 'field_data_field_pw_parmliament';
-  $handler->display->display_options['fields']['field_pw_parmliament']['field'] = 'field_pw_parmliament';
-  $handler->display->display_options['fields']['field_pw_parmliament']['label'] = '';
-  $handler->display->display_options['fields']['field_pw_parmliament']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_pw_parmliament']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_parmliament']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_parmliament']['type'] = 'i18n_taxonomy_term_reference_plain';
   /* Field: Content: Date */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
-  $handler->display->display_options['fields']['field_pw_poll_date']['label'] = 'Vote from';
-  $handler->display->display_options['fields']['field_pw_poll_date']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['alter']['text'] = '[field_pw_poll_date], [field_pw_parmliament]';
+  $handler->display->display_options['fields']['field_pw_poll_date']['label'] = '';
+  $handler->display->display_options['fields']['field_pw_poll_date']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pw_poll_date']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'light';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
     'format_type' => 'short',
@@ -87,13 +84,34 @@ function pw_poll_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Field: Content: Parmliament */
+  $handler->display->display_options['fields']['field_pw_parmliament']['id'] = 'field_pw_parmliament';
+  $handler->display->display_options['fields']['field_pw_parmliament']['table'] = 'field_data_field_pw_parmliament';
+  $handler->display->display_options['fields']['field_pw_parmliament']['field'] = 'field_pw_parmliament';
+  $handler->display->display_options['fields']['field_pw_parmliament']['label'] = 'Vote from';
+  $handler->display->display_options['fields']['field_pw_parmliament']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_pw_parmliament']['alter']['text'] = '[field_pw_poll_date], [field_pw_parmliament]';
+  $handler->display->display_options['fields']['field_pw_parmliament']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_parmliament']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_pw_parmliament']['element_wrapper_class'] = 'light';
+  $handler->display->display_options['fields']['field_pw_parmliament']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_parmliament']['empty'] = '[field_pw_poll_date]';
+  $handler->display->display_options['fields']['field_pw_parmliament']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_pw_parmliament']['type'] = 'i18n_taxonomy_term_reference_plain';
   /* Field: Global PHP: Overview Chart */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
   $handler->display->display_options['fields']['php']['ui_name'] = 'Global PHP: Overview Chart';
   $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['php']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['php']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['php']['alter']['alt'] = '[title]';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'float-left';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 print pw_blocks_get_chart($row->nid,\'total\');
@@ -141,21 +159,6 @@ print pw_blocks_get_chart($row->nid,\'total\');
   $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
   $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
   /* Sort criterion: Content: Date (field_pw_poll_date) */
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
@@ -163,6 +166,12 @@ print pw_blocks_get_chart($row->nid,\'total\');
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['expose']['label'] = 'Date';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -203,6 +212,119 @@ print pw_blocks_get_chart($row->nid,\'total\');
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
+
+  /* Display: Details */
+  $handler = $view->new_display('block', 'Details', 'details');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Display for the node page';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Date */
+  $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
+  $handler->display->display_options['fields']['field_pw_poll_date']['label'] = '';
+  $handler->display->display_options['fields']['field_pw_poll_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Parmliament */
+  $handler->display->display_options['fields']['field_pw_parmliament']['id'] = 'field_pw_parmliament';
+  $handler->display->display_options['fields']['field_pw_parmliament']['table'] = 'field_data_field_pw_parmliament';
+  $handler->display->display_options['fields']['field_pw_parmliament']['field'] = 'field_pw_parmliament';
+  $handler->display->display_options['fields']['field_pw_parmliament']['label'] = 'Vote from';
+  $handler->display->display_options['fields']['field_pw_parmliament']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_pw_parmliament']['alter']['text'] = '[field_pw_poll_date], [field_pw_parmliament]';
+  $handler->display->display_options['fields']['field_pw_parmliament']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_parmliament']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_pw_parmliament']['element_wrapper_class'] = 'light';
+  $handler->display->display_options['fields']['field_pw_parmliament']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_parmliament']['empty'] = '[field_pw_poll_date]';
+  $handler->display->display_options['fields']['field_pw_parmliament']['type'] = 'i18n_taxonomy_term_reference_plain';
+  /* Field: Content: Comment count */
+  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['element_type'] = 'div';
+  $handler->display->display_options['fields']['comment_count']['element_class'] = 'comment-count push-bottom-l clear-both';
+  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['empty'] = 'no comments yet';
+  $handler->display->display_options['fields']['comment_count']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['comment_count']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['separator'] = '';
+  $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
+  $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
+  /* Field: Global PHP: Overview Chart */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Global PHP: Overview Chart';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'float-left';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+print pw_blocks_get_chart($row->nid,\'total\');
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '320';
+  $handler->display->display_options['fields']['body']['element_type'] = 'p';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '320',
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['block_description'] = 'Poll Details';
   $translatables['pw_polls_list'] = array(
     t('Master'),
     t('Votes'),
@@ -221,13 +343,19 @@ print pw_blocks_get_chart($row->nid,\'total\');
     t('last »'),
     t('Vote from'),
     t('[field_pw_poll_date], [field_pw_parmliament]'),
+    t('[field_pw_poll_date]'),
+    t('[title]'),
     t('Details to vote'),
     t('no comments yet'),
     t('.'),
-    t('Title'),
     t('Date'),
+    t('Title'),
     t('Page'),
     t('Frontpage'),
+    t('Details'),
+    t('Display for the node page'),
+    t('All'),
+    t('Poll Details'),
   );
   $export['pw_polls_list'] = $view;
 

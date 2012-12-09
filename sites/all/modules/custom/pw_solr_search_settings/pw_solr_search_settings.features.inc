@@ -228,9 +228,14 @@ function pw_solr_search_settings_default_search_api_index() {
           "status" : 1,
           "weight" : "0",
           "settings" : { "fields" : {
+              "field_user_first_letter_lname" : true,
               "field_user_fname" : true,
               "field_user_lname" : true,
-              "field_user_first_letter_lname" : true
+              "field_user_constituency:field_constituency_area_codes" : true,
+              "field_user_constituency:field_constituency_area_codes:name" : true,
+              "field_user_constituency:field_voc_constituency_zip:name" : true,
+              "field_user_constituency:field_voc_constituency_zip:field_constituency_area_codes" : true,
+              "field_user_constituency:field_voc_constituency_zip:field_voc_constituency_zip" : true
             }
           }
         },
@@ -239,9 +244,9 @@ function pw_solr_search_settings_default_search_api_index() {
           "weight" : "10",
           "settings" : {
             "fields" : {
+              "field_user_first_letter_lname" : true,
               "field_user_fname" : true,
-              "field_user_lname" : true,
-              "field_user_first_letter_lname" : true
+              "field_user_lname" : true
             },
             "title" : 0,
             "alt" : 1,
@@ -253,9 +258,9 @@ function pw_solr_search_settings_default_search_api_index() {
           "weight" : "20",
           "settings" : {
             "fields" : {
+              "field_user_first_letter_lname" : true,
               "field_user_fname" : true,
-              "field_user_lname" : true,
-              "field_user_first_letter_lname" : true
+              "field_user_lname" : true
             },
             "spaces" : "[^[:alnum:]]",
             "ignorable" : "[\\u0027]"
@@ -266,9 +271,9 @@ function pw_solr_search_settings_default_search_api_index() {
           "weight" : "30",
           "settings" : {
             "fields" : {
+              "field_user_first_letter_lname" : true,
               "field_user_fname" : true,
-              "field_user_lname" : true,
-              "field_user_first_letter_lname" : true
+              "field_user_lname" : true
             },
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
@@ -303,7 +308,7 @@ function pw_solr_search_settings_default_search_api_server() {
       "retrieve_data" : 0,
       "highlight_data" : 0
     },
-    "enabled" : "1",
+    "enabled" : "0",
     "rdf_mapping" : []
   }');
   return $items;
