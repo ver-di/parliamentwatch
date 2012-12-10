@@ -1,6 +1,14 @@
 /* user page */
 
-.field-group-htab .content-wrapper {
+div.horizontal-tabs .field-item.even,
+div.horizontal-tabs tr.odd {
+    background: none repeat scroll 0 0 #DBDBDB;
+}
+div.horizontal-tabs .view-content {
+    max-height: 300px;
+    overflow-y: auto;
+}
+#user_user_full_group_user_polls_last .fieldset-wrapper {
     padding: 0 10px;
 }
 .field-group-htab h4,
@@ -18,6 +26,9 @@
 }
 .view-id-polls_profile td {
     padding: 5px 10px;
+}
+#block-views-polls-profile-last .description {
+    font-size: 12px;
 }
 
 

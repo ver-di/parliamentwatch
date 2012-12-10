@@ -9,10 +9,6 @@ div.horizontal-tabs {
   position: relative; /* IE6/7 */
   font-size: 11px;
 }
-div.horizontal-tabs div.even,
-div.horizontal-tabs tr.odd {
-  background: #dbdbdb;
-}
 div.horizontal-tabs .label-inline {
     display: block;
     float: left; /* LTR */
