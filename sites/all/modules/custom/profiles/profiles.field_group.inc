@@ -243,5 +243,83 @@ function profiles_field_group_info() {
   );
   $export['group_user_name|user|user|user_search'] = $field_group;
 
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_polls_archive|user|user|default';
+  $field_group->group_name = 'group_user_polls_archive';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_user_polls';
+  $field_group->data = array(
+    'label' => 'Polls archive',
+    'weight' => '32',
+    'children' => array(
+      0 => 'polls_archive_view',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_polls_archive|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_polls_last|user|user|default';
+  $field_group->group_name = 'group_user_polls_last';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_user_polls';
+  $field_group->data = array(
+    'label' => 'Last poll',
+    'weight' => '31',
+    'children' => array(
+      0 => 'polls_profile_last',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_polls_last|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_polls|user|user|default';
+  $field_group->group_name = 'group_user_polls';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Polls',
+    'weight' => '8',
+    'children' => array(
+      0 => 'group_user_polls_last',
+      1 => 'group_user_polls_archive',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_polls|user|user|default'] = $field_group;
+
   return $export;
 }
