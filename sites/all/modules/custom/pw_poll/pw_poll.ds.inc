@@ -116,20 +116,6 @@ function pw_poll_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'poll_details';
-  $ds_field->label = 'Poll Details';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->properties = array(
-    'block' => 'views|pw_polls_list-details',
-    'block_render' => '1',
-  );
-  $export['poll_details'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
   $ds_field->field = 'poll_legend_block';
   $ds_field->label = 'Poll legend block';
   $ds_field->field_type = 6;
@@ -155,34 +141,6 @@ function pw_poll_ds_custom_fields_info() {
     'block_render' => '3',
   );
   $export['poll_votes_per_party_block_ds'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'polls_archive_view';
-  $ds_field->label = 'Polls archive view';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'user' => 'user',
-  );
-  $ds_field->properties = array(
-    'block' => 'views|polls_profile-block',
-    'block_render' => '1',
-  );
-  $export['polls_archive_view'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'polls_profile_last';
-  $ds_field->label = 'Polls profile last';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'user' => 'user',
-  );
-  $ds_field->properties = array(
-    'block' => 'views|polls_profile-last',
-    'block_render' => '1',
-  );
-  $export['polls_profile_last'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;

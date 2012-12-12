@@ -234,20 +234,6 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'poll_details';
-  $ds_field->label = 'Poll Details';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->properties = array(
-    'block' => 'views|pw_polls_list-details',
-    'block_render' => '1',
-  );
-  $export['poll_details'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
   $ds_field->field = 'polls_archive_view';
   $ds_field->label = 'Polls archive view';
   $ds_field->field_type = 6;
