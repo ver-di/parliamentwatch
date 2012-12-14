@@ -425,6 +425,7 @@ h1#page-title {
     border-bottom: 1px dotted #f63;
     padding-bottom: 15px !important;
     margin-bottom: 26px !important;
+    position: relative;
 }
 .form-item-pw-search-type {
     float: left;
@@ -1414,11 +1415,19 @@ form .webform-component-checkboxes .description {
 }
 .answer {
     padding: 25px 24px;
+    position: relative;
 }
 .comment.answer .bg-white {
     margin-left: -24px;
     padding: 2px 24px;
     width: 100%;
+}
+.view-profile-questions-answers .views-row {
+    position: relative;
+}
+
+.view-mode-full .view-profile-questions-answers .sharethis-wrapper {
+	top: 2em;
 }
 
 
@@ -1498,6 +1507,51 @@ form .webform-component-checkboxes .description {
     padding: 0;
     width: 106px;
 }
+
+
+/* /////////////////////////// Share this /////////////////// */
+
+.sharethis-wrapper,
+.st_sharethis_hcount {
+	padding: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80px;
+	text-align: right;
+}
+.view-mode-full .sharethis-wrapper {
+    top: 3px;
+    right: 10px;
+}
+.add-sharethis {
+    position: relative;
+}
+.stMainServices.st-sharethis-counter {
+	background: url("../images/sprite.png") no-repeat scroll -681px 0px transparent !important;
+	width: 15px;
+	height: 15px;
+}
+.stButton .st-sharethis-counter {
+    width: 22px !important;
+}
+.stButton .stArrow {
+    background: transparent !important;
+}
+.stButton .stHBubble {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.stButton .stButton_gradient {
+    background: transparent !important;
+    border: 0 !important;
+}
+.sharethis-buttons + h1,
+.sharethis-buttons + h2,
+.sharethis-buttons + h3 {
+    margin-right: 80px;
+}
+
 
 /* /////////////////////////// RSS /////////////////// */
 
