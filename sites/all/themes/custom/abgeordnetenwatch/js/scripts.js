@@ -1,5 +1,15 @@
 jQuery(document).ready(function() {
 
+////// add a sharethis link to an anchor
+
+jQuery('.add-sharethis').each(function (i) {
+
+    var st_url = location.protocol + '//'+location.host+location.pathname + '#' + jQuery(this).closest('div').attr('id');
+    
+    jQuery(this).append('<span class="st_sharethis_hcount" onhover="false" st_url="' + st_url + '" displayText="ShareThis"></span><script type="text/javascript">var switchTo5x=false;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher: "d6866f3b-c520-4964-b020-748c260ef1e5"});</script>');
+
+});
+
 //// Report Link
 
    jQuery("a.report_message").click(function () {
