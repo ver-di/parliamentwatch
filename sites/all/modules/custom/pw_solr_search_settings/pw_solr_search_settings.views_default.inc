@@ -547,6 +547,7 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'search_api_index_pw_user_solr';
   $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['label'] = '';
+  $handler->display->display_options['fields']['field_user_questions_get']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[field_user_questions_get] question(s)';
   $handler->display->display_options['fields']['field_user_questions_get']['element_label_colon'] = FALSE;
@@ -563,9 +564,10 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give']['label'] = '';
   $handler->display->display_options['fields']['field_user_answers_give']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_answers_give']['alter']['text'] = '[field_user_answers_give] answer(s)';
+  $handler->display->display_options['fields']['field_user_answers_give']['alter']['text'] = '[field_user_questions_get], [field_user_answers_give] answer(s)';
   $handler->display->display_options['fields']['field_user_answers_give']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_answers_give']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_answers_give']['empty'] = '[field_user_questions_get]';
   $handler->display->display_options['fields']['field_user_answers_give']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_answers_give']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
@@ -1634,9 +1636,11 @@ if($record->value == 0){
     t('All'),
     t('user_first_letter_lname'),
     t('Profiles list parliament'),
-    t('[field_user_answers_give] answer(s)'),
+    t('[field_user_questions_get], [field_user_answers_give] answer(s)'),
+    t('[field_user_questions_get]'),
     t('Profile list commitees'),
     t('[field_user_questions_get] question(s),'),
+    t('[field_user_answers_give] answer(s)'),
     t('User Search'),
     t('Search Politicians'),
     t('Search by first or last name'),
@@ -1649,7 +1653,6 @@ if($record->value == 0){
     t('<h4>[field_user_fname]'),
     t('<h4>[field_user_fname] [field_user_lname], [field_user_party]</h4>'),
     t('<h4>[field_user_fname] [field_user_lname]</h4>'),
-    t('[field_user_questions_get], [field_user_answers_give] answer(s)'),
     t('Constituency or Area '),
     t('Find out how the TDs from your constituency voted, by filling in your constituency or area:'),
     t('Profiles list constituency search page'),
