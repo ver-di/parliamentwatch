@@ -57,7 +57,13 @@ function pw_poll_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '5',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '18',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -135,7 +141,13 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '21',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '22',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -228,7 +240,13 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '18',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -335,7 +353,13 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '22',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '23',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -408,7 +432,13 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '19',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '20',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -508,7 +538,17 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
+<<<<<<< HEAD
           'weight' => '21',
+=======
+          'weight' => '23',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '24',
+>>>>>>> add sharethis to polls
         ),
         'teaser' => array(
           'label' => 'above',
@@ -589,7 +629,13 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '20',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '21',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -698,7 +744,14 @@ function pw_poll_field_default_fields() {
           'module' => 'viewfield',
           'settings' => array(),
           'type' => 'viewfield_default',
-          'weight' => '3',
+          'weight' => '4',
+        ),
+        'full' => array(
+          'label' => 'above',
+          'module' => 'viewfield',
+          'settings' => array(),
+          'type' => 'viewfield_default',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',

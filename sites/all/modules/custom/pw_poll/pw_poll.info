@@ -28,6 +28,7 @@ features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[ds_field_settings][] = node|pw_poll|default
+features[ds_field_settings][] = node|pw_poll|full
 features[ds_field_settings][] = node|pw_poll|teaser
 features[ds_fields][] = poll_details
 features[ds_fields][] = poll_legend_block
