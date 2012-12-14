@@ -1145,6 +1145,17 @@ if($record->value == 0){
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
+  /* Field: comment/answer id for sharethis */
+  $handler->display->display_options['fields']['cid']['id'] = 'cid';
+  $handler->display->display_options['fields']['cid']['table'] = 'comment';
+  $handler->display->display_options['fields']['cid']['field'] = 'cid';
+  $handler->display->display_options['fields']['cid']['relationship'] = 'cid';
+  $handler->display->display_options['fields']['cid']['ui_name'] = 'comment/answer id for sharethis';
+  $handler->display->display_options['fields']['cid']['label'] = '';
+  $handler->display->display_options['fields']['cid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['cid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['cid']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['cid']['link_to_comment'] = FALSE;
   /* Field: | question start */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -1219,7 +1230,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = '| answer start';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="comment answer clearfix">';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="comment answer clearfix" id="answer-[cid]">';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
   /* Field: User: Profile picture */
@@ -1292,10 +1303,11 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '</div>';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
-  /* Field: Global: Custom text */
+  /* Field: to top link */
   $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
   $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_4']['ui_name'] = 'to top link';
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '<div class="anchor-to-top clearfix"><a href="#page">to the top</a></div>';
   $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
@@ -1537,7 +1549,7 @@ if($record->value == 0){
 '),
     t('anonymous<br/><span class="subline">[created]</span>'),
     t('</div>'),
-    t('<div class="comment answer clearfix">'),
+    t('<div class="comment answer clearfix" id="answer-[cid]">'),
     t('<div class="file-image float-left">[field_user_picture]</div>
 <h3>Answer from [field_user_fname] [field_user_lname]</h3>
 <p class="date">[created_1]</p>
@@ -1554,6 +1566,7 @@ if($record->value == 0){
     t('last »'),
     t('Colorbox'),
     t('[field_dialogue_sender_name]<br/><span class="subline">[created]</span>'),
+    t('<div class="comment answer clearfix">'),
   );
   $export['profile_questions_answers'] = $view;
 

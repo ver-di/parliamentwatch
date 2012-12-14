@@ -1144,7 +1144,7 @@ function profiles_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1298,7 +1298,7 @@ function profiles_field_default_fields() {
             'file_view_mode' => 'pw_file_portrait_l',
           ),
           'type' => 'file_rendered',
-          'weight' => '0',
+          'weight' => '1',
         ),
         'full' => array(
           'label' => 'hidden',
