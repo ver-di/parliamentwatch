@@ -858,6 +858,14 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '</div>';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
+  /* Field: User revision: Vid */
+  $handler->display->display_options['fields']['vid']['id'] = 'vid';
+  $handler->display->display_options['fields']['vid']['table'] = 'user_revision';
+  $handler->display->display_options['fields']['vid']['field'] = 'vid';
+  $handler->display->display_options['fields']['vid']['label'] = '';
+  $handler->display->display_options['fields']['vid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['vid']['alter']['path'] = 'user/[uid]/revisions/[vid]/view';
+  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
   /* Sort criterion: Taxonomy term: Term ID */
   $handler->display->display_options['sorts']['tid']['id'] = 'tid';
   $handler->display->display_options['sorts']['tid']['table'] = 'taxonomy_term_data';
