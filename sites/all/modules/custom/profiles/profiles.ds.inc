@@ -236,7 +236,7 @@ function profiles_ds_custom_fields_info() {
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'qa_asking_anchor';
-  $ds_field->label = 'Q & A ask anchor';
+  $ds_field->label = 'Q & A ask anckor';
   $ds_field->field_type = 6;
   $ds_field->entities = array(
     'user' => 'user',
