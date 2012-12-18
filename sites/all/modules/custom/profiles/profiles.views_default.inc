@@ -27,6 +27,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'iarratas a dhéanamh';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -67,12 +68,13 @@ function profiles_views_default_views() {
   $handler->display->display_options['relationships']['votingapi_vote']['id'] = 'votingapi_vote';
   $handler->display->display_options['relationships']['votingapi_vote']['table'] = 'node';
   $handler->display->display_options['relationships']['votingapi_vote']['field'] = 'votingapi_vote';
+  $handler->display->display_options['relationships']['votingapi_vote']['label'] = 'Vótaí';
   $handler->display->display_options['relationships']['votingapi_vote']['votingapi'] = array(
     'value_type' => '',
     'tag' => '',
   );
   $handler->display->display_options['relationships']['votingapi_vote']['current_user'] = 0;
-  /* Relationship: Votes: User */
+  /* Relationship: Vótaí: User */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'votingapi_vote';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -170,7 +172,7 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
-  /* Contextual filter: Votes: User */
+  /* Contextual filter: Vótaí: User */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'votingapi_vote';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -607,12 +609,12 @@ if($record->value == 0){
   $translatables['polls_profile'] = array(
     t('Master'),
     t('more'),
-    t('Apply'),
+    t('iarratas a dhéanamh'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Votes'),
+    t('Vótaí'),
     t('Individual voter'),
     t('All'),
     t('Last'),
@@ -658,6 +660,7 @@ if($record->value == 0){
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'iarratas a dhéanamh';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '21';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -839,7 +842,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'row link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'Go to profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'Téigh go dtí próifíl';
   /* Field: | more info end */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
@@ -1049,7 +1052,7 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_constituency_tid']['relationship'] = 'uid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['operator_id'] = 'field_user_constituency_tid_op';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['label'] = 'Constituency';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['label'] = 'Dáilcheantar';
   $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['operator'] = 'field_user_constituency_tid_op';
   $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['identifier'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['remember_roles'] = array(
@@ -1070,7 +1073,7 @@ if($record->value == 0){
   $translatables['profile_list_rev'] = array(
     t('Master'),
     t('more'),
-    t('Apply'),
+    t('iarratas a dhéanamh'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
@@ -1096,13 +1099,13 @@ if($record->value == 0){
     t('<h3>[field_user_fname]'),
     t('[field_user_lname-revision_id]</h3>'),
     t('[field_user_lname]</h3>'),
-    t('Go to profile'),
+    t('Téigh go dtí próifíl'),
     t('</div>'),
     t('All'),
     t('Last name (field_user_lname)'),
     t('Last name'),
     t('Active'),
-    t('Constituency'),
+    t('Dáilcheantar'),
     t('Page'),
   );
   $export['profile_list_rev'] = $view;
@@ -1128,6 +1131,7 @@ if($record->value == 0){
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'iarratas a dhéanamh';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1535,7 +1539,7 @@ if($record->value == 0){
     t('Master'),
     t('Questions & Answers'),
     t('more'),
-    t('Apply'),
+    t('iarratas a dhéanamh'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
@@ -1596,6 +1600,7 @@ if($record->value == 0){
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'iarratas a dhéanamh';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -1621,7 +1626,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_answers_give']['label'] = '';
   $handler->display->display_options['fields']['field_user_answers_give']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_answers_give']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_answers_give']['alter']['text'] = '[field_user_answers_give] answer(s)';
+  $handler->display->display_options['fields']['field_user_answers_give']['alter']['text'] = '[field_user_answers_give] freagra(í)';
   $handler->display->display_options['fields']['field_user_answers_give']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_answers_give']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
@@ -1675,13 +1680,13 @@ if($record->value == 0){
   $translatables['qa_counter_link'] = array(
     t('Master'),
     t('more'),
-    t('Apply'),
+    t('iarratas a dhéanamh'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),
     t('Desc'),
     t('go to Questions and Answers'),
-    t('[field_user_answers_give] answer(s)'),
+    t('[field_user_answers_give] freagra(í)'),
     t('[nothing]<br/>
 [field_user_questions_get] question(s), [field_user_answers_give]'),
     t('All'),
