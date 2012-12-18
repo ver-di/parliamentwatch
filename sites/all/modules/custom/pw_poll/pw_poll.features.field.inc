@@ -538,17 +538,16 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-<<<<<<< HEAD
+
           'weight' => '21',
-=======
-          'weight' => '23',
+// add poll details in default view (ds) of polls
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '24',
->>>>>>> add sharethis to polls
+          'weight' => '21',
         ),
         'teaser' => array(
           'label' => 'above',
