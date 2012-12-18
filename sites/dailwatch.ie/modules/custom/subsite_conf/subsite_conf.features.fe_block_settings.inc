@@ -97,7 +97,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Share',
     'cache' => -1,
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
     'machine_name' => 'metanavi_addthis',
   );
 
@@ -171,9 +171,9 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => 'Languages',
+    'title' => '',
     'cache' => -1,
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['nice_menus-1'] = array(
@@ -306,9 +306,9 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => 'Text resize',
+    'title' => '',
     'cache' => '1',
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['views--exp-profile_list_rev-page'] = array(
@@ -357,7 +357,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Share',
     'cache' => -1,
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
     'machine_name' => 'metanavi_addthis',
   );
 
@@ -380,9 +380,9 @@ function subsite_conf_default_fe_block_settings() {
     'module' => 'delta_blocks',
     'delta' => 'breadcrumb',
     'theme' => 'dailwatch',
-    'status' => 0,
+    'status' => '1',
     'weight' => '-22',
-    'region' => '',
+    'region' => 'header_first',
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
@@ -431,9 +431,9 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => 'Languages',
+    'title' => 'Language',
     'cache' => -1,
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['nice_menus-1'] = array(
@@ -568,7 +568,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Text resize',
     'cache' => '1',
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['views--exp-profile_list_rev-page'] = array(
@@ -617,7 +617,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Share',
     'cache' => -1,
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
     'machine_name' => 'metanavi_addthis',
   );
 
@@ -691,9 +691,9 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => 'Languages',
+    'title' => 'Language',
     'cache' => -1,
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['nice_menus-1'] = array(
@@ -828,7 +828,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Text resize',
     'cache' => '1',
-    'i18n_mode' => '1',
+    'i18n_mode' => '0',
   );
 
   $theme['views--exp-profile_list_rev-page'] = array(
