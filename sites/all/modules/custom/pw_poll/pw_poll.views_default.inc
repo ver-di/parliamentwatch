@@ -33,13 +33,16 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'iarratas a dhéanamh';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'apply';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort votes by';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '11';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -189,6 +192,7 @@ print pw_blocks_get_chart($row->nid,\'total\');
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
+  $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'votes/%';
 
@@ -329,7 +333,7 @@ print pw_blocks_get_chart($row->nid,\'total\');
     t('Master'),
     t('Votes'),
     t('more'),
-    t('iarratas a dhéanamh'),
+    t('apply'),
     t('Reset'),
     t('Sort votes by'),
     t('Asc'),
@@ -338,8 +342,8 @@ print pw_blocks_get_chart($row->nid,\'total\');
     t('- All -'),
     t('Offset'),
     t('« first'),
-    t('zurück'),
-    t('weiter'),
+    t('prev'),
+    t('next'),
     t('last »'),
     t('Vote from'),
     t('[field_pw_poll_date], [field_pw_parmliament]'),
@@ -352,6 +356,8 @@ print pw_blocks_get_chart($row->nid,\'total\');
     t('Title'),
     t('Page'),
     t('Frontpage'),
+    t('zurück'),
+    t('weiter'),
     t('Details'),
     t('Display for the node page'),
     t('All'),
