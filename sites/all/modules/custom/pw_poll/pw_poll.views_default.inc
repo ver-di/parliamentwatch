@@ -59,15 +59,6 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Field: Content: ShareThis Link */
-  $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['table'] = 'node';
-  $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['label'] = '';
-  $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['sharethis']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['sharethis']['element_wrapper_class'] = 'sharethis-buttons';
-  $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
