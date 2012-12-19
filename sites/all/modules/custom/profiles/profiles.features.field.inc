@@ -66,7 +66,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '28',
+          'weight' => '26',
         ),
       ),
       'entity_type' => 'user',
@@ -118,7 +118,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '26',
+          'weight' => '24',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -187,7 +187,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '23',
+          'weight' => '21',
         ),
         'full' => array(
           'label' => 'above',
@@ -257,7 +257,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '21',
+          'weight' => '19',
         ),
         'full' => array(
           'label' => 'inline',
@@ -504,7 +504,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '27',
+          'weight' => '25',
         ),
       ),
       'entity_type' => 'user',
@@ -675,7 +675,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '18',
         ),
         'full' => array(
           'label' => 'above',
@@ -973,7 +973,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '22',
+          'weight' => '20',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1144,7 +1144,7 @@ function profiles_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1298,7 +1298,7 @@ function profiles_field_default_fields() {
             'file_view_mode' => 'pw_file_portrait_l',
           ),
           'type' => 'file_rendered',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1463,7 +1463,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '24',
+          'weight' => '22',
         ),
         'full' => array(
           'label' => 'above',
@@ -1566,7 +1566,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '25',
+          'weight' => '23',
         ),
         'user_search' => array(
           'label' => 'above',
