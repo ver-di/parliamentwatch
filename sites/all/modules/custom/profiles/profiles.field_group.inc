@@ -52,7 +52,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Polls ID Wrapper',
-    'weight' => '10',
+    'weight' => '7',
     'children' => array(
       0 => 'group_user_polls',
     ),
@@ -75,39 +75,6 @@ function profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_profiles_mouseover|user|user|pw_profiles_list_compact';
-  $field_group->group_name = 'group_profiles_mouseover';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'pw_profiles_list_compact';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Mouseover',
-    'weight' => '7',
-    'children' => array(
-      0 => 'field_user_commitee',
-      1 => 'field_user_constituency',
-      2 => 'field_user_parliament',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Mouseover',
-      'instance_settings' => array(
-        'classes' => '',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'collapsible',
-    ),
-  );
-  $export['group_profiles_mouseover|user|user|pw_profiles_list_compact'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_roles|user|user|default';
   $field_group->group_name = 'group_roles';
   $field_group->entity_type = 'user';
@@ -116,7 +83,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Roles ID Wrapper',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'group_user_commitee',
     ),
@@ -202,7 +169,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = 'group_basics';
   $field_group->data = array(
     'label' => 'Basics',
-    'weight' => '7',
+    'weight' => '11',
     'children' => array(
       0 => 'group_user_basics_additional',
       1 => 'group_user_basics_basics',
@@ -302,39 +269,6 @@ function profiles_field_group_info() {
     ),
   );
   $export['group_user_name|user|user|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_name|user|user|user_search';
-  $field_group->group_name = 'group_user_name';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'user_search';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'User name',
-    'weight' => '1',
-    'children' => array(
-      0 => 'field_user_fname',
-      1 => 'field_user_lname',
-      2 => 'field_user_party',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'User name',
-      'instance_settings' => array(
-        'classes' => 'h3',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $export['group_user_name|user|user|user_search'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
