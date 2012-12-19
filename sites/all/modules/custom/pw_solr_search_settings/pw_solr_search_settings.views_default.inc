@@ -638,23 +638,6 @@ function pw_solr_search_settings_views_default_views() {
   $handler->display->display_options['fields']['field_user_constituency']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_user_constituency']['view_mode'] = 'full';
-  /* Field: Indexed User: Questions Get */
-  $handler->display->display_options['fields']['field_user_questions_get_1']['id'] = 'field_user_questions_get_1';
-  $handler->display->display_options['fields']['field_user_questions_get_1']['table'] = 'search_api_index_pw_user_solr';
-  $handler->display->display_options['fields']['field_user_questions_get_1']['field'] = 'field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get_1']['label'] = '';
-  $handler->display->display_options['fields']['field_user_questions_get_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get_1']['alter']['text'] = '[field_user_questions_get_1] question(s)';
-  $handler->display->display_options['fields']['field_user_questions_get_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_questions_get_1']['element_wrapper_class'] = 'row push-bottom-xxs';
-  $handler->display->display_options['fields']['field_user_questions_get_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get_1']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get_1']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get_1']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
   /* Field: Answers (reused) */
   $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
   $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
