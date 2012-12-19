@@ -97,7 +97,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Share',
     'cache' => -1,
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
     'machine_name' => 'metanavi_addthis',
   );
 
@@ -173,7 +173,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => -1,
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
   );
 
   $theme['nice_menus-1'] = array(
@@ -308,7 +308,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => '',
     'cache' => '1',
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
   );
 
   $theme['views--exp-profile_list_rev-page'] = array(
@@ -357,7 +357,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Share',
     'cache' => -1,
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
     'machine_name' => 'metanavi_addthis',
   );
 
@@ -431,9 +431,9 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => 'Language',
+    'title' => '',
     'cache' => -1,
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
   );
 
   $theme['nice_menus-1'] = array(
@@ -566,9 +566,9 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => 'Text resize',
+    'title' => '',
     'cache' => '1',
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
   );
 
   $theme['views--exp-profile_list_rev-page'] = array(
@@ -617,7 +617,7 @@ function subsite_conf_default_fe_block_settings() {
     'pages' => '',
     'title' => 'Share',
     'cache' => -1,
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
     'machine_name' => 'metanavi_addthis',
   );
 
@@ -691,9 +691,9 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => 'Language',
+    'title' => '',
     'cache' => -1,
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
   );
 
   $theme['nice_menus-1'] = array(
@@ -826,9 +826,9 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => 'Text resize',
+    'title' => '',
     'cache' => '1',
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
   );
 
   $theme['views--exp-profile_list_rev-page'] = array(
