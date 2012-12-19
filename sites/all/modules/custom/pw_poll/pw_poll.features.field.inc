@@ -538,7 +538,6 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-
           'weight' => '21',
 // add poll details in default view (ds) of polls
         ),
@@ -546,7 +545,6 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '24',
           'weight' => '21',
         ),
         'teaser' => array(
