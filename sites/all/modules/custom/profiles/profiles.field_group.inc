@@ -52,7 +52,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Polls ID Wrapper',
-    'weight' => '10',
+    'weight' => '8',
     'children' => array(
       0 => 'group_user_polls',
     ),
@@ -116,7 +116,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Roles ID Wrapper',
-    'weight' => '9',
+    'weight' => '7',
     'children' => array(
       0 => 'group_user_commitee',
     ),
@@ -281,7 +281,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Name',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_user_fname',
       1 => 'field_user_lname',
@@ -399,7 +399,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = 'group_polls';
   $field_group->data = array(
     'label' => 'Polls',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'group_user_polls_archive',
       1 => 'group_user_polls_last',
