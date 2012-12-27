@@ -61,9 +61,10 @@ function pw_poll_field_default_fields() {
         ),
         'full' => array(
           'label' => 'above',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '18',
+          'type' => 'text_default',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -246,7 +247,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '18',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -438,7 +439,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '19',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -539,13 +540,12 @@ function pw_poll_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '21',
-// add poll details in default view (ds) of polls
         ),
         'full' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '21',
+          'weight' => '20',
         ),
         'teaser' => array(
           'label' => 'above',

@@ -17,14 +17,6 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'pw_poll';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'poll_details' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'ft' => array(
-        'func' => 'theme_ds_field_reset',
-      ),
-    ),
     'poll_legend_block' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -34,6 +26,14 @@ function pw_poll_ds_field_settings_info() {
         'ow' => TRUE,
         'ow-el' => 'div',
         'ow-cl' => 'legend',
+      ),
+    ),
+    'poll_details' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
       ),
     ),
     'poll_votes_per_party_block_ds' => array(
@@ -84,11 +84,6 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'pw_poll';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'poll_details' => array(
-      'weight' => '2',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'poll_legend_block' => array(
       'weight' => '4',
       'label' => 'hidden',
@@ -100,10 +95,26 @@ function pw_poll_ds_field_settings_info() {
         'ow-cl' => 'legend',
       ),
     ),
+    'poll_details' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
+    ),
     'poll_votes_per_party_block_ds' => array(
       'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'sharethis' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
     'title' => array(
       'weight' => '1',
@@ -114,19 +125,28 @@ function pw_poll_ds_field_settings_info() {
       ),
     ),
     'comments' => array(
-      'weight' => '6',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
-        'func' => 'theme_ds_field_reset',
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'clear-both comments',
       ),
     ),
-    'sharethis' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
+    'body' => array(
       'ft' => array(
-        'func' => 'theme_ds_field_reset',
+        'func' => 'theme_ds_field_expert',
+        'lb' => 'Background information',
+        'lb-el' => 'h3',
+        'lb-col' => TRUE,
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => '',
+        'fi' => TRUE,
+        'fi-el' => 'p',
+        'fi-cl' => '',
       ),
     ),
     'field_pw_views_reference' => array(
@@ -135,11 +155,6 @@ function pw_poll_ds_field_settings_info() {
         'lb' => 'How did your constituency representatives vote?',
         'lb-el' => 'h3',
         'lb-col' => TRUE,
-      ),
-    ),
-    'group_fieldset_polls_per_party' => array(
-      'ft' => array(
-        'func' => 'theme_ds_field_minimal',
       ),
     ),
   );
@@ -280,6 +295,46 @@ function pw_poll_ds_layout_settings_info() {
     'classes' => array(),
   );
   $export['node|pw_poll|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|pw_poll|full';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'pw_poll';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'sharethis',
+        1 => 'title',
+        2 => 'poll_details',
+        3 => 'poll_votes_per_party_block_ds',
+        4 => 'group_polls_per_party',
+        5 => 'poll_legend_block',
+        6 => 'field_pw_views_reference',
+        7 => 'body',
+        8 => 'comments',
+      ),
+    ),
+    'fields' => array(
+      'sharethis' => 'ds_content',
+      'title' => 'ds_content',
+      'poll_details' => 'ds_content',
+      'poll_votes_per_party_block_ds' => 'ds_content',
+      'group_polls_per_party' => 'ds_content',
+      'poll_legend_block' => 'ds_content',
+      'field_pw_views_reference' => 'ds_content',
+      'body' => 'ds_content',
+      'comments' => 'ds_content',
+    ),
+    'classes' => array(),
+    'hide_page_title' => '1',
+    'page_option_title' => '',
+  );
+  $export['node|pw_poll|full'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
