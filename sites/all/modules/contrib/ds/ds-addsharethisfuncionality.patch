@@ -1,0 +1,19 @@
+diff --git sites/all/modules/contrib/ds/ds.ds_fields_info.inc sites/all/modules/contrib/ds/ds.ds_fields_info.inc
+index d7818ac..abec66c 100644
+--- sites/all/modules/contrib/ds/ds.ds_fields_info.inc
++++ sites/all/modules/contrib/ds/ds.ds_fields_info.inc
+@@ -26,6 +26,14 @@ function ds_ds_fields_info($entity_type) {
+     }
+   }
+ 
++  // Sharethis.
++  if (module_exists('sharethis')) {
++     $fields['node']['sharethis'] = array(
++       'title' => t('Share'),
++       'field_type' => DS_FIELD_TYPE_IGNORE,
++     );
++  }
++
+   /* --------------------------------------------------------------
+      General node fields.
+     -------------------------------------------------------------- */
