@@ -1212,7 +1212,7 @@ img.no-outline {
 .node-type-pw-poll .field-name-field-pw-views-reference .icon-taxonomy {
     margin-left: 97px;
 }
-#node_pw_poll_full_group_fieldset_polls_per_party legend {
+#node_pw_poll_full_group_polls_per_party legend {
     padding-bottom: 1.3em;
 }
 html.js fieldset.collapsed {
@@ -1563,6 +1563,9 @@ form .webform-component-checkboxes .description {
     background: transparent !important;
     border: 0 !important;
 }
+.sharethis-wrapper + h1,
+.sharethis-wrapper + h2,
+.sharethis-wrapper + h3,
 .sharethis-buttons + h1,
 .sharethis-buttons + h2,
 .sharethis-buttons + h3 {
