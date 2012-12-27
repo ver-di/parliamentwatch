@@ -171,7 +171,7 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '',
+    'title' => 'Language',
     'cache' => -1,
     'i18n_mode' => '1',
   );
@@ -306,7 +306,7 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '',
+    'title' => 'Text resize',
     'cache' => '1',
     'i18n_mode' => '1',
   );
@@ -380,13 +380,13 @@ function subsite_conf_default_fe_block_settings() {
     'module' => 'delta_blocks',
     'delta' => 'breadcrumb',
     'theme' => 'dailwatch',
-    'status' => '1',
+    'status' => 0,
     'weight' => '-22',
-    'region' => 'header_first',
+    'region' => '',
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '<none>',
+    'title' => '',
     'cache' => 4,
     'i18n_mode' => '0',
   );
@@ -431,7 +431,7 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '',
+    'title' => 'Language',
     'cache' => -1,
     'i18n_mode' => '1',
   );
@@ -566,7 +566,7 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '',
+    'title' => 'Text resize',
     'cache' => '1',
     'i18n_mode' => '1',
   );
@@ -646,7 +646,7 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '<none>',
+    'title' => '',
     'cache' => 4,
     'i18n_mode' => '0',
   );
@@ -691,7 +691,7 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '',
+    'title' => 'Language',
     'cache' => -1,
     'i18n_mode' => '1',
   );
@@ -826,7 +826,7 @@ function subsite_conf_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '',
+    'title' => 'Text resize',
     'cache' => '1',
     'i18n_mode' => '1',
   );
