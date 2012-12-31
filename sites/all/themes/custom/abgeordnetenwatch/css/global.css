@@ -1550,10 +1550,13 @@ form .webform-component-checkboxes .description {
 	height: 15px;
 }
 .stButton .st-sharethis-counter {
-    width: 22px !important;
+    width: 15px !important;
+    line-height: 15px !important;
 }
 .stButton .stArrow {
     background: transparent !important;
+    margin-left: 0 !important;
+    padding-left: 6px !important;
 }
 .stButton .stHBubble {
     margin: 0 !important;
