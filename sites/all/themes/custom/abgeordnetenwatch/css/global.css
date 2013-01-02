@@ -155,6 +155,9 @@ blockquote p:last-child {
 .clear-both {
     clear: both;
 }
+.relative {
+    position: relative;
+}
 
 .push-bottom-xxs {
     margin-bottom: 2px;
@@ -1529,23 +1532,23 @@ form .webform-component-checkboxes .description {
 /* /////////////////////////// Share this /////////////////// */
 
 .sharethis-wrapper,
-.st_sharethis_hcount {
+.st_sharethis_hcount,
+.st_sharethis {
 	padding: 0;
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 80px;
 	text-align: right;
 }
-.view-mode-full .sharethis-wrapper {
-    top: 3px;
-    right: 10px;
+.stButton .chicklets {
+    padding-left: 0 !important;
 }
 .add-sharethis {
     position: relative;
 }
+.stButton .sharethis,
 .stMainServices.st-sharethis-counter {
-	background: url("../images/sprite.png") no-repeat scroll -681px 0px transparent !important;
+	background: url("../images/sprite.png") no-repeat scroll -681px -2px transparent !important;
 	width: 15px;
 	height: 15px;
 }
