@@ -1543,6 +1543,10 @@ form .webform-component-checkboxes .description {
 .stButton .chicklets {
     padding-left: 0 !important;
 }
+.page-node .sharethis-wrapper {
+    top: 5px;
+    right: 7px;
+}
 .add-sharethis {
     position: relative;
 }
