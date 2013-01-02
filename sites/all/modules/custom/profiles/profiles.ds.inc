@@ -17,13 +17,13 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'qa_asking_anchor' => array(
-      'weight' => '4',
+    'question_form' => array(
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'question_form' => array(
-      'weight' => '10',
+    'sharethis_polls_profile' => array(
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -42,6 +42,11 @@ function profiles_ds_field_settings_info() {
       'ft' => array(
         'func' => 'theme_ds_field_reset',
       ),
+    ),
+    'qa_asking_anchor' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'qa_link_counter' => array(
       'weight' => '5',
@@ -62,7 +67,7 @@ function profiles_ds_field_settings_info() {
         'lb-col' => TRUE,
         'ow' => TRUE,
         'ow-el' => 'div',
-        'ow-cl' => 'field-item field-name-field-user-constituency clearfix',
+        'ow-cl' => 'field-item clearfix odd',
       ),
     ),
     'field_user_fname' => array(
@@ -73,10 +78,12 @@ function profiles_ds_field_settings_info() {
     'field_user_job_skills' => array(
       'ft' => array(
         'func' => 'theme_ds_field_expert',
+        'lb-el' => 'div',
+        'lb-cl' => 'label-inline',
         'lb-col' => TRUE,
         'ow' => TRUE,
         'ow-el' => 'div',
-        'ow-cl' => 'field-item field-name-field-user-job-skills clearfix even',
+        'ow-cl' => 'field-item clearfix even',
       ),
     ),
     'field_user_lname' => array(
@@ -329,6 +336,20 @@ function profiles_ds_custom_fields_info() {
   );
   $export['questions_and_answers'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'sharethis_polls_profile';
+  $ds_field->label = 'ShareThis polls profile';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|polls_profile-block_2',
+    'block_render' => '3',
+  );
+  $export['sharethis_polls_profile'] = $ds_field;
+
   return $export;
 }
 
@@ -350,49 +371,52 @@ function profiles_ds_layout_settings_info() {
     'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'polls_archive_view',
-        1 => 'field_user_picture',
-        2 => 'group_user_commitee_tab',
-        3 => 'group_audience',
-        4 => 'group_user_name',
-        5 => 'field_user_fname',
-        6 => 'field_user_parliament',
-        7 => 'field_user_lname',
-        8 => 'field_user_commitee',
-        9 => 'qa_asking_anchor',
+        0 => 'field_user_picture',
+        1 => 'group_audience',
+        2 => 'sharethis_polls_profile',
+        3 => 'polls_archive_view',
+        4 => 'group_user_commitee_tab',
+        5 => 'group_user_polls',
+        6 => 'group_user_name',
+        7 => 'field_user_fname',
+        8 => 'field_user_lname',
+        9 => 'field_user_parliament',
         10 => 'field_user_party',
-        11 => 'field_user_political_roles',
-        12 => 'qa_link_counter',
-        13 => 'group_basics',
-        14 => 'group_roles',
-        15 => 'group_user_basics',
-        16 => 'group_polls',
-        17 => 'group_user_commitee',
-        18 => 'questions_and_answers',
-        19 => 'polls_profile_last',
-        20 => 'group_user_polls',
-        21 => 'field_user_more',
-        22 => 'question_form',
-        23 => 'group_user_basics_basics',
-        24 => 'field_user_job_skills',
-        25 => 'field_user_constituency',
-        26 => 'group_user_basics_additional',
-        27 => 'group_user_polls_last',
-        28 => 'group_user_polls_archive',
+        11 => 'qa_asking_anchor',
+        12 => 'field_user_commitee',
+        13 => 'field_user_political_roles',
+        14 => 'qa_link_counter',
+        15 => 'group_basics',
+        16 => 'group_roles',
+        17 => 'group_user_basics',
+        18 => 'group_polls',
+        19 => 'group_user_commitee',
+        20 => 'questions_and_answers',
+        21 => 'question_form',
+        22 => 'polls_profile_last',
+        23 => 'field_user_more',
+        24 => 'group_user_basics_basics',
+        25 => 'field_user_job_skills',
+        26 => 'field_user_constituency',
+        27 => 'group_user_basics_additional',
+        28 => 'group_user_polls_last',
+        29 => 'group_user_polls_archive',
       ),
     ),
     'fields' => array(
-      'polls_archive_view' => 'ds_content',
       'field_user_picture' => 'ds_content',
-      'group_user_commitee_tab' => 'ds_content',
       'group_audience' => 'ds_content',
+      'sharethis_polls_profile' => 'ds_content',
+      'polls_archive_view' => 'ds_content',
+      'group_user_commitee_tab' => 'ds_content',
+      'group_user_polls' => 'ds_content',
       'group_user_name' => 'ds_content',
       'field_user_fname' => 'ds_content',
-      'field_user_parliament' => 'ds_content',
       'field_user_lname' => 'ds_content',
-      'field_user_commitee' => 'ds_content',
-      'qa_asking_anchor' => 'ds_content',
+      'field_user_parliament' => 'ds_content',
       'field_user_party' => 'ds_content',
+      'qa_asking_anchor' => 'ds_content',
+      'field_user_commitee' => 'ds_content',
       'field_user_political_roles' => 'ds_content',
       'qa_link_counter' => 'ds_content',
       'group_basics' => 'ds_content',
@@ -401,10 +425,9 @@ function profiles_ds_layout_settings_info() {
       'group_polls' => 'ds_content',
       'group_user_commitee' => 'ds_content',
       'questions_and_answers' => 'ds_content',
-      'polls_profile_last' => 'ds_content',
-      'group_user_polls' => 'ds_content',
-      'field_user_more' => 'ds_content',
       'question_form' => 'ds_content',
+      'polls_profile_last' => 'ds_content',
+      'field_user_more' => 'ds_content',
       'group_user_basics_basics' => 'ds_content',
       'field_user_job_skills' => 'ds_content',
       'field_user_constituency' => 'ds_content',

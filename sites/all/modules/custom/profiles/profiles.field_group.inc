@@ -54,13 +54,14 @@ function profiles_field_group_info() {
     'label' => 'Polls ID Wrapper',
     'weight' => '8',
     'children' => array(
-      0 => 'group_user_polls',
+      0 => 'sharethis_polls_profile',
+      1 => 'group_user_polls',
     ),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Polls ID Wrapper',
       'instance_settings' => array(
-        'classes' => 'add-sharethis clear-both',
+        'classes' => 'clear-both relative',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
@@ -399,7 +400,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = 'group_polls';
   $field_group->data = array(
     'label' => 'Polls',
-    'weight' => '10',
+    'weight' => '1',
     'children' => array(
       0 => 'group_user_polls_archive',
       1 => 'group_user_polls_last',

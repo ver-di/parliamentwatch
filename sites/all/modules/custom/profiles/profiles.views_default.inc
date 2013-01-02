@@ -13,7 +13,7 @@ function profiles_views_default_views() {
   $view = new view();
   $view->name = 'polls_profile';
   $view->description = '';
-  $view->tag = 'profile';
+  $view->tag = 'profile, poll';
   $view->base_table = 'node';
   $view->human_name = 'Polls for the profile';
   $view->core = 7;
@@ -604,6 +604,123 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['path'] = 'polls/archive/%';
+
+  /* Display: ShareThis */
+  $handler = $view->new_display('block', 'ShareThis', 'block_2');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'add ShareThis js';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_add_js(\'http://w.sharethis.com/button/buttons.js\', array(\'type\' => \'external\'));
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
+  /* Field: Share URL */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Share URL';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_value'] = '$charturl = "http://".$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"]."#user_user_full_group_polls";
+return $charturl;';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['text'] = '[field_pw_poll_date]: [title]';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Field: Chart URL */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Chart URL';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_1']['alter']['text'] = '[php_1]
+<div class="poll-behavior"><span class="icon yes"></span>yes</div>
+<div class="poll-behavior"><span class="icon no"></span>no</div>
+<div class="poll-behavior"><span class="icon absent"></span>absent</div>
+<div class="poll-behavior"><span class="icon blank"></span>blank</div>
+
+';
+  $handler->display->display_options['fields']['php_1']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['php_1']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['php_1']['alter']['alt'] = '[title_1]';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_value'] = '$html = pw_blocks_get_chart($row->nid,\'total\', NULL, 105,128);
+$url = preg_replace(\'#.*src="([^\\"]+)".*#\', \'\\1\', $html);
+return "http:".$url;';
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+print $value;
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '200',
+  );
+  /* Field: ShareThis Code */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'ShareThis Code';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="st_sharethis" st_url="[php]" st_title="[title]" st_image="[php_1]" st_summary="[body]"></span>
+';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'sharethis-wrapper';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['block_description'] = 'ShareThis: Polls in Profile';
   $translatables['polls_profile'] = array(
     t('Master'),
     t('more'),
@@ -635,6 +752,15 @@ if($record->value == 0){
     t('<span class="poll-behavior"><span class="block [php]">[php]</span></span>'),
     t('Poll profile: Archive'),
     t('Print Page'),
+    t('ShareThis'),
+    t('add ShareThis js'),
+    t('<?php
+drupal_add_js(\'http://w.sharethis.com/button/buttons.js\', array(\'type\' => \'external\'));
+?>'),
+    t('[field_pw_poll_date]: [title]'),
+    t('<span class="st_sharethis" st_url="[php]" st_title="[title]" st_image="[php_1]" st_summary="[body]"></span>
+'),
+    t('ShareThis: Polls in Profile'),
   );
   $export['polls_profile'] = $view;
 
