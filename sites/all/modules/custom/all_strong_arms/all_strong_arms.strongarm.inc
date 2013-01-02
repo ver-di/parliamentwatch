@@ -55,13 +55,6 @@ function all_strong_arms_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'cache';
-  $strongarm->value = 0;
-  $export['cache'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'cache_lifetime';
   $strongarm->value = '0';
   $export['cache_lifetime'] = $strongarm;
@@ -1032,6 +1025,7 @@ views-exposed-form-profile-list-solr-constituency';
     'group_user_polls|user|user|default' => FALSE,
     'group_user_polls_last|user|user|default' => FALSE,
     'group_user_polls_archive|user|user|default' => FALSE,
+    'group_polls_per_party|node|pw_poll|full' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -1864,7 +1858,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_button_option';
-  $strongarm->value = 'stbc_hcount';
+  $strongarm->value = 'stbc_';
   $export['sharethis_button_option'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1916,7 +1910,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_publisherID';
-  $strongarm->value = 'dr-6a80dfaa-e218-6aea-5ccd-4ca53d1548e8';
+  $strongarm->value = 'dr-acd3a371-d3c0-b734-48b1-c095501c9e4a';
   $export['sharethis_publisherID'] = $strongarm;
 
   $strongarm = new stdClass();
