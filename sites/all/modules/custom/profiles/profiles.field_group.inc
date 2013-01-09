@@ -54,14 +54,13 @@ function profiles_field_group_info() {
     'label' => 'Polls ID Wrapper',
     'weight' => '8',
     'children' => array(
-      0 => 'sharethis_polls_profile',
-      1 => 'group_user_polls',
+      0 => 'group_user_polls',
     ),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Polls ID Wrapper',
       'instance_settings' => array(
-        'classes' => 'clear-both relative',
+        'classes' => 'add-sharethis clear-both',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',

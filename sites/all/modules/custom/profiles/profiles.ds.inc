@@ -22,10 +22,13 @@ function profiles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'sharethis_polls_profile' => array(
+    'user_og_description' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
     'polls_archive_view' => array(
       'weight' => '0',
@@ -350,6 +353,39 @@ function profiles_ds_custom_fields_info() {
   );
   $export['sharethis_polls_profile'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'user_og_description';
+  $ds_field->label = 'User OG Description';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+global $user;
+$user_fields = user_load($user->uuid);
+$firstname = $user_fields->field_user_fname[\'und\'][\'0\'][\'value\'];
+$lastname = $user_fields->field_user_lname[\'und\'][\'0\'][\'value\'];
+$sitename = token_replace(\'[site:name]\');
+
+$description = "I found something interesting on ".$sitename.". Check it out!";
+$element = array(
+  \'#tag\' => \'meta\', 
+  \'#attributes\' => array(
+    \'property\' => \'og:description\',
+    \'content\' => $description,
+  ),
+);
+drupal_add_html_head($element, \'og_description\');
+?>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['user_og_description'] = $ds_field;
+
   return $export;
 }
 
@@ -371,19 +407,19 @@ function profiles_ds_layout_settings_info() {
     'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_user_picture',
+        0 => 'user_og_description',
         1 => 'group_audience',
-        2 => 'sharethis_polls_profile',
-        3 => 'polls_archive_view',
+        2 => 'polls_archive_view',
+        3 => 'field_user_picture',
         4 => 'group_user_commitee_tab',
         5 => 'group_user_polls',
-        6 => 'group_user_name',
-        7 => 'field_user_fname',
+        6 => 'field_user_fname',
+        7 => 'group_user_name',
         8 => 'field_user_lname',
         9 => 'field_user_parliament',
-        10 => 'field_user_party',
+        10 => 'field_user_commitee',
         11 => 'qa_asking_anchor',
-        12 => 'field_user_commitee',
+        12 => 'field_user_party',
         13 => 'field_user_political_roles',
         14 => 'qa_link_counter',
         15 => 'group_basics',
@@ -392,31 +428,31 @@ function profiles_ds_layout_settings_info() {
         18 => 'group_polls',
         19 => 'group_user_commitee',
         20 => 'questions_and_answers',
-        21 => 'question_form',
-        22 => 'polls_profile_last',
-        23 => 'field_user_more',
+        21 => 'polls_profile_last',
+        22 => 'field_user_more',
+        23 => 'question_form',
         24 => 'group_user_basics_basics',
         25 => 'field_user_job_skills',
-        26 => 'field_user_constituency',
-        27 => 'group_user_basics_additional',
+        26 => 'group_user_basics_additional',
+        27 => 'field_user_constituency',
         28 => 'group_user_polls_last',
         29 => 'group_user_polls_archive',
       ),
     ),
     'fields' => array(
-      'field_user_picture' => 'ds_content',
+      'user_og_description' => 'ds_content',
       'group_audience' => 'ds_content',
-      'sharethis_polls_profile' => 'ds_content',
       'polls_archive_view' => 'ds_content',
+      'field_user_picture' => 'ds_content',
       'group_user_commitee_tab' => 'ds_content',
       'group_user_polls' => 'ds_content',
-      'group_user_name' => 'ds_content',
       'field_user_fname' => 'ds_content',
+      'group_user_name' => 'ds_content',
       'field_user_lname' => 'ds_content',
       'field_user_parliament' => 'ds_content',
-      'field_user_party' => 'ds_content',
-      'qa_asking_anchor' => 'ds_content',
       'field_user_commitee' => 'ds_content',
+      'qa_asking_anchor' => 'ds_content',
+      'field_user_party' => 'ds_content',
       'field_user_political_roles' => 'ds_content',
       'qa_link_counter' => 'ds_content',
       'group_basics' => 'ds_content',
@@ -425,13 +461,13 @@ function profiles_ds_layout_settings_info() {
       'group_polls' => 'ds_content',
       'group_user_commitee' => 'ds_content',
       'questions_and_answers' => 'ds_content',
-      'question_form' => 'ds_content',
       'polls_profile_last' => 'ds_content',
       'field_user_more' => 'ds_content',
+      'question_form' => 'ds_content',
       'group_user_basics_basics' => 'ds_content',
       'field_user_job_skills' => 'ds_content',
-      'field_user_constituency' => 'ds_content',
       'group_user_basics_additional' => 'ds_content',
+      'field_user_constituency' => 'ds_content',
       'group_user_polls_last' => 'ds_content',
       'group_user_polls_archive' => 'ds_content',
     ),

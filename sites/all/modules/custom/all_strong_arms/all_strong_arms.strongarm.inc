@@ -1858,7 +1858,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_button_option';
-  $strongarm->value = 'stbc_';
+  $strongarm->value = 'stbc_hcount';
   $export['sharethis_button_option'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1910,7 +1910,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_publisherID';
-  $strongarm->value = 'dr-acd3a371-d3c0-b734-48b1-c095501c9e4a';
+  $strongarm->value = '55d7781f-7bd9-4944-acee-84f832478498';
   $export['sharethis_publisherID'] = $strongarm;
 
   $strongarm = new stdClass();
