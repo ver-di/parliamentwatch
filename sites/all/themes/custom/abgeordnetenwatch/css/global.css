@@ -1551,12 +1551,14 @@ form .webform-component-checkboxes .description {
     position: relative;
 }
 .stButton .sharethis,
-.stMainServices.st-sharethis-counter {
-	background: url("../images/sprite.png") no-repeat scroll -681px -2px transparent !important;
+.stMainServices.st-sharethis-counter,
+.st_sharethis_hcount .st-sharethis-counter2 {
+	background: url("../images/sprite.png") no-repeat scroll -681px 0 transparent !important;
 	width: 15px;
 	height: 15px;
 }
-.stButton .st-sharethis-counter {
+.stButton .st-sharethis-counter,
+.st_sharethis_hcount .st-sharethis-counter2 {
     width: 15px !important;
     line-height: 15px !important;
 }
