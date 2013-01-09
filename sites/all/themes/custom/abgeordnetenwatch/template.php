@@ -10,9 +10,17 @@
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
- 
 
-/////////////////////////// customize addthos button (ruth)
+
+/////////////////////////// add sharethis js (ruth)
+////////////////////////////////////////////////////// 
+
+drupal_add_js('var switchTo5x=false;', 'inline');
+drupal_add_js('http://w.sharethis.com/button/buttons.js', 'external');
+drupal_add_js('stLight.options({publisher: "55d7781f-7bd9-4944-acee-84f832478498"});', 'inline');
+
+
+/////////////////////////// customize addthis button (ruth)
 //////////////////////////////////////////////////////
 
 function abgeordnetenwatch_addthis_element($variables) {
