@@ -465,6 +465,7 @@ function pw_solr_search_settings_views_default_views() {
   /* Display: Profiles list parliament */
   $handler = $view->new_display('page', 'Profiles list parliament', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Dáil Members';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
@@ -1619,6 +1620,7 @@ if($record->value == 0){
     t('All'),
     t('user_first_letter_lname'),
     t('Profiles list parliament'),
+    t('Dáil Members'),
     t('[field_user_questions_get], [field_user_answers_give] answer(s)'),
     t('[field_user_questions_get]'),
     t('Profile list commitees'),
