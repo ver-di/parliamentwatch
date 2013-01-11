@@ -6,7 +6,7 @@ jQuery('.add-sharethis').each(function (i) {
 
     var st_url = location.protocol + '//'+location.host+location.pathname + '#' + jQuery(this).closest('div').attr('id');
     
-    jQuery(this).append('<span class="st_sharethis_hcount" onhover="false" st_url="' + st_url + '" displayText=""></span>');
+    jQuery(this).append('<span class="sharethis-wrapper"><span class="st_sharethis_hcount" onhover="false" st_url="' + st_url + '" displayText=""></span></span>');
 
 });
 

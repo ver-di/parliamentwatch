@@ -168,6 +168,9 @@ blockquote p:last-child {
 .push-bottom-s {
     margin-bottom: 12px;
 }
+.push-bottom-m {
+    margin-bottom: 20px;
+}
 .push-bottom-l {
     margin-bottom: 28px;
 }
@@ -176,6 +179,9 @@ blockquote p:last-child {
 }
 .push-left-xxl {
     margin-left: 154px;
+}
+.push-right-m {
+    margin-right: 14px;
 }
 .portrait-l {
     width: 140px;
@@ -195,6 +201,7 @@ a.dark {
 .label-inline {
     display: inline;
 }
+.views-more-link,
 .read-more a,
 a.read-more,
 .read-codex a,
@@ -239,10 +246,12 @@ a.link-report {
 a.link-report:hover {
     background-position: -440px -2220px;
 }
+.views-more-link,
 .read-more a,
 a.read-more {
     background-position: -723px -1942px;
 }
+.views-more-link:hover,
 .read-more a:hover,
 a.read-more:hover {
     background-position: -683px -1982px;
@@ -361,6 +370,10 @@ h1#page-title {
     padding-bottom: 15px !important;
     margin-bottom: 26px !important;
     position: relative;
+}
+.pw-list-item.views-row-last {
+    border-bottom: 0;
+    margin-bottom: 0;
 }
 .node.view-mode-full {
     border-bottom: 0;
@@ -1026,6 +1039,12 @@ textarea:active {
 }
 
 /* blog */
+#views-exposed-form-blog-page-1 {
+    float: right;
+}
+.view-blog .view-content {
+    clear: both;
+}
 #view-display-id-block_1 a {
     color: 
 }
@@ -1095,6 +1114,7 @@ img.no-outline {
     list-style: none;
 }
 .comment-count,
+.icon-taxonomy,
 .field-type-taxonomy-term-reference li,
 .field-type-taxonomy-term-reference li a {
     font-weight: normal;
@@ -1446,8 +1466,12 @@ form .webform-component-checkboxes .description {
     position: relative;
 }
 
-.view-mode-full .view-profile-questions-answers .sharethis-wrapper {
-	top: 2em;
+.view-profile-questions-answers .sharethis-wrapper {
+    top: 2em;
+}
+.view-answers .comment.answer .sharethis-wrapper {
+    top: 25px;
+    right: 24px;
 }
 
 
@@ -1531,28 +1555,26 @@ form .webform-component-checkboxes .description {
 
 /* /////////////////////////// Share this /////////////////// */
 
-.sharethis-wrapper,
-.st_sharethis_hcount,
-.st_sharethis {
+.sharethis-wrapper {
 	padding: 0;
 	position: absolute;
 	top: 0;
 	right: 0;
 	text-align: right;
+	width: 70px;
+}
+.view-mode-full > .sharethis-buttons {
+	margin-bottom: -0.5em;
 }
 .stButton .chicklets {
     padding-left: 0 !important;
-}
-.page-node .sharethis-wrapper {
-    top: 5px;
-    right: 7px;
 }
 .add-sharethis {
     position: relative;
 }
 .stButton .sharethis,
 .stMainServices.st-sharethis-counter,
-.st_sharethis_hcount .st-sharethis-counter2 {
+.stMainServices.st-sharethis-counter2 {
 	background: url("../images/sprite.png") no-repeat scroll -681px 0 transparent !important;
 	width: 15px;
 	height: 15px;
@@ -1776,7 +1798,9 @@ a.print-pdf,
 .anchor-to-top a,
 .arrow-item,
 .back,
+.views-more-link
 .read-more a,
+.views-more-link,
 a.read-more,
 .read-codex a,
 a.read-codex,

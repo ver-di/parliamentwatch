@@ -141,9 +141,10 @@ a#text_resize_increase:hover {
 }
 
 /* sharethis */
-.stButton .sharethis,
-.stMainServices.st-sharethis-counter {
-	background: url("../images/sprite.png") no-repeat scroll -681px -2px transparent !important;
+
+.stMainServices.st-sharethis-counter,
+.stMainServices.st-sharethis-counter2 {
+	background: url("../images/sprite.png") no-repeat scroll -681px 0 transparent !important;
 }
 
 /* icons */
