@@ -176,12 +176,6 @@ print pw_blocks_get_chart($row->nid,\'total\');
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['expose']['label'] = 'Date';
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
-  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -201,6 +195,20 @@ print pw_blocks_get_chart($row->nid,\'total\');
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date (field_pw_poll_date) */
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_pw_poll_date_value']['expose']['label'] = 'Date';
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
   $handler->display->display_options['path'] = 'votes/%';
 
   /* Display: Frontpage */
@@ -360,8 +368,8 @@ print pw_blocks_get_chart($row->nid,\'total\');
     t('no comments yet'),
     t('.'),
     t('Date'),
-    t('Title'),
     t('Page'),
+    t('Title'),
     t('Frontpage'),
     t('zurück'),
     t('weiter'),
