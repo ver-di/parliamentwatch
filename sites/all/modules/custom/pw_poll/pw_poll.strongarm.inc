@@ -72,6 +72,34 @@ function pw_poll_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_poll_en-gb_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_pw_poll_en-gb_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_poll_ga_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_pw_poll_ga_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_poll_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_pw_poll_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_poll_und_pattern';
+  $strongarm->value = '/votes/[node:field-pw-poll-date:custom:Y-m-d]/[node:title]';
+  $export['pathauto_node_pw_poll_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'rate_widgets';
   $strongarm->value = array(
     1 => (object) array(
