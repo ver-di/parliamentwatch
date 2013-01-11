@@ -1026,6 +1026,7 @@ views-exposed-form-profile-list-solr-constituency';
     'group_user_polls_last|user|user|default' => FALSE,
     'group_user_polls_archive|user|user|default' => FALSE,
     'group_polls_per_party|node|pw_poll|full' => FALSE,
+    'group_blog_author_info|node|blogpost|full' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
