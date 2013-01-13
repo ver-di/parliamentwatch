@@ -201,6 +201,14 @@ a.dark {
 .label-inline {
     display: inline;
 }
+.zero-clipboard {
+    padding-left: 15px;
+    background-position: -366px -2302px;
+}
+.permalink {
+    padding-left: 26px;
+    background-position: -282px -2382px;
+}
 .views-more-link,
 .read-more a,
 a.read-more,
@@ -881,7 +889,7 @@ a.print-pdf,
 a.print-page,
 a.print_mail,
 a.print-pdf {
-    padding: 0 15px 0 41px;
+    padding-left: 26px;
 }
 #block-locale-language a {
     padding: 0 15px;
@@ -893,7 +901,7 @@ a.print-pdf {
     padding: 0 38px;
 }
 a.print-page {
-    background-position: -466px -497px;
+    background-position: -481px -497px;
 }
 a.print-pdf {
     background-position: -507px -456px;
@@ -1271,6 +1279,7 @@ form:after {
 :first-child + html form {
     min-height: 1%;
 }
+.text-field,
 textarea,
 .form-textarea-wrapper textarea,
 select,
@@ -1300,6 +1309,12 @@ input[type="week"],
     margin-bottom: 0.8em;
     *line-height: 2.1em; /* IE6 IE7 */
     line-height: 2.1em\9; /* IE8 */
+    background: #fff;
+}
+.text-field {
+    line-height: 2.5em;
+    background: #fff;
+    margin-bottom: 3px;
 }
 textarea {
     min-height: 7em;
@@ -1454,8 +1469,24 @@ form .webform-component-checkboxes .description {
     margin-bottom: 18px;
 }
 .answer {
-    padding: 25px 24px;
     position: relative;
+}
+.answer .content-inner {
+    padding: 25px 24px;
+}
+.answer .more-info {
+    border-top: 1px solid #fff;
+    color: #666;
+}
+.answer .more-info.content-inner {
+    padding: 20px 24px;
+}
+.answer .more-info a {
+    font-weight: normal;
+    color: #666;
+}
+.answer .more-info #zeroclipboard-dynamic-id-0-zeroclipboard-wrapper {
+    float: right !important;
 }
 .comment.answer .bg-white {
     margin-left: -24px;
@@ -1466,7 +1497,7 @@ form .webform-component-checkboxes .description {
     position: relative;
 }
 
-.view-profile-questions-answers .sharethis-wrapper {
+#block-views-profile-questions-answers-block .view-profile-questions-answers .sharethis-wrapper {
     top: 2em;
 }
 .view-answers .comment.answer .sharethis-wrapper {
@@ -1485,7 +1516,7 @@ form .webform-component-checkboxes .description {
 }
 #comments .mandatory {
     bottom: 71px;
-    color: #666666;
+    color: #666;
     position: absolute;
     right: 20px;
 }
@@ -1816,6 +1847,8 @@ a.link-report,
 a.ic-print,
 .ic-info .info-title,
 blockquote:before,
+.zero-clipboard,
+.permalink,
 .collapse-processed .fieldset-title {
     background-image: url("../images/sprite.png");
     background-repeat: no-repeat;
