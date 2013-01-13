@@ -161,9 +161,9 @@ function pw_blog_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'tagadelic_block_tags_2';
-  $strongarm->value = '40';
-  $export['tagadelic_block_tags_2'] = $strongarm;
+  $strongarm->name = 'tagadelic_block_tags_13';
+  $strongarm->value = '12';
+  $export['tagadelic_block_tags_13'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

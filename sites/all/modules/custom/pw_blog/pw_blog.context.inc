@@ -40,23 +40,23 @@ function pw_blog_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'tagadelic-2' => array(
+        'tagadelic-13' => array(
           'module' => 'tagadelic',
-          'delta' => 2,
+          'delta' => '13',
           'region' => 'sidebar_second',
-          'weight' => '-27',
+          'weight' => '-53',
         ),
         'views-blog-block_1' => array(
           'module' => 'views',
           'delta' => 'blog-block_1',
           'region' => 'sidebar_second',
-          'weight' => '-26',
+          'weight' => '-52',
         ),
         'delta_blocks-feed-icons' => array(
           'module' => 'delta_blocks',
           'delta' => 'feed-icons',
           'region' => 'sidebar_second',
-          'weight' => '-25',
+          'weight' => '-51',
         ),
       ),
     ),

@@ -26,8 +26,8 @@ function pw_blog_default_fe_block_settings() {
       'delta' => 'feed-icons',
       'module' => 'delta_blocks',
     ),
-    'tagadelic-2' => array(
-      'delta' => '2',
+    'tagadelic-13' => array(
+      'delta' => '13',
       'module' => 'tagadelic',
     ),
     'views-blog-block_1' => array(
@@ -84,9 +84,9 @@ function pw_blog_default_fe_block_settings() {
     'i18n_mode' => '0',
   );
 
-  $theme['tagadelic-2'] = array(
+  $theme['tagadelic-13'] = array(
     'module' => 'tagadelic',
-    'delta' => '2',
+    'delta' => '13',
     'theme' => 'bartik',
     'status' => 0,
     'weight' => '0',
@@ -94,9 +94,9 @@ function pw_blog_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '',
+    'title' => 'Tags in the blog',
     'cache' => 8,
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
   );
 
   $theme['views-blog-block_1'] = array(
@@ -164,9 +164,9 @@ function pw_blog_default_fe_block_settings() {
     'i18n_mode' => '0',
   );
 
-  $theme['tagadelic-2'] = array(
+  $theme['tagadelic-13'] = array(
     'module' => 'tagadelic',
-    'delta' => '2',
+    'delta' => '13',
     'theme' => 'dailwatch',
     'status' => 0,
     'weight' => '0',
@@ -174,9 +174,9 @@ function pw_blog_default_fe_block_settings() {
     'custom' => '0',
     'visibility' => '0',
     'pages' => '',
-    'title' => '',
+    'title' => 'Tags in the blog',
     'cache' => 8,
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
   );
 
   $theme['views-blog-block_1'] = array(
@@ -244,17 +244,17 @@ function pw_blog_default_fe_block_settings() {
     'i18n_mode' => '1',
   );
 
-  $theme['tagadelic-2'] = array(
+  $theme['tagadelic-13'] = array(
     'module' => 'tagadelic',
-    'delta' => '2',
+    'delta' => '13',
     'theme' => 'seven',
     'status' => 0,
     'weight' => '0',
     'region' => '',
     'custom' => '0',
-    'visibility' => '1',
+    'visibility' => '0',
     'pages' => '',
-    'title' => 'Schlagwörter aus dem Blog',
+    'title' => 'Tags in the blog',
     'cache' => 8,
     'i18n_mode' => '1',
   );
