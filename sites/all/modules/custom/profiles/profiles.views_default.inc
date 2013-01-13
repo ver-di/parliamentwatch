@@ -1140,6 +1140,19 @@ if($record->value == 0){
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Header: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php drupal_add_js(\'Drupal.zeroClipboard.process(".zero-clipboard",".permalink")\', \'inline\'); ?>
+<?php
+drupal_add_js("jQuery(document).ready(function($) {
+	Drupal.zeroClipboard.process(\'.zero-clipboard\', copy);
+	function copy() {
+		return jQuery(\'.permalink\').text();
+	}
+});
+", "inline"); ?>';
   /* Relationship: Comment: Comments of the node */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
@@ -1238,6 +1251,14 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="comment answer clearfix" id="answer-[cid]">';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
+  /* Field: | inner start */
+  $handler->display->display_options['fields']['nothing_5']['id'] = 'nothing_5';
+  $handler->display->display_options['fields']['nothing_5']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_5']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_5']['ui_name'] = '| inner start';
+  $handler->display->display_options['fields']['nothing_5']['label'] = '';
+  $handler->display->display_options['fields']['nothing_5']['alter']['text'] = '<div class="content-inner">';
+  $handler->display->display_options['fields']['nothing_5']['element_label_colon'] = FALSE;
   /* Field: User: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
@@ -1297,6 +1318,14 @@ if($record->value == 0){
   $handler->display->display_options['fields']['comment_body']['empty'] = '<div class="file-image float-left">[field_user_picture]</div>
 <strong>No answer yet</strong>';
   $handler->display->display_options['fields']['comment_body']['hide_alter_empty'] = FALSE;
+  /* Field: | inner end */
+  $handler->display->display_options['fields']['nothing_6']['id'] = 'nothing_6';
+  $handler->display->display_options['fields']['nothing_6']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_6']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_6']['ui_name'] = '| inner end';
+  $handler->display->display_options['fields']['nothing_6']['label'] = '';
+  $handler->display->display_options['fields']['nothing_6']['alter']['text'] = '</div>';
+  $handler->display->display_options['fields']['nothing_6']['element_label_colon'] = FALSE;
   /* Field: | answer end */
   $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
   $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
@@ -1724,6 +1753,14 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="comment answer push-bottom-s clearfix">';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
+  /* Field: | inner start */
+  $handler->display->display_options['fields']['nothing_9']['id'] = 'nothing_9';
+  $handler->display->display_options['fields']['nothing_9']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_9']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_9']['ui_name'] = '| inner start';
+  $handler->display->display_options['fields']['nothing_9']['label'] = '';
+  $handler->display->display_options['fields']['nothing_9']['alter']['text'] = '<div class="content-inner clearfix">';
+  $handler->display->display_options['fields']['nothing_9']['element_label_colon'] = FALSE;
   /* Field: User: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
@@ -1785,6 +1822,85 @@ if($record->value == 0){
   $handler->display->display_options['fields']['comment_body']['empty'] = '<div class="file-image float-left">[field_user_picture]</div>
 <strong>No answer yet</strong>';
   $handler->display->display_options['fields']['comment_body']['hide_alter_empty'] = FALSE;
+  /* Field: | inner end */
+  $handler->display->display_options['fields']['nothing_10']['id'] = 'nothing_10';
+  $handler->display->display_options['fields']['nothing_10']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_10']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_10']['ui_name'] = '| inner end';
+  $handler->display->display_options['fields']['nothing_10']['label'] = '';
+  $handler->display->display_options['fields']['nothing_10']['alter']['text'] = '</div>';
+  $handler->display->display_options['fields']['nothing_10']['element_label_colon'] = FALSE;
+  /* Field: | more info start */
+  $handler->display->display_options['fields']['nothing_7']['id'] = 'nothing_7';
+  $handler->display->display_options['fields']['nothing_7']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_7']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_7']['ui_name'] = '| more info start';
+  $handler->display->display_options['fields']['nothing_7']['label'] = '';
+  $handler->display->display_options['fields']['nothing_7']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_7']['alter']['text'] = '<div class="more-info content-inner clear-both">';
+  $handler->display->display_options['fields']['nothing_7']['element_label_colon'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
+  /* Field: Print link */
+  $handler->display->display_options['fields']['nothing_5']['id'] = 'nothing_5';
+  $handler->display->display_options['fields']['nothing_5']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_5']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_5']['ui_name'] = 'Print link';
+  $handler->display->display_options['fields']['nothing_5']['label'] = '';
+  $handler->display->display_options['fields']['nothing_5']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_5']['alter']['text'] = 'Print question and answer';
+  $handler->display->display_options['fields']['nothing_5']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_5']['alter']['path'] = 'print/node/[nid]';
+  $handler->display->display_options['fields']['nothing_5']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing_5']['alter']['link_class'] = 'print-page';
+  $handler->display->display_options['fields']['nothing_5']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_5']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing_5']['element_default_classes'] = FALSE;
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['label'] = 'Permalink to this question and answer';
+  $handler->display->display_options['fields']['path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['path']['alter']['text'] = '<div class="text-field path">[path]</div>';
+  $handler->display->display_options['fields']['path']['element_type'] = 'div';
+  $handler->display->display_options['fields']['path']['element_class'] = 'form-text';
+  $handler->display->display_options['fields']['path']['element_label_type'] = 'div';
+  $handler->display->display_options['fields']['path']['element_label_class'] = 'push-bottom-xxs';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'permalink';
+  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Field: Clipboard link */
+  $handler->display->display_options['fields']['nothing_6']['id'] = 'nothing_6';
+  $handler->display->display_options['fields']['nothing_6']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_6']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_6']['ui_name'] = 'Clipboard link';
+  $handler->display->display_options['fields']['nothing_6']['label'] = '';
+  $handler->display->display_options['fields']['nothing_6']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_6']['alter']['text'] = 'Copy to clipboard';
+  $handler->display->display_options['fields']['nothing_6']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_6']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing_6']['element_wrapper_class'] = 'zero-clipboard float-right';
+  $handler->display->display_options['fields']['nothing_6']['element_default_classes'] = FALSE;
+  /* Field: | more info end */
+  $handler->display->display_options['fields']['nothing_8']['id'] = 'nothing_8';
+  $handler->display->display_options['fields']['nothing_8']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_8']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_8']['ui_name'] = '| more info end';
+  $handler->display->display_options['fields']['nothing_8']['label'] = '';
+  $handler->display->display_options['fields']['nothing_8']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_8']['alter']['text'] = '</div>';
+  $handler->display->display_options['fields']['nothing_8']['element_label_colon'] = FALSE;
   /* Field: | answer end */
   $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
   $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
@@ -1794,10 +1910,11 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '</div>';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
-  /* Field: Global: Custom text */
+  /* Field: To profile link */
   $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
   $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_4']['ui_name'] = 'To profile link';
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '[view_user]';
   $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
@@ -1846,6 +1963,7 @@ if($record->value == 0){
     t('anonymous<br/><span class="subline">[created]</span>'),
     t('</div>'),
     t('<div class="comment answer clearfix" id="answer-[cid]">'),
+    t('<div class="content-inner">'),
     t('<div class="file-image float-left push-bottom-s">[field_user_picture]</div>
 <h3>Answer from [field_user_fname] [field_user_lname]</h3>
 <p class="date">[created_1]</p>
@@ -1868,6 +1986,12 @@ if($record->value == 0){
     t('<div class="question clear-both">'),
     t('[field_dialogue_sender_name]<br/><span class="subline">[created]</span>'),
     t('<div class="comment answer push-bottom-s clearfix">'),
+    t('<div class="content-inner clearfix">'),
+    t('<div class="more-info content-inner clear-both">'),
+    t('Print question and answer'),
+    t('Permalink to this question and answer'),
+    t('<div class="text-field path">[path]</div>'),
+    t('Copy to clipboard'),
     t('[view_user]'),
   );
   $export['profile_questions_answers'] = $view;

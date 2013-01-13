@@ -1468,6 +1468,7 @@ form .webform-component-checkboxes .description {
 .field-name-questions-and-answers .content {
     margin-bottom: 18px;
 }
+.question,
 .answer {
     position: relative;
 }
@@ -1497,12 +1498,13 @@ form .webform-component-checkboxes .description {
     position: relative;
 }
 
-#block-views-profile-questions-answers-block .view-profile-questions-answers .sharethis-wrapper {
+#block-views-profile-questions-answers-block .sharethis-wrapper,
+#quicktabs-tabpage-politicians_answer-1 .sharethis-wrapper  {
     top: 2em;
 }
 .view-answers .comment.answer .sharethis-wrapper {
     top: 25px;
-    right: 24px;
+    right: 12px;
 }
 
 
