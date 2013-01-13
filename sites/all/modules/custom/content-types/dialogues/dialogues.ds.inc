@@ -46,6 +46,21 @@ function dialogues_ds_field_settings_info() {
   );
   $export['node|dialogue|full'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|dialogue|print';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'dialogue';
+  $ds_fieldsetting->view_mode = 'print';
+  $ds_fieldsetting->settings = array(
+    'question_and_answer_full_content' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|dialogue|print'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -151,6 +166,28 @@ function dialogues_ds_layout_settings_info() {
     'page_option_title' => '',
   );
   $export['node|dialogue|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|dialogue|print';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'dialogue';
+  $ds_layout->view_mode = 'print';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'question_and_answer_full_content',
+      ),
+    ),
+    'fields' => array(
+      'question_and_answer_full_content' => 'ds_content',
+    ),
+    'classes' => array(),
+  );
+  $export['node|dialogue|print'] = $ds_layout;
 
   return $export;
 }

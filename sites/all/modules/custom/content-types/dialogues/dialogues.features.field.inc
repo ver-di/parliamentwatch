@@ -742,6 +742,12 @@ function dialogues_field_default_fields() {
           'type' => 'hidden',
           'weight' => '14',
         ),
+        'print' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -823,6 +829,12 @@ function dialogues_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '26',
+        ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -906,6 +918,12 @@ function dialogues_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '21',
+        ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -993,6 +1011,12 @@ function dialogues_field_default_fields() {
           'type' => 'hidden',
           'weight' => '24',
         ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1065,6 +1089,12 @@ function dialogues_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '25',
+        ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1147,6 +1177,12 @@ function dialogues_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '23',
+        ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1238,6 +1274,12 @@ function dialogues_field_default_fields() {
           'type' => 'hidden',
           'weight' => '22',
         ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1318,6 +1360,12 @@ function dialogues_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '27',
+        ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1444,6 +1492,12 @@ function dialogues_field_default_fields() {
           'type' => 'hidden',
           'weight' => '20',
         ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1529,6 +1583,12 @@ function dialogues_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '19',
+        ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
