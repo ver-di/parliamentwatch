@@ -212,6 +212,11 @@ libraries[socialshareprivacy][directory_name] = "socialshareprivacy"
 libraries[socialshareprivacy][download][type] = "get"
 libraries[socialshareprivacy][download][url] = "http://www.heise.de/extras/socialshareprivacy/jquery.socialshareprivacy.zip"
 
+; zeroclipboard
+libraries[zeroclipboard][directory_name] = "zeroclipboard"
+libraries[zeroclipboard][download][type] = "get"
+libraries[zeroclipboard][download][url] = "http://zeroclipboard.googlecode.com/files/zeroclipboard-1.0.7.tar.gz"
+
 ; CiviCRM
 ; libraries[civicrm][directory_name] = "civicrm"
 ; libraries[civicrm][download][type] = "get"
