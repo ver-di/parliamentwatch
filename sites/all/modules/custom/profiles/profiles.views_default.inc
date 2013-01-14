@@ -1257,7 +1257,7 @@ drupal_add_js("jQuery(document).ready(function($) {
   $handler->display->display_options['fields']['nothing_5']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_5']['ui_name'] = '| inner start';
   $handler->display->display_options['fields']['nothing_5']['label'] = '';
-  $handler->display->display_options['fields']['nothing_5']['alter']['text'] = '<div class="content-inner">';
+  $handler->display->display_options['fields']['nothing_5']['alter']['text'] = '<div class="content-inner clearfix">';
   $handler->display->display_options['fields']['nothing_5']['element_label_colon'] = FALSE;
   /* Field: User: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
@@ -1963,7 +1963,7 @@ drupal_add_js("jQuery(document).ready(function($) {
     t('anonymous<br/><span class="subline">[created]</span>'),
     t('</div>'),
     t('<div class="comment answer clearfix" id="answer-[cid]">'),
-    t('<div class="content-inner">'),
+    t('<div class="content-inner clearfix">'),
     t('<div class="file-image float-left push-bottom-s">[field_user_picture]</div>
 <h3>Answer from [field_user_fname] [field_user_lname]</h3>
 <p class="date">[created_1]</p>
@@ -1986,7 +1986,6 @@ drupal_add_js("jQuery(document).ready(function($) {
     t('<div class="question clear-both">'),
     t('[field_dialogue_sender_name]<br/><span class="subline">[created]</span>'),
     t('<div class="comment answer push-bottom-s clearfix">'),
-    t('<div class="content-inner clearfix">'),
     t('<div class="more-info content-inner clear-both">'),
     t('Print question and answer'),
     t('Permalink to this question and answer'),
