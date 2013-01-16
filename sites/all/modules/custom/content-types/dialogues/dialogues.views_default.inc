@@ -52,22 +52,6 @@ function dialogues_views_default_views() {
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['relationship'] = 'nid';
-  /* Field: | inner start */
-  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
-  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_2']['ui_name'] = '| inner start';
-  $handler->display->display_options['fields']['nothing_2']['label'] = '';
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="content-inner">';
-  $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
-  /* Field: Content: ShareThis Link */
-  $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['table'] = 'node';
-  $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
-  $handler->display->display_options['fields']['sharethis']['relationship'] = 'nid';
-  $handler->display->display_options['fields']['sharethis']['label'] = '';
-  $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
   /* Field: User: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
@@ -222,14 +206,6 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'bg-white';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Field: | inner end */
-  $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
-  $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_4']['ui_name'] = '| inner end';
-  $handler->display->display_options['fields']['nothing_4']['label'] = '';
-  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '</div>';
-  $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
   /* Sort criterion: Comment: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
@@ -289,7 +265,6 @@ function dialogues_views_default_views() {
     t('last »'),
     t('Content'),
     t('User entity referenced from field_dialogue_recipient'),
-    t('<div class="content-inner">'),
     t('<h3>'),
     t('[field_user_lname],'),
     t('to a question from '),
@@ -300,7 +275,6 @@ function dialogues_views_default_views() {
     t(' '),
     t('read complete question and answer'),
     t('.'),
-    t('</div>'),
     t('Frontpage'),
   );
   $export['answers'] = $view;
