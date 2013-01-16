@@ -1025,8 +1025,6 @@ views-exposed-form-profile-list-solr-constituency';
     'group_user_polls|user|user|default' => FALSE,
     'group_user_polls_last|user|user|default' => FALSE,
     'group_user_polls_archive|user|user|default' => FALSE,
-    'group_polls_per_party|node|pw_poll|full' => FALSE,
-    'group_blog_author_info|node|blogpost|full' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -1231,7 +1229,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'features_tools_disable_features_page_js';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['features_tools_disable_features_page_js'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1887,7 +1885,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_node_option';
-  $strongarm->value = 'dialogue,blogpost,pw_poll,0,0,0,0,0';
+  $strongarm->value = 'pw_poll,0,0,0,0,0,0';
   $export['sharethis_node_option'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1906,13 +1904,6 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->name = 'sharethis_option_onhover';
   $strongarm->value = 0;
   $export['sharethis_option_onhover'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'sharethis_publisherID';
-  $strongarm->value = '55d7781f-7bd9-4944-acee-84f832478498';
-  $export['sharethis_publisherID'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

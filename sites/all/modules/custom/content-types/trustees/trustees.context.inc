@@ -19,7 +19,7 @@ function trustees_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'about/board-trustees' => 'about/board-trustees',
+        'about/advisory-board' => 'about/advisory-board',
       ),
     ),
   );
