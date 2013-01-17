@@ -233,8 +233,13 @@ function pw_blog_ds_field_settings_info() {
         'func' => 'theme_ds_field_minimal',
       ),
     ),
+    'comments' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'author' => array(
-      'weight' => '12',
+      'weight' => '4',
       'label' => 'inline',
       'format' => 'author',
       'ft' => array(
@@ -247,7 +252,7 @@ function pw_blog_ds_field_settings_info() {
       ),
     ),
     'post_date' => array(
-      'weight' => '11',
+      'weight' => '3',
       'label' => 'inline',
       'format' => 'ds_post_date_medium',
       'ft' => array(
@@ -269,21 +274,20 @@ function pw_blog_ds_field_settings_info() {
         'func' => 'theme_ds_field_expert',
         'ow' => TRUE,
         'ow-el' => 'div',
-        'ow-cl' => 'field-type-taxonomy-term-reference clearfix clear-both',
-        'fis' => TRUE,
-        'fis-el' => 'ul',
-        'fis-cl' => '',
-        'fi' => TRUE,
-        'fi-el' => 'li',
-        'fi-cl' => '',
+        'ow-cl' => 'icon-taxonomy clearfix clear-both',
       ),
     ),
-    'field_blogpost_teaserimage' => array(
+    'field_teaser_image' => array(
       'ft' => array(
         'func' => 'theme_ds_field_expert',
         'ow' => TRUE,
         'ow-el' => 'div',
-        'ow-cl' => 'field-name-field-blog-teaserimage',
+        'ow-cl' => 'float-left file-image push-bottom-s clear-both',
+      ),
+    ),
+    'group_blogtags_author' => array(
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
       ),
     ),
   );
@@ -518,21 +522,25 @@ function pw_blog_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'sharethis',
         1 => 'title',
-        2 => 'field_blogpost_teaserimage',
-        3 => 'body',
-        4 => 'field_blogpost_blogtags',
-        5 => 'post_date',
-        6 => 'author',
+        2 => 'group_blogtags_author',
+        3 => 'post_date',
+        4 => 'author',
+        5 => 'field_teaser_image',
+        6 => 'body',
+        7 => 'field_blogpost_blogtags',
+        8 => 'comments',
       ),
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
       'title' => 'ds_content',
-      'field_blogpost_teaserimage' => 'ds_content',
-      'body' => 'ds_content',
-      'field_blogpost_blogtags' => 'ds_content',
+      'group_blogtags_author' => 'ds_content',
       'post_date' => 'ds_content',
       'author' => 'ds_content',
+      'field_teaser_image' => 'ds_content',
+      'body' => 'ds_content',
+      'field_blogpost_blogtags' => 'ds_content',
+      'comments' => 'ds_content',
     ),
     'classes' => array(),
   );

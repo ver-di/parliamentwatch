@@ -191,6 +191,10 @@ blockquote p:last-child {
 a.light {
     color: #999;
 }
+.medium,
+a.medium {
+    color: #666;
+}
 .dark,
 a.dark {
     color: #333;
@@ -1130,6 +1134,7 @@ img.no-outline {
 }
 .comment-count,
 .icon-taxonomy,
+.icon-taxonomy a,
 .field-type-taxonomy-term-reference li,
 .field-type-taxonomy-term-reference li a {
     font-weight: normal;
