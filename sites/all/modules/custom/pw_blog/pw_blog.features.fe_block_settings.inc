@@ -39,21 +39,6 @@ function pw_blog_default_fe_block_settings() {
   // bartik
   $theme = array();
 
-  $theme['block-newsletter_order'] = array(
-    'module' => 'block',
-    'theme' => 'bartik',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-    'machine_name' => 'newsletter_order',
-  );
-
   $theme['block-anchor_to_top'] = array(
     'module' => 'block',
     'theme' => 'bartik',
@@ -67,6 +52,21 @@ function pw_blog_default_fe_block_settings() {
     'cache' => -1,
     'i18n_mode' => '0',
     'machine_name' => 'anchor_to_top',
+  );
+
+  $theme['block-newsletter_order'] = array(
+    'module' => 'block',
+    'theme' => 'bartik',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'newsletter_order',
   );
 
   $theme['delta_blocks-feed-icons'] = array(
@@ -119,21 +119,6 @@ function pw_blog_default_fe_block_settings() {
   // dailwatch
   $theme = array();
 
-  $theme['block-newsletter_order'] = array(
-    'module' => 'block',
-    'theme' => 'dailwatch',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-    'machine_name' => 'newsletter_order',
-  );
-
   $theme['block-anchor_to_top'] = array(
     'module' => 'block',
     'theme' => 'dailwatch',
@@ -147,6 +132,21 @@ function pw_blog_default_fe_block_settings() {
     'cache' => -1,
     'i18n_mode' => '0',
     'machine_name' => 'anchor_to_top',
+  );
+
+  $theme['block-newsletter_order'] = array(
+    'module' => 'block',
+    'theme' => 'dailwatch',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => '',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'newsletter_order',
   );
 
   $theme['delta_blocks-feed-icons'] = array(
@@ -199,21 +199,6 @@ function pw_blog_default_fe_block_settings() {
   // seven
   $theme = array();
 
-  $theme['block-newsletter_order'] = array(
-    'module' => 'block',
-    'theme' => 'seven',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => 'Newsletter bestellen',
-    'cache' => -1,
-    'i18n_mode' => '0',
-    'machine_name' => 'newsletter_order',
-  );
-
   $theme['block-anchor_to_top'] = array(
     'module' => 'block',
     'theme' => 'seven',
@@ -227,6 +212,21 @@ function pw_blog_default_fe_block_settings() {
     'cache' => -1,
     'i18n_mode' => '0',
     'machine_name' => 'anchor_to_top',
+  );
+
+  $theme['block-newsletter_order'] = array(
+    'module' => 'block',
+    'theme' => 'seven',
+    'status' => 0,
+    'weight' => '0',
+    'region' => '',
+    'custom' => '0',
+    'visibility' => '0',
+    'pages' => '',
+    'title' => 'Newsletter bestellen',
+    'cache' => -1,
+    'i18n_mode' => '0',
+    'machine_name' => 'newsletter_order',
   );
 
   $theme['delta_blocks-feed-icons'] = array(

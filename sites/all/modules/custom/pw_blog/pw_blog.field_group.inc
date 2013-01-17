@@ -49,7 +49,7 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metainformation',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'field_blogpost_blogtags',
       1 => 'custom_comment_counter',

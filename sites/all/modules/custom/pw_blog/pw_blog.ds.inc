@@ -18,7 +18,7 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'anchor_to_top' => array(
-      'weight' => '7',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -53,7 +53,7 @@ function pw_blog_ds_field_settings_info() {
       ),
     ),
     'comments' => array(
-      'weight' => '8',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -83,6 +83,14 @@ function pw_blog_ds_field_settings_info() {
         'ow' => TRUE,
         'ow-el' => 'div',
         'ow-cl' => 'icon-taxonomy',
+      ),
+    ),
+    'field_teaser_image' => array(
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'file-image float-left push-bottom-s',
       ),
     ),
     'group_blog_author' => array(
@@ -400,13 +408,14 @@ function pw_blog_ds_layout_settings_info() {
         1 => 'title',
         2 => 'group_blog_author',
         3 => 'field_blogpost_blogtags',
-        4 => 'post_date',
-        5 => 'author',
-        6 => 'custom_comment_counter',
-        7 => 'group_blog_metainformation',
-        8 => 'body',
-        9 => 'anchor_to_top',
-        10 => 'comments',
+        4 => 'group_blog_metainformation',
+        5 => 'post_date',
+        6 => 'author',
+        7 => 'custom_comment_counter',
+        8 => 'field_teaser_image',
+        9 => 'body',
+        10 => 'anchor_to_top',
+        11 => 'comments',
       ),
     ),
     'fields' => array(
@@ -414,10 +423,11 @@ function pw_blog_ds_layout_settings_info() {
       'title' => 'ds_content',
       'group_blog_author' => 'ds_content',
       'field_blogpost_blogtags' => 'ds_content',
+      'group_blog_metainformation' => 'ds_content',
       'post_date' => 'ds_content',
       'author' => 'ds_content',
       'custom_comment_counter' => 'ds_content',
-      'group_blog_metainformation' => 'ds_content',
+      'field_teaser_image' => 'ds_content',
       'body' => 'ds_content',
       'anchor_to_top' => 'ds_content',
       'comments' => 'ds_content',

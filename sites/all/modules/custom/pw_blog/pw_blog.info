@@ -12,6 +12,7 @@ dependencies[] = ds
 dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = field_group
+dependencies[] = file_entity
 dependencies[] = media
 dependencies[] = mediafield
 dependencies[] = strongarm

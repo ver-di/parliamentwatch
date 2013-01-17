@@ -64,7 +64,7 @@ function pw_blog_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -321,10 +321,13 @@ function pw_blog_field_default_fields() {
           'weight' => '6',
         ),
         'full' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '24',
+          'label' => 'hidden',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'pw_file_landscape_l',
+          ),
+          'type' => 'file_rendered',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
