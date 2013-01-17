@@ -142,7 +142,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '21',
+          'weight' => '28',
         ),
         'full' => array(
           'label' => 'above',
@@ -241,7 +241,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '24',
         ),
         'full' => array(
           'label' => 'above',
@@ -354,7 +354,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '22',
+          'weight' => '29',
         ),
         'full' => array(
           'label' => 'above',
@@ -433,7 +433,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '25',
         ),
         'full' => array(
           'label' => 'above',
@@ -539,7 +539,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '21',
+          'weight' => '27',
         ),
         'full' => array(
           'label' => 'above',
@@ -626,7 +626,7 @@ function pw_poll_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '20',
+          'weight' => '26',
         ),
         'full' => array(
           'label' => 'above',

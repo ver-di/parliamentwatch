@@ -1,7 +1,7 @@
 jQuery(document).ready(function() {
 
 ////// add a sharethis link to an anchor
-
+stLight.options({publisher:'YourPublisherKey', newOrZero:"zero"});
 jQuery('.add-sharethis').each(function (i) {
 
     var st_url = location.protocol + '//'+location.host+location.pathname + '#' + jQuery(this).closest('div').attr('id');

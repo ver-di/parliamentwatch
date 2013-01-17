@@ -18,7 +18,7 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'poll_legend_block' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -29,7 +29,7 @@ function pw_poll_ds_field_settings_info() {
       ),
     ),
     'poll_details' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -41,8 +41,16 @@ function pw_poll_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'sharethis' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
+    ),
     'comments' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'ft' => array(
@@ -275,16 +283,18 @@ function pw_poll_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'poll_votes_per_party_block_ds',
-        1 => 'poll_details',
-        2 => 'group_fieldset_polls_per_party',
-        3 => 'poll_legend_block',
-        4 => 'field_pw_views_reference',
-        5 => 'body',
-        6 => 'comments',
+        1 => 'sharethis',
+        2 => 'poll_details',
+        3 => 'group_fieldset_polls_per_party',
+        4 => 'poll_legend_block',
+        5 => 'field_pw_views_reference',
+        6 => 'body',
+        7 => 'comments',
       ),
     ),
     'fields' => array(
       'poll_votes_per_party_block_ds' => 'ds_content',
+      'sharethis' => 'ds_content',
       'poll_details' => 'ds_content',
       'group_fieldset_polls_per_party' => 'ds_content',
       'poll_legend_block' => 'ds_content',
@@ -311,8 +321,8 @@ function pw_poll_ds_layout_settings_info() {
         0 => 'sharethis',
         1 => 'title',
         2 => 'poll_details',
-        3 => 'poll_votes_per_party_block_ds',
-        4 => 'group_polls_per_party',
+        3 => 'group_polls_per_party',
+        4 => 'poll_votes_per_party_block_ds',
         5 => 'poll_legend_block',
         6 => 'field_pw_views_reference',
         7 => 'body',
@@ -323,8 +333,8 @@ function pw_poll_ds_layout_settings_info() {
       'sharethis' => 'ds_content',
       'title' => 'ds_content',
       'poll_details' => 'ds_content',
-      'poll_votes_per_party_block_ds' => 'ds_content',
       'group_polls_per_party' => 'ds_content',
+      'poll_votes_per_party_block_ds' => 'ds_content',
       'poll_legend_block' => 'ds_content',
       'field_pw_views_reference' => 'ds_content',
       'body' => 'ds_content',
