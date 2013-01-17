@@ -1140,19 +1140,6 @@ if($record->value == 0){
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Header: Global: PHP */
-  $handler->display->display_options['header']['php']['id'] = 'php';
-  $handler->display->display_options['header']['php']['table'] = 'views';
-  $handler->display->display_options['header']['php']['field'] = 'php';
-  $handler->display->display_options['header']['php']['php_output'] = '<?php drupal_add_js(\'Drupal.zeroClipboard.process(".zero-clipboard",".permalink")\', \'inline\'); ?>
-<?php
-drupal_add_js("jQuery(document).ready(function($) {
-	Drupal.zeroClipboard.process(\'.zero-clipboard\', copy);
-	function copy() {
-		return jQuery(\'.permalink\').text();
-	}
-});
-", "inline"); ?>';
   /* Relationship: Comment: Comments of the node */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
