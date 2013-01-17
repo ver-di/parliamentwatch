@@ -73,6 +73,34 @@ function pw_blog_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_blogtags_author|node|blogpost|teaser';
+  $field_group->group_name = 'group_blogtags_author';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blogpost';
+  $field_group->mode = 'teaser';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => '',
+    'weight' => '2',
+    'children' => array(
+      0 => 'author',
+      1 => 'post_date',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => '',
+      'instance_settings' => array(
+        'classes' => 'clearfix push-bottom-m medium',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_blogtags_author|node|blogpost|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_search_blog_body|node|blogpost|search_result';
   $field_group->group_name = 'group_search_blog_body';
   $field_group->entity_type = 'node';

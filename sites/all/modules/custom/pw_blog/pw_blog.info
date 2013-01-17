@@ -51,6 +51,7 @@ features[field][] = node-blogpost-field_blogpost_blogtags
 features[field][] = node-blogpost-field_teaser_image
 features[field_group][] = group_blog_author|node|blogpost|full
 features[field_group][] = group_blog_metainformation|node|blogpost|full
+features[field_group][] = group_blogtags_author|node|blogpost|teaser
 features[field_group][] = group_search_blog_body|node|blogpost|search_result
 features[node][] = blogpost
 features[taxonomy][] = blogtags
