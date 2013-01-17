@@ -1074,8 +1074,15 @@ textarea:active {
     right: 0;
     top: 0;
 }
-.file-image.float-left {
+.file-image .field-name-field-image-copyright {
+    font-weight: normal;
+}
+.file-image.float-left,
+.media-image-left {
     margin-right: 14px;
+}
+.media-image-left {
+    margin-bottom: 7px;
 }
 .field-name-field-image-copyright {
     color: #666;

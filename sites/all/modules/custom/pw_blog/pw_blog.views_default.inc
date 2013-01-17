@@ -68,7 +68,6 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Field: User: Name */
@@ -110,6 +109,9 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['field_teaser_image']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['field'] = 'field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['label'] = '';
+  $handler->display->display_options['fields']['field_teaser_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_teaser_image']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_teaser_image']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_teaser_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_class'] = 'float-left push-bottom-s push-right-m';
@@ -124,7 +126,6 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['max_length'] = '1000';
   $handler->display->display_options['fields']['body']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['more_link_text'] = 'read more';
@@ -167,7 +168,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['label'] = '';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'comment-count';
+  $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'comment-count clear-both';
   $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['empty'] = '0 comments';
   $handler->display->display_options['fields']['comment_count']['separator'] = '';
@@ -288,7 +289,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'pw-list-item';
+  $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;

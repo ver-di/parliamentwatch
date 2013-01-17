@@ -48,6 +48,7 @@ features[features_api][] = api:1
 features[field][] = node-blogpost-body
 features[field][] = node-blogpost-field_blogpost_blogtags
 features[field][] = node-blogpost-field_teaser_image
+features[field_group][] = group_blog_author|node|blogpost|full
 features[field_group][] = group_blog_metainformation|node|blogpost|full
 features[field_group][] = group_search_blog_body|node|blogpost|search_result
 features[node][] = blogpost

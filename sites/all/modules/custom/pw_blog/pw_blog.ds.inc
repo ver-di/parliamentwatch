@@ -85,6 +85,11 @@ function pw_blog_ds_field_settings_info() {
         'ow-cl' => 'icon-taxonomy',
       ),
     ),
+    'group_blog_author' => array(
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
+    ),
   );
   $export['node|blogpost|full'] = $ds_fieldsetting;
 
@@ -393,7 +398,7 @@ function pw_blog_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'sharethis',
         1 => 'title',
-        2 => 'group_blog_author_info',
+        2 => 'group_blog_author',
         3 => 'field_blogpost_blogtags',
         4 => 'post_date',
         5 => 'author',
@@ -407,7 +412,7 @@ function pw_blog_ds_layout_settings_info() {
     'fields' => array(
       'sharethis' => 'ds_content',
       'title' => 'ds_content',
-      'group_blog_author_info' => 'ds_content',
+      'group_blog_author' => 'ds_content',
       'field_blogpost_blogtags' => 'ds_content',
       'post_date' => 'ds_content',
       'author' => 'ds_content',
