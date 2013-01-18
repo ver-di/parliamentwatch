@@ -44,6 +44,7 @@ function pw_blocks_block_view($delta = ''){
   
   switch($delta){
     case 'pw_taxonomy_menu':
+      //the block for the revisions memory
       if(is_numeric(arg(1))){
         $uid = arg(1);
         $tid = arg(2);
@@ -57,6 +58,7 @@ function pw_blocks_block_view($delta = ''){
       $block['content'] =  pw_blocks_get_accordian_data($uid , $tid , $vid);
     break;
     case 'pw_total_votes':
+      //returns the overview block chart
       if(is_numeric(arg(1))){
         $nid = arg(1);
       }else{
@@ -67,6 +69,7 @@ function pw_blocks_block_view($delta = ''){
       $block['content'] = pw_blocks_get_chart($nid,'total');
     break;
     case 'pw_per_party_votes':
+      //returns the a chart per party
       if(is_numeric(arg(1))){
         $nid = arg(1);
       }else{
@@ -76,6 +79,7 @@ function pw_blocks_block_view($delta = ''){
       $block['content'] = pw_blocks_get_chart($nid,'party');
     break;
     case 'pw_per_custom_lang_switch':
+      //In case of multiple languages it returns a fixed node path for content
       $block['subject'] = t('Languages');
       $block['content'] = pw_blocks_get_custom_lang_switch();
     break;
@@ -89,9 +93,18 @@ function pw_blocks_get_custom_lang_switch(){
   if (drupal_multilingual()) {
     $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
     $links = language_negotiation_get_switch_links($type, $path);
-    print_r($links);
+    //print_r($links);
   }
 }
+
+/**
+ * This function creates the output for the revision memory
+ * @param type $uid
+ * @param type $tid
+ * @param type $vid
+ * @return string 
+ * 
+ */
 
 function pw_blocks_get_accordian_data($uid = NULL, $tid = NULL, $vid = NULL){
   $user = user_load($uid);
@@ -111,6 +124,17 @@ function pw_blocks_get_accordian_data($uid = NULL, $tid = NULL, $vid = NULL){
   return $output;
   
 }
+
+/**
+ * This function get the charts from the google chart api
+ * @param type $nid
+ * @param type $type either total for the overview or party to create chunk of party voting charts
+ * @param type $raw if raw is true it returns the raw google api output otherwise themed image
+ * @param type $height
+ * @param type $width
+ * @return string themed HTML output or raw google image
+ * 
+ */
 
 function pw_blocks_get_chart($nid = NULL, $type = 'total', $raw = NULL, $height = 200, $width = 200){
   $output = '';
@@ -311,3 +335,4 @@ function _pw_blocks_get_consituencies($user){
   $list = rtrim(implode(', ',$terms),',');
   return $list;
 }
+
