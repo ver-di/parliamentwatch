@@ -20,6 +20,7 @@ function trustees_context_default_contexts() {
     'path' => array(
       'values' => array(
         'about/advisory-board' => 'about/advisory-board',
+        'about/bord-comhairleoir' => 'about/bord-comhairleoir',
       ),
     ),
   );
