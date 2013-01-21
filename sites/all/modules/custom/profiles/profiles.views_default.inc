@@ -707,6 +707,13 @@ if($record->value == 0){
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: User revision: Vid */
+  $handler->display->display_options['fields']['vid_1']['id'] = 'vid_1';
+  $handler->display->display_options['fields']['vid_1']['table'] = 'user_revision';
+  $handler->display->display_options['fields']['vid_1']['field'] = 'vid';
+  $handler->display->display_options['fields']['vid_1']['label'] = '';
+  $handler->display->display_options['fields']['vid_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['vid_1']['element_label_colon'] = FALSE;
   /* Field: | start compact */
   $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
   $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
@@ -775,7 +782,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['path'] = 'user/[uid]';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['path'] = 'user/[uid]/revisions/[vid_1]/view';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_type'] = 'div';
@@ -815,7 +822,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_class'] = 'row party';
+  $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_class'] = 'bg-white row party push-bottom-xxs';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
@@ -826,20 +833,24 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_wrapper_class'] = 'row constituency';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_wrapper_class'] = 'bg-white row constituency push-bottom-xxs';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
-  /* Field: User: Link */
-  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['table'] = 'users';
-  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['label'] = '';
-  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'row link-profile';
-  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'Go to profile';
+  /* Field: Link to profile */
+  $handler->display->display_options['fields']['vid']['id'] = 'vid';
+  $handler->display->display_options['fields']['vid']['table'] = 'user_revision';
+  $handler->display->display_options['fields']['vid']['field'] = 'vid';
+  $handler->display->display_options['fields']['vid']['ui_name'] = 'Link to profile';
+  $handler->display->display_options['fields']['vid']['label'] = '';
+  $handler->display->display_options['fields']['vid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['vid']['alter']['text'] = 'Go to profile';
+  $handler->display->display_options['fields']['vid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['vid']['alter']['path'] = 'user/[uid]/revisions/[vid]/view';
+  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['vid']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
+  $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
   /* Field: | more info end */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
@@ -858,14 +869,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '</div>';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
-  /* Field: User revision: Vid */
-  $handler->display->display_options['fields']['vid']['id'] = 'vid';
-  $handler->display->display_options['fields']['vid']['table'] = 'user_revision';
-  $handler->display->display_options['fields']['vid']['field'] = 'vid';
-  $handler->display->display_options['fields']['vid']['label'] = '';
-  $handler->display->display_options['fields']['vid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['vid']['alter']['path'] = 'user/[uid]/revisions/[vid]/view';
-  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
   /* Sort criterion: Taxonomy term: Term ID */
   $handler->display->display_options['sorts']['tid']['id'] = 'tid';
   $handler->display->display_options['sorts']['tid']['table'] = 'taxonomy_term_data';
