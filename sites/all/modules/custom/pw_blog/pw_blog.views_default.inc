@@ -233,7 +233,7 @@ function pw_blog_views_default_views() {
   /* Display: Last entries */
   $handler = $view->new_display('block', 'Last entries', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Last entries';
+  $handler->display->display_options['title'] = 'Last blog entries';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
@@ -323,6 +323,7 @@ function pw_blog_views_default_views() {
     t('Comment count'),
     t('Feed'),
     t('Last entries'),
+    t('Last blog entries'),
     t('Page'),
   );
   $export['blog'] = $view;
