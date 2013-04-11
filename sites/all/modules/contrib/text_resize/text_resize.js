@@ -1,4 +1,3 @@
-// $Id: text_resize.js,v 1.1.2.8.2.6 2010/12/29 23:14:13 attheshow Exp $
 (function ($) { // JavaScript should be compatible with other libraries than jQuery
   Drupal.behaviors.textResize = { // D7 "Changed Drupal.behaviors to objects having the methods "attach" and "detach"."
     attach: function(context) {
