@@ -52,7 +52,7 @@ $sites['parlawatch.com'] = 'abgeordnetenwatch.de';          // for all test*.par
 $sites['de.pw.silversurfer'] = 'abgeordnetenwatch.de';    // ruth's local maschine
 
 $sites['dailwatch.ie'] = 'dailwatch.ie';
-$sites['ie.parliamentwatch.org'] = 'dailwatch.ie';
+$sites['ie.parliamentwatch.silversurfer'] = 'dailwatch.ie';
 
 $sites['parl.marsad.tn'] = 'marsad.tn';
 $sites['tn.parliamentwatch.org'] = 'marsad.tn';
