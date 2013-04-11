@@ -16,16 +16,16 @@
  *       custom more scalable menu parent selector.
  *
  * ToDo: Pre-placement of new menu items is sometimes slightly misplaced.
- *
  */
 
-DEFINE('CONTENT_MENU_ADD_EXISTING_CONTENT_URL', 'admin/structure/menu/manage/add_existing_content');
-DEFINE('CONTENT_MENU_ALTER_ALL_MENUS', FALSE);
-DEFINE('CONTENT_MENU_ADD_ITEM_WEIGHT', 50);
+define('CONTENT_MENU_ADD_EXISTING_CONTENT_URL', 'admin/structure/menu/manage/add_existing_content');
+define('CONTENT_MENU_ADD_EXISTING_VIEW_URL', 'admin/structure/menu/manage/add_existing_view');
+define('CONTENT_MENU_ALTER_ALL_MENUS', FALSE);
+define('CONTENT_MENU_ADD_ITEM_WEIGHT', 50);
 
 
 /**
- * Implementation for hook_permission().
+ * Implements hook_permission().
  */
 function content_menu_permission() {
   return array(
@@ -39,8 +39,7 @@ function content_menu_permission() {
 
 
 /**
- * Implementation of hook_menu().
- *
+ * Implements hook_menu().
  */
 function content_menu_menu() {
   // Add menu router item for use as target with dummy menu items.
@@ -50,16 +49,23 @@ function content_menu_menu() {
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
+  $items[CONTENT_MENU_ADD_EXISTING_VIEW_URL] = array(
+    'title' => 'Add existing view.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('content_menu_add_exiting_view'),
+    'access arguments' => array('access content'),
+    'file' => 'content_menu.menu_admin.inc',
+  );
+
   return $items;
 }
 
 
 /**
- * Menu router callback for url "menu-dummy".
- * For use as target with dummy menu items.
+ * Menu router callback for placeholder menu items.
  */
 function content_menu_menu_callback_menu_dummy() {
-  return t('This is a menu dummy.');
+  return t('This is an empty placeholder page for a menu item.<br /><br />You can replace it with a valid target page URL in the <a href="@url">menu administration</a>.', array('@url' => url('admin/structure/menu')));
 }
 
 
@@ -75,6 +81,17 @@ function content_menu_menu_alter(&$items) {
   unset($items['admin/structure/menu']['file']);
 }
 
+/**
+ * Implements hook_init().
+ *
+ * Necessary to invoke for ajax callback to work correctly.
+ * @todo Refactor as ajax is actually not used.
+ */
+function content_menu_init() {
+  if (arg(0) == 'admin' || ((arg(0) == 'system') && (arg(1) == 'ajax'))) {
+    module_load_include('inc', 'content_menu', 'content_menu.menu_admin');
+  }
+}
 
 /**
  * Callback for altered admin/structure/menu router item.
@@ -86,8 +103,7 @@ function content_menu_menu_overview_page_extended() {
 
 
 /**
- * Implementation of hook_theme().
- *
+ * Implements hook_theme().
  */
 function content_menu_theme() {
   return array(
@@ -104,25 +120,8 @@ function content_menu_theme() {
  * Implements hook_views_api().
  */
 function content_menu_views_api() {
-  list($module, $api) = func_get_args();
-  if ($module == "views" && $api == "views_default") {
-    return array("version" => "3.0");
-  }
+  return array('api' => 3.0);
 }
-
-
-/**
- * Implements hook_views_default_views().
- *
- * Declare default view for selecting existing content.
- */
-function content_menu_views_default_views() {
-  $export = array();
-  module_load_include('inc', 'content_menu', 'content_menu.selectionview');
-  $export['menu_existing_content_selection'] = content_menu_views_default_view_selectionview();
-  return $export;
-}
-
 
 /**
  * Implements hook_page_alter().
@@ -144,10 +143,10 @@ function content_menu_page_alter(&$page) {
   }
 
   if (current_path() == content_menu_variable_get_add_existing_content_url()) {
-    $item = content_menu_get_menu_item_form_querystring();
+    $item = content_menu_get_menu_item_from_querystring();
     if (isset($item['mlid']) && ($item['mlid'] != 0)) {
-      drupal_set_message(t('You`re about to select a new content target for menu item "%title"', array('%title' => $item['title'])));
-      drupal_set_message('Complete the process by finding and selecting an existing content for this menu item.');
+      drupal_set_message(t("You're about to select a new content target for menu item %title.", array('%title' => $item['title'])));
+      drupal_set_message(t('Now you can select an existing content item for menu item %title.', array('%title' => $item['title'])));
     }
   }
 }
@@ -160,11 +159,11 @@ function content_menu_set_menu_admin_breadcrumb($menu_name = NULL) {
   $breadcrumb = array();
   $breadcrumb[] = l(t('Home'), '<front>');
   $breadcrumb[] = l(t('Administration'), 'admin');
-  $breadcrumb[] = l(t('Structure'),      'admin/structure');
-  $breadcrumb[] = l(t('Menus'),          'admin/structure/menu');
+  $breadcrumb[] = l(t('Structure'), 'admin/structure');
+  $breadcrumb[] = l(t('Menus'), 'admin/structure/menu');
 
   if ($menu_name == NULL) {
-    $menu_item = content_menu_get_menu_item_form_querystring();
+    $menu_item = content_menu_get_menu_item_from_querystring();
     if (isset($menu_item['name'])) {
       $menu_name = $menu_item['name'];
     }
@@ -181,7 +180,7 @@ function content_menu_set_menu_admin_breadcrumb($menu_name = NULL) {
 
 
 /**
- * Implementation of hook_menu_link_insert.
+ * Implements hook_menu_link_insert().
  */
 function content_menu_menu_link_insert($link) {
   content_menu_mark_link_updated($link);
@@ -189,7 +188,7 @@ function content_menu_menu_link_insert($link) {
 
 
 /**
- * Implementation of hook_menu_link_update.
+ * Implements hook_menu_link_update().
  */
 function content_menu_menu_link_update($link) {
   content_menu_mark_link_updated($link);
@@ -197,8 +196,7 @@ function content_menu_menu_link_update($link) {
 
 
 /**
- * Remember newly created menu items to highlight them
- * on the next menu admin page view/request.
+ * Mark newly created menu items, to highlight them subsequently.
  *
  * @param $link Array defining the link.
  */
@@ -213,24 +211,15 @@ function content_menu_mark_link_updated($link) {
   }
 }
 
-
-//
-//
-//  Menu management workflow improvements
-//
-//
-
-
-
 /**
- * Implementation of hook_form_FORM_ID_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * Improve menu_edit_item form for better authoring experience.
  */
 function content_menu_form_menu_edit_item_alter(&$form, &$form_state, $form_id) {
   // Pre-populate menu item form elements with data from querystring.
   if (isset($_GET['menu_title'])) {
-    $menu_item = content_menu_get_menu_item_form_querystring();
+    $menu_item = content_menu_get_menu_item_from_querystring();
     // If even link_path is given, create item right away and go back.
     if (!empty($menu_item['link_path'])) {
       content_menu_link_save($menu_item);
@@ -243,10 +232,10 @@ function content_menu_form_menu_edit_item_alter(&$form, &$form_state, $form_id) 
     $form['enabled']['#default_value'] = !($menu_item['hidden']);
   }
 
-  // Extend breadcrumb
+  // Extend breadcrumb.
   if ($form['mlid']['#value']) {
-    $menu_name = reset(explode(':', $form['parent']['#default_value']));
-    content_menu_set_menu_admin_breadcrumb($menu_name);
+    $menu = explode(':', $form['parent']['#default_value']);
+    content_menu_set_menu_admin_breadcrumb($menu[0]);
   }
 
   // Simplify the form, by putting all "advanced" fields in fieldset.
@@ -258,7 +247,7 @@ function content_menu_form_menu_edit_item_alter(&$form, &$form_state, $form_id) 
     '#title' => t('Advanced menu item settings'),
   );
   $advanced_elements = array('description', 'expanded', 'parent', 'weight');
-  foreach($advanced_elements as $el_key) {
+  foreach ($advanced_elements as $el_key) {
     $form['advanced'][$el_key] = $form[$el_key];
     unset($form[$el_key]);
   }
@@ -266,13 +255,13 @@ function content_menu_form_menu_edit_item_alter(&$form, &$form_state, $form_id) 
 
 
 /**
- * Implementation of hook_form_FORM_ID_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * Improve menu_item_delete_form form for better authoring experience.
  */
 function content_menu_form_menu_item_delete_form_alter(&$form, &$form_state, $form_id) {
   if ($form['#item']['mlid']['#value']) {
-    // Extend breadcrumb
+    // Extend breadcrumb.
     $menu_name = $form['#item']['menu_name'];
     content_menu_set_menu_admin_breadcrumb($menu_name);
 
@@ -292,8 +281,13 @@ function content_menu_form_menu_item_delete_form_alter(&$form, &$form_state, $fo
         if (is_object($node) && node_access('delete', $node)) {
           $form['delete_node'] = array(
             '#type' => 'checkbox',
-            //'#markup' => '<div class="question">' . t('Are you sure you want to delete the custom menu link %item?', array('%item' => t($form['#item']['link_title']))) . '</div><p></p>',
-            '#title' => t('Delete associated %type <a href="@url">%title</a> as well.', array('%type' => node_type_get_name($node), '@url' => url('node/' . $node->nid), '%title' => $node->title)),
+            // '#markup' => '<div class="question">' . t('Are you sure you want to delete the custom menu link %item?', array('%item' => t($form['#item']['link_title']))) . '</div><p></p>',
+            '#title' => t('Delete associated %type <a href="@url">%title</a> as well.',
+              array(
+                '%type' => node_type_get_name($node),
+                '@url' => url('node/' . $node->nid),
+                '%title' => $node->title,
+              )),
             '#default_value' => FALSE,
             '#weight' => -50,
           );
@@ -329,14 +323,14 @@ function content_menu_item_delete_form_submit($form, &$form_state) {
 
 
 /**
- * Implementation of hook_form_FORM_ID_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * Pre-populate input elements in menu_position_add_rule_form.
  */
 function content_menu_form_menu_position_add_rule_form_alter(&$form, &$form_state, $form_id) {
   // Pre-populate menu item form elements with data from querystring.
   if (isset($_GET['menu_title'])) {
-    $menu_item = content_menu_get_menu_item_form_querystring();
+    $menu_item = content_menu_get_menu_item_from_querystring();
     $form['admin_title']['#default_value'] = $menu_item['title'];
     $form['plid']['#default_value'] = $menu_item['name'] . ':' . $menu_item['plid'];
   }
@@ -344,7 +338,7 @@ function content_menu_form_menu_position_add_rule_form_alter(&$form, &$form_stat
 
 
 /**
- * Implementation of hook_form_FORM_ID_alter().
+ * Implements hook_form_FORM_ID_alter().
  *
  * Overhaul the menu_overview_form to improve menu authoring experience.
  */
@@ -357,7 +351,7 @@ function content_menu_form_menu_overview_form_alter(&$form, &$form_state, $form_
 
 
 /**
- * Implementation hook_menu_local_tasks_alter().
+ * Implements hook_menu_local_tasks_alter().
  *
  * Remove the "Add link" link on menu listing page, since
  * we add a "New item" row and form element, which cares for adding new items.
@@ -365,7 +359,7 @@ function content_menu_form_menu_overview_form_alter(&$form, &$form_state, $form_
 function content_menu_menu_local_tasks_alter(&$data, $router_item, $root_path) {
   if (strpos(current_path(), 'admin/structure/menu/manage/') === 0) {
     if (variable_get('content_menu_alter_all_menus', CONTENT_MENU_ALTER_ALL_MENUS) || content_menu_is_menu_considered(arg(4))) {
-      foreach($data['actions']['output'] as $key => $action) {
+      foreach ($data['actions']['output'] as $key => $action) {
         if ($action['#link']['path'] == 'admin/structure/menu/manage/%/add') {
           unset($data['actions']['output'][$key]);
         }
@@ -376,7 +370,7 @@ function content_menu_menu_local_tasks_alter(&$data, $router_item, $root_path) {
 
 
 /**
- * Implementation of template_preprocess_views_view_field().
+ * Implements template_preprocess_views_view_field().
  *
  * For views to select exiting content, rewrite the nid field ("select" link)
  * to link to the correct target url and pass through the querystring params.
@@ -387,7 +381,7 @@ function content_menu_preprocess_views_view_field(&$vars) {
   $selection_view = explode(':', variable_get('content_menu_add_existing_content_view', 'menu_existing_content_selection'));
   if (($field->field == 'nid') && ($view->name == $selection_view[0]) && ((!isset($selection_view[1]) || ($view->current_display == $selection_view[1])))) {
     module_load_include('inc', 'content_menu', 'content_menu.menu_admin');
-    $item = content_menu_get_menu_item_form_querystring();
+    $item = content_menu_get_menu_item_from_querystring();
     $item['link_path'] = 'node/' . $field->original_value;
     $url = 'admin/structure/menu/manage/' . $item['name'] . '/add';
     $vars['output'] = l(t('select'), $url, array('query' => content_menu_assemble_query_string($item)));
@@ -396,7 +390,7 @@ function content_menu_preprocess_views_view_field(&$vars) {
 
 
 /**
- * Implementation of hook_menu_item_target_types_alter().
+ * Implements hook_menu_item_target_types_alter().
  *
  * Extend the target types for a new menu item provided by default.
  * See content_menu.api.php for further documentation.
@@ -418,16 +412,24 @@ function content_menu_menu_item_element_alter(&$el) {
 }
 
 
-
-//
-//
-// Menu management reachability improvements
-//
-//
-
+/**
+ * Implements hook_node_insert().
+ *
+ * After creating a new node, if it's being created to replace a menu-dummy,
+ * perform the replacement.
+ */
+function content_menu_node_insert($node) {
+  // Ensure that this node is replacing a menu dummy.
+  if (isset($_GET['menu_link_path']) && $_GET['menu_link_path'] == 'menu-dummy') {
+    // Update the dummy that is being replaced by this node.
+    $menu_item = content_menu_get_menu_item_from_querystring();
+    $menu_item['link_path'] = "node/" . $node->nid;
+    content_menu_link_save($menu_item);
+  }
+}
 
 /**
- * Implementation of hook_form_alter().
+ * Implements hook_form_alter().
  *
  * Improve menu item management for node edit forms.
  */
@@ -436,49 +438,70 @@ function content_menu_form_alter(&$form, &$form_state, $form_id) {
     // Add link to menu overview / admin form to menu fieldset.
     if (user_access('administer menu')) {
       if ($form['#node_edit_form'] && isset($form['menu'])) {
-        $menu_name = reset(explode(':', $form['menu']['link']['parent']['#default_value']));
-        $form['menu']['link']['menu_admin_link'] = array('#type' => 'markup', '#markup' => l(t('Manage menu structure') . ' …', 'admin/structure/menu/manage/' . $menu_name, array('attributes' => array('target' => '_blank'))));
+        $menu = explode(':', $form['menu']['link']['parent']['#default_value']);
+        $form['menu']['link']['menu_admin_link'] = array('#type' => 'markup', '#markup' => l(t('Manage menu structure') . ' …', 'admin/structure/menu/manage/' . $menu[0], array('attributes' => array('target' => '_blank'))));
       }
     }
 
     if (isset($form['menu'])) {
-      // Hide description field from menu item fieldset.
-      $form['menu']['link']['description']['#access'] = FALSE;
+      if (isset($_GET['menu_link_path']) && $_GET['menu_link_path'] == 'menu-dummy') {
+        // If this node is being created to replace a menu dummy, substitute
+        // the usual menu form for a description of what will happen.
+        $form['menu']['enabled']['#access'] = FALSE;
+        $form['menu']['link']['#access'] = FALSE;
+        $trail = content_menu_get_menu_trail($_GET['menu_mlid']);
+        $form['menu']['menu_dummy_replace'] = array(
+          '#markup' => t('A link to this node will replace the menu dummy at <br /> %trail', array('%trail' => implode(' » ', $trail))),
+        );
+        $form['title']['#default_value'] = $form['title_field']['und']['0']['value']['#default_value'] = $_GET['menu_title'];
+      }
+      else {
+        // Hide description field from menu item fieldset.
+        $form['menu']['link']['description']['#access'] = FALSE;
 
-      // Pre-Populate menu item fields, if given via querystring.
-      if (isset($_GET['menu_title'])) {
-        $menu_item = content_menu_get_menu_item_form_querystring();
+        // Pre-Populate menu item fields, if given via querystring.
+        if (isset($_GET['menu_title'])) {
+          $menu_item = content_menu_get_menu_item_from_querystring();
 
-        // Set node form's menu item input field according to query string input.
-        $form['menu']['enabled']['#default_value'] = 1;
-        $form['menu']['link']['hidden']['#value'] = $menu_item['hidden'];
-        $form['menu']['link']['link_title']['#default_value'] = $menu_item['title'];
-        $form['menu']['link']['parent']['#default_value'] = $menu_item['name'] . ':' . $menu_item['plid'];
-        $form['menu']['link']['weight']['#default_value'] = $menu_item['weight'];
+          // Set node form's menu item input field
+          // according to query string input.
+          $form['menu']['enabled']['#default_value'] = 1;
+          $form['menu']['link']['hidden']['#value'] = $menu_item['hidden'];
+          $form['menu']['link']['link_title']['#default_value'] = $menu_item['title'];
+          $form['menu']['link']['parent']['#default_value'] = $menu_item['name'] . ':' . $menu_item['plid'];
+          $form['menu']['link']['weight']['#default_value'] = $menu_item['weight'];
 
-        $form['title']['#default_value'] = $form['title_field']['und']['0']['value']['#default_value'] = $menu_item['title'];
+          $form['title']['#default_value'] = $form['title_field']['und']['0']['value']['#default_value'] = $menu_item['title'];
+        }
       }
     }
   }
 }
 
+/**
+ * Build the menu trail array that points to the given mlid.
+ */
+function content_menu_get_menu_trail($leaf_mlid) {
+  $menu_link = menu_link_load($leaf_mlid);
+  $menu = menu_load($menu_link['menu_name']);
+  $trail = array();
 
+  while ($menu_link) {
+    array_unshift($trail, $menu_link['link_title']);
+    $menu_link = menu_link_load($menu_link['plid']);
+  }
+  array_unshift($trail, $menu['title']);
 
-//
-//
-// Helper functions
-//
-//
-
+  return $trail;
+}
 
 /**
  * Build menu item data from querystring.
- *
  */
-function content_menu_get_menu_item_form_querystring() {
+function content_menu_get_menu_item_from_querystring() {
   // Sanitize querystring input.
   $menu_item = array();
-  foreach($_GET as $get_key => $get_value) {
+  foreach ($_GET as $get_key => $get_value) {
     if (substr($get_key, 0, 5) == 'menu_') {
       $menu_item[check_plain(substr($get_key, 5))] = strip_tags($get_value);
     }
@@ -491,7 +514,8 @@ function content_menu_get_menu_item_form_querystring() {
  * Check if a given menu (name) applies for being considered by this module.
  */
 function content_menu_is_menu_considered($menu_name) {
-  $exclude_menus = variable_get('content_menu_special_menus', array('management', 'user-menu', 'navigation', 'devel'));
+  $exclude_menus = variable_get('content_menu_special_menus',
+    array('management', 'user-menu', 'navigation', 'devel'));
   return !in_array($menu_name, $exclude_menus);
 }
 
