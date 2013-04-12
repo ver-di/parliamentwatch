@@ -208,6 +208,11 @@ function migrate_drush_command() {
     ),
     'drupal dependencies' => array('migrate'),
   );
+  $items['migrate-auto-register'] = array(
+    'description' => 'Register any newly-defined migration classes',
+    'drupal dependencies' => array('migrate'),
+    'aliases' => array('mar'),
+  );
   $items['migrate-wipe'] = array(
     'description' => 'Delete all nodes from specified content types.',
     'examples' => array(
@@ -787,6 +792,9 @@ function drush_migrate_rollback($args = NULL) {
     if ($idlist = drush_get_option('idlist', FALSE)) {
       $options['idlist'] = $idlist;
     }
+    if (drush_get_option('force', FALSE) == 1) {
+      $options['force'] = TRUE;
+    }
     $limit = drush_get_option('limit');
     if ($limit) {
       $parts = explode(' ', $limit);
@@ -1269,6 +1277,13 @@ function drush_migrate_deregister_migration($machine_name) {
   db_delete('migrate_status')
     ->condition('machine_name', $machine_name)
     ->execute();
+}
+
+/**
+ * Register any previously-unrecognized non-dynamic migrations.
+ */
+function drush_migrate_auto_register($args = NULL) {
+  migrate_autoregister();
 }
 
 /**

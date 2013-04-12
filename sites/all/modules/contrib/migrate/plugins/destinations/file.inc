@@ -351,9 +351,11 @@ class MigrateFileUri extends MigrateFile {
     // Perform the copy operation, with a cleaned-up path.
     $this->sourcePath = self::urlencode($this->sourcePath);
     if (!@copy($this->sourcePath, $destination)) {
-      throw new MigrateException(t('The specified file %file could not be copied to ' .
-        '%destination.',
-        array('%file' => $this->sourcePath, '%destination' => $destination)));
+      $migration = Migration::currentMigration();
+      $migration->saveMessage(t('The specified file %file could not be copied to ' .
+              '%destination.',
+              array('%file' => $this->sourcePath, '%destination' => $destination)));
+      return FALSE;
     }
     else {
       return TRUE;
@@ -368,16 +370,15 @@ class MigrateFileUri extends MigrateFile {
    * @return string
    */
   static public function urlencode($filename) {
-    // Only apply to a full URL (and then, don't encode the colon).
-    $split = explode('://', $filename);
-    if (count($split) == 2) {
-      $scheme = $split[0];
-      $filename = $split[1];
+    // Only apply to a full URL
+    if (strpos($filename, '://')) {
       $components = explode('/', $filename);
       foreach ($components as $key => $component) {
         $components[$key] = rawurlencode($component);
       }
-      $filename = $scheme . '://' . implode('/', $components);
+      $filename = implode('/', $components);
+      // Actually, we don't want colons encoded
+      $filename = str_replace('%3A', ':', $filename);
     }
     return $filename;
   }
