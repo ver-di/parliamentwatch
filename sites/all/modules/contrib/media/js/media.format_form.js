@@ -21,12 +21,11 @@ Drupal.behaviors.mediaFormatForm = {
     //       this particular functionality is. We should evaluate if it is still
     //       needed.
 
-    // Adding the buttons should only be done once in order to prevent multiple
-    // buttons from being added if part of the form is updated via AJAX
-    $('#media-format-form').once('format', function() {
-      $('<a class="button fake-ok">' + Drupal.t('Submit') + '</a>').appendTo($('#media-format-form')).bind('click', Drupal.media.formatForm.submit);
-      $('<a class="button fake-cancel">' + Drupal.t('Cancel') + '</a>').appendTo($('#media-format-form')).bind('click', Drupal.media.formatForm.submit);
-    });
+    $('<a class="button fake-ok">' + Drupal.t('Submit') + '</a>').appendTo($('#media-format-form')).bind('click', Drupal.media.formatForm.submit);
+    $('<a class="button fake-cancel">' + Drupal.t('Cancel') + '</a>').appendTo($('#media-format-form')).bind('click', Drupal.media.formatForm.submit);
+    if (Drupal.settings.media_format_form.autosubmit) {
+      $('.button.fake-ok').click();
+    }
   }
 };
 
