@@ -30,43 +30,82 @@ function menu_import_form($form, &$form_state) {
  * Step 1 of menu import process.
  */
 function menu_import_form_step1(&$form, &$form_state) {
-  $form['main'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('General settings'),
-  );
-  $form['main']['menu_name'] = array(
+  $form['menu_name'] = array(
     '#type' => 'select',
-    '#title' => t('Menu to import in'),
+    '#title' => t('Target menu'),
     '#options' => menu_get_menus(),
     '#description' => t('This menu will contain the imported items.'),
     '#required' => TRUE,
     '#default_value' => !empty($form_state['values']['menu_name']) ? $form_state['values']['menu_name'] : NULL,
   );
-  $form['main']['upload'] = array(
-    '#type' => 'file',
-    '#title' => t('Menu file'),
-    '#description' => t('File containing specially indented text.'),
+
+  $form['import_source'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Source'),
+    '#description' => t('The source file/text must contain menu definition. See !help for format details.',
+        array('!help' => l(t('help'), 'admin/help/menu_import'))),
   );
 
-  $form['main']['create_content'] = array(
+  $form['import_source']['upload'] = array(
+    '#type' => 'file',
+    '#title' => t('Menu file'),
+  );
+
+  $form['import_source']['text_import'] = array(
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#title' => t('Text import'),
+    '#description' => t('Type/paste menu definition here'),
+  );
+
+  $form['import_source']['text_import']['text'] = array(
+    '#type' => 'textarea',
+    '#default_value' => !empty($form_state['values']['text']) ? $form_state['values']['text'] : '',
+  );
+
+  $form['options'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Options'),
+  );
+
+  $form['options']['link_to_content'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Link to existing content'),
+    '#description' => t('Look for existing content by path or title.'),
+    '#default_value' => !empty($form_state['values']['link_to_content']) ? $form_state['values']['link_to_content'] : 1,
+  );
+
+  $form['options']['remove_menu_items'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Remove existing menu items'),
+    '#description' => t('Remove current menu items before running import.'),
+    '#default_value' => !empty($form_state['values']['remove_menu_items']) ? $form_state['values']['remove_menu_items'] : 0,
+  );
+
+  $form['options']['create_content'] = array(
     '#type' => 'checkbox',
     '#title' => t('Create initial content'),
     '#description' => t('Create initial content if none was found.'),
     '#default_value' => !empty($form_state['values']['create_content']) ? $form_state['values']['create_content'] : 0,
   );
 
-  $form['main']['link_to_content'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Link to existing content'),
-    '#description' => t('Look for existing content by path or title.'),
-    '#default_value' => !empty($form_state['values']['link_to_content']) ? $form_state['values']['link_to_content'] : 0,
-  );
-
-  $form['main']['remove_menu_items'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Remove existing menu items'),
-    '#description' => t('Remove current menu items before running import.'),
-    '#default_value' => !empty($form_state['values']['remove_menu_items']) ? $form_state['values']['remove_menu_items'] : 0,
+  $langs = language_list();
+  // We do not use lambda function here for the sake of 5.2.x support.
+  function language_list_get_names($item) {
+    return $item->name;
+  }
+  $lang_opts = array_map('language_list_get_names', $langs);
+  $form['options']['language'] = array(
+    '#type' => 'select',
+    '#title' => t('Default language'),
+    '#description' =>
+      t('Here you can set the default language of newly created content and/or menu items.'
+      . ' If menu item has its own valid language it will override the default one.'),
+    '#empty_option' => t('- Not defined -'),
+    '#empty_value'  => LANGUAGE_NONE,
+    '#options' => $lang_opts,
+    '#required' => FALSE,
   );
 
   $form['node'] = array(
@@ -108,6 +147,18 @@ function menu_import_form_step1(&$form, &$form_state) {
     '#default_value' => !empty($form_state['values']['node_body']) ? $form_state['values']['node_body'] : $default_body_value,
   );
 
+  $formats = filter_formats();
+  function filter_formats_get_names($item) {
+    return $item->name;
+  }
+  $filter_opts = array_map('filter_formats_get_names', $formats);
+  $form['node']['node_format'] = array(
+    '#type' => 'select',
+    '#options' => $filter_opts,
+    '#title' => t('Body format'),
+    '#default_value' => !empty($form_state['values']['node_format']) ? $form_state['values']['node_format'] : 'filtered_html',
+  );
+
   $users = db_query('SELECT uid, name FROM {users} WHERE uid <> 0')->fetchAllKeyed();
 
   $form['node']['node_author'] = array(
@@ -143,6 +194,10 @@ function menu_import_form_step1(&$form, &$form_state) {
             $("#edit-node").fadeOut();
           }
         });
+        // Show text input area if it has any contents.
+        if ($("textarea[name=text]").val()) {
+          $("#edit-text-import a.fieldset-title").click();
+        };
       });
     })(jQuery)',
     'inline'
@@ -169,12 +224,15 @@ function menu_import_form_step1_validate($form, &$form_state) {
   $validators = array(
     'file_validate_extensions' => array('txt'),
   );
-  $file = file_save_upload('upload', $validators);
-  if (!$file) {
-    form_set_error('upload', t('You must select a valid text file to upload.'));
-  }
-  else {
-    $form_state['values']['file'] = $file;
+
+  if (empty($form_state['values']['text'])) {
+    $file = file_save_upload('upload', $validators);
+    if (!$file) {
+      form_set_error('upload', t('You must select a valid text file to upload.'));
+    }
+    else {
+      $form_state['values']['file'] = $file;
+    }
   }
 }
 
@@ -182,22 +240,32 @@ function menu_import_form_step1_validate($form, &$form_state) {
  * Step 1 form submit handler.
  */
 function menu_import_form_step1_submit($form, &$form_state) {
-  $file = $form_state['values']['file'];
-
   $form_state['storage']['options'] = array(
     'create_content' => $form_state['values']['create_content'],
     'link_to_content' => $form_state['values']['link_to_content'],
     'remove_menu_items' => $form_state['values']['remove_menu_items'],
+    'language' => $form_state['values']['language'],
     'node_type' => $form_state['values']['node_type'],
     'node_body' => $form_state['values']['node_body'],
+    'node_format' => $form_state['values']['node_format'],
     'node_author' => $form_state['values']['node_author'],
     'node_status' => $form_state['values']['node_status'],
     'node_alias' => $form_state['values']['node_alias'],
   );
 
   module_load_include('inc', 'menu_import', 'includes/import');
-  $menu = menu_import_parse_menu_from_file($file->uri, $form_state['values']['menu_name'], $form_state['storage']['options']);
-  file_delete($file);
+
+  $text = $form_state['values']['text'];
+  $menu_name = $form_state['values']['menu_name'];
+  $options = $form_state['storage']['options'];
+  if ($text) {
+    $menu = menu_import_parse_menu_from_string(trim($text), $menu_name, $options);
+  }
+  else {
+    $file = $form_state['values']['file'];
+    $menu = menu_import_parse_menu_from_file($file->uri, $menu_name, $options);
+    file_delete($file);
+  }
 
   if (!empty($menu['errors'])) {
     foreach ($menu['errors'] as $error) {
@@ -333,6 +401,8 @@ function menu_import_preview($menu, array $options) {
     }
   }
 
+  $descriptions[] = t('Language: @lang', array('@lang' => $options['language'] == LANGUAGE_NONE ? t('not defined') : $options['language']));
+
   $rows = array();
   $depth = 0;
   foreach ($menu[0]['children'] as $index) {
@@ -369,15 +439,15 @@ function _menu_import_preview_row_recurse(&$menu, $index, $level, $options) {
   $rows = array();
 
   $title  = theme('indentation', array('size' => $level));
-  $title  .= check_plain($menu[$index]['link_title']);
+  $title  .= $menu[$index]['link_title'];
   $exists = $menu[$index]['nid'] ? t('Yes') : t('No');
   $weight = $menu[$index]['weight'];
   $path       = !empty($menu[$index]['path']) ? $menu[$index]['path'] : ' - ';
   $link_path  = !empty($menu[$index]['link_path']) ? $menu[$index]['link_path'] : ' - ';
-  $description= isset($menu[$index]['description']) ? $menu[$index]['description'] : ' - ';
+  $description= isset($menu[$index]['description']) ? $menu[$index]['description'] : '';
 
   $row_data = array(
-    array('data' => $title),
+    array('data' => '<span title="' . check_plain($description) . '">' . $title . '</span>'),
     array('data' => $exists),
     array('data' => check_url($path)),
     array('data' => check_url($link_path))

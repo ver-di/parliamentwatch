@@ -33,7 +33,7 @@ function menu_import_drush_command() {
       'create-content'=> 'Creates empty nodes referenced by respective menu items. Useful for stubbing-out a new site.'
         . ' Possible option value: type:page,author:1,status:1 where type is content type machine name,'
         . ' author is uid and status is publication status (0 - unpublished, 1 - published).',
-      'link-content'  => 'Tries to link menu items to existing content/pages.',
+      'no-content-link'  => 'Do not try to link menu items to existing content/pages.',
       'clean-import'  => 'Removes old menu items. Use carefully!',
     ),
     'aliases' => array('mi-import', 'mi'),
@@ -98,13 +98,13 @@ function drush_menu_import_import() {
   // Prepare options and import menu.
   $options = array(
     'create_content'  => FALSE,
-    'link_to_content' => FALSE,
+    'link_to_content' => TRUE,
     'remove_menu_items' => FALSE
   );
 
-  $link_content = drush_get_option_list('link-content');
-  if (count($link_content)) {
-    $options['link_to_content'] = 1;
+  $no_content_link = drush_get_option_list('no-content-link');
+  if (count($no_content_link)) {
+    $options['link_to_content'] = FALSE;
   }
 
   $clean_import = drush_get_option_list('clean-import');

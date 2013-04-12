@@ -72,7 +72,61 @@ function _menu_import_lookup_path($path, $title, array $options) {
 }
 
 /**
+ * Parse indentation and title information from a menu item definition line.
+ *
+ * @param string $line the menu item line.
+ * @return array of two items: 0 => level, 1 => title.
+ */
+function _menu_import_parse_level_title($line) {
+  $matches = array();
+  if (preg_match('/^([\-]+|[\*]+)?(\s+)?(.*)$/', $line, $matches)) {
+    $level = strlen($matches[1]); // No sense to use drupal_strlen on indentation.
+    $title = trim($matches[3]);
+
+    return array($level, $title);
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Marks menu item as erroneous and returns it.
+ */
+function _menu_import_mark_error_item($item, $error, $original) {
+  $item['error'] = $error;
+  $item['link_title'] = '<span class="error">' . check_plain($original) . '</span>';
+  return $item;
+}
+
+/**
+ * Returns 1 if body is translatable (entity_translation enabled and configured)
+ * and 0 otherwise.
+ */
+function _menu_import_body_is_translatable() {
+  $body_trans = &drupal_static(__FUNCTION__, NULL);
+
+  if (is_null($body_trans)) {
+    if (db_field_exists('field_config', 'translatable')) {
+      $body_trans =
+        db_select('field_config', 'fc')
+          ->fields('fc', array('translatable'))
+          ->condition('field_name', 'body')
+          ->execute()
+          ->fetchColumn();
+    }
+    else {
+      $body_trans = 0;
+    }
+  }
+
+  return $body_trans;
+}
+
+/**
  * Parse a line of text containing the menu structure.
+ * Only * and - are allowed as indentation characters.
+ * Menu item definition may or may not contain details in JSON format.
  *
  * @param $line
  *   One line from input file.
@@ -93,7 +147,7 @@ function menu_import_parse_line($line, $prev_level, array $weights, array $paren
     'error' => FALSE,
     'link_title' => NULL,
     'children' => array(),
-    'parent' => NULL,
+    'parent' => 0,
     'nid' => FALSE,
     'path' => FALSE,
     'weight' => 0,
@@ -101,29 +155,57 @@ function menu_import_parse_line($line, $prev_level, array $weights, array $paren
     'level' => 0,
   );
 
-  // Only * and - are allowed as indentation characters.
-  // URL aliases are separated from title by vertical bar (|) or semi-colon (;).
-  $opt_re = '([\|;]{1}[^\|;]*)?';
-  $matches = array();
-  preg_match('/^([\-]+|[\*]+)?(\s+)?([^\|;]*)' . str_repeat($opt_re, 3) . '/', $line, $matches);
+  // Set default language
+  if (module_exists('i18n_menu')) {
+    $menuitem['language'] = $options['language'];
+  }
+  $langs = array_keys(language_list());
 
-  $level = strlen($matches[1]); // No sense to use drupal_strlen on indentation.
-  $title = trim(strip_tags($matches[3]));
-  $path  = isset($matches[4]) ? trim(str_replace(array('|', ';'), '', $matches[4])) : '';
-  $description = isset($matches[5]) ? trim(str_replace(array('|', ';'), '', $matches[5])) : '';
-  $expanded = !empty($matches[6]) && stripos($matches[6], 'expanded') !== FALSE;
-  $disabled = !empty($matches[6]) && stripos($matches[6], 'disabled') !== FALSE;
+  $path = $description = $expanded = $hidden = $language = '';
+
+  // JSON is used.
+  // @todo: make the input JSON not so strict.
+  if (($json_start = strpos($line, '{"')) != 0) {
+    $json = substr($line, $json_start);
+    $details = json_decode($json);
+
+    // Parse structure and title.
+    $base_info = substr($line, 0, $json_start);
+    $level_title = _menu_import_parse_level_title($base_info);
+
+    // Extract details.
+    if (!is_null($details)) {
+      $path = !empty($details->url) ? trim($details->url) : '';
+      $description = !empty($details->description) ? trim($details->description) : '';
+      $expanded = !empty($details->expanded);
+      $hidden = !empty($details->hidden);
+      $language = !empty($details->lang) && in_array($details->lang, $langs)
+                    ? $details->lang : NULL;
+    }
+    else {
+      return _menu_import_mark_error_item($menuitem, t('malformed item details'), $line);
+    }
+  }
+  // No JSON is provided, only level and title are specified.
+  else {
+    $level_title = _menu_import_parse_level_title($line);
+  }
+
+  if (!$level_title) {
+    return _menu_import_mark_error_item($menuitem, t('missing title or wrong indentation'), $line);
+  }
+  else {
+    list($level, $title) = $level_title;
+  }
 
   // Skip empty items
   if (!strlen($title)) {
-    $menuitem['error'] = t('missing menu title');
-    return $menuitem;
+    return _menu_import_mark_error_item($menuitem, t('missing item title'), $line);
   }
 
   // Make sure this item is only 1 level below the last item.
   if ($level > $prev_level + 1) {
-    $menuitem['error'] = t('wrong indentation');
-    return $menuitem;
+    return _menu_import_mark_error_item($menuitem, t('wrong indentation'), $line);
   }
 
   if (isset($weights[$level])) {
@@ -156,13 +238,16 @@ function menu_import_parse_line($line, $prev_level, array $weights, array $paren
   if ($description) {
     $menuitem['description'] = $description;
   }
-
-  if ($disabled) {
+  if ($hidden) {
     $menuitem['hidden'] = 1;
   }
-
   if ($expanded) {
     $menuitem['expanded'] = 1;
+  }
+  if ($language) {
+    $menuitem['language'] = $language;
+    // Important when setting the language, otherwise it'll be ignored.
+    $menuitem['customized'] = 1;
   }
 
   return $menuitem;
@@ -350,25 +435,25 @@ function menu_import_save_menu($menu, $options) {
       else {
         // Node exists.
         if ($menuitem['nid']) {
-          // Need to create new content since no linking was selected.
-          if ($options['create_content']) {
-            menu_import_delete_menuitem($menuitem);
+          // Try to link to existing content first.
+          if ($options['link_to_content']) {
+            menu_import_delete_node_menuitem($menuitem);
+            $nodes_matched_cnt++;
+          }
+          // We need to create new content only if no linking was selected.
+          elseif ($options['create_content']) {
+            menu_import_delete_node_menuitem($menuitem);
             $options['node_title'] = $menuitem['link_title'];
             $nid = menu_import_create_node($options);
             $menuitem['nid'] = $nid;
             $nodes_new_cnt++;
             $menuitem['link_path'] = 'node/' . $menuitem['nid'];
           }
-          elseif ($options['link_to_content']) {
-            menu_import_delete_menuitem($menuitem);
-            $nodes_matched_cnt++;
-          }
         }
         // Node doesn't exist.
         else {
           // Create new link and node.
           if ($options['create_content']) {
-            menu_import_delete_menuitem($menuitem);
             $options['node_title'] = $menuitem['link_title'];
             if ($options['node_alias'] && !empty($menuitem['path'])
                 && arg($menuitem['path'], 0) != 'node') {
@@ -381,7 +466,6 @@ function menu_import_save_menu($menu, $options) {
           }
           // Recreate menu item.
           else {
-            menu_import_delete_menuitem($menuitem);
             $unknown_links_cnt++;
             $menuitem['link_path'] = '<front>';
           }
@@ -435,12 +519,13 @@ function menu_import_create_node($options) {
   $node = new stdClass();
 
   $node->type     = $options['node_type'];
-  $node->language = LANGUAGE_NONE;
+  $node->language = $options['language'];
   $node->title    = $options['node_title'];
 
-  $node->body[$node->language][0]['value']   = $options['node_body'];
-  $node->body[$node->language][0]['summary'] = text_summary($options['node_body']);
-  $node->body[$node->language][0]['format']  = 'filtered_html';
+  $body_lang = _menu_import_body_is_translatable() ? $node->language : LANGUAGE_NONE;
+  $node->body[$body_lang][0]['value']   = $options['node_body'];
+  $node->body[$body_lang][0]['summary'] = text_summary($options['node_body']);
+  $node->body[$body_lang][0]['format']  = $options['node_format'];
 
   $node->status = $options['node_status'];
   $node->uid    = $options['node_author'];
@@ -498,11 +583,13 @@ function menu_import_delete_menuitems($menu_name, $with_nodes = FALSE) {
  * @param $menuitem
  *   Array describing the menu item.
  */
-function menu_import_delete_menuitem($menuitem) {
-  db_delete('menu_links')
-    ->condition('menu_name', $menuitem['menu_name'])
-    ->condition('link_path', 'node/' . $menuitem['nid'])
-    ->execute();
+function menu_import_delete_node_menuitem($menuitem) {
+  $processed_items = &drupal_static(__FUNCTION__, array());
+  $path = 'node/' . $menuitem['nid'];
+  if (!in_array($path, $processed_items)) {
+    menu_link_delete(NULL, $path);
+    $processed_items[] = $path;
+  }
 }
 
 /**
