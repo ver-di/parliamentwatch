@@ -14,10 +14,37 @@ function file_entity_file_presave($file) {
     $file->filemime = file_get_mimetype($file->uri);
   }
 
-  // Always update file type based on filemime.
-  $file->type = file_get_type($file);
+  // The file type is used as a bundle key, and therefore, must not be NULL.
+  // It defaults to FILE_TYPE_NONE when loaded via file_load(), but in case
+  // file_save() is called on a new file object, default it here too.
+  if (!isset($file->type)) {
+    $file->type = FILE_TYPE_NONE;
+  }
+
+  // If the file isn't already assigned a real type, determine what type should
+  // be assigned to it.
+  if ($file->type === FILE_TYPE_NONE) {
+    $type = file_get_type($file);
+    if (isset($type)) {
+      $file->type = $type;
+    }
+  }
 
   field_attach_presave('file', $file);
+}
+
+/**
+ * Implements hook_file_type().
+ */
+function file_entity_file_type($file) {
+  $types = array();
+  foreach (file_type_get_enabled_types() as $type) {
+    if (in_array($file->filemime, $type->mimetypes)) {
+      $types[] = $type->type;
+    }
+  }
+
+  return $types;
 }
 
 /**
@@ -34,6 +61,8 @@ function file_entity_file_insert($file) {
   cache_clear_all();
 
   // Get and store image dimensions.
+  // @todo We should fetch image dimensions in file_entity_file_presave and
+  // then save them in this hook.
   file_entity_image_dimensions($file, TRUE);
 }
 
@@ -50,8 +79,21 @@ function file_entity_file_update($file) {
   // Clear the page and block caches.
   cache_clear_all();
 
-  // Get and store image dimensions.
+  // Reset the image dimensions for a file.
+  // @todo We should fetch image dimensions in file_entity_file_presave and
+  // then save them in this hook.
   file_entity_image_dimensions($file, TRUE);
+
+  if ($file->type == 'image' && module_exists('image')) {
+    // If the image dimensions have changed, update any image field references
+    // to this file and flush image style derivatives.
+    if ($file->image_dimensions != $file->original->image_dimensions) {
+      _file_entity_update_image_field_dimensions($file);
+    }
+
+    // Flush image style derivatives whenever an image is updated.
+    image_path_flush($file->uri);
+  }
 }
 
 /**
@@ -192,5 +234,47 @@ function file_entity_image_dimensions($file, $force = FALSE) {
       'width' => NULL,
       'height' => NULL,
     );
+  }
+}
+
+/**
+ * Update the image dimensions stored in any image fields for a file.
+ *
+ * @param object $file
+ *   A file object that is an image.
+ *
+ * @see http://drupal.org/node/1448124
+ */
+function _file_entity_update_image_field_dimensions($file) {
+  // Find all image field enabled on the site.
+  $image_fields = array();
+  foreach (field_info_fields() as $field) {
+    if ($field['type'] == 'image') {
+      $image_fields[] = $field['field_name'];
+    }
+  }
+
+  foreach ($image_fields as $image_field) {
+    $query = new EntityFieldQuery();
+    $query->fieldCondition($image_field, 'fid', $file->fid);
+    $results = $query->execute();
+
+    foreach ($results as $entity_type => $entities) {
+      $entities = entity_load($entity_type, array_keys($entities));
+      foreach ($entities as $entity) {
+        foreach ($entity->{$image_field} as $langcode => $items) {
+          foreach ($items as $delta => $item) {
+            if ($item['fid'] == $file->fid) {
+              $entity->{$image_field}[$langcode][$delta]['width'] = $file->image_dimensions['width'];
+              $entity->{$image_field}[$langcode][$delta]['height'] = $file->image_dimensions['height'];
+            }
+          }
+        }
+
+        // Ensure that file_field_update() will not trigger additional usage.
+        unset($entity->revision);
+        field_attach_update($entity_type, $entity);
+      }
+    }
   }
 }
