@@ -1200,13 +1200,6 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'enable_revisions_page_pw_poll';
-  $strongarm->value = 1;
-  $export['enable_revisions_page_pw_poll'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_comment_filter_pw_poll';
   $strongarm->value = 0;
   $export['entity_translation_comment_filter_pw_poll'] = $strongarm;
@@ -1953,20 +1946,6 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->name = 'sharethis_widget_option';
   $strongarm->value = 'st_direct';
   $export['sharethis_widget_option'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'show_diff_inline_pw_poll';
-  $strongarm->value = 0;
-  $export['show_diff_inline_pw_poll'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'show_preview_changes_pw_poll';
-  $strongarm->value = 1;
-  $export['show_preview_changes_pw_poll'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
