@@ -10,7 +10,7 @@
 function pw_content_authoring_layout_filter_default_formats() {
   $formats = array();
 
-  // Exported format: Display Suite code
+  // Exported format: Display Suite code.
   $formats['ds_code'] = array(
     'format' => 'ds_code',
     'name' => 'Display Suite code',
@@ -26,7 +26,7 @@ function pw_content_authoring_layout_filter_default_formats() {
     ),
   );
 
-  // Exported format: Filtered HTML
+  // Exported format: Filtered HTML.
   $formats['filtered_html'] = array(
     'format' => 'filtered_html',
     'name' => 'Filtered HTML',
@@ -63,7 +63,7 @@ function pw_content_authoring_layout_filter_default_formats() {
     ),
   );
 
-  // Exported format: Full HTML
+  // Exported format: Full HTML.
   $formats['full_html'] = array(
     'format' => 'full_html',
     'name' => 'Full HTML',
@@ -94,7 +94,7 @@ function pw_content_authoring_layout_filter_default_formats() {
     ),
   );
 
-  // Exported format: Managed Content
+  // Exported format: Managed Content.
   $formats['managed_content'] = array(
     'format' => 'managed_content',
     'name' => 'Managed Content',
@@ -127,7 +127,7 @@ function pw_content_authoring_layout_filter_default_formats() {
     ),
   );
 
-  // Exported format: PHP code
+  // Exported format: PHP code.
   $formats['php_code'] = array(
     'format' => 'php_code',
     'name' => 'PHP code',
@@ -143,7 +143,7 @@ function pw_content_authoring_layout_filter_default_formats() {
     ),
   );
 
-  // Exported format: Plain text
+  // Exported format: Plain text.
   $formats['plain_text'] = array(
     'format' => 'plain_text',
     'name' => 'Plain text',

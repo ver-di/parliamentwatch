@@ -10,7 +10,7 @@
 function pw_content_authoring_layout_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'file-image-field_image_copyright'
+  // Exported field: 'file-image-field_image_copyright'.
   $fields['file-image-field_image_copyright'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function pw_content_authoring_layout_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -51,7 +52,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'type' => 'text_default',
           'weight' => '0',
         ),
-        'media_large' => array(
+        'full' => array(
           'label' => 'above',
           'module' => 'text',
           'settings' => array(),
@@ -71,14 +72,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
-        'media_preview' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '1',
-        ),
-        'media_small' => array(
+        'preview' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
@@ -119,6 +113,13 @@ function pw_content_authoring_layout_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '0',
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '1',
         ),
         'token' => array(
           'label' => 'hidden',

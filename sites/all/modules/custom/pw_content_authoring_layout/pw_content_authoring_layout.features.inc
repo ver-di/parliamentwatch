@@ -24,7 +24,7 @@ function pw_content_authoring_layout_ctools_plugin_api() {
 function pw_content_authoring_layout_image_default_styles() {
   $styles = array();
 
-  // Exported image style: pw_landscape_l
+  // Exported image style: pw_landscape_l.
   $styles['pw_landscape_l'] = array(
     'name' => 'pw_landscape_l',
     'effects' => array(
@@ -46,7 +46,7 @@ function pw_content_authoring_layout_image_default_styles() {
     ),
   );
 
-  // Exported image style: pw_portrait_l
+  // Exported image style: pw_portrait_l.
   $styles['pw_portrait_l'] = array(
     'name' => 'pw_portrait_l',
     'effects' => array(
@@ -68,7 +68,7 @@ function pw_content_authoring_layout_image_default_styles() {
     ),
   );
 
-  // Exported image style: pw_portrait_m
+  // Exported image style: pw_portrait_m.
   $styles['pw_portrait_m'] = array(
     'name' => 'pw_portrait_m',
     'effects' => array(
@@ -90,7 +90,7 @@ function pw_content_authoring_layout_image_default_styles() {
     ),
   );
 
-  // Exported image style: pw_portrait_s
+  // Exported image style: pw_portrait_s.
   $styles['pw_portrait_s'] = array(
     'name' => 'pw_portrait_s',
     'effects' => array(
