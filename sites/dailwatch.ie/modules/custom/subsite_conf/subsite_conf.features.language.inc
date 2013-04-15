@@ -10,7 +10,7 @@
 function subsite_conf_locale_default_languages() {
   $languages = array();
 
-  // Exported language: en
+  // Exported language: en.
   $languages['en'] = array(
     'language' => 'en',
     'name' => 'English',
@@ -23,7 +23,7 @@ function subsite_conf_locale_default_languages() {
     'prefix' => 'en',
     'weight' => '0',
   );
-  // Exported language: en-gb
+  // Exported language: en-gb.
   $languages['en-gb'] = array(
     'language' => 'en-gb',
     'name' => 'English, British',
@@ -36,7 +36,7 @@ function subsite_conf_locale_default_languages() {
     'prefix' => 'en-gb',
     'weight' => '0',
   );
-  // Exported language: ga
+  // Exported language: ga.
   $languages['ga'] = array(
     'language' => 'ga',
     'name' => 'Irish',

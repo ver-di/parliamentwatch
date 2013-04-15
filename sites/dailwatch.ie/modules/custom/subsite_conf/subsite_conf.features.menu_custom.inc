@@ -10,7 +10,7 @@
 function subsite_conf_menu_default_menu_custom() {
   $menus = array();
 
-  // Exported menu: menu-about-us-en
+  // Exported menu: menu-about-us-en.
   $menus['menu-about-us-en'] = array(
     'menu_name' => 'menu-about-us-en',
     'title' => 'About us EN',
@@ -18,7 +18,7 @@ function subsite_conf_menu_default_menu_custom() {
     'language' => 'en-gb',
     'i18n_mode' => '2',
   );
-  // Exported menu: menu-about-us-ga
+  // Exported menu: menu-about-us-ga.
   $menus['menu-about-us-ga'] = array(
     'menu_name' => 'menu-about-us-ga',
     'title' => 'About us GA',
@@ -26,7 +26,7 @@ function subsite_conf_menu_default_menu_custom() {
     'language' => 'ga',
     'i18n_mode' => '2',
   );
-  // Exported menu: menu-main-menu-en
+  // Exported menu: menu-main-menu-en.
   $menus['menu-main-menu-en'] = array(
     'menu_name' => 'menu-main-menu-en',
     'title' => 'Main Menu EN',
@@ -34,7 +34,7 @@ function subsite_conf_menu_default_menu_custom() {
     'language' => 'en-gb',
     'i18n_mode' => '2',
   );
-  // Exported menu: menu-main-menu-ga
+  // Exported menu: menu-main-menu-ga.
   $menus['menu-main-menu-ga'] = array(
     'menu_name' => 'menu-main-menu-ga',
     'title' => 'Main Menu GA',
