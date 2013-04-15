@@ -150,6 +150,8 @@ function pw_poll_strongarm() {
       'description_in_compact' => TRUE,
       'value_type' => 'option',
       'translate' => TRUE,
+      'delete_vote_on_second_click' => 0,
+      'use_source_translation' => FALSE,
     ),
   );
   $export['rate_widgets'] = $strongarm;

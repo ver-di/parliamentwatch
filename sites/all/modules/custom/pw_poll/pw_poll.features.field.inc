@@ -10,7 +10,7 @@
 function pw_poll_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-pw_poll-body'
+  // Exported field: 'node-pw_poll-body'.
   $fields['node-pw_poll-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function pw_poll_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'profile2_private' => FALSE,
@@ -97,7 +98,7 @@ function pw_poll_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_poll-field_pw_csv_upload'
+  // Exported field: 'node-pw_poll-field_pw_csv_upload'.
   $fields['node-pw_poll-field_pw_csv_upload'] = array(
     'field_config' => array(
       'active' => '1',
@@ -118,6 +119,7 @@ function pw_poll_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -197,7 +199,7 @@ function pw_poll_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_poll-field_pw_overview_chart'
+  // Exported field: 'node-pw_poll-field_pw_overview_chart'.
   $fields['node-pw_poll-field_pw_overview_chart'] = array(
     'field_config' => array(
       'active' => '1',
@@ -218,6 +220,7 @@ function pw_poll_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -304,7 +307,7 @@ function pw_poll_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_poll-field_pw_parmliament'
+  // Exported field: 'node-pw_poll-field_pw_parmliament'.
   $fields['node-pw_poll-field_pw_parmliament'] = array(
     'field_config' => array(
       'active' => '1',
@@ -325,6 +328,7 @@ function pw_poll_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -389,7 +393,7 @@ function pw_poll_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_poll-field_pw_party_chart'
+  // Exported field: 'node-pw_poll-field_pw_party_chart'.
   $fields['node-pw_poll-field_pw_party_chart'] = array(
     'field_config' => array(
       'active' => '1',
@@ -410,6 +414,7 @@ function pw_poll_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -495,7 +500,7 @@ function pw_poll_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_poll-field_pw_poll_date'
+  // Exported field: 'node-pw_poll-field_pw_poll_date'.
   $fields['node-pw_poll-field_pw_poll_date'] = array(
     'field_config' => array(
       'active' => '1',
@@ -505,6 +510,7 @@ function pw_poll_field_default_fields() {
       'field_name' => 'field_pw_poll_date',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'cache_count' => '1',
@@ -584,7 +590,7 @@ function pw_poll_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_poll-field_pw_raw_csv_data'
+  // Exported field: 'node-pw_poll-field_pw_raw_csv_data'.
   $fields['node-pw_poll-field_pw_raw_csv_data'] = array(
     'field_config' => array(
       'active' => '1',
@@ -605,6 +611,7 @@ function pw_poll_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -704,7 +711,7 @@ function pw_poll_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_poll-field_pw_views_reference'
+  // Exported field: 'node-pw_poll-field_pw_views_reference'.
   $fields['node-pw_poll-field_pw_views_reference'] = array(
     'field_config' => array(
       'active' => '1',
@@ -714,6 +721,7 @@ function pw_poll_field_default_fields() {
       'field_name' => 'field_pw_views_reference',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'viewfield',
       'settings' => array(),
       'translatable' => '0',
