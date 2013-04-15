@@ -10,7 +10,7 @@
 function pw_blog_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-blogpost-body'
+  // Exported field: 'node-blogpost-body'.
   $fields['node-blogpost-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function pw_blog_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'profile2_private' => FALSE,
@@ -156,7 +157,7 @@ function pw_blog_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-blogpost-field_blogpost_blogtags'
+  // Exported field: 'node-blogpost-field_blogpost_blogtags'.
   $fields['node-blogpost-field_blogpost_blogtags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -177,6 +178,7 @@ function pw_blog_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -282,7 +284,7 @@ function pw_blog_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-blogpost-field_teaser_image'
+  // Exported field: 'node-blogpost-field_teaser_image'.
   $fields['node-blogpost-field_teaser_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -303,6 +305,7 @@ function pw_blog_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
