@@ -10,7 +10,7 @@
 function profiles_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'user-user-field_profile_node_connector'
+  // Exported field: 'user-user-field_profile_node_connector'.
   $fields['user-user-field_profile_node_connector'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function profiles_field_default_fields() {
           0 => 'target_id',
         ),
       ),
+      'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
         'handler' => 'base',
@@ -89,7 +90,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_answers_give'
+  // Exported field: 'user-user-field_user_answers_give'.
   $fields['user-user-field_user_answers_give'] = array(
     'field_config' => array(
       'active' => '1',
@@ -99,6 +100,7 @@ function profiles_field_default_fields() {
       'field_name' => 'field_user_answers_give',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(),
       'translatable' => '0',
@@ -149,7 +151,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_birthday'
+  // Exported field: 'user-user-field_user_birthday'.
   $fields['user-user-field_user_birthday'] = array(
     'field_config' => array(
       'active' => '1',
@@ -159,6 +161,7 @@ function profiles_field_default_fields() {
       'field_name' => 'field_user_birthday',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'cache_count' => '4',
@@ -232,7 +235,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_childs'
+  // Exported field: 'user-user-field_user_childs'.
   $fields['user-user-field_user_childs'] = array(
     'field_config' => array(
       'active' => '1',
@@ -242,6 +245,7 @@ function profiles_field_default_fields() {
       'field_name' => 'field_user_childs',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(),
       'translatable' => '0',
@@ -296,7 +300,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_commitee'
+  // Exported field: 'user-user-field_user_commitee'.
   $fields['user-user-field_user_commitee'] = array(
     'field_config' => array(
       'active' => '1',
@@ -317,6 +321,7 @@ function profiles_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -375,7 +380,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_constituency'
+  // Exported field: 'user-user-field_user_constituency'.
   $fields['user-user-field_user_constituency'] = array(
     'field_config' => array(
       'active' => '1',
@@ -396,6 +401,7 @@ function profiles_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -466,7 +472,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_first_letter_lname'
+  // Exported field: 'user-user-field_user_first_letter_lname'.
   $fields['user-user-field_user_first_letter_lname'] = array(
     'field_config' => array(
       'active' => '1',
@@ -487,6 +493,7 @@ function profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => 255,
@@ -526,7 +533,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_fname'
+  // Exported field: 'user-user-field_user_fname'.
   $fields['user-user-field_user_fname'] = array(
     'field_config' => array(
       'active' => '1',
@@ -547,6 +554,7 @@ function profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -640,7 +648,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_gender'
+  // Exported field: 'user-user-field_user_gender'.
   $fields['user-user-field_user_gender'] = array(
     'field_config' => array(
       'active' => '1',
@@ -654,6 +662,7 @@ function profiles_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -708,7 +717,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_job_skills'
+  // Exported field: 'user-user-field_user_job_skills'.
   $fields['user-user-field_user_job_skills'] = array(
     'field_config' => array(
       'active' => '1',
@@ -729,6 +738,7 @@ function profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -824,7 +834,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_lname'
+  // Exported field: 'user-user-field_user_lname'.
   $fields['user-user-field_user_lname'] = array(
     'field_config' => array(
       'active' => '1',
@@ -845,6 +855,7 @@ function profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -938,7 +949,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_marriage_status'
+  // Exported field: 'user-user-field_user_marriage_status'.
   $fields['user-user-field_user_marriage_status'] = array(
     'field_config' => array(
       'active' => '1',
@@ -952,6 +963,7 @@ function profiles_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -1008,7 +1020,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_more'
+  // Exported field: 'user-user-field_user_more'.
   $fields['user-user-field_user_more'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1018,6 +1030,7 @@ function profiles_field_default_fields() {
       'field_name' => 'field_user_more',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -1099,7 +1112,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_parliament'
+  // Exported field: 'user-user-field_user_parliament'.
   $fields['user-user-field_user_parliament'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1120,6 +1133,7 @@ function profiles_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -1178,7 +1192,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_party'
+  // Exported field: 'user-user-field_user_party'.
   $fields['user-user-field_user_party'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1199,6 +1213,7 @@ function profiles_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -1256,7 +1271,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_picture'
+  // Exported field: 'user-user-field_user_picture'.
   $fields['user-user-field_user_picture'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1277,6 +1292,7 @@ function profiles_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -1355,7 +1371,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_political_roles'
+  // Exported field: 'user-user-field_user_political_roles'.
   $fields['user-user-field_user_political_roles'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1376,6 +1392,7 @@ function profiles_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -1425,7 +1442,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_pseudonym'
+  // Exported field: 'user-user-field_user_pseudonym'.
   $fields['user-user-field_user_pseudonym'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1446,6 +1463,7 @@ function profiles_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -1537,7 +1555,7 @@ function profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_questions_get'
+  // Exported field: 'user-user-field_user_questions_get'.
   $fields['user-user-field_user_questions_get'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1547,6 +1565,7 @@ function profiles_field_default_fields() {
       'field_name' => 'field_user_questions_get',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(),
       'translatable' => '0',
