@@ -21,14 +21,14 @@ function latest_tweets_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_consumer_key';
-  $strongarm->value = 'Y5jMXzdKqnfVXQKTiJN7g';
+  $strongarm->value = 'lK5MvDvBX97Y8bjWgJIjA';
   $export['twitter_consumer_key'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_consumer_secret';
-  $strongarm->value = 'Z275stqyU5rsN0hqgpr6UwK1AXnndGmoWElDeDAmu4Y';
+  $strongarm->value = 'LXV2lOwU0Ou3ZhlClaOHop7AXpnFlU8pXmV7siTAoA';
   $export['twitter_consumer_secret'] = $strongarm;
 
   $strongarm = new stdClass();

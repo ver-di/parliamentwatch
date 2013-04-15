@@ -10,131 +10,73 @@
 function latest_tweets_default_fe_block_settings() {
   $export = array();
 
-  $export['version'] = '1.0';
+  $export['version'] = '2.0';
 
-  // Theme independent visibility settings.
-  $export['visibility'] = array(
-    'views-3latesttweets-block' => array(
-      'delta' => '3latesttweets-block',
-      'module' => 'views',
+  $export['views-3latesttweets-block'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'delta' => '3latesttweets-block',
+    'i18n_mode' => '0',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => '0',
+      ),
+      'dailwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'dailwatch',
+        'weight' => '-50',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
     ),
-    'views-tweets-block' => array(
-      'delta' => 'tweets-block',
-      'module' => 'views',
+    'title' => '',
+    'visibility' => '0',
+  );
+
+  $export['views-tweets-block'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'delta' => 'tweets-block',
+    'i18n_mode' => '0',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'bartik' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'bartik',
+        'weight' => '0',
+      ),
+      'dailwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'dailwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
     ),
-  );
-
-  // bartik
-  $theme = array();
-
-  $theme['views-3latesttweets-block'] = array(
-    'module' => 'views',
-    'delta' => '3latesttweets-block',
-    'theme' => 'bartik',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
     'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $theme['views-tweets-block'] = array(
-    'module' => 'views',
-    'delta' => 'tweets-block',
-    'theme' => 'bartik',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
     'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
   );
 
-  $export['theme']['bartik'] = $theme;
-
-  // dailwatch
-  $theme = array();
-
-  $theme['views-3latesttweets-block'] = array(
-    'module' => 'views',
-    'delta' => '3latesttweets-block',
-    'theme' => 'dailwatch',
-    'status' => '1',
-    'weight' => '0',
-    'region' => 'sidebar_second',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $theme['views-tweets-block'] = array(
-    'module' => 'views',
-    'delta' => 'tweets-block',
-    'theme' => 'dailwatch',
-    'status' => '1',
-    'weight' => '0',
-    'region' => 'sidebar_second',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $export['theme']['dailwatch'] = $theme;
-
-  // seven
-  $theme = array();
-
-  $theme['views-3latesttweets-block'] = array(
-    'module' => 'views',
-    'delta' => '3latesttweets-block',
-    'theme' => 'seven',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $theme['views-tweets-block'] = array(
-    'module' => 'views',
-    'delta' => 'tweets-block',
-    'theme' => 'seven',
-    'status' => 0,
-    'weight' => '0',
-    'region' => '',
-    'custom' => '0',
-    'visibility' => '0',
-    'pages' => '',
-    'title' => '',
-    'cache' => -1,
-    'i18n_mode' => '0',
-  );
-
-  $export['theme']['seven'] = $theme;
-
-  $theme_default = variable_get('theme_default', 'garland');
-  $themes = list_themes();
-  foreach ($export as $theme_key => $settings) {
-    if ($theme_key != $theme_default && empty($themes[$theme_key]->status)) {
-      unset($export['theme'][$theme_key]);
-    }
-  }
   return $export;
 }
