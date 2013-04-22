@@ -1572,7 +1572,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'nice_menus_custom_css';
-  $strongarm->value = 'sites/all/themes/custom/abgeordnetenwatch/css/nicemenu.css';
+  $strongarm->value = 'sites/all/themes/custom/parliamentwatch/css/nicemenu.css';
   $export['nice_menus_custom_css'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1838,13 +1838,6 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->name = 'search_default_module';
   $strongarm->value = 'node';
   $export['search_default_module'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'secureshare_fields_node_pw_poll';
-  $strongarm->value = '';
-  $export['secureshare_fields_node_pw_poll'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
