@@ -187,6 +187,42 @@ blockquote p:last-child {
     width: 140px;
 }
 
+/* grid extension */
+
+.pushfloat-1 {
+    margin-left: 60px;
+}
+.pushfloat-2 {
+    margin-left: 140px;
+}
+.pushfloat-3 {
+    margin-left: 220px;
+}
+.pushfloat-4 {
+    margin-left: 300px;
+}
+.pushfloat-5 {
+    margin-left: 380px;
+}
+.pushfloat-6 {
+    margin-left: 460px;
+}
+.pushfloat-7 {
+    margin-left: 540px;
+}
+.pushfloat-8 {
+    margin-left: 620px;
+}
+.pushfloat-9 {
+    margin-left: 700px;
+}
+.pushfloat-10 {
+    margin-left: 780px;
+}
+.pushfloat-11 {
+    margin-left: 860px;
+}
+
 .light,
 a.light {
     color: #999;
@@ -257,6 +293,29 @@ a.link-report {
 .link-report a:hover,
 a.link-report:hover {
     background-position: -440px -2220px;
+}
+.link-download a,
+a.link-download {
+    padding-left: 22px;
+    background-position: -226px -1940px;
+}
+.link-download a:hover,
+a.link-download:hover {
+    background-position: -186px -1980px;
+}
+.link-video a,
+a.link-video {
+    padding-left: 20px;
+    background-position: -148px -2020px;
+}
+.link-video a:hover,
+a.link-video:hover {
+    background-position: -108px -2060px;
+}
+.link-pdf a,
+a.link-pdf {
+    padding-left: 22px;
+    background-position: 
 }
 .views-more-link,
 .read-more a,
@@ -1274,6 +1333,14 @@ html.js fieldset.collapsed {
     top: 0;
 }
 
+/* press */
+
+.view-press-articles .download {
+    text-align: right;
+}
+.view-press-release .read-more {
+    float: right;   
+}
 
 
 /* /////////////////////////// forms /////////////////// */
@@ -1843,7 +1910,7 @@ a.print-pdf,
 .anchor-to-top a,
 .arrow-item,
 .back,
-.views-more-link
+.views-more-link,
 .read-more a,
 .views-more-link,
 a.read-more,
@@ -1857,8 +1924,14 @@ a.link-committees,
 a.link-poll,
 .link-report a,
 a.link-report,
+.link-download a,
+a.link-download,
 .ic-print a,
 a.ic-print,
+a.link-pdf,
+.link-pdf a,
+.link-video a,
+a.link-video,
 .ic-info .info-title,
 blockquote:before,
 .zero-clipboard,
