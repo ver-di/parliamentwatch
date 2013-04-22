@@ -34,8 +34,8 @@ function subsite_conf_strongarm() {
     'native' => 'Deutsch',
     'direction' => '0',
     'enabled' => 1,
-    'plurals' => '2',
-    'formula' => '($n!=1)',
+    'plurals' => '0',
+    'formula' => '',
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
@@ -46,9 +46,44 @@ function subsite_conf_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_depth_1';
+  $strongarm->value = '-1';
+  $export['nice_menus_depth_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_menu_1';
+  $strongarm->value = 'menu-main-menu-de';
+  $export['nice_menus_menu_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_name_1';
+  $strongarm->value = 'Nice menu 1';
+  $export['nice_menus_name_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'nice_menus_type_1';
+  $strongarm->value = 'down';
+  $export['nice_menus_type_1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'site_default_country';
   $strongarm->value = 'DE';
   $export['site_default_country'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_mail';
+  $strongarm->value = 'info@abgeordnetenwatch.de';
+  $export['site_mail'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
