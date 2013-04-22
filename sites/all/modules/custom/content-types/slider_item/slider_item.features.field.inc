@@ -10,7 +10,7 @@
 function slider_item_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-slider_item-body'
+  // Exported field: 'node-slider_item-body'.
   $fields['node-slider_item-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function slider_item_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'profile2_private' => FALSE,
@@ -98,7 +99,7 @@ function slider_item_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-slider_item-field_slider_teaserbody'
+  // Exported field: 'node-slider_item-field_slider_teaserbody'.
   $fields['node-slider_item-field_slider_teaserbody'] = array(
     'field_config' => array(
       'active' => '1',
@@ -119,6 +120,7 @@ function slider_item_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -177,7 +179,7 @@ function slider_item_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-slider_item-field_slider_url'
+  // Exported field: 'node-slider_item-field_slider_url'.
   $fields['node-slider_item-field_slider_url'] = array(
     'field_config' => array(
       'active' => '1',
@@ -187,6 +189,7 @@ function slider_item_field_default_fields() {
       'field_name' => 'field_slider_url',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(

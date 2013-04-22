@@ -92,8 +92,8 @@ function slider_item_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<?php
-drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
-drupal_add_js(\'sites/all/themes/custom/abgeordnetenwatch/js/slider.js\');
+drupal_add_css(\'sites/all/themes/custom/parliamentwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
+drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
 ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Field: Content: Beschreibung mit LInk */
@@ -187,8 +187,8 @@ drupal_add_js(\'sites/all/themes/custom/abgeordnetenwatch/js/slider.js\');
     t('aufsteigend'),
     t('absteigend'),
     t('<?php
-drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
-drupal_add_js(\'sites/all/themes/custom/abgeordnetenwatch/js/slider.js\');
+drupal_add_css(\'sites/all/themes/custom/parliamentwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
+drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
 ?>'),
     t('[field_slider_teaserbody]<div class="item"></div>'),
     t('<span class="close">close</span>'),
