@@ -61,5 +61,3 @@ features[variable][] = node_submitted_press_article
 features[variable][] = node_submitted_press_release
 features[views_view][] = press_articles
 features[views_view][] = press_release
-features[weight_settings][] = press_article
-features[weight_settings][] = press_release

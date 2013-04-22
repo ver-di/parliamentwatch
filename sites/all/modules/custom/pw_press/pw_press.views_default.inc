@@ -12,7 +12,7 @@ function pw_press_views_default_views() {
 
   $view = new view();
   $view->name = 'press_articles';
-  $view->description = '';
+  $view->description = 'A list of articles about the project found in the press';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Press articles';
@@ -22,7 +22,7 @@ function pw_press_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Presseartikel';
+  $handler->display->display_options['title'] = 'Press articles';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -147,7 +147,6 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_article_video']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_press_article_video']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_press_article_video']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_press_article_video']['type'] = 'media';
   $handler->display->display_options['fields']['field_press_article_video']['settings'] = array(
     'file_view_mode' => 'media_link',
   );
@@ -172,7 +171,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['path'] = 'press/articles';
   $translatables['press_articles'] = array(
     t('Master'),
-    t('Presseartikel'),
+    t('Press articles'),
     t('more'),
     t('Apply'),
     t('Reset'),

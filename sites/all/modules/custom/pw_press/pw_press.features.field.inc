@@ -10,7 +10,7 @@
 function pw_press_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-press_article-field_press_article_attachment'
+  // Exported field: 'node-press_article-field_press_article_attachment'.
   $fields['node-press_article-field_press_article_attachment'] = array(
     'field_config' => array(
       'active' => '1',
@@ -31,6 +31,7 @@ function pw_press_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'file',
       'settings' => array(
         'display_default' => 0,
@@ -109,7 +110,7 @@ function pw_press_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-press_article-field_press_article_date'
+  // Exported field: 'node-press_article-field_press_article_date'.
   $fields['node-press_article-field_press_article_date'] = array(
     'field_config' => array(
       'active' => '1',
@@ -119,6 +120,7 @@ function pw_press_field_default_fields() {
       'field_name' => 'field_press_article_date',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'cache_count' => '4',
@@ -199,7 +201,7 @@ function pw_press_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-press_article-field_press_article_link'
+  // Exported field: 'node-press_article-field_press_article_link'.
   $fields['node-press_article-field_press_article_link'] = array(
     'field_config' => array(
       'active' => '1',
@@ -209,6 +211,7 @@ function pw_press_field_default_fields() {
       'field_name' => 'field_press_article_link',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -293,7 +296,7 @@ function pw_press_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-press_article-field_press_article_publisher'
+  // Exported field: 'node-press_article-field_press_article_publisher'.
   $fields['node-press_article-field_press_article_publisher'] = array(
     'field_config' => array(
       'active' => '1',
@@ -314,6 +317,7 @@ function pw_press_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -406,7 +410,7 @@ function pw_press_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-press_article-field_press_article_video'
+  // Exported field: 'node-press_article-field_press_article_video'.
   $fields['node-press_article-field_press_article_video'] = array(
     'field_config' => array(
       'active' => '1',
@@ -427,6 +431,7 @@ function pw_press_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'mediafield',
       'settings' => array(),
       'translatable' => '0',
@@ -445,9 +450,11 @@ function pw_press_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => NULL,
-          'settings' => array(),
-          'type' => 'media_large',
+          'module' => 'mediafield',
+          'settings' => array(
+            'file_view_mode' => 'default',
+          ),
+          'type' => 'media',
           'weight' => 2,
         ),
         'teaser' => array(
@@ -498,7 +505,7 @@ function pw_press_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-press_release-field_press_release_body'
+  // Exported field: 'node-press_release-field_press_release_body'.
   $fields['node-press_release-field_press_release_body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -519,6 +526,7 @@ function pw_press_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -604,7 +612,7 @@ function pw_press_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-press_release-field_press_release_date'
+  // Exported field: 'node-press_release-field_press_release_date'.
   $fields['node-press_release-field_press_release_date'] = array(
     'field_config' => array(
       'active' => '1',
@@ -614,6 +622,7 @@ function pw_press_field_default_fields() {
       'field_name' => 'field_press_release_date',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'date',
       'settings' => array(
         'cache_count' => '4',
