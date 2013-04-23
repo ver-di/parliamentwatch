@@ -332,8 +332,8 @@ function subsite_conf_default_fe_block_settings() {
         'weight' => '-26',
       ),
       'seven' => array(
-        'region' => 'dashboard_inactive',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'seven',
         'weight' => '-10',
       ),
