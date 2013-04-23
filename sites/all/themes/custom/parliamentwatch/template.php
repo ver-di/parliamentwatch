@@ -10,7 +10,72 @@
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
+ 
+ 
+/**
+ * Implements hook_css_alter().
+ */
+function parliamentwatch_css_alter(&$css) {
+  // Use parliamentwatch horizontal-tabs.css instead of the default one.
+  if (isset($css['sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.css'])) {
+    $css['sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/horizontal-tabs.css';
+    $css['sites/all/modules/contrib/scroll_to_top/horizontal-tabs.css']['type'] = 'file';
+  }
+  // Use parliamentwatch scroll_to_top.css instead of the default one.
+  if (isset($css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css'])) {
+    $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/scroll_to_top.css';
+    $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['type'] = 'file';
+  }
+}
 
+
+/**
+ * slying element for the views_load_more_pager.
+ */
+
+function parliamentwatch_pager_link($vars){
+
+  $page_new = $vars['page_new'];
+  $element = $vars['element'];
+  $parameters = $vars['parameters'];
+  $attributes = $vars['attributes'];
+  $query = array('page'=>$page_new[0]);
+
+  $attributes['href'] = url($_GET['q'], array('query' => $query));
+
+  return '<a' . drupal_attributes($attributes) . '><span id="custom-load-more">' .$vars['text'] . '</span></a>';
+}
+
+
+/**
+ * slying element for the quicktabs tabs.
+ */
+
+function parliamentwatch_qt_quicktabs_tabset($vars) {
+  $variables = array(
+    'attributes' => array(
+      'class' => 'quicktabs-tabs quicktabs-style-' . $vars['tabset']['#options']['style'],
+    ),
+    'items' => array(),
+  );
+  foreach (element_children($vars['tabset']['tablinks']) as $key) {
+    $item = array();
+    if (is_array($vars['tabset']['tablinks'][$key])) {
+      $tab = $vars['tabset']['tablinks'][$key];
+      
+      
+      if ($key == $vars['tabset']['#options']['active']) {
+        $item['class'] = array('active');
+      }
+      $tab['#title'] = "<span>".$tab['#title']."</span>";
+      $tab['#options']['html'] = TRUE;
+      $item['data'] = drupal_render($tab);
+  
+      $variables['items'][] = $item;
+    }
+  }
+  return theme('item_list', $variables);
+}
 
 /////////////////////////// add sharethis js (ruth)
 ////////////////////////////////////////////////////// 
@@ -23,7 +88,7 @@ drupal_add_js('stLight.options({publisher: "55d7781f-7bd9-4944-acee-84f832478498
 /////////////////////////// customize addthis button (ruth)
 //////////////////////////////////////////////////////
 
-function abgeordnetenwatch_addthis_element($variables) {
+function parliamentwatch_addthis_element($variables) {
   $element = $variables['addthis_element'];
   $element['#attributes']['src'] = '/sites/all/themes/custom/abgeordnetenwatch/images/ic_share.png';
   if (!isset($element['#value'])) {
@@ -46,7 +111,7 @@ function abgeordnetenwatch_addthis_element($variables) {
 /////////////////////////// customize breadcrumb seperator (ruth)
 //////////////////////////////////////////////////////
 
-function abgeordnetenwatch_delta_blocks_breadcrumb($variables) {
+function parliamentwatch_delta_blocks_breadcrumb($variables) {
   $output = '';
 
   if (!empty($variables['breadcrumb'])) {  
@@ -87,7 +152,7 @@ function abgeordnetenwatch_delta_blocks_breadcrumb($variables) {
 /////////////////////////// customize comment form (ruth)
 //////////////////////////////////////////////////////
 
-function abgeordnetenwatch_form_comment_form_alter(&$form, &$form_state) {
+function parliamentwatch_form_comment_form_alter(&$form, &$form_state) {
     global $user;
     if ($user->uid) {
         $form['author']['_author']['#title'] = t('You are logged in as');
@@ -97,7 +162,7 @@ function abgeordnetenwatch_form_comment_form_alter(&$form, &$form_state) {
 /////////////////////////// customize RSS block (ruth)
 //////////////////////////////////////////////////////
 
-function abgeordnetenwatch_feed_icon($variables) {
+function parliamentwatch_feed_icon($variables) {
   $text = t('Subscribe to @feed-title', array('@feed-title' => $variables['title']));
   if ($image = theme('image', array('path' => 'misc/feed.png', 'width' => 16, 'height' => 16, 'alt' => $text))) {
     return l($text, $variables['url'], array('html' => TRUE, 'attributes' => array('class' => array('feed-link'), 'title' => $text)));
@@ -107,7 +172,7 @@ function abgeordnetenwatch_feed_icon($variables) {
 /////////////////////////// hide the more link in tagclouds (ruth)
 //////////////////////////////////////////////////////
 
-function abgeordnetenwatch_tagadelic_weighted(array $vars) {
+function parliamentwatch_tagadelic_weighted(array $vars) {
   $terms = $vars['terms'];
   $output = '';
 
@@ -131,7 +196,7 @@ function abgeordnetenwatch_tagadelic_weighted(array $vars) {
 /////////////////////////// cusomize the pager (waqar)
 //////////////////////////////////////////////////////
 
-function abgeordnetenwatch_pager($variables) {
+function parliamentwatch_pager($variables) {
   $tags = $variables['tags'];
   $element = $variables['element'];
   $parameters = $variables['parameters'];
@@ -266,60 +331,10 @@ function abgeordnetenwatch_pager($variables) {
   }
 }
 
-function dailwatch_pager_link($vars){
-
-  $page_new = $vars['page_new'];
-  $element = $vars['element'];
-  $parameters = $vars['parameters'];
-  $attributes = $vars['attributes'];
-  $query = array('page'=>$page_new[0]);
-
-  $attributes['href'] = url($_GET['q'], array('query' => $query));
-
-  return '<a' . drupal_attributes($attributes) . '><span id="custom-load-more">' .$vars['text'] . '</span></a>';
-}
-
-/*function dailwatch_views_load_more_pager($vars) {
-  global $pager_page_array, $pager_total;  
-
-  drupal_add_js(drupal_get_path('module', 'views_load_more').'/views_load_more.js');
-  
-  $tags = $vars['tags'];
-  $element = $vars['element'];
-  $parameters = $vars['parameters'];
-
-  $li_next = theme('pager_next',
-    array(
-      'text' => (isset($tags[3]) ? $tags[3] : t('Load More')),
-      'element' => $element,
-      'interval' => 1,
-      'parameters' => $parameters,
-    )
-  );
-  if (empty($li_next)) {
-    $li_next = "&nbsp;";
-  }
-
-  if ($pager_total[$element] > 1) {
-    $items[] = array(
-      'class' => array('pager-next'),
-      'data' => $li_next,
-    );
-    return theme('item_list',
-      array(
-        'items' => $items,
-        'title' => NULL,
-        'type' => 'ul',
-        'attributes' => array('class' => array('pager')),
-      )
-    );
-  }
-}*/
-
 
 /////////////////////////// hide filter tips
 //////////////////////////////////////////////////////
 
-function abgeordnetenwatch_filter_tips_more_info() {
+function parliamentwatch_filter_tips_more_info() {
   return '';
 }
