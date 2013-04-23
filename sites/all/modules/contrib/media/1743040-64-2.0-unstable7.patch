@@ -1,0 +1,61 @@
+diff --git a/includes/media.theme.inc b/includes/media.theme.inc
+index d801baa..ad2de7c 100644
+--- a/includes/media.theme.inc
++++ b/includes/media.theme.inc
+@@ -181,8 +181,13 @@ function theme_media_thumbnail($variables) {
+   $element = $variables['element'];
+   $destination = drupal_get_destination();
+ 
+-  // Wrappers to go around the thumbnail
+-  $prefix = '<div class="media-item" title="' . $element['#name'] . '"><div class="media-thumbnail">';
++  // Wrappers to go around the thumbnail.
++  $attributes = array(
++    'title' => $element['#name'],
++    'class' => 'media-item',
++    'data-fid' => $element['#file']->fid,
++  );
++  $prefix = '<div ' . drupal_attributes($attributes) . '><div class="media-thumbnail">';
+   $suffix = '</div></div>';
+ 
+   // Arguments for the thumbnail link
+diff --git a/js/plugins/media.views.js b/js/plugins/media.views.js
+index f5f44d0..8f5a75f 100644
+--- a/js/plugins/media.views.js
++++ b/js/plugins/media.views.js
+@@ -67,7 +67,7 @@ Drupal.media.browser.views.select = function(view) {
+ Drupal.media.browser.views.setup = function(view) {
+   // Catch the click on a media item
+   $('.view-content .media-item', view).bind('click', function () {
+-    var fid = $(this).closest('a[data-fid]').data('fid'),
++    var fid = $(this).closest('.media-item[data-fid]').data('fid'),
+       selectedFiles = new Array();
+ 
+     // Remove all currently selected files
+@@ -98,7 +98,7 @@ Drupal.media.browser.views.setup = function(view) {
+           selectedFiles.push(Drupal.media.browser.selectedMedia[index]);
+ 
+           // Mark it as selected
+-          $('.view-content *[data-fid=' + currentFid + '] .media-item', view).addClass('selected');
++          $('.view-content *[data-fid=' + currentFid + '].media-item', view).addClass('selected');
+         }
+       }
+     }
+diff --git a/media.views.inc b/media.views.inc
+index 8d7b011..b476db7 100644
+--- a/media.views.inc
++++ b/media.views.inc
+@@ -77,13 +77,7 @@ function template_preprocess_media_views_view_media_browser(&$vars) {
+     // Add url/preview to the file object
+     media_browser_build_media_item($file);
+     $vars['rows'][$index] = $file;
+-    $vars['rows'][$index]->preview = l($file->preview, 'media/browser', array(
+-      'html' => TRUE,
+-      'attributes' => array(
+-        'data-fid' => $row->fid,
+-      ),
+-      'query' => array('render' => 'media-popup', 'fid' => $row->fid))
+-    );
++    $vars['rows'][$index]->preview = $file->preview;
+   }
+ 
+   // Add the files to JS so that they are accessible inside the browser
