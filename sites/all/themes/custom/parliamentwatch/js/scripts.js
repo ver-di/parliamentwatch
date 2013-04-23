@@ -1,5 +1,12 @@
 jQuery(document).ready(function() {
 
+////// change youtube links to open them in a colorbox (http://drupal.org/node/1368274)
+
+    jQuery('a.colorbox-load').each(function(){
+        var newUrl = jQuery(this).attr('href').replace('youtube.com/watch?v=', 'youtube.com/v/');
+        jQuery(this).attr('href', newUrl);
+    });
+
 ////// change sharethis defaults
 
     stLight.options({newOrZero:"zero"});
