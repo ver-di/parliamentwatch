@@ -120,7 +120,7 @@ function pw_press_strongarm() {
           'weight' => '2',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
       ),
       'display' => array(),

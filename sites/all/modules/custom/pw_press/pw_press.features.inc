@@ -35,7 +35,7 @@ function pw_press_views_api() {
 function pw_press_node_info() {
   $items = array(
     'press_article' => array(
-      'name' => t('Press article'),
+      'name' => t('Presseartikel'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

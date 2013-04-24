@@ -44,7 +44,7 @@ function pw_press_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'press_article',
       'deleted' => '0',
-      'description' => 'If you want to link to an PDF, load it up here or select it from the library.',
+      'description' => 'If you want to link to an PDF, load it up here or select it from the library. It will be linked as download.',
       'display' => array(
         'colorbox' => array(
           'label' => 'above',
@@ -74,7 +74,7 @@ function pw_press_field_default_fields() {
       'settings' => array(
         'description_field' => 0,
         'file_directory' => 'press-articles',
-        'file_extensions' => 'pdf',
+        'file_extensions' => 'pdf jpg png gif',
         'max_filesize' => '',
         'user_register_form' => FALSE,
       ),
@@ -85,22 +85,19 @@ function pw_press_field_default_fields() {
           'allowed_schemes' => array(
             'private' => 0,
             'public' => 'public',
-            'vimeo' => 0,
-            'youtube' => 0,
           ),
           'allowed_types' => array(
             'audio' => 0,
             'default' => 'default',
+            'document' => 0,
             'image' => 0,
+            0 => 0,
             'video' => 0,
           ),
           'browser_plugins' => array(
-            'library' => 0,
-            'media_default--media_browser_1' => 'media_default--media_browser_1',
-            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-            'media_internet' => 0,
-            'upload' => 'upload',
-            'youtube' => 0,
+            'media_default--media_browser_1' => 0,
+            'media_default--media_browser_my_files' => 0,
+            'upload' => 0,
           ),
           'progress_indicator' => 'throbber',
         ),
@@ -196,7 +193,7 @@ function pw_press_field_default_fields() {
           'year_range' => '-10:+1',
         ),
         'type' => 'date_popup',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -235,7 +232,7 @@ function pw_press_field_default_fields() {
       'bundle' => 'press_article',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'You can paste the URL of an external Website here. It will be linked as external link.',
       'display' => array(
         'colorbox' => array(
           'label' => 'above',
@@ -260,7 +257,7 @@ function pw_press_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_press_article_link',
-      'label' => 'Link',
+      'label' => 'External link',
       'required' => 0,
       'settings' => array(
         'attributes' => array(
@@ -291,7 +288,7 @@ function pw_press_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '5',
+        'weight' => '6',
       ),
     ),
   );
@@ -410,6 +407,94 @@ function pw_press_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-press_article-field_press_article_sound'.
+  $fields['node-press_article-field_press_article_sound'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_press_article_sound',
+      'foreign keys' => array(
+        'file_managed' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'mediafield',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'media',
+    ),
+    'field_instance' => array(
+      'bundle' => 'press_article',
+      'deleted' => '0',
+      'description' => 'Upload a mp3 file here, it will be linked as soundfile.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'mediafield',
+          'settings' => array(
+            'file_view_mode' => 'default',
+          ),
+          'type' => 'media',
+          'weight' => 6,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_press_article_sound',
+      'label' => 'Soundfile',
+      'required' => 0,
+      'settings' => array(
+        'file_extensions' => 'mp3',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'media',
+        'settings' => array(
+          'allowed_schemes' => array(
+            'private' => 0,
+            'public' => 'public',
+            'vimeo' => 0,
+            'youtube' => 0,
+          ),
+          'allowed_types' => array(
+            'audio' => 'audio',
+            'document' => 0,
+            'image' => 0,
+            'video' => 0,
+          ),
+          'browser_plugins' => array(
+            'media_default--media_browser_1' => 'media_default--media_browser_1',
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+            'media_internet' => 'media_internet',
+            'upload' => 'upload',
+            'youtube' => 0,
+          ),
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'media_generic',
+        'weight' => '5',
+      ),
+    ),
+  );
+
   // Exported field: 'node-press_article-field_press_article_video'.
   $fields['node-press_article-field_press_article_video'] = array(
     'field_config' => array(
@@ -440,7 +525,7 @@ function pw_press_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'press_article',
       'deleted' => '0',
-      'description' => 'If you want to link to a youtube or vimeo video you can enter it here. Or load up your own video file.',
+      'description' => 'If you want to link to a youtube or vimeo video you can enter it here. Or load up your own video file. It will be linked as video.',
       'display' => array(
         'colorbox' => array(
           'label' => 'above',
@@ -485,17 +570,16 @@ function pw_press_field_default_fields() {
           ),
           'allowed_types' => array(
             'audio' => 0,
-            'default' => 0,
+            'document' => 0,
             'image' => 0,
             'video' => 'video',
           ),
           'browser_plugins' => array(
-            'library' => 0,
-            'media_default--media_browser_1' => 'media_default--media_browser_1',
-            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
-            'media_internet' => 'media_internet',
-            'upload' => 'upload',
-            'youtube' => 'youtube',
+            'media_default--media_browser_1' => 0,
+            'media_default--media_browser_my_files' => 0,
+            'media_internet' => 0,
+            'upload' => 0,
+            'youtube' => 0,
           ),
           'progress_indicator' => 'throbber',
         ),
@@ -710,12 +794,15 @@ function pw_press_field_default_fields() {
   t('Body');
   t('Date');
   t('Date of publication');
-  t('If you want to link to a youtube or vimeo video you can enter it here. Or load up your own video file.');
-  t('If you want to link to an PDF, load it up here or select it from the library.');
-  t('Link');
+  t('External link');
+  t('If you want to link to a youtube or vimeo video you can enter it here. Or load up your own video file. It will be linked as video.');
+  t('If you want to link to an PDF, load it up here or select it from the library. It will be linked as download.');
   t('Publisher');
+  t('Soundfile');
+  t('Upload a mp3 file here, it will be linked as soundfile.');
   t('Video');
   t('Where did you find this article?');
+  t('You can paste the URL of an external Website here. It will be linked as external link.');
 
   return $fields;
 }

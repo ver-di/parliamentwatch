@@ -22,7 +22,7 @@ function pw_press_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Press articles';
+  $handler->display->display_options['title'] = 'Presseartikel';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -54,7 +54,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_article_date']['element_wrapper_class'] = 'grid-2 alpha omega';
   $handler->display->display_options['fields']['field_press_article_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_press_article_date']['settings'] = array(
-    'format_type' => 'date_only_medium',
+    'format_type' => 'date_only_short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -109,6 +109,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_article_attachment']['alter']['path'] = '[uri]';
   $handler->display->display_options['fields']['field_press_article_attachment']['alter']['alt'] = 'pdf-Download';
   $handler->display->display_options['fields']['field_press_article_attachment']['alter']['link_class'] = 'link-download';
+  $handler->display->display_options['fields']['field_press_article_attachment']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_press_article_attachment']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_press_article_attachment']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_press_article_attachment']['element_wrapper_class'] = 'grid-2 omega download';
@@ -119,7 +120,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_article_attachment']['settings'] = array(
     'file_view_mode' => 'default',
   );
-  /* Field: Content: Link */
+  /* Field: Content: External link */
   $handler->display->display_options['fields']['field_press_article_link']['id'] = 'field_press_article_link';
   $handler->display->display_options['fields']['field_press_article_link']['table'] = 'field_data_field_press_article_link';
   $handler->display->display_options['fields']['field_press_article_link']['field'] = 'field_press_article_link';
@@ -129,6 +130,25 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_article_link']['element_wrapper_class'] = 'grid-2 omega download';
   $handler->display->display_options['fields']['field_press_article_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_press_article_link']['click_sort_column'] = 'url';
+  /* Field: Content: Soundfile */
+  $handler->display->display_options['fields']['field_press_article_sound']['id'] = 'field_press_article_sound';
+  $handler->display->display_options['fields']['field_press_article_sound']['table'] = 'field_data_field_press_article_sound';
+  $handler->display->display_options['fields']['field_press_article_sound']['field'] = 'field_press_article_sound';
+  $handler->display->display_options['fields']['field_press_article_sound']['label'] = '';
+  $handler->display->display_options['fields']['field_press_article_sound']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_press_article_sound']['alter']['text'] = 'Sound';
+  $handler->display->display_options['fields']['field_press_article_sound']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_press_article_sound']['alter']['path'] = '[uri]?width=500&height=500&iframe=true';
+  $handler->display->display_options['fields']['field_press_article_sound']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_press_article_sound']['alter']['link_class'] = 'link-sound colorbox-load';
+  $handler->display->display_options['fields']['field_press_article_sound']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_press_article_sound']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_press_article_sound']['element_wrapper_class'] = 'grid-2 omega download';
+  $handler->display->display_options['fields']['field_press_article_sound']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_press_article_sound']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_press_article_sound']['settings'] = array(
+    'file_view_mode' => 'media_link',
+  );
   /* Field: Content: Video */
   $handler->display->display_options['fields']['field_press_article_video']['id'] = 'field_press_article_video';
   $handler->display->display_options['fields']['field_press_article_video']['table'] = 'field_data_field_press_article_video';
@@ -137,10 +157,13 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_article_video']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_press_article_video']['alter']['text'] = 'Video';
   $handler->display->display_options['fields']['field_press_article_video']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_press_article_video']['alter']['path'] = '[uri]';
+  $handler->display->display_options['fields']['field_press_article_video']['alter']['path'] = '[uri]?&width=500&height=500&iframe=true';
+  $handler->display->display_options['fields']['field_press_article_video']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_press_article_video']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['field_press_article_video']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['field_press_article_video']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['field_press_article_video']['alter']['alt'] = '[title]';
-  $handler->display->display_options['fields']['field_press_article_video']['alter']['link_class'] = 'link-video';
+  $handler->display->display_options['fields']['field_press_article_video']['alter']['link_class'] = 'link-video colorbox-load';
   $handler->display->display_options['fields']['field_press_article_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_press_article_video']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_press_article_video']['element_wrapper_class'] = 'grid-2 omega download';
@@ -149,6 +172,39 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_article_video']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_press_article_video']['settings'] = array(
     'file_view_mode' => 'media_link',
+  );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit press article';
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  $handler->display->display_options['fields']['delete_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['delete_node']['text'] = 'delete press article';
+  /* Field: Global: Contextual Links */
+  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
+  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['label'] = '';
+  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
+    'edit_node' => 'edit_node',
+    'delete_node' => 'delete_node',
+    'field_press_article_date' => 0,
+    'field_press_article_publisher' => 0,
+    'title' => 0,
+    'uri' => 0,
+    'field_press_article_attachment' => 0,
+    'field_press_article_link' => 0,
+    'field_press_article_video' => 0,
   );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -169,30 +225,6 @@ function pw_press_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'press/articles';
-  $translatables['press_articles'] = array(
-    t('Master'),
-    t('Press articles'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('zurück'),
-    t('weiter'),
-    t('last »'),
-    t('File'),
-    t('<h4>[field_press_article_publisher]</h4>
-<div class="light">[title]</div>'),
-    t('Video'),
-    t('pdf-Download'),
-    t('[title]'),
-    t('Page'),
-  );
   $export['press_articles'] = $view;
 
   $view = new view();
@@ -235,7 +267,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_release_date']['element_wrapper_class'] = 'grid-2 alpha omega';
   $handler->display->display_options['fields']['field_press_release_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_press_release_date']['settings'] = array(
-    'format_type' => 'date_only_medium',
+    'format_type' => 'date_only_short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -279,9 +311,39 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['view_node']['element_class'] = 'read-more';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'read more';
+  $handler->display->display_options['fields']['view_node']['text'] = 'weiterlesen';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit press release';
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  $handler->display->display_options['fields']['delete_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['delete_node']['text'] = 'delete press release';
+  /* Field: Global: Contextual Links */
+  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
+  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['label'] = '';
+  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
+    'edit_node' => 'edit_node',
+    'delete_node' => 'delete_node',
+    'field_press_release_date' => 0,
+    'title' => 0,
+    'field_press_release_body' => 0,
+    'view_node' => 0,
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -306,27 +368,6 @@ function pw_press_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'press/releases';
-  $translatables['press_release'] = array(
-    t('Master'),
-    t('Pressemitteilungen'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('zurück'),
-    t('weiter'),
-    t('last »'),
-    t('<h3>[title]</h3>
-[field_press_release_body]'),
-    t('read more'),
-    t('Page'),
-  );
   $export['press_release'] = $view;
 
   return $export;
