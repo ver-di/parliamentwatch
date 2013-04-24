@@ -10,7 +10,7 @@
 function dialogues_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'comment-comment_node_dialogue-comment_body'
+  // Exported field: 'comment-comment_node_dialogue-comment_body'.
   $fields['comment-comment_node_dialogue-comment_body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function dialogues_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -111,7 +112,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_annotation'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_annotation'.
   $fields['comment-comment_node_dialogue-field_dialogue_annotation'] = array(
     'field_config' => array(
       'active' => '1',
@@ -132,6 +133,7 @@ function dialogues_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -173,7 +175,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_documents'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_documents'.
   $fields['comment-comment_node_dialogue-field_dialogue_documents'] = array(
     'field_config' => array(
       'active' => '1',
@@ -183,6 +185,7 @@ function dialogues_field_default_fields() {
       'field_name' => 'field_dialogue_documents',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -250,7 +253,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_id'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_id'.
   $fields['comment-comment_node_dialogue-field_dialogue_id'] = array(
     'field_config' => array(
       'active' => '1',
@@ -260,6 +263,7 @@ function dialogues_field_default_fields() {
       'field_name' => 'field_dialogue_id',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(),
       'translatable' => '0',
@@ -305,7 +309,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_message_id'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_message_id'.
   $fields['comment-comment_node_dialogue-field_dialogue_message_id'] = array(
     'field_config' => array(
       'active' => '1',
@@ -315,6 +319,7 @@ function dialogues_field_default_fields() {
       'field_name' => 'field_dialogue_message_id',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(),
       'translatable' => '0',
@@ -360,7 +365,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_message_type'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_message_type'.
   $fields['comment-comment_node_dialogue-field_dialogue_message_type'] = array(
     'field_config' => array(
       'active' => '1',
@@ -374,6 +379,7 @@ function dialogues_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -416,7 +422,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_recipient'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_recipient'.
   $fields['comment-comment_node_dialogue-field_dialogue_recipient'] = array(
     'field_config' => array(
       'active' => '1',
@@ -437,6 +443,7 @@ function dialogues_field_default_fields() {
           0 => 'target_id',
         ),
       ),
+      'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
         'handler' => 'base',
@@ -492,7 +499,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_sender_fullname'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_sender_fullname'.
   $fields['comment-comment_node_dialogue-field_dialogue_sender_fullname'] = array(
     'field_config' => array(
       'active' => '1',
@@ -513,6 +520,7 @@ function dialogues_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -554,7 +562,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_tags'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_tags'.
   $fields['comment-comment_node_dialogue-field_dialogue_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -575,6 +583,7 @@ function dialogues_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -622,7 +631,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'comment-comment_node_dialogue-field_dialogue_topic'
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_topic'.
   $fields['comment-comment_node_dialogue-field_dialogue_topic'] = array(
     'field_config' => array(
       'active' => '1',
@@ -643,6 +652,7 @@ function dialogues_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -687,7 +697,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-body'
+  // Exported field: 'node-dialogue-body'.
   $fields['node-dialogue-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -710,6 +720,7 @@ function dialogues_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'profile2_private' => FALSE,
@@ -779,7 +790,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_annotation'
+  // Exported field: 'node-dialogue-field_dialogue_annotation'.
   $fields['node-dialogue-field_dialogue_annotation'] = array(
     'field_config' => array(
       'active' => '1',
@@ -800,6 +811,7 @@ function dialogues_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -865,7 +877,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_documents'
+  // Exported field: 'node-dialogue-field_dialogue_documents'.
   $fields['node-dialogue-field_dialogue_documents'] = array(
     'field_config' => array(
       'active' => '1',
@@ -875,6 +887,7 @@ function dialogues_field_default_fields() {
       'field_name' => 'field_dialogue_documents',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'link',
       'settings' => array(
         'attributes' => array(
@@ -966,7 +979,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_id'
+  // Exported field: 'node-dialogue-field_dialogue_id'.
   $fields['node-dialogue-field_dialogue_id'] = array(
     'field_config' => array(
       'active' => '1',
@@ -976,6 +989,7 @@ function dialogues_field_default_fields() {
       'field_name' => 'field_dialogue_id',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(),
       'translatable' => '0',
@@ -1045,7 +1059,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_message_id'
+  // Exported field: 'node-dialogue-field_dialogue_message_id'.
   $fields['node-dialogue-field_dialogue_message_id'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1055,6 +1069,7 @@ function dialogues_field_default_fields() {
       'field_name' => 'field_dialogue_message_id',
       'foreign keys' => array(),
       'indexes' => array(),
+      'locked' => '0',
       'module' => 'number',
       'settings' => array(),
       'translatable' => '0',
@@ -1124,7 +1139,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_message_type'
+  // Exported field: 'node-dialogue-field_dialogue_message_type'.
   $fields['node-dialogue-field_dialogue_message_type'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1138,6 +1153,7 @@ function dialogues_field_default_fields() {
           0 => 'value',
         ),
       ),
+      'locked' => '0',
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
@@ -1208,7 +1224,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_recipient'
+  // Exported field: 'node-dialogue-field_dialogue_recipient'.
   $fields['node-dialogue-field_dialogue_recipient'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1229,6 +1245,7 @@ function dialogues_field_default_fields() {
           0 => 'target_id',
         ),
       ),
+      'locked' => '0',
       'module' => 'entityreference',
       'settings' => array(
         'handler' => 'base',
@@ -1308,7 +1325,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_sender_name'
+  // Exported field: 'node-dialogue-field_dialogue_sender_name'.
   $fields['node-dialogue-field_dialogue_sender_name'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1329,6 +1346,7 @@ function dialogues_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'max_length' => '255',
@@ -1433,7 +1451,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_tags'
+  // Exported field: 'node-dialogue-field_dialogue_tags'.
   $fields['node-dialogue-field_dialogue_tags'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1454,6 +1472,7 @@ function dialogues_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(
@@ -1525,7 +1544,7 @@ function dialogues_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-dialogue-field_dialogue_topic'
+  // Exported field: 'node-dialogue-field_dialogue_topic'.
   $fields['node-dialogue-field_dialogue_topic'] = array(
     'field_config' => array(
       'active' => '1',
@@ -1546,6 +1565,7 @@ function dialogues_field_default_fields() {
           0 => 'tid',
         ),
       ),
+      'locked' => '0',
       'module' => 'taxonomy',
       'settings' => array(
         'allowed_values' => array(

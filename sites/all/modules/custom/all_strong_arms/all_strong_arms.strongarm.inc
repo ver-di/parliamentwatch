@@ -531,7 +531,6 @@ node/*/edit';
   $strongarm->name = 'compact_forms_ids';
   $strongarm->value = 'user-login-form
 webform-client-form-6
-forward-form
 comment-form
 webform-client-form-12
 webform-client-form-14
