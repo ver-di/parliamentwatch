@@ -1400,13 +1400,6 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'forward_display_pw_poll';
-  $strongarm->value = 0;
-  $export['forward_display_pw_poll'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'i18n_string_allowed_formats';
   $strongarm->value = array(
     'managed_content' => 'managed_content',

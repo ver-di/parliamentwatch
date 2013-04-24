@@ -171,7 +171,6 @@ features[variable][] = features_tools_disable_features_page_js
 features[variable][] = field_bundle_settings_file__image
 features[variable][] = field_bundle_settings_node__page
 features[variable][] = field_bundle_settings_node__webform
-features[variable][] = forward_display_pw_poll
 features[variable][] = i18n_string_allowed_formats
 features[variable][] = language_content_type_page
 features[variable][] = language_content_type_pw_poll
