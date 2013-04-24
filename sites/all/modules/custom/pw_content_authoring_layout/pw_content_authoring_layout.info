@@ -1,9 +1,9 @@
-name = PW Text formats, WYSIWIG and Images
-description = Contains the text formats and their corrsponding WSIWIG configuration and the image styles
+name = PW Text formats, CKEditor and Images
+description = Contains the text formats and their corrsponding CKEditor configuration and the image styles
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-15042013
+version = 7.x-1.0-24042013
 project = pw_content_authoring_layout
 dependencies[] = ctools
 dependencies[] = ds
