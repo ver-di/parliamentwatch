@@ -110,6 +110,7 @@ p {
     margin-bottom: 1em;
 }
 hr {
+    clear: both;
     margin: 1em 0;
     border: 0;
     height: 1px;
@@ -1749,7 +1750,7 @@ form .webform-component-checkboxes .description {
 }
 
 #section-content .block.newsletter-subscribe { /* newsletter box with same block as teh slider in content */
-    background: url(/sites/all/themes/custom/abgeordnetenwatch/images/slider/slider_3.jpg);
+    background: url(../images/slider/slider_3.jpg);
     padding: 14px 76px 20px 0;
     height: 134px;
 }
