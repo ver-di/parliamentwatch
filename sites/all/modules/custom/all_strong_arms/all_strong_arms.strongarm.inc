@@ -1817,6 +1817,48 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_bg_color_hover';
+  $strongarm->value = '#ffffff';
+  $export['scroll_to_top_bg_color_hover'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_bg_color_out';
+  $strongarm->value = '#ffffff';
+  $export['scroll_to_top_bg_color_out'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_display_text';
+  $strongarm->value = 1;
+  $export['scroll_to_top_display_text'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_enable_admin_theme';
+  $strongarm->value = 1;
+  $export['scroll_to_top_enable_admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_label';
+  $strongarm->value = 'Back to top';
+  $export['scroll_to_top_label'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_position';
+  $strongarm->value = '1';
+  $export['scroll_to_top_position'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'search_active_modules';
   $strongarm->value = array(
     'node' => 'node',
