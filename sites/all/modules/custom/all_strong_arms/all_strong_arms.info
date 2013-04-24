@@ -144,6 +144,7 @@ features[variable][] = custom_search_type_selector
 features[variable][] = custom_search_type_selector_all
 features[variable][] = custom_search_type_selector_label
 features[variable][] = custom_search_type_selector_label_visibility
+features[variable][] = date_format_date_only_short
 features[variable][] = default_field_group
 features[variable][] = default_nodes_main
 features[variable][] = ds_extras_contextual
