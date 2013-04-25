@@ -240,6 +240,7 @@ function pw_press_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Pressemitteilungen';
+  $handler->display->display_options['css_class'] = 'push-bottom-l';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -292,7 +293,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_release_body']['field'] = 'field_press_release_body';
   $handler->display->display_options['fields']['field_press_release_body']['label'] = '';
   $handler->display->display_options['fields']['field_press_release_body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_press_release_body']['alter']['text'] = '<h3>[title]</h3>
+  $handler->display->display_options['fields']['field_press_release_body']['alter']['text'] = '<h4>[title]</h4>
 [field_press_release_body]';
   $handler->display->display_options['fields']['field_press_release_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_press_release_body']['element_wrapper_type'] = 'div';
