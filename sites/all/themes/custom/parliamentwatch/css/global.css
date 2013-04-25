@@ -313,6 +313,15 @@ a.link-video {
 a.link-video:hover {
     background-position: -108px -2060px;
 }
+.link-sound a,
+a.link-sound {
+    padding-left: 20px;
+    background-position: -66px -2098px;
+}
+.link-sound a:hover,
+a.link-sound:hover {
+    background-position: -26px -2138px;
+}
 .link-pdf a,
 a.link-pdf {
     padding-left: 22px;
@@ -1987,6 +1996,8 @@ a.link-pdf,
 .link-pdf a,
 .link-video a,
 a.link-video,
+.link-sound a,
+a.link-sound,
 .ic-info .info-title,
 blockquote:before,
 .zero-clipboard,

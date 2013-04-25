@@ -40,11 +40,16 @@
     font-size: 11px;
     line-height: 16px;
 }
+#block-views-slider-block {
+    height: 168px !important;
+}
 #views_slideshow_cycle_teaser_section_slider-block,
-#block-views-slider-block,
 #views_slideshow_cycle_main_slider-block,
 .views-slideshow-cycle-main-frame-row {
     height: 168px !important;
+}
+#region-sidebar-second {
+    padding-top: 20px;
 }
 .views-slideshow-cycle-main-frame-row {
     width: 100% !important;
