@@ -205,12 +205,12 @@ ul.nice-menu-down ul li {
 }
 
 ul.nice-menu-down li ul li ul {
-  left: 225; /* LTR */
+  left: 225px; /* LTR */
   top: 0;
 }
 
 ul.nice-menu-down li:last-child ul li ul {
-    margin-left: -225px;
+    margin-left: -450px;
 }
 
 ul.nice-menu-down .menuparent a {
