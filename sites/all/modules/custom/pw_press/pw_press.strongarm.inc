@@ -264,5 +264,33 @@ function pw_press_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_press_release'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_press_article_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_press_article_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_press_article_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_press_article_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_press_release_pattern';
+  $strongarm->value = 'about/press/[node:field-press-release-date:custom:Y-m-d]/[node:title]';
+  $export['pathauto_node_press_release_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_press_release_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_press_release_und_pattern'] = $strongarm;
+
   return $export;
 }

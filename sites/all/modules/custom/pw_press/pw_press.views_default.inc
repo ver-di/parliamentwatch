@@ -224,7 +224,7 @@ function pw_press_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'press/articles';
+  $handler->display->display_options['path'] = 'about/press';
   $export['press_articles'] = $view;
 
   $view = new view();
@@ -279,10 +279,10 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['title']['element_class'] = 'pushfloat-2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
@@ -292,29 +292,21 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_release_body']['table'] = 'field_data_field_press_release_body';
   $handler->display->display_options['fields']['field_press_release_body']['field'] = 'field_press_release_body';
   $handler->display->display_options['fields']['field_press_release_body']['label'] = '';
-  $handler->display->display_options['fields']['field_press_release_body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_press_release_body']['alter']['text'] = '<h4>[title]</h4>
-[field_press_release_body]';
+  $handler->display->display_options['fields']['field_press_release_body']['alter']['max_length'] = '400';
+  $handler->display->display_options['fields']['field_press_release_body']['alter']['more_link'] = TRUE;
+  $handler->display->display_options['fields']['field_press_release_body']['alter']['more_link_text'] = 'weiterlesen';
+  $handler->display->display_options['fields']['field_press_release_body']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_press_release_body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_press_release_body']['alter']['preserve_tags'] = '<a>';
+  $handler->display->display_options['fields']['field_press_release_body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_press_release_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_press_release_body']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_press_release_body']['element_wrapper_class'] = 'pushfloat-2';
   $handler->display->display_options['fields']['field_press_release_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_press_release_body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['field_press_release_body']['settings'] = array(
-    'trim_length' => '200',
+    'trim_length' => '600',
   );
-  /* Field: Content: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['element_type'] = 'span';
-  $handler->display->display_options['fields']['view_node']['element_class'] = 'read-more';
-  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'weiterlesen';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -368,7 +360,7 @@ function pw_press_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'press/releases';
+  $handler->display->display_options['path'] = 'about/press/press-releases';
   $export['press_release'] = $view;
 
   return $export;
