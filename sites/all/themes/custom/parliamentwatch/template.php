@@ -230,10 +230,10 @@ function parliamentwatch_pager($variables) {
   }
   // End of generation loop preparation.
 
-    $li_first = theme('pager_first', array('text' => (isset($tags[0]) ? $tags[0] :'1'), 'element' => $element, 'parameters' => $parameters));
+    $li_first = theme('pager_first', array('text' => ('1'), 'element' => $element, 'parameters' => $parameters));
     $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('‹ prev')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
     $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-    $li_last = theme('pager_last', array('text' => (isset($tags[4]) ? $tags[4] : $pager_max), 'element' => $element, 'parameters' => $parameters));
+    $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters));
 
     global $base_path;
     
