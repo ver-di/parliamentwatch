@@ -361,7 +361,7 @@ a.ic-print {
 }
 .ic-info .info-title {
     text-indent: -5000em;
-    background-position: -640px -41px;
+    background-position: -440px -41px;
     display: inline-block;
     width: 19px;
     height: 18px;
@@ -1706,7 +1706,7 @@ form .webform-component-checkboxes .description {
 }
 #views_slideshow_cycle_teaser_section_slider-block .icon-share {
     padding-left: 26px;
-    background-position: -680px -1px;
+    background-position: -480px -1px;
     margin: 2px 0 0 0;
 }
 #at16psf input, 
