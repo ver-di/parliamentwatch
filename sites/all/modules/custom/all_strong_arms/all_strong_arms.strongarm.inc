@@ -1912,7 +1912,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_node_option';
-  $strongarm->value = 'pw_poll,0,0,0,0,0,0';
+  $strongarm->value = 'pw_poll,0,0,0,0,0,0,0,0,0';
   $export['sharethis_node_option'] = $strongarm;
 
   $strongarm = new stdClass();
