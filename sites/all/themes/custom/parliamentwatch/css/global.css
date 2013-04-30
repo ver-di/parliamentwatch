@@ -1679,6 +1679,10 @@ form .webform-component-checkboxes .description {
 
 /* /////////////////////////// Share this /////////////////// */
 
+.icon-share {
+    padding-left: 26px;
+    background-position: -480px -1px;
+}
 .sharethis-wrapper {
 	padding: 0;
 	position: absolute;

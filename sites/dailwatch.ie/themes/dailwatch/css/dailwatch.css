@@ -196,11 +196,6 @@ a#text_resize_increase:hover {
     padding: 0;
     margin: 4px 0;
 }
-#views_slideshow_cycle_teaser_section_slider-block .icon-share {
-    padding-left: 26px;
-    background-position: -480px -1px;
-    margin: 2px 0 0 0;
-}
 #at16psf input, 
 #at16psf input:focus {
     height: auto;

@@ -162,6 +162,20 @@
     height: 20px;
 }
 
+
+/* sharethis */
+
+#block-views-slider-block .stButton .chicklets {
+    padding-left: 20px !important;
+    width: 102px;
+    margin: 4px 0;
+}
+#block-views-slider-block .stButton .sharethis {
+	background: url("../images/sprite.png") no-repeat scroll -481px -2px transparent !important;
+}
+#block-views-slider-block .icon-share {
+    margin-top: 2px;
+}
 /*
 #views_slideshow_cycle_main_slider-block input.email {
     float: left;
