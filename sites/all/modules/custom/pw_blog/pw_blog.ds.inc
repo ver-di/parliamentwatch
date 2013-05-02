@@ -17,14 +17,6 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blogpost';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'anchor_to_top' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-      'ft' => array(
-        'func' => 'theme_ds_field_minimal',
-      ),
-    ),
     'custom_comment_counter' => array(
       'weight' => '4',
       'label' => 'hidden',
@@ -304,20 +296,6 @@ function pw_blog_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'anchor_to_top';
-  $ds_field->label = 'Anchor to top';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->properties = array(
-    'block' => 'block|7',
-    'block_render' => '3',
-  );
-  $export['anchor_to_top'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
   $ds_field->field = 'block_newsletter_order';
   $ds_field->label = 'Newsletter bestellen';
   $ds_field->field_type = 6;
@@ -418,8 +396,7 @@ function pw_blog_ds_layout_settings_info() {
         7 => 'custom_comment_counter',
         8 => 'field_teaser_image',
         9 => 'body',
-        10 => 'anchor_to_top',
-        11 => 'comments',
+        10 => 'comments',
       ),
     ),
     'fields' => array(
@@ -433,7 +410,6 @@ function pw_blog_ds_layout_settings_info() {
       'custom_comment_counter' => 'ds_content',
       'field_teaser_image' => 'ds_content',
       'body' => 'ds_content',
-      'anchor_to_top' => 'ds_content',
       'comments' => 'ds_content',
     ),
     'classes' => array(),
