@@ -75,6 +75,37 @@ function profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_premium|user|user|form';
+  $field_group->group_name = 'group_premium';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Premium',
+    'weight' => '30',
+    'children' => array(
+      0 => 'field_user_more',
+      1 => 'field_user_picture',
+      2 => 'field_user_political_goals',
+      3 => 'field_user_about',
+      4 => 'field_user_image_gallery',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_premium|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_profiles_mouseover|user|user|pw_profiles_list_compact';
   $field_group->group_name = 'group_profiles_mouseover';
   $field_group->entity_type = 'user';
