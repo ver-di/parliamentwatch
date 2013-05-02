@@ -1099,22 +1099,25 @@ a#text_resize_increase:hover {
     font-family: 'Times New Roman',Georgia,serif;
     font-size: 16px;
     margin-bottom: 0;
+    font-weight: normal;
 }
-#floatbox ul {
-    margin-bottom: 10px;
+#region-content #floatbox ul {
+    margin: 0 0 10px;
+    padding: 0;
 }
-#floatbox ul.arrow-items li {
+#region-content #floatbox ul li {
     padding: 3px 0 3px 22px;
     color: #666;
     background-position: -763px -1894px;
-    margin-left: -7px;
+    margin: 0 0 0 -7px;
+    list-style: none;
 }
-#floatbox ul.arrow-items li a {
+#floatbox ul li a {
     color: #333;
     font-weight: normal;
     text-decoration: none;
 }
-#floatbox ul.arrow-items li:hover {
+#floatbox ul li:hover {
     background-color: #d5d5d5;
 }
 #floatbox.floatbox-right {
@@ -1912,7 +1915,7 @@ form .webform-component-checkboxes .description {
 #block-views-blog-block-1 .views-row,
 .comment-count,
 .icon-taxonomy,
-#floatbox ul.arrow-items li,
+#floatbox ul li,
 #floatbox h3,
 a#text_resize_decrease,
 a#text_resize_reset,

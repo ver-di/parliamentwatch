@@ -10,7 +10,6 @@ dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = features
 dependencies[] = file_entity
-dependencies[] = floatbox
 dependencies[] = image
 dependencies[] = linkit
 dependencies[] = media

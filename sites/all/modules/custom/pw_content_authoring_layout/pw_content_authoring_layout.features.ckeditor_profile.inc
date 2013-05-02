@@ -205,7 +205,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
     [\'Media\',\'MediaEmbed\',\'linkit\',\'Anchor\',\'Table\',\'SpecialChar\'],
     [\'Maximize\'],
     \'/\',
-    [\'Format\',\'CreateDiv\'],
+    [\'Templates\',\'Format\',\'CreateDiv\'],
     [\'Bold\',\'Italic\',\'Strike\',\'Blockquote\',\'Subscript\',\'Superscript\',\'HorizontalRule\'],
     [\'NumberedList\',\'BulletedList\'],
     [\'Outdent\',\'Indent\'],
@@ -218,7 +218,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
         'language_direction' => 'default',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
-        'font_format' => 'p;div;pre;address;h1;h2;h3;h4;h5;h6',
+        'font_format' => 'p;div;h3;h4',
         'custom_formatting' => 't',
         'formatting' => array(
           'custom_formatting_options' => array(
