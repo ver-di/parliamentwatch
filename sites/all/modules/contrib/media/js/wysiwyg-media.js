@@ -42,7 +42,7 @@ Drupal.wysiwyg.plugins.media = {
       var insert = new InsertMedia(instanceId);
       if (this.isNode(data.node)) {
         // Change the view mode for already-inserted media.
-        var media_file = Drupal.media.filter.extract_file_info($(data.node));
+        var media_file = extract_file_info($(data.node));
         insert.onSelect([media_file]);
       }
       else {
@@ -61,7 +61,39 @@ Drupal.wysiwyg.plugins.media = {
    * that will show in the editor.
    */
   attach: function (content, settings, instanceId) {
-    content = Drupal.media.filter.replaceTokenWithPlaceholder(content);
+    ensure_tagmap();
+
+    var tagmap = Drupal.settings.tagmap,
+        matches = content.match(/\[\[.*?\]\]/g),
+        media_definition;
+
+    if (matches) {
+      for (var index in matches) {
+        var macro = matches[index];
+
+        if (tagmap[macro]) {
+          var media_json = macro.replace('[[', '').replace(']]', '');
+
+          // Make sure that the media JSON is valid.
+          try {
+            media_definition = JSON.parse(media_json);
+          }
+          catch (err) {
+            media_definition = null;
+          }
+          if (media_definition) {
+            // Apply attributes.
+            var element = create_element(tagmap[macro], media_definition);
+            var markup = outerHTML(element);
+
+            content = content.replace(macro, markup);
+          }
+        }
+        else {
+          debug.debug("Could not find content for " + macro);
+        }
+      }
+    }
     return content;
   },
 
@@ -69,11 +101,38 @@ Drupal.wysiwyg.plugins.media = {
    * Detach function, called when a rich text editor detaches
    */
   detach: function (content, settings, instanceId) {
-    content = Drupal.media.filter.replacePlaceholderWithToken(content);
+    ensure_tagmap();
+    var tagmap = Drupal.settings.tagmap,
+        i = 0,
+        markup,
+        macro;
+
+    // Replace all media placeholders with their JSON macro representations.
+    //
+    // There are issues with using jQuery to parse the WYSIWYG content (see
+    // http://drupal.org/node/1280758), and parsing HTML with regular
+    // expressions is a terrible idea (see http://stackoverflow.com/a/1732454/854985)
+    //
+    // WYSIWYG editors act wacky with complex placeholder markup anyway, so an
+    // image is the most reliable and most usable anyway: images can be moved by
+    // dragging and dropping, and can be resized using interactive handles.
+    //
+    // Media requests a WYSIWYG place holder rendering of the file by passing
+    // the wysiwyg => 1 flag in the settings array when calling
+    // media_get_file_without_label().
+    var matches = content.match(/<img[^>]+class=[\'"]([^"']+ )?media-element[^>]*>/gi);
+    if (matches) {
+      for (i = 0; i < matches.length; i++) {
+        markup = matches[i];
+        macro = create_macro($(markup));
+        tagmap[macro] = markup;
+        content = content.replace(markup, macro);
+      }
+    }
+
     return content;
   }
 };
-
 /**
  * Defining InsertMedia object to manage the sequence of actions involved in
  * inserting a media element into the WYSIWYG.
@@ -112,7 +171,8 @@ InsertMedia.prototype = {
   insert: function (formatted_media) {
     var element = create_element(formatted_media.html, {
           fid: this.mediaFile.fid,
-          view_mode: formatted_media.type
+          view_mode: formatted_media.type,
+          attributes: formatted_media.options
         });
 
     var markup = outerHTML(element),
@@ -145,6 +205,11 @@ function ensure_tagmap () {
  *    A object containing the media file information (fid, view_mode, etc).
  */
 function create_element (html, info) {
+  if ($('<div></div>').append(html).text().length === html.length) {
+    // Element is not an html tag. Surround it in a span element
+    // so we can pass the file attributes.
+    html = '<span>' + html + '</span>';
+  }
   var element = $(html);
 
   // Move attributes from the file info array to the placeholder element.
