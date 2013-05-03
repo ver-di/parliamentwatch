@@ -48,6 +48,13 @@ function all_strong_arms_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'better_formats_per_field_core';
+  $strongarm->value = 1;
+  $export['better_formats_per_field_core'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'block_cache';
   $strongarm->value = 0;
   $export['block_cache'] = $strongarm;
@@ -1016,8 +1023,15 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_date_and_time';
+  $strongarm->value = 'm/d/Y \\a\\t H:i';
+  $export['date_format_date_and_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_date_only_short';
-  $strongarm->value = 'm/d/Y';
+  $strongarm->value = 'd.m.Y';
   $export['date_format_date_only_short'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -157,6 +157,7 @@ function parliamentwatch_form_comment_form_alter(&$form, &$form_state) {
     if ($user->uid) {
         $form['author']['_author']['#title'] = t('You are logged in as');
     }
+    $form['actions']['submit']['#value'] = t('Add comment');
 }
 
 /////////////////////////// customize RSS block (ruth)

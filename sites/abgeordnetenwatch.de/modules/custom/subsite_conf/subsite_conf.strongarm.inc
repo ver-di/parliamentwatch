@@ -33,13 +33,13 @@ function subsite_conf_strongarm() {
     'name' => 'German',
     'native' => 'Deutsch',
     'direction' => '0',
-    'enabled' => 1,
+    'enabled' => '1',
     'plurals' => '0',
     'formula' => '',
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => '',
+    'javascript' => 'QVJbgLUpFGx2aHg-cEuwgfPU83liXQg3md1b5heU4dw',
   );
   $export['language_default'] = $strongarm;
 

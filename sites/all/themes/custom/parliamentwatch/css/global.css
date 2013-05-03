@@ -1158,11 +1158,15 @@ textarea:active {
 }
 
 /* blog */
-#views-exposed-form-blog-page-1 {
+
+.view-blog .view-filters {
     float: right;
 }
 .view-blog .view-content {
     clear: both;
+}
+.view-blog .field-body {
+    margin-bottom: 1em;
 }
 #view-display-id-block_1 a {
     color: 
@@ -1402,7 +1406,6 @@ form:after {
 }
 .text-field,
 textarea,
-.form-textarea-wrapper textarea,
 select,
 input[type="date"],
 input[type="datetime"],
@@ -1439,6 +1442,7 @@ input[type="week"],
 }
 textarea {
     min-height: 7em;
+    height: auto;
     text-indent: 0;
     padding: 6px;
 }
@@ -1565,6 +1569,9 @@ form .webform-component-checkboxes .description {
     margin-bottom: 5em;
     padding: 12px 10px 10px 10px;
     color: #666;
+}
+#section-content #comment-form {
+    padding: 12px 10px 40px 10px;
 }
 #section-content .compact-form .form-actions,
 #section-content #comment-form .form-actions {

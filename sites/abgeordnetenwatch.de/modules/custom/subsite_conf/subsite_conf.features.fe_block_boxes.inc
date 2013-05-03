@@ -11,6 +11,22 @@ function subsite_conf_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Blog description';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'blog_description';
+  $fe_block_boxes->body = '<p>
+	Unser Blog ist - wie das Gesamtprojekt "abgeordnetenwatch.de" - überparteilich. Politikerinnen und Politiker werden nicht aufgrund ihrer Parteizugehörigkeit bevorzugt, benachteiligt, kritisiert oder hervorgehoben. Der Blog versteht sich als ergänzende Diskussionsplattform zum Angebot von abgeordnetenwatch.de. Er berichtet über das Projekt und nimmt Stellung zu Transparenz, Bürgernähe<br />
+	und Teilhabe in der Politik.
+</p>
+
+<p>
+	Alle Leserinnen und Leser sind eingeladen an der Diskussion teilzunehmen. Die Blogautoren selbst sind Mitglieder des abgeordnetenwatch.de-Teams. Ihre Einträge drücken nicht unbedingt die Position des Gesamtprojekts abgeordnetenwatch.de aus.&nbsp;
+</p>
+';
+
+  $export['blog_description'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Metanavi Addthis';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'metanavi_addthis';
