@@ -28,6 +28,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
@@ -256,6 +257,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
@@ -362,7 +364,7 @@ function pw_press_views_default_views() {
   $handler->display->display_options['sorts']['field_press_release_date_value']['table'] = 'field_data_field_press_release_date';
   $handler->display->display_options['sorts']['field_press_release_date_value']['field'] = 'field_press_release_date_value';
   $handler->display->display_options['sorts']['field_press_release_date_value']['order'] = 'DESC';
-  /* Sort criterion: Content: Post date */
+  /* Sort criterion: Content: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';

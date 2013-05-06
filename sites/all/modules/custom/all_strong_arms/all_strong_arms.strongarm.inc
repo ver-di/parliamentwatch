@@ -546,7 +546,8 @@ webform-client-form-17
 webform-client-form-18
 webform-client-form-25
 views-exposed-form-profile-list-solr-block-2
-views-exposed-form-profile-list-solr-constituency';
+views-exposed-form-profile-list-solr-constituency
+custom-search-blocks-form-1';
   $export['compact_forms_ids'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -728,7 +729,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = '';
+  $strongarm->value = 'blocks_1_';
   $export['custom_search_delta'] = $strongarm;
 
   $strongarm = new stdClass();

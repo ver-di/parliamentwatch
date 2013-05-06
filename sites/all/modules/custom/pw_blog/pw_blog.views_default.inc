@@ -28,7 +28,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -148,6 +148,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['body']['alter']['more_link_path'] = 'node/[nid]';
   $handler->display->display_options['fields']['body']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
