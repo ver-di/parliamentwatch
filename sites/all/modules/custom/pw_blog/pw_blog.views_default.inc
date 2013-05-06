@@ -176,7 +176,6 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['field_blogpost_blogtags']['element_wrapper_class'] = 'icon-taxonomy clearfix clear-both';
   $handler->display->display_options['fields']['field_blogpost_blogtags']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_blogpost_blogtags']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_blogpost_blogtags']['delta_offset'] = '0';
   /* Field: Content: Anzahl der Kommentare */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
@@ -192,6 +191,44 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
   $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit blogpost';
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  $handler->display->display_options['fields']['delete_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['delete_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['delete_node']['text'] = 'delete blogpost';
+  /* Field: Global: Contextual Links */
+  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
+  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['label'] = '';
+  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
+    'delete_node' => 'delete_node',
+    'edit_node' => 'edit_node',
+    'nid' => 0,
+    'sharethis' => 0,
+    'title' => 0,
+    'name' => 0,
+    'created_1' => 0,
+    'created' => 0,
+    'field_teaser_image' => 0,
+    'fieldset' => 0,
+    'body' => 0,
+    'view_node' => 0,
+    'field_blogpost_blogtags' => 0,
+    'comment_count' => 0,
+  );
   /* Sort criterion: Content: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
