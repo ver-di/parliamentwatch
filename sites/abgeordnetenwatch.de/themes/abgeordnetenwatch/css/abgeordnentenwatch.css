@@ -19,6 +19,19 @@
     font: 9px/21px Lucida Grande,Helvetica,Arial,sans-serif;
 }
 
+/* blog wordpress */
+
+.alignright {
+    float: right;
+    margin: 0 0 7px 14px;
+    outline: 1px solid #ccc;
+}
+.alignleft {
+    float: left;
+    margin: 0 14px 7px 0;
+    outline: 1px solid #ccc;
+}
+
 
 /* slider */
 
