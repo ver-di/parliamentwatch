@@ -721,16 +721,6 @@ ul.tabs li:hover a {
     width: auto;
 }
 
-/* hack */
-.not-front .pager-last #custom-load-more {
-    padding-right: 0 !important;
-    background: transparent !important;
-}
-.not-front .pager-first #custom-load-more {
-    padding-left: 0 !important;
-    background: transparent !important;
-}
-
 
 /* pager views load more */
 
