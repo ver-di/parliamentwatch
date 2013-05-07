@@ -674,6 +674,11 @@ ul.tabs li:hover a {
     width: 25px;
     height: 25px;
 }
+#region-content .item-list ul.pager li.pager-first a span,
+#region-content .item-list ul.pager li.pager-last a span {
+    background: transparent;
+    padding: 0;
+}
 #region-content .item-list ul.pager li.pager-previous a,
 #region-content .item-list ul.pager li.pager-first span,
 #region-content .item-list ul.pager li.pager-first a {
