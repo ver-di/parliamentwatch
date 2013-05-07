@@ -63,6 +63,7 @@ features[variable][] = node_submitted_press_article
 features[variable][] = node_submitted_press_release
 features[variable][] = pathauto_node_press_article_pattern
 features[variable][] = pathauto_node_press_article_und_pattern
+features[variable][] = pathauto_node_press_release_de_pattern
 features[variable][] = pathauto_node_press_release_pattern
 features[variable][] = pathauto_node_press_release_und_pattern
 features[views_view][] = press_articles
