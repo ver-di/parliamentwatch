@@ -162,21 +162,15 @@ function pw_blog_ds_field_settings_info() {
         'class' => '',
       ),
     ),
-    'node_link' => array(
-      'weight' => '4',
+    'author' => array(
+      'weight' => '0',
       'label' => 'hidden',
-      'format' => 'default',
-      'ft' => array(
-        'func' => 'theme_ds_field_expert',
-        'fi' => TRUE,
-        'fi-el' => 'span',
-        'fi-cl' => 'read-more',
-      ),
+      'format' => 'author',
     ),
     'post_date' => array(
       'weight' => '0',
       'label' => 'hidden',
-      'format' => 'ds_post_date_date_short',
+      'format' => 'ds_post_date_long',
     ),
     'body' => array(
       'ft' => array(
@@ -316,13 +310,13 @@ function pw_blog_ds_custom_fields_info() {
 // Load and print comment count
 $node = node_load(arg(1));
 if($node->comment_count == 0){
-    print t("Bisher keine Kommentare");
+    print \'<a href="#comments" title="\'.t(\'go to comments\').\'">\'.t(\'no comments yet\').\'</a>\';
 }
 else if($node->comment_count == 1){
-    print "1 Kommentar";
+    print \'<a href="#comments" title="\'.t("go to comments").\'">\'.t("1 comment").\'</a>\';
 }
 else{
-    print $node->comment_count." Kommentare";
+    print  \'<a href="#comments" title="\'.t("go to comments").\'">\'.$node->comment_count.t(" comments").\'</a>\';
 }
 
 ?>',
@@ -450,27 +444,27 @@ function pw_blog_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'blogpost';
   $ds_layout->view_mode = 'search_result';
-  $ds_layout->layout = 'panels-flexible:agw_date_left';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'hide_empty_regions' => 0,
     'hide_sidebars' => 0,
     'regions' => array(
-      'center' => array(
-        0 => 'post_date',
-      ),
-      'right' => array(
-        0 => 'title',
-        1 => 'group_search_blog_body',
-        2 => 'body',
-        3 => 'node_link',
+      'ds_content' => array(
+        0 => 'author',
+        1 => 'post_date',
+        2 => 'title',
+        3 => 'field_teaser_image',
+        4 => 'body',
+        5 => 'field_blogpost_blogtags',
       ),
     ),
     'fields' => array(
-      'post_date' => 'center',
-      'title' => 'right',
-      'group_search_blog_body' => 'right',
-      'body' => 'right',
-      'node_link' => 'right',
+      'author' => 'ds_content',
+      'post_date' => 'ds_content',
+      'title' => 'ds_content',
+      'field_teaser_image' => 'ds_content',
+      'body' => 'ds_content',
+      'field_blogpost_blogtags' => 'ds_content',
     ),
     'classes' => array(),
   );

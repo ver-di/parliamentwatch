@@ -276,6 +276,10 @@ function pw_blog_strongarm() {
       'sort' => '10',
       'region' => 'block',
     ),
+    'content_types' => array(
+      'sort' => '0',
+      'region' => 'block',
+    ),
   );
   $export['custom_search_blocks_1_order'] = $strongarm;
 
@@ -284,7 +288,7 @@ function pw_blog_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_blocks_1_other';
   $strongarm->value = array(
-    'ds_search' => 0,
+    'ds_search' => 'ds_search',
     'user' => 0,
   );
   $export['custom_search_blocks_1_other'] = $strongarm;
@@ -413,15 +417,18 @@ function pw_blog_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'print' => array(
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
     ),

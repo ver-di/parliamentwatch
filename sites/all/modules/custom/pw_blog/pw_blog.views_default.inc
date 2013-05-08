@@ -188,6 +188,10 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]/#comments';
+  $handler->display->display_options['fields']['comment_count']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['comment_count']['alter']['alt'] = 'go to comments';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'comment-count clear-both';

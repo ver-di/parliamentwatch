@@ -1,5 +1,14 @@
 jQuery(document).ready(function() {
 
+////// slide to comments
+
+   jQuery(".node-blogpost.view-mode-full .comment-count")
+    .css( "cursor", "pointer" )
+   .click(function () {
+		goToByScroll("comments");
+		return false;
+    });
+
 ////// change youtube links to open them in a colorbox (http://drupal.org/node/1368274)
 
     jQuery('a.colorbox-load').each(function(){

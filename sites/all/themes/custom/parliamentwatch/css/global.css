@@ -1252,6 +1252,7 @@ img.no-outline {
     list-style: none;
 }
 .comment-count,
+.comment-count a,
 .icon-taxonomy,
 .icon-taxonomy a,
 .field-type-taxonomy-term-reference li,
@@ -1835,6 +1836,9 @@ form .webform-component-checkboxes .description {
     border-top: 1px solid #fff;
     margin: 0;
     padding: 1.8em 10px;
+}
+#region-content .comment ul.inline li {
+    display: inline-block;
 }
 .links.inline a,
 .submitted {
