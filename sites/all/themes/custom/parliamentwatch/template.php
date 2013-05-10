@@ -27,6 +27,13 @@ function parliamentwatch_css_alter(&$css) {
     $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['type'] = 'file';
   }
 }
+ 
+/**
+ * Implements hook_js_alter().
+ */
+function parliamentwatch_js_alter(&$javascript) {
+  $javascript[drupal_get_path('module', 'scroll_to_top') . '/scroll_to_top.js']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/js/scroll_to_top.js';
+}
 
 
 /**
