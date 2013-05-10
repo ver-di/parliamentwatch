@@ -10,6 +10,243 @@
 function profiles_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'node-calendar_entry-body'.
+  $fields['node-calendar_entry-body'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'node',
+      ),
+      'field_name' => 'body',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '1',
+      'type' => 'text_with_summary',
+    ),
+    'field_instance' => array(
+      'bundle' => 'calendar_entry',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'body',
+      'label' => 'Body',
+      'required' => FALSE,
+      'settings' => array(
+        'display_summary' => TRUE,
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 20,
+          'summary_rows' => 5,
+        ),
+        'type' => 'text_textarea_with_summary',
+        'weight' => '31',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-calendar_entry-field_calendar_entry_address'.
+  $fields['node-calendar_entry-field_calendar_entry_address'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_calendar_entry_address',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'addressfield',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'addressfield',
+    ),
+    'field_instance' => array(
+      'bundle' => 'calendar_entry',
+      'default_value' => array(
+        0 => array(
+          'element_key' => 'node|calendar_entry|field_calendar_entry_address|und|0',
+          'thoroughfare' => '',
+          'premise' => '',
+          'locality' => '',
+          'administrative_area' => '',
+          'country' => 'IE',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'addressfield',
+          'settings' => array(
+            'format_handlers' => array(
+              0 => 'address',
+            ),
+            'use_widget_handlers' => 1,
+          ),
+          'type' => 'addressfield_default',
+          'weight' => 1,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_calendar_entry_address',
+      'label' => 'Address',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'addressfield',
+        'settings' => array(
+          'available_countries' => array(),
+          'format_handlers' => array(
+            'address' => 'address',
+            'address-hide-country' => 0,
+            'organisation' => 0,
+            'name-full' => 0,
+            'name-oneline' => 0,
+          ),
+        ),
+        'type' => 'addressfield_standard',
+        'weight' => '32',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-calendar_entry-field_calendar_entry_date'.
+  $fields['node-calendar_entry-field_calendar_entry_date'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_calendar_entry_date',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 'hour',
+          'minute' => 'minute',
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => 'UTC',
+        'todate' => 'optional',
+        'tz_handling' => 'site',
+      ),
+      'translatable' => '0',
+      'type' => 'datetime',
+    ),
+    'field_instance' => array(
+      'bundle' => 'calendar_entry',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => 2,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_calendar_entry_date',
+      'label' => 'Date',
+      'required' => 0,
+      'settings' => array(
+        'default_value' => 'now',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'display_all_day' => 0,
+          'increment' => '15',
+          'input_format' => 'd/m/Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'text_parts' => array(),
+          'year_range' => '-3:+3',
+        ),
+        'type' => 'date_popup',
+        'weight' => '33',
+      ),
+    ),
+  );
+
   // Exported field: 'taxonomy_term-list_position-field_int_list_postiion'.
   $fields['taxonomy_term-list_position-field_int_list_postiion'] = array(
     'field_config' => array(
@@ -133,7 +370,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '33',
         ),
       ),
       'entity_type' => 'user',
@@ -151,7 +388,7 @@ function profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '26',
+        'weight' => '21',
       ),
     ),
   );
@@ -202,7 +439,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '52',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -213,14 +450,14 @@ function profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
-            'ds_code' => 'ds_code',
+            'ds_code' => 0,
             'filtered_html' => 'filtered_html',
-            'full_html' => 'full_html',
+            'full_html' => 0,
             'managed_content' => 'managed_content',
-            'php_code' => 'php_code',
-            'plain_text' => 'plain_text',
+            'php_code' => 0,
+            'plain_text' => 0,
           ),
-          'allowed_formats_toggle' => 0,
+          'allowed_formats_toggle' => 1,
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
@@ -245,7 +482,7 @@ function profiles_field_default_fields() {
             ),
           ),
         ),
-        'display_summary' => 0,
+        'display_summary' => 1,
         'text_processing' => '1',
         'user_register_form' => 0,
       ),
@@ -257,7 +494,7 @@ function profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '27',
+        'weight' => '3',
       ),
     ),
   );
@@ -271,7 +508,7 @@ function profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_address',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(),
       'indexes' => array(),
@@ -312,7 +549,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '49',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -339,7 +576,7 @@ function profiles_field_default_fields() {
           ),
         ),
         'type' => 'addressfield_standard',
-        'weight' => '33',
+        'weight' => '7',
       ),
     ),
   );
@@ -380,7 +617,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '42',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -406,7 +643,7 @@ function profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '24',
+        'weight' => '19',
       ),
     ),
   );
@@ -462,7 +699,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '47',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -496,7 +733,7 @@ function profiles_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '13',
+        'weight' => '10',
       ),
     ),
   );
@@ -539,7 +776,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '40',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -567,7 +804,7 @@ function profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'number',
-        'weight' => '16',
+        'weight' => '12',
       ),
     ),
   );
@@ -631,7 +868,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '39',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -653,7 +890,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '19',
+        'weight' => '14',
       ),
     ),
   );
@@ -729,7 +966,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '38',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -751,7 +988,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '20',
+        'weight' => '15',
       ),
     ),
   );
@@ -801,7 +1038,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '36',
         ),
       ),
       'entity_type' => 'user',
@@ -818,7 +1055,7 @@ function profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'text_textfield',
-        'weight' => '25',
+        'weight' => '20',
       ),
     ),
   );
@@ -873,10 +1110,11 @@ function profiles_field_default_fields() {
           'weight' => '2',
         ),
         'premium_user' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'type' => 'text_default',
+          'weight' => '2',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -939,7 +1177,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '3',
+        'weight' => '1',
       ),
     ),
   );
@@ -992,7 +1230,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '37',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1014,7 +1252,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '11',
+        'weight' => '9',
       ),
     ),
   );
@@ -1067,7 +1305,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '53',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1076,14 +1314,14 @@ function profiles_field_default_fields() {
       'label' => 'Image Gallery',
       'required' => 0,
       'settings' => array(
-        'alt_field' => 0,
+        'alt_field' => 1,
         'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
-        'title_field' => 0,
+        'title_field' => 1,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -1099,7 +1337,6 @@ function profiles_field_default_fields() {
             'document' => 0,
             'image' => 'image',
             'video' => 0,
-            0 => 0,
           ),
           'browser_plugins' => array(
             'media_default--media_browser_1' => 0,
@@ -1109,7 +1346,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '30',
+        'weight' => '5',
       ),
     ),
   );
@@ -1167,7 +1404,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '46',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1232,7 +1469,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '17',
+        'weight' => '13',
       ),
     ),
   );
@@ -1289,7 +1526,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '48',
         ),
       ),
       'entity_type' => 'user',
@@ -1303,7 +1540,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '32',
+        'weight' => '22',
       ),
     ),
   );
@@ -1358,10 +1595,11 @@ function profiles_field_default_fields() {
           'weight' => '3',
         ),
         'premium_user' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'text',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'type' => 'text_default',
+          'weight' => '3',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1424,7 +1662,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '2',
       ),
     ),
   );
@@ -1477,7 +1715,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '45',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1501,7 +1739,7 @@ function profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '15',
+        'weight' => '11',
       ),
     ),
   );
@@ -1563,7 +1801,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '43',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1589,6 +1827,10 @@ function profiles_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
         'rel_remove' => 'default',
         'title' => 'optional',
         'title_maxlength' => '128',
@@ -1602,7 +1844,7 @@ function profiles_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '18',
+        'weight' => '2',
       ),
     ),
   );
@@ -1666,7 +1908,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '44',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1688,7 +1930,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '8',
       ),
     ),
   );
@@ -1749,10 +1991,11 @@ function profiles_field_default_fields() {
           'weight' => '4',
         ),
         'premium_user' => array(
-          'label' => 'above',
+          'label' => 'hidden',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '4',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1773,7 +2016,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '21',
+        'weight' => '16',
       ),
     ),
   );
@@ -1836,10 +2079,10 @@ function profiles_field_default_fields() {
           'weight' => '1',
         ),
         'premium_user' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '31',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1865,16 +2108,17 @@ function profiles_field_default_fields() {
         'module' => 'media',
         'settings' => array(
           'allowed_schemes' => array(
+            'private' => 0,
             'public' => 'public',
           ),
           'allowed_types' => array(
+            0 => 0,
             'audio' => 0,
-            'default' => 0,
+            'document' => 0,
             'image' => 'image',
             'video' => 0,
           ),
           'browser_plugins' => array(
-            'library' => 0,
             'media_default--media_browser_1' => 0,
             'media_default--media_browser_my_files' => 0,
             'upload' => 0,
@@ -1933,7 +2177,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '51',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1988,7 +2232,7 @@ function profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '29',
+        'weight' => '4',
       ),
     ),
   );
@@ -2045,7 +2289,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '41',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -2065,7 +2309,7 @@ function profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '22',
+        'weight' => '17',
       ),
     ),
   );
@@ -2121,7 +2365,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '35',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2184,7 +2428,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '5',
+        'weight' => '3',
       ),
     ),
   );
@@ -2225,7 +2469,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '34',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2251,7 +2495,7 @@ function profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '23',
+        'weight' => '18',
       ),
     ),
   );
@@ -2263,9 +2507,11 @@ function profiles_field_default_fields() {
   t('Address');
   t('Answers Give');
   t('Birthday');
+  t('Body');
   t('Children');
   t('Committee');
   t('Constituency');
+  t('Date');
   t('First Name');
   t('Gender');
   t('Image Gallery');
