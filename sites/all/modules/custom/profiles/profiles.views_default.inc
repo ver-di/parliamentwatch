@@ -1801,7 +1801,14 @@ if($record->value == 0){
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+    ),
+  );
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1814,6 +1821,12 @@ if($record->value == 0){
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'TEASER MODE-----------------------------------------------------------------';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
   /* Relationship: Comment: Comments of the node */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
@@ -2598,9 +2611,14 @@ if($record->value == 0){
     'dialogue' => 'dialogue',
   );
 
-  /* Display: Question and Answers Pane */
-  $handler = $view->new_display('panel_pane', 'Question and Answers Pane', 'panel_pane_1');
-  $handler->display->display_options['display_description'] = 'Question and Answers Pane with exposed fiters';
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'qanda-fullmode';
+  $handler->display->display_options['display_description'] = 'Question and Answers Content Pane for exposing filter in block';
+  $handler->display->display_options['defaults']['hide_attachment_summary'] = FALSE;
+  $handler->display->display_options['hide_attachment_summary'] = TRUE;
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -2621,6 +2639,17 @@ if($record->value == 0){
         'is_secondary' => 0,
       ),
     ),
+    'keys' => array(
+      'more_options' => array(
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+      ),
+    ),
     'field_dialogue_topic_tid' => array(
       'bef_format' => 'default',
       'more_options' => array(
@@ -2635,37 +2664,44 @@ if($record->value == 0){
         ),
       ),
     ),
-    'comment_count' => array(
-      'more_options' => array(
-        'is_secondary' => 0,
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-      ),
-    ),
   );
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'mini';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['tags']['first'] = 'first';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'FULL MODE-----------------------------------------------------------------';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date Question';
   /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created_2']['id'] = 'created_2';
-  $handler->display->display_options['sorts']['created_2']['table'] = 'node';
-  $handler->display->display_options['sorts']['created_2']['field'] = 'created';
-  $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Question Post date';
+  $handler->display->display_options['sorts']['created_1']['id'] = 'created_1';
+  $handler->display->display_options['sorts']['created_1']['table'] = 'node';
+  $handler->display->display_options['sorts']['created_1']['field'] = 'created';
+  $handler->display->display_options['sorts']['created_1']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Date of Question';
   /* Sort criterion: Comment: Post date */
-  $handler->display->display_options['sorts']['created_3']['id'] = 'created_3';
-  $handler->display->display_options['sorts']['created_3']['table'] = 'comment';
-  $handler->display->display_options['sorts']['created_3']['field'] = 'created';
-  $handler->display->display_options['sorts']['created_3']['relationship'] = 'cid';
-  $handler->display->display_options['sorts']['created_3']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created_3']['expose']['label'] = 'Antwort Post date';
+  $handler->display->display_options['sorts']['created_2']['id'] = 'created_2';
+  $handler->display->display_options['sorts']['created_2']['table'] = 'comment';
+  $handler->display->display_options['sorts']['created_2']['field'] = 'created';
+  $handler->display->display_options['sorts']['created_2']['relationship'] = 'cid';
+  $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Date of Answers';
   /* Sort criterion: Content: Comment count */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
@@ -2689,6 +2725,26 @@ if($record->value == 0){
     'dialogue' => 'dialogue',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Frage oder Antwort nach Stichwort anzeigen';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    181527986 => 0,
+    51622513 => 0,
+    185431326 => 0,
+    140336230 => 0,
+    237793809 => 0,
+  );
   /* Filter criterion: Field: Topic (field_dialogue_topic) */
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['id'] = 'field_dialogue_topic_tid';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['table'] = 'field_data_field_dialogue_topic';
@@ -2696,7 +2752,7 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['operator_id'] = 'field_dialogue_topic_tid_op';
-  $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['label'] = 'Topic';
+  $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['label'] = 'Nach Thema der Frage filtern';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['operator'] = 'field_dialogue_topic_tid_op';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['identifier'] = 'field_dialogue_topic_tid';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['remember_roles'] = array(
@@ -2705,12 +2761,67 @@ if($record->value == 0){
     3 => 0,
     181527986 => 0,
     51622513 => 0,
+    185431326 => 0,
+    140336230 => 0,
     237793809 => 0,
   );
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['vocabulary'] = 'dialogue_topics';
-  $handler->display->display_options['allow']['use_pager'] = 0;
-  $handler->display->display_options['allow']['items_per_page'] = 0;
+  /* Filter criterion: Content: Comment count */
+  $handler->display->display_options['filters']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['filters']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['filters']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['filters']['comment_count']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['comment_count']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['comment_count']['expose']['operator_id'] = 'comment_count_op';
+  $handler->display->display_options['filters']['comment_count']['expose']['label'] = 'Comment count';
+  $handler->display->display_options['filters']['comment_count']['expose']['operator'] = 'comment_count_op';
+  $handler->display->display_options['filters']['comment_count']['expose']['identifier'] = 'comment_count';
+  $handler->display->display_options['filters']['comment_count']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    181527986 => 0,
+    51622513 => 0,
+    185431326 => 0,
+    140336230 => 0,
+    237793809 => 0,
+  );
+  $handler->display->display_options['filters']['comment_count']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['comment_count']['group_info']['label'] = 'Answer State';
+  $handler->display->display_options['filters']['comment_count']['group_info']['identifier'] = 'comment_count';
+  $handler->display->display_options['filters']['comment_count']['group_info']['widget'] = 'radios';
+  $handler->display->display_options['filters']['comment_count']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Answered',
+      'operator' => '>=',
+      'value' => array(
+        'value' => '1',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    2 => array(
+      'title' => 'Not Answered',
+      'operator' => '=',
+      'value' => array(
+        'value' => '0',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    3 => array(
+      'title' => '',
+      'operator' => 'not empty',
+      'value' => array(
+        'value' => '',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['allow']['use_pager'] = 'use_pager';
+  $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
   $handler->display->display_options['allow']['offset'] = 0;
   $handler->display->display_options['allow']['link_to_view'] = 'link_to_view';
   $handler->display->display_options['allow']['more_link'] = 0;
@@ -2719,20 +2830,15 @@ if($record->value == 0){
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
 
-  /* Display: Question and Answers tagged Pane */
-  $handler = $view->new_display('panel_pane', 'Question and Answers tagged Pane', 'panel_pane_2');
-
-  /* Display: Teaser Mode */
-  $handler = $view->new_display('attachment', 'Teaser Mode', 'attachment_1');
-  $handler->display->display_options['display_description'] = 'Attachment for Teaser Mode';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Header: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'TEASERMODE STARTS HERE';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  /* Display: Attachment */
+  $handler = $view->new_display('attachment', 'Attachment', 'attachment_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'qanda-teaser';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
@@ -2790,7 +2896,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['body']['element_class'] = 'content';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '300',
   );
@@ -2892,7 +2997,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['comment_body']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['type'] = 'text_trimmed';
   $handler->display->display_options['fields']['comment_body']['settings'] = array(
-    'trim_length' => '300',
+    'trim_length' => '600',
   );
   /* Field: | inner end */
   $handler->display->display_options['fields']['nothing_6']['id'] = 'nothing_6';
@@ -2935,10 +3040,32 @@ if($record->value == 0){
   $handler->display->display_options['filters']['type']['value'] = array(
     'dialogue' => 'dialogue',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Search: Search Terms */
+  $handler->display->display_options['filters']['keys']['id'] = 'keys';
+  $handler->display->display_options['filters']['keys']['table'] = 'search_index';
+  $handler->display->display_options['filters']['keys']['field'] = 'keys';
+  $handler->display->display_options['filters']['keys']['group'] = 1;
+  $handler->display->display_options['filters']['keys']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keys']['expose']['operator_id'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['label'] = 'Frage oder Antwort nach Stichwort anzeigen';
+  $handler->display->display_options['filters']['keys']['expose']['operator'] = 'keys_op';
+  $handler->display->display_options['filters']['keys']['expose']['identifier'] = 'keys';
+  $handler->display->display_options['filters']['keys']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    181527986 => 0,
+    51622513 => 0,
+    185431326 => 0,
+    140336230 => 0,
+    237793809 => 0,
+  );
   /* Filter criterion: Field: Topic (field_dialogue_topic) */
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['id'] = 'field_dialogue_topic_tid';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['field'] = 'field_dialogue_topic_tid';
+  $handler->display->display_options['filters']['field_dialogue_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['operator_id'] = 'field_dialogue_topic_tid_op';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['label'] = 'Topic (field_dialogue_topic)';
@@ -2947,9 +3074,9 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    30037204 => 0,
-    51622513 => 0,
+    3 => 0,
     181527986 => 0,
+    51622513 => 0,
     185431326 => 0,
     140336230 => 0,
     237793809 => 0,
@@ -2967,6 +3094,8 @@ if($record->value == 0){
   );
   $handler->display->display_options['attachment_position'] = 'after';
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
+  $handler->display->display_options['inherit_pager'] = TRUE;
+  $handler->display->display_options['render_pager'] = TRUE;
   $translatables['profile_questions_answers'] = array(
     t('Master'),
     t('Questions & Answers'),
@@ -2983,6 +3112,7 @@ if($record->value == 0){
     t('prev'),
     t('next'),
     t('last'),
+    t('TEASER MODE-----------------------------------------------------------------'),
     t('Comments'),
     t('content author'),
     t('User entity referenced from field_dialogue_recipient'),
@@ -3023,22 +3153,18 @@ if($record->value == 0){
     t('<div class="text-field path">[path]</div>'),
     t('Copy to clipboard'),
     t('[view_user]'),
-    t('Question and Answers Pane'),
-    t('Question and Answers Pane with exposed fiters'),
-    t('Question Post date'),
-    t('Antwort Post date'),
+    t('Content pane'),
+    t('Question and Answers Content Pane for exposing filter in block'),
+    t('FULL MODE-----------------------------------------------------------------'),
+    t('Post date Question'),
+    t('Date of Question'),
+    t('Date of Answers'),
     t('Comment count'),
+    t('Frage oder Antwort nach Stichwort anzeigen'),
+    t('Nach Thema der Frage filtern'),
+    t('Answer State'),
     t('View panes'),
-    t('Question and Answers tagged Pane'),
-    t('Teaser Mode'),
-    t('Attachment for Teaser Mode'),
-    t('TEASERMODE STARTS HERE'),
-    t('<div class="file-image float-left push-bottom-s">[field_user_picture]</div>
-<h3>Answer from [field_user_fname] [field_user_lname]</h3>
-<p class="date">[created_1]</p>
-<div class="content clear-both">[comment_body]</div>'),
-    t('<div class="file-image float-left">[field_user_picture]</div>
-<strong>No answer yet</strong>'),
+    t('Attachment'),
     t('Topic (field_dialogue_topic)'),
   );
   $export['profile_questions_answers'] = $view;

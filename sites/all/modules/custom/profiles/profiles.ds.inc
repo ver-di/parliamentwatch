@@ -171,18 +171,34 @@ function profiles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'question_and_answers_quicktab' => array(
+    'question_and_answers_filter' => array(
       'weight' => '16',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'question_and_answer_colorbox' => array(
+    'question_and_answers_pane' => array(
+      'weight' => '18',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:4:{s:12:"link_to_view";i:0;s:9:"use_pager";i:1;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:1:"3";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:38:"profile_questions_answers-panel_pane_1";}',
+        'load_terms' => 0,
+      ),
+    ),
+    'question_and_answers_switcher' => array(
       'weight' => '17',
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'question_and_answer_colorbox' => array(
+      'weight' => '19',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'question_form' => array(
-      'weight' => '18',
+      'weight' => '20',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -353,6 +369,20 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'parliament_info_block';
+  $ds_field->label = 'Parliament Info Block';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|user_profile_fields-block_7',
+    'block_render' => '3',
+  );
+  $export['parliament_info_block'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'polls_archive_view';
   $ds_field->label = 'Polls archive view';
   $ds_field->field_type = 6;
@@ -424,6 +454,20 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'question_and_answers_filter';
+  $ds_field->label = 'Question and Answers Filter';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|262bcfa866f0c97952c40434a855967b',
+    'block_render' => '1',
+  );
+  $export['question_and_answers_filter'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'question_and_answers_pane';
   $ds_field->label = 'Question and Answers Pane';
   $ds_field->field_type = 7;
@@ -446,6 +490,29 @@ function profiles_ds_custom_fields_info() {
     ),
   );
   $export['question_and_answers_pane'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'question_and_answers_switcher';
+  $ds_field->label = 'Question and Answers Switcher';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => 'Switch View Mode
+<form name="myform" action="" method="POST">
+<div align="left"><br>
+<input type="radio" name="group1" value="full"> Full View<br>
+<input type="radio" name="group1" value="teaser" checked> Teaser View<br>
+</div>
+</form>',
+      'format' => 'full_html',
+    ),
+    'use_token' => 0,
+  );
+  $export['question_and_answers_switcher'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -544,6 +611,20 @@ function profiles_ds_custom_fields_info() {
     'block_render' => '2',
   );
   $export['user_basic_info'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'user_calendar';
+  $ds_field->label = 'User Calendar';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|calendar-block_1',
+    'block_render' => '2',
+  );
+  $export['user_calendar'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -737,9 +818,11 @@ function profiles_ds_layout_settings_info() {
         13 => 'user_tweets',
         14 => 'user_calendar',
         15 => 'additional_links_',
-        16 => 'question_and_answers_quicktab',
-        17 => 'question_and_answer_colorbox',
-        18 => 'question_form',
+        16 => 'question_and_answers_filter',
+        17 => 'question_and_answers_switcher',
+        18 => 'question_and_answers_pane',
+        19 => 'question_and_answer_colorbox',
+        20 => 'question_form',
       ),
     ),
     'fields' => array(
@@ -759,7 +842,9 @@ function profiles_ds_layout_settings_info() {
       'user_tweets' => 'ds_content',
       'user_calendar' => 'ds_content',
       'additional_links_' => 'ds_content',
-      'question_and_answers_quicktab' => 'ds_content',
+      'question_and_answers_filter' => 'ds_content',
+      'question_and_answers_switcher' => 'ds_content',
+      'question_and_answers_pane' => 'ds_content',
       'question_and_answer_colorbox' => 'ds_content',
       'question_form' => 'ds_content',
     ),

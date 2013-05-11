@@ -71,7 +71,13 @@ jQuery(document).ready(function() {
         goToByScroll("page");
         return false;
     });
-
+    
+////// Switch between Teaser and Full Mode in Question and Answers
+    jQuery('#modeswitcher').click(function(){
+    	$("#gruppe1").attr("checked","checked");
+    });
+    
+     
 });
 
 
