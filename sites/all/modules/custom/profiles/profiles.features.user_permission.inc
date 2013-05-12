@@ -24,8 +24,9 @@ function profiles_user_default_permissions() {
   $permissions['create field_user_address'] = array(
     'name' => 'create field_user_address',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -139,7 +140,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_address'] = array(
     'name' => 'edit own field_user_address',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Premium User',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -259,7 +261,8 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_address'] = array(
     'name' => 'view own field_user_address',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Premium User',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );

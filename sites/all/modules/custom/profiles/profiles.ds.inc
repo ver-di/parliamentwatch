@@ -425,6 +425,20 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'profile_picture';
+  $ds_field->label = 'Profile Picture';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|user_profile_fields-block_2',
+    'block_render' => '3',
+  );
+  $export['profile_picture'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'qa_asking_anchor';
   $ds_field->label = 'Q & A ask anchor';
   $ds_field->field_type = 6;

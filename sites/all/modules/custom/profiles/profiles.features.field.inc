@@ -402,6 +402,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_calendar_entry_date',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -465,7 +468,7 @@ function profiles_field_default_fields() {
         'active' => 1,
         'module' => 'date',
         'settings' => array(
-          'display_all_day' => 0,
+          'display_all_day' => 1,
           'increment' => '15',
           'input_format' => 'd/m/Y - H:i:s',
           'input_format_custom' => '',
