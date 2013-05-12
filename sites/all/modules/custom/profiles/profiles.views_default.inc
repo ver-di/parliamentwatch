@@ -549,6 +549,18 @@ function profiles_views_default_views() {
   $handler = $view->new_display('block', 'User Constituency Block', 'block_1');
   $handler->display->display_options['display_description'] = 'Show all other candidates in the same constituency';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'jcarousel';
+  $handler->display->display_options['style_options']['wrap'] = '0';
+  $handler->display->display_options['style_options']['visible'] = '';
+  $handler->display->display_options['style_options']['auto'] = '0';
+  $handler->display->display_options['style_options']['autoPause'] = 1;
+  $handler->display->display_options['style_options']['easing'] = '';
+  $handler->display->display_options['style_options']['vertical'] = 0;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
@@ -3354,7 +3366,6 @@ if($record->value == 0){
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="basicinfo" class="add-sharethis"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Exlcuded | First Name */
@@ -3488,6 +3499,11 @@ if($record->value == 0){
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div id="imagegallery" class="add-sharethis"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Image Gallery (field_user_image_gallery:fid) */
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['id'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['table'] = 'field_data_field_user_image_gallery';
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['field'] = 'field_user_image_gallery_fid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
@@ -3526,40 +3542,27 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_image_gallery']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_image_gallery']['multi_type'] = 'ul';
   $handler->display->display_options['fields']['field_user_image_gallery']['separator'] = '';
-  /* Field: Image Title */
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['id'] = 'field_user_image_gallery_1';
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['table'] = 'field_data_field_user_image_gallery';
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['field'] = 'field_user_image_gallery';
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['ui_name'] = 'Image Title';
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['label'] = '';
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['alter']['text'] = '[field_user_image_gallery_1-title]';
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_user_image_gallery_1']['delta_offset'] = '0';
-  /* Field: Image Alt */
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['id'] = 'field_user_image_gallery_2';
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['table'] = 'field_data_field_user_image_gallery';
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['field'] = 'field_user_image_gallery';
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['ui_name'] = 'Image Alt';
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['label'] = '';
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['alter']['text'] = '[field_user_image_gallery_2-alt] ';
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_user_image_gallery_2']['delta_offset'] = '0';
+  /* Field: File: copyright */
+  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
+  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
+  /* Field: File: Alt Text */
+  $handler->display->display_options['fields']['field_file_image_alt_text']['id'] = 'field_file_image_alt_text';
+  $handler->display->display_options['fields']['field_file_image_alt_text']['table'] = 'field_data_field_file_image_alt_text';
+  $handler->display->display_options['fields']['field_file_image_alt_text']['field'] = 'field_file_image_alt_text';
+  $handler->display->display_options['fields']['field_file_image_alt_text']['relationship'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['fields']['field_file_image_alt_text']['label'] = '';
+  $handler->display->display_options['fields']['field_file_image_alt_text']['element_label_colon'] = FALSE;
+  /* Field: File: Title Text */
+  $handler->display->display_options['fields']['field_file_image_title_text']['id'] = 'field_file_image_title_text';
+  $handler->display->display_options['fields']['field_file_image_title_text']['table'] = 'field_data_field_file_image_title_text';
+  $handler->display->display_options['fields']['field_file_image_title_text']['field'] = 'field_file_image_title_text';
+  $handler->display->display_options['fields']['field_file_image_title_text']['relationship'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['fields']['field_file_image_title_text']['label'] = '';
+  $handler->display->display_options['fields']['field_file_image_title_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: User: Active */
@@ -3955,6 +3958,11 @@ if($record->value == 0){
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Image Gallery (field_user_image_gallery:fid) */
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['id'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['table'] = 'field_data_field_user_image_gallery';
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['field'] = 'field_user_image_gallery_fid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Parliament */
   $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
@@ -4043,6 +4051,23 @@ if($record->value == 0){
   );
   $handler->display->display_options['fields']['field_user_image_gallery']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_image_gallery']['separator'] = '';
+  /* Field: File: copyright */
+  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_user_image_gallery_fid';
+  /* Field: File: Alt Text */
+  $handler->display->display_options['fields']['field_file_image_alt_text']['id'] = 'field_file_image_alt_text';
+  $handler->display->display_options['fields']['field_file_image_alt_text']['table'] = 'field_data_field_file_image_alt_text';
+  $handler->display->display_options['fields']['field_file_image_alt_text']['field'] = 'field_file_image_alt_text';
+  $handler->display->display_options['fields']['field_file_image_alt_text']['relationship'] = 'field_user_image_gallery_fid';
+  /* Field: File: Title Text */
+  $handler->display->display_options['fields']['field_file_image_title_text']['id'] = 'field_file_image_title_text';
+  $handler->display->display_options['fields']['field_file_image_title_text']['table'] = 'field_data_field_file_image_title_text';
+  $handler->display->display_options['fields']['field_file_image_title_text']['field'] = 'field_file_image_title_text';
+  $handler->display->display_options['fields']['field_file_image_title_text']['relationship'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['fields']['field_file_image_title_text']['label'] = '';
+  $handler->display->display_options['fields']['field_file_image_title_text']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -4239,7 +4264,6 @@ if($record->value == 0){
     t('Basic Info'),
     t('Basic Info of [field_user_fname] [field_user_lname]'),
     t('Contextual Basic Info Block on user for use with DS'),
-    t('<div id="basicinfo" class="add-sharethis"></div>'),
     t('Birthday'),
     t('Professional qualification'),
     t('List Position'),
@@ -4254,8 +4278,7 @@ if($record->value == 0){
     t(' Image Gallery of [field_user_fname] [field_user_lname]'),
     t('Contextual Image Gallery Block on user'),
     t('<div id="imagegallery" class="add-sharethis"></div>'),
-    t('[field_user_image_gallery_1-title]'),
-    t('[field_user_image_gallery_2-alt] '),
+    t('image from field_user_image_gallery'),
     t('Politcial Goals'),
     t(' Political Goals of [field_user_fname] [field_user_lname]'),
     t('Contextual Political Goals Block on user'),
@@ -4278,6 +4301,8 @@ if($record->value == 0){
     t('Political Goals of [field_user_fname] [field_user_lname], [field_user_party] '),
     t('Image Gallery Page'),
     t('Image Gallery of [field_user_fname] [field_user_lname], [field_user_party] '),
+    t('copyright'),
+    t('Alt Text'),
     t('Additional Links Page'),
     t('Additional Links of [field_user_fname] [field_user_lname], [field_user_party] '),
     t('Profile Picture'),
