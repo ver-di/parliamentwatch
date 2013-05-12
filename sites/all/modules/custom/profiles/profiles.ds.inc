@@ -696,7 +696,7 @@ drupal_add_html_head($element, \'og_description\');
     'user' => 'user',
   );
   $ds_field->properties = array(
-    'block' => 'views|tweets-block_1',
+    'block' => 'views|user_tweets-block_1',
     'block_render' => '2',
   );
   $export['user_tweets'] = $ds_field;

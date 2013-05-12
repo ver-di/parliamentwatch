@@ -184,3 +184,4 @@ features[views_view][] = profile_list_rev
 features[views_view][] = profile_questions_answers
 features[views_view][] = qa_counter_link
 features[views_view][] = user_profile_fields
+features[views_view][] = user_tweets
