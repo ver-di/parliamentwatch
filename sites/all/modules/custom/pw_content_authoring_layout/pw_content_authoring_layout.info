@@ -15,7 +15,6 @@ dependencies[] = linkit
 dependencies[] = media
 dependencies[] = php
 dependencies[] = twitter
-features[ckeditor_profile][] = Basic
 features[ckeditor_profile][] = CKEditor Global Profile
 features[ckeditor_profile][] = Full
 features[ckeditor_profile][] = ManagedContent

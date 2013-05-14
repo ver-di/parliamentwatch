@@ -43,6 +43,7 @@ features[ds_layout_settings][] = node|blogpost|teaser
 features[fe_block_boxes][] = newsletter_order
 features[fe_block_settings][] = custom_search_blocks-1
 features[features_api][] = api:1
+features[field][] = comment-comment_node_blogpost-comment_body
 features[field][] = node-blogpost-body
 features[field][] = node-blogpost-field_blogpost_blogtags
 features[field][] = node-blogpost-field_blogpost_categories
