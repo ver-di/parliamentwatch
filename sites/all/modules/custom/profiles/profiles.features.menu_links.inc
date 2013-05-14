@@ -15,7 +15,7 @@ function profiles_menu_default_menu_links() {
     'menu_name' => 'menu-calendar-options-menu',
     'link_path' => 'node/add/calendar-entry',
     'router_path' => 'node/add/calendar-entry',
-    'link_title' => 'Add Calendar Entry',
+    'link_title' => '+ Add Calendar Entry',
     'options' => array(
       'attributes' => array(
         'title' => '',
@@ -30,7 +30,7 @@ function profiles_menu_default_menu_links() {
   );
   // Translatables
   // Included for use with string extractors like potx.
-  t('Add Calendar Entry');
+  t('+ Add Calendar Entry');
 
 
   return $menu_links;

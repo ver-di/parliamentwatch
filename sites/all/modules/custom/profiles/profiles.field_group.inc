@@ -83,7 +83,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Premium',
-    'weight' => '23',
+    'weight' => '18',
     'children' => array(
       0 => 'field_user_more',
       1 => 'field_user_picture',
@@ -91,7 +91,7 @@ function profiles_field_group_info() {
       3 => 'field_user_about',
       4 => 'field_user_image_gallery',
       5 => 'field_user_address',
-      6 => 'field_pw_views_reference',
+      6 => 'field_user_twitter_account',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

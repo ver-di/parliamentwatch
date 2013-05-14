@@ -152,32 +152,32 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'premium_user';
   $ds_fieldsetting->settings = array(
     'additional_links_' => array(
-      'weight' => '15',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'parliament_info_block' => array(
-      'weight' => '5',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'profile_extension' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'profile_picture' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'question_and_answers_filter' => array(
       'weight' => '16',
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'parliament_info_block' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'profile_extension' => array(
+      'weight' => '7',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'profil_picture_views_block' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'question_and_answers_filter' => array(
+      'weight' => '17',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'question_and_answers_pane' => array(
-      'weight' => '18',
+      'weight' => '19',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -188,17 +188,17 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_switcher' => array(
-      'weight' => '17',
+      'weight' => '18',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'question_and_answer_colorbox' => array(
-      'weight' => '19',
+      'weight' => '20',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'question_form' => array(
-      'weight' => '20',
+      'weight' => '21',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -208,42 +208,42 @@ function profiles_ds_field_settings_info() {
       'format' => 'default',
     ),
     'user_about' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'user_basic_info' => array(
-      'weight' => '9',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'user_calendar' => array(
-      'weight' => '14',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'user_image_gallery' => array(
       'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'user_political_goals' => array(
+    'user_basic_info' => array(
+      'weight' => '10',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'user_calendar' => array(
+      'weight' => '15',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'user_image_gallery' => array(
       'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'user_tweets' => array(
+    'user_political_goals' => array(
       'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
     ),
+    'user_tweets' => array(
+      'weight' => '14',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'qa_asking_anchor' => array(
-      'weight' => '7',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'qa_link_counter' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -408,6 +408,20 @@ function profiles_ds_custom_fields_info() {
     'block_render' => '1',
   );
   $export['polls_profile_last'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'profil_picture_views_block';
+  $ds_field->label = 'Profil Picture Views Block';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|user_profile_fields-block_2',
+    'block_render' => '3',
+  );
+  $export['profil_picture_views_block'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -817,7 +831,7 @@ function profiles_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'same_constituency',
-        1 => 'profile_picture',
+        1 => 'profil_picture_views_block',
         2 => 'field_user_fname',
         3 => 'field_user_lname',
         4 => 'field_user_party',
@@ -841,7 +855,7 @@ function profiles_ds_layout_settings_info() {
     ),
     'fields' => array(
       'same_constituency' => 'ds_content',
-      'profile_picture' => 'ds_content',
+      'profil_picture_views_block' => 'ds_content',
       'field_user_fname' => 'ds_content',
       'field_user_lname' => 'ds_content',
       'field_user_party' => 'ds_content',
