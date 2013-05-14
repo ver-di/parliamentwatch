@@ -36,6 +36,7 @@ features[ds_field_settings][] = node|blogpost|teaser
 features[ds_fields][] = block_newsletter_order
 features[ds_fields][] = custom_comment_counter
 features[ds_fields][] = rss
+features[ds_fields][] = sharethis
 features[ds_layout_settings][] = node|blogpost|full
 features[ds_layout_settings][] = node|blogpost|print
 features[ds_layout_settings][] = node|blogpost|search_result

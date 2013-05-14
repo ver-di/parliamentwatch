@@ -17,6 +17,14 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blogpost';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'sharethis' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
+    ),
     'custom_comment_counter' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -26,6 +34,14 @@ function pw_blog_ds_field_settings_info() {
         'ow' => TRUE,
         'ow-el' => 'div',
         'ow-cl' => 'comment-count',
+      ),
+    ),
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
       ),
     ),
     'comments' => array(
@@ -350,6 +366,20 @@ else{
   );
   $export['rss'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'sharethis';
+  $ds_field->label = 'sharethis';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->properties = array(
+    'block' => 'sharethis|sharethis_block',
+    'block_render' => '3',
+  );
+  $export['sharethis'] = $ds_field;
+
   return $export;
 }
 
@@ -371,32 +401,36 @@ function pw_blog_ds_layout_settings_info() {
     'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'group_blog_author',
+        0 => 'sharethis',
         1 => 'field_blogpost_blogtags',
-        2 => 'custom_comment_counter',
-        3 => 'group_blog_metainformation',
-        4 => 'field_teaser_image',
+        2 => 'title',
+        3 => 'custom_comment_counter',
+        4 => 'group_blog_author',
         5 => 'post_date',
-        6 => 'author',
-        7 => 'body',
-        8 => 'field_blogpost_categories',
-        9 => 'comments',
+        6 => 'group_blog_metainformation',
+        7 => 'field_teaser_image',
+        8 => 'author',
+        9 => 'body',
+        10 => 'field_blogpost_categories',
+        11 => 'comments',
       ),
     ),
     'fields' => array(
-      'group_blog_author' => 'ds_content',
+      'sharethis' => 'ds_content',
       'field_blogpost_blogtags' => 'ds_content',
+      'title' => 'ds_content',
       'custom_comment_counter' => 'ds_content',
+      'group_blog_author' => 'ds_content',
+      'post_date' => 'ds_content',
       'group_blog_metainformation' => 'ds_content',
       'field_teaser_image' => 'ds_content',
-      'post_date' => 'ds_content',
       'author' => 'ds_content',
       'body' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
       'comments' => 'ds_content',
     ),
     'classes' => array(),
-    'hide_page_title' => '0',
+    'hide_page_title' => '1',
     'page_option_title' => '',
   );
   $export['node|blogpost|full'] = $ds_layout;

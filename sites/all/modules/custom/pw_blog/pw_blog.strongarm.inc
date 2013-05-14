@@ -359,7 +359,7 @@ function pw_blog_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_blocks_1_text';
-  $strongarm->value = 'Search blog';
+  $strongarm->value = 'Blog durchsuchen';
   $export['custom_search_blocks_1_text'] = $strongarm;
 
   $strongarm = new stdClass();

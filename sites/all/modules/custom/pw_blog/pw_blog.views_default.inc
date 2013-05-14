@@ -408,6 +408,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'blogcategories' => 'blogcategories',
     'blogtags' => 'blogtags',
   );
   $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'empty';

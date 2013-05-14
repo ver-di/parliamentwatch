@@ -167,7 +167,7 @@ function pw_blog_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -579,7 +579,7 @@ function pw_blog_field_default_fields() {
             'file_view_mode' => 'pw_file_landscape_l',
           ),
           'type' => 'file_rendered',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'search_index' => array(
           'label' => 'hidden',
