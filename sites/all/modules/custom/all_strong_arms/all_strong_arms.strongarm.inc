@@ -1999,7 +1999,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_node_option';
-  $strongarm->value = 'pw_poll,0,0,0,0,0,0,0,0,0';
+  $strongarm->value = 'blogpost,pw_poll,0,0,0,0,0,0,0,0,0,0';
   $export['sharethis_node_option'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2058,7 +2058,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_weight';
-  $strongarm->value = '10';
+  $strongarm->value = '-100';
   $export['sharethis_weight'] = $strongarm;
 
   $strongarm = new stdClass();
