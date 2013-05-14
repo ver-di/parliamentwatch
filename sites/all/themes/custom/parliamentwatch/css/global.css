@@ -1410,6 +1410,9 @@ html.js fieldset.collapsed {
 
 /* /////////////////////////// forms /////////////////// */
 
+.captcha .compact-form-label {
+    display: none !important;
+}
 form:after {
     clear: both;
     content: ".";
@@ -1687,6 +1690,9 @@ form .webform-component-checkboxes .description {
 }
 #comment-form .form-text {
     width: 370px;
+}
+#comment-form #edit-captcha-response.form-text {
+    width: 30px;
 }
 
 
