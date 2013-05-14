@@ -120,5 +120,59 @@ function subsite_conf_default_fe_block_settings() {
     'visibility' => '0',
   );
 
+  $export['tagadelic-24'] = array(
+    'cache' => 8,
+    'custom' => '0',
+    'delta' => '24',
+    'i18n_mode' => '1',
+    'module' => 'tagadelic',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => 'Tags in the blog',
+    'visibility' => '0',
+  );
+
+  $export['tagadelic-31'] = array(
+    'cache' => 8,
+    'custom' => '0',
+    'delta' => '31',
+    'i18n_mode' => '0',
+    'module' => 'tagadelic',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => 'Kategorien im Blog',
+    'visibility' => '0',
+  );
+
   return $export;
 }
