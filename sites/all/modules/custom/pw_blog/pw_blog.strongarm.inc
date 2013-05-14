@@ -175,7 +175,7 @@ function pw_blog_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_blocks_1_image_path';
-  $strongarm->value = 'public://custom_search/ic_search_0.png';
+  $strongarm->value = 'public://custom_search/ic_search.png';
   $export['custom_search_blocks_1_image_path'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -206,7 +206,6 @@ function pw_blog_strongarm() {
   $strongarm->value = array(
     'article' => 0,
     'page' => 0,
-    'migrate_example_beer' => 0,
     'blogpost' => 0,
     'dialogue' => 0,
     'migrate_extras_media_example' => 0,
@@ -217,9 +216,6 @@ function pw_blog_strongarm() {
     'slider_item' => 0,
     'trustee' => 0,
     'webform' => 0,
-    'migrate_example_wine' => 0,
-    'migrate_example_producer' => 0,
-    'migrate_example_baseball' => 0,
   );
   $export['custom_search_blocks_1_node_types'] = $strongarm;
 
@@ -230,7 +226,6 @@ function pw_blog_strongarm() {
   $strongarm->value = array(
     'article' => 'article',
     'page' => 'page',
-    'migrate_example_beer' => 'migrate_example_beer',
     'dialogue' => 'dialogue',
     'migrate_extras_media_example' => 'migrate_extras_media_example',
     'migrate_example_pathauto' => 'migrate_example_pathauto',
@@ -240,9 +235,6 @@ function pw_blog_strongarm() {
     'slider_item' => 'slider_item',
     'trustee' => 'trustee',
     'webform' => 'webform',
-    'migrate_example_wine' => 'migrate_example_wine',
-    'migrate_example_producer' => 'migrate_example_producer',
-    'migrate_example_baseball' => 'migrate_example_baseball',
     'blogpost' => 0,
   );
   $export['custom_search_blocks_1_node_types_excluded'] = $strongarm;
