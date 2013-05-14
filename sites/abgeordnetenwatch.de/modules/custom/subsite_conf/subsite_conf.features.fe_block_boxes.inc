@@ -47,6 +47,58 @@ function subsite_conf_default_fe_block_boxes() {
   $export['metanavi_addthis'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Ihr Pressekontakt';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'press_contact';
+  $fe_block_boxes->body = '<div class="clearfix">
+<p><img align="left" alt="Gregor Hackmann" border="2" class="media-image attr__typeof__foaf:Image img__fid__5994 img__view_mode__media_original attr__format__media_original" height="208" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/gregor-hackmann.jpg" style="margin-right:5px;padding:5px;" title="" typeof="foaf:Image" width="138" />Für Fragen stehen wir Ihnen gerne zur Verfügung.<br />
+Für O-Töne, Interviews, Fragen zu abgeordnetenwatch.de wenden Sie sich bitte an</p>
+
+<p><strong>Gregor Hackmack</strong></p>
+
+<p>Telefon: 040 / 317 69 10 - 55<br />
+Fax: 040 / 317 69 10 - 28<br />
+hackmack@abgeordnetenwatch.de</p>
+
+<p>Bürozeiten:<br />
+Montag - Freitag 10:00 - 16:00 Uhr</p>
+</div>
+<hr />
+<div class="clearfix">
+<p><img align="left" alt="Martin Reher" border="2" class="media-image attr__typeof__foaf:Image img__fid__5997 img__view_mode__media_original attr__format__media_original" height="208" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/martin-reyher.jpg" style="margin-right:5px;padding:5px;" title="" typeof="foaf:Image" width="138" />Für Informationen zu Parteispenden, Nebentätigkeiten<br />
+sowie für Datenmaterial zu Abgeordneten</p>
+
+<p><strong>Martin Reyher</strong></p>
+
+<p>Telefon: 040 / 317 69 10 - 38<br />
+Fax: 040 / 317 69 10 - 28<br />
+reyher@abgeordnetenwatch.de</p>
+
+<p>Bürozeiten:<br />
+Montag - Freitag 10:00 - 16:00 Uhr</p>
+</div>
+';
+
+  $export['press_contact'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Unsere Medienpartner';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'press_partner';
+  $fe_block_boxes->body = '<p>&nbsp;</p>
+
+<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__6001 img__view_mode__media_original attr__format__media_original" height="21" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-spiegelonline.png" title="" typeof="foaf:Image" width="150" /></p>
+
+<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__6000 img__view_mode__media_original attr__format__media_original" height="29" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-sueddeutsche.png" title="" typeof="foaf:Image" width="152" /></p>
+
+<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__5999 img__view_mode__media_original attr__format__media_original" height="23" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-weltonline.png" title="" typeof="foaf:Image" width="152" /></p>
+
+<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__5998 img__view_mode__media_original attr__format__media_original" height="22" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-t-online.png" title="" typeof="foaf:Image" width="152" /></p>
+';
+
+  $export['press_partner'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Social Media Footer';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'social_media_footer';

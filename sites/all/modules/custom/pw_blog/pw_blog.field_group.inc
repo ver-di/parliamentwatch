@@ -23,14 +23,15 @@ function pw_blog_field_group_info() {
     'label' => '',
     'weight' => '1',
     'children' => array(
-      0 => 'author',
-      1 => 'post_date',
+      0 => 'field_blogpost_categories',
+      1 => 'author',
+      2 => 'post_date',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => '',
       'instance_settings' => array(
-        'classes' => 'push-bottom-m',
+        'classes' => 'push-bottom-m medium',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -109,10 +110,9 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Body',
-    'weight' => '2',
+    'weight' => '18',
     'children' => array(
-      0 => 'body',
-      1 => 'node_link',
+      0 => 'node_link',
     ),
     'format_type' => 'div',
     'format_settings' => array(

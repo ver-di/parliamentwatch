@@ -225,12 +225,16 @@ blockquote p:last-child {
 }
 
 .light,
-a.light {
+a.light,
+.light a {
     color: #999;
+    font-weight: normal;
 }
 .medium,
-a.medium {
+a.medium,
+.medium a {
     color: #666;
+    font-weight: normal;
 }
 .dark,
 a.dark {

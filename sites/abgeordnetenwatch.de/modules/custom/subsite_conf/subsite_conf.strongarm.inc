@@ -34,12 +34,12 @@ function subsite_conf_strongarm() {
     'native' => 'Deutsch',
     'direction' => '0',
     'enabled' => '1',
-    'plurals' => '0',
-    'formula' => '',
+    'plurals' => '2',
+    'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => 'QVJbgLUpFGx2aHg-cEuwgfPU83liXQg3md1b5heU4dw',
+    'javascript' => 'fn11QLGX_YUr3kVtUvywj52syjNHafXR0J8EtxNPIQo',
   );
   $export['language_default'] = $strongarm;
 
@@ -124,7 +124,7 @@ function subsite_conf_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_cache';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['piwik_cache'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -252,7 +252,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_site_id';
-  $strongarm->value = '4';
+  $strongarm->value = '1';
   $export['piwik_site_id'] = $strongarm;
 
   $strongarm = new stdClass();

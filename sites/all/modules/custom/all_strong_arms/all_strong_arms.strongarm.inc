@@ -729,7 +729,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = 'blocks_1_';
+  $strongarm->value = '';
   $export['custom_search_delta'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -788,11 +788,20 @@ custom-search-blocks-form-1';
   $strongarm->value = array(
     'article' => 0,
     'page' => 0,
+    'migrate_example_beer' => 0,
+    'blogpost' => 0,
     'dialogue' => 0,
+    'migrate_extras_media_example' => 0,
+    'migrate_example_pathauto' => 0,
     'pw_poll' => 0,
+    'press_release' => 0,
+    'press_article' => 0,
     'slider_item' => 0,
     'trustee' => 0,
     'webform' => 0,
+    'migrate_example_wine' => 0,
+    'migrate_example_producer' => 0,
+    'migrate_example_baseball' => 0,
   );
   $export['custom_search_node_types'] = $strongarm;
 
@@ -801,13 +810,22 @@ custom-search-blocks-form-1';
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_node_types_excluded';
   $strongarm->value = array(
-    'slider_item' => 'slider_item',
     'article' => 0,
     'page' => 0,
+    'migrate_example_beer' => 0,
+    'blogpost' => 0,
     'dialogue' => 0,
+    'migrate_extras_media_example' => 0,
+    'migrate_example_pathauto' => 0,
     'pw_poll' => 0,
+    'press_release' => 0,
+    'press_article' => 0,
+    'slider_item' => 0,
     'trustee' => 0,
     'webform' => 0,
+    'migrate_example_wine' => 0,
+    'migrate_example_producer' => 0,
+    'migrate_example_baseball' => 0,
   );
   $export['custom_search_node_types_excluded'] = $strongarm;
 
@@ -1088,7 +1106,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_search_group_by_type';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['ds_search_group_by_type'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1122,15 +1140,51 @@ custom-search-blocks-form-1';
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
+    'migrate_example_beer' => array(
+      'status' => 1,
+      'label' => 'Results for beer',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'blogpost' => array(
+      'status' => 1,
+      'label' => 'Results for blogpost',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
     'dialogue' => array(
       'status' => 1,
       'label' => 'Results for dialogue',
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
+    'migrate_extras_media_example' => array(
+      'status' => 1,
+      'label' => 'Results for migrate extras media example',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'migrate_example_pathauto' => array(
+      'status' => 1,
+      'label' => 'Results for migrate example - pathauto',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
     'pw_poll' => array(
       'status' => 1,
       'label' => 'Results for pw poll',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'press_release' => array(
+      'status' => 1,
+      'label' => 'Results for press release',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'press_article' => array(
+      'status' => 1,
+      'label' => 'Results for presseartikel',
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
@@ -1149,6 +1203,24 @@ custom-search-blocks-form-1';
     'webform' => array(
       'status' => 1,
       'label' => 'Results for webform',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'migrate_example_wine' => array(
+      'status' => 1,
+      'label' => 'Results for wine',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'migrate_example_producer' => array(
+      'status' => 1,
+      'label' => 'Results for wine producer',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'migrate_example_baseball' => array(
+      'status' => 1,
+      'label' => 'Results for migrate_example_baseball',
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
@@ -1173,14 +1245,14 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_search_language';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['ds_search_language'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_search_node_form_alter';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['ds_search_node_form_alter'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1875,8 +1947,8 @@ custom-search-blocks-form-1';
   $strongarm->api_version = 1;
   $strongarm->name = 'search_active_modules';
   $strongarm->value = array(
-    'node' => 'node',
-    'ds_search' => 0,
+    'ds_search' => 'ds_search',
+    'node' => 0,
     'user' => 0,
   );
   $export['search_active_modules'] = $strongarm;
@@ -1885,14 +1957,14 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_cron_limit';
-  $strongarm->value = '100';
+  $strongarm->value = '200';
   $export['search_cron_limit'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_default_module';
-  $strongarm->value = 'node';
+  $strongarm->value = 'ds_search';
   $export['search_default_module'] = $strongarm;
 
   $strongarm = new stdClass();

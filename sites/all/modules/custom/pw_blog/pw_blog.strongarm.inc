@@ -438,13 +438,13 @@ function pw_blog_strongarm() {
           'weight' => '40',
         ),
         'title' => array(
-          'weight' => '-5',
+          'weight' => '0',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '5',
         ),
       ),
       'display' => array(),

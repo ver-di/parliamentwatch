@@ -77,6 +77,13 @@ function pw_blog_ds_field_settings_info() {
         'ow-cl' => 'icon-taxonomy',
       ),
     ),
+    'field_blogpost_categories' => array(
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'lb' => ' in ',
+        'lb-col' => TRUE,
+      ),
+    ),
     'group_blog_author' => array(
       'ft' => array(
         'func' => 'theme_ds_field_reset',
@@ -153,22 +160,22 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'search_result';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link' => '0',
-        'wrapper' => 'h4',
+        'link' => '1',
+        'wrapper' => 'h3',
         'class' => '',
       ),
     ),
     'author' => array(
-      'weight' => '0',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'author',
     ),
     'post_date' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'ds_post_date_long',
     ),
@@ -373,29 +380,29 @@ function pw_blog_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'field_blogpost_blogtags',
-        2 => 'group_blog_author',
+        1 => 'group_blog_author',
+        2 => 'field_blogpost_blogtags',
         3 => 'custom_comment_counter',
         4 => 'group_blog_metainformation',
         5 => 'field_teaser_image',
         6 => 'post_date',
         7 => 'author',
         8 => 'body',
-        9 => 'field_flattr',
+        9 => 'field_blogpost_categories',
         10 => 'comments',
       ),
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'field_blogpost_blogtags' => 'ds_content',
       'group_blog_author' => 'ds_content',
+      'field_blogpost_blogtags' => 'ds_content',
       'custom_comment_counter' => 'ds_content',
       'group_blog_metainformation' => 'ds_content',
       'field_teaser_image' => 'ds_content',
       'post_date' => 'ds_content',
       'author' => 'ds_content',
       'body' => 'ds_content',
-      'field_flattr' => 'ds_content',
+      'field_blogpost_categories' => 'ds_content',
       'comments' => 'ds_content',
     ),
     'classes' => array(),
@@ -450,19 +457,17 @@ function pw_blog_ds_layout_settings_info() {
     'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'author',
+        0 => 'title',
         1 => 'post_date',
-        2 => 'title',
-        3 => 'field_teaser_image',
-        4 => 'body',
-        5 => 'field_blogpost_blogtags',
+        2 => 'author',
+        3 => 'body',
+        4 => 'field_blogpost_blogtags',
       ),
     ),
     'fields' => array(
-      'author' => 'ds_content',
-      'post_date' => 'ds_content',
       'title' => 'ds_content',
-      'field_teaser_image' => 'ds_content',
+      'post_date' => 'ds_content',
+      'author' => 'ds_content',
       'body' => 'ds_content',
       'field_blogpost_blogtags' => 'ds_content',
     ),

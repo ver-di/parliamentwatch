@@ -251,6 +251,18 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
               ),
             ),
           ),
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for inserting images from Drupal media module',
+            'path' => '%plugin_dir%media/',
+            'buttons' => array(
+              'Media' => array(
+                'label' => 'Media',
+                'icon' => 'images/icon.gif',
+              ),
+            ),
+            'default' => 'f',
+          ),
           'mediaembed' => array(
             'name' => 'mediaembed',
             'desc' => 'Plugin for inserting Drupal embeded media',
