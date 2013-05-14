@@ -3003,15 +3003,6 @@ if($record->value == 0){
         'max' => '',
       ),
     ),
-    3 => array(
-      'title' => '',
-      'operator' => 'not empty',
-      'value' => array(
-        'value' => '',
-        'min' => '',
-        'max' => '',
-      ),
-    ),
   );
   $handler->display->display_options['allow']['use_pager'] = 'use_pager';
   $handler->display->display_options['allow']['items_per_page'] = 'items_per_page';
@@ -3030,6 +3021,61 @@ if($record->value == 0){
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+    ),
+    'sort' => array(
+      'bef_format' => 'bef',
+      'advanced' => array(
+        'collapsible' => 0,
+        'collapsible_label' => 'Sort options',
+        'combine' => 0,
+        'combine_rewrite' => '',
+        'reset' => 0,
+        'reset_label' => '',
+        'is_secondary' => 0,
+      ),
+    ),
+    'keys' => array(
+      'more_options' => array(
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+      ),
+    ),
+    'field_dialogue_topic_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+      ),
+    ),
+    'comment_count' => array(
+      'more_options' => array(
+        'is_secondary' => 0,
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+      ),
+    ),
+  );
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -3217,6 +3263,31 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '<div class="anchor-to-top clearfix"><a href="#page">to the top</a></div>';
   $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created_1']['id'] = 'created_1';
+  $handler->display->display_options['sorts']['created_1']['table'] = 'node';
+  $handler->display->display_options['sorts']['created_1']['field'] = 'created';
+  $handler->display->display_options['sorts']['created_1']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Date of Question';
+  /* Sort criterion: Comment: Post date */
+  $handler->display->display_options['sorts']['created_2']['id'] = 'created_2';
+  $handler->display->display_options['sorts']['created_2']['table'] = 'comment';
+  $handler->display->display_options['sorts']['created_2']['field'] = 'created';
+  $handler->display->display_options['sorts']['created_2']['relationship'] = 'cid';
+  $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Date of Answers';
+  /* Sort criterion: Content: Comment count */
+  $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['sorts']['comment_count']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Comment count';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -3276,6 +3347,39 @@ if($record->value == 0){
   );
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['vocabulary'] = 'dialogue_topics';
+  /* Filter criterion: Content: Comment count */
+  $handler->display->display_options['filters']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['filters']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['filters']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['filters']['comment_count']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['comment_count']['expose']['operator_id'] = 'comment_count_op';
+  $handler->display->display_options['filters']['comment_count']['expose']['label'] = 'Comment count';
+  $handler->display->display_options['filters']['comment_count']['expose']['operator'] = 'comment_count_op';
+  $handler->display->display_options['filters']['comment_count']['expose']['identifier'] = 'comment_count';
+  $handler->display->display_options['filters']['comment_count']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['comment_count']['group_info']['label'] = 'Answer State';
+  $handler->display->display_options['filters']['comment_count']['group_info']['identifier'] = 'comment_count';
+  $handler->display->display_options['filters']['comment_count']['group_info']['widget'] = 'radios';
+  $handler->display->display_options['filters']['comment_count']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Answered',
+      'operator' => '=',
+      'value' => array(
+        'value' => '1',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+    2 => array(
+      'title' => 'Not Answered',
+      'operator' => '=',
+      'value' => array(
+        'value' => '0',
+        'min' => '',
+        'max' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['displays'] = array(
     'panel_pane_1' => 'panel_pane_1',
     'default' => 0,
