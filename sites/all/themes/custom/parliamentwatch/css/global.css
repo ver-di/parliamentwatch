@@ -1831,7 +1831,8 @@ form .webform-component-checkboxes .description {
 }
 .comment .submitted .created {
     float: right;
-    line-height: 24px;
+    position: relative;
+    top: 7px;
 }
 .comment .field-name-comment-body {
     padding: 0 10px 10px 10px;
