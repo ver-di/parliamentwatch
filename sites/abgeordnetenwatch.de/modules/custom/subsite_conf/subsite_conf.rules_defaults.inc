@@ -17,9 +17,9 @@ function subsite_conf_default_rules_configuration() {
       "ON" : [ "comment_insert" ],
       "DO" : [
         { "mail" : {
-            "to" : "ruth.geisenfelder@gmail.com",
+            "to" : "info@abgeordnetenwatch.de",
             "subject" : "[site:name]: Blog Kommentar:  \\u0022[comment:node]\\u0022",
-            "message" : "Autor: [comment:name] (IP: [comment:hostname])\\r\\nE-Mail: [comment:mail]\\r\\nURL: [comment:url]\\r\\nWhois: http:\\/\\/ws.arin.net\\/cgi-bin\\/whois.pl?queryinput=[comment:hostname]\\r\\n\\r\\nKommentar: \\r\\n[comment:body]\\r\\n\\r\\n------------------------------------------------------------------\\r\\nDu kannst alle Kommentare zu diesem Artikel hier sehen:\\r\\n[site:current-page]\\/#comments\\r\\n\\r\\nDu kannst den Kommentar hier bearbeiten oder l\\u00f6schen:\\r\\n[comment:edit-url]",
+            "message" : "Autor: [comment:name] (IP: [comment:hostname])\\r\\nE-Mail: [comment:mail]\\r\\nURL: [comment:url]\\r\\nWhois: http:\\/\\/ws.arin.net\\/cgi-bin\\/whois.pl?queryinput=[comment:hostname]\\r\\n\\r\\nKommentar: \\r\\n[comment:body]\\r\\n\\r\\n------------------------------------------------------------------\\r\\nDu kannst alle Kommentare zu diesem Artikel hier sehen:\\r\\n[comment:node:url]\\/#comments\\r\\n\\r\\nDu kannst den Kommentar hier bearbeiten oder l\\u00f6schen:\\r\\n[comment:edit-url]",
             "language" : [ "" ]
           }
         }
