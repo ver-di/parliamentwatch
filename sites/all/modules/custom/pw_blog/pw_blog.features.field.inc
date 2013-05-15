@@ -160,7 +160,7 @@ function pw_blog_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_plain',
-          'weight' => '1',
+          'weight' => '0',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -175,6 +175,15 @@ function pw_blog_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => '5',
+        ),
+        'rss' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '0',
         ),
         'search_index' => array(
           'label' => 'hidden',
@@ -310,10 +319,9 @@ function pw_blog_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => '5',
+          'type' => 'hidden',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -340,6 +348,12 @@ function pw_blog_field_default_fields() {
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '3',
+        ),
+        'rss' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '14',
         ),
         'search_index' => array(
           'label' => 'hidden',
@@ -469,17 +483,34 @@ function pw_blog_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 7,
+          'type' => 'hidden',
+          'weight' => '1',
         ),
         'full' => array(
           'label' => 'inline',
-          'module' => 'taxonomy',
-          'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
+          'module' => 'textformatter',
+          'settings' => array(
+            'textformatter_class' => '',
+            'textformatter_comma_and' => 0,
+            'textformatter_comma_full_stop' => 0,
+            'textformatter_comma_override' => 0,
+            'textformatter_comma_tag' => '0',
+            'textformatter_contrib' => array(),
+            'textformatter_separator_custom' => '',
+            'textformatter_separator_custom_class' => 'textformatter-separator',
+            'textformatter_separator_custom_tag' => 'span',
+            'textformatter_term_plain' => 0,
+            'textformatter_type' => 'comma',
+          ),
+          'type' => 'textformatter_list',
           'weight' => '5',
+        ),
+        'rss' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '16',
         ),
         'search_index' => array(
           'label' => 'above',
@@ -564,13 +595,9 @@ function pw_blog_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-          ),
-          'type' => 'image',
-          'weight' => '6',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -580,6 +607,12 @@ function pw_blog_field_default_fields() {
           ),
           'type' => 'file_rendered',
           'weight' => '4',
+        ),
+        'rss' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '15',
         ),
         'search_index' => array(
           'label' => 'hidden',

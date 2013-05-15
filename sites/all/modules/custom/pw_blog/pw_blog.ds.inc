@@ -162,6 +162,21 @@ function pw_blog_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|blogpost|rss';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'blogpost';
+  $ds_fieldsetting->view_mode = 'rss';
+  $ds_fieldsetting->settings = array(
+    'node_link' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|blogpost|rss'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|blogpost|search_result';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'blogpost';

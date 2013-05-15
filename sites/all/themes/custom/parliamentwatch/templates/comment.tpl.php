@@ -65,7 +65,7 @@
   <?php print render($title_suffix); ?>
 
   <div class="submitted clearfix">
-    <h2 class="author"><?php print $author; ?></h2>
+    <h2 class="author dark"><?php print $author; ?></h2>
     <div class="created"><a href="#comment-<?php print render($comment->cid); ?>" class="medium"><?php print format_date($comment->created, 'date_and_time'); ?></a></div>
   </div>
 
