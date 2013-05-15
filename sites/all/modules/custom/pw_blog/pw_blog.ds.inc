@@ -25,6 +25,14 @@ function pw_blog_ds_field_settings_info() {
         'func' => 'theme_ds_field_reset',
       ),
     ),
+    'sharethis_horizontal' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_minimal',
+      ),
+    ),
     'custom_comment_counter' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -45,9 +53,12 @@ function pw_blog_ds_field_settings_info() {
       ),
     ),
     'comments' => array(
-      'weight' => '6',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_minimal',
+      ),
     ),
     'author' => array(
       'weight' => '4',
@@ -67,6 +78,11 @@ function pw_blog_ds_field_settings_info() {
         'func' => 'theme_ds_field_expert',
         'lb' => 'Posted on ',
         'lb-col' => TRUE,
+      ),
+    ),
+    'body' => array(
+      'ft' => array(
+        'func' => 'theme_ds_field_minimal',
       ),
     ),
     'field_teaser_image' => array(
@@ -95,6 +111,11 @@ function pw_blog_ds_field_settings_info() {
     'group_blog_author' => array(
       'ft' => array(
         'func' => 'theme_ds_field_reset',
+      ),
+    ),
+    'group_blog_metainformation' => array(
+      'ft' => array(
+        'func' => 'theme_ds_field_minimal',
       ),
     ),
   );
@@ -395,6 +416,20 @@ else{
   );
   $export['sharethis'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'sharethis_horizontal';
+  $ds_field->label = 'shareThis horizontal';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->properties = array(
+    'block' => 'block|12',
+    'block_render' => '3',
+  );
+  $export['sharethis_horizontal'] = $ds_field;
+
   return $export;
 }
 
@@ -417,31 +452,33 @@ function pw_blog_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'sharethis',
-        1 => 'field_blogpost_blogtags',
-        2 => 'title',
-        3 => 'custom_comment_counter',
-        4 => 'group_blog_author',
-        5 => 'post_date',
-        6 => 'group_blog_metainformation',
-        7 => 'field_teaser_image',
-        8 => 'author',
+        1 => 'title',
+        2 => 'field_blogpost_blogtags',
+        3 => 'group_blog_author',
+        4 => 'custom_comment_counter',
+        5 => 'group_blog_metainformation',
+        6 => 'post_date',
+        7 => 'author',
+        8 => 'field_teaser_image',
         9 => 'field_blogpost_categories',
         10 => 'body',
-        11 => 'comments',
+        11 => 'sharethis_horizontal',
+        12 => 'comments',
       ),
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
-      'field_blogpost_blogtags' => 'ds_content',
       'title' => 'ds_content',
-      'custom_comment_counter' => 'ds_content',
+      'field_blogpost_blogtags' => 'ds_content',
       'group_blog_author' => 'ds_content',
-      'post_date' => 'ds_content',
+      'custom_comment_counter' => 'ds_content',
       'group_blog_metainformation' => 'ds_content',
-      'field_teaser_image' => 'ds_content',
+      'post_date' => 'ds_content',
       'author' => 'ds_content',
+      'field_teaser_image' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
       'body' => 'ds_content',
+      'sharethis_horizontal' => 'ds_content',
       'comments' => 'ds_content',
     ),
     'classes' => array(),

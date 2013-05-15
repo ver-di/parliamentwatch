@@ -1675,7 +1675,7 @@ form .webform-component-checkboxes .description {
     position: absolute;
     right: 20px;
 }
-#comments a.username {
+#comments form a.username {
     text-decoration: none;
     color: #666;
 }
@@ -1710,8 +1710,18 @@ form .webform-component-checkboxes .description {
 	text-align: right;
 	width: 70px;
 }
-.view-mode-full > .sharethis-buttons,
-.view-mode-full > .sharethis-wrapper {
+.st_plusone_hcount,
+.st_twitter_hcount,
+.st_fbrec_hcount {
+    display: inline-block;
+    margin-right: 1em;
+}
+.st_fbrec_hcount {
+    position: relative;
+    top: 6px;
+}
+.view-mode-full .sharethis-buttons,
+.view-mode-full .sharethis-wrapper {
 	top: 0.5em;
 }
 .stButton .chicklets {

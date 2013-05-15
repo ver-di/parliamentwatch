@@ -23,5 +23,15 @@ print render($block[\'content\']);
 
   $export['newsletter_order'] = $fe_block_boxes;
 
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'shareThis buttons';
+  $fe_block_boxes->format = 'php_code';
+  $fe_block_boxes->machine_name = 'sharethis_buttons';
+  $fe_block_boxes->body = '<span class="st_twitter_hcount" displayText="Twitter"></span>
+<span class="st_fbrec_hcount" displayText="Facebook Recommend"></span>
+<span class="st_plusone_hcount" displayText="Google +1"></span>';
+
+  $export['sharethis_buttons'] = $fe_block_boxes;
+
   return $export;
 }
