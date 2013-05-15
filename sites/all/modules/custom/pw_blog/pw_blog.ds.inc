@@ -486,6 +486,30 @@ function pw_blog_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|blogpost|rss';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'blogpost';
+  $ds_layout->view_mode = 'rss';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'body',
+        1 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'body' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+  );
+  $export['node|blogpost|rss'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|blogpost|search_result';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'blogpost';

@@ -40,6 +40,7 @@ features[ds_fields][] = rss
 features[ds_fields][] = sharethis
 features[ds_layout_settings][] = node|blogpost|full
 features[ds_layout_settings][] = node|blogpost|print
+features[ds_layout_settings][] = node|blogpost|rss
 features[ds_layout_settings][] = node|blogpost|search_result
 features[ds_layout_settings][] = node|blogpost|teaser
 features[fe_block_boxes][] = newsletter_order
