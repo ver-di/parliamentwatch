@@ -158,9 +158,11 @@ function pw_blog_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_plain',
-          'weight' => '0',
+          'settings' => array(
+            'trim_length' => 600,
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '6',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -196,12 +198,9 @@ function pw_blog_field_default_fields() {
         ),
         'search_result' => array(
           'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(
-            'trim_length' => 600,
-          ),
-          'type' => 'text_summary_or_trimmed',
-          'weight' => '3',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '13',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -318,10 +317,23 @@ function pw_blog_field_default_fields() {
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '2',
+          'label' => 'hidden',
+          'module' => 'textformatter',
+          'settings' => array(
+            'textformatter_class' => '',
+            'textformatter_comma_and' => 0,
+            'textformatter_comma_full_stop' => 0,
+            'textformatter_comma_override' => 0,
+            'textformatter_comma_tag' => '0',
+            'textformatter_contrib' => array(),
+            'textformatter_separator_custom' => '',
+            'textformatter_separator_custom_class' => '',
+            'textformatter_separator_custom_tag' => '0',
+            'textformatter_term_plain' => 0,
+            'textformatter_type' => 'comma',
+          ),
+          'type' => 'textformatter_list',
+          'weight' => '7',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -376,22 +388,9 @@ function pw_blog_field_default_fields() {
         ),
         'search_result' => array(
           'label' => 'hidden',
-          'module' => 'textformatter',
-          'settings' => array(
-            'textformatter_class' => '',
-            'textformatter_comma_and' => 0,
-            'textformatter_comma_full_stop' => 0,
-            'textformatter_comma_override' => 0,
-            'textformatter_comma_tag' => '0',
-            'textformatter_contrib' => array(),
-            'textformatter_separator_custom' => '',
-            'textformatter_separator_custom_class' => '',
-            'textformatter_separator_custom_tag' => '0',
-            'textformatter_term_plain' => 0,
-            'textformatter_type' => 'comma',
-          ),
-          'type' => 'textformatter_list',
-          'weight' => '4',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '15',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -475,12 +474,6 @@ function pw_blog_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
-        'colorbox' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
         'default' => array(
           'label' => 'above',
           'settings' => array(),
@@ -512,17 +505,11 @@ function pw_blog_field_default_fields() {
           'type' => 'hidden',
           'weight' => '16',
         ),
-        'search_index' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
         'search_result' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '17',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -594,10 +581,13 @@ function pw_blog_field_default_fields() {
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '3',
+          'label' => 'hidden',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'pw_file_landscape_l',
+          ),
+          'type' => 'file_rendered',
+          'weight' => '5',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -627,7 +617,7 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'teaser' => array(
           'label' => 'hidden',

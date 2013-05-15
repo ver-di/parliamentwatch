@@ -729,7 +729,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = '';
+  $strongarm->value = 'blocks_1_';
   $export['custom_search_delta'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1064,6 +1064,8 @@ custom-search-blocks-form-1';
     'group_user_polls|user|user|default' => FALSE,
     'group_user_polls_last|user|user|default' => FALSE,
     'group_user_polls_archive|user|user|default' => FALSE,
+    'group_blog_searchitem|node|blogpost|search_result' => FALSE,
+    'group_blog_searchmeta|node|blogpost|search_result' => TRUE,
   );
   $export['default_field_group'] = $strongarm;
 

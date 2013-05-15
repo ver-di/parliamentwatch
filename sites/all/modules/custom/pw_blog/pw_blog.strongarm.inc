@@ -403,13 +403,13 @@ function pw_blog_strongarm() {
         'custom_settings' => TRUE,
       ),
       'colorbox' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'rss' => array(
         'custom_settings' => TRUE,
       ),
       'search_index' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_result' => array(
         'custom_settings' => TRUE,

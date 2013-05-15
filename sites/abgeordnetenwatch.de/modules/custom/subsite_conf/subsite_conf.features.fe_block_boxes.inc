@@ -85,16 +85,18 @@ Montag - Freitag 10:00 - 16:00 Uhr</p>
   $fe_block_boxes->info = 'Unsere Medienpartner';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'press_partner';
-  $fe_block_boxes->body = '<p>&nbsp;</p>
-
-<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__6001 img__view_mode__media_original attr__format__media_original" height="21" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-spiegelonline.png" title="" typeof="foaf:Image" width="150" /></p>
-
-<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__6000 img__view_mode__media_original attr__format__media_original" height="29" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-sueddeutsche.png" title="" typeof="foaf:Image" width="152" /></p>
-
-<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__5999 img__view_mode__media_original attr__format__media_original" height="23" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-weltonline.png" title="" typeof="foaf:Image" width="152" /></p>
-
-<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__5998 img__view_mode__media_original attr__format__media_original" height="22" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-t-online.png" title="" typeof="foaf:Image" width="152" /></p>
-';
+  $fe_block_boxes->body = '<p style="position: relative; left: 35px; margin-top: 1em;">
+	<a target="_blank" rel="nofollow" href="http://www.spiegel.de/"><img alt="" class="attr__format__media_original attr__typeof__foaf:Image img__fid__6001 img__view_mode__media_original media-image" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-spiegelonline.png" style="height:21px; width:150px" title=""></a>
+</p>
+<p style="position: relative; left: 117px;">
+	<a target="_blank" rel="nofollow" href="http://www.sueddeutsche.de/"><img alt="" class="attr__format__media_original attr__typeof__foaf:Image img__fid__6000 img__view_mode__media_original media-image" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-sueddeutsche.png" style="height:29px; width:152px" title=""></a>
+</p>
+<p style="position: relative; left: 35px;">
+	<a target="_blank" rel="nofollow" href="http://www.welt.de/"><img alt="" class="attr__format__media_original attr__typeof__foaf:Image img__fid__5999 img__view_mode__media_original media-image" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-weltonline.png" style="height:23px; width:152px" title=""></a>
+</p>
+<p style="position: relative; left: 117px;">
+	<a target="_blank" rel="nofollow" href="http://www.t-online.de/"><img alt="" class="attr__format__media_original attr__typeof__foaf:Image img__fid__5998 img__view_mode__media_original media-image" src="http://de.parliamentwatch.silversurfer/sites/abgeordnetenwatch.de/files/logo-t-online.png" style="height:22px; width:152px" title=""></a>
+</p>';
 
   $export['press_partner'] = $fe_block_boxes;
 

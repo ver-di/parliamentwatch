@@ -204,7 +204,7 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'search_result';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '0',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -213,22 +213,36 @@ function pw_blog_ds_field_settings_info() {
         'class' => '',
       ),
     ),
-    'author' => array(
-      'weight' => '2',
+    'node_link' => array(
+      'weight' => '10',
       'label' => 'hidden',
-      'format' => 'author',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => 'span',
+        'class' => 'read-more',
+      ),
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
     'post_date' => array(
-      'weight' => '1',
+      'weight' => '8',
       'label' => 'hidden',
-      'format' => 'ds_post_date_long',
-    ),
-    'body' => array(
+      'format' => 'ds_post_date_date_and_time',
       'ft' => array(
         'func' => 'theme_ds_field_expert',
         'ow' => TRUE,
-        'ow-el' => 'span',
+        'ow-el' => 'p',
         'ow-cl' => 'light',
+      ),
+    ),
+    'search_snippet' => array(
+      'weight' => '9',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
       ),
     ),
   );
@@ -557,19 +571,19 @@ function pw_blog_ds_layout_settings_info() {
     'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
-        1 => 'post_date',
-        2 => 'author',
-        3 => 'body',
-        4 => 'field_blogpost_blogtags',
+        0 => 'group_blog_searchitem',
+        1 => 'title',
+        2 => 'post_date',
+        3 => 'search_snippet',
+        4 => 'node_link',
       ),
     ),
     'fields' => array(
+      'group_blog_searchitem' => 'ds_content',
       'title' => 'ds_content',
       'post_date' => 'ds_content',
-      'author' => 'ds_content',
-      'body' => 'ds_content',
-      'field_blogpost_blogtags' => 'ds_content',
+      'search_snippet' => 'ds_content',
+      'node_link' => 'ds_content',
     ),
     'classes' => array(),
   );

@@ -335,6 +335,7 @@ a.link-pdf {
 .read-more a,
 a.read-more {
     background-position: -723px -1942px;
+    white-space: nowrap;
 }
 .views-more-link:hover,
 .read-more a:hover,
@@ -473,6 +474,7 @@ h1#page-title {
 #cboxNode {
     padding: 20px;
 }
+
 
 /* //////////////////////////// search ///////////////////// */
 
@@ -618,6 +620,9 @@ ul.tabs li:hover a {
 
 /* //////////////////////////// pager ////////////////////// */
 
+#region-content .item-list {
+    padding-bottom: 30px;
+}
 #region-content .item-list .pager {
     clear: both;
     text-align: center;
@@ -626,9 +631,6 @@ ul.tabs li:hover a {
 #region-content .item-list ul.pager {
     padding: 0;
     margin: 0;
-}
-#region-content #comments .item-list ul.pager {
-    margin-bottom: 30px;
 }
 #region-content .item-list ul.pager li {
     margin: 0 3px;
@@ -1177,6 +1179,9 @@ textarea:active {
 
 /* blog */
 
+.node-blogpost.view-mode-search_result .read-more {
+    margin-left: 1ex;
+}
 .view-blog .view-filters {
     float: right;
 }
