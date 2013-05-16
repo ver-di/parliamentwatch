@@ -24,7 +24,7 @@ function pw_blog_field_group_info() {
     'weight' => '2',
     'children' => array(
       0 => 'field_blogpost_categories',
-      1 => 'author',
+      1 => 'author_linked_to_contact_form',
       2 => 'post_date',
     ),
     'format_type' => 'fieldset',

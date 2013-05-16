@@ -474,6 +474,15 @@ h1#page-title {
 #cboxNode {
     padding: 20px;
 }
+#colorbox form label {
+    display: block;
+}
+#colorbox form textarea {
+    margin-bottom: 1em;
+}
+#colorbox form .form-actions {
+    text-align: right;
+}
 
 
 /* //////////////////////////// search ///////////////////// */
@@ -1084,7 +1093,7 @@ a#text_resize_increase:hover {
 
 /* //////////////////////////// floatbox /////////////////// */
 
-#floatbox {
+.floatbox {
     background: #f4f4f4;
     border: 1px solid #dedede;
     width: 270px;
@@ -1092,43 +1101,43 @@ a#text_resize_increase:hover {
     -webkit-box-shadow: 0 0 3px 2px #ebebeb;
     box-shadow: 0 0 3px 2px #ebebeb;        
 }
-#floatbox h3 {
+.floatbox h3 {
     background-position: -810px -2688px;
     padding-left: 20px;
     color: #333;
     font-size: 17px;
     margin-bottom: 20px;
 }
-#floatbox h4 {
+.floatbox h4 {
     font-family: 'Times New Roman',Georgia,serif;
     font-size: 16px;
     margin-bottom: 0;
     font-weight: normal;
 }
-#region-content #floatbox ul {
+#region-content .floatbox ul {
     margin: 0 0 10px;
     padding: 0;
 }
-#region-content #floatbox ul li {
+#region-content .floatbox ul li {
     padding: 3px 0 3px 22px;
     color: #666;
     background-position: -763px -1894px;
     margin: 0 0 0 -7px;
     list-style: none;
 }
-#floatbox ul li a {
+.floatbox ul li a {
     color: #333;
     font-weight: normal;
     text-decoration: none;
 }
-#floatbox ul li:hover {
+.floatbox ul li:hover {
     background-color: #d5d5d5;
 }
-#floatbox.floatbox-right {
+.floatbox.floatbox-right {
     float: right;
     margin: 4px 0 15px 20px;
 }
-#floatbox.floatbox-left {
+.floatbox.floatbox-left {
     float: left;
     margin: 4px 20px 15px 0;
 }
@@ -1951,8 +1960,8 @@ form .webform-component-checkboxes .description {
 #block-views-blog-block-1 .views-row,
 .comment-count,
 .icon-taxonomy,
-#floatbox ul li,
-#floatbox h3,
+.floatbox ul li,
+.floatbox h3,
 a#text_resize_decrease,
 a#text_resize_reset,
 a#text_resize_increase,

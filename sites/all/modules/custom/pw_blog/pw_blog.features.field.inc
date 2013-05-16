@@ -497,7 +497,7 @@ function pw_blog_field_default_fields() {
             'textformatter_type' => 'comma',
           ),
           'type' => 'textformatter_list',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'rss' => array(
           'label' => 'above',

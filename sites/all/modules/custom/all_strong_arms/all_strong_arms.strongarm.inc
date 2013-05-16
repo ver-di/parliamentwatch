@@ -319,7 +319,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_webform';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['comment_anonymous_webform'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -545,6 +545,7 @@ webform-client-form-15
 webform-client-form-17
 webform-client-form-18
 webform-client-form-25
+webform-client-form-6313
 views-exposed-form-profile-list-solr-block-2
 views-exposed-form-profile-list-solr-constituency
 custom-search-blocks-form-1';
@@ -1359,6 +1360,12 @@ custom-search-blocks-form-1';
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'preview' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -1385,6 +1392,10 @@ custom-search-blocks-form-1';
             'visible' => TRUE,
           ),
           'pw_file_portrait_s' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'preview' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),
@@ -1927,7 +1938,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'scroll_to_top_enable_admin_theme';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['scroll_to_top_enable_admin_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2159,9 +2170,18 @@ custom-search-blocks-form-1';
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_types';
   $strongarm->value = array(
-    0 => 'page',
-    1 => 'slider_item',
-    2 => 'webform',
+    0 => 'article',
+    1 => 'page',
+    2 => 'blogpost',
+    3 => 'dialogue',
+    4 => 'migrate_extras_media_example',
+    5 => 'migrate_example_pathauto',
+    6 => 'pw_poll',
+    7 => 'press_release',
+    8 => 'press_article',
+    9 => 'slider_item',
+    10 => 'trustee',
+    11 => 'webform',
   );
   $export['webform_node_types'] = $strongarm;
 
