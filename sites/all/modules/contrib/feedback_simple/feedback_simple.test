@@ -22,7 +22,7 @@ class FeedbackSimpleTestCase extends DrupalWebTestCase {
     $this->drupalLogin($web_user);
   }
 
-  function testFeedbackSimple() {
+  public function testFeedbackSimple() {
     $this->drupalGet('<front>');
     $this->assertRaw("<div id='feedback_simple'>", 'The Feedback Simple tab is present.');
   }
