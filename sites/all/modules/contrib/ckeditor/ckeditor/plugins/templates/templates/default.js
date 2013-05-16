@@ -15,7 +15,7 @@ CKEDITOR.addTemplates( 'default', {
 		title: 'Floatbox',
 		image: 'template1.gif',
 		description: 'A floating box on the left with headline.',
-		html: '<div id="floatbox" class="floatbox-left">' +
+		html: '<div class="floatbox floatbox-left">' +
 			'<h3>' +
                 'Title goes here' +
 			'</h3>' +
@@ -33,7 +33,7 @@ CKEDITOR.addTemplates( 'default', {
 		title: 'Floatbox',
 		image: 'template4.gif',
 		description: 'A floating box on the right with headline.',
-		html: '<div id="floatbox" class="floatbox-right">' +
+		html: '<div class="floatbox floatbox-right">' +
 			'<h3>' +
                 'Title goes here' +
 			'</h3>' +
@@ -45,6 +45,24 @@ CKEDITOR.addTemplates( 'default', {
                 '<li>List item 2</li>' +
                 '<li>List item 3</li>' +
 			'</ul>' +
+			'</div>'
+	},
+		{
+		title: 'Image container with ©opyright',
+		image: 'template1.gif',
+		description: 'A container with an image and a subline floating to the left.',
+		html: '<div class="file-image float-left">' +
+                '<img src="/sites/all/modules/contrib/ckeditor/ckeditor/plugins/templates/templates/images/template1.gif">' +
+                '<div class="field-name-field-image-copyright">©opyright</div>' +			
+			'</div>'
+	},
+		{
+		title: 'Image container with ©opyright',
+		image: 'template4.gif',
+		description: 'A container with an image and a subline floating to the right.',
+		html: '<div class="file-image float-right">' +
+                '<img src="/sites/all/modules/contrib/ckeditor/ckeditor/plugins/templates/templates/images/template4.gif">' +
+                '<div class="field-name-field-image-copyright">©opyright</div>' +			
 			'</div>'
 	}
 	]
