@@ -34,6 +34,19 @@ function parliamentwatch_css_alter(&$css) {
 function parliamentwatch_js_alter(&$javascript) {
   $javascript[drupal_get_path('module', 'scroll_to_top') . '/scroll_to_top.js']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/js/scroll_to_top.js';
 }
+ 
+/**
+ * changing the path to the file icons.
+ */
+
+function parliamentwatch_file_icon($variables) {
+  $file = $variables['file'];
+  $icon_directory = drupal_get_path('theme', 'parliamentwatch') . '/images/fileicons';
+
+  $mime = check_plain($file->filemime);
+  $icon_url = file_icon_url($file, $icon_directory);
+  return '<img alt="" class="file-icon" src="' . $icon_url . '" title="' . $mime . '" />';
+}
 
 
 /**
