@@ -8,13 +8,13 @@ jQuery(document).ready(function() {
 
     jQuery('.add-sharethis').each(function (i) {
     
+        console.log("SHARE THIS");
         //for subsite
         var st_url = location.protocol + '//'+location.host+location.pathname + '/' + jQuery(this).closest('div').attr('id');
-
-         // for anchor
-        //var st_url = location.protocol + '//'+location.host+location.pathname + '#' + jQuery(this).closest('div').attr('id');
-        
-        jQuery(this).append('<span class="sharethis-wrapper"><span class="st_sharethis_hcount" onhover="false" st_url="' + st_url + '" displayText=""></span></span>');
+                // for anchor
+        var link_title = jQuery(this).closest('div').attr('title');
+        console.log(link_title);
+        jQuery(this).append('<span class="sharethis-wrapper"><span class="st_sharethis_hcount" onhover="false" st_title="'+link_title+'" st_url="'+st_url+'" displayText="'+link_title+'"></span></span>');
     
     });
 
@@ -70,12 +70,7 @@ jQuery(document).ready(function() {
     jQuery(".anchor-to-top a").click(function () {
         goToByScroll("page");
         return false;
-    });
-    
-////// Switch between Teaser and Full Mode in Question and Answers
-    jQuery('#modeswitcher').click(function(){
-    	$("#gruppe1").attr("checked","checked");
-    });
+    }); 
     
      
 });

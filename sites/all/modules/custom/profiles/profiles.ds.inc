@@ -344,6 +344,20 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'back_to_calendar';
+  $ds_field->label = 'Back to Calendar';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|calendar-block_4',
+    'block_render' => '1',
+  );
+  $export['back_to_calendar'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'go_to_profile';
   $ds_field->label = 'Go to profile';
   $ds_field->field_type = 7;
@@ -614,6 +628,20 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'short_profile_on_calendar_entry';
+  $ds_field->label = 'Short Profile on Calendar Entry';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->properties = array(
+    'block' => 'views|calendar-block_3',
+    'block_render' => '1',
+  );
+  $export['short_profile_on_calendar_entry'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'user_about';
   $ds_field->label = 'User About';
   $ds_field->field_type = 6;
@@ -737,6 +765,36 @@ drupal_add_html_head($element, \'og_description\');
  */
 function profiles_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|calendar_entry|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'calendar_entry';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'short_profile_on_calendar_entry',
+        1 => 'field_calendar_entry_address',
+        2 => 'field_calendar_entry_date',
+        3 => 'body',
+        4 => 'back_to_calendar',
+      ),
+    ),
+    'fields' => array(
+      'short_profile_on_calendar_entry' => 'ds_content',
+      'field_calendar_entry_address' => 'ds_content',
+      'field_calendar_entry_date' => 'ds_content',
+      'body' => 'ds_content',
+      'back_to_calendar' => 'ds_content',
+    ),
+    'classes' => array(),
+  );
+  $export['node|calendar_entry|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

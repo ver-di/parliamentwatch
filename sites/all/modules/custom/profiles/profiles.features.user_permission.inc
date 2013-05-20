@@ -24,8 +24,9 @@ function profiles_user_default_permissions() {
   $permissions['create field_user_about'] = array(
     'name' => 'create field_user_about',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -51,6 +52,25 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: create field_user_childs.
+  $permissions['create field_user_childs'] = array(
+    'name' => 'create field_user_childs',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: create field_user_commitee.
+  $permissions['create field_user_commitee'] = array(
+    'name' => 'create field_user_commitee',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: create field_user_first_letter_lname.
   $permissions['create field_user_first_letter_lname'] = array(
     'name' => 'create field_user_first_letter_lname',
@@ -65,8 +85,28 @@ function profiles_user_default_permissions() {
   $permissions['create field_user_image_gallery'] = array(
     'name' => 'create field_user_image_gallery',
     'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: create field_user_job_skills.
+  $permissions['create field_user_job_skills'] = array(
+    'name' => 'create field_user_job_skills',
+    'roles' => array(
       0 => 'administrator',
       1 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: create field_user_marriage_status.
+  $permissions['create field_user_marriage_status'] = array(
+    'name' => 'create field_user_marriage_status',
+    'roles' => array(
+      0 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -81,12 +121,22 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: create field_user_parliament.
+  $permissions['create field_user_parliament'] = array(
+    'name' => 'create field_user_parliament',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: create field_user_picture.
   $permissions['create field_user_picture'] = array(
     'name' => 'create field_user_picture',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -94,6 +144,17 @@ function profiles_user_default_permissions() {
   // Exported permission: create field_user_political_goals.
   $permissions['create field_user_political_goals'] = array(
     'name' => 'create field_user_political_goals',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: create field_user_political_roles.
+  $permissions['create field_user_political_roles'] = array(
+    'name' => 'create field_user_political_roles',
     'roles' => array(
       0 => 'administrator',
       1 => 'anonymous user',
@@ -121,6 +182,35 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: create files.
+  $permissions['create files'] = array(
+    'name' => 'create files',
+    'roles' => array(
+      0 => 'Premium User',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: delete own files.
+  $permissions['delete own files'] = array(
+    'name' => 'delete own files',
+    'roles' => array(
+      0 => 'Premium User',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: edit any files.
+  $permissions['edit any files'] = array(
+    'name' => 'edit any files',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: edit field_profile_node_connector.
   $permissions['edit field_profile_node_connector'] = array(
     'name' => 'edit field_profile_node_connector',
@@ -134,8 +224,7 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_about'] = array(
     'name' => 'edit field_user_about',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -158,6 +247,24 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit field_user_childs.
+  $permissions['edit field_user_childs'] = array(
+    'name' => 'edit field_user_childs',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit field_user_commitee.
+  $permissions['edit field_user_commitee'] = array(
+    'name' => 'edit field_user_commitee',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit field_user_first_letter_lname.
   $permissions['edit field_user_first_letter_lname'] = array(
     'name' => 'edit field_user_first_letter_lname',
@@ -171,6 +278,25 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_image_gallery'] = array(
     'name' => 'edit field_user_image_gallery',
     'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit field_user_job_skills.
+  $permissions['edit field_user_job_skills'] = array(
+    'name' => 'edit field_user_job_skills',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit field_user_marriage_status.
+  $permissions['edit field_user_marriage_status'] = array(
+    'name' => 'edit field_user_marriage_status',
+    'roles' => array(
       0 => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -179,6 +305,15 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_more.
   $permissions['edit field_user_more'] = array(
     'name' => 'edit field_user_more',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit field_user_parliament.
+  $permissions['edit field_user_parliament'] = array(
+    'name' => 'edit field_user_parliament',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -197,6 +332,15 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_political_goals.
   $permissions['edit field_user_political_goals'] = array(
     'name' => 'edit field_user_political_goals',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit field_user_political_roles.
+  $permissions['edit field_user_political_roles'] = array(
+    'name' => 'edit field_user_political_roles',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -260,6 +404,24 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit own field_user_childs.
+  $permissions['edit own field_user_childs'] = array(
+    'name' => 'edit own field_user_childs',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_user_commitee.
+  $permissions['edit own field_user_commitee'] = array(
+    'name' => 'edit own field_user_commitee',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit own field_user_first_letter_lname.
   $permissions['edit own field_user_first_letter_lname'] = array(
     'name' => 'edit own field_user_first_letter_lname',
@@ -279,12 +441,39 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit own field_user_job_skills.
+  $permissions['edit own field_user_job_skills'] = array(
+    'name' => 'edit own field_user_job_skills',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_user_marriage_status.
+  $permissions['edit own field_user_marriage_status'] = array(
+    'name' => 'edit own field_user_marriage_status',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit own field_user_more.
   $permissions['edit own field_user_more'] = array(
     'name' => 'edit own field_user_more',
     'roles' => array(
       0 => 'Premium User',
       1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_user_parliament.
+  $permissions['edit own field_user_parliament'] = array(
+    'name' => 'edit own field_user_parliament',
+    'roles' => array(
+      0 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -309,6 +498,15 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit own field_user_political_roles.
+  $permissions['edit own field_user_political_roles'] = array(
+    'name' => 'edit own field_user_political_roles',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit own field_user_pseudonym.
   $permissions['edit own field_user_pseudonym'] = array(
     'name' => 'edit own field_user_pseudonym',
@@ -326,6 +524,37 @@ function profiles_user_default_permissions() {
       1 => 'administrator',
     ),
     'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own files.
+  $permissions['edit own files'] = array(
+    'name' => 'edit own files',
+    'roles' => array(
+      0 => 'Premium User',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: use text format filtered_html.
+  $permissions['use text format filtered_html'] = array(
+    'name' => 'use text format filtered_html',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
+    ),
+    'module' => 'filter',
+  );
+
+  // Exported permission: use text format managed_content.
+  $permissions['use text format managed_content'] = array(
+    'name' => 'use text format managed_content',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
+    'module' => 'filter',
   );
 
   // Exported permission: view field_profile_node_connector.
@@ -352,8 +581,9 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_address'] = array(
     'name' => 'view field_user_address',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -362,7 +592,31 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_answers_give'] = array(
     'name' => 'view field_user_answers_give',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view field_user_childs.
+  $permissions['view field_user_childs'] = array(
+    'name' => 'view field_user_childs',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view field_user_commitee.
+  $permissions['view field_user_commitee'] = array(
+    'name' => 'view field_user_commitee',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -380,8 +634,31 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_image_gallery'] = array(
     'name' => 'view field_user_image_gallery',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view field_user_job_skills.
+  $permissions['view field_user_job_skills'] = array(
+    'name' => 'view field_user_job_skills',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view field_user_marriage_status.
+  $permissions['view field_user_marriage_status'] = array(
+    'name' => 'view field_user_marriage_status',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -396,12 +673,24 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view field_user_parliament.
+  $permissions['view field_user_parliament'] = array(
+    'name' => 'view field_user_parliament',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view field_user_picture.
   $permissions['view field_user_picture'] = array(
     'name' => 'view field_user_picture',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -410,8 +699,20 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_political_goals'] = array(
     'name' => 'view field_user_political_goals',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view field_user_political_roles.
+  $permissions['view field_user_political_roles'] = array(
+    'name' => 'view field_user_political_roles',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -430,9 +731,23 @@ function profiles_user_default_permissions() {
     'name' => 'view field_user_questions_get',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'administrator',
+      1 => 'Premium User',
+      2 => 'administrator',
+      3 => 'anonymous user',
     ),
     'module' => 'field_permissions',
+  );
+
+  // Exported permission: view files.
+  $permissions['view files'] = array(
+    'name' => 'view files',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: view own field_profile_node_connector.
@@ -473,6 +788,26 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view own field_user_childs.
+  $permissions['view own field_user_childs'] = array(
+    'name' => 'view own field_user_childs',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_user_commitee.
+  $permissions['view own field_user_commitee'] = array(
+    'name' => 'view own field_user_commitee',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view own field_user_first_letter_lname.
   $permissions['view own field_user_first_letter_lname'] = array(
     'name' => 'view own field_user_first_letter_lname',
@@ -492,12 +827,41 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view own field_user_job_skills.
+  $permissions['view own field_user_job_skills'] = array(
+    'name' => 'view own field_user_job_skills',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_user_marriage_status.
+  $permissions['view own field_user_marriage_status'] = array(
+    'name' => 'view own field_user_marriage_status',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view own field_user_more.
   $permissions['view own field_user_more'] = array(
     'name' => 'view own field_user_more',
     'roles' => array(
       0 => 'Premium User',
       1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_user_parliament.
+  $permissions['view own field_user_parliament'] = array(
+    'name' => 'view own field_user_parliament',
+    'roles' => array(
+      0 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -522,6 +886,16 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view own field_user_political_roles.
+  $permissions['view own field_user_political_roles'] = array(
+    'name' => 'view own field_user_political_roles',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view own field_user_pseudonym.
   $permissions['view own field_user_pseudonym'] = array(
     'name' => 'view own field_user_pseudonym',
@@ -539,6 +913,24 @@ function profiles_user_default_permissions() {
       1 => 'administrator',
     ),
     'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own files.
+  $permissions['view own files'] = array(
+    'name' => 'view own files',
+    'roles' => array(
+      0 => 'Premium User',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: view own private files.
+  $permissions['view own private files'] = array(
+    'name' => 'view own private files',
+    'roles' => array(
+      0 => 'Premium User',
+    ),
+    'module' => 'file_entity',
   );
 
   return $permissions;
