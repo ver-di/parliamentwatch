@@ -429,18 +429,46 @@ function profiles_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Profile picture */
+  /* Field: Excluded | Profile Picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profile Picture';
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_m',
   );
+  /* Field: Content: Author uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'node';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: PHP | Conditional Profil Picture */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'PHP | Conditional Profil Picture';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$profiluser = user_load($row->uid);
+$profiluserroles = $profiluser->roles;
+if(in_array("Premium User",$profiluserroles)) {
+print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: User: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -492,10 +520,28 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['ui_name'] = 'Excluded | Content Title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]#block-webform-client-block-17';
+  $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -572,6 +618,7 @@ function profiles_views_default_views() {
 
   /* Display: Calendar Admin  View */
   $handler = $view->new_display('block', 'Calendar Admin  View', 'block_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
@@ -634,11 +681,6 @@ function profiles_views_default_views() {
   $handler->display->display_options['filters']['uid_current']['field'] = 'uid_current';
   $handler->display->display_options['filters']['uid_current']['relationship'] = 'uid';
   $handler->display->display_options['filters']['uid_current']['value'] = '1';
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $translatables['calendar'] = array(
     t('Master'),
     t('Calendar'),
@@ -666,6 +708,7 @@ function profiles_views_default_views() {
     t('Short Profile for Calendar Entry'),
     t('<div class="add-sharethis" title="Calendar Entry from [field_user_fname][field_user_lname]"></div>'),
     t('go back to full calendar'),
+    t('Ask a Question'),
     t('Back to Calendar Block'),
     t('Small Block for Calendar Entry Footer Section to go back to main Calendar'),
     t('<< to full calendar'),
@@ -675,7 +718,6 @@ function profiles_views_default_views() {
     t('Edit Calendar'),
     t('Delete'),
     t('Edit link'),
-    t('Block'),
   );
   $export['calendar'] = $view;
 
@@ -3696,7 +3738,7 @@ if($record->value == 0){
 
   $view = new view();
   $view->name = 'user_profile_fields';
-  $view->description = '';
+  $view->description = 'Political Goals Views Block on User Profile';
   $view->tag = 'default';
   $view->base_table = 'users';
   $view->human_name = 'User Profile Fields';
@@ -3769,6 +3811,15 @@ if($record->value == 0){
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: List Position (field_user_list_position) */
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['table'] = 'field_data_field_user_list_position';
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
+  /* Relationship: User: Constituency (field_user_constituency) */
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Exlcuded | First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
@@ -3803,11 +3854,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_job_skills']['table'] = 'field_data_field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills']['field'] = 'field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills']['element_label_colon'] = FALSE;
-  /* Field: User: List Position */
-  $handler->display->display_options['fields']['field_user_list_position']['id'] = 'field_user_list_position';
-  $handler->display->display_options['fields']['field_user_list_position']['table'] = 'field_data_field_user_list_position';
-  $handler->display->display_options['fields']['field_user_list_position']['field'] = 'field_user_list_position';
-  $handler->display->display_options['fields']['field_user_list_position']['type'] = 'i18n_taxonomy_term_reference_plain';
   /* Field: User: Address */
   $handler->display->display_options['fields']['field_user_address']['id'] = 'field_user_address';
   $handler->display->display_options['fields']['field_user_address']['table'] = 'field_data_field_user_address';
@@ -3815,6 +3861,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_address']['label'] = 'Residence';
   $handler->display->display_options['fields']['field_user_address']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_address']['alter']['text'] = '[field_user_address-locality] ';
+  $handler->display->display_options['fields']['field_user_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_address']['click_sort_column'] = 'country';
   $handler->display->display_options['fields']['field_user_address']['settings'] = array(
     'use_widget_handlers' => 1,
@@ -3822,10 +3869,20 @@ if($record->value == 0){
       'address' => 'address',
     ),
   );
-  /* Field: User: Party */
-  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['relationship'] = 'field_user_constituency_tid';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Constituency';
+  $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_user_list_position_tid';
+  $handler->display->display_options['fields']['name']['label'] = 'List Position';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
 
   /* Display: About */
   $handler = $view->new_display('block', 'About', 'block_4');
@@ -3994,7 +4051,7 @@ if($record->value == 0){
   /* Display: Politcial Goals */
   $handler = $view->new_display('block', 'Politcial Goals', 'block_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = ' Political Goals of [field_user_fname] [field_user_lname],[field_user_party]';
+  $handler->display->display_options['title'] = ' Political Goals of [field_user_fname] [field_user_lname]';
   $handler->display->display_options['display_description'] = 'Contextual Political Goals Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -4806,12 +4863,14 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
     t('Basic Info'),
     t('Basic Info of [field_user_fname] [field_user_lname]'),
     t('Contextual Basic Info Block on user for use with DS'),
+    t('term from field_user_list_position'),
+    t('term from field_user_constituency'),
     t('Birthday'),
     t('Professional qualification'),
-    t('List Position'),
     t('Residence'),
     t('[field_user_address-locality] '),
-    t('Party'),
+    t('Constituency'),
+    t('List Position'),
     t('About'),
     t(' About [field_user_fname] [field_user_lname]'),
     t('Contextual About Block on user'),
@@ -4823,7 +4882,7 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
     t('<div id="imagegallery" class="add-sharethis" title="Imagegallery of [field_user_fname] [field_user_lname],[field_user_party]">'),
     t('image from field_user_image_gallery'),
     t('Politcial Goals'),
-    t(' Political Goals of [field_user_fname] [field_user_lname],[field_user_party]'),
+    t(' Political Goals of [field_user_fname] [field_user_lname]'),
     t('Contextual Political Goals Block on user'),
     t('<div id="political-goals" class="add-sharethis" title="Political Goals of [field_user_fname] [field_user_lname], [field_user_party]"></div>'),
     t('Additional Links'),

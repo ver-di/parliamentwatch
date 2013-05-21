@@ -421,7 +421,7 @@ function profiles_field_default_fields() {
           'year' => 'year',
         ),
         'timezone_db' => 'UTC',
-        'todate' => 'optional',
+        'todate' => '',
         'tz_handling' => 'site',
       ),
       'translatable' => '0',
@@ -478,95 +478,6 @@ function profiles_field_default_fields() {
         ),
         'type' => 'date_popup',
         'weight' => '33',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-calendar_entry-field_test'.
-  $fields['node-calendar_entry-field_test'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_test',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'viewfield',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'viewfield',
-    ),
-    'field_instance' => array(
-      'bundle' => 'calendar_entry',
-      'default_value' => array(
-        0 => array(
-          'vname' => 'user_profile_fields|block_2',
-          'vargs' => '',
-        ),
-      ),
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '25',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_test',
-      'label' => 'Test',
-      'required' => 0,
-      'settings' => array(
-        'allowed_views' => array(
-          '3latesttweets' => 0,
-          'Trustees' => 0,
-          'answers' => 0,
-          'blog' => 0,
-          'calendar' => 0,
-          'constituency_for_the_profile' => 0,
-          'feeds_log' => 0,
-          'list_node_page_titles' => 0,
-          'media_default' => 0,
-          'menu_existing_content_selection' => 0,
-          'polls_profile' => 0,
-          'profile_list_rev' => 0,
-          'profile_list_solr' => 0,
-          'profile_questions_answers' => 0,
-          'pw_commitee_terms' => 0,
-          'pw_polls_list' => 0,
-          'qa_counter_link' => 0,
-          'rules_scheduler' => 0,
-          'slider' => 0,
-          'tweets' => 0,
-          'user_constituency' => 0,
-          'user_profile_fields' => 'user_profile_fields',
-          'user_revisions' => 0,
-          'user_tweets' => 0,
-          'weight' => 0,
-        ),
-        'force_default' => 0,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'viewfield',
-        'settings' => array(),
-        'type' => 'viewfield_select',
-        'weight' => '34',
       ),
     ),
   );
@@ -3153,7 +3064,6 @@ function profiles_field_default_fields() {
   t('Profile picture');
   t('Pseudonym');
   t('Questions Get');
-  t('Test');
   t('Title Text');
   t('Title text attribute');
   t('User Twitter Account');
