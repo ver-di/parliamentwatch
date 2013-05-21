@@ -81,6 +81,15 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: create field_user_gender.
+  $permissions['create field_user_gender'] = array(
+    'name' => 'create field_user_gender',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: create field_user_image_gallery.
   $permissions['create field_user_image_gallery'] = array(
     'name' => 'create field_user_image_gallery',
@@ -95,6 +104,16 @@ function profiles_user_default_permissions() {
   // Exported permission: create field_user_job_skills.
   $permissions['create field_user_job_skills'] = array(
     'name' => 'create field_user_job_skills',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: create field_user_list_position.
+  $permissions['create field_user_list_position'] = array(
+    'name' => 'create field_user_list_position',
     'roles' => array(
       0 => 'administrator',
       1 => 'anonymous user',
@@ -274,6 +293,15 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit field_user_gender.
+  $permissions['edit field_user_gender'] = array(
+    'name' => 'edit field_user_gender',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit field_user_image_gallery.
   $permissions['edit field_user_image_gallery'] = array(
     'name' => 'edit field_user_image_gallery',
@@ -287,6 +315,15 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_job_skills.
   $permissions['edit field_user_job_skills'] = array(
     'name' => 'edit field_user_job_skills',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit field_user_list_position.
+  $permissions['edit field_user_list_position'] = array(
+    'name' => 'edit field_user_list_position',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -431,6 +468,15 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit own field_user_gender.
+  $permissions['edit own field_user_gender'] = array(
+    'name' => 'edit own field_user_gender',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit own field_user_image_gallery.
   $permissions['edit own field_user_image_gallery'] = array(
     'name' => 'edit own field_user_image_gallery',
@@ -444,6 +490,15 @@ function profiles_user_default_permissions() {
   // Exported permission: edit own field_user_job_skills.
   $permissions['edit own field_user_job_skills'] = array(
     'name' => 'edit own field_user_job_skills',
+    'roles' => array(
+      0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_user_list_position.
+  $permissions['edit own field_user_list_position'] = array(
+    'name' => 'edit own field_user_list_position',
     'roles' => array(
       0 => 'administrator',
     ),
@@ -630,6 +685,17 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view field_user_gender.
+  $permissions['view field_user_gender'] = array(
+    'name' => 'view field_user_gender',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view field_user_image_gallery.
   $permissions['view field_user_image_gallery'] = array(
     'name' => 'view field_user_image_gallery',
@@ -644,6 +710,17 @@ function profiles_user_default_permissions() {
   // Exported permission: view field_user_job_skills.
   $permissions['view field_user_job_skills'] = array(
     'name' => 'view field_user_job_skills',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view field_user_list_position.
+  $permissions['view field_user_list_position'] = array(
+    'name' => 'view field_user_list_position',
     'roles' => array(
       0 => 'Premium User',
       1 => 'administrator',
@@ -817,6 +894,16 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view own field_user_gender.
+  $permissions['view own field_user_gender'] = array(
+    'name' => 'view own field_user_gender',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view own field_user_image_gallery.
   $permissions['view own field_user_image_gallery'] = array(
     'name' => 'view own field_user_image_gallery',
@@ -830,6 +917,16 @@ function profiles_user_default_permissions() {
   // Exported permission: view own field_user_job_skills.
   $permissions['view own field_user_job_skills'] = array(
     'name' => 'view own field_user_job_skills',
+    'roles' => array(
+      0 => 'Premium User',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_user_list_position.
+  $permissions['view own field_user_list_position'] = array(
+    'name' => 'view own field_user_list_position',
     'roles' => array(
       0 => 'Premium User',
       1 => 'administrator',

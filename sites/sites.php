@@ -63,7 +63,7 @@ $sites['abgeordnetenwatch.de'] = 'abgeordnetenwatch.de';
 			
 $sites['dailwatch.ie'] = 'dailwatch.ie';
 $sites['ie.pw.silversurfer'] = 'dailwatch.ie';    // ruth's local maschine
-
+$sites['oliver.parliamentwatch.org'] = 'oliver.parliamentwatch.org'; 
 			
 $sites['marsad.tn'] = 'marsad.tn';
 $sites['tn.pw.silversurfer'] = 'marsad.tn';

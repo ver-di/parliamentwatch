@@ -1680,6 +1680,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_gender',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(),
       'indexes' => array(
         'value' => array(
@@ -1692,6 +1695,7 @@ function profiles_field_default_fields() {
         'allowed_values' => array(
           'm' => 'Male',
           'f' => 'Female',
+          't' => 'Transgender',
         ),
         'allowed_values_function' => '',
       ),
@@ -1974,6 +1978,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_list_position',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -2021,14 +2028,16 @@ function profiles_field_default_fields() {
           'weight' => '49',
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_list_position',
       'label' => 'List Position',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'user_register_form' => FALSE,
+        'user_register_form' => 0,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
