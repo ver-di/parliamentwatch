@@ -33,13 +33,13 @@ function subsite_conf_strongarm() {
     'name' => 'German',
     'native' => 'Deutsch',
     'direction' => '0',
-    'enabled' => '1',
+    'enabled' => 1,
     'plurals' => '2',
     'formula' => '($n!=1)',
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => 'cAPT7kQUH7wKobEIYf1wBfLl5p0r3QfRElyf6dCJhS8',
+    'javascript' => 'PO4wcgSreedwRfxYBmvJ1d0V9CAjX5yLseNgUzFZJ7Y',
   );
   $export['language_default'] = $strongarm;
 
@@ -117,7 +117,7 @@ function subsite_conf_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_trustee_de_pattern';
-  $strongarm->value = '';
+  $strongarm->value = 'ueber-uns/mehr/kuratorium/[node:title]';
   $export['pathauto_node_trustee_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

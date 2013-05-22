@@ -33,6 +33,30 @@
 }
 
 
+/* old search */
+
+.search-old form#search-old {
+    margin-bottom: 0 !important;
+}
+#section-content .search-old .compact-form .form-actions {
+    position: absolute;
+    top: 13px;
+    bottom: 0;
+    right: 7px;
+}
+form#search-old .form-text {
+    width: 100%;
+    font-size: 14px;
+}
+form#search-old #edit-submit {
+    background: transparent;
+    height: auto;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
 /* slider */
 
 .view-id-slider .views_slideshow_slide {

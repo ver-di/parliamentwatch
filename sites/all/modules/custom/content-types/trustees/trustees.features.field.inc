@@ -10,7 +10,7 @@
 function trustees_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-trustee-body'
+  // Exported field: 'node-trustee-body'.
   $fields['node-trustee-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function trustees_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(
         'profile2_private' => FALSE,
@@ -90,7 +91,7 @@ function trustees_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-trustee-field_trustee_image'
+  // Exported field: 'node-trustee-field_trustee_image'.
   $fields['node-trustee-field_trustee_image'] = array(
     'field_config' => array(
       'active' => '1',
@@ -111,6 +112,7 @@ function trustees_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -131,13 +133,12 @@ function trustees_field_default_fields() {
           'weight' => 0,
         ),
         'default' => array(
-          'label' => 'above',
-          'module' => 'image',
+          'label' => 'hidden',
+          'module' => 'file_entity',
           'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+            'file_view_mode' => 'default',
           ),
-          'type' => 'image',
+          'type' => 'file_rendered',
           'weight' => '0',
         ),
         'teaser' => array(

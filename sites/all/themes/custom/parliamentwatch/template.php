@@ -11,7 +11,26 @@
  * for more information on this topic.
  */
  
- 
+/*
+ * Implements hook_process_zone().
+ */
+function parliamentwatch_alpha_process_zone(&$vars) {
+  $theme = alpha_get_theme();
+  if ($vars['elements']['#zone'] == 'content') {
+    $vars['messages'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_process_region().
+ */
+function parliamentwatch_alpha_process_region(&$vars) {
+  if ($vars['elements']['#region'] == 'content') {
+    $theme = alpha_get_theme();
+    $vars['messages'] = $theme->page['messages'];
+  }
+}
+
 /**
  * Implements hook_css_alter().
  */

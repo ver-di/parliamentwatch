@@ -36,7 +36,8 @@ class WordPressAttachment extends WordPressMigration {
     parent::__construct($arguments);
 
     $this->dependencies = array($this->generateMachineName('WordPressBlogEntry'),
-      $this->generateMachineName('WordPressPage'));
+      $this->generateMachineName('WordPressPage'),
+      $this->generateMachineName('WordPressComment'));
 
     // Construct the source object.
     $this->source = new WordPressAttachmentSource($this->wxrFile, $this->machineName);

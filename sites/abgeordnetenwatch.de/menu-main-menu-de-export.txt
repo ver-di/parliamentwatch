@@ -2,8 +2,8 @@ Bundestag {"url":"http:\/\/www.abgeordnetenwatch.de\/bundestag-360-0.html"}
 -Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-337-0.html"}
 -Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-991-0.html"}
 -Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-123-0.html"}
--Wahlrecht {"url":"http:\/\/www.abgeordnetenwatch.de\/wahlrecht-178-0.html"}
--Grußwort {"url":"http:\/\/www.abgeordnetenwatch.de\/grusswort-882-0.html"}
+-Wahlrecht {"url":"bundestag\/wahlrecht"}
+-Grußwort {"url":"bundestag\/grusswort"}
 Landtage {"url":"http:\/\/www.abgeordnetenwatch.de\/landtage-210-0.html"}
 -Ba-Wü {"url":"http:\/\/www.abgeordnetenwatch.de\/baden_wuerttemberg-913-0.html"}
 --Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-182-0.html"}
@@ -47,8 +47,8 @@ EU {"url":"http:\/\/www.abgeordnetenwatch.de\/eu-336-0.html"}
 -Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-669-0.html"}
 -Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-105-0.html"}
 -Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-107-0.html"}
--Wahlrecht {"url":"http:\/\/www.abgeordnetenwatch.de\/wahlrecht-668-0.html"}
--Gesetzgebende Verfahren {"url":"http:\/\/www.abgeordnetenwatch.de\/gesetzgebende_verfahren-927-0.html"}
+-Wahlrecht {"url":"eu\/wahlrecht"}
+-Gesetzgebende Verfahren {"url":"eu\/gesetzgebende-verfahren"}
 Archiv {"url":"http:\/\/www.abgeordnetenwatch.de\/archiv-391-0.html"}
 -2013 {"url":"http:\/\/www.abgeordnetenwatch.de\/2013-1315-0.html"}
 --Landtagswahl Niedersachsen {"url":"http:\/\/www.abgeordnetenwatch.de\/landtagswahl_niedersachsen-1210-0.html"}
@@ -104,31 +104,35 @@ Archiv {"url":"http:\/\/www.abgeordnetenwatch.de\/archiv-391-0.html"}
 --Bundestag 2005-2009 {"url":"http:\/\/www.abgeordnetenwatch.de\/bundestag_2005_2009-132-0.html"}
 --EU-Parlament 2004-2009 {"url":"http:\/\/www.abgeordnetenwatch.de\/eu_parlament_2004_2009-332-0.html"}
 --Hamburg 2004-2008 {"url":"http:\/\/www.abgeordnetenwatch.de\/hamburg_2004_2008-917-0.html"}
-Wir über uns {"url":"http:\/\/www.abgeordnetenwatch.de\/wir_ueber_uns-838-0.html"}
--Jobs {"url":"http:\/\/www.abgeordnetenwatch.de\/jobs-712-0.html"}
--Mehr über uns {"url":"http:\/\/www.abgeordnetenwatch.de\/mehr_ueber_uns-150-0.html"}
---Erfolge {"url":"http:\/\/www.abgeordnetenwatch.de\/erfolge-938-0.html"}
---Mitwirkende {"url":"http:\/\/www.abgeordnetenwatch.de\/mitwirkende-700-0.html"}
---Kuratorium {"url":"http:\/\/www.abgeordnetenwatch.de\/kuratorium-876-0.html"}
---Moderations-Codex {"url":"http:\/\/www.abgeordnetenwatch.de\/moderations_codex-766-0.html"}
---Finanzierung {"url":"http:\/\/www.abgeordnetenwatch.de\/finanzierung-632-0.html"}
---Social Entrepreneur {"url":"http:\/\/www.abgeordnetenwatch.de\/social_entrepreneur-696-0.html"}
---International {"url":"http:\/\/www.abgeordnetenwatch.de\/international-248-0.html"}
+Wir über uns {"url":"ueber-uns"}
+-Jobs {"url":"ueber-uns\/jobs"}
+-Mehr über uns {"url":"ueber-uns\/mehr"}
+--Erfolge {"url":"ueber-uns\/mehr\/erfolge"}
+--Mitwirkende {"url":"ueber-uns\/mehr\/mitwirkende"}
+--Kuratorium {"url":"ueber-uns\/mehr\/kuratorium"}
+---Trustee (menu position rule) {"url":"menu-position\/7","description":"Sets access to all menu position links.","hidden":true}
+--Moderations-Codex {"url":"ueber-uns\/mehr\/moderations-codex"}
+--Finanzierung {"url":"ueber-uns\/mehr\/finanzierung"}
+---Finanzierung Parlamentwatch GmbH {"url":"ueber-uns\/mehr\/finanzierung\/parlamentwatch-gmbh","hidden":true}
+---Finanzierung Parlamentwatch e.V. {"url":"ueber-uns\/mehr\/finanzierung\/parlamentwatch-eV","hidden":true}
+--Social Entrepreneur {"url":"ueber-uns\/mehr\/social-entreprenuer"}
+--International {"url":"ueber-uns\/mehr\/international"}
 -Blog {"url":"blog"}
 --Blog tagdelic (menu position rule) {"url":"menu-position\/4","description":"Sets access to all menu position links.","hidden":true}
+--Blogcategories (menu position rule) {"url":"menu-position\/6","description":"Sets access to all menu position links.","hidden":true}
 --Blogpost (menu position rule) {"url":"menu-position\/1","description":"Sets access to all menu position links.","hidden":true}
 --Blogtags (menu position rule) {"url":"menu-position\/2","description":"Sets access to all menu position links.","hidden":true}
 --Blogterms (menu position rule) {"url":"menu-position\/3","description":"Sets access to all menu position links.","hidden":true}
 --Press release (menu position rule) {"url":"menu-position\/5","description":"Sets access to all menu position links.","hidden":true}
--Mitmachen {"url":"http:\/\/www.abgeordnetenwatch.de\/mitmachen-744-0.html"}
---Parlamentsbeobachter {"url":"http:\/\/www.abgeordnetenwatch.de\/parlamentsbeobachter-710-0.html"}
---Infopaket bestellen {"url":"http:\/\/www.abgeordnetenwatch.de\/infopaket_bestellen-547-0.html"}
+-Mitmachen {"url":"ueber-uns\/mitmachen"}
+--Parlamentsbeobachter {"url":"ueber-uns\/mitmachen\/parlamentsbeobachter"}
+--Infopaket bestellen {"url":"ueber-uns\/mitmachen\/infopaket"}
 --Verlinken Sie uns {"url":"http:\/\/www.abgeordnetenwatch.de\/verlinken_sie_uns-162-0.html"}
---Feedback {"url":"http:\/\/www.abgeordnetenwatch.de\/feedback-774-0.html"}
--FAQ {"url":"http:\/\/www.abgeordnetenwatch.de\/faq-471-0.html"}
+-FAQ {"url":"ueber-uns\/faq"}
+--abgeordnetenwatch in 3 Minuten {"url":"ueber-uns\/faq\/in-drei-minuten","hidden":true}
 -Presse {"url":"ueber-uns\/presse"}
 --Pressespiegel {"url":"ueber-uns\/presse"}
 --Pressemitteilungen {"url":"ueber-uns\/presse\/pressemitteilungen"}
 -Login-Bereich {"url":"http:\/\/www.abgeordnetenwatch.de\/login_bereich-846-0.html"}
--Impressum {"url":"http:\/\/www.abgeordnetenwatch.de\/impressum-173-0.html"}
+-Impressum {"url":"ueber-uns\/impressum"}
 -Spenden {"url":"http:\/\/www.abgeordnetenwatch.de\/spenden-452-0.html"}

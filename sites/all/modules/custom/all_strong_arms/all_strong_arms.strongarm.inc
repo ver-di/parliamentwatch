@@ -14,7 +14,7 @@ function all_strong_arms_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_page';
-  $strongarm->value = 'edit-submenutree';
+  $strongarm->value = 'edit-page-title';
   $export['additional_settings__active_tab_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -35,7 +35,7 @@ function all_strong_arms_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_trustee';
-  $strongarm->value = 'edit-weight-settings';
+  $strongarm->value = 'edit-custom-breadcrumbs';
   $export['additional_settings__active_tab_trustee'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -546,9 +546,11 @@ webform-client-form-17
 webform-client-form-18
 webform-client-form-25
 webform-client-form-6313
+webform-client-form-6578
 views-exposed-form-profile-list-solr-block-2
 views-exposed-form-profile-list-solr-constituency
-custom-search-blocks-form-1';
+custom-search-blocks-form-1
+search-old';
   $export['compact_forms_ids'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1605,7 +1607,9 @@ custom-search-blocks-form-1';
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-main-menu-de',
+    1 => 'menu-support-us-de',
+    2 => 'menu-about-us-de',
   );
   $export['menu_options_page'] = $strongarm;
 
@@ -1636,7 +1640,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_page';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-main-menu-de:0';
   $export['menu_parent_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1819,7 +1823,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_pattern';
-  $strongarm->value = 'about/[node:title]';
+  $strongarm->value = '[node:title]';
   $export['pathauto_node_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2217,7 +2221,7 @@ custom-search-blocks-form-1';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'weight_range_trustee';
-  $strongarm->value = '10';
+  $strongarm->value = '50';
   $export['weight_range_trustee'] = $strongarm;
 
   return $export;

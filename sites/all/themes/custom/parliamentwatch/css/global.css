@@ -86,7 +86,9 @@ h3 {
 h2 a:link,
 h2 a:visited,
 h3 a:link,
-h3 a:visited {
+h3 a:visited,
+h4 a:link,
+h4 a:visited {
     color: #333;
     text-decoration: none;
 }
@@ -105,6 +107,17 @@ h4 {
 }
 .bg-white {
     background: #fff;
+}
+.boxed {
+    margin-bottom: 1.5em;
+}
+.boxed p:last-child {
+    margin-bottom: 0;
+}
+table.table th,
+table.table td {
+    border: 1px solid #999;
+    padding: 3px 5px;
 }
 p {
     margin-bottom: 1em;
@@ -468,6 +481,9 @@ h1#page-title {
 #region-sidebar-second .block {
     margin-bottom: 35px;
 }
+#region-sidebar-second .block p:last-child {
+    margin-bottom: 0;
+}
 
 /* colorbox */
 
@@ -545,9 +561,10 @@ h1#page-title {
 }
 
 #section-content #custom-search-blocks-form-1 {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 #section-content #custom-search-blocks-form-1 .form-actions {
+    position: absolute;
     top: 13px;
     bottom: 0;
     right: 7px;
@@ -1222,6 +1239,10 @@ textarea:active {
 .media-image-left {
     margin-right: 14px;
 }
+.file-image.float-right {
+    margin-left: 14px;
+    margin-bottom: 7px;
+}
 .media-image-left {
     margin-bottom: 7px;
 }
@@ -1230,7 +1251,8 @@ textarea:active {
     font-size: 10px;
     word-wrap: break-word;
 }
-.file-image img {
+.file-image img,
+img.file-image {
     outline: 1px solid #ccc;
 }
 .no-outline img,
@@ -1284,14 +1306,16 @@ img.no-outline {
 .field-type-taxonomy-term-reference li:last-child a:after {
     content: " ";
 }
-#block-views-blog-block-1 .views-row {
+#region-sidebar-second .view-blog .arrow-item,
+#region-sidebar-second .view-blog-comments .arrow-item {
     margin-bottom: 0;
     padding-top: 6px;
     padding-bottom: 6px;
     background-position: -770px -1890px;
     padding-right: 20px;
 }
-#block-views-blog-block-1 .views-row:hover {
+#region-sidebar-second .view-blog .arrow-item:hover,
+#region-sidebar-second .view-blog-comments .arrow-item:hover {
     background-color: #eee;
     padding-left: 21px;
     padding-right: 14px;
@@ -1416,9 +1440,6 @@ html.js fieldset.collapsed {
 
 .view-press-articles .download {
     text-align: right;
-}
-.view-press-release .read-more {
-    float: right;   
 }
 
 

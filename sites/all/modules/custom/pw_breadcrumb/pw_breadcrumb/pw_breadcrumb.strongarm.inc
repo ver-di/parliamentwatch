@@ -65,14 +65,32 @@ function pw_breadcrumb_strongarm() {
   $strongarm->name = 'custom_breadcrumbs_menu_list';
   $strongarm->value = array(
     'main-menu' => 'main-menu',
+    'management' => 'management',
     'menu-about-us-de' => 'menu-about-us-de',
     'menu-elections-de' => 'menu-elections-de',
     'menu-main-menu-de' => 'menu-main-menu-de',
     'menu-meta-de' => 'menu-meta-de',
     'menu-support-us-de' => 'menu-support-us-de',
+    'navigation' => 'navigation',
     'user-menu' => 'user-menu',
   );
   $export['custom_breadcrumbs_menu_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'custom_breadcrumbs_menu_theme';
+  $strongarm->value = array(
+    'abgeordnetenwatch' => array(
+      'menu_item' => NULL,
+      'menu_item_link' => NULL,
+    ),
+    'seven' => array(
+      'menu_item' => NULL,
+      'menu_item_link' => NULL,
+    ),
+  );
+  $export['custom_breadcrumbs_menu_theme'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -99,7 +117,7 @@ function pw_breadcrumb_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_breadcrumbs_set_menu_breadcrumb';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['custom_breadcrumbs_set_menu_breadcrumb'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -129,16 +147,13 @@ function pw_breadcrumb_strongarm() {
   $strongarm->name = 'custom_breadcrumbs_taxonomy_excluded_vocabs';
   $strongarm->value = array(
     14 => 0,
+    31 => 0,
     24 => 0,
     15 => 0,
     16 => 0,
     17 => 0,
     25 => 0,
     26 => 0,
-    27 => 0,
-    30 => 0,
-    29 => 0,
-    28 => 0,
     18 => 0,
     19 => 0,
     20 => 0,
@@ -169,7 +184,6 @@ function pw_breadcrumb_strongarm() {
   $strongarm->value = array(
     'article' => 0,
     'page' => 0,
-    'migrate_example_beer' => 0,
     'blogpost' => 0,
     'dialogue' => 0,
     'migrate_extras_media_example' => 0,
@@ -180,9 +194,6 @@ function pw_breadcrumb_strongarm() {
     'slider_item' => 0,
     'trustee' => 0,
     'webform' => 0,
-    'migrate_example_wine' => 0,
-    'migrate_example_producer' => 0,
-    'migrate_example_baseball' => 0,
   );
   $export['custom_breadcrumbs_taxonomy_node_types'] = $strongarm;
 

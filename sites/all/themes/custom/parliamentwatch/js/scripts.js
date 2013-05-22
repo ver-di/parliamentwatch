@@ -1,5 +1,19 @@
 jQuery(document).ready(function() {
 
+////// intelligente on:blur
+    jQuery("input[type=text],textarea").blur(function() {
+        if(jQuery(this).val() == "") {
+            jQuery(this).val(jQuery(this).attr("alt"));
+        }
+    });
+
+// intelligentes on:focus
+    jQuery("input[type=text],textarea").focus(function() {
+        if(jQuery(this).val() == jQuery(this).attr("alt")) {
+            jQuery(this).val("");
+        }
+    });
+
 ////// slide to comments
 
    jQuery(".node-blogpost.view-mode-full .comment-count")

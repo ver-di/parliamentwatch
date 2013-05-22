@@ -455,6 +455,44 @@ function pw_blog_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|blogpost|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'blogpost';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'sharethis',
+        1 => 'title',
+        2 => 'group_blogtags_author',
+        3 => 'post_date',
+        4 => 'author',
+        5 => 'field_teaser_image',
+        6 => 'body',
+        7 => 'field_blogpost_blogtags',
+        8 => 'comments',
+      ),
+    ),
+    'fields' => array(
+      'sharethis' => 'ds_content',
+      'title' => 'ds_content',
+      'group_blogtags_author' => 'ds_content',
+      'post_date' => 'ds_content',
+      'author' => 'ds_content',
+      'field_teaser_image' => 'ds_content',
+      'body' => 'ds_content',
+      'field_blogpost_blogtags' => 'ds_content',
+      'comments' => 'ds_content',
+    ),
+    'classes' => array(),
+  );
+  $export['node|blogpost|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|blogpost|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'blogpost';

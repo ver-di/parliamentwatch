@@ -128,7 +128,7 @@ function pw_press_feeds_importer_default() {
           'xpathparser:2' => 0,
           'xpathparser:3' => 0,
         ),
-        'context' => '//aw_pressemitteilungen',
+        'context' => '//aw_artikel',
         'exp' => array(
           'errors' => 1,
           'debug' => array(

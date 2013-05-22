@@ -621,9 +621,9 @@ function pw_press_field_default_fields() {
             'youtube' => 'youtube',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'document' => 0,
-            'image' => 0,
+            'audio' => 'audio',
+            'document' => 'document',
+            'image' => 'image',
             'video' => 'video',
           ),
           'browser_plugins' => array(
