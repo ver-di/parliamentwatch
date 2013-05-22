@@ -217,7 +217,8 @@ function profiles_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Calendar of [field_user_fname] [field_user_lname],[field_user_party]"></div>
-[field_user_picture]';
+[php]
+<span class="form-submit big link-question">[name]</span> ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -393,6 +394,50 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_m',
   );
+  /* Field: Excluded | UID */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'node';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['ui_name'] = 'Excluded | UID';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: Excluded | PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$profiluser = user_load($row->uid);
+$profiluserroles = $profiluser->roles;
+if(in_array("Premium User",$profiluserroles)) {
+print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Field: Excluded | Ask a question */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['ui_name'] = 'Excluded | Ask a question';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]#block-webform-client-block-17';
+  $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -420,7 +465,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Calendar Entry from [field_user_fname][field_user_lname]"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Calendar Entry from [field_user_fname] [field_user_lname], [title] [field_calendar_entry_date]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -542,6 +587,22 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Field: Excluded | Date */
+  $handler->display->display_options['fields']['field_calendar_entry_date']['id'] = 'field_calendar_entry_date';
+  $handler->display->display_options['fields']['field_calendar_entry_date']['table'] = 'field_data_field_calendar_entry_date';
+  $handler->display->display_options['fields']['field_calendar_entry_date']['field'] = 'field_calendar_entry_date';
+  $handler->display->display_options['fields']['field_calendar_entry_date']['ui_name'] = 'Excluded | Date';
+  $handler->display->display_options['fields']['field_calendar_entry_date']['label'] = '';
+  $handler->display->display_options['fields']['field_calendar_entry_date']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_calendar_entry_date']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_calendar_entry_date']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_calendar_entry_date']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -701,14 +762,15 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
     t('Calendar of [field_user_fname] [field_user_lname], [field_user_party]'),
     t('Calendar Page for sharing'),
     t('<div class="add-sharethis" title="Calendar of [field_user_fname] [field_user_lname],[field_user_party]"></div>
-[field_user_picture]'),
+[php]
+<span class="form-submit big link-question">[name]</span> '),
     t('[view_user]'),
     t('+ Add'),
     t('<< go back to profil'),
-    t('Short Profile for Calendar Entry'),
-    t('<div class="add-sharethis" title="Calendar Entry from [field_user_fname][field_user_lname]"></div>'),
-    t('go back to full calendar'),
     t('Ask a Question'),
+    t('Short Profile for Calendar Entry'),
+    t('<div class="add-sharethis" title="Calendar Entry from [field_user_fname] [field_user_lname], [title] [field_calendar_entry_date]"></div>'),
+    t('go back to full calendar'),
     t('Back to Calendar Block'),
     t('Small Block for Calendar Entry Footer Section to go back to main Calendar'),
     t('<< to full calendar'),
@@ -3045,6 +3107,7 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['created_1']['id'] = 'created_1';
   $handler->display->display_options['sorts']['created_1']['table'] = 'node';
   $handler->display->display_options['sorts']['created_1']['field'] = 'created';
+  $handler->display->display_options['sorts']['created_1']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_1']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Date of Question';
   /* Sort criterion: Comment: Post date */
@@ -3052,14 +3115,16 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['created_2']['table'] = 'comment';
   $handler->display->display_options['sorts']['created_2']['field'] = 'created';
   $handler->display->display_options['sorts']['created_2']['relationship'] = 'cid';
+  $handler->display->display_options['sorts']['created_2']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Date of Answers';
+  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Post date';
   /* Sort criterion: Content: Comment count */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['sorts']['comment_count']['order'] = 'DESC';
   $handler->display->display_options['sorts']['comment_count']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Comment count';
+  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Answer count';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -3432,6 +3497,7 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['created_1']['id'] = 'created_1';
   $handler->display->display_options['sorts']['created_1']['table'] = 'node';
   $handler->display->display_options['sorts']['created_1']['field'] = 'created';
+  $handler->display->display_options['sorts']['created_1']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_1']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Date of Question';
   /* Sort criterion: Comment: Post date */
@@ -3439,6 +3505,7 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['created_2']['table'] = 'comment';
   $handler->display->display_options['sorts']['created_2']['field'] = 'created';
   $handler->display->display_options['sorts']['created_2']['relationship'] = 'cid';
+  $handler->display->display_options['sorts']['created_2']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Date of Answers';
   /* Sort criterion: Content: Comment count */
@@ -3446,7 +3513,7 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Comment count';
+  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Answer count';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -3539,6 +3606,15 @@ if($record->value == 0){
       ),
     ),
   );
+  /* Filter criterion: Content: Post date */
+  $handler->display->display_options['filters']['created']['id'] = 'created';
+  $handler->display->display_options['filters']['created']['table'] = 'node';
+  $handler->display->display_options['filters']['created']['field'] = 'created';
+  $handler->display->display_options['filters']['created']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['created']['expose']['operator_id'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['label'] = 'Post date';
+  $handler->display->display_options['filters']['created']['expose']['operator'] = 'created_op';
+  $handler->display->display_options['filters']['created']['expose']['identifier'] = 'created';
   $handler->display->display_options['displays'] = array(
     'panel_pane_1' => 'panel_pane_1',
     'default' => 0,
@@ -3614,13 +3690,15 @@ if($record->value == 0){
     t('FULL MODE-----------------------------------------------------------------'),
     t('Post date Question'),
     t('Date of Question'),
-    t('Date of Answers'),
-    t('Comment count'),
+    t('Post date'),
+    t('Answer count'),
     t('Frage oder Antwort nach Stichwort anzeigen'),
     t('Nach Thema der Frage filtern'),
+    t('Comment count'),
     t('Answer State'),
     t('View panes'),
     t('Attachment'),
+    t('Date of Answers'),
     t('Topic (field_dialogue_topic)'),
   );
   $export['profile_questions_answers'] = $view;
@@ -4494,8 +4572,9 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Imagegallery of [field_user_fname] [field_user_fname],[field_user_party]"></div>
-[field_user_picture]
-[name] ';
+[php] 
+<span class="form-submit big link-question">[name]</span> 
+';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -4525,6 +4604,34 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_m',
   );
+  /* Field: Excluded | UID */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['ui_name'] = 'Excluded | UID';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: Excluded | PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$profiluser = user_load($row->uid);
+$profiluserroles = $profiluser->roles;
+if(in_array("Premium User",$profiluserroles)) {
+print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Field: Excluded | Ask a question */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -4567,6 +4674,7 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['fields']['field_user_party']['label'] = '';
   $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
   /* Field: Excluded | to the full profile */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
@@ -4632,7 +4740,8 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Additional Links of [field_user_fname] [field_user_lname], [field_user_party]"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Additional Links of [field_user_fname] [field_user_lname], [field_user_party]"></div>
+[php]';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -4665,11 +4774,13 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Field: Global: PHP */
+  /* Field: Excluded | PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP';
   $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
@@ -4905,12 +5016,14 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
     t('Image Gallery Page'),
     t('Image Gallery of [field_user_fname] [field_user_lname], [field_user_party] '),
     t('<div class="add-sharethis" title="Imagegallery of [field_user_fname] [field_user_fname],[field_user_party]"></div>
-[field_user_picture]
-[name] '),
+[php] 
+<span class="form-submit big link-question">[name]</span> 
+'),
     t('[view_user]'),
     t('Additional Links Page'),
     t('Additional Links of [field_user_fname] [field_user_lname], [field_user_party] '),
-    t('<div class="add-sharethis" title="Additional Links of [field_user_fname] [field_user_lname], [field_user_party]"></div>'),
+    t('<div class="add-sharethis" title="Additional Links of [field_user_fname] [field_user_lname], [field_user_party]"></div>
+[php]'),
     t('Profile Picture'),
     t('User Profile Picture and Copyright'),
     t('file from field_user_picture'),
