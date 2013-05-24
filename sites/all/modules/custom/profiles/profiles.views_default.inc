@@ -413,11 +413,18 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
+dpm($data->field_field_user_picture);
 $profiluser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+
+print render( $data->field_field_user_picture);
 }
+
+
 
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -509,6 +516,7 @@ $profiluser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
 }
 
 ?>';
@@ -678,9 +686,46 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
 
   /* Display: Calendar Admin  View */
-  $handler = $view->new_display('block', 'Calendar Admin  View', 'block_2');
-  $handler->display->display_options['enabled'] = FALSE;
+  $handler = $view->new_display('block', 'Calendar Admin  View', 'calendar_admin_block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_calendar_entry_date' => 'field_calendar_entry_date',
+    'title' => 'title',
+    'delete_node' => 'delete_node',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_calendar_entry_date' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'delete_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -4350,6 +4395,7 @@ $profiluser = $myuser = user_load($row->rid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
 }
 
 ?>';
@@ -4483,6 +4529,7 @@ $profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -4627,6 +4674,7 @@ $profiluser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
 }
 
 ?>';
@@ -4788,6 +4836,7 @@ $profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -4912,6 +4961,7 @@ $profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
