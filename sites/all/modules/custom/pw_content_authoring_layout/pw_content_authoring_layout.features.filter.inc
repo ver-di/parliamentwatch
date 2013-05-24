@@ -10,26 +10,10 @@
 function pw_content_authoring_layout_filter_default_formats() {
   $formats = array();
 
-  // Exported format: Display Suite code.
-  $formats['ds_code'] = array(
-    'format' => 'ds_code',
-    'name' => 'Display Suite code',
-    'cache' => '0',
-    'status' => '1',
-    'weight' => '-5',
-    'filters' => array(
-      'ds_code' => array(
-        'weight' => '0',
-        'status' => '1',
-        'settings' => array(),
-      ),
-    ),
-  );
-
-  // Exported format: Filtered HTML.
+  // Exported format: Basic.
   $formats['filtered_html'] = array(
     'format' => 'filtered_html',
-    'name' => 'Filtered HTML',
+    'name' => 'Basic',
     'cache' => '1',
     'status' => '1',
     'weight' => '-9',
@@ -45,8 +29,8 @@ function pw_content_authoring_layout_filter_default_formats() {
         'weight' => '1',
         'status' => '1',
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
-          'filter_html_help' => 1,
+          'allowed_html' => '<a><em> <strong> <cite> <blockquote> <ul> <ol> <li> <dl> <dt> <dd>',
+          'filter_html_help' => 0,
           'filter_html_nofollow' => 0,
         ),
       ),
@@ -91,6 +75,33 @@ function pw_content_authoring_layout_filter_default_formats() {
         'status' => '1',
         'settings' => array(),
       ),
+      'ds_code' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(),
+      ),
+      'filter_url' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(
+          'filter_url_length' => '72',
+        ),
+      ),
+      'twitter_hashtag' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(),
+      ),
+      'twitter_links' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(),
+      ),
+      'twitter_username' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(),
+      ),
     ),
   );
 
@@ -119,8 +130,8 @@ function pw_content_authoring_layout_filter_default_formats() {
           'filter_url_length' => '72',
         ),
       ),
-      'filter_floatbox' => array(
-        'weight' => '-43',
+      'filter_htmlcorrector' => array(
+        'weight' => '-42',
         'status' => '1',
         'settings' => array(),
       ),

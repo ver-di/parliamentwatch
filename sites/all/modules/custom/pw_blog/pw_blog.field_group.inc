@@ -21,16 +21,17 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
-      0 => 'author',
-      1 => 'post_date',
+      0 => 'field_blogpost_categories',
+      1 => 'author_linked_to_contact_form',
+      2 => 'post_date',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => '',
       'instance_settings' => array(
-        'classes' => 'push-bottom-m',
+        'classes' => 'push-bottom-m medium',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -49,7 +50,7 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metainformation',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'field_blogpost_blogtags',
       1 => 'custom_comment_counter',
@@ -69,6 +70,40 @@ function pw_blog_field_group_info() {
     ),
   );
   $export['group_blog_metainformation|node|blogpost|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_blog_searchitem|node|blogpost|search_result';
+  $field_group->group_name = 'group_blog_searchitem';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blogpost';
+  $field_group->mode = 'search_result';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'PW list item',
+    'weight' => '0',
+    'children' => array(
+      0 => 'title',
+      1 => 'node_link',
+      2 => 'post_date',
+      3 => 'search_snippet',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'PW list item',
+      'instance_settings' => array(
+        'classes' => 'pw-list-item',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_blog_searchitem|node|blogpost|search_result'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -109,11 +144,8 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Body',
-    'weight' => '2',
-    'children' => array(
-      0 => 'body',
-      1 => 'node_link',
-    ),
+    'weight' => '14',
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Body',

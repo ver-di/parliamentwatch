@@ -14,7 +14,7 @@ function all_strong_arms_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_page';
-  $strongarm->value = 'edit-submenutree';
+  $strongarm->value = 'edit-page-title';
   $export['additional_settings__active_tab_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -35,7 +35,7 @@ function all_strong_arms_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_trustee';
-  $strongarm->value = 'edit-weight-settings';
+  $strongarm->value = 'edit-custom-breadcrumbs';
   $export['additional_settings__active_tab_trustee'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -44,6 +44,13 @@ function all_strong_arms_strongarm() {
   $strongarm->name = 'additional_settings__active_tab_user_profile_metadata';
   $strongarm->value = 'edit-submission';
   $export['additional_settings__active_tab_user_profile_metadata'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'better_formats_per_field_core';
+  $strongarm->value = 1;
+  $export['better_formats_per_field_core'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -312,7 +319,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_webform';
-  $strongarm->value = 0;
+  $strongarm->value = '0';
   $export['comment_anonymous_webform'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -531,7 +538,6 @@ node/*/edit';
   $strongarm->name = 'compact_forms_ids';
   $strongarm->value = 'user-login-form
 webform-client-form-6
-forward-form
 comment-form
 webform-client-form-12
 webform-client-form-14
@@ -539,8 +545,12 @@ webform-client-form-15
 webform-client-form-17
 webform-client-form-18
 webform-client-form-25
+webform-client-form-6313
+webform-client-form-6578
 views-exposed-form-profile-list-solr-block-2
-views-exposed-form-profile-list-solr-constituency';
+views-exposed-form-profile-list-solr-constituency
+custom-search-blocks-form-1
+search-old';
   $export['compact_forms_ids'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -722,7 +732,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_delta';
-  $strongarm->value = '';
+  $strongarm->value = 'blocks_1_';
   $export['custom_search_delta'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -781,11 +791,20 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->value = array(
     'article' => 0,
     'page' => 0,
+    'migrate_example_beer' => 0,
+    'blogpost' => 0,
     'dialogue' => 0,
+    'migrate_extras_media_example' => 0,
+    'migrate_example_pathauto' => 0,
     'pw_poll' => 0,
+    'press_release' => 0,
+    'press_article' => 0,
     'slider_item' => 0,
     'trustee' => 0,
     'webform' => 0,
+    'migrate_example_wine' => 0,
+    'migrate_example_producer' => 0,
+    'migrate_example_baseball' => 0,
   );
   $export['custom_search_node_types'] = $strongarm;
 
@@ -794,13 +813,22 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_search_node_types_excluded';
   $strongarm->value = array(
-    'slider_item' => 'slider_item',
     'article' => 0,
     'page' => 0,
+    'migrate_example_beer' => 0,
+    'blogpost' => 0,
     'dialogue' => 0,
+    'migrate_extras_media_example' => 0,
+    'migrate_example_pathauto' => 0,
     'pw_poll' => 0,
+    'press_release' => 0,
+    'press_article' => 0,
+    'slider_item' => 0,
     'trustee' => 0,
     'webform' => 0,
+    'migrate_example_wine' => 0,
+    'migrate_example_producer' => 0,
+    'migrate_example_baseball' => 0,
   );
   $export['custom_search_node_types_excluded'] = $strongarm;
 
@@ -1017,6 +1045,20 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_date_and_time';
+  $strongarm->value = 'm/d/Y \\a\\t H:i';
+  $export['date_format_date_and_time'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_date_only_short';
+  $strongarm->value = 'd.m.Y';
+  $export['date_format_date_only_short'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'default_field_group';
   $strongarm->value = array(
     'group_polls_party|node|pw_poll|default' => TRUE,
@@ -1025,6 +1067,8 @@ views-exposed-form-profile-list-solr-constituency';
     'group_user_polls|user|user|default' => FALSE,
     'group_user_polls_last|user|user|default' => FALSE,
     'group_user_polls_archive|user|user|default' => FALSE,
+    'group_blog_searchitem|node|blogpost|search_result' => FALSE,
+    'group_blog_searchmeta|node|blogpost|search_result' => TRUE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -1067,7 +1111,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_search_group_by_type';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['ds_search_group_by_type'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1101,15 +1145,51 @@ views-exposed-form-profile-list-solr-constituency';
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
+    'migrate_example_beer' => array(
+      'status' => 1,
+      'label' => 'Results for beer',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'blogpost' => array(
+      'status' => 1,
+      'label' => 'Results for blogpost',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
     'dialogue' => array(
       'status' => 1,
       'label' => 'Results for dialogue',
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
+    'migrate_extras_media_example' => array(
+      'status' => 1,
+      'label' => 'Results for migrate extras media example',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'migrate_example_pathauto' => array(
+      'status' => 1,
+      'label' => 'Results for migrate example - pathauto',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
     'pw_poll' => array(
       'status' => 1,
       'label' => 'Results for pw poll',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'press_release' => array(
+      'status' => 1,
+      'label' => 'Results for press release',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'press_article' => array(
+      'status' => 1,
+      'label' => 'Results for presseartikel',
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
@@ -1128,6 +1208,24 @@ views-exposed-form-profile-list-solr-constituency';
     'webform' => array(
       'status' => 1,
       'label' => 'Results for webform',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'migrate_example_wine' => array(
+      'status' => 1,
+      'label' => 'Results for wine',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'migrate_example_producer' => array(
+      'status' => 1,
+      'label' => 'Results for wine producer',
+      'wrapper' => 'fieldset',
+      'weight' => '0',
+    ),
+    'migrate_example_baseball' => array(
+      'status' => 1,
+      'label' => 'Results for migrate_example_baseball',
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
@@ -1152,14 +1250,14 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_search_language';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['ds_search_language'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ds_search_node_form_alter';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['ds_search_node_form_alter'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1264,6 +1362,12 @@ views-exposed-form-profile-list-solr-constituency';
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'teaser' => array(
+        'custom_settings' => FALSE,
+      ),
+      'preview' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -1290,6 +1394,10 @@ views-exposed-form-profile-list-solr-constituency';
             'visible' => TRUE,
           ),
           'pw_file_portrait_s' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'preview' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),
@@ -1389,13 +1497,6 @@ views-exposed-form-profile-list-solr-constituency';
     ),
   );
   $export['field_bundle_settings_node__webform'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'forward_display_pw_poll';
-  $strongarm->value = 0;
-  $export['forward_display_pw_poll'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1506,7 +1607,9 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_page';
   $strongarm->value = array(
-    0 => 'main-menu',
+    0 => 'menu-main-menu-de',
+    1 => 'menu-support-us-de',
+    2 => 'menu-about-us-de',
   );
   $export['menu_options_page'] = $strongarm;
 
@@ -1537,7 +1640,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_page';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'menu-main-menu-de:0';
   $export['menu_parent_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1572,7 +1675,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'nice_menus_custom_css';
-  $strongarm->value = 'sites/all/themes/custom/abgeordnetenwatch/css/nicemenu.css';
+  $strongarm->value = 'sites/all/themes/custom/parliamentwatch/css/nicemenu.css';
   $export['nice_menus_custom_css'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1720,7 +1823,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_pattern';
-  $strongarm->value = 'about/[node:title]';
+  $strongarm->value = '[node:title]';
   $export['pathauto_node_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1817,10 +1920,52 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_bg_color_hover';
+  $strongarm->value = '#ffffff';
+  $export['scroll_to_top_bg_color_hover'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_bg_color_out';
+  $strongarm->value = '#ffffff';
+  $export['scroll_to_top_bg_color_out'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_display_text';
+  $strongarm->value = 1;
+  $export['scroll_to_top_display_text'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_enable_admin_theme';
+  $strongarm->value = 0;
+  $export['scroll_to_top_enable_admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_label';
+  $strongarm->value = 'Back to top';
+  $export['scroll_to_top_label'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'scroll_to_top_position';
+  $strongarm->value = '1';
+  $export['scroll_to_top_position'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'search_active_modules';
   $strongarm->value = array(
-    'node' => 'node',
-    'ds_search' => 0,
+    'ds_search' => 'ds_search',
+    'node' => 0,
     'user' => 0,
   );
   $export['search_active_modules'] = $strongarm;
@@ -1829,22 +1974,15 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_cron_limit';
-  $strongarm->value = '100';
+  $strongarm->value = '200';
   $export['search_cron_limit'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'search_default_module';
-  $strongarm->value = 'node';
+  $strongarm->value = 'ds_search';
   $export['search_default_module'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'secureshare_fields_node_pw_poll';
-  $strongarm->value = '';
-  $export['secureshare_fields_node_pw_poll'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1878,7 +2016,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_node_option';
-  $strongarm->value = 'pw_poll,0,0,0,0,0,0';
+  $strongarm->value = 'blogpost,press_article,press_release,pw_poll,0,0,0,0,0,0,0,0';
   $export['sharethis_node_option'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1937,7 +2075,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_weight';
-  $strongarm->value = '10';
+  $strongarm->value = '-100';
   $export['sharethis_weight'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2036,9 +2174,18 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_types';
   $strongarm->value = array(
-    0 => 'page',
-    1 => 'slider_item',
-    2 => 'webform',
+    0 => 'article',
+    1 => 'page',
+    2 => 'blogpost',
+    3 => 'dialogue',
+    4 => 'migrate_extras_media_example',
+    5 => 'migrate_example_pathauto',
+    6 => 'pw_poll',
+    7 => 'press_release',
+    8 => 'press_article',
+    9 => 'slider_item',
+    10 => 'trustee',
+    11 => 'webform',
   );
   $export['webform_node_types'] = $strongarm;
 
@@ -2074,7 +2221,7 @@ views-exposed-form-profile-list-solr-constituency';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'weight_range_trustee';
-  $strongarm->value = '10';
+  $strongarm->value = '50';
   $export['weight_range_trustee'] = $strongarm;
 
   return $export;

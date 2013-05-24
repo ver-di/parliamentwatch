@@ -34,7 +34,10 @@ function subsite_conf_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Social Media Footer';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'social_media_footer';
-  $fe_block_boxes->body = '<ul class="menu"><li class="first leaf facebook"><a title="" href="https://www.facebook.com/dailwatch">Facebook</a></li><li class="leaf twitter"><a title="" href="https://twitter.com/dailwatch">Twitter</a></li></ul>';
+  $fe_block_boxes->body = '<ul class="menu">
+<li class="first leaf facebook"><a title="" href="https://www.facebook.com/dailwatch">Facebook</a></li>
+<li class="leaf twitter"><a title="" href="https://twitter.com/dailwatch">Twitter</a></li>
+</ul>';
 
   $export['social_media_footer'] = $fe_block_boxes;
 

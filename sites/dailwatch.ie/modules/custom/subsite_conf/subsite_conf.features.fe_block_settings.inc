@@ -74,7 +74,7 @@ function subsite_conf_default_fe_block_settings() {
         'weight' => '0',
       ),
     ),
-    'title' => '',
+    'title' => 'Social Media',
     'visibility' => '0',
   );
 
@@ -132,39 +132,6 @@ function subsite_conf_default_fe_block_settings() {
         'status' => '1',
         'theme' => 'dailwatch',
         'weight' => '-26',
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => '0',
-      ),
-    ),
-    'title' => '',
-    'visibility' => '0',
-  );
-
-  $export['forward-form'] = array(
-    'cache' => -1,
-    'custom' => '0',
-    'delta' => 'form',
-    'i18n_mode' => '0',
-    'module' => 'forward',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => '0',
-      ),
-      'dailwatch' => array(
-        'region' => 'postscript_fourth',
-        'status' => '1',
-        'theme' => 'dailwatch',
-        'weight' => '-25',
       ),
       'seven' => array(
         'region' => '',
@@ -332,8 +299,8 @@ function subsite_conf_default_fe_block_settings() {
         'weight' => '-26',
       ),
       'seven' => array(
-        'region' => 'dashboard_inactive',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'seven',
         'weight' => '-10',
       ),

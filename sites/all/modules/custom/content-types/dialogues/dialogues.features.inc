@@ -39,7 +39,7 @@ function dialogues_node_info() {
       'base' => 'node_content',
       'description' => t('A dialogue. The node content is the question, comments are answers by the politician or further questions. Node and questions have the same fields.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );
