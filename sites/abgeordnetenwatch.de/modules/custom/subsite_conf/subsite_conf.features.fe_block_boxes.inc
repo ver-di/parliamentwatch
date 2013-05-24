@@ -26,10 +26,8 @@ function subsite_conf_default_fe_block_boxes() {
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'blog_description';
   $fe_block_boxes->body = '<p>
-	Unser Blog ist - wie das Gesamtprojekt "abgeordnetenwatch.de" - überparteilich. Politikerinnen und Politiker werden nicht aufgrund ihrer Parteizugehörigkeit bevorzugt, benachteiligt, kritisiert oder hervorgehoben. Der Blog versteht sich als ergänzende Diskussionsplattform zum Angebot von abgeordnetenwatch.de. Er berichtet über das Projekt und nimmt Stellung zu Transparenz, Bürgernähe<br />
-	und Teilhabe in der Politik.
+	Unser Blog ist - wie das Gesamtprojekt "abgeordnetenwatch.de" - überparteilich. Politikerinnen und Politiker werden nicht aufgrund ihrer Parteizugehörigkeit bevorzugt, benachteiligt, kritisiert oder hervorgehoben. Der Blog versteht sich als ergänzende Diskussionsplattform zum Angebot von abgeordnetenwatch.de. Er berichtet über das Projekt und nimmt Stellung zu Transparenz, Bürgernähe&nbsp;und Teilhabe in der Politik.
 </p>
-
 <p>
 	Alle Leserinnen und Leser sind eingeladen an der Diskussion teilzunehmen. Die Blogautoren selbst sind Mitglieder des abgeordnetenwatch.de-Teams. Ihre Einträge drücken nicht unbedingt die Position des Gesamtprojekts abgeordnetenwatch.de aus.&nbsp;
 </p>
@@ -189,7 +187,7 @@ function subsite_conf_default_fe_block_boxes() {
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'recherche';
   $fe_block_boxes->body = '<p>
-	Wir bemühen uns stets, alle Informationen sorgfältig und gewissenhaft zu recherchieren. Sollten uns trotzdem Fehler unterlaufen, dann senden Sie bitte einen <a class="colorbox-node" href="/node/6578">kurzen Hinweis</a>.
+	Wir bemühen uns stets, alle Informationen sorgfältig und gewissenhaft zu recherchieren. Sollten uns trotzdem Fehler unterlaufen, dann senden Sie bitte einen <a class="colorbox-node" href="/node/6578?width=600&amp;height=400">kurzen Hinweis</a>.
 </p>
 ';
 
@@ -202,11 +200,9 @@ function subsite_conf_default_fe_block_boxes() {
   $fe_block_boxes->body = '<form action="http://www.abgeordnetenwatch.de/index.php" class="compact-form" id="search-old">
     <input type="hidden" value="223" name="cmd" />
 <div class="form-item webform-component webform-component-textfield compact-form-wrapper">
-    <input type="text" value="Suchwort oder PLZ" alt="Suchwort oder PLZ" id="search-old-txt" class="form-text required compact-form-field" name="q"  />
+    <input type="text" value="Suchwort" alt="Suchwort" id="search-old-txt" class="form-text required compact-form-field" name="q"  />
 </div>
 <div id="edit-actions" class="form-actions form-wrapper"><input type="image" src="http://ruth.parliamentwatch.org/sites/abgeordnetenwatch.de/files/custom_search/ic_search.png" value="Suchen" name="op" id="edit-submit" class="custom-search-button form-submit" alt="Search"></div>
-
-<div class="clear clearfix">Geben Sie Ihre <strong>Postleitzahl</strong> ein um zu Ihren Ansprechpartnern in der Politik zu gelangen oder finden Sie Ihr Thema über ein <strong>Suchwort</strong>.</div>
  </form>';
 
   $export['search_old'] = $fe_block_boxes;
@@ -216,11 +212,17 @@ function subsite_conf_default_fe_block_boxes() {
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'social_media_footer';
   $fe_block_boxes->body = '<ul class="menu">
-<li class="first leaf facebook"><a title="" href="https://www.facebook.com/abgeordnetenwatch.de">Facebook</a></li>
-<li class="leaf twitter"><a title="" href="https://twitter.com/a_watch">Twitter</a></li>
-<li class="leaf google"><a title="" href="https://plus.google.com/101206126881536002255/">Google+</a></li>
-<li class="leaf rss"><a title="" href="/rss.xml">RSS</a></li>
-</ul>';
+	<li class="first leaf facebook">
+		<a href="https://www.facebook.com/abgeordnetenwatch.de" title="">Facebook</a>
+	</li>
+	<li class="leaf twitter">
+		<a href="https://twitter.com/a_watch" title="">Twitter</a>
+	</li>
+	<li class="leaf google">
+		<a href="https://plus.google.com/101206126881536002255/" title="">Google+</a>
+	</li>
+</ul>
+';
 
   $export['social_media_footer'] = $fe_block_boxes;
 

@@ -64,15 +64,7 @@ function pw_breadcrumb_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_breadcrumbs_menu_list';
   $strongarm->value = array(
-    'main-menu' => 'main-menu',
-    'management' => 'management',
-    'menu-about-us-de' => 'menu-about-us-de',
-    'menu-elections-de' => 'menu-elections-de',
     'menu-main-menu-de' => 'menu-main-menu-de',
-    'menu-meta-de' => 'menu-meta-de',
-    'menu-support-us-de' => 'menu-support-us-de',
-    'navigation' => 'navigation',
-    'user-menu' => 'user-menu',
   );
   $export['custom_breadcrumbs_menu_list'] = $strongarm;
 

@@ -37,7 +37,7 @@ function pw_blog_taxonomy_default_vocabularies() {
     'blogtags' => array(
       'name' => 'Blogtags',
       'machine_name' => 'blogtags',
-      'description' => '',
+      'description' => 'Tags in the Blog',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',

@@ -12,7 +12,6 @@ function subsite_conf_default_rules_configuration() {
   $items['rules_blog_comment_notification'] = entity_import('rules_config', '{ "rules_blog_comment_notification" : {
       "LABEL" : "Blog comment notification",
       "PLUGIN" : "reaction rule",
-      "ACTIVE" : false,
       "TAGS" : [ "blog" ],
       "REQUIRES" : [ "rules", "comment" ],
       "ON" : [ "comment_insert" ],

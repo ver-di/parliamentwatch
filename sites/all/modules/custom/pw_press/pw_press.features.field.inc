@@ -681,6 +681,13 @@ function pw_press_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '3',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -795,6 +802,19 @@ function pw_press_field_default_fields() {
           ),
           'type' => 'date_default',
           'weight' => '0',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
