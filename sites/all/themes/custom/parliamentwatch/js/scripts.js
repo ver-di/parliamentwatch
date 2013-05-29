@@ -1,6 +1,17 @@
 jQuery(document).ready(function() {
 
+////// open external links in new window
+
+    var domainparts = location.hostname.split('.');
+    var sndleveldomain = domainparts.slice(-2).join('.');
+
+    jQuery("a[href*='http://']:not([href*='"+sndleveldomain+"']),[href*='https://']:not([href*='"+sndleveldomain+"'])")
+        .attr("rel","external")
+        .attr("target","_blank")
+        .addClass("external");
+
 ////// intelligente on:blur
+
     jQuery("input[type=text],textarea").blur(function() {
         if(jQuery(this).val() == "") {
             jQuery(this).val(jQuery(this).attr("alt"));
@@ -8,6 +19,7 @@ jQuery(document).ready(function() {
     });
 
 // intelligentes on:focus
+
     jQuery("input[type=text],textarea").focus(function() {
         if(jQuery(this).val() == jQuery(this).attr("alt")) {
             jQuery(this).val("");
