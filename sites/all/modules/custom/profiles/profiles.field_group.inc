@@ -57,18 +57,17 @@ function profiles_field_group_info() {
       0 => 'field_profile_node_connector',
       1 => 'field_user_answers_give',
       2 => 'field_user_childs',
-      3 => 'field_user_commitee',
-      4 => 'field_user_first_letter_lname',
-      5 => 'field_user_gender',
-      6 => 'field_user_job_skills',
-      7 => 'field_user_marriage_status',
-      8 => 'field_user_parliament',
-      9 => 'field_user_political_roles',
-      10 => 'field_user_questions_get',
-      11 => 'field_user_list_position',
+      3 => 'field_user_first_letter_lname',
+      4 => 'field_user_gender',
+      5 => 'field_user_job_skills',
+      6 => 'field_user_marriage_status',
+      7 => 'field_user_questions_get',
+      8 => 'field_user_commitee',
+      9 => 'field_user_list_position',
+      10 => 'field_user_parliament',
+      11 => 'field_user_political_roles',
       12 => 'timezone',
       13 => 'locale',
-      14 => 'wysiwyg',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -128,10 +127,10 @@ function profiles_field_group_info() {
     'children' => array(
       0 => 'field_user_more',
       1 => 'field_user_picture',
-      2 => 'field_user_political_goals',
-      3 => 'field_user_about',
+      2 => 'field_user_about',
+      3 => 'field_user_address',
       4 => 'field_user_image_gallery',
-      5 => 'field_user_address',
+      5 => 'field_user_political_goals',
       6 => 'field_user_twitter_account',
     ),
     'format_type' => 'fieldset',
@@ -145,39 +144,6 @@ function profiles_field_group_info() {
     ),
   );
   $export['group_premium|user|user|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_profiles_mouseover|user|user|pw_profiles_list_compact';
-  $field_group->group_name = 'group_profiles_mouseover';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'pw_profiles_list_compact';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Mouseover',
-    'weight' => '7',
-    'children' => array(
-      0 => 'field_user_commitee',
-      1 => 'field_user_constituency',
-      2 => 'field_user_parliament',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Mouseover',
-      'instance_settings' => array(
-        'classes' => '',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'collapsible',
-    ),
-  );
-  $export['group_profiles_mouseover|user|user|pw_profiles_list_compact'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -250,8 +216,8 @@ function profiles_field_group_info() {
     'label' => 'Basics',
     'weight' => '13',
     'children' => array(
-      0 => 'field_user_constituency',
-      1 => 'field_user_job_skills',
+      0 => 'field_user_job_skills',
+      1 => 'field_user_constituency',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -376,39 +342,6 @@ function profiles_field_group_info() {
     ),
   );
   $export['group_user_name|user|user|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_name|user|user|user_search';
-  $field_group->group_name = 'group_user_name';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'user_search';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'User name',
-    'weight' => '1',
-    'children' => array(
-      0 => 'field_user_fname',
-      1 => 'field_user_lname',
-      2 => 'field_user_party',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'User name',
-      'instance_settings' => array(
-        'classes' => 'h3',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $export['group_user_name|user|user|user_search'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

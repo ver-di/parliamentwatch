@@ -56,7 +56,8 @@ function profiles_user_default_permissions() {
   $permissions['create field_user_childs'] = array(
     'name' => 'create field_user_childs',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -85,7 +86,8 @@ function profiles_user_default_permissions() {
   $permissions['create field_user_gender'] = array(
     'name' => 'create field_user_gender',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -105,8 +107,9 @@ function profiles_user_default_permissions() {
   $permissions['create field_user_job_skills'] = array(
     'name' => 'create field_user_job_skills',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Content Manager',
+      1 => 'administrator',
+      2 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -125,7 +128,8 @@ function profiles_user_default_permissions() {
   $permissions['create field_user_marriage_status'] = array(
     'name' => 'create field_user_marriage_status',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -144,7 +148,8 @@ function profiles_user_default_permissions() {
   $permissions['create field_user_parliament'] = array(
     'name' => 'create field_user_parliament',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -234,7 +239,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_profile_node_connector'] = array(
     'name' => 'edit field_profile_node_connector',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -243,7 +249,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_about'] = array(
     'name' => 'edit field_user_about',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -252,7 +259,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_address'] = array(
     'name' => 'edit field_user_address',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -261,7 +269,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_answers_give'] = array(
     'name' => 'edit field_user_answers_give',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -270,7 +279,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_childs'] = array(
     'name' => 'edit field_user_childs',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -279,7 +289,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_commitee'] = array(
     'name' => 'edit field_user_commitee',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -288,7 +299,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_first_letter_lname'] = array(
     'name' => 'edit field_user_first_letter_lname',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -297,7 +309,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_gender'] = array(
     'name' => 'edit field_user_gender',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -306,8 +319,9 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_image_gallery'] = array(
     'name' => 'edit field_user_image_gallery',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -316,7 +330,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_job_skills'] = array(
     'name' => 'edit field_user_job_skills',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -325,7 +340,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_list_position'] = array(
     'name' => 'edit field_user_list_position',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -334,7 +350,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_marriage_status'] = array(
     'name' => 'edit field_user_marriage_status',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -343,7 +360,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_more'] = array(
     'name' => 'edit field_user_more',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -352,7 +370,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_parliament'] = array(
     'name' => 'edit field_user_parliament',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -361,7 +380,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_picture'] = array(
     'name' => 'edit field_user_picture',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -370,7 +390,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_political_goals'] = array(
     'name' => 'edit field_user_political_goals',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -379,7 +400,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_political_roles'] = array(
     'name' => 'edit field_user_political_roles',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -407,7 +429,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_profile_node_connector'] = array(
     'name' => 'edit own field_profile_node_connector',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -416,8 +439,9 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_about'] = array(
     'name' => 'edit own field_user_about',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -426,8 +450,9 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_address'] = array(
     'name' => 'edit own field_user_address',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -436,7 +461,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_answers_give'] = array(
     'name' => 'edit own field_user_answers_give',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -445,7 +471,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_childs'] = array(
     'name' => 'edit own field_user_childs',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -454,7 +481,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_commitee'] = array(
     'name' => 'edit own field_user_commitee',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -463,7 +491,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_first_letter_lname'] = array(
     'name' => 'edit own field_user_first_letter_lname',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -472,7 +501,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_gender'] = array(
     'name' => 'edit own field_user_gender',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -481,8 +511,9 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_image_gallery'] = array(
     'name' => 'edit own field_user_image_gallery',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -491,7 +522,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_job_skills'] = array(
     'name' => 'edit own field_user_job_skills',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -500,7 +532,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_list_position'] = array(
     'name' => 'edit own field_user_list_position',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -509,7 +542,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_marriage_status'] = array(
     'name' => 'edit own field_user_marriage_status',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -518,8 +552,9 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_more'] = array(
     'name' => 'edit own field_user_more',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -528,7 +563,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_parliament'] = array(
     'name' => 'edit own field_user_parliament',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -537,8 +573,9 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_picture'] = array(
     'name' => 'edit own field_user_picture',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -547,8 +584,9 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_political_goals'] = array(
     'name' => 'edit own field_user_political_goals',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -557,7 +595,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_political_roles'] = array(
     'name' => 'edit own field_user_political_roles',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -616,7 +655,8 @@ function profiles_user_default_permissions() {
   $permissions['view field_profile_node_connector'] = array(
     'name' => 'view field_profile_node_connector',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -625,9 +665,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_about'] = array(
     'name' => 'view field_user_about',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -636,9 +680,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_address'] = array(
     'name' => 'view field_user_address',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -647,9 +695,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_answers_give'] = array(
     'name' => 'view field_user_answers_give',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -658,9 +710,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_childs'] = array(
     'name' => 'view field_user_childs',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -669,9 +725,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_commitee'] = array(
     'name' => 'view field_user_commitee',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -680,7 +740,8 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_first_letter_lname'] = array(
     'name' => 'view field_user_first_letter_lname',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -689,9 +750,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_gender'] = array(
     'name' => 'view field_user_gender',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -700,9 +765,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_image_gallery'] = array(
     'name' => 'view field_user_image_gallery',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -711,9 +780,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_job_skills'] = array(
     'name' => 'view field_user_job_skills',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -722,9 +795,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_list_position'] = array(
     'name' => 'view field_user_list_position',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -733,9 +810,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_marriage_status'] = array(
     'name' => 'view field_user_marriage_status',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -744,8 +825,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_more'] = array(
     'name' => 'view field_user_more',
     'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -754,9 +840,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_parliament'] = array(
     'name' => 'view field_user_parliament',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -765,9 +855,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_picture'] = array(
     'name' => 'view field_user_picture',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -776,9 +870,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_political_goals'] = array(
     'name' => 'view field_user_political_goals',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -787,9 +885,13 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_political_roles'] = array(
     'name' => 'view field_user_political_roles',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -808,9 +910,11 @@ function profiles_user_default_permissions() {
     'name' => 'view field_user_questions_get',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
+      1 => 'Deputy',
+      2 => 'Politician',
+      3 => 'Premium User',
+      4 => 'administrator',
+      5 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -831,7 +935,8 @@ function profiles_user_default_permissions() {
   $permissions['view own field_profile_node_connector'] = array(
     'name' => 'view own field_profile_node_connector',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -840,8 +945,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_about'] = array(
     'name' => 'view own field_user_about',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -850,8 +956,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_address'] = array(
     'name' => 'view own field_user_address',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -860,7 +967,8 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_answers_give'] = array(
     'name' => 'view own field_user_answers_give',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -869,8 +977,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_childs'] = array(
     'name' => 'view own field_user_childs',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -879,8 +988,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_commitee'] = array(
     'name' => 'view own field_user_commitee',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -889,7 +999,8 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_first_letter_lname'] = array(
     'name' => 'view own field_user_first_letter_lname',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -898,8 +1009,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_gender'] = array(
     'name' => 'view own field_user_gender',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -908,8 +1020,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_image_gallery'] = array(
     'name' => 'view own field_user_image_gallery',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -918,8 +1031,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_job_skills'] = array(
     'name' => 'view own field_user_job_skills',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -928,8 +1042,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_list_position'] = array(
     'name' => 'view own field_user_list_position',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -938,8 +1053,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_marriage_status'] = array(
     'name' => 'view own field_user_marriage_status',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -948,8 +1064,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_more'] = array(
     'name' => 'view own field_user_more',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -958,7 +1075,8 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_parliament'] = array(
     'name' => 'view own field_user_parliament',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -967,8 +1085,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_picture'] = array(
     'name' => 'view own field_user_picture',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -977,8 +1096,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_political_goals'] = array(
     'name' => 'view own field_user_political_goals',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -987,8 +1107,9 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_political_roles'] = array(
     'name' => 'view own field_user_political_roles',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
