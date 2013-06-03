@@ -75,6 +75,30 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'pw_file_landscape_l' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'pw_file_portrait_l' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'pw_file_portrait_m' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'pw_file_portrait_s' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -162,6 +186,30 @@ function profiles_field_default_fields() {
           'weight' => 0,
         ),
         'preview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'pw_file_landscape_l' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'pw_file_portrait_l' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'pw_file_portrait_m' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'pw_file_portrait_s' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',

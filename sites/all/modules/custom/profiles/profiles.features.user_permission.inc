@@ -206,6 +206,16 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: create field_user_twitter_account.
+  $permissions['create field_user_twitter_account'] = array(
+    'name' => 'create field_user_twitter_account',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: create files.
   $permissions['create files'] = array(
     'name' => 'create files',
@@ -425,6 +435,16 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit field_user_twitter_account.
+  $permissions['edit field_user_twitter_account'] = array(
+    'name' => 'edit field_user_twitter_account',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit own field_profile_node_connector.
   $permissions['edit own field_profile_node_connector'] = array(
     'name' => 'edit own field_profile_node_connector',
@@ -482,7 +502,8 @@ function profiles_user_default_permissions() {
     'name' => 'edit own field_user_commitee',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'administrator',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -616,6 +637,17 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_user_twitter_account.
+  $permissions['edit own field_user_twitter_account'] = array(
+    'name' => 'edit own field_user_twitter_account',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -919,6 +951,21 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view field_user_twitter_account.
+  $permissions['view field_user_twitter_account'] = array(
+    'name' => 'view field_user_twitter_account',
+    'roles' => array(
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view files.
   $permissions['view files'] = array(
     'name' => 'view files',
@@ -1129,6 +1176,17 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_user_twitter_account.
+  $permissions['view own field_user_twitter_account'] = array(
+    'name' => 'view own field_user_twitter_account',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );

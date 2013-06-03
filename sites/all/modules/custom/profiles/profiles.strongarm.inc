@@ -117,6 +117,65 @@ function profiles_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_user__user';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'user_search' => array(
+        'custom_settings' => FALSE,
+      ),
+      'premium_user' => array(
+        'custom_settings' => TRUE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'ckeditor' => array(
+          'weight' => '10',
+        ),
+        'piwik' => array(
+          'weight' => '3',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'account' => array(
+          'weight' => '-10',
+        ),
+        'timezone' => array(
+          'weight' => '6',
+        ),
+        'locale' => array(
+          'weight' => '5',
+        ),
+      ),
+      'display' => array(
+        'summary' => array(
+          'default' => array(
+            'weight' => '32',
+            'visible' => FALSE,
+          ),
+          'premium_user' => array(
+            'weight' => '13',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
+    ),
+  );
+  $export['field_bundle_settings_user__user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_calendar_entry';
   $strongarm->value = '0';
   $export['language_content_type_calendar_entry'] = $strongarm;
@@ -166,6 +225,29 @@ function profiles_strongarm() {
   $strongarm->name = 'pathauto_node_calendar_entry_pattern';
   $strongarm->value = 'users/[node:author]/calendar/[node:field-calendar-entry-date:custom:d-m-Y]/[node:title]';
   $export['pathauto_node_calendar_entry_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_profileswitch_assignment';
+  $strongarm->value = array(
+    237793809 => 'premium_user',
+  );
+  $export['pw_profileswitch_assignment'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_profileswitch_display_mode1';
+  $strongarm->value = 'premium_user';
+  $export['pw_profileswitch_display_mode1'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_profileswitch_role1';
+  $strongarm->value = '237793809';
+  $export['pw_profileswitch_role1'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
