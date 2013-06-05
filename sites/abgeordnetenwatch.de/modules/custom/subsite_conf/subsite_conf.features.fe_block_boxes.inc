@@ -11,17 +11,6 @@ function subsite_conf_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Beta version';
-  $fe_block_boxes->format = 'managed_content';
-  $fe_block_boxes->machine_name = 'beta_version';
-  $fe_block_boxes->body = '<p>
-	* Dies ist die neue beta Version von abgeordnetenwatch.de. Hier können Sie uns <a class="colorbox-node" href="/feedback?width=600&amp;height=400">Ihre Meinung</a> dazu sagen.
-</p>
-';
-
-  $export['beta_version'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Blog description';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'blog_description';
@@ -34,36 +23,6 @@ function subsite_conf_default_fe_block_boxes() {
 ';
 
   $export['blog_description'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Bürozeiten';
-  $fe_block_boxes->format = 'managed_content';
-  $fe_block_boxes->machine_name = 'buerozeiten';
-  $fe_block_boxes->body = '<p>
-	Montag - Freitag<br />
-	10:00 - 16:00 Uhr
-</p>
-';
-
-  $export['buerozeiten'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Kontakt';
-  $fe_block_boxes->format = 'managed_content';
-  $fe_block_boxes->machine_name = 'kontakt_hh';
-  $fe_block_boxes->body = '<p>
-	Parlamentwatch e.V.<br />
-	Mittelweg 12<br />
-	20148 Hamburg
-</p>
-<p>
-	Telefon: 040 / 317 69 10 - 26<br />
-	Fax: 040 / 317 69 10 - 28<br />
-	info@abgeordnetenwatch.de
-</p>
-';
-
-  $export['kontakt_hh'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Metanavi Addthis';
@@ -84,17 +43,6 @@ function subsite_conf_default_fe_block_boxes() {
 <!-- AddThis Button END -->';
 
   $export['metanavi_addthis'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Online spenden';
-  $fe_block_boxes->format = 'managed_content';
-  $fe_block_boxes->machine_name = 'online_spenden';
-  $fe_block_boxes->body = '<p>
-	Um dieses Projekt zu unterstützen können Sie auch <a href="https://secured.abgeordnetenwatch.de/spenden-452-0.html">online spenden</a>.
-</p>
-';
-
-  $export['online_spenden'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Ihr Pressekontakt';
@@ -181,31 +129,6 @@ function subsite_conf_default_fe_block_boxes() {
 ';
 
   $export['press_partner'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Recherche';
-  $fe_block_boxes->format = 'managed_content';
-  $fe_block_boxes->machine_name = 'recherche';
-  $fe_block_boxes->body = '<p>
-	Wir bemühen uns stets, alle Informationen sorgfältig und gewissenhaft zu recherchieren. Sollten uns trotzdem Fehler unterlaufen, dann senden Sie bitte einen <a class="colorbox-node" href="/node/6578?width=600&amp;height=400">kurzen Hinweis</a>.
-</p>
-';
-
-  $export['recherche'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Suche';
-  $fe_block_boxes->format = 'php_code';
-  $fe_block_boxes->machine_name = 'search_old';
-  $fe_block_boxes->body = '<form action="http://www.abgeordnetenwatch.de/index.php" class="compact-form" id="search-old">
-    <input type="hidden" value="223" name="cmd" />
-<div class="form-item webform-component webform-component-textfield compact-form-wrapper">
-    <input type="text" value="Suchwort" alt="Suchwort" id="search-old-txt" class="form-text required compact-form-field" name="q"  />
-</div>
-<div id="edit-actions" class="form-actions form-wrapper"><input type="image" src="http://ruth.parliamentwatch.org/sites/abgeordnetenwatch.de/files/custom_search/ic_search.png" value="Suchen" name="op" id="edit-submit" class="custom-search-button form-submit" alt="Search"></div>
- </form>';
-
-  $export['search_old'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Social Media Footer';

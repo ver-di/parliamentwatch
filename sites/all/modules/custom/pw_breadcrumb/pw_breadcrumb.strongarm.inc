@@ -71,22 +71,6 @@ function pw_breadcrumb_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'custom_breadcrumbs_menu_theme';
-  $strongarm->value = array(
-    'abgeordnetenwatch' => array(
-      'menu_item' => NULL,
-      'menu_item_link' => NULL,
-    ),
-    'seven' => array(
-      'menu_item' => NULL,
-      'menu_item_link' => NULL,
-    ),
-  );
-  $export['custom_breadcrumbs_menu_theme'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'custom_breadcrumbs_parts_class';
   $strongarm->value = 0;
   $export['custom_breadcrumbs_parts_class'] = $strongarm;

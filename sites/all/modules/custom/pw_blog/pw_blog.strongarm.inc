@@ -445,6 +445,14 @@ function pw_blog_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'rss' => array(
+            'weight' => '16',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),
