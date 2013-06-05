@@ -163,8 +163,14 @@ blockquote p:last-child {
 .float-right {
     float: right;
 }
+.text-left {
+    text-align: left;
+}
 .center {
     text-align: center;
+}
+.text-right {
+    text-align: right;
 }
 .clear-both {
     clear: both;
@@ -343,6 +349,11 @@ a.link-sound:hover {
 a.link-pdf {
     padding-left: 22px;
     background-position: 
+}
+.link-participate a,
+a.link-participate {
+    padding-left: 22px;
+    background-position: -26px -2138px;
 }
 .views-more-link,
 .read-more a,
@@ -2014,6 +2025,8 @@ a.link-download,
 a.ic-print,
 a.link-pdf,
 .link-pdf a,
+.link-participate a,
+a.link-participate,
 .link-video a,
 a.link-video,
 .link-sound a,

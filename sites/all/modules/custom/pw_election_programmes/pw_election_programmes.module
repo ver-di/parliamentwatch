@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PW Election programmes feature.
+ */
+
+include_once 'pw_election_programmes.features.inc';
