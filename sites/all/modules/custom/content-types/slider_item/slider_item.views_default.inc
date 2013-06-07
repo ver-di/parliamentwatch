@@ -35,6 +35,8 @@ function slider_item_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'slideshow';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
   $handler->display->display_options['style_options']['skin_info'] = array(
@@ -92,8 +94,8 @@ function slider_item_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<?php
-drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
-drupal_add_js(\'sites/all/themes/custom/abgeordnetenwatch/js/slider.js\');
+drupal_add_css(\'sites/all/themes/custom/parliamentwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
+drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
 ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Field: Content: Beschreibung mit LInk */
@@ -178,22 +180,6 @@ drupal_add_js(\'sites/all/themes/custom/abgeordnetenwatch/js/slider.js\');
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $translatables['slider'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Zurücksetzen'),
-    t('Artikel sortieren nach'),
-    t('aufsteigend'),
-    t('absteigend'),
-    t('<?php
-drupal_add_css(\'sites/all/themes/custom/abgeordnetenwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
-drupal_add_js(\'sites/all/themes/custom/abgeordnetenwatch/js/slider.js\');
-?>'),
-    t('[field_slider_teaserbody]<div class="item"></div>'),
-    t('<span class="close">close</span>'),
-    t('Block'),
-  );
   $export['slider'] = $view;
 
   return $export;

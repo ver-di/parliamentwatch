@@ -12,4 +12,8 @@ function pw_breadcrumb_ctools_plugin_api() {
   if ($module == "path_breadcrumbs" && $api == "path_breadcrumbs") {
     return array("version" => "1");
   }
+  list($module, $api) = func_get_args();
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
 }

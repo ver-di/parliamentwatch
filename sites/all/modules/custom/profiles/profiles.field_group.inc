@@ -44,6 +44,47 @@ function profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_managed_content|user|user|form';
+  $field_group->group_name = 'group_managed_content';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Mangaged Content',
+    'weight' => '9',
+    'children' => array(
+      0 => 'field_profile_node_connector',
+      1 => 'field_user_answers_give',
+      2 => 'field_user_childs',
+      3 => 'field_user_commitee',
+      4 => 'field_user_first_letter_lname',
+      5 => 'field_user_gender',
+      6 => 'field_user_job_skills',
+      7 => 'field_user_marriage_status',
+      8 => 'field_user_parliament',
+      9 => 'field_user_political_roles',
+      10 => 'field_user_questions_get',
+      11 => 'field_user_list_position',
+      12 => 'timezone',
+      13 => 'locale',
+      14 => 'wysiwyg',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_managed_content|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_polls|user|user|default';
   $field_group->group_name = 'group_polls';
   $field_group->entity_type = 'user';
@@ -71,6 +112,39 @@ function profiles_field_group_info() {
     ),
   );
   $export['group_polls|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_premium|user|user|form';
+  $field_group->group_name = 'group_premium';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Premium',
+    'weight' => '8',
+    'children' => array(
+      0 => 'field_user_more',
+      1 => 'field_user_picture',
+      2 => 'field_user_political_goals',
+      3 => 'field_user_about',
+      4 => 'field_user_image_gallery',
+      5 => 'field_user_address',
+      6 => 'field_user_twitter_account',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_premium|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

@@ -29,20 +29,24 @@ function dialogues_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'comment answer push-bottom-l';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: Comment: Content */
+  /* Relationship: Kommentar: Inhalt */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
@@ -52,7 +56,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['relationship'] = 'nid';
-  /* Field: | inner start */
+  /* Feld: | inner start */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
@@ -60,7 +64,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="content-inner">';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
-  /* Field: Content: ShareThis Link */
+  /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
@@ -68,7 +72,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['sharethis']['label'] = '';
   $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
-  /* Field: User: Profile picture */
+  /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -83,7 +87,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_s',
   );
-  /* Field: | header start */
+  /* Feld: | header start */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -92,7 +96,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h3>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Field: First name */
+  /* Feld: First name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
@@ -101,7 +105,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['field_user_fname']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
-  /* Field: Last name */
+  /* Feld: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
@@ -112,7 +116,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['field_user_lname']['alter']['text'] = '[field_user_lname],';
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Field: User: Party */
+  /* Feld: Broken/missing handler */
   $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
@@ -120,9 +124,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['field_user_party']['label'] = '';
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party']['type'] = 'i18n_taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Field: Content: Post date */
+  /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -133,7 +135,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['created']['element_wrapper_class'] = 'subline';
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'date_only_short';
-  /* Field: | header end */
+  /* Feld: | header end */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
@@ -142,7 +144,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '</h3>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
-  /* Field: User: Questions Get */
+  /* Feld: Benutzer: Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
@@ -157,7 +159,7 @@ function dialogues_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 0,
   );
-  /* Field: User: Answers Give */
+  /* Feld: Benutzer: Answers Give */
   $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
@@ -173,7 +175,7 @@ function dialogues_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 0,
   );
-  /* Field: User: Uid */
+  /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -185,7 +187,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['uid']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['uid']['element_wrapper_class'] = 'row link-profile';
   $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
-  /* Field: | user end */
+  /* Feld: | user end */
   $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
   $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
@@ -196,7 +198,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-s clear-both';
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
-  /* Field: Comment: Comment */
+  /* Feld: Kommentar: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
   $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
@@ -206,7 +208,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['comment_body']['element_default_classes'] = FALSE;
-  /* Field: Comment: Nid */
+  /* Feld: Kommentar: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'comment';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -222,7 +224,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'bg-white';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Field: | inner end */
+  /* Feld: | inner end */
   $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
   $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
@@ -230,12 +232,12 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '</div>';
   $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
-  /* Sort criterion: Comment: Post date */
+  /* Sort criterion: Kommentar: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -244,14 +246,14 @@ function dialogues_views_default_views() {
     'dialogue' => 'dialogue',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Comment: Approved */
+  /* Filter criterion: Kommentar: Approved */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'comment';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
   $handler->display->display_options['filters']['status_node']['table'] = 'node';
   $handler->display->display_options['filters']['status_node']['field'] = 'status';
@@ -259,7 +261,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['filters']['status_node']['value'] = 1;
   $handler->display->display_options['filters']['status_node']['group'] = 1;
   $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Roles */
+  /* Filter criterion: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -271,38 +273,6 @@ function dialogues_views_default_views() {
   /* Display: Frontpage */
   $handler = $view->new_display('block', 'Frontpage', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $translatables['answers'] = array(
-    t('Master'),
-    t('Answers'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('prev'),
-    t('next'),
-    t('last »'),
-    t('Content'),
-    t('User entity referenced from field_dialogue_recipient'),
-    t('<div class="content-inner">'),
-    t('<h3>'),
-    t('[field_user_lname],'),
-    t('to a question from '),
-    t('</h3>'),
-    t('[field_user_questions_get] question(s)'),
-    t('[field_user_questions_get], [field_user_answers_give] answer(s)'),
-    t('Go to profile'),
-    t(' '),
-    t('read complete question and answer'),
-    t('.'),
-    t('</div>'),
-    t('Frontpage'),
-  );
   $export['answers'] = $view;
 
   return $export;

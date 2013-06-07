@@ -11,14 +11,6 @@ function pw_blog_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Anchor to top';
-  $fe_block_boxes->format = 'full_html';
-  $fe_block_boxes->machine_name = 'anchor_to_top';
-  $fe_block_boxes->body = '<div class="anchor-to-top clearfix"><a href="#page">to the top</a></div>';
-
-  $export['anchor_to_top'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Newsletter bestellen';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'newsletter_order';
@@ -30,6 +22,16 @@ print render($block[\'content\']);
 ?>';
 
   $export['newsletter_order'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'shareThis buttons';
+  $fe_block_boxes->format = 'php_code';
+  $fe_block_boxes->machine_name = 'sharethis_buttons';
+  $fe_block_boxes->body = '<span class="st_twitter_hcount" displayText="Twitter"></span>
+<span class="st_fbrec_hcount" displayText="Facebook Recommend"></span>
+<span class="st_plusone_hcount" displayText="Google +1"></span>';
+
+  $export['sharethis_buttons'] = $fe_block_boxes;
 
   return $export;
 }

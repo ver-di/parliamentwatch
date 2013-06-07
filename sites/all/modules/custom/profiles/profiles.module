@@ -5,3 +5,18 @@
  */
 
 include_once 'profiles.features.inc';
+
+function profiles_form_alter(&$form, &$form_state, $form_id) {
+if ($form_id == "user_profile_form") {
+unset($form["locale"]);
+$view = views_get_view('calendar');
+$view->set_display('block_2');
+//views_embed_view('calendar,$display_id='block_2');
+
+$form['views_embedder'] = array(
+         '#value' => views_embed_view('calendar', $display_id = 'block_2'),
+         '#weight' => 0,
+       );
+ return $form;
+}
+}
