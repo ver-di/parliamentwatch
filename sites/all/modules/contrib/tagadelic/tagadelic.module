@@ -32,6 +32,8 @@ function tagadelic_menu() {
   );
   $items['tagadelic'] = array(
     'title' => 'Tags',
+    'title callback' => 'tagadelic_page_title_callback',
+    'title arguments' => array(NULL),
     'page callback' => 'tagadelic_page_chunk',
     'page arguments' => array(NULL),
     'access callback' => 'user_access',
@@ -40,20 +42,36 @@ function tagadelic_menu() {
   );
   $items['tagadelic/list/%tagadelic_vocs'] = array(
     'title' => 'Tags',
+    'title callback' => 'tagadelic_page_title_callback',
+    'title arguments' => array(2),
     'page callback' => 'tagadelic_page_list',
     'page arguments' => array(2),
     'access callback' => 'user_access',
     'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
+    'type' => MENU_SUGGESTED_ITEM,
   );
   $items['tagadelic/chunk/%tagadelic_vocs'] = array(
     'title' => 'Tags',
+    'title callback' => 'tagadelic_page_title_callback',
+    'title arguments' => array(2),
     'page callback' => 'tagadelic_page_chunk',
     'page arguments' => array(2),
     'access callback' => 'user_access',
     'access arguments' => array('access content'),
     'type' => MENU_SUGGESTED_ITEM,
   );
+  /////////////////////////// Workaround for AW-569 (Alex) //////////
+  /////////////////////////// modified lines 65-74 and 120-152 //////
+  $items['tagadelic/%tagadelic_vocs'] = array(
+    'title' => 'Tags',
+    'title callback' => 'tagadelic_page_title_callback',
+    'title arguments' => array(1),
+    'page callback' => 'tagadelic_page_chunk',
+    'page arguments' => array(1),
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+  );  ///////////////////////// /// /// /// /// /////////////////////
   return $items;
 }
 
@@ -97,6 +115,40 @@ function tagadelic_vocs_load($vocs) {
     $vocs = explode(',', $vocs);
   }
   return $vocs;
+}
+
+/**
+ * Menu callback to render the tagadelic title
+ * @param $vocs. an array of taxonomy vocabulary IDs
+ */
+function tagadelic_page_title_callback($vocs) {
+  $title = '';
+
+  if (empty($vocs)) {
+    $title = t('Tags');
+  }
+  else {
+    $vocabulary = taxonomy_vocabulary_load($vocs[0]);
+    $voc_names[] = $vocabulary->name;
+    $joined = join(', ', $voc_names);
+    $title = t('Tags in @voc', array('@voc' => $joined));
+  }
+
+  return $title;
+}
+
+/**
+ * Theme function that creates a comma separted list of vocubulary terms
+ * @params $vocs. an array of taxonomy vocabulary ids
+ * @ingroup themable
+ */
+function theme_tagadelic_list_vocs($vocs) {
+  foreach ($vocs as $vid) {
+    $vocabulary = taxonomy_vocabulary_load($vid);
+    $voc_names[] = $vocabulary->name;
+  }
+  $joined = join(', ', $voc_names);
+  return $joined;
 }
 
 /**
