@@ -57,6 +57,16 @@ form#search-old #edit-submit {
 }
 
 
+/* old login */
+
+a.header_login {
+    padding-left: 19px !important;
+}
+a.header_login {
+    background: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png) -566px -415px no-repeat;
+}
+
+
 /* slider */
 
 .view-id-slider .views_slideshow_slide {

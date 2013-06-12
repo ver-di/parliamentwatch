@@ -113,9 +113,9 @@ Wir über uns {"url":"ueber-uns"}
 ---Trustee (menu position rule) {"url":"menu-position\/7","description":"Sets access to all menu position links.","hidden":true}
 --Moderations-Codex {"url":"ueber-uns\/mehr\/moderations-codex"}
 --Finanzierung {"url":"ueber-uns\/mehr\/finanzierung"}
----Finanzierung Parlamentwatch GmbH {"url":"ueber-uns\/mehr\/finanzierung\/parlamentwatch-gmbh","hidden":true}
+---Finanzierung Parlamentwatch GmbH {"url":"ueber-uns\/mehr\/finanzierung\/parlamentwatch-GmbH","hidden":true}
 ---Finanzierung Parlamentwatch e.V. {"url":"ueber-uns\/mehr\/finanzierung\/parlamentwatch-eV","hidden":true}
---Social Entrepreneur {"url":"ueber-uns\/mehr\/social-entreprenuer"}
+--Social Entrepreneur {"url":"ueber-uns\/mehr\/social-entrepreneur"}
 --International {"url":"ueber-uns\/mehr\/international"}
 -Blog {"url":"blog"}
 --Blog tagdelic (menu position rule) {"url":"menu-position\/4","description":"Sets access to all menu position links.","hidden":true}
@@ -123,16 +123,16 @@ Wir über uns {"url":"ueber-uns"}
 --Blogpost (menu position rule) {"url":"menu-position\/1","description":"Sets access to all menu position links.","hidden":true}
 --Blogtags (menu position rule) {"url":"menu-position\/2","description":"Sets access to all menu position links.","hidden":true}
 --Blogterms (menu position rule) {"url":"menu-position\/3","description":"Sets access to all menu position links.","hidden":true}
---Press release (menu position rule) {"url":"menu-position\/5","description":"Sets access to all menu position links.","hidden":true}
 -Mitmachen {"url":"ueber-uns\/mitmachen"}
 --Parlamentsbeobachter {"url":"ueber-uns\/mitmachen\/parlamentsbeobachter"}
---Infopaket bestellen {"url":"ueber-uns\/mitmachen\/infopaket"}
+--Infopaket bestellen {"url":"ueber-uns\/mitmachen\/infopaket-bestellen"}
 --Verlinken Sie uns {"url":"http:\/\/www.abgeordnetenwatch.de\/verlinken_sie_uns-162-0.html"}
 -FAQ {"url":"ueber-uns\/faq"}
---abgeordnetenwatch in 3 Minuten {"url":"ueber-uns\/faq\/in-drei-minuten","hidden":true}
+--abgeordnetenwatch in 3 Minuten {"url":"ueber-uns\/faq\/in-3-minuten","hidden":true}
 -Presse {"url":"ueber-uns\/presse"}
 --Pressespiegel {"url":"ueber-uns\/presse"}
 --Pressemitteilungen {"url":"ueber-uns\/presse\/pressemitteilungen"}
+---Press release (menu position rule) {"url":"menu-position\/5","description":"Sets access to all menu position links.","hidden":true}
 -Login-Bereich {"url":"http:\/\/www.abgeordnetenwatch.de\/login_bereich-846-0.html"}
 -Impressum {"url":"ueber-uns\/impressum"}
 -Spenden {"url":"http:\/\/www.abgeordnetenwatch.de\/spenden-452-0.html"}

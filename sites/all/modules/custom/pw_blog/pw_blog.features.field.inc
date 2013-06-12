@@ -365,7 +365,7 @@ function pw_blog_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '14',
+          'weight' => '17',
         ),
         'search_index' => array(
           'label' => 'hidden',
@@ -503,7 +503,7 @@ function pw_blog_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '16',
+          'weight' => '19',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -602,7 +602,7 @@ function pw_blog_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '18',
         ),
         'search_index' => array(
           'label' => 'hidden',
