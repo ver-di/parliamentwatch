@@ -15,8 +15,8 @@ function pw_gdata_importer_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'gdata_constituency_importer_';
   $feeds_importer->config = array(
-    'name' => 'GData Constituency Importer	',
-    'description' => 'Imports Constituencies from GData Spreadsheet	',
+    'name' => 'GData Constituency Importer',
+    'description' => 'Imports Constituencies from GData Spreadsheet',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
@@ -31,18 +31,27 @@ function pw_gdata_importer_feeds_importer_default() {
         'sources' => array(
           'xpathparser:0' => 'parliament',
           'xpathparser:1' => 'constituency',
+          'xpathparser:2' => 'state',
+          'xpathparser:3' => 'constituencynumber',
+          'xpathparser:4' => 'uuid',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
           'xpathparser:1' => 0,
+          'xpathparser:2' => 0,
+          'xpathparser:3' => 0,
+          'xpathparser:4' => 0,
         ),
         'context' => '//row',
         'exp' => array(
-          'errors' => 0,
+          'errors' => 1,
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
             'xpathparser:1' => 0,
+            'xpathparser:2' => 0,
+            'xpathparser:3' => 0,
+            'xpathparser:4' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -61,6 +70,21 @@ function pw_gdata_importer_feeds_importer_default() {
           1 => array(
             'source' => 'xpathparser:1',
             'target' => 'name',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'xpathparser:2',
+            'target' => 'parent',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'xpathparser:3',
+            'target' => 'field_constituency_nr',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'xpathparser:4',
+            'target' => 'uuid:uuid',
             'unique' => FALSE,
           ),
         ),
@@ -108,6 +132,10 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:8' => 'username',
           'xpathparser:9' => 'constituency',
           'xpathparser:10' => 'pictureurl',
+          'xpathparser:11' => 'education',
+          'xpathparser:12' => 'listposition',
+          'xpathparser:13' => 'twitterurl',
+          'xpathparser:14' => 'externalurl',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -121,6 +149,10 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:8' => 0,
           'xpathparser:9' => 0,
           'xpathparser:10' => 0,
+          'xpathparser:11' => 0,
+          'xpathparser:12' => 0,
+          'xpathparser:13' => 0,
+          'xpathparser:14' => 0,
         ),
         'context' => '//row',
         'exp' => array(
@@ -138,6 +170,10 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:8' => 0,
             'xpathparser:9' => 0,
             'xpathparser:10' => 0,
+            'xpathparser:11' => 0,
+            'xpathparser:12' => 0,
+            'xpathparser:13' => 0,
+            'xpathparser:14' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -148,8 +184,11 @@ function pw_gdata_importer_feeds_importer_default() {
       'config' => array(
         'roles' => array(
           181527986 => '181527986',
+          185431326 => '185431326',
           3 => 0,
           51622513 => 0,
+          140336230 => 0,
+          237793809 => 0,
         ),
         'status' => '1',
         'defuse_mail' => 1,
@@ -197,7 +236,7 @@ function pw_gdata_importer_feeds_importer_default() {
           8 => array(
             'source' => 'xpathparser:8',
             'target' => 'name',
-            'unique' => 0,
+            'unique' => 1,
           ),
           9 => array(
             'source' => 'xpathparser:9',
@@ -207,6 +246,26 @@ function pw_gdata_importer_feeds_importer_default() {
           10 => array(
             'source' => 'xpathparser:10',
             'target' => 'field_user_picture',
+            'unique' => FALSE,
+          ),
+          11 => array(
+            'source' => 'xpathparser:11',
+            'target' => 'field_user_education',
+            'unique' => FALSE,
+          ),
+          12 => array(
+            'source' => 'xpathparser:12',
+            'target' => 'field_user_list_position',
+            'unique' => FALSE,
+          ),
+          13 => array(
+            'source' => 'xpathparser:13',
+            'target' => 'field_user_twitter_account',
+            'unique' => FALSE,
+          ),
+          14 => array(
+            'source' => 'xpathparser:14',
+            'target' => 'field_user_external_url:url',
             'unique' => FALSE,
           ),
         ),
