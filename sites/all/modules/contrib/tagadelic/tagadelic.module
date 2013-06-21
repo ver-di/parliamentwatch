@@ -75,6 +75,15 @@ function tagadelic_menu() {
   return $items;
 }
 
+///////////////////////// Disables Update-notifications (Alex) //////
+/**
+ * Implements hook_update_projects_alter().
+ */
+function tagadelic_update_projects_alter(&$projects) {
+  unset($projects['tagadelic']);
+}
+///////////////////////// /// /// /// /// ///////////////////////////
+
 /**
  * Menu callback. Admin setting page for tagadelic.
  */
