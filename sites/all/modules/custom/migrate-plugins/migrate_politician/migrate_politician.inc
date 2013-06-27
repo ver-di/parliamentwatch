@@ -15,7 +15,8 @@ class PoliticianMigration extends BasicMigratePolitician {
 
     // Connect to legacy database and select oldest profile of each politican (oldest=1)
     $query = Database::getConnection('default', 'parlamentwatch')
-            ->select('legacy_user', 'u');
+            ->select('legacy_user_sample', 'u'); // Works with sample data
+    //      ->select('legacy_user', 'u'); // @TODO Activate!
     $query->join('legacy_projects', 'p', 'u.cmd = p.cmd');
     $query->fields('u', array('id', 'uuid', 'username', 'title', 'nickname', 'first_name', 'first_name_2nd_lang', 'last_name', 'last_name_2nd_lang', 'first_lang', 'second_lang', 'email', 'gender', 'birthday', 'childs', 'job', 'marriage', 'url_picture', 'party', 'political_roles', 'links'));
     $query->fields('p', array('project', 'startdate'));
