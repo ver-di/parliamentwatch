@@ -7,6 +7,12 @@
 function migrate_committee_migrate_api() {
   $api = array(
     'api' => 2,
+    'migrations' => array(
+      'CommitteeTerm' => array(
+        'class_name' => 'CommitteeTermMigration',
+        'group_name' => 'committee',
+      ),
+    ),
   );
   return $api;
 }

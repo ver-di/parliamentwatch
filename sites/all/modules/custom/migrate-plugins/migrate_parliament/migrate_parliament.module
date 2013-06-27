@@ -7,6 +7,12 @@
 function migrate_parliament_migrate_api() {
   $api = array(
     'api' => 2,
+    'migrations' => array(
+      'ParliamentTerm' => array(
+        'class_name' => 'ParliamentTermMigration',
+        'group_name' => 'parliament',
+      ),
+    ),
   );
   return $api;
 }
