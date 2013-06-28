@@ -16,3 +16,10 @@ function migrate_committee_migrate_api() {
   );
   return $api;
 }
+
+/**
+ * Implements hook_update_projects_alter().
+ */
+function migrate_committee_update_projects_alter(&$projects) {
+  unset($projects['migrate_committee']);
+}

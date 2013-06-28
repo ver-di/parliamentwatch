@@ -22,7 +22,8 @@ class ConstituencyTermMigration extends BasicMigrateConstituency {
     $query->fields('p', array('project', 'startdate'));
 	switch(variable_get('site_name')){
 		case 'abgeordnetenwatch.de':
-		    $query->condition('p.project_cmd', array(132, 360));
+        $query->condition('p.project_cmd', array(0, 2000), 'BETWEEN');
+        $query->condition('p.project_cmd', array(233, 486, 974, 1036, 1010, 1475), 'NOT IN');
 			break;
 		case 'marsad.tn':
 		    $query->condition('p.project_cmd', 974);
