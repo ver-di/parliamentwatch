@@ -427,6 +427,10 @@ a.ic-print {
     padding-left: 15px;
     background-position: -770px -1896px;
 }
+.twitter-item {
+    background-position: -930px -3164px;
+    padding: 6px 0 6px 26px;    
+}
 
 h1.site-name a,
 h2.site-name a {
@@ -494,6 +498,9 @@ h1#page-title {
 }
 #region-sidebar-second .block p:last-child {
     margin-bottom: 0;
+}
+#region-sidebar-second .block .more-link {
+    float: right;
 }
 
 /* colorbox */
@@ -2004,6 +2011,7 @@ a.print-pdf,
 #block-system-user-menu .last a,
 #region-user-second .block h2,
 .arrow-item,
+.twitter-item,
 .back,
 .views-more-link,
 .read-more a,
