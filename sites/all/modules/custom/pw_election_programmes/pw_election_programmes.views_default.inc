@@ -95,7 +95,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['uri']['relationship'] = 'field_pdf_download_fid';
   $handler->display->display_options['fields']['uri']['label'] = '';
   $handler->display->display_options['fields']['uri']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uri']['alter']['text'] = 'Wahlprogramm runderladen';
+  $handler->display->display_options['fields']['uri']['alter']['text'] = 'Wahlprogramm runterladen';
   $handler->display->display_options['fields']['uri']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['uri']['alter']['path'] = '[uri]';
   $handler->display->display_options['fields']['uri']['alter']['target'] = '_blank';
