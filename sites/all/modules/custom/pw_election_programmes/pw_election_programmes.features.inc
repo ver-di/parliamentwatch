@@ -31,7 +31,7 @@ function pw_election_programmes_views_api() {
 function pw_election_programmes_node_info() {
   $items = array(
     'election_programme' => array(
-      'name' => t('Election programme'),
+      'name' => t('Wahlprogramme'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

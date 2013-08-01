@@ -22,7 +22,7 @@ function pw_election_programmes_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Election programme';
+  $handler->display->display_options['title'] = 'Wahlprogramme %1';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -60,6 +60,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Feld: Inhalt: Teaser image */
@@ -67,7 +68,6 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['field_teaser_image']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['field'] = 'field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['label'] = '';
-  $handler->display->display_options['fields']['field_teaser_image']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_teaser_image']['alter']['path'] = '[field_election_programme_open_1]';
   $handler->display->display_options['fields']['field_teaser_image']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_teaser_image']['alter']['external'] = TRUE;
@@ -95,7 +95,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['uri']['relationship'] = 'field_pdf_download_fid';
   $handler->display->display_options['fields']['uri']['label'] = '';
   $handler->display->display_options['fields']['uri']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uri']['alter']['text'] = 'download election programme';
+  $handler->display->display_options['fields']['uri']['alter']['text'] = 'Wahlprogramm runderladen';
   $handler->display->display_options['fields']['uri']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['uri']['alter']['path'] = '[uri]';
   $handler->display->display_options['fields']['uri']['alter']['target'] = '_blank';
@@ -109,6 +109,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['field_election_programme_open']['table'] = 'field_data_field_election_programme_open';
   $handler->display->display_options['fields']['field_election_programme_open']['field'] = 'field_election_programme_open';
   $handler->display->display_options['fields']['field_election_programme_open']['label'] = '';
+  $handler->display->display_options['fields']['field_election_programme_open']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_election_programme_open']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_election_programme_open']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_election_programme_open']['element_wrapper_class'] = 'text-right read-more';
@@ -144,11 +145,33 @@ function pw_election_programmes_views_default_views() {
     'field_election_programme_open' => 0,
     'field_pdf_download' => 0,
   );
-  /* Sort criterion: Inhalt: Datum */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Gewichtung: Gewichtung */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  /* Sort criterion: Inhalt: Titel */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Contextual filter: Inhalt: Has taxonomy term ID (translated) */
+  $handler->display->display_options['arguments']['tid_i18n']['id'] = 'tid_i18n';
+  $handler->display->display_options['arguments']['tid_i18n']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid_i18n']['field'] = 'tid_i18n';
+  $handler->display->display_options['arguments']['tid_i18n']['default_action'] = 'access denied';
+  $handler->display->display_options['arguments']['tid_i18n']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['tid_i18n']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['tid_i18n']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tid_i18n']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid_i18n']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid_i18n']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid_i18n']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid_i18n']['validate']['type'] = 'i18n_taxonomy_term';
+  $handler->display->display_options['arguments']['tid_i18n']['validate_options']['vocabularies'] = array(
+    'parliaments' => 'parliaments',
+  );
+  $handler->display->display_options['arguments']['tid_i18n']['validate_options']['type'] = 'i18n_convert';
+  $handler->display->display_options['arguments']['tid_i18n']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['tid_i18n']['validate']['fail'] = 'access denied';
   /* Filter criterion: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -166,7 +189,7 @@ function pw_election_programmes_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'election-programme';
+  $handler->display->display_options['path'] = 'election-programme/%';
   $export['election_programme'] = $view;
 
   return $export;
