@@ -165,7 +165,7 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'premium_user';
   $ds_fieldsetting->settings = array(
-    'additional_links_' => array(
+    'additional_links' => array(
       'weight' => '16',
       'label' => 'hidden',
       'format' => 'default',
@@ -329,7 +329,7 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'additional_links_';
+  $ds_field->field = 'additional_links';
   $ds_field->label = 'Additional Links ';
   $ds_field->field_type = 6;
   $ds_field->entities = array(
@@ -339,7 +339,7 @@ function profiles_ds_custom_fields_info() {
     'block' => 'views|user_profile_fields-block_6',
     'block_render' => '2',
   );
-  $export['additional_links_'] = $ds_field;
+  $export['additional_links'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -915,7 +915,7 @@ function profiles_ds_layout_settings_info() {
         12 => 'user_political_goals',
         13 => 'user_tweets',
         14 => 'user_calendar',
-        15 => 'additional_links_',
+        15 => 'additional_links',
         16 => 'question_and_answers_filter',
         17 => 'question_and_answers_switcher',
         18 => 'question_and_answers_pane',
@@ -939,7 +939,7 @@ function profiles_ds_layout_settings_info() {
       'user_political_goals' => 'ds_content',
       'user_tweets' => 'ds_content',
       'user_calendar' => 'ds_content',
-      'additional_links_' => 'ds_content',
+      'additional_links' => 'ds_content',
       'question_and_answers_filter' => 'ds_content',
       'question_and_answers_switcher' => 'ds_content',
       'question_and_answers_pane' => 'ds_content',

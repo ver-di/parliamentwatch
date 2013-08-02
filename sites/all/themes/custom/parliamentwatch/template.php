@@ -45,6 +45,11 @@ function parliamentwatch_css_alter(&$css) {
     $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/scroll_to_top.css';
     $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['type'] = 'file';
   }
+  // Use parliamentwatch jcarousel-default.css instead of the default one.
+  if (isset($css['sites/all/modules/contrib/jcarousel/skins/default/jcarousel-default.css'])) {
+    $css['sites/all/modules/contrib/jcarousel/skins/default/jcarousel-default.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/jcarousel-default.css';
+    $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['type'] = 'file';
+  }
 }
  
 /**

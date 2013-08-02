@@ -172,7 +172,7 @@ blockquote p:last-child {
 .text-right {
     text-align: right;
 }
-.clear-both {
+.clear {
     clear: both;
 }
 .relative {
@@ -199,6 +199,9 @@ blockquote p:last-child {
 }
 .push-left-xxl {
     margin-left: 154px;
+}
+.push-right-s {
+    margin-right: 6px;
 }
 .push-right-m {
     margin-right: 14px;
@@ -251,7 +254,8 @@ a.light,
 }
 .medium,
 a.medium,
-.medium a {
+.medium a,
+.copyright {
     color: #666;
     font-weight: normal;
 }
@@ -272,6 +276,17 @@ a.dark {
 .permalink {
     padding-left: 26px;
     background-position: -282px -2382px;
+}
+.zebra .views-row-odd {
+    background: #f4f4f4;
+}
+.zebra li {
+    padding: 7px 3px;
+}
+#region-content ol.zebra {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 .views-more-link,
 .read-more a,
@@ -1599,6 +1614,7 @@ span.form-submit.big {
     padding: 0 10px;
     display: inline-block;
     height: 2.5em;
+    margin-bottom: 0;
 }
 .form-submit.big.link-question {
     padding: 0 30px;

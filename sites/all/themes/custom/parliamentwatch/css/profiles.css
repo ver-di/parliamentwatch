@@ -289,3 +289,42 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 .views-exposed-form .views-exposed-widget {
    clear: both;
 }
+
+
+/* profiles extended */
+
+.user-profile h2.block-title {
+    color: #333;
+    font-size: 20px;
+}
+.field-name-same-constituency {
+    border: 1px dotted #dbdbdb;
+    border-width: 1px 0;
+    padding: 12px 0 0;
+    margin-bottom: 30px;
+}
+.field-name-same-constituency h2.block-title {
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 0;
+}
+.field-name-same-constituency .jcarousel-item {
+    padding-right: 46px;
+}
+.user-image-gallery-wrapper {
+    margin: 0 18px 16px 0;
+    float: left;
+}
+.field-name-additional-links- table {
+    width: 100%
+}
+.field-name-additional-links- tr.even {
+    background: #f4f4f4;
+}
+.field-name-additional-links- td {
+    padding: 7px 3px;
+}
+.field-name-additional-links- table a {
+    color: #333;
+    font-weight: normal;
+}

@@ -1,5 +1,18 @@
 jQuery(document).ready(function() {
 
+////// switch view mode in questions and aswers
+
+    jQuery(".field-name-question-and-answers-pane .attachment").addClass("js-hide");
+    jQuery("#form-view-mode-switcher .view-mode-full").click(function () {
+        jQuery(".field-name-question-and-answers-pane .view-display-id-panel_pane_1 > .view-content").removeClass("js-hide");
+        jQuery(".field-name-question-and-answers-pane .attachment").addClass("js-hide");
+    });
+    jQuery("#form-view-mode-switcher .view-mode-teaser").click(function () {
+        jQuery(".field-name-question-and-answers-pane .view-display-id-panel_pane_1 > .view-content").addClass("js-hide");
+        jQuery(".field-name-question-and-answers-pane .attachment").removeClass("js-hide");
+    });
+
+
 ////// open external links in new window
 
     var domainparts = location.hostname.split('.');
@@ -28,11 +41,11 @@ jQuery(document).ready(function() {
 
 ////// slide to comments
 
-   jQuery(".node-blogpost.view-mode-full .comment-count")
-    .css( "cursor", "pointer" )
-   .click(function () {
-		goToByScroll("comments");
-		return false;
+    jQuery(".node-blogpost.view-mode-full .comment-count")
+        .css( "cursor", "pointer" )
+        .click(function () {
+            goToByScroll("comments");
+            return false;
     });
 
 ////// change youtube links to open them in a colorbox (http://drupal.org/node/1368274)
