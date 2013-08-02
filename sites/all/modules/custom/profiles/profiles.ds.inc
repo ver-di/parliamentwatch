@@ -166,32 +166,132 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'premium_user';
   $ds_fieldsetting->settings = array(
     'additional_links' => array(
-      'weight' => '16',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
     'parliament_info_block' => array(
-      'weight' => '6',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
     'profile_extension' => array(
-      'weight' => '7',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'push-bottom-m',
+      ),
     ),
     'profil_picture_views_block' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'file-image float-left push-bottom-l',
+      ),
+    ),
+    'pw_user_nameparty' => array(
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
-    'question_and_answers_filter' => array(
+    'question_and_answers_switcher' => array(
+      'weight' => '15',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
+    ),
+    'question_and_answer_colorbox' => array(
       'weight' => '17',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
+    ),
+    'user_about' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'clear clearfix push-bottom-l',
+      ),
+    ),
+    'user_basic_info' => array(
+      'weight' => '7',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'clear clearfix push-bottom-l',
+      ),
+    ),
+    'user_political_goals' => array(
+      'weight' => '10',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'clear clearfix push-bottom-l',
+      ),
+    ),
+    'qa_asking_anchor' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'push-bottom-m',
+      ),
+    ),
+    'qa_link_counter' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'float-left',
+      ),
+    ),
+    'question_and_answers_filter' => array(
+      'weight' => '14',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
     'question_and_answers_pane' => array(
-      'weight' => '19',
+      'weight' => '16',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -200,66 +300,44 @@ function profiles_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:4:{s:12:"link_to_view";i:0;s:9:"use_pager";i:1;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:1:"3";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:38:"profile_questions_answers-panel_pane_1";}',
         'load_terms' => 0,
       ),
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
-    'question_and_answers_switcher' => array(
+    'question_form' => array(
       'weight' => '18',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'question_and_answer_colorbox' => array(
-      'weight' => '20',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'question_form' => array(
-      'weight' => '21',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'same_constituency' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'user_about' => array(
-      'weight' => '11',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'user_basic_info' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
     'user_calendar' => array(
-      'weight' => '15',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'user_image_gallery' => array(
-      'weight' => '12',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'user_political_goals' => array(
       'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
-    'user_tweets' => array(
-      'weight' => '14',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'qa_asking_anchor' => array(
-      'weight' => '8',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'qa_link_counter' => array(
+    'user_image_gallery' => array(
       'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_expert',
+        'ow' => TRUE,
+        'ow-el' => 'div',
+        'ow-cl' => 'clear clearfix push-bottom-l',
+      ),
+    ),
+    'user_tweets' => array(
+      'weight' => '11',
+      'label' => 'hidden',
+      'format' => 'default',
+      'ft' => array(
+        'func' => 'theme_ds_field_reset',
+      ),
     ),
   );
   $export['user|user|premium_user'] = $ds_fieldsetting;
@@ -330,13 +408,13 @@ function profiles_ds_custom_fields_info() {
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'additional_links';
-  $ds_field->label = 'Additional Links ';
+  $ds_field->label = 'User Additional Links ';
   $ds_field->field_type = 6;
   $ds_field->entities = array(
     'user' => 'user',
   );
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-block_6',
+    'block' => 'views|883f5d656342b9b5bf86986c1f124c89',
     'block_render' => '2',
   );
   $export['additional_links'] = $ds_field;
@@ -404,7 +482,7 @@ function profiles_ds_custom_fields_info() {
     'user' => 'user',
   );
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-block_7',
+    'block' => 'views|3509b58cbc4e6ba12500a0953896ee89',
     'block_render' => '3',
   );
   $export['parliament_info_block'] = $ds_field;
@@ -446,7 +524,7 @@ function profiles_ds_custom_fields_info() {
     'user' => 'user',
   );
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-block_2',
+    'block' => 'views|bb2bc4bf6c722a251dda49d38c4f36a0',
     'block_render' => '3',
   );
   $export['profil_picture_views_block'] = $ds_field;
@@ -460,7 +538,7 @@ function profiles_ds_custom_fields_info() {
     'user' => 'user',
   );
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-block_1',
+    'block' => 'views|f7236266d8b27f67d2300a86a665e373',
     'block_render' => '3',
   );
   $export['profile_extension'] = $ds_field;
@@ -557,12 +635,11 @@ function profiles_ds_custom_fields_info() {
   );
   $ds_field->properties = array(
     'code' => array(
-      'value' => 'Switch View Mode
-<form name="myform" action="" method="POST">
-<div align="left"><br>
-<input type="radio" name="group1" value="full"> Full View<br>
-<input type="radio" name="group1" value="teaser" checked> Teaser View<br>
-</div>
+      'value' => '<form action="" method="post" name="view-mode-switcher" id="form-view-mode-switcher">
+    <fieldset>
+		<input name="group1" type="radio" value="full" class="view-mode-full" /> Full View<br />
+		<input checked="checked" name="group1" type="radio" value="teaser" class="view-mode-teaser" /> Teaser View
+	</fieldset>
 </form>',
       'format' => 'full_html',
     ),
@@ -663,7 +740,7 @@ function profiles_ds_custom_fields_info() {
     'user' => 'user',
   );
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-block_4',
+    'block' => 'views|user_profile_fields-about',
     'block_render' => '2',
   );
   $export['user_about'] = $ds_field;
@@ -677,7 +754,7 @@ function profiles_ds_custom_fields_info() {
     'user' => 'user',
   );
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-block_3',
+    'block' => 'views|user_profile_fields-basic_info',
     'block_render' => '2',
   );
   $export['user_basic_info'] = $ds_field;
@@ -752,7 +829,7 @@ drupal_add_html_head($element, \'og_description\');
     'user' => 'user',
   );
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-block_5',
+    'block' => 'views|b40c00230269e3c21b215fbf9658442a',
     'block_render' => '2',
   );
   $export['user_political_goals'] = $ds_field;
@@ -896,39 +973,33 @@ function profiles_ds_layout_settings_info() {
   $ds_layout->view_mode = 'premium_user';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
+    'hide_empty_regions' => 1,
+    'hide_sidebars' => 1,
     'regions' => array(
       'ds_content' => array(
-        0 => 'same_constituency',
-        1 => 'profil_picture_views_block',
-        2 => 'field_user_fname',
-        3 => 'field_user_lname',
-        4 => 'field_user_party',
-        5 => 'parliament_info_block',
-        6 => 'profile_extension',
-        7 => 'qa_asking_anchor',
-        8 => 'qa_link_counter',
-        9 => 'user_basic_info',
-        10 => 'user_about',
-        11 => 'user_image_gallery',
-        12 => 'user_political_goals',
-        13 => 'user_tweets',
-        14 => 'user_calendar',
-        15 => 'additional_links',
-        16 => 'question_and_answers_filter',
-        17 => 'question_and_answers_switcher',
-        18 => 'question_and_answers_pane',
-        19 => 'question_and_answer_colorbox',
-        20 => 'question_form',
+        0 => 'profil_picture_views_block',
+        1 => 'pw_user_nameparty',
+        2 => 'parliament_info_block',
+        3 => 'profile_extension',
+        4 => 'qa_asking_anchor',
+        5 => 'qa_link_counter',
+        6 => 'user_basic_info',
+        7 => 'user_about',
+        8 => 'user_image_gallery',
+        9 => 'user_political_goals',
+        10 => 'user_tweets',
+        11 => 'additional_links',
+        12 => 'user_calendar',
+        13 => 'question_and_answers_filter',
+        14 => 'question_and_answers_switcher',
+        15 => 'question_and_answers_pane',
+        16 => 'question_and_answer_colorbox',
+        17 => 'question_form',
       ),
     ),
     'fields' => array(
-      'same_constituency' => 'ds_content',
       'profil_picture_views_block' => 'ds_content',
-      'field_user_fname' => 'ds_content',
-      'field_user_lname' => 'ds_content',
-      'field_user_party' => 'ds_content',
+      'pw_user_nameparty' => 'ds_content',
       'parliament_info_block' => 'ds_content',
       'profile_extension' => 'ds_content',
       'qa_asking_anchor' => 'ds_content',
@@ -938,8 +1009,8 @@ function profiles_ds_layout_settings_info() {
       'user_image_gallery' => 'ds_content',
       'user_political_goals' => 'ds_content',
       'user_tweets' => 'ds_content',
-      'user_calendar' => 'ds_content',
       'additional_links' => 'ds_content',
+      'user_calendar' => 'ds_content',
       'question_and_answers_filter' => 'ds_content',
       'question_and_answers_switcher' => 'ds_content',
       'question_and_answers_pane' => 'ds_content',

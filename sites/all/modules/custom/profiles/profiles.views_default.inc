@@ -818,7 +818,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'jcarousel';
   $handler->display->display_options['style_options']['wrap'] = '0';
@@ -937,7 +937,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'jcarousel';
-  $handler->display->display_options['style_options']['wrap'] = '0';
+  $handler->display->display_options['style_options']['wrap'] = 'circular';
   $handler->display->display_options['style_options']['visible'] = '';
   $handler->display->display_options['style_options']['auto'] = '0';
   $handler->display->display_options['style_options']['autoPause'] = 1;
@@ -946,6 +946,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -967,6 +968,49 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Benutzer: Profile Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Benutzer: Profile Picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['alter']['path'] = 'user/[uid]';
+  $handler->display->display_options['fields']['field_user_picture']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['alter']['alt'] = 'to the full profile';
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'float-left push-right-s';
+  $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'file_view_mode' => 'pw_file_portrait_xs',
+  );
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'user data';
+  $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'fieldset_1',
+    1 => 'fieldset_2',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'small nowrap';
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['label'] = 'name and party';
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'field_user_fname',
+    1 => 'field_user_lname',
+    2 => 'field_user_party',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -988,19 +1032,30 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['label'] = '';
   $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname] [field_user_lname],[field_user_party]';
+  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['field_user_party']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_user_party']['alter']['path'] = 'user/[uid]';
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
+  $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_2']['label'] = 'dialogue';
+  $handler->display->display_options['fields']['fieldset_2']['children'] = array(
+    0 => 'field_user_questions_get',
+    1 => 'field_user_answers_give',
+  );
+  $handler->display->display_options['fields']['fieldset_2']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset_2']['fieldset']['classes'] = 'medium';
   /* Feld: Benutzer: Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['label'] = '';
   $handler->display->display_options['fields']['field_user_questions_get']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[field_user_questions_get] Questions';
+  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[field_user_questions_get] Questions / ';
   $handler->display->display_options['fields']['field_user_questions_get']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
     'thousand_separator' => ' ',
@@ -1018,19 +1073,6 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Feld: Excluded | Profil Picture */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profil Picture';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_s',
-  );
   /* Feld: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -1038,7 +1080,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['php']['label'] = '';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+  $handler->display->display_options['fields']['php']['php_value'] = '<?php
 $profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
@@ -2170,12 +2212,6 @@ if($record->value == 0){
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Kopfbereich: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'TEASER MODE-----------------------------------------------------------------';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
   /* Relationship: Kommentar: Comments of the node */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
@@ -2359,14 +2395,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '</div>';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
-  /* Feld: to top link */
-  $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
-  $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_4']['ui_name'] = 'to top link';
-  $handler->display->display_options['fields']['nothing_4']['label'] = '';
-  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '<div class="anchor-to-top clearfix"><a href="#page">to the top</a></div>';
-  $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
   /* Sort criterion: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -2971,7 +2999,6 @@ if($record->value == 0){
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'qanda-fullmode';
   $handler->display->display_options['display_description'] = 'Question and Answers Content Pane for exposing filter in block';
   $handler->display->display_options['defaults']['hide_attachment_summary'] = FALSE;
   $handler->display->display_options['hide_attachment_summary'] = TRUE;
@@ -3046,12 +3073,6 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'FULL MODE-----------------------------------------------------------------';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -3438,14 +3459,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '</div>';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
-  /* Feld: to top link */
-  $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
-  $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_4']['ui_name'] = 'to top link';
-  $handler->display->display_options['fields']['nothing_4']['label'] = '';
-  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '<div class="anchor-to-top clearfix"><a href="#page">to the top</a></div>';
-  $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -3701,6 +3714,7 @@ if($record->value == 0){
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'User Profile Fields';
+  $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
@@ -3712,11 +3726,18 @@ if($record->value == 0){
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
+  /* Fußbereich: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -3754,10 +3775,188 @@ if($record->value == 0){
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
+  /* Display: Headline */
+  $handler = $view->new_display('block', 'Headline', 'headline');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['display_description'] = 'Name and Party';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Exlcuded | First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Exlcuded | First Name';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_fname']['type'] = 'text_plain';
+  /* Feld: Excluded | Last Name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_lname']['type'] = 'text_plain';
+  /* Feld: Name, Party */
+  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Name, Party';
+  $handler->display->display_options['fields']['field_user_party']['label'] = '';
+  $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
+  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_class'] = 'push-bottom-xxs';
+  $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Benutzer: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Profile Picture */
+  $handler = $view->new_display('block', 'Profile Picture', 'profile_picture');
+  $handler->display->display_options['display_description'] = 'User Profile Picture and Copyright';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Benutzer: Profile picture (field_user_picture:fid) */
+  $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
+  $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | Profile Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profile Picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'file_view_mode' => 'pw_file_portrait_m',
+  );
+  /* Feld: Exlcuded | UID */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['ui_name'] = 'Exlcuded | UID';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Profile Picture PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Profile Picture PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$profiluser = $myuser = user_load($row->uid);
+$profiluserroles = $profiluser->roles;
+if(in_array("Premium User",$profiluserroles)) {
+print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+}
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+
+  /* Display: Parliament Info */
+  $handler = $view->new_display('block', 'Parliament Info', 'parliament_info');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Parliament Info';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
+  $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | Parliament Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'field_user_parliament_tid';
+  $handler->display->display_options['fields']['name']['ui_name'] = 'Excluded | Parliament Name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Valid til */
+  $handler->display->display_options['fields']['field_parliament_valid']['id'] = 'field_parliament_valid';
+  $handler->display->display_options['fields']['field_parliament_valid']['table'] = 'field_data_field_parliament_valid';
+  $handler->display->display_options['fields']['field_parliament_valid']['field'] = 'field_parliament_valid';
+  $handler->display->display_options['fields']['field_parliament_valid']['relationship'] = 'field_user_parliament_tid';
+  $handler->display->display_options['fields']['field_parliament_valid']['ui_name'] = 'Excluded | Valid til';
+  $handler->display->display_options['fields']['field_parliament_valid']['label'] = '';
+  $handler->display->display_options['fields']['field_parliament_valid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_parliament_valid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_parliament_valid']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'value2',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Feld: Rewritten | Custom Text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Rewritten | Custom Text';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Member of [name] valid til [field_parliament_valid].';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'push-bottom-xs';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+
+  /* Display: Profile Extension */
+  $handler = $view->new_display('block', 'Profile Extension', 'profile_extension');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Profile Extension Text';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Durch die Verwendung einer <a href="#">Profilerweiterung</a> unterstützt der Kandidat abgeordnetenwatch einmalig mit 150 €. 
+';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'light';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+
   /* Display: Basic Info */
-  $handler = $view->new_display('block', 'Basic Info', 'block_3');
+  $handler = $view->new_display('block', 'Basic Info', 'basic_info');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Basic Info of [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'zebra clearfix';
   $handler->display->display_options['display_description'] = 'Contextual Basic Info Block on user for use with DS';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -3797,6 +3996,9 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_birthday']['table'] = 'field_data_field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday']['field'] = 'field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_birthday']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_birthday']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_birthday']['empty'] = '-';
   $handler->display->display_options['fields']['field_user_birthday']['settings'] = array(
     'format_type' => 'long',
     'fromto' => 'both',
@@ -3809,6 +4011,10 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_job_skills']['table'] = 'field_data_field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills']['field'] = 'field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_job_skills']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_job_skills']['element_wrapper_class'] = 'views-row-odd';
+  $handler->display->display_options['fields']['field_user_job_skills']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_job_skills']['empty'] = '-';
   /* Feld: Benutzer: Address */
   $handler->display->display_options['fields']['field_user_address']['id'] = 'field_user_address';
   $handler->display->display_options['fields']['field_user_address']['table'] = 'field_data_field_user_address';
@@ -3817,6 +4023,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_address']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_address']['alter']['text'] = '[field_user_address-locality] ';
   $handler->display->display_options['fields']['field_user_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_address']['empty'] = '-';
   $handler->display->display_options['fields']['field_user_address']['click_sort_column'] = 'country';
   $handler->display->display_options['fields']['field_user_address']['settings'] = array(
     'use_widget_handlers' => 1,
@@ -3831,6 +4038,10 @@ if($record->value == 0){
   $handler->display->display_options['fields']['name_1']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['fields']['name_1']['label'] = 'Constituency';
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['name_1']['element_wrapper_class'] = 'views-row-odd';
+  $handler->display->display_options['fields']['name_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name_1']['empty'] = '-';
   /* Feld: Taxonomie-Begriff: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -3838,9 +4049,10 @@ if($record->value == 0){
   $handler->display->display_options['fields']['name']['relationship'] = 'field_user_list_position_tid';
   $handler->display->display_options['fields']['name']['label'] = 'List Position';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['empty'] = '-';
 
   /* Display: About */
-  $handler = $view->new_display('block', 'About', 'block_4');
+  $handler = $view->new_display('block', 'About', 'about');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = ' About [field_user_fname] [field_user_lname]';
   $handler->display->display_options['display_description'] = 'Contextual About Block on user';
@@ -3910,16 +4122,208 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_about_value']['field'] = 'field_user_about_value';
   $handler->display->display_options['filters']['field_user_about_value']['operator'] = 'not empty';
 
+  /* Display: About Page */
+  $handler = $view->new_display('page', 'About Page', 'about_page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'About [field_user_party]';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="About [field_user_fname] [field_user_lname]"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | First Name';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Last Name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Profile picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profile picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'file_view_mode' => 'pw_file_portrait_l',
+  );
+  /* Feld: Excluded | Roles */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['ui_name'] = 'Excluded | Roles';
+  $handler->display->display_options['fields']['rid']['label'] = '';
+  $handler->display->display_options['fields']['rid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['rid']['element_label_colon'] = FALSE;
+  /* Feld: Profile picture PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Profile picture PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'file-image float-left push-bottom-l';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$profiluser = $myuser = user_load($row->rid);
+$profiluserroles = $profiluser->roles;
+if(in_array("Premium User",$profiluserroles)) {
+print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: Name, Party */
+  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Name, Party';
+  $handler->display->display_options['fields']['field_user_party']['label'] = '';
+  $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
+  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_class'] = 'push-bottom-xxs';
+  $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  /* Feld: Parliament */
+  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['ui_name'] = 'Parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['label'] = '';
+  $handler->display->display_options['fields']['field_user_parliament']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_parliament']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_user_parliament']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_parliament']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
+  /* Feld: Ask a question */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['ui_name'] = 'Ask a question';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]#block-webform-client-block-17';
+  $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Feld: Full profile link */
+  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
+  $handler->display->display_options['fields']['view_user']['table'] = 'users';
+  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
+  $handler->display->display_options['fields']['view_user']['ui_name'] = 'Full profile link';
+  $handler->display->display_options['fields']['view_user']['label'] = '';
+  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
+  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  /* Feld: Subline */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Subline';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'About me';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'clear clearfix';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Feld: Benutzer: About */
+  $handler->display->display_options['fields']['field_user_about']['id'] = 'field_user_about';
+  $handler->display->display_options['fields']['field_user_about']['table'] = 'field_data_field_user_about';
+  $handler->display->display_options['fields']['field_user_about']['field'] = 'field_user_about';
+  $handler->display->display_options['fields']['field_user_about']['label'] = '';
+  $handler->display->display_options['fields']['field_user_about']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_about']['element_default_classes'] = FALSE;
+  /* Feld: Full profile link copy */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Full profile link copy';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[view_user]';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'link-profile';
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Benutzer: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
+  $handler->display->display_options['path'] = 'users/%/about';
+
   /* Display: Image Gallery */
   $handler = $view->new_display('block', 'Image Gallery', 'image_gallery');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = ' Image Gallery of [field_user_fname] [field_user_lname]';
   $handler->display->display_options['display_description'] = 'Contextual Image Gallery Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'image_gallery_page';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '24';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'user-image-gallery-wrapper';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -3969,7 +4373,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_image_gallery']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_image_gallery']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_user_image_gallery']['settings'] = array(
-    'colorbox_node_style' => 'pw_portrait_s',
+    'colorbox_node_style' => 'pw_thumbnail',
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
@@ -3988,6 +4392,9 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_user_image_gallery_fid';
   $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
   $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Benutzer: Aktiv */
@@ -4003,8 +4410,245 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_image_gallery_fid']['field'] = 'field_user_image_gallery_fid';
   $handler->display->display_options['filters']['field_user_image_gallery_fid']['operator'] = 'not empty';
 
+  /* Display: Image Gallery Page */
+  $handler = $view->new_display('page', 'Image Gallery Page', 'image_gallery_page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Image Gallery of [field_user_party] ';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'clearfix field-name-user-image-gallery';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['style_options']['fill_single_line'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Imagegallery of [field_user_fname] [field_user_fname],[field_user_party]"></div>
+
+<div class="file-image float-left push-bottom-l">
+[php]
+</div>
+<h2 class="push-bottom-xxs">[field_user_party]</h2>
+<p>[field_user_parliament]</p>
+<p class="center push-bottom-l"><span class="form-submit big link-question">[name]</span></p>
+<p class="link-profile">
+[view_user]
+</p>
+<h3 class="clear clearfix">[nothing]</h3>
+';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Fußbereich: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<p class="link-profile">[view_user]</p>';
+  $handler->display->display_options['footer']['area']['format'] = 'managed_content';
+  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Benutzer: Image Gallery (field_user_image_gallery:fid) */
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['id'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['table'] = 'field_data_field_user_image_gallery';
+  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['field'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | Profile Picture */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profile Picture';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'file_view_mode' => 'pw_file_portrait_m',
+  );
+  /* Feld: Excluded | UID */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['ui_name'] = 'Excluded | UID';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | Profile picture PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | Profile picture PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$profiluser = user_load($row->uid);
+$profiluserroles = $profiluser->roles;
+if(in_array("Premium User",$profiluserroles)) {
+print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+}
+
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: Excluded | First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | First Name';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Last Name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Name, Party */
+  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Excluded | Name, Party';
+  $handler->display->display_options['fields']['field_user_party']['label'] = '';
+  $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
+  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_class'] = 'push-bottom-xxs';
+  $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  /* Feld: Excluded | Parliament */
+  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['ui_name'] = 'Excluded | Parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['label'] = '';
+  $handler->display->display_options['fields']['field_user_parliament']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_parliament']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_parliament']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_user_parliament']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_parliament']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
+  /* Feld: Excluded | Ask a question */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['ui_name'] = 'Excluded | Ask a question';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]#block-webform-client-block-17';
+  $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Feld: Excluded | Full profile link */
+  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
+  $handler->display->display_options['fields']['view_user']['table'] = 'users';
+  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
+  $handler->display->display_options['fields']['view_user']['ui_name'] = 'Excluded | Full profile link';
+  $handler->display->display_options['fields']['view_user']['label'] = '';
+  $handler->display->display_options['fields']['view_user']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
+  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  /* Feld: Excluded | Subline */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Excluded | Subline';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Image Gallery';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'clear clearfix';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'field_user_image_gallery',
+    1 => 'field_image_copyright',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'user-image-gallery-wrapper';
+  /* Feld: Benutzer: Image Gallery */
+  $handler->display->display_options['fields']['field_user_image_gallery']['id'] = 'field_user_image_gallery';
+  $handler->display->display_options['fields']['field_user_image_gallery']['table'] = 'field_data_field_user_image_gallery';
+  $handler->display->display_options['fields']['field_user_image_gallery']['field'] = 'field_user_image_gallery';
+  $handler->display->display_options['fields']['field_user_image_gallery']['label'] = '';
+  $handler->display->display_options['fields']['field_user_image_gallery']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_image_gallery']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_image_gallery']['type'] = 'colorbox';
+  $handler->display->display_options['fields']['field_user_image_gallery']['settings'] = array(
+    'colorbox_node_style' => 'media_thumbnail',
+    'colorbox_image_style' => '',
+    'colorbox_gallery' => 'field_page',
+    'colorbox_gallery_custom' => '',
+    'colorbox_caption' => 'title',
+    'colorbox_caption_custom' => '',
+  );
+  $handler->display->display_options['fields']['field_user_image_gallery']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_user_image_gallery']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_image_gallery']['separator'] = '';
+  /* Feld: Datei: copyright */
+  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_user_image_gallery_fid';
+  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
+  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Benutzer: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
+  $handler->display->display_options['path'] = 'users/%/imagegallery';
+
   /* Display: Politcial Goals */
-  $handler = $view->new_display('block', 'Politcial Goals', 'block_5');
+  $handler = $view->new_display('block', 'Politcial Goals', 'political_goals');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = ' Political Goals of [field_user_fname] [field_user_lname]';
   $handler->display->display_options['display_description'] = 'Contextual Political Goals Block on user';
@@ -4067,14 +4711,189 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_political_goals_value']['field'] = 'field_user_political_goals_value';
   $handler->display->display_options['filters']['field_user_political_goals_value']['operator'] = 'not empty';
 
+  /* Display: Political Goals Page */
+  $handler = $view->new_display('page', 'Political Goals Page', 'political_goals_page');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Political Goals of [field_user_party] ';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Political Goalst of [field_user_fname] [field_user_lname],[field_user_party]"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | Profile Picture  */
+  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
+  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profile Picture ';
+  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
+    'file_view_mode' => 'pw_file_portrait_l',
+  );
+  /* Feld: Excluded | UID */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['ui_name'] = 'Excluded | UID';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | First Name';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Last Name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  /* Feld: Profile picture PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Profile picture PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'file-image float-left push-bottom-l';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$profiluser = $myuser = user_load($row->uid);
+$profiluserroles = $profiluser->roles;
+if(in_array("Premium User",$profiluserroles)) {
+print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
+print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+}
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: Name, Party */
+  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Name, Party';
+  $handler->display->display_options['fields']['field_user_party']['label'] = '';
+  $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
+  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_class'] = 'push-bottom-xxs';
+  $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  /* Feld: Parliament */
+  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['ui_name'] = 'Parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['label'] = '';
+  $handler->display->display_options['fields']['field_user_parliament']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_parliament']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_user_parliament']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_parliament']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
+  /* Feld: Ask a question */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['ui_name'] = 'Ask a question';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]#block-webform-client-block-17';
+  $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_type'] = 'span';
+  $handler->display->display_options['fields']['name']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
+  /* Feld: Full profile link */
+  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
+  $handler->display->display_options['fields']['view_user']['table'] = 'users';
+  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
+  $handler->display->display_options['fields']['view_user']['ui_name'] = 'Full profile link';
+  $handler->display->display_options['fields']['view_user']['label'] = '';
+  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
+  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  /* Feld: Subline */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Subline';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Political Goals';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'clear clearfix';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Feld: Political goals */
+  $handler->display->display_options['fields']['field_user_political_goals']['id'] = 'field_user_political_goals';
+  $handler->display->display_options['fields']['field_user_political_goals']['table'] = 'field_data_field_user_political_goals';
+  $handler->display->display_options['fields']['field_user_political_goals']['field'] = 'field_user_political_goals';
+  $handler->display->display_options['fields']['field_user_political_goals']['ui_name'] = 'Political goals';
+  $handler->display->display_options['fields']['field_user_political_goals']['label'] = '';
+  $handler->display->display_options['fields']['field_user_political_goals']['element_label_colon'] = FALSE;
+  /* Feld: Full profile link copy */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Full profile link copy';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[view_user]';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'link-profile';
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Benutzer: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
+  $handler->display->display_options['path'] = 'users/%/political-goals';
+
   /* Display: Additional Links */
-  $handler = $view->new_display('block', 'Additional Links', 'block_6');
+  $handler = $view->new_display('block', 'Additional Links', 'additional_links');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Additional Links of [field_user_fname] [field_user_lname]';
   $handler->display->display_options['display_description'] = 'Additional Links Goals Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['columns'] = array(
     'field_user_fname' => 'field_user_fname',
     'field_user_lname' => 'field_user_lname',
@@ -4097,11 +4916,14 @@ if($record->value == 0){
       'empty_column' => 1,
     ),
     'field_user_more' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['override'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -4117,7 +4939,7 @@ if($record->value == 0){
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="%1/additional-links">more</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="read-more float-right"><a href="%1/additional-links">more</a></div>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -4159,303 +4981,37 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_more_attributes']['field'] = 'field_user_more_attributes';
   $handler->display->display_options['filters']['field_user_more_attributes']['operator'] = 'not empty';
 
-  /* Display: Profile Extension */
-  $handler = $view->new_display('block', 'Profile Extension', 'block_1');
+  /* Display: Additional Links Page */
+  $handler = $view->new_display('page', 'Additional Links Page', 'additional_links_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Profile Extension Text';
+  $handler->display->display_options['title'] = 'Additional Links of [field_user_party] ';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Durch die Verwendung einer <a href="#">Profilerweiterung</a> unterstützt der Kandidat abgeordnetenwatch einmalig mit 150 €. 
-';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-
-  /* Display: About Page */
-  $handler = $view->new_display('page', 'About Page', 'page_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'About [field_user_fname] [field_user_lname], [field_user_party] ';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['type'] = 'ol';
+  $handler->display->display_options['style_options']['class'] = 'zebra push-bottom-l';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="About [field_user_fname] [field_user_lname]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Benutzer: Parliament */
-  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['label'] = '';
-  $handler->display->display_options['fields']['field_user_parliament']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
-  /* Feld: Benutzer: Profile picture */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_m',
-  );
-  /* Feld: Excluded | Roles */
-  $handler->display->display_options['fields']['rid']['id'] = 'rid';
-  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
-  $handler->display->display_options['fields']['rid']['field'] = 'rid';
-  $handler->display->display_options['fields']['rid']['ui_name'] = 'Excluded | Roles';
-  $handler->display->display_options['fields']['rid']['label'] = '';
-  $handler->display->display_options['fields']['rid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['rid']['element_label_colon'] = FALSE;
-  /* Feld: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$profiluser = $myuser = user_load($row->rid);
-$profiluserroles = $profiluser->roles;
-if(in_array("Premium User",$profiluserroles)) {
-print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
-}
-
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Benutzer: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = 'Ask a Question';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]#block-webform-client-block-17';
-  $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_class'] = 'form-submit big link-question';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Excluded | First Name */
-  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | First Name';
-  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Last Name */
-  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
-  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Party */
-  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Excluded | Party';
-  $handler->display->display_options['fields']['field_user_party']['label'] = '';
-  $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Benutzer: Link */
-  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['table'] = 'users';
-  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['label'] = '';
-  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
-  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
-  /* Feld: Benutzer: About */
-  $handler->display->display_options['fields']['field_user_about']['id'] = 'field_user_about';
-  $handler->display->display_options['fields']['field_user_about']['table'] = 'field_data_field_user_about';
-  $handler->display->display_options['fields']['field_user_about']['field'] = 'field_user_about';
-  $handler->display->display_options['fields']['field_user_about']['label'] = '';
-  $handler->display->display_options['fields']['field_user_about']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
-  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['table'] = 'users';
-  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
-  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  $handler->display->display_options['path'] = 'users/%/about';
-
-  /* Display: Political Goals Page */
-  $handler = $view->new_display('page', 'Political Goals Page', 'page_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Political Goals of [field_user_fname] [field_user_lname], [field_user_party] ';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Political Goalst of [field_user_fname] [field_user_lname],[field_user_party]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Benutzer: Parliament */
-  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['label'] = '';
-  $handler->display->display_options['fields']['field_user_parliament']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
-  /* Feld: Excluded | Profile Picture  */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profile Picture ';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_m',
-  );
-  /* Feld: Excluded | UID */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['ui_name'] = 'Excluded | UID';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$profiluser = $myuser = user_load($row->uid);
-$profiluserroles = $profiluser->roles;
-if(in_array("Premium User",$profiluserroles)) {
-print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
-}
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Benutzer: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = 'Ask a Question';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]#block-webform-client-block-17';
-  $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_class'] = 'form-submit big link-question';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Excluded | First Name */
-  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | First Name';
-  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Last Name */
-  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
-  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Party */
-  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Excluded | Party';
-  $handler->display->display_options['fields']['field_user_party']['label'] = '';
-  $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Benutzer: Link */
-  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['table'] = 'users';
-  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['label'] = '';
-  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
-  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
-  /* Feld: Benutzer: Political Goals */
-  $handler->display->display_options['fields']['field_user_political_goals']['id'] = 'field_user_political_goals';
-  $handler->display->display_options['fields']['field_user_political_goals']['table'] = 'field_data_field_user_political_goals';
-  $handler->display->display_options['fields']['field_user_political_goals']['field'] = 'field_user_political_goals';
-  $handler->display->display_options['fields']['field_user_political_goals']['label'] = '';
-  $handler->display->display_options['fields']['field_user_political_goals']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
-  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['table'] = 'users';
-  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
-  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  $handler->display->display_options['path'] = 'users/%/political-goals';
-
-  /* Display: Image Gallery Page */
-  $handler = $view->new_display('page', 'Image Gallery Page', 'page_3');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Image Gallery of [field_user_fname] [field_user_lname], [field_user_party] ';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Imagegallery of [field_user_fname] [field_user_fname],[field_user_party]"></div>
-[php] 
-<span class="form-submit big link-question">[name]</span> 
-';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Additional Links of [field_user_fname] [field_user_lname], [field_user_party]"></div><div class="file-image float-left push-bottom-l">
+[php]
+</div>
+<h2 class="push-bottom-xxs">[field_user_party]</h2>
+<p>[field_user_parliament]</p>
+<p class="center push-bottom-l"><span class="form-submit big link-question">[name]</span></p>
+<p class="link-profile">
+[view_user]
+</p>
+<h3 class="clear clearfix">[nothing_1]</h3>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -4463,14 +5019,9 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '[view_user]';
+  $handler->display->display_options['footer']['area']['content'] = '<p class="link-profile">[view_user]</p>';
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer: Image Gallery (field_user_image_gallery:fid) */
-  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['id'] = 'field_user_image_gallery_fid';
-  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['table'] = 'field_data_field_user_image_gallery';
-  $handler->display->display_options['relationships']['field_user_image_gallery_fid']['field'] = 'field_user_image_gallery_fid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | Profile Picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
@@ -4494,26 +5045,71 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Excluded | PHP */
+  /* Feld: Excluded | First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | First Name';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Last Name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Profile picture PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | Profile picture PHP';
   $handler->display->display_options['fields']['php']['label'] = '';
   $handler->display->display_options['fields']['php']['exclude'] = TRUE;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'file-image float-left push-bottom-l';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$profiluser = user_load($row->uid);
+$profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
-print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
+print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
 print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
 }
-
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: Excluded | Name and Party */
+  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Excluded | Name and Party';
+  $handler->display->display_options['fields']['field_user_party']['label'] = '';
+  $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname], [field_user_lname], [field_user_party]';
+  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_class'] = 'push-bottom-xxs';
+  $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  /* Feld: Excluded | Parliament */
+  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['ui_name'] = 'Excluded | Parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['label'] = '';
+  $handler->display->display_options['fields']['field_user_parliament']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_parliament']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_parliament']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['field_user_parliament']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_parliament']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
   /* Feld: Excluded | Ask a question */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -4530,211 +5126,46 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['name']['element_type'] = 'span';
   $handler->display->display_options['fields']['name']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'center push-bottom-l';
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Excluded | First Name */
-  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | First Name';
-  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Last Name */
-  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
-  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Party */
-  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Excluded | Party';
-  $handler->display->display_options['fields']['field_user_party']['label'] = '';
-  $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Excluded | to the full profile */
+  /* Feld: Excluded | Full profile link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';
   $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['ui_name'] = 'Excluded | to the full profile';
+  $handler->display->display_options['fields']['view_user']['ui_name'] = 'Excluded | Full profile link';
   $handler->display->display_options['fields']['view_user']['label'] = '';
   $handler->display->display_options['fields']['view_user']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
-  /* Feld: Benutzer: Image Gallery */
-  $handler->display->display_options['fields']['field_user_image_gallery']['id'] = 'field_user_image_gallery';
-  $handler->display->display_options['fields']['field_user_image_gallery']['table'] = 'field_data_field_user_image_gallery';
-  $handler->display->display_options['fields']['field_user_image_gallery']['field'] = 'field_user_image_gallery';
-  $handler->display->display_options['fields']['field_user_image_gallery']['label'] = '';
-  $handler->display->display_options['fields']['field_user_image_gallery']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_image_gallery']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_image_gallery']['type'] = 'colorbox';
-  $handler->display->display_options['fields']['field_user_image_gallery']['settings'] = array(
-    'colorbox_node_style' => 'thumbnail',
-    'colorbox_image_style' => 'pw_landscape_l',
-    'colorbox_gallery' => 'post',
-    'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'auto',
-    'colorbox_caption_custom' => '',
-  );
-  $handler->display->display_options['fields']['field_user_image_gallery']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_user_image_gallery']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_user_image_gallery']['separator'] = '';
-  /* Feld: Datei: copyright */
-  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_user_image_gallery_fid';
-  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
-  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
-  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['table'] = 'users';
-  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
-  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
-  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  $handler->display->display_options['path'] = 'users/%/imagegallery';
-
-  /* Display: Additional Links Page */
-  $handler = $view->new_display('page', 'Additional Links Page', 'page_4');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Additional Links of [field_user_fname] [field_user_lname], [field_user_party] ';
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Additional Links of [field_user_fname] [field_user_lname], [field_user_party]"></div>
-[php]';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Benutzer: Parliament */
-  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['label'] = '';
-  $handler->display->display_options['fields']['field_user_parliament']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
-  /* Feld: Excluded | Profile Picture */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profile Picture';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_m',
-  );
-  /* Feld: Excluded | UID */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['ui_name'] = 'Excluded | UID';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Excluded | PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$profiluser = $myuser = user_load($row->uid);
-$profiluserroles = $profiluser->roles;
-if(in_array("Premium User",$profiluserroles)) {
-print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
-}
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Benutzer: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = 'Ask a Question';
-  $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'users/[name]#block-webform-client-block-17';
-  $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['replace_spaces'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_type'] = 'span';
-  $handler->display->display_options['fields']['name']['element_class'] = 'form-submit big link-question';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Excluded | First Name */
-  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | First Name';
-  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Last Name */
-  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | Last Name';
-  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
-  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Party */
-  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
-  $handler->display->display_options['fields']['field_user_party']['ui_name'] = 'Excluded | Party';
-  $handler->display->display_options['fields']['field_user_party']['label'] = '';
-  $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Benutzer: Link */
-  $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['table'] = 'users';
-  $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
-  $handler->display->display_options['fields']['view_user']['label'] = '';
-  $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
-  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
-  /* Feld: Benutzer: Additional information */
+  /* Feld: Excluded | Subline */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Excluded | Subline';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Additional information';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'h3';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'clear clearfix';
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  /* Feld: Additional information */
   $handler->display->display_options['fields']['field_user_more']['id'] = 'field_user_more';
   $handler->display->display_options['fields']['field_user_more']['table'] = 'field_data_field_user_more';
   $handler->display->display_options['fields']['field_user_more']['field'] = 'field_user_more';
+  $handler->display->display_options['fields']['field_user_more']['ui_name'] = 'Additional information';
   $handler->display->display_options['fields']['field_user_more']['label'] = '';
   $handler->display->display_options['fields']['field_user_more']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_more']['element_wrapper_type'] = 'span';
+  $handler->display->display_options['fields']['field_user_more']['element_wrapper_class'] = 'dark';
+  $handler->display->display_options['fields']['field_user_more']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_more']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_user_more']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_user_more']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_more']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -4753,100 +5184,6 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
   $handler->display->display_options['path'] = 'users/%/additional-links';
-
-  /* Display: Profile Picture */
-  $handler = $view->new_display('block', 'Profile Picture', 'block_2');
-  $handler->display->display_options['display_description'] = 'User Profile Picture and Copyright';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer: Profile picture (field_user_picture:fid) */
-  $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
-  $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Excluded | Profil Picture */
-  $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
-  $handler->display->display_options['fields']['field_user_picture']['ui_name'] = 'Excluded | Profil Picture';
-  $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
-  $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_m',
-  );
-  /* Feld: Exlcuded | UID */
-  $handler->display->display_options['fields']['uid']['id'] = 'uid';
-  $handler->display->display_options['fields']['uid']['table'] = 'users';
-  $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  $handler->display->display_options['fields']['uid']['ui_name'] = 'Exlcuded | UID';
-  $handler->display->display_options['fields']['uid']['label'] = '';
-  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$profiluser = $myuser = user_load($row->uid);
-$profiluserroles = $profiluser->roles;
-if(in_array("Premium User",$profiluserroles)) {
-print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
-}
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  $handler->display->display_options['block_description'] = 'Profil Picture Block';
-
-  /* Display: Parliament Info */
-  $handler = $view->new_display('block', 'Parliament Info', 'block_7');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Parliament Info';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Excluded | Parliament Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_user_parliament_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Excluded | Parliament Name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Valid til */
-  $handler->display->display_options['fields']['field_parliament_valid']['id'] = 'field_parliament_valid';
-  $handler->display->display_options['fields']['field_parliament_valid']['table'] = 'field_data_field_parliament_valid';
-  $handler->display->display_options['fields']['field_parliament_valid']['field'] = 'field_parliament_valid';
-  $handler->display->display_options['fields']['field_parliament_valid']['relationship'] = 'field_user_parliament_tid';
-  $handler->display->display_options['fields']['field_parliament_valid']['ui_name'] = 'Excluded | Valid til';
-  $handler->display->display_options['fields']['field_parliament_valid']['label'] = '';
-  $handler->display->display_options['fields']['field_parliament_valid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_parliament_valid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_parliament_valid']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'value2',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Feld: Rewritten | Custom Text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Rewritten | Custom Text';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Member of [name] valid til [field_parliament_valid].';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $export['user_profile_fields'] = $view;
 
   $view = new view();
