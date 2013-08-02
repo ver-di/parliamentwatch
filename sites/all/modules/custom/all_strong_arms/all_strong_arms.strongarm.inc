@@ -1069,6 +1069,7 @@ search-old';
     'group_user_polls_archive|user|user|default' => FALSE,
     'group_blog_searchitem|node|blogpost|search_result' => FALSE,
     'group_blog_searchmeta|node|blogpost|search_result' => TRUE,
+    'group_user_name|user|user|premium_user' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -1368,6 +1369,9 @@ search-old';
       'preview' => array(
         'custom_settings' => TRUE,
       ),
+      'pw_file_portrait_xs' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -1398,6 +1402,10 @@ search-old';
             'visible' => TRUE,
           ),
           'preview' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'pw_file_portrait_xs' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),
@@ -1816,7 +1824,7 @@ search-old';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_compression';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['page_compression'] = $strongarm;
 
   $strongarm = new stdClass();
