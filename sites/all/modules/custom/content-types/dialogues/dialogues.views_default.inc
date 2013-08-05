@@ -116,7 +116,7 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['field_user_lname']['alter']['text'] = '[field_user_lname],';
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Broken/missing handler */
+  /* Feld: Benutzer: Party */
   $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';

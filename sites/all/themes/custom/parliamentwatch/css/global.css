@@ -35,9 +35,6 @@ body {
     line-height: 18px; /* for module text_resize in IE */
     margin-top: 7px;
 }
-#region-content .region-content-inner {
-    padding: 0 10px 0 0;
-}
 a {
     color: #f63;
     text-decoration: none;
@@ -283,7 +280,7 @@ a.dark {
 .zebra li {
     padding: 7px 3px;
 }
-#region-content ol.zebra {
+ol.zebra {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -568,13 +565,7 @@ h1#page-title {
     font-size: inherit;
     color: #999;
 }
-#region-content ol.search-results,
-#region-content ol.search-results li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-#region-content ol.search-results li,
+ol.search-results li,
 .search-results article {
     border-bottom: 1px dotted #f63;
     padding-bottom: 15px !important;
@@ -672,25 +663,21 @@ ul.tabs li:hover a {
 
 /* //////////////////////////// pager ////////////////////// */
 
-#region-content .item-list {
+.item-list {
     padding-bottom: 30px;
 }
-#region-content .item-list .pager {
+.item-list .pager {
     clear: both;
     text-align: center;
     font-size: 12px;
 }
-#region-content .item-list ul.pager {
-    padding: 0;
-    margin: 0;
-}
-#region-content .item-list ul.pager li {
+.item-list ul.pager li {
     margin: 0 3px;
     display: inline;
 }
-#region-content .item-list ul.pager li a,
-#region-content .item-list ul.pager li span,
-#region-content .item-list ul.pager li.pager-current {
+.item-list ul.pager li a,
+.item-list ul.pager li span,
+.item-list ul.pager li.pager-current {
     background: #c3c3c3;
     display: inline-block;
     min-width: 25px;
@@ -709,74 +696,74 @@ ul.tabs li:hover a {
     float: right;
     margin-top: -25px;
 }
-#region-content .item-list ul.pager li.pager-first span,
-#region-content .item-list ul.pager li.pager-last span {
+.item-list ul.pager li.pager-first span,
+.item-list ul.pager li.pager-last span {
     color: #999;
 }
-#region-content .item-list ul.pager li.pager-current,
-#region-content .item-list ul.pager li a:hover {
+.item-list ul.pager li.pager-current,
+.item-list ul.pager li a:hover {
     background: #ddd;
 }
-#region-content .pager-current {
+.pager-current {
     font-weight: bold;
 }
-#region-content .item-list ul.pager li.pager-previous a,
-#region-content .item-list ul.pager li.pager-first span,
-#region-content .item-list ul.pager li.pager-first a,
-#region-content .item-list ul.pager li.pager-last a,
-#region-content .item-list ul.pager li.pager-last span,
-#region-content .item-list ul.pager li.pager-next a {
+.item-list ul.pager li.pager-previous a,
+.item-list ul.pager li.pager-first span,
+.item-list ul.pager li.pager-first a,
+.item-list ul.pager li.pager-last a,
+.item-list ul.pager li.pager-last span,
+.item-list ul.pager li.pager-next a {
     background-color: #c3c3c3;
     text-indent: -5000em;
     display: block;
     width: 25px;
     height: 25px;
 }
-#region-content .item-list ul.pager li.pager-first a span,
-#region-content .item-list ul.pager li.pager-last a span {
+.item-list ul.pager li.pager-first a span,
+.item-list ul.pager li.pager-last a span {
     background: transparent;
     padding: 0;
 }
-#region-content .item-list ul.pager li.pager-previous a,
-#region-content .item-list ul.pager li.pager-first span,
-#region-content .item-list ul.pager li.pager-first a {
+.item-list ul.pager li.pager-previous a,
+.item-list ul.pager li.pager-first span,
+.item-list ul.pager li.pager-first a {
     float: left;
     padding-left: 36px;
 }
-#region-content .item-list ul.pager li.pager-previous a,
-#region-content .item-list ul.pager li.pager-first a {
+.item-list ul.pager li.pager-previous a,
+.item-list ul.pager li.pager-first a {
     background-position: -920px -3655px;
 }
-#region-content .item-list ul.pager li.pager-first span,
-#region-content .item-list ul.pager li.pager-first a:hover {
+.item-list ul.pager li.pager-first span,
+.item-list ul.pager li.pager-first a:hover {
     background-position: -960px -3615px;
 }
-#region-content .item-list ul.pager li.pager-last a,
-#region-content .item-list ul.pager li.pager-last span,
-#region-content .item-list ul.pager li.pager-next a {
+.item-list ul.pager li.pager-last a,
+.item-list ul.pager li.pager-last span,
+.item-list ul.pager li.pager-next a {
     float: right;
     padding-right: 33px;
 }
-#region-content .item-list ul.pager li.pager-last a,
-#region-content .item-list ul.pager li.pager-next a {
+.item-list ul.pager li.pager-last a,
+.item-list ul.pager li.pager-next a {
     background-position: right -3815px;
 }
-#region-content .item-list ul.pager li.pager-last span,
-#region-content .item-list ul.pager li.pager-last a:hover {
+.item-list ul.pager li.pager-last span,
+.item-list ul.pager li.pager-last a:hover {
     background-position: right -3775px;
 }
-#region-content .item-list ul.pager li.pager-first a,
-#region-content .item-list ul.pager li.pager-previous a,
-#region-content .item-list ul.pager li.pager-last a,
-#region-content .item-list ul.pager li.pager-next a {
+.item-list ul.pager li.pager-first a,
+.item-list ul.pager li.pager-previous a,
+.item-list ul.pager li.pager-last a,
+.item-list ul.pager li.pager-next a {
     background-color: transparent;
     color: #333;
     font-weight: normal;
     text-indent: 0;
     width: auto;
 }
-#region-content .item-list ul.pager li.pager-first span,
-#region-content .item-list ul.pager li.pager-last span {
+.item-list ul.pager li.pager-first span,
+.item-list ul.pager li.pager-last span {
     background-color: transparent;
     color: #999;
     font-weight: normal;
@@ -787,12 +774,12 @@ ul.tabs li:hover a {
 
 /* pager views load more */
 
-#region-content .item-list ul.pager-load-more li.pager-next {
+.item-list ul.pager-load-more li.pager-next {
     position: relative;
     display: block;
     margin: 0;
 }
-#region-content .item-list ul.pager-load-more li.pager-next a {
+.item-list ul.pager-load-more li.pager-next a {
     border: 1px solid #d2d2d2;
     background: #f4f4f4; /* Old browsers */
     background-image: -moz-linear-gradient(top,  #f4f4f4 0%, #ececec 100%); /* FF3.6+ */
@@ -814,7 +801,7 @@ ul.tabs li:hover a {
     left: 19px;
     top: 3px;
 }
-#region-content .item-list ul.pager.pager-load-more a span {
+.item-list ul.pager.pager-load-more a span {
     background: url(../images/sprite.png) right -3311px no-repeat;
     padding-right: 19px;
     color: #333;
@@ -824,21 +811,19 @@ ul.tabs li:hover a {
 
 /* quicktabs */
 
-#region-content .quicktabs-style-nostyle ul.quicktabs-tabs {
-    margin: 0;
-    padding: 0;
+.quicktabs-style-nostyle ul.quicktabs-tabs {
     display: table;
     width: 100%;
     border-bottom: 1px solid #d2d2d2;
     margin-bottom: 23px;
 }
-#region-content .quicktabs-style-nostyle .quicktabs-tabs li {
+.quicktabs-style-nostyle .quicktabs-tabs li {
     display: table-cell;
     padding: 0;
     padding-right: 3px;
     width: 33%;
 }
-#region-content .quicktabs-style-nostyle .quicktabs-tabs li.last {
+.quicktabs-style-nostyle .quicktabs-tabs li.last {
     padding-right: 0;
 }
 #quicktabs-politicians_answer a span {
@@ -857,7 +842,7 @@ ul.tabs li:hover a {
 #quicktabs-tab-politicians_answer-2 span {
     background-position: -369px -3121px;
 }
-#region-content .quicktabs-style-nostyle .quicktabs-tabs a {
+.quicktabs-style-nostyle .quicktabs-tabs a {
     display: block;
     text-align: center;
     font-size: 14px;
@@ -878,7 +863,7 @@ ul.tabs li:hover a {
     border-radius: 3px 3px 0px 0px;   
 
 }
-#region-content .quicktabs-style-nostyle .quicktabs-tabs li.active a {
+.quicktabs-style-nostyle .quicktabs-tabs li.active a {
     background: #f1f1f1; /* Old browsers */
     background: -moz-linear-gradient(top,  #f1f1f1 0%, #dadada 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f1f1f1), color-stop(100%,#dadada)); /* Chrome,Safari4+ */
@@ -1157,11 +1142,11 @@ a#text_resize_increase:hover {
     margin-bottom: 0;
     font-weight: normal;
 }
-#region-content .floatbox ul {
+.floatbox ul {
     margin: 0 0 10px;
     padding: 0;
 }
-#region-content .floatbox ul li {
+.floatbox ul li {
     padding: 3px 0 3px 22px;
     color: #666;
     background-position: -763px -1894px;
@@ -1187,47 +1172,10 @@ a#text_resize_increase:hover {
 
 /* /////////////////////////// views /////////////////// */
 
-.views-exposed-widgets {
-    margin-bottom: 0.8em;
-}
-.views-exposed-form .views-exposed-widget {
-    padding: 0.5em 0 0 1em;
-}
-#region-content .views-exposed-form .views-exposed-widget label {
-    display: block;
-    font-size: 11px;
-    line-height: 16px;
-    margin-bottom: 4px;
+.views-exposed-form .views-exposed-widget label {
     font-weight: normal;
 }
-#region-content .views-widget-sort-order {
-    display: none;
-}
-button:focus,
-button:active,
-input:focus,
-input:active,
-select:focus,
-select:active,
-textarea:focus,
-textarea:active {
-    box-shadow: none;
-}
-.views-field-field-press-article-medium div {
-    color: #999;
-}
-.view-filters textarea,
-.view-filters select,
-.view-filters input[type="text"] {
-    font-size: 11px;
-    height: 1.8em;
-}
-.view-filters select {
-    width: 100%;
-}
-#region-sidebar-second select {
-    width: 80%;
-}
+
 
 /* blog */
 
@@ -1278,7 +1226,8 @@ textarea:active {
     word-wrap: break-word;
 }
 .file-image img,
-img.file-image {
+img.file-image,
+.img-outline img {
     outline: 1px solid #ccc;
 }
 .no-outline img,
@@ -1306,10 +1255,6 @@ img.no-outline {
 }
 .view-blog .views-row .comment-count {
     margin-bottom: 18px;
-}
-#region-content .field-type-taxonomy-term-reference ul {
-    margin: 0;
-    padding: 0;
 }
 .field-type-taxonomy-term-reference li {
     float: left;
@@ -1916,12 +1861,11 @@ form .webform-component-checkboxes .description {
 .comment .field-name-comment-body {
     padding: 0 10px 10px 10px;
 }
-#region-content .comment ul.links {
+.comment ul.links {
     border-top: 1px solid #fff;
-    margin: 0;
     padding: 1.8em 10px;
 }
-#region-content .comment ul.inline li {
+.comment ul.inline li {
     display: inline-block;
 }
 .links.inline a,
@@ -1991,12 +1935,12 @@ form .webform-component-checkboxes .description {
 /* icons */
 
 .field-type-taxonomy-term-reference,
-#region-content .item-list ul.pager li.pager-previous a,
-#region-content .item-list ul.pager li.pager-first span,
-#region-content .item-list ul.pager li.pager-first a,
-#region-content .item-list ul.pager li.pager-last a,
-#region-content .item-list ul.pager li.pager-last span,
-#region-content .item-list ul.pager li.pager-next a,
+.item-list ul.pager li.pager-previous a,
+.item-list ul.pager li.pager-first span,
+.item-list ul.pager li.pager-first a,
+.item-list ul.pager li.pager-last a,
+.item-list ul.pager li.pager-last span,
+.item-list ul.pager li.pager-next a,
 #region-postscript-fourth a,
 .comment-reply,
 .comment .submitted .author,
@@ -2074,40 +2018,40 @@ blockquote:before,
 
 /* reset the alpha-reset.css for lists in the content and display them how they appear in the wysiwig */
 
-#region-content ol,
-#region-content ul,
+.managed-content ol,
+.managed-content ul,
 #colorbox ol,
 #colorbox ul {
     unicode-bidi: embed;
 }
-#region-content li,
+.managed-content li,
 #colorbox li {
     display:list-item;
 }
-#region-content ul,
-#region-content ol,
+.managed-content ul,
+.managed-content ol,
 #colorbox ul,
 #colorbox ol {
     margin: 1.12em 0;
 }
-#region-content ol,
-#region-content ul,
+.managed-content ol,
+.managed-content ul,
 #colorbox ol,
 #colorbox ul {
     margin-left: 40px; /* LTR */
 }
-#region-content ol,
+.managed-content ol,
 #colorbox ol {
     list-style-type:decimal;
 }
-#region-content ul,
+.managed-content ul,
 #colorbox ul {
     list-style-type:disc;
 }
-#region-content ol ul,
-#region-content ul ol,
-#region-content ul ul,
-#region-content ol ol,
+.managed-content ol ul,
+.managed-content ul ol,
+.managed-content ul ul,
+.managed-content ol ol,
 #colorbox ol ul,
 #colorbox ul ol,
 #colorbox ul ul,

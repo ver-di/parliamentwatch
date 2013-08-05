@@ -81,6 +81,7 @@ function dialogues_ds_custom_fields_info() {
     'taxonomy_term' => 'taxonomy_term',
     'user' => 'user',
   );
+  $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'default' => array(),
     'settings' => array(
@@ -106,6 +107,7 @@ function dialogues_ds_custom_fields_info() {
   $ds_field->entities = array(
     'node' => 'node',
   );
+  $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'block' => 'views|7db3831b093872af21a56d09f89f7dcf',
     'block_render' => '1',

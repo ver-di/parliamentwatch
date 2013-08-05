@@ -3,15 +3,14 @@ jQuery(document).ready(function() {
     jQuery("#widget_pager_bottom_slider-block").click(function () {
     
         if(jQuery('#block-views-slider-block .views-slideshow-controls-top').css('display') != 'block') {
-            jQuery('#region-content').animate({
-                top: "0",
-                marginBottom: "0"
+            jQuery('#zone-content').animate({
+                marginTop: "188"
             }, 500, function() {
                     jQuery('#block-views-slider-block .views-slideshow-controls-top').fadeIn('slow');
                     jQuery('#views_slideshow_cycle_main_slider-block').fadeIn('slow');
             });
-            jQuery('#zone-preface-wrapper').animate({
-                top: "0"
+            jQuery('#widget_pager_bottom_slider-block').animate({
+                marginTop: "-188"
             }, 500 );            
         } return false;
     });

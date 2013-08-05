@@ -33,6 +33,9 @@ function profiles_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -104,7 +107,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<a href="[name]/calendar">go to full calendar</a>';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/users/[name]/calendar">go to full calendar</a>';
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -113,6 +116,17 @@ function profiles_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'Date and time';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'field_calendar_entry_date',
+    1 => 'field_calendar_entry_date_1',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'grid-2 alpha';
   /* Feld: Inhalt: Date */
   $handler->display->display_options['fields']['field_calendar_entry_date']['id'] = 'field_calendar_entry_date';
   $handler->display->display_options['fields']['field_calendar_entry_date']['table'] = 'field_data_field_calendar_entry_date';
@@ -120,12 +134,44 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['field_calendar_entry_date']['label'] = '';
   $handler->display->display_options['fields']['field_calendar_entry_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_calendar_entry_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'date_only_short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Feld: Time */
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['id'] = 'field_calendar_entry_date_1';
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['table'] = 'field_data_field_calendar_entry_date';
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['field'] = 'field_calendar_entry_date';
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['ui_name'] = 'Time';
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['label'] = '';
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['alter']['text'] = '[field_calendar_entry_date_1] Uhr';
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_calendar_entry_date_1']['settings'] = array(
+    'format_type' => 'time_only',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['label'] = 'Fieldset Data';
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'title',
+    1 => 'field_calendar_entry_address',
+    2 => 'field_user_fname',
+    3 => 'field_user_lname',
+    4 => 'field_user_party',
+    5 => 'title_1',
+    6 => 'name',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'grid-6 omega';
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -138,13 +184,31 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['field_calendar_entry_address']['table'] = 'field_data_field_calendar_entry_address';
   $handler->display->display_options['fields']['field_calendar_entry_address']['field'] = 'field_calendar_entry_address';
   $handler->display->display_options['fields']['field_calendar_entry_address']['label'] = '';
+  $handler->display->display_options['fields']['field_calendar_entry_address']['alter']['text'] = '<div class="vcard">
+    <div class="adr">
+        <span class="street-address">[field_calendar_entry_address-thoroughfare]</span>
+        <span class="locality">[field_calendar_entry_address-dependent_locality]</span>, 
+        <span class="postal-code">[field_calendar_entry_address-postal_code]</span>, 
+        <span class="country-name">[field_calendar_entry_address]</span>
+     </div>
+</div>
+
+
+';
   $handler->display->display_options['fields']['field_calendar_entry_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_calendar_entry_address']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_calendar_entry_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_calendar_entry_address']['type'] = 'addressfield_linear';
   $handler->display->display_options['fields']['field_calendar_entry_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
+    'components' => array(
+      'thoroughfare' => 'thoroughfare',
+      'premise' => 'premise',
+      'locality' => 'locality',
+      'administrative_area' => 'administrative_area',
+      'postal_code' => 'postal_code',
+      'country' => 'country',
     ),
+    'separator' => ', ',
   );
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
@@ -2191,6 +2255,7 @@ if($record->value == 0){
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -2210,6 +2275,8 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'push-bottom-l';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Relationship: Kommentar: Comments of the node */
@@ -2998,6 +3065,8 @@ if($record->value == 0){
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Questions to [field_user_fname] [field_user_lname]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['display_description'] = 'Question and Answers Content Pane for exposing filter in block';
   $handler->display->display_options['defaults']['hide_attachment_summary'] = FALSE;
@@ -3037,7 +3106,7 @@ if($record->value == 0){
       ),
     ),
     'field_dialogue_topic_tid' => array(
-      'bef_format' => 'default',
+      'bef_format' => 'bef_ul',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
@@ -3073,6 +3142,13 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<div class="messages warning">No results found.</div>';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -3996,7 +4072,6 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_user_birthday']['table'] = 'field_data_field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday']['field'] = 'field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_birthday']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_birthday']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_birthday']['empty'] = '-';
   $handler->display->display_options['fields']['field_user_birthday']['settings'] = array(
@@ -4012,7 +4087,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_user_job_skills']['field'] = 'field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_job_skills']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_job_skills']['element_wrapper_class'] = 'views-row-odd';
+  $handler->display->display_options['fields']['field_user_job_skills']['element_wrapper_class'] = 'views-row-odd clear clearfix';
   $handler->display->display_options['fields']['field_user_job_skills']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_job_skills']['empty'] = '-';
   /* Feld: Benutzer: Address */
@@ -4039,7 +4114,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['name_1']['label'] = 'Constituency';
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['name_1']['element_wrapper_class'] = 'views-row-odd';
+  $handler->display->display_options['fields']['name_1']['element_wrapper_class'] = 'views-row-odd clear clearfix';
   $handler->display->display_options['fields']['name_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name_1']['empty'] = '-';
   /* Feld: Taxonomie-Begriff: Name */
@@ -4316,7 +4391,6 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'user-image-gallery-wrapper';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -4370,6 +4444,9 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_user_image_gallery']['field'] = 'field_user_image_gallery';
   $handler->display->display_options['fields']['field_user_image_gallery']['label'] = '';
   $handler->display->display_options['fields']['field_user_image_gallery']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_image_gallery']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_image_gallery']['element_wrapper_class'] = 'img-outline user-image-gallery-wrapper';
+  $handler->display->display_options['fields']['field_user_image_gallery']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_image_gallery']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_image_gallery']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_user_image_gallery']['settings'] = array(
@@ -4377,7 +4454,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
-    'colorbox_caption' => 'auto',
+    'colorbox_caption' => 'custom',
     'colorbox_caption_custom' => '[file:field-image-copyright]',
   );
   $handler->display->display_options['fields']['field_user_image_gallery']['group_rows'] = FALSE;
@@ -4385,16 +4462,6 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_user_image_gallery']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_image_gallery']['multi_type'] = 'ul';
   $handler->display->display_options['fields']['field_user_image_gallery']['separator'] = '';
-  /* Feld: Datei: copyright */
-  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_user_image_gallery_fid';
-  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
-  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Benutzer: Aktiv */
@@ -4892,40 +4959,12 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['display_description'] = 'Additional Links Goals Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_user_fname' => 'field_user_fname',
-    'field_user_lname' => 'field_user_lname',
-    'field_user_more' => 'field_user_more',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_user_fname' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 1,
-    ),
-    'field_user_lname' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 1,
-    ),
-    'field_user_more' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['override'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */

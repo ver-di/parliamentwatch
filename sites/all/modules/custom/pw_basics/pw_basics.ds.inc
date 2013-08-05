@@ -18,8 +18,6 @@ function pw_basics_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
         0 => 'body',
@@ -29,6 +27,16 @@ function pw_basics_ds_layout_settings_info() {
       'body' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
   );
   $export['node|page|default'] = $ds_layout;
 

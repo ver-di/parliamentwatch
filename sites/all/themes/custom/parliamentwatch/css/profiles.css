@@ -256,40 +256,6 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 }
 
 
-/* filters */
-
-.views-exposed-form .form-item-field-user-lname-value {
-    display: block;
-    float: left; /* LTR */
-    margin: 0 5px 5px 0; /* LTR */
-}
-.views-exposed-form .form-item-field-user-lname-value label {
-    background: #c3c3c3;
-    display: block;
-    float: left; /* LTR */
-    color: #fff;
-    font-weight: bold;
-    min-width: 20px;
-    min-height: 20px;
-    line-height: 20px;
-    text-align: center;
-    cursor: pointer;
-}
-.views-exposed-form #edit-field-user-lname-value-all + .option {
-    min-width: 45px;
-}
-.views-exposed-form .form-item-field-user-lname-value label:hover,
-.form-radio:checked + .option {
-    background: #f4f4f4 !important;
-    color: #666 !important;
-}
-.views-exposed-form #edit-field-user-lname-value .form-radio {
-    display: none;
-}
-.views-exposed-form .views-exposed-widget {
-   clear: both;
-}
-
 
 /* profiles extended */
 
@@ -318,13 +284,53 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 .field-name-additional-links- table {
     width: 100%
 }
-.field-name-additional-links- tr.even {
+.view-user-profile-fields.view-display-id-additional_links li {
+    padding: 2px 0.5%;
+    list-style: none;
+}
+.view-user-profile-fields.view-display-id-additional_links .views-row-even {
     background: #f4f4f4;
 }
-.field-name-additional-links- td {
-    padding: 7px 3px;
-}
-.field-name-additional-links- table a {
+.view-user-profile-fields.view-display-id-additional_links .view-content a {
     color: #333;
     font-weight: normal;
+}
+.view-user-profile-fields.view-display-id-basic_info dt,
+.view-user-profile-fields.view-display-id-basic_info dd {
+    padding: 2px 0.5%;
+}
+.view-user-profile-fields.view-display-id-basic_info dt {
+    width: 31%;
+    float: left;
+    clear: both;
+}
+.view-user-profile-fields.view-display-id-basic_info dd {
+    width: 65%;
+    float: left;
+}
+
+#edit-field-dialogue-topic-tid {
+    background: #fff;
+    border: 1px solid #D3D3D3;
+    box-shadow: 0 0 2px 2px #ECECEC inset;
+    color: #666;
+    height: 24em;
+    margin-bottom: 0.8em;
+    overflow: auto;
+    width: 100%;
+    float: none;
+    padding: 0;
+}
+#edit-field-dialogue-topic-tid label {
+    cursor: pointer;
+    display: block;
+    line-height: 16px;
+    padding: 3px 7px;
+}
+#edit-field-dialogue-topic-tid label:hover,
+#edit-field-dialogue-topic-tid input[type="radio"]:checked + label {
+    background: none repeat scroll 0 0 #F4F4F4;
+}
+#edit-field-dialogue-topic-tid input[type="radio"] {
+    display: none;
 }

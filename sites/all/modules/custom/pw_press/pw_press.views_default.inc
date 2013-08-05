@@ -341,6 +341,8 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_release_body']['alter']['preserve_tags'] = '<a>';
   $handler->display->display_options['fields']['field_press_release_body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_press_release_body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_press_release_body']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_press_release_body']['element_wrapper_class'] = 'managed-content';
   $handler->display->display_options['fields']['field_press_release_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_press_release_body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['field_press_release_body']['settings'] = array(

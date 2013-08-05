@@ -1218,7 +1218,6 @@ function pw_basics_field_default_fields() {
   t('Valid Date');
   t('Value');
   t('Vice Chairman');
-  t('Zipcodes');
   t('constituency number or similar identifier ');
 
   return $fields;

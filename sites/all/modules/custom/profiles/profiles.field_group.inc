@@ -250,8 +250,8 @@ function profiles_field_group_info() {
     'label' => 'Basics',
     'weight' => '13',
     'children' => array(
-      0 => 'field_user_constituency',
-      1 => 'field_user_job_skills',
+      0 => 'field_user_job_skills',
+      1 => 'field_user_constituency',
     ),
     'format_type' => 'htab',
     'format_settings' => array(

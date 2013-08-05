@@ -18,11 +18,13 @@ function trustees_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'field_trustee_image' => array(
-      'ft' => array(
-        'func' => 'theme_ds_field_expert',
-        'ow' => TRUE,
-        'ow-el' => 'div',
-        'ow-cl' => 'file-image float-left',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'file-image float-left',
+        ),
       ),
     ),
   );
