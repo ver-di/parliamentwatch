@@ -136,6 +136,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:12' => 'listposition',
           'xpathparser:13' => 'twitterurl',
           'xpathparser:14' => 'externalurl',
+          'xpathparser:15' => 'picturecopyright',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -153,6 +154,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:12' => 0,
           'xpathparser:13' => 0,
           'xpathparser:14' => 0,
+          'xpathparser:15' => 0,
         ),
         'context' => '//row',
         'exp' => array(
@@ -174,6 +176,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:12' => 0,
             'xpathparser:13' => 0,
             'xpathparser:14' => 0,
+            'xpathparser:15' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -191,7 +194,7 @@ function pw_gdata_importer_feeds_importer_default() {
           237793809 => 0,
         ),
         'status' => '1',
-        'defuse_mail' => 1,
+        'defuse_mail' => 0,
         'mappings' => array(
           0 => array(
             'source' => 'xpathparser:0',
@@ -268,6 +271,11 @@ function pw_gdata_importer_feeds_importer_default() {
             'target' => 'field_user_external_url:url',
             'unique' => FALSE,
           ),
+          15 => array(
+            'source' => 'xpathparser:15',
+            'target' => 'field_user_picture_copyright',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => 1,
         'input_format' => 'plain_text',
@@ -276,7 +284,7 @@ function pw_gdata_importer_feeds_importer_default() {
     ),
     'content_type' => '',
     'update' => 0,
-    'import_period' => '-1',
+    'import_period' => '0',
     'expire_period' => 3600,
     'import_on_create' => 1,
     'process_in_background' => 0,
