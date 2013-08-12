@@ -119,6 +119,9 @@ table.table td {
 p {
     margin-bottom: 1em;
 }
+td {
+    vertical-align: top;
+}
 hr {
     clear: both;
     margin: 1em 0;
@@ -256,11 +259,15 @@ a.medium,
     color: #666;
     font-weight: normal;
 }
+.copyright {
+    font-size: 0.92em;
+}
 .dark,
 a.dark {
     color: #333;
 }
-.normal-weight {
+.normal-weight,
+.normal-weight a {
     font-weight: normal;
 }
 .label-inline {
@@ -278,12 +285,7 @@ a.dark {
     background: #f4f4f4;
 }
 .zebra li {
-    padding: 7px 3px;
-}
-ol.zebra {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 2px 0.5%;
 }
 .views-more-link,
 .read-more a,
@@ -1658,7 +1660,7 @@ form .webform-component-checkboxes .description {
     position: relative;
 }
 
-#block-views-profile-questions-answers-block .sharethis-wrapper,
+.view-profile-questions-answers .sharethis-wrapper,
 #quicktabs-tabpage-politicians_answer-1 .sharethis-wrapper  {
     top: 2em;
 }
@@ -1709,13 +1711,13 @@ form .webform-component-checkboxes .description {
     padding-left: 26px;
     background-position: -480px -1px;
 }
-.sharethis-wrapper {
-	padding: 0;
-	position: absolute;
-	top: 0;
-	right: 5px;
-	text-align: right;
-	width: 70px;
+.sharethis-wrapper,
+.add-sharethis {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    width: 70px;
+    text-align: right;    
 }
 .st_plusone_hcount,
 .st_twitter_hcount,
@@ -1733,9 +1735,6 @@ form .webform-component-checkboxes .description {
 }
 .stButton .chicklets {
     padding-left: 0 !important;
-}
-.add-sharethis {
-    position: relative;
 }
 .stButton .sharethis,
 .stMainServices.st-sharethis-counter,

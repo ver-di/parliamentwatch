@@ -337,6 +337,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_calendar_entry_address',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -352,9 +355,9 @@ function profiles_field_default_fields() {
           'element_key' => 'node|calendar_entry|field_calendar_entry_address|und|0',
           'thoroughfare' => '',
           'premise' => '',
+          'postal_code' => '',
           'locality' => '',
-          'administrative_area' => '',
-          'country' => 'IE',
+          'country' => 'DE',
         ),
       ),
       'deleted' => '0',
@@ -2406,8 +2409,9 @@ function profiles_field_default_fields() {
         ),
         'premium_user' => array(
           'label' => 'hidden',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'hidden',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => '34',
         ),
         'user_search' => array(

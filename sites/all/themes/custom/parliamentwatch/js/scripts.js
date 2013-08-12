@@ -115,11 +115,11 @@ jQuery(document).ready(function() {
         jQuery('html,body').animate({scrollTop: jQuery("#"+id).offset().top},'1000');
     }
     jQuery(".page-user .link-qa").click(function () {
-        goToByScroll("block-views-profile-questions-answers-block");
+        goToByScroll("pw-block-questions-and-answers");
         return false;
     });
     jQuery(".page-user .link-question").click(function () {
-        goToByScroll("block-webform-client-block-17");
+        goToByScroll("pw-block-question-form");
         return false;
     });
     jQuery(".anchor-to-top a").click(function () {

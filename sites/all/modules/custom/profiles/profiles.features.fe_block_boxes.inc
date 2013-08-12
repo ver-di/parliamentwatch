@@ -15,8 +15,9 @@ function profiles_default_fe_block_boxes() {
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'questionform_anchor';
   $fe_block_boxes->body = '<div class="center push-bottom-l">
-    <span class="form-submit big link-question"><a href="#block-webform-client-block-17">Ask a Question</a></span>
-</div>';
+	<span class="form-submit big link-question"><a href="#pw-block-question-form">Ask a Question</a></span>
+</div>
+';
 
   $export['questionform_anchor'] = $fe_block_boxes;
 

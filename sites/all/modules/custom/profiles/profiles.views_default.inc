@@ -179,6 +179,12 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'h4';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   /* Feld: Inhalt: Address */
   $handler->display->display_options['fields']['field_calendar_entry_address']['id'] = 'field_calendar_entry_address';
   $handler->display->display_options['fields']['field_calendar_entry_address']['table'] = 'field_data_field_calendar_entry_address';
@@ -247,7 +253,8 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['title_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['title_1']['alter']['text'] = '+ more information about this date';
   $handler->display->display_options['fields']['title_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox'] = TRUE;
+  $handler->display->display_options['fields']['title_1']['node_in_colorbox_width'] = '800';
   $handler->display->display_options['fields']['title_1']['node_in_colorbox_height'] = '600';
   /* Feld: Excluded | Author Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -2275,7 +2282,7 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'push-bottom-l';
+  $handler->display->display_options['style_options']['row_class'] = 'push-bottom-l relative';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
@@ -3775,6 +3782,52 @@ if($record->value == 0){
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Anchor: go to Q and A */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Anchor: go to Q and A';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'go to Questions and Answers';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '#pw-block-questions-and-answers';
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Feld: Benutzer: Answers Give */
+  $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['label'] = '';
+  $handler->display->display_options['fields']['field_user_answers_give']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_answers_give']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_answers_give']['alter']['text'] = '[field_user_answers_give] answer(s)';
+  $handler->display->display_options['fields']['field_user_answers_give']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_answers_give']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 0,
+  );
+  /* Feld: Benutzer: Questions Get */
+  $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['label'] = '';
+  $handler->display->display_options['fields']['field_user_questions_get']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[nothing]<br/>
+[field_user_questions_get] question(s), [field_user_answers_give]';
+  $handler->display->display_options['fields']['field_user_questions_get']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_questions_get']['element_wrapper_class'] = 'bubble tiny';
+  $handler->display->display_options['fields']['field_user_questions_get']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
   $export['qa_counter_link'] = $view;
 
   $view = new view();
@@ -3805,6 +3858,7 @@ if($record->value == 0){
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -3858,6 +3912,7 @@ if($record->value == 0){
   $handler->display->display_options['display_description'] = 'Name and Party';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Exlcuded | First Name */
@@ -3965,6 +4020,8 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Parliament Info';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -3990,7 +4047,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_parliament_valid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_parliament_valid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_parliament_valid']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'pw_date_only_medium',
     'fromto' => 'value2',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -4014,13 +4071,15 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['title'] = 'Profile Extension Text';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Durch die Verwendung einer <a href="#">Profilerweiterung</a> unterstützt der Kandidat abgeordnetenwatch einmalig mit 150 €. 
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat abgeordnetenwatch einmalig mit 179 Euro (149 Euro als Frühbucherrabatt). 
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
@@ -4075,7 +4134,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_user_birthday']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_birthday']['empty'] = '-';
   $handler->display->display_options['fields']['field_user_birthday']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'pw_date_only_medium',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -4674,6 +4733,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_user_image_gallery']['field'] = 'field_user_image_gallery';
   $handler->display->display_options['fields']['field_user_image_gallery']['label'] = '';
   $handler->display->display_options['fields']['field_user_image_gallery']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_image_gallery']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_image_gallery']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_image_gallery']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_user_image_gallery']['settings'] = array(
@@ -4924,6 +4984,9 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['field_user_political_goals']['ui_name'] = 'Political goals';
   $handler->display->display_options['fields']['field_user_political_goals']['label'] = '';
   $handler->display->display_options['fields']['field_user_political_goals']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_political_goals']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_political_goals']['element_wrapper_class'] = 'push-bottom-l';
+  $handler->display->display_options['fields']['field_user_political_goals']['element_default_classes'] = FALSE;
   /* Feld: Full profile link copy */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
@@ -4974,13 +5037,6 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['header']['area']['content'] = '<div id="additional-links" class="add-sharethis" title="[field_user_fname] [field_user_lname], [field_user_party]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="read-more float-right"><a href="%1/additional-links">more</a></div>';
-  $handler->display->display_options['footer']['area']['format'] = 'full_html';
-  $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';

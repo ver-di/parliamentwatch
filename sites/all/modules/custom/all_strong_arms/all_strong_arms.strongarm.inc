@@ -550,7 +550,8 @@ webform-client-form-6578
 views-exposed-form-profile-list-solr-block-2
 views-exposed-form-profile-list-solr-constituency
 custom-search-blocks-form-1
-search-old';
+search-old
+webform-client-form-10032';
   $export['compact_forms_ids'] = $strongarm;
 
   $strongarm = new stdClass();
