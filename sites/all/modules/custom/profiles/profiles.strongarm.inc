@@ -139,28 +139,28 @@ function profiles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'ckeditor' => array(
-          'weight' => '10',
+          'weight' => '32',
         ),
         'piwik' => array(
-          'weight' => '3',
+          'weight' => '4',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '33',
         ),
         'account' => array(
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'timezone' => array(
-          'weight' => '6',
+          'weight' => '21',
         ),
         'locale' => array(
-          'weight' => '5',
+          'weight' => '18',
         ),
       ),
       'display' => array(
         'summary' => array(
           'default' => array(
-            'weight' => '32',
+            'weight' => '35',
             'visible' => FALSE,
           ),
           'premium_user' => array(

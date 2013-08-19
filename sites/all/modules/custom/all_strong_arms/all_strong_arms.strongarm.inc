@@ -1071,6 +1071,8 @@ webform-client-form-10032';
     'group_blog_searchitem|node|blogpost|search_result' => FALSE,
     'group_blog_searchmeta|node|blogpost|search_result' => TRUE,
     'group_user_name|user|user|premium_user' => FALSE,
+    'group_premium|user|user|form' => TRUE,
+    'group_managed_content|user|user|form' => TRUE,
   );
   $export['default_field_group'] = $strongarm;
 
