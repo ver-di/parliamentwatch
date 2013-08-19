@@ -6,6 +6,7 @@ php = 5.2.4
 version = 7.x-1.3-18082013
 project = profiles
 dependencies[] = addressfield
+dependencies[] = addressfield_tokens
 dependencies[] = better_exposed_filters
 dependencies[] = context
 dependencies[] = ctools
