@@ -10,15 +10,15 @@
 }
 #zone-menu ul.nice-menu li {
     border-left: 1px solid #eee;
-    font-size: 15px;
-    line-height: 32px;
+    font-size: 125%;
+    line-height: 2.13em;
     position: relative;
     z-index: 100;
 }
 #zone-menu ul.nice-menu ul li {
     border-right: 0;
-    font-size: 12px;
-    line-height: 25px;
+    font-size: 80%;
+    line-height: 2em;
     padding: 0 16px;
 }
 #zone-menu ul.nice-menu li.first {

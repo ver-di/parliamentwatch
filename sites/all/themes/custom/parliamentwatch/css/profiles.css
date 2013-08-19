@@ -14,7 +14,7 @@ div.horizontal-tabs .view-content {
 .field-group-htab h4,
 .field-group-htab h4 a {
     font-family: 'Times New Roman',Georgia,serif;
-    font-size: 16px;
+    font-size: 1.6em;
     margin-bottom: 0;
     font-weight: normal;
 }
@@ -28,7 +28,7 @@ div.horizontal-tabs .view-content {
     padding: 5px 10px;
 }
 #block-views-polls-profile-last .description {
-    font-size: 12px;
+    font-size: 1.2em;
 }
 
 
@@ -201,8 +201,8 @@ div.horizontal-tabs .view-content {
 #views-exposed-form-profile-list-solr-block-2 #edit-field-user-constituency-field-constituency-area-codes-name,
 #views-exposed-form-profile-list-solr-block-2 #edit-field-user-constituency-field-constituency-area-codes-name-wrapper label {
     height: 35px;
-    font-size: 13px;
-    line-height: 35px;
+    font-size: 1.3em;
+    line-height: 3.5em;
     margin-right: 10px;
     width: 300px;
 }
@@ -231,7 +231,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 }
 #views-exposed-form-profile-list-solr-block-2 .description {
     color: inherit;
-    font-size: 12px;
+    font-size: 1.2em;
     position: absolute;
     top: -2em;
     width: 588px;
@@ -250,8 +250,8 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     text-indent: -5000em;
     width: 35px;
     height: 35px;
-    font-size: 13px;
-    line-height: 35px;
+    font-size: 1.3em;
+    line-height: 3.5em;
     margin-right: 10px;
 }
 
@@ -261,7 +261,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 
 .user-profile h2.block-title {
     color: #333;
-    font-size: 20px;
+    font-size: 2em;
 }
 .field-name-same-constituency {
     border: 1px dotted #dbdbdb;
@@ -270,7 +270,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     margin-bottom: 30px;
 }
 .field-name-same-constituency h2.block-title {
-    font-size: 17px;
+    font-size: 1.7em;
     color: #666;
     margin-bottom: 0;
 }
@@ -331,7 +331,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 #edit-field-dialogue-topic-tid label {
     cursor: pointer;
     display: block;
-    line-height: 16px;
+    line-height: 1.6em;
     padding: 3px 7px;
 }
 #edit-field-dialogue-topic-tid label:hover,

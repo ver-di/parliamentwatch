@@ -10,3 +10,11 @@
 #block-views-slider-block .views-slideshow-controls-top {
     width: 610px !important;
 }
+
+
+
+
+ul li,
+ul-down {
+  float: left; /* LTR */
+}

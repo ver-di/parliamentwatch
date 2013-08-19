@@ -13,7 +13,7 @@
     display: none;
 }
 #views_slideshow_cycle_main_slider-block h3 {
-    font-size: 18px;
+    font-size: 1.8em;
     margin-bottom: 1px;
     color: #f63;
 }
@@ -39,8 +39,8 @@
     margin: 14px 90px 20px 0;
     padding: 12px 20px;
     background: url(/sites/all/themes/custom/parliamentwatch/images/bg_fff50.png);
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 1.1em;
+    line-height: 1.6em;
 }
 .view-slider {
     height: 168px !important;
@@ -54,7 +54,7 @@
     width: 100% !important;
 }
 .views-content-field-slider-url a {
-    font-size: 18px;
+    font-size: 1.8em;
     color: #666;
     font-family: 'Times New Roman', Georgia, serif;
     line-height: 1.1em;
@@ -64,8 +64,8 @@
     color: #999;
 }
 .views-field-field-slider-teaserbody {
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 1.1em;
+    line-height: 1.6em
     color: #999;
 }
 .active .views-field-field-slider-teaserbody {
@@ -77,8 +77,8 @@
 }
 
 .views-field-field-slider-teaserbody p {
-    line-height: 11px;
-    margin-bottom: 13px;
+    line-height: 1.1em;
+    margin-bottom: 1.3em;
 }
 #views_slideshow_cycle_main_slider-block {
     position: absolute;
@@ -147,7 +147,7 @@
     cursor: pointer;   
 }
 .view-slider  a.form-submit {
-    font-size: 15px;
+    font-size: 1.5em;
 }
 
 .view-slider .service-links {

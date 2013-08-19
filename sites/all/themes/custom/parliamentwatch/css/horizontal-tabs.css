@@ -7,7 +7,7 @@ div.horizontal-tabs {
   margin: 0 0 1em 0; /* LTR */
   padding: 4px 0 0;
   position: relative; /* IE6/7 */
-  font-size: 11px;
+  font-size: 1.1em;
 }
 div.horizontal-tabs .label-inline {
     display: block;
@@ -22,12 +22,12 @@ div.horizontal-tabs .value {
 div.horizontal-tabs .fieldset-description,
 div.horizontal-tabs h3 {
     font-family: 'Times New Roman', Georgia, serif;
-    font-size: 18px;
+    font-size: 1.8em;
     display: inline-block;
 }
 div.horizontal-tabs .fieldset-description {
     font-family: 'Times New Roman', Georgia, serif;
-    font-size: 18px;
+    font-size: 1.8em;
     padding: 0 10px 10px 10px;
 }
 .field-group-htabs-wrapper h2 {
@@ -105,7 +105,7 @@ div.horizontal-tabs .fieldset-description {
   display: block;
   text-decoration: none;
   padding: 0 30px;
-  line-height: 24px;
+  line-height: 2.4em;
   position:relative;
   top: 0px;
   color: #666; 

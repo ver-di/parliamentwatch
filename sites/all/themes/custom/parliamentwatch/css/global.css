@@ -1,9 +1,10 @@
 /* This file will hold the main styles for your website. */
 @charset "utf-8";
 @import url("profiles.css");
+@import url("mainmenu.css");
 body {
     background: #fff;
-    font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
+    font: 62.5%/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
     color: #333;
 }
 .report_message {
@@ -32,7 +33,7 @@ body {
     min-height: 20px;
 }
 #region-content { 
-    line-height: 18px; /* for module text_resize in IE */
+    line-height: 1.8em; /* for module text_resize in IE */
     margin-top: 7px;
 }
 a {
@@ -57,24 +58,24 @@ h3 {
 }
 h1 {
     color: #f63;
-    font-size: 24px;
+    font-size: 2.4em;
 }
 h2,
 .h2 {
     color: #f63;
-    font-size: 23px;
+    font-size: 2.3em;
     letter-spacing: 0.04ex;
     margin-bottom: 0.4em;
 }
 #region-sidebar-second h2.block-title {
-    font-size: 15px;
+    font-size: 1.5em;
     margin-bottom: 2px;
     letter-spacing: 0.01ex;
 }
 h3 {
     font-family: 'Times New Roman', Georgia, serif;
-    font-size:20px;
-    line-height: 22px;
+    font-size: 2em;
+    line-height: 2.2em;
     margin-bottom: 0.4em;
 }
 #zone-postscript h2.block-title {
@@ -90,13 +91,13 @@ h4 a:visited {
     text-decoration: none;
 }
 h4 {
-    font-size: 12px;
+    font-size: 1.2em;
     line-height: 1.5em;
     margin-bottom: 0;
 }
 .subtitle,
 .small {
-    font-size: 11px;
+    font-size: 1.1em;
     line-height: 1.3em;
 }
 .subline {
@@ -260,7 +261,7 @@ a.medium,
     font-weight: normal;
 }
 .copyright {
-    font-size: 0.92em;
+    font-size: 1.1em;
 }
 .dark,
 a.dark {
@@ -445,8 +446,8 @@ a.ic-print {
 h1.site-name a,
 h2.site-name a {
     color: #333;
-    font-size: 17px;
-    line-height: 42px;
+    font-size: 1.7em;
+    line-height: 4.2em;
 }
 h1#page-title {
     color: #f63;
@@ -537,7 +538,7 @@ h1#page-title {
 #search-api-page-search-form-content-search .form-text {
     width: 100%;
     padding: 6px 10px;   
-    font-size: 14px;
+    font-size: 1.4em;
     line-height: 1em;
     height: auto;
     margin: 0;
@@ -590,7 +591,7 @@ ol.search-results li,
 }
 #section-content #custom-search-blocks-form-1 input.form-text {
     width: 100%;
-    font-size: 14px;
+    font-size: 1.4em;
 }
 #section-content #custom-search-blocks-form-1 input.form-submit {
     background: transparent;
@@ -637,7 +638,7 @@ ul.tabs li a {
     color: #333;
     border: 1px solid #d2d2d2;
     border-bottom: 0;
-    line-height: 30px;
+    line-height: 3em;
     background: #f9f9f9; /* Old browsers */
     background: -moz-linear-gradient(top,  #f9f9f9 0%, #ececec 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ececec)); /* Chrome,Safari4+ */
@@ -671,7 +672,7 @@ ul.tabs li:hover a {
 .item-list .pager {
     clear: both;
     text-align: center;
-    font-size: 12px;
+    font-size: 1.2em;
 }
 .item-list ul.pager li {
     margin: 0 3px;
@@ -685,7 +686,7 @@ ul.tabs li:hover a {
     min-width: 25px;
     color: #fff;
     text-decoration: none;
-    line-height: 25px;
+    line-height: 2.5em;
     font-weight: bold;
 }
 *+html .item-list ul.pager li a,
@@ -795,7 +796,7 @@ ul.tabs li:hover a {
     border-radius: 0px 0px 3px 3px;    
     display: block;
     float: none;
-    line-height: 26px;
+    line-height: 2.6em;
     text-align: center;
 }
 .pager-load-more .ajax-progress {
@@ -830,7 +831,7 @@ ul.tabs li:hover a {
 }
 #quicktabs-politicians_answer a span {
     display: inline-block;
-    line-height: 36px;
+    line-height: 3.6em;
     padding-left: 30px;
     margin-left: -15px;
     background-image: url(../images/sprite.png);
@@ -847,12 +848,12 @@ ul.tabs li:hover a {
 .quicktabs-style-nostyle .quicktabs-tabs a {
     display: block;
     text-align: center;
-    font-size: 14px;
+    font-size: 1.4em;
     font-weight: normal;
     color: #333;
     border: 1px solid #d2d2d2;
     border-bottom: 0;
-    line-height: 36px;
+    line-height: 3.6em;
     background: #f9f9f9; /* Old browsers */
     background: -moz-linear-gradient(top,  #f9f9f9 0%, #ececec 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ececec)); /* Chrome,Safari4+ */
@@ -882,7 +883,7 @@ ul.tabs li:hover a {
     background-image: url(../images/sprite.png);
     padding-left: 29px;
     display: inline-block;
-    line-height: 36px;
+    line-height: 3.6em;
 }
 #quicktabs-tab-homepage_tabs-0 span {
     background-position: -409px -3084px;
@@ -907,7 +908,7 @@ ul.tabs li:hover a {
     right: 14px;
 }
 #region-user-second a {
-    font-size: 12px;
+    font-size: 1.2em;
     color: #666 !important;
 }
 #region-user-second a:hover {
@@ -1035,7 +1036,7 @@ ul.tabs li:hover a {
 
 
 #region-user-second #block-system-user-menu .content a {
-    line-height: 26px;
+    line-height: 2.6em;
 }
 #region-user-second #block-system-user-menu .content a:hover,
 #region-user-second #block-print-print-links .content a:hover,
@@ -1051,7 +1052,7 @@ a.print-pdf,
 #block-system-user-menu .last a {
     margin-left: 0;
     display: block;
-    line-height: 26px;
+    line-height: 2.6em;
 }
 a.print-page,
 a.print_mail,
@@ -1060,7 +1061,7 @@ a.print-pdf {
 }
 #block-locale-language a {
     padding: 0 15px;
-    line-height: 26px;
+    line-height: 2.6em;
     display: block;
 }
 #block-system-user-menu .first a,
@@ -1135,12 +1136,12 @@ a#text_resize_increase:hover {
     background-position: -810px -2688px;
     padding-left: 20px;
     color: #333;
-    font-size: 17px;
+    font-size: 1.7em;
     margin-bottom: 20px;
 }
 .floatbox h4 {
     font-family: 'Times New Roman',Georgia,serif;
-    font-size: 16px;
+    font-size: 1.6em;
     margin-bottom: 0;
     font-weight: normal;
 }
@@ -1224,7 +1225,7 @@ a#text_resize_increase:hover {
 }
 .field-name-field-image-copyright {
     color: #666;
-    font-size: 10px;
+    font-size: 1em;
     word-wrap: break-word;
 }
 .file-image img,
@@ -1334,8 +1335,8 @@ img.no-outline {
 .legend .poll-behavior {
     margin-right: 57px;
     display: inline-block;
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 1.1em;
+    line-height: 1.6em;
 }
 .poll.legend {
     margin-bottom: 20px;
@@ -1457,7 +1458,7 @@ input[type="week"],
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
     box-shadow: inset 0px 0px 2px 2px #ececec;
     color: #666;
-    font-size: 12px;
+    font-size: 1.2em;
     padding-left: 6px;
     height: 2.5em;
     margin-bottom: 0.8em;
@@ -1488,8 +1489,8 @@ select {
 }
 form .description {
     color: #999;
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 1.1em;
+    line-height: 1.6em;
     margin: -8px 0 6px;
 }
 .resizable-textarea .grippie {
@@ -1497,7 +1498,7 @@ form .description {
 }
 .compact-form-label {
     color: #666;
-    font-size: 12px;
+    font-size: 1.2em;
     padding-left: 3px;
     line-height: 2.3em;
 }
@@ -1746,7 +1747,7 @@ form .webform-component-checkboxes .description {
 .stButton .st-sharethis-counter,
 .st_sharethis_hcount .st-sharethis-counter2 {
     width: 15px !important;
-    line-height: 15px !important;
+    line-height: 1.5em !important;
 }
 .stButton .stArrow {
     background: transparent !important;
@@ -1806,7 +1807,7 @@ form .webform-component-checkboxes .description {
     height: 134px;
 }
 #section-content .block.newsletter-subscribe h2 { /* newsletter box with same block in content */
-    font-size: 18px;
+    font-size: 1.8em;
     margin-bottom: 0.2em;
 }
 #section-content .block.newsletter-subscribe form.compact-form { /* newsletter order */
@@ -1824,8 +1825,8 @@ form .webform-component-checkboxes .description {
 }
 #section-content .block.newsletter-subscribe .block-inner {
     background: url(../images/bg_fff50.png);
-    font-size: 11px;
-    line-height: 16px;
+    font-size: 1.1em;
+    line-height: 1.6em;
 }
 
 .comment .submitted {
@@ -1899,7 +1900,7 @@ form .webform-component-checkboxes .description {
 }
 #zone-postscript-wrapper h2 {
     font-family: Lucida Grande, Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 1.4em;
 }
 #zone-postscript-wrapper li {
     list-style: none;
@@ -1907,11 +1908,11 @@ form .webform-component-checkboxes .description {
 #zone-postscript-wrapper a {
     font-weight: normal;
     color: #666;
-    line-height: 20px;
+    line-height: 2em;
 }
 #region-postscript-fourth a {
     padding-left: 28px;
-    line-height: 24px;
+    line-height: 2.4em;
     display: inline-block;
 }
 #region-postscript-fourth .facebook a {
