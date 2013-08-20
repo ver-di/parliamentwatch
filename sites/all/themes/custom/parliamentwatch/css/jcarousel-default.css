@@ -8,12 +8,12 @@
  */
 
 .jcarousel-skin-default .jcarousel-container-horizontal {
-  padding: 12px 22px;
+  padding: 1.2rem 22px;
   margin: auto;
 }
 
 .jcarousel-skin-default .jcarousel-container-vertical {
-  padding: 3em 2em;
+  padding: 3em 2rem;
   margin: auto;
 }
 

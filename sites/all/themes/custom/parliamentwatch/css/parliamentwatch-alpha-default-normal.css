@@ -14,7 +14,6 @@
 
 
 
-ul li,
-ul-down {
+#region-menu ul li {
   float: left; /* LTR */
 }

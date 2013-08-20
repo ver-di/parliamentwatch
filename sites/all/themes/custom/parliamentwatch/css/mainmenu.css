@@ -4,8 +4,9 @@
 }
 #zone-menu ul li {
     border-right: 1px solid #eee;
-    font-size: 1.5em;
-    line-height: 2.13em;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 2.15em;
     position: relative;
     z-index: 100;
 }
@@ -13,7 +14,7 @@
     border-left: 1px solid #eee;
 }
 #zone-menu ul ul {
-  top: 2.1em;
+  top: 2.1rem;
   left: -1px; /* LTR */
   display: none;
   position: absolute;
@@ -38,7 +39,7 @@
 }
 #zone-menu ul ul li {
     border-right: 0;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     line-height: 2em;
     padding: 0 16px;
     width: 193px;
@@ -78,7 +79,7 @@
     margin-left: -450px;
 }
 #zone-menu ul li ul li ul {
-  left: 12.5em; /* LTR */
+  left: 12.5rem; /* LTR */
   top: -1px;
 }
 

@@ -14,12 +14,12 @@ div.horizontal-tabs .view-content {
 .field-group-htab h4,
 .field-group-htab h4 a {
     font-family: 'Times New Roman',Georgia,serif;
-    font-size: 1.6em;
+    font-size: 1.6rem;
     margin-bottom: 0;
     font-weight: normal;
 }
 .view-id-polls_profile .view-header {
-    padding: 0 10px 0.8em;
+    padding: 0 10px 0.8rem;
 }
 .view-id-polls_profile table {
     width: 100%;
@@ -28,7 +28,7 @@ div.horizontal-tabs .view-content {
     padding: 5px 10px;
 }
 #block-views-polls-profile-last .description {
-    font-size: 1.2em;
+    font-size: 1.2rem;
 }
 
 
@@ -37,7 +37,7 @@ div.horizontal-tabs .view-content {
 
 .view-profile-list-solr table {
     width: 100%;
-    margin-bottom: 2.6em;
+    margin-bottom: 2.6rem;
 }
 .view-profile-list-solr td {
     padding: 16px 22px;
@@ -144,7 +144,7 @@ div.horizontal-tabs .view-content {
 .pw-list-item a.link-profile {
     position: absolute;
     right: 0; /* LTR */
-    bottom: 1em;
+    bottom: 1rem;
 }
 
 
@@ -174,7 +174,7 @@ div.horizontal-tabs .view-content {
     margin-top: 0;
     width: 40px;
     height: 40px;
-    text-indent: -5000em;
+    text-indent: -5000rem;
 }
 
 
@@ -201,7 +201,7 @@ div.horizontal-tabs .view-content {
 #views-exposed-form-profile-list-solr-block-2 #edit-field-user-constituency-field-constituency-area-codes-name,
 #views-exposed-form-profile-list-solr-block-2 #edit-field-user-constituency-field-constituency-area-codes-name-wrapper label {
     height: 35px;
-    font-size: 1.3em;
+    font-size: 1.3rem;
     line-height: 3.5em;
     margin-right: 10px;
     width: 300px;
@@ -210,7 +210,7 @@ div.horizontal-tabs .view-content {
     margin-top: 0;
     width: 35px;
     height: 35px;
-    text-indent: -5000em;
+    text-indent: -5000rem;
 }
 
 /* search */
@@ -226,14 +226,14 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 #views-exposed-form-profile-list-solr-block-2 {
     position: relative;
     padding-top: 4em !important;
-    margin-top: 0.5em;
+    margin-top: 0.5rem;
     margin-bottom: 2em !important;
 }
 #views-exposed-form-profile-list-solr-block-2 .description {
     color: inherit;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     position: absolute;
-    top: -2em;
+    top: -2rem;
     width: 588px;
 }
 .view-id-profile_list_solr .views-exposed-form .views-exposed-widget {
@@ -247,10 +247,10 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 .view-id-profile_list_solr .views-exposed-form .views-exposed-widget .form-submit,
 #views-exposed-form-profile-list-solr-constituency .form-submit {
     margin-top: 0;
-    text-indent: -5000em;
+    text-indent: -5000rem;
     width: 35px;
     height: 35px;
-    font-size: 1.3em;
+    font-size: 1.3rem;
     line-height: 3.5em;
     margin-right: 10px;
 }
@@ -261,16 +261,16 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 
 .user-profile h2.block-title {
     color: #333;
-    font-size: 2em;
+    font-size: 2rem;
 }
 .field-name-same-constituency {
     border: 1px dotted #dbdbdb;
     border-width: 1px 0;
-    padding: 12px 0 0;
-    margin-bottom: 30px;
+    padding: 1.2rem 0 0;
+    margin-bottom: 3.0rem;
 }
 .field-name-same-constituency h2.block-title {
-    font-size: 1.7em;
+    font-size: 1.7rem;
     color: #666;
     margin-bottom: 0;
 }
@@ -321,8 +321,8 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     border: 1px solid #D3D3D3;
     box-shadow: 0 0 2px 2px #ECECEC inset;
     color: #666;
-    height: 24em;
-    margin-bottom: 0.8em;
+    height: 24rem;
+    margin-bottom: 0.8rem;
     overflow: auto;
     width: 100%;
     float: none;
