@@ -1,0 +1,8 @@
+name = PW Search
+core = 7.x
+package = Features
+version = 7.x-1.0-alpha1
+project = pw_search
+dependencies[] = apachesolr
+dependencies[] = apachesolr_user
+dependencies[] = facetapi
