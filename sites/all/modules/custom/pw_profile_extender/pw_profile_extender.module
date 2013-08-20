@@ -5,6 +5,7 @@
    * - Extends the User Profile Form with the calendar view
    */
   function pw_profile_extender_form_alter(&$form, &$form_state, $form_id) {
+    //krumo($form_id);
     if ($form_id == 'user_profile_form') {
       //krumo($form);
       $form['calendar admin'] = array(
@@ -13,10 +14,14 @@
         '#markup' =>views_embed_view('calendar','calendar_admin_block'),
         '#weight' => 8,
       );
-
       unset($form["locale"]);
     }
+
+    if ($form_id == 'views_exposed_form') {
+      $form_state['redirect'] = current_path();
+    }
    }
+
   /*
 function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
 

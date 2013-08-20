@@ -816,8 +816,10 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Calendar Admin';
-  $handler->display->display_options['header']['area']['content'] = 'Edit Calendar';
+  $handler->display->display_options['header']['area']['content'] = 'Edit Calendar
+[nothing_3]';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Custom Text | Lightbox Definition */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -899,6 +901,19 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node init-colorbox-processed-processed';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | add-calendar-entry */
+  $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
+  $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Excluded | add-calendar-entry';
+  $handler->display->display_options['fields']['nothing_3']['label'] = '';
+  $handler->display->display_options['fields']['nothing_3']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '+ Add calendar entry';
+  $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['path'] = 'node/add/calendar-entry?width=800&height=600&destination=user/[uid]/edit';
+  $handler->display->display_options['fields']['nothing_3']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'colorbox-node init-colorbox-processed-processed';
+  $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Inhalt: Veröffentlicht */

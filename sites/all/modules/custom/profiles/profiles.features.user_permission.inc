@@ -10,16 +10,6 @@
 function profiles_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: create field_profile_node_connector.
-  $permissions['create field_profile_node_connector'] = array(
-    'name' => 'create field_profile_node_connector',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: create field_user_about.
   $permissions['create field_user_about'] = array(
     'name' => 'create field_user_about',
@@ -245,16 +235,6 @@ function profiles_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: edit field_profile_node_connector.
-  $permissions['edit field_profile_node_connector'] = array(
-    'name' => 'edit field_profile_node_connector',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: edit field_user_about.
   $permissions['edit field_user_about'] = array(
     'name' => 'edit field_user_about',
@@ -438,16 +418,6 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_twitter_account.
   $permissions['edit field_user_twitter_account'] = array(
     'name' => 'edit field_user_twitter_account',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: edit own field_profile_node_connector.
-  $permissions['edit own field_profile_node_connector'] = array(
-    'name' => 'edit own field_profile_node_connector',
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
@@ -681,16 +651,6 @@ function profiles_user_default_permissions() {
       1 => 'administrator',
     ),
     'module' => 'filter',
-  );
-
-  // Exported permission: view field_profile_node_connector.
-  $permissions['view field_profile_node_connector'] = array(
-    'name' => 'view field_profile_node_connector',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
   );
 
   // Exported permission: view field_user_about.
@@ -976,16 +936,6 @@ function profiles_user_default_permissions() {
       3 => 'authenticated user',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: view own field_profile_node_connector.
-  $permissions['view own field_profile_node_connector'] = array(
-    'name' => 'view own field_profile_node_connector',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
   );
 
   // Exported permission: view own field_user_about.
