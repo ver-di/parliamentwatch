@@ -120,7 +120,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['label'] = 'Date and time';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'Datum und Uhrzeit';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'field_calendar_entry_date',
     1 => 'field_calendar_entry_date_1',
@@ -883,7 +883,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Rewritten | Edit';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Edit';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Bearbeiten';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'node/[nid]/edit?width=800&height=600&destination=user/[uid]/edit';
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
@@ -895,7 +895,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Rewritten | Delete';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Delete';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Löschen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid]/delete?width=400&height=100&destination=user/1802/edit?';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
@@ -2348,8 +2348,8 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['tags']['first'] = 'first';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'push-bottom-l relative';
@@ -3215,8 +3215,8 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['tags']['first'] = 'first';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = 'prev';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'next';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -3248,7 +3248,7 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['created_2']['relationship'] = 'cid';
   $handler->display->display_options['sorts']['created_2']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Post date';
+  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Datum';
   /* Sort criterion: Inhalt: Anzahl an Kommentaren */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
@@ -3322,7 +3322,7 @@ if($record->value == 0){
   $handler->display->display_options['filters']['comment_count']['operator'] = 'not empty';
   $handler->display->display_options['filters']['comment_count']['exposed'] = TRUE;
   $handler->display->display_options['filters']['comment_count']['expose']['operator_id'] = 'comment_count_op';
-  $handler->display->display_options['filters']['comment_count']['expose']['label'] = 'Comment count';
+  $handler->display->display_options['filters']['comment_count']['expose']['label'] = 'Anzahl an Kommentaren';
   $handler->display->display_options['filters']['comment_count']['expose']['operator'] = 'comment_count_op';
   $handler->display->display_options['filters']['comment_count']['expose']['identifier'] = 'comment_count';
   $handler->display->display_options['filters']['comment_count']['expose']['remember_roles'] = array(
@@ -3705,7 +3705,7 @@ if($record->value == 0){
   $handler->display->display_options['filters']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['filters']['comment_count']['exposed'] = TRUE;
   $handler->display->display_options['filters']['comment_count']['expose']['operator_id'] = 'comment_count_op';
-  $handler->display->display_options['filters']['comment_count']['expose']['label'] = 'Comment count';
+  $handler->display->display_options['filters']['comment_count']['expose']['label'] = 'Anzahl an Kommentaren';
   $handler->display->display_options['filters']['comment_count']['expose']['operator'] = 'comment_count_op';
   $handler->display->display_options['filters']['comment_count']['expose']['identifier'] = 'comment_count';
   $handler->display->display_options['filters']['comment_count']['is_grouped'] = TRUE;
@@ -3738,7 +3738,7 @@ if($record->value == 0){
   $handler->display->display_options['filters']['created']['field'] = 'created';
   $handler->display->display_options['filters']['created']['exposed'] = TRUE;
   $handler->display->display_options['filters']['created']['expose']['operator_id'] = 'created_op';
-  $handler->display->display_options['filters']['created']['expose']['label'] = 'Post date';
+  $handler->display->display_options['filters']['created']['expose']['label'] = 'Datum';
   $handler->display->display_options['filters']['created']['expose']['operator'] = 'created_op';
   $handler->display->display_options['filters']['created']['expose']['identifier'] = 'created';
   $handler->display->display_options['displays'] = array(
@@ -3980,10 +3980,17 @@ if($record->value == 0){
   $handler = $view->new_display('block', 'Headline', 'headline');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'relative';
   $handler->display->display_options['display_description'] = 'Name and Party';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Fußbereich: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_party]"></div>';
+  $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Exlcuded | First Name */
@@ -4080,7 +4087,7 @@ $profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\']."</div>";
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -4271,6 +4278,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
 ';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
@@ -4394,7 +4402,7 @@ $profiluser = $myuser = user_load($row->rid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\']."</div>";
 }
 
 ?>';
@@ -4695,7 +4703,7 @@ $profiluser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\']."</div>";
 }
 
 ?>';
@@ -4922,6 +4930,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Political Goalst of [field_user_fname] [field_user_lname],[field_user_party]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | Profile Picture  */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
@@ -4977,7 +4986,7 @@ $profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\']."</div>";
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -5244,7 +5253,7 @@ $profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_l\'));
-print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\'];
+print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'und\'][0][\'value\']."</div>";
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -5364,6 +5373,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
 
   /* Display: Tweets */
   $handler = $view->new_display('default', 'Tweets', 'default');
+  $handler->display->display_options['css_class'] = 'twitter';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -5372,7 +5382,7 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = '';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -5682,40 +5692,42 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler = $view->new_display('block', 'User Tweets', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = '[name] on Twitter';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'twitter clear clearfix push-bottom-l relative';
   $handler->display->display_options['display_description'] = 'User Tweets Block on Profile';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'pw-list-item-light clear clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '[profile_image_url]
-[name]';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['header']['area']['content'] = '<a href="https://twitter.com/[screen_name]"><span class="float-left push-right-s push-bottom-s">[profile_image_url]</span><span class="pw-twitter-name">[name]</span>
+<span class="pw-twitter-screenname">[screen_name]</span></a>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '[follow] [name] on Twitter';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="text-right">[follow] [name] on Twitter</div>';
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Twitter: Full name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'twitter_account';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Feld: Twitter: Message text */
-  $handler->display->display_options['fields']['text']['id'] = 'text';
-  $handler->display->display_options['fields']['text']['table'] = 'twitter';
-  $handler->display->display_options['fields']['text']['field'] = 'text';
-  $handler->display->display_options['fields']['text']['label'] = '';
-  $handler->display->display_options['fields']['text']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['text']['link_urls'] = 1;
-  $handler->display->display_options['fields']['text']['link_usernames'] = 1;
-  $handler->display->display_options['fields']['text']['link_hashtags'] = 1;
   /* Feld: Excluded | Twitter Profile Image */
   $handler->display->display_options['fields']['profile_image_url']['id'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['table'] = 'twitter_account';
@@ -5723,7 +5735,11 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['profile_image_url']['ui_name'] = 'Excluded | Twitter Profile Image';
   $handler->display->display_options['fields']['profile_image_url']['label'] = '';
   $handler->display->display_options['fields']['profile_image_url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['profile_image_url']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['profile_image_url']['alter']['preserve_tags'] = '<img>';
   $handler->display->display_options['fields']['profile_image_url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['profile_image_url']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['profile_image_url']['hide_alter_empty'] = FALSE;
   /* Feld: Exlcuded | Twitter Follow */
   $handler->display->display_options['fields']['follow']['id'] = 'follow';
   $handler->display->display_options['fields']['follow']['table'] = 'twitter';
@@ -5739,7 +5755,51 @@ print $data->field_field_user_picture[0][\'raw\'][\'field_image_copyright\'][\'u
   $handler->display->display_options['fields']['screen_name']['ui_name'] = 'Excluded |  Twitter Login Name';
   $handler->display->display_options['fields']['screen_name']['label'] = '';
   $handler->display->display_options['fields']['screen_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['screen_name']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['screen_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['screen_name']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['screen_name']['hide_alter_empty'] = FALSE;
+  /* Feld: Excluded | Twitter Full name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'twitter_account';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['ui_name'] = 'Excluded | Twitter Full name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
+  /* Feld: Twitter: Message text */
+  $handler->display->display_options['fields']['text']['id'] = 'text';
+  $handler->display->display_options['fields']['text']['table'] = 'twitter';
+  $handler->display->display_options['fields']['text']['field'] = 'text';
+  $handler->display->display_options['fields']['text']['label'] = '';
+  $handler->display->display_options['fields']['text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['text']['link_urls'] = 1;
+  $handler->display->display_options['fields']['text']['link_usernames'] = 1;
+  $handler->display->display_options['fields']['text']['link_hashtags'] = 1;
+  /* Feld: Excluded | Benutzer: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['ui_name'] = 'Excluded | Benutzer: Created date';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
+  /* Feld: Twitter: Web Intents */
+  $handler->display->display_options['fields']['web_intents']['id'] = 'web_intents';
+  $handler->display->display_options['fields']['web_intents']['table'] = 'twitter';
+  $handler->display->display_options['fields']['web_intents']['field'] = 'web_intents';
+  $handler->display->display_options['fields']['web_intents']['label'] = '';
+  $handler->display->display_options['fields']['web_intents']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['web_intents']['alter']['text'] = '[created] [web_intents]';
+  $handler->display->display_options['fields']['web_intents']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['web_intents']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['web_intents']['element_wrapper_class'] = 'footer small';
+  $handler->display->display_options['fields']['web_intents']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';

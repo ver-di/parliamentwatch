@@ -160,7 +160,7 @@ function profiles_strongarm() {
       'display' => array(
         'summary' => array(
           'default' => array(
-            'weight' => '35',
+            'weight' => '34',
             'visible' => FALSE,
           ),
           'premium_user' => array(
