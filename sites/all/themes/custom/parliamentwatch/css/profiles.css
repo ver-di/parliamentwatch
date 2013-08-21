@@ -276,6 +276,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 }
 .field-name-same-constituency .jcarousel-item {
     padding-right: 46px;
+    width: 134px;
 }
 .user-image-gallery-wrapper {
     margin: 0 18px 16px 0;

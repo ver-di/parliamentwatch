@@ -502,6 +502,16 @@ h1#page-title {
     border-bottom: 0;
     margin-bottom: 0;
 }
+.pw-list-item-light {
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 1rem;
+    margin-bottom: 1.3rem;
+    position: relative;
+}
+.pw-list-item-light.views-row-last {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
 .node.view-mode-full {
     border-bottom: 0;
 }
@@ -526,6 +536,9 @@ h1#page-title {
 }
 #colorbox form .form-actions {
     text-align: right;
+}
+#cboxCurrent {
+    left: 120px;
 }
 
 
@@ -1177,6 +1190,7 @@ a#text_resize_increase:hover {
     margin: 4px 20px 15px 0;
 }
 
+
 /* /////////////////////////// views /////////////////// */
 
 .views-exposed-form .views-exposed-widget label {
@@ -1707,6 +1721,30 @@ form .webform-component-checkboxes .description {
 }
 #comment-form #edit-captcha-response.form-text {
     width: 180px;
+}
+
+
+/* /////////////////////////// Twitter /////////////////////// */
+
+.twitter a {
+    color: #30b3eb;
+    font-weight: normal;
+}
+.twitter .pw-list-item-light a {
+    color: #999;
+}
+.twitter .pw-twitter-name,
+.twitter .pw-twitter-screenname {
+    display: block;
+}
+.twitter .pw-twitter-name {
+    margin-top: 5px;
+}
+.twitter .pw-twitter-screenname {
+    font-size: 1.8rem;
+}
+.twitter .footer > span:before {
+    content: "· ";
 }
 
 

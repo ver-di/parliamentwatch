@@ -2,14 +2,14 @@ jQuery(document).ready(function() {
 
 ////// switch view mode in questions and aswers
 
-    jQuery(".field-name-question-and-answers-pane .attachment").addClass("js-hide");
+    jQuery(".view-id-profile_questions_answers .attachment").addClass("js-hide");
     jQuery("#form-view-mode-switcher .view-mode-full").click(function () {
-        jQuery(".field-name-question-and-answers-pane .view-display-id-panel_pane_1 > .view-content").removeClass("js-hide");
-        jQuery(".field-name-question-and-answers-pane .attachment").addClass("js-hide");
+        jQuery("#pw-block-questions-and-answers > .view-id-profile_questions_answers > .view-content").removeClass("js-hide");
+        jQuery(".view-id-profile_questions_answers .attachment").addClass("js-hide");
     });
     jQuery("#form-view-mode-switcher .view-mode-teaser").click(function () {
-        jQuery(".field-name-question-and-answers-pane .view-display-id-panel_pane_1 > .view-content").addClass("js-hide");
-        jQuery(".field-name-question-and-answers-pane .attachment").removeClass("js-hide");
+        jQuery("#pw-block-questions-and-answers > .view-id-profile_questions_answers > .view-content").addClass("js-hide");
+        jQuery(".view-id-profile_questions_answers .attachment").removeClass("js-hide");
     });
 
 
