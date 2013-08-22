@@ -372,6 +372,15 @@ a.link-participate {
     padding-left: 22px;
     background-position: -26px -2138px;
 }
+.link-calendar a,
+a.link-calendar {
+    padding-left: 19px;
+    background-position: -240px -2418px;
+}
+.link-calendar a:hover,
+a.link-calendar:hover {
+    background-position: -200px -2458px;
+}
 .views-more-link,
 .read-more a,
 a.read-more {
@@ -2029,6 +2038,8 @@ a.link-pdf,
 .link-pdf a,
 .link-participate a,
 a.link-participate,
+.link-calendar a,
+a.link-calendar,
 .link-video a,
 a.link-video,
 .link-sound a,

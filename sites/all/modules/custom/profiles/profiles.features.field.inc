@@ -296,7 +296,7 @@ function profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -364,16 +364,11 @@ function profiles_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'addressfield',
-          'settings' => array(
-            'format_handlers' => array(
-              0 => 'address',
-            ),
-            'use_widget_handlers' => 1,
-          ),
-          'type' => 'addressfield_default',
-          'weight' => '1',
+          'label' => 'hidden',
+          'module' => 'addressfield_tokens',
+          'settings' => array(),
+          'type' => 'addressfield_linear',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -448,7 +443,7 @@ function profiles_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
             'format_type' => 'long',
@@ -458,7 +453,7 @@ function profiles_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',

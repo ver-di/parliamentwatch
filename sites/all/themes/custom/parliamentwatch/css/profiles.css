@@ -299,7 +299,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     background: #f4f4f4;
 }
 .view-user-profile-fields.view-display-id-additional_links .view-content a,
-.view-user-profile-fields.view-display-id-additional_links_page .view-content a {
+.view-user-profile-fields.view-display-id-additional_links_page .zebra a {
     color: #333;
     font-weight: normal;
 }
@@ -341,4 +341,10 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 }
 #edit-field-dialogue-topic-tid input[type="radio"] {
     display: none;
+}
+
+/* calendar */
+
+.view-display-id-profile_block .view-footer {
+    margin-top: -1.3rem;
 }

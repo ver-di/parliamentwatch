@@ -17,15 +17,90 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'calendar_entry';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'back_to_calendar' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'short_profile_on_calendar_entry' => array(
+    'sharethis' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'short_profile' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'back_to_calendar' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'title' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link' => '0',
+        'wrapper' => 'h3',
+        'class' => '',
+        'ft' => array(),
+      ),
+    ),
+    'body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_calendar_entry_address' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'p',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'strong',
+          'fis-cl' => '',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_calendar_entry_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'strong',
+          'fis-cl' => '',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
+        ),
+      ),
     ),
   );
   $export['node|calendar_entry|default'] = $ds_fieldsetting;
@@ -319,6 +394,22 @@ function profiles_ds_field_settings_info() {
         ),
       ),
     ),
+    'user_calendar' => array(
+      'weight' => '13',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'clear clearfix push-bottom-l relative',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'user_headline' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -406,22 +497,6 @@ function profiles_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'user_calendar' => array(
-      'weight' => '13',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => ' relative',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
     ),
     'user_image_gallery' => array(
       'weight' => '9',
@@ -859,18 +934,19 @@ function profiles_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'short_profile_on_calendar_entry';
-  $ds_field->label = 'Short Profile on Calendar Entry';
+  $ds_field->field = 'short_profile';
+  $ds_field->label = 'Short Profile';
   $ds_field->field_type = 6;
   $ds_field->entities = array(
     'node' => 'node',
+    'user' => 'user',
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|calendar-block_3',
-    'block_render' => '1',
+    'block' => 'views|86179fce1a97268e68c8c0e6142ed54d',
+    'block_render' => '3',
   );
-  $export['short_profile_on_calendar_entry'] = $ds_field;
+  $export['short_profile'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -912,7 +988,7 @@ function profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|calendar-block_1',
+    'block' => 'views|calendar-profile_block',
     'block_render' => '2',
   );
   $export['user_calendar'] = $ds_field;
@@ -1013,25 +1089,37 @@ function profiles_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'short_profile_on_calendar_entry',
-        1 => 'field_calendar_entry_address',
-        2 => 'field_calendar_entry_date',
-        3 => 'body',
-        4 => 'back_to_calendar',
+        0 => 'sharethis',
+        1 => 'short_profile',
+        2 => 'title',
+        3 => 'field_calendar_entry_date',
+        4 => 'field_calendar_entry_address',
+        5 => 'body',
+        6 => 'back_to_calendar',
       ),
     ),
     'fields' => array(
-      'short_profile_on_calendar_entry' => 'ds_content',
-      'field_calendar_entry_address' => 'ds_content',
+      'sharethis' => 'ds_content',
+      'short_profile' => 'ds_content',
+      'title' => 'ds_content',
       'field_calendar_entry_date' => 'ds_content',
+      'field_calendar_entry_address' => 'ds_content',
       'body' => 'ds_content',
       'back_to_calendar' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
   );
   $export['node|calendar_entry|default'] = $ds_layout;
 
