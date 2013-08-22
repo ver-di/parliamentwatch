@@ -46,7 +46,6 @@ css[abgeordnentenwatch.css][description] = 'Custom theme styles.'
 css[abgeordnentenwatch.css][options][weight] = '10'
 
 version = '7.x-3.1'
-project = 'omega'
 datestamp = '1314088930'
 settings[toggle_logo] = '1'
 settings[toggle_name] = '0'

@@ -19,7 +19,8 @@ class ParliamentTermMigration extends BasicMigrateParliament {
 	$query->condition('p.is_mapping_id', 1);
 	switch(variable_get('site_name')){
 		case 'abgeordnetenwatch.de':
-		    $query->condition('p.project_cmd', array(132, 360));
+        $query->condition('p.project_cmd', array(0, 2000), 'BETWEEN');
+        $query->condition('p.project_cmd', array(233, 486, 974, 1036, 1010, 1475), 'NOT IN');
 			break;
 		case 'marsad.tn':
 		    $query->condition('p.project_cmd', 974);
@@ -29,6 +30,9 @@ class ParliamentTermMigration extends BasicMigrateParliament {
 			break;		
 		case 'piratenpartei-bayern.de':
 		    $query->condition('p.project_cmd', array(1036, 1010, 1475));
+			break;	
+		case 'politikercheck.lu':
+		    $query->condition('p.project_cmd', array(20000, 30000), 'BETWEEN');
 			break;	
 		default:
 		    $query->condition('p.project_cmd', 0);

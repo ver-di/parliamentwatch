@@ -7,6 +7,19 @@
 function migrate_politician_migrate_api() {
   $api = array(
     'api' => 2,
+    'migrations' => array(
+      'Politician' => array(
+        'class_name' => 'PoliticianMigration',
+        'group_name' => 'politician',
+      ),
+    ),
   );
   return $api;
+}
+
+/**
+ * Implements hook_update_projects_alter().
+ */
+function migrate_politician_update_projects_alter(&$projects) {
+  unset($projects['migrate_politician']);
 }

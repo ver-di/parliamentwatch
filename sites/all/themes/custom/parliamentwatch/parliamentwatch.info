@@ -47,7 +47,6 @@ css[print.css][description] = 'This file holds all the custom print CSS of your 
 css[print.css][options][weight] = '11'
 css[print.css][options][media] = 'print'
 version = '7.x-3.1'
-project = 'omega'
 datestamp = '1314088930'
 settings[toggle_logo] = '1'
 settings[toggle_name] = '1'

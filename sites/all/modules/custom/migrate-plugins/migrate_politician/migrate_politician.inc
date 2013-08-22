@@ -15,14 +15,16 @@ class PoliticianMigration extends BasicMigratePolitician {
 
     // Connect to legacy database and select oldest profile of each politican (oldest=1)
     $query = Database::getConnection('default', 'parlamentwatch')
-            ->select('legacy_user', 'u');
+            ->select('legacy_user_sample', 'u'); // Works with sample data
+    //      ->select('legacy_user', 'u'); // @TODO Activate!
     $query->join('legacy_projects', 'p', 'u.cmd = p.cmd');
     $query->fields('u', array('id', 'uuid', 'username', 'title', 'nickname', 'first_name', 'first_name_2nd_lang', 'last_name', 'last_name_2nd_lang', 'first_lang', 'second_lang', 'email', 'gender', 'birthday', 'childs', 'job', 'marriage', 'url_picture', 'party', 'political_roles', 'links'));
     $query->fields('p', array('project', 'startdate'));
     $query->condition('u.oldest', 1, '=');
 	switch(variable_get('site_name')){
 		case 'abgeordnetenwatch.de':
-		    $query->condition('p.project_cmd', array(132, 360));
+        $query->condition('p.project_cmd', array(0, 2000), 'BETWEEN');
+        $query->condition('p.project_cmd', array(233, 486, 974, 1036, 1010, 1475), 'NOT IN');
 			break;
 		case 'marsad.tn':
 		    $query->condition('p.project_cmd', 974);
@@ -33,6 +35,9 @@ class PoliticianMigration extends BasicMigratePolitician {
 		case 'piratenpartei-bayern.de':
 		    $query->condition('p.project_cmd', array(1036, 1010, 1475));
 			break;				
+		case 'politikercheck.lu':
+		    $query->condition('p.project_cmd', array(20000, 30000), 'BETWEEN');
+			break;	
 		default:
 		    $query->condition('p.project_cmd', 0);
 			break;		
