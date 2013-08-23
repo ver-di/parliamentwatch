@@ -1,5 +1,10 @@
 <?php
 /**
+ * With this module, the search index generation and view is changed to the
+ * requirements to parliamentwatch.
+ */
+
+/**
  * Filter out dialogues that do not have a recipient (incorrect data).
  * @param type $entity_id
  * @param type $row
@@ -104,7 +109,7 @@ function pw_search_user_facetapi_facet_info($searcher_info) {
  */
 function pw_search_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
   
-  $query->addParam("fl", "sm_field_dialogue_recipient"); // first look field. This is a pseudo field. Not sure if this is the correct type...
+  $query->addParam("fl", "sm_field_dialogue_recipient"); // first look field. This is a pseudo field.
   
   // We have to rewrite the "query fields" solr parameter, because it contains the label, which should not be searchable. 
   // The label equals the Drupal user name.
@@ -113,6 +118,7 @@ function pw_search_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
   $query->removeParam("qf");
   $query->addParam("qf", "content"); // defined in the index generation, see pw_search_apachesolr_index_document_build_user()
   $query->addParam("qf", "taxonomy_names"); // handles party, constituency, and parliament automatically
+  $query->addParam("qf", "sm_areacodes");
 }
 
 /**
@@ -142,7 +148,7 @@ function pw_search_preprocess_search_result(&$vars) {
 function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $document, $entity, $env_id) {
   $contentArr = array();
   
-  $contentArr[] =  $entity->body["und"][0]["value"];
+  $contentArr[] =  $entity->body["und"][0]["value"]; // Hier kommt das <crypt>-Tag aus dem body_value des Dialogues noch mit
   $contentArr[] =  $entity->field_dialogue_recipient["und"][0]["entity"]->field_user_fname["und"][0]["value"];
   $contentArr[] =  $entity->field_dialogue_recipient["und"][0]["entity"]->field_user_lname["und"][0]["value"];
   
@@ -151,8 +157,19 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
     $contentArr[] = $comment->comment_body_value;
   }
   
+  // Add Dialogue Tags:
+  if (array_key_exists("und", $entity->field_dialogue_tags)) {
+    foreach ($entity->field_dialogue_tags["und"] as $dialogueTmp) {
+      $contentArr[] = $dialogueTmp["taxonomy_term"]->name;
+    }
+  }
+    
   // We do not add the topic here, because it is already searchable by the default query.
   $document->setField("content", implode(" ", $contentArr));
+  
+  // Add Parliament and Party of the recipient to make them facetable:
+  $document->setField('im_field_user_party', $entity->field_dialogue_recipient["und"][0]["entity"]->field_user_party["und"][0]["tid"]);
+  $document->setField('im_field_user_parliament', $entity->field_dialogue_recipient["und"][0]["entity"]->field_user_parliament["und"][0]["tid"]);
 }
 
 /**
@@ -179,16 +196,16 @@ function pw_search_apachesolr_index_document_build_user(ApacheSolrDocument $docu
   if (is_array($areacodes) && count($areacodes) > 0) {
     foreach ($areacodes["und"] as $areacodeTmp) {
       $areacode = taxonomy_term_load($areacodeTmp["tid"]);
-      $contentArr[] = $areacode->name;
+      $document->addField("sm_areacodes", $areacode->name);
     }
   }
-  $areacodes1 = $constituency->field_voc_constituency_zip;
-  if (is_array($areacodes1) && count($areacodes1) > 0) {
-    foreach ($areacodes1["und"] as $areacodeTmp) {
-      $areacode = taxonomy_term_load($areacodeTmp["tid"]);
-      $contentArr[] = $areacode->name;
-    }
-  }
+//  $areacodes1 = $constituency->field_voc_constituency_zip;
+//  if (is_array($areacodes1) && count($areacodes1) > 0) {
+//    foreach ($areacodes1["und"] as $areacodeTmp) {
+//      $areacode = taxonomy_term_load($areacodeTmp["tid"]);
+//      $document->addField("sm_areacodes", $areacode->name);
+//    }
+//  }
   
   // We do not need to explicitly add Party, Constituency, and Parliament to the content.
   // They are handled automatically in the query by qf.taxonomy_names
