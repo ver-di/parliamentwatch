@@ -4,6 +4,8 @@
  * requirements to parliamentwatch.
  */
 
+include_once 'pw_search.features.inc';
+
 /**
  * Filter out dialogues that do not have a recipient (incorrect data).
  * @param type $entity_id
