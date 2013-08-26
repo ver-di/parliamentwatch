@@ -14,9 +14,8 @@
     border-left: 1px solid #eee;
 }
 #zone-menu ul ul {
-  top: 2.1rem;
+  top: 2.1em;
   left: -1px; /* LTR */
-  display: none;
   position: absolute;
   left: 0; /* LTR */
   background: #ccc;background: rgb(155,155,155); /* Old browsers */
@@ -34,12 +33,18 @@
 	filter: alpha(opacity=90);
 	opacity: .9;
 }
-#zone-menu ul li:hover ul {
+#zone-menu ul ul,
+#zone-menu ul li:hover ul ul {
+    display: none;
+}
+#zone-menu ul li:hover ul,
+#zone-menu ul li:hover ul li:hover ul {
     display: block;
 }
 #zone-menu ul ul li {
     border-right: 0;
-    font-size: 0.8rem;
+    font-size: 12px;
+    font-size: 1.2rem;
     line-height: 2em;
     padding: 0 16px;
     width: 193px;
@@ -62,12 +67,15 @@
 #zone-menu ul li a.active {
     background: url("../images/sprite.png") no-repeat scroll center -1641px transparent;
 }
+#zone-menu ul ul li.active-trail,
+#zone-menu ul ul li:hover,
 #zone-menu ul ul li a.active {
     background: transparent;
 }
 #zone-menu ul ul a {
     padding: 0;
     border-bottom: 1px dotted #fff;
+    display: block;
 }
 
 #zone-menu ul li ul li ul {
@@ -75,12 +83,12 @@
   top: 0;
 }
 
-#zone-menu ul li:last-child ul li ul {
-    margin-left: -450px;
-}
 #zone-menu ul li ul li ul {
-  left: 12.5rem; /* LTR */
+  left: 225px; /* LTR */
   top: -1px;
+}
+#zone-menu ul li:last-child ul li ul {
+    left: -225px;
 }
 
 
