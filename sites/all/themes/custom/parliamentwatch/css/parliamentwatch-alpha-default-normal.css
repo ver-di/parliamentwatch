@@ -17,3 +17,6 @@
 #region-menu ul li {
   float: left; /* LTR */
 }
+#region-menu ul ul li {
+  float: none; /* LTR */
+}

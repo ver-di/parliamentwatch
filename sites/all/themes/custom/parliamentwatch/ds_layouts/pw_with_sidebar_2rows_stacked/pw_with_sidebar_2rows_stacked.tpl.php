@@ -45,11 +45,11 @@
       <?php print $header; ?>
     </<?php print $header_wrapper; ?>>
 
-    <<?php print $left_1_wrapper; ?> class="ds-left-1 ds-left-2 grid-8 alpha <?php print $left_1_classes; ?>">
+    <<?php print $left_1_wrapper; ?> class="ds-left-1 slider-stage grid-8 alpha <?php print $left_1_classes; ?>">
       <?php print $left_1; ?>
     </<?php print $left_1_wrapper; ?>>
 
-    <<?php print $right_1_wrapper; ?> class="ds-right-1 ds-right-2 grid-4 omega<?php print $right_1_classes; ?>">
+    <<?php print $right_1_wrapper; ?> class="ds-right-1 region-sidebar-second grid-4 omega<?php print $right_1_classes; ?>">
       <?php print $right_1; ?>
     </<?php print $right_1_wrapper; ?>>
 
@@ -57,11 +57,11 @@
       <?php print $inbetween; ?>
     </<?php print $inbetween_wrapper; ?>>
 
-    <<?php print $left_2_wrapper; ?> class="ds-left-2 ds-left-2 grid-8 alpha<?php print $left_2_classes; ?>">
+    <<?php print $left_2_wrapper; ?> class="ds-left-2 grid-8 alpha<?php print $left_2_classes; ?>">
       <?php print $left_2; ?>
     </<?php print $left_2_wrapper; ?>>
 
-    <<?php print $right_2_wrapper; ?> class="ds-right-2 ds-right-2 grid-4 omega<?php print $right_2_classes; ?>">
+    <<?php print $right_2_wrapper; ?> class="ds-right-2 region-sidebar-second grid-4 omega<?php print $right_2_classes; ?>">
       <?php print $right_2; ?>
     </<?php print $right_2_wrapper; ?>>
 
