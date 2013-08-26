@@ -17,6 +17,7 @@
     padding: 0 13px 0 13px;
     color: #858585 !important;
     font: 9px/21px Lucida Grande,Helvetica,Arial,sans-serif;
+    font: 0.9rem/2.1rem Lucida Grande,Helvetica,Arial,sans-serif;
 }
 
 /* blog wordpress */
@@ -47,6 +48,7 @@
 form#search-old .form-text {
     width: 100%;
     font-size: 14px;
+    font-size: 1.4rem;
 }
 form#search-old #edit-submit {
     background: transparent;
