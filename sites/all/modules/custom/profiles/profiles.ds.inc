@@ -323,16 +323,23 @@ function profiles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'question_and_answers_switcher' => array(
-      'weight' => '19',
-      'label' => 'above',
+    'question_and_answers_filter' => array(
+      'weight' => '18',
+      'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Change view',
-          'lb-el' => 'h4',
-          'lb-col' => TRUE,
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'question_and_answers_switcher' => array(
+      'weight' => '19',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -348,7 +355,7 @@ function profiles_ds_field_settings_info() {
     ),
     'question_form' => array(
       'weight' => '17',
-      'label' => 'above',
+      'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
@@ -460,16 +467,6 @@ function profiles_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'question_and_answers_filter' => array(
-      'weight' => '18',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -804,7 +801,7 @@ function profiles_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'block' => 'views|262bcfa866f0c97952c40434a855967b',
-    'block_render' => '1',
+    'block_render' => '2',
   );
   $export['question_and_answers_filter'] = $ds_field;
 
@@ -845,10 +842,11 @@ function profiles_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<form action="" id="form-view-mode-switcher" method="post" name="view-mode-switcher">
-	<fieldset>
-		<input class="view-mode-full" name="group1" type="radio" value="full" checked="checked" /> Full View<br />
-		<input class="view-mode-teaser" name="group1" type="radio" value="teaser" /> Teaser View
+      'value' => '<form action="" id="form-view-mode-switcher" method="post" name="view-mode-switcher" class="views-exposed-form">
+	<fieldset class="views-exposed-widget">
+                <label>Change view</label>
+		<div class="form-item"><input class="view-mode-full form-radio" name="group1" id="group1_1" type="radio" value="full" checked="checked" /><label for="group1_1" class="option">Full View</label></div>
+		<div class="form-item"><input class="view-mode-teaser form-radio" name="group1" id="group1_2" type="radio" value="teaser" /><label for="group1_2" class="option">Teaser View</label></div>
 	</fieldset>
 </form>',
       'format' => 'php_code',
@@ -868,7 +866,7 @@ function profiles_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'block' => 'webform|client-block-10032',
-    'block_render' => '3',
+    'block_render' => '2',
   );
   $export['question_form'] = $ds_field;
 
