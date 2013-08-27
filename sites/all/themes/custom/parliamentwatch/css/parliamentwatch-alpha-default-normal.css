@@ -1,5 +1,10 @@
 /* This file will hold styles that are loaded using the same media query as the normal grid. */
 
+#region-sidebar-second {
+    float: left;
+}
+
+
 #views_slideshow_cycle_main_slider-block,
 .views-slideshow-controls-top {
     width: 610px;
