@@ -744,6 +744,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_age',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -751,14 +754,14 @@ function profiles_field_default_fields() {
       'settings' => array(
         'code' => '$entity_field[0][\'value\'] = "";',
         'database' => array(
-          'data_default' => NULL,
-          'data_index' => FALSE,
-          'data_length' => 32,
-          'data_not_NULL' => FALSE,
-          'data_precision' => 10,
-          'data_scale' => 2,
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
           'data_size' => 'normal',
-          'data_type' => 'varchar',
+          'data_type' => 'int',
         ),
         'display_format' => '$display_output = $entity_field_item[\'value\'];',
         'store' => 1,
@@ -1133,6 +1136,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_constituency',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -2839,6 +2845,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_qanda_ratio',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -2883,14 +2892,16 @@ $entity_field[0][\'value\'] = $result',
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_qanda_ratio',
       'label' => 'QuestionAnswerRatio',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'user_register_form' => FALSE,
+        'user_register_form' => 0,
       ),
       'widget' => array(
+        'active' => 0,
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',

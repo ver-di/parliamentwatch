@@ -186,6 +186,16 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: create field_user_qanda_ratio.
+  $permissions['create field_user_qanda_ratio'] = array(
+    'name' => 'create field_user_qanda_ratio',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: create field_user_questions_get.
   $permissions['create field_user_questions_get'] = array(
     'name' => 'create field_user_questions_get',
@@ -405,6 +415,16 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit field_user_qanda_ratio.
+  $permissions['edit field_user_qanda_ratio'] = array(
+    'name' => 'edit field_user_qanda_ratio',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit field_user_questions_get.
   $permissions['edit field_user_questions_get'] = array(
     'name' => 'edit field_user_questions_get',
@@ -597,6 +617,16 @@ function profiles_user_default_permissions() {
     'name' => 'edit own field_user_pseudonym',
     'roles' => array(
       0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_user_qanda_ratio.
+  $permissions['edit own field_user_qanda_ratio'] = array(
+    'name' => 'edit own field_user_qanda_ratio',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -897,6 +927,17 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view field_user_qanda_ratio.
+  $permissions['view field_user_qanda_ratio'] = array(
+    'name' => 'view field_user_qanda_ratio',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+      2 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view field_user_questions_get.
   $permissions['view field_user_questions_get'] = array(
     'name' => 'view field_user_questions_get',
@@ -1116,6 +1157,16 @@ function profiles_user_default_permissions() {
     'name' => 'view own field_user_pseudonym',
     'roles' => array(
       0 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_user_qanda_ratio.
+  $permissions['view own field_user_qanda_ratio'] = array(
+    'name' => 'view own field_user_qanda_ratio',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
