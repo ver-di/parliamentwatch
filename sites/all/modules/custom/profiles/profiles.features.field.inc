@@ -69,6 +69,12 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'media_responsive' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
         'preview' => array(
           'label' => 'above',
           'settings' => array(),
@@ -190,6 +196,12 @@ function profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'media_responsive' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
         ),
         'preview' => array(
           'label' => 'above',

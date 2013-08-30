@@ -1,5 +1,23 @@
 /* This file will hold styles that are loaded using the same media query as the normal grid. */
+@import url("mainmenu-default-normal.css");
 
+#region-user-second {
+    position: absolute;
+    z-index: 142;
+    top: 5px;
+    right: 14px;
+}
+#zone-menu-wrapper {
+    background: #ff6733; /* Old browsers */
+    background-image: #ff8157; /* Old browsers */
+    background-image: -moz-linear-gradient(top,  #ff8157 0%, #ff6c3f 64%, #ff622d 65%, #ff602b 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff8157), color-stop(64%,#ff6c3f), color-stop(65%,#ff622d), color-stop(100%,#ff602b)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* IE10+ */
+    background-image: linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8157', endColorstr='#ff602b',GradientType=0 ); /* IE6-9 */
+}
 #region-sidebar-second {
     float: left;
 }
@@ -16,12 +34,3 @@
     width: 610px !important;
 }
 
-
-
-
-#region-menu ul li {
-  float: left; /* LTR */
-}
-#region-menu ul ul li {
-  float: none; /* LTR */
-}

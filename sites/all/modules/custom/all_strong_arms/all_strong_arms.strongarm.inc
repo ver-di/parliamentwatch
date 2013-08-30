@@ -1412,6 +1412,10 @@ webform-client-form-10032';
             'weight' => '0',
             'visible' => TRUE,
           ),
+          'media_responsive' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
       ),
     ),
@@ -2141,28 +2145,28 @@ webform-client-form-10032';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'text_resize_line_height_max';
-  $strongarm->value = '42';
+  $strongarm->value = '';
   $export['text_resize_line_height_max'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'text_resize_line_height_min';
-  $strongarm->value = '14';
+  $strongarm->value = '';
   $export['text_resize_line_height_min'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'text_resize_maximum';
-  $strongarm->value = '18';
+  $strongarm->value = '15';
   $export['text_resize_maximum'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'text_resize_minimum';
-  $strongarm->value = '10';
+  $strongarm->value = '5';
   $export['text_resize_minimum'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2176,7 +2180,7 @@ webform-client-form-10032';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'text_resize_scope';
-  $strongarm->value = 'region-content';
+  $strongarm->value = 'js';
   $export['text_resize_scope'] = $strongarm;
 
   $strongarm = new stdClass();

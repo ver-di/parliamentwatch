@@ -72,6 +72,13 @@ function pw_content_authoring_layout_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
+        'media_responsive' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '1',
+        ),
         'preview' => array(
           'label' => 'hidden',
           'module' => 'text',

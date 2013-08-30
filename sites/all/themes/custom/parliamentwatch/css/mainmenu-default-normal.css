@@ -1,0 +1,41 @@
+#region-menu ul li {
+  float: left; /* LTR */
+    border-bottom: 0;
+    border-right: 1px solid #eee;
+}
+#zone-menu ul li.first {
+    border-left: 1px solid #eee;
+}
+#zone-menu ul ul {
+    top: 2.1em;
+    left: -1px; /* LTR */
+    position: absolute;
+    left: 0; /* LTR */
+}
+#region-menu ul ul li {
+    float: none; /* LTR */
+    width: 193px;
+}
+#zone-menu ul li.active-trail,
+#zone-menu ul li:hover,
+#zone-menu ul li a.active {
+    background: url("../images/sprite.png") no-repeat scroll center -1641px transparent;
+}
+#zone-menu ul ul li.active-trail,
+#zone-menu ul ul li:hover,
+#zone-menu ul ul li a.active {
+    background: transparent;
+}
+
+#zone-menu ul li ul li ul {
+  left: 225px; /* LTR */
+  top: 0;
+}
+
+#zone-menu ul li ul li ul {
+  left: 225px; /* LTR */
+  top: -1px;
+}
+#zone-menu ul li:last-child ul li ul {
+    left: -225px;
+}

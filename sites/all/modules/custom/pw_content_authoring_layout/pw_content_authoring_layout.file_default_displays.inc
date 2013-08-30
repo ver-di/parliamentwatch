@@ -248,7 +248,9 @@ function pw_content_authoring_layout_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'pw_landscape_l',
+    'image_style' => 'pw_landscape_l__mobile',
+    'alt' => '[file:field_file_image_alt_text]',
+    'title' => '[file:field_file_image_title_text]',
   );
   $export['image__pw_file_landscape_l__file_image'] = $file_display;
 
@@ -300,7 +302,9 @@ function pw_content_authoring_layout_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = TRUE;
   $file_display->settings = array(
-    'image_style' => 'pw_portrait_l',
+    'image_style' => 'pw_portrait_l__mobile',
+    'alt' => '[file:field_file_image_alt_text]',
+    'title' => '[file:field_file_image_title_text]',
   );
   $export['image__pw_file_portrait_l__file_image'] = $file_display;
 

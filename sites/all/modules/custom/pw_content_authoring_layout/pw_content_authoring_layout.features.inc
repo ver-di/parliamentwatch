@@ -28,13 +28,35 @@ function pw_content_authoring_layout_ctools_plugin_api() {
 function pw_content_authoring_layout_image_default_styles() {
   $styles = array();
 
-  // Exported image style: pw_landscape_l.
-  $styles['pw_landscape_l'] = array(
-    'name' => 'pw_landscape_l',
+  // Exported image style: pw_landscape_l__mobile.
+  $styles['pw_landscape_l__mobile'] = array(
+    'name' => 'pw_landscape_l__mobile',
     'effects' => array(
-      5 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+      13 => array(
+        'label' => 'Skalieren und zuschneiden',
+        'help' => 'Skalieren und zuschneiden wird das Seitenverhältnis des ursprünglichen Bildes erhalten, und dann die überstehenden Ränder entfernen. Dies ist besonders nützlich für die Erstellung von perfekt quadratischen Vorschaubildern ohne Verzerrung des Bildes.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => '140',
+          'height' => '93',
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported image style: pw_landscape_l__normal.
+  $styles['pw_landscape_l__normal'] = array(
+    'name' => 'pw_landscape_l__normal',
+    'effects' => array(
+      12 => array(
+        'label' => 'Skalieren und zuschneiden',
+        'help' => 'Skalieren und zuschneiden wird das Seitenverhältnis des ursprünglichen Bildes erhalten, und dann die überstehenden Ränder entfernen. Dies ist besonders nützlich für die Erstellung von perfekt quadratischen Vorschaubildern ohne Verzerrung des Bildes.',
         'effect callback' => 'image_scale_and_crop_effect',
         'dimensions callback' => 'image_resize_dimensions',
         'form callback' => 'image_resize_form',
@@ -50,13 +72,35 @@ function pw_content_authoring_layout_image_default_styles() {
     ),
   );
 
-  // Exported image style: pw_portrait_l.
-  $styles['pw_portrait_l'] = array(
-    'name' => 'pw_portrait_l',
+  // Exported image style: pw_portrait_l__mobile.
+  $styles['pw_portrait_l__mobile'] = array(
+    'name' => 'pw_portrait_l__mobile',
     'effects' => array(
-      1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+      14 => array(
+        'label' => 'Skalieren und zuschneiden',
+        'help' => 'Skalieren und zuschneiden wird das Seitenverhältnis des ursprünglichen Bildes erhalten, und dann die überstehenden Ränder entfernen. Dies ist besonders nützlich für die Erstellung von perfekt quadratischen Vorschaubildern ohne Verzerrung des Bildes.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => '70',
+          'height' => '105',
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported image style: pw_portrait_l__normal.
+  $styles['pw_portrait_l__normal'] = array(
+    'name' => 'pw_portrait_l__normal',
+    'effects' => array(
+      15 => array(
+        'label' => 'Skalieren und zuschneiden',
+        'help' => 'Skalieren und zuschneiden wird das Seitenverhältnis des ursprünglichen Bildes erhalten, und dann die überstehenden Ränder entfernen. Dies ist besonders nützlich für die Erstellung von perfekt quadratischen Vorschaubildern ohne Verzerrung des Bildes.',
         'effect callback' => 'image_scale_and_crop_effect',
         'dimensions callback' => 'image_resize_dimensions',
         'form callback' => 'image_resize_form',
