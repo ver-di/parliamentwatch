@@ -35,26 +35,32 @@ div.horizontal-tabs .view-content {
 
 
 
-.view-profile-list-solr table {
+.view-id-profile_list_rev table {
     width: 100%;
     margin-bottom: 2.6rem;
 }
-.view-profile-list-solr td {
+.view-id-profile_list_rev td {
     padding: 16px 22px;
     border: 1px solid #eee;
     width: 33%;
 }
-.view-profile-list-solr td.col-first {
+.view-id-profile_list_rev td.col-first {
     border-left: 0;
 }
-.view-profile-list-solr td.col-last {
+.view-id-profile_list_rev td.col-last {
     border-right: 0;
 }
-.view-profile-list-solr .row-first td {
+.view-id-profile_list_rev .row-first td {
     border-top: 0;
 }
-.view-profile-list-solr .row-last td {
+.view-id-profile_list_rev .row-last td {
     border-bottom: 0;
+}
+.view-id-profile_list_rev .profile-list-compact-info .file-image .content {
+    width: 140px;
+    height: 210px;
+    background: url(/sites/abgeordnetenwatch.de/files/default_images/profile-picture-default.jpg) no-repeat;
+    outline: 1px solid #ccc;
 }
 
 .block-views-profile-questions-answers-block .link-report {

@@ -667,7 +667,7 @@ function profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '10',
+        'weight' => '19',
       ),
     ),
   );
@@ -743,7 +743,7 @@ function profiles_field_default_fields() {
           ),
         ),
         'type' => 'addressfield_standard',
-        'weight' => '14',
+        'weight' => '6',
       ),
     ),
   );
@@ -811,7 +811,7 @@ function profiles_field_default_fields() {
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '36',
+        'weight' => '9',
       ),
     ),
   );
@@ -974,7 +974,7 @@ function profiles_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '3',
+        'weight' => '8',
       ),
     ),
   );
@@ -1046,7 +1046,7 @@ function profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '25',
+        'weight' => '11',
       ),
     ),
   );
@@ -1135,7 +1135,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '17',
+        'weight' => '15',
       ),
     ),
   );
@@ -1236,7 +1236,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '14',
       ),
     ),
   );
@@ -1346,7 +1346,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '7',
+        'weight' => '17',
       ),
     ),
   );
@@ -1452,7 +1452,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '28',
+        'weight' => '4',
       ),
     ),
   );
@@ -1573,7 +1573,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -1652,7 +1652,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '23',
+        'weight' => '5',
       ),
     ),
   );
@@ -1749,7 +1749,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '12',
+        'weight' => '21',
       ),
     ),
   );
@@ -1869,7 +1869,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '22',
+        'weight' => '7',
       ),
     ),
   );
@@ -1944,7 +1944,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '19',
+        'weight' => '24',
       ),
     ),
   );
@@ -2065,7 +2065,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -2143,7 +2143,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '24',
+        'weight' => '10',
       ),
     ),
   );
@@ -2248,7 +2248,7 @@ function profiles_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '13',
+        'weight' => '22',
       ),
     ),
   );
@@ -2337,7 +2337,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '16',
+        'weight' => '13',
       ),
     ),
   );
@@ -2423,7 +2423,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '6',
+        'weight' => '12',
       ),
     ),
   );
@@ -2437,7 +2437,7 @@ function profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_picture',
       'field_permissions' => array(
-        'type' => '2',
+        'type' => '0',
       ),
       'foreign keys' => array(
         'fid' => array(
@@ -2453,14 +2453,13 @@ function profiles_field_default_fields() {
         ),
       ),
       'locked' => '0',
-      'module' => 'file',
+      'module' => 'image',
       'settings' => array(
-        'display_default' => 0,
-        'display_field' => 0,
+        'default_image' => '7972',
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
-      'type' => 'file',
+      'type' => 'image',
     ),
     'field_instance' => array(
       'bundle' => 'user',
@@ -2468,30 +2467,16 @@ function profiles_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
-          'module' => 'file_entity',
+          'label' => 'above',
+          'module' => 'image',
           'settings' => array(
-            'file_view_mode' => 'pw_file_portrait_l',
+            'image_link' => '',
+            'image_style' => '',
           ),
-          'type' => 'file_rendered',
-          'weight' => '4',
-        ),
-        'full' => array(
-          'label' => 'hidden',
-          'module' => 'file_entity',
-          'settings' => array(
-            'file_view_mode' => 'pw_file_portrait_l',
-          ),
-          'type' => 'file_rendered',
-          'weight' => '1',
+          'type' => 'image',
+          'weight' => 57,
         ),
         'premium_user' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '37',
-        ),
-        'user_search' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -2504,11 +2489,15 @@ function profiles_field_default_fields() {
       'label' => 'Profile picture',
       'required' => 0,
       'settings' => array(
-        'description_field' => 0,
-        'file_directory' => 'users',
-        'file_extensions' => 'jpg jpeg gif png',
+        'alt_field' => 0,
+        'default_image' => '7973',
+        'file_directory' => 'user',
+        'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '1 MB',
-        'user_register_form' => 0,
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 0,
+        'user_register_form' => 1,
       ),
       'widget' => array(
         'active' => 1,
@@ -2527,7 +2516,7 @@ function profiles_field_default_fields() {
           ),
           'browser_plugins' => array(
             'media_default--media_browser_1' => 0,
-            'media_default--media_browser_my_files' => 0,
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
             'media_internet' => 0,
             'upload' => 'upload',
             'youtube' => 0,
@@ -2535,7 +2524,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '9',
+        'weight' => '0',
       ),
     ),
   );
@@ -2643,7 +2632,7 @@ function profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '11',
+        'weight' => '20',
       ),
     ),
   );
@@ -2722,7 +2711,7 @@ function profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '20',
+        'weight' => '16',
       ),
     ),
   );
@@ -2844,7 +2833,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '18',
       ),
     ),
   );
@@ -2917,7 +2906,7 @@ $entity_field[0][\'value\'] = $result',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '37',
+        'weight' => '32',
       ),
     ),
   );
@@ -3093,7 +3082,7 @@ $entity_field[0][\'value\'] = $result',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '15',
+        'weight' => '23',
       ),
     ),
   );
@@ -3181,7 +3170,7 @@ $entity_field[0][\'value\'] = $result',
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '35',
+        'weight' => '31',
       ),
     ),
   );

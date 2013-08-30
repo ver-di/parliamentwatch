@@ -144,17 +144,6 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: create field_user_picture.
-  $permissions['create field_user_picture'] = array(
-    'name' => 'create field_user_picture',
-    'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: create field_user_political_goals.
   $permissions['create field_user_political_goals'] = array(
     'name' => 'create field_user_political_goals',
@@ -376,16 +365,6 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: edit field_user_picture.
-  $permissions['edit field_user_picture'] = array(
-    'name' => 'edit field_user_picture',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: edit field_user_political_goals.
   $permissions['edit field_user_political_goals'] = array(
     'name' => 'edit field_user_political_goals',
@@ -576,17 +555,6 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: edit own field_user_picture.
-  $permissions['edit own field_user_picture'] = array(
-    'name' => 'edit own field_user_picture',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -873,21 +841,6 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: view field_user_picture.
-  $permissions['view field_user_picture'] = array(
-    'name' => 'view field_user_picture',
-    'roles' => array(
-      0 => 'Candidate',
-      1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: view field_user_political_goals.
   $permissions['view field_user_political_goals'] = array(
     'name' => 'view field_user_political_goals',
@@ -1115,17 +1068,6 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: view own field_user_picture.
-  $permissions['view own field_user_picture'] = array(
-    'name' => 'view own field_user_picture',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );

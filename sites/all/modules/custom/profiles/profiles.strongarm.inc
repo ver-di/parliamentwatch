@@ -142,22 +142,22 @@ function profiles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'ckeditor' => array(
-          'weight' => '32',
+          'weight' => '29',
         ),
         'piwik' => array(
-          'weight' => '4',
+          'weight' => '35',
         ),
         'redirect' => array(
-          'weight' => '33',
+          'weight' => '30',
         ),
         'account' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'timezone' => array(
-          'weight' => '21',
+          'weight' => '34',
         ),
         'locale' => array(
-          'weight' => '18',
+          'weight' => '33',
         ),
       ),
       'display' => array(
