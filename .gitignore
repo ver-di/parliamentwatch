@@ -6,3 +6,5 @@ sites/*/files
 sites/*/private
 sites/sites.php
 /.idea/
+/nbproject/private/
+nbproject/.gitignore

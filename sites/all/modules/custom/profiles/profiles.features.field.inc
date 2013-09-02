@@ -2437,7 +2437,7 @@ function profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_picture',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(
         'fid' => array(
@@ -2453,13 +2453,14 @@ function profiles_field_default_fields() {
         ),
       ),
       'locked' => '0',
-      'module' => 'image',
+      'module' => 'file',
       'settings' => array(
-        'default_image' => '7972',
+        'display_default' => 0,
+        'display_field' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
-      'type' => 'image',
+      'type' => 'file',
     ),
     'field_instance' => array(
       'bundle' => 'user',
@@ -2467,16 +2468,30 @@ function profiles_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'image',
+          'label' => 'hidden',
+          'module' => 'file_entity',
           'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
+            'file_view_mode' => 'pw_file_portrait_l',
           ),
-          'type' => 'image',
-          'weight' => 57,
+          'type' => 'file_rendered',
+          'weight' => '4',
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'pw_file_portrait_l',
+          ),
+          'type' => 'file_rendered',
+          'weight' => '1',
         ),
         'premium_user' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '37',
+        ),
+        'user_search' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -2489,15 +2504,11 @@ function profiles_field_default_fields() {
       'label' => 'Profile picture',
       'required' => 0,
       'settings' => array(
-        'alt_field' => 0,
-        'default_image' => '7973',
-        'file_directory' => 'user',
-        'file_extensions' => 'png gif jpg jpeg',
+        'description_field' => 0,
+        'file_directory' => 'users',
+        'file_extensions' => 'jpg jpeg gif png',
         'max_filesize' => '1 MB',
-        'max_resolution' => '',
-        'min_resolution' => '',
-        'title_field' => 0,
-        'user_register_form' => 1,
+        'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 1,
@@ -2516,7 +2527,7 @@ function profiles_field_default_fields() {
           ),
           'browser_plugins' => array(
             'media_default--media_browser_1' => 0,
-            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+            'media_default--media_browser_my_files' => 0,
             'media_internet' => 0,
             'upload' => 'upload',
             'youtube' => 0,
@@ -2524,7 +2535,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '0',
+        'weight' => '9',
       ),
     ),
   );
@@ -2632,7 +2643,7 @@ function profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '20',
+        'weight' => '11',
       ),
     ),
   );
@@ -2711,7 +2722,7 @@ function profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '16',
+        'weight' => '20',
       ),
     ),
   );
@@ -2833,7 +2844,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '18',
+        'weight' => '8',
       ),
     ),
   );
@@ -2854,10 +2865,10 @@ function profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'computed_field',
       'settings' => array(
-        'code' => '$answers = $entity->field_user_answers_give;
+        'code' => '/*$answers = $entity->field_user_answers_give;
 $questions = $entity-> field_user_questions_get;
-$result = ($answers / $questions) * 100;
-$entity_field[0][\'value\'] = $result',
+$result = ($answers / $questions) * 100;*/
+$entity_field[0][\'value\'] = 50;',
         'database' => array(
           'data_default' => '',
           'data_index' => 0,
@@ -2906,7 +2917,7 @@ $entity_field[0][\'value\'] = $result',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '32',
+        'weight' => '37',
       ),
     ),
   );
@@ -3082,7 +3093,7 @@ $entity_field[0][\'value\'] = $result',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '23',
+        'weight' => '15',
       ),
     ),
   );
@@ -3170,7 +3181,7 @@ $entity_field[0][\'value\'] = $result',
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '31',
+        'weight' => '35',
       ),
     ),
   );

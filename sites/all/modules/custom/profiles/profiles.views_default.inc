@@ -2192,8 +2192,7 @@ if($record->value == 0){
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_options']['argument'] = 'bundestag';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary_options']['items_per_page'] = '25';
@@ -2482,7 +2481,28 @@ if($record->value == 0){
   /* Display: Übersicht der Abgeordneten */
   $handler = $view->new_display('page', 'Übersicht der Abgeordneten', 'grid');
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'deputies/%';
+  $handler->display->display_options['path'] = 'politicians/%';
+
+  /* Display: Listenansicht */
+  $handler = $view->new_display('attachment', 'Listenansicht', 'attachment_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '21';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['displays'] = array(
+    'page_1' => 'page_1',
+    'default' => 0,
+    'grid' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
+  $handler->display->display_options['inherit_exposed_filters'] = TRUE;
+  $handler->display->display_options['inherit_pager'] = TRUE;
   $export['profile_list_rev'] = $view;
 
   $view = new view();
