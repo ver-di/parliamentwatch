@@ -610,7 +610,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '48',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -710,7 +710,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '51',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -764,7 +764,8 @@ function profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'computed_field',
       'settings' => array(
-        'code' => '$entity_field[0][\'value\'] = "";',
+        'code' => '$entity_field[0][\'value\'] = ( time() - strtotime($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\']) ) / 86400 / 365.25;
+',
         'database' => array(
           'data_default' => '',
           'data_index' => 0,
@@ -788,10 +789,9 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'computed_field',
           'settings' => array(),
-          'type' => 'computed_field_plain',
-          'weight' => 54,
+          'type' => 'hidden',
+          'weight' => '56',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -800,14 +800,16 @@ function profiles_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_age',
       'label' => 'Age',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'user_register_form' => FALSE,
+        'user_register_form' => 0,
       ),
       'widget' => array(
+        'active' => 0,
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
@@ -849,7 +851,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '41',
+          'weight' => '44',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -928,7 +930,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '38',
+          'weight' => '41',
         ),
         'full' => array(
           'label' => 'above',
@@ -1008,7 +1010,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '39',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1283,7 +1285,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '53',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -1393,7 +1395,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '45',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -1618,7 +1620,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '38',
         ),
         'full' => array(
           'label' => 'above',
@@ -1699,7 +1701,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '49',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -1922,7 +1924,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '50',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -2109,7 +2111,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '40',
         ),
         'full' => array(
           'label' => 'inline',
@@ -2586,7 +2588,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '46',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -2769,7 +2771,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '39',
+          'weight' => '42',
         ),
         'full' => array(
           'label' => 'above',
@@ -2865,10 +2867,11 @@ function profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'computed_field',
       'settings' => array(
-        'code' => '/*$answers = $entity->field_user_answers_give;
-$questions = $entity-> field_user_questions_get;
-$result = ($answers / $questions) * 100;*/
-$entity_field[0][\'value\'] = 50;',
+        'code' => '$answers = $entity->field_user_answers_give[LANGUAGE_NONE][0][\'value\'];
+$questions = $entity-> field_user_questions_get[LANGUAGE_NONE][0][\'value\'];
+$result = ($answers / $questions) * 100;
+
+$entity_field[0][\'value\'] = $result;',
         'database' => array(
           'data_default' => '',
           'data_index' => 0,
@@ -2895,7 +2898,7 @@ $entity_field[0][\'value\'] = 50;',
           'module' => 'computed_field',
           'settings' => array(),
           'type' => 'computed_field_plain',
-          'weight' => 55,
+          'weight' => '0',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -2955,7 +2958,7 @@ $entity_field[0][\'value\'] = 50;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '40',
+          'weight' => '43',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -3034,7 +3037,7 @@ $entity_field[0][\'value\'] = 50;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '50',
+          'weight' => '52',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -3138,16 +3141,9 @@ $entity_field[0][\'value\'] = 50;',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
-          'weight' => 53,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '55',
         ),
         'premium_user' => array(
           'label' => 'above',
