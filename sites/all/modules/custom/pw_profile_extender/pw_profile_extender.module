@@ -1,15 +1,15 @@
 <?php
-
   /**
    * Implements hook_form_alter().
    * Extends the User Profile Form with the calendar view
    */
-  function pw_profile_extender_form_alter(&$form, &$form_state, $form_id) {
-     if ($form_id == 'user_profile_form') {
+  function pw_profile_extender_form_alter(&$form, &$form_state, $form_id)
+  {
+    if ($form_id == 'user_profile_form') {
       $form['calendar admin'] = array(
         '#title' => 'My Calendar',
         '#type' => 'markup',
-        '#markup' =>views_embed_view('calendar','calendar_admin_block'),
+        '#markup' => views_embed_view('calendar', 'calendar_admin_block'),
         '#weight' => 8,
       );
       unset($form["locale"]);
@@ -18,49 +18,35 @@
     if ($form_id == 'views_exposed_form') {
       $form_state['redirect'] = current_path();
     }
-   }
+  }
 
-/*
-function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  /**
+   * Implements form_views_exposed_form_alter().
+   * Adds checkboxes to the alphabetical filter
+   */
+  function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
+  {
+    if ($form['#id'] == 'views-exposed-form-profile-list-rev-grid') {
+      foreach (range('a', 'z') as $letter) {
+        $letters[$letter] = strtoupper($letter);
+      }
 
- if ($form['#id'] == 'views-exposed-form-profile-list-rev-grid' || $form['#id'] == 'between_date_filter') {
-  //dpm($form);
-   krumo($form);
+      // add the new options and adjust other settings to change the exposed filter
+      $form['field_user_first_letter_lname_value'] += array(
+        '#type' => 'select',
+        '#theme' => 'select_as_checkboxes',
+        '#default_value' => 'A',
+        '#options' => $letters,
+      );
+    }
+  }
 
-   $form['between_date_filter_op'] = array(
-     '#type' => 'checkbox',
-     '#title' => t('Ausgeschiedene Abgeordnete anzeigen'),
-     '#default_value' => '==',
-     '#return_value' => '!='
-   );
-
- }
-}
-*/
-/*
-function pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
-// set up array of letters  $letters = array('' =----> '');
-foreach (range('a', 'z') as $letter) {
-  $letters[$letter] = strtoupper($letter);
-}
-
-// add the new options and adjust other settings to change the exposed filter
-$form['field_user_lname_value_1'] += array(
-  '#type' => 'select',
-  '#theme' => 'select_as_links',
-  '#default_value' => 'A',
-  '#options' => $letters,
-);
-}
-*/
-
-  function pw_profile_extender_menu_alter(&$items) {
-   //krumo($items);
-
-   $items['node/add/calendarentry'] = array(
-     'title' => t('Add calendar Entry'),
-     'desctiption' =>'Add new calendar entry',
-     'type' => MENU_LOCAL_TASK,
+  function pw_profile_extender_menu_alter(&$items)
+  {
+     $items['node/add/calendarentry'] = array(
+      'title' => t('Add calendar Entry'),
+      'desctiption' => 'Add new calendar entry',
+      'type' => MENU_LOCAL_TASK,
 
     );
-}
+  }
