@@ -15,7 +15,7 @@ function slider_item_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Slider';
+  $view->human_name = 'PW Slider';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -89,7 +89,7 @@ function slider_item_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Header: Global: Text area */
+  /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -98,7 +98,7 @@ drupal_add_css(\'sites/all/themes/custom/parliamentwatch/css/slider.css\', array
 drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
 ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
-  /* Field: Content: Beschreibung mit LInk */
+  /* Feld: Inhalt: Beschreibung mit LInk */
   $handler->display->display_options['fields']['field_slider_url']['id'] = 'field_slider_url';
   $handler->display->display_options['fields']['field_slider_url']['table'] = 'field_data_field_slider_url';
   $handler->display->display_options['fields']['field_slider_url']['field'] = 'field_slider_url';
@@ -108,7 +108,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['fields']['field_slider_url']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_slider_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_slider_url']['group_column'] = 'url';
-  /* Field: Content: Teaser Body */
+  /* Feld: Inhalt: Teaser Body */
   $handler->display->display_options['fields']['field_slider_teaserbody']['id'] = 'field_slider_teaserbody';
   $handler->display->display_options['fields']['field_slider_teaserbody']['table'] = 'field_data_field_slider_teaserbody';
   $handler->display->display_options['fields']['field_slider_teaserbody']['field'] = 'field_slider_teaserbody';
@@ -118,7 +118,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['fields']['field_slider_teaserbody']['alter']['text'] = '[field_slider_teaserbody]<div class="item"></div>';
   $handler->display->display_options['fields']['field_slider_teaserbody']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_slider_teaserbody']['hide_alter_empty'] = FALSE;
-  /* Field: Content: Title */
+  /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -129,7 +129,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -137,31 +137,31 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'clearfix';
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
-  /* Field: Webform: Webform form body */
+  /* Feld: Webform: Webform form body */
   $handler->display->display_options['fields']['webform_form_body']['id'] = 'webform_form_body';
   $handler->display->display_options['fields']['webform_form_body']['table'] = 'node';
   $handler->display->display_options['fields']['webform_form_body']['field'] = 'webform_form_body';
   $handler->display->display_options['fields']['webform_form_body']['label'] = '';
   $handler->display->display_options['fields']['webform_form_body']['element_label_colon'] = FALSE;
-  /* Field: Global: Custom text */
+  /* Feld: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="close">close</span>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Sort criterion: Weight: Weight */
+  /* Sort criterion: Gewichtung: Gewichtung */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -169,7 +169,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
     'slider_item' => 'slider_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Inhalt: Sprache */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';

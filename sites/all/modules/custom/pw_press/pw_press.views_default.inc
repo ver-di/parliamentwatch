@@ -15,7 +15,7 @@ function pw_press_views_default_views() {
   $view->description = 'A list of articles about the project found in the press';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Press articles';
+  $view->human_name = 'PW Press articles';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -249,7 +249,7 @@ function pw_press_views_default_views() {
   $view->description = 'A list of teasered press releases';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Press release';
+  $view->human_name = 'PW Press release';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

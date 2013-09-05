@@ -12,10 +12,10 @@ function pw_blog_views_default_views() {
 
   $view = new view();
   $view->name = 'blog';
-  $view->description = '';
+  $view->description = 'A feed, a page of articles, a block of recent articles, a taxonomypage';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Blog';
+  $view->human_name = 'PW Blog';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

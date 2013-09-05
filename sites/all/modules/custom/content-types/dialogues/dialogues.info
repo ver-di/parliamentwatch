@@ -1,4 +1,4 @@
-name = Dialogues
+name = PW Dialogues
 description = q&a importer and content type
 core = 7.x
 package = Features

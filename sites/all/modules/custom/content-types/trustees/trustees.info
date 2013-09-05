@@ -1,9 +1,9 @@
-name = Trustees
+name = PW Trustees
 description = content type trustee and view with form block underneeth
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-05082013
+version = 7.x-1.0-05092013
 project = trustees
 dependencies[] = context
 dependencies[] = ctools

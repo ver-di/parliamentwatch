@@ -1,9 +1,9 @@
-name = Slider item
-description = content type slider item
+name = PW Slider
+description = Slider in the sidebar
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-25042013
+version = 7.x-1.0-05092013
 project = slider_item
 dependencies[] = all_strong_arms
 dependencies[] = ds

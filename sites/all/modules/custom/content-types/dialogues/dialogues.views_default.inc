@@ -12,10 +12,10 @@ function dialogues_views_default_views() {
 
   $view = new view();
   $view->name = 'answers';
-  $view->description = '';
+  $view->description = 'Displays a list of recent answers';
   $view->tag = 'default';
   $view->base_table = 'comment';
-  $view->human_name = 'Answers';
+  $view->human_name = 'PW Answers';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -56,14 +56,29 @@ function dialogues_views_default_views() {
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['relationship'] = 'nid';
-  /* Feld: | inner start */
-  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
-  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_2']['ui_name'] = '| inner start';
-  $handler->display->display_options['fields']['nothing_2']['label'] = '';
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '<div class="content-inner">';
-  $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'Fieldset Content Inner';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'sharethis',
+    1 => 'field_user_picture',
+    2 => 'nothing',
+    3 => 'field_user_fname',
+    4 => 'field_user_lname',
+    5 => 'field_user_party',
+    6 => 'created',
+    7 => 'nothing_1',
+    8 => 'field_user_questions_get',
+    9 => 'field_user_answers_give',
+    10 => 'uid',
+    11 => 'nothing_3',
+    12 => 'comment_body',
+    13 => 'nid',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'content-inner';
   /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
@@ -224,14 +239,6 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'bg-white';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Feld: | inner end */
-  $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
-  $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_4']['ui_name'] = '| inner end';
-  $handler->display->display_options['fields']['nothing_4']['label'] = '';
-  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '</div>';
-  $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
   /* Sort criterion: Kommentar: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
