@@ -610,13 +610,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '11',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '59',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '49',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '59',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -667,7 +679,7 @@ function profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '19',
+        'weight' => '21',
       ),
     ),
   );
@@ -710,13 +722,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '14',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '54',
+          'weight' => '57',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '57',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -743,7 +767,7 @@ function profiles_field_default_fields() {
           ),
         ),
         'type' => 'addressfield_standard',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -791,13 +815,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '19',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '19',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '55',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -813,7 +849,7 @@ function profiles_field_default_fields() {
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '9',
+        'weight' => '13',
       ),
     ),
   );
@@ -851,13 +887,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '7',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '50',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '45',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '50',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -875,7 +923,7 @@ function profiles_field_default_fields() {
         'max' => '',
         'min' => '0',
         'prefix' => '',
-        'suffix' => '',
+        'suffix' => ' answer| answers',
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -883,7 +931,7 @@ function profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '27',
+        'weight' => '12',
       ),
     ),
   );
@@ -930,7 +978,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '41',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'above',
@@ -938,11 +986,23 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '16',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '52',
+          'weight' => '55',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '55',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -969,14 +1029,14 @@ function profiles_field_default_fields() {
         'settings' => array(
           'display_all_day' => 0,
           'increment' => '15',
-          'input_format' => 'Y-m-d H:i:s',
+          'input_format' => 'd.m.Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
           'text_parts' => array(),
-          'year_range' => '-3:+3',
+          'year_range' => '-100:+0',
         ),
         'type' => 'date_popup',
-        'weight' => '8',
+        'weight' => '12',
       ),
     ),
   );
@@ -1010,7 +1070,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '39',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1018,11 +1078,23 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '11',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '48',
+        ),
+        'user_deputy' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '41',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '48',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1041,14 +1113,14 @@ function profiles_field_default_fields() {
         'min' => '',
         'prefix' => '',
         'suffix' => '',
-        'user_register_form' => 1,
+        'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 0,
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '11',
+        'weight' => '15',
       ),
     ),
   );
@@ -1099,9 +1171,8 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'i18n_taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'hidden',
           'weight' => '4',
         ),
         'full' => array(
@@ -1111,11 +1182,26 @@ function profiles_field_default_fields() {
           'type' => 'i18n_taxonomy_term_reference_link',
           'weight' => '6',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '47',
+        ),
+        'user_deputy' => array(
+          'label' => 'hidden',
+          'module' => 'shs',
+          'settings' => array(
+            'linked' => FALSE,
+          ),
+          'type' => 'shs_default',
+          'weight' => '7',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '47',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1137,7 +1223,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '15',
+        'weight' => '11',
       ),
     ),
   );
@@ -1188,21 +1274,8 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'textformatter',
-          'settings' => array(
-            'textformatter_class' => '',
-            'textformatter_comma_and' => 0,
-            'textformatter_comma_full_stop' => 0,
-            'textformatter_comma_override' => 0,
-            'textformatter_comma_tag' => '0',
-            'textformatter_contrib' => array(),
-            'textformatter_separator_custom' => '',
-            'textformatter_separator_custom_class' => '',
-            'textformatter_separator_custom_tag' => '0',
-            'textformatter_term_plain' => 1,
-            'textformatter_type' => 'comma',
-          ),
-          'type' => 'textformatter_list',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '15',
         ),
         'full' => array(
@@ -1212,11 +1285,23 @@ function profiles_field_default_fields() {
           'type' => 'i18n_taxonomy_term_reference_plain',
           'weight' => '15',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '46',
+        ),
+        'user_deputy' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '46',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1238,7 +1323,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '14',
+        'weight' => '10',
       ),
     ),
   );
@@ -1285,13 +1370,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '17',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '31',
+          'weight' => '37',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '53',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '37',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1348,7 +1445,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '17',
+        'weight' => '9',
       ),
     ),
   );
@@ -1395,13 +1492,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '9',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '41',
+          'weight' => '44',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '47',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '44',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1496,10 +1605,9 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_plain',
-          'weight' => '2',
+          'type' => 'hidden',
+          'weight' => '21',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1508,11 +1616,24 @@ function profiles_field_default_fields() {
           'type' => 'text_plain',
           'weight' => '2',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '33',
+          'weight' => '38',
+        ),
+        'user_deputy' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '35',
+        ),
+        'user_premium' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '38',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1620,7 +1741,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '38',
+          'weight' => '1',
         ),
         'full' => array(
           'label' => 'above',
@@ -1628,11 +1749,23 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '10',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '45',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '40',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '45',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1647,14 +1780,14 @@ function profiles_field_default_fields() {
       'label' => 'Gender',
       'required' => 0,
       'settings' => array(
-        'user_register_form' => 1,
+        'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '5',
+        'weight' => '1',
       ),
     ),
   );
@@ -1701,13 +1834,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '12',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '57',
+          'weight' => '60',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '50',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '60',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1751,7 +1896,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '21',
+        'weight' => '22',
       ),
     ),
   );
@@ -1796,9 +1941,8 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
+          'type' => 'hidden',
           'weight' => '14',
         ),
         'full' => array(
@@ -1808,11 +1952,23 @@ function profiles_field_default_fields() {
           'type' => 'text_default',
           'weight' => '14',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '54',
+        ),
+        'user_deputy' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '54',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1862,7 +2018,7 @@ function profiles_field_default_fields() {
           'insert_plugin' => '',
         ),
         'text_processing' => '0',
-        'user_register_form' => 1,
+        'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 1,
@@ -1871,7 +2027,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -1924,13 +2080,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '50',
+          'weight' => '13',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '56',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '56',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -1946,7 +2114,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '24',
+        'weight' => '12',
       ),
     ),
   );
@@ -1988,10 +2156,9 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_plain',
-          'weight' => '3',
+          'type' => 'hidden',
+          'weight' => '22',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -2000,11 +2167,24 @@ function profiles_field_default_fields() {
           'type' => 'text_plain',
           'weight' => '3',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '34',
+          'weight' => '39',
+        ),
+        'user_deputy' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '36',
+        ),
+        'user_premium' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '39',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2111,7 +2291,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '40',
+          'weight' => '3',
         ),
         'full' => array(
           'label' => 'inline',
@@ -2119,11 +2299,23 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '12',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '50',
+          'weight' => '53',
+        ),
+        'user_deputy' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '42',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '53',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2138,14 +2330,14 @@ function profiles_field_default_fields() {
       'label' => 'Marriage status',
       'required' => 0,
       'settings' => array(
-        'user_register_form' => 1,
+        'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '10',
+        'weight' => '14',
       ),
     ),
   );
@@ -2191,9 +2383,8 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'link',
           'settings' => array(),
-          'type' => 'link_default',
+          'type' => 'hidden',
           'weight' => '10',
         ),
         'full' => array(
@@ -2203,11 +2394,24 @@ function profiles_field_default_fields() {
           'type' => 'link_default',
           'weight' => '10',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '51',
+        ),
+        'user_deputy' => array(
+          'label' => 'hidden',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => '9',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '51',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2250,7 +2454,7 @@ function profiles_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '22',
+        'weight' => '26',
       ),
     ),
   );
@@ -2301,10 +2505,9 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'i18n_taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '6',
+          'type' => 'hidden',
+          'weight' => '25',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -2313,11 +2516,23 @@ function profiles_field_default_fields() {
           'type' => 'i18n_taxonomy_term_reference_plain',
           'weight' => '3',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '52',
+        ),
+        'user_deputy' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '33',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '52',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2332,14 +2547,14 @@ function profiles_field_default_fields() {
       'label' => 'Parliament',
       'required' => 0,
       'settings' => array(
-        'user_register_form' => 1,
+        'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 1,
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '13',
+        'weight' => '7',
       ),
     ),
   );
@@ -2387,10 +2602,9 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'i18n_taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '4',
+          'type' => 'hidden',
+          'weight' => '23',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -2399,12 +2613,26 @@ function profiles_field_default_fields() {
           'type' => 'i18n_taxonomy_term_reference_plain',
           'weight' => '4',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '20',
+          'weight' => '18',
+        ),
+        'user_deputy' => array(
+          'label' => 'hidden',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_plain',
+          'weight' => '38',
+        ),
+        'user_premium' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '18',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2425,7 +2653,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '12',
+        'weight' => '6',
       ),
     ),
   );
@@ -2455,14 +2683,13 @@ function profiles_field_default_fields() {
         ),
       ),
       'locked' => '0',
-      'module' => 'file',
+      'module' => 'image',
       'settings' => array(
-        'display_default' => 0,
-        'display_field' => 0,
+        'default_image' => '7977',
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
-      'type' => 'file',
+      'type' => 'image',
     ),
     'field_instance' => array(
       'bundle' => 'user',
@@ -2470,46 +2697,48 @@ function profiles_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
-          'module' => 'file_entity',
+          'label' => 'above',
+          'module' => 'image',
           'settings' => array(
-            'file_view_mode' => 'pw_file_portrait_l',
+            'image_link' => '',
+            'image_style' => '',
           ),
-          'type' => 'file_rendered',
-          'weight' => '4',
+          'type' => 'image',
+          'weight' => '26',
         ),
-        'full' => array(
-          'label' => 'hidden',
-          'module' => 'file_entity',
-          'settings' => array(
-            'file_view_mode' => 'pw_file_portrait_l',
-          ),
-          'type' => 'file_rendered',
-          'weight' => '1',
-        ),
-        'premium_user' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '37',
-        ),
-        'user_search' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '25',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '25',
         ),
       ),
-      'ds_extras_field_template' => '',
+      'ds_extras_field_template' => 'theme_ds_field_reset',
       'entity_type' => 'user',
       'field_name' => 'field_user_picture',
       'label' => 'Profile picture',
       'required' => 0,
       'settings' => array(
-        'description_field' => 0,
+        'alt_field' => 0,
+        'default_image' => '7978',
         'file_directory' => 'users',
-        'file_extensions' => 'jpg jpeg gif png',
+        'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '1 MB',
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 0,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -2529,7 +2758,7 @@ function profiles_field_default_fields() {
           ),
           'browser_plugins' => array(
             'media_default--media_browser_1' => 0,
-            'media_default--media_browser_my_files' => 0,
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
             'media_internet' => 0,
             'upload' => 'upload',
             'youtube' => 0,
@@ -2537,7 +2766,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '9',
+        'weight' => '0',
       ),
     ),
   );
@@ -2588,13 +2817,25 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '10',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '58',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '48',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '58',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -2645,7 +2886,7 @@ function profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '11',
+        'weight' => '23',
       ),
     ),
   );
@@ -2696,16 +2937,30 @@ function profiles_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'i18n_taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_plain',
+          'type' => 'hidden',
           'weight' => '5',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '49',
+        ),
+        'user_deputy' => array(
+          'label' => 'hidden',
+          'module' => 'shs',
+          'settings' => array(
+            'linked' => FALSE,
+          ),
+          'type' => 'shs_default',
+          'weight' => '8',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '49',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -2724,7 +2979,7 @@ function profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '20',
+        'weight' => '13',
       ),
     ),
   );
@@ -2771,7 +3026,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '5',
         ),
         'full' => array(
           'label' => 'above',
@@ -2779,11 +3034,23 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '17',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '40',
+          'weight' => '43',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '43',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '43',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2846,7 +3113,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '11',
       ),
     ),
   );
@@ -2895,16 +3162,27 @@ $entity_field[0][\'value\'] = $result;',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'computed_field',
           'settings' => array(),
-          'type' => 'computed_field_plain',
-          'weight' => '0',
+          'type' => 'hidden',
+          'weight' => '20',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '20',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '34',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '20',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -2920,7 +3198,7 @@ $entity_field[0][\'value\'] = $result;',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '37',
+        'weight' => '13',
       ),
     ),
   );
@@ -2958,13 +3236,25 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '6',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '39',
+          'weight' => '42',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '44',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '42',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2982,7 +3272,7 @@ $entity_field[0][\'value\'] = $result;',
         'max' => '',
         'min' => '0',
         'prefix' => '',
-        'suffix' => '',
+        'suffix' => ' question| questions',
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -2990,7 +3280,7 @@ $entity_field[0][\'value\'] = $result;',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '26',
+        'weight' => '11',
       ),
     ),
   );
@@ -3037,13 +3327,25 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '52',
+          'weight' => '16',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '41',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '51',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '41',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -3096,7 +3398,7 @@ $entity_field[0][\'value\'] = $result;',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '15',
+        'weight' => '25',
       ),
     ),
   );
@@ -3143,13 +3445,25 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '18',
         ),
-        'premium_user' => array(
+        'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '21',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '54',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '21',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -3174,10 +3488,10 @@ $entity_field[0][\'value\'] = $result;',
           'input_format_custom' => '',
           'label_position' => 'above',
           'text_parts' => array(),
-          'year_range' => '-3:+3',
+          'year_range' => '-100:+10',
         ),
         'type' => 'date_select',
-        'weight' => '35',
+        'weight' => '9',
       ),
     ),
   );

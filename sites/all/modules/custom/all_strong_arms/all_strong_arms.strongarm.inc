@@ -63,7 +63,7 @@ function all_strong_arms_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cache_lifetime';
-  $strongarm->value = '300';
+  $strongarm->value = '0';
   $export['cache_lifetime'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1065,14 +1065,37 @@ webform-client-form-10032';
     'group_polls_party|node|pw_poll|default' => TRUE,
     'group_fieldset_polls_per_party|node|pw_poll|default' => FALSE,
     'group_question_forms|user|user|default' => TRUE,
-    'group_user_polls|user|user|default' => FALSE,
-    'group_user_polls_last|user|user|default' => FALSE,
-    'group_user_polls_archive|user|user|default' => FALSE,
+    'group_user_polls|user|user|default' => TRUE,
+    'group_user_polls_last|user|user|default' => TRUE,
+    'group_user_polls_archive|user|user|default' => TRUE,
     'group_blog_searchitem|node|blogpost|search_result' => FALSE,
     'group_blog_searchmeta|node|blogpost|search_result' => TRUE,
-    'group_user_name|user|user|premium_user' => FALSE,
+    'group_user_name|user|user|user_premium' => FALSE,
     'group_premium|user|user|form' => TRUE,
     'group_managed_content|user|user|form' => TRUE,
+    'group_user_basics|user|user|user_deputy' => FALSE,
+    'group_user_basics_data|user|user|user_deputy' => FALSE,
+    'group_user_basics_additional|user|user|user_deputy' => FALSE,
+    'group_user_polls|user|user|user_deputy' => FALSE,
+    'group_user_polls_current|user|user|user_deputy' => FALSE,
+    'group_user_polls_archive|user|user|user_deputy' => FALSE,
+    'group_user_roles|user|user|user_deputy' => FALSE,
+    'group_user_roles_current|user|user|user_deputy' => FALSE,
+    'group_user_roles_archive|user|user|user_deputy' => FALSE,
+    'group_user_name|user|user|default' => TRUE,
+    'group_basics|user|user|default' => TRUE,
+    'group_user_basics|user|user|default' => TRUE,
+    'group_user_basics_basics|user|user|default' => TRUE,
+    'group_user_basics_additional|user|user|default' => TRUE,
+    'group_roles|user|user|default' => TRUE,
+    'group_user_commitee|user|user|default' => TRUE,
+    'group_user_commitee_tab|user|user|default' => TRUE,
+    'group_polls|user|user|default' => TRUE,
+    'group_user_premium_fields|user|user|form' => FALSE,
+    'group_user_affiliation|user|user|form' => FALSE,
+    'group_user_personal_data|user|user|form' => FALSE,
+    'group_user_dialogue|user|user|form' => FALSE,
+    'group_user_admin|user|user|form' => FALSE,
   );
   $export['default_field_group'] = $strongarm;
 
@@ -1830,7 +1853,7 @@ webform-client-form-10032';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_cache_maximum_age';
-  $strongarm->value = '1800';
+  $strongarm->value = '0';
   $export['page_cache_maximum_age'] = $strongarm;
 
   $strongarm = new stdClass();

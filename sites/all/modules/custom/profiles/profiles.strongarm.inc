@@ -132,42 +132,59 @@ function profiles_strongarm() {
       'user_search' => array(
         'custom_settings' => FALSE,
       ),
-      'premium_user' => array(
+      'user_premium' => array(
         'custom_settings' => TRUE,
       ),
       'diff_standard' => array(
         'custom_settings' => FALSE,
       ),
+      'user_deputy' => array(
+        'custom_settings' => TRUE,
+      ),
+      'premium_user' => array(
+        'custom_settings' => FALSE,
+      ),
+      'user_candidate' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'ckeditor' => array(
-          'weight' => '29',
+          'weight' => '13',
         ),
         'piwik' => array(
-          'weight' => '35',
+          'weight' => '17',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '16',
         ),
         'account' => array(
-          'weight' => '1',
+          'weight' => '5',
         ),
         'timezone' => array(
-          'weight' => '34',
+          'weight' => '15',
         ),
         'locale' => array(
-          'weight' => '33',
+          'weight' => '14',
         ),
       ),
       'display' => array(
         'summary' => array(
           'default' => array(
-            'weight' => '37',
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'user_premium' => array(
+            'weight' => '40',
             'visible' => FALSE,
           ),
-          'premium_user' => array(
-            'weight' => '35',
+          'user_deputy' => array(
+            'weight' => '39',
+            'visible' => FALSE,
+          ),
+          'user_candidate' => array(
+            'weight' => '40',
             'visible' => FALSE,
           ),
         ),
@@ -234,7 +251,9 @@ function profiles_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_assignment';
   $strongarm->value = array(
-    237793809 => 'premium_user',
+    140336230 => 'user_deputy',
+    178386088 => 'user_premium',
+    185431326 => 'user_premium',
   );
   $export['pw_profileswitch_assignment'] = $strongarm;
 
@@ -242,14 +261,14 @@ function profiles_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_display_mode1';
-  $strongarm->value = 'premium_user';
+  $strongarm->value = 'user_deputy';
   $export['pw_profileswitch_display_mode1'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_role1';
-  $strongarm->value = '237793809';
+  $strongarm->value = '140336230';
   $export['pw_profileswitch_role1'] = $strongarm;
 
   $strongarm = new stdClass();

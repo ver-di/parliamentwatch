@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 
-////// switch view mode in questions and aswers
+////// switch view mode in questions and answers
 
     jQuery(".view-id-profile_questions_answers .attachment").addClass("js-hide");
     jQuery("#form-view-mode-switcher .view-mode-full").click(function () {
