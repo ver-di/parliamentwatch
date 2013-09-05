@@ -213,6 +213,40 @@ function profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_admin|user|user|form';
+  $field_group->group_name = 'group_user_admin';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Admin Settings',
+    'weight' => '10',
+    'children' => array(
+      0 => 'field_profile_node_connector',
+      1 => 'field_user_external_url',
+      2 => 'ckeditor',
+      3 => 'piwik',
+      4 => 'redirect',
+      5 => 'timezone',
+      6 => 'locale',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Admin Settings',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
+      ),
+      'formatter' => 'collapsible',
+    ),
+  );
+  $export['group_user_admin|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_user_affiliation|user|user|form';
   $field_group->group_name = 'group_user_affiliation';
   $field_group->entity_type = 'user';
@@ -523,6 +557,34 @@ function profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_name|user|user|premium_user';
+  $field_group->group_name = 'group_user_name';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'premium_user';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Name',
+    'weight' => '58',
+    'children' => array(),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'formatter' => 'collapsible',
+      'instance_settings' => array(
+        'description' => '',
+        'show_label' => 1,
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_name|user|user|premium_user'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_user_name|user|user|user_search';
   $field_group->group_name = 'group_user_name';
   $field_group->entity_type = 'user';
@@ -617,6 +679,58 @@ function profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_polls_archive|user|user|user_deputy';
+  $field_group->group_name = 'group_user_polls_archive';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'user_deputy';
+  $field_group->parent_name = 'group_user_polls';
+  $field_group->data = array(
+    'label' => 'User Polls Archive',
+    'weight' => '8',
+    'children' => array(
+      0 => 'polls_archive_view',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_polls_archive|user|user|user_deputy'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_polls_current|user|user|user_deputy';
+  $field_group->group_name = 'group_user_polls_current';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'user_deputy';
+  $field_group->parent_name = 'group_user_polls';
+  $field_group->data = array(
+    'label' => 'User Polls Current',
+    'weight' => '7',
+    'children' => array(
+      0 => 'polls_profile_last',
+    ),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_polls_current|user|user|user_deputy'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_user_polls_last|user|user|default';
   $field_group->group_name = 'group_user_polls_last';
   $field_group->entity_type = 'user';
@@ -669,6 +783,32 @@ function profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_polls|user|user|user_deputy';
+  $field_group->group_name = 'group_user_polls';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'user_deputy';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'User Polls',
+    'weight' => '2',
+    'children' => array(
+      0 => 'group_user_polls_current',
+      1 => 'group_user_polls_archive',
+    ),
+    'format_type' => 'htabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_polls|user|user|user_deputy'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_user_premium_fields|user|user|form';
   $field_group->group_name = 'group_user_premium_fields';
   $field_group->entity_type = 'user';
@@ -697,6 +837,30 @@ function profiles_field_group_info() {
     ),
   );
   $export['group_user_premium_fields|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_roles_archive|user|user|user_deputy';
+  $field_group->group_name = 'group_user_roles_archive';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'user_deputy';
+  $field_group->parent_name = 'group_user_roles';
+  $field_group->data = array(
+    'label' => 'User Roles Archive',
+    'weight' => '62',
+    'children' => array(),
+    'format_type' => 'htab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_roles_archive|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

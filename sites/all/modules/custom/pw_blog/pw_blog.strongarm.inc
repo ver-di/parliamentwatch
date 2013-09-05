@@ -13,6 +13,13 @@ function pw_blog_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_blogpost';
+  $strongarm->value = 'edit-comment';
+  $export['additional_settings__active_tab_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_blogpost';
   $strongarm->value = '2';
   $export['comment_anonymous_blogpost'] = $strongarm;
@@ -58,6 +65,13 @@ function pw_blog_strongarm() {
   $strongarm->name = 'comment_subject_field_blogpost';
   $strongarm->value = 0;
   $export['comment_subject_field_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'custom_breadcrumbs_show_form_table_blogpost';
+  $strongarm->value = 1;
+  $export['custom_breadcrumbs_show_form_table_blogpost'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -393,6 +407,41 @@ function pw_blog_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_blogpost';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_blogpost';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_blogpost';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_comment_filter_blogpost';
+  $strongarm->value = 0;
+  $export['entity_translation_comment_filter_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_blogpost';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__blogpost';
   $strongarm->value = array(
     'view_modes' => array(
@@ -504,9 +553,170 @@ function pw_blog_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_blogpost';
+  $strongarm->value = '';
+  $export['page_title_type_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_blogpost_showfield';
+  $strongarm->value = 0;
+  $export['page_title_type_blogpost_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_vocab_blogcategories';
+  $strongarm->value = '';
+  $export['page_title_vocab_blogcategories'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_vocab_blogcategories_showfield';
+  $strongarm->value = 0;
+  $export['page_title_vocab_blogcategories_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_vocab_blogtags';
+  $strongarm->value = '';
+  $export['page_title_vocab_blogtags'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_vocab_blogtags_showfield';
+  $strongarm->value = 0;
+  $export['page_title_vocab_blogtags_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_blog_pattern';
+  $strongarm->value = 'blogs/[user:name]';
+  $export['pathauto_blog_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_blogpost_pattern';
   $strongarm->value = 'blog/[node:created:custom:Y-m-d]/[node:title]';
   $export['pathauto_node_blogpost_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_blogpost_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_blogpost_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_blogcategories_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_blogcategories_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_blogtags_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_blogtags_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_blogpost';
+  $strongarm->value = 1;
+  $export['print_display_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_comment_blogpost';
+  $strongarm->value = 0;
+  $export['print_display_comment_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_urllist_blogpost';
+  $strongarm->value = 1;
+  $export['print_display_urllist_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'siblingmenutree_display_blogpost';
+  $strongarm->value = '0';
+  $export['siblingmenutree_display_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'siblingmenutree_enable_blogpost';
+  $strongarm->value = 0;
+  $export['siblingmenutree_enable_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'siblingmenutree_title_blogpost';
+  $strongarm->value = '';
+  $export['siblingmenutree_title_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'siblingmenutree_weight_blogpost';
+  $strongarm->value = '0';
+  $export['siblingmenutree_weight_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_display_blogpost';
+  $strongarm->value = '0';
+  $export['submenutree_display_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_enable_blogpost';
+  $strongarm->value = 0;
+  $export['submenutree_enable_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_node_type_blogpost';
+  $strongarm->value = '0';
+  $export['submenutree_node_type_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_title_blogpost';
+  $strongarm->value = '';
+  $export['submenutree_title_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_weight_blogpost';
+  $strongarm->value = '0';
+  $export['submenutree_weight_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sync_translations_blogpost';
+  $strongarm->value = '0';
+  $export['sync_translations_blogpost'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -535,6 +745,34 @@ function pw_blog_strongarm() {
   $strongarm->name = 'tagadelic_sort_order';
   $strongarm->value = 'random,none';
   $export['tagadelic_sort_order'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_default_blogpost';
+  $strongarm->value = '0';
+  $export['weight_default_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_enabled_blogpost';
+  $strongarm->value = '0';
+  $export['weight_enabled_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_menu_blogpost';
+  $strongarm->value = '0';
+  $export['weight_menu_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_range_blogpost';
+  $strongarm->value = '20';
+  $export['weight_range_blogpost'] = $strongarm;
 
   return $export;
 }

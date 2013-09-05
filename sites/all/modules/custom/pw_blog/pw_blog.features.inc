@@ -49,3 +49,20 @@ function pw_blog_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_weight_features_default_settings().
+ */
+function pw_blog_weight_features_default_settings() {
+  $settings = array();
+
+  $settings['blogpost'] = array(
+    'enabled' => '0',
+    'range' => '20',
+    'menu_weight' => '0',
+    'default' => '0',
+    'sync_translations' => '0',
+  );
+
+  return $settings;
+}

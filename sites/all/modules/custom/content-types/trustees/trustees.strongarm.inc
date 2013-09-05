@@ -62,6 +62,48 @@ function trustees_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'custom_breadcrumbs_show_form_table_trustee';
+  $strongarm->value = 1;
+  $export['custom_breadcrumbs_show_form_table_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_trustee';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_trustee';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_trustee';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_comment_filter_trustee';
+  $strongarm->value = 0;
+  $export['entity_translation_comment_filter_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_translation_node_metadata_trustee';
+  $strongarm->value = '0';
+  $export['entity_translation_node_metadata_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__trustee';
   $strongarm->value = array(
     'view_modes' => array(
@@ -167,6 +209,139 @@ function trustees_strongarm() {
   $strongarm->name = 'node_submitted_trustee';
   $strongarm->value = 0;
   $export['node_submitted_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_trustee';
+  $strongarm->value = '';
+  $export['page_title_type_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_type_trustee_showfield';
+  $strongarm->value = 0;
+  $export['page_title_type_trustee_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_trustee_pattern';
+  $strongarm->value = 'ueber-uns/mehr/kuratorium/[node:title]';
+  $export['pathauto_node_trustee_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_trustee_und_pattern';
+  $strongarm->value = 'ueber-uns/mehr/kuratorium/[node:title]';
+  $export['pathauto_node_trustee_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_comment_trustee';
+  $strongarm->value = 0;
+  $export['print_display_comment_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_trustee';
+  $strongarm->value = 0;
+  $export['print_display_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'print_display_urllist_trustee';
+  $strongarm->value = 0;
+  $export['print_display_urllist_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'siblingmenutree_display_trustee';
+  $strongarm->value = '0';
+  $export['siblingmenutree_display_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'siblingmenutree_enable_trustee';
+  $strongarm->value = 0;
+  $export['siblingmenutree_enable_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'siblingmenutree_title_trustee';
+  $strongarm->value = '';
+  $export['siblingmenutree_title_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'siblingmenutree_weight_trustee';
+  $strongarm->value = '0';
+  $export['siblingmenutree_weight_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_display_trustee';
+  $strongarm->value = '0';
+  $export['submenutree_display_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_enable_trustee';
+  $strongarm->value = 0;
+  $export['submenutree_enable_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_node_type_trustee';
+  $strongarm->value = '0';
+  $export['submenutree_node_type_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_title_trustee';
+  $strongarm->value = '';
+  $export['submenutree_title_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'submenutree_weight_trustee';
+  $strongarm->value = '0';
+  $export['submenutree_weight_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sync_translations_trustee';
+  $strongarm->value = '0';
+  $export['sync_translations_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_default_trustee';
+  $strongarm->value = '0';
+  $export['weight_default_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_menu_trustee';
+  $strongarm->value = '0';
+  $export['weight_menu_trustee'] = $strongarm;
 
   return $export;
 }

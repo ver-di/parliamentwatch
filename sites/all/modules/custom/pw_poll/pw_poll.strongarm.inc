@@ -27,6 +27,20 @@ function pw_poll_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_pw_poll';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_pw_poll'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_pw_poll';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_pw_poll'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__pw_poll';
   $strongarm->value = array(
     'view_modes' => array(
@@ -72,16 +86,16 @@ function pw_poll_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_pw_poll_en-gb_pattern';
+  $strongarm->name = 'page_title_type_pw_poll';
   $strongarm->value = '';
-  $export['pathauto_node_pw_poll_en-gb_pattern'] = $strongarm;
+  $export['page_title_type_pw_poll'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_pw_poll_ga_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_pw_poll_ga_pattern'] = $strongarm;
+  $strongarm->name = 'page_title_type_pw_poll_showfield';
+  $strongarm->value = 0;
+  $export['page_title_type_pw_poll_showfield'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

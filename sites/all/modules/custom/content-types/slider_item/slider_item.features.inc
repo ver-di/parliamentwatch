@@ -41,3 +41,20 @@ function slider_item_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_weight_features_default_settings().
+ */
+function slider_item_weight_features_default_settings() {
+  $settings = array();
+
+  $settings['slider_item'] = array(
+    'enabled' => '1',
+    'range' => '10',
+    'menu_weight' => '0',
+    'default' => '0',
+    'sync_translations' => '0',
+  );
+
+  return $settings;
+}

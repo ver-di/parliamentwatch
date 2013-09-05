@@ -45,3 +45,20 @@ function trustees_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_weight_features_default_settings().
+ */
+function trustees_weight_features_default_settings() {
+  $settings = array();
+
+  $settings['trustee'] = array(
+    'enabled' => '1',
+    'range' => '50',
+    'menu_weight' => '0',
+    'default' => '0',
+    'sync_translations' => '0',
+  );
+
+  return $settings;
+}

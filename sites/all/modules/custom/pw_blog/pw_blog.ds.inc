@@ -12,6 +12,41 @@ function pw_blog_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|blogpost|default';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'blogpost';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'sharethis' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'title' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'comments' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'author' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'author',
+    ),
+    'post_date' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_long',
+    ),
+  );
+  $export['node|blogpost|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|blogpost|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'blogpost';
@@ -508,6 +543,42 @@ else{
  */
 function pw_blog_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|blogpost|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'blogpost';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'comments',
+        2 => 'post_date',
+        3 => 'author',
+        4 => 'sharethis',
+        5 => 'field_teaser_image',
+        6 => 'body',
+        7 => 'field_blogpost_blogtags',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'comments' => 'ds_content',
+      'post_date' => 'ds_content',
+      'author' => 'ds_content',
+      'sharethis' => 'ds_content',
+      'field_teaser_image' => 'ds_content',
+      'body' => 'ds_content',
+      'field_blogpost_blogtags' => 'ds_content',
+    ),
+    'classes' => array(),
+  );
+  $export['node|blogpost|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
