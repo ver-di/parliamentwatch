@@ -38,6 +38,10 @@
         '#default_value' => 'A',
         '#options' => $letters,
       );
+
+      //$form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
+
+      //krumo($form);
     }
   }
 

@@ -45,6 +45,8 @@ css[abgeordnentenwatch.css][name] = 'Custom styles'
 css[abgeordnentenwatch.css][description] = 'Custom theme styles.'
 css[abgeordnentenwatch.css][options][weight] = '10'
 
+scripts[] = 'js/exposed.forms.fix.js'
+
 version = '7.x-3.1'
 project = 'omega'
 datestamp = '1314088930'
