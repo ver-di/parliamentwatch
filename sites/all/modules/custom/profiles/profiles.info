@@ -96,6 +96,7 @@ features[ds_view_modes][] = pw_file_portrait_m
 features[ds_view_modes][] = pw_file_portrait_s
 features[ds_view_modes][] = user_search
 features[fe_block_boxes][] = questionform_anchor
+features[fe_block_boxes][] = uebersicht_ansicht_switcher
 features[features_api][] = api:1
 features[field][] = file-image-field_file_image_alt_text
 features[field][] = file-image-field_file_image_title_text

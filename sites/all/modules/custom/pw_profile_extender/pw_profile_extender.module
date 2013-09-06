@@ -39,9 +39,11 @@
         '#options' => $letters,
       );
 
-      //$form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
+      $form['between_date_filter_op']['#options']['='] = t('Aktive Abgeordnete');
+      $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
+      $form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
 
-      //krumo($form);
+      $form['between_date_filter']['#access'] = FALSE;
     }
   }
 

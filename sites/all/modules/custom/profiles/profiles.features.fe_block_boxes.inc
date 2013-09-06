@@ -21,5 +21,24 @@ function profiles_default_fe_block_boxes() {
 
   $export['questionform_anchor'] = $fe_block_boxes;
 
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Ansicht wechseln';
+  $fe_block_boxes->format = 'full_html';
+  $fe_block_boxes->machine_name = 'uebersicht_ansicht_switcher';
+  $fe_block_boxes->body = '<form action="" class="views-exposed-form" id="form-view-mode-switcher" method="post" name="view-mode-switcher">
+	<fieldset class="views-exposed-widget">
+		<label>Ansicht wechseln</label>
+		<div class="form-item">
+			<input checked="checked" class="view-mode-full form-radio" id="group1_1" name="group1" type="radio" value="full" /><label class="option" for="group1_1">Normale Ansicht</label>
+		</div>
+		<div class="form-item">
+			<input class="view-mode-teaser form-radio" id="group1_2" name="group1" type="radio" value="teaser" /><label class="option" for="group1_2">Listenansicht</label>
+		</div>
+	</fieldset>
+</form>
+';
+
+  $export['uebersicht_ansicht_switcher'] = $fe_block_boxes;
+
   return $export;
 }

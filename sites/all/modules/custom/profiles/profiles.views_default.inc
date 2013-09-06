@@ -2228,136 +2228,137 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['label'] = 'Abgeordnete nach Namen filtern';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['identifier'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['widget'] = 'radios';
+  $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'C',
-      'operator' => 'starts',
-      'value' => 'C',
-    ),
-    2 => array(
-      'title' => 'D',
-      'operator' => 'starts',
-      'value' => 'D',
-    ),
-    3 => array(
-      'title' => 'B',
-      'operator' => 'starts',
-      'value' => 'B',
-    ),
-    4 => array(
-      'title' => 'A',
-      'operator' => 'starts',
-      'value' => 'A',
-    ),
-    5 => array(
-      'title' => 'L',
-      'operator' => 'starts',
-      'value' => 'L',
-    ),
-    6 => array(
-      'title' => 'E',
-      'operator' => 'starts',
-      'value' => 'E',
-    ),
-    7 => array(
-      'title' => 'F',
-      'operator' => 'starts',
-      'value' => 'F',
-    ),
-    8 => array(
-      'title' => 'J',
-      'operator' => 'starts',
-      'value' => 'J',
-    ),
-    9 => array(
-      'title' => 'K',
-      'operator' => 'starts',
-      'value' => 'K',
-    ),
-    10 => array(
-      'title' => 'I',
-      'operator' => 'starts',
-      'value' => 'I',
-    ),
-    11 => array(
-      'title' => 'H',
-      'operator' => 'starts',
-      'value' => 'H',
-    ),
-    12 => array(
-      'title' => 'G',
-      'operator' => 'starts',
-      'value' => 'G',
-    ),
-    13 => array(
-      'title' => 'M',
-      'operator' => 'starts',
-      'value' => 'M',
-    ),
-    14 => array(
-      'title' => 'N',
-      'operator' => 'starts',
-      'value' => 'N',
-    ),
-    15 => array(
-      'title' => 'X',
-      'operator' => '=',
-      'value' => 'X',
-    ),
-    16 => array(
-      'title' => 'R',
-      'operator' => '=',
-      'value' => 'R',
-    ),
-    17 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    18 => array(
       'title' => 'P',
       'operator' => 'starts',
       'value' => 'P',
     ),
-    19 => array(
+    2 => array(
       'title' => 'Q',
       'operator' => '=',
       'value' => 'Q',
     ),
-    20 => array(
+    3 => array(
+      'title' => 'S',
+      'operator' => '=',
+      'value' => 'S',
+    ),
+    4 => array(
+      'title' => 'R',
+      'operator' => '=',
+      'value' => 'R',
+    ),
+    5 => array(
+      'title' => 'X',
+      'operator' => '=',
+      'value' => 'X',
+    ),
+    6 => array(
       'title' => 'O',
       'operator' => 'starts',
       'value' => 'O',
     ),
-    21 => array(
+    7 => array(
       'title' => 'T',
       'operator' => '=',
       'value' => 'T',
     ),
-    22 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    23 => array(
-      'title' => 'Z',
-      'operator' => '=',
-      'value' => 'Z',
-    ),
-    24 => array(
-      'title' => 'W',
-      'operator' => '=',
-      'value' => 'W',
-    ),
-    25 => array(
+    8 => array(
       'title' => 'Y',
       'operator' => '=',
       'value' => 'Y',
     ),
-    26 => array(
+    9 => array(
       'title' => 'U',
       'operator' => '=',
       'value' => 'U',
+    ),
+    10 => array(
+      'title' => 'W',
+      'operator' => '=',
+      'value' => 'W',
+    ),
+    11 => array(
+      'title' => 'Z',
+      'operator' => '=',
+      'value' => 'Z',
+    ),
+    12 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
+    ),
+    13 => array(
+      'title' => 'N',
+      'operator' => 'starts',
+      'value' => 'N',
+    ),
+    14 => array(
+      'title' => 'M',
+      'operator' => 'starts',
+      'value' => 'M',
+    ),
+    15 => array(
+      'title' => 'G',
+      'operator' => 'starts',
+      'value' => 'G',
+    ),
+    16 => array(
+      'title' => 'C',
+      'operator' => 'starts',
+      'value' => 'C',
+    ),
+    17 => array(
+      'title' => 'D',
+      'operator' => 'starts',
+      'value' => 'D',
+    ),
+    18 => array(
+      'title' => 'B',
+      'operator' => 'starts',
+      'value' => 'B',
+    ),
+    19 => array(
+      'title' => 'A',
+      'operator' => 'starts',
+      'value' => 'A',
+    ),
+    20 => array(
+      'title' => 'L',
+      'operator' => 'starts',
+      'value' => 'L',
+    ),
+    21 => array(
+      'title' => 'E',
+      'operator' => 'starts',
+      'value' => 'E',
+    ),
+    22 => array(
+      'title' => 'F',
+      'operator' => 'starts',
+      'value' => 'F',
+    ),
+    23 => array(
+      'title' => 'J',
+      'operator' => 'starts',
+      'value' => 'J',
+    ),
+    24 => array(
+      'title' => 'K',
+      'operator' => 'starts',
+      'value' => 'K',
+    ),
+    25 => array(
+      'title' => 'I',
+      'operator' => 'starts',
+      'value' => 'I',
+    ),
+    26 => array(
+      'title' => 'H',
+      'operator' => 'starts',
+      'value' => 'H',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
@@ -2476,6 +2477,29 @@ if($record->value == 0){
     140336230 => 0,
     237793809 => 0,
   );
+  /* Filter criterion: Datum: Between Dates (user_revision) */
+  $handler->display->display_options['filters']['between_date_filter']['id'] = 'between_date_filter';
+  $handler->display->display_options['filters']['between_date_filter']['table'] = 'user_revision';
+  $handler->display->display_options['filters']['between_date_filter']['field'] = 'between_date_filter';
+  $handler->display->display_options['filters']['between_date_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['between_date_filter']['expose']['operator_id'] = 'between_date_filter_op';
+  $handler->display->display_options['filters']['between_date_filter']['expose']['label'] = 'Abgeordneten Status';
+  $handler->display->display_options['filters']['between_date_filter']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['between_date_filter']['expose']['operator'] = 'between_date_filter_op';
+  $handler->display->display_options['filters']['between_date_filter']['expose']['identifier'] = 'between_date_filter';
+  $handler->display->display_options['filters']['between_date_filter']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    181527986 => 0,
+    51622513 => 0,
+    185431326 => 0,
+    140336230 => 0,
+    237793809 => 0,
+  );
+  $handler->display->display_options['filters']['between_date_filter']['default_date'] = 'now';
+  $handler->display->display_options['filters']['between_date_filter']['start_date_field'] = 'field_revision_field_user_valid.field_user_valid_value';
+  $handler->display->display_options['filters']['between_date_filter']['end_date_field'] = 'field_revision_field_user_valid.field_user_valid_value2';
 
   /* Display: Übersicht der Abgeordneten */
   $handler = $view->new_display('page', 'Übersicht der Abgeordneten', 'grid');
@@ -3343,6 +3367,7 @@ if($record->value == 0){
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -3364,42 +3389,65 @@ if($record->value == 0){
       ),
     ),
     'keys' => array(
+      'bef_format' => 'default',
       'more_options' => array(
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
           ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
         ),
       ),
     ),
     'field_dialogue_topic_tid' => array(
-      'bef_format' => 'bef_ul',
+      'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
           ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
         ),
       ),
     ),
     'comment_count' => array(
+      'bef_format' => 'default',
+      'slider_options' => array(
+        'bef_slider_min' => '',
+        'bef_slider_max' => '',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+      ),
       'more_options' => array(
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
           ),
         ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
       ),
     ),
   );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -3567,6 +3615,7 @@ if($record->value == 0){
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
@@ -3588,13 +3637,18 @@ if($record->value == 0){
       ),
     ),
     'keys' => array(
+      'bef_format' => 'default',
       'more_options' => array(
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
           ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
         ),
       ),
     ),
@@ -3604,26 +3658,60 @@ if($record->value == 0){
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
           ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
         ),
       ),
     ),
     'comment_count' => array(
+      'bef_format' => 'default',
+      'slider_options' => array(
+        'bef_slider_min' => '',
+        'bef_slider_max' => '',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+      ),
       'more_options' => array(
         'is_secondary' => 0,
+        'any_label' => '',
         'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
           ),
         ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'created' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
       ),
     ),
   );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
