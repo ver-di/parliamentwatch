@@ -127,7 +127,7 @@
     } else $tmpString = 'No';
     $output .= $tmpString . ' parliament terms are empty in XML-API.<br />';
     echo 'Found <strong>' . $countProfiles . '</strong> politicians in XML-API'
-       . ' (number of revisions unavailable <strong>@TODO AW-???</strong>).</p>' 
+       . ' (number of revisions unavailable <strong>@TODO</strong>).</p>' 
        . $output . '</p>';
   } else {
     echo '<strong>No</strong> parliaments found in XML, please re-check <a'

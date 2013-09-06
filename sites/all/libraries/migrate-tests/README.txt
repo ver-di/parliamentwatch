@@ -18,6 +18,15 @@ on live sites.
 - checks whether parliaments are invalid (404 in API) or empty (no connected
   profiles)
 - checks for entries missing in either DB or XML
+
+### 3 politicianComm.php ###
+- @TODO work in progress
+
+### 4 politicianConst.php ###
+- counts constituencies in DB
+- counts constituencies in XML depending on their parliament
+- checks whether parliaments are invalid (404 in API) or empty (no connected
+  constituencies)
 - @TODO work in progress
 
 Migration tests written by:
