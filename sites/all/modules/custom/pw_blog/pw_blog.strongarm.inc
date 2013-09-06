@@ -225,7 +225,7 @@ function pw_blog_strongarm() {
     'pw_poll' => 0,
     'press_release' => 0,
     'press_article' => 0,
-    'slider_item' => 0,
+    'pw_slider' => 0,
     'trustee' => 0,
     'webform' => 0,
   );
@@ -242,7 +242,7 @@ function pw_blog_strongarm() {
     'pw_poll' => 'pw_poll',
     'press_release' => 'press_release',
     'press_article' => 'press_article',
-    'slider_item' => 'slider_item',
+    'pw_slider' => 'pw_slider',
     'trustee' => 'trustee',
     'webform' => 'webform',
     'blogpost' => 0,

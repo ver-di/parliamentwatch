@@ -27,9 +27,9 @@ function all_strong_arms_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'additional_settings__active_tab_slider_item';
+  $strongarm->name = 'additional_settings__active_tab_pw_slider';
   $strongarm->value = 'edit-weight-settings';
-  $export['additional_settings__active_tab_slider_item'] = $strongarm;
+  $export['additional_settings__active_tab_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -304,9 +304,9 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_slider_item';
+  $strongarm->name = 'comment_anonymous_pw_slider';
   $strongarm->value = '0';
-  $export['comment_anonymous_slider_item'] = $strongarm;
+  $export['comment_anonymous_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -339,9 +339,9 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_slider_item';
+  $strongarm->name = 'comment_default_mode_pw_slider';
   $strongarm->value = 1;
-  $export['comment_default_mode_slider_item'] = $strongarm;
+  $export['comment_default_mode_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -367,9 +367,9 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_slider_item';
+  $strongarm->name = 'comment_default_per_page_pw_slider';
   $strongarm->value = '50';
-  $export['comment_default_per_page_slider_item'] = $strongarm;
+  $export['comment_default_per_page_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -395,9 +395,9 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_slider_item';
+  $strongarm->name = 'comment_form_location_pw_slider';
   $strongarm->value = 1;
-  $export['comment_form_location_slider_item'] = $strongarm;
+  $export['comment_form_location_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -437,9 +437,9 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_slider_item';
+  $strongarm->name = 'comment_preview_pw_slider';
   $strongarm->value = '1';
-  $export['comment_preview_slider_item'] = $strongarm;
+  $export['comment_preview_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -465,9 +465,9 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_slider_item';
+  $strongarm->name = 'comment_pw_slider';
   $strongarm->value = '1';
-  $export['comment_slider_item'] = $strongarm;
+  $export['comment_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -486,9 +486,9 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_slider_item';
+  $strongarm->name = 'comment_subject_field_pw_slider';
   $strongarm->value = 1;
-  $export['comment_subject_field_slider_item'] = $strongarm;
+  $export['comment_subject_field_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -599,9 +599,9 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'custom_search_advanced_type_slider_item_display';
+  $strongarm->name = 'custom_search_advanced_type_pw_slider_display';
   $strongarm->value = 1;
-  $export['custom_search_advanced_type_slider_item_display'] = $strongarm;
+  $export['custom_search_advanced_type_pw_slider_display'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -798,7 +798,7 @@ webform-client-form-10032';
     'pw_poll' => 0,
     'press_release' => 0,
     'press_article' => 0,
-    'slider_item' => 0,
+    'pw_slider' => 0,
     'trustee' => 0,
     'webform' => 0,
     'migrate_example_wine' => 0,
@@ -820,7 +820,7 @@ webform-client-form-10032';
     'pw_poll' => 0,
     'press_release' => 0,
     'press_article' => 0,
-    'slider_item' => 0,
+    'pw_slider' => 0,
     'trustee' => 0,
     'webform' => 0,
     'migrate_example_wine' => 0,
@@ -1216,7 +1216,7 @@ webform-client-form-10032';
       'wrapper' => 'fieldset',
       'weight' => '0',
     ),
-    'slider_item' => array(
+    'pw_slider' => array(
       'status' => 0,
       'label' => 'Results for slider item',
       'wrapper' => 'fieldset',
@@ -1569,9 +1569,9 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_slider_item';
+  $strongarm->name = 'language_content_type_pw_slider';
   $strongarm->value = '2';
-  $export['language_content_type_slider_item'] = $strongarm;
+  $export['language_content_type_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1663,9 +1663,9 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_slider_item';
+  $strongarm->name = 'menu_options_pw_slider';
   $strongarm->value = array();
-  $export['menu_options_slider_item'] = $strongarm;
+  $export['menu_options_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1693,9 +1693,9 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_slider_item';
+  $strongarm->name = 'menu_parent_pw_slider';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_slider_item'] = $strongarm;
+  $export['menu_parent_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1739,11 +1739,11 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_slider_item';
+  $strongarm->name = 'node_options_pw_slider';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_slider_item'] = $strongarm;
+  $export['node_options_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1771,9 +1771,9 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_slider_item';
+  $strongarm->name = 'node_preview_pw_slider';
   $strongarm->value = '1';
-  $export['node_preview_slider_item'] = $strongarm;
+  $export['node_preview_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1827,9 +1827,9 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_slider_item';
+  $strongarm->name = 'node_submitted_pw_slider';
   $strongarm->value = 0;
-  $export['node_submitted_slider_item'] = $strongarm;
+  $export['node_submitted_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2223,7 +2223,7 @@ webform-client-form-10032';
     6 => 'pw_poll',
     7 => 'press_release',
     8 => 'press_article',
-    9 => 'slider_item',
+    9 => 'pw_slider',
     10 => 'trustee',
     11 => 'webform',
   );
@@ -2232,9 +2232,9 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'weight_enabled_slider_item';
+  $strongarm->name = 'weight_enabled_pw_slider';
   $strongarm->value = '1';
-  $export['weight_enabled_slider_item'] = $strongarm;
+  $export['weight_enabled_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -2253,9 +2253,9 @@ webform-client-form-10032';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'weight_range_slider_item';
+  $strongarm->name = 'weight_range_pw_slider';
   $strongarm->value = '10';
-  $export['weight_range_slider_item'] = $strongarm;
+  $export['weight_range_pw_slider'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

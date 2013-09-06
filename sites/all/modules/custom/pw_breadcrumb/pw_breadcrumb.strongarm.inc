@@ -165,7 +165,7 @@ function pw_breadcrumb_strongarm() {
     'pw_poll' => 0,
     'press_release' => 0,
     'press_article' => 0,
-    'slider_item' => 0,
+    'pw_slider' => 0,
     'trustee' => 0,
     'webform' => 0,
   );

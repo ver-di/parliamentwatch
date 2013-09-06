@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * slider_item.features.inc
+ * pw_slider.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function slider_item_ctools_plugin_api() {
+function pw_slider_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
@@ -21,16 +21,16 @@ function slider_item_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function slider_item_views_api() {
+function pw_slider_views_api() {
   return array("version" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function slider_item_node_info() {
+function pw_slider_node_info() {
   $items = array(
-    'slider_item' => array(
+    'pw_slider' => array(
       'name' => t('Slider item'),
       'base' => 'node_content',
       'description' => '',
@@ -40,4 +40,21 @@ function slider_item_node_info() {
     ),
   );
   return $items;
+}
+
+/**
+ * Implements hook_weight_features_default_settings().
+ */
+function pw_slider_weight_features_default_settings() {
+  $settings = array();
+
+  $settings['pw_slider'] = array(
+    'enabled' => '1',
+    'range' => '10',
+    'menu_weight' => '0',
+    'default' => '0',
+    'sync_translations' => '0',
+  );
+
+  return $settings;
 }

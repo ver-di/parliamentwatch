@@ -1,20 +1,20 @@
 <?php
 /**
  * @file
- * slider_item.ds.inc
+ * pw_slider.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function slider_item_ds_field_settings_info() {
+function pw_slider_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'node|slider_item|full';
+  $ds_fieldsetting->id = 'node|pw_slider|full';
   $ds_fieldsetting->entity_type = 'node';
-  $ds_fieldsetting->bundle = 'slider_item';
+  $ds_fieldsetting->bundle = 'pw_slider';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
     'title' => array(
@@ -28,7 +28,7 @@ function slider_item_ds_field_settings_info() {
       'format' => 'sld_group_image',
     ),
   );
-  $export['node|slider_item|full'] = $ds_fieldsetting;
+  $export['node|pw_slider|full'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -36,14 +36,14 @@ function slider_item_ds_field_settings_info() {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function slider_item_ds_layout_settings_info() {
+function pw_slider_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|slider_item|default';
+  $ds_layout->id = 'node|pw_slider|default';
   $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'slider_item';
+  $ds_layout->bundle = 'pw_slider';
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
@@ -61,7 +61,7 @@ function slider_item_ds_layout_settings_info() {
     ),
     'classes' => array(),
   );
-  $export['node|slider_item|default'] = $ds_layout;
+  $export['node|pw_slider|default'] = $ds_layout;
 
   return $export;
 }

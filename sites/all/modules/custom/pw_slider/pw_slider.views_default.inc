@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * slider_item.views_default.inc
+ * pw_slider.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function slider_item_views_default_views() {
+function pw_slider_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -166,7 +166,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'slider_item' => 'slider_item',
+    'pw_slider' => 'pw_slider',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Inhalt: Sprache */

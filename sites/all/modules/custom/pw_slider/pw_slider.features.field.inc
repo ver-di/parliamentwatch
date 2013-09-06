@@ -1,17 +1,17 @@
 <?php
 /**
  * @file
- * slider_item.features.field.inc
+ * pw_slider.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function slider_item_field_default_fields() {
+function pw_slider_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-slider_item-body'.
-  $fields['node-slider_item-body'] = array(
+  // Exported field: 'node-pw_slider-body'.
+  $fields['node-pw_slider-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -42,7 +42,7 @@ function slider_item_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'slider_item',
+      'bundle' => 'pw_slider',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -99,8 +99,8 @@ function slider_item_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-slider_item-field_slider_teaserbody'.
-  $fields['node-slider_item-field_slider_teaserbody'] = array(
+  // Exported field: 'node-pw_slider-field_slider_teaserbody'.
+  $fields['node-pw_slider-field_slider_teaserbody'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -127,7 +127,7 @@ function slider_item_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'slider_item',
+      'bundle' => 'pw_slider',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -179,8 +179,8 @@ function slider_item_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-slider_item-field_slider_url'.
-  $fields['node-slider_item-field_slider_url'] = array(
+  // Exported field: 'node-pw_slider-field_slider_url'.
+  $fields['node-pw_slider-field_slider_url'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -210,7 +210,7 @@ function slider_item_field_default_fields() {
       'type' => 'link_field',
     ),
     'field_instance' => array(
-      'bundle' => 'slider_item',
+      'bundle' => 'pw_slider',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
