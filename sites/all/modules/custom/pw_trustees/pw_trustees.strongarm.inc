@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * trustees.strongarm.inc
+ * pw_trustees.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function trustees_strongarm() {
+function pw_trustees_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

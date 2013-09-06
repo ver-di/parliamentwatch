@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * trustees.context.inc
+ * pw_trustees.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function trustees_context_default_contexts() {
+function pw_trustees_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

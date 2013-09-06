@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * trustees.features.field.inc
+ * pw_trustees.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function trustees_field_default_fields() {
+function pw_trustees_field_default_fields() {
   $fields = array();
 
   // Exported field: 'node-trustee-body'.

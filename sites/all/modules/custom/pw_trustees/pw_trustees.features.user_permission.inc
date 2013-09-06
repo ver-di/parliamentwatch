@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * trustees.features.user_permission.inc
+ * pw_trustees.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function trustees_user_default_permissions() {
+function pw_trustees_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: create trustee content.

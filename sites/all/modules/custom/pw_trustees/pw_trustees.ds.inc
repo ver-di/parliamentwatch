@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * trustees.ds.inc
+ * pw_trustees.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function trustees_ds_field_settings_info() {
+function pw_trustees_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
@@ -36,7 +36,7 @@ function trustees_ds_field_settings_info() {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function trustees_ds_layout_settings_info() {
+function pw_trustees_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();

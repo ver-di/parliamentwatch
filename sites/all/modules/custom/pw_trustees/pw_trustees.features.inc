@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * trustees.features.inc
+ * pw_trustees.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function trustees_ctools_plugin_api() {
+function pw_trustees_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
@@ -25,14 +25,14 @@ function trustees_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function trustees_views_api() {
+function pw_trustees_views_api() {
   return array("version" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function trustees_node_info() {
+function pw_trustees_node_info() {
   $items = array(
     'trustee' => array(
       'name' => t('Trustee'),
@@ -49,7 +49,7 @@ function trustees_node_info() {
 /**
  * Implements hook_weight_features_default_settings().
  */
-function trustees_weight_features_default_settings() {
+function pw_trustees_weight_features_default_settings() {
   $settings = array();
 
   $settings['trustee'] = array(
