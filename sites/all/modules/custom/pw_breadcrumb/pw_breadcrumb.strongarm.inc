@@ -162,8 +162,6 @@ function pw_breadcrumb_strongarm() {
     'page' => 0,
     'blogpost' => 0,
     'dialogue' => 0,
-    'migrate_extras_media_example' => 0,
-    'migrate_example_pathauto' => 0,
     'pw_poll' => 0,
     'press_release' => 0,
     'press_article' => 0,
