@@ -7,6 +7,8 @@
   // Add working domain here, without trailing slash ///////////////////////////
   $dom = 'x.dev';
 
+
+/*
   // database SELECT *1 from *2 ////////////////////////////////////////////////
   $dbSelect = 'username'; //*1
   $dbFrom = 'legacy_user_sample'; //*2
@@ -184,7 +186,7 @@
   // Script finished ///////////////////////////////////////////////////////////
      . '<p>After successful profile validation, you may proceed to the'
      . ' <a href="politicianComm.php">committee</a> validation.'
-     . '</p>';
+     . '</p>'; */
      
   //////////////////////////////////////////////////////////////////////////////
   function rutime($ru, $rus, $index) {
