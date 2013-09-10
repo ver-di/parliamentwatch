@@ -32,7 +32,6 @@ dependencies[] = menu_block
 dependencies[] = number
 dependencies[] = options
 dependencies[] = php
-dependencies[] = pw_basics
 dependencies[] = pw_committees
 dependencies[] = pw_image_gallery
 dependencies[] = pw_profileswitch

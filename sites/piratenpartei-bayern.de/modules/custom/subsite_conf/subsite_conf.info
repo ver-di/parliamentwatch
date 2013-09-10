@@ -5,7 +5,6 @@ package = Features
 php = 5.2.4
 version = 7.x-1.0-19092012
 project = subsite_conf
-dependencies[] = all_strong_arms
 dependencies[] = ctools
 dependencies[] = custom_search_blocks
 dependencies[] = delta_blocks

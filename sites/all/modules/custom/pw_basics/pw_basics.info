@@ -5,7 +5,6 @@ package = Features
 php = 5.2.4
 version = 7.x-1.0-05082013
 project = pw_basics
-dependencies[] = all_strong_arms
 dependencies[] = antispam
 dependencies[] = ctools
 dependencies[] = date

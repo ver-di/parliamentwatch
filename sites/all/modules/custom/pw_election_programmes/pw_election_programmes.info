@@ -16,7 +16,6 @@ dependencies[] = link
 dependencies[] = media
 dependencies[] = mediafield
 dependencies[] = options
-dependencies[] = pw_basics
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = views

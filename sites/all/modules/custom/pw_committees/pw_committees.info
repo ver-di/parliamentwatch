@@ -8,7 +8,6 @@ project = pw_committees
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = ds
-dependencies[] = pw_basics
 dependencies[] = strongarm
 dependencies[] = views
 features[context][] = committees
