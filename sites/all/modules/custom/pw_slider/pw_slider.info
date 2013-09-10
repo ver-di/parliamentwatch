@@ -17,6 +17,7 @@ features[ctools][] = ds:ds:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[ds_field_settings][] = node|pw_slider|full
+features[ds_fields][] = pw_slider
 features[ds_layout_settings][] = node|pw_slider|default
 features[features_api][] = api:1
 features[field][] = node-pw_slider-body

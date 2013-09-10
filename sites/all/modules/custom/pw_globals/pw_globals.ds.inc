@@ -52,10 +52,61 @@ function pw_globals_ds_field_settings_info() {
 }
 
 /**
+ * Implements hook_ds_custom_fields_info().
+ */
+function pw_globals_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'author_linked_to_contact_form';
+  $ds_field->label = 'Author linked to contact form';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<a href="/contact?url=[node:nid]&width=600&height=400" class="colorbox-node" title="<?php t(\'give feedback\'); ?>">[node:author]</a>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['author_linked_to_contact_form'] = $ds_field;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function pw_globals_ds_layout_settings_info() {
   $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|page|colorbox';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'page';
+  $ds_layout->view_mode = 'colorbox';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'hide_empty_regions' => 0,
+    'hide_sidebars' => 0,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'title',
+        1 => 'body',
+      ),
+    ),
+    'fields' => array(
+      'title' => 'ds_content',
+      'body' => 'ds_content',
+    ),
+    'classes' => array(),
+  );
+  $export['node|page|colorbox'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

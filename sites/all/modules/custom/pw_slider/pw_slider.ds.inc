@@ -34,6 +34,36 @@ function pw_slider_ds_field_settings_info() {
 }
 
 /**
+ * Implements hook_ds_custom_fields_info().
+ */
+function pw_slider_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'pw_slider';
+  $ds_field->label = 'PW Slider';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'comment' => 'comment',
+    'node' => 'node',
+    'file' => 'file',
+    'taxonomy_term' => 'taxonomy_term',
+    'user' => 'user',
+    'ds_views' => 'ds_views',
+    'rules_config' => 'rules_config',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'views|slider-block',
+    'block_render' => '3',
+  );
+  $export['pw_slider'] = $ds_field;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function pw_slider_ds_layout_settings_info() {

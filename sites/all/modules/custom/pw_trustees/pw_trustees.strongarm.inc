@@ -13,6 +13,13 @@ function pw_trustees_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'additional_settings__active_tab_trustee';
+  $strongarm->value = 'edit-custom-breadcrumbs';
+  $export['additional_settings__active_tab_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_trustee';
   $strongarm->value = '0';
   $export['comment_anonymous_trustee'] = $strongarm;
@@ -65,6 +72,13 @@ function pw_trustees_strongarm() {
   $strongarm->name = 'custom_breadcrumbs_show_form_table_trustee';
   $strongarm->value = 1;
   $export['custom_breadcrumbs_show_form_table_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'custom_search_advanced_type_trustee_display';
+  $strongarm->value = 1;
+  $export['custom_search_advanced_type_trustee_display'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -339,9 +353,23 @@ function pw_trustees_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'weight_enabled_trustee';
+  $strongarm->value = '1';
+  $export['weight_enabled_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'weight_menu_trustee';
   $strongarm->value = '0';
   $export['weight_menu_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'weight_range_trustee';
+  $strongarm->value = '50';
+  $export['weight_range_trustee'] = $strongarm;
 
   return $export;
 }

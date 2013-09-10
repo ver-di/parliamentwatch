@@ -384,6 +384,34 @@ function pw_content_authoring_layout_file_default_displays() {
 
   $file_display = new stdClass();
   $file_display->api_version = 1;
+  $file_display->name = 'image__pw_file_landscape_l__file_field_mediaelement_audio';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'controls' => 1,
+    'width' => '300',
+    'height' => '30',
+    'download_link' => 0,
+    'download_text' => 'Herunterladen',
+  );
+  $export['image__pw_file_landscape_l__file_field_mediaelement_audio'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
+  $file_display->name = 'image__pw_file_landscape_l__file_field_mediaelement_video';
+  $file_display->weight = 0;
+  $file_display->status = FALSE;
+  $file_display->settings = array(
+    'controls' => 1,
+    'width' => '640',
+    'height' => '385',
+    'download_link' => 0,
+    'download_text' => 'Herunterladen',
+  );
+  $export['image__pw_file_landscape_l__file_field_mediaelement_video'] = $file_display;
+
+  $file_display = new stdClass();
+  $file_display->api_version = 1;
   $file_display->name = 'image__pw_file_landscape_l__file_image';
   $file_display->weight = 0;
   $file_display->status = TRUE;
