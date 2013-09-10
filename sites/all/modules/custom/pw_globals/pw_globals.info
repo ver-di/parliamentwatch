@@ -1,10 +1,10 @@
-name = PW Basics
+name = PW Globals
 description = platform wide settings
 core = 7.x
 package = Features
 php = 5.2.4
 version = 7.x-1.0-05082013
-project = pw_basics
+project = pw_globals
 dependencies[] = antispam
 dependencies[] = ctools
 dependencies[] = date

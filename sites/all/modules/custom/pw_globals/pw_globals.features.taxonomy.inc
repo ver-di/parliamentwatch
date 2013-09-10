@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * pw_basics.features.taxonomy.inc
+ * pw_globals.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function pw_basics_taxonomy_default_vocabularies() {
+function pw_globals_taxonomy_default_vocabularies() {
   return array(
     'area_codex' => array(
       'name' => 'Area Codes',

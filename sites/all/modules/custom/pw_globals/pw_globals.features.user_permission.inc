@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * pw_basics.features.user_permission.inc
+ * pw_globals.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function pw_basics_user_default_permissions() {
+function pw_globals_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: access all webform results.

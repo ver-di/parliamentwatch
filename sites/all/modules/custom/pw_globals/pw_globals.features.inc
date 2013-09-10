@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * pw_basics.features.inc
+ * pw_globals.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function pw_basics_ctools_plugin_api() {
+function pw_globals_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
@@ -21,7 +21,7 @@ function pw_basics_ctools_plugin_api() {
 /**
  * Implements hook_node_info().
  */
-function pw_basics_node_info() {
+function pw_globals_node_info() {
   $items = array(
     'page' => array(
       'name' => t('Basic page'),

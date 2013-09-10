@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * pw_basics.features.field.inc
+ * pw_globals.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function pw_basics_field_default_fields() {
+function pw_globals_field_default_fields() {
   $fields = array();
 
   // Exported field: 'node-page-body'.

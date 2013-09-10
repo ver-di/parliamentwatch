@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * pw_basics.strongarm.inc
+ * pw_globals.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function pw_basics_strongarm() {
+function pw_globals_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

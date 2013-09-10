@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * pw_basics.ds.inc
+ * pw_globals.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function pw_basics_ds_field_settings_info() {
+function pw_globals_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
@@ -54,7 +54,7 @@ function pw_basics_ds_field_settings_info() {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function pw_basics_ds_layout_settings_info() {
+function pw_globals_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();
