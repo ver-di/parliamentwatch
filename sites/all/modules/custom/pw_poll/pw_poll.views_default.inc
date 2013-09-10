@@ -354,17 +354,17 @@ print pw_blocks_get_chart($row->nid,\'total\');
 
   $view = new view();
   $view->name = 'user_constituency';
-  $view->description = '';
+  $view->description = 'A list of Politicians and their voting behavior on the polls page';
   $view->tag = 'default';
   $view->base_table = 'users';
-  $view->human_name = 'User Constituency';
+  $view->human_name = 'PW Polls Constituency';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'User Constituency';
+  $handler->display->display_options['title'] = 'PW Polls Constituency';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -592,12 +592,6 @@ if($record->value == 0){
     51622513 => 0,
   );
   $handler->display->display_options['filters']['field_user_constituency_tid_1']['vocabulary'] = 'constituency';
-
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'user-constituency';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
