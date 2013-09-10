@@ -743,7 +743,8 @@ function pw_globals_strongarm() {
     7 => 'press_release',
     8 => 'press_article',
     9 => 'pw_slider',
-    10 => 'webform',
+    10 => 'trustee',
+    11 => 'webform',
   );
   $export['webform_node_types'] = $strongarm;
 

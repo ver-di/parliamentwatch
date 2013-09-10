@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * roles.features.user_role.inc
+ * pw_globals.features.user_role.inc
  */
 
 /**
  * Implements hook_user_default_roles().
  */
-function roles_user_default_roles() {
+function pw_globals_user_default_roles() {
   $roles = array();
 
   // Exported role: Content Manager.
@@ -15,13 +15,6 @@ function roles_user_default_roles() {
     'name' => 'Content Manager',
     'weight' => '3',
     'machine_name' => 'content_manager',
-  );
-
-  // Exported role: Politician.
-  $roles['Politician'] = array(
-    'name' => 'Politician',
-    'weight' => '4',
-    'machine_name' => 'politician',
   );
 
   return $roles;

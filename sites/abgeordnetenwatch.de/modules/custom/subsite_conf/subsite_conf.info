@@ -53,7 +53,6 @@ features[variable][] = pathauto_node_page_de_pattern
 features[variable][] = pathauto_node_press_article_de_pattern
 features[variable][] = pathauto_node_press_release_de_pattern
 features[variable][] = pathauto_node_pw_poll_de_pattern
-features[variable][] = pathauto_node_slider_item_de_pattern
 features[variable][] = pathauto_node_trustee_de_pattern
 features[variable][] = pathauto_node_webform_de_pattern
 features[variable][] = piwik_cache

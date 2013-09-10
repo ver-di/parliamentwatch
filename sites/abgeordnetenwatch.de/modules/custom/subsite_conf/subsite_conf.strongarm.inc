@@ -39,7 +39,7 @@ function subsite_conf_strongarm() {
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => 'ufovbLID3tbrtuAzU9OO574pfITWiJBkH1u4lxBxB1s',
+    'javascript' => 'i2JGFCaEWJoDzybXIIBqVsdGx2yqzCSIRNiCfMninno',
   );
   $export['language_default'] = $strongarm;
 
@@ -105,13 +105,6 @@ function subsite_conf_strongarm() {
   $strongarm->name = 'pathauto_node_pw_poll_de_pattern';
   $strongarm->value = '';
   $export['pathauto_node_pw_poll_de_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_slider_item_de_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_slider_item_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

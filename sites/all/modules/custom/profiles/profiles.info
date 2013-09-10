@@ -33,6 +33,7 @@ dependencies[] = number
 dependencies[] = options
 dependencies[] = php
 dependencies[] = pw_committees
+dependencies[] = pw_globals
 dependencies[] = pw_image_gallery
 dependencies[] = pw_profileswitch
 dependencies[] = pw_twitter
