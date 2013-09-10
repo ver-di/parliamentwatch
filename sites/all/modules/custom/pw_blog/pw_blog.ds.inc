@@ -426,119 +426,6 @@ function pw_blog_ds_field_settings_info() {
 }
 
 /**
- * Implements hook_ds_custom_fields_info().
- */
-function pw_blog_ds_custom_fields_info() {
-  $export = array();
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'block_newsletter_order';
-  $ds_field->label = 'Newsletter bestellen';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'block|3',
-    'block_render' => '1',
-  );
-  $export['block_newsletter_order'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'custom_comment_counter';
-  $ds_field->label = 'Custom Comment Counter';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'comment' => 'comment',
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-
-// Load and print comment count
-$node = node_load(arg(1));
-if($node->comment_count == 0){
-    print \'<a href="#comments" title="\'.t(\'go to comments\').\'">\'.t(\'no comments yet\').\'</a>\';
-}
-else if($node->comment_count == 1){
-    print \'<a href="#comments" title="\'.t("go to comments").\'">\'.t("1 comment").\'</a>\';
-}
-else{
-    print  \'<a href="#comments" title="\'.t("go to comments").\'">\'.$node->comment_count.t(" comments").\'</a>\';
-}
-
-?>',
-      'format' => 'php_code',
-    ),
-    'use_token' => 0,
-  );
-  $export['custom_comment_counter'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'rss';
-  $ds_field->label = 'RSS';
-  $ds_field->field_type = 7;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'default' => array(),
-    'settings' => array(
-      'show_title' => array(
-        'type' => 'checkbox',
-      ),
-      'title_wrapper' => array(
-        'type' => 'textfield',
-        'description' => 'Eg: h1, h2, p',
-      ),
-      'ctools' => array(
-        'type' => 'ctools',
-      ),
-    ),
-  );
-  $export['rss'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'sharethis';
-  $ds_field->label = 'sharethis';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'sharethis|sharethis_block',
-    'block_render' => '3',
-  );
-  $export['sharethis'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'sharethis_horizontal';
-  $ds_field->label = 'shareThis horizontal';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'node' => 'node',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'block|12',
-    'block_render' => '3',
-  );
-  $export['sharethis_horizontal'] = $ds_field;
-
-  return $export;
-}
-
-/**
  * Implements hook_ds_layout_settings_info().
  */
 function pw_blog_ds_layout_settings_info() {
@@ -636,40 +523,6 @@ function pw_blog_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|blogpost|print';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'blogpost';
-  $ds_layout->view_mode = 'print';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'title',
-        1 => 'group_blog_submitted',
-        2 => 'field_blogpost_blogtags',
-        3 => 'post_date',
-        4 => 'author',
-        5 => 'body',
-        6 => 'comments',
-      ),
-    ),
-    'fields' => array(
-      'title' => 'ds_content',
-      'group_blog_submitted' => 'ds_content',
-      'field_blogpost_blogtags' => 'ds_content',
-      'post_date' => 'ds_content',
-      'author' => 'ds_content',
-      'body' => 'ds_content',
-      'comments' => 'ds_content',
-    ),
-    'classes' => array(),
-  );
-  $export['node|blogpost|print'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|blogpost|rss';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'blogpost';
@@ -719,44 +572,6 @@ function pw_blog_ds_layout_settings_info() {
     'classes' => array(),
   );
   $export['node|blogpost|search_result'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'node|blogpost|teaser';
-  $ds_layout->entity_type = 'node';
-  $ds_layout->bundle = 'blogpost';
-  $ds_layout->view_mode = 'teaser';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'sharethis',
-        1 => 'title',
-        2 => 'group_blogtags_author',
-        3 => 'post_date',
-        4 => 'author',
-        5 => 'field_teaser_image',
-        6 => 'body',
-        7 => 'field_blogpost_blogtags',
-        8 => 'comments',
-      ),
-    ),
-    'fields' => array(
-      'sharethis' => 'ds_content',
-      'title' => 'ds_content',
-      'group_blogtags_author' => 'ds_content',
-      'post_date' => 'ds_content',
-      'author' => 'ds_content',
-      'field_teaser_image' => 'ds_content',
-      'body' => 'ds_content',
-      'field_blogpost_blogtags' => 'ds_content',
-      'comments' => 'ds_content',
-    ),
-    'classes' => array(),
-  );
-  $export['node|blogpost|teaser'] = $ds_layout;
 
   return $export;
 }
