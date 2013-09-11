@@ -214,4 +214,7 @@ function pw_search_apachesolr_index_document_build_user(ApacheSolrDocument $docu
   
   $document->setField("content", implode(" ", $contentArr));
   $document->setField("spell", $contentArr);
+  
+  // remove the birthday field, which has been added automatically to each user:
+  unset($document->dm_field_user_birthday);
 }
