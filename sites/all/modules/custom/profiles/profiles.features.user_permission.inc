@@ -199,7 +199,9 @@ function profiles_user_default_permissions() {
   $permissions['create files'] = array(
     'name' => 'create files',
     'roles' => array(
-      0 => 'Premium User',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -208,7 +210,9 @@ function profiles_user_default_permissions() {
   $permissions['delete own files'] = array(
     'name' => 'delete own files',
     'roles' => array(
-      0 => 'Premium User',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -218,8 +222,7 @@ function profiles_user_default_permissions() {
     'name' => 'edit any files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -591,7 +594,9 @@ function profiles_user_default_permissions() {
   $permissions['edit own files'] = array(
     'name' => 'edit own files',
     'roles' => array(
-      0 => 'Premium User',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -1135,7 +1140,9 @@ function profiles_user_default_permissions() {
   $permissions['view own files'] = array(
     'name' => 'view own files',
     'roles' => array(
-      0 => 'Premium User',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -1144,7 +1151,9 @@ function profiles_user_default_permissions() {
   $permissions['view own private files'] = array(
     'name' => 'view own private files',
     'roles' => array(
-      0 => 'Premium User',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'file_entity',
   );
