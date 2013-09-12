@@ -124,16 +124,6 @@ function profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: create field_user_more.
-  $permissions['create field_user_more'] = array(
-    'name' => 'create field_user_more',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: create field_user_parliament.
   $permissions['create field_user_parliament'] = array(
     'name' => 'create field_user_parliament',
@@ -257,10 +247,7 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_answers_give.
   $permissions['edit field_user_answers_give'] = array(
     'name' => 'edit field_user_answers_give',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -309,8 +296,7 @@ function profiles_user_default_permissions() {
     'name' => 'edit field_user_image_gallery',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -338,16 +324,6 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_marriage_status.
   $permissions['edit field_user_marriage_status'] = array(
     'name' => 'edit field_user_marriage_status',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: edit field_user_more.
-  $permissions['edit field_user_more'] = array(
-    'name' => 'edit field_user_more',
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
@@ -389,7 +365,8 @@ function profiles_user_default_permissions() {
   $permissions['edit field_user_pseudonym'] = array(
     'name' => 'edit field_user_pseudonym',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -397,20 +374,14 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_qanda_ratio.
   $permissions['edit field_user_qanda_ratio'] = array(
     'name' => 'edit field_user_qanda_ratio',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
   // Exported permission: edit field_user_questions_get.
   $permissions['edit field_user_questions_get'] = array(
     'name' => 'edit field_user_questions_get',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -439,9 +410,12 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_address'] = array(
     'name' => 'edit own field_user_address',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -449,10 +423,7 @@ function profiles_user_default_permissions() {
   // Exported permission: edit own field_user_answers_give.
   $permissions['edit own field_user_answers_give'] = array(
     'name' => 'edit own field_user_answers_give',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -471,7 +442,7 @@ function profiles_user_default_permissions() {
     'name' => 'edit own field_user_commitee',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
+      1 => 'Deputy',
       2 => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -491,8 +462,12 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_gender'] = array(
     'name' => 'edit own field_user_gender',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -512,8 +487,12 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_job_skills'] = array(
     'name' => 'edit own field_user_job_skills',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -522,8 +501,12 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_list_position'] = array(
     'name' => 'edit own field_user_list_position',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -534,17 +517,6 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: edit own field_user_more.
-  $permissions['edit own field_user_more'] = array(
-    'name' => 'edit own field_user_more',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -584,7 +556,8 @@ function profiles_user_default_permissions() {
   $permissions['edit own field_user_pseudonym'] = array(
     'name' => 'edit own field_user_pseudonym',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -592,20 +565,14 @@ function profiles_user_default_permissions() {
   // Exported permission: edit own field_user_qanda_ratio.
   $permissions['edit own field_user_qanda_ratio'] = array(
     'name' => 'edit own field_user_qanda_ratio',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
   // Exported permission: edit own field_user_questions_get.
   $permissions['edit own field_user_questions_get'] = array(
     'name' => 'edit own field_user_questions_get',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
@@ -662,6 +629,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -677,6 +645,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -692,6 +661,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -707,6 +677,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -722,6 +693,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -732,6 +704,8 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -747,6 +721,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -762,6 +737,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -777,6 +753,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -792,6 +769,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -807,21 +785,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: view field_user_more.
-  $permissions['view field_user_more'] = array(
-    'name' => 'view field_user_more',
-    'roles' => array(
-      0 => 'Candidate',
-      1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -837,6 +801,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -852,6 +817,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -867,6 +833,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -875,7 +842,10 @@ function profiles_user_default_permissions() {
   $permissions['view field_user_pseudonym'] = array(
     'name' => 'view field_user_pseudonym',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -887,6 +857,7 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'administrator',
       2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -901,6 +872,7 @@ function profiles_user_default_permissions() {
       3 => 'Premium User',
       4 => 'administrator',
       5 => 'anonymous user',
+      6 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -916,6 +888,7 @@ function profiles_user_default_permissions() {
       4 => 'Premium User',
       5 => 'administrator',
       6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -939,6 +912,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -950,6 +925,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -960,6 +937,8 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -971,6 +950,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -982,6 +963,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -992,6 +975,8 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1003,6 +988,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1014,6 +1001,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1025,6 +1014,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1036,6 +1027,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1047,17 +1040,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: view own field_user_more.
-  $permissions['view own field_user_more'] = array(
-    'name' => 'view own field_user_more',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1068,6 +1052,8 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1079,6 +1065,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1090,6 +1078,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1098,7 +1088,10 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_pseudonym'] = array(
     'name' => 'view own field_user_pseudonym',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1107,8 +1100,8 @@ function profiles_user_default_permissions() {
   $permissions['view own field_user_qanda_ratio'] = array(
     'name' => 'view own field_user_qanda_ratio',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      0 => 'anonymous user',
+      1 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1119,6 +1112,8 @@ function profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1130,6 +1125,8 @@ function profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );

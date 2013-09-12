@@ -4500,15 +4500,12 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_lname']['label'] = '';
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Feld: Benutzer: Additional information */
+  /* Feld: Broken/missing handler */
   $handler->display->display_options['fields']['field_user_more']['id'] = 'field_user_more';
   $handler->display->display_options['fields']['field_user_more']['table'] = 'field_data_field_user_more';
   $handler->display->display_options['fields']['field_user_more']['field'] = 'field_user_more';
   $handler->display->display_options['fields']['field_user_more']['label'] = '';
   $handler->display->display_options['fields']['field_user_more']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_more']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_user_more']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_user_more']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Benutzer: Aktiv */
@@ -4518,7 +4515,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Benutzer: Additional information (field_user_more:attributes) */
+  /* Filter criterion: Broken/missing handler */
   $handler->display->display_options['filters']['field_user_more_attributes']['id'] = 'field_user_more_attributes';
   $handler->display->display_options['filters']['field_user_more_attributes']['table'] = 'field_data_field_user_more';
   $handler->display->display_options['filters']['field_user_more_attributes']['field'] = 'field_user_more_attributes';
@@ -4607,7 +4604,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Additional information */
+  /* Feld: Broken/missing handler */
   $handler->display->display_options['fields']['field_user_more']['id'] = 'field_user_more';
   $handler->display->display_options['fields']['field_user_more']['table'] = 'field_data_field_user_more';
   $handler->display->display_options['fields']['field_user_more']['field'] = 'field_user_more';
@@ -4617,10 +4614,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_more']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['field_user_more']['element_wrapper_class'] = 'dark';
   $handler->display->display_options['fields']['field_user_more']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_more']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_user_more']['group_rows'] = FALSE;
-  $handler->display->display_options['fields']['field_user_more']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_user_more']['multi_type'] = 'ul';
   /* Feld: Excluded | Full profile link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';

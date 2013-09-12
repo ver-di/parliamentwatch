@@ -781,7 +781,7 @@ function profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_age',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(),
       'indexes' => array(),
@@ -931,7 +931,7 @@ function profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '12',
+        'weight' => '29',
       ),
     ),
   );
@@ -945,7 +945,7 @@ function profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_birthday',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(),
       'indexes' => array(),
@@ -1237,7 +1237,7 @@ function profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_constituency',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(
         'tid' => array(
@@ -1320,9 +1320,12 @@ function profiles_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
+        'module' => 'taxonomy',
+        'settings' => array(
+          'autocomplete_path' => 'taxonomy/autocomplete',
+          'size' => 60,
+        ),
+        'type' => 'taxonomy_autocomplete',
         'weight' => '10',
       ),
     ),
@@ -1337,7 +1340,7 @@ function profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_education',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(
         'format' => array(
@@ -1399,7 +1402,6 @@ function profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
-            'ds_code' => 'ds_code',
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'managed_content' => 'managed_content',
@@ -1410,9 +1412,6 @@ function profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
-              'ds_code' => array(
-                'weight' => '-5',
-              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -1576,6 +1575,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_fname',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -1646,11 +1648,10 @@ function profiles_field_default_fields() {
       'entity_type' => 'user',
       'field_name' => 'field_user_fname',
       'label' => 'First Name',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
-            'ds_code' => 'ds_code',
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'managed_content' => 'managed_content',
@@ -1661,9 +1662,6 @@ function profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
-              'ds_code' => array(
-                'weight' => '-5',
-              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -1687,7 +1685,7 @@ function profiles_field_default_fields() {
           'insert_plugin' => '',
         ),
         'text_processing' => '0',
-        'user_register_form' => 0,
+        'user_register_form' => 1,
       ),
       'widget' => array(
         'active' => 1,
@@ -2127,6 +2125,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_lname',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -2197,11 +2198,10 @@ function profiles_field_default_fields() {
       'entity_type' => 'user',
       'field_name' => 'field_user_lname',
       'label' => 'Last name',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
-            'ds_code' => 'ds_code',
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'managed_content' => 'managed_content',
@@ -2212,9 +2212,6 @@ function profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
-              'ds_code' => array(
-                'weight' => '-5',
-              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -2238,7 +2235,7 @@ function profiles_field_default_fields() {
           'insert_plugin' => '',
         ),
         'text_processing' => '0',
-        'user_register_form' => 0,
+        'user_register_form' => 1,
       ),
       'widget' => array(
         'active' => 1,
@@ -2338,123 +2335,6 @@ function profiles_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '14',
-      ),
-    ),
-  );
-
-  // Exported field: 'user-user-field_user_more'.
-  $fields['user-user-field_user_more'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_user_more',
-      'field_permissions' => array(
-        'type' => '2',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'link',
-      'settings' => array(
-        'attributes' => array(
-          'class' => '',
-          'rel' => '',
-          'target' => 'default',
-        ),
-        'display' => array(
-          'url_cutoff' => 80,
-        ),
-        'enable_tokens' => 1,
-        'title' => 'optional',
-        'title_maxlength' => 128,
-        'title_value' => '',
-        'url' => 0,
-      ),
-      'translatable' => '0',
-      'type' => 'link_field',
-    ),
-    'field_instance' => array(
-      'bundle' => 'user',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '10',
-        ),
-        'full' => array(
-          'label' => 'hidden',
-          'module' => 'link',
-          'settings' => array(),
-          'type' => 'link_default',
-          'weight' => '10',
-        ),
-        'user_candidate' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '51',
-        ),
-        'user_deputy' => array(
-          'label' => 'hidden',
-          'module' => 'link',
-          'settings' => array(),
-          'type' => 'link_default',
-          'weight' => '9',
-        ),
-        'user_premium' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '51',
-        ),
-        'user_search' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'user',
-      'field_name' => 'field_user_more',
-      'label' => 'Additional information',
-      'required' => 0,
-      'settings' => array(
-        'attributes' => array(
-          'class' => '',
-          'configurable_title' => 0,
-          'rel' => '',
-          'target' => 'default',
-          'title' => '',
-        ),
-        'display' => array(
-          'url_cutoff' => '80',
-        ),
-        'enable_tokens' => 1,
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'rel_remove' => 'default',
-        'title' => 'optional',
-        'title_maxlength' => '128',
-        'title_value' => '',
-        'url' => 0,
-        'user_register_form' => 0,
-        'validate_url' => 1,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'link',
-        'settings' => array(),
-        'type' => 'link_field',
-        'weight' => '26',
       ),
     ),
   );
@@ -2567,6 +2447,9 @@ function profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_party',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -2641,6 +2524,7 @@ function profiles_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_party',
       'label' => 'Party',
@@ -2766,7 +2650,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
@@ -3067,7 +2951,6 @@ function profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
-            'ds_code' => 'ds_code',
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'managed_content' => 'managed_content',
@@ -3078,9 +2961,6 @@ function profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
-              'ds_code' => array(
-                'weight' => '-5',
-              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -3198,7 +3078,7 @@ $entity_field[0][\'value\'] = $result;',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '13',
+        'weight' => '30',
       ),
     ),
   );
@@ -3280,7 +3160,7 @@ $entity_field[0][\'value\'] = $result;',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '11',
+        'weight' => '28',
       ),
     ),
   );
@@ -3398,7 +3278,7 @@ $entity_field[0][\'value\'] = $result;',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '25',
+        'weight' => '24',
       ),
     ),
   );
@@ -3412,7 +3292,7 @@ $entity_field[0][\'value\'] = $result;',
       'entity_types' => array(),
       'field_name' => 'field_user_valid',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(),
       'indexes' => array(),
@@ -3499,7 +3379,6 @@ $entity_field[0][\'value\'] = $result;',
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
-  t('Additional information');
   t('Address');
   t('Age');
   t('Alt Text');

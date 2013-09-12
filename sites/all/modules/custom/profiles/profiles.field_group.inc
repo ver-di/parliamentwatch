@@ -824,6 +824,7 @@ function profiles_field_group_info() {
       2 => 'field_user_image_gallery',
       3 => 'field_user_political_goals',
       4 => 'field_user_twitter_account',
+      5 => 'field_user_links_more',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
