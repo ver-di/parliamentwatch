@@ -112,6 +112,22 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_deputy';
   $ds_fieldsetting->settings = array(
+    'bundestagsradar' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'block',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => TRUE,
+        ),
+      ),
+    ),
     'pw_slider' => array(
       'weight' => '5',
       'label' => 'hidden',
@@ -129,12 +145,12 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_filter' => array(
-      'weight' => '10',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'question_form' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -182,7 +198,7 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -591,6 +607,22 @@ function profiles_ds_custom_fields_info() {
     'block_render' => '1',
   );
   $export['back_to_calendar'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'bundestagsradar';
+  $ds_field->label = 'Bundestagsradar';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'block|22',
+    'block_render' => '2',
+  );
+  $export['bundestagsradar'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -1118,33 +1150,34 @@ function profiles_ds_layout_settings_info() {
         3 => 'group_user_basics',
         4 => 'group_user_polls',
         5 => 'group_user_roles',
-        6 => 'polls_profile_last',
+        7 => 'polls_profile_last',
         8 => 'polls_archive_view',
         10 => 'field_user_commitee',
-        11 => 'group_user_polls_current',
+        12 => 'group_user_polls_current',
         13 => 'group_user_polls_archive',
-        15 => 'field_user_political_roles',
-        16 => 'group_user_basics_data',
+        14 => 'group_user_basics_data',
+        16 => 'field_user_political_roles',
         17 => 'group_user_basics_additional',
-        23 => 'group_user_roles_current',
-        24 => 'group_user_roles_archive',
+        24 => 'group_user_roles_current',
+        25 => 'group_user_roles_archive',
       ),
       'right_1' => array(
-        7 => 'pw_slider',
+        6 => 'pw_slider',
         9 => 'user_wrong_data',
-        12 => 'user_profile_api_link',
+        11 => 'user_profile_api_link',
+        15 => 'bundestagsradar',
       ),
       'left_2' => array(
-        14 => 'user_questions_and_answers',
-        18 => 'question_form',
+        18 => 'user_questions_and_answers',
+        19 => 'question_form',
       ),
       'right_2' => array(
-        19 => 'question_and_answers_filter',
+        20 => 'question_and_answers_filter',
       ),
       'ds_hidden' => array(
-        20 => 'field_user_fname',
-        21 => 'field_user_lname',
-        22 => 'field_user_party',
+        21 => 'field_user_fname',
+        22 => 'field_user_lname',
+        23 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1154,18 +1187,19 @@ function profiles_ds_layout_settings_info() {
       'group_user_basics' => 'left_1',
       'group_user_polls' => 'left_1',
       'group_user_roles' => 'left_1',
-      'polls_profile_last' => 'left_1',
       'pw_slider' => 'right_1',
+      'polls_profile_last' => 'left_1',
       'polls_archive_view' => 'left_1',
       'user_wrong_data' => 'right_1',
       'field_user_commitee' => 'left_1',
-      'group_user_polls_current' => 'left_1',
       'user_profile_api_link' => 'right_1',
+      'group_user_polls_current' => 'left_1',
       'group_user_polls_archive' => 'left_1',
-      'user_questions_and_answers' => 'left_2',
-      'field_user_political_roles' => 'left_1',
       'group_user_basics_data' => 'left_1',
+      'bundestagsradar' => 'right_1',
+      'field_user_political_roles' => 'left_1',
       'group_user_basics_additional' => 'left_1',
+      'user_questions_and_answers' => 'left_2',
       'question_form' => 'left_2',
       'question_and_answers_filter' => 'right_2',
       'field_user_fname' => 'ds_hidden',
