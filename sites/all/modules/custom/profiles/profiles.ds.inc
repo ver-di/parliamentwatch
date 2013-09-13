@@ -997,6 +997,32 @@ drupal_add_html_head($element, \'og_description\');
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'user_questions_and_answers';
+  $ds_field->label = 'Questions and Answers Profile';
+  $ds_field->field_type = 7;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'default' => array(),
+    'settings' => array(
+      'show_title' => array(
+        'type' => 'checkbox',
+      ),
+      'title_wrapper' => array(
+        'type' => 'textfield',
+        'description' => 'Eg: h1, h2, p',
+      ),
+      'ctools' => array(
+        'type' => 'ctools',
+      ),
+    ),
+  );
+  $export['user_questions_and_answers'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'user_tweets';
   $ds_field->label = 'User Tweets';
   $ds_field->field_type = 6;
