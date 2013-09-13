@@ -317,9 +317,7 @@ function profiles_field_group_info() {
   $field_group->data = array(
     'label' => 'User Basics Additional',
     'weight' => '9',
-    'children' => array(
-      0 => 'field_user_more',
-    ),
+    'children' => array(),
     'format_type' => 'htab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -423,7 +421,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Basics',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'group_user_basics_additional',
       1 => 'group_user_basics_data',
@@ -791,7 +789,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Polls',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'group_user_polls_current',
       1 => 'group_user_polls_archive',
@@ -901,7 +899,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Roles',
-    'weight' => '58',
+    'weight' => '4',
     'children' => array(
       0 => 'group_user_roles_current',
       1 => 'group_user_roles_archive',

@@ -546,11 +546,15 @@ h1#page-title {
     border-bottom: 0;
 }
 
-#region-sidebar-second .block {
+.region-sidebar-second .block {
     margin-bottom: 35px;
     margin-bottom: 3.5rem;
 }
-#region-sidebar-second .block p:last-child {
+.region-sidebar-second p {
+    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
+}
+.region-sidebar-second .block p:last-child {
     margin-bottom: 0;
 }
 
@@ -1299,6 +1303,10 @@ img.no-outline {
 .comment-count,
 .icon-taxonomy {
     padding-left: 26px;
+}
+.icon-edit {
+    padding-left: 26px;
+    background-position: -891px -3210px;
 }
 .comment-count {
     background-position: -929px -2574px;
@@ -2049,6 +2057,7 @@ form .webform-component-checkboxes .description {
 #block-views-blog-block-1 .views-row,
 .comment-count,
 .icon-taxonomy,
+.icon-edit,
 .floatbox ul li,
 .floatbox h3,
 a#text_resize_decrease,

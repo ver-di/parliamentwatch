@@ -180,7 +180,7 @@ function profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '39',
+            'weight' => '41',
             'visible' => FALSE,
           ),
           'user_candidate' => array(
