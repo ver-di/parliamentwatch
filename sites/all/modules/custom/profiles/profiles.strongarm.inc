@@ -176,11 +176,11 @@ function profiles_strongarm() {
             'visible' => TRUE,
           ),
           'user_premium' => array(
-            'weight' => '40',
+            'weight' => '41',
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '41',
+            'weight' => '42',
             'visible' => FALSE,
           ),
           'user_candidate' => array(

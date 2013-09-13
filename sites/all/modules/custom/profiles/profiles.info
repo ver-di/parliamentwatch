@@ -84,6 +84,7 @@ features[ds_fields][] = user_calendar
 features[ds_fields][] = user_image_gallery
 features[ds_fields][] = user_og_description
 features[ds_fields][] = user_political_goals
+features[ds_fields][] = user_profile_api_link
 features[ds_fields][] = user_tweets
 features[ds_fields][] = user_wrong_data
 features[ds_layout_settings][] = node|calendar_entry|default
