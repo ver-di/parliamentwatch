@@ -99,10 +99,11 @@ function pw_announcements_field_default_fields() {
             'upload' => 'upload',
             'youtube' => 0,
           ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );

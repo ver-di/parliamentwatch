@@ -32,6 +32,29 @@ function pw_content_authoring_layout_ctools_plugin_api() {
 function pw_content_authoring_layout_image_default_styles() {
   $styles = array();
 
+  // Exported image style: pw_grid_8_normal.
+  $styles['pw_grid_8_normal'] = array(
+    'name' => 'pw_grid_8_normal',
+    'effects' => array(
+      3 => array(
+        'label' => 'Skalierung',
+        'help' => 'Eine Skalierung behält das Seitenverhältnis des Originalbildes bei. Sofern nur eine Seitenlänge angegeben ist, wird die andere berechnet.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '620',
+          'height' => '',
+          'upscale' => 1,
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Exported image style: pw_landscape_l__mobile.
   $styles['pw_landscape_l__mobile'] = array(
     'name' => 'pw_landscape_l__mobile',

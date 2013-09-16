@@ -1816,17 +1816,29 @@ form .webform-component-checkboxes .description {
     position: relative;
     margin-bottom: 43px;
     margin-bottom: 4.3rem;
+    min-height: 168px;
+    min-height: 16.8rem;
+    -webkit-box-shadow: 0px 0px 4px 1px #ebebeb;
+    -moz-box-shadow: 0px 0px 4px 1px #ebebeb;
+    box-shadow: 0px 0px 4px 1px #ebebeb;
 }
-.announcement.slideshow img {
+.announcement.slideshow .background-image {
+    width: 620px;
+    height: 220px;
     position: absolute;
-    top: 0;
     left: 0;
-    z-index: 0;
+    top: -42px;
+    top: -4.1rem;
+    z-index: -1;
+    background: url(../images/bg_announcement.jpg);
 }
 .announcement.slideshow .views-slideshow-controls-top {
     background: url(../images/bg_fff50.png);
-    padding: 0 20px;
+    padding: 2px 20px;
+    padding: 0.2rem 20px;
     margin-bottom: 1px;
+    position: relative;
+    z-index: 10;
 }
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
@@ -1841,12 +1853,20 @@ form .webform-component-checkboxes .description {
 }
 .announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
     background: url(../images/bg_fff50.png);
-    padding: 12px 10px 12px 20px;
+    padding: 8px 10px 12px 20px;
+}
+.announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
+    background: url(../images/bg_fff50.png);
+    padding: 8px 10px 12px 20px;
+}
+.announcement.slideshow .content p:last-child {
+    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
 }
 .announcement.slideshow .more-link {
     position: absolute;
-    bottom: -20px;
-    bottom: -2rem;
+    bottom: -18px;
+    bottom: -1.8rem;
     right: 0;
 }
 .announcement.slideshow .more-link a {
