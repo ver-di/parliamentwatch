@@ -1808,6 +1808,55 @@ form .webform-component-checkboxes .description {
 }
 
 
+/* /////////////////////////// Announcement ///////////////// */
+
+.announcement.slideshow {
+    background: #ccc;
+    padding: 18px 30px 34px 0;
+    position: relative;
+    margin-bottom: 43px;
+    margin-bottom: 4.3rem;
+}
+.announcement.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.announcement.slideshow .views-slideshow-controls-top {
+    background: url(../images/bg_fff50.png);
+    padding: 0 20px;
+    margin-bottom: 1px;
+}
+.announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
+    color: #999;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.announcement.slideshow .views-slideshow-controls-top .active .views-content-field-announce-tab-title {
+    color: #333;
+}
+.announcement.slideshow .views-slideshow-controls-top .views-slideshow-pager-field-item {
+    float: left;
+}
+.announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
+    background: url(../images/bg_fff50.png);
+    padding: 12px 10px 12px 20px;
+}
+.announcement.slideshow .more-link {
+    position: absolute;
+    bottom: -20px;
+    bottom: -2rem;
+    right: 0;
+}
+.announcement.slideshow .more-link a {
+    font-weight: normal;
+    font-size: 11px;
+    font-size: 1.1rem;
+    color: #999;
+}
+
+
 /* /////////////////////////// Share this /////////////////// */
 
 .icon-share {
