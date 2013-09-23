@@ -294,7 +294,11 @@ a.dark {
     padding-left: 15px;
     background-position: -366px -2302px;
 }
-.permalink {
+.zero-clipboard.copied {
+    padding-left: 15px;
+    background-position: -406px -2262px;
+}
+.icon-link {
     padding-left: 26px;
     background-position: -282px -2382px;
 }
@@ -1722,12 +1726,17 @@ form .webform-component-checkboxes .description {
 .answer .more-info.content-inner {
     padding: 20px 24px;
 }
+.answer .more-info.content-inner .fieldset-wrapper {
+    margin-top: 1.5em;
+}
 .answer .more-info a {
     font-weight: normal;
     color: #666;
 }
-.answer .more-info #zeroclipboard-dynamic-id-0-zeroclipboard-wrapper {
-    float: right !important;
+.answer .more-info .zero-clipboard,
+.answer .more-info .shorten {
+    float: right;
+    margin-left: 20px;
 }
 .comment.answer .bg-white {
     margin-left: -24px;
@@ -1827,7 +1836,7 @@ form .webform-component-checkboxes .description {
     height: 220px;
     position: absolute;
     left: 0;
-    top: -42px;
+    top: -41px;
     top: -4.1rem;
     z-index: -1;
     background: url(../images/bg_announcement.jpg);
@@ -2171,7 +2180,7 @@ a.link-sound,
 .ic-info .info-title,
 blockquote:before,
 .zero-clipboard,
-.permalink,
+.icon-link,
 .collapse-processed .fieldset-title {
     background-image: url("../images/sprite.png");
     background-repeat: no-repeat;
@@ -2189,6 +2198,21 @@ blockquote:before,
 }
 .collapse-processed.collapsed a.fieldset-title:hover {
     background-position: -770px -1898px;
+}
+.more-info.collapse-processed a.fieldset-title {
+    padding-left: 26px;
+    position: absolute;
+    top: 1em;
+}
+.more-info.collapse-processed a.fieldset-title {
+    background-position: -480px -2180px;
+    color: #999;
+}
+.more-info.collapse-processed a.fieldset-title:hover,
+.more-info.collapse-processed a.fieldset-title:active,
+.more-info.collapse-processed.collapsed a.fieldset-title {
+    background-position: -440px -2220px;
+    color: #666;
 }
 
 /* /////////////////////////// content /////////////////// */

@@ -73,14 +73,13 @@
     line-height: 1.1em;
     margin-bottom: 1.3rem;
 }
-.view-slider #views_slideshow_cycle_main_slider-block {
+.view-slider #views_slideshow_cycle_main_slider-block,
+.ds-right-1 .view-slider #views_slideshow_cycle_main_slider-block {
     position: absolute;
     right: 331px;
     top: 0;
     height: 168px !important;
-}
-.ds-right-1 .view-slider #views_slideshow_cycle_main_slider-block {
-    top: 0;
+    width: 610px;
 }
 .view-slider .views-slideshow-controls-text-previous a {
     width: 26px;

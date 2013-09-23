@@ -99,7 +99,14 @@ function dialogues_strongarm() {
           'weight' => '11',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'webform' => array(
+          'full' => array(
+            'weight' => '27',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__dialogue'] = $strongarm;
