@@ -1,0 +1,5 @@
+name = PW Cron Orphaned Files
+description = deletes orphaned files
+core = 7.x
+package = 
+files[] = tests/pw_cron_orphaned_files.test
