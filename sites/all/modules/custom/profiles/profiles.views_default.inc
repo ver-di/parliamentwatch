@@ -2646,17 +2646,6 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Datei: copyright */
-  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'user_to_file';
-  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
-  $handler->display->display_options['fields']['field_image_copyright']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
   /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
@@ -2748,7 +2737,7 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   $handler->display->display_options['fields']['fieldset_3']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset_3']['label'] = 'Fieldset Answer Inner';
   $handler->display->display_options['fields']['fieldset_3']['children'] = array(
-    0 => 'field_user_picture',
+    0 => 'fieldset_5',
     1 => 'field_user_fname',
     2 => 'field_user_lname',
     3 => 'created_1',
@@ -2756,26 +2745,42 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   );
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'content-inner clearfix';
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_5']['id'] = 'fieldset_5';
+  $handler->display->display_options['fields']['fieldset_5']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_5']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_5']['label'] = 'Profile picture';
+  $handler->display->display_options['fields']['fieldset_5']['children'] = array(
+    0 => 'field_user_picture',
+    1 => 'field_image_copyright',
+  );
+  $handler->display->display_options['fields']['fieldset_5']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset_5']['fieldset']['classes'] = 'file-image float-left push-bottom-s';
   /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['alter']['text'] = '[field_user_picture]
-<div class="copyright">[field_image_copyright]</div>';
   $handler->display->display_options['fields']['field_user_picture']['alter']['path'] = 'user/[uid]';
   $handler->display->display_options['fields']['field_user_picture']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'file-image float-left push-bottom-s';
   $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'image_style' => 'pw_portrait_s',
     'image_link' => 'content',
   );
+  /* Feld: Datei: copyright */
+  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'user_to_file';
+  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
+  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -2951,7 +2956,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><input type="checkbox" id="shortlink-<?php print $row->nid; ?>" /> <label for="shortlink-<?php print $row->nid; ?>"><?php t(\'trim the link\'); ?></label></div>';
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><input type="checkbox" id="shortlink-<?php print $row->nid; ?>" /> <label for="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></label></div>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Feld: Global: PHP: add zclip js */

@@ -843,6 +843,9 @@ ul.tabs li:hover a {
     display: block;
     margin: 0;
 }
+.item-list ul.pager.pager-load-more li a {
+    background-image: none !important;
+}
 .item-list ul.pager-load-more li.pager-next a {
     border: 1px solid #d2d2d2;
     background: #f4f4f4; /* Old browsers */
@@ -857,7 +860,7 @@ ul.tabs li:hover a {
     border-radius: 0px 0px 3px 3px;    
     display: block;
     float: none;
-    line-height: 2.6em;
+    line-height: 2.6rem;
     text-align: center;
 }
 .pager-load-more .ajax-progress {
@@ -892,7 +895,8 @@ ul.tabs li:hover a {
 }
 #quicktabs-politicians_answer a span {
     display: inline-block;
-    line-height: 3.6em;
+    line-height: 35px;
+    line-height: 3.5rem;
     padding-left: 30px;
     margin-left: -15px;
     background-image: url(../images/sprite.png);
@@ -915,7 +919,8 @@ ul.tabs li:hover a {
     color: #333;
     border: 1px solid #d2d2d2;
     border-bottom: 0;
-    line-height: 3.6em;
+    line-height: 36px;
+    line-height: 3.6rem;
     background: #f9f9f9; /* Old browsers */
     background: -moz-linear-gradient(top,  #f9f9f9 0%, #ececec 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9f9f9), color-stop(100%,#ececec)); /* Chrome,Safari4+ */
