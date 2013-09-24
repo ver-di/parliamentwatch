@@ -291,12 +291,12 @@ a.dark {
     display: inline;
 }
 .zero-clipboard {
-    padding-left: 15px;
-    background-position: -366px -2302px;
+    padding-left: 20px;
+    background-position: -361px -2301px;
 }
 .zero-clipboard.copied {
-    padding-left: 15px;
-    background-position: -406px -2262px;
+    padding-left: 20px;
+    background-position: -406px -2260px;
 }
 .icon-link {
     padding-left: 26px;
@@ -1736,7 +1736,7 @@ form .webform-component-checkboxes .description {
 .answer .more-info .zero-clipboard,
 .answer .more-info .shorten {
     float: right;
-    margin-left: 20px;
+    margin-left: 15px;
 }
 .comment.answer .bg-white {
     margin-left: -24px;
