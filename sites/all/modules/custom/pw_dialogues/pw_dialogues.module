@@ -70,8 +70,6 @@ function pw_dialogues_cron() {
         $source .= '&updated_since=' . $updated_since;
       }
     }
-    
-    drupal_set_message($source);
 
     variable_set('pw_dialogues_last_import', REQUEST_TIME);
 
