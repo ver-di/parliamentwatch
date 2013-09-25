@@ -432,9 +432,27 @@ a.ic-print {
     position: relative;
     display: inline;
 }
+#views-exposed-form-profile-questions-answers-profile,
+#views-exposed-form-profile-list-rev-grid,
+.views-exposed-widget {
+    position: relative;
+}
+#views-exposed-form-profile-questions-answers-profile .ic-info,
+#views-exposed-form-profile-list-rev-grid .ic-info {
+    position: absolute;
+    right: 0;
+    z-index: 200;
+}
+#views-exposed-form-profile-questions-answers-profile .ic-info {
+    top: -25px;
+    top: -2.5rem;
+}
+#views-exposed-form-profile-list-rev-grid .ic-info {
+    top: 0;
+}
 .ic-info .info-title {
     text-indent: -50000px;
-    background-position: -440px -41px;
+    background-position: -441px -41px;
     display: inline-block;
     width: 19px;
     height: 18px;
@@ -1243,7 +1261,8 @@ a#text_resize_increase:hover {
 /* /////////////////////////// views /////////////////// */
 
 .views-exposed-form .views-exposed-widget {
-    padding: 0.8em 0;
+    margin: 0.8em 0 0;
+    padding: 0 0 0.8em;
     color: #333;
 }
 .views-exposed-form .views-exposed-widget label.option {
@@ -1257,6 +1276,10 @@ a#text_resize_increase:hover {
 }
 .views-exposed-form .form-radio {
     margin-right: 10px;
+}
+.views-exposed-widget > label {
+    display: block;
+    padding-bottom: 4px;
 }
 
 
@@ -1545,6 +1568,25 @@ input[type="week"],
     *line-height: 2.1em; /* IE6 IE7 */
     line-height: 2.1em\9; /* IE8 */
     background-color: #fff;
+    max-width: 100%;
+}
+.views-exposed-widgets .views-reset-button input[type="submit"] {
+    border: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    color: #666;
+    padding: 0 0 0 16px;
+    height: auto;
+    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
+    line-height: auto;
+    background: transparent url(../images/sprite.png) -120px -2539px no-repeat;
+}
+.views-exposed-widgets .views-reset-button input[type="submit"]:hover {
+    background: transparent url(../images/sprite.png) -160px -2499px no-repeat;
+    color: #ccc;
+
 }
 .text-field {
     line-height: 2.5em;
@@ -1566,6 +1608,7 @@ select {
     -moz-box-shadow: inset 0px 0px 1px 1px #ececec;
     box-shadow: inset 0px 0px 1px 1px #ececec;
     border: 1px solid #d3d3d3;
+    height: 2em;
 }
 form .description {
     color: #999;
@@ -1588,7 +1631,6 @@ form .description {
 }
 button,
 .button,
-input[type="reset"],
 input[type="submit"],
 input[type="button"],
 .form-submit {
@@ -1620,7 +1662,6 @@ input[type="button"],
 }
 button:hover,
 .button:hover,
-input[type="reset"]:hover,
 input[type="submit"]:hover,
 input[type="button"]:hover,
 a.form-submit:hover,
@@ -1673,7 +1714,7 @@ form .webform-component-checkboxes .description {
     margin-top: 0;
 }
 
-.views-exposed-widget button, input[type="reset"],
+.views-exposed-widget button,
 .views-exposed-widget input[type="submit"],
 .views-exposed-widget input[type="button"],
 .views-exposed-widget a.form-submit {

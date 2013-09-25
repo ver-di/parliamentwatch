@@ -35,7 +35,7 @@
       </div>
     <?php endif; ?>
     <?php foreach ($widgets as $id => $widget): ?>
-      <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?>">
+      <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?> clearfix">
         <?php if (!empty($widget->label)): ?>
           <label for="<?php print $widget->id; ?>">
             <?php print $widget->label; ?>

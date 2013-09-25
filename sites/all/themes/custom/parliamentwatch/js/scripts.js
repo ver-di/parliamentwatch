@@ -97,8 +97,9 @@ jQuery(document).ready(function() {
 
 ////// Info icon
 
-    jQuery(".info-title").click(function(){
-        jQuery(".info-title + .info-content").fadeToggle("slow", "linear");
+    jQuery(".ic-info").click(function(){   
+        jQuery(this).find(".info-content").fadeToggle("slow", "linear");
+        jQuery(".ic-info .info-content").not(jQuery('.info-content', this)).fadeOut("slow", "linear");
     });
 
 

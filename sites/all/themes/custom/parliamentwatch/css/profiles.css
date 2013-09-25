@@ -277,8 +277,8 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     font-size: 2rem;
 }
 .user-profile .ds-right-2 {
-    padding-top: 37px;
-    padding-top: 3.7rem;
+    margin-top: 37px;
+    margin-top: 3.7rem;
 }
 .field-name-same-constituency {
     border: 1px dotted #dbdbdb;
@@ -333,6 +333,12 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     float: left;
 }
 
+
+/* filters */
+
+#edit-between-date-filter-wrapper .views-widget { /* status filter */
+    display: none;
+}
 #edit-field-dialogue-topic-tid {
     background: #fff;
     border: 1px solid #D3D3D3;
@@ -357,6 +363,37 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 }
 #edit-field-dialogue-topic-tid input[type="radio"] {
     display: none;
+}
+
+#edit-field-user-first-letter-lname-value-wrapper .views-widget {
+    width: 89%;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input {
+    position: absolute;
+    left: -5000em;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes label {
+    float: left;
+    min-width: 10px;
+    line-height: 20px;
+    line-height: 2.0rem;
+    text-align: center;
+    margin: 0 4px 4px 0;
+    padding: 0 5px;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes label,
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input[type="checkbox"]:checked + label:hover {
+    background: #ccc;
+    color: #fff;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes label:hover,
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input[type="checkbox"]:checked + label {
+    background: #f4f4f4;
+    color: #333;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-item {
+    float: left;
+    padding: 0;
 }
 
 /* calendar */
