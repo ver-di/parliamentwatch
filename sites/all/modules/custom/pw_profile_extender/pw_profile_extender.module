@@ -27,7 +27,7 @@
   function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
   {
     if ($form['#id'] == 'views-exposed-form-profile-list-rev-grid') {
-      foreach (range('a', 'z') as $letter) {
+      /*foreach (range('a', 'z') as $letter) {
         $letters[$letter] = strtoupper($letter);
       }
 
@@ -38,12 +38,15 @@
         '#default_value' => 'A',
         '#options' => $letters,
       );
+      */
+
+      $form['field_user_first_letter_lname_value']['#theme'] = 'select_as_checkboxes';
 
       $form['between_date_filter_op']['#options']['='] = t('Aktive Abgeordnete');
       $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
       $form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
 
-      $form['between_date_filter']['#access'] = FALSE;
+      //$form['between_date_filter']['#access'] = FALSE;
     }
   }
 

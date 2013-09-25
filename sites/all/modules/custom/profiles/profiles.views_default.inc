@@ -1748,6 +1748,7 @@ if($record->value == 0){
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
       'allow_secondary' => 0,
@@ -1757,7 +1758,8 @@ if($record->value == 0){
       'bef_format' => 'default',
       'more_options' => array(
         'is_secondary' => 0,
-        'bef_filter_description' => '',
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1774,7 +1776,8 @@ if($record->value == 0){
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'bef_filter_description' => '',
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1791,7 +1794,8 @@ if($record->value == 0){
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'bef_filter_description' => '',
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1813,7 +1817,8 @@ if($record->value == 0){
       ),
       'more_options' => array(
         'is_secondary' => 0,
-        'bef_filter_description' => '',
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1835,7 +1840,8 @@ if($record->value == 0){
       ),
       'more_options' => array(
         'is_secondary' => 0,
-        'bef_filter_description' => '',
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1852,7 +1858,24 @@ if($record->value == 0){
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
         'is_secondary' => 0,
-        'bef_filter_description' => '',
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'between_date_filter' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1864,6 +1887,8 @@ if($record->value == 0){
       ),
     ),
   );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '21';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -2229,69 +2254,69 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'P',
+      'title' => 'A',
       'operator' => 'starts',
-      'value' => 'P',
+      'value' => 'A',
     ),
     2 => array(
-      'title' => 'Q',
-      'operator' => '=',
-      'value' => 'Q',
+      'title' => 'L',
+      'operator' => 'starts',
+      'value' => 'L',
     ),
     3 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
+      'title' => 'B',
+      'operator' => 'starts',
+      'value' => 'B',
     ),
     4 => array(
-      'title' => 'R',
-      'operator' => '=',
-      'value' => 'R',
+      'title' => 'D',
+      'operator' => 'starts',
+      'value' => 'D',
     ),
     5 => array(
-      'title' => 'X',
-      'operator' => '=',
-      'value' => 'X',
+      'title' => 'C',
+      'operator' => 'starts',
+      'value' => 'C',
     ),
     6 => array(
-      'title' => 'O',
+      'title' => 'E',
       'operator' => 'starts',
-      'value' => 'O',
+      'value' => 'E',
     ),
     7 => array(
-      'title' => 'T',
-      'operator' => '=',
-      'value' => 'T',
+      'title' => 'F',
+      'operator' => 'starts',
+      'value' => 'F',
     ),
     8 => array(
-      'title' => 'Y',
-      'operator' => '=',
-      'value' => 'Y',
+      'title' => 'H',
+      'operator' => 'starts',
+      'value' => 'H',
     ),
     9 => array(
-      'title' => 'U',
-      'operator' => '=',
-      'value' => 'U',
+      'title' => 'Alle',
+      'operator' => 'not empty',
+      'value' => '1',
     ),
     10 => array(
-      'title' => 'W',
-      'operator' => '=',
-      'value' => 'W',
+      'title' => 'I',
+      'operator' => 'starts',
+      'value' => 'I',
     ),
     11 => array(
-      'title' => 'Z',
-      'operator' => '=',
-      'value' => 'Z',
+      'title' => 'K',
+      'operator' => 'starts',
+      'value' => 'K',
     ),
     12 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
+      'title' => 'J',
+      'operator' => 'starts',
+      'value' => 'J',
     ),
     13 => array(
-      'title' => 'N',
+      'title' => 'G',
       'operator' => 'starts',
-      'value' => 'N',
+      'value' => 'G',
     ),
     14 => array(
       'title' => 'M',
@@ -2299,64 +2324,69 @@ if($record->value == 0){
       'value' => 'M',
     ),
     15 => array(
-      'title' => 'G',
-      'operator' => 'starts',
-      'value' => 'G',
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
     ),
     16 => array(
-      'title' => 'C',
+      'title' => 'N',
       'operator' => 'starts',
-      'value' => 'C',
+      'value' => 'N',
     ),
     17 => array(
-      'title' => 'D',
+      'title' => 'P',
       'operator' => 'starts',
-      'value' => 'D',
+      'value' => 'P',
     ),
     18 => array(
-      'title' => 'B',
-      'operator' => 'starts',
-      'value' => 'B',
+      'title' => 'Q',
+      'operator' => '=',
+      'value' => 'Q',
     ),
     19 => array(
-      'title' => 'A',
-      'operator' => 'starts',
-      'value' => 'A',
+      'title' => 'S',
+      'operator' => '=',
+      'value' => 'S',
     ),
     20 => array(
-      'title' => 'L',
-      'operator' => 'starts',
-      'value' => 'L',
+      'title' => 'R',
+      'operator' => '=',
+      'value' => 'R',
     ),
     21 => array(
-      'title' => 'E',
-      'operator' => 'starts',
-      'value' => 'E',
+      'title' => 'X',
+      'operator' => '=',
+      'value' => 'X',
     ),
     22 => array(
-      'title' => 'F',
+      'title' => 'O',
       'operator' => 'starts',
-      'value' => 'F',
+      'value' => 'O',
     ),
     23 => array(
-      'title' => 'J',
-      'operator' => 'starts',
-      'value' => 'J',
+      'title' => 'T',
+      'operator' => '=',
+      'value' => 'T',
     ),
     24 => array(
-      'title' => 'K',
-      'operator' => 'starts',
-      'value' => 'K',
+      'title' => 'Y',
+      'operator' => '=',
+      'value' => 'Y',
     ),
     25 => array(
-      'title' => 'I',
-      'operator' => 'starts',
-      'value' => 'I',
+      'title' => 'U',
+      'operator' => '=',
+      'value' => 'U',
     ),
     26 => array(
-      'title' => 'H',
-      'operator' => 'starts',
-      'value' => 'H',
+      'title' => 'W',
+      'operator' => '=',
+      'value' => 'W',
+    ),
+    27 => array(
+      'title' => 'Z',
+      'operator' => '=',
+      'value' => 'Z',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
