@@ -221,15 +221,14 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Admin Settings',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
-      0 => 'field_profile_node_connector',
-      1 => 'field_user_external_url',
-      2 => 'ckeditor',
-      3 => 'piwik',
-      4 => 'redirect',
-      5 => 'timezone',
-      6 => 'locale',
+      0 => 'field_user_external_url',
+      1 => 'ckeditor',
+      2 => 'piwik',
+      3 => 'redirect',
+      4 => 'timezone',
+      5 => 'locale',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -255,7 +254,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Political Affiliation',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_user_commitee',
       1 => 'field_user_constituency',
@@ -500,7 +499,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dialogue Data',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_user_answers_give',
       1 => 'field_user_questions_get',
@@ -634,6 +633,7 @@ function profiles_field_group_info() {
       5 => 'field_user_address',
       6 => 'field_user_education',
       7 => 'field_user_age',
+      8 => 'field_user_links_more',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -682,10 +682,10 @@ function profiles_field_group_info() {
   $field_group->entity_type = 'user';
   $field_group->bundle = 'user';
   $field_group->mode = 'user_deputy';
-  $field_group->parent_name = 'group_user_polls';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Polls Archive',
-    'weight' => '8',
+    'weight' => '34',
     'children' => array(
       0 => 'polls_archive_view',
     ),
@@ -815,14 +815,12 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Premium Fields',
-    'weight' => '8',
+    'weight' => '9',
     'children' => array(
-      0 => 'field_user_more',
-      1 => 'field_user_about',
-      2 => 'field_user_image_gallery',
-      3 => 'field_user_political_goals',
-      4 => 'field_user_twitter_account',
-      5 => 'field_user_links_more',
+      0 => 'field_user_about',
+      1 => 'field_user_image_gallery',
+      2 => 'field_user_political_goals',
+      3 => 'field_user_twitter_account',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -869,10 +867,10 @@ function profiles_field_group_info() {
   $field_group->entity_type = 'user';
   $field_group->bundle = 'user';
   $field_group->mode = 'user_deputy';
-  $field_group->parent_name = 'group_user_roles';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Roles Current',
-    'weight' => '61',
+    'weight' => '59',
     'children' => array(
       0 => 'field_user_commitee',
       1 => 'field_user_political_roles',

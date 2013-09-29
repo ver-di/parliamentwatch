@@ -849,7 +849,7 @@ function profiles_field_default_fields() {
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '13',
+        'weight' => '12',
       ),
     ),
   );
@@ -1036,7 +1036,7 @@ function profiles_field_default_fields() {
           'year_range' => '-100:+0',
         ),
         'type' => 'date_popup',
-        'weight' => '12',
+        'weight' => '11',
       ),
     ),
   );
@@ -1120,7 +1120,7 @@ function profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '15',
+        'weight' => '14',
       ),
     ),
   );
@@ -1190,11 +1190,8 @@ function profiles_field_default_fields() {
         ),
         'user_deputy' => array(
           'label' => 'hidden',
-          'module' => 'shs',
-          'settings' => array(
-            'linked' => FALSE,
-          ),
-          'type' => 'shs_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '7',
         ),
         'user_premium' => array(
@@ -1295,7 +1292,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '33',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -1629,7 +1626,7 @@ function profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '12',
+          'weight' => '11',
         ),
         'user_premium' => array(
           'label' => 'hidden',
@@ -2179,7 +2176,7 @@ function profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '13',
+          'weight' => '12',
         ),
         'user_premium' => array(
           'label' => 'hidden',
@@ -2334,7 +2331,7 @@ function profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '14',
+        'weight' => '13',
       ),
     ),
   );
@@ -2508,7 +2505,7 @@ function profiles_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '14',
+          'weight' => '13',
         ),
         'user_premium' => array(
           'label' => 'hidden',
@@ -2650,7 +2647,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -2833,11 +2830,8 @@ function profiles_field_default_fields() {
         ),
         'user_deputy' => array(
           'label' => 'hidden',
-          'module' => 'shs',
-          'settings' => array(
-            'linked' => FALSE,
-          ),
-          'type' => 'shs_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '8',
         ),
         'user_premium' => array(
@@ -2993,7 +2987,7 @@ function profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '11',
+        'weight' => '10',
       ),
     ),
   );

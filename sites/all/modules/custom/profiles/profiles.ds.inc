@@ -112,8 +112,24 @@ function profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_deputy';
   $ds_fieldsetting->settings = array(
+    'additional_links' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'clear clearfix push-bottom-l relative',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'bundestagsradar' => array(
-      'weight' => '8',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -129,7 +145,7 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '5',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -145,12 +161,12 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_filter' => array(
-      'weight' => '11',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'question_form' => array(
-      'weight' => '10',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -182,7 +198,7 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'user_profile_api_link' => array(
-      'weight' => '7',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -198,7 +214,7 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '9',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -218,7 +234,7 @@ function profiles_ds_field_settings_info() {
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '6',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -233,23 +249,19 @@ function profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'polls_archive_view' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'polls_profile_last' => array(
-      'weight' => '5',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'user_basic_info' => array(
-      'weight' => '0',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -1145,68 +1157,44 @@ function profiles_ds_layout_settings_info() {
     'regions' => array(
       'left_1' => array(
         0 => 'user_og_description',
-        1 => 'user_basic_info',
-        2 => 'short_profile_deputy_main',
-        3 => 'group_user_basics',
-        4 => 'group_user_polls',
-        5 => 'group_user_roles',
-        7 => 'polls_profile_last',
-        8 => 'polls_archive_view',
-        10 => 'field_user_commitee',
-        12 => 'group_user_polls_current',
-        13 => 'group_user_polls_archive',
-        14 => 'group_user_basics_data',
-        16 => 'field_user_political_roles',
-        17 => 'group_user_basics_additional',
-        24 => 'group_user_roles_current',
-        25 => 'group_user_roles_archive',
+        1 => 'short_profile_deputy_main',
+        2 => 'user_basic_info',
+        3 => 'additional_links',
       ),
       'right_1' => array(
-        6 => 'pw_slider',
-        9 => 'user_wrong_data',
-        11 => 'user_profile_api_link',
-        15 => 'bundestagsradar',
+        4 => 'pw_slider',
+        5 => 'user_wrong_data',
+        6 => 'user_profile_api_link',
+        7 => 'bundestagsradar',
       ),
       'left_2' => array(
-        18 => 'user_questions_and_answers',
-        19 => 'question_form',
+        8 => 'user_questions_and_answers',
+        9 => 'question_form',
       ),
       'right_2' => array(
-        20 => 'question_and_answers_filter',
+        10 => 'question_and_answers_filter',
       ),
       'ds_hidden' => array(
-        21 => 'field_user_fname',
-        22 => 'field_user_lname',
-        23 => 'field_user_party',
+        11 => 'field_user_fname',
+        12 => 'field_user_lname',
+        13 => 'field_user_party',
       ),
     ),
     'fields' => array(
       'user_og_description' => 'left_1',
-      'user_basic_info' => 'left_1',
       'short_profile_deputy_main' => 'left_1',
-      'group_user_basics' => 'left_1',
-      'group_user_polls' => 'left_1',
-      'group_user_roles' => 'left_1',
+      'user_basic_info' => 'left_1',
+      'additional_links' => 'left_1',
       'pw_slider' => 'right_1',
-      'polls_profile_last' => 'left_1',
-      'polls_archive_view' => 'left_1',
       'user_wrong_data' => 'right_1',
-      'field_user_commitee' => 'left_1',
       'user_profile_api_link' => 'right_1',
-      'group_user_polls_current' => 'left_1',
-      'group_user_polls_archive' => 'left_1',
-      'group_user_basics_data' => 'left_1',
       'bundestagsradar' => 'right_1',
-      'field_user_political_roles' => 'left_1',
-      'group_user_basics_additional' => 'left_1',
       'user_questions_and_answers' => 'left_2',
       'question_form' => 'left_2',
       'question_and_answers_filter' => 'right_2',
       'field_user_fname' => 'ds_hidden',
       'field_user_lname' => 'ds_hidden',
       'field_user_party' => 'ds_hidden',
-      'group_user_roles_current' => 'left_1',
-      'group_user_roles_archive' => 'left_1',
     ),
     'classes' => array(),
     'wrappers' => array(
