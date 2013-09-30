@@ -20,6 +20,49 @@
     font: 0.9rem/2.1rem Lucida Grande,Helvetica,Arial,sans-serif;
 }
 
+
+
+/* menu country icons */
+
+#nav ul ul .menu-region {
+    padding-left: 21px;
+    background-image: url(../images/sprite_countryicons.png);
+}
+#nav ul ul .menu-region.region-bt { /* bundestag */
+    background-position: -326px -51px;
+}
+#nav ul ul .menu-region.region-eu { /* EU */
+    background-position: -367px -9px;
+}
+#nav ul ul .menu-region.region-bw { /* BW */
+    background-position: -285px -93px;
+}
+#nav ul ul .menu-region.region-by { /* BY */
+    background-position: -246px -136px;
+}
+#nav ul ul .menu-region.region-be { /* BE */
+    background-position: -212px -178px;
+}
+#nav ul ul .menu-region.region-hh { /* HH */
+    background-position: -89px -301px;
+}
+#nav ul ul .menu-region.region-he { /* HE */
+    background-position: -47px -346px;
+}
+#nav ul ul .menu-region.region-ni { /* NI */
+    background-position: -328px -428px;
+}
+#nav ul ul .menu-region.region-nw { /* NW */
+    background-position: -286px -470px;
+}
+#nav ul ul .menu-region.region-sh { /* SH */
+    background-position: -89px -681px;
+}
+#nav ul ul .menu-region.region-sn { /* SH */
+    background-position: -172px -595px;
+}
+
+
 /* blog wordpress */
 
 .alignright {
