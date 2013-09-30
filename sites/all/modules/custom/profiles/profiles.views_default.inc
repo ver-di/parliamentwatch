@@ -5523,6 +5523,8 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -5533,26 +5535,33 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Benutzer: First Name */
+  /* Feld: Excluded | User: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | User: First Name';
   $handler->display->display_options['fields']['field_user_fname']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
-  /* Feld: Benutzer: Last name */
+  /* Feld: Excluded | User: Last Name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | User: Last Name';
   $handler->display->display_options['fields']['field_user_lname']['label'] = '';
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Feld: Broken/missing handler */
-  $handler->display->display_options['fields']['field_user_more']['id'] = 'field_user_more';
-  $handler->display->display_options['fields']['field_user_more']['table'] = 'field_data_field_user_more';
-  $handler->display->display_options['fields']['field_user_more']['field'] = 'field_user_more';
-  $handler->display->display_options['fields']['field_user_more']['label'] = '';
-  $handler->display->display_options['fields']['field_user_more']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer: External Links */
+  $handler->display->display_options['fields']['field_user_links_more']['id'] = 'field_user_links_more';
+  $handler->display->display_options['fields']['field_user_links_more']['table'] = 'field_data_field_user_links_more';
+  $handler->display->display_options['fields']['field_user_links_more']['field'] = 'field_user_links_more';
+  $handler->display->display_options['fields']['field_user_links_more']['label'] = '';
+  $handler->display->display_options['fields']['field_user_links_more']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_links_more']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_links_more']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_user_links_more']['group_rows'] = FALSE;
+  $handler->display->display_options['fields']['field_user_links_more']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_links_more']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Benutzer: Aktiv */
@@ -5562,11 +5571,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_user_more_attributes']['id'] = 'field_user_more_attributes';
-  $handler->display->display_options['filters']['field_user_more_attributes']['table'] = 'field_data_field_user_more';
-  $handler->display->display_options['filters']['field_user_more_attributes']['field'] = 'field_user_more_attributes';
-  $handler->display->display_options['filters']['field_user_more_attributes']['operator'] = 'not empty';
 
   /* Display: Additional Links Page */
   $handler = $view->new_display('page', 'Additional Links Page', 'additional_links_page');
@@ -5651,16 +5655,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Broken/missing handler */
-  $handler->display->display_options['fields']['field_user_more']['id'] = 'field_user_more';
-  $handler->display->display_options['fields']['field_user_more']['table'] = 'field_data_field_user_more';
-  $handler->display->display_options['fields']['field_user_more']['field'] = 'field_user_more';
-  $handler->display->display_options['fields']['field_user_more']['ui_name'] = 'Additional information';
-  $handler->display->display_options['fields']['field_user_more']['label'] = '';
-  $handler->display->display_options['fields']['field_user_more']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_more']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['field_user_more']['element_wrapper_class'] = 'dark';
-  $handler->display->display_options['fields']['field_user_more']['element_default_classes'] = FALSE;
   /* Feld: Excluded | Full profile link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';
@@ -5673,6 +5667,16 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  /* Feld: Benutzer: External Links */
+  $handler->display->display_options['fields']['field_user_links_more']['id'] = 'field_user_links_more';
+  $handler->display->display_options['fields']['field_user_links_more']['table'] = 'field_data_field_user_links_more';
+  $handler->display->display_options['fields']['field_user_links_more']['field'] = 'field_user_links_more';
+  $handler->display->display_options['fields']['field_user_links_more']['label'] = '';
+  $handler->display->display_options['fields']['field_user_links_more']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_links_more']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_links_more']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_user_links_more']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_links_more']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
