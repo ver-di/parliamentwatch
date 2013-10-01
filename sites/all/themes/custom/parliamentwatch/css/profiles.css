@@ -268,10 +268,11 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 .view-constituency-for-the-profile img {
     margin-top: 1px;
 }
-.view-constituency-for-the-profile .jcarousel-skin-default .jcarousel-item {
+.view-constituency-for-the-profile li {
     height: 62px;
+    height: 6.2rem;
+    width: 180px;
 }
-
 .user-profile .ds-left-1 h2.block-title {
     color: #333;
     font-size: 2rem;
@@ -290,9 +291,6 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     font-size: 1.7rem;
     color: #666;
     margin-bottom: 0;
-}
-.field-name-same-constituency .jcarousel-item {
-    width: 180px;
 }
 .user-image-gallery-wrapper {
     margin: 0 18px 16px 0;

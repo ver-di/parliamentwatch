@@ -1,15 +1,46 @@
-*+html #region-menu {
-    z-index: 100;
+#section-header {
     position: relative;
 }
-#zone-menu ul li {
+#nav {
+	position: relative;
+	z-index: 999;
+}
+#nav > a {
+    display: none;
+    background-color: #f6f6f6;
+    color: #333;
+    font-weight: normal;
+    position: relative;
+    border: 1px solid #d7d7d7;
+    padding: 4px 14px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0.8em;
+    right: 0;
+}
+#nav:not( :target ) > a:first-of-type,
+#nav:target > a:last-of-type {
+    display: block;
+}
+
+#nav li	{
+    position: relative;
     font-size: 15px;
     font-size: 1.5rem;
-    line-height: 2.15em;
-    position: relative;
-    z-index: 100;
+    line-height: 2.55em;
 }
-#zone-menu ul ul {
+#nav li a {
+    font-weight: normal;
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+    display: block;
+}
+
+
+/* first level */
+
+#nav > ul {
     background: #ccc; /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
     background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzliOWI5YiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZjdmN2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -24,79 +55,40 @@
     -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     filter: alpha(opacity=90);
     opacity: .9;
+    
+    width: 100%;
+    padding: 0 10px;
+	display: none;
+	position: absolute;
+	left: -10px;
+	margin-top: 12px;
 }
-#zone-menu ul ul,
-#zone-menu ul li:hover ul ul {
+#nav:target > ul {
+	display: block;
+}
+#nav > ul > li:last-child a {
+	border-bottom: 0;
+}
+
+
+/* second level */
+
+#nav li ul {
     display: none;
+    position: static;
 }
-#zone-menu ul li:hover ul,
-#zone-menu ul li:hover ul li:hover ul {
-    display: block;
+#nav li:hover ul
+{
+	display: block;
+	left: 0;
 }
-#zone-menu ul ul li {
-    border-right: 0;
-    font-size: 12px;
-    font-size: 1.2rem;
-    line-height: 2em;
-    padding: 0 16px;
-}
-#zone-menu ul ul li.first {
-    border-left: 0;
-}
-#zone-menu ul a {
-    font-weight: normal;
-    color: #fff;
-    padding: 0 33px;
-    position: relative;
-    z-index: 100;
-}
-#zone-menu ul ul li.last a {
-    border-bottom: 0;
-}
-#zone-menu ul li {
-    border-bottom: 1px dotted #fff;
-}
-#zone-menu ul li.last {
-    border-bottom: 0;
-}
-#zone-menu ul ul a {
-    padding: 0;
-    border-bottom: 1px dotted #fff;
-    display: block;
+#nav li ul a {
+    padding-left: 36px;
 }
 
 
-#zone-menu ul li.menu-1428 li a {
-    padding: 0 0 0 21px;
-    background-image: url(../images/sprite_countryicons.png);
-}
-.menu-1702 a { /* bundestag */
-    background-position: -326px -51px;
-}
-.menu-1699 a { /* EU */
-    background-position: -367px -9px;
-}
-.menu-1703 a { /* BW */
-    background-position: -285px -93px;
-}
-.menu-1856 a { /* BY */
-    background-position: -246px -136px;
-}
-.menu-1857 a { /* BE */
-    background-position: -212px -178px;
-}
-.menu-1858 a { /* HH */
-    background-position: -89px -301px;
-}
-.menu-1859 a { /* HE */
-    background-position: -47px -346px;
-}
-.menu-1860 a { /* NI */
-    background-position: -328px -428px;
-}
-.menu-1861 a { /* NW */
-    background-position: -286px -470px;
-}
-.menu-1862 a { /* SH */
-    background-position: -89px -681px;
+/* third level */
+
+#nav ul ul ul a {
+    padding-left: 72px;
 }

@@ -1,22 +1,27 @@
 /* This file will hold styles that are loaded using the same media query as the normal grid. */
 @import url("mainmenu-default-normal.css");
 
+html {
+    font-size: 10px;
+}
+#section-header {
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+#zone-branding .logo-img {
+    display: inline-block;
+    margin: 1px 7px 11px 0;
+}
 #region-user-second {
     position: absolute;
     z-index: 142;
     top: 5px;
     right: 14px;
 }
-#zone-menu-wrapper {
-    background: #ff6733; /* Old browsers */
-    background-image: #ff8157; /* Old browsers */
-    background-image: -moz-linear-gradient(top,  #ff8157 0%, #ff6c3f 64%, #ff622d 65%, #ff602b 100%); /* FF3.6+ */
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff8157), color-stop(64%,#ff6c3f), color-stop(65%,#ff622d), color-stop(100%,#ff602b)); /* Chrome,Safari4+ */
-    background-image: -webkit-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* Chrome10+,Safari5.1+ */
-    background-image: -o-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* Opera 11.10+ */
-    background-image: -ms-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* IE10+ */
-    background-image: linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8157', endColorstr='#ff602b',GradientType=0 ); /* IE6-9 */
+#region-header-first {
+    display: block;
+    min-height: 20rem;
+    min-height: 20px;
 }
 #region-sidebar-second {
     float: left;
@@ -34,3 +39,26 @@
     width: 610px !important;
 }
 
+
+/* /////////////////////////// Announcement ///////////////// */
+
+.announcement.slideshow .background-image {
+    display: block;
+    width: 620px;
+    height: 220px;
+    position: absolute;
+    left: 0;
+    top: -41px;
+    top: -4.1rem;
+    z-index: -1;
+    background: url(../images/bg_announcement.jpg);
+}
+
+
+/* /////////////////////////// not Mobile //////////////////// */
+
+#feedback_simple,
+#block-views-slider-block,
+.field-name-pw-slider {
+    display: block;
+}

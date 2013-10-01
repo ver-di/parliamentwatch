@@ -24,11 +24,13 @@
 
 .jcarousel-skin-default .jcarousel-clip-vertical {
   height: 440px;
+  height: 44rem;
   overflow: hidden;
 }
 
 .jcarousel-skin-default .jcarousel-item {
   height: 60px;
+  height: 6.0rem;
   list-style: none;
 }
 
