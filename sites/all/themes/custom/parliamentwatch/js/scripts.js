@@ -1,5 +1,13 @@
 jQuery(document).ready(function() {
 
+/* MAINMENU MOBILE
+http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
+Considering the markup above, the plugin should be only applied to the items that are parents – in order to avoid double-tap requirement on drop-down-less items
+*/
+
+$('#nav li:has(ul)').doubleTapToGo();
+
+
 ////// switch view mode in questions and answers
 
     jQuery(".view-id-profile_questions_answers .attachment").addClass("js-hide");
@@ -23,7 +31,7 @@ jQuery(document).ready(function() {
         .attr("target","_blank")
         .addClass("external");
 
-////// intelligente on:blur
+////// intelligent on:blur
 
     jQuery("input[type=text],textarea").blur(function() {
         if(jQuery(this).val() == "") {
@@ -31,7 +39,7 @@ jQuery(document).ready(function() {
         }
     });
 
-// intelligentes on:focus
+// intelligent on:focus
 
     jQuery("input[type=text],textarea").focus(function() {
         if(jQuery(this).val() == jQuery(this).attr("alt")) {
