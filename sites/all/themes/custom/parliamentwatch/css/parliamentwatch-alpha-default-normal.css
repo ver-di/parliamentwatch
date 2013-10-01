@@ -53,6 +53,9 @@ html {
     z-index: -1;
     background: url(../images/bg_announcement.jpg);
 }
+.announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
+    width: 560px;
+}
 
 
 /* /////////////////////////// not Mobile //////////////////// */

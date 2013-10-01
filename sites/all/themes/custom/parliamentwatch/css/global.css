@@ -1901,7 +1901,7 @@ form .webform-component-checkboxes .description {
 }
 .announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
     background: url(../images/bg_fff50.png);
-    padding: 8px 10px 12px 20px;
+    padding: 8px 10px 12px 20px;width: 560px;
 }
 .announcement.slideshow .content p:last-child {
     margin-bottom: 5px;

@@ -47,7 +47,7 @@
     border-bottom: 0;
     padding: 0 33px;
 }
-#nav ul > li.first {
+#nav > ul > li.first {
     border-left: 1px solid #eee;
 }
 #nav > ul > li.active-trail,
@@ -76,8 +76,7 @@
     opacity: .9;
     
     position: absolute;
-    top: 2.1em;
-    left: 0; /* LTR */  
+    top: 2.1em; 
     width: 225px;
 }
 #nav ul ul li {
@@ -102,6 +101,7 @@
 
 #nav ul ul ul {
     top: 0;
+    left: 0;
     margin-left: 225px;
 }
 #nav ul li:last-child ul ul {
