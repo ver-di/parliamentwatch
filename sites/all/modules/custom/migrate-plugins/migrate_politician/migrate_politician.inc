@@ -16,14 +16,14 @@ class PoliticianMigration extends BasicMigratePolitician {
       ->select('legacy_user_sample', 'u'); // To work with sample data only
     //->select('legacy_user', 'u'); // @TODO activate!
     $query->join('legacy_projects', 'p', 'u.cmd = p.cmd');
-    $query->fields('u', array('id', 'uuid', 'username', 'title', 'nickname',
+    $query->fields('u', array('uid', 'uuid', 'username', 'title', 'nickname',
                               'first_name', 'last_name', 'first_lang', 'email',
-                              'gender', 'valid_from', 'valid_to', 'birthday', 
-                              'residence', 'childs', 'job', 'marriage', 
-                              'url_picture', 'twitter_account', 'party', 
+                              'gender', 'birthday', 'residence', 'childs', 
+                              'job', 'marriage', 'url_picture', 
+                              'copyright_picture', 'twitter_account', 'party', 
                               'txt_political_goals', 'txt_about_me', 
                               'political_roles', 'links'));
-    $query->fields('p', array('project', 'startdate'));
+    $query->fields('p', array('parliament', 'valid_from'));
     $query->condition('u.oldest', 1, '=');
     switch(variable_get('site_name')){
       case 'abgeordnetenwatch.de':
@@ -53,23 +53,19 @@ class PoliticianMigration extends BasicMigratePolitician {
     $this->source = new MigrateSourceSQL($query);
     $this->destination = new MigrateDestinationUser();
     $this->map = new MigrateSQLMap($this->machineName,
-      array('id' => array('type' => 'int',
+      array('uid' => array('type' => 'int',
                           'not null' => TRUE,
                           'alias' => 'u')),
             MigrateDestinationUser::getKeySchema());
 
     // Map old to new data fields
     $this->addFieldMapping('name', 'username')->dedupe('users', 'name');
-    $this->addFieldMapping('created', 'startdate');
+    $this->addFieldMapping('created', 'valid_from');
     $this->addFieldMapping('status')->defaultValue(1);
     $this->addFieldMapping('field_user_title', 'title');
     $this->addFieldMapping('uuid', 'uuid');
     $this->addFieldMapping('mail', 'email');
     $this->addFieldMapping('field_user_gender', 'gender');
-    // @TODO update for new profiles
-  //$this->addFieldMapping('field_user_?@TODO?', 'valid_from');
-    // @TODO update for new profiles
-  //$this->addFieldMapping('field_user_?@TODO?', 'valid_to');
     $this->addFieldMapping('field_user_birthday', 'birthday');
     $this->addFieldMapping('field_user_pseudonym', 'nickname');
     // @TODO update for new profiles
@@ -89,6 +85,8 @@ class PoliticianMigration extends BasicMigratePolitician {
     $this->addFieldMapping('field_user_political_roles', 'political_roles')
       ->separator(';')->arguments(array('create_term' => TRUE));
     $this->addFieldMapping('field_user_picture', 'url_picture');
+    // @TODO update for new profiles
+  //$this->addFieldMapping('field_user_?@TODO?', 'copyright_picture');
     if(variable_get('site_name') != 'dailwatch.ie'){
       $this->addFieldMapping('field_user_more', 'links')->separator('|');
     }
@@ -99,8 +97,8 @@ class PoliticianMigration extends BasicMigratePolitician {
     if($current_row->birthday < 1) {
       $current_row->birthday = NULL;
     }
-    if($current_row->startdate < 1){
-      $current_row->startdate = NULL;
+    if($current_row->valid_from < 1){
+      $current_row->valid_from = NULL;
     }
   }
 

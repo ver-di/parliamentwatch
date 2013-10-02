@@ -15,9 +15,8 @@ class CommitteeTermMigration extends BasicMigrateCommittee {
       ->select('legacy_committee', 'c');
     $query->join('legacy_projects', 'p', 'c.cmd = p.cmd');
     $query->fields('c', array('id', 'committee', 'committee_type',
-                              'picture_url', 'txt', 'first_lang' , 
-                              'vorsitz_uid', 'stellv_uid',));
-    $query->fields('p', array('project', 'startdate'));
+                              'picture_url', 'txt', 'first_lang',));
+    $query->fields('p', array('parliament', 'valid_from'));
     switch(variable_get('site_name')){
       case 'abgeordnetenwatch.de':
         $query->condition('p.project_cmd', array(0, 2000), 'BETWEEN');
@@ -50,14 +49,15 @@ class CommitteeTermMigration extends BasicMigrateCommittee {
     $this->addFieldMapping('name', 'committee'); 
     $this->addFieldMapping('description', 'txt');
     $this->addFieldMapping('field_committee_picture', 'picture_url'); 
-    $this->addFieldMapping('field_parliament', 'project')
+    $this->addFieldMapping('field_parliament', 'parliament')
       ->arguments(array('create_term' => TRUE));
     $this->addFieldMapping('field_committee_type', 'committee_type')
       ->arguments(array('create_term' => TRUE));
-    $this->addFieldMapping('field_committee_chairman', 'vorsitz_uid')
-      ->sourceMigration('politician');
-    $this->addFieldMapping('field_committee_vice_chairman', 'stellv_uid')
-      ->sourceMigration('politician');
+    
+    //@TODO loeschen //$this->addFieldMapping('field_committee_chairman', 'vorsitz_uid')
+      //->sourceMigration('politician');
+    //@TODO loeschen //$this->addFieldMapping('field_committee_vice_chairman', 'stellv_uid')
+      //->sourceMigration('politician');
   // old mapping stuff, @TODO remove?
   //$this->addFieldMapping('field_committee_spokesman', 'sprecher_uid')
   //  ->sourceMigration('politician');

@@ -15,7 +15,7 @@ class ConstituencyTermMigration extends BasicMigrateConstituency {
     $query->join('legacy_projects', 'p', 'c.cmd = p.cmd');
     $query->fields('c', array('id', 'constituency', 'constituency_nr',
                               'area_codes'));
-    $query->fields('p', array('project', 'startdate'));
+    $query->fields('p', array('parliament', 'valid_from'));
     switch(variable_get('site_name')){
       case 'abgeordnetenwatch.de':
         $query->condition('p.project_cmd', array(0, 2000), 'BETWEEN');
@@ -48,7 +48,7 @@ class ConstituencyTermMigration extends BasicMigrateConstituency {
     $this->destination = new MigrateDestinationTerm('constituency');
     $this->addFieldMapping('name', 'constituency');
     $this->addFieldMapping('field_constituency_nr', 'constituency_nr');
-    $this->addFieldMapping('field_parliament', 'project');
+    $this->addFieldMapping('field_parliament', 'parliament');
     $this->addFieldMapping('field_constituency_area_codes', 'area_codes')
       ->separator(',')->arguments(array('create_term' => TRUE));
     $this->addFieldMapping('field_voc_constituency_zip', 'area_codes')
@@ -56,8 +56,8 @@ class ConstituencyTermMigration extends BasicMigrateConstituency {
   }
 
   public function prepareRow($current_row) {
-    if ($current_row->startdate < 1) {
-      $current_row->startdate = NULL;
+    if ($current_row->valid_from < 1) {
+      $current_row->valid_from = NULL;
     }
   }
 }

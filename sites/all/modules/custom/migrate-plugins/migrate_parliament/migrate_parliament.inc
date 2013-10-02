@@ -11,7 +11,7 @@ class ParliamentTermMigration extends BasicMigrateParliament {
     parent::__construct();
     $query = Database::getConnection('default', 'parlamentwatch')
       ->select('legacy_projects', 'p');
-    $query->fields('p', array('parl_id', 'project', 'startdate', 'enddate'));
+    $query->fields('p', array('parl_id', 'parliament', 'valid_from', 'valid_to'));
     $query->condition('p.is_mapping_id', 1);
     switch(variable_get('site_name')){
       case 'abgeordnetenwatch.de':
@@ -44,14 +44,14 @@ class ParliamentTermMigration extends BasicMigrateParliament {
     );
 
     $this->destination = new MigrateDestinationTerm('parliaments');
-    $this->addFieldMapping('name', 'project');
-    // TODO: $this->addFieldMapping('valid_from', 'startdate');
-    // TODO: $this->addFieldMapping('valid_till', 'enddate');
+    $this->addFieldMapping('name', 'parliament');
+    // TODO: $this->addFieldMapping('valid_from', 'valid_from');
+    // TODO: $this->addFieldMapping('valid_till', 'valid_to');
   }
 
   public function prepareRow($current_row) {
-    if ($current_row->startdate < 1) {
-      $current_row->startdate = NULL;
+    if ($current_row->valid_from < 1) {
+      $current_row->valid_from = NULL;
     }
   }
 }
