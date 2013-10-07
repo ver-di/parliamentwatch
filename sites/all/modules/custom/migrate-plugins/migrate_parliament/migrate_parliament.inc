@@ -38,20 +38,38 @@ class ParliamentTermMigration extends BasicMigrateParliament {
     }
 
     $this->source = new MigrateSourceSQL($query);
-    $this->map = new MigrateSQLMap($this->machineName,array('parl_id' => array(
+    $this->map = new MigrateSQLMap($this->machineName, array('parl_id' => array(
                     'type' => 'int',
                     'not null' => TRUE)), MigrateDestinationTerm::getKeySchema()
     );
 
     $this->destination = new MigrateDestinationTerm('parliaments');
     $this->addFieldMapping('name', 'parliament');
-    // TODO: $this->addFieldMapping('valid_from', 'valid_from');
-    // TODO: $this->addFieldMapping('valid_till', 'valid_to');
+    $this->addFieldMapping('field_parliament_valid', 'valid_from'); 
   }
 
   public function prepareRow($current_row) {
-    if ($current_row->valid_from < 1) {
-      $current_row->valid_from = NULL;
+    // Checks for malformed date strings in DB and converts to datetime type
+    if (($current_row->valid_from = strtotime($current_row->valid_from)) === false) {
+      $current_row->valid_from = strtotime('1970-02-01');
     }
+    if (($current_row->valid_to = strtotime($current_row->valid_to)) === false) {
+      $current_row->valid_to = strtotime('2037-12-31');
+    }
+    // Converts the date to YYYY-mm-dd format
+    $format = 'Y-m-d';
+    $current_row->valid_from = date($format, $current_row->valid_from);
+    $current_row->valid_to = date($format, $current_row->valid_to);
+
+    // Creates a date field for the valid_from/to migration mapping
+    $current_row->valid_from = array(
+      'value' => (string) $current_row->valid_from, // @TODO Does not work, why?
+      'value2' => (string) $current_row->valid_to, // @TODO Does not work, why?
+      'timezone' => DateMigrateFieldHandler::arguments('Europe/Berlin'),
+      'timezone_db' => DateMigrateFieldHandler::arguments('Europe/Berlin'),
+      'date_type' => 'datetime',
+    );
+    $current_row->valid_from = drupal_json_encode($current_row->valid_from);
+    watchdog("PW_TEST", $current_row->valid_from, $variables = NULL, WATCHDOG_DEBUG, $link = NULL);
   }
 }
