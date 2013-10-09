@@ -45,7 +45,7 @@ class ParliamentTermMigration extends BasicMigrateParliament {
 
     $this->destination = new MigrateDestinationTerm('parliaments');
     $this->addFieldMapping('name', 'parliament');
-    $this->addFieldMapping('field_parliament_valid', 'valid_from'); 
+    $this->addFieldMapping('field_parliament_valid', 'valid_from');
   }
 
   public function prepareRow($current_row) {
@@ -56,18 +56,15 @@ class ParliamentTermMigration extends BasicMigrateParliament {
     if (($current_row->valid_to = strtotime($current_row->valid_to)) === false) {
       $current_row->valid_to = strtotime('2037-12-31');
     }
-    // Converts the date to YYYY-mm-dd format
-    $format = 'Y-m-d';
+    // Formats the the date
+    $format = 'Y-m-d H:i:s';
     $current_row->valid_from = date($format, $current_row->valid_from);
     $current_row->valid_to = date($format, $current_row->valid_to);
 
     // Creates a date field for the valid_from/to migration mapping
     $current_row->valid_from = array(
-      'value' => (string) $current_row->valid_from, // @TODO Does not work, why?
-      'value2' => (string) $current_row->valid_to, // @TODO Does not work, why?
-      'timezone' => DateMigrateFieldHandler::arguments('Europe/Berlin'),
-      'timezone_db' => DateMigrateFieldHandler::arguments('Europe/Berlin'),
-      'date_type' => 'datetime',
+      'from' => (string) $current_row->valid_from,
+      'to' => (string) $current_row->valid_to,
     );
     $current_row->valid_from = drupal_json_encode($current_row->valid_from);
     watchdog("PW_TEST", $current_row->valid_from, $variables = NULL, WATCHDOG_DEBUG, $link = NULL);

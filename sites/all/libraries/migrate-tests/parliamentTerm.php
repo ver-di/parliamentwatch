@@ -1,8 +1,8 @@
 <?php
 
   //////////////////////////////////////////////////////////////////////////////
-  /////////////// Run this script from DRUSH COMMAND LINE !!! //////////////////
-  // drush [options] scr sites/all/libraries/migrate-tests/parliamentTerm.php //
+  // Run this script from drush cli!                                          //
+  // $ drush [-vd --uri=...] scr path/to/migrate-tests/parliamentTerm.php     //
   //////////////////////////////////////////////////////////////////////////////
 
   // Starting timers ///////////////////////////////////////////////////////////
@@ -156,37 +156,6 @@
   }
   watchdog("PW_TEST", t($tmpString . ' duplicate entries in XML.'), $variables = NULL, $status, $link = NULL);
   
-  // Checking for duplicates in DB /////////////////////////////////////////////
-  watchdog("PW_TEST", t('Checking for duplicates in DB...'), $variables = NULL, WATCHDOG_INFO, $link = NULL);
-  watchdog("PW_TEST", t('Hint: This test result can be ignored as DB statement GROUPS BY "' . $dbSelect . '" and will find no results. Please, do a manual check on this one if desired.'), $variables = NULL, WATCHDOG_DEBUG, $link = NULL);
-  $outterResult = mysql_query($sql, $dblink);
-  $s = 0;
-  $countDuplicateDB = 0;
-  while ($outterRow = mysql_fetch_assoc($outterResult)) {
-    $s++;
-    $innerResult = mysql_query($sql, $dblink);
-    $t = 0;
-    while ($innerRow = mysql_fetch_assoc($innerResult)) {
-      $t++;
-      if (strcmp(utf8_encode($outterRow[$dbSelect]),
-                 utf8_encode($innerRow[$dbSelect])) == 0 && $s != $t) {
-        watchdog("PW_TEST", t('Possible duplicate entry</strong> for: ' . utf8_encode($outterRow[$dbSelect]) . ' and ' . utf8_encode($innerRow[$dbSelect])), $variables = NULL, WATCHDOG_WARNING, $link = NULL);
-        $countDuplicateDB++;
-      }
-    }
-  }
-  $countDuplicateDB /= 2;
-  $tmpString = '0';
-  $status = WATCHDOG_INFO;
-  if ($countDuplicateDB > 0) {
-    $status = WATCHDOG_WARNING;
-    $tmpString = $countDuplicateDB;
-  } else {
-    $status = WATCHDOG_NOTICE;
-    $tmpString = 'No';
-  }
-  watchdog("PW_TEST", t($tmpString . ' duplicate entries in DB.'), $variables = NULL, $status, $link = NULL);
-  
   // Checking for missing entries in DB ////////////////////////////////////////
   watchdog("PW_TEST", t('Checking missing entries in DB...'), $variables = NULL, WATCHDOG_INFO, $link = NULL);
   $xpath = $xml->xpath($xmlExpression);
@@ -216,9 +185,6 @@
   watchdog("PW_TEST", t($tmpString . ' missing entries in DB.'), $variables = NULL, $status, $link = NULL);
   
   // Script finished ///////////////////////////////////////////////////////////
-  //   . '<p>After successful parliament term validation, you may proceed to the'
-  //   . ' <a href="politicianProfiles.php">politician profiles</a> validation.'
-  //   . '</p>';
      
   // Getting time //////////////////////////////////////////////////////////////
   function rutime($ru, $rus, $index) {
