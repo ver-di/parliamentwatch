@@ -24,6 +24,7 @@ function profiles_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Calendar';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -120,7 +121,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['ui_name'] = 'link to calendar page';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<a href="/users/[name]/calendar" class="link-calendar float-right">go to full calendar</a>';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<a href="/users/[name]/calendar" class="link-calendar float-right">Alle Termine anzeigen</a>';
   $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Inhalt: Autor */
@@ -277,7 +278,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
   $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_2']['label'] = 'more information about this date';
+  $handler->display->display_options['fields']['fieldset_2']['label'] = 'Mehr Informationen zu diesen Termin';
   $handler->display->display_options['fields']['fieldset_2']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset_2']['children'] = array(
     0 => 'body',
@@ -462,7 +463,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['label'] = 'more information about this date';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'Mehr Informationen zu diesen Termin';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'body',
@@ -803,8 +804,9 @@ function profiles_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Other Candidates in [field_user_constituency] ';
+  $handler->display->display_options['title'] = 'Weitere Kandidierende im Wahlkreis [field_user_constituency]';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -926,7 +928,7 @@ function profiles_views_default_views() {
   /* Display: User Constituency Block */
   $handler = $view->new_display('block', 'User Constituency Block', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Other Candidates in [field_user_constituency]';
+  $handler->display->display_options['title'] = 'Weitere Kandidierende im Wahlkreis [field_user_constituency]';
   $handler->display->display_options['display_description'] = 'Show all other candidates in the same constituency';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -1137,6 +1139,7 @@ return $user->field_user_constituency[\'und\'][0][\'tid\'];';
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -1739,6 +1742,7 @@ if($record->value == 0){
   $handler->display->display_options['css_class'] = 'pager-full';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -2571,6 +2575,7 @@ if($record->value == 0){
   $handler->display->display_options['css_class'] = 'pager-load-more';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -3505,7 +3510,7 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['sorts']['created_1']['field'] = 'created';
   $handler->display->display_options['sorts']['created_1']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_1']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Date of Question';
+  $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Datum der Frage';
   /* Sort criterion: Kommentar: Datum */
   $handler->display->display_options['sorts']['created_2']['id'] = 'created_2';
   $handler->display->display_options['sorts']['created_2']['table'] = 'comment';
@@ -3607,7 +3612,7 @@ drupal_add_js($js,\'inline\');
     237793809 => 0,
   );
   $handler->display->display_options['filters']['comment_count']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['comment_count']['group_info']['label'] = 'Answer State';
+  $handler->display->display_options['filters']['comment_count']['group_info']['label'] = 'Status der Frage';
   $handler->display->display_options['filters']['comment_count']['group_info']['identifier'] = 'comment_count';
   $handler->display->display_options['filters']['comment_count']['group_info']['widget'] = 'radios';
   $handler->display->display_options['filters']['comment_count']['group_info']['group_items'] = array(
@@ -4078,7 +4083,7 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['sorts']['created_1']['field'] = 'created';
   $handler->display->display_options['sorts']['created_1']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_1']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Date of Question';
+  $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Datum der Frage';
   /* Sort criterion: Kommentar: Datum */
   $handler->display->display_options['sorts']['created_2']['id'] = 'created_2';
   $handler->display->display_options['sorts']['created_2']['table'] = 'comment';
@@ -4169,7 +4174,7 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['filters']['comment_count']['expose']['operator'] = 'comment_count_op';
   $handler->display->display_options['filters']['comment_count']['expose']['identifier'] = 'comment_count';
   $handler->display->display_options['filters']['comment_count']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['comment_count']['group_info']['label'] = 'Answer State';
+  $handler->display->display_options['filters']['comment_count']['group_info']['label'] = 'Status der Frage';
   $handler->display->display_options['filters']['comment_count']['group_info']['identifier'] = 'comment_count';
   $handler->display->display_options['filters']['comment_count']['group_info']['widget'] = 'radios';
   $handler->display->display_options['filters']['comment_count']['group_info']['group_items'] = array(
@@ -4361,6 +4366,7 @@ drupal_add_js($js,\'inline\');
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -4420,7 +4426,7 @@ drupal_add_js($js,\'inline\');
   /* Display: Wrong Data */
   $handler = $view->new_display('block', 'Wrong Data', 'user_wrong_data');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Data of [field_user_fname] [field_user_lname] not correct?';
+  $handler->display->display_options['title'] = 'Daten von [field_user_fname] [field_user_lname] nicht korrekt?';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
@@ -4465,7 +4471,7 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Link';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Send us a message';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Benachrichtigen Sie uns';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'contact?width=600&height=400';
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
@@ -4550,6 +4556,7 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['title'] = 'User Profile Fields';
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -4849,6 +4856,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_birthday']['id'] = 'field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday']['table'] = 'field_data_field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday']['field'] = 'field_user_birthday';
+  $handler->display->display_options['fields']['field_user_birthday']['label'] = 'Geburtstag';
   $handler->display->display_options['fields']['field_user_birthday']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_birthday']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_birthday']['empty'] = '-';
@@ -4859,7 +4867,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Benutzer: Professional qualification */
+  /* Feld: Benutzer: Professional Education */
   $handler->display->display_options['fields']['field_user_job_skills']['id'] = 'field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills']['table'] = 'field_data_field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills']['field'] = 'field_user_job_skills';
@@ -5083,6 +5091,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['defaults']['link_display'] = FALSE;
   $handler->display->display_options['link_display'] = 'image_gallery_page';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -6497,6 +6506,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler = $view->new_display('default', 'Tweets', 'default');
   $handler->display->display_options['css_class'] = 'twitter';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weiterlesen';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
