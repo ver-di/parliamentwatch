@@ -1,4 +1,4 @@
-File Version: 2013-10-09
+File Version: 2013-10-10
 
 The migration test scripts compare (mirgration-)database data with the XML-API
 which displays data imported into Drupal and taxonomy terms. This is no Drupal
@@ -11,12 +11,18 @@ stability issues on live sites.
 
 IMPORTANT: Don't enter live site database details, only run it local.
 
+NOTE: Test results may yield false positives due to character encoding.
+
 ### 1 parliamentTerm.php ###
 - counts parliament terms in DB, XML and Taxonomy
 - checks for duplicates both in XML and Taxonomy
 - checks for entries missing in either DB, XML or Taxonomy
 
-### 2 politicianProfiles.php ###
+### 2 committeeTerm.php ###
+- counts committee terms in DB and Taxonomy
+- checks for entries missing in Taxonomy
+
+### x politicianProfiles.php ###
 - @TODO work in progress
 - counts politicians (unique) and their profiles (multiple) in DB
 - counts politicians (unique) in XML depending on their parliament
