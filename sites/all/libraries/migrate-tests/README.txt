@@ -22,6 +22,11 @@ NOTE: Test results may yield false positives due to character encoding.
 - counts committee terms in DB and Taxonomy
 - checks for entries missing in Taxonomy
 
+### 3 constituencyTerm.php ###
+- @TODO work in progress
+- counts constituency terms in DB and Taxonomy
+- checks for entries missing in Taxonomy
+
 ### x politicianProfiles.php ###
 - @TODO work in progress
 - counts politicians (unique) and their profiles (multiple) in DB

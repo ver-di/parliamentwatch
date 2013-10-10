@@ -2,10 +2,12 @@
 
 
            /* --- ! @TODO Test ParliamentTerm links @TODO ! --- */
+              /* ---  ! @TODO Test AreaCode links @TODO ! --- */
+              /* --- ! @TODO XML Api verification @TODO ! --- */
 
 
   // Run this script from drush cli! ///////////////////////////////////////////
-  // $ drush [-vd --uri=...] scr path/to/migrate-tests/committeeTerm.php ///////
+  // $ drush [-vd --uri=...] scr path/to/migrate-tests/constituencyTerm.php ////
 
   // Starting timers ///////////////////////////////////////////////////////////
   $time_start = microtime(true);
@@ -15,15 +17,15 @@
   $dom = 'x.dev';
 
   // database SELECT *1 from *2, *3 ////////////////////////////////////////////
-  $dbSelect = 'committee'; //*1
-  $dbFromCom = 'legacy_committee'; //*2
+  $dbSelect = 'constituency'; //*1
+  $dbFromCon = 'legacy_constituency'; //*2
   $dbFromPro = 'legacy_projects'; //*3
 
   // UTF-8 needed to display non-standard characters ///////////////////////////
   header('Content-Type: text/html; charset=utf-8');
 
   // Starting script ///////////////////////////////////////////////////////////
-  watchdog("PW_TEST", t("Checking committee term data integrity."),
+  watchdog("PW_TEST", t("Checking constituency term data integrity."),
     $variables = NULL, WATCHDOG_DEBUG, $link = NULL);
 
   // Establishing database connection //////////////////////////////////////////
@@ -40,12 +42,12 @@
     exit;
   }
   // DB query for Germany (AW) /////////////////////////////////////////////////
-  $sql = 'SELECT ' . $dbSelect . ' FROM ' . $dbFromCom . ', ' . $dbFromPro
-      . ' WHERE ' . $dbFromCom . '.cmd = ' . $dbFromPro . '.cmd AND '
+  $sql = 'SELECT ' . $dbSelect . ' FROM ' . $dbFromCon . ', ' . $dbFromPro
+      . ' WHERE ' . $dbFromCon . '.cmd = ' . $dbFromPro . '.cmd AND '
       . $dbFromPro . '.project_cmd '
       . ' NOT IN (233, 486, 974, 1036, 1010, 1475) AND ' . $dbFromPro
-      . '.project_cmd BETWEEN 0 AND 2000 GROUP BY ' . $dbFromCom . '.'
-      . $dbSelect . ' ORDER BY ' . $dbFromCom . '.' . $dbSelect . ' ASC';
+      . '.project_cmd BETWEEN 0 AND 2000 GROUP BY ' . $dbFromCon . '.'
+      . $dbSelect . ' ORDER BY ' . $dbFromCon . '.' . $dbSelect . ' ASC';
   $result = mysql_query($sql, $dblink);
   if (!$result) {
     watchdog("PW_TEST", t('Could not query the database!'), $variables = NULL,
@@ -57,19 +59,19 @@
 
   // Counting results in mirgration database ///////////////////////////////////
   watchdog("PW_TEST", t('Looking in DB for "' . $dbSelect . '" in "'
-    . $dbFromCom . '".'), $variables = NULL, WATCHDOG_INFO, $link = NULL);
+    . $dbFromCon . '".'), $variables = NULL, WATCHDOG_INFO, $link = NULL);
   $i = 0;
   while ($row = mysql_fetch_assoc($result)) $i++;
-  watchdog("PW_TEST", t('Found ' . $i . ' committee terms in DB.'),
+  watchdog("PW_TEST", t('Found ' . $i . ' constituency terms in DB.'),
     $variables = NULL, WATCHDOG_NOTICE, $link = NULL);
 
   // Counting results in Taxonomy //////////////////////////////////////////////
-  watchdog("PW_TEST", t('Looking in taxonomy for "committee".'),
+  watchdog("PW_TEST", t('Looking in taxonomy for "constituency".'),
     $variables = NULL, WATCHDOG_INFO, $link = NULL);
-  $vid = taxonomy_vocabulary_machine_name_load("committee")->vid;
+  $vid = taxonomy_vocabulary_machine_name_load("constituency")->vid;
   $terms = taxonomy_get_tree($vid);
   $numTerms = count($terms);
-  watchdog("PW_TEST", t('Found ' . $numTerms . ' committee terms in taxonomy.'),
+  watchdog("PW_TEST", t('Found ' . $numTerms . ' constituency terms in taxonomy.'),
     $variables = NULL, WATCHDOG_NOTICE, $link = NULL);
 
   // Checking for missing entries in Taxonomy //////////////////////////////////
@@ -102,9 +104,9 @@
   }
   watchdog("PW_TEST", t($tmpString . ' missing entries in taxonomy.'),
     $variables = NULL, $status, $link = NULL);
-  watchdog("PW_TEST", t('NOTE: This test can yield false positives due to '
-    . 'character encoding, check the results manually.'), $variables = NULL,
-    WATCHDOG_NOTICE, $link = NULL);
+//  watchdog("PW_TEST", t('NOTE: This test can yield false positives due to '
+//    . 'character encoding, check the results manually.'), $variables = NULL,
+//    WATCHDOG_NOTICE, $link = NULL);
 
   // Script finished ///////////////////////////////////////////////////////////
 
