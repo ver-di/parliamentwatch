@@ -2084,7 +2084,7 @@ function profiles_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_job_skills',
-      'label' => 'Professional Education',
+      'label' => 'Professional Qualification',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
@@ -3608,7 +3608,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Political Goals');
   t('Political Roles');
   t('Position');
-  t('Professional Education');
+  t('Professional Qualification');
   t('Profile picture');
   t('Pseudonym');
   t('QuestionAnswerRatio');

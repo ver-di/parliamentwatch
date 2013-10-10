@@ -4867,15 +4867,15 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Benutzer: Professional Education */
-  $handler->display->display_options['fields']['field_user_job_skills']['id'] = 'field_user_job_skills';
-  $handler->display->display_options['fields']['field_user_job_skills']['table'] = 'field_data_field_user_job_skills';
-  $handler->display->display_options['fields']['field_user_job_skills']['field'] = 'field_user_job_skills';
-  $handler->display->display_options['fields']['field_user_job_skills']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_job_skills']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_job_skills']['element_wrapper_class'] = 'views-row-odd clear clearfix';
-  $handler->display->display_options['fields']['field_user_job_skills']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_job_skills']['empty'] = '-';
+  /* Feld: Benutzer: Education */
+  $handler->display->display_options['fields']['field_user_education']['id'] = 'field_user_education';
+  $handler->display->display_options['fields']['field_user_education']['table'] = 'field_data_field_user_education';
+  $handler->display->display_options['fields']['field_user_education']['field'] = 'field_user_education';
+  $handler->display->display_options['fields']['field_user_education']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_education']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_education']['element_wrapper_class'] = 'views-row-odd clear clearfix';
+  $handler->display->display_options['fields']['field_user_education']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_education']['empty'] = '-';
   /* Feld: Benutzer: Address */
   $handler->display->display_options['fields']['field_user_address']['id'] = 'field_user_address';
   $handler->display->display_options['fields']['field_user_address']['table'] = 'field_data_field_user_address';
