@@ -165,22 +165,6 @@ function profiles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'question_form' => array(
-      'weight' => '9',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => '',
-          'ow-def-cl' => FALSE,
-          'ow-at' => 'id="pw-block-question-form"',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'short_profile_deputy_main' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -319,22 +303,6 @@ function profiles_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
-    'question_form' => array(
-      'weight' => '14',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => '',
-          'ow-def-cl' => FALSE,
-          'ow-at' => 'id=pw-block-question-form',
-          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -1169,15 +1137,14 @@ function profiles_ds_layout_settings_info() {
       ),
       'left_2' => array(
         8 => 'user_questions_and_answers',
-        9 => 'question_form',
       ),
       'right_2' => array(
-        10 => 'question_and_answers_filter',
+        9 => 'question_and_answers_filter',
       ),
       'ds_hidden' => array(
-        11 => 'field_user_fname',
-        12 => 'field_user_lname',
-        13 => 'field_user_party',
+        10 => 'field_user_fname',
+        11 => 'field_user_lname',
+        12 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1190,7 +1157,6 @@ function profiles_ds_layout_settings_info() {
       'user_profile_api_link' => 'right_1',
       'bundestagsradar' => 'right_1',
       'user_questions_and_answers' => 'left_2',
-      'question_form' => 'left_2',
       'question_and_answers_filter' => 'right_2',
       'field_user_fname' => 'ds_hidden',
       'field_user_lname' => 'ds_hidden',
@@ -1242,14 +1208,13 @@ function profiles_ds_layout_settings_info() {
       ),
       'left_2' => array(
         13 => 'user_questions_and_answers',
-        14 => 'question_form',
       ),
       'right_2' => array(
-        15 => 'question_and_answers_filter',
-        16 => 'question_and_answers_switcher',
+        14 => 'question_and_answers_filter',
+        15 => 'question_and_answers_switcher',
       ),
       'ds_hidden' => array(
-        17 => 'field_user_party',
+        16 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1267,7 +1232,6 @@ function profiles_ds_layout_settings_info() {
       'user_wrong_data' => 'right_1',
       'user_profile_api_link' => 'right_1',
       'user_questions_and_answers' => 'left_2',
-      'question_form' => 'left_2',
       'question_and_answers_filter' => 'right_2',
       'question_and_answers_switcher' => 'right_2',
       'field_user_party' => 'ds_hidden',
