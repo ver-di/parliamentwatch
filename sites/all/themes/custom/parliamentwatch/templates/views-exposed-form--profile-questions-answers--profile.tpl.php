@@ -34,7 +34,7 @@
           <?php print $reset_button; ?>
         </div>
       <?php endif; ?>
-
+    </div>
     <div class="views-exposed-widgets clearfix">
     <?php foreach ($widgets as $id => $widget): ?>
       <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?> clearfix">

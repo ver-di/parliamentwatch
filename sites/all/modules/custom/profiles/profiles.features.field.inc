@@ -1446,6 +1446,115 @@ function profiles_field_default_fields() {
     ),
   );
 
+  // Exported field: 'user-user-field_user_external_url'.
+  $fields['user-user-field_user_external_url'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_external_url',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => 128,
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '15',
+        ),
+        'premium_user' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '31',
+        ),
+        'user_candidate' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '22',
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '55',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '37',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'field_name' => 'field_user_external_url',
+      'label' => 'External URL',
+      'required' => 0,
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'configurable_title' => 0,
+          'rel' => '',
+          'target' => 'default',
+          'title' => '',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 1,
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'rel_remove' => 'default',
+        'title' => 'none',
+        'title_maxlength' => '128',
+        'title_value' => '',
+        'url' => 0,
+        'user_register_form' => 0,
+        'validate_url' => 1,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_field',
+        'weight' => '11',
+      ),
+    ),
+  );
+
   // Exported field: 'user-user-field_user_first_letter_lname'.
   $fields['user-user-field_user_first_letter_lname'] = array(
     'field_config' => array(
@@ -2025,6 +2134,106 @@ function profiles_field_default_fields() {
         ),
         'type' => 'text_textfield',
         'weight' => '8',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_user_links_more'.
+  $fields['user-user-field_user_links_more'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_links_more',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'link',
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'rel' => '',
+          'target' => 'default',
+        ),
+        'display' => array(
+          'url_cutoff' => 80,
+        ),
+        'enable_tokens' => 1,
+        'title' => 'optional',
+        'title_maxlength' => 128,
+        'title_value' => '',
+        'url' => 0,
+      ),
+      'translatable' => '0',
+      'type' => 'link_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => 27,
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '35',
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '33',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'field_name' => 'field_user_links_more',
+      'label' => 'External Links',
+      'required' => 0,
+      'settings' => array(
+        'attributes' => array(
+          'class' => '',
+          'configurable_title' => 0,
+          'rel' => '',
+          'target' => '_blank',
+          'title' => '',
+        ),
+        'display' => array(
+          'url_cutoff' => '80',
+        ),
+        'enable_tokens' => 0,
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'rel_remove' => 'default',
+        'title' => 'optional',
+        'title_maxlength' => '128',
+        'title_value' => '',
+        'url' => 0,
+        'user_register_form' => 0,
+        'validate_url' => 1,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'link',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'link_field',
+        'weight' => '15',
       ),
     ),
   );
@@ -3386,6 +3595,8 @@ $entity_field[0][\'value\'] = $result;',
   t('Constituency');
   t('Date');
   t('Education');
+  t('External Links');
+  t('External URL');
   t('First Name');
   t('Gender');
   t('Image Gallery');

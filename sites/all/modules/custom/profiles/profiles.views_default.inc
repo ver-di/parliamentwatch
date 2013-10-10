@@ -4811,7 +4811,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Basic Info */
   $handler = $view->new_display('block', 'Basic Info', 'basic_info');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Basic Info of [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Grunddaten von [field_user_fname] [field_user_lname]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'zebra clearfix';
   $handler->display->display_options['display_description'] = 'Contextual Basic Info Block on user for use with DS';
@@ -4880,7 +4880,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_address']['id'] = 'field_user_address';
   $handler->display->display_options['fields']['field_user_address']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['fields']['field_user_address']['field'] = 'field_user_address';
-  $handler->display->display_options['fields']['field_user_address']['label'] = 'Residence';
+  $handler->display->display_options['fields']['field_user_address']['label'] = 'Wohnort';
   $handler->display->display_options['fields']['field_user_address']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_address']['alter']['text'] = '[field_user_address-locality] ';
   $handler->display->display_options['fields']['field_user_address']['element_label_colon'] = FALSE;
@@ -4897,7 +4897,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
   $handler->display->display_options['fields']['name_1']['relationship'] = 'field_user_constituency_tid';
-  $handler->display->display_options['fields']['name_1']['label'] = 'Constituency';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Wahlkreis';
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['name_1']['element_wrapper_class'] = 'views-row-odd clear clearfix';
@@ -4908,7 +4908,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'field_user_list_position_tid';
-  $handler->display->display_options['fields']['name']['label'] = 'List Position';
+  $handler->display->display_options['fields']['name']['label'] = 'Listenplatz';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['empty'] = '-';
 
@@ -5082,7 +5082,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Image Gallery */
   $handler = $view->new_display('block', 'Image Gallery', 'image_gallery');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = ' Image Gallery of [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Bildgalerie von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['display_description'] = 'Contextual Image Gallery Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
@@ -5350,7 +5350,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Politcial Goals */
   $handler = $view->new_display('block', 'Politcial Goals', 'political_goals');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = ' Political Goals of [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Die politischen Ziele von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['display_description'] = 'Contextual Political Goals Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -5414,7 +5414,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Political Goals Page */
   $handler = $view->new_display('page', 'Political Goals Page', 'political_goals_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Political Goals of [field_user_fname] [field_user_lname], [field_user_party]';
+  $handler->display->display_options['title'] = 'Die politischen Ziele von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -5845,7 +5845,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
@@ -5887,7 +5887,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Excluded | Link to questions and answers';
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
   $handler->display->display_options['fields']['nothing_3']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'to questions and answers';
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'Zu den Fragen und Antworten';
   $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_3']['alter']['path'] = '#pw-block-questions-and-answers';
   $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'link-qa';
@@ -6065,7 +6065,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
@@ -6224,7 +6224,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
@@ -6265,7 +6265,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Excluded | Link to questions and answers';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'to questions and answers';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Zu den Fragen und Antworten';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '#pw-block-questions-and-answers';
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'link-qa';
@@ -6445,7 +6445,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Ask a Question';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
