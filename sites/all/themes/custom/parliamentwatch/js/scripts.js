@@ -1,5 +1,26 @@
 jQuery(document).ready(function() {
 
+/* MAINMENU MOBILE
+http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
+Considering the markup above, the plugin should be only applied to the items that are parents – in order to avoid double-tap requirement on drop-down-less items
+*/
+
+$('#nav li:has(ul)').doubleTapToGo();
+
+
+////// switch view mode in questions and answers
+
+    jQuery(".view-id-profile_questions_answers .attachment").addClass("js-hide");
+    jQuery("#form-view-mode-switcher .view-mode-full").click(function () {
+        jQuery("#pw-block-questions-and-answers > .view-id-profile_questions_answers > .view-content").removeClass("js-hide");
+        jQuery(".view-id-profile_questions_answers .attachment").addClass("js-hide");
+    });
+    jQuery("#form-view-mode-switcher .view-mode-teaser").click(function () {
+        jQuery("#pw-block-questions-and-answers > .view-id-profile_questions_answers > .view-content").addClass("js-hide");
+        jQuery(".view-id-profile_questions_answers .attachment").removeClass("js-hide");
+    });
+
+
 ////// open external links in new window
 
     var domainparts = location.hostname.split('.');
@@ -10,7 +31,7 @@ jQuery(document).ready(function() {
         .attr("target","_blank")
         .addClass("external");
 
-////// intelligente on:blur
+////// intelligent on:blur
 
     jQuery("input[type=text],textarea").blur(function() {
         if(jQuery(this).val() == "") {
@@ -18,7 +39,7 @@ jQuery(document).ready(function() {
         }
     });
 
-// intelligentes on:focus
+// intelligent on:focus
 
     jQuery("input[type=text],textarea").focus(function() {
         if(jQuery(this).val() == jQuery(this).attr("alt")) {
@@ -28,11 +49,11 @@ jQuery(document).ready(function() {
 
 ////// slide to comments
 
-   jQuery(".node-blogpost.view-mode-full .comment-count")
-    .css( "cursor", "pointer" )
-   .click(function () {
-		goToByScroll("comments");
-		return false;
+    jQuery(".node-blogpost.view-mode-full .comment-count")
+        .css( "cursor", "pointer" )
+        .click(function () {
+            goToByScroll("comments");
+            return false;
     });
 
 ////// change youtube links to open them in a colorbox (http://drupal.org/node/1368274)
@@ -84,8 +105,9 @@ jQuery(document).ready(function() {
 
 ////// Info icon
 
-    jQuery(".info-title").click(function(){
-        jQuery(".info-title + .info-content").fadeToggle("slow", "linear");
+    jQuery(".ic-info").click(function(){   
+        jQuery(this).find(".info-content").fadeToggle("slow", "linear");
+        jQuery(".ic-info .info-content").not(jQuery('.info-content', this)).fadeOut("slow", "linear");
     });
 
 
@@ -102,11 +124,11 @@ jQuery(document).ready(function() {
         jQuery('html,body').animate({scrollTop: jQuery("#"+id).offset().top},'1000');
     }
     jQuery(".page-user .link-qa").click(function () {
-        goToByScroll("block-views-profile-questions-answers-block");
+        goToByScroll("pw-block-questions-and-answers");
         return false;
     });
     jQuery(".page-user .link-question").click(function () {
-        goToByScroll("block-webform-client-block-17");
+        goToByScroll("pw-block-question-form");
         return false;
     });
     jQuery(".anchor-to-top a").click(function () {
