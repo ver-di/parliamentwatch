@@ -2610,7 +2610,6 @@ if($record->value == 0){
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['php_output'] = '<?php
-drupal_add_js("/sites/all/libraries/zclip/jquery.zclip.min.js");
 drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
 ?>
 ';
@@ -3353,6 +3352,7 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'more-info content-inner clearfix';
   $handler->display->display_options['fields']['fieldset']['fieldset']['id'] = 'pw-question-[nid]';
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
+  $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
   /* Feld: Feld: Topic */
   $handler->display->display_options['fields']['field_dialogue_topic_1']['id'] = 'field_dialogue_topic_1';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['table'] = 'field_data_field_dialogue_topic';
@@ -3448,20 +3448,6 @@ $path = url($path, array(\'absolute\' => true));
 print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: Custom text: Copy link */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Custom text: Copy link';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'copy the link';
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = '/node/[nid]#';
-  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'zero-clipboard';
-  $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
-  $handler->display->display_options['fields']['nothing']['element_class'] = 'zero-clipboard';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: Global: PHP: trim the link */
   $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
   $handler->display->display_options['fields']['php_2']['table'] = 'views';
@@ -3474,29 +3460,6 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><input type="checkbox" id="shortlink-<?php print $row->nid; ?>" /> <label for="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></label></div>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
-  /* Feld: Global: PHP: add zclip js */
-  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
-  $handler->display->display_options['fields']['php_1']['table'] = 'views';
-  $handler->display->display_options['fields']['php_1']['field'] = 'php';
-  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Global: PHP: add zclip js';
-  $handler->display->display_options['fields']['php_1']['label'] = '';
-  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php $js = "jQuery(document).ready(function(){
-    jQuery(\'#pw-question-path-".$row->nid." .zero-clipboard\').zclip({
-        path:\'/sites/all/libraries/zclip/ZeroClipboard.swf\',
-        copy:function() { return jQuery(\'#pw-question-path-".$row->nid." .permalink\').text(); },
-        afterCopy:function(){
-            jQuery(\'#pw-question-path-".$row->nid." .zero-clipboard\').addClass(\'copied\');
-        }
-    });
-    // jQuery(\'#pw-question-".$row->nid."\').addClass(\'collapsed\');
-});";
-drupal_add_js($js,\'inline\');
-?>';
-  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -4022,20 +3985,6 @@ $path = url($path, array(\'absolute\' => true));
 print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: Custom text: Copy link */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Custom text: Copy link';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'copy the link';
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = '/node/[nid]#';
-  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'zero-clipboard';
-  $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
-  $handler->display->display_options['fields']['nothing']['element_class'] = 'zero-clipboard';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: Global: PHP: trim the link */
   $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
   $handler->display->display_options['fields']['php_2']['table'] = 'views';
@@ -4048,29 +3997,6 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><input type="checkbox" id="shortlink-<?php print $row->nid; ?>" /> <label for="shortlink-<?php print $row->nid; ?>"><?php t(\'trim the link\'); ?></label></div>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
-  /* Feld: Global: PHP: add zclip js */
-  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
-  $handler->display->display_options['fields']['php_1']['table'] = 'views';
-  $handler->display->display_options['fields']['php_1']['field'] = 'php';
-  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Global: PHP: add zclip js';
-  $handler->display->display_options['fields']['php_1']['label'] = '';
-  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php $js = "jQuery(document).ready(function(){
-    jQuery(\'#pw-question-path-".$row->nid." .zero-clipboard\').zclip({
-        path:\'/sites/all/libraries/zclip/ZeroClipboard.swf\',
-        copy:function() { return jQuery(\'#pw-question-path-".$row->nid." .permalink\').text(); },
-        afterCopy:function(){
-            jQuery(\'#pw-question-path-".$row->nid." .zero-clipboard\').addClass(\'copied\');
-        }
-    });
-    // jQuery(\'#pw-question-".$row->nid."\').addClass(\'collapsed\');
-});";
-drupal_add_js($js,\'inline\');
-?>';
-  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -5814,7 +5740,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Member of [name_1] valid til [field_parliament_valid].';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate of [name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
@@ -6033,7 +5959,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Member of [name_1] valid til [field_parliament_valid].';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate of [name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
@@ -6213,7 +6139,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Member of [name_1] valid til [field_parliament_valid].';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Member of [name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
@@ -6423,7 +6349,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Member of [name_1] valid til [field_parliament_valid].';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Member of [name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
