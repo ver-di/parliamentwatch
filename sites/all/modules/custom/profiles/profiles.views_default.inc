@@ -5745,7 +5745,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate of [name_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate for [name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
@@ -5964,7 +5964,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate of [name_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate for [name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
