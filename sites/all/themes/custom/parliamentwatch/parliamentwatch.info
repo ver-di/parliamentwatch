@@ -46,7 +46,9 @@ zones[footer] = 'Footer'
 
 scripts[09] = 'js/exposed.forms.fix.js'
 scripts[10] = 'js/doubletaptogo.min.js'
-scripts[12] = 'js/scripts.js'
+scripts[11] = 'js/jquery.expander.min.js'
+scripts[12] = 'js/jquery.selectText.min.js'
+scripts[13] = 'js/scripts.js'
 
 css[global.css][name] = 'Your custom global styles'
 css[global.css][description] = 'This file holds all the globally active custom CSS of your theme.'

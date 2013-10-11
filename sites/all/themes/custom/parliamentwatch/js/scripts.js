@@ -1,11 +1,36 @@
 jQuery(document).ready(function() {
 
+
+// slice text and add expander link (http://plugins.learningjquery.com/expander/)
+        
+    $(window).load(function () { //https://drupal.org/node/1478648
+        var t_readmore = Drupal.t('read more');
+        var t_readless = Drupal.t('read less');
+        $('.responsive-layout-normal div.pw-expander').expander({
+            slicePoint:       400,  // default is 100
+            expandPrefix:     '', // default is '... '
+            expandText:       t_readmore, // default is 'read more'
+            userCollapseText: t_readless  // default is 'read less'
+        });
+    });
+
+
+////// Make blocks expandable only for responsive mobile version
+        
+    $(window).load(function () { //https://drupal.org/node/1478648
+        $('.responsive-layout-mobile #pw-block-user-basics > h2').addClass('pw-mobile-expanded');
+        $('.responsive-layout-mobile .pw-expandable-mobile > h2').click(function(){
+            $(this).next('div').slideToggle('slow');
+            $(this).toggleClass('pw-mobile-expanded');
+        });
+    });
+    
+
 /* MAINMENU MOBILE
 http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
-Considering the markup above, the plugin should be only applied to the items that are parents – in order to avoid double-tap requirement on drop-down-less items
 */
-
-$('#nav li:has(ul)').doubleTapToGo();
+    
+    $('#nav li:has(ul)').doubleTapToGo();
 
 
 ////// switch view mode in questions and answers

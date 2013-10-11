@@ -56,12 +56,3 @@ html {
 .announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
     width: 560px;
 }
-
-
-/* /////////////////////////// not Mobile //////////////////// */
-
-#feedback_simple,
-#block-views-slider-block,
-.field-name-pw-slider {
-    display: block;
-}

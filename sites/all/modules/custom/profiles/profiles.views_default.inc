@@ -4889,7 +4889,8 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_about']['alter']['max_length'] = '300';
   $handler->display->display_options['fields']['field_user_about']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['field_user_about']['alter']['more_link_path'] = 'users/%1/about';
-  $handler->display->display_options['fields']['field_user_about']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_user_about']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_about']['element_class'] = 'pw-expander';
   $handler->display->display_options['fields']['field_user_about']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_about']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_about']['settings'] = array(
@@ -5298,17 +5299,19 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Benutzer: First Name */
+  /* Feld: Excluded | User: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['ui_name'] = 'Excluded | User: First Name';
   $handler->display->display_options['fields']['field_user_fname']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
-  /* Feld: Benutzer: Last name */
+  /* Feld: Excluded | User: Last Name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['ui_name'] = 'Excluded | User: Last Name';
   $handler->display->display_options['fields']['field_user_lname']['label'] = '';
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
@@ -5320,8 +5323,10 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_political_goals']['alter']['max_length'] = '450';
   $handler->display->display_options['fields']['field_user_political_goals']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['field_user_political_goals']['alter']['more_link_path'] = 'users/%1/political-goals';
-  $handler->display->display_options['fields']['field_user_political_goals']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_user_political_goals']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_political_goals']['element_class'] = 'pw-expander';
   $handler->display->display_options['fields']['field_user_political_goals']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_political_goals']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Benutzer: Aktiv */

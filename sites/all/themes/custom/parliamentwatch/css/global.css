@@ -316,12 +316,17 @@ a.dark {
 }
 .views-more-link,
 .read-more a,
+.read-less a,
 a.read-more,
+a.read-less,
 .read-codex a,
 a.read-codex,
 .link-profile a,
 a.link-profile {
     padding-left: 18px;
+}
+.pw-expander .read-more {
+    margin-left: 0.5em;
 }
 .link-profile a,
 a.link-profile {
@@ -407,13 +412,17 @@ a.link-calendar:hover {
 }
 .views-more-link,
 .read-more a,
-a.read-more {
+a.read-more,
+.read-less a,
+a.read-less {
     background-position: -723px -1942px;
     white-space: nowrap;
 }
 .views-more-link:hover,
 .read-more a:hover,
-a.read-more:hover {
+a.read-more:hover,
+.read-less a:hover,
+a.read-less:hover {
     background-position: -683px -1982px;
 }
 .read-codex a,
@@ -2191,8 +2200,10 @@ a.print-pdf,
 .back,
 .views-more-link,
 .read-more a,
+.read-less a,
 .views-more-link,
 a.read-more,
+a.read-less,
 .read-codex a,
 a.read-codex,
 .link-profile a,
@@ -2255,12 +2266,27 @@ blockquote:before,
     color: #666;
 }
 
-/* /////////////////////////// not Mobile //////////////////// */
 
-#feedback_simple,
-#block-views-slider-block,
-.field-name-pw-slider {
+/* ///////////// not displayed in responsive mobile version */
+
+.responsive-layout-mobile #feedback_simple,
+.responsive-layout-mobile #block-views-slider-block,
+.responsive-layout-mobile .field-name-pw-slider {
     display: none;
+}
+.js .responsive-layout-mobile .pw-expandable-mobile h2 {
+    padding-left: 36px;
+    background: url(../images/sprite.png) -280px -195px no-repeat;
+    cursor: pointer;
+}
+.js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded {
+    background-position: -360px -115px;
+}
+.js .responsive-layout-mobile .pw-expandable-mobile > div {
+    display: none;
+}
+.js .responsive-layout-mobile #pw-block-user-basics > div {
+    display: block;
 }
 
 /* /////////////////////////// content /////////////////// */
