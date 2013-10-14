@@ -363,5 +363,32 @@ function pw_subsite_default_fe_block_settings() {
     'visibility' => '0',
   );
 
+  $export['views-slider-block'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'delta' => 'slider-block',
+    'i18n_mode' => '0',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '-17',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => '0',
+  );
+
   return $export;
 }
