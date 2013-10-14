@@ -273,7 +273,7 @@ function profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relativepw-expandable-mobile ',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
           'ow-def-cl' => FALSE,
           'ow-at' => 'id="pw-block-user-links"',
           'ow-def-at' => FALSE,
@@ -598,15 +598,26 @@ function profiles_ds_custom_fields_info() {
   $ds_field->api_version = 1;
   $ds_field->field = 'bundestagsradar';
   $ds_field->label = 'Bundestagsradar';
-  $ds_field->field_type = 6;
+  $ds_field->field_type = 5;
   $ds_field->entities = array(
-    'node' => 'node',
     'user' => 'user',
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'block|22',
-    'block_render' => '2',
+    'code' => array(
+      'value' => '<?php
+$uid = arg(1);
+$user_fields = user_load($uid);
+$field_user_parliament = $user_fields->field_user_parliament[\'und\'][0][\'tid\'];
+if($field_user_parliament == 12727){
+    $block = block_load(\'block\', \'22\');
+    print drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+ 
+}
+?>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 0,
   );
   $export['bundestagsradar'] = $ds_field;
 
