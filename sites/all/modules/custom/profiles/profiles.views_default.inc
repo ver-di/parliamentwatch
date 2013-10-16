@@ -2188,7 +2188,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['expression']['decimal'] = ',';
   $handler->display->display_options['fields']['expression']['separator'] = '';
   $handler->display->display_options['fields']['expression']['suffix'] = ' % response rate';
-  $handler->display->display_options['fields']['expression']['expression'] = '[field_user_answers_give-revision_id] / [field_user_questions_get-revision_id] ';
+  $handler->display->display_options['fields']['expression']['expression'] = '[field_user_answers_give-revision_id] / [field_user_questions_get-revision_id] * 100';
   /* Feld: Link to profile */
   $handler->display->display_options['fields']['vid']['id'] = 'vid';
   $handler->display->display_options['fields']['vid']['table'] = 'user_revision';
@@ -4375,7 +4375,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   /* Display: Profile API */
   $handler = $view->new_display('block', 'Profile API', 'api_profile');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] as XML';
+  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] als XML';
   $handler->display->display_options['display_description'] = 'provides a link to the API';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | User: First Name */
