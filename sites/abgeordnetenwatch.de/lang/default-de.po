@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-10-16 13:01+0200\n"
-"PO-Revision-Date: 2013-10-16 13:01+0200\n"
+"POT-Creation-Date: 2013-10-16 13:22+0200\n"
+"PO-Revision-Date: 2013-10-16 13:22+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -67696,10 +67696,6 @@ msgid "copy the link"
 msgstr ""
 
 #: /admin/structure/features/profiles/status
-msgid "[field_user_fname] [field_user_lname] as XML"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
 msgid "provides a link to the API"
 msgstr ""
 
@@ -89998,6 +89994,10 @@ msgstr "Zu den Fragen und Antworten"
 #: /admin/structure/features/profiles/status
 msgid "Data of [field_user_fname] [field_user_lname] not correct?"
 msgstr "Daten von [field_user_fname] [field_user_lname] nicht korrekt?"
+
+#: /admin/structure/features/profiles/status
+msgid "[field_user_fname] [field_user_lname] as XML"
+msgstr "[field_user_fname] [field_user_lname] als XML"
 
 #: /admin/structure/features/profiles/status
 msgid "Send us a message"

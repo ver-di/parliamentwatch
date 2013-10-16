@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-10-16 13:02+0200\n"
-"PO-Revision-Date: 2013-10-16 13:02+0200\n"
+"POT-Creation-Date: 2013-10-16 13:22+0200\n"
+"PO-Revision-Date: 2013-10-16 13:22+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -10057,11 +10057,6 @@ msgctxt "pw_user_blocks:user_wrong_data:exposed_form:sort_desc_label"
 msgid "Desc"
 msgstr ""
 
-#: views:pw_user_blocks:api_profile:title
-msgctxt "pw_user_blocks:api_profile:title"
-msgid "[field_user_fname] [field_user_lname] as XML"
-msgstr ""
-
 #: views:pw_user_blocks:api_profile:display_description
 msgctxt "pw_user_blocks:api_profile:display_description"
 msgid "provides a link to the API"
@@ -10095,20 +10090,6 @@ msgstr ""
 #: views:pw_user_blocks:api_profile:exposed_form:sort_desc_label
 msgctxt "pw_user_blocks:api_profile:exposed_form:sort_desc_label"
 msgid "Desc"
-msgstr ""
-
-#: views:pw_user_blocks:api_profile:field:views:nothing:alter:text
-msgctxt "pw_user_blocks:api_profile:field:views:nothing:alter:text"
-msgid ""
-"Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. "
-"Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. "
-"Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet "
-"contentiones ex pro, id idque offendit ius."
-msgstr ""
-
-#: views:pw_user_blocks:api_profile:field:views:nothing_1:alter:text
-msgctxt "pw_user_blocks:api_profile:field:views:nothing_1:alter:text"
-msgid "link to the API"
 msgstr ""
 
 #: views:pw_announcement:default:title
@@ -14590,6 +14571,27 @@ msgstr ""
 msgctxt "pw_user_blocks:user_wrong_data:field:views:nothing_1:alter:text"
 msgid "report error"
 msgstr "Fehler melden"
+
+#: views:pw_user_blocks:api_profile:title
+msgctxt "pw_user_blocks:api_profile:title"
+msgid "[field_user_fname] [field_user_lname] as XML"
+msgstr "[field_user_fname] [field_user_lname] als XML"
+
+#: views:pw_user_blocks:api_profile:field:views:nothing:alter:text
+msgctxt "pw_user_blocks:api_profile:field:views:nothing:alter:text"
+msgid ""
+"You want to retrieve the data of this profile for your own website? "
+"Then take a look at our <a "
+"href=\"http://de.parliamentwatch.org/api\">API</a>."
+msgstr ""
+"Sie wollen die Daten aus diesem Profil maschinenlesbar abrufen und "
+"für eigene Zwecke weiter verwenden? Dann schauen Sie sich unsere <a "
+"href=\"http://de.parliamentwatch.org/api\">API</a> an."
+
+#: views:pw_user_blocks:api_profile:field:views:nothing_1:alter:text
+msgctxt "pw_user_blocks:api_profile:field:views:nothing_1:alter:text"
+msgid "Profile as XML"
+msgstr "Profil als XML"
 
 #: views:pw_api_profile_dialogues:default:field:field_data_body:body:label
 msgctxt "pw_api_profile_dialogues:default:field:field_data_body:body:label"
