@@ -402,12 +402,17 @@ a.link-participate {
     background-position: -26px -2138px;
 }
 .link-calendar a,
-a.link-calendar {
+a.link-calendar,
+.view-calendar .more-link a {
     padding-left: 19px;
     background-position: -240px -2418px;
 }
+.view-calendar .more-link {
+   float: right;
+}
 .link-calendar a:hover,
-a.link-calendar:hover {
+a.link-calendar:hover,
+.view-calendar .more-link a:hover {
     background-position: -200px -2458px;
 }
 .views-more-link,
@@ -2224,6 +2229,7 @@ a.link-pdf,
 a.link-participate,
 .link-calendar a,
 a.link-calendar,
+.view-calendar .more-link a,
 .link-video a,
 a.link-video,
 .link-sound a,

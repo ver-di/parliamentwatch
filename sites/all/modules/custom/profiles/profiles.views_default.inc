@@ -116,13 +116,6 @@ function profiles_views_default_views() {
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: link to calendar page */
-  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['ui_name'] = 'link to calendar page';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<a href="/users/[name]/calendar" class="link-calendar float-right">Alle Termine anzeigen</a>';
-  $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Inhalt: Autor */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
