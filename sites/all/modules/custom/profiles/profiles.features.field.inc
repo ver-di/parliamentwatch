@@ -2939,12 +2939,12 @@ function profiles_field_default_fields() {
         'better_formats' => array(
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
-            'full_html' => 'full_html',
+            'full_html' => 0,
             'managed_content' => 'managed_content',
-            'php_code' => 'php_code',
-            'plain_text' => 'plain_text',
+            'php_code' => 0,
+            'plain_text' => 0,
           ),
-          'allowed_formats_toggle' => 0,
+          'allowed_formats_toggle' => 1,
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
@@ -2974,6 +2974,10 @@ function profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
           'rows' => '20',
           'summary_rows' => 5,
         ),
