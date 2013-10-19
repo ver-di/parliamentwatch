@@ -152,10 +152,6 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
         goToByScroll("pw-block-questions-and-answers");
         return false;
     });
-    jQuery(".page-user .link-question").click(function () {
-        goToByScroll("pw-block-question-form");
-        return false;
-    });
     jQuery(".anchor-to-top a").click(function () {
         goToByScroll("page");
         return false;

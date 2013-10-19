@@ -176,7 +176,7 @@ function profiles_strongarm() {
             'visible' => TRUE,
           ),
           'user_premium' => array(
-            'weight' => '42',
+            'weight' => '41',
             'visible' => FALSE,
           ),
           'user_deputy' => array(

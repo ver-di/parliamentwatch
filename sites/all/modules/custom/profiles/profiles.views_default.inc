@@ -5743,7 +5743,8 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '?width=500&height=500&inline=true#pw-block-question-form';
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'colorbox-inline';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -6122,7 +6123,8 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '?width=500&height=500&inline=true#pw-block-question-form';
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'colorbox-inline';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
