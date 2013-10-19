@@ -51,7 +51,7 @@ function profiles_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Mangaged Content',
+    'label' => 'Managed Content',
     'weight' => '9',
     'children' => array(
       0 => 'field_profile_node_connector',

@@ -50229,7 +50229,7 @@ msgid "Mark group for required fields."
 msgstr ""
 
 #: /admin/config/people/accounts/fields
-msgid "Mangaged Content"
+msgid "Managed Content"
 msgstr ""
 
 #: /admin/config/people/accounts/fields
