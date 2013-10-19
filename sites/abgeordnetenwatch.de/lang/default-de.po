@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-10-16 13:22+0200\n"
-"PO-Revision-Date: 2013-10-16 13:22+0200\n"
+"POT-Creation-Date: 2013-10-19 16:06+0200\n"
+"PO-Revision-Date: 2013-10-19 16:06+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -68306,6 +68306,33 @@ msgstr ""
 msgid "Comment is published"
 msgstr ""
 
+#: /admin/structure/views/ajax/config-item/profile_list_rev/grid/field/expression
+msgid "Expression"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_list_rev/grid/field/expression
+msgid ""
+"Enter mathematical expressions such as 2 + 2 or sqrt(5). You may "
+"assign variables and create mathematical functions and evaluate them. "
+"Use the ; to separate these. For example: f(x) = x + 2; f(2)."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_list_rev/grid/field/expression
+msgid "Round"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_list_rev/grid/field/expression
+msgid "If checked, the number will be rounded."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_list_rev/grid/field/expression
+msgid "Specify how many digits to print after the decimal point."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_list_rev/grid/field/expression
+msgid "What single character to use as a decimal point."
+msgstr ""
+
 msgid "Search"
 msgstr "Suche"
 
@@ -90002,4 +90029,12 @@ msgstr "[field_user_fname] [field_user_lname] als XML"
 #: /admin/structure/features/profiles/status
 msgid "Send us a message"
 msgstr "Benachrichtigen Sie uns"
+
+#: /users/ruth
+msgid ""
+"Browse through all questions and answers by keyword or filter them "
+"according to a subject of your choice"
+msgstr ""
+"Durchsuchen Sie alle Fragen und Antworten nach einem Stichwort oder "
+"filtern Sie diese nach einem Thema Ihrer Wahl"
 

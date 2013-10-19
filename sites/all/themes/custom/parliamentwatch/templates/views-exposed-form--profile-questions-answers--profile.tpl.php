@@ -27,7 +27,7 @@
   ?>
 <?php endif; ?>
 <div class="views-exposed-form">
-    <div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php print t("Infotext"); ?></div></div>
+    <div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php print t("Browse through all questions and answers by keyword or filter them according to a subject of your choice"); ?></div></div>
     <div class="views-exposed-widgets clearfix">
       <?php if (!empty($reset_button)): ?>
         <div class="views-exposed-widget views-reset-button">
