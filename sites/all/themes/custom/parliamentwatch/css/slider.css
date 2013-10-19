@@ -35,6 +35,7 @@
 }
 .view-slider {
     height: 168px !important;
+    position: relative;
 }
 .view-slider #views_slideshow_cycle_teaser_section_slider-block,
 .view-slider #views_slideshow_cycle_main_slider-block,
@@ -76,10 +77,10 @@
 .view-slider #views_slideshow_cycle_main_slider-block,
 .ds-right-1 .view-slider #views_slideshow_cycle_main_slider-block {
     position: absolute;
-    right: 331px;
+    right: 321px;
     top: 0;
     height: 168px !important;
-    width: 610px;
+    width: 620px;
 }
 .view-slider .views-slideshow-controls-text-previous a {
     width: 26px;
@@ -118,9 +119,9 @@
     position: relative;
 }
 .view-slider .views-slideshow-controls-top {
-    bottom: 34px;
+    bottom: 0;
     position: absolute;
-    right: 331px;
+    right: 321px;
     z-index: 13;
 }
 .view-slider .views-slideshow-controls-bottom {

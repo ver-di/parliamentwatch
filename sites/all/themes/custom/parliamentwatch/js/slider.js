@@ -6,11 +6,11 @@ jQuery(document).ready(function() {
 
     jQuery("#widget_pager_bottom_slider-block").click(function () {
     
-        if(jQuery('#block-views-slider-block .views-slideshow-controls-top').css('display') != 'block') {
+        if(jQuery('.view-slider .views-slideshow-controls-top').css('display') != 'block') {
             jQuery('.slider-stage').animate({
                 paddingTop: "188px"
             }, 500, function() {
-                    jQuery('#block-views-slider-block .views-slideshow-controls-top').fadeIn('slow');
+                    jQuery('.view-slider .views-slideshow-controls-top').fadeIn('slow');
                     jQuery('#views_slideshow_cycle_main_slider-block').fadeIn('slow');
             });          
         } return false;
