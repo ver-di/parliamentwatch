@@ -27,17 +27,14 @@
   ?>
 <?php endif; ?>
 <div class="views-exposed-form">
-    <div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php print t("Infotext"); ?></div></div>
-    <div class="views-exposed-widgets clearfix">
-      <?php if (!empty($reset_button)): ?>
-        <div class="views-exposed-widget views-reset-button">
-          <?php print $reset_button; ?>
-        </div>
-      <?php endif; ?>
-    </div>
-    <div class="views-exposed-widgets clearfix">
+  <div class="views-exposed-widgets clearfix">
+    <?php if (!empty($reset_button)): ?>
+      <div class="views-exposed-widget views-reset-button">
+        <?php print $reset_button; ?>
+      </div>
+    <?php endif; ?>
     <?php foreach ($widgets as $id => $widget): ?>
-      <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?> clearfix">
+      <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?>">
         <?php if (!empty($widget->label)): ?>
           <label for="<?php print $widget->id; ?>">
             <?php print $widget->label; ?>

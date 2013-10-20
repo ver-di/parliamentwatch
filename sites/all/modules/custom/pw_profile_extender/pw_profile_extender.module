@@ -14,10 +14,6 @@
       );
       unset($form["locale"]);
     }
-
-    if ($form_id == 'views_exposed_form') {
-      $form_state['redirect'] = current_path();
-    }
   }
 
   /**
@@ -33,12 +29,13 @@
 
       $form['between_date_filter_op']['#options']['='] = t('Aktive Abgeordnete');
       $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
-      $form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
-
+      $form['between_date_filter_op']['#theme'] = 'select_with_description';
+      //krumo($form);
+      //$form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
       //$form['between_date_filter']['#access'] = FALSE;
     }
   }
-
+/*
   function pw_profile_extender_menu_alter(&$items)
   {
      $items['node/add/calendarentry'] = array(
@@ -48,3 +45,17 @@
 
     );
   }
+*/
+
+  /**
+ * Implements hook_theme().
+ */
+function pw_profile_extender_theme($existing, $type, $theme, $path) {
+  return array(
+    'select_with_description' => array(
+      'function' => 'theme_select_with_description',
+      'render element' => 'element',
+      'file' => 'pw_profile_extender.theme',
+    ),
+  );
+}
