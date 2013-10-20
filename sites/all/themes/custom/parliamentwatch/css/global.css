@@ -300,8 +300,25 @@ a.dark {
     padding-left: 20px;
     background-position: -361px -2301px;
 }
-.zero-clipboard.copied {
-    padding-left: 20px;
+.zero-clipboard.copied,
+.shorten span.processed,
+.shorten span {
+    padding-left: 24px;
+    display: inline-block;
+    line-height: 18px;
+    line-height: 1.8rem;
+}
+.shorten span {
+    background-position: -40px -2620px;
+    cursor: pointer;
+}
+.shorten span:hover {
+    background-position: -80px -2580px;
+    color: #999;
+}
+.zero-clipboard.copied,
+.shorten .processed,
+.shorten .processed:hover {
     background-position: -406px -2260px;
 }
 .icon-link {
@@ -2237,6 +2254,8 @@ a.link-sound,
 .ic-info .info-title,
 blockquote:before,
 .zero-clipboard,
+.shorten span.processed,
+.shorten span,
 .icon-link,
 .collapse-processed .fieldset-title {
     background-image: url("../images/sprite.png");

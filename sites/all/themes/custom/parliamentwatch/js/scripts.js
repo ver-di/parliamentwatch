@@ -1,5 +1,17 @@
 jQuery(document).ready(function() {
 
+// toggle view of permalinks in dialogues
+
+    $('.shorten').click(function(){
+        $(this).parent().find('.pw-question-link .text-field').toggle();
+        $(this).parent().find('.pw-question-link .text-field').toggleClass('permalink');
+        $(this).find('span').toggleClass('processed');
+        return false;
+    });
+    $('.permalink-wrapper .text-field').click(function(){
+        $(this).selectText(); //working with https://github.com/emilkje/jquery.selectText
+    });
+
 
 // slice text and add expander link (http://plugins.learningjquery.com/expander/)
         
