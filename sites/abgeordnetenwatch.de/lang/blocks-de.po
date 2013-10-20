@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-10-16 13:04+0200\n"
-"PO-Revision-Date: 2013-10-16 13:04+0200\n"
+"POT-Creation-Date: 2013-10-20 13:56+0200\n"
+"PO-Revision-Date: 2013-10-20 13:56+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -79,6 +79,20 @@ msgstr ""
 msgctxt "block:5:body"
 msgid ""
 "<div class=\"center push-bottom-l\">\r\n"
+"    <span class=\"form-submit big link-question\"><a "
+"href=\"#block-webform-client-block-17\">Ask a Question</a></span>\r\n"
+"</div>"
+msgstr ""
+
+#: blocks:tagadelic:24:title
+msgctxt "tagadelic:24:title"
+msgid "Tags in the blog"
+msgstr "Schlagwörter aus dem Blog"
+
+#: blocks:block:5:body
+msgctxt "block:5:body"
+msgid ""
+"<div class=\"center push-bottom-l\">\r\n"
 "\t<span class=\"form-submit big link-question\"><a "
 "href=\"#pw-block-question-form\">Ask a Question</a></span>\r\n"
 "</div>\r\n"
@@ -86,9 +100,4 @@ msgstr ""
 "<div class=\"center push-bottom-l\"> <span class=\"form-submit big "
 "link-question\"><a href=\"#pw-block-question-form\">Frage "
 "stellen</a></span> </div>"
-
-#: blocks:tagadelic:24:title
-msgctxt "tagadelic:24:title"
-msgid "Tags in the blog"
-msgstr "Schlagwörter aus dem Blog"
 

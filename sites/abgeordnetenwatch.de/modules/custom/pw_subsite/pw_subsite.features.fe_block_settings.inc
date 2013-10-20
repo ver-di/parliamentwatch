@@ -313,7 +313,7 @@ function pw_subsite_default_fe_block_settings() {
     'cache' => -1,
     'custom' => '0',
     'delta' => '1aaf3482d7a482c92318ccf7dc354a3c',
-    'i18n_mode' => '0',
+    'i18n_mode' => '1',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',

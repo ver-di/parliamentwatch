@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-10-16 13:03+0200\n"
-"PO-Revision-Date: 2013-10-16 13:03+0200\n"
+"POT-Creation-Date: 2013-10-20 13:54+0200\n"
+"PO-Revision-Date: 2013-10-20 13:54+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -28,9 +28,29 @@ msgctxt "comment_body:comment_node_page:label"
 msgid "Comment"
 msgstr ""
 
+#: field:comment_body:comment_node_article:label
+msgctxt "comment_body:comment_node_article:label"
+msgid "Comment"
+msgstr ""
+
 #: field:body:page:label
 msgctxt "body:page:label"
 msgid "Body"
+msgstr ""
+
+#: field:body:article:label
+msgctxt "body:article:label"
+msgid "Body"
+msgstr ""
+
+#: field:field_image:article:label
+msgctxt "field_image:article:label"
+msgid "Image"
+msgstr ""
+
+#: field:field_image:article:description
+msgctxt "field_image:article:description"
+msgid "Upload an image to go with this article."
 msgstr ""
 
 #: field:comment_body:comment_node_dialogue:label
@@ -148,11 +168,6 @@ msgctxt "field_user_childs:user:label"
 msgid "Children"
 msgstr ""
 
-#: field:field_user_first_letter_lname:user:label
-msgctxt "field_user_first_letter_lname:user:label"
-msgid "user_first_letter_lname"
-msgstr ""
-
 #: field:field_user_fname:user:label
 msgctxt "field_user_fname:user:label"
 msgid "First Name"
@@ -196,6 +211,11 @@ msgstr ""
 #: field:field_user_marriage_status:user:label
 msgctxt "field_user_marriage_status:user:label"
 msgid "Marriage status"
+msgstr ""
+
+#: field:field_user_more:user:label
+msgctxt "field_user_more:user:label"
+msgid "Additional information"
 msgstr ""
 
 #: field:field_user_pseudonym:user:label
@@ -471,99 +491,59 @@ msgctxt "field_pw_parmliament:pw_poll:label"
 msgid "Parmliament"
 msgstr ""
 
+#: field:comment_body:comment_node_migrate_extras_media_example:label
+msgctxt "comment_body:comment_node_migrate_extras_media_example:label"
+msgid "Comment"
+msgstr ""
+
+#: field:comment_body:comment_node_migrate_example_pathauto:label
+msgctxt "comment_body:comment_node_migrate_example_pathauto:label"
+msgid "Comment"
+msgstr ""
+
+#: field:body:migrate_extras_media_example:label
+msgctxt "body:migrate_extras_media_example:label"
+msgid "Body"
+msgstr ""
+
+#: field:field_document:migrate_extras_media_example:label
+msgctxt "field_document:migrate_extras_media_example:label"
+msgid "Document"
+msgstr ""
+
+#: field:field_media_image:migrate_extras_media_example:label
+msgctxt "field_media_image:migrate_extras_media_example:label"
+msgid "Media image"
+msgstr ""
+
+#: field:field_youtube_video:migrate_extras_media_example:label
+msgctxt "field_youtube_video:migrate_extras_media_example:label"
+msgid "Youtube video"
+msgstr ""
+
+#: field:body:migrate_example_pathauto:label
+msgctxt "body:migrate_example_pathauto:label"
+msgid "Body"
+msgstr ""
+
 #: field:field_blogpost_categories:blogpost:label
 msgctxt "field_blogpost_categories:blogpost:label"
 msgid "Categories"
 msgstr ""
 
-#: field:comment_body:comment_node_calendar_entry:label
-msgctxt "comment_body:comment_node_calendar_entry:label"
+#: field:comment_body:comment_node_poll:label
+msgctxt "comment_body:comment_node_poll:label"
 msgid "Comment"
 msgstr ""
 
-#: field:body:calendar_entry:label
-msgctxt "body:calendar_entry:label"
+#: field:comment_body:comment_node_survey:label
+msgctxt "comment_body:comment_node_survey:label"
+msgid "Comment"
+msgstr ""
+
+#: field:body:survey:label
+msgctxt "body:survey:label"
 msgid "Body"
-msgstr ""
-
-#: field:field_calendar_entry_address:calendar_entry:label
-msgctxt "field_calendar_entry_address:calendar_entry:label"
-msgid "Address"
-msgstr ""
-
-#: field:field_calendar_entry_date:calendar_entry:label
-msgctxt "field_calendar_entry_date:calendar_entry:label"
-msgid "Date"
-msgstr ""
-
-#: field:field_int_list_postiion:list_position:label
-msgctxt "field_int_list_postiion:list_position:label"
-msgid "Position"
-msgstr ""
-
-#: field:field_user_about:user:label
-msgctxt "field_user_about:user:label"
-msgid "About"
-msgstr ""
-
-#: field:field_user_address:user:label
-msgctxt "field_user_address:user:label"
-msgid "Address"
-msgstr ""
-
-#: field:field_user_commitee:user:label
-msgctxt "field_user_commitee:user:label"
-msgid "Committee"
-msgstr ""
-
-#: field:field_user_constituency:user:label
-msgctxt "field_user_constituency:user:label"
-msgid "Constituency"
-msgstr ""
-
-#: field:field_user_education:user:label
-msgctxt "field_user_education:user:label"
-msgid "Education"
-msgstr ""
-
-#: field:field_user_gender:#allowed_values:t
-msgctxt "field_user_gender:#allowed_values:t"
-msgid "Transgender"
-msgstr ""
-
-#: field:field_user_image_gallery:user:label
-msgctxt "field_user_image_gallery:user:label"
-msgid "Image Gallery"
-msgstr ""
-
-#: field:field_user_list_position:user:label
-msgctxt "field_user_list_position:user:label"
-msgid "List Position"
-msgstr ""
-
-#: field:field_user_parliament:user:label
-msgctxt "field_user_parliament:user:label"
-msgid "Parliament"
-msgstr ""
-
-#: field:field_user_party:user:label
-msgctxt "field_user_party:user:label"
-msgid "Party"
-msgstr ""
-
-#: field:field_user_political_goals:user:label
-msgctxt "field_user_political_goals:user:label"
-msgid "Political Goals"
-msgstr ""
-
-#: field:field_user_political_roles:user:label
-msgctxt "field_user_political_roles:user:label"
-msgid "Political Roles"
-msgstr ""
-
-#: field:field_user_twitter_account:user:label
-msgctxt "field_user_twitter_account:user:label"
-msgid "User Twitter Account"
 msgstr ""
 
 #: field:comment_body:comment_node_election_programme:label
@@ -616,14 +596,109 @@ msgctxt "field_teaser_image:election_programme:description"
 msgid "Landscape image style will be used."
 msgstr ""
 
-#: field:field_user_external_url:user:label
-msgctxt "field_user_external_url:user:label"
-msgid "External URL"
+#: field:comment_body:comment_node_calendar_entry:label
+msgctxt "comment_body:comment_node_calendar_entry:label"
+msgid "Comment"
 msgstr ""
 
-#: field:field_user_valid:user:label
-msgctxt "field_user_valid:user:label"
-msgid "Valid"
+#: field:body:calendar_entry:label
+msgctxt "body:calendar_entry:label"
+msgid "Body"
+msgstr ""
+
+#: field:field_calendar_entry_address:calendar_entry:label
+msgctxt "field_calendar_entry_address:calendar_entry:label"
+msgid "Address"
+msgstr ""
+
+#: field:field_calendar_entry_date:calendar_entry:label
+msgctxt "field_calendar_entry_date:calendar_entry:label"
+msgid "Date"
+msgstr ""
+
+#: field:field_int_list_postiion:list_position:label
+msgctxt "field_int_list_postiion:list_position:label"
+msgid "Position"
+msgstr ""
+
+#: field:field_profile_node_connector:user:label
+msgctxt "field_profile_node_connector:user:label"
+msgid "profile_node_connector"
+msgstr ""
+
+#: field:field_user_about:user:label
+msgctxt "field_user_about:user:label"
+msgid "About"
+msgstr ""
+
+#: field:field_user_address:user:label
+msgctxt "field_user_address:user:label"
+msgid "Address"
+msgstr ""
+
+#: field:field_user_commitee:user:label
+msgctxt "field_user_commitee:user:label"
+msgid "Committee"
+msgstr ""
+
+#: field:field_user_constituency:user:label
+msgctxt "field_user_constituency:user:label"
+msgid "Constituency"
+msgstr ""
+
+#: field:field_user_education:user:label
+msgctxt "field_user_education:user:label"
+msgid "Education"
+msgstr ""
+
+#: field:field_user_first_letter_lname:user:label
+msgctxt "field_user_first_letter_lname:user:label"
+msgid "user_first_letter_lname"
+msgstr ""
+
+#: field:field_user_gender:#allowed_values:t
+msgctxt "field_user_gender:#allowed_values:t"
+msgid "Transgender"
+msgstr ""
+
+#: field:field_user_image_gallery:user:label
+msgctxt "field_user_image_gallery:user:label"
+msgid "Image Gallery"
+msgstr ""
+
+#: field:field_user_list_position:user:label
+msgctxt "field_user_list_position:user:label"
+msgid "List Position"
+msgstr ""
+
+#: field:field_user_parliament:user:label
+msgctxt "field_user_parliament:user:label"
+msgid "Parliament"
+msgstr ""
+
+#: field:field_user_party:user:label
+msgctxt "field_user_party:user:label"
+msgid "Party"
+msgstr ""
+
+#: field:field_user_political_goals:user:label
+msgctxt "field_user_political_goals:user:label"
+msgid "Political Goals"
+msgstr ""
+
+#: field:field_user_political_roles:user:label
+msgctxt "field_user_political_roles:user:label"
+msgid "Political Roles"
+msgstr ""
+
+#: field:field_user_twitter_account:user:label
+msgctxt "field_user_twitter_account:user:label"
+msgid "User Twitter Account"
+msgstr ""
+
+#: field:field_user_picture_copyright:user:label
+msgctxt "field_user_picture_copyright:user:label"
+msgid "Profile Picture Copyright"
 msgstr ""
 
 #: field:field_user_age:user:label
@@ -631,14 +706,29 @@ msgctxt "field_user_age:user:label"
 msgid "Age"
 msgstr ""
 
+#: field:field_user_picture:user:label
+msgctxt "field_user_picture:user:label"
+msgid "Profile picture"
+msgstr ""
+
 #: field:field_user_qanda_ratio:user:label
 msgctxt "field_user_qanda_ratio:user:label"
 msgid "QuestionAnswerRatio"
 msgstr ""
 
-#: field:field_user_picture:user:label
-msgctxt "field_user_picture:user:label"
-msgid "Profile picture"
+#: field:field_user_valid:user:label
+msgctxt "field_user_valid:user:label"
+msgid "Valid"
+msgstr ""
+
+#: field:field_user_external_url:user:label
+msgctxt "field_user_external_url:user:label"
+msgid "External URL"
+msgstr ""
+
+#: field:field_user_links_more:user:label
+msgctxt "field_user_links_more:user:label"
+msgid "External Links"
 msgstr ""
 
 #: field:comment_body:comment_node_pw_slider:label
@@ -659,51 +749,6 @@ msgstr ""
 #: field:field_slider_url:pw_slider:label
 msgctxt "field_slider_url:pw_slider:label"
 msgid "Beschreibung mit LInk"
-msgstr ""
-
-#: field:field_user_links_more:user:label
-msgctxt "field_user_links_more:user:label"
-msgid "External Links"
-msgstr ""
-
-#: field:comment_body:comment_node_announcement:label
-msgctxt "comment_body:comment_node_announcement:label"
-msgid "Comment"
-msgstr ""
-
-#: field:field_announce_background_image:announcement:label
-msgctxt "field_announce_background_image:announcement:label"
-msgid "Background image"
-msgstr ""
-
-#: field:field_announce_background_image:announcement:description
-msgctxt "field_announce_background_image:announcement:description"
-msgid "If no image is uploaded a default image will be shown."
-msgstr ""
-
-#: field:field_announce_tab_title:announcement:label
-msgctxt "field_announce_tab_title:announcement:label"
-msgid "Tab title"
-msgstr ""
-
-#: field:field_announce_tab_title:announcement:description
-msgctxt "field_announce_tab_title:announcement:description"
-msgid "This field will be used as link text in the slider."
-msgstr ""
-
-#: field:field_announce_link:announcement:label
-msgctxt "field_announce_link:announcement:label"
-msgid "Link"
-msgstr ""
-
-#: field:field_announce_link:announcement:description
-msgctxt "field_announce_link:announcement:description"
-msgid "Link the article you want to announce."
-msgstr ""
-
-#: field:field_announce_body:announcement:label
-msgctxt "field_announce_body:announcement:label"
-msgid "Body"
 msgstr ""
 
 #: field:comment_body:comment_node_blogpost:label
