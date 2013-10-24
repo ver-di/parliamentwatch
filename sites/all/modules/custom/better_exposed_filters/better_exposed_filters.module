@@ -35,6 +35,11 @@ function better_exposed_filters_theme($existing, $type, $theme, $path) {
       'render element' => 'element',
       'file' => 'better_exposed_filters.theme',
     ),
+    'select_as_slider' => array(
+      'function' => 'theme_select_as_slider',
+      'render element' => 'element',
+      'file' => 'better_exposed_filters.theme',
+    ),
     'select_as_tree' => array(
       'function' => 'theme_select_as_tree',
       'render element' => 'element',
