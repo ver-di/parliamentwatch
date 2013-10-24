@@ -14,10 +14,6 @@
       );
       unset($form["locale"]);
     }
-
-    if ($form_id == 'views_exposed_form') {
-      $form_state['redirect'] = current_path();
-    }
   }
 
   /**
@@ -33,12 +29,12 @@
 
       $form['between_date_filter_op']['#options']['='] = t('Aktive Abgeordnete');
       $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
-      $form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
-
+      //krumo($form);
+      //$form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
       //$form['between_date_filter']['#access'] = FALSE;
     }
   }
-
+/*
   function pw_profile_extender_menu_alter(&$items)
   {
      $items['node/add/calendarentry'] = array(
@@ -48,3 +44,4 @@
 
     );
   }
+*/
