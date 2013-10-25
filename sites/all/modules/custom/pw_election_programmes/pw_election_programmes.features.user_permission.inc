@@ -52,12 +52,5 @@ function pw_election_programmes_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: moderate spam in nodes of type Election programme.
-  $permissions['moderate spam in nodes of type Election programme'] = array(
-    'name' => 'moderate spam in nodes of type Election programme',
-    'roles' => array(),
-    'module' => 'antispam',
-  );
-
   return $permissions;
 }
