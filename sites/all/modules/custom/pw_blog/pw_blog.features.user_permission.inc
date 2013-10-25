@@ -90,15 +90,6 @@ function pw_blog_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: migrate wordpress blogs.
-  $permissions['migrate wordpress blogs'] = array(
-    'name' => 'migrate wordpress blogs',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'wordpress_migrate',
-  );
-
   // Exported permission: moderate spam in nodes of type Blogpost.
   $permissions['moderate spam in nodes of type Blogpost'] = array(
     'name' => 'moderate spam in nodes of type Blogpost',
