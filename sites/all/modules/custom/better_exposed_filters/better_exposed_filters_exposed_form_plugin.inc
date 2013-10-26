@@ -1083,6 +1083,11 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
           break;
 
         case 'bef_slider':
+          // Das funktioniert, aber ich brauche eine Vorlage für das Template...
+          // 
+          $form[$field_id]['#theme'] = 'select_as_slider';
+//          Das hier funktioniert nicht ganz, weil ein check_plain das HTML umwandelt:
+//          $form['#info']['filter-'.$field_id]['description'] = $options['more_options']['bef_filter_description'];
           $show_apply = TRUE;
           $bef_add_js = TRUE;
           $bef_add_css = TRUE;

@@ -304,6 +304,31 @@ function theme_select_as_radios($vars) {
   return $output;
 }
 
+
+/**
+ * Themes a select element as a slider.
+ *
+ * @see http://api.drupal.org/api/function/theme_select/7
+ *
+ * @param array $vars
+ *   An array of arrays, the 'element' item holds the properties of the element.
+ *
+ * @return string
+ *   HTML representing the form element.
+ */
+function theme_select_as_slider($vars) {
+  $element = $vars['element'];
+
+  // Grab exposed filter description.  We'll put it under the label where it
+  // makes more sense.
+  $description = '';
+  if (!empty($element['#bef_description'])) {
+    $description = '<div class="description">' . $element['#bef_description'] . '</div>';
+  }
+
+  return $description.drupal_render($element['min']).drupal_render($element['max']);
+}
+
 /**
  * Themes a taxonomy-based exposed filter as a nested unordered list.
  *

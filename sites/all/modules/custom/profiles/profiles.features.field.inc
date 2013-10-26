@@ -1033,7 +1033,7 @@ function profiles_field_default_fields() {
           'input_format_custom' => '',
           'label_position' => 'above',
           'text_parts' => array(),
-          'year_range' => '-100:+0',
+          'year_range' => '-70:+0',
         ),
         'type' => 'date_popup',
         'weight' => '11',
@@ -1317,12 +1317,12 @@ function profiles_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'taxonomy',
+        'module' => 'options',
         'settings' => array(
           'autocomplete_path' => 'taxonomy/autocomplete',
           'size' => 60,
         ),
-        'type' => 'taxonomy_autocomplete',
+        'type' => 'options_buttons',
         'weight' => '10',
       ),
     ),
@@ -3225,7 +3225,15 @@ function profiles_field_default_fields() {
       'settings' => array(
         'code' => '$answers = $entity->field_user_answers_give[LANGUAGE_NONE][0][\'value\'];
 $questions = $entity-> field_user_questions_get[LANGUAGE_NONE][0][\'value\'];
-$result = ($answers / $questions) * 100;
+
+if($questions != 0)
+{
+  $result = ($answers / $questions) * 100;
+}
+else
+{
+  $result = 0;
+}
 
 $entity_field[0][\'value\'] = $result;',
         'database' => array(
