@@ -1,0 +1,4 @@
+name = Pw forms filter alter
+description = TODO: Description of module
+core = 7.x
+files[] = tests/pw_forms_filter_alter.test
