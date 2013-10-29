@@ -3988,7 +3988,7 @@ drupal_add_js($js,\'inline\');
       'more_options' => array(
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -4006,7 +4006,7 @@ drupal_add_js($js,\'inline\');
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -4029,7 +4029,7 @@ drupal_add_js($js,\'inline\');
       'more_options' => array(
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -4062,9 +4062,8 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<script type="text/javascript">
   jQuery(function() {
-    jQuery(\'#views-exposed-form-profile-questions-answers-profile\').hide("fast");
+    jQuery(\'.ds-right-2\').hide("fast");
     jQuery(\'#pw-block-questions-and-answers\').hide("fast");
-    jQuery(\'#form-view-mode-switcher\').hide("fast");
   });
 
 </script>';
@@ -5034,13 +5033,11 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
     ),
   );
   $handler->display->display_options['displays'] = array(
-    'panel_pane_1' => 'panel_pane_1',
+    'profile' => 'profile',
     'default' => 0,
-    'block' => 0,
-    'block_1' => 0,
-    'block_2' => 0,
-    'block_3' => 0,
-    'panel_pane_2' => 0,
+    'front' => 0,
+    'front_colorbox' => 0,
+    'full_content' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
