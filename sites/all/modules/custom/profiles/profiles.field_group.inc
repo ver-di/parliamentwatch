@@ -665,7 +665,7 @@ function profiles_field_group_info() {
   $field_group->entity_type = 'user';
   $field_group->bundle = 'user';
   $field_group->mode = 'user_deputy';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_user_polls';
   $field_group->data = array(
     'label' => 'User Polls Archive',
     'weight' => '34',
@@ -774,8 +774,8 @@ function profiles_field_group_info() {
     'label' => 'User Polls',
     'weight' => '3',
     'children' => array(
-      0 => 'group_user_polls_current',
-      1 => 'group_user_polls_archive',
+      0 => 'group_user_polls_archive',
+      1 => 'group_user_polls_current',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(
@@ -850,7 +850,7 @@ function profiles_field_group_info() {
   $field_group->entity_type = 'user';
   $field_group->bundle = 'user';
   $field_group->mode = 'user_deputy';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_user_roles';
   $field_group->data = array(
     'label' => 'User Roles Current',
     'weight' => '59',
@@ -882,8 +882,8 @@ function profiles_field_group_info() {
     'label' => 'User Roles',
     'weight' => '4',
     'children' => array(
-      0 => 'group_user_roles_current',
-      1 => 'group_user_roles_archive',
+      0 => 'group_user_roles_archive',
+      1 => 'group_user_roles_current',
     ),
     'format_type' => 'htabs',
     'format_settings' => array(

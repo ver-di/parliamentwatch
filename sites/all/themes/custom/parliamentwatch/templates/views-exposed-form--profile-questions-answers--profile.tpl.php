@@ -26,6 +26,7 @@
     print $q;
   ?>
 <?php endif; ?>
+<?php if(!empty($row)): ?>
 <div class="views-exposed-form">
     <div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php print t("Browse through all questions and answers by keyword or filter them according to a subject of your choice"); ?></div></div>
     <div class="views-exposed-widgets clearfix">
@@ -81,3 +82,4 @@
     </div>
   </div>
 </div>
+<?php endif; ?>
