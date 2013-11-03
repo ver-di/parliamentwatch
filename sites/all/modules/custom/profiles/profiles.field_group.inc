@@ -21,7 +21,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Basics ID Wrapper',
-    'weight' => '9',
+    'weight' => '2',
     'children' => array(
       0 => 'group_user_basics',
     ),
@@ -55,8 +55,7 @@ function profiles_field_group_info() {
     'weight' => '9',
     'children' => array(
       0 => 'field_user_gender',
-      1 => 'field_profile_node_connector',
-      2 => 'field_user_first_letter_lname',
+      1 => 'field_user_first_letter_lname',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -81,7 +80,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Polls ID Wrapper',
-    'weight' => '11',
+    'weight' => '4',
     'children' => array(
       0 => 'group_user_polls',
     ),
@@ -114,8 +113,7 @@ function profiles_field_group_info() {
     'label' => 'Premium',
     'weight' => '8',
     'children' => array(
-      0 => 'field_user_more',
-      1 => 'field_user_picture',
+      0 => 'field_user_picture',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -173,7 +171,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Roles ID Wrapper',
-    'weight' => '10',
+    'weight' => '3',
     'children' => array(
       0 => 'group_user_commitee',
     ),
@@ -272,9 +270,7 @@ function profiles_field_group_info() {
   $field_group->data = array(
     'label' => 'Additional',
     'weight' => '15',
-    'children' => array(
-      0 => 'field_user_more',
-    ),
+    'children' => array(),
     'format_type' => 'htab',
     'format_settings' => array(
       'label' => 'Additional',
@@ -512,7 +508,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Name',
-    'weight' => '5',
+    'weight' => '1',
     'children' => array(
       0 => 'field_user_fname',
       1 => 'field_user_lname',
@@ -643,9 +639,7 @@ function profiles_field_group_info() {
   $field_group->data = array(
     'label' => 'Polls archive',
     'weight' => '32',
-    'children' => array(
-      0 => 'polls_archive_view',
-    ),
+    'children' => array(),
     'format_type' => 'htab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -721,9 +715,7 @@ function profiles_field_group_info() {
   $field_group->data = array(
     'label' => 'Last poll',
     'weight' => '31',
-    'children' => array(
-      0 => 'polls_profile_last',
-    ),
+    'children' => array(),
     'format_type' => 'htab',
     'format_settings' => array(
       'formatter' => 'closed',
