@@ -20,3 +20,32 @@ $form['views_embedder'] = array(
  return $form;
 }
 }
+
+/**
+ * FFI: Saves changes to the user role in the corresponding taxonomy. 
+ * This is important for the profile switch that relies on this taxonomy.
+ */
+function profiles_user_presave(&$edit, $account, $category) {
+  // fetch the chosen roles from $edit['roles']:
+  $roleIdArray = array();
+  foreach ($edit['roles'] as $key => $value) {
+    if ($value != 0) {
+      $roleIdArray[] = $key;
+    }
+  }
+  
+  // reset the $edit['field_user_roles_for_view_mode_s']['und'] array:
+  $edit['field_user_roles_for_view_mode_s']['und'] = array();
+
+  foreach ($roleIdArray as $roleId) {
+    $role = user_role_load($roleId);
+    $roleName = $role->name; // i.e., Politician
+    // search for this roleName in the taxonomy:
+    $taxonomyArray = taxonomy_get_term_by_name($roleName, 'pw_profile_roles_for_view_mode_switch');
+    foreach ($taxonomyArray as $taxonomy) {
+      $tid = $taxonomy->tid;
+      $edit['field_user_roles_for_view_mode_s']['und'][] = array('tid' => "$tid");
+      break; // If there are several taxonomies with the same name that's a data error.
+    }
+  } 
+}
