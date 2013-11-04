@@ -4233,8 +4233,9 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<script type="text/javascript">
   jQuery(function() {
-    //jQuery(\'.ds-right-2\').hide("fast");
-    //jQuery(\'#pw-block-questions-and-answers\').hide("fast");
+    jQuery(\'.ds-right-2\').hide("fast");
+    jQuery(\'#pw-block-questions-and-answers\').hide("fast");
+    jQuery(\'#form-view-mode-switcher\').hide("fast");
   });
 
 </script>';
