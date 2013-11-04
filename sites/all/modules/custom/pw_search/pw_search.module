@@ -121,6 +121,8 @@ function pw_search_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
   $query->addParam("qf", "content"); // defined in the index generation, see pw_search_apachesolr_index_document_build_user()
   $query->addParam("qf", "taxonomy_names"); // handles party, constituency, and parliament automatically
   $query->addParam("qf", "sm_areacodes");
+  $query->removeParam("fq");
+  $query->addParam("fq", "ss_language:und");
   
 }
 
