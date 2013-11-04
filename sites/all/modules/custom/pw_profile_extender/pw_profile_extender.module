@@ -22,30 +22,24 @@
    */
   function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
   {
-    if ($form['#id'] == 'views-exposed-form-profile-list-rev-grid') {
+    //define helptexts for sort and order filter here!
+    $infotext_sort = t('Infotext Sort');
+    $infotext_order = t('Infotext Order');
 
-      //politician overview: change letter select to checkboxes
-      $form['field_user_first_letter_lname_value']['#theme'] = 'select_as_checkboxes';
+    if ($form['#id'] == 'views-exposed-form-profile-list-rev-grid') {
 
       $form['between_date_filter_op']['#options']['='] = t('Aktive Abgeordnete');
       $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
       $form['between_date_filter_op']['#theme'] = 'select_with_description';
-      //krumo($form);
-      //$form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
-      //$form['between_date_filter']['#access'] = FALSE;
     }
-  }
-/*
-  function pw_profile_extender_menu_alter(&$items)
-  {
-     $items['node/add/calendarentry'] = array(
-      'title' => t('Add calendar Entry'),
-      'desctiption' => 'Add new calendar entry',
-      'type' => MENU_LOCAL_TASK,
 
-    );
+    if ($form['#id'] == 'views-exposed-form-profile-questions-answers-profile') {
+        $form['sort_by']['#prefix'] = '<div class="bef-sortby bef-select-as-radios><div class="ic-info"><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_sort.'</div></div></div>';
+        $form['sort_order']['#prefix'] = '<div class="bef-sortorder bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_order.'</div></div></div>';
+
+    }
+
   }
-*/
 
   /**
  * Implements hook_theme().
