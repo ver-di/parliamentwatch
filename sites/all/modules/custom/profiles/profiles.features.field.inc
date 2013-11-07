@@ -618,6 +618,12 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
@@ -736,6 +742,12 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
@@ -835,6 +847,12 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
@@ -906,6 +924,12 @@ function profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '15',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'search_result' => array(
           'label' => 'above',
@@ -1426,6 +1450,12 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1658,6 +1688,12 @@ function profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '16',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'search_result' => array(
           'label' => 'above',
@@ -2024,6 +2060,12 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2280,6 +2322,12 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_deputy' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2383,6 +2431,12 @@ function profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '20',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'search_result' => array(
           'label' => 'above',
@@ -2930,6 +2984,12 @@ function profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3042,6 +3102,12 @@ function profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '17',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'search_result' => array(
           'label' => 'above',
@@ -3419,6 +3485,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3490,6 +3562,12 @@ $entity_field[0][\'value\'] = $result;',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '14',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'search_result' => array(
           'label' => 'above',
@@ -3681,6 +3759,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_candidate' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3798,6 +3882,12 @@ $entity_field[0][\'value\'] = $result;',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '25',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'search_result' => array(
           'label' => 'above',
