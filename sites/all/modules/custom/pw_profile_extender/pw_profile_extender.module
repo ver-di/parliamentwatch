@@ -14,6 +14,10 @@
       );
       unset($form["locale"]);
     }
+
+    /*if ($form_id == 'views_exposed_form') {
+      $form_state['redirect'] = current_path();
+    }*/
   }
 
   /**
@@ -25,16 +29,48 @@
     if ($form['#id'] == 'views-exposed-form-profile-list-rev-grid') {
 
       //politician overview: change letter select to checkboxes
-      $form['field_user_first_letter_lname_value']['#theme'] = 'select_as_checkboxes';
+      //$form['field_user_first_letter_lname_value']['#theme'] = 'select_as_checkboxes';
+      //$form['field_user_first_letter_lname_value']['#default_value'] = 'A';
 
       $form['between_date_filter_op']['#options']['='] = t('Aktive Abgeordnete');
       $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
-      $form['between_date_filter_op']['#theme'] = 'select_with_description';
-      //krumo($form);
+
       //$form['between_date_filter_op']['#theme'] = 'select_as_checkboxes';
+
       //$form['between_date_filter']['#access'] = FALSE;
     }
+
+
+    if ($form['#id'] == 'views-exposed-form-profile-questions-answers-profile') {
+      //krumo($form);
+      $form['sort_by']['#prefix'] = '<div class="bef-sortby bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_sort.'</div></div>';
+      $form['sort_order']['#prefix'] = '<div class="bef-sortorder bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_order.'</div></div>';
+    }
   }
+
+
+function pw_profile_extender_preprocess_views_view(&$vars) {
+  // When using full pager, disable any time-based caching if there are less
+  // then 10 results.
+  $view = $vars['view'];
+
+  if($view->name == 'your-profile_questions_answers') {
+    // add needed javascript
+    drupal_add_js(drupal_get_path('theme', 'parliamentwatch') . '/js/hidefilter.js');
+  }
+}
+
+function pw_profile_extender_theme($existing, $type, $theme, $path) {
+  return array(
+    'select_with_description' => array(
+      'function' => 'theme_select_with_description',
+      'render element' => 'element',
+      'file' => 'pw_profile_extender.theme',
+    ),
+  );
+}
+
+
 /*
   function pw_profile_extender_menu_alter(&$items)
   {
@@ -46,16 +82,3 @@
     );
   }
 */
-
-  /**
- * Implements hook_theme().
- */
-function pw_profile_extender_theme($existing, $type, $theme, $path) {
-  return array(
-    'select_with_description' => array(
-      'function' => 'theme_select_with_description',
-      'render element' => 'element',
-      'file' => 'pw_profile_extender.theme',
-    ),
-  );
-}

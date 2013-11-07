@@ -44,7 +44,7 @@ zones[content] = 'Content'
 zones[postscript] = 'Postscript'
 zones[footer] = 'Footer'
 
-;scripts[09] = 'js/exposed.forms.fix.js'
+scripts[09] = 'js/exposed.forms.fix.js'
 scripts[10] = 'js/doubletaptogo.min.js'
 scripts[11] = 'js/jquery.expander.min.js'
 scripts[12] = 'js/jquery.selectText.min.js'
