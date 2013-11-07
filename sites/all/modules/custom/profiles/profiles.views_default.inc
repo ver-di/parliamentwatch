@@ -1081,7 +1081,6 @@ if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
 }
 $user = menu_get_object(\'user\');
-krumo( $user->field_user_constituency[\'und\'][0][\'tid\']);
 ';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
