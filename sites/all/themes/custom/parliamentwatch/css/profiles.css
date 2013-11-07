@@ -366,6 +366,9 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 #edit-field-user-first-letter-lname-value-wrapper .views-widget {
     width: 89%;
 }
+
+/* letter filter as checkboxes */
+/*
 #edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input {
     position: absolute;
     left: -5000em;
@@ -386,6 +389,35 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 }
 #edit-field-user-first-letter-lname-value-wrapper .form-checkboxes label:hover,
 #edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input[type="checkbox"]:checked + label {
+    background: #f4f4f4;
+    color: #333;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-item {
+    float: left;
+    padding: 0;
+}
+*/
+/* letter filter as radios */
+#edit-field-user-first-letter-lname-value-wrapper .form-radios input {
+    position: absolute;
+    left: -5000em;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-radios label {
+    float: left;
+    min-width: 10px;
+    line-height: 20px;
+    line-height: 2.0rem;
+    text-align: center;
+    margin: 0 4px 4px 0;
+    padding: 0 5px;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-radios label,
+#edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label:hover {
+    background: #ccc;
+    color: #fff;
+}
+#edit-field-user-first-letter-lname-value-wrapper .form-radios label:hover,
+#edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label {
     background: #f4f4f4;
     color: #333;
 }

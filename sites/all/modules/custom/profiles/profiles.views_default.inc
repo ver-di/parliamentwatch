@@ -31,6 +31,8 @@ function profiles_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -89,7 +91,7 @@ function profiles_views_default_views() {
   /* Display: Profile Calendar */
   $handler = $view->new_display('block', 'Profile Calendar', 'profile_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Calendar of [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Wahlkampftermine von [field_user_fname] [field_user_lname]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -97,7 +99,7 @@ function profiles_views_default_views() {
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'go to full calendar';
+  $handler->display->display_options['use_more_text'] = 'Alle Termine anzeigen';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
@@ -308,7 +310,7 @@ function profiles_views_default_views() {
   /* Display: Calendar Page */
   $handler = $view->new_display('page', 'Calendar Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Calendar of [field_user_fname] [field_user_lname], [field_user_party]';
+  $handler->display->display_options['title'] = 'Wahlkampftermine von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['display_description'] = 'Calendar Page for sharing';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -814,6 +816,8 @@ function profiles_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -1108,7 +1112,16 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['tid']['default_argument_options']['code'] = '$user = menu_get_object(\'user\');
-return $user->field_user_constituency[\'und\'][0][\'tid\'];';
+
+if(sizeOf($user->field_user_constituency[\'und\']) >1)
+{
+  return $user->field_user_constituency[\'und\'][1][\'tid\'];
+}
+else
+{
+   return $user->field_user_constituency[\'und\'][0][\'tid\'];
+}
+';
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
@@ -1146,6 +1159,8 @@ return $user->field_user_constituency[\'und\'][0][\'tid\'];';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -1752,6 +1767,8 @@ if($record->value == 0){
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
@@ -2540,6 +2557,7 @@ if($record->value == 0){
   /* Display: Übersicht der Abgeordneten */
   $handler = $view->new_display('page', 'Übersicht der Abgeordneten', 'grid');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Benutzer: First Name */
@@ -2852,137 +2870,136 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['label'] = 'Abgeordnete nach Namen filtern';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['identifier'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['widget'] = 'radios';
-  $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    2 => array(
-      'title' => 'R',
-      'operator' => '=',
-      'value' => 'R',
-    ),
-    3 => array(
-      'title' => 'Q',
-      'operator' => '=',
-      'value' => 'Q',
-    ),
-    4 => array(
-      'title' => 'P',
-      'operator' => '=',
-      'value' => 'P',
-    ),
-    5 => array(
-      'title' => 'N',
-      'operator' => '=',
-      'value' => 'N',
-    ),
-    6 => array(
-      'title' => 'X',
-      'operator' => '=',
-      'value' => 'X',
-    ),
-    7 => array(
-      'title' => 'O',
-      'operator' => '=',
-      'value' => 'O',
-    ),
-    8 => array(
-      'title' => 'W',
-      'operator' => '=',
-      'value' => 'W',
-    ),
-    9 => array(
-      'title' => 'Z',
-      'operator' => '=',
-      'value' => 'Z',
-    ),
-    10 => array(
-      'title' => 'U',
-      'operator' => '=',
-      'value' => 'U',
-    ),
-    11 => array(
-      'title' => 'Y',
-      'operator' => '=',
-      'value' => 'Y',
-    ),
-    12 => array(
-      'title' => 'T',
-      'operator' => '=',
-      'value' => 'T',
-    ),
-    13 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    14 => array(
-      'title' => 'M',
-      'operator' => '=',
-      'value' => 'M',
-    ),
-    15 => array(
-      'title' => 'J',
-      'operator' => '=',
-      'value' => 'J',
-    ),
-    16 => array(
-      'title' => 'G',
-      'operator' => '=',
-      'value' => 'G',
-    ),
-    17 => array(
-      'title' => 'A',
-      'operator' => '=',
-      'value' => 'A',
-    ),
-    18 => array(
       'title' => 'L',
       'operator' => '=',
       'value' => 'L',
     ),
-    19 => array(
+    2 => array(
       'title' => 'B',
       'operator' => '=',
       'value' => 'B',
     ),
-    20 => array(
+    3 => array(
+      'title' => 'A',
+      'operator' => '=',
+      'value' => 'A',
+    ),
+    4 => array(
+      'title' => 'G',
+      'operator' => '=',
+      'value' => 'G',
+    ),
+    5 => array(
+      'title' => 'J',
+      'operator' => '=',
+      'value' => 'J',
+    ),
+    6 => array(
       'title' => 'D',
       'operator' => '=',
       'value' => 'D',
     ),
-    21 => array(
+    7 => array(
       'title' => 'C',
       'operator' => '=',
       'value' => 'C',
     ),
-    22 => array(
-      'title' => 'E',
-      'operator' => '=',
-      'value' => 'E',
-    ),
-    23 => array(
-      'title' => 'F',
-      'operator' => '=',
-      'value' => 'F',
-    ),
-    24 => array(
-      'title' => 'H',
-      'operator' => '=',
-      'value' => 'H',
-    ),
-    26 => array(
+    8 => array(
       'title' => 'I',
       'operator' => '=',
       'value' => 'I',
     ),
-    27 => array(
+    9 => array(
       'title' => 'K',
       'operator' => '=',
       'value' => 'K',
+    ),
+    10 => array(
+      'title' => 'H',
+      'operator' => '=',
+      'value' => 'H',
+    ),
+    11 => array(
+      'title' => 'F',
+      'operator' => '=',
+      'value' => 'F',
+    ),
+    12 => array(
+      'title' => 'E',
+      'operator' => '=',
+      'value' => 'E',
+    ),
+    13 => array(
+      'title' => 'M',
+      'operator' => '=',
+      'value' => 'M',
+    ),
+    14 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
+    ),
+    15 => array(
+      'title' => 'T',
+      'operator' => '=',
+      'value' => 'T',
+    ),
+    16 => array(
+      'title' => 'S',
+      'operator' => '=',
+      'value' => 'S',
+    ),
+    17 => array(
+      'title' => 'R',
+      'operator' => '=',
+      'value' => 'R',
+    ),
+    18 => array(
+      'title' => 'Q',
+      'operator' => '=',
+      'value' => 'Q',
+    ),
+    19 => array(
+      'title' => 'P',
+      'operator' => '=',
+      'value' => 'P',
+    ),
+    20 => array(
+      'title' => 'N',
+      'operator' => '=',
+      'value' => 'N',
+    ),
+    21 => array(
+      'title' => 'X',
+      'operator' => '=',
+      'value' => 'X',
+    ),
+    22 => array(
+      'title' => 'O',
+      'operator' => '=',
+      'value' => 'O',
+    ),
+    23 => array(
+      'title' => 'W',
+      'operator' => '=',
+      'value' => 'W',
+    ),
+    24 => array(
+      'title' => 'Z',
+      'operator' => '=',
+      'value' => 'Z',
+    ),
+    25 => array(
+      'title' => 'U',
+      'operator' => '=',
+      'value' => 'U',
+    ),
+    26 => array(
+      'title' => 'Y',
+      'operator' => '=',
+      'value' => 'Y',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
@@ -3480,6 +3497,8 @@ if($record->value == 0){
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
@@ -3965,6 +3984,8 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
@@ -4054,20 +4075,17 @@ drupal_add_js($js,\'inline\');
   $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'last';
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\')."/js/shortlink.js");
+//drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\')."/js/hidefilter.js");
+?>
+';
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['area']['id'] = 'area';
-  $handler->display->display_options['empty']['area']['table'] = 'views';
-  $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<script type="text/javascript">
-  jQuery(function() {
-    jQuery(\'.ds-right-2\').hide("fast");
-    jQuery(\'#pw-block-questions-and-answers\').hide("fast");
-  });
-
-</script>';
-  $handler->display->display_options['empty']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
@@ -4528,6 +4546,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
@@ -5058,6 +5078,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
@@ -5207,6 +5229,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -5317,7 +5341,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   /* Display: Profile API */
   $handler = $view->new_display('block', 'Profile API', 'api_profile');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] as XML';
+  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] als XML';
   $handler->display->display_options['display_description'] = 'provides a link to the API';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | User: First Name */
@@ -5397,6 +5421,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -5704,6 +5730,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_education']['id'] = 'field_user_education';
   $handler->display->display_options['fields']['field_user_education']['table'] = 'field_data_field_user_education';
   $handler->display->display_options['fields']['field_user_education']['field'] = 'field_user_education';
+  $handler->display->display_options['fields']['field_user_education']['label'] = 'Berufliche Qualifikation';
   $handler->display->display_options['fields']['field_user_education']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_education']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_education']['element_wrapper_class'] = 'views-row-odd clear clearfix';
@@ -5748,7 +5775,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: About */
   $handler = $view->new_display('block', 'About', 'about');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = ' About [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Über [field_user_fname] [field_user_lname]';
   $handler->display->display_options['display_description'] = 'Contextual About Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -5820,7 +5847,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: About Page */
   $handler = $view->new_display('page', 'About Page', 'about_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'About [field_user_fname] [field_user_lname], [field_user_party]';
+  $handler->display->display_options['title'] = 'Über [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -6355,7 +6382,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Additional Links */
   $handler = $view->new_display('block', 'Additional Links', 'additional_links');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Additional Links of [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Weiterführende Links von [field_user_fname] [field_user_lname]';
   $handler->display->display_options['display_description'] = 'Additional Links Goals Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -6422,7 +6449,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Additional Links Page */
   $handler = $view->new_display('page', 'Additional Links Page', 'additional_links_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Additional Links of [field_user_fname] [field_user_lname], [field_user_party]';
+  $handler->display->display_options['title'] = 'Weiterführende Links von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
@@ -7352,6 +7379,8 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = '';
