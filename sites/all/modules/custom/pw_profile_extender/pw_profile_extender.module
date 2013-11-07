@@ -1,56 +1,43 @@
 <?php
-  /**
-   * Implements hook_form_alter().
-   * Extends the User Profile Form with the calendar view
-   */
-  function pw_profile_extender_form_alter(&$form, &$form_state, $form_id)
-  {
-    if ($form_id == 'user_profile_form') {
-      $form['calendar admin'] = array(
-        '#title' => 'My Calendar',
-        '#type' => 'markup',
-        '#markup' => views_embed_view('calendar', 'calendar_admin_block'),
-        '#weight' => 8,
-      );
-      unset($form["locale"]);
-    }
-
-    /*if ($form_id == 'views_exposed_form') {
-      $form_state['redirect'] = current_path();
-    }*/
-  }
-
-  /**
-   * Implements form_views_exposed_form_alter().
-   * Adds checkboxes to the alphabetical filter
-   */
-  function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
-  {
-    if ($form['#id'] == 'views-exposed-form-profile-list-rev-grid') {
-      $form['between_date_filter_op']['#options']['='] = t('Aktive Abgeordnete');
-      $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
-    }
-
-
-    if ($form['#id'] == 'views-exposed-form-profile-questions-answers-profile') {
-      //krumo($form);
-      $form['sort_by']['#prefix'] = '<div class="bef-sortby bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_sort.'</div></div>';
-      $form['sort_order']['#prefix'] = '<div class="bef-sortorder bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_order.'</div></div>';
-    }
-  }
-
-
-function pw_profile_extender_preprocess_views_view(&$vars) {
-  // When using full pager, disable any time-based caching if there are less
-  // then 10 results.
-  $view = $vars['view'];
-
-  if($view->name == 'your-profile_questions_answers') {
-    // add needed javascript
-    drupal_add_js(drupal_get_path('theme', 'parliamentwatch') . '/js/hidefilter.js');
+/**
+ * Implements hook_form_alter().
+ * Extends the User Profile Form with the calendar view
+ */
+function pw_profile_extender_form_alter(&$form, &$form_state, $form_id)
+{
+  if ($form_id == 'user_profile_form') {
+    $form['calendar admin'] = array(
+      '#title' => 'My Calendar',
+      '#type' => 'markup',
+      '#markup' => views_embed_view('calendar', 'calendar_admin_block'),
+      '#weight' => 8,
+    );
+    unset($form["locale"]);
   }
 }
 
+/**
+ * Implements form_views_exposed_form_alter().
+ * Adds checkboxes to the alphabetical filter
+ */
+function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
+{
+  $infotext_sort = t('Infotext Sort');
+  $infotext_order = t('Infotext Order');
+
+  if ($form['#id'] == 'views-exposed-form-profile-list-rev-grid') {
+    $form['between_date_filter_op']['#options']['='] = t('Aktive Abgeordnete');
+    $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
+  }
+
+
+  if ($form['#id'] == 'views-exposed-form-profile-questions-answers-profile') {
+    $form['sort_by']['#prefix'] = '<div class="bef-sortby bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_sort.'</div></div>';
+    $form['sort_order']['#prefix'] = '<div class="bef-sortorder bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_order.'</div></div>';
+  }
+}
+
+/* Implements hook_theme */
 function pw_profile_extender_theme($existing, $type, $theme, $path) {
   return array(
     'select_with_description' => array(
@@ -61,15 +48,3 @@ function pw_profile_extender_theme($existing, $type, $theme, $path) {
   );
 }
 
-
-/*
-  function pw_profile_extender_menu_alter(&$items)
-  {
-     $items['node/add/calendarentry'] = array(
-      'title' => t('Add calendar Entry'),
-      'desctiption' => 'Add new calendar entry',
-      'type' => MENU_LOCAL_TASK,
-
-    );
-  }
-*/
