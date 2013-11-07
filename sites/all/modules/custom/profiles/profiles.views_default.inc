@@ -1084,6 +1084,8 @@ $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
 print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0][\'raw\'][\'uri\'], \'style_name\' => \'pw_portrait_m\'));
 }
+$user = menu_get_object(\'user\');
+krumo( $user->field_user_constituency[\'und\'][0][\'tid\']);
 ';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
@@ -1112,10 +1114,23 @@ print theme(\'image_style\', array(\'path\' => $data->field_field_user_picture[0
   $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'php';
   $handler->display->display_options['arguments']['tid']['default_argument_options']['code'] = '$user = menu_get_object(\'user\');
-return $user->field_user_constituency[\'und\'][0][\'tid\'];';
+
+if(sizeOf($user->field_user_constituency[\'und\']) >1)
+{
+  return $user->field_user_constituency[\'und\'][1][\'tid\'];
+}
+else
+{
+   return $user->field_user_constituency[\'und\'][0][\'tid\'];
+}
+';
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
+    'constituency' => 'constituency',
+  );
   /* Contextual filter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
@@ -1128,6 +1143,15 @@ return $user->field_user_constituency[\'und\'][0][\'tid\'];';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uid']['not'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Benutzer: Aktiv */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $export['constituency_for_the_profile'] = $view;
 
   $view = new view();
@@ -2548,6 +2572,153 @@ if($record->value == 0){
   /* Display: Übersicht der Abgeordneten */
   $handler = $view->new_display('page', 'Übersicht der Abgeordneten', 'grid');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Erweiterte Optionen',
+    ),
+    'field_user_first_letter_lname_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_user_constituency_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_user_party_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_user_qanda_ratio_value' => array(
+      'bef_format' => 'bef_slider',
+      'slider_options' => array(
+        'bef_slider_min' => '0',
+        'bef_slider_max' => '100',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+      ),
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_user_age_value' => array(
+      'bef_format' => 'bef_slider',
+      'slider_options' => array(
+        'bef_slider_min' => '20',
+        'bef_slider_max' => '70',
+        'bef_slider_step' => '1',
+        'bef_slider_animate' => '',
+        'bef_slider_orientation' => 'horizontal',
+      ),
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_user_gender_value' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'between_date_filter' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Benutzer: First Name */
@@ -2860,137 +3031,136 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['label'] = 'Abgeordnete nach Namen filtern';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['identifier'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['widget'] = 'radios';
-  $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    2 => array(
-      'title' => 'R',
-      'operator' => '=',
-      'value' => 'R',
-    ),
-    3 => array(
-      'title' => 'Q',
-      'operator' => '=',
-      'value' => 'Q',
-    ),
-    4 => array(
-      'title' => 'P',
-      'operator' => '=',
-      'value' => 'P',
-    ),
-    5 => array(
-      'title' => 'N',
-      'operator' => '=',
-      'value' => 'N',
-    ),
-    6 => array(
-      'title' => 'X',
-      'operator' => '=',
-      'value' => 'X',
-    ),
-    7 => array(
-      'title' => 'O',
-      'operator' => '=',
-      'value' => 'O',
-    ),
-    8 => array(
-      'title' => 'W',
-      'operator' => '=',
-      'value' => 'W',
-    ),
-    9 => array(
-      'title' => 'Z',
-      'operator' => '=',
-      'value' => 'Z',
-    ),
-    10 => array(
-      'title' => 'U',
-      'operator' => '=',
-      'value' => 'U',
-    ),
-    11 => array(
-      'title' => 'Y',
-      'operator' => '=',
-      'value' => 'Y',
-    ),
-    12 => array(
-      'title' => 'T',
-      'operator' => '=',
-      'value' => 'T',
-    ),
-    13 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    14 => array(
-      'title' => 'M',
-      'operator' => '=',
-      'value' => 'M',
-    ),
-    15 => array(
-      'title' => 'J',
-      'operator' => '=',
-      'value' => 'J',
-    ),
-    16 => array(
-      'title' => 'G',
-      'operator' => '=',
-      'value' => 'G',
-    ),
-    17 => array(
-      'title' => 'A',
-      'operator' => '=',
-      'value' => 'A',
-    ),
-    18 => array(
       'title' => 'L',
       'operator' => '=',
       'value' => 'L',
     ),
-    19 => array(
+    2 => array(
       'title' => 'B',
       'operator' => '=',
       'value' => 'B',
     ),
-    20 => array(
+    3 => array(
+      'title' => 'A',
+      'operator' => '=',
+      'value' => 'A',
+    ),
+    4 => array(
+      'title' => 'G',
+      'operator' => '=',
+      'value' => 'G',
+    ),
+    5 => array(
+      'title' => 'J',
+      'operator' => '=',
+      'value' => 'J',
+    ),
+    6 => array(
       'title' => 'D',
       'operator' => '=',
       'value' => 'D',
     ),
-    21 => array(
+    7 => array(
       'title' => 'C',
       'operator' => '=',
       'value' => 'C',
     ),
-    22 => array(
-      'title' => 'E',
-      'operator' => '=',
-      'value' => 'E',
-    ),
-    23 => array(
-      'title' => 'F',
-      'operator' => '=',
-      'value' => 'F',
-    ),
-    24 => array(
-      'title' => 'H',
-      'operator' => '=',
-      'value' => 'H',
-    ),
-    26 => array(
+    8 => array(
       'title' => 'I',
       'operator' => '=',
       'value' => 'I',
     ),
-    27 => array(
+    9 => array(
       'title' => 'K',
       'operator' => '=',
       'value' => 'K',
+    ),
+    10 => array(
+      'title' => 'H',
+      'operator' => '=',
+      'value' => 'H',
+    ),
+    11 => array(
+      'title' => 'F',
+      'operator' => '=',
+      'value' => 'F',
+    ),
+    12 => array(
+      'title' => 'E',
+      'operator' => '=',
+      'value' => 'E',
+    ),
+    13 => array(
+      'title' => 'M',
+      'operator' => '=',
+      'value' => 'M',
+    ),
+    14 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
+    ),
+    15 => array(
+      'title' => 'T',
+      'operator' => '=',
+      'value' => 'T',
+    ),
+    16 => array(
+      'title' => 'S',
+      'operator' => '=',
+      'value' => 'S',
+    ),
+    17 => array(
+      'title' => 'R',
+      'operator' => '=',
+      'value' => 'R',
+    ),
+    18 => array(
+      'title' => 'Q',
+      'operator' => '=',
+      'value' => 'Q',
+    ),
+    19 => array(
+      'title' => 'P',
+      'operator' => '=',
+      'value' => 'P',
+    ),
+    20 => array(
+      'title' => 'N',
+      'operator' => '=',
+      'value' => 'N',
+    ),
+    21 => array(
+      'title' => 'X',
+      'operator' => '=',
+      'value' => 'X',
+    ),
+    22 => array(
+      'title' => 'O',
+      'operator' => '=',
+      'value' => 'O',
+    ),
+    23 => array(
+      'title' => 'W',
+      'operator' => '=',
+      'value' => 'W',
+    ),
+    24 => array(
+      'title' => 'Z',
+      'operator' => '=',
+      'value' => 'Z',
+    ),
+    25 => array(
+      'title' => 'U',
+      'operator' => '=',
+      'value' => 'U',
+    ),
+    26 => array(
+      'title' => 'Y',
+      'operator' => '=',
+      'value' => 'Y',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
@@ -3117,6 +3287,7 @@ if($record->value == 0){
   $handler->display->display_options['filters']['between_date_filter']['id'] = 'between_date_filter';
   $handler->display->display_options['filters']['between_date_filter']['table'] = 'user_revision';
   $handler->display->display_options['filters']['between_date_filter']['field'] = 'between_date_filter';
+  $handler->display->display_options['filters']['between_date_filter']['group'] = 1;
   $handler->display->display_options['filters']['between_date_filter']['exposed'] = TRUE;
   $handler->display->display_options['filters']['between_date_filter']['expose']['operator_id'] = 'between_date_filter_op';
   $handler->display->display_options['filters']['between_date_filter']['expose']['label'] = 'Abgeordneten Status';
@@ -4076,6 +4247,7 @@ drupal_add_js($js,\'inline\');
   jQuery(function() {
     jQuery(\'.ds-right-2\').hide("fast");
     jQuery(\'#pw-block-questions-and-answers\').hide("fast");
+    jQuery(\'#form-view-mode-switcher\').hide("fast");
   });
 
 </script>';
