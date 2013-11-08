@@ -57,6 +57,24 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
         jQuery(".view-id-profile_questions_answers .attachment").removeClass("js-hide");
     });
 
+////// respect view mode on views ajax filter call
+    jQuery(document).ajaxComplete(function(e, xhr, settings) {
+        var radio1 = jQuery('.view-mode-full.form-radio').attr('checked');
+        var radio2 = jQuery('.view-mode-teaser.form-radio').attr('checked');
+
+        if(radio1 == 'checked')
+        {
+            jQuery("#pw-block-questions-and-answers > .view-id-profile_questions_answers > .view-content").removeClass("js-hide");
+            jQuery(".view-id-profile_questions_answers .attachment").addClass("js-hide");
+        }
+
+        if(radio2 == 'checked')
+        {
+            jQuery("#pw-block-questions-and-answers > .view-id-profile_questions_answers > .view-content").addClass("js-hide");
+            jQuery(".view-id-profile_questions_answers .attachment").removeClass("js-hide");
+        }
+    });
+
 
 ////// open external links in new window
 
@@ -108,12 +126,10 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 
     jQuery('.add-sharethis').each(function (i) {
     
-        console.log("SHARE THIS");
         //for subsite
         var st_url = location.protocol + '//'+location.host+location.pathname + '/' + jQuery(this).closest('div').attr('id');
-                // for anchor
+        // for anchor
         var link_title = jQuery(this).closest('div').attr('title');
-        console.log(link_title);
         jQuery(this).append('<span class="sharethis-wrapper"><span class="st_sharethis_hcount" onhover="false" st_title="'+link_title+'" st_url="'+st_url+'" displayText="'+link_title+'"></span></span>');
     
     });
