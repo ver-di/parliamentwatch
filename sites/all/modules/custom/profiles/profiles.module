@@ -71,6 +71,14 @@ function profiles_schema() {
 }
 
 /**
+ * Add index to the table to optimize select queries from pw_forms_filter_alter:
+ */
+function profiles_update_1() {
+  db_add_index('user_filter_cache', 'pw_forms_filter_alter_ix', array('input_output_type', 
+      'input_role_name', 'input_parliament_name'));
+}
+
+/**
  * This function maintains the cache table user_filter_cache
  */
 function profiles_cron() {
