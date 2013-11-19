@@ -125,11 +125,13 @@ function profiles_user_presave(&$edit, $account, $category) {
   // fetch the chosen roles from $edit['roles']:
   $roleIdArray = array();
   
-  // stop if the roles are not set. Otherwise, the taxonomy will be reset accidentially.
-  // This happens if user_save() is called programmatically with modifications that
-  // do not include the roles.
-  if(!isset($edit['roles'])) 
-    return;
+  // $edit['roles'] is unset if user_save() is called programmatically with 
+  // modifications that do not include the roles. In order to reset the roles
+  // anyway, we load the roles from the $account:
+  if(!isset($edit['roles'])) {
+    foreach ($account->roles as $key => $value)
+      $edit['roles'][$key] = $key;
+  }
   
   foreach ($edit['roles'] as $key => $value) {
     if ($value != 0) {
