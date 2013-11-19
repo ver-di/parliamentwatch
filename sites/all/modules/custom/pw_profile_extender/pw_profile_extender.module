@@ -30,7 +30,6 @@ function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state
     $form['between_date_filter_op']['#options']['!='] = t('Ausgeschiedene Abgeordnete');
   }
 
-
   if ($form['#id'] == 'views-exposed-form-profile-questions-answers-profile') {
     $form['sort_by']['#prefix'] = '<div class="bef-sortby bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_sort.'</div></div>';
     $form['sort_order']['#prefix'] = '<div class="bef-sortorder bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_order.'</div></div>';
