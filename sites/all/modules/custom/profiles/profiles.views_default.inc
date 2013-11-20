@@ -4409,14 +4409,14 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['sorts']['created_2']['relationship'] = 'cid';
   $handler->display->display_options['sorts']['created_2']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Datum';
+  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Datum der Antwort';
   /* Sort criterion: Inhalt: Anzahl an Kommentaren */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['order'] = 'DESC';
   $handler->display->display_options['sorts']['comment_count']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Answer count';
+  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Anzahl der Antworten';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Inhalt: Veröffentlicht */
@@ -4508,7 +4508,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['filters']['comment_count']['group_info']['widget'] = 'radios';
   $handler->display->display_options['filters']['comment_count']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'Answered',
+      'title' => 'Frage beantwortet',
       'operator' => '>=',
       'value' => array(
         'value' => '1',
@@ -4517,7 +4517,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
       ),
     ),
     2 => array(
-      'title' => 'Not Answered',
+      'title' => 'Frage unbeantwortet',
       'operator' => '=',
       'value' => array(
         'value' => '0',
@@ -4643,8 +4643,19 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['php_output'] = '<?php
+drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\');
+drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js\');
+?>
+';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Inhalt: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -4947,7 +4958,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['sorts']['created_2']['relationship'] = 'cid';
   $handler->display->display_options['sorts']['created_2']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Date of Answers';
+  $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Datum der Antwort';
   /* Sort criterion: Inhalt: Anzahl an Kommentaren */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
@@ -5004,20 +5015,19 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['operator_id'] = 'field_dialogue_topic_tid_op';
-  $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['label'] = 'Topic (field_dialogue_topic)';
+  $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['label'] = 'Nach Thema der Frage filtern';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['operator'] = 'field_dialogue_topic_tid_op';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['identifier'] = 'field_dialogue_topic_tid';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
-    181527986 => 0,
     51622513 => 0,
-    185431326 => 0,
+    181527986 => 0,
     140336230 => 0,
-    237793809 => 0,
+    185431326 => 0,
+    178386088 => 0,
   );
-  $handler->display->display_options['filters']['field_dialogue_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['vocabulary'] = 'dialogue_topics';
   /* Filter criterion: Inhalt: Anzahl an Kommentaren */
   $handler->display->display_options['filters']['comment_count']['id'] = 'comment_count';
@@ -5035,8 +5045,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['filters']['comment_count']['group_info']['widget'] = 'radios';
   $handler->display->display_options['filters']['comment_count']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'Answered',
-      'operator' => '=',
+      'title' => 'Beantwortet',
+      'operator' => '>=',
       'value' => array(
         'value' => '1',
         'min' => '',
@@ -5044,7 +5054,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
       ),
     ),
     2 => array(
-      'title' => 'Not Answered',
+      'title' => 'Unbeantwortet',
       'operator' => '=',
       'value' => array(
         'value' => '0',
