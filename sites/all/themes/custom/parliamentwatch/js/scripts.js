@@ -58,6 +58,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
     });
 
 ////// respect view mode on views ajax filter call
+
     jQuery(document).ajaxComplete(function(e, xhr, settings) {
         var radio1 = jQuery('.view-mode-full.form-radio').attr('checked');
         var radio2 = jQuery('.view-mode-teaser.form-radio').attr('checked');
@@ -74,7 +75,6 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
             jQuery(".view-id-profile_questions_answers .attachment").removeClass("js-hide");
         }
     });
-
 
 ////// open external links in new window
 
