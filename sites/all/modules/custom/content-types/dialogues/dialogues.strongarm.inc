@@ -99,7 +99,14 @@ function dialogues_strongarm() {
           'weight' => '11',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'webform' => array(
+          'full' => array(
+            'weight' => '27',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__dialogue'] = $strongarm;
@@ -165,9 +172,58 @@ function dialogues_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_vocab_dialogue_tags';
+  $strongarm->value = '';
+  $export['page_title_vocab_dialogue_tags'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_vocab_dialogue_tags_showfield';
+  $strongarm->value = 0;
+  $export['page_title_vocab_dialogue_tags_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_vocab_dialogue_topics';
+  $strongarm->value = '';
+  $export['page_title_vocab_dialogue_topics'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'page_title_vocab_dialogue_topics_showfield';
+  $strongarm->value = 0;
+  $export['page_title_vocab_dialogue_topics_showfield'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_dialogue_pattern';
   $strongarm->value = '[node:field-dialogue-recipient:name]/question/[node:created:custom:Y-m-d]/[node:nid]';
   $export['pathauto_node_dialogue_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_dialogue_tags_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_dialogue_tags_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_dialogue_topics_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_dialogue_topics_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_dialogues_source';
+  $strongarm->value = 'https://mod.parliamentwatch.org/aw/api2/dialogue/';
+  $export['pw_dialogues_source'] = $strongarm;
 
   return $export;
 }

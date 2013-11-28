@@ -1,8 +1,8 @@
 <?php
 
 /*
- * You must implement hook_migrate_api(), setting the API level to 2, for
- * your migration classes to be recognized by the Migrate module.
+ * Implements hook_migrate_api(), setting the API level to 2, for
+ * committee migration classes to be recognized by the Migrate module.
  */
 function migrate_committee_migrate_api() {
   $api = array(
