@@ -57,6 +57,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_grid_8_normal',
   );
 
   // Exported image style: pw_landscape_l__mobile.
@@ -79,6 +80,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_landscape_l__mobile',
   );
 
   // Exported image style: pw_landscape_l__normal.
@@ -101,6 +103,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_landscape_l__normal',
   );
 
   // Exported image style: pw_portrait_l__mobile.
@@ -123,6 +126,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_portrait_l__mobile',
   );
 
   // Exported image style: pw_portrait_l__normal.
@@ -145,6 +149,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_portrait_l__normal',
   );
 
   // Exported image style: pw_portrait_m.
@@ -167,6 +172,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_portrait_m',
   );
 
   // Exported image style: pw_portrait_s.
@@ -189,6 +195,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_portrait_s',
   );
 
   // Exported image style: pw_portrait_xs.
@@ -211,6 +218,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_portrait_xs',
   );
 
   // Exported image style: pw_thumbnail.
@@ -233,6 +241,7 @@ function pw_content_authoring_layout_image_default_styles() {
         'weight' => '1',
       ),
     ),
+    'label' => 'pw_thumbnail',
   );
 
   return $styles;
