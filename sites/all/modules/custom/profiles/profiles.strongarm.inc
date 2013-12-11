@@ -130,7 +130,7 @@ function profiles_strongarm() {
         'custom_settings' => FALSE,
       ),
       'user_search' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'user_premium' => array(
         'custom_settings' => TRUE,
@@ -189,6 +189,10 @@ function profiles_strongarm() {
           'user_candidate' => array(
             'weight' => '40',
             'visible' => FALSE,
+          ),
+          'user_search' => array(
+            'weight' => '0',
+            'visible' => TRUE,
           ),
         ),
       ),
