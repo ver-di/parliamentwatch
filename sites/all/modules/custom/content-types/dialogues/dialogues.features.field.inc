@@ -759,6 +759,13 @@ function dialogues_field_default_fields() {
           'type' => 'hidden',
           'weight' => '0',
         ),
+        'search_index' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '0',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -843,6 +850,12 @@ function dialogues_field_default_fields() {
           'weight' => '36',
         ),
         'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
+        ),
+        'search_index' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -933,6 +946,12 @@ function dialogues_field_default_fields() {
           'weight' => '31',
         ),
         'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
+        'search_index' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1031,6 +1050,12 @@ function dialogues_field_default_fields() {
           'type' => 'hidden',
           'weight' => '6',
         ),
+        'search_index' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1106,6 +1131,12 @@ function dialogues_field_default_fields() {
           'weight' => '35',
         ),
         'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
+        ),
+        'search_index' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1195,6 +1226,12 @@ function dialogues_field_default_fields() {
           'weight' => '33',
         ),
         'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
+        'search_index' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1297,6 +1334,12 @@ function dialogues_field_default_fields() {
           'type' => 'hidden',
           'weight' => '4',
         ),
+        'search_index' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1380,6 +1423,12 @@ function dialogues_field_default_fields() {
           'weight' => '37',
         ),
         'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
+        ),
+        'search_index' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1517,6 +1566,13 @@ function dialogues_field_default_fields() {
           'type' => 'hidden',
           'weight' => '2',
         ),
+        'search_index' => array(
+          'label' => 'above',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_link',
+          'weight' => '2',
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1608,6 +1664,13 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
+          'weight' => '1',
+        ),
+        'search_index' => array(
+          'label' => 'above',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_link',
           'weight' => '1',
         ),
         'teaser' => array(
