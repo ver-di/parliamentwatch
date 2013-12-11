@@ -130,7 +130,7 @@ function profiles_strongarm() {
         'custom_settings' => FALSE,
       ),
       'user_search' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'user_premium' => array(
         'custom_settings' => TRUE,
@@ -189,6 +189,10 @@ function profiles_strongarm() {
           'user_candidate' => array(
             'weight' => '40',
             'visible' => FALSE,
+          ),
+          'user_search' => array(
+            'weight' => '0',
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -268,9 +272,9 @@ function profiles_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_assignment';
   $strongarm->value = array(
-    7441 => 'user_deputy',
-    7443 => 'user_premium',
-    7442 => 'user_premium',
+    7028 => 'user_deputy',
+    7030 => 'user_premium',
+    7029 => 'user_premium',
   );
   $export['pw_profileswitch_assignment'] = $strongarm;
 
@@ -285,7 +289,7 @@ function profiles_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_role1';
-  $strongarm->value = '7441';
+  $strongarm->value = '7028';
   $export['pw_profileswitch_role1'] = $strongarm;
 
   $strongarm = new stdClass();
