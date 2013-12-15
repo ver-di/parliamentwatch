@@ -89,7 +89,8 @@ div.horizontal-tabs .fieldset-description {
   background-color: #f4f4f4;
 }
 .horizontal-tabs ul.horizontal-tabs-list li:hover,
-.horizontal-tabs ul.horizontal-tabs-list li:focus {
+.horizontal-tabs ul.horizontal-tabs-list li:focus,
+.horizontal-tabs ul.horizontal-tabs-list li:active {
   background-color: #f4f4f4;
 }
 .horizontal-tabs ul.horizontal-tabs-list li strong {

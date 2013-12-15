@@ -74,7 +74,8 @@
   background-position: -16px -10px;
 }
 .jcarousel-skin-default .jcarousel-prev-horizontal:hover,
-.jcarousel-skin-default .jcarousel-prev-horizontal:focus {
+.jcarousel-skin-default .jcarousel-prev-horizontal:focus,
+.jcarousel-skin-default .jcarousel-prev-horizontal:active {
   background-position: -48px -10px;
 }
 .jcarousel-skin-default .jcarousel-prev-horizontal:active {
@@ -89,10 +90,11 @@
   background-position: -4px -42px;
 }
 .jcarousel-skin-default .jcarousel-next-horizontal:hover,
-.jcarousel-skin-default .jcarousel-next-horizontal:focus {
+.jcarousel-skin-default .jcarousel-next-horizontal:focus,
+.jcarousel-skin-default .jcarousel-next-horizontal:active {
   background-position: -36px -42px;
 }
-.jcarousel-skin-default .jcarousel-next-horizontal:activez {
+.jcarousel-skin-default .jcarousel-next-horizontal:active {
   background-position: -68px -42px;
 }
 
@@ -106,7 +108,8 @@
   background-position: 0 -64px;
 }
 .jcarousel-skin-default .jcarousel-prev-vertical:hover,
-.jcarousel-skin-default .jcarousel-prev-vertical:focus {
+.jcarousel-skin-default .jcarousel-prev-vertical:focus,
+.jcarousel-skin-default .jcarousel-prev-vertical:active {
   background-position: -32px -64px;
 }
 .jcarousel-skin-default .jcarousel-prev-vertical:active {
@@ -120,7 +123,8 @@
   background-position: 0 -96px;
 }
 .jcarousel-skin-default .jcarousel-next-vertical:hover,
-.jcarousel-skin-default .jcarousel-next-vertical:focus {
+.jcarousel-skin-default .jcarousel-next-vertical:focus,
+.jcarousel-skin-default .jcarousel-next-vertical:active {
   background-position: -32px -96px;
 }
 .jcarousel-skin-default .jcarousel-next-vertical:active {

@@ -318,14 +318,16 @@ a.dark {
     cursor: pointer;
 }
 .shorten span:hover,
-.shorten span:focus {
+.shorten span:focus,
+.shorten span:active {
     background-position: -80px -2580px;
     color: #999;
 }
 .zero-clipboard.copied,
 .shorten .processed,
 .shorten .processed:hover,
-.shorten .processed:focus {
+.shorten .processed:focus,
+.shorten .processed:active {
     background-position: -406px -2260px;
 }
 .icon-link {
@@ -1095,7 +1097,8 @@ ul.tabs li a:active {
     position: relative;
 }
 #region-user-second .block:hover h2.block-title,
-#region-user-second .block:focus h2.block-title {
+#region-user-second .block:focus h2.block-title,
+#region-user-second .block:active h2.block-title {
     z-index: 144;
     border: 1px solid #ccc;
     background-color: #fff;
@@ -1162,7 +1165,8 @@ ul.tabs li a:active {
 
 }
 #region-user-second .block:hover .content,
-#region-user-second .block:focus .content {
+#region-user-second .block:focus .content,
+#region-user-second .block:active .content {
     display: block;
     z-index: 143;
 }
@@ -1186,7 +1190,8 @@ ul.tabs li a:active {
     background-position: -600px -2056px;
 }
 #region-user-second #block-locale-language:hover h2,
-#region-user-second #block-locale-language:focus h2 {
+#region-user-second #block-locale-language:focus h2,
+#region-user-second #block-locale-language:active h2 {
     background-position: -638px -2015px;
 }
 #region-user-second #block-locale-language .locale-translated-name,
@@ -1353,7 +1358,8 @@ a#text_resize_increase:active {
     text-decoration: none;
 }
 .floatbox ul li:hover,
-.floatbox ul li:focus {
+.floatbox ul li:focus,
+.floatbox ul li:active {
     background-color: #d5d5d5;
 }
 .floatbox.floatbox-right {
@@ -1498,7 +1504,9 @@ img.no-outline {
 #region-sidebar-second .view-blog .arrow-item:hover,
 #region-sidebar-second .view-blog-comments .arrow-item:hover,
 #region-sidebar-second .view-blog .arrow-item:focus,
-#region-sidebar-second .view-blog-comments .arrow-item:focus {
+#region-sidebar-second .view-blog-comments .arrow-item:focus,
+#region-sidebar-second .view-blog .arrow-item:active,
+#region-sidebar-second .view-blog-comments .arrow-item:active {
     background-color: #eee;
     padding-left: 21px;
     padding-right: 14px;
