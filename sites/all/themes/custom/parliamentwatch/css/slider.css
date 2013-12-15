@@ -35,6 +35,7 @@
 }
 .view-slider {
     height: 168px !important;
+    height: 16.8rem !important;
     position: relative;
 }
 .view-slider #views_slideshow_cycle_teaser_section_slider-block,
