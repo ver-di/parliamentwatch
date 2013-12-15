@@ -18,11 +18,14 @@
 	display: none;
 }
 #nav ul ul,
-#nav ul li:hover ul ul {
+#nav ul li:hover ul ul,
+#nav ul li:focus ul ul {
     display: none;
 }
 #nav ul li:hover ul,
-#nav ul li:hover ul li:hover ul {
+#nav ul li:hover ul li:hover ul,
+#nav ul li:focus ul,
+#nav ul li ul li:focus ul {
     display: block;
 }
 
@@ -52,6 +55,7 @@
 }
 #nav > ul > li.active-trail,
 #nav > ul > li:hover,
+#nav > ul > li:focus,
 #nav > ul > li a.active {
     background: url("../images/sprite.png") no-repeat scroll center -1641px transparent;
 }

@@ -77,7 +77,8 @@
     display: none;
     position: static;
 }
-#nav li:hover ul
+#nav li:hover ul,
+#nav li:focus ul
 {
 	display: block;
 }

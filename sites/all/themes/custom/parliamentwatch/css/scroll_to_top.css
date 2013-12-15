@@ -32,7 +32,11 @@ body {
 	
 }
 #back-top a:hover, 
-#back-top-prev a:hover {
+#back-top-prev a:hover,
+#back-top a:focus, 
+#back-top-prev a:focus
+#back-top a:active, 
+#back-top-prev a:active {
 	color: #666;
 }
 /* arrow icon (span tag) */
@@ -54,7 +58,11 @@ body {
 	transition: 1s;
 }
 #back-top a:hover span#button,
-#back-top-prev a:hover span#button-prev {
+#back-top-prev a:hover span#button-prev,
+#back-top a:focus span#button,
+#back-top-prev a:focus span#button-prev,
+#back-top a:active span#button,
+#back-top-prev a:active span#button-prev {
 	opacity: 1;
 	filter: alpha(opacity = 100);
 }

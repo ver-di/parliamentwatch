@@ -109,7 +109,8 @@ div.horizontal-tabs .view-content {
     margin-right: 0;
     text-align: right;
 }
-.profiles-list-compact-wrapper:hover .element-hidden {
+.profiles-list-compact-wrapper:hover .element-hidden,
+.profiles-list-compact-wrapper:focus .element-hidden {
     display: block;
     position: absolute;
     z-index: 123;
@@ -124,15 +125,18 @@ div.horizontal-tabs .view-content {
     border: 1px solid #dedede;
 
 }
-.col-last .profiles-list-compact-wrapper:hover .element-hidden {
+.col-last .profiles-list-compact-wrapper:hover .element-hidden,
+.col-last .profiles-list-compact-wrapper:focus .element-hidden {
     left: auto;
     right: 17px;
 }
-.profiles-list-compact-wrapper:hover .element-hidden .profile-image {
+.profiles-list-compact-wrapper:hover .element-hidden .profile-image,
+.profiles-list-compact-wrapper:focus .element-hidden .profile-image {
     float: left;
     margin: 0 14px 0 0;
 }
-.col-last .profiles-list-compact-wrapper:hover .element-hidden .profile-image {
+.col-last .profiles-list-compact-wrapper:hover .element-hidden .profile-image,
+.col-last .profiles-list-compact-wrapper:focus .element-hidden .profile-image {
     float: right;
     margin: 0 0 0 14px;
 }
@@ -356,6 +360,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     padding: 3px 7px;
 }
 #edit-field-dialogue-topic-tid label:hover,
+#edit-field-dialogue-topic-tid label:focus,
 #edit-field-dialogue-topic-tid input[type="radio"]:checked + label {
     background: none repeat scroll 0 0 #F4F4F4;
 }
@@ -381,11 +386,13 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     padding: 0 5px;
 }
 #edit-field-user-first-letter-lname-value-wrapper .form-checkboxes label,
-#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input[type="checkbox"]:checked + label:hover {
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input[type="checkbox"]:checked + label:hover,
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input[type="checkbox"]:checked + label:focus {
     background: #ccc;
     color: #fff;
 }
 #edit-field-user-first-letter-lname-value-wrapper .form-checkboxes label:hover,
+#edit-field-user-first-letter-lname-value-wrapper .form-checkboxes label:focus,
 #edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input[type="checkbox"]:checked + label {
     background: #f4f4f4;
     color: #333;
@@ -407,11 +414,13 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     padding: 0 5px;
 }
 #edit-field-user-first-letter-lname-value-wrapper .form-radios label,
-#edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label:hover {
+#edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label:hover,
+#edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label:focus {
     background: #ccc;
     color: #fff;
 }
 #edit-field-user-first-letter-lname-value-wrapper .form-radios label:hover,
+#edit-field-user-first-letter-lname-value-wrapper .form-radios label:focus,
 #edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label {
     background: #f4f4f4;
     color: #333;
