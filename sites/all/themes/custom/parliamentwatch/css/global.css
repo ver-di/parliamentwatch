@@ -274,23 +274,18 @@ a.light,
 }
 .medium,
 a.medium,
-.medium a,
-.copyright,
-.field-name-field-image-copyright {
+.medium a {
     color: #666;
-    font-weight: normal;
 }
-.copyright,
-.field-name-field-image-copyright {
-    font-size: 11px;
-    font-size: 1.1rem;
+a.medium,
+.medium a {
+    font-weight: normal;
 }
 .dark,
 a.dark {
     color: #333;
 }
-.normal-weight,
-.normal-weight a {
+.normal-weight {
     font-weight: normal;
 }
 .label-inline {
@@ -417,6 +412,15 @@ a.link-pdf {
 a.link-participate {
     padding-left: 22px;
     background-position: -26px -2138px;
+}
+.link-sign a,
+a.link-sign {
+    padding-left: 20px;
+    background-position: -247px -2422px;
+}
+.link-sign a:hover,
+a.link-sign:hover {
+    background-position: -207px -2462px;
 }
 .link-calendar a,
 a.link-calendar,
@@ -1544,6 +1548,31 @@ html.js fieldset.collapsed {
     text-align: right;
 }
 
+/* petitions */
+
+.pw-petition-progress-wrapper {
+    height: 32px;
+    width: 314px;
+    margin-bottom: 2px; 
+    border: 1px solid #d3d3d3;
+    -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
+    -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
+    box-shadow: inset 0px 0px 2px 2px #ececec;
+}
+.pw-petition-progress {
+    height: 32px;
+    width: 314px;
+    background: #ff6633;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNjYzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmVlMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left,  #ff6633 0%, #ffee33 314px);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ff6633), color-stop(314px,#ffee33));
+    background: -webkit-linear-gradient(left,  #ff6633 0%,#ffee33 314px);
+    background: -o-linear-gradient(left,  #ff6633 0%,#ffee33 314px);
+    background: -ms-linear-gradient(left,  #ff6633 0%,#ffee33 314px);
+    background: linear-gradient(to right,  #ff6633 0%,#ffee33 314px);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6633', endColorstr='#ffee33',GradientType=1 ); 
+}
+
 
 /* /////////////////////////// forms /////////////////// */
 
@@ -1733,14 +1762,10 @@ span.form-submit.big {
     display: inline-block;
 }
 .webform-component-checkboxes {
-    position: relative;
-    padding-left: 20px;
-    margin-bottom: 8px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.8em;
 }
-.webform-component-checkboxes .form-checkboxes {
-    position: absolute;
-    left: 0;
+input.form-checkbox {
+    margin-top: -4px;
 }
 form .webform-component-checkboxes .description {
     margin-top: 0;
@@ -1869,6 +1894,42 @@ form .webform-component-checkboxes .description {
 }
 #comment-form #edit-captcha-response.form-text {
     width: 180px;
+}
+
+
+/* /////////////////////////// petition form //////////////// */
+
+.pw-petition-form #edit-submitted-prefix {
+    width: 191px;
+}
+.pw-petition-form #webform-component-prefix label {
+    display: none;
+}
+.pw-petition-form input.form-text,
+.pw-petition-form select {
+    width: 423px;
+}
+.pw-petition-form #webform-component-zipcode,
+.pw-petition-form #webform-component-zipcode input {
+    width: 98px;
+    float: left;
+}
+.pw-petition-form #webform-component-zipcode {
+    margin-right: 10px;
+}
+.pw-petition-form #webform-component-city,
+.pw-petition-form #webform-component-city input {
+    width: 314px;
+    float: left;
+}
+.pw-petition-form #webform-component-country label {
+    display: none;
+}
+.pw-petition-form #webform-component-country {
+    clear: both;
+}
+.pw-petition-form #edit-submitted-reason {
+    height: 15em;
 }
 
 
@@ -2248,10 +2309,12 @@ a.link-report,
 a.link-download,
 .ic-print a,
 a.ic-print,
-a.link-pdf,
 .link-pdf a,
+a.link-pdf,
 .link-participate a,
 a.link-participate,
+.link-sign a,
+a.link-sign,
 .link-calendar a,
 a.link-calendar,
 .view-calendar .more-link a,
@@ -2367,4 +2430,3 @@ blockquote:before,
     margin-top:0;
     margin-bottom:0;
 }
-
