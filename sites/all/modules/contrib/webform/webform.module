@@ -2523,7 +2523,7 @@ function webform_client_form_submit($form, &$form_state) {
   }
 
   // Strip out empty tags added by WYSIWYG editors if needed.
-  $confirmation = _webform_filter_values($confirmation, $node, $submission, NULL, FALSE, TRUE);
+  $confirmation = strlen(trim(strip_tags($node->webform['confirmation']))) ? $node->webform['confirmation'] : '';
 
   // Clean up the redirect URL and filter it for webform tokens.
   $redirect_url = trim($node->webform['redirect_url']);
@@ -2635,10 +2635,6 @@ function _webform_confirmation($node) {
   drupal_set_title($node->title);
   webform_set_breadcrumb($node);
   $sid = isset($_GET['sid']) ? $_GET['sid'] : NULL;
-  if (isset($sid)) {
-      $submission = webform_menu_submission_load($sid, $node->nid);
-      $node->webform['confirmation'] = _webform_filter_values($node->webform['confirmation'], $node, $submission, NULL, FALSE, TRUE);
-  }
   return theme(array('webform_confirmation_' . $node->nid, 'webform_confirmation'), array('node' => $node, 'sid' => $sid));
 }
 
@@ -2924,23 +2920,6 @@ function _webform_filter_values($string, $node = NULL, $submission = NULL, $emai
   // Don't do any filtering if the string is empty.
   if (strlen(trim($string)) == 0) {
     return $string;
-  }
-
-  // Token module replacements
-  if (module_exists('token')) {
-      $reptypes = array('global' => NULL, 'user' => $user);
-      if (isset($node) && isset($node->nid) && is_numeric($node->nid)) {
-        $nid = $node->nid;
-      }
-      else if (arg(0) == 'node' && is_numeric(arg(1))) {
-        $nid = arg(1);
-      }
-
-      if ($nid) {
-          $reptypes += array('node' => node_load($nid));
-      }
-
-      $string = token_replace($string, $reptypes, array('clear' => TRUE));
   }
 
   // Setup default token replacements.
@@ -3290,12 +3269,6 @@ function theme_webform_token_help($variables) {
     '#children' => '<div>' . $output . '</div>',
     '#attributes' => array('class' => array('collapsible', 'collapsed')),
   );
-
-  if (module_exists('token')) {
-      $fieldset['#children'] .= '<br/><p>' . t("Additional token values from Drupal's standard token replacement mechanism. Please make sure that, unlike most other places where these tokens are used, you surround them by <em>two</em> square brackets; '<strong>[[</strong>' and '<strong>]]</strong>'. </p>")
-                              . theme('token_tree', array('token_types' => array('global', 'user', 'node'), 'click_insert' => TRUE, 'show_restricted' => TRUE));
-  }
-
   return theme('fieldset', array('element' => $fieldset));
 }
 
