@@ -43,6 +43,16 @@ function pw_petitions_ds_field_settings_info() {
         ),
       ),
     ),
+    'sharethis_horizontal' => array(
+      'weight' => '11',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
     'pw_petition_form' => array(
       'weight' => '10',
       'label' => 'hidden',
@@ -70,7 +80,7 @@ function pw_petitions_ds_field_settings_info() {
       ),
     ),
     'comments' => array(
-      'weight' => '11',
+      'weight' => '12',
       'label' => 'above',
       'format' => 'default',
     ),
@@ -231,7 +241,8 @@ function pw_petitions_ds_layout_settings_info() {
         8 => 'field_petition_signings',
         9 => 'field_petition_content',
         10 => 'pw_petition_form',
-        11 => 'comments',
+        11 => 'sharethis_horizontal',
+        12 => 'comments',
       ),
     ),
     'fields' => array(
@@ -246,6 +257,7 @@ function pw_petitions_ds_layout_settings_info() {
       'field_petition_signings' => 'ds_content',
       'field_petition_content' => 'ds_content',
       'pw_petition_form' => 'ds_content',
+      'sharethis_horizontal' => 'ds_content',
       'comments' => 'ds_content',
     ),
     'classes' => array(),
