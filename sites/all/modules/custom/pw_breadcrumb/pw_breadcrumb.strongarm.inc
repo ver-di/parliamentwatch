@@ -130,12 +130,13 @@ function pw_breadcrumb_strongarm() {
     17 => 0,
     25 => 0,
     26 => 0,
+    32 => 0,
     18 => 0,
     19 => 0,
     20 => 0,
+    33 => 0,
     21 => 0,
     22 => 0,
-    23 => 0,
   );
   $export['custom_breadcrumbs_taxonomy_excluded_vocabs'] = $strongarm;
 
@@ -161,12 +162,18 @@ function pw_breadcrumb_strongarm() {
     'article' => 0,
     'page' => 0,
     'blogpost' => 0,
+    'calendar_entry' => 0,
     'dialogue' => 0,
+    'migrate_extras_media_example' => 0,
+    'migrate_example_pathauto' => 0,
     'pw_poll' => 0,
+    'pw_petition' => 0,
     'press_release' => 0,
     'press_article' => 0,
     'pw_slider' => 0,
     'trustee' => 0,
+    'poll' => 0,
+    'election_programme' => 0,
     'webform' => 0,
   );
   $export['custom_breadcrumbs_taxonomy_node_types'] = $strongarm;
@@ -259,7 +266,7 @@ function pw_breadcrumb_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_breadcrumb_home';
-  $strongarm->value = 'Home';
+  $strongarm->value = 'Startseite';
   $export['custom_breadcrumb_home'] = $strongarm;
 
   return $export;
