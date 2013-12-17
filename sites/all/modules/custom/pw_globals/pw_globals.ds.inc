@@ -75,6 +75,39 @@ function pw_globals_ds_custom_fields_info() {
   );
   $export['author_linked_to_contact_form'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'custom_comment_counter';
+  $ds_field->label = 'Custom Comment Counter';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'comment' => 'comment',
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<?php
+
+// Load and print comment count
+$node = node_load(arg(1));
+if($node->comment_count == 0){
+    print \'<a href="#comments" title="\'.t(\'go to comments\').\'">\'.t(\'no comments yet\').\'</a>\';
+}
+else if($node->comment_count == 1){
+    print \'<a href="#comments" title="\'.t("go to comments").\'">\'.t("1 comment").\'</a>\';
+}
+else{
+    print  \'<a href="#comments" title="\'.t("go to comments").\'">\'.$node->comment_count.t(" comments").\'</a>\';
+}
+
+?>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 0,
+  );
+  $export['custom_comment_counter'] = $ds_field;
+
   return $export;
 }
 
