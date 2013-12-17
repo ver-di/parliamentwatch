@@ -12,7 +12,7 @@ include_once 'pw_petitions.features.inc';
 function pw_petitions_menu() {
   $items = array();
   
-  $items['thanks-for-your-signing'] = array(
+  $items['petitions/thanks-for-signing'] = array(
     'title' => 'Thanks for your signing!',
     'access arguments' => array('access content'),
     'page callback' => 'redirect_to_petition',
@@ -22,7 +22,7 @@ function pw_petitions_menu() {
 }
 
 function redirect_to_petition(){
-	drupal_set_message("Vielen Dank, dass Sie die Petition unterzeichnet haben.");
+	drupal_set_message("Vielen Dank, dass Sie die Petition unterzeichnet haben! Bitte teilen Sie die Petition in Ihren Netzwerken und unter Ihren Freunden!");
 	drupal_goto('petitions');
 }
 
@@ -33,7 +33,7 @@ function redirect_to_petition(){
 function pw_petitions_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
-    case 'webform_client_form_10367':
+    case 'webform_client_form_10369':
       $form['#validate'][] = 'pw_petitions_form_validate';
       $form['#submit'][] = 'pw_petitions_form_submit';
   }
