@@ -1,0 +1,86 @@
+<?php
+
+/**
+ * @file pw_newsletter.module
+ * + helper module to subscribe users via webform to newsletter
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function pw_newsletter_menu() {
+  $items = array();
+  
+  $items['newsletter/subscribe'] = array(
+    'title' => 'Newsletter Subscription',
+    'access arguments' => array('access content'),
+    'delivery callback' => 'subscribe_to_newsletter',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+  return $items;
+}
+
+function subscribe_to_newsletter(){
+	drupal_add_http_header('Content-type', 'text/html; charset=utf8');
+
+	// check if email address is submitted via get parameter
+	$email = false;
+	if(isset($_GET['email'])){
+		$email = $_GET['email'];
+	}
+	
+	// validate email address
+	if(valid_email_address($email)){
+
+		// retrieve webform node
+		$internal_path = drupal_lookup_path('source', 'newsletter-subscription');
+
+		if($internal_path && $node = menu_get_object('node', 1, $internal_path)){
+
+			// load webform module
+			module_load_include('inc', 'webform', 'includes/webform.submissions');
+		
+			// load webform submissions
+			$webform_submissions = webform_get_submissions($node->nid);
+
+			// check if address is on list
+			foreach($webform_submissions as $webform_submission){
+				if($webform_submission->data[1]['value'][0] == $email){
+					$status = $webform_submission->data[2]['value'][0];
+					if($status == 'exported'){
+						print 'already_in_list';
+					}
+					else{
+						print 'please_confirm';
+					}
+					return;
+				}
+			}
+
+			// submit as webform
+			$data = array(
+				1 => array('value' => array($email)),
+				2 => array('value' => array('subscribed')),
+			);
+			$submission = (object) array(
+				'nid' => $node->nid,
+				'submitted' => REQUEST_TIME,
+				'remote_addr' => ip_address(),
+				'is_draft' => FALSE,
+				'data' => $data,
+			);
+
+			webform_submission_insert($node, $submission);
+			webform_submission_send_mail($node, $submission);
+			print 'success';
+		}
+		else{
+			print 'unknown_error';
+			watchdog('pw_newsletter', 'Could not load node from path "newsletter-subscription"', NULL, WATCHDOG_ALERT);
+		}
+	}
+	else{
+		print 'email_error';
+	}
+}
+
