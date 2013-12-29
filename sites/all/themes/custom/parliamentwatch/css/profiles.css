@@ -334,6 +334,19 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 
 /* filters */
 
+#edit-field-user-constituency-tid-select-1 {
+    width: 87%;
+}
+
+#views-exposed-form-profile-list-rev-grid .bef-slider {
+    width: 87%;
+}
+#edit-field-user-qanda-ratio-value-wrapper .form-type-textfield,
+#edit-field-user-age-value-wrapper .form-type-textfield {
+    visibility: hidden;
+    position: absolute;
+}
+
 #edit-between-date-filter-wrapper .views-widget { /* status filter */
     display: none;
 }
@@ -366,7 +379,10 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 #edit-field-user-first-letter-lname-value-wrapper .views-widget {
     width: 89%;
 }
+
+
 /* letter filter with checkboxes */
+
 #edit-field-user-first-letter-lname-value-wrapper .form-checkboxes input {
     position: absolute;
     left: -5000em;
@@ -393,6 +409,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 
 
 /* letter filter with radios */
+
 #edit-field-user-first-letter-lname-value-wrapper .form-radios input {
     position: absolute;
     left: -5000em;

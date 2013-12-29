@@ -1,6 +1,7 @@
 /* This file will hold the main styles for your website. */
 @charset "utf-8";
 @import url("profiles.css");
+@import url("jquery.ui.slider.css");
 @import url("mainmenu.css");
 html {
     font-size: 12px;
