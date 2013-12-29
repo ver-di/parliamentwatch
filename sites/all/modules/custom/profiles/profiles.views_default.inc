@@ -2283,14 +2283,14 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
+      'title' => 'Alle',
+      'operator' => 'not empty',
+      'value' => '1',
+    ),
+    2 => array(
       'title' => 'A',
       'operator' => 'starts',
       'value' => 'A',
-    ),
-    2 => array(
-      'title' => 'L',
-      'operator' => 'starts',
-      'value' => 'L',
     ),
     3 => array(
       'title' => 'B',
@@ -2298,14 +2298,14 @@ if($record->value == 0){
       'value' => 'B',
     ),
     4 => array(
-      'title' => 'D',
-      'operator' => 'starts',
-      'value' => 'D',
-    ),
-    5 => array(
       'title' => 'C',
       'operator' => 'starts',
       'value' => 'C',
+    ),
+    5 => array(
+      'title' => 'D',
+      'operator' => 'starts',
+      'value' => 'D',
     ),
     6 => array(
       'title' => 'E',
@@ -2318,14 +2318,14 @@ if($record->value == 0){
       'value' => 'F',
     ),
     8 => array(
+      'title' => 'G',
+      'operator' => 'starts',
+      'value' => 'G',
+    ),
+    9 => array(
       'title' => 'H',
       'operator' => 'starts',
       'value' => 'H',
-    ),
-    9 => array(
-      'title' => 'Alle',
-      'operator' => 'not empty',
-      'value' => '1',
     ),
     10 => array(
       'title' => 'I',
@@ -2333,19 +2333,19 @@ if($record->value == 0){
       'value' => 'I',
     ),
     11 => array(
-      'title' => 'K',
-      'operator' => 'starts',
-      'value' => 'K',
-    ),
-    12 => array(
       'title' => 'J',
       'operator' => 'starts',
       'value' => 'J',
     ),
-    13 => array(
-      'title' => 'G',
+    12 => array(
+      'title' => 'K',
       'operator' => 'starts',
-      'value' => 'G',
+      'value' => 'K',
+    ),
+    13 => array(
+      'title' => 'L',
+      'operator' => 'starts',
+      'value' => 'L',
     ),
     14 => array(
       'title' => 'M',
@@ -2353,14 +2353,14 @@ if($record->value == 0){
       'value' => 'M',
     ),
     15 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    16 => array(
       'title' => 'N',
       'operator' => 'starts',
       'value' => 'N',
+    ),
+    16 => array(
+      'title' => 'O',
+      'operator' => 'starts',
+      'value' => 'O',
     ),
     17 => array(
       'title' => 'P',
@@ -2373,44 +2373,44 @@ if($record->value == 0){
       'value' => 'Q',
     ),
     19 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    20 => array(
       'title' => 'R',
       'operator' => '=',
       'value' => 'R',
     ),
-    21 => array(
-      'title' => 'X',
+    20 => array(
+      'title' => 'S',
       'operator' => '=',
-      'value' => 'X',
+      'value' => 'S',
     ),
-    22 => array(
-      'title' => 'O',
-      'operator' => 'starts',
-      'value' => 'O',
-    ),
-    23 => array(
+    21 => array(
       'title' => 'T',
       'operator' => '=',
       'value' => 'T',
     ),
-    24 => array(
-      'title' => 'Y',
-      'operator' => '=',
-      'value' => 'Y',
-    ),
-    25 => array(
+    22 => array(
       'title' => 'U',
       'operator' => '=',
       'value' => 'U',
     ),
-    26 => array(
+    23 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
+    ),
+    24 => array(
       'title' => 'W',
       'operator' => '=',
       'value' => 'W',
+    ),
+    25 => array(
+      'title' => 'X',
+      'operator' => '=',
+      'value' => 'X',
+    ),
+    26 => array(
+      'title' => 'Y',
+      'operator' => '=',
+      'value' => 'Y',
     ),
     27 => array(
       'title' => 'Z',
@@ -2890,9 +2890,9 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['widget'] = 'radios';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'L',
+      'title' => 'A',
       'operator' => '=',
-      'value' => 'L',
+      'value' => 'A',
     ),
     2 => array(
       'title' => 'B',
@@ -2900,54 +2900,54 @@ if($record->value == 0){
       'value' => 'B',
     ),
     3 => array(
-      'title' => 'A',
-      'operator' => '=',
-      'value' => 'A',
-    ),
-    4 => array(
-      'title' => 'G',
-      'operator' => '=',
-      'value' => 'G',
-    ),
-    5 => array(
-      'title' => 'J',
-      'operator' => '=',
-      'value' => 'J',
-    ),
-    6 => array(
-      'title' => 'D',
-      'operator' => '=',
-      'value' => 'D',
-    ),
-    7 => array(
       'title' => 'C',
       'operator' => '=',
       'value' => 'C',
     ),
-    8 => array(
-      'title' => 'I',
+    4 => array(
+      'title' => 'D',
       'operator' => '=',
-      'value' => 'I',
+      'value' => 'D',
     ),
-    9 => array(
-      'title' => 'K',
+    5 => array(
+      'title' => 'E',
       'operator' => '=',
-      'value' => 'K',
+      'value' => 'E',
     ),
-    10 => array(
-      'title' => 'H',
-      'operator' => '=',
-      'value' => 'H',
-    ),
-    11 => array(
+    6 => array(
       'title' => 'F',
       'operator' => '=',
       'value' => 'F',
     ),
-    12 => array(
-      'title' => 'E',
+    7 => array(
+      'title' => 'G',
       'operator' => '=',
-      'value' => 'E',
+      'value' => 'G',
+    ),
+    8 => array(
+      'title' => 'H',
+      'operator' => '=',
+      'value' => 'H',
+    ),
+    9 => array(
+      'title' => 'I',
+      'operator' => '=',
+      'value' => 'I',
+    ),
+    10 => array(
+      'title' => 'J',
+      'operator' => '=',
+      'value' => 'J',
+    ),
+    11 => array(
+      'title' => 'K',
+      'operator' => '=',
+      'value' => 'K',
+    ),
+    12 => array(
+      'title' => 'L',
+      'operator' => '=',
+      'value' => 'L',
     ),
     13 => array(
       'title' => 'M',
@@ -2955,49 +2955,49 @@ if($record->value == 0){
       'value' => 'M',
     ),
     14 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    15 => array(
-      'title' => 'T',
-      'operator' => '=',
-      'value' => 'T',
-    ),
-    16 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    17 => array(
-      'title' => 'R',
-      'operator' => '=',
-      'value' => 'R',
-    ),
-    18 => array(
-      'title' => 'Q',
-      'operator' => '=',
-      'value' => 'Q',
-    ),
-    19 => array(
-      'title' => 'P',
-      'operator' => '=',
-      'value' => 'P',
-    ),
-    20 => array(
       'title' => 'N',
       'operator' => '=',
       'value' => 'N',
     ),
-    21 => array(
-      'title' => 'X',
-      'operator' => '=',
-      'value' => 'X',
-    ),
-    22 => array(
+    15 => array(
       'title' => 'O',
       'operator' => '=',
       'value' => 'O',
+    ),
+    16 => array(
+      'title' => 'P',
+      'operator' => '=',
+      'value' => 'P',
+    ),
+    17 => array(
+      'title' => 'Q',
+      'operator' => '=',
+      'value' => 'Q',
+    ),
+    18 => array(
+      'title' => 'R',
+      'operator' => '=',
+      'value' => 'R',
+    ),
+    19 => array(
+      'title' => 'S',
+      'operator' => '=',
+      'value' => 'S',
+    ),
+    20 => array(
+      'title' => 'T',
+      'operator' => '=',
+      'value' => 'T',
+    ),
+    21 => array(
+      'title' => 'U',
+      'operator' => '=',
+      'value' => 'U',
+    ),
+    22 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
     ),
     23 => array(
       'title' => 'W',
@@ -3005,19 +3005,19 @@ if($record->value == 0){
       'value' => 'W',
     ),
     24 => array(
-      'title' => 'Z',
+      'title' => 'X',
       'operator' => '=',
-      'value' => 'Z',
+      'value' => 'X',
     ),
     25 => array(
-      'title' => 'U',
-      'operator' => '=',
-      'value' => 'U',
-    ),
-    26 => array(
       'title' => 'Y',
       'operator' => '=',
       'value' => 'Y',
+    ),
+    26 => array(
+      'title' => 'Z',
+      'operator' => '=',
+      'value' => 'Z',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
@@ -3208,134 +3208,134 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    2 => array(
-      'title' => 'R',
-      'operator' => '=',
-      'value' => 'R',
-    ),
-    3 => array(
-      'title' => 'Q',
-      'operator' => '=',
-      'value' => 'Q',
-    ),
-    4 => array(
-      'title' => 'P',
-      'operator' => '=',
-      'value' => 'P',
-    ),
-    5 => array(
-      'title' => 'N',
-      'operator' => '=',
-      'value' => 'N',
-    ),
-    6 => array(
-      'title' => 'X',
-      'operator' => '=',
-      'value' => 'X',
-    ),
-    7 => array(
-      'title' => 'O',
-      'operator' => '=',
-      'value' => 'O',
-    ),
-    8 => array(
-      'title' => 'W',
-      'operator' => '=',
-      'value' => 'W',
-    ),
-    9 => array(
-      'title' => 'Z',
-      'operator' => '=',
-      'value' => 'Z',
-    ),
-    10 => array(
-      'title' => 'U',
-      'operator' => '=',
-      'value' => 'U',
-    ),
-    11 => array(
-      'title' => 'Y',
-      'operator' => '=',
-      'value' => 'Y',
-    ),
-    12 => array(
-      'title' => 'T',
-      'operator' => '=',
-      'value' => 'T',
-    ),
-    13 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    14 => array(
-      'title' => 'M',
-      'operator' => '=',
-      'value' => 'M',
-    ),
-    15 => array(
-      'title' => 'J',
-      'operator' => '=',
-      'value' => 'J',
-    ),
-    16 => array(
-      'title' => 'G',
-      'operator' => '=',
-      'value' => 'G',
-    ),
-    17 => array(
       'title' => 'A',
       'operator' => '=',
       'value' => 'A',
     ),
-    18 => array(
-      'title' => 'L',
-      'operator' => '=',
-      'value' => 'L',
-    ),
-    19 => array(
+    2 => array(
       'title' => 'B',
       'operator' => '=',
       'value' => 'B',
     ),
-    20 => array(
-      'title' => 'D',
-      'operator' => '=',
-      'value' => 'D',
-    ),
-    21 => array(
+    3 => array(
       'title' => 'C',
       'operator' => '=',
       'value' => 'C',
     ),
-    22 => array(
+    4 => array(
+      'title' => 'D',
+      'operator' => '=',
+      'value' => 'D',
+    ),
+    5 => array(
       'title' => 'E',
       'operator' => '=',
       'value' => 'E',
     ),
-    23 => array(
+    6 => array(
       'title' => 'F',
       'operator' => '=',
       'value' => 'F',
     ),
-    24 => array(
+    7 => array(
+      'title' => 'G',
+      'operator' => '=',
+      'value' => 'G',
+    ),
+    8 => array(
       'title' => 'H',
       'operator' => '=',
       'value' => 'H',
     ),
-    26 => array(
+    9 => array(
       'title' => 'I',
       'operator' => '=',
       'value' => 'I',
     ),
-    27 => array(
+    10 => array(
+      'title' => 'J',
+      'operator' => '=',
+      'value' => 'J',
+    ),
+    11 => array(
       'title' => 'K',
       'operator' => '=',
       'value' => 'K',
+    ),
+    12 => array(
+      'title' => 'L',
+      'operator' => '=',
+      'value' => 'L',
+    ),
+    13 => array(
+      'title' => 'M',
+      'operator' => '=',
+      'value' => 'M',
+    ),
+    14 => array(
+      'title' => 'N',
+      'operator' => '=',
+      'value' => 'N',
+    ),
+    15 => array(
+      'title' => 'O',
+      'operator' => '=',
+      'value' => 'O',
+    ),
+    16 => array(
+      'title' => 'P',
+      'operator' => '=',
+      'value' => 'P',
+    ),
+    17 => array(
+      'title' => 'Q',
+      'operator' => '=',
+      'value' => 'Q',
+    ),
+    18 => array(
+      'title' => 'R',
+      'operator' => '=',
+      'value' => 'R',
+    ),
+    19 => array(
+      'title' => 'S',
+      'operator' => '=',
+      'value' => 'S',
+    ),
+    20 => array(
+      'title' => 'T',
+      'operator' => '=',
+      'value' => 'T',
+    ),
+    21 => array(
+      'title' => 'U',
+      'operator' => '=',
+      'value' => 'U',
+    ),
+    22 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
+    ),
+    23 => array(
+      'title' => 'W',
+      'operator' => '=',
+      'value' => 'W',
+    ),
+    24 => array(
+      'title' => 'X',
+      'operator' => '=',
+      'value' => 'X',
+    ),
+    25 => array(
+      'title' => 'Y',
+      'operator' => '=',
+      'value' => 'Y',
+    ),
+    26 => array(
+      'title' => 'Z',
+      'operator' => '=',
+      'value' => 'Z',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */

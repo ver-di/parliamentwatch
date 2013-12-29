@@ -405,6 +405,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     text-align: center;
     margin: 0 4px 4px 0;
     padding: 0 5px;
+    cursor: pointer;
 }
 #edit-field-user-first-letter-lname-value-wrapper .form-radios label,
 #edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label:hover {
