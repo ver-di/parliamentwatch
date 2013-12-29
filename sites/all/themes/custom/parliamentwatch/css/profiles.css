@@ -407,6 +407,9 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     padding: 0 5px;
     cursor: pointer;
 }
+#edit-field-user-first-letter-lname-value label[for="edit-field-user-first-letter-lname-value-all"] {
+    min-width: 34px;
+}
 #edit-field-user-first-letter-lname-value-wrapper .form-radios label,
 #edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label:hover {
     background: #ccc;
