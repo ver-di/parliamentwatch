@@ -179,7 +179,9 @@ function pw_content_authoring_layout_user_default_permissions() {
   // Exported permission: use text format php_code.
   $permissions['use text format php_code'] = array(
     'name' => 'use text format php_code',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'filter',
   );
 
