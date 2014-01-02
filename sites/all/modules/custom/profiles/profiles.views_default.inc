@@ -5547,7 +5547,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['field_user_party']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['hide_alter_empty'] = FALSE;
@@ -6594,6 +6594,17 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Short Profile Premium Mainpage */
   $handler = $view->new_display('block', 'Short Profile Premium Mainpage', 'short_profile_premium_main');
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: PHP remove page title */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'PHP remove page title';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_set_title("");
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -6693,7 +6704,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_5']['label'] = '';
   $handler->display->display_options['fields']['nothing_5']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['nothing_5']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_5']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing_5']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_5']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['nothing_5']['element_default_classes'] = FALSE;
   /* Feld: Custom: Parliament Information */
@@ -6813,6 +6824,17 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   /* Display: Short Profile Premium Subpage */
   $handler = $view->new_display('block', 'Short Profile Premium Subpage', 'short_profile_premium_sub');
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: PHP remove page title */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'PHP remove page title';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_set_title("");
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -6912,7 +6934,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
   /* Feld: Custom: Parliament Information */
@@ -6992,6 +7014,17 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   /* Display: Short Profile Deputy Mainpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Mainpage', 'short_profile_deputy_main');
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: PHP remove page title */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'PHP remove page title';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_set_title("");
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -7092,7 +7125,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_4']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing_4']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_4']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['nothing_4']['element_default_classes'] = FALSE;
   /* Feld: Custom: Parliament Information */
@@ -7189,6 +7222,17 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   /* Display: Short Profile Deputy Subpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Subpage', 'short_profile_deputy_sub');
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: PHP remove page title */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'PHP remove page title';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_set_title("");
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -7360,7 +7404,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
