@@ -34,7 +34,9 @@ function pw_election_programmes_user_default_permissions() {
   // Exported permission: ds_switch election_programme.
   $permissions['ds_switch election_programme'] = array(
     'name' => 'ds_switch election_programme',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 

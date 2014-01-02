@@ -367,14 +367,18 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_age.
   $permissions['edit field_user_age'] = array(
     'name' => 'edit field_user_age',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
   // Exported permission: edit field_user_answers_give.
   $permissions['edit field_user_answers_give'] = array(
     'name' => 'edit field_user_answers_give',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -591,14 +595,18 @@ function profiles_user_default_permissions() {
   // Exported permission: edit field_user_qanda_ratio.
   $permissions['edit field_user_qanda_ratio'] = array(
     'name' => 'edit field_user_qanda_ratio',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
   // Exported permission: edit field_user_questions_get.
   $permissions['edit field_user_questions_get'] = array(
     'name' => 'edit field_user_questions_get',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -650,14 +658,18 @@ function profiles_user_default_permissions() {
   // Exported permission: edit own field_user_age.
   $permissions['edit own field_user_age'] = array(
     'name' => 'edit own field_user_age',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
   // Exported permission: edit own field_user_answers_give.
   $permissions['edit own field_user_answers_give'] = array(
     'name' => 'edit own field_user_answers_give',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -909,14 +921,18 @@ function profiles_user_default_permissions() {
   // Exported permission: edit own field_user_qanda_ratio.
   $permissions['edit own field_user_qanda_ratio'] = array(
     'name' => 'edit own field_user_qanda_ratio',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
   // Exported permission: edit own field_user_questions_get.
   $permissions['edit own field_user_questions_get'] = array(
     'name' => 'edit own field_user_questions_get',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 

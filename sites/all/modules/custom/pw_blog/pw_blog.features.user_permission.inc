@@ -40,21 +40,27 @@ function pw_blog_user_default_permissions() {
   // Exported permission: delete terms in 24.
   $permissions['delete terms in 24'] = array(
     'name' => 'delete terms in 24',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: delete terms in 31.
   $permissions['delete terms in 31'] = array(
     'name' => 'delete terms in 31',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: ds_switch blogpost.
   $permissions['ds_switch blogpost'] = array(
     'name' => 'ds_switch blogpost',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 
@@ -79,14 +85,18 @@ function pw_blog_user_default_permissions() {
   // Exported permission: edit terms in 24.
   $permissions['edit terms in 24'] = array(
     'name' => 'edit terms in 24',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: edit terms in 31.
   $permissions['edit terms in 31'] = array(
     'name' => 'edit terms in 31',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 

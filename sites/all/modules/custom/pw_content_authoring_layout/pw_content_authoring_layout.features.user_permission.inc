@@ -61,6 +61,7 @@ function pw_content_authoring_layout_user_default_permissions() {
     'name' => 'administer media browser',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'media',
   );

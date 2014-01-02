@@ -40,7 +40,9 @@ function pw_trustees_user_default_permissions() {
   // Exported permission: ds_switch trustee.
   $permissions['ds_switch trustee'] = array(
     'name' => 'ds_switch trustee',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 

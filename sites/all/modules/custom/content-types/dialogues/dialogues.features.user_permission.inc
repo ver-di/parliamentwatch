@@ -13,14 +13,18 @@ function dialogues_user_default_permissions() {
   // Exported permission: clear dialogue_importer feeds.
   $permissions['clear dialogue_importer feeds'] = array(
     'name' => 'clear dialogue_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: clear dialogue_message_importer feeds.
   $permissions['clear dialogue_message_importer feeds'] = array(
     'name' => 'clear dialogue_message_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
@@ -54,21 +58,27 @@ function dialogues_user_default_permissions() {
   // Exported permission: delete terms in 25.
   $permissions['delete terms in 25'] = array(
     'name' => 'delete terms in 25',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: delete terms in 26.
   $permissions['delete terms in 26'] = array(
     'name' => 'delete terms in 26',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: ds_switch dialogue.
   $permissions['ds_switch dialogue'] = array(
     'name' => 'ds_switch dialogue',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 
@@ -93,28 +103,36 @@ function dialogues_user_default_permissions() {
   // Exported permission: edit terms in 25.
   $permissions['edit terms in 25'] = array(
     'name' => 'edit terms in 25',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: edit terms in 26.
   $permissions['edit terms in 26'] = array(
     'name' => 'edit terms in 26',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'taxonomy',
   );
 
   // Exported permission: import dialogue_importer feeds.
   $permissions['import dialogue_importer feeds'] = array(
     'name' => 'import dialogue_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: import dialogue_message_importer feeds.
   $permissions['import dialogue_message_importer feeds'] = array(
     'name' => 'import dialogue_message_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
@@ -131,14 +149,18 @@ function dialogues_user_default_permissions() {
   // Exported permission: unlock dialogue_importer feeds.
   $permissions['unlock dialogue_importer feeds'] = array(
     'name' => 'unlock dialogue_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: unlock dialogue_message_importer feeds.
   $permissions['unlock dialogue_message_importer feeds'] = array(
     'name' => 'unlock dialogue_message_importer feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
