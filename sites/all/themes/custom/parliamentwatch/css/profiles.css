@@ -340,11 +340,24 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 
 #views-exposed-form-profile-list-rev-grid .bef-slider {
     width: 87%;
+    margin-bottom: 1.5em;
 }
-#edit-field-user-qanda-ratio-value-wrapper .form-type-textfield,
-#edit-field-user-age-value-wrapper .form-type-textfield {
-    visibility: hidden;
+.js .views-exposed-form .slider-filter-processed .form-text,
+.js .views-exposed-form .slider-filter-processed .form-item {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    text-align: center;
+    padding:  0;
+    width: 2em;
+    border: 0;
+    font-size: 11px;
+    font-size: 1.1rem;
+}
+.js .views-exposed-form .slider-filter-processed .views-widget {
     position: absolute;
+    width: 100%;
+    top: 0;
 }
 
 #edit-between-date-filter-wrapper .views-widget { /* status filter */

@@ -1,5 +1,30 @@
 jQuery(document).ready(function() {
 
+// attach values of bef slider to handles
+
+    $('.slider-filter-processed .views-widget .form-item label').hide(); // hide values
+    $.myFunctionName = function() {
+        $('.slider-filter-processed').each(function() {
+            $(this).find('.form-item').first().position( // position min value
+            {
+              my: "center top",
+              at: "center bottom",
+              of: $(this).find('.ui-slider-handle').first()
+            });
+            $(this).find('.form-item').last().position( // position max value
+            {
+              my: "center top",
+              at: "center bottom",
+              of: $(this).find('.ui-slider-handle').last()
+            });
+        });
+    }
+    $.myFunctionName(); // execute on page load
+    $('.slider-filter-processed').on('slide slidechange', function() { // execute on slider change by sliding or cklicking
+        $.myFunctionName();
+    });
+
+
 // toggle view of permalinks in dialogues
 
     $('.shorten').click(function(){
