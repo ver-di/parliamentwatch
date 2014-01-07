@@ -61,6 +61,7 @@ function subscribe_to_newsletter(){
 			$data = array(
 				1 => array('value' => array($email)),
 				2 => array('value' => array('subscribed')),
+				3 => array('value' => array($internal_path)),
 			);
 			$submission = (object) array(
 				'nid' => $node->nid,
