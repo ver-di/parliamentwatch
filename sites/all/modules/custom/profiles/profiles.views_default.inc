@@ -2111,13 +2111,13 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'profile-image';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'profile-image img-outline';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_l',
+    'image_style' => 'pw_portrait_l__normal',
+    'image_link' => '',
   );
   /* Feld: Benutzer (historical data): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
@@ -2747,13 +2747,13 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'profile-image';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'profile-image img-outline';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_l',
+    'image_style' => 'pw_portrait_l__normal',
+    'image_link' => '',
   );
   /* Feld: Benutzer (historical data): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
