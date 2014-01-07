@@ -1861,8 +1861,8 @@ if($record->value == 0){
     'field_user_age_value' => array(
       'bef_format' => 'bef_slider',
       'slider_options' => array(
-        'bef_slider_min' => '20',
-        'bef_slider_max' => '70',
+        'bef_slider_min' => '0',
+        'bef_slider_max' => '90',
         'bef_slider_step' => '1',
         'bef_slider_animate' => '',
         'bef_slider_orientation' => 'horizontal',
@@ -1886,22 +1886,6 @@ if($record->value == 0){
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'between_date_filter' => array(
-      'bef_format' => 'default',
-      'more_options' => array(
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
@@ -2491,8 +2475,8 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_age_value']['table'] = 'field_revision_field_user_age';
   $handler->display->display_options['filters']['field_user_age_value']['field'] = 'field_user_age_value';
   $handler->display->display_options['filters']['field_user_age_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_user_age_value']['value']['min'] = '20';
-  $handler->display->display_options['filters']['field_user_age_value']['value']['max'] = '70';
+  $handler->display->display_options['filters']['field_user_age_value']['value']['min'] = '0';
+  $handler->display->display_options['filters']['field_user_age_value']['value']['max'] = '90';
   $handler->display->display_options['filters']['field_user_age_value']['group'] = 1;
   $handler->display->display_options['filters']['field_user_age_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_age_value']['expose']['operator_id'] = 'field_user_age_value_op';
@@ -3093,8 +3077,8 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_age_value']['table'] = 'field_revision_field_user_age';
   $handler->display->display_options['filters']['field_user_age_value']['field'] = 'field_user_age_value';
   $handler->display->display_options['filters']['field_user_age_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_user_age_value']['value']['min'] = '20';
-  $handler->display->display_options['filters']['field_user_age_value']['value']['max'] = '70';
+  $handler->display->display_options['filters']['field_user_age_value']['value']['min'] = '0';
+  $handler->display->display_options['filters']['field_user_age_value']['value']['max'] = '90';
   $handler->display->display_options['filters']['field_user_age_value']['group'] = 1;
   $handler->display->display_options['filters']['field_user_age_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_age_value']['expose']['operator_id'] = 'field_user_age_value_op';
@@ -3140,29 +3124,6 @@ if($record->value == 0){
     140336230 => 0,
     237793809 => 0,
   );
-  /* Filter criterion: Datum: Between Dates (user_revision) */
-  $handler->display->display_options['filters']['between_date_filter']['id'] = 'between_date_filter';
-  $handler->display->display_options['filters']['between_date_filter']['table'] = 'user_revision';
-  $handler->display->display_options['filters']['between_date_filter']['field'] = 'between_date_filter';
-  $handler->display->display_options['filters']['between_date_filter']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['between_date_filter']['expose']['operator_id'] = 'between_date_filter_op';
-  $handler->display->display_options['filters']['between_date_filter']['expose']['label'] = 'Abgeordneten Status';
-  $handler->display->display_options['filters']['between_date_filter']['expose']['use_operator'] = TRUE;
-  $handler->display->display_options['filters']['between_date_filter']['expose']['operator'] = 'between_date_filter_op';
-  $handler->display->display_options['filters']['between_date_filter']['expose']['identifier'] = 'between_date_filter';
-  $handler->display->display_options['filters']['between_date_filter']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    181527986 => 0,
-    51622513 => 0,
-    185431326 => 0,
-    140336230 => 0,
-    237793809 => 0,
-  );
-  $handler->display->display_options['filters']['between_date_filter']['default_date'] = 'now';
-  $handler->display->display_options['filters']['between_date_filter']['start_date_field'] = 'field_revision_field_user_valid.field_user_valid_value';
-  $handler->display->display_options['filters']['between_date_filter']['end_date_field'] = 'field_revision_field_user_valid.field_user_valid_value2';
   $handler->display->display_options['path'] = 'politicians/%';
 
   /* Display: Listenansicht */

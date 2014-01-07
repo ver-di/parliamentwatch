@@ -2958,7 +2958,7 @@ function profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'image',
       'settings' => array(
-        'default_image' => '7977',
+        'default_image' => '13520',
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -3021,7 +3021,7 @@ function profiles_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
-        'default_image' => '7978',
+        'default_image' => 0,
         'file_directory' => 'users',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '1 MB',
@@ -3055,7 +3055,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
@@ -3693,7 +3693,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => 0,
         ),
         'user_search' => array(
           'label' => 'above',
