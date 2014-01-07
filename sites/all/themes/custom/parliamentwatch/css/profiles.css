@@ -350,14 +350,19 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     text-align: center;
     padding:  0;
     width: 2em;
+    height: auto;
     border: 0;
     font-size: 11px;
     font-size: 1.1rem;
+    padding-top: 22px;
 }
 .js .views-exposed-form .slider-filter-processed .views-widget {
     position: absolute;
     width: 100%;
     top: 0;
+}
+.js .views-exposed-form .slider-filter-processed .ui-slider-handle {
+    cursor: pointer;
 }
 
 #edit-between-date-filter-wrapper .views-widget { /* status filter */
