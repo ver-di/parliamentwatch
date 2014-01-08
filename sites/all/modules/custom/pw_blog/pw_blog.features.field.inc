@@ -158,10 +158,8 @@ function pw_blog_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(
-            'trim_length' => 600,
-          ),
-          'type' => 'text_summary_or_trimmed',
+          'settings' => array(),
+          'type' => 'text_default',
           'weight' => '6',
         ),
         'full' => array(

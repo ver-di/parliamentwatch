@@ -439,14 +439,12 @@ function pw_blog_ds_layout_settings_info() {
   $ds_layout->view_mode = 'default';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
         0 => 'title',
-        1 => 'comments',
-        2 => 'post_date',
-        3 => 'author',
+        1 => 'post_date',
+        2 => 'author',
+        3 => 'comments',
         4 => 'sharethis',
         5 => 'field_teaser_image',
         6 => 'body',
@@ -455,15 +453,25 @@ function pw_blog_ds_layout_settings_info() {
     ),
     'fields' => array(
       'title' => 'ds_content',
-      'comments' => 'ds_content',
       'post_date' => 'ds_content',
       'author' => 'ds_content',
+      'comments' => 'ds_content',
       'sharethis' => 'ds_content',
       'field_teaser_image' => 'ds_content',
       'body' => 'ds_content',
       'field_blogpost_blogtags' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
   );
   $export['node|blogpost|default'] = $ds_layout;
 
