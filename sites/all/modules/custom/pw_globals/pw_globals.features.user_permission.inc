@@ -120,14 +120,18 @@ function pw_globals_user_default_permissions() {
   // Exported permission: ds_switch page.
   $permissions['ds_switch page'] = array(
     'name' => 'ds_switch page',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 
   // Exported permission: ds_switch webform.
   $permissions['ds_switch webform'] = array(
     'name' => 'ds_switch webform',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 

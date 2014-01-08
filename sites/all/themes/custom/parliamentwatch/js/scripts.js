@@ -1,5 +1,26 @@
 jQuery(document).ready(function() {
 
+// attach values of bef slider to handles
+
+    $('.slider-filter-processed .views-widget .form-item label').hide(); // hide values
+    $.pw_befslidervalue = function() {
+        $('.slider-filter-processed').each(function() {
+            $(this).find('.form-item').first().position( // position min value
+            {
+              of: $(this).find('.ui-slider-handle').first()
+            });
+            $(this).find('.form-item').last().position( // position max value
+            {
+              of: $(this).find('.ui-slider-handle').last()
+            });
+        });
+    }
+    $.pw_befslidervalue(); // execute on page load
+    $('.views-exposed-widget').on('slidecreate slide slidechange', function() { // execute on slider change by sliding or cklicking
+        $.pw_befslidervalue();
+    });
+
+
 // toggle view of permalinks in dialogues
 
     $('.shorten').click(function(){

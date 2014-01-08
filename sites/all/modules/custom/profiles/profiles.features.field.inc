@@ -628,7 +628,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '52',
+          'weight' => '55',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -752,7 +752,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '39',
+          'weight' => '42',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -857,7 +857,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '58',
+          'weight' => '61',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -941,7 +941,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '52',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -1044,7 +1044,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '40',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -1142,7 +1142,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '48',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -1454,7 +1454,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '59',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -1591,7 +1591,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '58',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -1705,7 +1705,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '50',
+          'weight' => '53',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -1843,7 +1843,7 @@ function profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '11',
+          'weight' => '9',
         ),
         'user_premium' => array(
           'label' => 'hidden',
@@ -1977,7 +1977,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '47',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -2070,7 +2070,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '56',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -2198,7 +2198,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '38',
+          'weight' => '41',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -2326,7 +2326,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '38',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -2449,7 +2449,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '40',
+          'weight' => '43',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -2550,7 +2550,7 @@ function profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '12',
+          'weight' => '10',
         ),
         'user_premium' => array(
           'label' => 'hidden',
@@ -2683,7 +2683,7 @@ function profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '49',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -2789,7 +2789,7 @@ function profiles_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '41',
+          'weight' => '44',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -2897,7 +2897,7 @@ function profiles_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '13',
+          'weight' => '11',
         ),
         'user_premium' => array(
           'label' => 'hidden',
@@ -2958,7 +2958,7 @@ function profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'image',
       'settings' => array(
-        'default_image' => '7977',
+        'default_image' => '13520',
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -2995,7 +2995,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '39',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -3021,7 +3021,7 @@ function profiles_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
-        'default_image' => '7978',
+        'default_image' => 0,
         'file_directory' => 'users',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '1 MB',
@@ -3055,7 +3055,7 @@ function profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
@@ -3124,7 +3124,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '54',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -3364,7 +3364,7 @@ function profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '50',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -3506,7 +3506,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '45',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -3590,7 +3590,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '51',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -3687,7 +3687,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '33',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -3780,7 +3780,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '54',
+          'weight' => '57',
         ),
         'user_premium' => array(
           'label' => 'above',
@@ -3910,7 +3910,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '57',
+          'weight' => '60',
         ),
         'user_premium' => array(
           'label' => 'above',

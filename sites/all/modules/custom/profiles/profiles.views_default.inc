@@ -1861,8 +1861,8 @@ if($record->value == 0){
     'field_user_age_value' => array(
       'bef_format' => 'bef_slider',
       'slider_options' => array(
-        'bef_slider_min' => '20',
-        'bef_slider_max' => '70',
+        'bef_slider_min' => '0',
+        'bef_slider_max' => '90',
         'bef_slider_step' => '1',
         'bef_slider_animate' => '',
         'bef_slider_orientation' => 'horizontal',
@@ -1886,22 +1886,6 @@ if($record->value == 0){
       'more_options' => array(
         'bef_select_all_none' => 0,
         'bef_collapsible' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'between_date_filter' => array(
-      'bef_format' => 'default',
-      'more_options' => array(
         'is_secondary' => 0,
         'any_label' => '',
         'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
@@ -2111,13 +2095,13 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'profile-image';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'profile-image img-outline';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_l',
+    'image_style' => 'pw_portrait_l__normal',
+    'image_link' => '',
   );
   /* Feld: Benutzer (historical data): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
@@ -2283,14 +2267,14 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
+      'title' => 'Alle',
+      'operator' => 'not empty',
+      'value' => '1',
+    ),
+    2 => array(
       'title' => 'A',
       'operator' => 'starts',
       'value' => 'A',
-    ),
-    2 => array(
-      'title' => 'L',
-      'operator' => 'starts',
-      'value' => 'L',
     ),
     3 => array(
       'title' => 'B',
@@ -2298,14 +2282,14 @@ if($record->value == 0){
       'value' => 'B',
     ),
     4 => array(
-      'title' => 'D',
-      'operator' => 'starts',
-      'value' => 'D',
-    ),
-    5 => array(
       'title' => 'C',
       'operator' => 'starts',
       'value' => 'C',
+    ),
+    5 => array(
+      'title' => 'D',
+      'operator' => 'starts',
+      'value' => 'D',
     ),
     6 => array(
       'title' => 'E',
@@ -2318,14 +2302,14 @@ if($record->value == 0){
       'value' => 'F',
     ),
     8 => array(
+      'title' => 'G',
+      'operator' => 'starts',
+      'value' => 'G',
+    ),
+    9 => array(
       'title' => 'H',
       'operator' => 'starts',
       'value' => 'H',
-    ),
-    9 => array(
-      'title' => 'Alle',
-      'operator' => 'not empty',
-      'value' => '1',
     ),
     10 => array(
       'title' => 'I',
@@ -2333,19 +2317,19 @@ if($record->value == 0){
       'value' => 'I',
     ),
     11 => array(
-      'title' => 'K',
-      'operator' => 'starts',
-      'value' => 'K',
-    ),
-    12 => array(
       'title' => 'J',
       'operator' => 'starts',
       'value' => 'J',
     ),
-    13 => array(
-      'title' => 'G',
+    12 => array(
+      'title' => 'K',
       'operator' => 'starts',
-      'value' => 'G',
+      'value' => 'K',
+    ),
+    13 => array(
+      'title' => 'L',
+      'operator' => 'starts',
+      'value' => 'L',
     ),
     14 => array(
       'title' => 'M',
@@ -2353,14 +2337,14 @@ if($record->value == 0){
       'value' => 'M',
     ),
     15 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    16 => array(
       'title' => 'N',
       'operator' => 'starts',
       'value' => 'N',
+    ),
+    16 => array(
+      'title' => 'O',
+      'operator' => 'starts',
+      'value' => 'O',
     ),
     17 => array(
       'title' => 'P',
@@ -2373,44 +2357,44 @@ if($record->value == 0){
       'value' => 'Q',
     ),
     19 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    20 => array(
       'title' => 'R',
       'operator' => '=',
       'value' => 'R',
     ),
-    21 => array(
-      'title' => 'X',
+    20 => array(
+      'title' => 'S',
       'operator' => '=',
-      'value' => 'X',
+      'value' => 'S',
     ),
-    22 => array(
-      'title' => 'O',
-      'operator' => 'starts',
-      'value' => 'O',
-    ),
-    23 => array(
+    21 => array(
       'title' => 'T',
       'operator' => '=',
       'value' => 'T',
     ),
-    24 => array(
-      'title' => 'Y',
-      'operator' => '=',
-      'value' => 'Y',
-    ),
-    25 => array(
+    22 => array(
       'title' => 'U',
       'operator' => '=',
       'value' => 'U',
     ),
-    26 => array(
+    23 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
+    ),
+    24 => array(
       'title' => 'W',
       'operator' => '=',
       'value' => 'W',
+    ),
+    25 => array(
+      'title' => 'X',
+      'operator' => '=',
+      'value' => 'X',
+    ),
+    26 => array(
+      'title' => 'Y',
+      'operator' => '=',
+      'value' => 'Y',
     ),
     27 => array(
       'title' => 'Z',
@@ -2491,8 +2475,8 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_age_value']['table'] = 'field_revision_field_user_age';
   $handler->display->display_options['filters']['field_user_age_value']['field'] = 'field_user_age_value';
   $handler->display->display_options['filters']['field_user_age_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_user_age_value']['value']['min'] = '20';
-  $handler->display->display_options['filters']['field_user_age_value']['value']['max'] = '70';
+  $handler->display->display_options['filters']['field_user_age_value']['value']['min'] = '0';
+  $handler->display->display_options['filters']['field_user_age_value']['value']['max'] = '90';
   $handler->display->display_options['filters']['field_user_age_value']['group'] = 1;
   $handler->display->display_options['filters']['field_user_age_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_age_value']['expose']['operator_id'] = 'field_user_age_value_op';
@@ -2747,13 +2731,13 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'profile-image';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'profile-image img-outline';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_l',
+    'image_style' => 'pw_portrait_l__normal',
+    'image_link' => '',
   );
   /* Feld: Benutzer (historical data): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
@@ -2890,9 +2874,9 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['widget'] = 'radios';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'L',
+      'title' => 'A',
       'operator' => '=',
-      'value' => 'L',
+      'value' => 'A',
     ),
     2 => array(
       'title' => 'B',
@@ -2900,54 +2884,54 @@ if($record->value == 0){
       'value' => 'B',
     ),
     3 => array(
-      'title' => 'A',
-      'operator' => '=',
-      'value' => 'A',
-    ),
-    4 => array(
-      'title' => 'G',
-      'operator' => '=',
-      'value' => 'G',
-    ),
-    5 => array(
-      'title' => 'J',
-      'operator' => '=',
-      'value' => 'J',
-    ),
-    6 => array(
-      'title' => 'D',
-      'operator' => '=',
-      'value' => 'D',
-    ),
-    7 => array(
       'title' => 'C',
       'operator' => '=',
       'value' => 'C',
     ),
-    8 => array(
-      'title' => 'I',
+    4 => array(
+      'title' => 'D',
       'operator' => '=',
-      'value' => 'I',
+      'value' => 'D',
     ),
-    9 => array(
-      'title' => 'K',
+    5 => array(
+      'title' => 'E',
       'operator' => '=',
-      'value' => 'K',
+      'value' => 'E',
     ),
-    10 => array(
-      'title' => 'H',
-      'operator' => '=',
-      'value' => 'H',
-    ),
-    11 => array(
+    6 => array(
       'title' => 'F',
       'operator' => '=',
       'value' => 'F',
     ),
-    12 => array(
-      'title' => 'E',
+    7 => array(
+      'title' => 'G',
       'operator' => '=',
-      'value' => 'E',
+      'value' => 'G',
+    ),
+    8 => array(
+      'title' => 'H',
+      'operator' => '=',
+      'value' => 'H',
+    ),
+    9 => array(
+      'title' => 'I',
+      'operator' => '=',
+      'value' => 'I',
+    ),
+    10 => array(
+      'title' => 'J',
+      'operator' => '=',
+      'value' => 'J',
+    ),
+    11 => array(
+      'title' => 'K',
+      'operator' => '=',
+      'value' => 'K',
+    ),
+    12 => array(
+      'title' => 'L',
+      'operator' => '=',
+      'value' => 'L',
     ),
     13 => array(
       'title' => 'M',
@@ -2955,49 +2939,49 @@ if($record->value == 0){
       'value' => 'M',
     ),
     14 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    15 => array(
-      'title' => 'T',
-      'operator' => '=',
-      'value' => 'T',
-    ),
-    16 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    17 => array(
-      'title' => 'R',
-      'operator' => '=',
-      'value' => 'R',
-    ),
-    18 => array(
-      'title' => 'Q',
-      'operator' => '=',
-      'value' => 'Q',
-    ),
-    19 => array(
-      'title' => 'P',
-      'operator' => '=',
-      'value' => 'P',
-    ),
-    20 => array(
       'title' => 'N',
       'operator' => '=',
       'value' => 'N',
     ),
-    21 => array(
-      'title' => 'X',
-      'operator' => '=',
-      'value' => 'X',
-    ),
-    22 => array(
+    15 => array(
       'title' => 'O',
       'operator' => '=',
       'value' => 'O',
+    ),
+    16 => array(
+      'title' => 'P',
+      'operator' => '=',
+      'value' => 'P',
+    ),
+    17 => array(
+      'title' => 'Q',
+      'operator' => '=',
+      'value' => 'Q',
+    ),
+    18 => array(
+      'title' => 'R',
+      'operator' => '=',
+      'value' => 'R',
+    ),
+    19 => array(
+      'title' => 'S',
+      'operator' => '=',
+      'value' => 'S',
+    ),
+    20 => array(
+      'title' => 'T',
+      'operator' => '=',
+      'value' => 'T',
+    ),
+    21 => array(
+      'title' => 'U',
+      'operator' => '=',
+      'value' => 'U',
+    ),
+    22 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
     ),
     23 => array(
       'title' => 'W',
@@ -3005,19 +2989,19 @@ if($record->value == 0){
       'value' => 'W',
     ),
     24 => array(
-      'title' => 'Z',
+      'title' => 'X',
       'operator' => '=',
-      'value' => 'Z',
+      'value' => 'X',
     ),
     25 => array(
-      'title' => 'U',
-      'operator' => '=',
-      'value' => 'U',
-    ),
-    26 => array(
       'title' => 'Y',
       'operator' => '=',
       'value' => 'Y',
+    ),
+    26 => array(
+      'title' => 'Z',
+      'operator' => '=',
+      'value' => 'Z',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
@@ -3093,8 +3077,8 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_age_value']['table'] = 'field_revision_field_user_age';
   $handler->display->display_options['filters']['field_user_age_value']['field'] = 'field_user_age_value';
   $handler->display->display_options['filters']['field_user_age_value']['operator'] = 'between';
-  $handler->display->display_options['filters']['field_user_age_value']['value']['min'] = '20';
-  $handler->display->display_options['filters']['field_user_age_value']['value']['max'] = '70';
+  $handler->display->display_options['filters']['field_user_age_value']['value']['min'] = '0';
+  $handler->display->display_options['filters']['field_user_age_value']['value']['max'] = '90';
   $handler->display->display_options['filters']['field_user_age_value']['group'] = 1;
   $handler->display->display_options['filters']['field_user_age_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_age_value']['expose']['operator_id'] = 'field_user_age_value_op';
@@ -3140,29 +3124,6 @@ if($record->value == 0){
     140336230 => 0,
     237793809 => 0,
   );
-  /* Filter criterion: Datum: Between Dates (user_revision) */
-  $handler->display->display_options['filters']['between_date_filter']['id'] = 'between_date_filter';
-  $handler->display->display_options['filters']['between_date_filter']['table'] = 'user_revision';
-  $handler->display->display_options['filters']['between_date_filter']['field'] = 'between_date_filter';
-  $handler->display->display_options['filters']['between_date_filter']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['between_date_filter']['expose']['operator_id'] = 'between_date_filter_op';
-  $handler->display->display_options['filters']['between_date_filter']['expose']['label'] = 'Abgeordneten Status';
-  $handler->display->display_options['filters']['between_date_filter']['expose']['use_operator'] = TRUE;
-  $handler->display->display_options['filters']['between_date_filter']['expose']['operator'] = 'between_date_filter_op';
-  $handler->display->display_options['filters']['between_date_filter']['expose']['identifier'] = 'between_date_filter';
-  $handler->display->display_options['filters']['between_date_filter']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    181527986 => 0,
-    51622513 => 0,
-    185431326 => 0,
-    140336230 => 0,
-    237793809 => 0,
-  );
-  $handler->display->display_options['filters']['between_date_filter']['default_date'] = 'now';
-  $handler->display->display_options['filters']['between_date_filter']['start_date_field'] = 'field_revision_field_user_valid.field_user_valid_value';
-  $handler->display->display_options['filters']['between_date_filter']['end_date_field'] = 'field_revision_field_user_valid.field_user_valid_value2';
   $handler->display->display_options['path'] = 'politicians/%';
 
   /* Display: Listenansicht */
@@ -3208,134 +3169,134 @@ if($record->value == 0){
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'S',
-      'operator' => '=',
-      'value' => 'S',
-    ),
-    2 => array(
-      'title' => 'R',
-      'operator' => '=',
-      'value' => 'R',
-    ),
-    3 => array(
-      'title' => 'Q',
-      'operator' => '=',
-      'value' => 'Q',
-    ),
-    4 => array(
-      'title' => 'P',
-      'operator' => '=',
-      'value' => 'P',
-    ),
-    5 => array(
-      'title' => 'N',
-      'operator' => '=',
-      'value' => 'N',
-    ),
-    6 => array(
-      'title' => 'X',
-      'operator' => '=',
-      'value' => 'X',
-    ),
-    7 => array(
-      'title' => 'O',
-      'operator' => '=',
-      'value' => 'O',
-    ),
-    8 => array(
-      'title' => 'W',
-      'operator' => '=',
-      'value' => 'W',
-    ),
-    9 => array(
-      'title' => 'Z',
-      'operator' => '=',
-      'value' => 'Z',
-    ),
-    10 => array(
-      'title' => 'U',
-      'operator' => '=',
-      'value' => 'U',
-    ),
-    11 => array(
-      'title' => 'Y',
-      'operator' => '=',
-      'value' => 'Y',
-    ),
-    12 => array(
-      'title' => 'T',
-      'operator' => '=',
-      'value' => 'T',
-    ),
-    13 => array(
-      'title' => 'V',
-      'operator' => '=',
-      'value' => 'V',
-    ),
-    14 => array(
-      'title' => 'M',
-      'operator' => '=',
-      'value' => 'M',
-    ),
-    15 => array(
-      'title' => 'J',
-      'operator' => '=',
-      'value' => 'J',
-    ),
-    16 => array(
-      'title' => 'G',
-      'operator' => '=',
-      'value' => 'G',
-    ),
-    17 => array(
       'title' => 'A',
       'operator' => '=',
       'value' => 'A',
     ),
-    18 => array(
-      'title' => 'L',
-      'operator' => '=',
-      'value' => 'L',
-    ),
-    19 => array(
+    2 => array(
       'title' => 'B',
       'operator' => '=',
       'value' => 'B',
     ),
-    20 => array(
-      'title' => 'D',
-      'operator' => '=',
-      'value' => 'D',
-    ),
-    21 => array(
+    3 => array(
       'title' => 'C',
       'operator' => '=',
       'value' => 'C',
     ),
-    22 => array(
+    4 => array(
+      'title' => 'D',
+      'operator' => '=',
+      'value' => 'D',
+    ),
+    5 => array(
       'title' => 'E',
       'operator' => '=',
       'value' => 'E',
     ),
-    23 => array(
+    6 => array(
       'title' => 'F',
       'operator' => '=',
       'value' => 'F',
     ),
-    24 => array(
+    7 => array(
+      'title' => 'G',
+      'operator' => '=',
+      'value' => 'G',
+    ),
+    8 => array(
       'title' => 'H',
       'operator' => '=',
       'value' => 'H',
     ),
-    26 => array(
+    9 => array(
       'title' => 'I',
       'operator' => '=',
       'value' => 'I',
     ),
-    27 => array(
+    10 => array(
+      'title' => 'J',
+      'operator' => '=',
+      'value' => 'J',
+    ),
+    11 => array(
       'title' => 'K',
       'operator' => '=',
       'value' => 'K',
+    ),
+    12 => array(
+      'title' => 'L',
+      'operator' => '=',
+      'value' => 'L',
+    ),
+    13 => array(
+      'title' => 'M',
+      'operator' => '=',
+      'value' => 'M',
+    ),
+    14 => array(
+      'title' => 'N',
+      'operator' => '=',
+      'value' => 'N',
+    ),
+    15 => array(
+      'title' => 'O',
+      'operator' => '=',
+      'value' => 'O',
+    ),
+    16 => array(
+      'title' => 'P',
+      'operator' => '=',
+      'value' => 'P',
+    ),
+    17 => array(
+      'title' => 'Q',
+      'operator' => '=',
+      'value' => 'Q',
+    ),
+    18 => array(
+      'title' => 'R',
+      'operator' => '=',
+      'value' => 'R',
+    ),
+    19 => array(
+      'title' => 'S',
+      'operator' => '=',
+      'value' => 'S',
+    ),
+    20 => array(
+      'title' => 'T',
+      'operator' => '=',
+      'value' => 'T',
+    ),
+    21 => array(
+      'title' => 'U',
+      'operator' => '=',
+      'value' => 'U',
+    ),
+    22 => array(
+      'title' => 'V',
+      'operator' => '=',
+      'value' => 'V',
+    ),
+    23 => array(
+      'title' => 'W',
+      'operator' => '=',
+      'value' => 'W',
+    ),
+    24 => array(
+      'title' => 'X',
+      'operator' => '=',
+      'value' => 'X',
+    ),
+    25 => array(
+      'title' => 'Y',
+      'operator' => '=',
+      'value' => 'Y',
+    ),
+    26 => array(
+      'title' => 'Z',
+      'operator' => '=',
+      'value' => 'Z',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
@@ -5547,7 +5508,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['field_user_party']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_party']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['field_user_party']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['field_user_party']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['hide_alter_empty'] = FALSE;
@@ -6594,6 +6555,17 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Short Profile Premium Mainpage */
   $handler = $view->new_display('block', 'Short Profile Premium Mainpage', 'short_profile_premium_main');
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: PHP remove page title */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'PHP remove page title';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_set_title("");
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -6693,7 +6665,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_5']['label'] = '';
   $handler->display->display_options['fields']['nothing_5']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['nothing_5']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_5']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing_5']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_5']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['nothing_5']['element_default_classes'] = FALSE;
   /* Feld: Custom: Parliament Information */
@@ -6813,6 +6785,17 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   /* Display: Short Profile Premium Subpage */
   $handler = $view->new_display('block', 'Short Profile Premium Subpage', 'short_profile_premium_sub');
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: PHP remove page title */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'PHP remove page title';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_set_title("");
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -6912,7 +6895,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
   /* Feld: Custom: Parliament Information */
@@ -6992,6 +6975,17 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   /* Display: Short Profile Deputy Mainpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Mainpage', 'short_profile_deputy_main');
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: PHP remove page title */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'PHP remove page title';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_set_title("");
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -7092,7 +7086,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
   $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_4']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing_4']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_4']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['nothing_4']['element_default_classes'] = FALSE;
   /* Feld: Custom: Parliament Information */
@@ -7189,6 +7183,17 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   /* Display: Short Profile Deputy Subpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Subpage', 'short_profile_deputy_sub');
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: PHP remove page title */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['ui_name'] = 'PHP remove page title';
+  $handler->display->display_options['header']['area']['content'] = '<?php
+drupal_set_title("");
+?>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -7360,7 +7365,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'h2';
+  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-xxs';
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;

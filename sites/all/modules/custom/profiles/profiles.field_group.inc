@@ -349,7 +349,6 @@ function profiles_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_user_constituency',
-      1 => 'user_basic_info',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -399,7 +398,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Basics',
-    'weight' => '2',
+    'weight' => '35',
     'children' => array(
       0 => 'group_user_basics_additional',
       1 => 'group_user_basics_data',
@@ -764,7 +763,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Polls',
-    'weight' => '3',
+    'weight' => '36',
     'children' => array(
       0 => 'group_user_polls_archive',
       1 => 'group_user_polls_current',
@@ -872,7 +871,7 @@ function profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Roles',
-    'weight' => '4',
+    'weight' => '37',
     'children' => array(
       0 => 'group_user_roles_archive',
       1 => 'group_user_roles_current',

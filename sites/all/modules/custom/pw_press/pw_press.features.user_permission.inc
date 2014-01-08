@@ -13,14 +13,18 @@ function pw_press_user_default_permissions() {
   // Exported permission: clear press_articles feeds.
   $permissions['clear press_articles feeds'] = array(
     'name' => 'clear press_articles feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: clear press_release feeds.
   $permissions['clear press_release feeds'] = array(
     'name' => 'clear press_release feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
@@ -81,14 +85,18 @@ function pw_press_user_default_permissions() {
   // Exported permission: ds_switch press_article.
   $permissions['ds_switch press_article'] = array(
     'name' => 'ds_switch press_article',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 
   // Exported permission: ds_switch press_release.
   $permissions['ds_switch press_release'] = array(
     'name' => 'ds_switch press_release',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 
@@ -131,14 +139,18 @@ function pw_press_user_default_permissions() {
   // Exported permission: import press_articles feeds.
   $permissions['import press_articles feeds'] = array(
     'name' => 'import press_articles feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: import press_release feeds.
   $permissions['import press_release feeds'] = array(
     'name' => 'import press_release feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
@@ -163,14 +175,18 @@ function pw_press_user_default_permissions() {
   // Exported permission: unlock press_articles feeds.
   $permissions['unlock press_articles feeds'] = array(
     'name' => 'unlock press_articles feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 
   // Exported permission: unlock press_release feeds.
   $permissions['unlock press_release feeds'] = array(
     'name' => 'unlock press_release feeds',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'feeds',
   );
 

@@ -10,7 +10,15 @@
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
- 
+
+/*
+ * adding jqueryui libraries
+ */
+function parliamentwatch_preprocess_page(&$variables) {
+  drupal_add_library('system', 'ui');
+  drupal_add_library('system', 'ui.position');
+}
+
 /*
  * Implements hook_process_zone().
  */

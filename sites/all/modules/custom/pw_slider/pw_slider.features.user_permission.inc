@@ -40,7 +40,9 @@ function pw_slider_user_default_permissions() {
   // Exported permission: ds_switch pw_slider.
   $permissions['ds_switch pw_slider'] = array(
     'name' => 'ds_switch pw_slider',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'administrator',
+    ),
     'module' => 'ds_extras',
   );
 
