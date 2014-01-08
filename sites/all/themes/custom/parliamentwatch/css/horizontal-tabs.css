@@ -83,12 +83,14 @@ div.horizontal-tabs .fieldset-description {
   padding: 0.5em 0.6rem;
 }
 .horizontal-tabs ul.horizontal-tabs-list li a:hover,
+.horizontal-tabs ul.horizontal-tabs-list li a:focus,
+.horizontal-tabs ul.horizontal-tabs-list li a:active,
 .horizontal-tabs ul.horizontal-tabs-list li.selected a {
-  outline: none;
   background-color: #f4f4f4;
 }
 .horizontal-tabs ul.horizontal-tabs-list li:hover,
-.horizontal-tabs ul.horizontal-tabs-list li:focus {
+.horizontal-tabs ul.horizontal-tabs-list li:focus,
+.horizontal-tabs ul.horizontal-tabs-list li:active {
   background-color: #f4f4f4;
 }
 .horizontal-tabs ul.horizontal-tabs-list li strong {

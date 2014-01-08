@@ -58471,6 +58471,9 @@ msgstr "ReadyState: !readyState"
 msgid "Skip to main content"
 msgstr "Direkt zum Inhalt"
 
+msgid "Skip to main navigation"
+msgstr "Direkt zur Hauptnavigation"
+
 msgid "No available update data"
 msgstr "Keine Daten über verfügbare Aktualisierungen."
 

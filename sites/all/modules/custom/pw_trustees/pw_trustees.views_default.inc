@@ -15,7 +15,7 @@ function pw_trustees_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Trustees';
+  $view->human_name = 'PW Trustees';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -36,11 +36,13 @@ function pw_trustees_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* Feld: Inhalt: Profile image */
   $handler->display->display_options['fields']['field_trustee_image']['id'] = 'field_trustee_image';
   $handler->display->display_options['fields']['field_trustee_image']['table'] = 'field_data_field_trustee_image';
   $handler->display->display_options['fields']['field_trustee_image']['field'] = 'field_trustee_image';
   $handler->display->display_options['fields']['field_trustee_image']['label'] = '';
+  $handler->display->display_options['fields']['field_trustee_image']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_trustee_image']['element_class'] = 'file-image float-left';
   $handler->display->display_options['fields']['field_trustee_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_trustee_image']['element_default_classes'] = FALSE;
