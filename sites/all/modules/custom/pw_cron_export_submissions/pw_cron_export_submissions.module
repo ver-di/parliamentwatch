@@ -87,7 +87,7 @@ function export_submissions($source){
 			// on success update submissions to status=exported
 			if($file_json){	
 				foreach($submissions as $submission){
-					// webform_submission_update($webform, $submission);
+					webform_submission_update($webform, $submission);
 				}
 			}
 		}
