@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.features.user_role.inc
+ * pw_profiles.features.user_role.inc
  */
 
 /**
  * Implements hook_user_default_roles().
  */
-function profiles_user_default_roles() {
+function pw_profiles_user_default_roles() {
   $roles = array();
 
   // Exported role: Candidate.

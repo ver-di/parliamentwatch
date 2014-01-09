@@ -4,13 +4,13 @@
  * Code for the Profiles feature.
  */
 
-include_once 'profiles.features.inc';
+include_once 'pw_profiles.features.inc';
 
 /**
  * (Un-)Installs the needed cache table for user filters
  * @return array
  */
-function profiles_schema() {
+function pw_profiles_schema() {
   $schema['user_filter_cache'] = array (
     'fields' => 
     array (
@@ -64,7 +64,7 @@ function profiles_schema() {
         4 => 'input_parliament_name',
       ),
     ),
-    'module' => 'profiles',
+    'module' => 'pw_profiles',
     'name' => 'user_filter_cache',
   );
   return $schema;
@@ -73,7 +73,7 @@ function profiles_schema() {
 /**
  * Add index to the table to optimize select queries from pw_forms_filter_alter:
  */
-function profiles_update_1() {
+function pw_profiles_update_1() {
   db_add_index('user_filter_cache', 'pw_forms_filter_alter_ix', array('input_output_type', 
       'input_role_name', 'input_parliament_name'));
 }
@@ -81,10 +81,10 @@ function profiles_update_1() {
 /**
  * This function maintains the cache table user_filter_cache
  */
-function profiles_cron() {
+function pw_profiles_cron() {
   // Short-running operation example, not using a queue:
   // Delete all expired records since the last cron run.
-  $expires = variable_get('profiles_cron_last_run', REQUEST_TIME);
+  $expires = variable_get('pw_profiles_cron_last_run', REQUEST_TIME);
   // Delete all unused items in the table:
   db_query('TRUNCATE TABLE {user_filter_cache}');
   
@@ -99,10 +99,10 @@ function profiles_cron() {
 		INNER JOIN field_revision_field_user_party AS uparty ON uparty.entity_type = \'user\' AND u.uid = uparty.entity_id AND urev.vid = uparty.revision_id 
 		INNER JOIN taxonomy_term_data AS tparty ON uparty.field_user_party_tid = tparty.tid');
   
-  variable_set('profiles_cron_last_run', REQUEST_TIME);
+  variable_set('pw_profiles_cron_last_run', REQUEST_TIME);
 }
 
-function profiles_form_alter(&$form, &$form_state, $form_id) {
+function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
 if ($form_id == "user_profile_form") {
 unset($form["locale"]);
 $view = views_get_view('calendar');
@@ -121,7 +121,7 @@ $form['views_embedder'] = array(
  * FFI: Saves changes to the user role in the corresponding taxonomy. 
  * This is important for the profile switch that relies on this taxonomy.
  */
-function profiles_user_presave(&$edit, $account, $category) {
+function pw_profiles_user_presave(&$edit, $account, $category) {
   // fetch the chosen roles from $edit['roles']:
   $roleIdArray = array();
   

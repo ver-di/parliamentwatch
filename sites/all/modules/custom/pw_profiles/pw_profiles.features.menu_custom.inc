@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.features.menu_custom.inc
+ * pw_profiles.features.menu_custom.inc
  */
 
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function profiles_menu_default_menu_custom() {
+function pw_profiles_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: menu-calendar-options-menu.

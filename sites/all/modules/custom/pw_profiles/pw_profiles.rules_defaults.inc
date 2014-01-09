@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.rules_defaults.inc
+ * pw_profiles.rules_defaults.inc
  */
 
 /**
  * Implements hook_default_rules_configuration().
  */
-function profiles_default_rules_configuration() {
+function pw_profiles_default_rules_configuration() {
   $items = array();
   $items['rules_submitting_question'] = entity_import('rules_config', '{ "rules_submitting_question" : {
       "LABEL" : "Submitting Question",

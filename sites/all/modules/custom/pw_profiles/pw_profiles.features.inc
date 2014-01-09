@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.features.inc
+ * pw_profiles.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function profiles_ctools_plugin_api() {
+function pw_profiles_ctools_plugin_api() {
   list($module, $api) = func_get_args();
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
@@ -29,14 +29,14 @@ function profiles_ctools_plugin_api() {
 /**
  * Implements hook_views_api().
  */
-function profiles_views_api() {
+function pw_profiles_views_api() {
   return array("version" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function profiles_node_info() {
+function pw_profiles_node_info() {
   $items = array(
     'calendar_entry' => array(
       'name' => t('Calendar Entry'),

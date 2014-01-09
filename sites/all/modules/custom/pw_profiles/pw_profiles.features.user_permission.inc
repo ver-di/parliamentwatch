@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.features.user_permission.inc
+ * pw_profiles.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function profiles_user_default_permissions() {
+function pw_profiles_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: create field_user_about.
