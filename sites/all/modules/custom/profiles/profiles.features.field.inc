@@ -2958,7 +2958,7 @@ function profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'image',
       'settings' => array(
-        'default_image' => '13546',
+        'default_image' => '13596',
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
