@@ -1,0 +1,14 @@
+diff --git a/sites/all/modules/contrib/custom_ssl_redirect/custom_ssl_redirect.module b/sites/all/modules/contrib/custom_ssl_redirect/custom_ssl_redirect.module
+index 30688c9..7082012 100644
+--- a/sites/all/modules/contrib/custom_ssl_redirect/custom_ssl_redirect.module
++++ b/sites/all/modules/contrib/custom_ssl_redirect/custom_ssl_redirect.module
+@@ -9,6 +9,9 @@
+  * Implements hook_init().
+  */
+ function custom_ssl_redirect_init() {
++  if($_SERVER['SERVER_NAME'] == 'stage.abgeordnetenwatch.de' || $_SERVER['SERVER_NAME'] == 'live.de.parliamentwatch.org'){
++    return false;
++  }
+   $check = custom_ssl_redirect_check();
+   if ($check !== NULL) {
+     custom_ssl_redirect_redirect($check);

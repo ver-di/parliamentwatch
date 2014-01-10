@@ -207,7 +207,7 @@ function parliamentwatch_qt_quicktabs_tabset($vars) {
 ////////////////////////////////////////////////////// 
 
 drupal_add_js('var switchTo5x=false;', 'inline');
-drupal_add_js('http://w.sharethis.com/button/buttons.js', 'external');
+drupal_add_js('https://ws.sharethis.com/button/buttons.js', 'external');
 drupal_add_js('stLight.options({publisher: "55d7781f-7bd9-4944-acee-84f832478498"});', 'inline');
 
 
