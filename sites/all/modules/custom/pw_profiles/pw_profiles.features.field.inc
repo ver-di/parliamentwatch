@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.features.field.inc
+ * pw_profiles.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function profiles_field_default_fields() {
+function pw_profiles_field_default_fields() {
   $fields = array();
 
   // Exported field: 'file-image-field_file_image_alt_text'.

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.features.taxonomy.inc
+ * pw_profiles.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function profiles_taxonomy_default_vocabularies() {
+function pw_profiles_taxonomy_default_vocabularies() {
   return array(
     'list_position' => array(
       'name' => 'List Position',

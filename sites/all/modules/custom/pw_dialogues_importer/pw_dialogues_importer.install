@@ -8,7 +8,7 @@
 /**
  * Implements hook_enable().
  */
-function pw_dialogues_enable() {
+function pw_dialogues_importer_enable() {
   $job_scheduler_weight = db_query('SELECT weight FROM {system} WHERE name = :job_scheduler', array(':job_scheduler' => 'job_scheduler'))->fetchField();
 
   db_update('system')
@@ -20,7 +20,7 @@ function pw_dialogues_enable() {
 /**
  * Implements hook_uninstall().
  */
-function pw_dialogues_uninstall() {
-  variable_del('pw_dialogues_last_import');
-  variable_del('pw_dialogues_source');
+function pw_dialogues_importer_uninstall() {
+  variable_del('pw_dialogues_importer_last_import');
+  variable_del('pw_dialogues_importer_source');
 }

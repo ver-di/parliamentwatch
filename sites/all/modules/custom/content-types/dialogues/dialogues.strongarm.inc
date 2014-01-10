@@ -235,9 +235,9 @@ function dialogues_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'pw_dialogues_source';
-  $strongarm->value = 'https://mod.parliamentwatch.org/aw/api2/dialogue/';
-  $export['pw_dialogues_source'] = $strongarm;
+  $strongarm->name = 'pw_dialogues_importer_source';
+  $strongarm->value = 'http://mod.parliamentwatch.org/aw/api2/dialogue/';
+  $export['pw_dialogues_importer_source'] = $strongarm;
 
   return $export;
 }

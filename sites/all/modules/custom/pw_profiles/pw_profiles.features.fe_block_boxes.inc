@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.features.fe_block_boxes.inc
+ * pw_profiles.features.fe_block_boxes.inc
  */
 
 /**
  * Implements hook_default_fe_block_boxes().
  */
-function profiles_default_fe_block_boxes() {
+function pw_profiles_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.features.menu_links.inc
+ * pw_profiles.features.menu_links.inc
  */
 
 /**
  * Implements hook_menu_default_menu_links().
  */
-function profiles_menu_default_menu_links() {
+function pw_profiles_menu_default_menu_links() {
   $menu_links = array();
 
   // Exported menu link: menu-calendar-options-menu:node/add/calendar-entry

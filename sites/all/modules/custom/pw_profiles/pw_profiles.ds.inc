@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiles.ds.inc
+ * pw_profiles.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function profiles_ds_field_settings_info() {
+function pw_profiles_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
@@ -560,7 +560,7 @@ function profiles_ds_field_settings_info() {
 /**
  * Implements hook_ds_custom_fields_info().
  */
-function profiles_ds_custom_fields_info() {
+function pw_profiles_ds_custom_fields_info() {
   $export = array();
 
   $ds_field = new stdClass();
@@ -1075,7 +1075,7 @@ drupal_add_html_head($element, \'og_description\');
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function profiles_ds_layout_settings_info() {
+function pw_profiles_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();
@@ -1296,7 +1296,7 @@ function profiles_ds_layout_settings_info() {
 /**
  * Implements hook_ds_view_modes_info().
  */
-function profiles_ds_view_modes_info() {
+function pw_profiles_ds_view_modes_info() {
   $export = array();
 
   $ds_view_mode = new stdClass();
