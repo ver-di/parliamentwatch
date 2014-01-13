@@ -2218,6 +2218,18 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['tid']['field'] = 'tid';
   $handler->display->display_options['sorts']['tid']['relationship'] = 'field_user_parliament_tid';
   $handler->display->display_options['sorts']['tid']['order'] = 'DESC';
+  /* Sort criterion: Benutzer: QuestionAnswerRatio (field_user_qanda_ratio) */
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['id'] = 'field_user_qanda_ratio_value';
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['table'] = 'field_data_field_user_qanda_ratio';
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['field'] = 'field_user_qanda_ratio_value';
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['relationship'] = 'uid';
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['order'] = 'DESC';
+  /* Sort criterion: Benutzer: Answers Give (field_user_answers_give) */
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['id'] = 'field_user_answers_give_value';
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['table'] = 'field_data_field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['field'] = 'field_user_answers_give_value';
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['relationship'] = 'uid';
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['order'] = 'DESC';
   /* Sort criterion: Benutzer (historical data): Last name (field_user_lname) */
   $handler->display->display_options['sorts']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['sorts']['field_user_lname_value']['table'] = 'field_revision_field_user_lname';
