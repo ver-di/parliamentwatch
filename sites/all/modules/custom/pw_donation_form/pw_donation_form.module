@@ -38,9 +38,8 @@ function pw_donation_form_form_validate($form_id, $form_values){
   }
 
   // check if either iban is filled or Kontonummer & Bankleitzahl
-  $check_iban = !empty($form_values['values']['submitted']['payment_sepa_iban']);
+  $check_iban = !empty($form_values['values']['submitted']['payment_accordion']['payment_tab_sepa']['payment_sepa_iban']);
   $check_dd_account = !empty($form_values['values']['submitted']['payment_accordion']['payment_tab_direct_debit']['payment_direct_debit_account']);
-
   $check_dd_bank = !empty($form_values['values']['submitted']['payment_accordion']['payment_tab_direct_debit']['payment_direct_debit_bank']);
   if(!$check_dd_account && $check_dd_bank){
     form_set_error("payment_direct_debit_account", 'Bitte füllen Sie das Feld für die Kontonummer aus.');
