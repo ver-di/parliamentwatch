@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file pw_donation_form.module
+ * helper functions for donation form.
+ */
+
+/**
+ * Implements hook_form_alter()..
+ */
+function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'webform_client_form_10383' && drupal_get_path_alias() == 'donation-form') {
+	$form['submitted']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
+    $form['#validate'][] = 'pw_donation_form_form_validate';
+  }
+}
+
+function pw_donation_form_process_date(&$element){
+    // change type to hidden
+    $element['day']['#type'] = 'hidden';
+
+    // set value to first day of the month
+    $element['day']['#value'] = '1';
+
+    return $element;
+}
+
+function pw_donation_form_form_validate($form_id, $form_values){
+  // check if amount higher than 5 euros
+  if($form_values['values']['submitted']['donation_amount'] < 5){
+    form_set_error("donation_amount", 'Bitte tragen Sie einen Wert über 5 Euro ein.');
+  }
+
+  // check if either iban is filled or Kontonummer & Bankleitzahl
+  $check_iban = !empty($form_values['values']['submitted']['payment_sepa_iban']);
+  $check_dd_account = !empty($form_values['values']['submitted']['payment_accordion']['payment_tab_direct_debit']['payment_direct_debit_account']);
+
+  $check_dd_bank = !empty($form_values['values']['submitted']['payment_accordion']['payment_tab_direct_debit']['payment_direct_debit_bank']);
+  if(!$check_dd_account && $check_dd_bank){
+    form_set_error("payment_direct_debit_account", 'Bitte füllen Sie das Feld für die Kontonummer aus.');
+  }
+  if($check_dd_account && !$check_dd_bank){
+    form_set_error("payment_direct_debit_bank", 'Bitte füllen Sie das Feld für die Bankleitzahl aus.');
+  }
+  if(!$check_iban && !$check_dd_account && !$check_dd_bank){
+    form_set_error("payment_sepa_iban", 'Bitte füllen Sie das Feld für die IBAN aus oder alternativ die Felder für Kontonummer und Bankleitzahl.');
+  }
+}
