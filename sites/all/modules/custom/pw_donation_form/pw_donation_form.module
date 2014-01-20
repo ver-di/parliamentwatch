@@ -17,17 +17,21 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
 
 function pw_donation_form_process_date(&$element){
 
-    // change type to hidden
+    // change day type to hidden
     $element['day']['#type'] = 'hidden';
 
-    // set value to first day of the month
+    // set value for day
     if(!empty($element['#value']['month']) && !empty($element['#value']['year'])){
-      $element['day']['#value'] = '1';
+      if($element['#value']['year'].'-'.$element['#value']['month'] > date('Y-n')){
+        $element['day']['#value'] = '1';
+      }
+      else{
+        $element['day']['#value'] = date('d');
+      }
     }
     else{
       $element['day']['#value'] = '';
     }
-
     return $element;
 }
 
