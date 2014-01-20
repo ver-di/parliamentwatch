@@ -113,7 +113,28 @@ array(
           '1',
           '2',
         ),
-        'emails' => array(),
+        'emails' => array(
+          1 => array(
+            'nid' => '10383',
+            'eid' => '1',
+            'email' => 'foerdern@abgeordnetenwatch.de',
+            'subject' => 'Eine Spende ist eingegangen',
+            'from_name' => 'default',
+            'from_address' => 'default',
+            'template' => 'default',
+            'excluded_components' => array(
+              '22',
+              '5',
+              '15',
+              '28',
+              '34',
+              '39',
+              '37',
+            ),
+            'html' => '0',
+            'attachments' => '0',
+          ),
+        ),
         'components' => array(
           22 => array(
             'nid' => 10383,
