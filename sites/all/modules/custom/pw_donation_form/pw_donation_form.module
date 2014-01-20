@@ -15,6 +15,7 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
+// set date
 function pw_donation_form_process_date(&$element){
 
     // change day type to hidden
@@ -35,10 +36,11 @@ function pw_donation_form_process_date(&$element){
     return $element;
 }
 
+// custom validations
 function pw_donation_form_form_validate($form_id, $form_values){
   // check if amount higher than 5 euros
-  if($form_values['values']['submitted']['donation_amount'] < 5){
-    form_set_error("donation_amount", 'Bitte tragen Sie einen Wert über 5 Euro ein.');
+  if($form_values['values']['submitted']['donation_amount'] == 'free' && $form_values['values']['submitted']['donation_free_amount'] < 5){
+    form_set_error("donation_amount_free", 'Bitte tragen Sie einen Wert über 5 Euro ein.');
   }
 
   // check if either iban is filled or Kontonummer & Bankleitzahl
