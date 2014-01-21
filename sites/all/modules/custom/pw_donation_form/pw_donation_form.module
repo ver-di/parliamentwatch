@@ -9,10 +9,23 @@
  * Implements hook_form_alter()..
  */
 function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'webform_client_form_10383' && drupal_get_path_alias() == 'donation-form') {
-	$form['submitted']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
+  if ($form_id == 'webform_client_form_10383') { #  && drupal_get_path_alias() == 'donation-form'
+
+    // fieldset_donationform_yourdonation
+	$form['submitted']['fieldset_donationform_yourdonation']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
+	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdonation']['donation_target']);
+
+    // fieldset_donationform_yourdata
+	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdata']['personal_prefix']);
+
+   // custom validations
     $form['#validate'][] = 'pw_donation_form_form_validate';
   }
+}
+
+// set empty value
+function pw_donation_form_set_empty_value(&$element){
+  $element['#empty_option'] = '- '.$element['#title'].' -';
 }
 
 // set date
