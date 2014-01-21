@@ -8,3 +8,5 @@ dependencies[] = webform
 dependencies[] = webform_confirm_email
 dependencies[] = webform_accordion
 dependencies[] = webform_conditional
+stylesheets[all][] = pw_donation_form.css
+scripts[20] = 'pw_donation_form.js'
