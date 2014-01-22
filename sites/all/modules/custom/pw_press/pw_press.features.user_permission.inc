@@ -33,6 +33,7 @@ function pw_press_user_default_permissions() {
     'name' => 'create press_article content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -42,6 +43,7 @@ function pw_press_user_default_permissions() {
     'name' => 'create press_release content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -51,6 +53,7 @@ function pw_press_user_default_permissions() {
     'name' => 'delete any press_article content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -60,6 +63,7 @@ function pw_press_user_default_permissions() {
     'name' => 'delete any press_release content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -69,6 +73,7 @@ function pw_press_user_default_permissions() {
     'name' => 'delete own press_article content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -78,6 +83,7 @@ function pw_press_user_default_permissions() {
     'name' => 'delete own press_release content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -105,6 +111,7 @@ function pw_press_user_default_permissions() {
     'name' => 'edit any press_article content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -114,6 +121,7 @@ function pw_press_user_default_permissions() {
     'name' => 'edit any press_release content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -123,6 +131,7 @@ function pw_press_user_default_permissions() {
     'name' => 'edit own press_article content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -132,6 +141,7 @@ function pw_press_user_default_permissions() {
     'name' => 'edit own press_release content',
     'roles' => array(
       0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
