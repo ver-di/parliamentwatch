@@ -651,7 +651,7 @@ array(
             'form_key' => 'donation_date_start',
             'name' => 'Wann soll Ihre Spende erstmalig abgebucht werden?',
             'type' => 'date',
-            'value' => '',
+            'value' => '+9 days',
             'extra' => array(
               'timezone' => 'user',
               'title_display' => 'before',
