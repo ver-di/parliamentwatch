@@ -1,8 +1,8 @@
-name = Pw Donation Form
+name = PW Donation Form
 description = Custom Donation Form
 core = 7.x
 php = 5.2.4
-version = 7.x-1.0-20140120
+version = 7.x-1.0-20140122
 project = pw_donation_form
 dependencies[] = webform
 dependencies[] = webform_confirm_email

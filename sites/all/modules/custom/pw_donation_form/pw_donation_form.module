@@ -9,14 +9,10 @@
  * Implements hook_form_alter()..
  */
 function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'webform_client_form_10383') { #  && drupal_get_path_alias() == 'donation-form'
-
-    // fieldset_donationform_yourdonation
-	$form['submitted']['fieldset_donationform_yourdonation']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
+  if (drupal_get_path_alias() == 'donation-form') { # $form_id == 'webform_client_form_10384'
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdonation']['donation_target']);
-
-    // fieldset_donationform_yourdata
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdata']['personal_prefix']);
+	$form['submitted']['fieldset_donationform_paymentinfo']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
 
    // custom validations
     $form['#validate'][] = 'pw_donation_form_form_validate';
@@ -52,14 +48,17 @@ function pw_donation_form_process_date(&$element){
 // custom validations
 function pw_donation_form_form_validate($form_id, $form_values){
   // check if amount higher than 5 euros
-  if($form_values['values']['submitted']['donation_amount'] == 'free' && $form_values['values']['submitted']['donation_free_amount'] < 5){
+  if($form_values['values']['submitted']['fieldset_donationform_yourdonation']['donation_amount'] == 'free' && $form_values['values']['submitted']['fieldset_donationform_yourdonation']['donation_free_amount'] < 5){
     form_set_error("donation_amount_free", 'Bitte tragen Sie einen Wert über 5 Euro ein.');
   }
 
   // check if either iban is filled or Kontonummer & Bankleitzahl
-  $check_iban = !empty($form_values['values']['submitted']['payment_accordion']['payment_tab_sepa']['payment_sepa_iban']);
-  $check_dd_account = !empty($form_values['values']['submitted']['payment_accordion']['payment_tab_direct_debit']['payment_direct_debit_account']);
-  $check_dd_bank = !empty($form_values['values']['submitted']['payment_accordion']['payment_tab_direct_debit']['payment_direct_debit_bank']);
+  $check_iban = !empty($form_values['values']['submitted']['fieldset_donationform_paymentinfo']['payment_accordion']['payment_tab_sepa']['payment_sepa_iban']);
+
+  $check_dd_account = !empty($form_values['values']['submitted']['fieldset_donationform_paymentinfo']['payment_accordion']['payment_tab_direct_debit']['payment_direct_debit_account']);
+
+  $check_dd_bank = !empty($form_values['values']['submitted']['fieldset_donationform_paymentinfo']['payment_accordion']['payment_tab_direct_debit']['payment_direct_debit_bank']);
+
   if(!$check_dd_account && $check_dd_bank){
     form_set_error("payment_direct_debit_account", 'Bitte füllen Sie das Feld für die Kontonummer aus.');
   }

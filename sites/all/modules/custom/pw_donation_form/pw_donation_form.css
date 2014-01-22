@@ -1,22 +1,25 @@
-#webform-client-form-10383 #edit-submitted-fieldset-donationform-yourdonation-donation-frequency .form-item,
-#webform-client-form-10383 #edit-submitted-fieldset-donationform-yourdonation-donation-amount .form-item,
-#webform-client-form-10383 #edit-submitted-fieldset-donationform-paymentinfo-option-receipt .form-item {
+#webform-client-form-10384 #edit-submitted-fieldset-donationform-yourdonation-donation-frequency .form-item,
+#webform-client-form-10384 #edit-submitted-fieldset-donationform-yourdonation-donation-amount .form-item,
+#webform-client-form-10384 #edit-submitted-fieldset-donationform-paymentinfo-option-receipt .form-item {
     float: left;
     margin-right: 20px;
 }
 #webform-component-fieldset-donationform-yourdonation--donation-amount,
 #webform-component-fieldset-donationform-yourdonation--donation-target,
-#webform-component-fieldset-donationform-yourdonation--donation-date-start,
-#webform-component-fieldset-donationform-paymentinfo--option-newsletter {
+#webform-component-fieldset-donationform-yourdata--option-newsletter {
     clear: both;
     padding-top: 1em;
 }
-#webform-client-form-10383 .fieldset-legend {
+#webform-client-form-10384 .fieldset-legend {
     font-family: 'Times New Roman',Georgia,serif;
     font-size: 20px;
     font-size: 2rem;
     line-height: 22px;
     line-height: 2.2rem;
+    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
+}
+#webform-client-form-10384 .fieldset-description {
     margin-bottom: 8px;
     margin-bottom: 0.8rem;
 }
@@ -44,7 +47,7 @@
 #edit-submitted-fieldset-donationform-yourdata-address-country {
     width: 348px;
 }
-#webform-client-form-10383 .webform-component-fieldset.form-wrapper {
+#webform-client-form-10384 .webform-component-fieldset.form-wrapper {
     margin-bottom: 1em;
     padding-bottom: 1em;
     border-bottom: 1px solid #fff;
