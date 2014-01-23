@@ -52,7 +52,7 @@ function pw_subsite_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'donations';
-  $context->description = '';
+  $context->description = 'adds blocks';
   $context->tag = 'PW page';
   $context->conditions = array(
     'menu' => array(
@@ -80,19 +80,25 @@ function pw_subsite_context_default_contexts() {
           'module' => 'block',
           'delta' => '14',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '0',
         ),
         'block-29' => array(
           'module' => 'block',
           'delta' => '29',
           'region' => 'sidebar_second',
-          'weight' => '-8',
+          'weight' => '1',
         ),
         'block-30' => array(
           'module' => 'block',
           'delta' => '30',
           'region' => 'sidebar_second',
-          'weight' => '-7',
+          'weight' => '2',
+        ),
+        'block-32' => array(
+          'module' => 'block',
+          'delta' => '32',
+          'region' => 'sidebar_second',
+          'weight' => '3',
         ),
       ),
     ),
@@ -102,6 +108,7 @@ function pw_subsite_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('PW page');
+  t('adds blocks');
   $export['donations'] = $context;
 
   $context = new stdClass();
