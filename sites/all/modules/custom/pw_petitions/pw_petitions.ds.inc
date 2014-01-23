@@ -17,16 +17,16 @@ function pw_petitions_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'pw_petition';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'custom_comment_counter' => array(
-      'weight' => '3',
+    'pw_petition_form' => array(
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'p',
-          'ow-cl' => 'comment-count push-bottom-m',
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-petition-form',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -34,7 +34,7 @@ function pw_petitions_ds_field_settings_info() {
       ),
     ),
     'sharethis' => array(
-      'weight' => '1',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -53,16 +53,16 @@ function pw_petitions_ds_field_settings_info() {
         ),
       ),
     ),
-    'pw_petition_form' => array(
-      'weight' => '10',
+    'custom_comment_counter' => array(
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'pw-petition-form',
+          'ow-el' => 'p',
+          'ow-cl' => 'comment-count push-bottom-m',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
@@ -231,8 +231,8 @@ function pw_petitions_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_petition_recipient',
-        1 => 'sharethis',
-        2 => 'field_blogpost_blogtags',
+        1 => 'field_blogpost_blogtags',
+        2 => 'sharethis',
         3 => 'custom_comment_counter',
         4 => 'field_teaser_image',
         5 => 'body',
@@ -247,8 +247,8 @@ function pw_petitions_ds_layout_settings_info() {
     ),
     'fields' => array(
       'field_petition_recipient' => 'ds_content',
-      'sharethis' => 'ds_content',
       'field_blogpost_blogtags' => 'ds_content',
+      'sharethis' => 'ds_content',
       'custom_comment_counter' => 'ds_content',
       'field_teaser_image' => 'ds_content',
       'body' => 'ds_content',

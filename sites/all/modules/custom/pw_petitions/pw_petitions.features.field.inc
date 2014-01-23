@@ -160,7 +160,7 @@ function pw_petitions_field_default_fields() {
             'textformatter_type' => 'comma',
           ),
           'type' => 'textformatter_list',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
