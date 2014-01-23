@@ -12,6 +12,33 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-pw_donation_smallprint'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'i18n_mode' => '0',
+    'machine_name' => 'pw_donation_smallprint',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
   $export['block-pw_flattr'] = array(
     'cache' => -1,
     'custom' => '0',

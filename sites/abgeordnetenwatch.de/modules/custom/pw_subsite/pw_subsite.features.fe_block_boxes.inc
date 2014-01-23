@@ -11,6 +11,25 @@ function pw_subsite_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Spenden Kleingedrucktes';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'pw_donation_smallprint';
+  $fe_block_boxes->body = '<p>
+	Zum Schutz der Daten erfolgt die Übertragung der Formular-Daten ausschließlich über zertifizierte SSL-Verschlüsselung.
+</p>
+<p>
+	Verkürzte Einzugsfristen:<br />
+	Wenn Sie sich für eine Spende über SEPA-Lastschrift entschieden haben, richtet sich der Einzugstermin nach dem Eintragungstag:
+</p>
+<p>
+	Eintragung erfolgt bis zum 13. des Monats → Wir ziehen am 15. des Monats bzw. am darauffolgenden Bankarbeitstag ein.<br />
+	Eintragung erfolgt bis zum 23. des Monats → Ist die Eintragung in der zweiten Monatshälfte bis zum 23. des Monats erfolgt, ziehen wir am 25. des Monats bzw. am darauffolgenden Bankarbeitstag ein.
+</p>
+';
+
+  $export['pw_donation_smallprint'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Flattr';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'pw_flattr';
