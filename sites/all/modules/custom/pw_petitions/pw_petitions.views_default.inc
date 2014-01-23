@@ -139,6 +139,18 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['label'] = 'Progress';
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'php',
+    1 => 'field_petition_required',
+    2 => 'field_petition_signings',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'clear';
   /* Feld: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -147,7 +159,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-petition-progress-wrapper float-left"><div class="pw-petition-progress" style="width: <?php 
+  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-petition-progress-wrapper"><div class="pw-petition-progress" style="width: <?php 
 $required = $data->_field_data[\'nid\'][\'entity\']->field_petition_required[\'und\'][0][\'value\'];
 $signings = $data->_field_data[\'nid\'][\'entity\']->field_petition_signings[\'und\'][0][\'value\'];
 $progress = $data->_field_data[\'nid\'][\'entity\']->field_petition_progress[\'und\'][0][\'value\'];
@@ -193,11 +205,12 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'text-right link-sign';
+  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'text-right link-sign clear';
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'zur Petition';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   /* Feld: Inhalt: Tags */
   $handler->display->display_options['fields']['field_blogpost_blogtags']['id'] = 'field_blogpost_blogtags';
   $handler->display->display_options['fields']['field_blogpost_blogtags']['table'] = 'field_data_field_blogpost_blogtags';
