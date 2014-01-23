@@ -4338,7 +4338,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['path']['ui_name'] = 'Content: Path: Permalink';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_class'] = 'text-field permalink';
+  $handler->display->display_options['fields']['path']['element_class'] = 'text-field';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'pw-question-link';
@@ -4360,7 +4360,8 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
 $path = url($path, array(\'absolute\' => true));
-print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
+print shorten_url($original = $path, $service = \'tinyURL\');
+?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Global: PHP: trim the link */
@@ -4372,7 +4373,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><input type="checkbox" id="shortlink-<?php print $row->nid; ?>" /> <label for="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></label></div>';
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><span id="shortlink-<?php print $row->nid; ?>" /><?php print t(\'trim the link\'); ?></span></div>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -5340,7 +5341,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   /* Display: Profile API */
   $handler = $view->new_display('block', 'Profile API', 'api_profile');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] as XML';
+  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] als XML';
   $handler->display->display_options['display_description'] = 'provides a link to the API';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | User: First Name */
@@ -5388,8 +5389,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'link to the API';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'http://de.parliamentwatch.org/api/profile/[name]/profile.xml';
-  $handler->display->display_options['fields']['nothing_1']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'api/profile/[name]/profile.xml';
+  $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
