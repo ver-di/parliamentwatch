@@ -5738,16 +5738,16 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_address']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['fields']['field_user_address']['field'] = 'field_user_address';
   $handler->display->display_options['fields']['field_user_address']['label'] = 'Wohnort';
-  $handler->display->display_options['fields']['field_user_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_address']['alter']['text'] = '[field_user_address-locality] ';
   $handler->display->display_options['fields']['field_user_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_address']['empty'] = '-';
+  $handler->display->display_options['fields']['field_user_address']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_user_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_user_address']['type'] = 'addressfield_components';
   $handler->display->display_options['fields']['field_user_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
+    'components' => array(
+      'locality' => 'locality',
     ),
+    'separator' => ', ',
   );
   /* Feld: Taxonomie-Begriff: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
