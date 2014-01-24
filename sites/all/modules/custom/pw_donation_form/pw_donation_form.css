@@ -59,6 +59,10 @@
     padding-bottom: 0;
     border-bottom: 0;
 }
+#webform-client-form-10384 #payment_accordion {
+    clear: both;
+    padding-top: 1em;
+}
 
 
 /* /////////////////////////
