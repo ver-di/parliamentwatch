@@ -33,6 +33,7 @@ jQuery(document).ready(function() {
             jQuery("#edit-submitted-fieldset-donationform-yourdonation-donation-amount-2 + label").text(pw_interval * 20 + " €");
             //jQuery("#edit-submitted-fieldset-donationform-yourdonation-donation-amount-2").val(pw_interval * 20);
             jQuery("#edit-submitted-fieldset-donationform-yourdonation-donation-amount-3 + label").text(pw_interval * 50 + " €");
+            jQuery("#edit-submitted-fieldset-donationform-yourdonation-donation-amount-4 + label").text(pw_interval * 100 + " €");
             //jQuery("#edit-submitted-fieldset-donationform-yourdonation-donation-amount-3").val(pw_interval * 50);
    //     }
 

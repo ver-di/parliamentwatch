@@ -11,7 +11,7 @@ function pw_donation_form_node_export_features_default() {
   $node_export = array(
   'code_string' => 'array(
   (object) array(
-      \'vid\' => \'10397\',
+      \'vid\' => \'10407\',
       \'uid\' => \'1\',
       \'title\' => \'Vielen Dank für Ihre Spende\',
       \'log\' => \'\',
@@ -29,7 +29,7 @@ function pw_donation_form_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'636c1802-7052-4e35-9bae-71412a90a013\',
-      \'revision_timestamp\' => \'1390567144\',
+      \'revision_timestamp\' => \'1390570791\',
       \'revision_uid\' => \'1\',
       \'body\' => array(),
       \'rdf_mapping\' => array(
@@ -157,7 +157,7 @@ function pw_donation_form_node_export_features_default() {
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10400\',
+      \'vid\' => \'10408\',
       \'uid\' => \'1\',
       \'title\' => \'Spendenformular\',
       \'log\' => \'\',
@@ -175,7 +175,7 @@ function pw_donation_form_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'be5a5fb5-27f9-473b-86e2-d48262a8dc45\',
-      \'revision_timestamp\' => \'1390568546\',
+      \'revision_timestamp\' => \'1390570791\',
       \'revision_uid\' => \'1\',
       \'body\' => array(),
       \'rdf_mapping\' => array(
@@ -352,7 +352,7 @@ function pw_donation_form_node_export_features_default() {
             \'type\' => \'select\',
             \'value\' => \'10\',
             \'extra\' => array(
-              \'items\' => "10|10 €\\r\\n20|20 €\\r\\n50|50 €\\r\\nfree|Freibetrag",
+              \'items\' => "10|10 €\\r\\n20|20 €\\r\\n50|50 €\\r\\n100|100 €\\r\\nfree|Freibetrag",
               \'multiple\' => 0,
               \'title_display\' => \'before\',
               \'private\' => 0,
