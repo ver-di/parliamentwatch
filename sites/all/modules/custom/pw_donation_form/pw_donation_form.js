@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
         pw_interval = jQuery("input:radio[name ='submitted[fieldset_donationform_yourdonation][donation_frequency]']:checked").val();
 
 		// when one time donation multiple by 2
-		pw_interval = pw_interval == 0?2:pw_interval;
+		pw_interval = pw_interval == 0?1:pw_interval;
         /* if (pw_interval == 0 && pw_amount != 'free') {
             jQuery("#edit-submitted-fieldset-donationform-yourdonation-donation-amount-1 + label").text("10 €");
             //jQuery("#edit-submitted-fieldset-donationform-yourdonation-donation-amount-1").val(10);
