@@ -57,7 +57,7 @@ function pw_subsite_context_default_contexts() {
   $context->conditions = array(
     'menu' => array(
       'values' => array(
-        'node/10383' => 'node/10383',
+        'node/10384' => 'node/10384',
       ),
     ),
   );
@@ -70,9 +70,9 @@ function pw_subsite_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
-        'block-31' => array(
+        'block-32' => array(
           'module' => 'block',
-          'delta' => '31',
+          'delta' => '32',
           'region' => 'content',
           'weight' => '-9',
         ),
@@ -80,25 +80,25 @@ function pw_subsite_context_default_contexts() {
           'module' => 'block',
           'delta' => '14',
           'region' => 'sidebar_second',
-          'weight' => '0',
+          'weight' => '-71',
         ),
         'block-29' => array(
           'module' => 'block',
           'delta' => '29',
           'region' => 'sidebar_second',
-          'weight' => '1',
+          'weight' => '-70',
         ),
         'block-30' => array(
           'module' => 'block',
           'delta' => '30',
           'region' => 'sidebar_second',
-          'weight' => '2',
+          'weight' => '-69',
         ),
-        'block-32' => array(
+        'block-31' => array(
           'module' => 'block',
-          'delta' => '32',
+          'delta' => '31',
           'region' => 'sidebar_second',
-          'weight' => '3',
+          'weight' => '-10',
         ),
       ),
     ),
