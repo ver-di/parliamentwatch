@@ -9,7 +9,7 @@
  * Implements hook_form_alter()..
  */
 function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
-  if (drupal_get_path_alias() == 'donation-form') { # $form_id == 'webform_client_form_10384'
+  if ($form_id == 'webform_client_form_10384') {
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdonation']['donation_target']);
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdata']['personal_prefix']);
 	$form['submitted']['fieldset_donationform_paymentinfo']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
@@ -34,6 +34,7 @@ function pw_donation_form_process_date(&$element){
     if(!empty($element['#value']['month']) && !empty($element['#value']['year'])){
       if($element['#value']['year'].'-'.$element['#value']['month'] > date('Y-n')){
         $element['day']['#value'] = '1';
+
       }
       else{
         $element['day']['#value'] = date('d');
@@ -42,6 +43,8 @@ function pw_donation_form_process_date(&$element){
     else{
       $element['day']['#value'] = '';
     }
+
+
     return $element;
 }
 
