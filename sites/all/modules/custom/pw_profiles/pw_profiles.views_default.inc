@@ -4373,7 +4373,7 @@ print shorten_url($original = $path, $service = \'tinyURL\');
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><span id="shortlink-<?php print $row->nid; ?>" /><?php print t(\'trim the link\'); ?></span></div>';
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><span id="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></span></div>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -4889,7 +4889,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['path']['ui_name'] = 'Content: Path: Permalink';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_class'] = 'text-field permalink';
+  $handler->display->display_options['fields']['path']['element_class'] = 'text-field';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'pw-question-link';
@@ -4911,7 +4911,8 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
 $path = url($path, array(\'absolute\' => true));
-print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
+print shorten_url($original = $path, $service = \'tinyURL\');
+?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Global: PHP: trim the link */
@@ -4923,7 +4924,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><input type="checkbox" id="shortlink-<?php print $row->nid; ?>" /> <label for="shortlink-<?php print $row->nid; ?>"><?php t(\'trim the link\'); ?></label></div>';
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><span id="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></span></div>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;

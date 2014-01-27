@@ -1,10 +1,10 @@
-jQuery(document).ready(function(){
-    jQuery('.shorten').click(function(){
-        jQuery(this).parent().find('.pw-question-link .text-field').toggleClass('js-hide');
-        jQuery(this).find('span').toggleClass('processed');
+jQuery(document).ready(function($){
+    $(document).on("click",".shorten",function(){
+        $(this).parent().find('.pw-question-link .text-field').toggleClass('js-hide');
+        $(this).find('span').toggleClass('processed');
         return false;
     });
-    jQuery('.permalink-wrapper .text-field').click(function(){
-        jQuery(this).selectText(); //working with https://github.com/emilkje/jquery.selectText
+    $(document).on("click",".permalink-wrapper .text-field",function(){
+        $(this).selectText(); //working with https://github.com/emilkje/jquery.selectText
     });
 });
