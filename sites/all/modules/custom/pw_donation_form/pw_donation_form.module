@@ -19,12 +19,15 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
-// set empty value
+// set empty value of select list
 function pw_donation_form_set_empty_value(&$element){
   $element['#empty_option'] = '- '.$element['#title'].' -';
 }
 
-// set date
+/**
+ * Implements hook_form_process_date()..
+ * sets day value and visibility
+ */
 function pw_donation_form_process_date(&$element){
 
     // change day type to hidden
@@ -48,7 +51,10 @@ function pw_donation_form_process_date(&$element){
     return $element;
 }
 
-// custom validations
+/**
+ * Implements hook_form_validate()..
+ * custom validations on webform submission
+ */
 function pw_donation_form_form_validate($form_id, $form_values){
   // check if amount higher than 5 euros
   if($form_values['values']['submitted']['fieldset_donationform_yourdonation']['donation_amount'] == 'free' && $form_values['values']['submitted']['fieldset_donationform_yourdonation']['donation_free_amount'] < 5){
@@ -70,5 +76,94 @@ function pw_donation_form_form_validate($form_id, $form_values){
   }
   if(!$check_iban && !$check_dd_account && !$check_dd_bank){
     form_set_error("payment_sepa_iban", 'Bitte füllen Sie das Feld für die IBAN aus oder alternativ die Felder für Kontonummer und Bankleitzahl.');
+  }
+}
+
+/**
+ * Implements hook_webform_csv_data_alter()..
+ * alters data before export of CSV file
+ */
+define('WEBFORM_DONATION_EXPORT_TIME', date('Y-m-d H:i'));
+function pw_donation_form_webform_csv_data_alter(&$data, $component) {
+  if($component['nid'] == 10384){
+    switch($component['form_key']) {
+      case 'option_newsletter':
+      case 'option_not_anonymous':
+        $data = $data[0] == 'X'?'yes':'no';
+        break;
+      case 'donation_date_start':
+        $data = date('Y-m-d', strtotime($data));
+        break;
+      case 'civicrm_description':
+        $data = 'Webform - '.WEBFORM_DONATION_EXPORT_TIME;
+        break;
+    }
+  }
+
+  foreach($component as $key => $val){
+    #drupal_set_message($key);
+  } 
+}
+
+/**
+ * Implements hook_webform_submission_presave()..
+ * alters data before submission will be saved
+ */
+function pw_donation_form_webform_submission_presave($node, &$submission){
+
+  // query db to retrieve webform components
+  $sql = "SELECT wf_comp.cid, wf_comp.form_key
+                FROM webform_component wf_comp
+                WHERE wf_comp.nid = :nid";
+  $form_fields = db_query($sql, array(':nid' => $node->nid))->fetchAllAssoc('cid');
+
+  // find ids of all relevant components
+  foreach($form_fields as $cid => $component){
+    switch($component->form_key){
+      case 'option_newsletter':
+        $cid_option_newsletter = $cid;
+        break;
+      case 'civicrm_groups':
+        $cid_civicrm_groups = $cid;
+        break;
+      case 'donation_frequency':
+        $cid_donation_frequency = $cid;
+        break;
+      case 'donation_amount':
+        $cid_donation_amount = $cid;
+        break;
+      case 'donation_free_amount':
+        $cid_donation_free_amount = $cid;
+        break;
+      case 'civicrm_amount':
+        $cid_civicrm_amount = $cid;
+        break;
+      case 'civicrm_contribution_type':
+        $cid_civicrm_contribution_type = $cid;
+        break;
+    }
+  }
+  // set newsletter group for civicrm
+  if(isset($cid_option_newsletter) && !empty($submission->data[$cid_option_newsletter]['value'][0])){
+    $submission->data[$cid_civicrm_groups]['value'][0] = 'abgeordnetenwatch.de Newsletter';
+  }
+
+  // set amout to be charged based on frequency and selected amount
+  if(isset($cid_donation_frequency) && isset($cid_donation_amount) && isset($cid_donation_free_amount) && isset($cid_civicrm_amount)){
+    if($submission->data[$cid_donation_amount]['value'][0] == 'free'){
+      $donation_amount = $submission->data[$cid_donation_free_amount]['value'][0];
+    }
+    else{
+      $donation_amount = $submission->data[$cid_donation_amount]['value'][0];
+    }
+    $donation_frequency = $submission->data[$cid_donation_frequency]['value'][0];
+    $donation_frequency = $donation_frequency < 1?1:$donation_frequency;
+    $submission->data[$cid_civicrm_amount]['value'][0] = $donation_frequency * $donation_amount;
+  }
+
+  // set contribution type
+  if(isset($cid_civicrm_contribution_type) && isset($cid_donation_frequency)){
+    $donation_frequency = $submission->data[$cid_donation_frequency]['value'][0];
+    $submission->data[$cid_civicrm_contribution_type]['value'][0] = $donation_frequency == 0?'one_time_donation':'regular_membership';
   }
 }
