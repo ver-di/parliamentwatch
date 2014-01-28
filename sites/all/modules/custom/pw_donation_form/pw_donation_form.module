@@ -152,13 +152,13 @@ function pw_donation_form_webform_submission_presave($node, &$submission){
   if(isset($cid_donation_frequency) && isset($cid_donation_amount) && isset($cid_donation_free_amount) && isset($cid_civicrm_amount)){
     if($submission->data[$cid_donation_amount]['value'][0] == 'free'){
       $donation_amount = $submission->data[$cid_donation_free_amount]['value'][0];
+      $submission->data[$cid_civicrm_amount]['value'][0] = $donation_amount;
     }
     else{
+      $donation_frequency = $submission->data[$cid_donation_frequency]['value'][0];
       $donation_amount = $submission->data[$cid_donation_amount]['value'][0];
+      $submission->data[$cid_civicrm_amount]['value'][0] = $donation_frequency * $donation_amount;
     }
-    $donation_frequency = $submission->data[$cid_donation_frequency]['value'][0];
-    $donation_frequency = $donation_frequency < 1?1:$donation_frequency;
-    $submission->data[$cid_civicrm_amount]['value'][0] = $donation_frequency * $donation_amount;
   }
 
   // set contribution type
