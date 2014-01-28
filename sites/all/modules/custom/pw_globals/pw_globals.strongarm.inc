@@ -838,7 +838,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_csv_delimiter';
-  $strongarm->value = '\\t';
+  $strongarm->value = ';';
   $export['webform_csv_delimiter'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -921,7 +921,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_search_index';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['webform_search_index'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -935,7 +935,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_use_cookies';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['webform_use_cookies'] = $strongarm;
 
   $strongarm = new stdClass();
