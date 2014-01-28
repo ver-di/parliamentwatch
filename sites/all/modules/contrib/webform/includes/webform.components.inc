@@ -135,7 +135,8 @@ function webform_components_form($form, $form_state, $node) {
     '#submit' => array('webform_components_form_add_submit'),
   );
 
-  $form['submit'] = array(
+  $form['actions'] = array('#type' => 'actions');
+  $form['actions']['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Save'),
     '#weight' => 45,
@@ -599,11 +600,19 @@ function webform_component_edit_form($form, $form_state, $node, $component, $clo
   $form = array_merge($form, $additional_form_elements);
 
   // Add the submit button.
-  $form['submit'] = array(
+  $form['actions'] = array('#type' => 'actions');
+  $form['actions']['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Save component'),
     '#weight' => 50,
   );
+
+  // Remove fieldsets without any child form controls.
+  foreach ($form as $group_key => $group) {
+    if (isset($group['#type']) && $group['#type'] === 'fieldset' && !element_children($group)) {
+      unset($form[$group_key]);
+    }
+  }
 
   return $form;
 }
@@ -1061,7 +1070,9 @@ function webform_component_parent_keys($node, $component) {
  * Populate a component with the defaults for that type.
  */
 function webform_component_defaults(&$component) {
-  if ($defaults = webform_component_invoke($component['type'], 'defaults')) {
+  $defaults = webform_component_invoke($component['type'], 'defaults');
+  drupal_alter('webform_component_defaults', $defaults, $component['type']);
+  if (!empty($defaults)) {
     foreach ($defaults as $key => $default) {
       if (!isset($component[$key])) {
         $component[$key] = $default;
