@@ -14,3 +14,5 @@ dependencies[] = webform_confirm_email
 features[features_api][] = api:1
 features[node_export_features][] = 636c1802-7052-4e35-9bae-71412a90a013
 features[node_export_features][] = be5a5fb5-27f9-473b-86e2-d48262a8dc45
+stylesheets[all][] = pw_donation_form.css
+scripts[20] = 'pw_donation_form.js'
