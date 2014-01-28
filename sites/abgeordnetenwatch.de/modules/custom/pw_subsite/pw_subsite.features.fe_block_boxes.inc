@@ -31,12 +31,7 @@ function pw_subsite_default_fe_block_boxes() {
 	Zum Schutz der Daten erfolgt die Übertragung der Formular-Daten ausschließlich über zertifizierte SSL-Verschlüsselung.
 </p>
 <p>
-	Verkürzte Einzugsfristen:<br />
-	Wenn Sie sich für eine Spende über SEPA-Lastschrift entschieden haben, richtet sich der Einzugstermin nach dem Eintragungstag:
-</p>
-<p>
-	Eintragung erfolgt bis zum 13. des Monats → Wir ziehen am 15. des Monats bzw. am darauffolgenden Bankarbeitstag ein.<br />
-	Eintragung erfolgt bis zum 23. des Monats → Ist die Eintragung in der zweiten Monatshälfte bis zum 23. des Monats erfolgt, ziehen wir am 25. des Monats bzw. am darauffolgenden Bankarbeitstag ein.
+	Hinweis für Spenden per SEPA-Lastschrift: Wenn Sie bis zum 13. des Monats spenden, dann ziehen wir die Spende am 15. des Monats oder am darauffolgenden Bankarbeitstag ein. Wenn Sie nach dem 13. des Monats spenden, dann ziehen wir Ihre Spende am 25. des Monats oder am darauffolgenden Bankarbeitstag ein.
 </p>
 ';
 
