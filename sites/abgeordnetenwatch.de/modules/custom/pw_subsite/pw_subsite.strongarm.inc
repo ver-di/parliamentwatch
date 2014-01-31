@@ -39,7 +39,7 @@ function pw_subsite_strongarm() {
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => '7EozfN4ZBspZiSuEfr2etQrFGMZGjPmX_VK_kqNvzQA',
+    'javascript' => 'ZkMQsI_K5XiYw1Ec-aYfCmKKAPoEbN2CEl5EMvu-XnY',
   );
   $export['language_default'] = $strongarm;
 
