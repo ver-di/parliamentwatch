@@ -9,7 +9,7 @@
  * Implements hook_form_alter()..
  */
 function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'webform_client_form_10384') {
+  if ($form_id == 'webform_client_form_10394') {
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdonation']['donation_target']);
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdata']['personal_prefix']);
 	// $form['submitted']['fieldset_donationform_paymentinfo']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
@@ -85,7 +85,7 @@ function pw_donation_form_form_validate($form_id, $form_values){
  */
 define('WEBFORM_DONATION_EXPORT_TIME', date('Y-m-d H:i'));
 function pw_donation_form_webform_csv_data_alter(&$data, $component) {
-  if($component['nid'] == 10384){
+  if($component['nid'] == 10394){
     switch($component['form_key']) {
       case 'option_newsletter':
       case 'option_not_anonymous':

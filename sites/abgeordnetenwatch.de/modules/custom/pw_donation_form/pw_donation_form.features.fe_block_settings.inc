@@ -19,7 +19,7 @@ function pw_donation_form_default_fe_block_settings() {
     'i18n_mode' => '0',
     'module' => 'featured_content',
     'node_types' => array(),
-    'pages' => 'ueber-uns/spendenformular/vielen-dank',
+    'pages' => '*/vielen-dank',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
