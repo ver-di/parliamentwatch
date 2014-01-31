@@ -12,7 +12,7 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'webform_client_form_10384') {
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdonation']['donation_target']);
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdata']['personal_prefix']);
-	$form['submitted']['fieldset_donationform_paymentinfo']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
+	// $form['submitted']['fieldset_donationform_paymentinfo']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
 
    // custom validations
     $form['#validate'][] = 'pw_donation_form_form_validate';
@@ -91,18 +91,11 @@ function pw_donation_form_webform_csv_data_alter(&$data, $component) {
       case 'option_not_anonymous':
         $data = $data[0] == 'X'?'yes':'no';
         break;
-      case 'donation_date_start':
-        $data = date('Y-m-d', strtotime($data));
-        break;
       case 'civicrm_description':
         $data = 'Webform - '.WEBFORM_DONATION_EXPORT_TIME;
         break;
     }
   }
-
-  foreach($component as $key => $val){
-    #drupal_set_message($key);
-  } 
 }
 
 /**
@@ -141,17 +134,25 @@ function pw_donation_form_webform_submission_presave($node, &$submission){
       case 'civicrm_contribution_type':
         $cid_civicrm_contribution_type = $cid;
         break;
+      case 'civicrm_date_start':
+        $cid_civicrm_date_start = $cid;
+        break;
     }
   }
+
   // set newsletter group for civicrm
   if(isset($cid_option_newsletter) && !empty($submission->data[$cid_option_newsletter]['value'][0])){
     $submission->data[$cid_civicrm_groups]['value'][0] = 'abgeordnetenwatch.de Newsletter';
   }
 
-  // set amout to be charged based on frequency and selected amount
+  // set amout to be charged based on selected frequency and amount
   if(isset($cid_donation_frequency) && isset($cid_donation_amount) && isset($cid_donation_free_amount) && isset($cid_civicrm_amount)){
     if($submission->data[$cid_donation_amount]['value'][0] == 'free'){
       $donation_amount = $submission->data[$cid_donation_free_amount]['value'][0];
+      $submission->data[$cid_civicrm_amount]['value'][0] = $donation_amount;
+    }
+    elseif($submission->data[$cid_donation_frequency]['value'][0] == '0'){
+      $donation_amount = $submission->data[$cid_donation_amount]['value'][0];
       $submission->data[$cid_civicrm_amount]['value'][0] = $donation_amount;
     }
     else{
@@ -164,6 +165,11 @@ function pw_donation_form_webform_submission_presave($node, &$submission){
   // set contribution type
   if(isset($cid_civicrm_contribution_type) && isset($cid_donation_frequency)){
     $donation_frequency = $submission->data[$cid_donation_frequency]['value'][0];
-    $submission->data[$cid_civicrm_contribution_type]['value'][0] = $donation_frequency == 0?'one_time_donation':'regular_membership';
+    $submission->data[$cid_civicrm_contribution_type]['value'][0] = $donation_frequency == 0?'Spende Parlamentwatch e.V.':'Fördermitglied';
+  }
+
+  // set date start
+  if(isset($cid_civicrm_date_start)){
+    $submission->data[$cid_civicrm_date_start]['value'][0] = date('Y-m-d H:i', $submission->submitted);
   }
 }
