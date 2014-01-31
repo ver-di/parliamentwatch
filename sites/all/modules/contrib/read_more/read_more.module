@@ -8,7 +8,7 @@
 
 
 define('READ_MORE_PLACEMENT_DEFAULT', 'inline');
-define('READ_MORE_TEXT_DEFAULT', '<strong>Read more<span class="element-invisible"> about [node:title]</span></strong>');
+define('READ_MORE_TEXT_DEFAULT', '<strong>'.t('Read more').'<span class="element-invisible"> '.t('about').' [node:title]</span></strong>');
 define('READ_MORE_TITLE_DEFAULT', '[node:title]');
 
 

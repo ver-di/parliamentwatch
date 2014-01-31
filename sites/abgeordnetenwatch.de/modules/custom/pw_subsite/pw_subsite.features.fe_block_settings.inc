@@ -12,6 +12,114 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-pw_donation_mail'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'i18n_mode' => '0',
+    'machine_name' => 'pw_donation_mail',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => 'Spenden per Post',
+    'visibility' => '0',
+  );
+
+  $export['block-pw_donation_smallprint'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'i18n_mode' => '0',
+    'machine_name' => 'pw_donation_smallprint',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
+  $export['block-pw_flattr'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'i18n_mode' => '0',
+    'machine_name' => 'pw_flattr',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => 'Flattr',
+    'visibility' => '0',
+  );
+
+  $export['block-pw_paypal'] = array(
+    'cache' => -1,
+    'custom' => '0',
+    'i18n_mode' => '0',
+    'machine_name' => 'pw_paypal',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => 'Paypal',
+    'visibility' => '0',
+  );
+
   $export['block-social_media_footer'] = array(
     'cache' => -1,
     'custom' => '0',
@@ -270,87 +378,6 @@ function pw_subsite_default_fe_block_settings() {
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
         'weight' => '-62',
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => '0',
-      ),
-    ),
-    'title' => '',
-    'visibility' => '0',
-  );
-
-  $export['views--exp-profile_list_rev-grid'] = array(
-    'cache' => -1,
-    'custom' => '0',
-    'delta' => '-exp-profile_list_rev-grid',
-    'i18n_mode' => '0',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => 'politicians/*',
-    'roles' => array(),
-    'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => '0',
-      ),
-    ),
-    'title' => '',
-    'visibility' => '1',
-  );
-
-  $export['views-1aaf3482d7a482c92318ccf7dc354a3c'] = array(
-    'cache' => -1,
-    'custom' => '0',
-    'delta' => '1aaf3482d7a482c92318ccf7dc354a3c',
-    'i18n_mode' => '1',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => '0',
-      ),
-    ),
-    'title' => 'Filter Questions and Answers',
-    'visibility' => '0',
-  );
-
-  $export['views-1b41cdd78f044727c43855024694181b'] = array(
-    'cache' => -1,
-    'custom' => '0',
-    'delta' => '1b41cdd78f044727c43855024694181b',
-    'i18n_mode' => '0',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
       ),
       'seven' => array(
         'region' => '',

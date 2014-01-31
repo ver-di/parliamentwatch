@@ -51,6 +51,69 @@ function pw_subsite_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'donations';
+  $context->description = 'adds blocks';
+  $context->tag = 'PW page';
+  $context->conditions = array(
+    'menu' => array(
+      'values' => array(
+        'node/10384' => 'node/10384',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'block-32' => array(
+          'module' => 'block',
+          'delta' => '32',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
+        'block-14' => array(
+          'module' => 'block',
+          'delta' => '14',
+          'region' => 'sidebar_second',
+          'weight' => '-71',
+        ),
+        'block-29' => array(
+          'module' => 'block',
+          'delta' => '29',
+          'region' => 'sidebar_second',
+          'weight' => '-70',
+        ),
+        'block-30' => array(
+          'module' => 'block',
+          'delta' => '30',
+          'region' => 'sidebar_second',
+          'weight' => '-69',
+        ),
+        'block-31' => array(
+          'module' => 'block',
+          'delta' => '31',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('PW page');
+  t('adds blocks');
+  $export['donations'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'press_contact';
   $context->description = '';
   $context->tag = 'press';

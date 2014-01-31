@@ -10,8 +10,9 @@
  * Implements hook_cron()..
  */
 function pw_cron_export_submissions_cron() {
-	export_submissions('petition-unterschreiben');
-	export_submissions('newsletter-subscription');
+  export_submissions('petition-unterschreiben');
+  export_submissions('newsletter-subscription');
+  export_submissions('ueber-uns/spendenformular');
 }
 
 
@@ -49,7 +50,6 @@ function export_submissions($source){
 			// prepare
 			$cid_status_field = false;
 			$cid_node_path_field = false;
-			$export_path = false;
 			foreach($form_fields as $cid => $component){
 				if($component->form_key == 'status'){
 					$cid_status_field = $cid;
@@ -60,7 +60,8 @@ function export_submissions($source){
 			}
 
 			// prepare export path
-			$export_path = "private://webforms/submissions/$source/";
+			$export_path = "private://webforms/submissions/";
+            $export_path .= str_replace('/', '_', $source).'/';
 			if(!file_prepare_directory($export_path, FILE_CREATE_DIRECTORY)){
 				watchdog('pw_cron_export_submissions_cron', 'could not create export path: '.$export_path, NULL, WATCHDOG_WARNING);
 				return;
