@@ -15,6 +15,7 @@ dependencies[] = features
 dependencies[] = locale
 dependencies[] = menu
 dependencies[] = rules
+dependencies[] = site_verify
 dependencies[] = strongarm
 dependencies[] = submenutree
 dependencies[] = tagadelic
