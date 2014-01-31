@@ -2218,6 +2218,18 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['tid']['field'] = 'tid';
   $handler->display->display_options['sorts']['tid']['relationship'] = 'field_user_parliament_tid';
   $handler->display->display_options['sorts']['tid']['order'] = 'DESC';
+  /* Sort criterion: Benutzer: QuestionAnswerRatio (field_user_qanda_ratio) */
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['id'] = 'field_user_qanda_ratio_value';
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['table'] = 'field_data_field_user_qanda_ratio';
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['field'] = 'field_user_qanda_ratio_value';
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['relationship'] = 'uid';
+  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['order'] = 'DESC';
+  /* Sort criterion: Benutzer: Answers Give (field_user_answers_give) */
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['id'] = 'field_user_answers_give_value';
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['table'] = 'field_data_field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['field'] = 'field_user_answers_give_value';
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['relationship'] = 'uid';
+  $handler->display->display_options['sorts']['field_user_answers_give_value']['order'] = 'DESC';
   /* Sort criterion: Benutzer (historical data): Last name (field_user_lname) */
   $handler->display->display_options['sorts']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['sorts']['field_user_lname_value']['table'] = 'field_revision_field_user_lname';
@@ -4326,7 +4338,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['path']['ui_name'] = 'Content: Path: Permalink';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_class'] = 'text-field permalink';
+  $handler->display->display_options['fields']['path']['element_class'] = 'text-field';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'pw-question-link';
@@ -4348,7 +4360,8 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
 $path = url($path, array(\'absolute\' => true));
-print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
+print shorten_url($original = $path, $service = \'tinyURL\');
+?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Global: PHP: trim the link */
@@ -4360,7 +4373,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><input type="checkbox" id="shortlink-<?php print $row->nid; ?>" /> <label for="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></label></div>';
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><span id="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></span></div>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -4876,7 +4889,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['path']['ui_name'] = 'Content: Path: Permalink';
   $handler->display->display_options['fields']['path']['label'] = '';
   $handler->display->display_options['fields']['path']['element_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_class'] = 'text-field permalink';
+  $handler->display->display_options['fields']['path']['element_class'] = 'text-field';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'pw-question-link';
@@ -4898,7 +4911,8 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
 $path = url($path, array(\'absolute\' => true));
-print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
+print shorten_url($original = $path, $service = \'tinyURL\');
+?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Global: PHP: trim the link */
@@ -4910,7 +4924,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><input type="checkbox" id="shortlink-<?php print $row->nid; ?>" /> <label for="shortlink-<?php print $row->nid; ?>"><?php t(\'trim the link\'); ?></label></div>';
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><span id="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></span></div>';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
@@ -5328,7 +5342,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   /* Display: Profile API */
   $handler = $view->new_display('block', 'Profile API', 'api_profile');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] as XML';
+  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] als XML';
   $handler->display->display_options['display_description'] = 'provides a link to the API';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | User: First Name */
@@ -5376,8 +5390,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'link to the API';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'http://de.parliamentwatch.org/api/profile/[name]/profile.xml';
-  $handler->display->display_options['fields']['nothing_1']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'api/profile/[name]/profile.xml';
+  $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
@@ -5725,16 +5739,16 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_address']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['fields']['field_user_address']['field'] = 'field_user_address';
   $handler->display->display_options['fields']['field_user_address']['label'] = 'Wohnort';
-  $handler->display->display_options['fields']['field_user_address']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_address']['alter']['text'] = '[field_user_address-locality] ';
   $handler->display->display_options['fields']['field_user_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_address']['empty'] = '-';
+  $handler->display->display_options['fields']['field_user_address']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_user_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_user_address']['type'] = 'addressfield_components';
   $handler->display->display_options['fields']['field_user_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
+    'components' => array(
+      'locality' => 'locality',
     ),
+    'separator' => ', ',
   );
   /* Feld: Taxonomie-Begriff: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
@@ -5956,7 +5970,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="imagegallery" class="add-sharethis" title="Imagegallery of [field_user_fname] [field_user_lname],[field_user_party]">';
+  $handler->display->display_options['header']['area']['content'] = '<div id="imagegallery" class="add-sharethis" title="Imagegallery of [field_user_fname] [field_user_lname],[field_user_party]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -6554,7 +6568,19 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
 
   /* Display: Short Profile Premium Mainpage */
   $handler = $view->new_display('block', 'Short Profile Premium Mainpage', 'short_profile_premium_main');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'relative clearfix';
   $handler->display->display_options['display_description'] = 'used as header field on pages';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: PHP remove page title */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -6565,6 +6591,12 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
 drupal_set_title("");
 ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
+  /* Kopfbereich: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_fname] [field_user_lname], [field_user_party]"></div>';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
@@ -6784,6 +6816,8 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
 
   /* Display: Short Profile Premium Subpage */
   $handler = $view->new_display('block', 'Short Profile Premium Subpage', 'short_profile_premium_sub');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'relative clearfix';
   $handler->display->display_options['display_description'] = 'used as header field on pages';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: PHP remove page title */
@@ -6974,6 +7008,8 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
 
   /* Display: Short Profile Deputy Mainpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Mainpage', 'short_profile_deputy_main');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'relative clearfix';
   $handler->display->display_options['display_description'] = 'used as header field on pages';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: PHP remove page title */
@@ -6985,6 +7021,12 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
 drupal_set_title("");
 ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
+  /* Kopfbereich: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_fname] [field_user_lname], [field_user_party]"></div>';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer: Parliament (field_user_parliament) */
@@ -7182,6 +7224,8 @@ drupal_set_title("");
 
   /* Display: Short Profile Deputy Subpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Subpage', 'short_profile_deputy_sub');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'relative clearfix';
   $handler->display->display_options['display_description'] = 'used as header field on pages';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: PHP remove page title */
