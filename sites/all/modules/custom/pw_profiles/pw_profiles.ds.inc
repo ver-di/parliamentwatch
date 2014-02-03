@@ -754,9 +754,9 @@ function pw_profiles_ds_custom_fields_info() {
       'value' => '<form action="" id="form-view-mode-switcher" method="post" name="view-mode-switcher" class="views-exposed-form">
 	<div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php t(\'Infotext\'); ?></div></div></div>
        <fieldset class="views-exposed-widget">
-                <label>Change view</label>
-		<div class="form-item"><input class="view-mode-full form-radio" name="group1" id="group1_1" type="radio" value="full" checked="checked" /><label for="group1_1" class="option">Full View</label></div>
-		<div class="form-item"><input class="view-mode-teaser form-radio" name="group1" id="group1_2" type="radio" value="teaser" /><label for="group1_2" class="option">Teaser View</label></div>
+                <label><?php t(\'Change view\'); ?></label>
+		<div class="form-item"><input class="view-mode-full form-radio" name="group1" id="group1_1" type="radio" value="full" checked="checked" /><label for="group1_1" class="option"><?php t(\'Full View\'); ?></label></div>
+		<div class="form-item"><input class="view-mode-teaser form-radio" name="group1" id="group1_2" type="radio" value="teaser" /><label for="group1_2" class="option"><?php t(\'Teaser View\'); ?></label></div>
 	</fieldset>
 </form>',
       'format' => 'php_code',

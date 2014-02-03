@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2013-12-29 19:09+0100\n"
-"PO-Revision-Date: 2013-12-29 19:09+0100\n"
+"POT-Creation-Date: 2014-02-03 16:41+0100\n"
+"PO-Revision-Date: 2014-02-03 16:41+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -4877,10 +4877,6 @@ msgid "[field_user_lname]</h3>"
 msgstr ""
 
 #: /index.php
-msgid "Go to profile"
-msgstr ""
-
-#: /index.php
 msgid "</div>"
 msgstr ""
 
@@ -4921,10 +4917,6 @@ msgid "<div class=\"question\">"
 msgstr ""
 
 #: /index.php
-msgid "Question from"
-msgstr ""
-
-#: /index.php
 msgid ""
 "[field_dialogue_sender_fullname]<br/><span "
 "class=\"subline\">[created]</span>\n"
@@ -4944,12 +4936,6 @@ msgid ""
 "<h3>Antwort von [field_user_fname] [field_user_lname]</h3>\n"
 "<p class=\"date\">[created_1]</p>\n"
 "<div class=\"content clear-both\">[comment_body]</div>"
-msgstr ""
-
-#: /index.php
-msgid ""
-"<div class=\"file-image float-left\">[field_user_picture]</div>\n"
-"<strong>No answer yet</strong>"
 msgstr ""
 
 #: /index.php
@@ -17638,10 +17624,6 @@ msgid "</h4>"
 msgstr ""
 
 #: /en-gb/admin/structure/features/cleanup/clear
-msgid "[field_user_questions_get] question(s),"
-msgstr ""
-
-#: /en-gb/admin/structure/features/cleanup/clear
 msgid "[field_user_answers_give] answer(s)"
 msgstr ""
 
@@ -17651,10 +17633,6 @@ msgstr ""
 
 #: /en-gb/admin/structure/features/cleanup/clear
 msgid "[field_user_lname_1]</h3>"
-msgstr ""
-
-#: /en-gb/admin/structure/features/cleanup/clear
-msgid "[field_user_questions_get_1] question(s)"
 msgstr ""
 
 #: /en-gb/admin/structure/features/cleanup/clear
@@ -27562,18 +27540,10 @@ msgstr ""
 
 #: /en-gb/admin/structure/views/import
 msgid "to a question from "
-msgstr ""
+msgstr "zu einer Frage von "
 
 #: /en-gb/admin/structure/views/import
 msgid "</h3>"
-msgstr ""
-
-#: /en-gb/admin/structure/views/import
-msgid "[field_user_questions_get] question(s)"
-msgstr ""
-
-#: /en-gb/admin/structure/views/import
-msgid "[field_user_questions_get], [field_user_answers_give] answer(s)"
 msgstr ""
 
 #: /en-gb/admin/structure/views/import
@@ -51350,10 +51320,6 @@ msgid "Title text attribute"
 msgstr ""
 
 #: /index.php
-msgid "Education"
-msgstr ""
-
-#: /index.php
 msgid "Image Gallery"
 msgstr ""
 
@@ -51530,10 +51496,6 @@ msgstr ""
 
 #: /admin/structure/features/profiles/status
 msgid "[field_user_fname] [field_user_lname],[field_user_party]"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
-msgid "[field_user_questions_get] Questions"
 msgstr ""
 
 #: /admin/structure/features/profiles/status
@@ -51873,15 +51835,7 @@ msgid "topic"
 msgstr ""
 
 #: /index.php
-msgid "question"
-msgstr ""
-
-#: /index.php
 msgid "answer_post_date"
-msgstr ""
-
-#: /index.php
-msgid "answer"
 msgstr ""
 
 #: /index.php
@@ -53420,10 +53374,6 @@ msgid "Weitere Kandidierende im Wahlkreis [field_user_constituency]"
 msgstr ""
 
 #: /index.php
-msgid "Questions to [field_user_fname] [field_user_lname]"
-msgstr ""
-
-#: /index.php
 msgid "A content pane used on the profile pages"
 msgstr ""
 
@@ -53986,10 +53936,6 @@ msgid "Select any filter and click on Apply to see results"
 msgstr ""
 
 #: /admin/structure/features/profiles/status
-msgid " % response rate"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
 msgid "Antwortquote"
 msgstr ""
 
@@ -54005,10 +53951,6 @@ msgstr ""
 msgid ""
 "Broken handler "
 "field_revision_field_user_qanda_ratio.field_user_qanda_ratio-revision_id"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
-msgid "[field_user_qanda_ratio-revision_id-value] % response rate"
 msgstr ""
 
 #: /admin/structure/features/profiles/status
@@ -54041,19 +53983,7 @@ msgid "<strong>No answer yet</strong>"
 msgstr ""
 
 #: /admin/structure/features/profiles/status
-msgid "more information to the answer"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
-msgid "Topic "
-msgstr ""
-
-#: /admin/structure/features/profiles/status
 msgid "permalink-wrapper"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
-msgid "Permanent link to this question and answer"
 msgstr ""
 
 #: /admin/structure/features/profiles/status
@@ -54210,14 +54140,6 @@ msgstr ""
 
 #: /admin/structure/features
 msgid "Computed field %field_name raw value."
-msgstr ""
-
-#: /api/profile/rolf-wuerz/profile.xml
-msgid " answers"
-msgstr ""
-
-#: /api/profile/rolf-wuerz/profile.xml
-msgid " questions"
 msgstr ""
 
 #: /admin/reports/status
@@ -56555,287 +56477,2088 @@ msgstr ""
 msgid "You cannot enter a title without a link url."
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit
+#: /admin/structure/ds
+msgid "operations"
+msgstr ""
+
+#: /index.php
+msgid "Missing required module %name."
+msgstr ""
+
+#: /index.php
+msgid "Beiträge mit dem Schlagwort \"%1\""
+msgstr ""
+
+#: /index.php
+msgid "Manage custom view modes for every entity."
+msgstr ""
+
+#: /index.php
+msgid "Manage fields for every entity."
+msgstr ""
+
+#: /index.php
+msgid "Administer classes"
+msgstr ""
+
+#: /index.php
+msgid "Manage classes."
+msgstr ""
+
+#: /index.php
+msgid "Petitionen"
+msgstr ""
+
+#: /index.php
+msgid "A webform email address was confirmed."
+msgstr ""
+
+#: /index.php
+msgid "Drupal node object"
+msgstr ""
+
+#: /index.php
+msgid "Node object of the webform for which an email was confirmed."
+msgstr ""
+
+#: /index.php
+msgid "Webform submission object"
+msgstr ""
+
+#: /index.php
+msgid "Webform submission object for which an email was confirmed."
+msgstr ""
+
+#: /index.php
+msgid "Petition"
+msgstr ""
+
+#: /index.php
+msgid "Edit confirmation request e-mail settings"
+msgstr ""
+
+#: /index.php
+msgid "Delete a confirmation request e-mail"
+msgstr ""
+
+#: /index.php
+msgid "Edit confirmation e-mail settings"
+msgstr ""
+
+#: /index.php
+msgid "Delete a confirmation e-mail"
+msgstr ""
+
+#: /index.php
+msgid "Confirmation mail settings"
+msgstr ""
+
+#: /index.php
+msgid "Teaser image wrapper"
+msgstr ""
+
+#: /index.php
+msgid "zur Petition"
+msgstr ""
+
+#: /index.php
+msgid "edit petition"
+msgstr ""
+
+#: /index.php
+msgid "image from field_teaser_image"
+msgstr ""
+
+#: /index.php
+msgid "Petition content"
+msgstr ""
+
+#: /index.php
+msgid "Signings"
+msgstr ""
+
+#: /index.php
+msgid "These tags are the same tags that are used in the blog."
+msgstr ""
+
+#: /index.php
+msgid "Benötigte Unterschriften"
+msgstr ""
+
+#: /index.php
+msgid "petitions"
+msgstr ""
+
+#: /users/root
+msgid "Thanks for your signing!"
+msgstr ""
+
+#: /users/root
+msgid "Bulk generate"
+msgstr ""
+
+#: /users/root
+msgid "Define extra CSS class names for regions and fields."
+msgstr ""
+
+#: /users/root
+msgid "webform_confirm_email"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_block/pw_petition_form
+msgid "Limit field"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_block/pw_petition_form
+msgid ""
+"Limit this field on field UI per bundles and/or view modes. The values "
+"are in the form of $bundle|$view_mode. You may use * to select all. "
+"Enter one value per line."
+msgstr ""
+
+#: /node/10369/webform/confirmation_request/new
+msgid "Set the redirect URL"
+msgstr ""
+
+#: /node/10369/webform/confirmation_request/new
+msgid "Choose between default and custom redirect URL"
+msgstr ""
+
+#: /node/10369/webform/confirmation_request/new
+msgid "Default redirect URL from the webform: %value"
+msgstr ""
+
+#: /node/10369/webform/confirmation_request/new
+msgid "Custom redirect URL"
+msgstr ""
+
+#: /node/10369/webform/confirmation_request/new
+msgid ""
+"@confirm_url - URL that is emailed to a submitee that will confirm "
+"his/her email address."
+msgstr ""
+
+#: /node/10369/webform/confirmation_request/new
+msgid "Email confirmation variables"
+msgstr ""
+
+#: /admin/structure/features/pw_petitions/status
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: /admin/structure/features/pw_petitions/status
+msgid "nächste Seite ›"
+msgstr ""
+
+#: /node/10369/webform/confirmation-settings
+msgid "Confirmation Request Lifetime"
+msgstr ""
+
+#: /node/10369/webform/confirmation-settings
+msgid ""
+"Specify the lifetime of confirmation request before they get deleted "
+"automatically. To not delete any requests leave fields blank."
+msgstr ""
+
+#: /node/10369/webform/emails
+msgid "Add standard email"
+msgstr ""
+
+#: /node/10369/webform/emails
+msgid "Add confirmation request mail"
+msgstr ""
+
+#: /node/10369/webform/emails
+msgid "Add confirmation mail"
+msgstr ""
+
+#: /node/10369/webform/emails
+msgid ""
+"Currently not sending confirmation request e-mails, add a confirmation "
+"request email by clicking the button below."
+msgstr ""
+
+#: /node/10369/webform/emails
+msgid ""
+"Currently not sending confirmation e-mails, add a confirmation email "
+"by clicking the button below."
+msgstr ""
+
+#: /node/10369/webform/emails/1/delete
+msgid "Delete e-mail settings"
+msgstr ""
+
+#: /node/10369/webform/emails/1/delete
+msgid "Delete e-mail settings?"
+msgstr ""
+
+#: /node/10369/webform/emails/1/delete
+msgid ""
+"This will immediately delete the e-mail settings based on the "
+"@component component."
+msgstr ""
+
+#: /node/10369/webform/emails/1/delete
+msgid "E-mail settings deleted."
+msgstr ""
+
+#: /node/10369/webform/emails
+msgid ""
+"Currently not sending standard e-mails, add a standard email by "
+"clicking the button below."
+msgstr ""
+
+#: /petitions/abgeordnetenbestechung-bestrafen-korrupt
+msgid "Unterschreiben"
+msgstr ""
+
+#: /node/10369/sid/2401/eid/2/confirm_email/a7a2b615e39742e24024e0abebb31e1c
+msgid "Submit email confirmation"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid ""
+"Make the default block title a link to that menu item. An overridden "
+"block title will not be a link."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid ""
+"This title will be used administratively to identify this block. If "
+"blank, the regular title will be used."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "the menu selected by the page"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid ""
+"The preferred menus used by <em>&lt;the menu selected by the "
+"page&gt;</em> can be customized on the <a href=\"!url\">Menu block "
+"settings page</a>."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "1st level (primary)"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "2nd level (secondary)"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "3rd level (tertiary)"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "4th level"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "5th level"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "6th level"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "7th level"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "8th level"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "9th level"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "Make the starting level follow the active menu item."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "Starting level will be"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "Active menu item"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "Children of active menu item"
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid ""
+"When following the active menu item, specify if the starting level "
+"should be the active menu item or its children."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "From the starting level, specify the maximum depth of the menu tree."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "<strong>Expand all children</strong> of this tree."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid "<strong>Sort</strong> menu tree by the active menu item’s trail."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid ""
+"Alter the “starting level” and “maximum depth” options to be "
+"relative to the fixed parent item. The tree of links will only contain "
+"children of the selected menu item."
+msgstr ""
+
+#: /admin/structure/block/add-menu-block
+msgid ""
+"To learn more about configuring menu blocks, see <a href=\"!url\">menu "
+"block’s detailed help</a>."
+msgstr ""
+
+#: /admin/config/system/cron/debug
+msgid ""
+"Cron presumably failed while running the cron hook "
+"<em>@module_cron()</em> in the module @module."
+msgstr ""
+
+#: /admin/config/system/cron/debug
+msgid ""
+"You can see details about the progress of cron functions <a "
+"href=\"@url\">in the log</a>. Filter for <em>cron debug</em> messages "
+"and look at the most recent entries at the top of the list."
+msgstr ""
+
+#: /admin/modules
+msgid "exports webform submissions for CiviCRM import"
+msgstr ""
+
+#: /admin/modules
+msgid "newsletter subscription form & helper functions"
+msgstr ""
+
+#: /admin/modules
+msgid "Webform addon to confirm submitters' email."
+msgstr ""
+
+#: /admin/modules
+msgid "PW Modules"
+msgstr ""
+
+#: /admin/structure/menu/item/3169/delete
+msgid "Press release (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/3172/delete
+msgid "Blogpost (menu position rule)"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/display
+msgid "You have not defined any CSS classes which can be used on regions."
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/display
+msgid "Manage region and field CSS classes"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/display
+msgid "Custom fields"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/display
+msgid "Custom page title"
+msgstr ""
+
+#: /system/ajax
+msgid "Linked to term page: !linked"
+msgstr ""
+
+#: /node/10380/submission/2572/delete?destination=node/10380/webform-results
+msgid "Webform results"
+msgstr ""
+
+#: /node/10380/submission/2572/delete?destination=node/10380/webform-results
+msgid "Are you sure you want to delete this submission?"
+msgstr ""
+
+#: /node/10380/submission/2572/delete?destination=node/10380/webform-results
+msgid "Submission deleted."
+msgstr ""
+
+#: /admin/config/system/cron/debug/run/pw_cron_export_submissions
+msgid "%function successfully completed in @secs seconds."
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "cron debug"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "Ended cron for @module module."
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "Starting cron for @module module."
+msgstr ""
+
+#: /index.php
+msgid "Development link"
+msgstr ""
+
+#: /index.php
+msgid "Entwicklung"
+msgstr ""
+
+#: /index.php
+msgid "Drush was unable to export FirePHP to @path."
+msgstr ""
+
+#: /admin/config/system/cron/debug
+msgid ""
+"Helper functions, pages, and blocks to assist Drupal developers. The "
+"devel blocks can be managed via the <a "
+"href=\"/admin/structure/block\">block administration</a> page."
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "pw_cron_export_submissions_cron"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=126505"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=126504"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Stream open: %url"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Stream opened: %parameters"
+msgstr ""
+
+#: /admin/structure/features/profiles/status
+msgid ""
+"<?php\n"
+"drupal_set_title(\"\");\n"
+"?>"
+msgstr ""
+
+#: /admin/structure/views/view/profile_list_rev/edit/grid?destination=politicians/bundestag
 msgid "BEF Settings"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit
+#: /admin/structure/views/view/profile_list_rev/edit/grid?destination=politicians/bundestag
 msgid "grouped"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit
+#: /admin/structure/views/view/profile_list_rev/edit/default
 msgid "(@start - @end) <strong>Exposed</strong> @format"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /blog/2014-01-07/warum-ronald-pofalla-nicht-beim-jugendnetzwerk-friedrichshain-kreuzberg-anheuert
+msgid "Skip to main navigation"
+msgstr ""
+
+#: /user/24626/edit
+msgid "Asia/Khandyga"
+msgstr ""
+
+#: /user/24626/edit
+msgid "Asia/Ust-Nera"
+msgstr ""
+
+#: /user/24626/edit
+msgid "Europe/Busingen"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Computed Code (PHP)"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"The variables available to your code include: <code>@fields</code>. To "
+"set the value of the field, set <code>@entity_field</code>.  For "
+"multi-value computed fields continue with "
+"<code>@entity_field_multi</code>.  Here's a simple example which sets "
+"the computed field's value to the value of the sum of the number "
+"fields (<code>@field_a</code> and <code>@field_b</code>) in a node "
+"entity:<p><code>@example</code> The first pop fetches the last (or "
+"only) item from the field while the second pop fetches its "
+"<code>['value']</code> contents (assuming it's the only key that's "
+"set).<p>Alternately, this code can be supplied by your own custom "
+"function named: <code>@compute_func(&$entity_field, $entity_type, "
+"$entity, $field, $instance, $langcode, $items)</code>"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Display Code (PHP)"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"This code should assign a string to the <code>@display_output</code> "
+"variable, which will be printed when the field is displayed. The raw "
+"computed value of the field is in <code>@value</code>.  "
+"<strong>Note:</strong> this code has no effect if you use the \"Raw "
+"computed value\" display formatter.<p> Alternately, this code can be "
+"supplied by your own custom function named: "
+"<code>@display_func($field, $entity_field_item, $entity_lang, "
+"$langcode)</code>.  Return the value to be displayed.  Original value "
+"is in $entity_field_item['value']."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Store value in the database"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"The value will be stored in the database with the settings below.  As "
+"a result, it will only be recalculated when the entity is updated.  "
+"This option is required when accessing the field through Views."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Database Storage Settings"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"<strong>**This field currently has stored data, so modifications to "
+"its DB settings are not allowed.**</strong>"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Data Type"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "The SQL datatype to store this field in."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Data Length (varchar/text)"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"<strong>Only</strong> valid for <strong>varchar</strong> or "
+"<strong>text</strong> fields. The length of the field stored in the "
+"database."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Data Size (int/float)"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"<strong>Only</strong> valid for <strong>int</strong> or "
+"<strong>float</strong> fields. The size of the field stored in the "
+"database."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Decimal Precision (decimal)"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"<strong>Only</strong> valid for <strong>decimal</strong> fields. The "
+"total number of digits to store in the database, including those to "
+"the right of the decimal."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Decimal Scale (decimal)"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"<strong>Only</strong> valid for <strong>decimal</strong> fields. The "
+"number of digits to the right of the decimal. "
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Default Value"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid "Not NULL"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_age
+msgid ""
+"Index computed values in the database (Does not apply to text or "
+"longtext fields.)"
+msgstr ""
+
+#: /index.php
+msgid "!extension was not found."
+msgstr ""
+
+#: /admin/reports/views-plugins
+msgid "Provided by"
+msgstr ""
+
+#: /admin/reports/views-plugins
+msgid "There are no enabled views."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Enables files inside of the WYSIWYG editor to be displayed using a "
+"separate view mode."
+msgstr ""
+
+#: /index.php
+msgid "(new variable)"
+msgstr ""
+
+#: /index.php
+msgid "!name was set to !value."
+msgstr ""
+
+#: /index.php
+msgid "Application"
+msgstr ""
+
+#: /index.php
+msgid "Multipurpose type - kept to support older sites."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The external command could not be executed due to an application "
+"error."
+msgstr ""
+
+#: /index.php
+msgid "The feature !feature could not be found."
+msgstr ""
+
+#: /index.php
+msgid "Current state already matches defaults, aborting."
+msgstr ""
+
+#: /admin/modules
+msgid "Letzte Kommentare"
+msgstr ""
+
+#: /blog
+msgid "[name] zu"
+msgstr ""
+
+#: /blog
+msgid "go to the full comment"
+msgstr ""
+
+#: /blog
+msgid "zum vollständigen Kommentar"
+msgstr ""
+
+#: /admin/modules
+msgid "Custom SSL redirect"
+msgstr ""
+
+#: /admin/modules
+msgid "Configure custom SSL redirect settings."
+msgstr ""
+
+#: /admin/modules
+msgid "Allows to set secured / unsecured pages"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Helper functions, pages, and blocks to assist Drupal developers. The "
+"devel blocks can be managed via the <a "
+"href=\"https://abgeordnetenwatch.de/admin/structure/block\">block "
+"administration</a> page."
+msgstr ""
+
+#: /admin/config/people/custom-ssl-redirect
+msgid "List of secured paths"
+msgstr ""
+
+#: /admin/config/people/custom-ssl-redirect
+msgid ""
+"Please enter the list of path regular expressions (without leading and "
+"trailing slashes), one expression per line. These paths will be forced "
+"to use HTTPS, all other paths will be forced to use HTTP (except "
+"ignored paths, see below)."
+msgstr ""
+
+#: /admin/config/people/custom-ssl-redirect
+msgid "List of ignored paths"
+msgstr ""
+
+#: /admin/config/people/custom-ssl-redirect
+msgid ""
+"Please enter the list of path regular expressions (without leading and "
+"trailing slashes), one expression per line. These paths will use "
+"currently used protocol (required for e.g., for correct AJAX "
+"requests)."
+msgstr ""
+
+#: /admin/config/people/custom-ssl-redirect
+msgid "Configuration is successfully saved."
+msgstr ""
+
+#: /admin/content/antispam/comments/published?page=1
+msgid "The comments have been deleted."
+msgstr ""
+
+#: /admin/content/antispam/comments/published
+msgid "The comments have been updated."
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Default suffix"
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid ""
+"Specify the default suffix to use, ex. \"_mobile\". Make sure you also "
+"create the corresponding imagestyles."
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Force redirect if cookie is not set."
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Force resize"
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Resize images when browser windows resizes."
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Reload on resize"
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Reload the page when browser windows resizes, use wisely!"
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Advanced support for purge/expire"
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Clear all variants using purge/expire modules."
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Enable responsive images for blocks."
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "If checked, the images within blocks will be responsive as well."
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid "Use device pixel ratio"
+msgstr ""
+
+#: /admin/config/media/resp_img/settings
+msgid ""
+"Take the device pixel ratio in to account when calculating the right "
+"suffix. !link"
+msgstr ""
+
+#: /admin/config/media/resp_img/list/normal/edit
+msgid "suffix name"
+msgstr ""
+
+#: /admin/config/media/resp_img/list/normal/edit
+msgid "The human-readable description of this suffix"
+msgstr ""
+
+#: /admin/config/media/resp_img/list/normal/edit
+msgid ""
+"A unique machine-readable name for this suffix.\n"
+"      It must only contain lowercase letters, numbers, and "
+"underscores."
+msgstr ""
+
+#: /admin/config/media/resp_img/list/normal/edit
+msgid "The image formatter suffix (e.g. \"_mobile\")"
+msgstr ""
+
+#: /admin/config/media/resp_img/list/normal/edit
+msgid ""
+"The smallest width for this suffix. Images will be rendered in this \n"
+"      format when the window is above this width. If the window width "
+"is smaller than any of \n"
+"      the defined suffix' widths, the default will be used."
+msgstr ""
+
+#: /system/ajax
+msgid "E.g."
+msgstr ""
+
+#: /system/ajax
+msgid "E.g. name=\"anchor\""
+msgstr ""
+
+#: /system/ajax
+msgid "Hide label colon"
+msgstr ""
+
+#: /system/ajax
+msgid "Add default attributes"
+msgstr ""
+
+#: /system/ajax
+msgid "Add odd/even classes"
+msgstr ""
+
+#: /index.php
+msgid "The langcode of the language for which a definition will be added."
+msgstr ""
+
+#: /index.php
+msgid "The langcode of the language which will be enabled."
+msgstr ""
+
+#: /index.php
+msgid "The langcode of the language which will be disabled."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The langcode of the language which will be set as the default "
+"language."
+msgstr ""
+
+#: /index.php
+msgid "The langcode of the language in which the string will be imported."
+msgstr ""
+
+#: /index.php
+msgid "Path to a .po file containing the translation. Can be multiple."
+msgstr ""
+
+#: /index.php
+msgid "Replace existing translations."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The group to which the strings should be imported, defaults to "
+"'default'."
+msgstr ""
+
+#: /index.php
+msgid "Add and import a new language definition"
+msgstr ""
+
+#: /index.php
+msgid "Enable an already defined language"
+msgstr ""
+
+#: /index.php
+msgid "Disable an already defined language"
+msgstr ""
+
+#: /index.php
+msgid "Assign an enabled language as default"
+msgstr ""
+
+#: /index.php
+msgid "Import a single .po file"
+msgstr ""
+
+#: /index.php
+msgid "drush langimp eo file1.po file2.po ..."
+msgstr ""
+
+#: /index.php
+msgid "drush langimp eo file.po --replace"
+msgstr ""
+
+#: /index.php
+msgid "drush langimp eo file.po --group mygroup"
+msgstr ""
+
+#: /media/14082/format-form?render=media-popup&fields=undefined
+msgid ""
+"Choose the type of display you would like for this\n"
+"      file. Please be aware that files may display differently than "
+"they do when\n"
+"      they are inserted into an editor."
+msgstr ""
+
+#: /node/10386/webform/components/new/time?name=Datum%20der%20%C3%84nderung&mandatory=0&pid=0&weight=3
+msgid ""
+"Accepts a time in any <a "
+"href=\"http://www.gnu.org/software/tar/manual/html_chapter/Date-input-formats.html\">GNU "
+"Date Input Format</a>. Strings such as now, +2 hours, and 10:30pm are "
+"all valid."
+msgstr ""
+
+#: /node/10386/webform/components/new/time?name=Datum%20der%20%C3%84nderung&mandatory=0&pid=0&weight=3
+msgid "Default value timezone"
+msgstr ""
+
+#: /node/10386/webform/components/new/time?name=Datum%20der%20%C3%84nderung&mandatory=0&pid=0&weight=3
+msgid ""
+"If using relative dates for a default value (e.g. \"now\") base the "
+"current time on this timezone."
+msgstr ""
+
+#: /node/10386/webform/components/new/time?name=Datum%20der%20%C3%84nderung&mandatory=0&pid=0&weight=3
+msgid "User timezone"
+msgstr ""
+
+#: /node/10386/webform/components/new/time?name=Datum%20der%20%C3%84nderung&mandatory=0&pid=0&weight=3
+msgid "Website timezone"
+msgstr ""
+
+#: /node/10386/webform/components/new/time?name=Datum%20der%20%C3%84nderung&mandatory=0&pid=0&weight=3
+msgid "Time format"
+msgstr ""
+
+#: /node/10386/webform/components/new/time?name=Datum%20der%20%C3%84nderung&mandatory=0&pid=0&weight=3
+msgid "12-hour (am/pm)"
+msgstr ""
+
+#: /node/10386/webform/components/new/time?name=Datum%20der%20%C3%84nderung&mandatory=0&pid=0&weight=3
+msgid "Minute increments"
+msgstr ""
+
+#: /admin/structure/types/manage/pw_petition
+msgid "Clear all weights"
+msgstr ""
+
+#: /admin/structure/types/manage/pw_petition
+msgid "If selected, all weights for nodes of this type will be cleared."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variable $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright is availliable for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variables $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright are availliable for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variable $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright, $roles is availliable for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variables $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright, $roles are availliable for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variable $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright, $roles, $field_user_about is "
+"availliable for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variables $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright, $roles, $field_user_about are "
+"availliable for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variable $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright, $roles, $field_user_about, "
+"$field_user_political_goals is availliable for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variables $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright, $roles, $field_user_about, "
+"$field_user_political_goals are availliable for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variable $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright, $roles, $field_user_about, "
+"$field_user_political_goals, $field_user_valid:start is availliable "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer
+msgid ""
+"The variables $field_user_parliament, $uuid, $field_user_fname, "
+"$field_user_lname, $field_user_gender, $field_user_birthday:start, "
+"$field_user_party, $mail, $name, $field_user_constituency, "
+"$field_user_picture, $field_user_education, $field_user_list_position, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_picture_copyright, $roles, $field_user_about, "
+"$field_user_political_goals, $field_user_valid:start are availliable "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/features
+msgid "about"
+msgstr ""
+
+#: /admin/structure/features/pw_blog/status
+msgid "PW page"
+msgstr ""
+
+#: /admin/structure/features/pw_blog/status
+msgid "adds blocks"
+msgstr ""
+
+#: /index.php
+msgid "Outputs the raw debug hook data."
+msgstr ""
+
+#: /index.php
+msgid ""
+"<h4>[field_press_article_publisher]</h4>\n"
+"<div class=\"medium\">[title]</div>"
+msgstr ""
+
+#: /index.php
+msgid "[field_user_fname] [field_user_lname] als XML"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid ""
+"<div id=\"imagegallery\" class=\"add-sharethis\" title=\"Imagegallery "
+"of [field_user_fname] [field_user_lname],[field_user_party]\"></div>"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid ""
+"<div id=\"\" class=\"add-sharethis\" title=\"[field_user_fname] "
+"[field_user_lname], [field_user_party]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"To add Featured Content blocks, find the \"Add Featured Content "
+"block\" action link on the <a href=\"@url\">administer blocks "
+"page</a>."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Accordion Container"
+msgstr ""
+
+#: /admin/structure/features
+msgid "A container for grouping the tabs of an accordion."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Accordion Tab"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"A single tab in the accordion.  Must be placed inside of an Accordion "
+"Container."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Featured Content"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Featured Content Block administration settings"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Add Featured Content block"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Add a new Featured Content block."
+msgstr ""
+
+#: /admin/modules
+msgid "Adding Featured Content Blocks"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"To add new Featured Content blocks, use the \"Add Featured Content "
+"block\" link on the <a href=\"@url\">administer blocks page</a>. You "
+"will be able to configure your Featured Content block before adding it "
+"to a region."
+msgstr ""
+
+#: /admin/modules
+msgid "Configuring Featured Content blocks"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"When adding or configuring a Featured Content block, several "
+"configuration options are available:"
+msgstr ""
+
+#: /admin/modules
+msgid "Styling Featured Content Blocks"
+msgstr ""
+
+#: /admin/modules
+msgid "Themers should look at the classes added to the %div."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"In addition, the block is generated using the %template_default "
+"template."
+msgstr ""
+
+#: /admin/modules
+msgid "Provides configurable Featured Content blocks."
+msgstr ""
+
+#: /admin/modules
+msgid "Custom Donation Form"
+msgstr ""
+
+#: /admin/modules
+msgid "Allows webform elements to be grouped under a jquery accordion."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Allows Webform components to be hidden dependent on the value of other "
+"components"
+msgstr ""
+
+#: /admin/config/content/node_export
+msgid "featured_content"
+msgstr ""
+
+#: /spendenformular
+msgid "Jetzt spenden"
+msgstr ""
+
+#: /admin/structure/context/list/donations/edit
+msgid "Enable this context."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Featured Content Block Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "admin/structure/block"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Provide a descriptive name for internal use. This will\n"
+"    show up on the !admin_block_page page."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Featured Content Blocks are blocks that show lists of content\n"
+"      on your site. You can either manually choose what will be shown, "
+"or\n"
+"      you can specify content fields or filters to use to determine "
+"what will be\n"
+"      shown along side pages when they are being viewed."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Header Text"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Will show up between block title and content."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Footer Text"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Will show up after content."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Empty Text"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"This will show up all by itself if there is no content that\n"
+"    can be found."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Number to Show"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Featured Content settings page"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"The number of content items to show. The maximum allowed\n"
+"    is @max_num_show. If you enter an invalid number, @max_num_show "
+"will be\n"
+"    used. To configure the maximum, go to the !admin_settings_page."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Alphabetical - A to Z"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Alphabetical - Z to A"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Date Created - Newest First"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Date Created - Oldest First"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Popularity (Number of Views) - Highest First"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Popularity (Number of Views) - Lowest First"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Randomly Chosen from All Available"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Closest Match to Current Page by Terms"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Furthest Match to Current Page by Terms"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Vocabulary - Order on Taxonomy Page"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Vocabulary - Reverse Order on Taxonomy Page"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "None - Use Order Provided if Available"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Linked Titles"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Teasers/Summaries"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Full Node Content"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "What to Display in the Block"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"You can choose to show only a list of the titles\n"
+"    each linked to their own page, to show the teaser for each content "
+"item\n"
+"    which will usually include the title (linked) and the teaser "
+"summary,\n"
+"      or the full node content for each content item."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Ordered List"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Unordered List"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Display Style"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"If you are showing a list of titles, you can choose\n"
+"    to display them in an ordered or unordered list if desired."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "No Read More Page"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Link to the Custom Page Specified Below"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "What to Display on Read More Page"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"A \"read more\" link can be added that goes to a \"read\n"
+"    more page\" that will show linked titles, teasers/summaries, or "
+"full nodes based\n"
+"    on the chosen option."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Read More Page Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Read More Text"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "The text to show for the read more link if set."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Number to Show on Read More Page"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Read More Display Style"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Read More Title"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Title shown on the read more page."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Read More Header Text"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Will show up between more title and more content."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Read More Footer Text"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Will show up after the more content."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Custom Read More Page"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"To link to a custom page, fill in the URL here and\n"
+"    choose the custom option in the list above."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Include RSS Feed"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"If checked, then there will be a small RSS icon\n"
+"    shown at the bottom of the block that links to the RSS feed for "
+"the\n"
+"    block content."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "RSS Page Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "RSS Title"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Title shown on the RSS page."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Manually-Selected Content"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Content Field Selected Content"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Filtered Content"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Search Results Content"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"You can choose from 4 types of content blocks:\n"
+"    Manually-Selected Content, Content Field Selected Content, "
+"Filtered Content, and Search Results Content.\n"
+"    When you choose a type, the type-specific settings form will "
+"change to\n"
+"    show what you can provide for the type chosen."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Manually-Selected Content Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "URLs to Include"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"List the URLs for each page you want to include in\n"
+"    the block, one per line. Do not include the domain. You can use\n"
+"    the node/[nid] URL (e.g. node/123) or the path alias (e.g. "
+"some/page) \n"
+"    or a path alias pattern (e.g. */something/*).\n"
+"    Assumes all URLs are internal and correspond with node pages. If "
+"you\n"
+"    include more than the configured number to show, then the URLs "
+"will be\n"
+"    filtered out to only show the correct number. This can be useful "
+"for\n"
+"    example if you want to use the random sort and end up showing a\n"
+"    different combination of content items each page load."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Content Field Selected Content Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Choose the content fields below. If the field is a\n"
+"      text field, then the field data will be parsed and assumed to "
+"have\n"
+"      a list of comma-delimited node ids. If the field is a node "
+"reference,\n"
+"      the referenced node(s) will be used. If the field is a user "
+"reference,\n"
+"      the referenced user(s) will be used to find content authored "
+"by\n"
+"      those users."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Filtered Content Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Add one or more of the filters below if you want content \n"
+"    in the block to be selected based on these options. For example, "
+"if you want \n"
+"    only certain user content shown then you would use the user/author "
+"filter.\n"
+"    If you want only content with certain content types to be shown "
+"then you \n"
+"    would use the content type filter. The most common filters are for "
+"\n"
+"    content types, users/authors, and taxonomy terms so those filters "
+"are \n"
+"    displayed first. Less common filters are displayed further down "
+"the form \n"
+"    and are closed to minimize clutter unless the option is being "
+"used."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Include Node Being Viewed"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"If checked, then the node being viewed can be\n"
+"    included in the block. It may not always show up depending on "
+"the\n"
+"    settings. For example, if random display is chosen, then the "
+"current\n"
+"    node may not always show up in the block."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Language Options"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Use the language of the page being shown."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Content Type Filter Options"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Select the content types to use below. If no content types are "
+"selected, all will be used. If the first checkbox is checked, then "
+"content with the same content type as the page being viewed will be "
+"used."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Use the content type of the page being shown."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "User (Author) Filter Options"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Select the users to use below. If no users are selected, all will be "
+"used. If the first checkbox is checked, then the user (author) of the "
+"page being viewed will be used."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Use the user (author) of the page being shown."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "@vocab_name Terms Filter Options"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Select the terms to use below. If no terms are selected, all will be "
+"used. If the first checkbox is checked, then content with the same "
+"terms as the page being viewed will be used."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Use the @vocab_name terms of the page being shown."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Path Filter Options"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Select any of the checkboxes below if you want to\n"
+"    get content based on the path of the current page being viewed. "
+"For example,\n"
+"    if the current page is www.mysite.com/first/second/third/fourth "
+"and you\n"
+"      choose to match on the second and third parts of the path, then "
+"pages\n"
+"      with paths like www.mysite.com/foo/second/third and like\n"
+"      www.mysite.com/hello/second/third/world and like\n"
+"      www.mysite.com/a/second/third/b/c/d would match."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Match first part of path (e.g. first/any)."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Match second part of path (e.g. any/second/any)."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Match third part of path (e.g. any/any/third/any)."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Match fourth part of path (e.g. any/any/any/fourth/any)."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Title Keywords"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Whether to limit the returned results to content similar to the title "
+"of the currently viewed page.  This filter will return content by "
+"order of relevance. You may want to set the <strong>\"Sort "
+"By\"</strong> setting to <strong>\"None - Use Order Provided if "
+"Available.\"</strong>"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Match content with similar keywords?"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"If the above option is selected, only content that include similar "
+"terms as the title of the current page will be included."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Number of words in title to search against"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Number of words in the current page's title to search against. If "
+"filtering by \"Title Keywords\", this value must be zero or positive. "
+"If zero, no trimming will be done. Words with \"@count\" letters or "
+"less (set in the !search_panel) will be ignored for this purpose. "
+"Making this number low will return more results, while setting it "
+"higher (or zero) will return better matches."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Views Filter Options"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Select any of the views below if you want the\n"
+"        resulting nodes from the views to show up in your block."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Search Results Content Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Search results will be based on the title of the node page being "
+"viewed."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"If checked, then the node being viewed can be\n"
+"      included in the block. It may not always show up depending on "
+"the\n"
+"      settings. For example, if random display is chosen, then the "
+"current\n"
+"      node may not always show up in the block."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"Number of words in the current page's title to search against. This "
+"value must be zero or positive. If zero, no trimming will be done. "
+"Words with \"@count\" letters or less (set in the !search_panel) will "
+"be ignored for this purpose. Making this number low will return more "
+"results, while setting it higher (or zero) will return better matches."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Featured Content Block Visibility Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"If no content types are selected, block visibility\n"
+"    is not affected. If content types are selected, then the block "
+"will\n"
+"    only be shown if the current page being shown is one of the "
+"selected\n"
+"    content types."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"The following block visibility settings can be\n"
+"    used in <i>conjunction</i> with the regular "
+"<i>user-specific</i>,\n"
+"    <i>role-specific</i>, and <i>page-specific</i> block visibility "
+"settings.\n"
+"    The module will check the current page being shown and, if it is a "
+"node\n"
+"    view page, will use the settings to determine whether or not the "
+"block\n"
+"    should be shown for that page. <strong>Note:</strong> If you use "
+"these\n"
+"    visibility settings, they will be \"ANDed\" with the other "
+"visibility\n"
+"    settings. For example, if you choose to show the block for the "
+"content\n"
+"    type \"blog\" and you choose the <i>page specific</i> setting to "
+"show the\n"
+"    block for pages with aliases like \"*topic*\" then the block will "
+"only be\n"
+"    shown if the node's content type is \"blog\" AND the node's "
+"alias\n"
+"    contains \"topic\" in it."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"If no users are selected, block visibility\n"
+"    is not affected. If users are selected, then the block will\n"
+"    only be shown if the author of the current page being shown is one "
+"of\n"
+"    the selected users."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "Taxonomy Visibility Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "@vocab_name Visibility Settings"
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"If no terms are selected, block visibility\n"
+"        is not affected. If terms are selected, then the block will\n"
+"        only be shown if the current page being shown has one of\n"
+"        the selected terms."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid ""
+"To learn more about configuring Featured Content blocks, see <a "
+"href=\"@url\">Featured Content Block’s detailed help</a>."
+msgstr ""
+
+#: /admin/structure/block
+msgid ""
+"Click <a href=\"@url\">add Featured Content Block</a> to create a "
+"customizable Featured Content Block. You will be able to configure "
+"your Featured Content Block before adding it to a region."
+msgstr ""
+
+#: /admin/structure/block/add-featured-content-block
+msgid "The Featured Content block has been created."
+msgstr ""
+
+#: /admin/structure/block
+msgid "Featured Content Block"
+msgstr ""
+
+#: /ueber-uns/spendenformular
+msgid ""
+"<strong>weiterlesen<span class=\"element-invisible\"> about "
+"[node:title]</span></strong>"
+msgstr ""
+
+#: /admin/structure/features/pw_donation_form/recreate
+msgid "@module does not appear to include the @include file."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Verifications"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Add, change or remove verifications for your site."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Add verification"
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid "Google"
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid "Yahoo!"
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid "Bing"
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid "Yandex"
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid "Custom verification"
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid "Engine"
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid "Meta tag"
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid "No verifications available. <a href=\"@add\">Add verification</a>."
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid "This is a verification page."
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid "Verification META tag"
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid ""
+"This is the full meta tag provided for verification. Note that this "
+"meta tag will only be visible in the source code of your <a "
+"href=\"@frontpage\">front page</a>."
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid "Upload an existing verification file"
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid ""
+"If you have been provided with an actual file, you can simply upload "
+"the file."
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid "Verification file"
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid "The name of the HTML verification file you were asked to upload."
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid "Verification file contents"
+msgstr ""
+
+#: /admin/config/search/verifications/add
+msgid "Verification saved."
+msgstr ""
+
+#: /admin/modules
+msgid "Implements Custom Tokens for CiviCRM"
+msgstr ""
+
+#: /admin/modules
+msgid "Verifies ownership of a site for use with search engines."
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid ""
+"Helper functions, pages, and blocks to assist Drupal developers. The "
+"devel blocks can be managed via the <a "
+"href=\"https://live.de.parliamentwatch.org/admin/structure/block\">block "
+"administration</a> page."
+msgstr ""
+
+#: /admin/config/search/verifications
+msgid ""
+"Helper functions, pages, and blocks to assist Drupal developers. The "
+"devel blocks can be managed via the <a "
+"href=\"https://beta.abgeordnetenwatch.de/admin/structure/block\">block "
+"administration</a> page."
+msgstr ""
+
+#: /admin/reports/status/run-cron
+msgid ""
+"You do not have permission to perform a Node export on one or more of "
+"these nodes.  No nodes exported."
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid "A source provided by Feeds Tamper with no value of it's own."
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid " (Entity reference by Feeds GUID)"
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid "The field instance @label of @id matched by Feeds GUID."
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid " (Entity reference by Feeds URL)"
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid "The field instance @label of @id matched by Feeds URL."
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid " (Entity reference by Entity ID)"
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid "The field instance @label of @id matched by Entity ID."
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid " (Entity reference by Entity label)"
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid "The field instance @label of @id matched by Entity label."
+msgstr ""
+
+#: /batch?id=24995&op=do
+msgid ""
+"A field that stores the source data temporarily so that it can be used "
+"with the Feeds Tamper rewrite plugin."
+msgstr ""
+
+#: /users/cansel-kiziltepe
+msgid "an unknown service"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Pane settings"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Use view name"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Admin title"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Use view description"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Admin desc"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Link to view"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Use Panel path"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Argument input"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Allow settings"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
+msgid "Some"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "Attachment settings"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
-msgid "Not defined"
-msgstr ""
-
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "Attachment position"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "Before"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "After"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "Both"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "Inherit contextual filters"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "Inherit exposed filters"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "Inherit pager"
 msgstr ""
 
-#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
 msgid "Render pager"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Enable secondary exposed form options"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"Allows you to specify some exposed form elements as being secondary "
-"options and places those elements in a collapsible fieldset. Use this "
-"option to place some exposed filters in an \"Advanced Search\" area of "
-"the form, for example."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Secondary options label"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"The name of the fieldset to hold secondary options. This cannot be "
-"left blank or there will be no way to show/hide these options."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Require input before results are shown"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Emulates the built in <em>Input Required</em> exposed filter handler"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Text on demand"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"Text to display instead of results until the user selects and applies "
-"an exposed filter."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "BEF settings documentation"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Exposed Filter Settings"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"This section lets you select additional options for exposed filters. "
-"Some options are only available in certain situations. If you do not "
-"see the options you expect, please see the !link page for more "
-"details."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Default select list"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid " (Filter label: \"@fl\")"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Display @identifier exposed filter as"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "More options for @identifier"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "This is a secondary option"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"Places this element in the secondary options portion of the exposed "
-"form."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Override \"Any\" option label"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"Leave blank to use views default value. <em>Note: overriding this "
-"label will break translations and localizations. Leave this field "
-"blank if preserving internationalization is important to your "
-"site.</em>"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"Adds descriptive text to the exposed filter.  This is usually rendered "
-"in smaller print under the label or the options."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Rewrite filter options"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Rewrite the text displayed"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"\n"
-"          Use this field to rewrite the filter options displayed. Use "
-"the format\n"
-"          of current_value|replacement_value, one replacement per "
-"line. For\n"
-"          example: <pre>\n"
-"0|Zero\n"
-"1|One\n"
-"2|Two\n"
-"</pre> Leave the replacement value blank to remove an option "
-"altogether. If using hierarchical taxonomy filters, do not including "
-"leading hyphens in the current value.\n"
-"        "
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Checkboxes/Radio Buttons"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Add select all/none links"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"Add a \"Select All/None\" link when rendering the exposed filter "
-"using\n"
-"              checkboxes. If this option is disabled, edit the filter "
-"and check the\n"
-"              \"Allow multiple selections\"."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Make this filter collapsible"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Puts this filter in a collapsible fieldset"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "jQuery UI slider"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Slider options for @identifier"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Range minimum"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"The minimum allowed value for the jQuery range slider. It can be "
-"positive, negative, or zero and have up to 11 decimal places."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Range maximum"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"The maximum allowed value for the jQuery range slider. It can be "
-"positive, negative, or zero and have up to 11 decimal places."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Step"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"Determines the size or amount of each interval or step the slider "
-"takes between the min and max."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"The full specified value range of the slider (Range maximum - Range "
-"minimum) must be evenly divisible by the step."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "The step must be a positive number of up to 5 decimal places."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Animate"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid ""
-"Whether to slide handle smoothly when user click outside handle on the "
-"bar. Allowed values are \"slow\", \"normal\", \"fast\" or the number "
-"of milliseconds to run the animation (e.g. 1000). If left blank, there "
-"will be no animation, the slider will just jump to the new value "
-"instantly."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Orientation"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Horizontal"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "Vertical"
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "The orientation of the jQuery range slider."
-msgstr ""
-
-#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
-msgid "jQuery UI Datepicker"
 msgstr ""
 
 msgid "Search"
@@ -57253,7 +58976,7 @@ msgstr "Textfeld (mehrere Zeilen)"
 msgid "Text area with a summary"
 msgstr "Textbereich mit einer Zusammenfassung"
 
-#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js
+#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js
 msgid "Disabled"
 msgstr "Deaktiviert"
 
@@ -57534,7 +59257,7 @@ msgstr "Eigentümer"
 msgid "The user who originally uploaded the file."
 msgstr "Der Benutzer der diese Datei ursprünglich hochgeladen hat."
 
-#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js
+#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js
 msgid "Enabled"
 msgstr "Aktiviert"
 
@@ -57573,7 +59296,7 @@ msgstr "Version"
 msgid "Published"
 msgstr "Veröffentlicht"
 
-#: ; modules/node/node.js
+#: ; modules/node/node.js; modules/node/content_types.js
 msgid "Not published"
 msgstr "Nicht veröffentlicht"
 
@@ -57746,8 +59469,22 @@ msgstr "zurück"
 msgid "last »"
 msgstr "letzte Seite »"
 
+#: /index.php
+msgid "Go to profile"
+msgstr "Profil besuchen"
+
 msgid "Topic"
 msgstr "Thema"
+
+#: /index.php
+msgid "Question from"
+msgstr "Frage von"
+
+#: /index.php
+msgid ""
+"<div class=\"file-image float-left\">[field_user_picture]</div>\n"
+"<strong>No answer yet</strong>"
+msgstr "Bisher ist noch keine Antwort eingetroffen"
 
 msgid "Operations"
 msgstr "Operationen"
@@ -58470,9 +60207,6 @@ msgstr "ReadyState: !readyState"
 
 msgid "Skip to main content"
 msgstr "Direkt zum Inhalt"
-
-msgid "Skip to main navigation"
-msgstr "Direkt zur Hauptnavigation"
 
 msgid "No available update data"
 msgstr "Keine Daten über verfügbare Aktualisierungen."
@@ -59243,7 +60977,7 @@ msgstr "Keine Blöcke in dieser Region"
 msgid "Not restricted"
 msgstr "Uneingeschränkt"
 
-#: ; modules/block/block.js
+#: ; modules/block/block.js; sites/all/modules/contrib/menu_position/plugins/menu_position.pages.js
 msgid "Restricted to certain pages"
 msgstr "Auf bestimmte Seiten eingeschränkt"
 
@@ -60081,6 +61815,14 @@ msgstr "Bildstil erzeugen"
 
 msgid "Save settings"
 msgstr "Einstellungen speichern"
+
+#: /en-gb/admin/structure/features/cleanup/clear
+msgid "[field_user_questions_get] question(s),"
+msgstr "[field_user_questions_get] Frage(n),"
+
+#: /en-gb/admin/structure/features/cleanup/clear
+msgid "[field_user_questions_get_1] question(s)"
+msgstr "[field_user_questions_get_1] Frage(n)"
 
 #: ; sites/all/modules/contrib/media/js/media.format_form.js; sites/all/modules/contrib/shs/js/shs.js
 msgid "Cancel"
@@ -61274,9 +63016,11 @@ msgstr ""
 "gespeichert. Vorhandene Inhalte sind durch die Änderung dieser Option "
 "nicht betroffen."
 
+#: ; modules/node/content_types.js
 msgid "Requires a title"
 msgstr "Benötigt einen Titel"
 
+#: ; modules/node/content_types.js
 msgid "Don't display post information"
 msgstr "Beitragsinformationen nicht anzeigen"
 
@@ -66218,6 +67962,14 @@ msgstr "Dateiinformation"
 msgid "Continue"
 msgstr "Weiter"
 
+#: /en-gb/admin/structure/views/import
+msgid "[field_user_questions_get] question(s)"
+msgstr "[field_user_questions_get] Frage(n)"
+
+#: /en-gb/admin/structure/views/import
+msgid "[field_user_questions_get], [field_user_answers_give] answer(s)"
+msgstr "[field_user_questions_get], [field_user_answers_give] Antwort(en)"
+
 msgid ""
 "These settings apply to the %field field everywhere it is used. "
 "Because the field already has data, some settings can no longer be "
@@ -67725,6 +69477,7 @@ msgstr "Gesamten Cache löschen"
 msgid "Cache pages for anonymous users"
 msgstr "Seiten für anonyme Benutzer cachen"
 
+#: ; sites/all/modules/contrib/media/js/media.admin.js
 msgid "none"
 msgstr "keine"
 
@@ -78423,4 +80176,64 @@ msgstr "Wahlprogramm öffnen"
 #: /admin/structure/features/cleanup/clear
 msgid "download election programme"
 msgstr "Wahlprogramm runterladen"
+
+#: /index.php
+msgid "Education"
+msgstr "Berufliche Qualifikation"
+
+#: /admin/structure/features/profiles/status
+msgid "[field_user_questions_get] Questions"
+msgstr "[field_user_questions_get] Fragen"
+
+#: /index.php
+msgid "question"
+msgstr " Frage"
+
+#: /index.php
+msgid "answer"
+msgstr " Antwort"
+
+#: /index.php
+msgid "Questions to [field_user_fname] [field_user_lname]"
+msgstr "Fragen an [field_user_fname] [field_user_lname]"
+
+#: /admin/structure/features/profiles/status
+msgid " % response rate"
+msgstr "% Antwortquote"
+
+#: /admin/structure/features/profiles/status
+msgid "[field_user_qanda_ratio-revision_id-value] % response rate"
+msgstr "[field_user_qanda_ratio-revision_id-value] % Antwortquote"
+
+#: /admin/structure/features/profiles/status
+msgid "more information to the answer"
+msgstr "Weitere Informationen zur Antwort"
+
+#: /admin/structure/features/profiles/status
+msgid "Topic "
+msgstr "Thema"
+
+#: /admin/structure/features/profiles/status
+msgid "Permanent link to this question and answer"
+msgstr "Permanent-Link zu obenstehender Frage und Antwort"
+
+#: /api/profile/rolf-wuerz/profile.xml
+msgid " answers"
+msgstr " Antworten"
+
+#: /api/profile/rolf-wuerz/profile.xml
+msgid " questions"
+msgstr " Fragen"
+
+#: /index.php
+msgid "Required signings"
+msgstr "Benötigte Unterschriften"
+
+#: /abgeordnetenbestechung-bestrafen-korrupt
+msgid " people support this petition"
+msgstr " unterstützen die Petition"
+
+#: /users/cansel-kiziltepe
+msgid "trim the link"
+msgstr "Link kürzen"
 
