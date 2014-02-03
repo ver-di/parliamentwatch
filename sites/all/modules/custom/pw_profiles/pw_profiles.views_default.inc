@@ -883,7 +883,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['label'] = '';
-  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[field_user_questions_get] Questions';
+  $handler->display->display_options['fields']['field_user_questions_get']['alter']['text'] = '[field_user_questions_get] Fragen';
   $handler->display->display_options['fields']['field_user_questions_get']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
     'thousand_separator' => ' ',
@@ -2196,7 +2196,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['expression']['precision'] = '1';
   $handler->display->display_options['fields']['expression']['decimal'] = ',';
   $handler->display->display_options['fields']['expression']['separator'] = '';
-  $handler->display->display_options['fields']['expression']['suffix'] = ' % response rate';
+  $handler->display->display_options['fields']['expression']['suffix'] = '% Antwortquote';
   $handler->display->display_options['fields']['expression']['expression'] = '[field_user_answers_give-revision_id] / [field_user_questions_get-revision_id] ';
   /* Feld: Link to profile */
   $handler->display->display_options['fields']['vid']['id'] = 'vid';
@@ -2205,7 +2205,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['vid']['ui_name'] = 'Link to profile';
   $handler->display->display_options['fields']['vid']['label'] = '';
   $handler->display->display_options['fields']['vid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['vid']['alter']['text'] = 'Go to profile';
+  $handler->display->display_options['fields']['vid']['alter']['text'] = 'Profil besuchen';
   $handler->display->display_options['fields']['vid']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['vid']['alter']['path'] = 'user/[uid]/revisions/[vid]/view';
   $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
@@ -2837,7 +2837,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['ui_name'] = ' Response rate';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['alter']['text'] = '[field_user_qanda_ratio-revision_id-value] % response rate';
+  $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['alter']['text'] = '[field_user_qanda_ratio-revision_id-value] % Antwortquote';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['element_wrapper_class'] = 'row push-bottom-xs';
@@ -2849,7 +2849,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['vid']['ui_name'] = 'Link to profile';
   $handler->display->display_options['fields']['vid']['label'] = '';
   $handler->display->display_options['fields']['vid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['vid']['alter']['text'] = 'Go to profile';
+  $handler->display->display_options['fields']['vid']['alter']['text'] = 'Profil besuchen';
   $handler->display->display_options['fields']['vid']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['vid']['alter']['path'] = 'user/[uid]/revisions/[vid]/view';
   $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
@@ -3598,7 +3598,7 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   $handler->display->display_options['fields']['field_dialogue_sender_name']['id'] = 'field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['table'] = 'field_data_field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['field'] = 'field_dialogue_sender_name';
-  $handler->display->display_options['fields']['field_dialogue_sender_name']['label'] = 'Question from';
+  $handler->display->display_options['fields']['field_dialogue_sender_name']['label'] = 'Frage von';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_sender_name']['alter']['text'] = ' [field_dialogue_sender_name]<br/><span class="subline">[created]</span>
 ';
@@ -3730,13 +3730,13 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
 <div class="content clear-both">[comment_body]</div>';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['comment_body']['empty'] = '<strong>No answer yet</strong>';
+  $handler->display->display_options['fields']['comment_body']['empty'] = '<strong>Bisher ist noch keine Antwort eingetroffen</strong>';
   $handler->display->display_options['fields']['comment_body']['hide_alter_empty'] = FALSE;
   /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['label'] = 'more information to the answer';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'Weitere Informationen zur Antwort';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'field_dialogue_topic_1',
@@ -3750,7 +3750,7 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   $handler->display->display_options['fields']['field_dialogue_topic_1']['id'] = 'field_dialogue_topic_1';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['field'] = 'field_dialogue_topic';
-  $handler->display->display_options['fields']['field_dialogue_topic_1']['label'] = 'Topic ';
+  $handler->display->display_options['fields']['field_dialogue_topic_1']['label'] = 'Thema';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_wrapper_class'] = 'icon-taxonomy';
@@ -3805,7 +3805,7 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Global: Custom text: Headline';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Permanent link to this question and answer';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Permanent-Link zu obenstehender Frage und Antwort';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
@@ -3962,7 +3962,7 @@ drupal_add_js($js,\'inline\');
   /* Display: Profile */
   $handler = $view->new_display('panel_pane', 'Profile', 'profile');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Questions to [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Fragen an [field_user_fname] [field_user_lname]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['display_description'] = 'A content pane used on the profile pages';
   $handler->display->display_options['defaults']['hide_attachment_summary'] = FALSE;
@@ -4137,7 +4137,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_sender_name']['id'] = 'field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['table'] = 'field_data_field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['field'] = 'field_dialogue_sender_name';
-  $handler->display->display_options['fields']['field_dialogue_sender_name']['label'] = 'Question from';
+  $handler->display->display_options['fields']['field_dialogue_sender_name']['label'] = 'Frage von';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_sender_name']['alter']['text'] = ' [field_dialogue_sender_name]<br/><span class="subline">[created]</span>
 ';
@@ -4251,13 +4251,13 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
 <div class="content clear-both">[comment_body]</div>';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['comment_body']['empty'] = '<strong>No answer yet</strong>';
+  $handler->display->display_options['fields']['comment_body']['empty'] = '<strong>Bisher ist noch keine Antwort eingetroffen</strong>';
   $handler->display->display_options['fields']['comment_body']['hide_alter_empty'] = FALSE;
   /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['label'] = 'more information to the answer';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'Weitere Informationen zur Antwort';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'field_dialogue_topic_1',
@@ -4272,7 +4272,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_topic_1']['id'] = 'field_dialogue_topic_1';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['field'] = 'field_dialogue_topic';
-  $handler->display->display_options['fields']['field_dialogue_topic_1']['label'] = 'Topic ';
+  $handler->display->display_options['fields']['field_dialogue_topic_1']['label'] = 'Thema';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_wrapper_class'] = 'icon-taxonomy';
@@ -4327,7 +4327,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Global: Custom text: Headline';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Permanent link to this question and answer';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Permanent-Link zu obenstehender Frage und Antwort';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
@@ -4702,7 +4702,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_sender_name']['id'] = 'field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['table'] = 'field_data_field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['field'] = 'field_dialogue_sender_name';
-  $handler->display->display_options['fields']['field_dialogue_sender_name']['label'] = 'Question from';
+  $handler->display->display_options['fields']['field_dialogue_sender_name']['label'] = 'Frage von';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_sender_name']['alter']['text'] = ' [field_dialogue_sender_name]<br/><span class="subline">[created]</span>
 ';
@@ -4811,7 +4811,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['label'] = 'more information to the answer';
+  $handler->display->display_options['fields']['fieldset']['label'] = 'Weitere Informationen zur Antwort';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'field_dialogue_topic_1',
@@ -4825,7 +4825,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_topic_1']['id'] = 'field_dialogue_topic_1';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['field'] = 'field_dialogue_topic';
-  $handler->display->display_options['fields']['field_dialogue_topic_1']['label'] = 'Topic ';
+  $handler->display->display_options['fields']['field_dialogue_topic_1']['label'] = 'Thema';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_topic_1']['element_wrapper_class'] = 'icon-taxonomy';
@@ -4878,7 +4878,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Global: Custom text: Headline';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Permanent link to this question and answer';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Permanent-Link zu obenstehender Frage und Antwort';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
@@ -5072,7 +5072,7 @@ print shorten_url($original = $path, $service = \'tinyURL\');
   /* Display: Full content */
   $handler = $view->new_display('panel_pane', 'Full content', 'full_content');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Questions to [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Fragen an [field_user_fname] [field_user_lname]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['display_description'] = 'A content pane used on the full content of the question';
   $handler->display->display_options['defaults']['hide_attachment_summary'] = FALSE;
@@ -5729,6 +5729,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_education']['id'] = 'field_user_education';
   $handler->display->display_options['fields']['field_user_education']['table'] = 'field_data_field_user_education';
   $handler->display->display_options['fields']['field_user_education']['field'] = 'field_user_education';
+  $handler->display->display_options['fields']['field_user_education']['label'] = 'Berufliche Qualifikation';
   $handler->display->display_options['fields']['field_user_education']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_education']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_education']['element_wrapper_class'] = 'views-row-odd clear clearfix';
