@@ -166,7 +166,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 
 ////// Info icon
 
-    jQuery(".ic-info").click(function(){   
+    jQuery(document).on("click",".ic-info",function(){  
         jQuery(this).find(".info-content").fadeToggle("slow", "linear");
         jQuery(".ic-info .info-content").not(jQuery('.info-content', this)).fadeOut("slow", "linear");
     });

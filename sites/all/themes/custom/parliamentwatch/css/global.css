@@ -533,18 +533,22 @@ a.ic-print {
 }
 #views-exposed-form-profile-questions-answers-profile,
 #views-exposed-form-profile-list-rev-grid,
-.views-exposed-widget {
+.views-exposed-widget,
+.views-exposed-form {
     position: relative;
 }
-#views-exposed-form-profile-questions-answers-profile .ic-info,
-#views-exposed-form-profile-list-rev-grid .ic-info {
+.views-exposed-widgets {
+    padding-top: 3em;
+}
+.views-exposed-widgets .views-reset-button {
     position: absolute;
+    top: 0;
+}
+.ic-info {
+    position: absolute;
+    top: 0;
     right: 0;
     z-index: 200;
-}
-#views-exposed-form-profile-questions-answers-profile .ic-info {
-    top: -25px;
-    top: -2.5rem;
 }
 #views-exposed-form-profile-list-rev-grid .ic-info {
     top: 0;
