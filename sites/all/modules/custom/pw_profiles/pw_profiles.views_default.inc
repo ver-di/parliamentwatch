@@ -3717,7 +3717,7 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   $handler->display->display_options['fields']['created_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['created_1']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['created_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['created_1']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created_1']['date_format'] = 'date_only_short';
   /* Feld: Kommentar: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
@@ -4238,7 +4238,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['created_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['created_1']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['created_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['created_1']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created_1']['date_format'] = 'date_only_short';
   /* Feld: Kommentar: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
@@ -4798,7 +4798,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['created_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['created_1']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['created_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['created_1']['date_format'] = 'short';
+  $handler->display->display_options['fields']['created_1']['date_format'] = 'date_only_short';
   /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['id'] = 'field_dialogue_annotation_1';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['table'] = 'field_data_field_dialogue_annotation';
