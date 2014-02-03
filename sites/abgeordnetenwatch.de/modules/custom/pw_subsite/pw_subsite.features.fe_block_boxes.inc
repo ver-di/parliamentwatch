@@ -44,7 +44,7 @@ function pw_subsite_default_fe_block_boxes() {
   $fe_block_boxes->body = '<p>
 Sie können uns auch "flattrn".
 </p>
-<iframe src="https://api.flattr.com/button/view/?uid=abgeordnetenwatch.de&amp;url=http://www.abgeordnetenwatch.de&amp;title=www.abgeordnetenwatch.de&amp;description=www.abgeordnetenwatch.de&amp;category=text&amp;language=de_DE" style="width:80px; height:62px;" allowtransparency="true" frameborder="0" scrolling="no" class="float-left"></iframe>';
+<iframe src="https://api.flattr.com/button/view/?uid=abgeordnetenwatch.de&amp;url=https://www.abgeordnetenwatch.de&amp;title=www.abgeordnetenwatch.de&amp;description=www.abgeordnetenwatch.de&amp;category=text&amp;language=de_DE" style="width:80px; height:62px;" allowtransparency="true" frameborder="0" scrolling="no" class="float-left"></iframe>';
 
   $export['pw_flattr'] = $fe_block_boxes;
 

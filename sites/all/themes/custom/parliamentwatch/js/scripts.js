@@ -149,7 +149,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 			return false;
 		}
 		var message_id = jQuery(this).attr('id').substr(jQuery(this).attr('id').indexOf('_') + 1);
-		var url = 'http://mod.parliamentwatch.org/piraten/api/message/' + message_id + '/report';
+		var url = 'https://mod.parliamentwatch.org/piraten/api/message/' + message_id + '/report';
 		jQuery.get(url);
 		alert('Vielen Dank! Ein Moderator wird sich darum kümmern.');
     });
