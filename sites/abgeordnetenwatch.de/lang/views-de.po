@@ -7614,7 +7614,7 @@ msgstr ""
 #: views:profile_questions_answers:profile:field:field_data_comment_body:comment_body:empty
 msgctxt "profile_questions_answers:profile:field:field_data_comment_body:comment_body:empty"
 msgid "<strong>No answer yet</strong>"
-msgstr "<strong>No answer yet</strong>"
+msgstr "<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
 
 #: views:profile_questions_answers:profile:field:views:fieldset:label
 msgctxt "profile_questions_answers:profile:field:views:fieldset:label"
