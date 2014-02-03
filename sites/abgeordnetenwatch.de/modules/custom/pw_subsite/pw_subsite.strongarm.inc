@@ -259,7 +259,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_url_http';
-  $strongarm->value = 'http://stats.parliamentwatch.org/';
+  $strongarm->value = 'https://stats.parliamentwatch.org/';
   $export['piwik_url_http'] = $strongarm;
 
   $strongarm = new stdClass();
