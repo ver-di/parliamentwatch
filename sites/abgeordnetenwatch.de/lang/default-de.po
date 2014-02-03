@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-02-03 16:41+0100\n"
-"PO-Revision-Date: 2014-02-03 16:41+0100\n"
+"POT-Creation-Date: 2014-02-03 17:43+0100\n"
+"PO-Revision-Date: 2014-02-03 17:43+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -27417,10 +27417,6 @@ msgid "The node ID of the node."
 msgstr ""
 
 #: /ga/admin/structure/quicktabs/add
-msgid "Teaser view"
-msgstr ""
-
-#: /ga/admin/structure/quicktabs/add
 msgid "Hide the title of this node"
 msgstr ""
 
@@ -27537,10 +27533,6 @@ msgstr ""
 #: /en-gb/admin/structure/views/import
 msgid "<h3>"
 msgstr ""
-
-#: /en-gb/admin/structure/views/import
-msgid "to a question from "
-msgstr "zu einer Frage von "
 
 #: /en-gb/admin/structure/views/import
 msgid "</h3>"
@@ -31402,10 +31394,6 @@ msgid ""
 "<p class=\"date\">[created_1]</p>\n"
 "<div class=\"content clear-both\">[comment_body]</div>"
 msgstr ""
-"<div class=\"file-image float-left\">[field_user_picture]</div>\n"
-"<h3>Antwort von [field_user_fname] [field_user_lname]</h3>\n"
-"<p class=\"date\">[created_1]</p>\n"
-"<div class=\"content clear-both\">[comment_body]</div>"
 
 #: /en-gb/admin/structure/views/ajax/config-item/profile_questions_answers/block/field/created_1
 msgid "@date_format format"
@@ -31956,8 +31944,6 @@ msgid ""
 "<div class=\"file-image float-left\">[field_user_picture]</div>\r\n"
 "<strong>No answer yet</strong>"
 msgstr ""
-"<div class=\"file-image float-left\">[field_user_picture]</div>\r\n"
-"<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
 
 #: /en-gb/admin/structure/ds/fields/manage_ctools/content/add/node/question_and_answer_colorbox/views/profile_questions_answers/step1
 msgid "Configure view @view (@display)"
@@ -34950,11 +34936,6 @@ msgid ""
 "<p class=\"date\">[created_1]</p>\n"
 "<div class=\"content clear-both\">[comment_body]</div>"
 msgstr ""
-"<div class=\"file-image float-left "
-"push-bottom-s\">[field_user_picture]</div>\n"
-"<h3>Antwort von [field_user_fname] [field_user_lname]</h3>\n"
-"<p class=\"date\">[created_1]</p>\n"
-"<div class=\"content clear-both\">[comment_body]</div>"
 
 #: /index.php
 msgid "[field_user_fname_1] [field_user_lname_1], [field_user_party]"
@@ -51546,11 +51527,6 @@ msgid ""
 "<p class=\"date\">[created_1]</p>\r\n"
 "<div class=\"content clear-both\">[comment_body]</div>"
 msgstr ""
-"<div class=\"file-image float-left "
-"push-bottom-s\">[field_user_picture]</div>\r\n"
-"<h3>Antwort von [field_user_fname] [field_user_lname]</h3>\r\n"
-"<p class=\"date\">[created_1]</p>\r\n"
-"<div class=\"content clear-both\">[comment_body]</div>"
 
 #: /admin/structure/features/profiles/status
 msgid ""
@@ -53993,13 +53969,6 @@ msgid ""
 "<p class=\"date\">[created_1]</p>\n"
 "<div class=\"content clear-both\">[comment_body]</div>"
 msgstr ""
-"<h3>Antwort von [field_user_fname] [field_user_lname]</h3>\n"
-"<p class=\"date\">[created_1]</p>\n"
-"<div class=\"content clear-both\">[comment_body]</div>"
-
-#: /admin/structure/features/profiles/status
-msgid "<strong>No answer yet</strong>"
-msgstr "<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
 
 #: /admin/structure/features/profiles/status
 msgid "permalink-wrapper"
@@ -58580,6 +58549,10 @@ msgstr ""
 msgid "Render pager"
 msgstr ""
 
+#: /user/24522/revisions/45342/view
+msgid "Teaser View"
+msgstr ""
+
 msgid "Search"
 msgstr "Suche"
 
@@ -59503,9 +59476,7 @@ msgstr "Frage von"
 msgid ""
 "<div class=\"file-image float-left\">[field_user_picture]</div>\n"
 "<strong>No answer yet</strong>"
-msgstr ""
-"<div class=\"file-image float-left\">[field_user_picture]</div>\n"
-"<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
+msgstr "Bisher ist noch keine Antwort eingetroffen"
 
 msgid "Operations"
 msgstr "Operationen"
@@ -67982,6 +67953,14 @@ msgstr "Dateiinformation"
 
 msgid "Continue"
 msgstr "Weiter"
+
+#: /ga/admin/structure/quicktabs/add
+msgid "Teaser view"
+msgstr "Verschlagwortete Antwort"
+
+#: /en-gb/admin/structure/views/import
+msgid "to a question from "
+msgstr "zu einer Frage von "
 
 #: /en-gb/admin/structure/views/import
 msgid "[field_user_questions_get] question(s)"
@@ -80227,6 +80206,10 @@ msgid "[field_user_qanda_ratio-revision_id-value] % response rate"
 msgstr "[field_user_qanda_ratio-revision_id-value] % Antwortquote"
 
 #: /admin/structure/features/profiles/status
+msgid "<strong>No answer yet</strong>"
+msgstr "<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
+
+#: /admin/structure/features/profiles/status
 msgid "more information to the answer"
 msgstr "Weitere Informationen zur Antwort"
 
@@ -80257,4 +80240,336 @@ msgstr " unterstützen die Petition"
 #: /users/cansel-kiziltepe
 msgid "trim the link"
 msgstr "Link kürzen"
+
+#: views:profile_questions_answers:default:field:views:fieldset:label
+msgctxt "profile_questions_answers:default:field:views:fieldset:label"
+msgid "more information to the answer"
+msgstr "Weitere Informationen zur Antwort"
+
+#: views:profile_questions_answers:default:field:views:nothing_1:alter:text
+msgctxt "profile_questions_answers:default:field:views:nothing_1:alter:text"
+msgid "Permanent link to this question and answer"
+msgstr "Permanent-Link zu obenstehender Frage und Antwort"
+
+#: views:profile_questions_answers:profile:field:views:fieldset:label
+msgctxt "profile_questions_answers:profile:field:views:fieldset:label"
+msgid "more information to the answer"
+msgstr "Weitere Informationen zur Antwort"
+
+#: views:profile_questions_answers:profile:field:views:nothing_1:alter:text
+msgctxt "profile_questions_answers:profile:field:views:nothing_1:alter:text"
+msgid "Permanent link to this question and answer"
+msgstr "Permanent-Link zu obenstehender Frage und Antwort"
+
+#: views:profile_questions_answers:profile_teasered:field:views:fieldset:label
+msgctxt "profile_questions_answers:profile_teasered:field:views:fieldset:label"
+msgid "more information to the answer"
+msgstr "Weitere Informationen zur Antwort"
+
+#: views:profile_questions_answers:profile_teasered:field:views:nothing_1:alter:text
+msgctxt "profile_questions_answers:profile_teasered:field:views:nothing_1:alter:text"
+msgid "Permanent link to this question and answer"
+msgstr "Permanent-Link zu obenstehender Frage und Antwort"
+
+#: views:press_articles:default:title
+msgctxt "press_articles:default:title"
+msgid "Presseartikel"
+msgstr "Presseartikel"
+
+#: views:press_release:default:title
+msgctxt "press_release:default:title"
+msgid "Pressemitteilungen"
+msgstr "Pressemitteilungen"
+
+#: views:answers:default:field:field_data_field_user_questions_get:field_user_questions_get:alter:text
+msgctxt "answers:default:field:field_data_field_user_questions_get:field_user_questions_get:alter:text"
+msgid "[field_user_questions_get] Frage(n)"
+msgstr "[field_user_questions_get] Frage(n)"
+
+#: views:answers:default:field:users:uid:alter:text
+msgctxt "answers:default:field:users:uid:alter:text"
+msgid "Profil besuchen"
+msgstr "Profil besuchen"
+
+#: views:archive:default:pager:tags:next
+msgctxt "archive:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:archive:page:pager:tags:next
+msgctxt "archive:page:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:archive:block:pager:tags:next
+msgctxt "archive:block:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:backlinks:default:pager:tags:next
+msgctxt "backlinks:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:backlinks:page:pager:tags:next
+msgctxt "backlinks:page:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:backlinks:block:pager:tags:next
+msgctxt "backlinks:block:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:blog:default:title
+msgctxt "blog:default:title"
+msgid "Beiträge mit dem Schlagwort \"%1\""
+msgstr "Blogartikel mit dem Schlagwort \"%1\""
+
+#: views:blog:default:pager:tags:previous
+msgctxt "blog:default:pager:tags:previous"
+msgid "zurück"
+msgstr "zurück"
+
+#: views:blog:default:field:node:created:alter:text
+msgctxt "blog:default:field:node:created:alter:text"
+msgid ""
+"Veröffentlicht am [created] um [created_1] von [name] "
+"[field_blogpost_categories]"
+msgstr ""
+"Veröffentlicht am [created] um [created_1] von [name] "
+"[field_blogpost_categories]"
+
+#: views:blog:default:field:field_data_body:body:alter:more_link_text
+msgctxt "blog:default:field:field_data_body:body:alter:more_link_text"
+msgid "weiterlesen"
+msgstr "weiterlesen"
+
+#: views:blog:default:field:views_entity_node:view_node:text
+msgctxt "blog:default:field:views_entity_node:view_node:text"
+msgid "weiterlesen"
+msgstr "weiterlesen"
+
+#: views:blog:default:sort:node:created:expose:label
+msgctxt "blog:default:sort:node:created:expose:label"
+msgid "Datum"
+msgstr "Datum"
+
+#: views:blog:default:sort:node_comment_statistics:comment_count:expose:label
+msgctxt "blog:default:sort:node_comment_statistics:comment_count:expose:label"
+msgid "Anzahl der Kommentare"
+msgstr "Anzahl der Kommentare"
+
+#: views:blog:block_1:title
+msgctxt "blog:block_1:title"
+msgid "Letzte Blogbeiträge"
+msgstr "Letzte Blogbeiträge"
+
+#: views:blog:page_1:pager:tags:previous
+msgctxt "blog:page_1:pager:tags:previous"
+msgid "zurück"
+msgstr "zurück"
+
+#: views:feeds_log:default:pager:tags:next
+msgctxt "feeds_log:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:feeds_log:page_1:pager:tags:next
+msgctxt "feeds_log:page_1:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:feeds_log:page_2:pager:tags:next
+msgctxt "feeds_log:page_2:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:feeds_log:page_3:pager:tags:next
+msgctxt "feeds_log:page_3:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:frontpage:default:pager:tags:next
+msgctxt "frontpage:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:frontpage:page:pager:tags:next
+msgctxt "frontpage:page:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:glossary:default:pager:tags:next
+msgctxt "glossary:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:glossary:page:pager:tags:next
+msgctxt "glossary:page:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:list_node_page_titles:default:pager:tags:next
+msgctxt "list_node_page_titles:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:list_node_page_titles:page_1:pager:tags:next
+msgctxt "list_node_page_titles:page_1:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:media_default:default:pager:tags:next
+msgctxt "media_default:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:media_default:media_browser_1:pager:tags:next
+msgctxt "media_default:media_browser_1:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:media_default:media_browser_my_files:pager:tags:next
+msgctxt "media_default:media_browser_my_files:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:menu_existing_content_selection:default:pager:tags:next
+msgctxt "menu_existing_content_selection:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:menu_existing_content_selection:page_1:pager:tags:next
+msgctxt "menu_existing_content_selection:page_1:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:rules_scheduler:default:pager:tags:next
+msgctxt "rules_scheduler:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:taxonomy_term:default:pager:tags:next
+msgctxt "taxonomy_term:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:taxonomy_term:page:pager:tags:next
+msgctxt "taxonomy_term:page:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:taxonomy_term:feed:pager:tags:next
+msgctxt "taxonomy_term:feed:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:top_content:default:pager:tags:next
+msgctxt "top_content:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:top_content:page_1:pager:tags:next
+msgctxt "top_content:page_1:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:top_content:page_2:pager:tags:next
+msgctxt "top_content:page_2:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:top_content:page_3:pager:tags:next
+msgctxt "top_content:page_3:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:tracker:default:pager:tags:next
+msgctxt "tracker:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:tracker:page:pager:tags:next
+msgctxt "tracker:page:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:tweets:page_all_tweets:pager:tags:next
+msgctxt "tweets:page_all_tweets:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:tweets:page_2:pager:tags:next
+msgctxt "tweets:page_2:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:weight:default:pager:tags:next
+msgctxt "weight:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:weight:page:pager:tags:next
+msgctxt "weight:page:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:press_release:default:field:field_data_field_press_release_body:field_press_release_body:alter:more_link_text
+msgctxt "press_release:default:field:field_data_field_press_release_body:field_press_release_body:alter:more_link_text"
+msgid "weiterlesen"
+msgstr "weiterlesen"
+
+#: views:blog:page_2:pager:tags:previous
+msgctxt "blog:page_2:pager:tags:previous"
+msgid "zurück"
+msgstr "zurück"
+
+#: views:redirects:default:pager:tags:next
+msgctxt "redirects:default:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:redirects:page_user:pager:tags:next
+msgctxt "redirects:page_user:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:redirects:page_admin:pager:tags:next
+msgctxt "redirects:page_admin:pager:tags:next"
+msgid "nächste Seite ›"
+msgstr "weiter"
+
+#: views:blog:default:pager:tags:next
+msgctxt "blog:default:pager:tags:next"
+msgid "weiter"
+msgstr "weiter"
+
+#: views:blog:page_1:pager:tags:next
+msgctxt "blog:page_1:pager:tags:next"
+msgid "weiter"
+msgstr "weiter"
+
+#: views:blog:page_2:pager:tags:next
+msgctxt "blog:page_2:pager:tags:next"
+msgid "weiter"
+msgstr "weiter"
+
+#: views:press_release:default:field:views_entity_node:view_node:text
+msgctxt "press_release:default:field:views_entity_node:view_node:text"
+msgid "weiterlesen"
+msgstr "weiterlesen"
+
+#: views:election_programme:default:title
+msgctxt "election_programme:default:title"
+msgid "Wahlprogramme %1"
+msgstr "Wahlprogramme %1"
+
+#: /user/24522/revisions/45342/view
+msgid "Change view"
+msgstr "Ansicht wechseln"
+
+#: /user/24522/revisions/45342/view
+msgid "Full View"
+msgstr "Normale Ansicht"
 
