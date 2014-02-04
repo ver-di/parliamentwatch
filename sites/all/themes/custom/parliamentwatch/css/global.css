@@ -1418,6 +1418,35 @@ a#text_resize_increase:active {
 .views-exposed-form .form-radio {
     margin-right: 10px;
 }
+.views-exposed-form .form-radios .form-item,
+.views-exposed-form .form-checkboxes .form-item,
+.views-exposed-form .bef-checkboxes .form-item {
+    position: relative;
+}
+.views-exposed-form .form-radios .form-item input,
+.views-exposed-form .form-checkboxes .form-item input,
+.views-exposed-form .bef-checkboxes .form-item input {
+    margin-top: -4px;
+}
+.views-exposed-form .form-radios .form-item:hover,
+.views-exposed-form .form-checkboxes .form-item:hover,
+.views-exposed-form .bef-checkboxes .form-item:hover {
+    background: #eee;
+}
+.views-exposed-form .form-radios label,
+.views-exposed-form .form-checkboxes label,
+.views-exposed-form .bef-checkboxes label {
+    position: absolute;
+    display: block;
+    width: 279px;
+    top: 0;
+    padding-left: 21px;
+}
+.views-exposed-form .form-radios label:hover,
+.views-exposed-form .form-checkboxes label:hover,
+.views-exposed-form .bef-checkboxes label:hover {
+    cursor: pointer; 
+}
 .views-exposed-widget > label {
     display: block;
     padding-bottom: 4px;
