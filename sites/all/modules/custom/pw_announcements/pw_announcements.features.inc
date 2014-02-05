@@ -23,6 +23,13 @@ function pw_announcements_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function pw_announcements_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function pw_announcements_node_info() {
