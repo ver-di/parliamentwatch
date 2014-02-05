@@ -1,5 +1,6 @@
 jQuery(document).ready(function() {
 
+    
 // attach values of bef slider to handles
 
     $('.slider-filter-processed .views-widget .form-item label').hide(); // hide values

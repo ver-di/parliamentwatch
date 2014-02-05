@@ -1,9 +1,9 @@
-name = PW Dialogues Content type
-description = q&a importer and content type
+name = PW Dialogues
+description = Dialogues importer, content type and views
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-20140109
+version = 7.x-1.0-20140205
 project = dialogues
 dependencies[] = antispam
 dependencies[] = ds
@@ -106,3 +106,4 @@ features[variable][] = pathauto_taxonomy_term_dialogue_tags_pattern
 features[variable][] = pathauto_taxonomy_term_dialogue_topics_pattern
 features[variable][] = pw_dialogues_importer_source
 features[views_view][] = answers
+features[views_view][] = profile_questions_answers

@@ -20,20 +20,18 @@ function pw_eu_frontpage_quicktabs_default_quicktabs() {
   $quicktabs->title = 'Politicians answer!';
   $quicktabs->tabs = array(
     0 => array(
-      'vid' => 'answers',
-      'display' => 'block',
-      'args' => '',
+      'bid' => 'views_delta_answers-block',
+      'hide_title' => 1,
       'title' => 'Answers',
       'weight' => '-100',
-      'type' => 'view',
+      'type' => 'block',
     ),
     1 => array(
-      'vid' => 'profile_questions_answers',
-      'display' => 'front',
-      'args' => '',
+      'bid' => 'views_delta_profile_questions_answers-front',
+      'hide_title' => 1,
       'title' => 'Questions',
       'weight' => '-99',
-      'type' => 'view',
+      'type' => 'block',
     ),
   );
   $quicktabs->renderer = 'quicktabs';
