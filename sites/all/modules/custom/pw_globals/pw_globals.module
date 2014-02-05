@@ -11,6 +11,6 @@ include_once 'pw_globals.features.inc';
  */
 function pw_globals_query_alter($query) {
   if ($query->hasTag('node_export_features')) {
-    $query->condition('type', array('page', 'webform', 'pw_slider'), 'IN');
+    $query->condition('type', array('announcement', 'page', 'trustee', 'webform', 'pw_slider'), 'IN');
   }
 }
