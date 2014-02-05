@@ -49,10 +49,12 @@ function dialogues_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: Kommentar: Inhalt */
+  /* Relationship: Relationship comment */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['ui_name'] = 'Relationship comment';
+  $handler->display->display_options['relationships']['nid']['label'] = 'comment';
   $handler->display->display_options['relationships']['nid']['required'] = TRUE;
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
@@ -82,8 +84,9 @@ function dialogues_views_default_views() {
     9 => 'field_user_answers_give',
     10 => 'uid',
     11 => 'nothing_3',
-    12 => 'comment_body',
-    13 => 'nid',
+    12 => 'field_dialogue_annotation',
+    13 => 'comment_body',
+    14 => 'nid',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'content-inner';
@@ -241,17 +244,15 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-s clear-both';
   $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
-  /* Feld: Kommentar: Comment */
-  $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
-  $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
-  $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
-  $handler->display->display_options['fields']['comment_body']['label'] = '';
-  $handler->display->display_options['fields']['comment_body']['alter']['max_length'] = '255';
-  $handler->display->display_options['fields']['comment_body']['alter']['trim'] = TRUE;
-  $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['comment_body']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['comment_body']['element_wrapper_class'] = 'clear push-bottom-s';
-  $handler->display->display_options['fields']['comment_body']['element_default_classes'] = FALSE;
+  /* Feld: Feld: Annotation */
+  $handler->display->display_options['fields']['field_dialogue_annotation']['id'] = 'field_dialogue_annotation';
+  $handler->display->display_options['fields']['field_dialogue_annotation']['table'] = 'field_data_field_dialogue_annotation';
+  $handler->display->display_options['fields']['field_dialogue_annotation']['field'] = 'field_dialogue_annotation';
+  $handler->display->display_options['fields']['field_dialogue_annotation']['label'] = '';
+  $handler->display->display_options['fields']['field_dialogue_annotation']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_dialogue_annotation']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_dialogue_annotation']['element_wrapper_class'] = 'push-bottom-m clear';
+  $handler->display->display_options['fields']['field_dialogue_annotation']['element_default_classes'] = FALSE;
   /* Feld: Kommentar: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'comment';
@@ -268,6 +269,60 @@ function dialogues_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_wrapper_class'] = 'bg-white';
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Feld: Benutzer: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['relationship'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['text'] = 'edit user';
+  /* Feld: Inhalt: Edit link */
+  $handler->display->display_options['fields']['edit_node_1']['id'] = 'edit_node_1';
+  $handler->display->display_options['fields']['edit_node_1']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node_1']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node_1']['relationship'] = 'nid';
+  $handler->display->display_options['fields']['edit_node_1']['label'] = '';
+  $handler->display->display_options['fields']['edit_node_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_node_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_node_1']['text'] = 'edit dialogue';
+  /* Feld: Kommentar: Edit link */
+  $handler->display->display_options['fields']['edit_comment']['id'] = 'edit_comment';
+  $handler->display->display_options['fields']['edit_comment']['table'] = 'comment';
+  $handler->display->display_options['fields']['edit_comment']['field'] = 'edit_comment';
+  $handler->display->display_options['fields']['edit_comment']['label'] = '';
+  $handler->display->display_options['fields']['edit_comment']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_comment']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['edit_comment']['text'] = 'edit comment';
+  /* Feld: Global: Contextual Links */
+  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
+  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['label'] = '';
+  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
+    'edit_node' => 'edit_node',
+    'edit_node_1' => 'edit_node_1',
+    'edit_comment' => 'edit_comment',
+    'fieldset' => 0,
+    'sharethis' => 0,
+    'fieldset_1' => 0,
+    'field_user_picture' => 0,
+    'field_image_copyright' => 0,
+    'nothing' => 0,
+    'field_user_fname' => 0,
+    'field_user_lname' => 0,
+    'field_user_party' => 0,
+    'created' => 0,
+    'nothing_1' => 0,
+    'field_user_questions_get' => 0,
+    'field_user_answers_give' => 0,
+    'uid' => 0,
+    'nothing_3' => 0,
+    'field_dialogue_annotation' => 0,
+    'nid' => 0,
+  );
   /* Sort criterion: Kommentar: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
@@ -305,6 +360,11 @@ function dialogues_views_default_views() {
   $handler->display->display_options['filters']['rid']['value'] = array(
     181527986 => '181527986',
   );
+  /* Filter criterion: Feld: Annotation (field_dialogue_annotation) */
+  $handler->display->display_options['filters']['field_dialogue_annotation_value']['id'] = 'field_dialogue_annotation_value';
+  $handler->display->display_options['filters']['field_dialogue_annotation_value']['table'] = 'field_data_field_dialogue_annotation';
+  $handler->display->display_options['filters']['field_dialogue_annotation_value']['field'] = 'field_dialogue_annotation_value';
+  $handler->display->display_options['filters']['field_dialogue_annotation_value']['operator'] = 'not empty';
 
   /* Display: Frontpage */
   $handler = $view->new_display('block', 'Frontpage', 'block');

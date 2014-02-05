@@ -119,6 +119,10 @@ function dialogues_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'colorbox' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),
