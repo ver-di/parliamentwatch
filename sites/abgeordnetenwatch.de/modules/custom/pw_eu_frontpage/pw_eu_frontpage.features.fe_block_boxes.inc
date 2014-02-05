@@ -14,12 +14,15 @@ function pw_eu_frontpage_default_fe_block_boxes() {
   $fe_block_boxes->info = 'AW EU Intro';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'aw_eu_intro';
-  $fe_block_boxes->body = '<p>
-	Informationen zur EU Wahl<br />
+  $fe_block_boxes->body = '<h3>
+	Informationen zur EU Wahl
+</h3>
+<p>
 	Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior. Sea te choro perfecto, per eu meis nonumy percipit.&nbsp;
 </p>
 <p>
-	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a>
+	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a><br />
+	<a class="read-more" href="/node/7755" title="EU-Wahlrecht">Gesetzgebende Verfahren</a>
 </p>
 ';
 
@@ -60,13 +63,13 @@ function pw_eu_frontpage_default_fe_block_boxes() {
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'aw_schirmherrin';
   $fe_block_boxes->body = '<p>
-	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__14596 img__view_mode__pw_file_portrait_s attr__format__pw_file_portrait_m attr__field_file_image_alt_text[und][0][value]__Jutta Limbach attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="http://develop.silversurfer/sites/abgeordnetenwatch.de/files/styles/pw_portrait_s/public/jutta_limbach_0.jpg?itok=PYNvtaq1" style="float: right; width: 70px; height: 105px; margin-left: 10px; margin-bottom: 10px;" title="" typeof="foaf:Image" />
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__14771 img__view_mode__pw_file_portrait_m attr__format__pw_file_portrait_m attr__field_file_image_alt_text[und][0][value]__Jutta Limbach attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="http://dev_eu.silversurfer/sites/abgeordnetenwatch.de/files/styles/pw_portrait_m/public/jutta_limbach_0.jpg?itok=6t9pWPBm" style="float: right; width: 100px; height: 150px; margin-left: 10px; margin-bottom: 10px;" title="" typeof="foaf:Image" />
 </p>
 <blockquote>
 	Initiativen wie diese machen Politiker empfänglicher für gesellschaftliche Probleme und Bedürfnisse.
 </blockquote>
-<p class="rteright">
-	<a class="read-more clear" href="/node/7753">Grußwort lesen</a>
+<p class="rteright clear">
+	<a class="read-more" href="/node/7753">Grußwort lesen</a>
 </p>
 ';
 
