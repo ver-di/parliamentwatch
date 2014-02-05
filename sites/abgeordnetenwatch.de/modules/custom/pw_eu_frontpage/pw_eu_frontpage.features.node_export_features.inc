@@ -11,7 +11,7 @@ function pw_eu_frontpage_node_export_features_default() {
   $node_export = array(
   'code_string' => 'array(
   (object) array(
-      \'vid\' => \'10428\',
+      \'vid\' => \'10485\',
       \'uid\' => \'24952\',
       \'title\' => \'EU Wahlen 2014\',
       \'log\' => \'\',
@@ -21,7 +21,7 @@ function pw_eu_frontpage_node_export_features_default() {
       \'sticky\' => \'0\',
       \'vuuid\' => \'e14ad95f-b3ef-47d6-8f19-ec6ba580883e\',
       \'ds_switch\' => \'\',
-      \'nid\' => \'10413\',
+      \'nid\' => \'10452\',
       \'type\' => \'page\',
       \'language\' => \'und\',
       \'created\' => \'1391549922\',
@@ -29,7 +29,7 @@ function pw_eu_frontpage_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'f02e308d-8272-47bf-b631-8635b8d7cdbd\',
-      \'revision_timestamp\' => \'1391550119\',
+      \'revision_timestamp\' => \'1391616077\',
       \'revision_uid\' => \'24952\',
       \'body\' => array(),
       \'rdf_mapping\' => array(
@@ -91,7 +91,7 @@ function pw_eu_frontpage_node_export_features_default() {
           \'data\' => array(
             \'und\' => array(
               \'entity_type\' => \'node\',
-              \'entity_id\' => \'10413\',
+              \'entity_id\' => \'10452\',
               \'language\' => \'und\',
               \'source\' => \'\',
               \'uid\' => \'24952\',
@@ -128,9 +128,9 @@ function pw_eu_frontpage_node_export_features_default() {
       \'signature\' => \'\',
       \'spaminess\' => 0,
       \'cid\' => \'0\',
-      \'last_comment_timestamp\' => \'1391549922\',
+      \'last_comment_timestamp\' => \'1391608706\',
       \'last_comment_name\' => NULL,
-      \'last_comment_uid\' => \'24952\',
+      \'last_comment_uid\' => \'1\',
       \'comment_count\' => \'0\',
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
@@ -148,8 +148,8 @@ function pw_eu_frontpage_node_export_features_default() {
       \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
       \'weight_weight\' => FALSE,
       \'path\' => array(
-        \'pid\' => \'79300\',
-        \'source\' => \'node/10413\',
+        \'pid\' => \'79348\',
+        \'source\' => \'node/10452\',
         \'alias\' => \'parlamente/eu\',
         \'language\' => \'und\',
       ),
