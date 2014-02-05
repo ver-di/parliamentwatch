@@ -65,7 +65,7 @@ function pw_eu_frontpage_default_fe_block_boxes() {
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'aw_schirmherrin';
   $fe_block_boxes->body = '<p>
-	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__14771 img__view_mode__pw_file_portrait_m attr__format__pw_file_portrait_m attr__field_file_image_alt_text[und][0][value]__Jutta Limbach attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="http://dev_eu.silversurfer/sites/abgeordnetenwatch.de/files/styles/pw_portrait_m/public/jutta_limbach_0.jpg?itok=6t9pWPBm" style="float: right; width: 100px; height: 150px; margin-left: 10px; margin-bottom: 10px;" title="" typeof="foaf:Image" />
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__14771 img__view_mode__pw_file_portrait_m attr__format__pw_file_portrait_m attr__field_file_image_alt_text[und][0][value]__Jutta Limbach attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_m/public/jutta_limbach_0.jpg?itok=6t9pWPBm" style="float: right; width: 100px; height: 150px; margin-left: 10px; margin-bottom: 10px;" title="" typeof="foaf:Image" />
 </p>
 <blockquote>
 	Initiativen wie diese machen Politiker empfänglicher für gesellschaftliche Probleme und Bedürfnisse.
