@@ -26,15 +26,15 @@ function pw_eu_frontpage_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-35' => array(
+        'block-34' => array(
           'module' => 'block',
-          'delta' => '35',
+          'delta' => '34',
           'region' => 'content',
           'weight' => '-10',
         ),
-        'block-36' => array(
+        'block-33' => array(
           'module' => 'block',
-          'delta' => '36',
+          'delta' => '33',
           'region' => 'content',
           'weight' => '-9',
         ),
@@ -50,15 +50,15 @@ function pw_eu_frontpage_context_default_contexts() {
           'region' => 'content',
           'weight' => '-7',
         ),
-        'block-34' => array(
+        'block-35' => array(
           'module' => 'block',
-          'delta' => '34',
+          'delta' => '35',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'block-33' => array(
+        'block-36' => array(
           'module' => 'block',
-          'delta' => '33',
+          'delta' => '36',
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
