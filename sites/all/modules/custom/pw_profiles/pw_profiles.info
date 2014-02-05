@@ -363,7 +363,6 @@ features[views_view][] = calendar
 features[views_view][] = constituency_for_the_profile
 features[views_view][] = polls_profile
 features[views_view][] = profile_list_rev
-features[views_view][] = profile_questions_answers
 features[views_view][] = pw_user_blocks
 features[views_view][] = user_profile_fields
 features[views_view][] = user_tweets
