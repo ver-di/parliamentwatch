@@ -1,6 +1,8 @@
 
 Login one time README
 
+--- PW --- NOTE --- THIS IS A COPY OF "LOGIN ONE TIME CONTRIB" MODULE FOR PW ---
+
 CONTENTS OF THIS FILE
 ----------------------
 
@@ -68,7 +70,7 @@ login_one_time_button($username = NULL, $path = NULL, $select = FALSE)
     code is called from.  Supply empty string to prompt for selection.
   $select
     If TRUE will display a select element to choose from configured paths, the
-    default choice will come from $path or be calculated the same way, or if 
+    default choice will come from $path or be calculated the same way, or if
     empty string supplied it will prompt for selection.
   Return value
     The HTML string of the form, for use in output.
@@ -100,13 +102,13 @@ These are some hooks you can implement to modify login one time's behaviour.
 
 hook_login_one_time_path_options_alter(&$options)
   Alter the list of path options that the module uses in various places.  Use
-  this instead of a hook_form_alter approach to affect all forms and lists 
+  this instead of a hook_form_alter approach to affect all forms and lists
   with this data.
 
 hook_login_one_time_user_options_alter(&$options)
   Alter the list of user options that the module uses in various places.  Use
-  this instead of a hook_form_alter approach to affect all forms and lists 
+  this instead of a hook_form_alter approach to affect all forms and lists
   with this data.
 
-hook_login_one_time_used($user) 
+hook_login_one_time_used($user)
   Invoked when a user successfully uses a login_one_time link.
