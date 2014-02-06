@@ -507,7 +507,7 @@ function pw_login_once_send_mail($account, $path = NULL, $email = NULL) {
 function pw_login_once_get_link($account, $path = NULL) {
 
   // PW: Override $path so whatever happens - send the user to his profile.
-  $path = "user/" . $account->uid . "/edit";
+  $path = "user/" . $account->uid;
 
   $timestamp = REQUEST_TIME;
   return url(
