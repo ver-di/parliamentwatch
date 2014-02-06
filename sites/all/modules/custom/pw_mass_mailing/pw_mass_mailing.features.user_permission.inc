@@ -23,7 +23,8 @@ function pw_mass_mailing_user_default_permissions() {
   $permissions['administer views_send'] = array(
     'name' => 'administer views_send',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'views_send',
   );
@@ -31,7 +32,10 @@ function pw_mass_mailing_user_default_permissions() {
   // Exported permission: attachments with views_send.
   $permissions['attachments with views_send'] = array(
     'name' => 'attachments with views_send',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
     'module' => 'views_send',
   );
 
@@ -49,7 +53,8 @@ function pw_mass_mailing_user_default_permissions() {
   $permissions['mass mailing with views_send'] = array(
     'name' => 'mass mailing with views_send',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'views_send',
   );
@@ -67,7 +72,8 @@ function pw_mass_mailing_user_default_permissions() {
   $permissions['send link to pw login once'] = array(
     'name' => 'send link to pw login once',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'pw_login_once',
   );
