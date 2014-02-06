@@ -296,7 +296,7 @@ function pw_announcements_field_default_fields() {
         'enable_tokens' => 0,
         'linkit' => array(
           'enable' => 1,
-          'insert_plugin' => 'html_link',
+          'insert_plugin' => 'raw_url',
         ),
         'rel_remove' => 'default',
         'title' => 'required',
@@ -309,7 +309,9 @@ function pw_announcements_field_default_fields() {
       'widget' => array(
         'active' => 0,
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'link_field',
         'weight' => '4',
       ),
