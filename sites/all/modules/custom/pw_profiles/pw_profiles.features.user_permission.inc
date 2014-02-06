@@ -10,6 +10,15 @@
 function pw_profiles_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: access overlay.
+  $permissions['access overlay'] = array(
+    'name' => 'access overlay',
+    'roles' => array(
+      0 => 'Politician',
+    ),
+    'module' => 'overlay',
+  );
+
   // Exported permission: create field_user_about.
   $permissions['create field_user_about'] = array(
     'name' => 'create field_user_about',
