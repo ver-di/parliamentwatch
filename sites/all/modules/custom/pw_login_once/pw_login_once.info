@@ -1,9 +1,8 @@
-name = Login one time
+name = PW Login Once
 description = "Provides functionality for permitted users to send a one-time login link to other users."
 core = 7.x
-; Information added by drupal.org packaging script on 2012-08-09
-version = "7.x-2.8"
+version = "7.x-2.8-pw"
 core = "7.x"
 project = "login_one_time"
-datestamp = "1344485259"
+datestamp = "1391686650"
 
