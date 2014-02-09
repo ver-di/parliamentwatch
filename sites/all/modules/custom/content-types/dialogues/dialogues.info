@@ -105,5 +105,5 @@ features[variable][] = pathauto_node_dialogue_pattern
 features[variable][] = pathauto_taxonomy_term_dialogue_tags_pattern
 features[variable][] = pathauto_taxonomy_term_dialogue_topics_pattern
 features[variable][] = pw_dialogues_importer_source
-features[views_view][] = answers
 features[views_view][] = profile_questions_answers
+features[views_view][] = pw_dialogue_answers

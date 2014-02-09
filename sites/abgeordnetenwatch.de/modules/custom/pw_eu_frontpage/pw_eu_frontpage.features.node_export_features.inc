@@ -11,7 +11,7 @@ function pw_eu_frontpage_node_export_features_default() {
   $node_export = array(
   'code_string' => 'array(
   (object) array(
-      \'vid\' => \'10485\',
+      \'vid\' => \'10480\',
       \'uid\' => \'24952\',
       \'title\' => \'EU Wahlen 2014\',
       \'log\' => \'\',
@@ -29,7 +29,7 @@ function pw_eu_frontpage_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'f02e308d-8272-47bf-b631-8635b8d7cdbd\',
-      \'revision_timestamp\' => \'1391616077\',
+      \'revision_timestamp\' => \'1391693550\',
       \'revision_uid\' => \'24952\',
       \'body\' => array(),
       \'rdf_mapping\' => array(
@@ -150,7 +150,7 @@ function pw_eu_frontpage_node_export_features_default() {
       \'path\' => array(
         \'pid\' => \'79348\',
         \'source\' => \'node/10452\',
-        \'alias\' => \'parlamente/eu\',
+        \'alias\' => \'eu-wahlen-2014\',
         \'language\' => \'und\',
       ),
       \'menu\' => NULL,

@@ -272,6 +272,21 @@ blockquote p:last-child {
     margin-left: 860px;
 }
 
+/* image styles */
+
+.pw_portrait_xs {
+    max-width: 40px;
+}
+.pw_portrait_s {
+    max-width: 70px;
+}
+.pw_portrait_m {
+    max-width: 100px;
+}
+
+
+/* text/links */
+
 .light,
 a.light,
 .light a {
@@ -290,6 +305,12 @@ a.medium,
 .dark,
 a.dark {
     color: #333;
+}
+.copyright {
+    color: #666;
+    font-weight: normal;
+    font-size: 11px;
+    font-size: 1.1rem;
 }
 .normal-weight {
     font-weight: normal;
@@ -857,14 +878,13 @@ ul.tabs li a:active {
 
 /* //////////////////////////// pager ////////////////////// */
 
-.item-list {
-    padding-bottom: 30px;
-}
 .item-list .pager {
     clear: both;
     text-align: center;
     font-size: 12px;
     font-size: 1.2rem;
+    padding-bottom: 30px;
+    padding-bottom: 3rem;
 }
 .item-list ul.pager li {
     margin: 0 3px;
@@ -1002,8 +1022,8 @@ ul.tabs li a:active {
 }
 .pager-load-more .ajax-progress {
     position: absolute;
-    left: 19px;
-    top: 3px;
+    left: 0;
+    top: 0;
 }
 .item-list ul.pager.pager-load-more a span {
     background: url(../images/sprite.png) right -3311px no-repeat;
@@ -1015,6 +1035,12 @@ ul.tabs li a:active {
 
 /* quicktabs */
 
+.quicktabs-wrapper .item-list {
+    margin-bottom: 0;
+}
+.quicktabs-style-nostyle .item-list ul.pager li * {
+    line-height: 2em;
+}
 .quicktabs-style-nostyle ul.quicktabs-tabs {
     display: table;
     width: 100%;
@@ -1030,7 +1056,7 @@ ul.tabs li a:active {
 .quicktabs-style-nostyle .quicktabs-tabs li.last {
     padding-right: 0;
 }
-#quicktabs-politicians_answer a span {
+#quicktabs-politicians_answer .quicktabs-tabs a span {
     display: inline-block;
     line-height: 35px;
     line-height: 3.5rem;

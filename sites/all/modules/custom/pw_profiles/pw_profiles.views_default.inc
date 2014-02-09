@@ -92,7 +92,6 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['title'] = 'Calendar of [field_user_fname] [field_user_lname]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -111,10 +110,6 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<div id="calendar" class="add-sharethis" title="Calendar of [field_user_fname] [field_user_lname],[field_user_party]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  /* Kopfbereich: Global: View area */
-  $handler->display->display_options['header']['view']['id'] = 'view';
-  $handler->display->display_options['header']['view']['table'] = 'views';
-  $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: link to calendar page */
   $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
