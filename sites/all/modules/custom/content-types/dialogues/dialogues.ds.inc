@@ -19,7 +19,7 @@ function dialogues_ds_field_settings_info() {
   $ds_fieldsetting->settings = array(
     'question_and_answer_colorbox' => array(
       'weight' => '0',
-      'label' => 'above',
+      'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'show_title' => 0,
