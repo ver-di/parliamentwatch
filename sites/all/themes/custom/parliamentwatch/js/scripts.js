@@ -1,6 +1,5 @@
 jQuery(document).ready(function() {
-
-    
+     
 // attach values of bef slider to handles
 
     $('.slider-filter-processed .views-widget .form-item label').hide(); // hide values
@@ -196,5 +195,9 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 
 });
 
+/////// change images on image maps
 
-
+function changeImage(imageSRC2){
+    var imageSRC = document.getElementById('map').src;
+    document.getElementById('map').src=imageSRC2;
+}

@@ -232,6 +232,9 @@ blockquote p:last-child {
 .push-right-m {
     margin-right: 14px;
 }
+.portrait-s {
+    width: 70px;
+}
 .portrait-l {
     width: 140px;
 }
