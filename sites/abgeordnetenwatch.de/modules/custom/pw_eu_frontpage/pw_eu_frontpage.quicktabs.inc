@@ -14,22 +14,22 @@ function pw_eu_frontpage_quicktabs_default_quicktabs() {
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'politicians_answer';
-  $quicktabs->ajax = 0;
+  $quicktabs->ajax = 1;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 0;
   $quicktabs->title = 'Politicians answer!';
   $quicktabs->tabs = array(
     0 => array(
       'vid' => 'pw_dialogue_answers',
-      'display' => 'default',
+      'display' => 'panel_pane_1',
       'args' => '',
       'title' => 'Answers',
       'weight' => '-100',
       'type' => 'view',
     ),
     1 => array(
-      'vid' => 'pw_dialogue_answers',
-      'display' => 'panel_pane_1',
+      'vid' => 'profile_questions_answers',
+      'display' => 'landing_page',
       'args' => '',
       'title' => 'Questions',
       'weight' => '-99',
