@@ -16,6 +16,11 @@ function pw_diff_tracking_default_rules_configuration() {
       "ON" : [ "user_update" ],
       "IF" : [
         { "user_has_role" : {
+            "account" : [ "site:current-user" ],
+            "roles" : { "value" : { "181527986" : "181527986" } }
+          }
+        },
+        { "user_has_role" : {
             "account" : [ "account" ],
             "roles" : { "value" : { "181527986" : "181527986" } }
           }
@@ -24,8 +29,8 @@ function pw_diff_tracking_default_rules_configuration() {
       "DO" : [
         { "mail" : {
             "to" : "[site:mail]",
-            "subject" : "Account [account:field-user-fname] [account:field-user-lname] updated",
-            "message" : "UUID: [account:uuid]\\r\\nUID: [account:uid]\\r\\nName: [account:field-user-fname] [account:field-user-lname]\\r\\nE-Mail: [account:mail]\\r\\nURL: [account:url]\\r\\nEdit: [account:edit-url]\\r\\n\\r\\nDIFFs\\r\\n+++++++++++++++++++++++++++++++++++\\r\\n[account:diff]\\r\\n+++++++++++++++++++++++++++++++++++",
+            "subject" : "Account [account:field-user-fname] [account:field-user-lname] updated       ",
+            "message" : "UUID: [account:uuid]\\r\\nUID: [account:uid]\\r\\nName: [account:field-user-fname] [account:field-user-lname]\\r\\nE-Mail: [account:mail]\\r\\nURL: [account:url]\\r\\nEdit: [account:edit-url]\\r\\n\\r\\nDIFFs\\r\\n+++++++++++++++++++++++++++++++++++\\r\\n[account:pw_diff]\\r\\n+++++++++++++++++++++++++++++++++++\\u0022,",
             "language" : [ "" ]
           }
         }
