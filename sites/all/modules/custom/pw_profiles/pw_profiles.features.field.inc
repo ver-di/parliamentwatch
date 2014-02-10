@@ -85,31 +85,31 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '2',
         ),
         'pw_file_portrait_l' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '4',
         ),
         'pw_file_portrait_m' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '2',
         ),
         'pw_file_portrait_s' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '3',
         ),
         'pw_file_portrait_xs' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -146,6 +146,9 @@ function pw_profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_file_image_title_text',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -171,7 +174,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'image',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Title text attribute',
+      'description' => 'Title text attribute (for the profile formats x and xs the copyright will overwrite this field)',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -213,31 +216,31 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '4',
         ),
         'pw_file_portrait_l' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '3',
         ),
         'pw_file_portrait_m' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '4',
         ),
         'pw_file_portrait_s' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '4',
         ),
         'pw_file_portrait_xs' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '1',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -246,18 +249,56 @@ function pw_profiles_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'file',
       'field_name' => 'field_file_image_title_text',
       'label' => 'Title Text',
       'required' => 0,
       'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
+        'wysiwyg_override' => 1,
       ),
       'widget' => array(
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -3693,7 +3734,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3988,7 +4029,7 @@ $entity_field[0][\'value\'] = $result;',
   t('QuestionAnswerRatio');
   t('Questions Get');
   t('Title Text');
-  t('Title text attribute');
+  t('Title text attribute (for the profile formats x and xs the copyright will overwrite this field)');
   t('User Twitter Account');
   t('Valid');
   t('user_first_letter_lname');
