@@ -448,7 +448,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['views-slider-block'] = array(
-    'cache' => -1,
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'slider-block',
