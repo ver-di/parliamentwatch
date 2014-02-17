@@ -612,6 +612,8 @@ function pw_profiles_field_group_info() {
       6 => 'field_user_education',
       7 => 'field_user_age',
       8 => 'field_user_links_more',
+      9 => 'field_user_public_mail',
+      10 => 'field_user_phone',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

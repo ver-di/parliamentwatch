@@ -791,7 +791,7 @@ function pw_profiles_field_default_fields() {
           ),
         ),
         'type' => 'addressfield_standard',
-        'weight' => '7',
+        'weight' => '34',
       ),
     ),
   );
@@ -885,7 +885,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '12',
+        'weight' => '39',
       ),
     ),
   );
@@ -1084,7 +1084,7 @@ function pw_profiles_field_default_fields() {
           'year_range' => '-70:+0',
         ),
         'type' => 'date_popup',
-        'weight' => '11',
+        'weight' => '38',
       ),
     ),
   );
@@ -1174,7 +1174,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '14',
+        'weight' => '41',
       ),
     ),
   );
@@ -1519,7 +1519,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '9',
+        'weight' => '36',
       ),
     ),
   );
@@ -2265,7 +2265,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '35',
       ),
     ),
   );
@@ -2378,7 +2378,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'link_field',
-        'weight' => '15',
+        'weight' => '42',
       ),
     ),
   );
@@ -2711,7 +2711,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '13',
+        'weight' => '40',
       ),
     ),
   );
@@ -3055,7 +3055,7 @@ function pw_profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -3429,7 +3429,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '10',
+        'weight' => '37',
       ),
     ),
   );
