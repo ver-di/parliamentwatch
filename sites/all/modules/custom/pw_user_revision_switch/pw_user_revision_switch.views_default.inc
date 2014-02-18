@@ -262,6 +262,15 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | UID */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['ui_name'] = 'Excluded | UID';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
   /* Feld: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -270,28 +279,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat abgeordnetenwatch einmalig mit 179 Euro (149 Euro als Frühbucherrabatt). ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User revision: Vid */
-  $handler->display->display_options['arguments']['vid']['id'] = 'vid';
-  $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
-  $handler->display->display_options['arguments']['vid']['field'] = 'vid';
-  $handler->display->display_options['arguments']['vid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['vid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['vid']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['vid']['default_argument_options']['code'] = '$cpath = explode(\'/\',current_path());
-$path_uid = $cpath[1];
-if (array_key_exists(3, $cpath))
-{
-  $path_vid  =  $cpath[3];
-  return $path_vid;
-}
-else{
-$result =db_query("SELECT vid FROM {user_revision} u WHERE uid = (:uids) ORDER BY vid DESC LIMIT 0,1", array(\':uids\' => $path_uid))->fetchField();
-return $result;
-}
-';
-  $handler->display->display_options['arguments']['vid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['vid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['vid']['summary_options']['items_per_page'] = '25';
 
   /* Display: Basic Info */
   $handler = $view->new_display('block', 'Basic Info', 'basic_info');

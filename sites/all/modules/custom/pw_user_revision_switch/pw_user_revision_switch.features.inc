@@ -12,6 +12,10 @@ function pw_user_revision_switch_ctools_plugin_api() {
   if ($module == "data" && $api == "data_default") {
     return array("version" => "1");
   }
+  list($module, $api) = func_get_args();
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
 }
 
 /**
