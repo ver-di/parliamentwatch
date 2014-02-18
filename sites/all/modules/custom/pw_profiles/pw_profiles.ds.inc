@@ -565,7 +565,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|883f5d656342b9b5bf86986c1f124c89',
+    'block' => 'views|8cb951080268e07b91e84bb9f40a0b10',
     'block_render' => '2',
   );
   $export['additional_links'] = $ds_field;
@@ -637,7 +637,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|3509b58cbc4e6ba12500a0953896ee89',
+    'block' => 'views|8a05376dfc4831ce88592b0045b1a661',
     'block_render' => '3',
   );
   $export['parliament_info_block'] = $ds_field;
@@ -697,7 +697,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|f7236266d8b27f67d2300a86a665e373',
+    'block' => 'views|66c15b9f7adf72949d75707559106a91',
     'block_render' => '3',
   );
   $export['profile_extension'] = $ds_field;
@@ -712,7 +712,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-block_2',
+    'block' => 'views|1ed77cfca6fb78161c79828e2a5829e5',
     'block_render' => '3',
   );
   $export['profile_picture'] = $ds_field;
@@ -830,7 +830,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|108e2c16b7e7df10a5b7b5e39d423d41',
+    'block' => 'views|1bfdad95b3077966cebee9136e4f94e5',
     'block_render' => '3',
   );
   $export['short_profile'] = $ds_field;
@@ -846,7 +846,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|61396393ab453f7a0379aaa7c9cad1f0',
+    'block' => 'views|f4f58a460e337dd20c6b7fbc8a2f0b6d',
     'block_render' => '3',
   );
   $export['short_profile_deputy_main'] = $ds_field;
@@ -893,7 +893,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-about',
+    'block' => 'views|4dcafc132e57885543e30b58a6f03db6',
     'block_render' => '2',
   );
   $export['user_about'] = $ds_field;
@@ -908,7 +908,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|user_profile_fields-basic_info',
+    'block' => 'views|901096594d39ea14f78dc9e2fefbe5e0',
     'block_render' => '2',
   );
   $export['user_basic_info'] = $ds_field;
@@ -938,7 +938,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|5e53e48c6b000f864c0fbb0bc65ce72e',
+    'block' => 'views|911001090b6fd83967d2564c46e72c20',
     'block_render' => '2',
   );
   $export['user_image_gallery'] = $ds_field;
@@ -987,7 +987,7 @@ drupal_add_html_head($element, \'og_description\');
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|b40c00230269e3c21b215fbf9658442a',
+    'block' => 'views|5c321d1fa4154d361026bc60361258b8',
     'block_render' => '2',
   );
   $export['user_political_goals'] = $ds_field;
