@@ -104,13 +104,24 @@ return $result;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Unfiltered text */
-  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
-  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_party-revision_id]"></div>';
-  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Fußbereich: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_party-revision_id]"></div>';
+  $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
@@ -156,6 +167,8 @@ return $result;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer (historical data): Profile picture (field_user_picture:fid) */
@@ -190,6 +203,9 @@ return $result;
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
   $handler->display->display_options['fields']['php']['ui_name'] = 'Profile Picture PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $profiluser = $myuser = user_load($row->uid);
@@ -213,6 +229,16 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -249,18 +275,34 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Rewritten | Custom Text';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Member of [name] valid til [field_parliament_valid].';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'push-bottom-xs';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
 
   /* Display: Profile Extension */
   $handler = $view->new_display('block', 'Profile Extension', 'profile_extension');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Profile Extension Text';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | UID */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
@@ -278,12 +320,17 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat abgeordnetenwatch einmalig mit 179 Euro (149 Euro als Frühbucherrabatt). ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'light';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
 
   /* Display: Basic Info */
   $handler = $view->new_display('block', 'Basic Info', 'basic_info');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Grunddaten von [field_user_fname-revision_id] [field_user_lname-revision_id]';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'zebra clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
@@ -291,6 +338,16 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -437,6 +494,16 @@ return $result;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -444,7 +511,7 @@ return $result;
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div id="about" class="add-sharethis" title="About [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>
 ';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | First Name */
@@ -472,13 +539,17 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (historical data): About */
   $handler->display->display_options['fields']['field_user_about-revision_id']['id'] = 'field_user_about-revision_id';
   $handler->display->display_options['fields']['field_user_about-revision_id']['table'] = 'field_revision_field_user_about';
   $handler->display->display_options['fields']['field_user_about-revision_id']['field'] = 'field_user_about-revision_id';
   $handler->display->display_options['fields']['field_user_about-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_about-revision_id']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_about-revision_id']['element_class'] = 'pw-expander';
   $handler->display->display_options['fields']['field_user_about-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_about-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Benutzer (historical data): About (field_user_about) */
@@ -499,6 +570,16 @@ return $result;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -543,10 +624,10 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['ui_name'] = 'Excluded | Party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Subline */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -596,6 +677,16 @@ return $result;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '24';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -682,6 +773,17 @@ return $result;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['style_options']['fill_single_line'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -750,7 +852,8 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
@@ -760,12 +863,15 @@ return $result;
     0 => 'field_user_image_gallery-revision_id',
     1 => 'field_image_copyright',
   );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'user-image-gallery-wrapper';
   /* Feld: Benutzer (historical data): Image Gallery */
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['id'] = 'field_user_image_gallery-revision_id';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['table'] = 'field_revision_field_user_image_gallery';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['field'] = 'field_user_image_gallery-revision_id';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['settings'] = array(
@@ -819,13 +925,21 @@ return $result;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div id="political-goals" class="add-sharethis" title="Political Goals of [field_user_fname-revision_id][field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: Global: Text area */
@@ -974,9 +1088,11 @@ return $result;
   $handler->display->display_options['path'] = 'users/%/revision/political-goals';
 
   /* Display: Additional Links */
-  $handler = $view->new_display('block', 'Additional Links', 'block_4');
+  $handler = $view->new_display('block', 'Additional Links', 'additional_links');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Additional Links of  [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -987,6 +1103,8 @@ return $result;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -994,8 +1112,7 @@ return $result;
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div id="additional-links" class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
@@ -1161,6 +1278,16 @@ return $result;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: PHP remove page title */
   $handler->display->display_options['header']['php']['id'] = 'php';
@@ -1170,13 +1297,12 @@ return $result;
   $handler->display->display_options['header']['php']['php_output'] = '<?php
 drupal_set_title("");
 ?>';
-  /* Kopfbereich: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="" class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  /* Kopfbereich: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id"></div>';
+  $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
@@ -1224,7 +1350,6 @@ drupal_set_title("");
   $handler->display->display_options['fields']['field_user_party-revision_id']['ui_name'] = 'Excluded | Party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
@@ -1235,6 +1360,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['name_1']['relationship'] = 'field_user_parliament_tid';
   $handler->display->display_options['fields']['name_1']['ui_name'] = 'Excluded | Taxonomie: Name';
   $handler->display->display_options['fields']['name_1']['label'] = '';
+  $handler->display->display_options['fields']['name_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
   /* Feld: Excluded | Parliament: Valid date */
   $handler->display->display_options['fields']['field_parliament_valid']['id'] = 'field_parliament_valid';
@@ -1257,10 +1383,15 @@ drupal_set_title("");
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'file-image float-left portrait-l';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
+    'file_view_mode' => 'pw_file_portrait_l',
   );
   /* Feld: Global: Custom text: Headline */
   $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
@@ -1268,8 +1399,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_4']['ui_name'] = 'Global: Custom text: Headline';
   $handler->display->display_options['fields']['nothing_4']['label'] = '';
-  $handler->display->display_options['fields']['nothing_4']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '[field_user_fname-revision_id][field_user_lname-revision_id], [field_user_party-revision_id] ';
+  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_4']['element_wrapper_type'] = 'h1';
   $handler->display->display_options['fields']['nothing_4']['element_wrapper_class'] = 'push-bottom-xxs';
@@ -1289,6 +1419,9 @@ drupal_set_title("");
   $handler->display->display_options['fields']['php_1']['ui_name'] = 'PHP | Profile extension';
   $handler->display->display_options['fields']['php_1']['label'] = '';
   $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'light';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $profiluser = $myuser = user_load($row->uid);
@@ -1357,6 +1490,9 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
 [field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]
 ';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'float-left bubble tiny';
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
 
   /* Display: Short Profile Premium Subpage */
   $handler = $view->new_display('block', 'Short Profile Premium Subpage', 'short_profile_premium_sub');
@@ -1480,6 +1616,9 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h1';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'push-bottom-xxs';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: Custom: Parliament Information */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
@@ -1488,6 +1627,9 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate of [name]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
   /* Feld: PHP | Profile extension */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -1495,6 +1637,9 @@ drupal_set_title("");
   $handler->display->display_options['fields']['php']['ui_name'] = 'PHP | Profile extension';
   $handler->display->display_options['fields']['php']['label'] = '';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'light';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $profiluser = $myuser = user_load($row->uid);
@@ -1505,6 +1650,19 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: Global: Custom text: Ask a Question */
+  $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
+  $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Global: Custom text: Ask a Question';
+  $handler->display->display_options['fields']['nothing_2']['label'] = '';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
+  $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
+  $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
   /* Feld: User: Link: profile link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';
@@ -1513,61 +1671,27 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['view_user']['label'] = '';
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
-  /* Feld: Excluded | User: Answers Give */
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['table'] = 'field_revision_field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['field'] = 'field_user_answers_give-revision_id';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['ui_name'] = 'Excluded | User: Answers Give';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
-  /* Feld: Excluded | User: Questions Get */
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['id'] = 'field_user_questions_get-revision_id';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['table'] = 'field_revision_field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['field'] = 'field_user_questions_get-revision_id';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['ui_name'] = 'Excluded | User: Questions Get';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
-  /* Feld: Excluded | Link to questions and answers */
-  $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
-  $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Excluded | Link to questions and answers';
-  $handler->display->display_options['fields']['nothing_3']['label'] = '';
-  $handler->display->display_options['fields']['nothing_3']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'Zu den Fragen und Antworten';
-  $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_3']['alter']['path'] = '#pw-block-questions-and-answers';
-  $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'link-qa';
-  $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
-  /* Feld: Rewritten | dialogue count and qa link */
-  $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
-  $handler->display->display_options['fields']['nothing_4']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_4']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_4']['ui_name'] = 'Rewritten | dialogue count and qa link';
-  $handler->display->display_options['fields']['nothing_4']['label'] = '';
-  $handler->display->display_options['fields']['nothing_4']['alter']['text'] = '[nothing_3]<br/>
-[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] ';
-  $handler->display->display_options['fields']['nothing_4']['element_label_colon'] = FALSE;
 
   /* Display: Short Profile Deputy Mainpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Mainpage', 'short_profile_deputy_main');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'User Profile Fields';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'relative clearfix';
   $handler->display->display_options['display_description'] = 'used as header field on pages';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: PHP remove page title */
   $handler->display->display_options['header']['php']['id'] = 'php';
@@ -1605,6 +1729,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
   $handler->display->display_options['fields']['name_1']['ui_name'] = 'Excluded | User: Name';
   $handler->display->display_options['fields']['name_1']['label'] = '';
+  $handler->display->display_options['fields']['name_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name_1']['link_to_user'] = FALSE;
   /* Feld: Excluded | First Name */
@@ -1665,10 +1790,15 @@ drupal_set_title("");
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_class'] = 'file-image float-left portrait-l';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['settings'] = array(
-    'image_style' => '',
-    'image_link' => '',
+    'file_view_mode' => 'pw_file_portrait_l',
   );
   /* Feld: Global: Custom text: Headline */
   $handler->display->display_options['fields']['nothing_4']['id'] = 'nothing_4';
@@ -1689,6 +1819,9 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
   $handler->display->display_options['fields']['nothing_3']['alter']['text'] = 'Member of [name]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-xs';
+  $handler->display->display_options['fields']['nothing_3']['element_default_classes'] = FALSE;
   /* Feld: Global: Custom text: Ask a Question */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
@@ -1745,8 +1878,11 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Rewritten | dialogue count and qa link';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[nothing]<br/>
-[field_user_questions_get] / [field_user_answers_give]';
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'float-left bubble tiny';
+  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
 
   /* Display: Short Profile Deputy Subpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Subpage', 'short_profile_deputy_sub');
@@ -1856,6 +1992,9 @@ drupal_set_title("");
   $handler->display->display_options['fields']['php']['ui_name'] = 'Global: PHP: Profile picture';
   $handler->display->display_options['fields']['php']['label'] = '';
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'file-image float-left push-bottom-l portrait-l';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $profiluser = $myuser = user_load($row->uid);
@@ -1877,6 +2016,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Custom: Parliament Information */
@@ -1887,6 +2027,9 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Member of [name]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'push-bottom-xs';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: Custom | Profile extension */
   $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
   $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
@@ -1918,15 +2061,20 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['view_user']['ui_name'] = 'User: Link: profile link';
   $handler->display->display_options['fields']['view_user']['label'] = '';
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
+  $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
-  /* Feld: Name, Party */
+  /* Feld: Global: Custom text */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Name, Party';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'h1';
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'push-bottom-xxs';
+  $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
   $export['pw_user_profile_fields_rev'] = $view;
 
   $view = new view();
