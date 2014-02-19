@@ -114,6 +114,7 @@ function pw_profiles_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_user_picture',
+      1 => 'field_user_picture_copyright',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -614,6 +615,7 @@ function pw_profiles_field_group_info() {
       8 => 'field_user_links_more',
       9 => 'field_user_public_mail',
       10 => 'field_user_phone',
+      11 => 'field_user_title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
