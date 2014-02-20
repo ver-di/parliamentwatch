@@ -128,16 +128,36 @@ function pw_gdata_importer_feeds_importer_default() {
     'parser' => array(
       'plugin_key' => 'FeedsXPathParserXML',
       'config' => array(
-        'sources' => array(),
-        'rawXML' => array(),
-        'context' => '',
-        'exp' => array(
-          'errors' => FALSE,
-          'tidy' => FALSE,
-          'debug' => array(),
-          'tidy_encoding' => 'UTF8',
+        'sources' => array(
+          'xpathparser:3' => 'systemuuid',
+          'xpathparser:0' => 'parliament',
+          'xpathparser:1' => 'dateelection',
+          'xpathparser:2' => 'dateperiodstart',
+          'xpathparser:4' => 'dateperiodend',
+          'xpathparser:5' => 'systemuuid',
         ),
-        'allow_override' => TRUE,
+        'rawXML' => array(
+          'xpathparser:3' => 0,
+          'xpathparser:0' => 0,
+          'xpathparser:1' => 0,
+          'xpathparser:2' => 0,
+          'xpathparser:4' => 0,
+          'xpathparser:5' => 0,
+        ),
+        'context' => '//row',
+        'exp' => array(
+          'errors' => 0,
+          'debug' => array(
+            'context' => 0,
+            'xpathparser:3' => 0,
+            'xpathparser:0' => 0,
+            'xpathparser:1' => 0,
+            'xpathparser:2' => 0,
+            'xpathparser:4' => 0,
+            'xpathparser:5' => 0,
+          ),
+        ),
+        'allow_override' => 1,
       ),
     ),
     'processor' => array(
@@ -146,13 +166,38 @@ function pw_gdata_importer_feeds_importer_default() {
         'vocabulary' => 'parliaments',
         'mappings' => array(
           0 => array(
+            'source' => 'xpathparser:3',
+            'target' => 'uuid:uuid',
+            'unique' => FALSE,
+          ),
+          1 => array(
             'source' => 'xpathparser:0',
             'target' => 'name',
             'unique' => FALSE,
           ),
+          2 => array(
+            'source' => 'xpathparser:1',
+            'target' => 'field_parliament_election:start',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'xpathparser:2',
+            'target' => 'field_parliament_valid:start',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'xpathparser:4',
+            'target' => 'field_parliament_valid:end',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'xpathparser:5',
+            'target' => 'guid',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
-        'input_format' => 'managed_content',
+        'input_format' => 'plain_text',
         'skip_hash_check' => 0,
       ),
     ),
@@ -164,6 +209,82 @@ function pw_gdata_importer_feeds_importer_default() {
     'process_in_background' => 0,
   );
   $export['gdata_parliaments_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'gdata_party_importer';
+  $feeds_importer->config = array(
+    'name' => 'GData Party Importer',
+    'description' => 'Imports Parties from GData Spreadsheet',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsHTTPFetcher',
+      'config' => array(
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsXPathParserXML',
+      'config' => array(
+        'sources' => array(
+          'xpathparser:0' => 'systemuuid',
+          'xpathparser:1' => 'party',
+          'xpathparser:2' => 'systemuuid',
+        ),
+        'rawXML' => array(
+          'xpathparser:0' => 0,
+          'xpathparser:1' => 0,
+          'xpathparser:2' => 0,
+        ),
+        'context' => '//row',
+        'exp' => array(
+          'errors' => 0,
+          'debug' => array(
+            'context' => 0,
+            'xpathparser:0' => 0,
+            'xpathparser:1' => 0,
+            'xpathparser:2' => 0,
+          ),
+        ),
+        'allow_override' => 1,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'vocabulary' => 'party',
+        'mappings' => array(
+          0 => array(
+            'source' => 'xpathparser:0',
+            'target' => 'uuid:uuid',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'xpathparser:1',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'xpathparser:2',
+            'target' => 'guid',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['gdata_party_importer'] = $feeds_importer;
 
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
