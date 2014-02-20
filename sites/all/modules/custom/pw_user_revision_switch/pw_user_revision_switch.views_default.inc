@@ -692,7 +692,7 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="imagegallery" class="add-sharethis" title="Imagegallery of [field_user_fname-revision_id][field_user_lname-revision_id],[field_user_party-revision_id]"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div id="imagegallery" class="add-sharethis" title="Imagegallery of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -938,7 +938,7 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="political-goals" class="add-sharethis" title="Political Goals of [field_user_fname-revision_id][field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div id="political-goals" class="add-sharethis" title="Political Goals of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -1301,7 +1301,7 @@ drupal_set_title("");
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id"></div>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
@@ -1326,6 +1326,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   /* Feld: Excluded | User: First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
@@ -1335,6 +1336,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_fname-revision_id']['element_default_classes'] = FALSE;
   /* Feld: Excluded | User: Last Name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
@@ -1343,6 +1345,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_lname-revision_id']['element_default_classes'] = FALSE;
   /* Feld: Excluded | Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
@@ -1352,6 +1355,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Excluded | Taxonomie: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
@@ -1478,6 +1482,9 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Zu den Fragen und Antworten';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = '#pw-block-questions-and-answers';
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: Rewritten | dialogue count and qa link */
@@ -2100,6 +2107,9 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'pw-list-expander';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -2139,6 +2149,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['alter']['text'] = '[parliament_name_1] ';
+  $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'number_of_questions',
     1 => 'number_of_answers',
@@ -2148,6 +2159,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
     5 => 'nothing',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
+  $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
   /* Feld: Excluded | Number of Questions */
   $handler->display->display_options['fields']['number_of_questions']['id'] = 'number_of_questions';
   $handler->display->display_options['fields']['number_of_questions']['table'] = 'user_archive_cache';
@@ -2158,6 +2170,9 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['number_of_questions']['alter']['text'] = '[number_of_questions] Fragen /';
   $handler->display->display_options['fields']['number_of_questions']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['number_of_questions']['separator'] = '';
+  $handler->display->display_options['fields']['number_of_questions']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['number_of_questions']['format_plural_singular'] = '1 question';
+  $handler->display->display_options['fields']['number_of_questions']['format_plural_plural'] = '@count questions';
   /* Feld: Overwritten | Questions + Answers */
   $handler->display->display_options['fields']['number_of_answers']['id'] = 'number_of_answers';
   $handler->display->display_options['fields']['number_of_answers']['table'] = 'user_archive_cache';
@@ -2165,35 +2180,55 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['number_of_answers']['ui_name'] = 'Overwritten | Questions + Answers';
   $handler->display->display_options['fields']['number_of_answers']['label'] = '';
   $handler->display->display_options['fields']['number_of_answers']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['number_of_answers']['alter']['text'] = '[number_of_questions] Fragen / [number_of_answers] Antworten';
+  $handler->display->display_options['fields']['number_of_answers']['alter']['text'] = '[number_of_questions] / [number_of_answers]';
   $handler->display->display_options['fields']['number_of_answers']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['number_of_answers']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['number_of_answers']['element_wrapper_class'] = 'medium';
+  $handler->display->display_options['fields']['number_of_answers']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['number_of_answers']['separator'] = '';
+  $handler->display->display_options['fields']['number_of_answers']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['number_of_answers']['format_plural_singular'] = '1 answer';
+  $handler->display->display_options['fields']['number_of_answers']['format_plural_plural'] = '@count answers';
   /* Feld: User archive cache: Number of sideline jobs */
   $handler->display->display_options['fields']['number_of_sideline_jobs']['id'] = 'number_of_sideline_jobs';
   $handler->display->display_options['fields']['number_of_sideline_jobs']['table'] = 'user_archive_cache';
   $handler->display->display_options['fields']['number_of_sideline_jobs']['field'] = 'number_of_sideline_jobs';
   $handler->display->display_options['fields']['number_of_sideline_jobs']['label'] = '';
-  $handler->display->display_options['fields']['number_of_sideline_jobs']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['number_of_sideline_jobs']['alter']['text'] = '[number_of_sideline_jobs] Nebentätigkeiten';
   $handler->display->display_options['fields']['number_of_sideline_jobs']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['number_of_sideline_jobs']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['number_of_sideline_jobs']['element_wrapper_class'] = 'medium';
+  $handler->display->display_options['fields']['number_of_sideline_jobs']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['number_of_sideline_jobs']['separator'] = '';
+  $handler->display->display_options['fields']['number_of_sideline_jobs']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['number_of_sideline_jobs']['format_plural_singular'] = '1 sideline job';
+  $handler->display->display_options['fields']['number_of_sideline_jobs']['format_plural_plural'] = '@count sideline jobs';
   /* Feld: User archive cache: Number of speeches */
   $handler->display->display_options['fields']['number_of_speeches']['id'] = 'number_of_speeches';
   $handler->display->display_options['fields']['number_of_speeches']['table'] = 'user_archive_cache';
   $handler->display->display_options['fields']['number_of_speeches']['field'] = 'number_of_speeches';
   $handler->display->display_options['fields']['number_of_speeches']['label'] = '';
-  $handler->display->display_options['fields']['number_of_speeches']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['number_of_speeches']['alter']['text'] = '[number_of_speeches] Gehaltene Reden';
   $handler->display->display_options['fields']['number_of_speeches']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['number_of_speeches']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['number_of_speeches']['element_wrapper_class'] = 'medium';
+  $handler->display->display_options['fields']['number_of_speeches']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['number_of_speeches']['separator'] = '';
+  $handler->display->display_options['fields']['number_of_speeches']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['number_of_speeches']['format_plural_singular'] = '1 speech';
+  $handler->display->display_options['fields']['number_of_speeches']['format_plural_plural'] = '@count speeches';
   /* Feld: User archive cache: Number of missed votings */
   $handler->display->display_options['fields']['number_of_missed_votings']['id'] = 'number_of_missed_votings';
   $handler->display->display_options['fields']['number_of_missed_votings']['table'] = 'user_archive_cache';
   $handler->display->display_options['fields']['number_of_missed_votings']['field'] = 'number_of_missed_votings';
   $handler->display->display_options['fields']['number_of_missed_votings']['label'] = '';
-  $handler->display->display_options['fields']['number_of_missed_votings']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['number_of_missed_votings']['alter']['text'] = '[number_of_missed_votings] Verpasste Abstimmungen';
   $handler->display->display_options['fields']['number_of_missed_votings']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['number_of_missed_votings']['element_wrapper_class'] = 'medium';
+  $handler->display->display_options['fields']['number_of_missed_votings']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['number_of_missed_votings']['format_plural'] = TRUE;
+  $handler->display->display_options['fields']['number_of_missed_votings']['format_plural_singular'] = '1 missed voting';
+  $handler->display->display_options['fields']['number_of_missed_votings']['format_plural_plural'] = '@count missed votings';
   /* Feld: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -2205,6 +2240,9 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'text-right';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Sort criterion: User archive cache: Timestamp */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'user_archive_cache';
