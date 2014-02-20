@@ -107,7 +107,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['ui_name'] = 'sharethis link';
-  $handler->display->display_options['header']['area']['content'] = '<div id="calendar" class="add-sharethis" title="Calendar of [field_user_fname] [field_user_lname],[field_user_party]"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div id="calendar" class="add-sharethis" title="Calendar of [field_user_fname] [field_user_lname], [field_user_party]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
