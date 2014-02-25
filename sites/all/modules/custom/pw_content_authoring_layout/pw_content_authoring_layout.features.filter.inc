@@ -134,10 +134,12 @@ function pw_content_authoring_layout_filter_default_formats() {
         'weight' => '50',
         'status' => '1',
         'settings' => array(
-          'local_paths' => 'http://live.de.parliamentwatch.org/
+          'local_paths' => 'https://live.de.parliamentwatch.org/
+https://beta.abgeordnetenwatch.de/
+http://live.de.parliamentwatch.org/
 http://beta.abgeordnetenwatch.de/
 /',
-          'protocol_style' => 'full',
+          'protocol_style' => 'path',
         ),
       ),
     ),
