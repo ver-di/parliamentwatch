@@ -26,5 +26,4 @@ features[feeds_tamper][] = gdata_constituency_importer-xpathparser_6-explode
 features[feeds_tamper][] = gdata_profiles_importer-xpathparser_0-pflichtfeld
 features[feeds_tamper][] = gdata_profiles_importer-xpathparser_18-explode
 features[feeds_tamper][] = gdata_profiles_importer-xpathparser_9-execute_php_code
-features[feeds_tamper][] = gdata_profiles_importer-xpathparser_9-explode
 features[feeds_tamper][] = gdata_profiles_importer-xpathparser_9-pflichtfeld
