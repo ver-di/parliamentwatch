@@ -5,6 +5,8 @@
  * helper functions for donation form.
  */
 
+include_once 'pw_donation_form.features.inc';
+
 /**
  * Implements hook_form_alter()..
  */
