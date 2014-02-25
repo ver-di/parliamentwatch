@@ -23,6 +23,7 @@ function pw_gdata_importer_feeds_importer_default() {
         'auto_detect_feeds' => FALSE,
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
+        'request_timeout' => NULL,
       ),
     ),
     'parser' => array(
@@ -35,6 +36,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:3' => 'constituencynumber',
           'xpathparser:4' => 'systemuuid',
           'xpathparser:5' => 'systemuuid',
+          'xpathparser:6' => 'areacodes',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -43,6 +45,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:3' => 0,
           'xpathparser:4' => 0,
           'xpathparser:5' => 0,
+          'xpathparser:6' => 0,
         ),
         'context' => '//row',
         'exp' => array(
@@ -55,6 +58,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:3' => 0,
             'xpathparser:4' => 0,
             'xpathparser:5' => 0,
+            'xpathparser:6' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -63,7 +67,6 @@ function pw_gdata_importer_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsTermProcessor',
       'config' => array(
-        'vocabulary' => 'constituency',
         'mappings' => array(
           0 => array(
             'source' => 'xpathparser:0',
@@ -73,7 +76,7 @@ function pw_gdata_importer_feeds_importer_default() {
           1 => array(
             'source' => 'xpathparser:1',
             'target' => 'name',
-            'unique' => 1,
+            'unique' => 0,
           ),
           2 => array(
             'source' => 'xpathparser:2',
@@ -93,12 +96,20 @@ function pw_gdata_importer_feeds_importer_default() {
           5 => array(
             'source' => 'xpathparser:5',
             'target' => 'guid',
-            'unique' => FALSE,
+            'unique' => 1,
+          ),
+          6 => array(
+            'source' => 'xpathparser:6',
+            'target' => 'field_constituency_area_codes',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
+        'bundle' => 'constituency',
+        'vocabulary' => 0,
       ),
     ),
     'content_type' => '',
@@ -123,6 +134,7 @@ function pw_gdata_importer_feeds_importer_default() {
         'auto_detect_feeds' => FALSE,
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
+        'request_timeout' => NULL,
       ),
     ),
     'parser' => array(
@@ -146,7 +158,7 @@ function pw_gdata_importer_feeds_importer_default() {
         ),
         'context' => '//row',
         'exp' => array(
-          'errors' => 0,
+          'errors' => 1,
           'debug' => array(
             'context' => 0,
             'xpathparser:3' => 0,
@@ -163,7 +175,6 @@ function pw_gdata_importer_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsTermProcessor',
       'config' => array(
-        'vocabulary' => 'parliaments',
         'mappings' => array(
           0 => array(
             'source' => 'xpathparser:3',
@@ -173,7 +184,7 @@ function pw_gdata_importer_feeds_importer_default() {
           1 => array(
             'source' => 'xpathparser:0',
             'target' => 'name',
-            'unique' => FALSE,
+            'unique' => 1,
           ),
           2 => array(
             'source' => 'xpathparser:1',
@@ -193,12 +204,14 @@ function pw_gdata_importer_feeds_importer_default() {
           5 => array(
             'source' => 'xpathparser:5',
             'target' => 'guid',
-            'unique' => FALSE,
+            'unique' => 1,
           ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
+        'bundle' => 'parliaments',
+        'vocabulary' => 0,
       ),
     ),
     'content_type' => '',
@@ -223,6 +236,7 @@ function pw_gdata_importer_feeds_importer_default() {
         'auto_detect_feeds' => FALSE,
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
+        'request_timeout' => NULL,
       ),
     ),
     'parser' => array(
@@ -240,7 +254,7 @@ function pw_gdata_importer_feeds_importer_default() {
         ),
         'context' => '//row',
         'exp' => array(
-          'errors' => 0,
+          'errors' => 1,
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -254,7 +268,6 @@ function pw_gdata_importer_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsTermProcessor',
       'config' => array(
-        'vocabulary' => 'party',
         'mappings' => array(
           0 => array(
             'source' => 'xpathparser:0',
@@ -264,17 +277,19 @@ function pw_gdata_importer_feeds_importer_default() {
           1 => array(
             'source' => 'xpathparser:1',
             'target' => 'name',
-            'unique' => FALSE,
+            'unique' => 1,
           ),
           2 => array(
             'source' => 'xpathparser:2',
             'target' => 'guid',
-            'unique' => FALSE,
+            'unique' => 1,
           ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
+        'bundle' => 'party',
+        'vocabulary' => 0,
       ),
     ),
     'content_type' => '',
@@ -299,6 +314,7 @@ function pw_gdata_importer_feeds_importer_default() {
         'auto_detect_feeds' => FALSE,
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
+        'request_timeout' => NULL,
       ),
     ),
     'parser' => array(
@@ -376,7 +392,7 @@ function pw_gdata_importer_feeds_importer_default() {
         ),
         'context' => '//row',
         'exp' => array(
-          'errors' => 0,
+          'errors' => 1,
           'debug' => array(
             'context' => 0,
             'xpathparser:1' => 0,
@@ -444,7 +460,7 @@ function pw_gdata_importer_feeds_importer_default() {
           2 => array(
             'source' => 'xpathparser:24',
             'target' => 'name',
-            'unique' => 0,
+            'unique' => 1,
           ),
           3 => array(
             'source' => 'xpathparser:7',
@@ -559,17 +575,20 @@ function pw_gdata_importer_feeds_importer_default() {
           25 => array(
             'source' => 'xpathparser:0',
             'target' => 'field_user_parliament',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 0,
           ),
           26 => array(
             'source' => 'xpathparser:9',
             'target' => 'field_user_constituency',
-            'unique' => FALSE,
+            'term_search' => '2',
+            'autocreate' => 0,
           ),
           27 => array(
             'source' => 'xpathparser:12',
             'target' => 'field_user_list_position',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           28 => array(
             'source' => 'xpathparser:10',
@@ -605,6 +624,7 @@ function pw_gdata_importer_feeds_importer_default() {
         'update_existing' => 1,
         'input_format' => 'managed_content',
         'skip_hash_check' => 0,
+        'bundle' => 'user',
       ),
     ),
     'content_type' => '',
