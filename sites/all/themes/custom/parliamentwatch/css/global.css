@@ -232,6 +232,9 @@ blockquote p:last-child {
 .push-right-m {
     margin-right: 14px;
 }
+.portrait-s {
+    width: 70px;
+}
 .portrait-l {
     width: 140px;
 }
@@ -272,6 +275,21 @@ blockquote p:last-child {
     margin-left: 860px;
 }
 
+/* image styles */
+
+.pw_portrait_xs {
+    max-width: 40px;
+}
+.pw_portrait_s {
+    max-width: 70px;
+}
+.pw_portrait_m {
+    max-width: 100px;
+}
+
+
+/* text/links */
+
 .light,
 a.light,
 .light a {
@@ -290,6 +308,12 @@ a.medium,
 .dark,
 a.dark {
     color: #333;
+}
+.copyright {
+    color: #666;
+    font-weight: normal;
+    font-size: 11px;
+    font-size: 1.1rem;
 }
 .normal-weight {
     font-weight: normal;
@@ -533,18 +557,22 @@ a.ic-print {
 }
 #views-exposed-form-profile-questions-answers-profile,
 #views-exposed-form-profile-list-rev-grid,
-.views-exposed-widget {
+.views-exposed-widget,
+.views-exposed-form {
     position: relative;
 }
-#views-exposed-form-profile-questions-answers-profile .ic-info,
-#views-exposed-form-profile-list-rev-grid .ic-info {
+.views-exposed-widgets {
+    padding-top: 3em;
+}
+.views-exposed-widgets .views-reset-button {
     position: absolute;
+    top: 0;
+}
+.ic-info {
+    position: absolute;
+    top: 0;
     right: 0;
     z-index: 200;
-}
-#views-exposed-form-profile-questions-answers-profile .ic-info {
-    top: -25px;
-    top: -2.5rem;
 }
 #views-exposed-form-profile-list-rev-grid .ic-info {
     top: 0;
@@ -568,11 +596,29 @@ a.ic-print {
     width: 260px;
 }
 
-.ajax-progress {
-    display: inline-block;
-    margin-bottom: -8px;
-    position: relative;
-    top: -4px;
+.ajax-progress, .ajax-progress-throbber {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	filter:alpha(opacity=70);
+	opacity:.70;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 500;
+	vertical-align: middle;
+	text-align: center;
+}
+.ajax-progress .throbber {
+	position: relative;
+	top: 35%;
+	left: 41%;
+	width: 118px; /* dimensions of the ajax-loader.gif */
+	height: 119px;
+	margin: auto;
+	background: url(../images/ajax-throbber.gif) no-repeat;
+	color: #000;
+	z-index: 501;
 }
 
 .back {
@@ -587,6 +633,33 @@ a.ic-print {
 .arrow-item {
     padding-left: 15px;
     background-position: -770px -1896px;
+}
+.pw-list-expander {
+    margin: 5px 0;
+    margin-bottom: 0.5rem 0;
+}
+.pw-list-expander fieldset.collapse-processed a.fieldset-title {
+    padding-left: 26px;
+    font-weight: normal;
+    color: #333;
+    display: block;
+    line-height: 19px;
+    line-height: 1.9rem;
+}
+.pw-list-expander fieldset.collapse-processed a.fieldset-title:hover {
+    color: #999;
+}
+.pw-list-expander fieldset.collapse-processed.collapsible a.fieldset-title {
+    background-position: -851px -1812px;
+}
+.pw-list-expander fieldset.collapse-processed.collapsible.collapsed a.fieldset-title {
+    background-position: -891px -1771px;
+}
+.pw-list-expander fieldset.collapse-processed .fieldset-wrapper {
+    padding-left: 43px;
+}
+.pw-list-expander fieldset.collapse-processed .fieldset-wrapper .medium {
+    margin: 1px 0;
 }
 .twitter-item {
     background-position: -930px -3164px;
@@ -835,14 +908,13 @@ ul.tabs li a:active {
 
 /* //////////////////////////// pager ////////////////////// */
 
-.item-list {
-    padding-bottom: 30px;
-}
 .item-list .pager {
     clear: both;
     text-align: center;
     font-size: 12px;
     font-size: 1.2rem;
+    padding-bottom: 30px;
+    padding-bottom: 3rem;
 }
 .item-list ul.pager li {
     margin: 0 3px;
@@ -980,8 +1052,8 @@ ul.tabs li a:active {
 }
 .pager-load-more .ajax-progress {
     position: absolute;
-    left: 19px;
-    top: 3px;
+    left: 0;
+    top: 0;
 }
 .item-list ul.pager.pager-load-more a span {
     background: url(../images/sprite.png) right -3311px no-repeat;
@@ -993,6 +1065,12 @@ ul.tabs li a:active {
 
 /* quicktabs */
 
+.quicktabs-wrapper .item-list {
+    margin-bottom: 0;
+}
+.quicktabs-style-nostyle .item-list ul.pager li * {
+    line-height: 2em;
+}
 .quicktabs-style-nostyle ul.quicktabs-tabs {
     display: table;
     width: 100%;
@@ -1008,7 +1086,7 @@ ul.tabs li a:active {
 .quicktabs-style-nostyle .quicktabs-tabs li.last {
     padding-right: 0;
 }
-#quicktabs-politicians_answer a span {
+#quicktabs-politicians_answer .quicktabs-tabs a span {
     display: inline-block;
     line-height: 35px;
     line-height: 3.5rem;
@@ -1395,6 +1473,35 @@ a#text_resize_increase:active {
 }
 .views-exposed-form .form-radio {
     margin-right: 10px;
+}
+.views-exposed-form .form-radios .form-item,
+.views-exposed-form .form-checkboxes .form-item,
+.views-exposed-form .bef-checkboxes .form-item {
+    position: relative;
+}
+.views-exposed-form .form-radios .form-item input,
+.views-exposed-form .form-checkboxes .form-item input,
+.views-exposed-form .bef-checkboxes .form-item input {
+    margin-top: -4px;
+}
+.views-exposed-form .form-radios .form-item:hover,
+.views-exposed-form .form-checkboxes .form-item:hover,
+.views-exposed-form .bef-checkboxes .form-item:hover {
+    background: #eee;
+}
+.views-exposed-form .form-radios label,
+.views-exposed-form .form-checkboxes label,
+.views-exposed-form .bef-checkboxes label {
+    position: absolute;
+    display: block;
+    width: 279px;
+    top: 0;
+    padding-left: 21px;
+}
+.views-exposed-form .form-radios label:hover,
+.views-exposed-form .form-checkboxes label:hover,
+.views-exposed-form .bef-checkboxes label:hover {
+    cursor: pointer; 
 }
 .views-exposed-widget > label {
     display: block;
@@ -1890,7 +1997,7 @@ form .webform-component-checkboxes .description {
 #section-content form.compact-form,
 #section-content #comment-form {
     position: relative;
-    margin-bottom: 4.2em;
+    margin-bottom: 7em;
     padding: 12px 10px 10px 10px;
     color: #666;
 }
@@ -2393,6 +2500,7 @@ a.print-pdf,
 #block-system-user-menu .last a,
 #region-user-second .block h2,
 .arrow-item,
+.pw-list-expander fieldset.collapse-processed.collapsed a.fieldset-title,
 .twitter-item,
 .back,
 .views-more-link,

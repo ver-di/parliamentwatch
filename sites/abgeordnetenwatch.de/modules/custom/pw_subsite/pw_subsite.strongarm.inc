@@ -39,9 +39,16 @@ function pw_subsite_strongarm() {
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => 'Nzo0LNJaXAsOw5Qoipmw-3PApdiBxIA5tI3naVn-jeU',
+    'javascript' => 'QEfCZS8xLwyx1SNT9gDHLYsFjyQeJ4It2dvrPzQq5kU',
   );
   $export['language_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_announcement_de_pattern';
+  $strongarm->value = 'news/[node:created:custom:Y-m-d]/[node:title]';
+  $export['pathauto_node_announcement_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -259,7 +266,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_url_http';
-  $strongarm->value = 'http://stats.parliamentwatch.org/';
+  $strongarm->value = 'https://stats.parliamentwatch.org/';
   $export['piwik_url_http'] = $strongarm;
 
   $strongarm = new stdClass();

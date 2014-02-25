@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-
+     
 // attach values of bef slider to handles
 
     $('.slider-filter-processed .views-widget .form-item label').hide(); // hide values
@@ -18,19 +18,6 @@ jQuery(document).ready(function() {
     $.pw_befslidervalue(); // execute on page load
     $('.views-exposed-widget').on('slidecreate slide slidechange', function() { // execute on slider change by sliding or cklicking
         $.pw_befslidervalue();
-    });
-
-
-// toggle view of permalinks in dialogues
-
-    $('.shorten').click(function(){
-        $(this).parent().find('.pw-question-link .text-field').toggle();
-        $(this).parent().find('.pw-question-link .text-field').toggleClass('permalink');
-        $(this).find('span').toggleClass('processed');
-        return false;
-    });
-    $('.permalink-wrapper .text-field').click(function(){
-        $(this).selectText(); //working with https://github.com/emilkje/jquery.selectText
     });
 
 
@@ -162,7 +149,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 			return false;
 		}
 		var message_id = jQuery(this).attr('id').substr(jQuery(this).attr('id').indexOf('_') + 1);
-		var url = 'http://mod.parliamentwatch.org/piraten/api/message/' + message_id + '/report';
+		var url = 'https://mod.parliamentwatch.org/piraten/api/message/' + message_id + '/report';
 		jQuery.get(url);
 		alert('Vielen Dank! Ein Moderator wird sich darum kümmern.');
     });
@@ -179,7 +166,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 
 ////// Info icon
 
-    jQuery(".ic-info").click(function(){   
+    jQuery(document).on("click",".ic-info",function(){  
         jQuery(this).find(".info-content").fadeToggle("slow", "linear");
         jQuery(".ic-info .info-content").not(jQuery('.info-content', this)).fadeOut("slow", "linear");
     });
@@ -208,5 +195,9 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 
 });
 
+/////// change images on image maps
 
-
+function changeImage(imageSRC2){
+    var imageSRC = document.getElementById('map').src;
+    document.getElementById('map').src=imageSRC2;
+}

@@ -5,3 +5,12 @@
  */
 
 include_once 'pw_globals.features.inc';
+
+/**
+ * Implements hook_query_alter().
+ */
+function pw_globals_query_alter($query) {
+  if ($query->hasTag('node_export_features')) {
+    $query->condition('type', array('announcement', 'page', 'trustee', 'webform', 'pw_slider'), 'IN');
+  }
+}

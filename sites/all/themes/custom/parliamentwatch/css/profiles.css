@@ -313,28 +313,28 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 .field-name-additional-links- table {
     width: 100%
 }
-.view-user-profile-fields.view-display-id-additional_links li {
+.view-pw-user-profile-fields-rev.view-display-id-additional_links li {
     padding: 2px 0.5%;
     list-style: none;
 }
-.view-user-profile-fields.view-display-id-additional_links .views-row-even {
+.view-pw-user-profile-fields-rev.view-display-id-additional_links .views-row-even {
     background: #f4f4f4;
 }
-.view-user-profile-fields.view-display-id-additional_links .view-content a,
-.view-user-profile-fields.view-display-id-additional_links_page .zebra a {
+.view-pw-user-profile-fields-rev.view-display-id-additional_links .view-content a,
+.view-pw-user-profile-fields-rev.view-display-id-additional_links_page .zebra a {
     color: #333;
     font-weight: normal;
 }
-.view-user-profile-fields.view-display-id-basic_info dt,
-.view-user-profile-fields.view-display-id-basic_info dd {
+.view-pw-user-profile-fields-rev.view-display-id-basic_info dt,
+.view-pw-user-profile-fields-rev.view-display-id-basic_info dd {
     padding: 2px 0.5%;
 }
-.view-user-profile-fields.view-display-id-basic_info dt {
+.view-pw-user-profile-fields-rev.view-display-id-basic_info dt {
     width: 31%;
     float: left;
     clear: both;
 }
-.view-user-profile-fields.view-display-id-basic_info dd {
+.view-pw-user-profile-fields-rev.view-display-id-basic_info dd {
     width: 65%;
     float: left;
 }
@@ -465,6 +465,9 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 #edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label:active {
     background: #ccc;
     color: #fff;
+    position: relative;
+    top: 0;
+    width: auto;
 }
 #edit-field-user-first-letter-lname-value-wrapper .form-radios label:hover,
 #edit-field-user-first-letter-lname-value-wrapper .form-radios label:focus,

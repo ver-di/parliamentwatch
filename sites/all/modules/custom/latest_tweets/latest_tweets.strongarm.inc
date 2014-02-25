@@ -42,7 +42,7 @@ function latest_tweets_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_host';
-  $strongarm->value = 'http://twitter.com';
+  $strongarm->value = 'https://twitter.com';
   $export['twitter_host'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -56,14 +56,14 @@ function latest_tweets_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_search';
-  $strongarm->value = 'http://search.twitter.com';
+  $strongarm->value = 'https://search.twitter.com';
   $export['twitter_search'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_tinyurl';
-  $strongarm->value = 'http://tinyurl.com';
+  $strongarm->value = 'https://tinyurl.com';
   $export['twitter_tinyurl'] = $strongarm;
 
   return $export;

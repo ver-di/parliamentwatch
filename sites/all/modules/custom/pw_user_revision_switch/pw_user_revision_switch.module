@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PW User Revision Switch feature.
+ */
+
+include_once 'pw_user_revision_switch.features.inc';

@@ -1,0 +1,91 @@
+<?php
+
+function pw_civiCustomTokens_civicrm_tokens(&$tokens) {
+
+    $tokens['custom_membership'] = array(
+        'custom_membership.aktivemitgliedschaften' => 'Mitgliedschaft - Mandatsreferenz(en)',
+    );
+
+    $tokens['custom_contribution'] = array(
+        'custom_contribution.anstehendespenden' => 'Spende - Mandatsreferenz(en)',
+    );
+}
+
+function pw_civiCustomTokens_civicrm_tokenValues(&$values, $cids, $job = null, $tokens = array(), $context = null) {
+    $contacts = implode(',', $cids);
+
+	// Mandatsreferenz(en) - aktive Mitgliedschaften
+    if (!empty($tokens['custom_membership'])) {
+
+        $dao = &CRM_Core_DAO::executeQuery(
+                "
+        SELECT c.id,
+                m.id AS membership_id, 
+                custom.id AS custom_field_id,
+                custom.mandatsreferenz_dauerspende_21 AS mandatsreferenz,
+                option_value.label AS zahlungsintervall,
+                custom.mitgliedsbeitrag_5 AS beitrag
+                FROM civicrm_contact c
+                INNER JOIN civicrm_membership m ON c.id = m.contact_id
+                INNER JOIN civicrm_value_bankverbindungsdaten_2 custom ON m.id = custom.entity_id
+                INNER JOIN civicrm_option_value option_value ON custom.zahlungsintervall_6 = option_value.value
+                WHERE c.id IN ($contacts) AND m.status_id IN (1, 2, 5, 8) AND option_value.option_group_id = 68
+                "
+        );
+        while ($dao->fetch()) {
+            $cid = $dao->id;
+            if (empty($dao->mandatsreferenz)) {
+                  $mandatsreferenz = "PW".$cid."DS".$dao->membership_id;
+                  CRM_Core_DAO::executeQuery(
+                  "
+                  UPDATE civicrm_value_bankverbindungsdaten_2 SET mandatsreferenz_dauerspende_21='".$mandatsreferenz."' WHERE id=".$dao->custom_field_id."
+                  "
+                  );
+            } 
+            else{
+              $mandatsreferenz = $dao->mandatsreferenz;
+            }
+            $values[$cid]['custom_membership.aktivemitgliedschaften'] .= 'Mandatsreferenz: ' . $mandatsreferenz . ' ' . $dao->zahlungsintervall . ' ' . $dao->beitrag . ' Euro' . "\r\n";
+        }
+    }
+
+	// Token für Mandatsreferenz - anstehende Zuwendung / Spende
+	if (!empty($tokens['custom_contribution'])) {
+        $dao = &CRM_Core_DAO::executeQuery(
+                "
+SELECT c.id, cb.id AS contribution_id, custom.id AS custom_field_id, custom.mandatsreferenz_18 AS mandatsreferenz, cb.total_amount AS beitrag
+FROM civicrm_contact c
+INNER JOIN civicrm_contribution cb ON c.id = cb.contact_id
+INNER JOIN civicrm_value_belastetes_konto_4 custom ON cb.id = custom.entity_id
+INNER JOIN civicrm_contribution_type AS cb_type ON cb.contribution_type_id = cb_type.id
+INNER JOIN civicrm_option_value AS cb_status ON cb.contribution_status_id = cb_status.value
+INNER JOIN civicrm_option_group AS cb_status_group ON cb_status.option_group_id = cb_status_group.id
+INNER JOIN civicrm_option_value AS cb_instrument ON cb.payment_instrument_id = cb_instrument.value
+INNER JOIN civicrm_option_group AS cb_instrument_group ON cb_instrument.option_group_id = cb_instrument_group.id
+WHERE c.id IN ( $contacts )
+AND cb_type.name='Spende Parlamentwatch e.V.'
+AND cb_instrument.name='Lastschrift'
+AND cb_instrument_group.name='payment_instrument'
+AND cb_status.name='pending'
+AND cb_status_group.name='contribution_status'
+                "
+        );
+        while ($dao->fetch()) {
+            $cid = $dao->id;
+            if (empty($dao->mandatsreferenz)) {
+                  $mandatsreferenz = "PW".$cid."ES".$dao->contribution_id;
+                  CRM_Core_DAO::executeQuery(
+                  "
+                  UPDATE civicrm_value_belastetes_konto_4 SET mandatsreferenz_18='".$mandatsreferenz."' WHERE id=".$dao->custom_field_id."
+                  "
+                  );
+            } 
+            else{
+              $mandatsreferenz = $dao->mandatsreferenz;
+            }
+			$values[$cid]['custom_contribution.anstehendespenden'] .= 'Mandatsreferenz: ' . $mandatsreferenz . ' ' . $dao->beitrag . ' Euro' . "\r\n";
+        }
+
+    }
+}
+

@@ -1,0 +1,11 @@
+name = PW Calender Items Importer
+description = Imports Calender Items from legacy database
+core = 7.x
+package = Features
+version = 7.x-1.0-20140205
+project = pw_calender_items_importer
+dependencies[] = feeds
+dependencies[] = feeds_xpathparser
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:1
+features[feeds_importer][] = calender_items_importer
