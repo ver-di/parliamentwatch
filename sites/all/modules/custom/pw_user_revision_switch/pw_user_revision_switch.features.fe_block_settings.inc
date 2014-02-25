@@ -24,12 +24,6 @@ function pw_user_revision_switch_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
