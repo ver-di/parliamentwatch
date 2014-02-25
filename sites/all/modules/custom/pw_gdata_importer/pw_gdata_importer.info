@@ -9,6 +9,7 @@ dependencies[] = ctools
 dependencies[] = feeds
 dependencies[] = feeds_ridmap
 dependencies[] = feeds_tamper
+dependencies[] = feeds_tamper_php
 dependencies[] = feeds_tamper_ui
 dependencies[] = feeds_ui
 dependencies[] = feeds_xpathparser
