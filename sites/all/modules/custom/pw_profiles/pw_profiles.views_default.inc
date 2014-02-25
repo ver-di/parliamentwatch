@@ -542,7 +542,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  $handler->display->display_options['path'] = 'users/%/calendar';
+  $handler->display->display_options['path'] = 'profile/%/calendar';
 
   /* Display: Back to Calendar Block */
   $handler = $view->new_display('block', 'Back to Calendar Block', 'block_4');
@@ -4184,7 +4184,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  $handler->display->display_options['path'] = 'users/%/about';
+  $handler->display->display_options['path'] = 'profile/%/about';
 
   /* Display: Image Gallery */
   $handler = $view->new_display('block', 'Image Gallery', 'image_gallery');
@@ -4452,7 +4452,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  $handler->display->display_options['path'] = 'users/%/imagegallery';
+  $handler->display->display_options['path'] = 'profile/%/imagegallery';
 
   /* Display: Politcial Goals */
   $handler = $view->new_display('block', 'Politcial Goals', 'political_goals');
@@ -4626,7 +4626,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  $handler->display->display_options['path'] = 'users/%/political-goals';
+  $handler->display->display_options['path'] = 'profile/%/political-goals';
 
   /* Display: Additional Links */
   $handler = $view->new_display('block', 'Additional Links', 'additional_links');
@@ -4815,7 +4815,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  $handler->display->display_options['path'] = 'users/%/additional-links';
+  $handler->display->display_options['path'] = 'profile/%/additional-links';
 
   /* Display: Short Profile Premium Mainpage */
   $handler = $view->new_display('block', 'Short Profile Premium Mainpage', 'short_profile_premium_main');
