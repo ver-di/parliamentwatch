@@ -1428,6 +1428,36 @@ a#text_resize_increase:active {
 }
 
 
+/* /////////////////////////// pw-promo-block /////////// */
+
+.pw-promo-block {
+    background: #ccc;
+    -webkit-box-shadow: 0 0 2px 2px #DEDEDE;
+    -moz-box-shadow: 0 0 2px 2px #DEDEDE;
+    box-shadow: 0 0 2px 2px #DEDEDE;
+    min-height: 120px;
+    padding: 40px 0;
+    margin-bottom: 2em;
+}
+.pw-promo-block .content {
+    background: url(/sites/all/themes/custom/parliamentwatch/images/bg_fff50.png);
+}
+.pw-promo-block.pw-promo-headline .content {
+    margin-right: 230px;
+    padding: 16px 32px;
+}
+.pw-promo-block.pw-promo-headline h3 {
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 26px;
+    line-height: 2.6rem;
+    color: #f63;
+}
+.pw-promo-donation {
+    background: url(/sites/abgeordnetenwatch.de/files/promo_spenden.jpg) center;
+}
+
+
 /* /////////////////////////// views /////////////////// */
 
 .views-exposed-form .views-exposed-widget {
