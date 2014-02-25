@@ -23,6 +23,13 @@ function pw_announcements_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function pw_announcements_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function pw_announcements_node_info() {
@@ -32,7 +39,7 @@ function pw_announcements_node_info() {
       'base' => 'node_content',
       'description' => t('The last 4 announcement will be printed in a slider on the frontpage.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );

@@ -14,7 +14,9 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['block-pw_donation_mail'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'machine_name' => 'pw_donation_mail',
     'module' => 'block',
@@ -41,7 +43,9 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['block-pw_donation_smallprint'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'machine_name' => 'pw_donation_smallprint',
     'module' => 'block',
@@ -68,7 +72,9 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['block-pw_flattr'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'machine_name' => 'pw_flattr',
     'module' => 'block',
@@ -95,7 +101,9 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['block-pw_paypal'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'machine_name' => 'pw_paypal',
     'module' => 'block',
@@ -122,7 +130,9 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['block-social_media_footer'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'machine_name' => 'social_media_footer',
     'module' => 'block',
@@ -149,8 +159,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['delta_blocks-breadcrumb'] = array(
     'cache' => 4,
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'breadcrumb',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'delta_blocks',
     'node_types' => array(),
@@ -176,8 +188,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['delta_blocks-messages'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'messages',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'delta_blocks',
     'node_types' => array(),
@@ -203,8 +217,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['locale-language'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'language',
+    'i18n_block_language' => array(),
     'i18n_mode' => '1',
     'module' => 'locale',
     'node_types' => array(),
@@ -230,8 +246,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['menu-menu-about-us-de'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-about-us-de',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'menu',
     'node_types' => array(),
@@ -257,8 +275,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['menu-menu-elections-de'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-elections-de',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'menu',
     'node_types' => array(),
@@ -284,8 +304,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['menu-menu-main-menu-de'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-main-menu-de',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'menu',
     'node_types' => array(),
@@ -311,8 +333,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['menu-menu-meta-de'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-meta-de',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'menu',
     'node_types' => array(),
@@ -338,8 +362,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['menu-menu-support-us-de'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-support-us-de',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'menu',
     'node_types' => array(),
@@ -365,8 +391,10 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['submenutree-0'] = array(
     'cache' => 4,
+    'css_class' => '',
     'custom' => '0',
     'delta' => '0',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'submenutree',
     'node_types' => array(),
@@ -390,10 +418,41 @@ function pw_subsite_default_fe_block_settings() {
     'visibility' => '0',
   );
 
-  $export['views-slider-block'] = array(
+  $export['views--exp-profile_list_rev-grid'] = array(
     'cache' => -1,
+    'css_class' => '',
+    'custom' => '0',
+    'delta' => '-exp-profile_list_rev-grid',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '1',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'politicians/*',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => 'Filter list',
+    'visibility' => '1',
+  );
+
+  $export['views-slider-block'] = array(
+    'cache' => '-1',
+    'css_class' => '',
     'custom' => '0',
     'delta' => 'slider-block',
+    'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'views',
     'node_types' => array(),

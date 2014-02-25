@@ -18,10 +18,10 @@ function pw_profiles_default_fe_block_boxes() {
 	Wer verdient nebenher, wer hat die meisten Kinder, wo sitzen die Abweichler? Das Bundestagsradar verrät es Ihnen.
 </p>
 <p>
-	<a href="http://www.abgeordnetenwatch.de/popup-720-0.html" target="_blank"><img alt="" class="media-image attr__typeof__foaf:Image img__fid__7979 img__view_mode__default attr__format__default attr__title__" height="189" src="/sites/abgeordnetenwatch.de/files/bundestagsradar.png" title="" typeof="foaf:Image" width="259" /></a>
+	<a href="https://www.abgeordnetenwatch.de/popup-720-0.html" target="_blank"><img alt="" class="media-image attr__typeof__foaf:Image img__fid__7979 img__view_mode__default attr__format__default attr__title__" height="189" src="/sites/abgeordnetenwatch.de/files/bundestagsradar.png" title="" typeof="foaf:Image" width="259" /></a>
 </p>
 <p class="rteright">
-	<a href="http://www.abgeordnetenwatch.de/popup-720-0.html">zum Bundestagsradar</a>
+	<a href="https://www.abgeordnetenwatch.de/popup-720-0.html">zum Bundestagsradar</a>
 </p>
 ';
 

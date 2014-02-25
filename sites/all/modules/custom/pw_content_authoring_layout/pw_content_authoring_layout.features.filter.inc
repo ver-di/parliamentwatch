@@ -44,6 +44,18 @@ function pw_content_authoring_layout_filter_default_formats() {
         'status' => '1',
         'settings' => array(),
       ),
+      'pathologic' => array(
+        'weight' => '50',
+        'status' => '1',
+        'settings' => array(
+          'local_paths' => 'https://live.de.parliamentwatch.org/
+https://beta.abgeordnetenwatch.de/
+http://live.de.parliamentwatch.org/
+http://beta.abgeordnetenwatch.de/
+/',
+          'protocol_style' => 'path',
+        ),
+      ),
     ),
   );
 
@@ -96,6 +108,18 @@ function pw_content_authoring_layout_filter_default_formats() {
         'weight' => '0',
         'status' => '1',
         'settings' => array(),
+      ),
+      'pathologic' => array(
+        'weight' => '50',
+        'status' => '1',
+        'settings' => array(
+          'local_paths' => 'https://live.de.parliamentwatch.org/
+https://beta.abgeordnetenwatch.de/
+http://live.de.parliamentwatch.org/
+http://beta.abgeordnetenwatch.de/
+/',
+          'protocol_style' => 'full',
+        ),
       ),
     ),
   );

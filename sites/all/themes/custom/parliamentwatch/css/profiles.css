@@ -465,6 +465,9 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 #edit-field-user-first-letter-lname-value-wrapper .form-radios input[type="radio"]:checked + label:active {
     background: #ccc;
     color: #fff;
+    position: relative;
+    top: 0;
+    width: auto;
 }
 #edit-field-user-first-letter-lname-value-wrapper .form-radios label:hover,
 #edit-field-user-first-letter-lname-value-wrapper .form-radios label:focus,

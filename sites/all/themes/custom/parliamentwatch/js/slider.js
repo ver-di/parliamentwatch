@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
             jQuery('.slider-stage').animate({
                 paddingTop: "188px"
             }, 500, function() {
-                    jQuery('.view-slider .views-slideshow-controls-top').fadeIn('slow');
+                    jQuery('#block-views-slider-block .view-slider .views-slideshow-controls-top').fadeIn('slow');
                     jQuery('#views_slideshow_cycle_main_slider-block').fadeIn('slow');
             });          
         } return false;
@@ -20,7 +20,7 @@ jQuery(document).ready(function() {
 
         jQuery('#views_slideshow_cycle_main_slider-block').fadeOut('slow');  
         jQuery('#views_slideshow_cycle_main_slider-block').css('display','none');    
-        jQuery('.views-slideshow-controls-top').fadeOut('slow', function() {
+        jQuery('#block-views-slider-block .views-slideshow-controls-top').fadeOut('slow', function() {
             jQuery('.slider-stage').animate({
                 paddingTop: "0"
             }, 500); 

@@ -13,6 +13,13 @@ function pw_subsite_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'block_cache';
+  $strongarm->value = 1;
+  $export['block_cache'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'date_default_timezone';
   $strongarm->value = 'Europe/Berlin';
   $export['date_default_timezone'] = $strongarm;
@@ -39,9 +46,16 @@ function pw_subsite_strongarm() {
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => 'ZkMQsI_K5XiYw1Ec-aYfCmKKAPoEbN2CEl5EMvu-XnY',
+    'javascript' => '57M0dAzGapsp2XpVrVCB8pHq0Hj61lFYT-AnLJUklVE',
   );
   $export['language_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_announcement_de_pattern';
+  $strongarm->value = 'news/[node:created:custom:Y-m-d]/[node:title]';
+  $export['pathauto_node_announcement_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -259,7 +273,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'piwik_url_http';
-  $strongarm->value = 'http://stats.parliamentwatch.org/';
+  $strongarm->value = 'https://stats.parliamentwatch.org/';
   $export['piwik_url_http'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -85,16 +85,12 @@ function pw_donation_form_form_validate($form_id, $form_values){
  * Implements hook_webform_csv_data_alter()..
  * alters data before export of CSV file
  */
-define('WEBFORM_DONATION_EXPORT_TIME', date('Y-m-d H:i'));
 function pw_donation_form_webform_csv_data_alter(&$data, $component) {
   if($component['nid'] == 10394){
     switch($component['form_key']) {
       case 'option_newsletter':
       case 'option_not_anonymous':
         $data = $data[0] == 'X'?'yes':'no';
-        break;
-      case 'civicrm_description':
-        $data = 'Webform - '.WEBFORM_DONATION_EXPORT_TIME;
         break;
     }
   }
@@ -139,6 +135,9 @@ function pw_donation_form_webform_submission_presave($node, &$submission){
       case 'civicrm_date_start':
         $cid_civicrm_date_start = $cid;
         break;
+      case 'civicrm_description':
+        $cid_civicrm_description = $cid;
+        break;
     }
   }
 
@@ -173,5 +172,10 @@ function pw_donation_form_webform_submission_presave($node, &$submission){
   // set date start
   if(isset($cid_civicrm_date_start)){
     $submission->data[$cid_civicrm_date_start]['value'][0] = date('Y-m-d H:i', $submission->submitted);
+  }
+
+  // set description text
+  if(isset($cid_civicrm_description)){
+    $submission->data[$cid_civicrm_description]['value'][0] = 'Webform - '.date('Y-m-d H:i');
   }
 }

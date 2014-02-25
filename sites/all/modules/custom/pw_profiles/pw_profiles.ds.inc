@@ -305,14 +305,6 @@ function pw_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'same_constituency' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
     'short_profile' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -754,9 +746,11 @@ function pw_profiles_ds_custom_fields_info() {
       'value' => '<form action="" id="form-view-mode-switcher" method="post" name="view-mode-switcher" class="views-exposed-form">
 	<div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php t(\'Infotext\'); ?></div></div></div>
        <fieldset class="views-exposed-widget">
-                <label>Change view</label>
-		<div class="form-item"><input class="view-mode-full form-radio" name="group1" id="group1_1" type="radio" value="full" checked="checked" /><label for="group1_1" class="option">Full View</label></div>
-		<div class="form-item"><input class="view-mode-teaser form-radio" name="group1" id="group1_2" type="radio" value="teaser" /><label for="group1_2" class="option">Teaser View</label></div>
+                <label><?php print t(\'Change view\'); ?></label>
+                <div class="form-radios">
+		    <div class="form-item"><input class="view-mode-full form-radio" name="group1" id="group1_1" type="radio" value="full" checked="checked" /><label for="group1_1" class="option"><?php print t(\'Full View\'); ?></label></div>
+		    <div class="form-item"><input class="view-mode-teaser form-radio" name="group1" id="group1_2" type="radio" value="teaser" /><label for="group1_2" class="option"><?php print t(\'Teaser View\'); ?></label></div>
+              </div>
 	</fieldset>
 </form>',
       'format' => 'php_code',
@@ -1197,34 +1191,32 @@ function pw_profiles_ds_layout_settings_info() {
     'regions' => array(
       'right_1' => array(
         0 => 'pw_slider',
-        10 => 'user_wrong_data',
-        11 => 'user_profile_api_link',
+        9 => 'user_wrong_data',
+        10 => 'user_profile_api_link',
       ),
       'left_1' => array(
-        1 => 'same_constituency',
-        2 => 'short_profile',
-        3 => 'user_basic_info',
-        4 => 'user_about',
-        5 => 'user_image_gallery',
-        6 => 'user_political_goals',
-        7 => 'user_tweets',
-        8 => 'additional_links',
-        9 => 'user_calendar',
+        1 => 'short_profile',
+        2 => 'user_basic_info',
+        3 => 'user_about',
+        4 => 'user_image_gallery',
+        5 => 'user_political_goals',
+        6 => 'user_tweets',
+        7 => 'additional_links',
+        8 => 'user_calendar',
       ),
       'left_2' => array(
-        12 => 'user_questions_and_answers',
+        11 => 'user_questions_and_answers',
       ),
       'right_2' => array(
-        13 => 'question_and_answers_filter',
-        14 => 'question_and_answers_switcher',
+        12 => 'question_and_answers_filter',
+        13 => 'question_and_answers_switcher',
       ),
       'ds_hidden' => array(
-        15 => 'field_user_party',
+        14 => 'field_user_party',
       ),
     ),
     'fields' => array(
       'pw_slider' => 'right_1',
-      'same_constituency' => 'left_1',
       'short_profile' => 'left_1',
       'user_basic_info' => 'left_1',
       'user_about' => 'left_1',
