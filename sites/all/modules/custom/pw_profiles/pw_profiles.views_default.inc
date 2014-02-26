@@ -1842,7 +1842,7 @@ if($record->value == 0){
       'more_options' => array(
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Über den Schieber können Sie sich die Politikerinnen und Politiker auf dieser Seite entsprechend ihrer Antwortquote auf abgeordnetenwatch.de anzeigen lassen.</div></div>',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -3565,7 +3565,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius.';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Wenn Ihnen ein Fehler bzgl. der Angaben zu [field_user_fname] [field_user_lname] aufgefallen ist, teilen Sie uns diesen bitte über das Formular mit:';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'icon-edit';
@@ -3624,7 +3624,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius.';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Daten zu [field_user_fname] [field_user_lname] stehen Ihnen auch als XML zur Verfügung.';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'icon-edit';
@@ -3635,7 +3635,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Link';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'link to the API';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Link zur API';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'api/profile/[name]/profile.xml';
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;

@@ -18,7 +18,7 @@ function pw_eu_frontpage_default_fe_block_boxes() {
 	Informationen zur EU Wahl
 </h3>
 <p>
-	Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no. Viris partiendo ius no, alia animal nam at. Feugait imperdiet ius an, no quis facer lucilius vis. Aliquam saperet contentiones ex pro, id idque offendit ius. Fugit suavitate ad eam, ut essent debitis cum. Cu duo iudico instructior. Sea te choro perfecto, per eu meis nonumy percipit.&nbsp;
+	Am 25. Mai findet die Wahl zum Europäischen Parlament statt. Über abgeordnetenwatch.de können Sie alle Kandidierenden öffentlich befragen.
 </p>
 <p>
 	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a><br />
