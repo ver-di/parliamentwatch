@@ -29,6 +29,20 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer-blank_source_1-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer';
+  $feeds_tamper->source = 'Blank source 1';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'DE',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default country code';
+  $export['gdata_profiles_importer-blank_source_1-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_profiles_importer-xpathparser_0-pflichtfeld';
   $feeds_tamper->importer = 'gdata_profiles_importer';
   $feeds_tamper->source = 'xpathparser:0';
@@ -81,6 +95,22 @@ return false;',
   $feeds_tamper->weight = 5;
   $feeds_tamper->description = 'Execute php code';
   $export['gdata_profiles_importer-xpathparser_9-execute_php_code'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer-xpathparser_9-explode';
+  $feeds_tamper->importer = 'gdata_profiles_importer';
+  $feeds_tamper->source = 'xpathparser:9';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 4;
+  $feeds_tamper->description = 'Explode';
+  $export['gdata_profiles_importer-xpathparser_9-explode'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
