@@ -64,41 +64,47 @@ function pw_subsite_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-33' => array(
+          'module' => 'block',
+          'delta' => '33',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-8',
         ),
         'block-30' => array(
           'module' => 'block',
           'delta' => '30',
           'region' => 'content',
-          'weight' => '-9',
-        ),
-        'block-29' => array(
-          'module' => 'block',
-          'delta' => '29',
-          'region' => 'sidebar_second',
-          'weight' => '-69',
-        ),
-        'block-14' => array(
-          'module' => 'block',
-          'delta' => '14',
-          'region' => 'sidebar_second',
-          'weight' => '-68',
-        ),
-        'block-31' => array(
-          'module' => 'block',
-          'delta' => '31',
-          'region' => 'sidebar_second',
-          'weight' => '-67',
+          'weight' => '-7',
         ),
         'block-32' => array(
           'module' => 'block',
           'delta' => '32',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '2',
+        ),
+        'block-31' => array(
+          'module' => 'block',
+          'delta' => '31',
+          'region' => 'sidebar_second',
+          'weight' => '15',
+        ),
+        'block-29' => array(
+          'module' => 'block',
+          'delta' => '29',
+          'region' => 'sidebar_second',
+          'weight' => '26',
+        ),
+        'block-14' => array(
+          'module' => 'block',
+          'delta' => '14',
+          'region' => 'sidebar_second',
+          'weight' => '40',
         ),
       ),
     ),
