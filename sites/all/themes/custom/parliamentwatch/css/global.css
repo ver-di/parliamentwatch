@@ -747,7 +747,9 @@ h1#page-title {
 #cboxNode {
     padding: 20px;
 }
-#colorbox form label {
+#colorbox form .webform-component-textfield label,
+#colorbox form .webform-component-email label,
+#colorbox form .webform-component-textarea label {
     display: block;
 }
 #colorbox form textarea {
@@ -2034,7 +2036,8 @@ form .webform-component-checkboxes .description {
 .answer {
     position: relative;
 }
-.answer .content-inner {
+.answer .content-inner,
+.comment .content-inner {
     padding: 25px 24px;
 }
 .answer .more-info {

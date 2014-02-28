@@ -754,7 +754,7 @@ function pw_profiles_ds_custom_fields_info() {
   $ds_field->properties = array(
     'code' => array(
       'value' => '<form action="" id="form-view-mode-switcher" method="post" name="view-mode-switcher" class="views-exposed-form">
-	<div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php t(\'Infotext\'); ?></div></div></div>
+	<div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php print t(\'Bei "normaler Ansicht" erhalten Sie die Fragen und Antworten in voller Länge. Um sich schnell einen Überblick zu verschaffen, wählen Sie "verschlagwortete Ansicht". Dann wird Ihnen ein redaktionell ausgewählter Ausschnitt aus den Fragen und Antworten angezeigt.\'); ?></div></div></div>
        <fieldset class="views-exposed-widget">
                 <label><?php print t(\'Change view\'); ?></label>
                 <div class="form-radios">

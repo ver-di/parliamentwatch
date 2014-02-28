@@ -600,6 +600,7 @@ return $result;
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: User revision: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -688,6 +689,20 @@ return $result;
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Benutzer: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
   /* Contextual filter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
@@ -963,7 +978,44 @@ return $result;
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['path'] = 'profile/%/revisions/%/imagegallery';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Benutzer: Uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'users';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
+  /* Contextual filter: User revision: Vid */
+  $handler->display->display_options['arguments']['vid']['id'] = 'vid';
+  $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
+  $handler->display->display_options['arguments']['vid']['field'] = 'vid';
+  $handler->display->display_options['arguments']['vid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['vid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['vid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['vid']['default_argument_options']['code'] = '$cpath = explode(\'/\',current_path());
+$path_uid = $cpath[1];
+if (array_key_exists(3, $cpath))
+{
+  $path_vid  =  $cpath[3];
+  return $path_vid;
+}
+else{
+$result =db_query("SELECT vid FROM {user_revision} u WHERE uid = (:uids) ORDER BY vid DESC LIMIT 0,1", array(\':uids\' => $path_uid))->fetchField();
+return $result;
+}
+';
+  $handler->display->display_options['arguments']['vid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['vid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['vid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['path'] = 'profile/%/imagegallery/%';
 
   /* Display: Political Goals */
   $handler = $view->new_display('block', 'Political Goals', 'political_goals');
@@ -1137,7 +1189,7 @@ return $result;
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
-  $handler->display->display_options['path'] = 'profile/%/revision/political-goals';
+  $handler->display->display_options['path'] = 'profile/%/political-goals/%';
 
   /* Display: Additional Links */
   $handler = $view->new_display('block', 'Additional Links', 'additional_links');
@@ -1317,7 +1369,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['delta_offset'] = '0';
-  $handler->display->display_options['path'] = 'profile/%/revisions/%/additional-links';
+  $handler->display->display_options['path'] = 'profile/%/additional-links/%';
 
   /* Display: Short Profile Premium Mainpage */
   $handler = $view->new_display('block', 'Short Profile Premium Mainpage', 'short_profile_premium_main');
@@ -1495,6 +1547,10 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
+  $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10453?width=600&height=600';
+  $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
@@ -1888,6 +1944,10 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
+  $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10453?width=600&height=600';
+  $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
@@ -2444,7 +2504,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Profil öffnen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'profile/[uid]/archive/[vid]/view';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'profile/[uid]/archive/[vid]';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
