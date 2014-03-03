@@ -37,11 +37,18 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
  * Show a revision.
  */
 function pw_user_revision_show($user, $vid) {
-  // is $user numeric or is it the user name?
-//  if (!is_numeric($user)) {
-//    $user = user_load_by_name($user);
-//  }
-  $account = user_revision_load($user->uid, $vid);
+  if ($user->uid == "0") {
+    // Load user by vid:
+    $query = db_select('user_revision', 'ur');
+    $query->addField('ur', 'uid');
+    $query->condition('ur.vid', $vid);
+    $res = $query->execute();
+    while ($row = $res->fetchAssoc()) {
+      $account = user_revision_load($row["uid"], $vid);
+    }
+  } else {
+    $account = user_revision_load($user->uid, $vid);
+  }
   return pw_profileswitch_user_custom_view($account);
 }
 
