@@ -1280,7 +1280,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '11',
+        'weight' => '10',
       ),
     ),
   );
@@ -1389,7 +1389,7 @@ function pw_profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '9',
       ),
     ),
   );
@@ -1520,6 +1520,86 @@ function pw_profiles_field_default_fields() {
         ),
         'type' => 'text_textfield',
         'weight' => '48',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_user_election_result'.
+  $fields['user-user-field_user_election_result'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_election_result',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 33,
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_user_election_result',
+      'label' => 'Election Result',
+      'required' => FALSE,
+      'settings' => array(
+        'text_processing' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'size' => 60,
+        ),
+        'type' => 'text_textfield',
+        'weight' => '13',
       ),
     ),
   );
@@ -2477,7 +2557,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '12',
+        'weight' => '11',
       ),
     ),
   );
@@ -3492,7 +3572,7 @@ function pw_profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '13',
+        'weight' => '12',
       ),
     ),
   );
@@ -4348,7 +4428,7 @@ $entity_field[0][\'value\'] = $result;',
           'year_range' => '-100:+10',
         ),
         'type' => 'date_select',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -4367,6 +4447,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Constituency');
   t('Date');
   t('Education');
+  t('Election Result');
   t('External Links');
   t('External URL');
   t('First Name');
