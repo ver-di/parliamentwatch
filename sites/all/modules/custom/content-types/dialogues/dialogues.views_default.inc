@@ -2709,7 +2709,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['relationship'] = 'nid';
-  $handler->display->display_options['fields']['created']['label'] = 'to a question from ';
+  $handler->display->display_options['fields']['created']['label'] = 'zu einer Frage von ';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['created']['element_wrapper_class'] = 'subline';

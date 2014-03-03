@@ -158,7 +158,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['separator'] = '; ';
-  /* Feld: Excluded Profile Picture Copyright */
+  /* Feld: Broken/missing handler */
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['id'] = 'field_user_picture_copyright-revision_id';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['table'] = 'field_revision_field_user_picture_copyright';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['field'] = 'field_user_picture_copyright-revision_id';
@@ -3323,7 +3323,7 @@ $query = db_select(\'user_revision\', \'ur\');
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['separator'] = '; ';
-  /* Feld: Excluded Profile Picture Copyright */
+  /* Feld: Broken/missing handler */
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['id'] = 'field_user_picture_copyright-revision_id';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['table'] = 'field_revision_field_user_picture_copyright';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['field'] = 'field_user_picture_copyright-revision_id';
@@ -3964,7 +3964,7 @@ echo $base_url;
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = 'question';
+  $handler->display->display_options['fields']['body']['label'] = ' Frage';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_plain';
   /* Feld: Kommentar: Datum */
@@ -3980,7 +3980,7 @@ echo $base_url;
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
   $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['relationship'] = 'cid';
-  $handler->display->display_options['fields']['comment_body']['label'] = 'answer';
+  $handler->display->display_options['fields']['comment_body']['label'] = ' Antwort';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['type'] = 'text_plain';
   /* Feld: Feld: Annotation */

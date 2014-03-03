@@ -11,8 +11,8 @@ function pw_donation_form_node_export_features_default() {
   $node_export = array(
   'code_string' => 'array(
   (object) array(
-      \'vid\' => \'10408\',
-      \'uid\' => \'1\',
+      \'vid\' => \'10461\',
+      \'uid\' => \'0\',
       \'title\' => \'Vielen Dank für Ihre Spende!\',
       \'log\' => \'\',
       \'status\' => \'1\',
@@ -29,8 +29,8 @@ function pw_donation_form_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'636c1802-7052-4e35-9bae-71412a90a013\',
-      \'revision_timestamp\' => \'1391676949\',
-      \'revision_uid\' => \'1344\',
+      \'revision_timestamp\' => \'1393848220\',
+      \'revision_uid\' => \'0\',
       \'body\' => array(
         \'und\' => array(
           array(
@@ -153,22 +153,22 @@ function pw_donation_form_node_export_features_default() {
       \'siblingmenutree_title\' => \'\',
       \'siblingmenutree_display\' => \'18\',
       \'siblingmenutree_weight\' => \'0\',
-      \'name\' => \'root\',
+      \'name\' => \'\',
       \'picture\' => \'0\',
-      \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
+      \'data\' => NULL,
       \'weight_weight\' => FALSE,
+      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'79270\',
         \'source\' => \'node/10393\',
         \'alias\' => \'ueber-uns/spendenformular/vielen-dank\',
         \'language\' => \'und\',
       ),
-      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10439\',
-      \'uid\' => \'1\',
+      \'vid\' => \'10462\',
+      \'uid\' => \'0\',
       \'title\' => \'Unterstützen Sie abgeordnetenwatch.de!\',
       \'log\' => \'neuen Header eingebaut\',
       \'status\' => \'1\',
@@ -185,8 +185,8 @@ function pw_donation_form_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'be5a5fb5-27f9-473b-86e2-d48262a8dc45\',
-      \'revision_timestamp\' => \'1392288431\',
-      \'revision_uid\' => \'24952\',
+      \'revision_timestamp\' => \'1393848220\',
+      \'revision_uid\' => \'0\',
       \'body\' => array(
         \'und\' => array(
           array(
@@ -1373,17 +1373,17 @@ function pw_donation_form_node_export_features_default() {
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
       \'print_display_urllist\' => 0,
-      \'name\' => \'root\',
+      \'name\' => \'\',
       \'picture\' => \'0\',
-      \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
+      \'data\' => NULL,
       \'weight_weight\' => FALSE,
+      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'79271\',
         \'source\' => \'node/10394\',
         \'alias\' => \'ueber-uns/spendenformular\',
         \'language\' => \'und\',
       ),
-      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
 )',

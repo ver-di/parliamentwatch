@@ -418,37 +418,8 @@ function pw_subsite_default_fe_block_settings() {
     'visibility' => '0',
   );
 
-  $export['views--exp-profile_list_rev-grid'] = array(
-    'cache' => -1,
-    'css_class' => '',
-    'custom' => '0',
-    'delta' => '-exp-profile_list_rev-grid',
-    'i18n_block_language' => array(),
-    'i18n_mode' => '1',
-    'module' => 'views',
-    'node_types' => array(),
-    'pages' => 'politicians/*',
-    'roles' => array(),
-    'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => '0',
-      ),
-    ),
-    'title' => 'Filter list',
-    'visibility' => '1',
-  );
-
   $export['views-slider-block'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'delta' => 'slider-block',
