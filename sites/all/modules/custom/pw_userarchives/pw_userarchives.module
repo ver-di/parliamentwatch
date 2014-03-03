@@ -1,0 +1,82 @@
+<?php
+
+/**
+ * @file
+ * Includes main hooks.
+ */
+
+// -- hooks
+
+function pw_userarchives_cron() {
+    $query = check_user_archives_database();    
+
+    // Delete the archive entries for the chosen users first:
+    $res = $query->execute();
+    while ($row = $res->fetchAssoc()) {
+      db_delete('user_archive_cache')
+        ->condition('uid', $row["uid"])
+        ->execute();
+    }
+    
+    // Insert new archive entries:
+    $dbconnection = db_insert('user_archive_cache');
+    $dbconnection->from($query)->execute(); // INSERT INTO ... FROM SELECT ...
+    
+    // Calculate number of questions and answers and insert them into:
+    // (1) the revision table (for showing them in the profile view)
+    // (2) the userarchive table (for showing them in the sidebar)
+    // 
+    // Question query:
+    //SELECT field_dialogue_message_type_value AS type, COUNT(nid) AS count 
+    //FROM node AS n 
+    //INNER JOIN field_data_field_dialogue_recipient AS r ON r.entity_type = 'node' AND r.entity_id = n.nid 
+    //INNER JOIN field_data_field_dialogue_message_type AS f ON f.entity_type = 'node' AND f.entity_id = n.nid 
+    //WHERE r.field_dialogue_recipient_target_id = :uid AND n.status = 1
+    // GROUP BY f.field_dialogue_message_type_value
+    // 
+    //$comment_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(cid) AS count FROM {comment} AS c INNER JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = \'comment\' AND f.entity_id = c.cid WHERE uid = :uid AND c.status = 1 GROUP BY f.field_dialogue_message_type_value', array(':uid' => $uid))->fetchAllKeyed();
+
+    return "Done";
+}
+
+// -- functions
+
+/**
+ * Creates schema for user archive if necessary, selects and returns users and 
+ * their revisions that have changed in the last 24 hours.
+ * @return type
+ */
+function check_user_archives_database() {
+    
+    $a_day_ago = time() - (24 * 60 * 60);
+    
+    $query = db_select('user_revision', 'ur');
+    $query->addField('ur', 'uid');
+    $query->addField('ur', 'name', 'user_name');
+    $query->addField('ur', 'vid');
+    $query->addField('td', 'name', 'parliament_name');
+    $query->addField('ur', 'timestamp');
+    $query->join('field_revision_field_user_parliament', 'up', 'ur.uid = up.entity_id AND ur.vid = up.revision_id');
+    $query->join('taxonomy_term_data', 'td', 'td.tid=up.field_user_parliament_tid');
+//    $query->condition('ur.status', '1');
+//    $query->condition('ur.uid', 24905); // only for testing
+    $query->condition('ur.timestamp', $a_day_ago, '>');
+    $query->groupBy('ur.uid, up.field_user_parliament_tid');
+    $query->orderBy('ur.timestamp');
+    
+    return $query;
+}
+
+/**
+ * Implementation of hook_menu() for testing the cron functionality.
+ */
+function pw_userarchives_menu() {
+  $items['admin/config/pw_userarchives/settings'] = array(
+      'title' => 'PW Userarchives Cron',
+      'description' => 'Run daily cron manually.',
+      'page callback' => 'pw_userarchives_cron',
+      'access arguments' => array('administer site configuration'),
+      'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}

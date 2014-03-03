@@ -41,10 +41,10 @@ function pw_user_revision_show($user, $vid) {
     // Load user by vid:
     $query = db_select('user_revision', 'ur');
     $query->addField('ur', 'uid');
-    $query->condition('ur.vid', $vid);
+    $query->condition('ur.vid', $vid); // This is the primary ID of the table
     $res = $query->execute();
     while ($row = $res->fetchAssoc()) {
-      $account = user_revision_load($row["uid"], $vid);
+      $account = user_revision_load($row["uid"], $vid); // Can only be one result maximum
     }
   } else {
     $account = user_revision_load($user->uid, $vid);
