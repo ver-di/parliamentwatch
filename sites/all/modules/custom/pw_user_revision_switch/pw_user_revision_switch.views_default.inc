@@ -2229,6 +2229,14 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* Feld: Exkuded | User Name */
+  $handler->display->display_options['fields']['user_name']['id'] = 'user_name';
+  $handler->display->display_options['fields']['user_name']['table'] = 'user_archive_cache';
+  $handler->display->display_options['fields']['user_name']['field'] = 'user_name';
+  $handler->display->display_options['fields']['user_name']['ui_name'] = 'Exkuded | User Name';
+  $handler->display->display_options['fields']['user_name']['label'] = '';
+  $handler->display->display_options['fields']['user_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['user_name']['element_label_colon'] = FALSE;
   /* Feld: Excluded | VID */
   $handler->display->display_options['fields']['vid']['id'] = 'vid';
   $handler->display->display_options['fields']['vid']['table'] = 'user_archive_cache';
@@ -2348,7 +2356,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Zeitraumsprofil öffnen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'user/[uid]/revisions/[vid]/view';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'user/[user_name]/revisions/[vid]/view';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -2504,13 +2512,27 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Profil öffnen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'profile/[uid]/archive/[vid]';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'profile/[user_name]/archive/[vid]';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = TRUE;
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'text-right';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: User archive cache: User name */
+  $handler->display->display_options['arguments']['user_name']['id'] = 'user_name';
+  $handler->display->display_options['arguments']['user_name']['table'] = 'user_archive_cache';
+  $handler->display->display_options['arguments']['user_name']['field'] = 'user_name';
+  $handler->display->display_options['arguments']['user_name']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['user_name']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['user_name']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['user_name']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['user_name']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['user_name']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['user_name']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['user_name']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['user_name']['limit'] = '0';
   $export['pw_user_revision_switch'] = $view;
 
   return $export;
