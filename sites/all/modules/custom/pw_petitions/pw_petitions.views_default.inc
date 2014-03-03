@@ -182,7 +182,7 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['field_petition_required']['element_wrapper_class'] = 'medium clear';
   $handler->display->display_options['fields']['field_petition_required']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_petition_required']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => '.',
     'prefix_suffix' => 0,
   );
   /* Feld: Inhalt: Signings */
@@ -195,7 +195,7 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['field_petition_signings']['element_wrapper_class'] = 'small light';
   $handler->display->display_options['fields']['field_petition_signings']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_petition_signings']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => '.',
     'prefix_suffix' => 1,
   );
   /* Feld: Inhalt: Link */
