@@ -159,7 +159,7 @@ return false;',
   $feeds_tamper->plugin_id = 'php';
   $feeds_tamper->settings = array(
     'php' => '// load related parliament term
-$parliament_term = taxonomy_get_term_by_name($item[\'xpathparser:0\']);
+$parliament_term = taxonomy_get_term_by_name($item[\'xpathparser:25\']);
 if(empty($parliament_term)){
   return false;
 }
