@@ -154,7 +154,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_date_and_time';
-  $strongarm->value = 'd.m.Y \\u\\m H:i';
+  $strongarm->value = 'm/d/Y \\a\\t H:i';
   $export['date_format_date_and_time'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -182,15 +182,8 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_short';
-  $strongarm->value = 'd.m.Y - H:i';
+  $strongarm->value = 'm/d/Y - H:i';
   $export['date_format_short'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_time_only';
-  $strongarm->value = 'H:i';
-  $export['date_format_time_only'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -529,15 +522,8 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_export_reset_changed_announcement';
-  $strongarm->value = 1;
-  $export['node_export_reset_changed_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_export_reset_changed_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_export_reset_changed_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -564,15 +550,8 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_export_reset_created_announcement';
-  $strongarm->value = 1;
-  $export['node_export_reset_created_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_export_reset_created_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_export_reset_created_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -599,15 +578,8 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_export_reset_last_comment_timestamp_announcement';
-  $strongarm->value = 1;
-  $export['node_export_reset_last_comment_timestamp_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_export_reset_last_comment_timestamp_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_export_reset_last_comment_timestamp_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -630,13 +602,6 @@ function pw_globals_strongarm() {
   $strongarm->name = 'node_export_reset_last_comment_timestamp_webform';
   $strongarm->value = 0;
   $export['node_export_reset_last_comment_timestamp_webform'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'node_export_reset_menu_announcement';
-  $strongarm->value = 1;
-  $export['node_export_reset_menu_announcement'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -669,15 +634,8 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_export_reset_path_announcement';
-  $strongarm->value = 1;
-  $export['node_export_reset_path_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_export_reset_path_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_export_reset_path_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -704,15 +662,8 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_export_reset_revision_timestamp_announcement';
-  $strongarm->value = 1;
-  $export['node_export_reset_revision_timestamp_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'node_export_reset_revision_timestamp_page';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['node_export_reset_revision_timestamp_page'] = $strongarm;
 
   $strongarm = new stdClass();

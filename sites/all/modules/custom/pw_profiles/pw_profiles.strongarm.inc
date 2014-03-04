@@ -171,6 +171,9 @@ function pw_profiles_strongarm() {
         'locale' => array(
           'weight' => '14',
         ),
+        'overlay_control' => array(
+          'weight' => '5',
+        ),
       ),
       'display' => array(
         'summary' => array(

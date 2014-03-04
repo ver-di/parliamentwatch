@@ -13,9 +13,7 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: access overlay.
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
-    'roles' => array(
-      0 => 'Politician',
-    ),
+    'roles' => array(),
     'module' => 'overlay',
   );
 

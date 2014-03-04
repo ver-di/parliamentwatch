@@ -23,3 +23,6 @@ nbproject/.gitignore
 !sites/*/files/.htaccess
 !sites/*/private/.htaccess
 !sites/*/files/private/.htaccess
+
+# Ignore gdata stuff
+gdata

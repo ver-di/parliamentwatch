@@ -114,6 +114,7 @@ function pw_profiles_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_user_picture',
+      1 => 'field_user_picture_copyright',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -244,6 +245,7 @@ function pw_profiles_field_group_info() {
       4 => 'field_user_party',
       5 => 'field_user_political_roles',
       6 => 'field_user_valid',
+      7 => 'field_user_election_result',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -612,6 +614,9 @@ function pw_profiles_field_group_info() {
       6 => 'field_user_education',
       7 => 'field_user_age',
       8 => 'field_user_links_more',
+      9 => 'field_user_phone',
+      10 => 'field_user_public_mail',
+      11 => 'field_user_title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
