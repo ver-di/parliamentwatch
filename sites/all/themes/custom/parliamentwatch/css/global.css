@@ -634,6 +634,33 @@ a.ic-print {
     padding-left: 15px;
     background-position: -770px -1896px;
 }
+.pw-list-expander {
+    margin: 5px 0;
+    margin-bottom: 0.5rem 0;
+}
+.pw-list-expander fieldset.collapse-processed a.fieldset-title {
+    padding-left: 26px;
+    font-weight: normal;
+    color: #333;
+    display: block;
+    line-height: 19px;
+    line-height: 1.9rem;
+}
+.pw-list-expander fieldset.collapse-processed a.fieldset-title:hover {
+    color: #999;
+}
+.pw-list-expander fieldset.collapse-processed.collapsible a.fieldset-title {
+    background-position: -851px -1812px;
+}
+.pw-list-expander fieldset.collapse-processed.collapsible.collapsed a.fieldset-title {
+    background-position: -891px -1771px;
+}
+.pw-list-expander fieldset.collapse-processed .fieldset-wrapper {
+    padding-left: 43px;
+}
+.pw-list-expander fieldset.collapse-processed .fieldset-wrapper .medium {
+    margin: 1px 0;
+}
 .twitter-item {
     background-position: -930px -3164px;
     padding: 6px 0 6px 26px;    
@@ -720,7 +747,9 @@ h1#page-title {
 #cboxNode {
     padding: 20px;
 }
-#colorbox form label {
+#colorbox form .webform-component-textfield label,
+#colorbox form .webform-component-email label,
+#colorbox form .webform-component-textarea label {
     display: block;
 }
 #colorbox form textarea {
@@ -2037,7 +2066,8 @@ form .webform-component-checkboxes .description {
 .answer {
     position: relative;
 }
-.answer .content-inner {
+.answer .content-inner,
+.comment .content-inner {
     padding: 25px 24px;
 }
 .answer .more-info {
@@ -2503,6 +2533,7 @@ a.print-pdf,
 #block-system-user-menu .last a,
 #region-user-second .block h2,
 .arrow-item,
+.pw-list-expander fieldset.collapse-processed.collapsed a.fieldset-title,
 .twitter-item,
 .back,
 .views-more-link,

@@ -933,7 +933,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'sharethis_node_option';
-  $strongarm->value = 'blogpost,pw_petition,press_article,press_release,pw_poll,0,0,0,0,0,0,0,0,0,0,0';
+  $strongarm->value = 'dialogue,blogpost,pw_petition,press_article,press_release,pw_poll,0,0,0,0,0,0,0,0,0,0,0';
   $export['sharethis_node_option'] = $strongarm;
 
   $strongarm = new stdClass();

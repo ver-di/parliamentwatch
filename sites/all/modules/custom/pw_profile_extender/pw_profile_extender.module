@@ -3,8 +3,7 @@
  * Implements hook_form_alter().
  * Extends the User Profile Form with the calendar view
  */
-function pw_profile_extender_form_alter(&$form, &$form_state, $form_id)
-{
+function pw_profile_extender_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_profile_form') {
     $form['calendar admin'] = array(
       '#title' => 'My Calendar',
@@ -20,8 +19,7 @@ function pw_profile_extender_form_alter(&$form, &$form_state, $form_id)
  * Implements form_views_exposed_form_alter().
  * Adds checkboxes to the alphabetical filter
  */
-function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id)
-{
+function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
   $infotext_sort = t('Infotext Sort');
   $infotext_order = t('Infotext Order');
 
@@ -31,8 +29,8 @@ function  pw_profile_extender_form_views_exposed_form_alter(&$form, &$form_state
   }
 
   if ($form['#id'] == 'views-exposed-form-profile-questions-answers-profile') {
-    $form['sort_by']['#prefix'] = '<div class="bef-sortby bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_sort.'</div></div>';
-    $form['sort_order']['#prefix'] = '<div class="bef-sortorder bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">'.$infotext_order.'</div></div>';
+    $form['sort_by']['#prefix'] = '<div class="bef-sortby bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">' . $infotext_sort . '</div></div>';
+    $form['sort_order']['#prefix'] = '<div class="bef-sortorder bef-select-as-radios><div class="description"><div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">' . $infotext_order . '</div></div>';
   }
 }
 
@@ -47,3 +45,13 @@ function pw_profile_extender_theme($existing, $type, $theme, $path) {
   );
 }
 
+
+/**
+ *  Implements hook_menu_alter
+ *  Changes standard revision url
+*/
+function pw_profile_extender_menu_alter(&$items) {
+  $items['profile/%user/archive/%'] = $items['user/%user/revisions/%/view']; // arrays are copied here
+  $items['profile/%user/archive/%']['access callback'] = TRUE; // grant anonymous access
+  unset($items['profile/%user/archive/%']['access arguments']); // remove conflicting access 
+}

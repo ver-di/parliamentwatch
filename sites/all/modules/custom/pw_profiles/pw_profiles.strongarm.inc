@@ -179,11 +179,11 @@ function pw_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'user_premium' => array(
-            'weight' => '41',
+            'weight' => '45',
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '46',
+            'weight' => '47',
             'visible' => FALSE,
           ),
           'user_candidate' => array(
