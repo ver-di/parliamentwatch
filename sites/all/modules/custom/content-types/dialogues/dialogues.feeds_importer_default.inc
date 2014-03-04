@@ -23,6 +23,7 @@ function dialogues_feeds_importer_default() {
         'auto_detect_feeds' => FALSE,
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
+        'request_timeout' => NULL,
       ),
     ),
     'parser' => array(
@@ -45,6 +46,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:11' => 'message[1]/keyworded_text',
           'xpathparser:16' => 'message[1]/sender.external_id',
           'xpathparser:17' => 'message[1]/status=1',
+          'xpathparser:18' => 'message[1]/context',
         ),
         'rawXML' => array(
           'xpathparser:12' => 0,
@@ -63,10 +65,13 @@ function dialogues_feeds_importer_default() {
           'xpathparser:11' => 0,
           'xpathparser:16' => 0,
           'xpathparser:17' => 0,
+          'xpathparser:18' => 0,
         ),
         'context' => '//dialogue',
         'exp' => array(
           'errors' => 1,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:12' => 0,
@@ -85,6 +90,7 @@ function dialogues_feeds_importer_default() {
             'xpathparser:11' => 0,
             'xpathparser:16' => 0,
             'xpathparser:17' => 0,
+            'xpathparser:18' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -93,7 +99,6 @@ function dialogues_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'content_type' => 'dialogue',
         'expire' => '-1',
         'author' => 0,
         'mappings' => array(
@@ -105,7 +110,8 @@ function dialogues_feeds_importer_default() {
           1 => array(
             'source' => 'xpathparser:14',
             'target' => 'field_dialogue_topic',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           2 => array(
             'source' => 'xpathparser:15',
@@ -120,7 +126,8 @@ function dialogues_feeds_importer_default() {
           4 => array(
             'source' => 'xpathparser:1',
             'target' => 'field_dialogue_tags',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           5 => array(
             'source' => 'xpathparser:2',
@@ -177,11 +184,17 @@ function dialogues_feeds_importer_default() {
             'target' => 'status',
             'unique' => FALSE,
           ),
+          16 => array(
+            'source' => 'xpathparser:18',
+            'target' => 'field_pw_parmliament',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '1',
         'input_format' => 'filtered_html',
         'authorize' => 0,
         'skip_hash_check' => 0,
+        'bundle' => 'dialogue',
       ),
     ),
     'content_type' => '',
