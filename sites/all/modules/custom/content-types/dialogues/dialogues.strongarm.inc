@@ -102,7 +102,10 @@ function dialogues_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '11',
+          'weight' => '12',
+        ),
+        'redirect' => array(
+          'weight' => '13',
         ),
       ),
       'display' => array(
