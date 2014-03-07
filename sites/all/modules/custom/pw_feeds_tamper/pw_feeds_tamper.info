@@ -1,4 +1,6 @@
 name = PW Feeds Tamper
 description = Custom Feeds Tamper
 core = 7.x
+version = 7.x-1.0-20140703
+package = Parliamentwatch
 files[] = tests/pw_feeds_tamper.test
