@@ -5,3 +5,4 @@
  */
 
 include_once 'pw_mass_mailing.features.inc';
+include 'MimeMailSystem__SmtpMailSystem.mail.inc';
