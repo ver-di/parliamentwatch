@@ -267,8 +267,15 @@ function pw_profiles_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_calendar_entry_pattern';
-  $strongarm->value = 'users/[node:author]/calendar/[node:field-calendar-entry-date:custom:d-m-Y]/[node:title]';
+  $strongarm->value = 'profile/[node:author]/calendar/[node:field-calendar-entry-date:custom:d-m-Y]/[node:title]';
   $export['pathauto_node_calendar_entry_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_user_pattern';
+  $strongarm->value = 'profile/[user:name]';
+  $export['pathauto_user_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
