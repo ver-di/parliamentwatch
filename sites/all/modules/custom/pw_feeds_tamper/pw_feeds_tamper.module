@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file pw_feeds_tamper.module
+ * TODO: Enter file description here.
+ */
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function pw_feeds_tamper_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'feeds_tamper' && $plugin_type == 'plugins') {
+    return 'plugins';
+  }
+}

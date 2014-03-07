@@ -1,0 +1,4 @@
+name = PW Feeds Tamper
+description = Custom Feeds Tamper
+core = 7.x
+files[] = tests/pw_feeds_tamper.test
