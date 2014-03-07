@@ -55,67 +55,26 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_26-php';
-  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
-  $feeds_tamper->source = 'xpathparser:26';
-  $feeds_tamper->plugin_id = 'php';
-  $feeds_tamper->settings = array(
-    'php' => '// look for parliaments
-$tax = \'parliaments\';
-// load all vocabularies
-$vid = 0;
-$vocs = taxonomy_get_vocabularies();
-// get the parliaments vocab id
-foreach($vocs as $voc){
-  if ($voc->{\'machine_name\'} == $tax) {
-    $vid = $voc->{\'vid\'};}}
-// exit if no taxonomy vocabulary found
-if ($vid == 0) {
-  dpm("Error: Taxonomy \'$tax\' not found.");
-  return false;}
-// load related taxonomy terms
-$name = $item[\'xpathparser:25\'];
-$tterms = taxonomy_get_term_by_name($name);
-// exit if no taxonomy term found
-if(empty($tterms)){
-  dpm("Error: Term \'$name\' not found.");
-  return false;}
-// match vocabulary and term
-$pterm = null;
-$tid = 0;
-foreach($tterms as $term){
-  if ($term->{\'vid\'} == $vid) {
-    $pterm = $term;
-    $tid = $pterm->{\'tid\'};}}
-// exit if no taxonomy term found in vocabulary
-if(empty($pterm) || $tid == 0){
-  dpm("Error: Term \'$name\' not found in taxonomy \'$tax\'.");
-  return false;}
-// find constituency term tagged with same parliament like imported user
-$cterms = taxonomy_get_term_by_name($field);
-foreach($cterms as $term){
-  if ($term->field_parliament[\'und\'][0][\'tid\'] == $tid) {
-    return $term->{\'uuid\'};}}
-// if code reaches this, no term was found
-dpm("Error: Feeds Tamper Execute PHP failed for \'$name\' and \'$tax\'.");
-return false;
-',
-  );
-  $feeds_tamper->weight = 10;
-  $feeds_tamper->description = 'Execute php code';
-  $export['gdata_profiles_importer_v2-xpathparser_26-php'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_26-required';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:26';
   $feeds_tamper->plugin_id = 'required';
   $feeds_tamper->settings = array();
-  $feeds_tamper->weight = 9;
+  $feeds_tamper->weight = 11;
   $feeds_tamper->description = 'Pflichtfeld';
   $export['gdata_profiles_importer_v2-xpathparser_26-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_26-term_id_by_term_and_parliament';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:26';
+  $feeds_tamper->plugin_id = 'term_id_by_term_and_parliament';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 10;
+  $feeds_tamper->description = 'Term ID by Term and Parliament';
+  $export['gdata_profiles_importer_v2-xpathparser_26-term_id_by_term_and_parliament'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
