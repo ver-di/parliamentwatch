@@ -101,7 +101,7 @@ dpm("Error: Feeds Tamper Execute PHP failed for \'$name\' and \'$tax\'.");
 return false;
 ',
   );
-  $feeds_tamper->weight = 0;
+  $feeds_tamper->weight = 10;
   $feeds_tamper->description = 'Execute php code';
   $export['gdata_profiles_importer_v2-xpathparser_26-php'] = $feeds_tamper;
 
@@ -113,7 +113,7 @@ return false;
   $feeds_tamper->source = 'xpathparser:26';
   $feeds_tamper->plugin_id = 'required';
   $feeds_tamper->settings = array();
-  $feeds_tamper->weight = 1;
+  $feeds_tamper->weight = 9;
   $feeds_tamper->description = 'Pflichtfeld';
   $export['gdata_profiles_importer_v2-xpathparser_26-required'] = $feeds_tamper;
 
