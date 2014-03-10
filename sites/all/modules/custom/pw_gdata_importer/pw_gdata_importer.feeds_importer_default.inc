@@ -358,6 +358,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:32' => 'twitteraccount',
           'xpathparser:33' => 'externalurl',
           'xpathparser:34' => 'facebookurl',
+          'xpathparser:35' => 'systemroles',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -395,6 +396,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:32' => 0,
           'xpathparser:33' => 0,
           'xpathparser:34' => 0,
+          'xpathparser:35' => 0,
         ),
         'context' => '//row',
         'exp' => array(
@@ -436,6 +438,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:32' => 0,
             'xpathparser:33' => 0,
             'xpathparser:34' => 0,
+            'xpathparser:35' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -635,6 +638,11 @@ function pw_gdata_importer_feeds_importer_default() {
           35 => array(
             'source' => 'xpathparser:34',
             'target' => 'field_user_links_more:url',
+            'unique' => FALSE,
+          ),
+          36 => array(
+            'source' => 'xpathparser:35',
+            'target' => 'field_user_roles_for_view_mode_s',
             'unique' => FALSE,
           ),
         ),
