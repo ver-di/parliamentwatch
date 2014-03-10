@@ -132,13 +132,11 @@ function pw_profiles_user_presave(&$edit, $account, $category) {
     foreach ($account->roles as $key => $value)
       $edit['roles'][$key] = $key;
   }
-  
   foreach ($edit['roles'] as $key => $value) {
-    if ($value != 0) {
+    if(!empty($value)) {
       $roleIdArray[] = $key;
     }
   }
-  
   // reset the $edit['field_user_roles_for_view_mode_s']['und'] array:
   $edit['field_user_roles_for_view_mode_s']['und'] = array();
 
