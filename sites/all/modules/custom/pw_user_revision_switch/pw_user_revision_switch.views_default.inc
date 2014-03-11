@@ -2263,12 +2263,36 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['parliament_name_1']['label'] = '';
   $handler->display->display_options['fields']['parliament_name_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['parliament_name_1']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | User Role */
+  $handler->display->display_options['fields']['user_role']['id'] = 'user_role';
+  $handler->display->display_options['fields']['user_role']['table'] = 'user_archive_cache';
+  $handler->display->display_options['fields']['user_role']['field'] = 'user_role';
+  $handler->display->display_options['fields']['user_role']['ui_name'] = 'Excluded | User Role';
+  $handler->display->display_options['fields']['user_role']['label'] = '';
+  $handler->display->display_options['fields']['user_role']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['user_role']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$urole = $row->user_role;
+if ( !empty($urole) && $urole ==  "candidate") print t("Kandidatenprofil");
+else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetentprofil");
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['fieldset']['alter']['text'] = '[parliament_name_1] ';
+  $handler->display->display_options['fields']['fieldset']['alter']['text'] = '[php] [parliament_name_1] ';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'number_of_questions',
@@ -2419,12 +2443,36 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['parliament_name_1']['label'] = '';
   $handler->display->display_options['fields']['parliament_name_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['parliament_name_1']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | User Role */
+  $handler->display->display_options['fields']['user_role']['id'] = 'user_role';
+  $handler->display->display_options['fields']['user_role']['table'] = 'user_archive_cache';
+  $handler->display->display_options['fields']['user_role']['field'] = 'user_role';
+  $handler->display->display_options['fields']['user_role']['ui_name'] = 'Excluded | User Role';
+  $handler->display->display_options['fields']['user_role']['label'] = '';
+  $handler->display->display_options['fields']['user_role']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['user_role']['element_label_colon'] = FALSE;
+  /* Feld: Excluded  | PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded  | PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$urole = $row->user_role;
+if ( !empty($urole) && $urole ==  "candidate") print t("Kandidatenprofil");
+else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetentprofil");
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['fieldset']['alter']['text'] = 'Kandidatenprofil [parliament_name_1] ';
+  $handler->display->display_options['fields']['fieldset']['alter']['text'] = '[php] [parliament_name_1] ';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'number_of_questions',

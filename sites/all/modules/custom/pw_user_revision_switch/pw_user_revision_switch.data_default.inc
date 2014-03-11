@@ -86,6 +86,10 @@ function pw_user_revision_switch_data_default() {
         'not null' => FALSE,
         'description' => '',
       ),
+      'user_role' => array(
+        'type' => 'varchar',
+        'length' => 255,
+      ),
     ),
     'name' => 'user_archive_cache',
     'primary key' => array(
@@ -105,6 +109,9 @@ function pw_user_revision_switch_data_default() {
       'number_of_speeches' => array(),
       'number_of_missed_votings' => array(),
       'timestamp' => array(),
+      'user_role' => array(
+        'label' => '',
+      ),
     ),
   );
   $export['user_archive_cache'] = $data_table;
