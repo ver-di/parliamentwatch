@@ -39,7 +39,7 @@ function pw_profileswitch_admin_settings() {
       '#type' => 'fieldset', 
       '#title' => t('Assignment '.$assignment_title), 
       '#weight' => 5, 
-      '#collapsible' => FALSE, 
+      '#collapsible' => FALSE,
       '#collapsed' => FALSE,
     );
 
