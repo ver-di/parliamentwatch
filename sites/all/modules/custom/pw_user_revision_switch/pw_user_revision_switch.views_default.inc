@@ -1548,7 +1548,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10453?width=600&height=600';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
@@ -1945,7 +1945,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10453?width=600&height=600';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
