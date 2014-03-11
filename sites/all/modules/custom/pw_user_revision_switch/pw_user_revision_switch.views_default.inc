@@ -1422,6 +1422,15 @@ drupal_set_title("");
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | User UUID */
+  $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['fields']['uuid']['table'] = 'users';
+  $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['fields']['uuid']['ui_name'] = 'Excluded | User UUID';
+  $handler->display->display_options['fields']['uuid']['label'] = '';
+  $handler->display->display_options['fields']['uuid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uuid']['element_default_classes'] = FALSE;
   /* Feld: Excluded | User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -1548,7 +1557,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
@@ -1838,6 +1847,14 @@ drupal_set_title("");
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | User UUID */
+  $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['fields']['uuid']['table'] = 'users';
+  $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['fields']['uuid']['ui_name'] = 'Excluded | User UUID';
+  $handler->display->display_options['fields']['uuid']['label'] = '';
+  $handler->display->display_options['fields']['uuid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
   /* Feld: Excluded | User: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'users';
@@ -1945,7 +1962,7 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
