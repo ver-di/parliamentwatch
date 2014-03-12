@@ -29,4 +29,5 @@ features[feeds_tamper][] = gdata_profiles_importer_v2-blank_source_1-default_val
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_25-required
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_26-required
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_26-term_id_by_term_and_parliament
+features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_35-explode
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_4-explode

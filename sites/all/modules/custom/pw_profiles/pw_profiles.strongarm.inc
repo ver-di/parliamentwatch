@@ -198,6 +198,16 @@ function pw_profiles_strongarm() {
             'visible' => TRUE,
           ),
         ),
+        'mimemail' => array(
+          'user_premium' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'user_deputy' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
       ),
     ),
   );
