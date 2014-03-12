@@ -428,6 +428,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_address-revision_id']['table'] = 'field_revision_field_user_address';
   $handler->display->display_options['fields']['field_user_address-revision_id']['field'] = 'field_user_address-revision_id';
   $handler->display->display_options['fields']['field_user_address-revision_id']['label'] = 'Wohnort';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_address-revision_id']['empty'] = '-';
   $handler->display->display_options['fields']['field_user_address-revision_id']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_user_address-revision_id']['click_sort_column'] = 'country';
