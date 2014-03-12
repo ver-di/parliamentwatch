@@ -2619,7 +2619,8 @@ blockquote:before,
 
 .responsive-layout-mobile #feedback_simple,
 .responsive-layout-mobile #block-views-slider-block,
-.responsive-layout-mobile .field-name-pw-slider {
+.responsive-layout-mobile .field-name-pw-slider,
+.responsive-layout-mobile #block-block-33 {
     display: none;
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2 {
