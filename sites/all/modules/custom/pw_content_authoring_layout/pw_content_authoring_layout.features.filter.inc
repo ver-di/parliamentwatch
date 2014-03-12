@@ -29,8 +29,8 @@ function pw_content_authoring_layout_filter_default_formats() {
         'weight' => '1',
         'status' => '1',
         'settings' => array(
-          'allowed_html' => '<a><em> <strong> <cite> <blockquote> <ul> <ol> <li> <dl> <dt> <dd>',
-          'filter_html_help' => 0,
+          'allowed_html' => '<p><br><a><em> <strong><ul> <ol> <li> <dl> <dt> <dd>',
+          'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
       ),
