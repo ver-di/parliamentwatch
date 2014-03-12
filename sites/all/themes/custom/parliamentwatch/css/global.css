@@ -2630,10 +2630,10 @@ blockquote:before,
 .js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded {
     background-position: -360px -115px;
 }
-.js .responsive-layout-mobile .pw-expandable-mobile > div {
+.js .responsive-layout-mobile .pw-expandable-mobile .view-content {
     display: none;
 }
-.js .responsive-layout-mobile #pw-block-user-basics > div {
+.js .responsive-layout-mobile #pw-block-user-basics .view-content {
     display: block;
 }
 
