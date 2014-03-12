@@ -158,7 +158,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['separator'] = '; ';
-  /* Feld: Broken/missing handler */
+  /* Feld: Excluded Profile Picture Copyright */
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['id'] = 'field_user_picture_copyright-revision_id';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['table'] = 'field_revision_field_user_picture_copyright';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['field'] = 'field_user_picture_copyright-revision_id';
@@ -408,7 +408,7 @@ echo $base_url;
   $handler = $view->new_display('views_data_export', 'XML-Parliament-by-name', 'views_data_export_5');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_xml';
   $handler->display->display_options['style_options']['provide_file'] = 0;
@@ -3323,7 +3323,7 @@ $query = db_select(\'user_revision\', \'ur\');
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['separator'] = '; ';
-  /* Feld: Broken/missing handler */
+  /* Feld: Excluded Profile Picture Copyright */
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['id'] = 'field_user_picture_copyright-revision_id';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['table'] = 'field_revision_field_user_picture_copyright';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['field'] = 'field_user_picture_copyright-revision_id';
