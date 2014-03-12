@@ -52,7 +52,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Managed Content',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_user_gender',
       1 => 'field_user_first_letter_lname',
@@ -203,7 +203,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Admin Settings',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'field_user_external_url',
       1 => 'ckeditor',
@@ -479,7 +479,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dialogue Data',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_user_answers_give',
       1 => 'field_user_questions_get',
@@ -613,10 +613,8 @@ function pw_profiles_field_group_info() {
       5 => 'field_user_address',
       6 => 'field_user_education',
       7 => 'field_user_age',
-      8 => 'field_user_links_more',
-      9 => 'field_user_phone',
-      10 => 'field_user_public_mail',
-      11 => 'field_user_title',
+      8 => 'field_user_phone',
+      9 => 'field_user_public_mail',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -800,6 +798,9 @@ function pw_profiles_field_group_info() {
       1 => 'field_user_image_gallery',
       2 => 'field_user_political_goals',
       3 => 'field_user_twitter_account',
+      4 => 'field_user_links_more',
+      5 => 'field_user_picture',
+      6 => 'field_user_picture_copyright',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

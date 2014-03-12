@@ -3,7 +3,7 @@
 }
 #nav {
 	position: relative;
-	z-index: 999;
+	z-index: 500;
 }
 #nav > a {
     display: none;

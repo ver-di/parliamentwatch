@@ -13,7 +13,9 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: access overlay.
   $permissions['access overlay'] = array(
     'name' => 'access overlay',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'Politician',
+    ),
     'module' => 'overlay',
   );
 
@@ -453,8 +455,7 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit field_user_first_letter_lname'] = array(
     'name' => 'edit field_user_first_letter_lname',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      0 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -709,8 +710,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_commitee',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Deputy',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -753,8 +753,7 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_first_letter_lname'] = array(
     'name' => 'edit own field_user_first_letter_lname',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      0 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -774,12 +773,8 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_gender'] = array(
     'name' => 'edit own field_user_gender',
     'roles' => array(
-      0 => 'Candidate',
-      1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -813,12 +808,9 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_links_more'] = array(
     'name' => 'edit own field_user_links_more',
     'roles' => array(
-      0 => 'Candidate',
-      1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'Premium User',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -979,10 +971,14 @@ function pw_profiles_user_default_permissions() {
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
-      3 => 'authenticated user',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Deputy',
+      3 => 'Politician',
+      4 => 'Premium User',
+      5 => 'administrator',
+      6 => 'anonymous user',
+      7 => 'authenticated user',
     ),
     'module' => 'filter',
   );
@@ -1782,6 +1778,17 @@ function pw_profiles_user_default_permissions() {
       2 => 'administrator',
     ),
     'module' => 'file_entity',
+  );
+
+  // Exported permission: view the administration theme.
+  $permissions['view the administration theme'] = array(
+    'name' => 'view the administration theme',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'Politician',
+      2 => 'administrator',
+    ),
+    'module' => 'system',
   );
 
   return $permissions;

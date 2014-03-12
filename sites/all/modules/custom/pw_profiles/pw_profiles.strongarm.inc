@@ -163,7 +163,7 @@ function pw_profiles_strongarm() {
           'weight' => '16',
         ),
         'account' => array(
-          'weight' => '5',
+          'weight' => '4',
         ),
         'timezone' => array(
           'weight' => '15',
@@ -172,6 +172,9 @@ function pw_profiles_strongarm() {
           'weight' => '14',
         ),
         'overlay_control' => array(
+          'weight' => '0',
+        ),
+        'mimemail' => array(
           'weight' => '5',
         ),
       ),
@@ -292,9 +295,9 @@ function pw_profiles_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_assignment';
   $strongarm->value = array(
-    7028 => 'user_deputy',
     7030 => 'user_premium',
-    7029 => 'user_premium',
+    7029 => 'user_deputy',
+    7028 => 'user_deputy',
   );
   $export['pw_profileswitch_assignment'] = $strongarm;
 
@@ -302,14 +305,14 @@ function pw_profiles_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_display_mode1';
-  $strongarm->value = 'user_deputy';
+  $strongarm->value = 'user_premium';
   $export['pw_profileswitch_display_mode1'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_role1';
-  $strongarm->value = '7028';
+  $strongarm->value = '7030';
   $export['pw_profileswitch_role1'] = $strongarm;
 
   $strongarm = new stdClass();
