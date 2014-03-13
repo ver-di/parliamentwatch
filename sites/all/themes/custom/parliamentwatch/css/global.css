@@ -116,7 +116,8 @@ h4 {
     margin-bottom: 0;
 }
 .subtitle,
-.small {
+.small,
+small {
     font-size: 11px;
     font-size: 1.1rem;
     line-height: 14px;
@@ -1427,7 +1428,7 @@ a#text_resize_increase:active {
     font-weight: normal;
 }
 .floatbox ul {
-    margin: 0 0 10px;
+    margin: 0 0 10px !important;
     padding: 0;
 }
 .floatbox ul li {
@@ -2662,7 +2663,7 @@ blockquote:before,
 .managed-content ul,
 #colorbox ol,
 #colorbox ul {
-    margin-left: 40px; /* LTR */
+    margin-left: 20px; /* LTR */
 }
 .managed-content ol,
 #colorbox ol {
