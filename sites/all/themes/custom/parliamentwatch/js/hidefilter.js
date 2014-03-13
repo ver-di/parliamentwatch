@@ -1,5 +1,6 @@
 /**
  * Created by oliverpal on 06.11.13.
+ *  Hide Questions and Answers Filter and Switcher Block if the number of questions displayed in the profile is 0.
  */
 jQuery(document).ready(function(){
     var container_clone=jQuery('.bubble.tiny').clone();
@@ -12,3 +13,5 @@ jQuery(document).ready(function(){
       jQuery('#form-view-mode-switcher').hide("fast");
     }
 });
+
+
