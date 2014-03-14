@@ -645,7 +645,7 @@ function pw_profiles_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil veröffentlicht.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -777,7 +777,7 @@ function pw_profiles_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Eine Adresse unter der wir Sie erreichen können.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -838,6 +838,7 @@ function pw_profiles_field_default_fields() {
             'name-full' => 0,
             'name-oneline' => 0,
           ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'addressfield_standard',
         'weight' => '45',
@@ -1481,7 +1482,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Tragen Sie hier die berufliche Qualifikation ein.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -1530,6 +1531,7 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -1543,6 +1545,9 @@ function pw_profiles_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -1567,6 +1572,8 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -2236,7 +2243,7 @@ function pw_profiles_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'user',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Die Foto-Gallery ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2301,6 +2308,7 @@ function pw_profiles_field_default_fields() {
             'youtube' => 0,
           ),
           'allowed_types' => array(
+            'application' => 0,
             'audio' => 0,
             'document' => 0,
             'image' => 'image',
@@ -2313,6 +2321,7 @@ function pw_profiles_field_default_fields() {
             'upload' => 'upload',
             'youtube' => 0,
           ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
@@ -2357,7 +2366,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Geben Sie hier Ihre aktuell ausgeübte Tätigkeit an.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -2413,6 +2422,7 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -2426,6 +2436,9 @@ function pw_profiles_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -2497,7 +2510,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Hier können Sie beliebige Links ergänzen, die in Ihrem Profil öffentlich angezeigt werden sollen.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2615,7 +2628,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Wählen Sie hier Ihren Listenplatz aus.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2665,7 +2678,9 @@ function pw_profiles_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'options_select',
         'weight' => '11',
       ),
@@ -3157,7 +3172,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Bitte geben Sie eine Telefonnummer an. Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3282,7 +3297,7 @@ function pw_profiles_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'user',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Laden Sie hier Ihr Profilfoto hoch.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3355,6 +3370,7 @@ function pw_profiles_field_default_fields() {
             'youtube' => 0,
           ),
           'allowed_types' => array(
+            'application' => 0,
             'audio' => 0,
             'document' => 0,
             'image' => 'image',
@@ -3367,10 +3383,11 @@ function pw_profiles_field_default_fields() {
             'upload' => 'upload',
             'youtube' => 0,
           ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
@@ -3540,7 +3557,7 @@ function pw_profiles_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem Profil veröffentlicht.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3682,7 +3699,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -3734,6 +3751,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'taxonomy',
         'settings' => array(
           'autocomplete_path' => 'taxonomy/autocomplete',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
@@ -3914,7 +3932,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Diese E-Mail Adresse wird öffentlich in Profil angezeigt.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -4189,7 +4207,9 @@ $entity_field[0][\'value\'] = $result;',
       'widget' => array(
         'active' => 0,
         'module' => 'number',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'number',
         'weight' => '28',
       ),
@@ -4452,7 +4472,7 @@ $entity_field[0][\'value\'] = $result;',
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Hier können Sie Ihren Twitter-Account eintragen, um die Angabe im Profil zu veröffentlichen.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -4501,6 +4521,7 @@ $entity_field[0][\'value\'] = $result;',
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -4514,6 +4535,9 @@ $entity_field[0][\'value\'] = $result;',
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -4538,6 +4562,8 @@ $entity_field[0][\'value\'] = $result;',
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -4659,18 +4685,27 @@ $entity_field[0][\'value\'] = $result;',
   t('Alt Text');
   t('Answers Give');
   t('Birthday');
+  t('Bitte geben Sie eine Telefonnummer an. Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
   t('Body');
   t('Children');
   t('Committee');
   t('Constituency');
   t('Date');
+  t('Die Foto-Gallery ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
+  t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
   t('Education');
+  t('Eine Adresse unter der wir Sie erreichen können.');
   t('Election Result');
   t('External Links');
   t('External URL');
   t('First Name');
+  t('Geben Sie hier Ihre aktuell ausgeübte Tätigkeit an.');
   t('Gender');
+  t('Hier können Sie Ihren Twitter-Account eintragen, um die Angabe im Profil zu veröffentlichen.');
+  t('Hier können Sie beliebige Links ergänzen, die in Ihrem Profil öffentlich angezeigt werden sollen.');
+  t('Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil veröffentlicht.');
   t('Image Gallery');
+  t('Laden Sie hier Ihr Profilfoto hoch.');
   t('Last name');
   t('List Position');
   t('Marriage status');
@@ -4680,6 +4715,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Picture copyright');
   t('Political Goals');
   t('Political Roles');
+  t('Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.');
   t('Position');
   t('Professional Qualification');
   t('Profile picture');
@@ -4690,8 +4726,11 @@ $entity_field[0][\'value\'] = $result;',
   t('Title');
   t('Title Text');
   t('Title text attribute (for the profile formats x and xs the copyright will overwrite this field)');
+  t('Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem Profil veröffentlicht.');
+  t('Tragen Sie hier die berufliche Qualifikation ein.');
   t('User Twitter Account');
   t('Valid');
+  t('Wählen Sie hier Ihren Listenplatz aus.');
   t('user_first_letter_lname');
   t('user_roles_for_view_mode_switch');
 

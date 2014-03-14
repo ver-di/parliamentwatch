@@ -15,6 +15,9 @@ a {
     text-decoration: none;
     font-weight: bold;
 }
+p {
+    margin: 0 0 1em;
+}
 a:hover,
 a:focus,
 a:active {

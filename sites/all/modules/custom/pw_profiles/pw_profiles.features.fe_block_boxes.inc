@@ -28,6 +28,39 @@ function pw_profiles_default_fe_block_boxes() {
   $export['bundestagsradar'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'PW Premium Promo';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'pw_premium_promo';
+  $fe_block_boxes->body = '<p>
+	Sie nutzen derzeit das kostenfreie abgeordnetenwatch.de-Grundprofil.<br />
+	Buchen Sie jetzt eine Profilerweiterung und demonstrieren Sie Ihren Wählerinnen und Wählern gegenüber Offenheit und Bürgernähe!<br />
+	Mit der Profilerweiterung erhalten Sie zusätzliche Möglichkeiten Ihr Profil zu gestalten:
+</p>
+<ol>
+	<li>
+		Profilfoto
+	</li>
+	<li>
+		Verlinkung Ihrer Social-Media-Kanäle
+	</li>
+	<li>
+		Bilder-Galerie für die schönsten Wahlkampf-Fotos
+	</li>
+	<li>
+		Terminkalender
+	</li>
+	<li>
+		Hintergrundinformationen über Sie und Ihre politischen Ziele
+	</li>
+</ol>
+<p>
+	Buchen Sie per <a href="mailto: service@abgeordnetenwatch.de">E-Mail</a> oder rufen Sie uns an: <strong>040 / 317 69 10 26</strong>
+</p>
+';
+
+  $export['pw_premium_promo'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Ask a question anchor';
   $fe_block_boxes->format = 'full_html';
   $fe_block_boxes->machine_name = 'questionform_anchor';
