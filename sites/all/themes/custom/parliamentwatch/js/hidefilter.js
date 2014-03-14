@@ -13,5 +13,3 @@ jQuery(document).ready(function(){
       jQuery('#form-view-mode-switcher').hide("fast");
     }
 });
-
-
