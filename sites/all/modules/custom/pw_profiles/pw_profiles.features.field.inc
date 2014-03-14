@@ -1441,7 +1441,7 @@ function pw_profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '55',
       ),
     ),
   );
@@ -1482,7 +1482,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Tragen Sie hier die berufliche Qualifikation ein.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2243,7 +2243,7 @@ function pw_profiles_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'user',
       'deleted' => '0',
-      'description' => 'Die Foto-Gallery ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.',
+      'description' => 'Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2316,7 +2316,7 @@ function pw_profiles_field_default_fields() {
           ),
           'browser_plugins' => array(
             'media_default--media_browser_1' => 0,
-            'media_default--media_browser_my_files' => 0,
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
             'media_internet' => 0,
             'upload' => 'upload',
             'youtube' => 0,
@@ -2366,7 +2366,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Geben Sie hier Ihre aktuell ausgeübte Tätigkeit an.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -2682,7 +2682,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '11',
+        'weight' => '54',
       ),
     ),
   );
@@ -3172,7 +3172,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Bitte geben Sie eine Telefonnummer an. Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.',
+      'description' => 'Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3297,7 +3297,7 @@ function pw_profiles_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'user',
       'deleted' => '0',
-      'description' => 'Laden Sie hier Ihr Profilfoto hoch.',
+      'description' => 'Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu auf "Auswählen", suchen Sie dann eine Bilddatei von Ihrem Computer aus und klicken Sie auf "Abschicken".',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3387,7 +3387,7 @@ function pw_profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -4472,7 +4472,7 @@ $entity_field[0][\'value\'] = $result;',
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Hier können Sie Ihren Twitter-Account eintragen, um die Angabe im Profil zu veröffentlichen.',
+      'description' => 'Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). Aus technischen Gründen kann es bis zu 30min dauern, bis diese Information in Ihrem Profil angezeigt wird.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -4514,7 +4514,7 @@ $entity_field[0][\'value\'] = $result;',
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_twitter_account',
-      'label' => 'User Twitter Account',
+      'label' => 'Twitter',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
@@ -4685,13 +4685,14 @@ $entity_field[0][\'value\'] = $result;',
   t('Alt Text');
   t('Answers Give');
   t('Birthday');
-  t('Bitte geben Sie eine Telefonnummer an. Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
+  t('Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). Aus technischen Gründen kann es bis zu 30min dauern, bis diese Information in Ihrem Profil angezeigt wird.');
   t('Body');
   t('Children');
   t('Committee');
   t('Constituency');
   t('Date');
-  t('Die Foto-Gallery ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
+  t('Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
+  t('Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
   t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
   t('Education');
   t('Eine Adresse unter der wir Sie erreichen können.');
@@ -4699,13 +4700,11 @@ $entity_field[0][\'value\'] = $result;',
   t('External Links');
   t('External URL');
   t('First Name');
-  t('Geben Sie hier Ihre aktuell ausgeübte Tätigkeit an.');
   t('Gender');
-  t('Hier können Sie Ihren Twitter-Account eintragen, um die Angabe im Profil zu veröffentlichen.');
   t('Hier können Sie beliebige Links ergänzen, die in Ihrem Profil öffentlich angezeigt werden sollen.');
+  t('Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu auf "Auswählen", suchen Sie dann eine Bilddatei von Ihrem Computer aus und klicken Sie auf "Abschicken".');
   t('Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil veröffentlicht.');
   t('Image Gallery');
-  t('Laden Sie hier Ihr Profilfoto hoch.');
   t('Last name');
   t('List Position');
   t('Marriage status');
@@ -4727,8 +4726,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Title Text');
   t('Title text attribute (for the profile formats x and xs the copyright will overwrite this field)');
   t('Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem Profil veröffentlicht.');
-  t('Tragen Sie hier die berufliche Qualifikation ein.');
-  t('User Twitter Account');
+  t('Twitter');
   t('Valid');
   t('Wählen Sie hier Ihren Listenplatz aus.');
   t('user_first_letter_lname');

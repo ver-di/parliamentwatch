@@ -31,7 +31,6 @@ features[fe_block_boxes][] = pw_donation_mail
 features[fe_block_boxes][] = pw_donation_smallprint
 features[fe_block_boxes][] = pw_flattr
 features[fe_block_boxes][] = pw_paypal
-features[fe_block_boxes][] = pw_premium_promo
 features[fe_block_boxes][] = social_media_footer
 features[fe_block_settings][] = block-pw_donation_mail
 features[fe_block_settings][] = block-pw_donation_smallprint
