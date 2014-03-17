@@ -36,6 +36,7 @@ dependencies[] = php
 dependencies[] = pw_committees
 dependencies[] = pw_globals
 dependencies[] = pw_image_gallery
+dependencies[] = pw_kandidatencheck
 dependencies[] = pw_profile_extender
 dependencies[] = pw_profileswitch
 dependencies[] = pw_twitter
