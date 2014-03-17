@@ -30,19 +30,22 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
   if(empty($field)) {
 
     // uname is empty, create one by following rule set
-    $uuid = $source->current_item['xpathparser:3'];
-    $title = $source->current_item['xpathparser:7'];
     $fname = $source->current_item['xpathparser:11'];
     $lname = $source->current_item['xpathparser:12'];
-    $uname = strtolower($fname) . '-' . strtolower($lname);
+    $uname = $fname . '-' . $lname;
 
+    $title = $source->current_item['xpathparser:7'];
     if (!empty($title)) {
 
       // add title to umame if exists
-      $uname = strtolower($title) . '-' . strtolower($uname);
+      $uname = $title . '-';
 
     }
 
+    $uname =  strtr(utf8_decode($uname),
+      utf8_decode('ŠŒŽšœžŸ¥µÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýÿ'),
+                  'SOZsozYYuAAAAAAACEEEEIIIIDNOOOOOOUUUUYsaaaaaaaceeeeiiiionoooooouuuuyy');
+    $uname = strtolower($uname);
     $uname = preg_replace('/[^a-z -]+/', '', $uname);
     $uname = str_replace(' ', '-', $uname);
     $uname = trim($uname, '-');
@@ -51,6 +54,7 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
 
     $users = entity_load('user');
     $count = 2;
+    $uuid = $source->current_item['xpathparser:3'];
 
     foreach($users as $user) {
       if ($user->uuid === $uuid) {
