@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-02-03 16:42+0100\n"
-"PO-Revision-Date: 2014-02-03 16:42+0100\n"
+"POT-Creation-Date: 2014-03-17 19:45+0100\n"
+"PO-Revision-Date: 2014-03-17 19:45+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -158,34 +158,24 @@ msgctxt "field_user_answers_give:user:label"
 msgid "Answers Give"
 msgstr ""
 
-#: field:field_user_birthday:user:label
-msgctxt "field_user_birthday:user:label"
-msgid "Birthday"
-msgstr ""
-
 #: field:field_user_childs:user:label
 msgctxt "field_user_childs:user:label"
 msgid "Children"
 msgstr ""
 
-#: field:field_user_fname:user:label
-msgctxt "field_user_fname:user:label"
-msgid "First Name"
+#: field:field_user_gender:#allowed_values:m
+msgctxt "field_user_gender:#allowed_values:m"
+msgid "Male"
+msgstr ""
+
+#: field:field_user_gender:#allowed_values:f
+msgctxt "field_user_gender:#allowed_values:f"
+msgid "Female"
 msgstr ""
 
 #: field:field_user_gender:user:label
 msgctxt "field_user_gender:user:label"
 msgid "Gender"
-msgstr ""
-
-#: field:field_user_job_skills:user:label
-msgctxt "field_user_job_skills:user:label"
-msgid "Professional Qualification"
-msgstr ""
-
-#: field:field_user_lname:user:label
-msgctxt "field_user_lname:user:label"
-msgid "Last name"
 msgstr ""
 
 #: field:field_user_marriage_status:#allowed_values:married
@@ -292,7 +282,9 @@ msgstr ""
 
 #: field:field_file_image_title_text:image:description
 msgctxt "field_file_image_title_text:image:description"
-msgid "Title text attribute"
+msgid ""
+"Title text attribute (for the profile formats x and xs the copyright "
+"will overwrite this field)"
 msgstr ""
 
 #: field:comment_body:comment_node_press_article:label
@@ -456,9 +448,19 @@ msgctxt "field_dialogue_tags:comment_node_dialogue:label"
 msgid "Tags"
 msgstr ""
 
+#: field:field_dialogue_topic:comment_node_dialogue:label
+msgctxt "field_dialogue_topic:comment_node_dialogue:label"
+msgid "Topic"
+msgstr ""
+
 #: field:field_dialogue_tags:dialogue:label
 msgctxt "field_dialogue_tags:dialogue:label"
 msgid "Tags"
+msgstr ""
+
+#: field:field_dialogue_topic:dialogue:label
+msgctxt "field_dialogue_topic:dialogue:label"
+msgid "Topic"
 msgstr ""
 
 #: field:field_pw_parmliament:pw_poll:label
@@ -586,11 +588,6 @@ msgctxt "field_calendar_entry_address:calendar_entry:label"
 msgid "Address"
 msgstr ""
 
-#: field:field_calendar_entry_date:calendar_entry:label
-msgctxt "field_calendar_entry_date:calendar_entry:label"
-msgid "Date"
-msgstr ""
-
 #: field:field_int_list_postiion:list_position:label
 msgctxt "field_int_list_postiion:list_position:label"
 msgid "Position"
@@ -599,11 +596,6 @@ msgstr ""
 #: field:field_user_about:user:label
 msgctxt "field_user_about:user:label"
 msgid "About"
-msgstr ""
-
-#: field:field_user_address:user:label
-msgctxt "field_user_address:user:label"
-msgid "Address"
 msgstr ""
 
 #: field:field_user_commitee:user:label
@@ -619,6 +611,11 @@ msgstr ""
 #: field:field_user_first_letter_lname:user:label
 msgctxt "field_user_first_letter_lname:user:label"
 msgid "user_first_letter_lname"
+msgstr ""
+
+#: field:field_user_gender:#allowed_values:t
+msgctxt "field_user_gender:#allowed_values:t"
+msgid "Transgender"
 msgstr ""
 
 #: field:field_user_image_gallery:user:label
@@ -639,11 +636,6 @@ msgstr ""
 #: field:field_user_party:user:label
 msgctxt "field_user_party:user:label"
 msgid "Party"
-msgstr ""
-
-#: field:field_user_political_goals:user:label
-msgctxt "field_user_political_goals:user:label"
-msgid "Political Goals"
 msgstr ""
 
 #: field:field_user_political_roles:user:label
@@ -684,16 +676,6 @@ msgstr ""
 #: field:field_user_age:user:label
 msgctxt "field_user_age:user:label"
 msgid "Age"
-msgstr ""
-
-#: field:field_user_links_more:user:label
-msgctxt "field_user_links_more:user:label"
-msgid "External Links"
-msgstr ""
-
-#: field:field_user_picture:user:label
-msgctxt "field_user_picture:user:label"
-msgid "Profile picture"
 msgstr ""
 
 #: field:field_user_qanda_ratio:user:label
@@ -761,43 +743,258 @@ msgctxt "field_teaser_image:pw_petition:label"
 msgid "Teaser image"
 msgstr ""
 
-#: field:field_user_gender:#allowed_values:m
-msgctxt "field_user_gender:#allowed_values:m"
-msgid "Male"
-msgstr "männlich"
+#: field:comment_body:comment_node_announcement:label
+msgctxt "comment_body:comment_node_announcement:label"
+msgid "Comment"
+msgstr ""
 
-#: field:field_user_gender:#allowed_values:f
-msgctxt "field_user_gender:#allowed_values:f"
-msgid "Female"
-msgstr "weiblich"
+#: field:field_announce_background_image:announcement:label
+msgctxt "field_announce_background_image:announcement:label"
+msgid "Background image"
+msgstr ""
+
+#: field:field_announce_background_image:announcement:description
+msgctxt "field_announce_background_image:announcement:description"
+msgid "If no image is uploaded a default image will be shown."
+msgstr ""
+
+#: field:field_announce_body:announcement:label
+msgctxt "field_announce_body:announcement:label"
+msgid "Body"
+msgstr ""
+
+#: field:field_announce_link:announcement:label
+msgctxt "field_announce_link:announcement:label"
+msgid "Link"
+msgstr ""
+
+#: field:field_announce_link:announcement:description
+msgctxt "field_announce_link:announcement:description"
+msgid "Link the article you want to announce."
+msgstr ""
+
+#: field:field_announce_tab_title:announcement:label
+msgctxt "field_announce_tab_title:announcement:label"
+msgid "Tab title"
+msgstr ""
+
+#: field:field_announce_tab_title:announcement:description
+msgctxt "field_announce_tab_title:announcement:description"
+msgid "This field will be used as link text in the slider."
+msgstr ""
+
+#: field:field_pw_parmliament:dialogue:label
+msgctxt "field_pw_parmliament:dialogue:label"
+msgid "Parliament"
+msgstr ""
+
+#: field:field_parliament_election:parliaments:label
+msgctxt "field_parliament_election:parliaments:label"
+msgid "Election"
+msgstr ""
+
+#: field:field_user_election_result:user:label
+msgctxt "field_user_election_result:user:label"
+msgid "Election Result"
+msgstr ""
+
+#: field:field_user_picture_copyright:user:label
+msgctxt "field_user_picture_copyright:user:label"
+msgid "Picture copyright"
+msgstr ""
+
+#: field:field_user_public_mail:user:label
+msgctxt "field_user_public_mail:user:label"
+msgid "Public Mail"
+msgstr ""
+
+#: field:field_user_public_mail:user:description
+msgctxt "field_user_public_mail:user:description"
+msgid "Diese E-Mail Adresse wird öffentlich in Profil angezeigt."
+msgstr ""
+
+#: field:field_user_phone:user:description
+msgctxt "field_user_phone:user:description"
+msgid ""
+"Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht "
+"veröffentlicht."
+msgstr ""
+
+#: field:field_user_address:user:description
+msgctxt "field_user_address:user:description"
+msgid "Eine Adresse unter der wir Sie erreichen können."
+msgstr ""
+
+#: field:field_user_links_more:user:description
+msgctxt "field_user_links_more:user:description"
+msgid ""
+"Hier können Sie beliebige Links ergänzen, die in Ihrem Profil "
+"öffentlich angezeigt werden sollen."
+msgstr ""
+
+#: field:field_user_picture:user:description
+msgctxt "field_user_picture:user:description"
+msgid "Laden Sie hier Ihr Profilfoto hoch."
+msgstr ""
+
+#: field:field_user_list_position:user:description
+msgctxt "field_user_list_position:user:description"
+msgid "Wählen Sie hier Ihren Listenplatz aus."
+msgstr ""
+
+#: field:field_user_political_roles:user:description
+msgctxt "field_user_political_roles:user:description"
+msgid ""
+"Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, "
+"Fraktionsvorsitzender, etc."
+msgstr ""
+
+#: field:field_user_about:user:description
+msgctxt "field_user_about:user:description"
+msgid ""
+"Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine "
+"Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil "
+"veröffentlicht."
+msgstr ""
+
+#: field:field_user_image_gallery:user:description
+msgctxt "field_user_image_gallery:user:description"
+msgid ""
+"Die Foto-Gallery ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in "
+"Ihrem Profil zu veröffentlichen."
+msgstr ""
+
+#: field:field_user_political_goals:user:description
+msgctxt "field_user_political_goals:user:description"
+msgid ""
+"Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem "
+"Profil veröffentlicht."
+msgstr ""
+
+#: field:field_user_twitter_account:user:description
+msgctxt "field_user_twitter_account:user:description"
+msgid ""
+"Hier können Sie Ihren Twitter-Account eintragen, um die Angabe im "
+"Profil zu veröffentlichen."
+msgstr ""
+
+#: field:comment_body:comment_node_pw_kc_thesis:label
+msgctxt "comment_body:comment_node_pw_kc_thesis:label"
+msgid "Comment"
+msgstr ""
+
+#: field:body:pw_kc_thesis:label
+msgctxt "body:pw_kc_thesis:label"
+msgid "Thesis"
+msgstr ""
+
+#: field:field_pw_parmliament:pw_kc_thesis:label
+msgctxt "field_pw_parmliament:pw_kc_thesis:label"
+msgid "Parliament"
+msgstr ""
+
+#: field:comment_body:comment_node_pw_kc_position:label
+msgctxt "comment_body:comment_node_pw_kc_position:label"
+msgid "Comment"
+msgstr ""
+
+#: field:body:pw_kc_position:label
+msgctxt "body:pw_kc_position:label"
+msgid "Argumentation"
+msgstr ""
+
+#: field:field_pw_kc_thesis_reference:pw_kc_position:label
+msgctxt "field_pw_kc_thesis_reference:pw_kc_position:label"
+msgid "Thesis Reference"
+msgstr ""
+
+#: field:field_pw_kc_vote_reference:pw_kc_position:label
+msgctxt "field_pw_kc_vote_reference:pw_kc_position:label"
+msgid "Vote"
+msgstr ""
+
+#: field:field_pw_kc_user_reference:pw_kc_position:label
+msgctxt "field_pw_kc_user_reference:pw_kc_position:label"
+msgid "User"
+msgstr ""
+
+#: field:field_pw_kc_votes_classname:pw_kc_votes:label
+msgctxt "field_pw_kc_votes_classname:pw_kc_votes:label"
+msgid "Class name"
+msgstr ""
+
+#: field:field_pw_kc_votes_classname:pw_kc_votes:description
+msgctxt "field_pw_kc_votes_classname:pw_kc_votes:description"
+msgid "Defines the color of the output"
+msgstr ""
+
+#: field:field_user_birthday:user:label
+msgctxt "field_user_birthday:user:label"
+msgid "Birthday"
+msgstr "Geburtsdatum"
+
+#: field:field_user_fname:user:label
+msgctxt "field_user_fname:user:label"
+msgid "First Name"
+msgstr "Vorname/n"
+
+#: field:field_user_job_skills:user:label
+msgctxt "field_user_job_skills:user:label"
+msgid "Professional Qualification"
+msgstr "Aktuell ausgeübte Tätigkeit"
+
+#: field:field_user_lname:user:label
+msgctxt "field_user_lname:user:label"
+msgid "Last name"
+msgstr "Nachname"
 
 #: field:comment_body:comment_node_blogpost:label
 msgctxt "comment_body:comment_node_blogpost:label"
 msgid "Comment"
 msgstr "Kommentar"
 
-#: field:field_dialogue_topic:comment_node_dialogue:label
-msgctxt "field_dialogue_topic:comment_node_dialogue:label"
-msgid "Topic"
-msgstr "Thema"
+#: field:field_calendar_entry_date:calendar_entry:label
+msgctxt "field_calendar_entry_date:calendar_entry:label"
+msgid "Date"
+msgstr "Datum"
 
-#: field:field_dialogue_topic:dialogue:label
-msgctxt "field_dialogue_topic:dialogue:label"
-msgid "Topic"
-msgstr "Thema"
+#: field:field_user_address:user:label
+msgctxt "field_user_address:user:label"
+msgid "Address"
+msgstr "Adresse"
 
 #: field:field_user_education:user:label
 msgctxt "field_user_education:user:label"
 msgid "Education"
 msgstr "Berufliche Qualifikation"
 
-#: field:field_user_gender:#allowed_values:t
-msgctxt "field_user_gender:#allowed_values:t"
-msgid "Transgender"
-msgstr "transsexuell"
+#: field:field_user_political_goals:user:label
+msgctxt "field_user_political_goals:user:label"
+msgid "Political Goals"
+msgstr "Politische Ziele"
+
+#: field:field_user_links_more:user:label
+msgctxt "field_user_links_more:user:label"
+msgid "External Links"
+msgstr "Externe Links"
+
+#: field:field_user_picture:user:label
+msgctxt "field_user_picture:user:label"
+msgid "Profile picture"
+msgstr "Profilfoto"
 
 #: field:field_petition_required:pw_petition:label
 msgctxt "field_petition_required:pw_petition:label"
 msgid "Required signings"
 msgstr "Benötigte Unterschriften"
+
+#: field:field_user_phone:user:label
+msgctxt "field_user_phone:user:label"
+msgid "Phone"
+msgstr "Telefonnummer"
+
+#: field:field_user_title:user:label
+msgctxt "field_user_title:user:label"
+msgid "Title"
+msgstr "Titel"
 
