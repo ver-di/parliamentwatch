@@ -25,21 +25,11 @@ function pw_userarchives_cron() {
     // Calculate number of questions and answers and insert them into:
     // (1) the revision table (for showing them in the profile view)
     // (2) the userarchive table (for showing them in the sidebar)
-    // 
-    // Question query:
-    //SELECT 
-    //COUNT(nid) AS count
-    //FROM node AS n 
-    //INNER JOIN field_data_field_dialogue_recipient AS r ON r.entity_type = 'node' AND r.entity_id = n.nid 
-    //INNER JOIN field_data_field_dialogue_message_type AS f ON f.entity_type = 'node' AND f.entity_id = n.nid 
-    //JOIN field_revision_field_pw_parmliament p ON p.entity_id=n.nid
-    //JOIN taxonomy_term_data rn ON rn.tid=p.field_pw_parmliament_tid
-    //WHERE r.field_dialogue_recipient_target_id = 25050 AND n.status = 1 AND rn.name='Hamburg 2008-2011'
-    //GROUP BY f.field_dialogue_message_type_value
+
     $res1 = $query->execute();
     while ($row = $res1->fetchAssoc()) {      
       $questionQuery = db_select('node', 'n');
-      $questionQuery->addExpression('COUNT(n.nid)', 'count');
+      $questionQuery->addExpression('IFNULL(COUNT(n.nid), 0)', 'count');
       $questionQuery->join('field_data_field_dialogue_recipient', 'r', 'r.entity_type = \'node\' AND r.entity_id = n.nid');
       $questionQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'node\' AND f.entity_id = n.nid');
       $questionQuery->join('field_revision_field_pw_parmliament', 'p', 'p.entity_id=n.nid');
@@ -47,7 +37,6 @@ function pw_userarchives_cron() {
       $questionQuery->condition('r.field_dialogue_recipient_target_id', $row['uid']);
       $questionQuery->condition('n.status', 1);
       $questionQuery->condition('rn.name', $row['parliament_name']);
-      $questionQuery->groupBy('f.field_dialogue_message_type_value');
       $questionRes = $questionQuery->execute();
       while ($questionRow = $questionRes->fetchAssoc()) {
         db_update('user_archive_cache')
@@ -60,7 +49,6 @@ function pw_userarchives_cron() {
                 ->condition('entity_id', $row['uid'])
                 ->condition('revision_id', $row['vid'])
                 ->execute();
-//        return 'uid: '.$row['uid'].' vid: '.$row['vid'].' count: '.$questionRow['count'];
       }
       
       $answerQuery = db_select('comment', 'c');
@@ -72,7 +60,6 @@ function pw_userarchives_cron() {
       $answerQuery->condition('c.uid', $row['uid']);
       $answerQuery->condition('c.status', 1);
       $answerQuery->condition('rn.name', $row['parliament_name']);
-      $answerQuery->groupBy('f.field_dialogue_message_type_value');
       $answerRes = $answerQuery->execute();
       while ($answerRow = $answerRes->fetchAssoc()) {
         db_update('user_archive_cache')
@@ -85,23 +72,10 @@ function pw_userarchives_cron() {
                 ->condition('entity_id', $row['uid'])
                 ->condition('revision_id', $row['vid'])
                 ->execute();
-//        return 'uid: '.$row['uid'].' vid: '.$row['vid'].' count: '.$questionRow['count'];
       }
       
     }
     
-    
-    // 
-    //SELECT COUNT(cid) AS count 
-    //FROM comment AS c 
-    //INNER JOIN field_data_field_dialogue_message_type AS f ON f.entity_type = 'comment' AND f.entity_id = c.cid 
-    //JOIN node n ON n.nid=c.nid
-    //JOIN field_revision_field_pw_parmliament p ON p.entity_id=n.nid
-    //JOIN taxonomy_term_data rn ON rn.tid=p.field_pw_parmliament_tid
-    //WHERE c.uid = 25050 AND c.status = 1 AND rn.name='Hamburg 2008-2011'
-    //GROUP BY f.field_dialogue_message_type_value
-    
-
     return "Done";
 }
 
@@ -119,7 +93,7 @@ function check_user_archives_database() {
     $query = db_select('user_revision', 'ur');
     $query->addField('ur', 'uid');
     $query->addField('ur', 'name', 'user_name');
-    $query->addField('ur', 'vid');
+    $query->addExpression('MAX(ur.vid)', 'vid');
     $query->addField('td', 'name', 'parliament_name');
     $query->addField('ur', 'timestamp');
     $query->addExpression('LOWER(rn.name)', 'user_role');
@@ -127,12 +101,11 @@ function check_user_archives_database() {
     $query->join('taxonomy_term_data', 'td', 'td.tid=up.field_user_parliament_tid');
     $query->join('field_revision_field_user_roles_for_view_mode_s', 'ro', 'ro.entity_id=ur.uid AND ro.revision_id=ur.vid');
     $query->join('taxonomy_term_data', 'rn', 'rn.tid=ro.field_user_roles_for_view_mode_s_tid');
-//    $query->condition('ur.status', '1');
-//    $query->condition('ur.uid', 24905); // only for testing
+    $query->condition('ur.status', '1');
+//    $query->condition('ur.uid', 25050); // only for testing
     $query->condition('ur.timestamp', $a_day_ago, '>');
     $query->condition('rn.name', array('Deputy', 'Candidate'), 'IN');
     $query->groupBy('ur.uid, up.field_user_parliament_tid');
-    $query->orderBy('ur.timestamp');
     
     return $query;
 }

@@ -99,24 +99,24 @@ function pw_dialogues_importer_cron() {
                         
     foreach ($users as $uid) {
 
-      // Query comments and nodes resulting in two arrays, keyed by 'answer' and 'question' with the corresponding counts as values.
-      $node_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(nid) AS count FROM {node} AS n INNER JOIN {field_data_field_dialogue_recipient} AS r ON r.entity_type = \'node\' AND r.entity_id = n.nid INNER JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = \'node\' AND f.entity_id = n.nid WHERE r.field_dialogue_recipient_target_id = :uid AND n.status = 1 GROUP BY f.field_dialogue_message_type_value', array(':uid' => $uid))->fetchAllKeyed();
-      $comment_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(cid) AS count FROM {comment} AS c INNER JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = \'comment\' AND f.entity_id = c.cid WHERE uid = :uid AND c.status = 1 GROUP BY f.field_dialogue_message_type_value', array(':uid' => $uid))->fetchAllKeyed();
-
-      // Load the politician and update the fields.
+//      // Query comments and nodes resulting in two arrays, keyed by 'answer' and 'question' with the corresponding counts as values.
+//      $node_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(nid) AS count FROM {node} AS n INNER JOIN {field_data_field_dialogue_recipient} AS r ON r.entity_type = \'node\' AND r.entity_id = n.nid INNER JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = \'node\' AND f.entity_id = n.nid WHERE r.field_dialogue_recipient_target_id = :uid AND n.status = 1 GROUP BY f.field_dialogue_message_type_value', array(':uid' => $uid))->fetchAllKeyed();
+//      $comment_query = db_query('SELECT field_dialogue_message_type_value AS type, COUNT(cid) AS count FROM {comment} AS c INNER JOIN {field_data_field_dialogue_message_type} AS f ON f.entity_type = \'comment\' AND f.entity_id = c.cid WHERE uid = :uid AND c.status = 1 GROUP BY f.field_dialogue_message_type_value', array(':uid' => $uid))->fetchAllKeyed();
+//
+//      // Load the politician and update the fields.
       $account = user_load($uid);
       $edit = array();
-      $edit['field_user_questions_get'][LANGUAGE_NONE][0]['value'] = 0;
-      $edit['field_user_answers_give'][LANGUAGE_NONE][0]['value'] = 0;
-      $edit['revision'] = 0;
-      foreach (array($comment_query, $node_query) as $query) {
-        if (isset($query['question'])) {
-          $edit['field_user_questions_get'][LANGUAGE_NONE][0]['value'] += intval($query['question']);
-        }
-        if (isset($query['answer'])) {
-         $edit['field_user_answers_give'][LANGUAGE_NONE][0]['value'] += intval($query['answer']);
-        }
-      }
+//      $edit['field_user_questions_get'][LANGUAGE_NONE][0]['value'] = 0;
+//      $edit['field_user_answers_give'][LANGUAGE_NONE][0]['value'] = 0;
+//      $edit['revision'] = 0;
+//      foreach (array($comment_query, $node_query) as $query) {
+//        if (isset($query['question'])) {
+//          $edit['field_user_questions_get'][LANGUAGE_NONE][0]['value'] += intval($query['question']);
+//        }
+//        if (isset($query['answer'])) {
+//         $edit['field_user_answers_give'][LANGUAGE_NONE][0]['value'] += intval($query['answer']);
+//        }
+//      }
       user_save($account, $edit);
     }
   }
