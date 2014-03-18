@@ -98,17 +98,40 @@ function pw_user_revision_switch_data_default() {
   );
   $data_table->meta = array(
     'fields' => array(
-      'id' => array(),
-      'uid' => array(),
-      'user_name' => array(),
-      'vid' => array(),
-      'parliament_name' => array(),
-      'number_of_questions' => array(),
-      'number_of_answers' => array(),
-      'number_of_sideline_jobs' => array(),
-      'number_of_speeches' => array(),
-      'number_of_missed_votings' => array(),
-      'timestamp' => array(),
+
+      'id' => array(
+        'label' => '',
+      ),
+      'uid' => array(
+        'label' => '',
+      ),
+      'user_name' => array(
+        'label' => '',
+      ),
+      'vid' => array(
+        'label' => '',
+      ),
+      'parliament_name' => array(
+        'label' => '',
+      ),
+      'number_of_questions' => array(
+        'label' => '',
+      ),
+      'number_of_answers' => array(
+        'label' => '',
+      ),
+      'number_of_sideline_jobs' => array(
+        'label' => '',
+      ),
+      'number_of_speeches' => array(
+        'label' => '',
+      ),
+      'number_of_missed_votings' => array(
+        'label' => '',
+      ),
+      'timestamp' => array(
+        'label' => '',
+      ),
       'user_role' => array(
         'label' => '',
       ),
