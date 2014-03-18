@@ -1,4 +1,9 @@
 jQuery(document).ready(function() {
+
+// change slideshow controls links in pw_kandidatencheck
+
+    $(".view-pw-kandidatencheck .views_slideshow_controls_text_next a").text(Drupal.t('next thesis'));
+    $(".view-pw-kandidatencheck .views_slideshow_controls_text_previous a").text(Drupal.t('previous thesis'));
      
 // attach values of bef slider to handles
 
