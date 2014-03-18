@@ -14,6 +14,7 @@ function pw_cron_export_submissions_cron() {
   export_submissions('newsletter-subscription');
   export_submissions('ueber-uns/spendenformular');
   export_submissions('frage-stellen');
+  export_submissions('profilerweiterung-buchen');
 }
 
 
