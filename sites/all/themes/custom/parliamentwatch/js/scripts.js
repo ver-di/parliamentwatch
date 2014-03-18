@@ -38,10 +38,11 @@ jQuery(document).ready(function() {
 ////// Make blocks expandable only for responsive mobile version
         
     $(window).load(function () { //https://drupal.org/node/1478648
-        $('.responsive-layout-mobile #pw-block-user-basics > h2').addClass('pw-mobile-expanded');
-        $('.responsive-layout-mobile .pw-expandable-mobile > h2').click(function(){
+        $('.responsive-layout-mobile #pw-block-user-basics h2').addClass('pw-mobile-expanded');
+        $('.responsive-layout-mobile .pw-expandable-mobile h2').click(function(){
         //alert();
             $(this).next('div').find('.view-content').slideToggle('slow');
+            $(this).parent('div').next('.view-content').slideToggle('slow');
             $(this).toggleClass('pw-mobile-expanded');
         });
     });

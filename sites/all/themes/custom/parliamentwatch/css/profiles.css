@@ -281,7 +281,7 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     height: 6.2rem;
     width: 180px;
 }
-.user-profile .ds-left-1 h2.block-title {
+.user-profile .ds-left-1 h2 {
     color: #333;
     font-size: 2rem;
 }

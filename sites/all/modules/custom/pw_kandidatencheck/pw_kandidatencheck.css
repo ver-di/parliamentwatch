@@ -1,14 +1,14 @@
 .container-12 .view-pw-kandidatencheck blockquote {
     top: -8px;
 }
-.container-12 .view-pw-kandidatencheck .grid-1 {
-    width: 50px;
+.container-12 .view-pw-kandidatencheck .pw-kc-profile-picture {
+    width: 60px;
 }
-.container-12 .view-pw-kandidatencheck .grid-1 img {
+.container-12 .view-pw-kandidatencheck .pw-kc-profile-picture img {
     margin-left: 1px;
 }
-.container-12 .view-pw-kandidatencheck .grid-7 {
-    width: 530px;
+.container-12 .view-pw-kandidatencheck .pw-kc-argumentation {
+    margin-left: 60px;
 }
 .view-pw-kandidatencheck .views-slideshow-controls-top {
     font-weight: bold;
