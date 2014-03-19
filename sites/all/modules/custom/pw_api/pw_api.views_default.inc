@@ -46,6 +46,10 @@ function pw_api_views_default_views() {
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
+  /* Relationship: Benutzer (historical data): List Position (field_user_list_position) */
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['table'] = 'field_revision_field_user_list_position';
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
   /* Feld: User revision: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'user_revision';
@@ -271,6 +275,88 @@ echo $base_url;
       'address' => 'address',
     ),
   );
+  /* Feld: Benutzer (historical data): List Position */
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['id'] = 'field_user_list_position-revision_id';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['table'] = 'field_revision_field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['field'] = 'field_user_list_position-revision_id';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['label'] = 'list_position';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['settings'] = array(
+    'linked' => 0,
+  );
+  /* Feld: Benutzer (historical data): Election Result */
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['id'] = 'field_user_election_result-revision_id';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['table'] = 'field_revision_field_user_election_result';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['field'] = 'field_user_election_result-revision_id';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['label'] = 'election_result';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer (historical data): user_roles_for_view_mode_switch */
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['id'] = 'field_user_roles_for_view_mode_s-revision_id';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['field'] = 'field_user_roles_for_view_mode_s-revision_id';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['label'] = 'roles';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['settings'] = array(
+    'textformatter_type' => 'ul',
+    'textformatter_comma_and' => 0,
+    'textformatter_comma_full_stop' => 0,
+    'textformatter_comma_override' => 0,
+    'textformatter_separator_custom' => '',
+    'textformatter_separator_custom_tag' => '0',
+    'textformatter_separator_custom_class' => '',
+    'textformatter_comma_tag' => 'div',
+    'textformatter_class' => 'textformatter-list',
+    'textformatter_term_plain' => 0,
+  );
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['delta_offset'] = '0';
+  /* Feld: Benutzer (historical data): Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = 'title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer (historical data): Birthday */
+  $handler->display->display_options['fields']['field_user_birthday-revision_id']['id'] = 'field_user_birthday-revision_id';
+  $handler->display->display_options['fields']['field_user_birthday-revision_id']['table'] = 'field_revision_field_user_birthday';
+  $handler->display->display_options['fields']['field_user_birthday-revision_id']['field'] = 'field_user_birthday-revision_id';
+  $handler->display->display_options['fields']['field_user_birthday-revision_id']['label'] = 'birthday';
+  $handler->display->display_options['fields']['field_user_birthday-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_birthday-revision_id']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_user_birthday-revision_id']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => '',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Feld: Benutzer (historical data): Professional Qualification */
+  $handler->display->display_options['fields']['field_user_job_skills-revision_id']['id'] = 'field_user_job_skills-revision_id';
+  $handler->display->display_options['fields']['field_user_job_skills-revision_id']['table'] = 'field_revision_field_user_job_skills';
+  $handler->display->display_options['fields']['field_user_job_skills-revision_id']['field'] = 'field_user_job_skills-revision_id';
+  $handler->display->display_options['fields']['field_user_job_skills-revision_id']['label'] = 'profession';
+  $handler->display->display_options['fields']['field_user_job_skills-revision_id']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer (historical data): Valid */
+  $handler->display->display_options['fields']['field_user_valid-revision_id']['id'] = 'field_user_valid-revision_id';
+  $handler->display->display_options['fields']['field_user_valid-revision_id']['table'] = 'field_revision_field_user_valid';
+  $handler->display->display_options['fields']['field_user_valid-revision_id']['field'] = 'field_user_valid-revision_id';
+  $handler->display->display_options['fields']['field_user_valid-revision_id']['label'] = 'valid';
+  $handler->display->display_options['fields']['field_user_valid-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_valid-revision_id']['type'] = 'date_plain';
+  $handler->display->display_options['fields']['field_user_valid-revision_id']['settings'] = array(
+    'format_type' => 'date_only_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Feld: Benutzer (historical data): User Twitter Account */
+  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['id'] = 'field_user_twitter_account-revision_id';
+  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['table'] = 'field_revision_field_user_twitter_account';
+  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['field'] = 'field_user_twitter_account-revision_id';
+  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['label'] = 'twitter';
+  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['element_label_colon'] = FALSE;
   /* Sort criterion: User revision: Vid */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
   $handler->display->display_options['sorts']['vid']['table'] = 'user_revision';
