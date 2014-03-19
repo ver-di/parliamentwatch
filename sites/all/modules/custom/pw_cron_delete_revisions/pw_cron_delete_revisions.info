@@ -1,0 +1,5 @@
+name = PW Cron Delete Revisions
+description = Removes revisions which are set to system_do_delete = 1 in Google API
+core = 7.x
+version = 7.x-1.0-20140319
+package = Parliamentwatch
