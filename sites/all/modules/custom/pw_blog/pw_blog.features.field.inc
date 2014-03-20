@@ -20,6 +20,9 @@ function pw_blog_field_default_fields() {
         0 => 'comment',
       ),
       'field_name' => 'comment_body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -44,6 +47,7 @@ function pw_blog_field_default_fields() {
       'default_value' => array(
         0 => array(
           'value' => '',
+          'format' => 'plain_text',
         ),
       ),
       'deleted' => '0',
@@ -65,11 +69,12 @@ function pw_blog_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
-            'filtered_html' => 'filtered_html',
+            'filtered_html' => 0,
             'full_html' => 0,
+            'html_mail' => 0,
             'managed_content' => 0,
             'php_code' => 0,
-            'plain_text' => 0,
+            'plain_text' => 'plain_text',
           ),
           'allowed_formats_toggle' => 1,
           'default_order_toggle' => 0,
@@ -80,6 +85,9 @@ function pw_blog_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -104,6 +112,10 @@ function pw_blog_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
           'rows' => '10',
         ),
         'type' => 'text_textarea',
@@ -122,6 +134,9 @@ function pw_blog_field_default_fields() {
         0 => 'node',
       ),
       'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
