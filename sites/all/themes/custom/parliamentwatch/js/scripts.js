@@ -90,7 +90,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
     var domainparts = location.hostname.split('.');
     var sndleveldomain = domainparts.slice(-2).join('.');
 
-    jQuery("a[href*='http://']:not([href*='"+sndleveldomain+"']),[href*='https://']:not([href*='"+sndleveldomain+"'])")
+    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']),[href*='https://']:not([href*='"+sndleveldomain+"'])")
         .attr("rel","external")
         .attr("target","_blank")
         .addClass("external");
