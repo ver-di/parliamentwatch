@@ -2118,7 +2118,8 @@ form .webform-component-checkboxes .description {
     margin-bottom: 3em;
 }
 #comments .mandatory {
-    bottom: 71px;
+    bottom: 101px;
+    bottom: 10.1rem;
     color: #666;
     position: absolute;
     right: 20px;
