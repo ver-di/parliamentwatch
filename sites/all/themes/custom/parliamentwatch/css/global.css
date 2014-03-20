@@ -2332,8 +2332,10 @@ form .webform-component-checkboxes .description {
 .sharethis-wrapper + h3,
 .sharethis-buttons + h1,
 .sharethis-buttons + h2,
-.sharethis-buttons + h3 {
-    margin-right: 80px;
+.sharethis-buttons + h3,
+.view-mode-user_deputy h1,
+.view-mode-user_premium h1 {
+    margin-right: 55px;
 }
 
 
