@@ -1779,6 +1779,9 @@ html.js fieldset.collapsed {
 .view-press-articles .download {
     text-align: right;
 }
+.responsive-layout-mobile .view-press-release .pushfloat-2 {
+    margin-left: 24px;
+}
 
 /* petitions */
 
