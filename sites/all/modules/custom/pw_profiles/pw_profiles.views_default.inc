@@ -1783,7 +1783,7 @@ if($record->value == 0){
       'more_options' => array(
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1801,7 +1801,7 @@ if($record->value == 0){
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1819,7 +1819,7 @@ if($record->value == 0){
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1865,7 +1865,7 @@ if($record->value == 0){
       'more_options' => array(
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
@@ -1883,7 +1883,7 @@ if($record->value == 0){
         'bef_collapsible' => 0,
         'is_secondary' => 0,
         'any_label' => '',
-        'bef_filter_description' => '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>',
+        'bef_filter_description' => '',
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
