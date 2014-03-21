@@ -49,8 +49,6 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
     $uname = preg_replace('/[^a-z -]+/', '', $uname);
     $uname = str_replace(' ', '-', $uname);
     $uname = trim($uname, '-');
-    dpm('* $uname *');
-    dpm($uname);
 
     $users = entity_load('user');
     $count = 2;
