@@ -42,6 +42,10 @@ Parlamente {"url":"http:\/\/www.abgeordnetenwatch.de\/parlamente-210-0.html","ex
 --Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-924-0.html"}
 --Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-251-0.html"}
 --Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-624-0.html"}
+-Rheinland-Pfalz {"url":"http:\/\/www.abgeordnetenwatch.de\/rheinland_pfalz-531-0.html","expanded":true}
+--Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-451-0.html"}
+--Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-448-0.html"}
+--Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-446-0.html"}
 -Sachsen {"url":"http:\/\/www.abgeordnetenwatch.de\/sachsen-146-0.html","expanded":true}
 --Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-764-0.html"}
 --Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-984-0.html"}
