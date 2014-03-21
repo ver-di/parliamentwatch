@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-14 15:11+0100\n"
-"PO-Revision-Date: 2014-03-14 15:11+0100\n"
+"POT-Creation-Date: 2014-03-21 16:01+0100\n"
+"PO-Revision-Date: 2014-03-21 16:01+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -175,7 +175,7 @@ msgstr ""
 
 #: taxonomy:term:14684:name
 msgctxt "term:14684:name"
-msgid "EU"
+msgid "EU-Parlament 2009-2014"
 msgstr ""
 
 #: taxonomy:term:14685:name
@@ -340,17 +340,17 @@ msgstr ""
 
 #: taxonomy:term:14719:name
 msgctxt "term:14719:name"
-msgid "DIE GRÜNEN"
+msgid "GRÜNE"
 msgstr ""
 
 #: taxonomy:term:14720:name
 msgctxt "term:14720:name"
-msgid "DIE LINKE"
+msgid "LINKE"
 msgstr ""
 
 #: taxonomy:term:14721:name
 msgctxt "term:14721:name"
-msgid "FAMILIEN-PARTEI"
+msgid "Familien-Partei"
 msgstr ""
 
 #: taxonomy:term:14722:name
@@ -365,7 +365,7 @@ msgstr ""
 
 #: taxonomy:term:14724:name
 msgctxt "term:14724:name"
-msgid "ÖDP"
+msgid "ödp"
 msgstr ""
 
 #: taxonomy:term:14725:name
@@ -1296,6 +1296,216 @@ msgstr ""
 #: taxonomy:term:15662:name
 msgctxt "term:15662:name"
 msgid "Kultur"
+msgstr ""
+
+#: taxonomy:term:15663:name
+msgctxt "term:15663:name"
+msgid "EU"
+msgstr ""
+
+#: taxonomy:term:15664:name
+msgctxt "term:15664:name"
+msgid "FW"
+msgstr ""
+
+#: taxonomy:term:15665:name
+msgctxt "term:15665:name"
+msgid "Alternative für Deutschland"
+msgstr ""
+
+#: taxonomy:term:15666:name
+msgctxt "term:15666:name"
+msgid "BüSo"
+msgstr ""
+
+#: taxonomy:term:15667:name
+msgctxt "term:15667:name"
+msgid "PBC"
+msgstr ""
+
+#: taxonomy:term:15668:name
+msgctxt "term:15668:name"
+msgid "PSG"
+msgstr ""
+
+#: taxonomy:term:15669:name
+msgctxt "term:15669:name"
+msgid "MLPD"
+msgstr ""
+
+#: taxonomy:term:15670:name
+msgctxt "term:15670:name"
+msgid "Die PARTEI"
+msgstr ""
+
+#: taxonomy:term:15671:name
+msgctxt "term:15671:name"
+msgid "Bundesliste"
+msgstr ""
+
+#: taxonomy:term:15672:name
+msgctxt "term:15672:name"
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: taxonomy:term:15673:name
+msgctxt "term:15673:name"
+msgid "Bayern"
+msgstr ""
+
+#: taxonomy:term:15674:name
+msgctxt "term:15674:name"
+msgid "Berlin"
+msgstr ""
+
+#: taxonomy:term:15675:name
+msgctxt "term:15675:name"
+msgid "Brandenburg"
+msgstr ""
+
+#: taxonomy:term:15676:name
+msgctxt "term:15676:name"
+msgid "Bremen"
+msgstr ""
+
+#: taxonomy:term:15677:name
+msgctxt "term:15677:name"
+msgid "Hamburg"
+msgstr ""
+
+#: taxonomy:term:15678:name
+msgctxt "term:15678:name"
+msgid "Hessen"
+msgstr ""
+
+#: taxonomy:term:15679:name
+msgctxt "term:15679:name"
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: taxonomy:term:15680:name
+msgctxt "term:15680:name"
+msgid "Niedersachsen"
+msgstr ""
+
+#: taxonomy:term:15681:name
+msgctxt "term:15681:name"
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: taxonomy:term:15682:name
+msgctxt "term:15682:name"
+msgid "Saarland"
+msgstr ""
+
+#: taxonomy:term:15683:name
+msgctxt "term:15683:name"
+msgid "Sachsen"
+msgstr ""
+
+#: taxonomy:term:15684:name
+msgctxt "term:15684:name"
+msgid "Sachsen-Anhalt"
+msgstr ""
+
+#: taxonomy:term:15685:name
+msgctxt "term:15685:name"
+msgid "Schleswig-Holstein"
+msgstr ""
+
+#: taxonomy:term:15686:name
+msgctxt "term:15686:name"
+msgid "Thüringen"
+msgstr ""
+
+#: taxonomy:term:15687:name
+msgctxt "term:15687:name"
+msgid "Rheinland-Pfalz"
+msgstr ""
+
+#: taxonomy:term:15738:name
+msgctxt "term:15738:name"
+msgid "Agrarpolitik"
+msgstr ""
+
+#: taxonomy:term:15739:name
+msgctxt "term:15739:name"
+msgid "Arbeit"
+msgstr ""
+
+#: taxonomy:term:15740:name
+msgctxt "term:15740:name"
+msgid "Bildung und Forschung"
+msgstr ""
+
+#: taxonomy:term:15741:name
+msgctxt "term:15741:name"
+msgid "Bürgerrechte"
+msgstr ""
+
+#: taxonomy:term:15742:name
+msgctxt "term:15742:name"
+msgid "Energie und Klimaschutz"
+msgstr ""
+
+#: taxonomy:term:15743:name
+msgctxt "term:15743:name"
+msgid "EU-Erweiterung"
+msgstr ""
+
+#: taxonomy:term:15744:name
+msgctxt "term:15744:name"
+msgid "Europäische Außenpolitik"
+msgstr ""
+
+#: taxonomy:term:15745:name
+msgctxt "term:15745:name"
+msgid "Finanzen und Euro"
+msgstr ""
+
+#: taxonomy:term:15746:name
+msgctxt "term:15746:name"
+msgid "Gesundheit"
+msgstr ""
+
+#: taxonomy:term:15747:name
+msgctxt "term:15747:name"
+msgid "Menschenrechte und Immigration"
+msgstr ""
+
+#: taxonomy:term:15748:name
+msgctxt "term:15748:name"
+msgid "Regionen"
+msgstr ""
+
+#: taxonomy:term:15749:name
+msgctxt "term:15749:name"
+msgid "Sozialpolitik"
+msgstr ""
+
+#: taxonomy:term:15750:name
+msgctxt "term:15750:name"
+msgid "Umwelt"
+msgstr ""
+
+#: taxonomy:term:15751:name
+msgctxt "term:15751:name"
+msgid "Verbraucherschutz"
+msgstr ""
+
+#: taxonomy:term:15752:name
+msgctxt "term:15752:name"
+msgid "Verkehr und Infrastruktur"
+msgstr ""
+
+#: taxonomy:term:15753:name
+msgctxt "term:15753:name"
+msgid "Wirtschaft"
+msgstr ""
+
+#: taxonomy:term:15754:name
+msgctxt "term:15754:name"
+msgid "Ische"
 msgstr ""
 
 #: taxonomy:vocabulary:24:name

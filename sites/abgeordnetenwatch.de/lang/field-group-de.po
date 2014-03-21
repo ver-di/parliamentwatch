@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-14 15:11+0100\n"
-"PO-Revision-Date: 2014-03-14 15:11+0100\n"
+"POT-Creation-Date: 2014-03-21 16:01+0100\n"
+"PO-Revision-Date: 2014-03-21 16:01+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr ""
 
 #: field_group:user:user:form:group_managed_content:label
 msgctxt "user:user:form:group_managed_content:label"
-msgid "Managed Content"
+msgid "Mangaged Content"
 msgstr ""
 
 #: field_group:user:user:form:group_premium:label
@@ -117,81 +117,4 @@ msgstr ""
 msgctxt "user:user:default:group_user_polls:label"
 msgid "Polls"
 msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_basics_additional:label
-msgctxt "user:user:user_deputy:group_user_basics_additional:label"
-msgid "User Basics Additional"
-msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_basics_data:label
-msgctxt "user:user:user_deputy:group_user_basics_data:label"
-msgid "User Basics Data"
-msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_basics:label
-msgctxt "user:user:user_deputy:group_user_basics:label"
-msgid "User Basics"
-msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_polls_archive:label
-msgctxt "user:user:user_deputy:group_user_polls_archive:label"
-msgid "User Polls Archive"
-msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_polls_current:label
-msgctxt "user:user:user_deputy:group_user_polls_current:label"
-msgid "User Polls Current"
-msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_polls:label
-msgctxt "user:user:user_deputy:group_user_polls:label"
-msgid "User Polls"
-msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_roles_archive:label
-msgctxt "user:user:user_deputy:group_user_roles_archive:label"
-msgid "User Roles Archive"
-msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_roles_current:label
-msgctxt "user:user:user_deputy:group_user_roles_current:label"
-msgid "User Roles Current"
-msgstr ""
-
-#: field_group:user:user:user_deputy:group_user_roles:label
-msgctxt "user:user:user_deputy:group_user_roles:label"
-msgid "User Roles"
-msgstr ""
-
-#: field_group:user:user:form:group_user_admin:label
-msgctxt "user:user:form:group_user_admin:label"
-msgid "Admin Settings"
-msgstr ""
-
-#: field_group:user:user:form:group_user_affiliation:label
-msgctxt "user:user:form:group_user_affiliation:label"
-msgid "Political Affiliation"
-msgstr ""
-
-#: field_group:user:user:form:group_user_dialogue:label
-msgctxt "user:user:form:group_user_dialogue:label"
-msgid "Dialogue Data"
-msgstr ""
-
-#: field_group:user:user:form:group_user_premium_fields:description
-msgctxt "user:user:form:group_user_premium_fields:description"
-msgid ""
-"Profilfoto, Social-Media, Bildergalerie, Kalender, Biografie, "
-"politische Ziele"
-msgstr ""
-
-#: field_group:user:user:form:group_user_personal_data:label
-msgctxt "user:user:form:group_user_personal_data:label"
-msgid "Personal Data"
-msgstr "Angaben zur Person"
-
-#: field_group:user:user:form:group_user_premium_fields:label
-msgctxt "user:user:form:group_user_premium_fields:label"
-msgid "Premium Fields"
-msgstr "Profilerweiterung\r\n"
 

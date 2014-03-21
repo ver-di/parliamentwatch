@@ -98,7 +98,6 @@ function pw_user_revision_switch_data_default() {
   );
   $data_table->meta = array(
     'fields' => array(
-
       'id' => array(
         'label' => '',
       ),

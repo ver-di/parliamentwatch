@@ -487,7 +487,7 @@ return $result;
   /* Display: About */
   $handler = $view->new_display('block', 'About', 'about');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Über [field_user_fname-revision_id] [field_user_lname-revision_id]';
+  $handler->display->display_options['title'] = '[field_user_fname-revision_id] [field_user_lname-revision_id] über sich';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -511,9 +511,9 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="about" class="add-sharethis" title="About [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>
+  $handler->display->display_options['header']['area']['content'] = '<div id="about" class="add-sharethis" title="<?php print t(\'About [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]\'); ?>"></div>
 ';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | First Name */
@@ -563,7 +563,7 @@ return $result;
   /* Display: About Page */
   $handler = $view->new_display('page', 'About Page', 'about_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'About [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
+  $handler->display->display_options['title'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id] über sich';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -761,8 +761,8 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="imagegallery" class="add-sharethis" title="Imagegallery of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['header']['area']['content'] = '<div id="imagegallery" class="add-sharethis" title="<?php print t(\'Imagegallery of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]\'); ?>"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: Global: Text area */
@@ -1066,7 +1066,7 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="political-goals" class="add-sharethis" title="Political Goals of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div id="political-goals" class="add-sharethis" title="<?php print t(\'Political Goals of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]\'); ?>"></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -1323,8 +1323,9 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="additional-links" class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<div id="additional-links" class="add-sharethis" title="<?php print t(\'Additional links of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]\'); ?>"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
@@ -2049,7 +2050,6 @@ drupal_set_title("");
   $handler->display->display_options['fields']['field_user_party-revision_id']['ui_name'] = 'Excluded | User: Party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';

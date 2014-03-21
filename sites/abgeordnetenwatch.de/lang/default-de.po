@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-14 15:11+0100\n"
-"PO-Revision-Date: 2014-03-14 15:11+0100\n"
+"POT-Creation-Date: 2014-03-21 16:00+0100\n"
+"PO-Revision-Date: 2014-03-21 16:00+0100\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -25795,10 +25795,6 @@ msgid "Example modules"
 msgstr ""
 
 #: /ga/admin/modules
-msgid "Filter list"
-msgstr ""
-
-#: /ga/admin/modules
 msgid "!enabled of !total"
 msgstr ""
 
@@ -34914,10 +34910,6 @@ msgstr ""
 
 #: /index.php
 msgid "Ask a Question"
-msgstr ""
-
-#: /index.php
-msgid "to the full profile"
 msgstr ""
 
 #: /index.php
@@ -51130,10 +51122,6 @@ msgid "Contextual Basic Info Block on user for use with DS"
 msgstr ""
 
 #: /index.php
-msgid " About [field_user_fname] [field_user_lname]"
-msgstr ""
-
-#: /index.php
 msgid "Contextual About Block on user"
 msgstr ""
 
@@ -51159,10 +51147,6 @@ msgstr ""
 
 #: /index.php
 msgid "Profile Extension Text"
-msgstr ""
-
-#: /index.php
-msgid "About [field_user_fname] [field_user_lname], [field_user_party] "
 msgstr ""
 
 #: /index.php
@@ -51275,15 +51259,7 @@ msgid "Title text attribute"
 msgstr ""
 
 #: /index.php
-msgid "Image Gallery"
-msgstr ""
-
-#: /index.php
 msgid "List Position"
-msgstr ""
-
-#: /index.php
-msgid "Political Goals"
 msgstr ""
 
 #: /index.php
@@ -53167,10 +53143,6 @@ msgid "Grunddaten von [field_user_fname] [field_user_lname]"
 msgstr ""
 
 #: /index.php
-msgid "About [field_user_fname] [field_user_lname], [field_user_party]"
-msgstr ""
-
-#: /index.php
 msgid ""
 "Bildgalerie von [field_user_fname] [field_user_lname], "
 "[field_user_party]"
@@ -53268,10 +53240,6 @@ msgstr ""
 
 #: /index.php
 msgid "Abgeordneten Status"
-msgstr ""
-
-#: /index.php
-msgid "About me"
 msgstr ""
 
 #: /index.php
@@ -59267,12 +59235,6 @@ msgstr ""
 
 #: /index.php
 msgid ""
-"About [field_user_fname-revision_id] [field_user_lname-revision_id], "
-"[field_user_party-revision_id]"
-msgstr ""
-
-#: /index.php
-msgid ""
 "Bildergalerie von [field_user_fname-revision_id] "
 "[field_user_lname-revision_id]"
 msgstr ""
@@ -60777,30 +60739,52 @@ msgstr ""
 msgid "Show difference between user revisions."
 msgstr ""
 
-#: /admin/config/search/redirect/edit/1?destination=admin/config/search/redirect
-msgid "Edit redirect"
+#: /profile/david
+msgid "One-time login link for [user:name] at [site:name]"
 msgstr ""
 
-#: /admin/structure/features
+#: /profile/david
 msgid ""
-"Benutzen Sie <em>Einfache Seiten</em> für statischen Inhalt, wie z.B. "
-"eine „Über uns“ Seite."
+"[user:name],\n"
+"\n"
+"A request to give you a one-time login for your account has been made "
+"at [site:name].\n"
+"\n"
+"You may now log in to [site:url-brief] by clicking on this link or "
+"copying and pasting it in your browser:\n"
+"\n"
+"[user:login-one-time]\n"
+"\n"
+"This is a one-time login, so it can be used only once.  It expires in "
+"two weeks and nothing will happen if it's not used.\n"
+"\n"
+"--  [site:name] team"
 msgstr ""
 
-#: /admin/structure/features/pw_globals/status
-msgid "Einfache Seite"
+#: /profile/david
+msgid "A one-time login link has been sent to @username."
 msgstr ""
 
-#: /admin/structure/features/pw_press/status
-msgid "Pressemitteilung"
+#: /pw_login_once/24997/1394533328/zO8_1aMhPmm52THOMwriXn4i27gDgLTNnQ9OPKrYiRY?destination=user/24997
+msgid ""
+"It is not necessary to use this link to login anymore. You are already "
+"logged in."
 msgstr ""
 
-#: /colorbox/frage-stellen?width=600&height=600
-msgid "Frage abschicken"
+#: /pw_login_once/24997/1394533587/yOXPVKds1swuXXUQtUdvn1RRn-rc3fo9bY0P710-A1Y?destination=user/24997
+msgid "You have just used your one-time login link."
 msgstr ""
 
-#: /system/ajax
-msgid "Use widget configuration"
+#: /admin/config/people/accounts
+msgid "Available variables are:"
+msgstr ""
+
+#: /admin/config/people/accounts
+msgid "PW Login Once e-mail"
+msgstr ""
+
+#: /admin/config/people/accounts
+msgid "Customize pw login once e-mail messages sent to users."
 msgstr ""
 
 #: /admin/config/people/accounts/display/user_deputy
@@ -60827,69 +60811,417 @@ msgstr ""
 msgid "User Roles Current"
 msgstr ""
 
-#: /admin/structure/views/ajax/config-item/pw_user_profile_fields_rev/basic_info/field/field_user_address-revision_id
-msgid "Components to render"
+#: /system/ajax
+msgid "Exported data"
 msgstr ""
 
-#: /admin/structure/views/ajax/config-item/pw_user_profile_fields_rev/basic_info/field/field_user_address-revision_id
-msgid "@name (full)"
+#: /frage-stellen
+msgid "Frage abschicken"
 msgstr ""
 
-#: /admin/structure/views/ajax/config-item/pw_user_profile_fields_rev/basic_info/field/field_user_address-revision_id
+#: /admin/config/search/redirect/edit/11?destination=admin/config/search/redirect%3Fsort%3Ddesc%26order%3DFrom
+msgid "Edit redirect"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Deslash"
+msgstr ""
+
+#: /admin/config/system/globalredirect
 msgid ""
-"The separator to use between components. Use \\n"
-" for a line break."
+"If enabled, this option will remove the trailing slash from requests. "
+"This stops requests such as <code>example.com/node/1/</code> failing "
+"to match the corresponding alias and can cause duplicate content. On "
+"the other hand, if you require certain requests to have a trailing "
+"slash, this feature can cause problems so may need to be disabled."
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_fname
+#: /admin/config/system/globalredirect
+msgid "Non-clean to Clean"
+msgstr ""
+
+#: /admin/config/system/globalredirect
 msgid ""
-"Limit the maximum length of the field in characters using the "
-"\"<strong>Maximum length</strong>\" value set in the <strong>field "
-"settings</strong> using Javascript."
+"If enabled, this option will redirect from non-clean to clean URL (if "
+"Clean URL's are enabled). This will stop, for example, node 1  "
+"existing on both <code>example.com/node/1</code> AND "
+"<code>example.com?q=node/1</code>."
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_fname
-msgid "Apply responsive images and styles to this field"
+#: /admin/config/system/globalredirect
+msgid "Remove Trailing Zero Argument"
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_fname
+#: /admin/config/system/globalredirect
 msgid ""
-"If selected, responsive images and styles will be applied to the "
-"content of this field."
+"If enabled, any instance of \"/0\" will be trimmed from the right of "
+"the URL. This stops duplicate pages such as \"taxonomy/term/1\" and "
+"\"taxonomy/term/1/0\" where 0 is the default depth. There is an option "
+"of limiting this feature to taxonomy term pages ONLY or allowing it to "
+"effect any page. <strong>By default this feature is disabled to avoid "
+"any unexpected behavior. Also of note, the trailing /0 \"depth "
+"modifier\" was removed from Drupal 7.</strong>"
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_birthday
-msgctxt "ampm"
-msgid "am"
+#: /admin/config/system/globalredirect
+msgid "Enabled for all pages"
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_birthday
+#: /admin/config/system/globalredirect
+msgid "Enabled for taxonomy term pages only"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Menu Access Checking"
+msgstr ""
+
+#: /admin/config/system/globalredirect
 msgid ""
-"The location of date part labels, like 'Year', 'Month', or 'Day' . "
-"'Above' displays the label as titles above each date part. 'None' "
-"doesn't visually label any of the date parts. Theme functions like "
-"'date_part_label_year' and 'date_part_label_month' control label text."
+"If enabled, the module will check the user has access to the page "
+"before redirecting. This helps to stop redirection on protected pages "
+"and avoids giving away <em>secret</em> URL's. <strong>By default this "
+"feature is disabled to avoid any unexpected behavior</strong>"
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_birthday
-msgid "Changes to date attributes only effects new or updated content."
+#: /admin/config/system/globalredirect
+msgid "Case Sensitive URL Checking"
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_about
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, the module will compare the current URL to the alias "
+"stored in the system. If there are any differences in case then the "
+"user will be redirected to the correct URL."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Language Path Checking"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, the module will check that the page being viewed matches "
+"the language in the URL or the system default. For example, viewing a "
+"French node while the site is in English will cause a redirect to the "
+"English node."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Add Canonical Link"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, will add a <a href=\"!canonical\">canonical link</a> to "
+"each page."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Set Content Location Header"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, will add a <a href=\"!canonical\">Content-Location</a> "
+"header."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Taxonomy Term Path Handler"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, any request to a taxonomy/term/[tid] page will check that "
+"the correct path is being used for the term's vocabulary."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Frontpage Redirect Handler"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Site Information"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, any request to the frontpage path will redirect to the "
+"site root.<br />\n"
+"                         Whatever you set as the path of the front "
+"page on the !link settings page will redirect to the site root (e.g. "
+"\"node\" or \"node/1\" and also its alias (e.g. in case you have set "
+"\"node/1\" as your home page but that page also has an alias "
+"\"home\"))."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Ignore Admin Path"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, any request to the admin section of the site will be "
+"ignored by Global Redirect.<br />\n"
+"                         This is useful if you are experiencing "
+"problems with Global Redirect and want to protect the admin section of "
+"your website. NOTE: This may not be desirable if you are using path "
+"aliases for certain admin URLs."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Save Configuration"
+msgstr ""
+
+#: /comment/reply/10481/137865
+msgid "SMTP Error: Data not accepted."
+msgstr ""
+
+#: /comment/reply/10481/137865
+msgid "SMTP server error: !lasterror"
+msgstr ""
+
+#: /admin/structure/menu/item/4042/delete
+msgid "Blog tagdelic (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/4043/delete
+msgid "Blogcategories (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/4045/delete
+msgid "Blogtags (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/4046/delete
+msgid "Blogterms (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/4130/delete
+msgid "Trustee (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu-position
+msgid "The new rules ordering has been applied."
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=138196"
+msgstr ""
+
+#: /admin/structure/menu/item/4140/delete
+msgid "Lobbyistenspenden verbieten"
+msgstr ""
+
+#: /admin/structure/menu/item/4141/delete
+msgid "Abgeordnetenbestechung bestrafen"
+msgstr ""
+
+#: /index.php
+msgid "Menu \"!menu\" has been exported to \"!file\"."
+msgstr ""
+
+#: /index.php
+msgid "File \"!file\" already exists or cannot be created."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). "
+"Aus technischen Gründen kann es bis zu 30min dauern, bis diese "
+"Information in Ihrem Profil angezeigt wird."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in "
+"Ihrem Profil zu veröffentlichen."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht "
+"veröffentlicht."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid "Diese E-Mail Adresse wird öffentlich in Profil angezeigt."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid "Eine Adresse unter der wir Sie erreichen können."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Hier können Sie beliebige Links ergänzen, die in Ihrem Profil "
+"öffentlich angezeigt werden sollen."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu "
+"auf \"Auswählen\", suchen Sie dann eine Bilddatei von Ihrem Computer "
+"aus und klicken Sie auf \"Abschicken\"."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine "
+"Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil "
+"veröffentlicht."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, "
+"Fraktionsvorsitzender, etc."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem "
+"Profil veröffentlicht."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid "Wählen Sie hier Ihren Listenplatz aus."
+msgstr ""
+
+#: /admin/structure/features/pw_blog/status
+msgid ""
+"Adds a block with information to the premium profile to the user edit "
+"form"
+msgstr ""
+
+#: /index.php
+msgid "Einfache Seite"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Benutzen Sie <em>Einfache Seiten</em> für statischen Inhalt, wie z.B. "
+"eine „Über uns“ Seite."
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/status
+msgid "[php] [parliament_name_1] "
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Calendar Entries of Committee Memberships"
+msgstr ""
+
+#: /import
+msgid "PW Userarchives Cron"
+msgstr ""
+
+#: /import
+msgid "Run daily cron manually."
+msgstr ""
+
+#: /index.php
+msgid "Extensions not available"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Either the <a "
+"href=\"http://php.net/manual/en/book.memcache.php\">memcache</a> or <a "
+"href=\"http://php.net/manual/en/book.memcached.php\">memcached</a> "
+"extensions must be installed in order to use memcache integration."
+msgstr ""
+
+#: /index.php
+msgid "Module !module doesn't meet the requirements to be enabled."
+msgstr ""
+
+#: /profile/brigitta-martens
+msgid "Kandidatenprofil"
+msgstr ""
+
+#: /profilerweiterung-buchen
+msgid "Profilerweiterung buchen"
+msgstr ""
+
+#: /profile/brigitta-martens
+msgid "Abgeordnetenprofil"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Image Gallery of  [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid "<p class=\"link-profile\">[nothing_1]</p>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div class=\"add-sharethis\" title=\"Political Goals of "
+"[field_user_fname-revision_id] [field_user_lname-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid "Inline User diff"
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid "user_diff"
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid "Latest differences (Formatted)"
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid ""
+"The differences between the current revision and the previous revision "
+"of this user. (With better formatting)"
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid ""
+"The differences between the current revision and the previous revision "
+"of this user."
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid ""
+"The differences between the current revision and the previous revision "
+"of this user, but with a marked-down form of each revision used for "
+"comparison."
+msgstr ""
+
+#: /profile/martina-poser
+msgid "Show latest diff"
+msgstr ""
+
+#: /user/25050/revisions?render=overlay
+msgid "Revisions for @title"
+msgstr ""
+
+#: /user/25050/revisions?render=overlay
+msgid "Show diff"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/fields/body
 msgid "Force text truncate"
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_about
+#: /admin/structure/types/manage/blogpost/fields/body
 msgid ""
 "Check this option if you want that the html (or the text) that the "
 "user inserts into the field to be truncated."
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_about
+#: /admin/structure/types/manage/blogpost/fields/body
 msgid "Truncate html"
 msgstr ""
 
-#: /admin/config/people/accounts/fields/field_user_about
+#: /admin/structure/types/manage/blogpost/fields/body
 msgid ""
 "Check this option if the input field may contain html text and you "
 "want to truncate it safely. This will also overwrite the maxlength "
@@ -60897,243 +61229,721 @@ msgid ""
 "the length."
 msgstr ""
 
-#: /admin/appearance
-msgid "This is a sub-theme of theme Seven"
+#: /admin/structure/types/manage/blogpost/fields/body
+msgid "Apply responsive images and styles to this field"
 msgstr ""
 
-#: /admin/appearance
-msgid "PW Seven"
-msgstr ""
-
-#: /admin/config/people/accounts/fields/field_user_address
-msgid "Available countries"
-msgstr ""
-
-#: /admin/config/people/accounts/fields/field_user_address
-msgid "If no countries are selected, all countries will be available."
-msgstr ""
-
-#: /admin/config/people/accounts/fields/field_user_address
-msgid "Format handlers"
-msgstr ""
-
-#: /admin/config/people/accounts/fields/field_user_valid
+#: /admin/structure/types/manage/blogpost/fields/body
 msgid ""
-"The location of date part labels, like 'Year', 'Month', or 'Day' . "
-"'Above' displays the label as titles above each date part. 'Within' "
-"inserts the label as the first option in the select list and in blank "
-"textfields. 'None' doesn't visually label any of the date parts. Theme "
-"functions like 'date_part_label_year' and 'date_part_label_month' "
-"control label text."
+"If selected, responsive images and styles will be applied to the "
+"content of this field."
 msgstr ""
 
-#: /admin/config/pw_profileswitch/settings
-msgid "Assignment 2"
+#: /index.php
+msgid "list_position"
 msgstr ""
 
-#: /admin/config/pw_profileswitch/settings
-msgid "Assignment 3"
+#: /index.php
+msgid "election_result"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /index.php
+msgid "roles"
+msgstr ""
+
+#: /index.php
+msgid "title"
+msgstr ""
+
+#: /index.php
+msgid "birthday"
+msgstr ""
+
+#: /index.php
+msgid "profession"
+msgstr ""
+
+#: /index.php
+msgid "valid"
+msgstr ""
+
+#: /index.php
+msgid "twitter"
+msgstr ""
+
+#: /index.php
+msgid "Bypass domain 301 redirect"
+msgstr ""
+
+#: /index.php
+msgid ""
+"If this permission is set, the user will not be 301 redirected if the "
+"domain does not match the main domain."
+msgstr ""
+
+#: /profile/root
+msgid "Domain 301 Redirect"
+msgstr ""
+
+#: /profile/root
+msgid "Manage domain 301 redirection."
+msgstr ""
+
+#: /profile/root
+msgid "domain_301_redirect"
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid ""
+"The Domain 301 Redirect module allows sites to 301 redirect to a "
+"domain that is marked as the main domain. This means you can have all "
+"subdomains and other domains 301 redirect to a domain that you choose "
+"as the main domain. This provides great SEO benefit."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid ""
+"Allows you to 301 redirect any domain to the main domain associated "
+"with a site."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "High performance integration with memcache."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Adds a User Interface to monitor the Memcache for this site."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Performance and scalability"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid ""
+"Enable this setting to start 301 redirects to the domain below for all "
+"other domains."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid ""
+"This is the domain that all other domains that point to this site will "
+"be 301 redirected to. This value should also include the scheme (http "
+"or https). E.g. http://www.testsite.com"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Domain Check"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid ""
+"This option selects the period between domain validation checks. If "
+"the Domain no longer points to this site, Domain 301 Redirection will "
+"be disabled."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "2 hours"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "3 hours"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "6 hours"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "12 hours"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Domain retries"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid ""
+"Number of times to check domain availability before disabling "
+"redirects."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Re-enable domain redirection"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Turn domain redirection on when the domain becomes available."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Redirect on specific pages"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay&render=overlay
+msgid ""
+"Domain 301 redirection can not be enabled as the domain you set does "
+"not currently point to this site."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay&render=overlay
+msgid ""
+"The domain cannot be set, as it causes a redirect loop (within @num "
+"redirects)."
+msgstr ""
+
+#: /domain_301_redirect_check/1395225593
+msgid "Domain 301 Redirect Check"
+msgstr ""
+
+#: /domain_301_redirect_check/1395225593
+msgid "Checks that the main domain listed actually points to the same site."
+msgstr ""
+
+#: /api/parliament/hamburg%202004-2008/profile/brigitta-martens/profile-authorized.xml
+msgid "!start-date to !end-date"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "Transform spaces"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid ""
+"Transform spaces to valid XML in field labels (spaces create invalid "
+"XML markup). Note that invalid XML tag characters will always be "
+"converted."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "Transform type"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "Dash"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "camelCase"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "PascalCase"
+msgstr ""
+
+#: /system/ajax
+msgid "Updated term data"
+msgstr ""
+
+#: /admin/structure/features/pw_press/status
+msgid "Pressemitteilung"
+msgstr ""
+
+#: /user/25378/revisions/47239/view
+msgid ""
+"The revisions let you track differences between multiple versions of a "
+"user."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Enable secondary exposed form options"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"Allows you to specify some exposed form elements as being secondary "
+"options and places those elements in a collapsible fieldset. Use this "
+"option to place some exposed filters in an \"Advanced Search\" area of "
+"the form, for example."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Secondary options label"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"The name of the fieldset to hold secondary options. This cannot be "
+"left blank or there will be no way to show/hide these options."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Require input before results are shown"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Emulates the built in <em>Input Required</em> exposed filter handler"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Text on demand"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"Text to display instead of results until the user selects and applies "
+"an exposed filter."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "BEF settings documentation"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Exposed Filter Settings"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"This section lets you select additional options for exposed filters. "
+"Some options are only available in certain situations. If you do not "
+"see the options you expect, please see the !link page for more "
+"details."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Default select list"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid " (Filter label: \"@fl\")"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Display @identifier exposed filter as"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "More options for @identifier"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "This is a secondary option"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"Places this element in the secondary options portion of the exposed "
+"form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Override \"Any\" option label"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"Leave blank to use views default value. <em>Note: overriding this "
+"label will break translations and localizations. Leave this field "
+"blank if preserving internationalization is important to your "
+"site.</em>"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"Adds descriptive text to the exposed filter.  This is usually rendered "
+"in smaller print under the label or the options."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Rewrite filter options"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Rewrite the text displayed"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"\n"
+"          Use this field to rewrite the filter options displayed. Use "
+"the format\n"
+"          of current_value|replacement_value, one replacement per "
+"line. For\n"
+"          example: <pre>\n"
+"0|Zero\n"
+"1|One\n"
+"2|Two\n"
+"</pre> Leave the replacement value blank to remove an option "
+"altogether. If using hierarchical taxonomy filters, do not including "
+"leading hyphens in the current value.\n"
+"        "
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Checkboxes/Radio Buttons"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Add select all/none links"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"Add a \"Select All/None\" link when rendering the exposed filter "
+"using\n"
+"              checkboxes. If this option is disabled, edit the filter "
+"and check the\n"
+"              \"Allow multiple selections\"."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Make this filter collapsible"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Puts this filter in a collapsible fieldset"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "jQuery UI slider"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Slider options for @identifier"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Range minimum"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"The minimum allowed value for the jQuery range slider. It can be "
+"positive, negative, or zero and have up to 11 decimal places."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Range maximum"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"The maximum allowed value for the jQuery range slider. It can be "
+"positive, negative, or zero and have up to 11 decimal places."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Step"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"Determines the size or amount of each interval or step the slider "
+"takes between the min and max."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"The full specified value range of the slider (Range maximum - Range "
+"minimum) must be evenly divisible by the step."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "The step must be a positive number of up to 5 decimal places."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Animate"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid ""
+"Whether to slide handle smoothly when user click outside handle on the "
+"bar. Allowed values are \"slow\", \"normal\", \"fast\" or the number "
+"of milliseconds to run the animation (e.g. 1000). If left blank, there "
+"will be no animation, the slider will just jump to the new value "
+"instantly."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Orientation"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Horizontal"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "Vertical"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_list_rev/grid/exposed_form_options
+msgid "The orientation of the jQuery range slider."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_list_rev/grid/filter/field_user_age_value
+msgid "Min"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_list_rev/grid/filter/field_user_age_value
+msgid "And max"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Pane settings"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Use view name"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Admin title"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Use view description"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Admin desc"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Link to view"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Use Panel path"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Argument input"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Allow settings"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/25050
+#: /admin/structure/views/view/profile_questions_answers/edit/profile
 msgid "Some"
 msgstr ""
 
-#: /admin/structure/features/pw_user_revision_switch/status
-msgid "Broken handler user_archive_cache.user_role"
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Display exposed sort options as"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
-msgid "Attachment settings"
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Radio Buttons"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
-msgid "Attachment position"
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Select a format for the exposed sort options."
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
-msgid "Before"
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Advanced sort options"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
-msgid "After"
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Make sort options collapsible"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
-msgid "Both"
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Puts the sort options in a collapsible fieldset"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Collapsible fieldset title"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"This cannot be left blank or there will be no way to show/hide sort "
+"options."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Combine sort order with sort by"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Combines the sort by options and order (ascending or decending) into a "
+"single list.  Use this to display \"Option1 (ascending)\", \"Option1 "
+"(descending)\", \"Option2 (ascending)\", \"Option2 (descending)\" in a "
+"single form element."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Use this field to rewrite the text displayed for combined sort options "
+"and sort order. Use the format of current_value|replacement_value, one "
+"replacement per line. For example: <pre>\n"
+"Post date Asc|Oldest first\n"
+"Post date Desc|Newest first\n"
+"Title Asc|A -> Z\n"
+"Title Desc|Z -> A</pre> Leave the replacement value blank to remove an "
+"option altogether."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Include a \"Reset sort\" option"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Adds a \"Reset sort\" link; Views will use the default sort order."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "\"Reset sort\" label"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "This cannot be left blank if the above option is checked"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/preview/profile/ajax
+msgid ""
+"<div class=\"ic-info\"><div class=\"info-title\"></div><div "
+"class=\"info-content element-hidden\">Durchsuchen Sie die Fragen und "
+"Antworten in diesem Profil nach einem bestimmten "
+"Schlagwort</div></div>"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/preview/profile/ajax
+msgid ""
+"<div class=\"ic-info\"><div class=\"info-title\"></div><div "
+"class=\"info-content element-hidden\">Filtern Sie die Fragen und "
+"Antworten in diesem Profil nach einem bestimmten Thema</div></div>"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_questions_answers/profile/filter/combine
+msgid "Choose fields to combine for filtering"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/profile_questions_answers/profile/filter/combine
+msgid "This filter doesn't work for very special field handlers."
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/preview/profile/ajax
+msgid ""
+"<div class=\"ic-info\"><div class=\"info-title\"></div><div "
+"class=\"info-content element-hidden\">Als 'unbeantwortet' gelten auch "
+"Fragen, auf die Politikerinnen und Politiker mit standardisierten "
+"Textbausteinen reagieren</div></div>"
+msgstr ""
+
+#: /index.php
+msgid "List of comments"
+msgstr ""
+
+#: /index.php
+msgid "Display the node's list of comments."
+msgstr ""
+
+#: /index.php
+msgid "AJAX Add Comment"
+msgstr ""
+
+#: /index.php
+msgid "Adds an inline AJAX comment form."
+msgstr ""
+
+#: /admin/modules
+msgid "AJAX comments"
+msgstr ""
+
+#: /admin/modules
+msgid "AJAXifies comments on site."
+msgstr ""
+
+#: /admin/modules
+msgid "Module makes comments load without a page refresh via AJAX"
+msgstr ""
+
+#: /admin/modules
+msgid "Integrates Nodejs with Ajax Comments"
+msgstr ""
+
+#: /admin/modules
+msgid "Directly administer your Drupal database."
+msgstr ""
+
+#: /admin/config/content/ajax_comments
+msgid ""
+"Select node types you want to activate ajax comments on. If you select "
+"nothing, AJAX Comments will be enabled everywhere."
+msgstr ""
+
+#: /admin/config/content/ajax_comments
+msgid "Notification Message"
+msgstr ""
+
+#: /admin/config/content/ajax_comments
+msgid "Add notification message to comment when posted."
+msgstr ""
+
+#: /system/ajax
+msgid "SMTP Error: Could not connect to SMTP host."
+msgstr ""
+
+#: /system/ajax
+msgid "Your comment has been posted"
+msgstr ""
+
+#: /admin/config/regional/translate/edit/25846?destination=admin/config/regional/translate/translate
+msgid "Source string not found."
+msgstr ""
+
+#: /profile/tine-hordum/archive/47239
+msgid "About Tine Hördum, Alternative für Deutschland, BüSo, SPD"
+msgstr ""
+
+#: /profile/tine-hordum
+msgid "Imagegallery of Tine Hördum, Alternative für Deutschland, BüSo, SPD"
+msgstr ""
+
+#: /profile/tine-hordum
+msgid ""
+"Political Goals of Tine Hördum, Alternative für Deutschland, BüSo, "
+"SPD"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "-Select-"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "View: @view - Display: @display"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "View to insert"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "The view to insert into this area."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
 msgid "Inherit contextual filters"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
-msgid "Inherit exposed filters"
-msgstr ""
-
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
-msgid "Inherit pager"
-msgstr ""
-
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
-msgid "Render pager"
-msgstr ""
-
-#: /profile/brigitta-martens
-msgid "[php] [parliament_name_1] "
-msgstr ""
-
-#: /admin/config/content/ckeditor/edit/ManagedContent
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
 msgid ""
-"Enter a valid, semicolon-separated list of HTML font formats (no "
-"semicolon at the end of the list is expected)."
+"If checked, this view will receive the same contextual filters as its "
+"parent."
 msgstr ""
 
-#: /admin/structure/features
+#: /admin/structure/views/ajax/display/user_profile_fields/page_with_page_title_1/page_title_pattern
+msgid "The <em>Page Title Pattern</em> of this view"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_profile_fields/page_with_page_title_1/page_title_pattern
 msgid ""
-"Bitte geben Sie eine Telefonnummer an. Die Telefonnummer dient zur "
-"einfachen Kontaktaufnahme, wird nicht veröffentlicht."
+"Optionally use this field to define a Page Title Pattern (not the Page "
+"Title). You may use the Tokens listed below"
 msgstr ""
 
-#: /admin/structure/features
-msgid ""
-"Die Foto-Gallery ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in "
-"Ihrem Profil zu veröffentlichen."
+#: /test/tine-hordum
+msgid "Broken handler node.title"
 msgstr ""
 
-#: /admin/structure/features
-msgid "Diese E-Mail Adresse wird öffentlich in Profil angezeigt."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Eine Adresse unter der wir Sie erreichen können."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Geben Sie hier Ihre aktuell ausgeübte Tätigkeit an."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Hier können Sie Ihren Twitter-Account eintragen, um die Angabe im "
-"Profil zu veröffentlichen."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Hier können Sie beliebige Links ergänzen, die in Ihrem Profil "
-"öffentlich angezeigt werden sollen."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine "
-"Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil "
-"veröffentlicht."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Laden Sie hier Ihr Profilfoto hoch."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, "
-"Fraktionsvorsitzender, etc."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem "
-"Profil veröffentlicht."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Tragen Sie hier die berufliche Qualifikation ein."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Wählen Sie hier Ihren Listenplatz aus."
-msgstr ""
-
-#: /admin/structure/features/pw_profiles/recreate
-msgid ""
-"Adds a block with information to the premium profile to the user edit "
-"form"
-msgstr ""
-
-#: /user/25050/edit
-msgid "Geburtsdatum"
-msgstr ""
-
-#: /user/25050/edit
-msgid "Angaben zur Person"
-msgstr ""
-
-#: /user/25050/edit
-msgid "Profilerweiterung\r\n"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). "
-"Aus technischen Gründen kann es bis zu 30min dauern, bis diese "
-"Information in Ihrem Profil angezeigt wird."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in "
-"Ihrem Profil zu veröffentlichen."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht "
-"veröffentlicht."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu "
-"auf \"Auswählen\", suchen Sie dann eine Bilddatei von Ihrem Computer "
-"aus und klicken Sie auf \"Abschicken\"."
+#: /test/tine-hordum
+msgid "Broken handler node.webform_form_body"
 msgstr ""
 
 msgid "Search"
@@ -69810,6 +70620,10 @@ msgstr "Steuert die Benutzerregistrierung und das Anmeldesystem."
 msgid "Testing"
 msgstr "Testmodus"
 
+#: /ga/admin/modules
+msgid "Filter list"
+msgstr "Liste filtern"
+
 msgid ""
 "Download additional <a href=\"@modules\">contributed modules</a> to "
 "extend Drupal's functionality."
@@ -72654,6 +73468,10 @@ msgstr "Soll der Block %name wirklich gelöscht werden?"
 
 msgid "The block %name has been removed."
 msgstr "Der Block %name wurde gelöscht."
+
+#: /index.php
+msgid "to the full profile"
+msgstr "zum vollständigen Profil"
 
 msgid "Blog"
 msgstr "Blog"
@@ -76730,7 +77548,7 @@ msgid "View full user profile"
 msgstr "Vollständiges Benutzerprofil anzeigen"
 
 msgid "About %name"
-msgstr "Über %name"
+msgstr "%name über sich"
 
 msgid ""
 "Put each item on a separate line or separate them by commas. No HTML "
@@ -82796,12 +83614,28 @@ msgid "download election programme"
 msgstr "Wahlprogramm runterladen"
 
 #: /index.php
+msgid " About [field_user_fname] [field_user_lname]"
+msgstr "[field_user_fname] [field_user_lname] über sich"
+
+#: /index.php
 msgid " Image Gallery of [field_user_fname] [field_user_lname]"
 msgstr "Bildergalerie von [field_user_fname] [field_user_lname]"
 
 #: /index.php
+msgid "About [field_user_fname] [field_user_lname], [field_user_party] "
+msgstr "[field_user_fname] [field_user_lname], [field_user_party] über sich"
+
+#: /index.php
 msgid "Education"
 msgstr "Berufliche Qualifikation"
+
+#: /index.php
+msgid "Image Gallery"
+msgstr "Bildergalerie"
+
+#: /index.php
+msgid "Political Goals"
+msgstr "Politische Ziele"
 
 #: /index.php
 msgid "Postal code"
@@ -82830,6 +83664,14 @@ msgstr "Adresszusatz"
 #: /user/1692/edit?destination=admin/people
 msgid "City"
 msgstr "Stadt"
+
+#: /index.php
+msgid "About [field_user_fname] [field_user_lname], [field_user_party]"
+msgstr "[field_user_fname] [field_user_lname], [field_user_party] über sich"
+
+#: /index.php
+msgid "About me"
+msgstr "Über mich"
 
 #: /index.php
 msgid "Questions to [field_user_fname] [field_user_lname]"
@@ -83215,6 +84057,14 @@ msgstr "Ansicht wechseln"
 msgid "Full View"
 msgstr "Normale Ansicht"
 
+#: /index.php
+msgid ""
+"About [field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]"
+msgstr ""
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id] über sich"
+
 #: /users/root
 msgid "Plaintext email only"
 msgstr "E-Mails ausschließlich als Klartext empfangen"
@@ -83230,4 +84080,24 @@ msgid ""
 msgstr ""
 "Wählen Sie diese Option falls Sie E-Mails nur ohne Grafiken und CSS "
 "Formatierung erhalten wollen."
+
+#: /profile/brigitta-martens
+msgid "@count questions"
+msgstr "@count Fragen"
+
+#: /profile/brigitta-martens
+msgid "@count answers"
+msgstr "@count Antworten"
+
+#: /profile/brigitta-martens
+msgid "@count sideline jobs"
+msgstr "@count Nebentätigkeiten"
+
+#: /profile/brigitta-martens
+msgid "@count speeches"
+msgstr "@count gehaltene Reden"
+
+#: /profile/brigitta-martens
+msgid "@count missed votings"
+msgstr "@count verpasste Abstimmungen"
 

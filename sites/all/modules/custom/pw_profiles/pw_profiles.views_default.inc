@@ -527,7 +527,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Inhalt: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -593,7 +593,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['uid_1']['field'] = 'uid';
   $handler->display->display_options['fields']['uid_1']['label'] = '';
   $handler->display->display_options['fields']['uid_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uid_1']['alter']['text'] = 'to the full profile';
+  $handler->display->display_options['fields']['uid_1']['alter']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['fields']['uid_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['uid_1']['element_wrapper_class'] = 'link-profile';
@@ -968,7 +968,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture']['alter']['path'] = 'user/[uid]';
   $handler->display->display_options['fields']['field_user_picture']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture']['alter']['alt'] = 'to the full profile';
+  $handler->display->display_options['fields']['field_user_picture']['alter']['alt'] = 'zum vollständigen Profil';
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'float-left push-right-s';
@@ -4021,7 +4021,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: About */
   $handler = $view->new_display('block', 'About', 'about');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = ' About [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = '[field_user_fname] [field_user_lname] über sich';
   $handler->display->display_options['display_description'] = 'Contextual About Block on user';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
@@ -4029,9 +4029,9 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="about" class="add-sharethis" title="About [field_user_fname] [field_user_lname], [field_user_party]"></div>
+  $handler->display->display_options['header']['area']['content'] = '<div id="about" class="add-sharethis" title="<?php print t(\'About [field_user_fname] [field_user_lname], [field_user_party]\'); ?>"></div>
 ';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -4094,7 +4094,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: About Page */
   $handler = $view->new_display('page', 'About Page', 'about_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'About [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -4111,6 +4110,16 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['header']['view']['empty'] = TRUE;
   $handler->display->display_options['header']['view']['view_to_insert'] = 'user_profile_fields:short_profile_premium_sub';
   $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
+  /* Kopfbereich: Global: Text area */
+  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['header']['area_1']['table'] = 'views';
+  $handler->display->display_options['header']['area_1']['field'] = 'area';
+  $handler->display->display_options['header']['area_1']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_1']['content'] = '<?php
+drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party]");
+?>';
+  $handler->display->display_options['header']['area_1']['format'] = 'php_code';
+  $handler->display->display_options['header']['area_1']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | User: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
@@ -4296,7 +4305,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Image Gallery Page */
   $handler = $view->new_display('page', 'Image Gallery Page', 'image_gallery_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Image Gallery of [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix field-name-user-image-gallery';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
@@ -4523,7 +4531,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Political Goals Page */
   $handler = $view->new_display('page', 'Political Goals Page', 'political_goals_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Die politischen Ziele von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -4698,7 +4705,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: Additional Links Page */
   $handler = $view->new_display('page', 'Additional Links Page', 'additional_links_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Additional Links of [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
