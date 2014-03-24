@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PW Kandidatencheck feature.
+ */
+
+include_once 'pw_kandidatencheck.features.inc';

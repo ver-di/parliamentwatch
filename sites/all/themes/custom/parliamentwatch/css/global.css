@@ -3,6 +3,7 @@
 @import url("profiles.css");
 @import url("jquery.ui.slider.css");
 @import url("mainmenu.css");
+@import url("pw_kandidatencheck.css");
 html {
     font-size: 12px;
 }

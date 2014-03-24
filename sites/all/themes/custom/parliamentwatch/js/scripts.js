@@ -1,4 +1,9 @@
 jQuery(document).ready(function() {
+
+// change slideshow controls links in pw_kandidatencheck
+
+    $(".view-pw-kandidatencheck .views_slideshow_controls_text_next a").text(Drupal.t('next thesis'));
+    $(".view-pw-kandidatencheck .views_slideshow_controls_text_previous a").text(Drupal.t('previous thesis'));
      
 // attach values of bef slider to handles
 
@@ -38,10 +43,11 @@ jQuery(document).ready(function() {
 ////// Make blocks expandable only for responsive mobile version
         
     $(window).load(function () { //https://drupal.org/node/1478648
-        $('.responsive-layout-mobile #pw-block-user-basics > h2').addClass('pw-mobile-expanded');
-        $('.responsive-layout-mobile .pw-expandable-mobile > h2').click(function(){
+        $('.responsive-layout-mobile #pw-block-user-basics h2').addClass('pw-mobile-expanded');
+        $('.responsive-layout-mobile .pw-expandable-mobile h2').click(function(){
         //alert();
             $(this).next('div').find('.view-content').slideToggle('slow');
+            $(this).parent('div').next('.view-content').slideToggle('slow');
             $(this).toggleClass('pw-mobile-expanded');
         });
     });

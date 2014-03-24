@@ -113,7 +113,7 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'user_deputy';
   $ds_fieldsetting->settings = array(
     'bundestagsradar' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -128,8 +128,28 @@ function pw_profiles_ds_field_settings_info() {
         ),
       ),
     ),
+    'pw_kandidatencheck' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 1,
+        'title_wrapper' => 'h3',
+        'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:36:"pw_kandidatencheck-profile_slideshow";}',
+        'load_terms' => 1,
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-kc"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'question_and_answers_filter' => array(
-      'weight' => '10',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -176,7 +196,7 @@ function pw_profiles_ds_field_settings_info() {
       'format' => 'default',
     ),
     'user_profile_api_link' => array(
-      'weight' => '7',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -192,7 +212,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -212,7 +232,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '6',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -228,7 +248,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '4',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -244,7 +264,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_revision_switch' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -258,6 +278,26 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_premium';
   $ds_fieldsetting->settings = array(
+    'pw_kandidatencheck' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:36:"pw_kandidatencheck-profile_slideshow";}',
+        'load_terms' => 1,
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-kc"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'additional_links' => array(
       'weight' => '6',
       'label' => 'hidden',
@@ -275,7 +315,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_filter' => array(
-      'weight' => '13',
+      'weight' => '14',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -285,7 +325,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_switcher' => array(
-      'weight' => '14',
+      'weight' => '15',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -391,7 +431,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_profile_api_link' => array(
-      'weight' => '11',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -407,7 +447,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '12',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -443,7 +483,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '10',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -459,7 +499,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -475,7 +515,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_revision_switch' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -1137,30 +1177,32 @@ function pw_profiles_ds_layout_settings_info() {
         0 => 'user_og_description',
         1 => 'short_profile_deputy_main',
         2 => 'user_basic_info',
+        3 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        3 => 'pw_slider',
-        4 => 'user_revision_switch',
-        5 => 'user_wrong_data',
-        6 => 'user_profile_api_link',
-        7 => 'bundestagsradar',
+        4 => 'pw_slider',
+        5 => 'user_revision_switch',
+        6 => 'user_wrong_data',
+        7 => 'user_profile_api_link',
+        8 => 'bundestagsradar',
       ),
       'left_2' => array(
-        8 => 'user_questions_and_answers',
+        9 => 'user_questions_and_answers',
       ),
       'right_2' => array(
-        9 => 'question_and_answers_filter',
+        10 => 'question_and_answers_filter',
       ),
       'ds_hidden' => array(
-        10 => 'field_user_fname',
-        11 => 'field_user_lname',
-        12 => 'field_user_party',
+        11 => 'field_user_fname',
+        12 => 'field_user_lname',
+        13 => 'field_user_party',
       ),
     ),
     'fields' => array(
       'user_og_description' => 'left_1',
       'short_profile_deputy_main' => 'left_1',
       'user_basic_info' => 'left_1',
+      'pw_kandidatencheck' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
@@ -1208,22 +1250,23 @@ function pw_profiles_ds_layout_settings_info() {
         5 => 'user_tweets',
         6 => 'additional_links',
         7 => 'user_calendar',
+        8 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        8 => 'pw_slider',
-        9 => 'user_revision_switch',
-        10 => 'user_wrong_data',
-        11 => 'user_profile_api_link',
+        9 => 'pw_slider',
+        10 => 'user_revision_switch',
+        11 => 'user_wrong_data',
+        12 => 'user_profile_api_link',
       ),
       'left_2' => array(
-        12 => 'user_questions_and_answers',
+        13 => 'user_questions_and_answers',
       ),
       'right_2' => array(
-        13 => 'question_and_answers_filter',
-        14 => 'question_and_answers_switcher',
+        14 => 'question_and_answers_filter',
+        15 => 'question_and_answers_switcher',
       ),
       'ds_hidden' => array(
-        15 => 'field_user_party',
+        16 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1235,6 +1278,7 @@ function pw_profiles_ds_layout_settings_info() {
       'user_tweets' => 'left_1',
       'additional_links' => 'left_1',
       'user_calendar' => 'left_1',
+      'pw_kandidatencheck' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',

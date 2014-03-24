@@ -114,6 +114,13 @@ function pw_content_authoring_layout_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
+        'pw_file_portrait_ms' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '0',
+        ),
         'pw_file_portrait_s' => array(
           'label' => 'hidden',
           'settings' => array(),

@@ -65,6 +65,12 @@ function pw_content_authoring_layout_strongarm() {
       'pw_file_portrait_xs' => array(
         'custom_settings' => TRUE,
       ),
+      'media_responsive' => array(
+        'custom_settings' => TRUE,
+      ),
+      'pw_file_portrait_ms' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -103,6 +109,10 @@ function pw_content_authoring_layout_strongarm() {
             'visible' => TRUE,
           ),
           'media_responsive' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'pw_file_portrait_ms' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),
