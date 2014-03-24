@@ -1,5 +1,64 @@
 <?php
+
 /**
- * @file
- * Drupal needs this blank file.
+ * @file pw_question_form.module
+ * helper functions for question form.
  */
+
+/**
+ * Implements hook_form_alter()..
+ */
+function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'webform_client_form_10446') {
+
+    // load recipient user
+    $user_uuid = $form['submitted']['recipient_external_id']['#value'];
+    $user = entity_uuid_load('user', array($user_uuid), array(), TRUE);
+    if(sizeof($user) == 0){
+      return;
+    }
+    $user_obj = array_pop($user);
+    
+    // retrieve parliament tag from user
+    $parliament_uuid = $user_obj->field_user_parliament['und'][0]['tid'];
+    $parliament = entity_uuid_load('taxonomy_term', array($parliament_uuid), array(), TRUE);
+    $parliament_tid = key($parliament);
+
+    // query for subject terms tagged with same parliament as user has
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'taxonomy_term')
+          ->entityCondition('bundle', 'dialogue_topics')
+          ->fieldCondition('field_parliament', 'tid', $parliament_tid);
+    $result = $query->execute();
+    $subject_terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']));
+
+    // add subject to form element
+    $a_subjects = array();
+    foreach($subject_terms as $subject_key => $subject_term){
+      $a_subjects[$subject_term->name] = $subject_term->name;
+    }
+    $form['submitted']['subject']['#options'] = $a_subjects;
+
+    // add custom validations
+    $form['#validate'][] = 'pw_question_form_form_validate';
+  }
+}
+
+/**
+ * Implements hook_form_validate()..
+ * custom validations on webform submission
+ */
+function pw_question_form_form_validate($form_id, $form_values){
+
+  // check if question has less than 2000 chars
+  if(strlen($form_values['values']['submitted']['question']) > 2000){
+    form_set_error('question', 'Ihre Frage hat mehr als die zulässigen 2000 Zeichen.');
+  }
+
+  // check user exists
+  $user_uuid = $form_values['values']['submitted']['recipient_external_id'];
+  $user = entity_uuid_load('user', array($user_uuid), array(), TRUE);
+  if(sizeof($user) == 0){
+    form_set_error('user', $user_uuid.'Empfänger existiert nicht.');
+  }
+}
