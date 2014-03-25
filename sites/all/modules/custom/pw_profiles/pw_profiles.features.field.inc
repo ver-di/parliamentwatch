@@ -4720,7 +4720,6 @@ $entity_field[0][\'value\'] = $result;',
   t('Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu auf "Auswählen", suchen Sie dann eine Bilddatei von Ihrem Computer aus und klicken Sie auf "Abschicken".');
   t('Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil veröffentlicht.');
   t('Image Gallery');
-  t('Laden Sie hier Ihr Profilfoto hoch.');
   t('Last name');
   t('List Position');
   t('Marriage status');

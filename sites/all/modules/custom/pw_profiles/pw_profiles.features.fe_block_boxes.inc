@@ -54,7 +54,7 @@ function pw_profiles_default_fe_block_boxes() {
 	</li>
 </ol>
 <p>
-	Buchen Sie per <a href="mailto: service@abgeordnetenwatch.de">E-Mail</a> oder rufen Sie uns an: <strong>040 / 317 69 10 26</strong>
+	Buchen Sie ganz einfach per <a href="/node/10492">Formular</a> oder schreiben Sie uns eine <a href="mailto: service@abgeordnetenwatch.de">E-Mail</a>. Telefonisch erreichen Sie uns unter: 040 / 317 69 10 26
 </p>
 ';
 

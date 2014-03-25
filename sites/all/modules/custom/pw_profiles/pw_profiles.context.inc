@@ -28,9 +28,8 @@ function pw_profiles_context_default_contexts() {
       ),
       'options' => array(
         'phpcode' => 'global $user;
-$array = $user->roles;
-$key = array_search(\'Premium User\', $array);
-return $key;',
+$is_premium_user = array_search(\'Premium User\', $user->roles)?true:false;
+return !$is_premium_user;',
       ),
     ),
     'user' => array(
