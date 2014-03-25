@@ -20,6 +20,9 @@ function pw_globals_field_default_fields() {
         0 => 'comment',
       ),
       'field_name' => 'comment_body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -82,6 +85,9 @@ function pw_globals_field_default_fields() {
         0 => 'comment',
       ),
       'field_name' => 'comment_body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -144,6 +150,9 @@ function pw_globals_field_default_fields() {
         0 => 'node',
       ),
       'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -226,6 +235,9 @@ function pw_globals_field_default_fields() {
         0 => 'node',
       ),
       'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -477,6 +489,9 @@ function pw_globals_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_parliament',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
