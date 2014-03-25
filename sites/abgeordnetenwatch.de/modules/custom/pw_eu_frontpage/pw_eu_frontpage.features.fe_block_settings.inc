@@ -30,10 +30,10 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '-76',
       ),
-      'seven' => array(
+      'pw_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'pw_seven',
         'weight' => '0',
       ),
     ),
@@ -59,10 +59,10 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '-77',
       ),
-      'seven' => array(
+      'pw_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'pw_seven',
         'weight' => '0',
       ),
     ),
@@ -88,10 +88,10 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '0',
       ),
-      'seven' => array(
+      'pw_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'pw_seven',
         'weight' => '0',
       ),
     ),
@@ -117,10 +117,10 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '0',
       ),
-      'seven' => array(
+      'pw_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'pw_seven',
         'weight' => '0',
       ),
     ),
@@ -146,11 +146,11 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '-73',
       ),
-      'seven' => array(
+      'pw_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
-        'weight' => '0',
+        'theme' => 'pw_seven',
+        'weight' => '-8',
       ),
     ),
     'title' => '',
@@ -175,10 +175,10 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '-75',
       ),
-      'seven' => array(
+      'pw_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'pw_seven',
         'weight' => '0',
       ),
     ),

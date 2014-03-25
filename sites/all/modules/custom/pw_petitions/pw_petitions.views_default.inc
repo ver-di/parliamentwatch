@@ -64,7 +64,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_petition_progress']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_petition_progress']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_petition_progress']['type'] = 'computed_field_unsanitized';
-  /* Feld: Broken/missing handler */
+  /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
