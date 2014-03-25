@@ -102,80 +102,83 @@ function pw_donation_form_webform_csv_data_alter(&$data, $component) {
  */
 function pw_donation_form_webform_submission_presave($node, &$submission){
 
-  // query db to retrieve webform components
-  $sql = "SELECT wf_comp.cid, wf_comp.form_key
-                FROM webform_component wf_comp
-                WHERE wf_comp.nid = :nid";
-  $form_fields = db_query($sql, array(':nid' => $node->nid))->fetchAllAssoc('cid');
+  if($node->nid == 10394){
 
-  // find ids of all relevant components
-  foreach($form_fields as $cid => $component){
-    switch($component->form_key){
-      case 'option_newsletter':
-        $cid_option_newsletter = $cid;
-        break;
-      case 'civicrm_groups':
-        $cid_civicrm_groups = $cid;
-        break;
-      case 'donation_frequency':
-        $cid_donation_frequency = $cid;
-        break;
-      case 'donation_amount':
-        $cid_donation_amount = $cid;
-        break;
-      case 'donation_free_amount':
-        $cid_donation_free_amount = $cid;
-        break;
-      case 'civicrm_amount':
-        $cid_civicrm_amount = $cid;
-        break;
-      case 'civicrm_contribution_type':
-        $cid_civicrm_contribution_type = $cid;
-        break;
-      case 'civicrm_date_start':
-        $cid_civicrm_date_start = $cid;
-        break;
-      case 'civicrm_description':
-        $cid_civicrm_description = $cid;
-        break;
+    // query db to retrieve webform components
+    $sql = "SELECT wf_comp.cid, wf_comp.form_key
+                  FROM webform_component wf_comp
+                  WHERE wf_comp.nid = :nid";
+    $form_fields = db_query($sql, array(':nid' => $node->nid))->fetchAllAssoc('cid');
+  
+    // find ids of all relevant components
+    foreach($form_fields as $cid => $component){
+      switch($component->form_key){
+        case 'option_newsletter':
+          $cid_option_newsletter = $cid;
+          break;
+        case 'civicrm_groups':
+          $cid_civicrm_groups = $cid;
+          break;
+        case 'donation_frequency':
+          $cid_donation_frequency = $cid;
+          break;
+        case 'donation_amount':
+          $cid_donation_amount = $cid;
+          break;
+        case 'donation_free_amount':
+          $cid_donation_free_amount = $cid;
+          break;
+        case 'civicrm_amount':
+          $cid_civicrm_amount = $cid;
+          break;
+        case 'civicrm_contribution_type':
+          $cid_civicrm_contribution_type = $cid;
+          break;
+        case 'civicrm_date_start':
+          $cid_civicrm_date_start = $cid;
+          break;
+        case 'civicrm_description':
+          $cid_civicrm_description = $cid;
+          break;
+      }
     }
-  }
 
-  // set newsletter group for civicrm
-  if(isset($cid_option_newsletter) && !empty($submission->data[$cid_option_newsletter]['value'][0])){
-    $submission->data[$cid_civicrm_groups]['value'][0] = 'abgeordnetenwatch.de Newsletter';
-  }
+    // set newsletter group for civicrm
+    if(isset($cid_option_newsletter) && !empty($submission->data[$cid_option_newsletter]['value'][0])){
+      $submission->data[$cid_civicrm_groups]['value'][0] = 'abgeordnetenwatch.de Newsletter';
+    }
 
-  // set amout to be charged based on selected frequency and amount
-  if(isset($cid_donation_frequency) && isset($cid_donation_amount) && isset($cid_donation_free_amount) && isset($cid_civicrm_amount)){
-    if($submission->data[$cid_donation_amount]['value'][0] == 'free'){
-      $donation_amount = $submission->data[$cid_donation_free_amount]['value'][0];
-      $submission->data[$cid_civicrm_amount]['value'][0] = $donation_amount;
+    // set amout to be charged based on selected frequency and amount
+    if(isset($cid_donation_frequency) && isset($cid_donation_amount) && isset($cid_donation_free_amount) && isset($cid_civicrm_amount)){
+      if($submission->data[$cid_donation_amount]['value'][0] == 'free'){
+        $donation_amount = $submission->data[$cid_donation_free_amount]['value'][0];
+        $submission->data[$cid_civicrm_amount]['value'][0] = $donation_amount;
+      }
+      elseif($submission->data[$cid_donation_frequency]['value'][0] == '0'){
+        $donation_amount = $submission->data[$cid_donation_amount]['value'][0];
+        $submission->data[$cid_civicrm_amount]['value'][0] = $donation_amount;
+      }
+      else{
+        $donation_frequency = $submission->data[$cid_donation_frequency]['value'][0];
+        $donation_amount = $submission->data[$cid_donation_amount]['value'][0];
+        $submission->data[$cid_civicrm_amount]['value'][0] = $donation_frequency * $donation_amount;
+      }
     }
-    elseif($submission->data[$cid_donation_frequency]['value'][0] == '0'){
-      $donation_amount = $submission->data[$cid_donation_amount]['value'][0];
-      $submission->data[$cid_civicrm_amount]['value'][0] = $donation_amount;
-    }
-    else{
+
+    // set contribution type
+    if(isset($cid_civicrm_contribution_type) && isset($cid_donation_frequency)){
       $donation_frequency = $submission->data[$cid_donation_frequency]['value'][0];
-      $donation_amount = $submission->data[$cid_donation_amount]['value'][0];
-      $submission->data[$cid_civicrm_amount]['value'][0] = $donation_frequency * $donation_amount;
+      $submission->data[$cid_civicrm_contribution_type]['value'][0] = $donation_frequency == 0?'Spende Parlamentwatch e.V.':'Fördermitglied';
     }
-  }
 
-  // set contribution type
-  if(isset($cid_civicrm_contribution_type) && isset($cid_donation_frequency)){
-    $donation_frequency = $submission->data[$cid_donation_frequency]['value'][0];
-    $submission->data[$cid_civicrm_contribution_type]['value'][0] = $donation_frequency == 0?'Spende Parlamentwatch e.V.':'Fördermitglied';
-  }
+    // set date start
+    if(isset($cid_civicrm_date_start)){
+      $submission->data[$cid_civicrm_date_start]['value'][0] = date('Y-m-d H:i', $submission->submitted);
+    }
 
-  // set date start
-  if(isset($cid_civicrm_date_start)){
-    $submission->data[$cid_civicrm_date_start]['value'][0] = date('Y-m-d H:i', $submission->submitted);
-  }
-
-  // set description text
-  if(isset($cid_civicrm_description)){
-    $submission->data[$cid_civicrm_description]['value'][0] = 'Webform - '.date('Y-m-d H:i');
+    // set description text
+    if(isset($cid_civicrm_description)){
+      $submission->data[$cid_civicrm_description]['value'][0] = 'Webform - '.date('Y-m-d H:i');
+    }
   }
 }
