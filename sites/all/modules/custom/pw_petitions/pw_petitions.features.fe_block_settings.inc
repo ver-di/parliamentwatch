@@ -30,10 +30,10 @@ function pw_petitions_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '0',
       ),
-      'pw_seven' => array(
+      'seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'pw_seven',
+        'theme' => 'seven',
         'weight' => '0',
       ),
     ),
