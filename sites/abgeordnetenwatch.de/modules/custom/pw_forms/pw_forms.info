@@ -15,4 +15,5 @@ features[webform][] = frage_stellen
 features[webform][] = kontakt
 features[webform][] = newsletter_subscription
 features[webform][] = petition_unterschreiben
+features[webform][] = profilerweiterung_buchen
 features[webform][] = unterst_tzen_sie_abgeordnetenwat

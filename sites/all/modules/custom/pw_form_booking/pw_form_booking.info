@@ -1,10 +1,7 @@
 name = PW Form Booking
-description = form to book extended profile
+description = booking form for extended profiles
 core = 7.x
-package = Features
-version = 7.x-1.0-20140318
+version = 7.x-1.0-20140325
 project = pw_form_booking
-dependencies[] = node_export_features
+dependencies[] = pw_forms
 dependencies[] = pw_globals
-features[features_api][] = api:1
-features[node_export_features][] = bee681c8-3217-439c-93ad-6dd8285aa7a3
