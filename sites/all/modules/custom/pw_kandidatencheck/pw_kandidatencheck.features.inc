@@ -35,7 +35,7 @@ function pw_kandidatencheck_node_info() {
       'base' => 'node_content',
       'description' => t('Position of an politician to a thesis'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'pw_kc_thesis' => array(
@@ -43,7 +43,7 @@ function pw_kandidatencheck_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );

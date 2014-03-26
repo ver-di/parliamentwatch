@@ -80,20 +80,8 @@ $webforms = array();
     ),
   ),
   'translations' => array(
-    'original' => 'und',
-    'data' => array(
-      'und' => array(
-        'entity_type' => 'node',
-        'entity_id' => '10386',
-        'language' => 'und',
-        'source' => '',
-        'uid' => '1344',
-        'status' => '0',
-        'translate' => '0',
-        'created' => '1389887010',
-        'changed' => '1389887010',
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'webform' => array(
     'confirmation' => '<p>
@@ -113,8 +101,8 @@ $webforms = array();
     'submit_interval' => '-1',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '0',
     'machine_name' => '_nderung_fehler_mitteilen_',
+    'webform_ajax' => '0',
     'record_exists' => TRUE,
     'roles' => array(
       0 => '1',
@@ -139,7 +127,7 @@ $webforms = array();
       ),
     ),
     'components' => array(
-      'profilerweiterung_buchen__ihre_daten' => array(
+      'profilerweiterung_buchen__constituency' => array(
         'form_key' => 'stadt',
         'name' => 'Stadt',
         'type' => 'textfield',
@@ -161,10 +149,10 @@ $webforms = array();
         ),
         'mandatory' => '1',
         'weight' => '0',
-        'machine_name' => 'profilerweiterung_buchen__ihre_daten',
+        'machine_name' => 'profilerweiterung_buchen__constituency',
         'page_num' => 1,
       ),
-      'profilerweiterung_buchen__user_uuid' => array(
+      'profilerweiterung_buchen__ihre_daten' => array(
         'form_key' => 'politiker_in',
         'name' => 'Politiker/in',
         'type' => 'textfield',
@@ -186,10 +174,10 @@ $webforms = array();
         ),
         'mandatory' => '1',
         'weight' => '1',
-        'machine_name' => 'profilerweiterung_buchen__user_uuid',
+        'machine_name' => 'profilerweiterung_buchen__ihre_daten',
         'page_num' => 1,
       ),
-      'profilerweiterung_buchen__constituency' => array(
+      'profilerweiterung_buchen__user_uuid' => array(
         'form_key' => 'was_hat_sich_geaendert',
         'name' => 'Was hat sich geändert?',
         'type' => 'textarea',
@@ -209,7 +197,7 @@ $webforms = array();
         ),
         'mandatory' => '1',
         'weight' => '2',
-        'machine_name' => 'profilerweiterung_buchen__constituency',
+        'machine_name' => 'profilerweiterung_buchen__user_uuid',
         'page_num' => 1,
       ),
       'profilerweiterung_buchen__party' => array(
@@ -392,20 +380,8 @@ $webforms = array();
     ),
   ),
   'translations' => array(
-    'original' => 'und',
-    'data' => array(
-      'und' => array(
-        'entity_type' => 'node',
-        'entity_id' => '6313',
-        'language' => 'und',
-        'source' => '',
-        'uid' => '1',
-        'status' => '1',
-        'translate' => '0',
-        'created' => '1368714870',
-        'changed' => '1368714870',
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'webform' => array(
     'confirmation' => '<div class="messages status">
@@ -425,8 +401,8 @@ $webforms = array();
     'submit_interval' => '3600',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '0',
     'machine_name' => 'feedback',
+    'webform_ajax' => '0',
     'record_exists' => TRUE,
     'roles' => array(
       0 => '1',
@@ -436,8 +412,8 @@ $webforms = array();
       0 => array(
         'email' => 'info@abgeordnetenwatch.de',
         'subject' => 'default',
-        'from_name' => 'profilerweiterung_buchen__constituency',
-        'from_address' => 'profilerweiterung_buchen__ihre_daten',
+        'from_name' => NULL,
+        'from_address' => NULL,
         'template' => 'Abgeschickt am %date
 von der IP %ip_address
 
@@ -461,8 +437,8 @@ Alle eingegangenen Nachrichten findest du hier:
         'components_machine_names' => array(
           'email' => FALSE,
           'subject' => FALSE,
-          'from_name' => TRUE,
-          'from_address' => TRUE,
+          'from_name' => FALSE,
+          'from_address' => FALSE,
         ),
       ),
     ),
@@ -601,7 +577,7 @@ Alle eingegangenen Nachrichten findest du hier:
   'print_display_urllist' => 0,
   'name' => 'root',
   'picture' => '0',
-  'data' => 'a:7:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";s:17:"mimemail_textonly";i:0;s:7:"overlay";i:1;}',
+  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
   'weight_weight' => '0',
   'webform_features_author' => 'root',
   'webform_features_revision_author' => '',
@@ -677,20 +653,8 @@ Alle eingegangenen Nachrichten findest du hier:
     ),
   ),
   'translations' => array(
-    'original' => 'und',
-    'data' => array(
-      'und' => array(
-        'entity_type' => 'node',
-        'entity_id' => '10446',
-        'language' => 'und',
-        'source' => '',
-        'uid' => '1',
-        'status' => '1',
-        'translate' => '0',
-        'created' => '1391509598',
-        'changed' => '1391509598',
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'webform' => array(
     'confirmation' => '',
@@ -707,8 +671,8 @@ Alle eingegangenen Nachrichten findest du hier:
     'submit_interval' => '-1',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '1',
     'machine_name' => 'frage_stellen',
+    'webform_ajax' => '1',
     'record_exists' => TRUE,
     'roles' => array(
       0 => '1',
@@ -788,7 +752,7 @@ Alle eingegangenen Nachrichten findest du hier:
         'machine_name' => 'profilerweiterung_buchen__constituency',
         'page_num' => 1,
       ),
-      'profilerweiterung_buchen__nachname' => array(
+      'profilerweiterung_buchen__anrede' => array(
         'form_key' => 'option_newsletter',
         'name' => 'Newsletter',
         'type' => 'select',
@@ -811,7 +775,7 @@ Alle eingegangenen Nachrichten findest du hier:
         ),
         'mandatory' => '0',
         'weight' => '3',
-        'machine_name' => 'profilerweiterung_buchen__nachname',
+        'machine_name' => 'profilerweiterung_buchen__anrede',
         'page_num' => 1,
       ),
       'profilerweiterung_buchen__party' => array(
@@ -837,60 +801,6 @@ Alle eingegangenen Nachrichten findest du hier:
         'mandatory' => '0',
         'weight' => '4',
         'machine_name' => 'profilerweiterung_buchen__party',
-        'page_num' => 1,
-      ),
-      'profilerweiterung_buchen__anrede' => array(
-        'form_key' => 'subject',
-        'name' => 'Thema',
-        'type' => 'select',
-        'value' => '',
-        'extra' => array(
-          'items' => 'tid_4281|Administration
-tid_1506|Agriculture and Environment
-tid_7050|Arbeit
-tid_7053|Bildung und Forschung
-tid_6489|Children
-tid_6493|Culture
-tid_7047|Demokratie und Bürgerrechte
-tid_6490|Education
-tid_6491|Education and Social Protection
-tid_6485|Employment, Business
-tid_6486|Finance
-tid_6495|Foreign Policy
-tid_7045|Gesundheit
-tid_6492|Government Procedure
-tid_3|Health
-tid_4|Healthcare Policy
-tid_7052|Integration
-tid_7051|Internationales
-tid_6482|Investigations and Petitions
-tid_2395|Justice and Security
-tid_6494|North/South Relations
-tid_6488|Privileges
-tid_6484|Procedure
-tid_7048|Sicherheit
-tid_6487|Social Welfare
-tid_7049|Soziales
-tid_7046|Städtebau und Stadtentwicklung
-tid_6483|Transport, Communications
-',
-          'options_source' => 'vid_26',
-          'multiple' => 0,
-          'title_display' => 'none',
-          'private' => 0,
-          'aslist' => 1,
-          'optrand' => 0,
-          'conditional_operator' => '=',
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '5',
-        'machine_name' => 'profilerweiterung_buchen__anrede',
         'page_num' => 1,
       ),
       'profilerweiterung_buchen__vorname' => array(
@@ -932,9 +842,9 @@ drupal_add_library(\'system\', \'drupal.form\');
     <div class="fieldset-wrapper comment">
         <div class="content-inner">
         <?php
-             = node_load(7734);
-             = [][0][\'value\'];
-            print ;
+            $node = node_load(7734);
+             $body_content = $node->body[$node->language][0][\'value\'];
+            print $body_content;
         ?>
         </div>
     </div>
@@ -949,9 +859,9 @@ Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem
     <div class="fieldset-wrapper comment">
         <div class="content-inner">
         <?php
-             = node_load(10006);
-             = [][0][\'value\'];
-            print ;
+             $node =  node_load(10006);
+             $body_content = $node->body[$node->language][0][\'value\'];
+            print $body_content;
         ?>
         </div>
     </div>
@@ -1007,6 +917,23 @@ Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem
         'machine_name' => 'profilerweiterung_buchen__stadt',
         'page_num' => 1,
       ),
+      'frage_stellen__empfaenger' => array(
+        'form_key' => 'recipient_external_id',
+        'name' => 'Empfänger',
+        'type' => 'hidden',
+        'value' => '%profile[uuid]',
+        'extra' => array(
+          'hidden_type' => 'value',
+          'conditional_operator' => '=',
+          'private' => 0,
+          'conditional_component' => '',
+          'conditional_values' => '',
+        ),
+        'mandatory' => '0',
+        'weight' => '10',
+        'machine_name' => 'frage_stellen__empfaenger',
+        'page_num' => 1,
+      ),
     ),
   ),
   'signature' => '',
@@ -1020,10 +947,10 @@ Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem
   'print_display_urllist' => 0,
   'name' => 'root',
   'picture' => '0',
-  'data' => 'a:7:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";s:17:"mimemail_textonly";i:0;s:7:"overlay";i:1;}',
+  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
   'weight_weight' => FALSE,
   'webform_features_author' => 'root',
-  'webform_features_revision_author' => 'root',
+  'webform_features_revision_author' => '',
 );
   $webforms['kontakt'] = array(
   'title' => 'Kontakt',
@@ -1112,20 +1039,8 @@ Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem
     ),
   ),
   'translations' => array(
-    'original' => 'und',
-    'data' => array(
-      'und' => array(
-        'entity_type' => 'node',
-        'entity_id' => '6578',
-        'language' => 'und',
-        'source' => '',
-        'uid' => '1',
-        'status' => '1',
-        'translate' => '0',
-        'created' => '1368714870',
-        'changed' => '1368785063',
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'webform' => array(
     'confirmation' => '<div class="messages status">
@@ -1145,8 +1060,8 @@ Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem
     'submit_interval' => '3600',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '0',
     'machine_name' => 'kontakt',
+    'webform_ajax' => '0',
     'record_exists' => TRUE,
     'roles' => array(
       0 => '1',
@@ -1156,8 +1071,8 @@ Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem
       0 => array(
         'email' => 'info@abgeordnetenwatch.de',
         'subject' => 'default',
-        'from_name' => 'profilerweiterung_buchen__constituency',
-        'from_address' => 'profilerweiterung_buchen__ihre_daten',
+        'from_name' => NULL,
+        'from_address' => NULL,
         'template' => 'Abgeschickt am %date
 von der IP %ip_address
 
@@ -1178,8 +1093,8 @@ Alle eingegangenen Nachrichten findest du hier:
         'components_machine_names' => array(
           'email' => FALSE,
           'subject' => FALSE,
-          'from_name' => TRUE,
-          'from_address' => TRUE,
+          'from_name' => FALSE,
+          'from_address' => FALSE,
         ),
       ),
     ),
@@ -1318,7 +1233,7 @@ Alle eingegangenen Nachrichten findest du hier:
   'print_display_urllist' => 0,
   'name' => 'root',
   'picture' => '0',
-  'data' => 'a:7:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";s:17:"mimemail_textonly";i:0;s:7:"overlay";i:1;}',
+  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
   'weight_weight' => '0',
   'webform_features_author' => 'root',
   'webform_features_revision_author' => '',
@@ -1394,20 +1309,8 @@ Alle eingegangenen Nachrichten findest du hier:
     ),
   ),
   'translations' => array(
-    'original' => 'und',
-    'data' => array(
-      'und' => array(
-        'entity_type' => 'node',
-        'entity_id' => '10380',
-        'language' => 'und',
-        'source' => '',
-        'uid' => '1',
-        'status' => '1',
-        'translate' => '0',
-        'created' => '1385667175',
-        'changed' => '1389108721',
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'webform' => array(
     'confirmation' => '<p>
@@ -1430,8 +1333,8 @@ Alle eingegangenen Nachrichten findest du hier:
     'submit_interval' => '-1',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '0',
     'machine_name' => 'newsletter_subscription',
+    'webform_ajax' => '0',
     'record_exists' => TRUE,
     'roles' => array(
       0 => '1',
@@ -1439,7 +1342,7 @@ Alle eingegangenen Nachrichten findest du hier:
     ),
     'emails' => array(
       0 => array(
-        'email' => 'profilerweiterung_buchen__ihre_daten',
+        'email' => NULL,
         'subject' => 'Bitte bestätigen Sie Ihr Newsletter Abonnement',
         'from_name' => 'default',
         'from_address' => 'default',
@@ -1472,7 +1375,7 @@ www.abgeordnetenwatch.de',
         'html' => '0',
         'attachments' => '0',
         'components_machine_names' => array(
-          'email' => TRUE,
+          'email' => FALSE,
           'subject' => FALSE,
           'from_name' => FALSE,
           'from_address' => FALSE,
@@ -1549,7 +1452,7 @@ www.abgeordnetenwatch.de',
   'print_display_urllist' => 0,
   'name' => 'root',
   'picture' => '0',
-  'data' => 'a:7:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";s:17:"mimemail_textonly";i:0;s:7:"overlay";i:1;}',
+  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
   'weight_weight' => FALSE,
   'webform_features_author' => 'root',
   'webform_features_revision_author' => '',
@@ -1657,20 +1560,8 @@ www.abgeordnetenwatch.de',
     ),
   ),
   'translations' => array(
-    'original' => 'de',
-    'data' => array(
-      'de' => array(
-        'entity_type' => 'node',
-        'entity_id' => '10369',
-        'language' => 'de',
-        'source' => '',
-        'uid' => '1',
-        'status' => '1',
-        'translate' => '0',
-        'created' => '1385378982',
-        'changed' => '1387296298',
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'webform' => array(
     'confirmation' => '',
@@ -1687,8 +1578,8 @@ www.abgeordnetenwatch.de',
     'submit_interval' => '-1',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '0',
     'machine_name' => 'petition_unterschreiben',
+    'webform_ajax' => '0',
     'record_exists' => TRUE,
     'roles' => array(
       0 => '1',
@@ -1890,7 +1781,7 @@ mr|Herr',
         'machine_name' => 'profilerweiterung_buchen__vorname',
         'page_num' => 1,
       ),
-      'profilerweiterung_buchen__nachname' => array(
+      'frage_stellen__empfaenger' => array(
         'form_key' => 'zipcode',
         'name' => 'Postleitzahl',
         'type' => 'textfield',
@@ -1912,7 +1803,7 @@ mr|Herr',
         ),
         'mandatory' => '1',
         'weight' => '8',
-        'machine_name' => 'profilerweiterung_buchen__nachname',
+        'machine_name' => 'frage_stellen__empfaenger',
         'page_num' => 1,
       ),
       'profilerweiterung_buchen__strasse_hausnummer' => array(
@@ -2106,7 +1997,7 @@ mr|Herr',
   'print_display_urllist' => 0,
   'name' => 'root',
   'picture' => '0',
-  'data' => 'a:7:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";s:17:"mimemail_textonly";i:0;s:7:"overlay";i:1;}',
+  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
   'weight_weight' => FALSE,
   'webform_features_author' => 'root',
   'webform_features_revision_author' => '',
@@ -2182,20 +2073,8 @@ mr|Herr',
     ),
   ),
   'translations' => array(
-    'original' => 'und',
-    'data' => array(
-      'und' => array(
-        'entity_type' => 'node',
-        'entity_id' => '10492',
-        'language' => 'und',
-        'source' => '',
-        'uid' => '1',
-        'status' => '1',
-        'translate' => '0',
-        'created' => '1395757686',
-        'changed' => '1395757686',
-      ),
-    ),
+    'original' => NULL,
+    'data' => array(),
   ),
   'webform' => array(
     'confirmation' => '',
@@ -2212,8 +2091,8 @@ mr|Herr',
     'submit_interval' => '-1',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '1',
     'machine_name' => 'profilerweiterung_buchen',
+    'webform_ajax' => '1',
     'record_exists' => TRUE,
     'roles' => array(
       0 => '1',
@@ -2221,15 +2100,17 @@ mr|Herr',
     ),
     'emails' => array(
       0 => array(
-        'email' => 'hekele@abgeordnetenwatch.de',
+        'email' => 'service@abgeordnetenwatch.de',
         'subject' => 'Profilerweiterung gebucht',
-        'from_name' => 'profilerweiterung_buchen__nachname',
+        'from_name' => 'frage_stellen__empfaenger',
         'from_address' => 'profilerweiterung_buchen__e_mail',
         'template' => 'default',
         'excluded_components' => array(
-          0 => '24',
-          1 => '25',
-          2 => '19',
+          0 => '25',
+          1 => '19',
+          2 => '27',
+          3 => '31',
+          4 => '24',
         ),
         'html' => '0',
         'attachments' => '0',
@@ -2379,7 +2260,7 @@ mrs|Frau',
         'machine_name' => 'profilerweiterung_buchen__vorname',
         'page_num' => 1,
       ),
-      'profilerweiterung_buchen__nachname' => array(
+      'frage_stellen__empfaenger' => array(
         'form_key' => 'user_last_name',
         'name' => 'Nachname',
         'type' => 'textfield',
@@ -2401,7 +2282,7 @@ mrs|Frau',
         ),
         'mandatory' => '1',
         'weight' => '30',
-        'machine_name' => 'profilerweiterung_buchen__nachname',
+        'machine_name' => 'frage_stellen__empfaenger',
         'page_num' => 1,
       ),
       'profilerweiterung_buchen__strasse_hausnummer' => array(
@@ -2598,7 +2479,7 @@ bank_transfer|Überweisung',
           'disabled' => 0,
           'unique' => 0,
           'webform_conditional_field_value' => 'sepa_direct_debit',
-          'webform_conditional_cid' => '15',
+          'webform_conditional_cid' => '23',
           'webform_conditional_operator' => '=',
           'width' => '',
           'maxlength' => '',
@@ -2626,7 +2507,7 @@ bank_transfer|Überweisung',
           'disabled' => 0,
           'unique' => 0,
           'webform_conditional_field_value' => 'sepa_direct_debit',
-          'webform_conditional_cid' => '15',
+          'webform_conditional_cid' => '23',
           'webform_conditional_operator' => '=',
           'width' => '',
           'maxlength' => '',
@@ -2654,7 +2535,7 @@ bank_transfer|Überweisung',
           'disabled' => 0,
           'unique' => 0,
           'webform_conditional_field_value' => 'sepa_direct_debit',
-          'webform_conditional_cid' => '15',
+          'webform_conditional_cid' => '23',
           'webform_conditional_operator' => '=',
           'width' => '',
           'maxlength' => '',
@@ -2692,7 +2573,7 @@ bank_transfer|Überweisung',
         'extra' => array(
           'format' => 'managed_content',
           'webform_conditional_field_value' => 'bank_transfer',
-          'webform_conditional_cid' => '15',
+          'webform_conditional_cid' => '23',
           'webform_conditional_operator' => '=',
           'private' => 0,
           'conditional_component' => '',
@@ -2774,10 +2655,10 @@ bank_transfer|Überweisung',
   'print_display_urllist' => 0,
   'name' => 'root',
   'picture' => '0',
-  'data' => 'a:7:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";s:17:"mimemail_textonly";i:0;s:7:"overlay";i:1;}',
+  'data' => 'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}',
   'weight_weight' => FALSE,
   'webform_features_author' => 'root',
-  'webform_features_revision_author' => 'root',
+  'webform_features_revision_author' => '',
 );
   $webforms['unterst_tzen_sie_abgeordnetenwat'] = array(
   'title' => 'Unterstützen Sie abgeordnetenwatch.de!',
@@ -2894,8 +2775,8 @@ bank_transfer|Überweisung',
     'submit_interval' => '-1',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '0',
     'machine_name' => 'unterst_tzen_sie_abgeordnetenwat',
+    'webform_ajax' => '0',
     'record_exists' => TRUE,
     'roles' => array(
       0 => '1',
@@ -2929,1014 +2810,6 @@ bank_transfer|Überweisung',
       ),
     ),
     'components' => array(
-      'profilerweiterung_buchen__ihre_daten' => array(
-        'form_key' => 'fieldset_donationform_yourdonation',
-        'name' => 'Ihre Spende',
-        'type' => 'fieldset',
-        'value' => '',
-        'extra' => array(
-          'description' => 'Bitte wählen Sie Ihren Spendenbetrag und wofür Sie spenden möchten.',
-          'title_display' => 0,
-          'private' => 0,
-          'collapsible' => 0,
-          'collapsed' => 0,
-          'conditional_operator' => '=',
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '24',
-        'machine_name' => 'profilerweiterung_buchen__ihre_daten',
-        'page_num' => 1,
-      ),
-      'profilerweiterung_buchen__user_uuid' => array(
-        'form_key' => 'donation_frequency',
-        'name' => 'Wie oft möchten Sie spenden?',
-        'type' => 'select',
-        'value' => '0',
-        'extra' => array(
-          'items' => '0|einmalig
-1|monatlich
-3|vierteljährlich
-6|halbjährlich
-12|jährlich',
-          'multiple' => 0,
-          'title_display' => 'before',
-          'private' => 0,
-          'aslist' => 0,
-          'optrand' => 0,
-          'conditional_operator' => '=',
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '24',
-        'machine_name' => 'profilerweiterung_buchen__user_uuid',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__ihre_daten',
-      ),
-      'profilerweiterung_buchen__constituency' => array(
-        'form_key' => 'donation_amount',
-        'name' => 'Ihr Spendenbetrag',
-        'type' => 'select',
-        'value' => '10',
-        'extra' => array(
-          'items' => '10|10 €
-20|20 €
-50|50 €
-100|100 €
-free|Freibetrag',
-          'multiple' => 0,
-          'title_display' => 'before',
-          'private' => 0,
-          'aslist' => 0,
-          'optrand' => 0,
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '25',
-        'machine_name' => 'profilerweiterung_buchen__constituency',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__ihre_daten',
-      ),
-      'profilerweiterung_buchen__party' => array(
-        'form_key' => 'donation_free_amount',
-        'name' => 'Freibetrag',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'field_suffix' => ' €',
-          'disabled' => 0,
-          'unique' => 0,
-          'webform_conditional_field_value' => 'free',
-          'webform_conditional_cid' => '2',
-          'webform_conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '26',
-        'machine_name' => 'profilerweiterung_buchen__party',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__ihre_daten',
-      ),
-      'profilerweiterung_buchen__anrede' => array(
-        'form_key' => 'donation_target',
-        'name' => 'Ziel der Spende',
-        'type' => 'select',
-        'value' => 'overall-project',
-        'extra' => array(
-          'description' => 'Möchten Sie Ihre Spende einem bestimmten Teilprojekt von abgeordnetenwatch.de, also einem sogenannten Förderkreis, zukommen lassen? Sie können ein Bundesland oder auch eine bestimmte Stadt oder einen Landkreis auswählen.',
-          'items' => 'overall-project|gesamtes Projekt
-baden-wuerttemberg|Baden-Württemberg
-bayern|Bayern
-berlin|Berlin
-brandenburg|Brandenburg
-bremen|Bremen
-hamburg|Hamburg
-hessen|Hessen
-mecklenburg-vorpommern|Mecklenburg-Vorpommern
-niedersachsen|Niedersachsen
-nordrhein-westfalen|Nordrhein-Westfalen
-rheinland-pfalz|Rheinland-Pfalz
-saarland|Saarland
-sachsen|Sachsen
-sachsen-anhalt|Sachsen-Anhalt
-Schleswig-holstein|Schleswig-Holstein
-thueringen|Thüringen
-council|Stadt oder Landkreis',
-          'multiple' => 0,
-          'title_display' => 'none',
-          'private' => 0,
-          'aslist' => 1,
-          'optrand' => 0,
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '27',
-        'machine_name' => 'profilerweiterung_buchen__anrede',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__ihre_daten',
-      ),
-      'profilerweiterung_buchen__vorname' => array(
-        'form_key' => 'donation_target_council',
-        'name' => 'Stadt oder Landkreis',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'webform_conditional_field_value' => 'council',
-          'webform_conditional_cid' => '4',
-          'webform_conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '28',
-        'machine_name' => 'profilerweiterung_buchen__vorname',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__ihre_daten',
-      ),
-      'profilerweiterung_buchen__nachname' => array(
-        'form_key' => 'fieldset_donationform_yourdata',
-        'name' => 'Ihre Daten',
-        'type' => 'fieldset',
-        'value' => '',
-        'extra' => array(
-          'description' => 'Bitte tragen Sie hier Ihre persönlichen Daten ein.',
-          'title_display' => 0,
-          'private' => 0,
-          'collapsible' => 0,
-          'collapsed' => 0,
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '25',
-        'machine_name' => 'profilerweiterung_buchen__nachname',
-        'page_num' => 1,
-      ),
-      'profilerweiterung_buchen__strasse_hausnummer' => array(
-        'form_key' => 'personal_prefix',
-        'name' => 'Anrede',
-        'type' => 'select',
-        'value' => '',
-        'extra' => array(
-          'items' => 'mrs|Frau
-mr|Herr',
-          'multiple' => 0,
-          'title_display' => 'none',
-          'private' => 0,
-          'aslist' => 1,
-          'optrand' => 0,
-          'conditional_operator' => '=',
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '34',
-        'machine_name' => 'profilerweiterung_buchen__strasse_hausnummer',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__plz' => array(
-        'form_key' => 'personal_firstname',
-        'name' => 'Vorname',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '36',
-        'machine_name' => 'profilerweiterung_buchen__plz',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__stadt' => array(
-        'form_key' => 'personal_lastname',
-        'name' => 'Nachname',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '39',
-        'machine_name' => 'profilerweiterung_buchen__stadt',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__e_mail' => array(
-        'form_key' => 'personal_email',
-        'name' => 'E-Mail-Adresse',
-        'type' => 'email',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '40',
-        'machine_name' => 'profilerweiterung_buchen__e_mail',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__telefon' => array(
-        'form_key' => 'personal_phone',
-        'name' => 'Telefon',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '41',
-        'machine_name' => 'profilerweiterung_buchen__telefon',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__ihre_buchung' => array(
-        'form_key' => 'address_street',
-        'name' => 'Straße und Hausnummer',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '42',
-        'machine_name' => 'profilerweiterung_buchen__ihre_buchung',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__preis' => array(
-        'form_key' => 'address_zipcode',
-        'name' => 'PLZ',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '1',
-        'weight' => '43',
-        'machine_name' => 'profilerweiterung_buchen__preis',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__zahlungsart' => array(
-        'form_key' => 'address_city',
-        'name' => 'Stadt',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '44',
-        'machine_name' => 'profilerweiterung_buchen__zahlungsart',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__kontoinhaber_wenn_abweichend' => array(
-        'form_key' => 'address_country',
-        'name' => 'Land',
-        'type' => 'select',
-        'value' => 'DE',
-        'extra' => array(
-          'items' => 'AF|Afghanistan
-AL|Albanien
-DZ|Algerien
-AS|Amerikanisch-Samoa
-VI|Amerikanische Jungferninseln
-AD|Andorra
-AO|Angola
-AI|Anguilla
-AQ|Antarktis
-AG|Antigua und Barbuda
-AR|Argentinien
-AM|Armenien
-AW|Aruba
-AZ|Aserbaidschan
-AU|Australien
-BS|Bahamas
-BH|Bahrain
-BD|Bangladesch
-BB|Barbados
-BE|Belgien
-BZ|Belize
-BJ|Benin
-BM|Bermuda
-BT|Bhutan
-BO|Bolivien
-BA|Bosnien und Herzegowina
-BW|Botswana
-BV|Bouvetinsel
-BR|Brasilien
-VG|Britische Jungferninseln
-IO|Britisches Territorium im Indischen Ozean
-BN|Brunei
-BG|Bulgarien
-BF|Burkina Faso
-BI|Burundi
-CL|Chile
-CN|China
-CK|Cookinseln
-CR|Costa Rica
-CW|Curaçao
-CD|Demokratische Republik Kongo
-DE|Deutschland
-DM|Dominica
-DO|Dominikanische Republik
-DJ|Dschibuti
-DK|Dänemark
-CI|Elfenbeinküste
-SV|El Salvador
-EC|Equador
-ER|Eritrea
-EE|Estland
-FK|Falklandinseln
-FJ|Fidschi
-FI|Finnland
-FR|Frankreich
-GF|Französisch-Guayana
-PF|Französisch-Polynesien
-TF|Französische Süd- und Antarktisgebiete
-FO|Färöer
-GA|Gabun
-GM|Gambia
-GE|Georgien
-GH|Ghana
-GI|Gibraltar
-GD|Grenada
-GR|Griechenland
-GL|Grönland
-GP|Guadeloupe
-GU|Guam
-GT|Guatemala
-GG|Guernsey
-GN|Guinea
-GW|Guinea-Bissau
-GY|Guyana
-HT|Haiti
-HM|Heard und McDonaldinseln
-HN|Honduras
-HK|Hongkong
-IN|Indien
-ID|Indonesien
-IQ|Irak
-IR|Iran
-IE|Irland
-IS|Island
-IM|Isle of Man
-IL|Israel
-IT|Italien
-JM|Jamaika
-JP|Japan
-YE|Jemen
-JE|Jersey
-JO|Jordanien
-KY|Kaimaninseln
-KH|Kambodscha
-CM|Kamerun
-CA|Kanada
-CV|Kapverden
-KZ|Kasachstan
-QA|Katar
-KE|Kenia
-KG|Kirgisistan
-KI|Kiribati
-CC|Kokosinseln
-CO|Kolumbien
-KM|Komoren
-HR|Kroatien
-CU|Kuba
-KW|Kuwait
-LA|Laos
-LS|Lesotho
-LV|Lettland
-LB|Libanon
-LR|Liberia
-LY|Libyen
-LI|Liechtenstein
-LT|Litauen
-LU|Luxemburg
-MO|Macao
-MG|Madagaskar
-MW|Malawi
-MY|Malaysia
-MV|Malediven
-ML|Mali
-MT|Malta
-MA|Marokko
-MH|Marshallinseln
-MQ|Martinique
-MR|Mauretanien
-MU|Mauritius
-YT|Mayotte
-MK|Mazedonien
-MX|Mexiko
-FM|Mikronesien
-MD|Moldawien
-MC|Monaco
-MN|Mongolei
-ME|Montenegro
-MS|Montserrat
-MZ|Mosambik
-MM|Myanmar
-NA|Namibia
-NR|Nauru
-NP|Nepal
-NC|Neukaledonien
-NZ|Neuseeland
-NI|Nicaragua
-NL|Niederlande
-AN|Niederländische Antillen
-NE|Niger
-NG|Nigeria
-NU|Niue
-KP|Nordkorea
-NF|Norfolkinsel
-NO|Norwegen
-MP|Nördliche Marianen
-OM|Oman
-TL|Osttimor
-PK|Pakistan
-PW|Palau
-PS|Palästinensische Gebiete
-PA|Panama
-PG|Papua-Neuguinea
-PY|Paraguay
-PE|Peru
-PH|Philippinen
-PN|Pitcairn
-PL|Polen
-PT|Portugal
-PR|Puerto Rico
-CG|Republik Kongo
-RW|Ruanda
-RO|Rumänien
-RU|Russland
-RE|Réunion
-BL|Saint-Barthélemy
-MF|Saint-Martin
-PM|Saint-Pierre und Miquelon
-SB|Salomonen
-ZM|Sambia
-WS|Samoa
-SM|San Marino
-SA|Saudi-Arabien
-SE|Schweden
-CH|Schweiz
-SN|Senegal
-RS|Serbien
-SC|Seychellen
-SL|Sierra Leone
-ZW|Simbabwe
-SG|Singapur
-SK|Slowakei
-SI|Slowenien
-SO|Somalia
-ES|Spanien
-SJ|Spitzbergen und Jan Mayen
-LK|Sri Lanka
-SH|St. Helena
-KN|St. Kitts und Nevis
-LC|St. Lucia
-VC|St. Vincent und die Grenadinen
-SD|Sudan
-SR|Surinam
-SZ|Swasiland
-SY|Syrien
-ST|São Tomé und Príncipe
-ZA|Südafrika
-GS|Südgeorgien und die Südlichen Sandwichinseln
-KR|Südkorea
-TJ|Tadschikistan
-TW|Taiwan
-TZ|Tansania
-TH|Thailand
-TG|Togo
-TK|Tokelau
-TO|Tonga
-TT|Trinidad und Tobago
-TD|Tschad
-CZ|Tschechische Republik
-TN|Tunesien
-TM|Turkmenistan
-TC|Turks- und Caicosinseln
-TV|Tuvalu
-TR|Türkei
-UG|Uganda
-UA|Ukraine
-HU|Ungarn
-UM|United States Minor Outlying Islands
-UY|Uruguay
-UZ|Usbekistan
-VU|Vanuatu
-VA|Vatikan
-VE|Venezuela
-AE|Vereinigte Arabische Emirate
-GB|Vereinigtes Königreich
-US|Vereinigte Staaten
-VN|Vietnam
-WF|Wallis und Futuna
-CX|Weihnachtsinsel
-BY|Weißrussland
-EH|Westsahara
-CF|Zentralafrikanische Republik
-CY|Zypern
-EG|Ägypten
-GQ|Äquatorialguinea
-ET|Äthiopien
-AX|Åland
-AT|Österreich
-',
-          'options_source' => 'countries',
-          'multiple' => 0,
-          'title_display' => 'none',
-          'private' => 0,
-          'aslist' => 1,
-          'optrand' => 0,
-          'conditional_operator' => '=',
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '45',
-        'machine_name' => 'profilerweiterung_buchen__kontoinhaber_wenn_abweichend',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__iban' => array(
-        'form_key' => 'option_newsletter',
-        'name' => 'Newsletter',
-        'type' => 'select',
-        'value' => 'yes',
-        'extra' => array(
-          'items' => 'yes|Ja, ich möchte den Newsletter von abgeordnetenwatch.de abonnieren',
-          'multiple' => 1,
-          'title_display' => 'none',
-          'private' => 0,
-          'aslist' => 0,
-          'optrand' => 0,
-          'conditional_operator' => '=',
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '46',
-        'machine_name' => 'profilerweiterung_buchen__iban',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__bic' => array(
-        'form_key' => 'option_not_anonymous',
-        'name' => 'namentlich nennen',
-        'type' => 'select',
-        'value' => '',
-        'extra' => array(
-          'items' => 'yes|Ja, ich möchte namentlich mit meinem Beitrag auf abgeordnetenwatch.de genannt werden.',
-          'multiple' => 1,
-          'title_display' => 'none',
-          'private' => 0,
-          'aslist' => 0,
-          'optrand' => 0,
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '47',
-        'machine_name' => 'profilerweiterung_buchen__bic',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__nachname',
-      ),
-      'profilerweiterung_buchen__kontoverbindung' => array(
-        'form_key' => 'fieldset_donationform_paymentinfo',
-        'name' => 'Zahlungsart',
-        'type' => 'fieldset',
-        'value' => '',
-        'extra' => array(
-          'description' => 'Für den Einzug der Spende von Ihrem Konto per SEPA-Lastschrift können Sie entweder Ihre Kontonummer und BLZ oder, wenn bekannt, auch die IBAN und BIC angeben. Nach Ablauf des Jahres schicken wir Ihnen automatisch eine Spendenbescheinigung zu.',
-          'title_display' => 0,
-          'private' => 0,
-          'collapsible' => 0,
-          'collapsed' => 0,
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '26',
-        'machine_name' => 'profilerweiterung_buchen__kontoverbindung',
-        'page_num' => 1,
-      ),
-      'profilerweiterung_buchen__nachricht' => array(
-        'form_key' => 'option_receipt',
-        'name' => 'Spendenquittung',
-        'type' => 'select',
-        'value' => 'yes',
-        'extra' => array(
-          'items' => 'yes|ja
-no|nein',
-          'multiple' => 0,
-          'title_display' => 'before',
-          'private' => 1,
-          'aslist' => 0,
-          'optrand' => 0,
-          'other_option' => NULL,
-          'other_text' => 'Other...',
-          'description' => '',
-          'custom_keys' => FALSE,
-          'options_source' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '32',
-        'machine_name' => 'profilerweiterung_buchen__nachricht',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__kontoverbindung',
-      ),
-      'profilerweiterung_buchen__node_path' => array(
-        'form_key' => 'payment_accordion',
-        'name' => 'Zahlungsart',
-        'type' => 'accordion_grp',
-        'value' => '',
-        'extra' => array(
-          'webform_accordion_settings' => array(
-            'webform_accordion_grp_autoheight' => 1,
-            'webform_accordion_grp_clearstyle' => 0,
-            'webform_accordion_grp_collapsible' => 0,
-            'webform_accordion_grp_active' => '0',
-          ),
-          'title_display' => 0,
-          'private' => 0,
-          'collapsible' => 0,
-          'collapsed' => 0,
-          'description' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '33',
-        'machine_name' => 'profilerweiterung_buchen__node_path',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__kontoverbindung',
-      ),
-      'profilerweiterung_buchen__status' => array(
-        'form_key' => 'payment_tab_direct_debit',
-        'name' => 'Kontonummer & BLZ',
-        'type' => 'accordion_tab',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 0,
-          'private' => 0,
-          'description' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '58',
-        'machine_name' => 'profilerweiterung_buchen__status',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__node_path',
-      ),
-      'profilerweiterung_buchen__parliament' => array(
-        'form_key' => 'payment_direct_debit_holder',
-        'name' => 'Kontoinhaber (wenn abweichend vom Spender)',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '43',
-        'machine_name' => 'profilerweiterung_buchen__parliament',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__status',
-      ),
-      'profilerweiterung_buchen__markup_ihre_daten' => array(
-        'form_key' => 'payment_direct_debit_account',
-        'name' => 'Kontonummer',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '44',
-        'machine_name' => 'profilerweiterung_buchen__markup_ihre_daten',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__status',
-      ),
-      'profilerweiterung_buchen__markup_ihre_buchung' => array(
-        'form_key' => 'payment_direct_debit_bank',
-        'name' => 'BLZ',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '45',
-        'machine_name' => 'profilerweiterung_buchen__markup_ihre_buchung',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__status',
-      ),
-      'unterst_tzen_sie_abgeordnetenwat__payment_tab_sepa' => array(
-        'form_key' => 'payment_tab_sepa',
-        'name' => 'IBAN & BIC',
-        'type' => 'accordion_tab',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 0,
-          'private' => 0,
-          'description' => '',
-          'conditional_component' => '',
-          'conditional_operator' => '=',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '59',
-        'machine_name' => 'unterst_tzen_sie_abgeordnetenwat__payment_tab_sepa',
-        'page_num' => 1,
-        'parent_machine_name' => 'profilerweiterung_buchen__node_path',
-      ),
-      'unterst_tzen_sie_abgeordnetenwat__payment_sepa_holder' => array(
-        'form_key' => 'payment_sepa_holder',
-        'name' => 'Kontoinhaber (wenn abweichend vom Spender)',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '43',
-        'machine_name' => 'unterst_tzen_sie_abgeordnetenwat__payment_sepa_holder',
-        'page_num' => 1,
-        'parent_machine_name' => 'unterst_tzen_sie_abgeordnetenwat__payment_tab_sepa',
-      ),
-      'unterst_tzen_sie_abgeordnetenwat__payment_sepa_iban' => array(
-        'form_key' => 'payment_sepa_iban',
-        'name' => 'IBAN',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '44',
-        'machine_name' => 'unterst_tzen_sie_abgeordnetenwat__payment_sepa_iban',
-        'page_num' => 1,
-        'parent_machine_name' => 'unterst_tzen_sie_abgeordnetenwat__payment_tab_sepa',
-      ),
-      'unterst_tzen_sie_abgeordnetenwat__payment_sepa_bic' => array(
-        'form_key' => 'payment_sepa_bic',
-        'name' => 'BIC',
-        'type' => 'textfield',
-        'value' => '',
-        'extra' => array(
-          'title_display' => 'before',
-          'private' => 0,
-          'disabled' => 0,
-          'unique' => 0,
-          'conditional_operator' => '=',
-          'width' => '',
-          'maxlength' => '',
-          'field_prefix' => '',
-          'field_suffix' => '',
-          'description' => '',
-          'attributes' => array(),
-          'conditional_component' => '',
-          'conditional_values' => '',
-        ),
-        'mandatory' => '0',
-        'weight' => '45',
-        'machine_name' => 'unterst_tzen_sie_abgeordnetenwat__payment_sepa_bic',
-        'page_num' => 1,
-        'parent_machine_name' => 'unterst_tzen_sie_abgeordnetenwat__payment_tab_sepa',
-      ),
       'unterst_tzen_sie_abgeordnetenwat__fieldset_donationform_message' => array(
         'form_key' => 'fieldset_donationform_message',
         'name' => 'Ihre Nachricht an uns',
@@ -4207,7 +3080,7 @@ no|nein',
   'spaminess' => 0,
   'cid' => '0',
   'last_comment_name' => NULL,
-  'last_comment_uid' => '0',
+  'last_comment_uid' => '1',
   'comment_count' => '0',
   'print_display' => 0,
   'print_display_comment' => 0,
@@ -4217,7 +3090,7 @@ no|nein',
   'data' => NULL,
   'weight_weight' => FALSE,
   'webform_features_author' => '',
-  'webform_features_revision_author' => 'root',
+  'webform_features_revision_author' => '',
 );
 return $webforms;
 }

@@ -8,7 +8,7 @@
  * Implements hook_form_alter()..
  */
 function pw_form_booking_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'webform_client_form_10492') {
+  if ($form_id == 'webform_client_form_10482') {
 
     // load user
     $user_uuid = $form['submitted']['user_uuid']['#value'];
@@ -52,7 +52,7 @@ function pw_form_booking_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_form_alter()..
  */
 function pw_form_booking_webform_submission_presave($node, &$submission){
-  if($node->nid == 10492 && $submission->data[15]['value'][0] == 'sepa_direct_debit'){
+  if($node->nid == 10482 && $submission->data[15]['value'][0] == 'sepa_direct_debit'){
 
     // give user role Premium User if profile extension was booked via direct debit
     global $user;
@@ -85,7 +85,7 @@ function pw_form_booking_menu(){
 
 // Show the page
 function pw_form_booking_page($uid){
-  $node = node_view(node_load(10492));
+  $node = node_view(node_load(10482));
   return array(
     'content' => array(
       'node' => $node,

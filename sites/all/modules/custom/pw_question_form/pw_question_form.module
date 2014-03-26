@@ -59,6 +59,6 @@ function pw_question_form_form_validate($form_id, $form_values){
   $user_uuid = $form_values['values']['submitted']['recipient_external_id'];
   $user = entity_uuid_load('user', array($user_uuid), array(), TRUE);
   if(sizeof($user) == 0){
-    form_set_error('user', $user_uuid.'Empfänger existiert nicht.');
+    form_set_error('user', 'Empfänger existiert nicht.');
   }
 }
