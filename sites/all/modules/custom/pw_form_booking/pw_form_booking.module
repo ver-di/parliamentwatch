@@ -69,3 +69,41 @@ function pw_form_booking_webform_submission_presave($node, &$submission){
     }
   }
 }
+
+function pw_form_booking_menu(){
+    return array(
+        'user/%/booking_form' => array(
+            'title' => 'Profilerweiterung buchen',
+            'page callback' => 'pw_form_booking_page',
+            'page arguments' => array(1),
+            'access callback' => 'pw_form_booking_access',
+            'access arguments' => array(1),
+            'type' => MENU_LOCAL_TASK,
+        ),
+    );
+}
+
+// Show the page
+function pw_form_booking_page($uid){
+  $node = node_view(node_load(10492));
+  return array(
+    'content' => array(
+      'node' => $node,
+    ),
+  );
+}
+
+// Check if user has permission, or views its own page
+function pw_form_booking_access($uid){
+    return ($uid == $GLOBALS['user']->uid) || user_access('view user tabs');
+}
+
+// Define permission for administrators
+function pw_form_booking_perm(){
+    return array(
+        'view user tabs' => array(
+            'title' => t('View user tabs'), 
+            'description' => t('View user tabs'),
+        ),
+    );
+}

@@ -29,7 +29,7 @@ function pw_profiles_default_fe_block_boxes() {
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'PW Premium Promo';
-  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'pw_premium_promo';
   $fe_block_boxes->body = '<p>
 	Sie nutzen derzeit das kostenfreie abgeordnetenwatch.de-Grundprofil.<br />
@@ -54,7 +54,11 @@ function pw_profiles_default_fe_block_boxes() {
 	</li>
 </ol>
 <p>
-	Buchen Sie ganz einfach per <a href="/node/10492">Formular</a> oder schreiben Sie uns eine <a href="mailto: service@abgeordnetenwatch.de">E-Mail</a>. Telefonisch erreichen Sie uns unter: 040 / 317 69 10 26
+<?php
+  global $user;
+  $link_booking_form = \'/user/\'.$user->uid.\'/booking_form\';
+?>
+	Buchen Sie ganz einfach per <a href="<?=$link_booking_form?>">Formular</a> oder schreiben Sie uns eine <a href="mailto: service@abgeordnetenwatch.de">E-Mail</a>. Telefonisch erreichen Sie uns unter: 040 / 317 69 10 26
 </p>
 ';
 

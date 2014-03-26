@@ -2212,7 +2212,7 @@ mr|Herr',
     'submit_interval' => '-1',
     'total_submit_limit' => '-1',
     'total_submit_interval' => '-1',
-    'webform_ajax' => '0',
+    'webform_ajax' => '1',
     'machine_name' => 'profilerweiterung_buchen',
     'record_exists' => TRUE,
     'roles' => array(
