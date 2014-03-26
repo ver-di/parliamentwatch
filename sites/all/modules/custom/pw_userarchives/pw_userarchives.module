@@ -14,7 +14,7 @@ function pw_userarchives_cron() {
     $res = $query->execute();
     while ($row = $res->fetchAssoc()) {
       db_delete('user_archive_cache')
-        ->condition('uid', $row["uid"])
+        ->condition('user_name', $row["user_name"])
         ->execute();
     }
     
