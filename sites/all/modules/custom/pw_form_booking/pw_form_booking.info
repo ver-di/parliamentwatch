@@ -4,5 +4,4 @@ core = 7.x
 version = 7.x-1.0-20140326
 project = pw_form_booking
 dependencies[] = overlay_paths
-dependencies[] = pw_forms
 dependencies[] = pw_globals

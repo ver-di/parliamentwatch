@@ -16,7 +16,6 @@ dependencies[] = media
 dependencies[] = number
 dependencies[] = options
 dependencies[] = pw_blog
-dependencies[] = pw_forms
 dependencies[] = pw_globals
 dependencies[] = strongarm
 dependencies[] = taxonomy
