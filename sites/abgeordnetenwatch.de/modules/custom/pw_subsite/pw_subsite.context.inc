@@ -55,9 +55,9 @@ function pw_subsite_context_default_contexts() {
   $context->description = 'adds blocks';
   $context->tag = 'PW page';
   $context->conditions = array(
-    'menu' => array(
+    'path' => array(
       'values' => array(
-        'node/10394' => 'node/10394',
+        'ueber-uns/spendenformular' => 'ueber-uns/spendenformular',
       ),
     ),
   );
