@@ -38,7 +38,7 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
     if (!empty($title)) {
 
       // add title to umame if exists
-      $uname = $title . '-';
+      $uname = $title . '-' . $uname;
 
     }
 
@@ -49,6 +49,7 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
     $uname = preg_replace('/[^a-z -]+/', '', $uname);
     $uname = str_replace(' ', '-', $uname);
     $uname = trim($uname, '-');
+    $cname = $uname;
 
     $users = entity_load('user');
     $count = 2;
@@ -59,20 +60,24 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
 
         // if user exists by uuid it just updates the existing user name
         $field = $user->name;
-        return;
+
+        // only skip non-empty username fields
+        if (!empty($user->name)) {
+          return;
+        }
 
       }
       if ($user->name === $uname) {
 
         // if user does not exist by uuid, but the name exists, add a number to name
-        $uname .= '-' . $count;
+        $cname = $uname . '-' . $count;
         $count++;
 
       }
     }
 
     // create a new user with constructed uname
-    $field = $uname;
+    $field = $cname;
     return;
 
   } else {
