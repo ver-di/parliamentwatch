@@ -334,7 +334,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Broken/missing handler */
+  /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
@@ -4155,7 +4155,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Subline';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'About me';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Über mich';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'clear clearfix';
@@ -4177,7 +4177,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -4444,7 +4444,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -4592,7 +4592,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Subline';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Political Goals';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Politische Ziele';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'clear clearfix';
@@ -4617,7 +4617,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -4795,7 +4795,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   /* Feld: Benutzer: External Links */
   $handler->display->display_options['fields']['field_user_links_more']['id'] = 'field_user_links_more';
   $handler->display->display_options['fields']['field_user_links_more']['table'] = 'field_data_field_user_links_more';
@@ -5246,7 +5246,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
@@ -5658,7 +5658,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['view_user']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['view_user']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'to the full profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   /* Feld: Global: Custom text */
   $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
   $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
