@@ -1,5 +1,9 @@
 jQuery(document).ready(function() {
 
+// automatically adjust textarea heigh  with jQuery Autosize
+
+    $('textarea').autosize();
+
 // change slideshow controls links in pw_kandidatencheck
 
     $(".view-pw-kandidatencheck .views_slideshow_controls_text_next a").text(Drupal.t('next thesis'));

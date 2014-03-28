@@ -1915,7 +1915,7 @@ form .description {
     font-size: 1.1rem;
     line-height: 16px;
     line-height: 1.6rem;
-    margin: -8px 0 0.5em;
+    margin: 0 0 0.5em;
 }
 .resizable-textarea .grippie {
     display: none;
@@ -2015,7 +2015,7 @@ span.form-submit.big {
     margin-bottom: 0.8em;
 }
 input.form-checkbox {
-    margin-top: -4px;
+    margin-top: -3px;
 }
 form .webform-component-checkboxes .description {
     margin-top: 0;
@@ -2057,6 +2057,60 @@ form .webform-component-checkboxes .description {
 #user-login label,
 #search-form label {
     display: block;
+}
+
+
+/* /////////////////////////// question form //////////////////// */
+
+#node-webform-10446 #webform-component-firstname {
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 0.5em;
+}
+#node-webform-10446 #webform-component-lastname {
+    float: left;
+    width: 48%;
+    margin-left: 2%;
+    margin-bottom: 0.5em;
+}
+#node-webform-10446 #webform-component-email {
+    clear: both;
+    float: left;
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 0.5em;
+}
+#node-webform-10446 #webform-component-option-newsletter {
+    float: left;
+    width: 48%;
+    margin-left: 2%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+#node-webform-10446 #webform-component-option-newsletter input {
+    float: left;
+    display: block;
+    margin-top: 3px;
+}
+#node-webform-10446 #webform-component-option-newsletter input + label {
+    display: block;
+    margin-left: 23px;
+}
+#node-webform-10446 #webform-component-residence {
+    clear: both;
+    width: 48%;
+    margin-bottom: 1em;
+}
+#node-webform-10446 #webform-component-subject {
+    clear: both;
+    width: 48%;
+    margin-bottom: 0.5em;
+}
+#node-webform-10446 #webform-component-subject select {
+    width: 100%;
+    height: 2.5em;
+    padding: 0.6em;
 }
 
 /* /////////////////////////// question and answers ///////////// */
