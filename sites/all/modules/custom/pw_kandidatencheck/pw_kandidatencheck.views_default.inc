@@ -119,7 +119,7 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<div class="messages warning">Leider hat der/die Kandidat/in nicht am Kandidaten-Check Stellung bezogen.</div>';
+  $handler->display->display_options['empty']['area']['content'] = '<div class="messages warning">Leider hat der/die Kandidat/in nicht beim Kandidaten-Check Stellung bezogen.</div>';
   $handler->display->display_options['empty']['area']['format'] = 'managed_content';
   $handler->display->display_options['empty']['area']['tokenize'] = TRUE;
   /* Relationship: Entity Reference: Referenced Entity */
