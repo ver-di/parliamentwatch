@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * latest_tweets.strongarm.inc
+ * pw_latest_tweets.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function latest_tweets_strongarm() {
+function pw_latest_tweets_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -42,7 +42,7 @@ function latest_tweets_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_host';
-  $strongarm->value = 'https://twitter.com';
+  $strongarm->value = 'http://twitter.com';
   $export['twitter_host'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -56,14 +56,14 @@ function latest_tweets_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_search';
-  $strongarm->value = 'https://search.twitter.com';
+  $strongarm->value = 'http://search.twitter.com';
   $export['twitter_search'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'twitter_tinyurl';
-  $strongarm->value = 'https://tinyurl.com';
+  $strongarm->value = 'http://tinyurl.com';
   $export['twitter_tinyurl'] = $strongarm;
 
   return $export;

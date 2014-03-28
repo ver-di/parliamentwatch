@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * latest_tweets.views_default.inc
+ * pw_latest_tweets.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function latest_tweets_views_default_views() {
+function pw_latest_tweets_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -27,11 +27,13 @@ function latest_tweets_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Twitter: Twitter status message ID */
+  /* Feld: Twitter: Twitter status message ID */
   $handler->display->display_options['fields']['twitter_id']['id'] = 'twitter_id';
   $handler->display->display_options['fields']['twitter_id']['table'] = 'twitter';
   $handler->display->display_options['fields']['twitter_id']['field'] = 'twitter_id';
@@ -45,30 +47,19 @@ function latest_tweets_views_default_views() {
   $handler = $view->new_display('block', 'Latest Tweets', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Twitter: Formatted tweet */
+  /* Feld: Twitter: Formatted tweet */
   $handler->display->display_options['fields']['formatted_tweet']['id'] = 'formatted_tweet';
   $handler->display->display_options['fields']['formatted_tweet']['table'] = 'twitter';
   $handler->display->display_options['fields']['formatted_tweet']['field'] = 'formatted_tweet';
   $handler->display->display_options['fields']['formatted_tweet']['label'] = '';
   $handler->display->display_options['fields']['formatted_tweet']['element_label_colon'] = FALSE;
-  /* Field: Twitter: Twitter status message ID */
+  /* Feld: Twitter: Twitter status message ID */
   $handler->display->display_options['fields']['twitter_id_1']['id'] = 'twitter_id_1';
   $handler->display->display_options['fields']['twitter_id_1']['table'] = 'twitter';
   $handler->display->display_options['fields']['twitter_id_1']['field'] = 'twitter_id';
   $handler->display->display_options['fields']['twitter_id_1']['label'] = '';
   $handler->display->display_options['fields']['twitter_id_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['twitter_id_1']['element_label_colon'] = FALSE;
-  $translatables['3latesttweets'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Twitter status message ID'),
-    t('Latest Tweets'),
-  );
   $export['3latesttweets'] = $view;
 
   return $export;

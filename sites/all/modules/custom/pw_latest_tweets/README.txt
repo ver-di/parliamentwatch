@@ -20,7 +20,7 @@ Required Modules
 ----------------
 1 - Download and place the (Twitter) module in your sites modules directory
 2 - Download and place the (oauth) module in your sites modules directory
-3 - Place the module (latest_tweets) in modules directory of your site.
+3 - Place the module (pw_latest_tweets) in modules directory of your site.
 4 - Enable the above 3 modules
 
 
