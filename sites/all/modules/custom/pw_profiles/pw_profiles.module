@@ -7,6 +7,26 @@
 include_once 'pw_profiles.features.inc';
 
 /**
+ * Enlarges field output_name field in table user_filter_cache to 255 characters:
+ */
+function pw_profiles_update_7104() {
+  db_change_field('user_filter_cache', 'output_name', 'output_name', array (
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => true,
+        'default' => '',
+      ));
+}
+
+/**
+ * Add index to the table to optimize select queries from pw_forms_filter_alter:
+ */
+function pw_profiles_update_7103() {
+  db_add_index('user_filter_cache', 'pw_forms_filter_alter_ix', array('input_output_type', 
+      'input_role_name', 'input_parliament_name'));
+}
+
+/**
  * (Un-)Installs the needed cache table for user filters
  * @return array
  */
@@ -68,14 +88,6 @@ function pw_profiles_schema() {
     'name' => 'user_filter_cache',
   );
   return $schema;
-}
-
-/**
- * Add index to the table to optimize select queries from pw_forms_filter_alter:
- */
-function pw_profiles_update_1() {
-  db_add_index('user_filter_cache', 'pw_forms_filter_alter_ix', array('input_output_type', 
-      'input_role_name', 'input_parliament_name'));
 }
 
 /**
