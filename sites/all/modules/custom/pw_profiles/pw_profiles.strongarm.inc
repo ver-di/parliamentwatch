@@ -266,7 +266,7 @@ function pw_profiles_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_title_user';
-  $strongarm->value = '[user:field-user-fname] [user:field-user-lname] | [site:name]';
+  $strongarm->value = '';
   $export['page_title_user'] = $strongarm;
 
   $strongarm = new stdClass();
