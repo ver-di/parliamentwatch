@@ -2241,6 +2241,8 @@ if($record->value == 0){
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['title'] = '%1';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['format'] = 'default_summary';
@@ -2251,6 +2253,33 @@ if($record->value == 0){
     'parliaments' => 'parliaments',
   );
   $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['type'] = 'convert';
+  /* Contextual filter: Benutzer (historical data): user_roles_for_view_mode_switch (field_user_roles_for_view_mode_s) */
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['id'] = 'field_user_roles_for_view_mode_s_tid';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['field'] = 'field_user_roles_for_view_mode_s_tid';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['default_argument_options']['argument'] = 'Candidate';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['validate']['type'] = 'php';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['validate_options']['code'] = 'if($handler->argument == \'deputies\'){
+  $term_name = \'Deputy\';
+}
+else{
+  $term_name = \'Candidate\';
+}
+
+$term_role = taxonomy_get_term_by_name($term_name, \'pw_profile_roles_for_view_mode_switch\');
+if($term_role){
+  $term_role_id = key($term_role);
+  $handler->argument = $term_role_id;
+  return true;
+}
+return false;';
   /* Filter criterion: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
@@ -3142,7 +3171,7 @@ if($record->value == 0){
     140336230 => 0,
     237793809 => 0,
   );
-  $handler->display->display_options['path'] = 'politicians/%';
+  $handler->display->display_options['path'] = 'politicians/%/%';
 
   /* Display: Listenansicht */
   $handler = $view->new_display('attachment', 'Listenansicht', 'attachment_1');

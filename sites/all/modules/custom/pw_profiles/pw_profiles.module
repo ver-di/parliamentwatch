@@ -176,8 +176,8 @@ function pw_profiles_views_query_alter(&$view, &$query) {
   switch($view->name) {
     case 'profile_list_rev':
      // add the group by on the user id field to prevent duplicates caused by user revisions
-     $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
-     $query->add_groupby('users_uid');
+     #$query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
+     #$query->add_groupby('users_uid');
      break;
   }
 }
