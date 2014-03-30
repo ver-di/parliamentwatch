@@ -1812,6 +1812,15 @@ html.js fieldset.collapsed {
 
 /* /////////////////////////// forms /////////////////// */
 
+div.pw-messages {
+  background-position: 8px 8px; /* LTR */
+  background-repeat: no-repeat;
+  border-width: 1px;
+  border-style: solid;
+  margin: 6px 0;
+  padding: 10px 10px 10px 50px; /* LTR */
+}
+
 .captcha .compact-form-label {
     display: none !important;
 }
