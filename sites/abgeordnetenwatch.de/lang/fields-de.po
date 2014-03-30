@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-21 16:00+0100\n"
-"PO-Revision-Date: 2014-03-21 16:00+0100\n"
+"POT-Creation-Date: 2014-03-30 14:21+0200\n"
+"PO-Revision-Date: 2014-03-30 14:21+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -171,6 +171,16 @@ msgstr ""
 #: field:field_user_fname:user:label
 msgctxt "field_user_fname:user:label"
 msgid "First Name"
+msgstr ""
+
+#: field:field_user_gender:#allowed_values:m
+msgctxt "field_user_gender:#allowed_values:m"
+msgid "Male"
+msgstr ""
+
+#: field:field_user_gender:#allowed_values:f
+msgctxt "field_user_gender:#allowed_values:f"
+msgid "Female"
 msgstr ""
 
 #: field:field_user_gender:user:label
@@ -643,6 +653,11 @@ msgctxt "field_user_gender:#allowed_values:t"
 msgid "Transgender"
 msgstr ""
 
+#: field:field_user_image_gallery:user:label
+msgctxt "field_user_image_gallery:user:label"
+msgid "Image Gallery"
+msgstr ""
+
 #: field:field_user_list_position:user:label
 msgctxt "field_user_list_position:user:label"
 msgid "List Position"
@@ -932,25 +947,60 @@ msgid ""
 "Information in Ihrem Profil angezeigt wird."
 msgstr ""
 
-#: field:field_user_gender:#allowed_values:m
-msgctxt "field_user_gender:#allowed_values:m"
-msgid "Male"
-msgstr "männlich"
+#: field:comment_body:comment_node_pw_kc_position:label
+msgctxt "comment_body:comment_node_pw_kc_position:label"
+msgid "Comment"
+msgstr ""
 
-#: field:field_user_gender:#allowed_values:f
-msgctxt "field_user_gender:#allowed_values:f"
-msgid "Female"
-msgstr "weiblich"
+#: field:comment_body:comment_node_pw_kc_thesis:label
+msgctxt "comment_body:comment_node_pw_kc_thesis:label"
+msgid "Comment"
+msgstr ""
+
+#: field:body:pw_kc_position:label
+msgctxt "body:pw_kc_position:label"
+msgid "Argumentation"
+msgstr ""
+
+#: field:field_pw_kc_thesis_reference:pw_kc_position:label
+msgctxt "field_pw_kc_thesis_reference:pw_kc_position:label"
+msgid "Thesis Reference"
+msgstr ""
+
+#: field:field_pw_kc_user_reference:pw_kc_position:label
+msgctxt "field_pw_kc_user_reference:pw_kc_position:label"
+msgid "User"
+msgstr ""
+
+#: field:field_pw_kc_vote_reference:pw_kc_position:label
+msgctxt "field_pw_kc_vote_reference:pw_kc_position:label"
+msgid "Vote"
+msgstr ""
+
+#: field:body:pw_kc_thesis:label
+msgctxt "body:pw_kc_thesis:label"
+msgid "Thesis"
+msgstr ""
+
+#: field:field_pw_parmliament:pw_kc_thesis:label
+msgctxt "field_pw_parmliament:pw_kc_thesis:label"
+msgid "Parliament"
+msgstr ""
+
+#: field:field_pw_kc_votes_classname:pw_kc_votes:label
+msgctxt "field_pw_kc_votes_classname:pw_kc_votes:label"
+msgid "Class name"
+msgstr ""
+
+#: field:field_pw_kc_votes_classname:pw_kc_votes:description
+msgctxt "field_pw_kc_votes_classname:pw_kc_votes:description"
+msgid "Defines the color of the output"
+msgstr ""
 
 #: field:comment_body:comment_node_blogpost:label
 msgctxt "comment_body:comment_node_blogpost:label"
 msgid "Comment"
 msgstr "Kommentar"
-
-#: field:field_user_image_gallery:user:label
-msgctxt "field_user_image_gallery:user:label"
-msgid "Image Gallery"
-msgstr "Bildergalerie"
 
 #: field:field_petition_required:pw_petition:label
 msgctxt "field_petition_required:pw_petition:label"

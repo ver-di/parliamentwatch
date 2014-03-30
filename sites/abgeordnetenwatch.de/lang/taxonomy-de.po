@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-21 16:01+0100\n"
-"PO-Revision-Date: 2014-03-21 16:01+0100\n"
+"POT-Creation-Date: 2014-03-30 14:21+0200\n"
+"PO-Revision-Date: 2014-03-30 14:21+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -83,11 +83,6 @@ msgctxt "vocabulary:31:name"
 msgid "Blogcategories"
 msgstr ""
 
-#: taxonomy:term:6501:name
-msgctxt "term:6501:name"
-msgid "Bundestag"
-msgstr ""
-
 #: taxonomy:vocabulary:32:name
 msgctxt "vocabulary:32:name"
 msgid "List Position"
@@ -96,1151 +91,6 @@ msgstr ""
 #: taxonomy:vocabulary:33:name
 msgctxt "vocabulary:33:name"
 msgid "PW Profile Roles for View Mode Switch"
-msgstr ""
-
-#: taxonomy:term:14669:name
-msgctxt "term:14669:name"
-msgid "Hamburg 2004-2008"
-msgstr ""
-
-#: taxonomy:term:14670:name
-msgctxt "term:14670:name"
-msgid "EU-Parlament 2004-2009"
-msgstr ""
-
-#: taxonomy:term:14671:name
-msgctxt "term:14671:name"
-msgid "Nordrhein-Westfalen 2005-2010"
-msgstr ""
-
-#: taxonomy:term:14672:name
-msgctxt "term:14672:name"
-msgid "Bundestag 2005-2009"
-msgstr ""
-
-#: taxonomy:term:14673:name
-msgctxt "term:14673:name"
-msgid "Baden-Württemberg 2006-2011"
-msgstr ""
-
-#: taxonomy:term:14674:name
-msgctxt "term:14674:name"
-msgid "Rheinland-Pfalz 2006-2011"
-msgstr ""
-
-#: taxonomy:term:14675:name
-msgctxt "term:14675:name"
-msgid "Sachsen-Anhalt 2006-2011"
-msgstr ""
-
-#: taxonomy:term:14676:name
-msgctxt "term:14676:name"
-msgid "Mecklenburg-Vorpommern 2006-2011"
-msgstr ""
-
-#: taxonomy:term:14677:name
-msgctxt "term:14677:name"
-msgid "Bremen 2007-2011"
-msgstr ""
-
-#: taxonomy:term:14678:name
-msgctxt "term:14678:name"
-msgid "Hessen 2008"
-msgstr ""
-
-#: taxonomy:term:14679:name
-msgctxt "term:14679:name"
-msgid "Niedersachsen 2008-2013"
-msgstr ""
-
-#: taxonomy:term:14680:name
-msgctxt "term:14680:name"
-msgid "Hamburg 2008-2011"
-msgstr ""
-
-#: taxonomy:term:14681:name
-msgctxt "term:14681:name"
-msgid "Dresden"
-msgstr ""
-
-#: taxonomy:term:14682:name
-msgctxt "term:14682:name"
-msgid "Bayern 2008-2013"
-msgstr ""
-
-#: taxonomy:term:14683:name
-msgctxt "term:14683:name"
-msgid "Hessen 2009-2013"
-msgstr ""
-
-#: taxonomy:term:14684:name
-msgctxt "term:14684:name"
-msgid "EU-Parlament 2009-2014"
-msgstr ""
-
-#: taxonomy:term:14685:name
-msgctxt "term:14685:name"
-msgid "Halle (Saale)"
-msgstr ""
-
-#: taxonomy:term:14686:name
-msgctxt "term:14686:name"
-msgid "Bürgermeisterwahlen Nordrhein-Westfalen 2009"
-msgstr ""
-
-#: taxonomy:term:14687:name
-msgctxt "term:14687:name"
-msgid "Saarland 2009-2012"
-msgstr ""
-
-#: taxonomy:term:14688:name
-msgctxt "term:14688:name"
-msgid "Thüringen"
-msgstr ""
-
-#: taxonomy:term:14689:name
-msgctxt "term:14689:name"
-msgid "Bundestag 2009-2013"
-msgstr ""
-
-#: taxonomy:term:14690:name
-msgctxt "term:14690:name"
-msgid "Sachsen"
-msgstr ""
-
-#: taxonomy:term:14691:name
-msgctxt "term:14691:name"
-msgid "Schleswig-Holstein 2009-2012"
-msgstr ""
-
-#: taxonomy:term:14692:name
-msgctxt "term:14692:name"
-msgid "Freiburg"
-msgstr ""
-
-#: taxonomy:term:14693:name
-msgctxt "term:14693:name"
-msgid "Brandenburg"
-msgstr ""
-
-#: taxonomy:term:14694:name
-msgctxt "term:14694:name"
-msgid "Solingen"
-msgstr ""
-
-#: taxonomy:term:14695:name
-msgctxt "term:14695:name"
-msgid "Nordrhein-Westfalen 2010-2012"
-msgstr ""
-
-#: taxonomy:term:14696:name
-msgctxt "term:14696:name"
-msgid "Hamburg"
-msgstr ""
-
-#: taxonomy:term:14697:name
-msgctxt "term:14697:name"
-msgid "Sachsen-Anhalt"
-msgstr ""
-
-#: taxonomy:term:14698:name
-msgctxt "term:14698:name"
-msgid "Baden-Württemberg"
-msgstr ""
-
-#: taxonomy:term:14699:name
-msgctxt "term:14699:name"
-msgid "Darmstadt"
-msgstr ""
-
-#: taxonomy:term:14700:name
-msgctxt "term:14700:name"
-msgid "Offenbach am Main"
-msgstr ""
-
-#: taxonomy:term:14701:name
-msgctxt "term:14701:name"
-msgid "Kreis Darmstadt-Dieburg"
-msgstr ""
-
-#: taxonomy:term:14702:name
-msgctxt "term:14702:name"
-msgid "Rheinland-Pfalz"
-msgstr ""
-
-#: taxonomy:term:14703:name
-msgctxt "term:14703:name"
-msgid "Bremen"
-msgstr ""
-
-#: taxonomy:term:14704:name
-msgctxt "term:14704:name"
-msgid "Mecklenburg-Vorpommern"
-msgstr ""
-
-#: taxonomy:term:14705:name
-msgctxt "term:14705:name"
-msgid "Berlin"
-msgstr ""
-
-#: taxonomy:term:14706:name
-msgctxt "term:14706:name"
-msgid "Frankfurt am Main"
-msgstr ""
-
-#: taxonomy:term:14707:name
-msgctxt "term:14707:name"
-msgid "Berlin-Neukölln"
-msgstr ""
-
-#: taxonomy:term:14708:name
-msgctxt "term:14708:name"
-msgid "Osnabrück"
-msgstr ""
-
-#: taxonomy:term:14709:name
-msgctxt "term:14709:name"
-msgid "Kreis Göttingen"
-msgstr ""
-
-#: taxonomy:term:14710:name
-msgctxt "term:14710:name"
-msgid "Saarland"
-msgstr ""
-
-#: taxonomy:term:14711:name
-msgctxt "term:14711:name"
-msgid "Nordrhein-Westfalen"
-msgstr ""
-
-#: taxonomy:term:14712:name
-msgctxt "term:14712:name"
-msgid "Niedersachsen"
-msgstr ""
-
-#: taxonomy:term:14713:name
-msgctxt "term:14713:name"
-msgid "Hessen"
-msgstr ""
-
-#: taxonomy:term:14714:name
-msgctxt "term:14714:name"
-msgid "Bayern"
-msgstr ""
-
-#: taxonomy:term:14717:name
-msgctxt "term:14717:name"
-msgid "CDU"
-msgstr ""
-
-#: taxonomy:term:14718:name
-msgctxt "term:14718:name"
-msgid "CSU"
-msgstr ""
-
-#: taxonomy:term:14719:name
-msgctxt "term:14719:name"
-msgid "GRÜNE"
-msgstr ""
-
-#: taxonomy:term:14720:name
-msgctxt "term:14720:name"
-msgid "LINKE"
-msgstr ""
-
-#: taxonomy:term:14721:name
-msgctxt "term:14721:name"
-msgid "Familien-Partei"
-msgstr ""
-
-#: taxonomy:term:14722:name
-msgctxt "term:14722:name"
-msgid "FDP"
-msgstr ""
-
-#: taxonomy:term:14723:name
-msgctxt "term:14723:name"
-msgid "FDP/DVP"
-msgstr ""
-
-#: taxonomy:term:14724:name
-msgctxt "term:14724:name"
-msgid "ödp"
-msgstr ""
-
-#: taxonomy:term:14725:name
-msgctxt "term:14725:name"
-msgid "PIRATEN"
-msgstr ""
-
-#: taxonomy:term:14726:name
-msgctxt "term:14726:name"
-msgid "SPD"
-msgstr ""
-
-#: taxonomy:term:14727:name
-msgctxt "term:14727:name"
-msgid "Tierschutzpartei"
-msgstr ""
-
-#: taxonomy:term:14728:name
-msgctxt "term:14728:name"
-msgid "Oberbayern"
-msgstr ""
-
-#: taxonomy:term:14729:name
-msgctxt "term:14729:name"
-msgid "Niederbayern"
-msgstr ""
-
-#: taxonomy:term:14730:name
-msgctxt "term:14730:name"
-msgid "Oberfranken"
-msgstr ""
-
-#: taxonomy:term:14731:name
-msgctxt "term:14731:name"
-msgid "Schwaben"
-msgstr ""
-
-#: taxonomy:term:14732:name
-msgctxt "term:14732:name"
-msgid "Unterfranken"
-msgstr ""
-
-#: taxonomy:term:14733:name
-msgctxt "term:14733:name"
-msgid "Oberbayern"
-msgstr ""
-
-#: taxonomy:term:14734:name
-msgctxt "term:14734:name"
-msgid "Neukölln"
-msgstr ""
-
-#: taxonomy:term:14735:name
-msgctxt "term:14735:name"
-msgid "Bayern"
-msgstr ""
-
-#: taxonomy:term:14736:name
-msgctxt "term:14736:name"
-msgid "Berlin"
-msgstr ""
-
-#: taxonomy:term:14737:name
-msgctxt "term:14737:name"
-msgid "Nordrhein-Westfalen"
-msgstr ""
-
-#: taxonomy:term:14738:name
-msgctxt "term:14738:name"
-msgid "Hamburg"
-msgstr ""
-
-#: taxonomy:term:14739:name
-msgctxt "term:14739:name"
-msgid "Sachsen-Anhalt"
-msgstr ""
-
-#: taxonomy:term:14740:name
-msgctxt "term:14740:name"
-msgid "Baden-Württemberg"
-msgstr ""
-
-#: taxonomy:term:14741:name
-msgctxt "term:14741:name"
-msgid "Rheinland-Pfalz"
-msgstr ""
-
-#: taxonomy:term:14742:name
-msgctxt "term:14742:name"
-msgid "Mecklenburg-Vorpommern"
-msgstr ""
-
-#: taxonomy:term:14743:name
-msgctxt "term:14743:name"
-msgid "Brandenburg"
-msgstr ""
-
-#: taxonomy:term:14744:name
-msgctxt "term:14744:name"
-msgid "Saarland"
-msgstr ""
-
-#: taxonomy:term:14745:name
-msgctxt "term:14745:name"
-msgid "Baden-Württemberg"
-msgstr ""
-
-#: taxonomy:term:14746:name
-msgctxt "term:14746:name"
-msgid "Mecklenburg-Vorpommern"
-msgstr ""
-
-#: taxonomy:term:14747:name
-msgctxt "term:14747:name"
-msgid "Bremen"
-msgstr ""
-
-#: taxonomy:term:14748:name
-msgctxt "term:14748:name"
-msgid "Sachsen"
-msgstr ""
-
-#: taxonomy:term:14749:name
-msgctxt "term:14749:name"
-msgid "Niedersachsen"
-msgstr ""
-
-#: taxonomy:term:14750:name
-msgctxt "term:14750:name"
-msgid "Saarland"
-msgstr ""
-
-#: taxonomy:term:14751:name
-msgctxt "term:14751:name"
-msgid "Schleswig-Holstein"
-msgstr ""
-
-#: taxonomy:term:14752:name
-msgctxt "term:14752:name"
-msgid "Sachsen"
-msgstr ""
-
-#: taxonomy:term:14753:name
-msgctxt "term:14753:name"
-msgid "Hamburg"
-msgstr ""
-
-#: taxonomy:term:14754:name
-msgctxt "term:14754:name"
-msgid "Baden-Württemberg"
-msgstr ""
-
-#: taxonomy:term:14755:name
-msgctxt "term:14755:name"
-msgid "Saarland"
-msgstr ""
-
-#: taxonomy:term:14756:name
-msgctxt "term:14756:name"
-msgid "Aalen"
-msgstr ""
-
-#: taxonomy:term:14757:name
-msgctxt "term:14757:name"
-msgid "Hohenlohe"
-msgstr ""
-
-#: taxonomy:term:14758:name
-msgctxt "term:14758:name"
-msgid "Ludwigsburg"
-msgstr ""
-
-#: taxonomy:term:14759:name
-msgctxt "term:14759:name"
-msgid "Freudenstadt"
-msgstr ""
-
-#: taxonomy:term:14760:name
-msgctxt "term:14760:name"
-msgid "Hohenlohe"
-msgstr ""
-
-#: taxonomy:term:14761:name
-msgctxt "term:14761:name"
-msgid "Rosenheim-West"
-msgstr ""
-
-#: taxonomy:term:14767:name
-msgctxt "term:14767:name"
-msgid "Rottal-Inn"
-msgstr ""
-
-#: taxonomy:term:14769:name
-msgctxt "term:14769:name"
-msgid "Wahlkreisliste Oberfranken"
-msgstr ""
-
-#: taxonomy:term:14770:name
-msgctxt "term:14770:name"
-msgid "Wahlkreisliste Schwaben"
-msgstr ""
-
-#: taxonomy:term:14806:name
-msgctxt "term:14806:name"
-msgid "Haßberge, Rhön-Grabfeld"
-msgstr ""
-
-#: taxonomy:term:14807:name
-msgctxt "term:14807:name"
-msgid "Rosenheim-West"
-msgstr ""
-
-#: taxonomy:term:14808:name
-msgctxt "term:14808:name"
-msgid "Neukölln WK 2"
-msgstr ""
-
-#: taxonomy:term:14809:name
-msgctxt "term:14809:name"
-msgid "Berlin-Neukölln (BVV)"
-msgstr ""
-
-#: taxonomy:term:14810:name
-msgctxt "term:14810:name"
-msgid "Landesliste"
-msgstr ""
-
-#: taxonomy:term:14811:name
-msgctxt "term:14811:name"
-msgid "Bremen-Neustadt"
-msgstr ""
-
-#: taxonomy:term:14812:name
-msgctxt "term:14812:name"
-msgid "Bremen-Schwachhausen"
-msgstr ""
-
-#: taxonomy:term:14813:name
-msgctxt "term:14813:name"
-msgid "Bremen-Neustadt"
-msgstr ""
-
-#: taxonomy:term:14814:name
-msgctxt "term:14814:name"
-msgid "Bremen-Schwachhausen"
-msgstr ""
-
-#: taxonomy:term:14815:name
-msgctxt "term:14815:name"
-msgid "Amberg"
-msgstr ""
-
-#: taxonomy:term:14816:name
-msgctxt "term:14816:name"
-msgid "Berlin-Neukölln"
-msgstr ""
-
-#: taxonomy:term:14817:name
-msgctxt "term:14817:name"
-msgid "Düsseldorf II"
-msgstr ""
-
-#: taxonomy:term:14818:name
-msgctxt "term:14818:name"
-msgid "Hamburg-Mitte"
-msgstr ""
-
-#: taxonomy:term:14819:name
-msgctxt "term:14819:name"
-msgid "Harz"
-msgstr ""
-
-#: taxonomy:term:14820:name
-msgctxt "term:14820:name"
-msgid "Heidelberg"
-msgstr ""
-
-#: taxonomy:term:14821:name
-msgctxt "term:14821:name"
-msgid "Karlsruhe-Stadt"
-msgstr ""
-
-#: taxonomy:term:14822:name
-msgctxt "term:14822:name"
-msgid "Ludwigshafen/Frankenthal"
-msgstr ""
-
-#: taxonomy:term:14823:name
-msgctxt "term:14823:name"
-msgid "Mecklenburgische Seenplatte I - Vorpommern-Greifswald II"
-msgstr ""
-
-#: taxonomy:term:14824:name
-msgctxt "term:14824:name"
-msgid "Nürnberg-Nord"
-msgstr ""
-
-#: taxonomy:term:14825:name
-msgctxt "term:14825:name"
-msgid "Oberhavel - Havelland II"
-msgstr ""
-
-#: taxonomy:term:14833:name
-msgctxt "term:14833:name"
-msgid "Rottal-Inn"
-msgstr ""
-
-#: taxonomy:term:14834:name
-msgctxt "term:14834:name"
-msgid "Rottweil - Tuttlingen"
-msgstr ""
-
-#: taxonomy:term:14835:name
-msgctxt "term:14835:name"
-msgid "Saarbrücken"
-msgstr ""
-
-#: taxonomy:term:14836:name
-msgctxt "term:14836:name"
-msgid "Aalen-Heidenheim"
-msgstr ""
-
-#: taxonomy:term:14837:name
-msgctxt "term:14837:name"
-msgid "Bad Doberan - Güstrow - Müritz"
-msgstr ""
-
-#: taxonomy:term:14838:name
-msgctxt "term:14838:name"
-msgid "Bremen I"
-msgstr ""
-
-#: taxonomy:term:14839:name
-msgctxt "term:14839:name"
-msgid "Döbeln - Mittweida - Meißen II"
-msgstr ""
-
-#: taxonomy:term:14840:name
-msgctxt "term:14840:name"
-msgid "Göttingen"
-msgstr ""
-
-#: taxonomy:term:14841:name
-msgctxt "term:14841:name"
-msgid "Saarbrücken"
-msgstr ""
-
-#: taxonomy:term:14842:name
-msgctxt "term:14842:name"
-msgid "Segeberg - Stormarn-Nord"
-msgstr ""
-
-#: taxonomy:term:14843:name
-msgctxt "term:14843:name"
-msgid "Wismar - Nordwestmecklenburg - Parchim"
-msgstr ""
-
-#: taxonomy:term:14844:name
-msgctxt "term:14844:name"
-msgid "Erzgebirgskreis I"
-msgstr ""
-
-#: taxonomy:term:14845:name
-msgctxt "term:14845:name"
-msgid "Hamburg Nord"
-msgstr ""
-
-#: taxonomy:term:14846:name
-msgctxt "term:14846:name"
-msgid "Karlsruhe-Stadt"
-msgstr ""
-
-#: taxonomy:term:14847:name
-msgctxt "term:14847:name"
-msgid "Saarbrücken"
-msgstr ""
-
-#: taxonomy:term:14848:name
-msgctxt "term:14848:name"
-msgid "Solingen"
-msgstr ""
-
-#: taxonomy:term:14849:name
-msgctxt "term:14849:name"
-msgid "Darmstadt (Stadtverordnetenversammlung)"
-msgstr ""
-
-#: taxonomy:term:14850:name
-msgctxt "term:14850:name"
-msgid "Dresden (Stadtrat)"
-msgstr ""
-
-#: taxonomy:term:14868:name
-msgctxt "term:14868:name"
-msgid "Baden-Württemberg"
-msgstr ""
-
-#: taxonomy:term:15368:name
-msgctxt "term:15368:name"
-msgid "Bayern"
-msgstr ""
-
-#: taxonomy:term:15369:name
-msgctxt "term:15369:name"
-msgid "Berlin"
-msgstr ""
-
-#: taxonomy:term:15370:name
-msgctxt "term:15370:name"
-msgid "Brandenburg"
-msgstr ""
-
-#: taxonomy:term:15371:name
-msgctxt "term:15371:name"
-msgid "Bremen"
-msgstr ""
-
-#: taxonomy:term:15372:name
-msgctxt "term:15372:name"
-msgid "Hamburg"
-msgstr ""
-
-#: taxonomy:term:15373:name
-msgctxt "term:15373:name"
-msgid "Hessen"
-msgstr ""
-
-#: taxonomy:term:15374:name
-msgctxt "term:15374:name"
-msgid "Mecklenburg-Vorpommern"
-msgstr ""
-
-#: taxonomy:term:15375:name
-msgctxt "term:15375:name"
-msgid "Niedersachsen"
-msgstr ""
-
-#: taxonomy:term:15376:name
-msgctxt "term:15376:name"
-msgid "Nordrhein-Westfalen"
-msgstr ""
-
-#: taxonomy:term:15377:name
-msgctxt "term:15377:name"
-msgid "Rheinland-Pfalz"
-msgstr ""
-
-#: taxonomy:term:15378:name
-msgctxt "term:15378:name"
-msgid "Saarland"
-msgstr ""
-
-#: taxonomy:term:15379:name
-msgctxt "term:15379:name"
-msgid "Sachsen"
-msgstr ""
-
-#: taxonomy:term:15380:name
-msgctxt "term:15380:name"
-msgid "Schleswig-Holstein"
-msgstr ""
-
-#: taxonomy:term:15509:name
-msgctxt "term:15509:name"
-msgid "Thüringen"
-msgstr ""
-
-#: taxonomy:term:15510:name
-msgctxt "term:15510:name"
-msgid "Baden-Württemberg"
-msgstr ""
-
-#: taxonomy:term:15511:name
-msgctxt "term:15511:name"
-msgid "Bayern"
-msgstr ""
-
-#: taxonomy:term:15512:name
-msgctxt "term:15512:name"
-msgid "Berlin"
-msgstr ""
-
-#: taxonomy:term:15513:name
-msgctxt "term:15513:name"
-msgid "Brandenburg"
-msgstr ""
-
-#: taxonomy:term:15514:name
-msgctxt "term:15514:name"
-msgid "Bremen"
-msgstr ""
-
-#: taxonomy:term:15515:name
-msgctxt "term:15515:name"
-msgid "Hessen"
-msgstr ""
-
-#: taxonomy:term:15516:name
-msgctxt "term:15516:name"
-msgid "Niedersachsen"
-msgstr ""
-
-#: taxonomy:term:15517:name
-msgctxt "term:15517:name"
-msgid "Nordrhein-Westfalen"
-msgstr ""
-
-#: taxonomy:term:15518:name
-msgctxt "term:15518:name"
-msgid "Rheinland-Pfalz"
-msgstr ""
-
-#: taxonomy:term:15519:name
-msgctxt "term:15519:name"
-msgid "Saarland"
-msgstr ""
-
-#: taxonomy:term:15520:name
-msgctxt "term:15520:name"
-msgid "Sachsen"
-msgstr ""
-
-#: taxonomy:term:15521:name
-msgctxt "term:15521:name"
-msgid "Schleswig-Holstein"
-msgstr ""
-
-#: taxonomy:term:15522:name
-msgctxt "term:15522:name"
-msgid "Frankfurt am Main (Stadtverordnetenversammlung)"
-msgstr ""
-
-#: taxonomy:term:15523:name
-msgctxt "term:15523:name"
-msgid "Freiburg (Gemeinderat)"
-msgstr ""
-
-#: taxonomy:term:15524:name
-msgctxt "term:15524:name"
-msgid "Halle (Saale) (Stadtrat)"
-msgstr ""
-
-#: taxonomy:term:15525:name
-msgctxt "term:15525:name"
-msgid "Alstertal - Walddörfer"
-msgstr ""
-
-#: taxonomy:term:15526:name
-msgctxt "term:15526:name"
-msgid "Fuhlsbüttel - Alsterdorf  - Langenhorn"
-msgstr ""
-
-#: taxonomy:term:15527:name
-msgctxt "term:15527:name"
-msgid "Landesliste"
-msgstr ""
-
-#: taxonomy:term:15528:name
-msgctxt "term:15528:name"
-msgid "Lokstedt - Niendorf  - Schnelsen"
-msgstr ""
-
-#: taxonomy:term:15529:name
-msgctxt "term:15529:name"
-msgid "Hamburg-Eimsbüttel"
-msgstr ""
-
-#: taxonomy:term:15530:name
-msgctxt "term:15530:name"
-msgid "Hamburg-Mitte"
-msgstr ""
-
-#: taxonomy:term:15531:name
-msgctxt "term:15531:name"
-msgid "Hamburg-Wandsbek"
-msgstr ""
-
-#: taxonomy:term:15532:name
-msgctxt "term:15532:name"
-msgid "Fuhlsbüttel - Alsterdorf  - Langenhorn"
-msgstr ""
-
-#: taxonomy:term:15533:name
-msgctxt "term:15533:name"
-msgid "Hamburg - Mitte"
-msgstr ""
-
-#: taxonomy:term:15534:name
-msgctxt "term:15534:name"
-msgid "Harburg"
-msgstr ""
-
-#: taxonomy:term:15535:name
-msgctxt "term:15535:name"
-msgid "Landesliste"
-msgstr ""
-
-#: taxonomy:term:15536:name
-msgctxt "term:15536:name"
-msgid "Lokstedt - Niendorf  - Schnelsen"
-msgstr ""
-
-#: taxonomy:term:15537:name
-msgctxt "term:15537:name"
-msgid "Frankfurt am Main VI"
-msgstr ""
-
-#: taxonomy:term:15538:name
-msgctxt "term:15538:name"
-msgid "Kassel-Land I"
-msgstr ""
-
-#: taxonomy:term:15539:name
-msgctxt "term:15539:name"
-msgid "Main-Kinzig I"
-msgstr ""
-
-#: taxonomy:term:15540:name
-msgctxt "term:15540:name"
-msgid "Offenbach-Stadt"
-msgstr ""
-
-#: taxonomy:term:15541:name
-msgctxt "term:15541:name"
-msgid "Wetterau I"
-msgstr ""
-
-#: taxonomy:term:15542:name
-msgctxt "term:15542:name"
-msgid "Kassel-Land I"
-msgstr ""
-
-#: taxonomy:term:15543:name
-msgctxt "term:15543:name"
-msgid "Main-Kinzig I"
-msgstr ""
-
-#: taxonomy:term:15544:name
-msgctxt "term:15544:name"
-msgid "Main-Kinzig II"
-msgstr ""
-
-#: taxonomy:term:15545:name
-msgctxt "term:15545:name"
-msgid "Schwalm-Eder II"
-msgstr ""
-
-#: taxonomy:term:15546:name
-msgctxt "term:15546:name"
-msgid "Wetterau I"
-msgstr ""
-
-#: taxonomy:term:15547:name
-msgctxt "term:15547:name"
-msgid "Darmstadt-Dieburg I"
-msgstr ""
-
-#: taxonomy:term:15548:name
-msgctxt "term:15548:name"
-msgid "Kassel-Land I"
-msgstr ""
-
-#: taxonomy:term:15549:name
-msgctxt "term:15549:name"
-msgid "Main-Kinzig I"
-msgstr ""
-
-#: taxonomy:term:15550:name
-msgctxt "term:15550:name"
-msgid "Main-Kinzig II"
-msgstr ""
-
-#: taxonomy:term:15551:name
-msgctxt "term:15551:name"
-msgid "Schwalm-Eder II"
-msgstr ""
-
-#: taxonomy:term:15552:name
-msgctxt "term:15552:name"
-msgid "Wetterau I"
-msgstr ""
-
-#: taxonomy:term:15553:name
-msgctxt "term:15553:name"
-msgid "Darmstadt-Dieburg (Kreistag)"
-msgstr ""
-
-#: taxonomy:term:15554:name
-msgctxt "term:15554:name"
-msgid "Göttingen (Kreistag)"
-msgstr ""
-
-#: taxonomy:term:15555:name
-msgctxt "term:15555:name"
-msgid "Nordvorpommern II"
-msgstr ""
-
-#: taxonomy:term:15556:name
-msgctxt "term:15556:name"
-msgid "Rostock I"
-msgstr ""
-
-#: taxonomy:term:15557:name
-msgctxt "term:15557:name"
-msgid "Rostock II"
-msgstr ""
-
-#: taxonomy:term:15558:name
-msgctxt "term:15558:name"
-msgid "Rügen II"
-msgstr ""
-
-#: taxonomy:term:15559:name
-msgctxt "term:15559:name"
-msgid "Nordvorpommern I"
-msgstr ""
-
-#: taxonomy:term:15560:name
-msgctxt "term:15560:name"
-msgid "Rügen II"
-msgstr ""
-
-#: taxonomy:term:15561:name
-msgctxt "term:15561:name"
-msgid "Bremervörde"
-msgstr ""
-
-#: taxonomy:term:15562:name
-msgctxt "term:15562:name"
-msgid "Hadeln / Wesermünde"
-msgstr ""
-
-#: taxonomy:term:15563:name
-msgctxt "term:15563:name"
-msgid "Seevetal"
-msgstr ""
-
-#: taxonomy:term:15564:name
-msgctxt "term:15564:name"
-msgid "Cuxhaven"
-msgstr ""
-
-#: taxonomy:term:15565:name
-msgctxt "term:15565:name"
-msgid "Hadeln / Wesermünde"
-msgstr ""
-
-#: taxonomy:term:15566:name
-msgctxt "term:15566:name"
-msgid "Springe"
-msgstr ""
-
-#: taxonomy:term:15567:name
-msgctxt "term:15567:name"
-msgid "Wesel II"
-msgstr ""
-
-#: taxonomy:term:15568:name
-msgctxt "term:15568:name"
-msgid "Wesel IV"
-msgstr ""
-
-#: taxonomy:term:15569:name
-msgctxt "term:15569:name"
-msgid "Wesel II"
-msgstr ""
-
-#: taxonomy:term:15570:name
-msgctxt "term:15570:name"
-msgid "Aachen II"
-msgstr ""
-
-#: taxonomy:term:15571:name
-msgctxt "term:15571:name"
-msgid "Rhein-Kreis Neuss II"
-msgstr ""
-
-#: taxonomy:term:15572:name
-msgctxt "term:15572:name"
-msgid "Wesel II"
-msgstr ""
-
-#: taxonomy:term:15573:name
-msgctxt "term:15573:name"
-msgid "Offenbach am Main (Stadtverordnetenversammlung)"
-msgstr ""
-
-#: taxonomy:term:15574:name
-msgctxt "term:15574:name"
-msgid "Osnabrück (Rat der Stadt)"
-msgstr ""
-
-#: taxonomy:term:15575:name
-msgctxt "term:15575:name"
-msgid "Bad Marienberg (Westerwald) / Westerburg"
-msgstr ""
-
-#: taxonomy:term:15576:name
-msgctxt "term:15576:name"
-msgid "Landau in der Pfalz"
-msgstr ""
-
-#: taxonomy:term:15577:name
-msgctxt "term:15577:name"
-msgid "Landesliste"
-msgstr ""
-
-#: taxonomy:term:15578:name
-msgctxt "term:15578:name"
-msgid "Speyer"
-msgstr ""
-
-#: taxonomy:term:15579:name
-msgctxt "term:15579:name"
-msgid "Südliche Weinstraße"
-msgstr ""
-
-#: taxonomy:term:15580:name
-msgctxt "term:15580:name"
-msgid "Bad Marienberg (Westerwald) / Westerburg"
-msgstr ""
-
-#: taxonomy:term:15581:name
-msgctxt "term:15581:name"
-msgid "Ludwigshafen am Rhein I"
-msgstr ""
-
-#: taxonomy:term:15582:name
-msgctxt "term:15582:name"
-msgid "Landesliste"
-msgstr ""
-
-#: taxonomy:term:15583:name
-msgctxt "term:15583:name"
-msgid "Neunkirchen"
-msgstr ""
-
-#: taxonomy:term:15584:name
-msgctxt "term:15584:name"
-msgid "Saarbrücken"
-msgstr ""
-
-#: taxonomy:term:15585:name
-msgctxt "term:15585:name"
-msgid "Neunkirchen"
-msgstr ""
-
-#: taxonomy:term:15586:name
-msgctxt "term:15586:name"
-msgid "Löbau-Zittau I"
-msgstr ""
-
-#: taxonomy:term:15587:name
-msgctxt "term:15587:name"
-msgid "Halle IV"
-msgstr ""
-
-#: taxonomy:term:15588:name
-msgctxt "term:15588:name"
-msgid "Halle IV"
-msgstr ""
-
-#: taxonomy:term:15589:name
-msgctxt "term:15589:name"
-msgid "Lauenburg-Nord"
-msgstr ""
-
-#: taxonomy:term:15590:name
-msgctxt "term:15590:name"
-msgid "Solingen (Stadtrat)"
-msgstr ""
-
-#: taxonomy:term:15591:name
-msgctxt "term:15591:name"
-msgid "Weimar"
 msgstr ""
 
 #: taxonomy:term:15651:name
@@ -1298,214 +148,1404 @@ msgctxt "term:15662:name"
 msgid "Kultur"
 msgstr ""
 
-#: taxonomy:term:15663:name
-msgctxt "term:15663:name"
+#: taxonomy:term:15821:name
+msgctxt "term:15821:name"
 msgid "EU"
 msgstr ""
 
-#: taxonomy:term:15664:name
-msgctxt "term:15664:name"
-msgid "FW"
+#: taxonomy:term:15822:name
+msgctxt "term:15822:name"
+msgid "Hamburg 2004-2008"
 msgstr ""
 
-#: taxonomy:term:15665:name
-msgctxt "term:15665:name"
-msgid "Alternative für Deutschland"
+#: taxonomy:term:15823:name
+msgctxt "term:15823:name"
+msgid "EU-Parlament 2004-2009"
 msgstr ""
 
-#: taxonomy:term:15666:name
-msgctxt "term:15666:name"
-msgid "BüSo"
+#: taxonomy:term:15824:name
+msgctxt "term:15824:name"
+msgid "Nordrhein-Westfalen 2005-2010"
 msgstr ""
 
-#: taxonomy:term:15667:name
-msgctxt "term:15667:name"
-msgid "PBC"
+#: taxonomy:term:15825:name
+msgctxt "term:15825:name"
+msgid "Bundestag 2005-2009"
 msgstr ""
 
-#: taxonomy:term:15668:name
-msgctxt "term:15668:name"
-msgid "PSG"
+#: taxonomy:term:15826:name
+msgctxt "term:15826:name"
+msgid "Baden-Württemberg 2006-2011"
 msgstr ""
 
-#: taxonomy:term:15669:name
-msgctxt "term:15669:name"
-msgid "MLPD"
+#: taxonomy:term:15827:name
+msgctxt "term:15827:name"
+msgid "Rheinland-Pfalz 2006-2011"
 msgstr ""
 
-#: taxonomy:term:15670:name
-msgctxt "term:15670:name"
-msgid "Die PARTEI"
+#: taxonomy:term:15828:name
+msgctxt "term:15828:name"
+msgid "Sachsen-Anhalt 2006-2011"
 msgstr ""
 
-#: taxonomy:term:15671:name
-msgctxt "term:15671:name"
-msgid "Bundesliste"
+#: taxonomy:term:15829:name
+msgctxt "term:15829:name"
+msgid "Mecklenburg-Vorpommern 2006-2011"
 msgstr ""
 
-#: taxonomy:term:15672:name
-msgctxt "term:15672:name"
-msgid "Baden-Württemberg"
+#: taxonomy:term:15830:name
+msgctxt "term:15830:name"
+msgid "Bremen 2007-2011"
 msgstr ""
 
-#: taxonomy:term:15673:name
-msgctxt "term:15673:name"
-msgid "Bayern"
+#: taxonomy:term:15831:name
+msgctxt "term:15831:name"
+msgid "Hessen 2008"
 msgstr ""
 
-#: taxonomy:term:15674:name
-msgctxt "term:15674:name"
-msgid "Berlin"
+#: taxonomy:term:15832:name
+msgctxt "term:15832:name"
+msgid "Niedersachsen 2008-2013"
 msgstr ""
 
-#: taxonomy:term:15675:name
-msgctxt "term:15675:name"
-msgid "Brandenburg"
+#: taxonomy:term:15833:name
+msgctxt "term:15833:name"
+msgid "Hamburg 2008-2011"
 msgstr ""
 
-#: taxonomy:term:15676:name
-msgctxt "term:15676:name"
-msgid "Bremen"
+#: taxonomy:term:15834:name
+msgctxt "term:15834:name"
+msgid "Dresden"
 msgstr ""
 
-#: taxonomy:term:15677:name
-msgctxt "term:15677:name"
-msgid "Hamburg"
+#: taxonomy:term:15835:name
+msgctxt "term:15835:name"
+msgid "Bayern 2008-2013"
 msgstr ""
 
-#: taxonomy:term:15678:name
-msgctxt "term:15678:name"
-msgid "Hessen"
+#: taxonomy:term:15836:name
+msgctxt "term:15836:name"
+msgid "Hessen 2009-2013"
 msgstr ""
 
-#: taxonomy:term:15679:name
-msgctxt "term:15679:name"
-msgid "Mecklenburg-Vorpommern"
+#: taxonomy:term:15837:name
+msgctxt "term:15837:name"
+msgid "EU-Parlament 2009-2014"
 msgstr ""
 
-#: taxonomy:term:15680:name
-msgctxt "term:15680:name"
-msgid "Niedersachsen"
+#: taxonomy:term:15838:name
+msgctxt "term:15838:name"
+msgid "Halle (Saale)"
 msgstr ""
 
-#: taxonomy:term:15681:name
-msgctxt "term:15681:name"
-msgid "Nordrhein-Westfalen"
+#: taxonomy:term:15839:name
+msgctxt "term:15839:name"
+msgid "Bürgermeisterwahlen Nordrhein-Westfalen 2009"
 msgstr ""
 
-#: taxonomy:term:15682:name
-msgctxt "term:15682:name"
-msgid "Saarland"
+#: taxonomy:term:15840:name
+msgctxt "term:15840:name"
+msgid "Saarland 2009-2012"
 msgstr ""
 
-#: taxonomy:term:15683:name
-msgctxt "term:15683:name"
-msgid "Sachsen"
-msgstr ""
-
-#: taxonomy:term:15684:name
-msgctxt "term:15684:name"
-msgid "Sachsen-Anhalt"
-msgstr ""
-
-#: taxonomy:term:15685:name
-msgctxt "term:15685:name"
-msgid "Schleswig-Holstein"
-msgstr ""
-
-#: taxonomy:term:15686:name
-msgctxt "term:15686:name"
+#: taxonomy:term:15841:name
+msgctxt "term:15841:name"
 msgid "Thüringen"
 msgstr ""
 
-#: taxonomy:term:15687:name
-msgctxt "term:15687:name"
+#: taxonomy:term:15842:name
+msgctxt "term:15842:name"
+msgid "Bundestag 2009-2013"
+msgstr ""
+
+#: taxonomy:term:15843:name
+msgctxt "term:15843:name"
+msgid "Sachsen"
+msgstr ""
+
+#: taxonomy:term:15844:name
+msgctxt "term:15844:name"
+msgid "Schleswig-Holstein 2009-2012"
+msgstr ""
+
+#: taxonomy:term:15845:name
+msgctxt "term:15845:name"
+msgid "Freiburg"
+msgstr ""
+
+#: taxonomy:term:15846:name
+msgctxt "term:15846:name"
+msgid "Brandenburg"
+msgstr ""
+
+#: taxonomy:term:15847:name
+msgctxt "term:15847:name"
+msgid "Solingen"
+msgstr ""
+
+#: taxonomy:term:15848:name
+msgctxt "term:15848:name"
+msgid "Nordrhein-Westfalen 2010-2012"
+msgstr ""
+
+#: taxonomy:term:15849:name
+msgctxt "term:15849:name"
+msgid "Hamburg"
+msgstr ""
+
+#: taxonomy:term:15850:name
+msgctxt "term:15850:name"
+msgid "Sachsen-Anhalt"
+msgstr ""
+
+#: taxonomy:term:15851:name
+msgctxt "term:15851:name"
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: taxonomy:term:15852:name
+msgctxt "term:15852:name"
+msgid "Darmstadt"
+msgstr ""
+
+#: taxonomy:term:15853:name
+msgctxt "term:15853:name"
+msgid "Offenbach am Main"
+msgstr ""
+
+#: taxonomy:term:15854:name
+msgctxt "term:15854:name"
+msgid "Kreis Darmstadt-Dieburg"
+msgstr ""
+
+#: taxonomy:term:15855:name
+msgctxt "term:15855:name"
 msgid "Rheinland-Pfalz"
 msgstr ""
 
-#: taxonomy:term:15738:name
-msgctxt "term:15738:name"
+#: taxonomy:term:15856:name
+msgctxt "term:15856:name"
+msgid "Bremen"
+msgstr ""
+
+#: taxonomy:term:15857:name
+msgctxt "term:15857:name"
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: taxonomy:term:15858:name
+msgctxt "term:15858:name"
+msgid "Berlin"
+msgstr ""
+
+#: taxonomy:term:15859:name
+msgctxt "term:15859:name"
+msgid "Frankfurt am Main"
+msgstr ""
+
+#: taxonomy:term:15860:name
+msgctxt "term:15860:name"
+msgid "Berlin-Neukölln"
+msgstr ""
+
+#: taxonomy:term:15861:name
+msgctxt "term:15861:name"
+msgid "Osnabrück"
+msgstr ""
+
+#: taxonomy:term:15862:name
+msgctxt "term:15862:name"
+msgid "Kreis Göttingen"
+msgstr ""
+
+#: taxonomy:term:15863:name
+msgctxt "term:15863:name"
+msgid "Saarland"
+msgstr ""
+
+#: taxonomy:term:15864:name
+msgctxt "term:15864:name"
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: taxonomy:term:15865:name
+msgctxt "term:15865:name"
+msgid "Niedersachsen"
+msgstr ""
+
+#: taxonomy:term:15866:name
+msgctxt "term:15866:name"
+msgid "Bundestag"
+msgstr ""
+
+#: taxonomy:term:15867:name
+msgctxt "term:15867:name"
+msgid "Hessen"
+msgstr ""
+
+#: taxonomy:term:15868:name
+msgctxt "term:15868:name"
+msgid "Bayern"
+msgstr ""
+
+#: taxonomy:term:15869:name
+msgctxt "term:15869:name"
 msgid "Agrarpolitik"
 msgstr ""
 
-#: taxonomy:term:15739:name
-msgctxt "term:15739:name"
+#: taxonomy:term:15870:name
+msgctxt "term:15870:name"
 msgid "Arbeit"
 msgstr ""
 
-#: taxonomy:term:15740:name
-msgctxt "term:15740:name"
+#: taxonomy:term:15871:name
+msgctxt "term:15871:name"
 msgid "Bildung und Forschung"
 msgstr ""
 
-#: taxonomy:term:15741:name
-msgctxt "term:15741:name"
+#: taxonomy:term:15872:name
+msgctxt "term:15872:name"
 msgid "Bürgerrechte"
 msgstr ""
 
-#: taxonomy:term:15742:name
-msgctxt "term:15742:name"
+#: taxonomy:term:15873:name
+msgctxt "term:15873:name"
 msgid "Energie und Klimaschutz"
 msgstr ""
 
-#: taxonomy:term:15743:name
-msgctxt "term:15743:name"
+#: taxonomy:term:15874:name
+msgctxt "term:15874:name"
 msgid "EU-Erweiterung"
 msgstr ""
 
-#: taxonomy:term:15744:name
-msgctxt "term:15744:name"
+#: taxonomy:term:15875:name
+msgctxt "term:15875:name"
 msgid "Europäische Außenpolitik"
 msgstr ""
 
-#: taxonomy:term:15745:name
-msgctxt "term:15745:name"
+#: taxonomy:term:15876:name
+msgctxt "term:15876:name"
 msgid "Finanzen und Euro"
 msgstr ""
 
-#: taxonomy:term:15746:name
-msgctxt "term:15746:name"
+#: taxonomy:term:15877:name
+msgctxt "term:15877:name"
 msgid "Gesundheit"
 msgstr ""
 
-#: taxonomy:term:15747:name
-msgctxt "term:15747:name"
+#: taxonomy:term:15878:name
+msgctxt "term:15878:name"
 msgid "Menschenrechte und Immigration"
 msgstr ""
 
-#: taxonomy:term:15748:name
-msgctxt "term:15748:name"
+#: taxonomy:term:15879:name
+msgctxt "term:15879:name"
 msgid "Regionen"
 msgstr ""
 
-#: taxonomy:term:15749:name
-msgctxt "term:15749:name"
+#: taxonomy:term:15880:name
+msgctxt "term:15880:name"
 msgid "Sozialpolitik"
 msgstr ""
 
-#: taxonomy:term:15750:name
-msgctxt "term:15750:name"
+#: taxonomy:term:15881:name
+msgctxt "term:15881:name"
 msgid "Umwelt"
 msgstr ""
 
-#: taxonomy:term:15751:name
-msgctxt "term:15751:name"
+#: taxonomy:term:15882:name
+msgctxt "term:15882:name"
 msgid "Verbraucherschutz"
 msgstr ""
 
-#: taxonomy:term:15752:name
-msgctxt "term:15752:name"
+#: taxonomy:term:15883:name
+msgctxt "term:15883:name"
 msgid "Verkehr und Infrastruktur"
 msgstr ""
 
-#: taxonomy:term:15753:name
-msgctxt "term:15753:name"
+#: taxonomy:term:15884:name
+msgctxt "term:15884:name"
 msgid "Wirtschaft"
 msgstr ""
 
-#: taxonomy:term:15754:name
-msgctxt "term:15754:name"
-msgid "Ische"
+#: taxonomy:term:15902:name
+msgctxt "term:15902:name"
+msgid "CDU"
+msgstr ""
+
+#: taxonomy:term:15903:name
+msgctxt "term:15903:name"
+msgid "CSU"
+msgstr ""
+
+#: taxonomy:term:15904:name
+msgctxt "term:15904:name"
+msgid "DIE GRÜNEN"
+msgstr ""
+
+#: taxonomy:term:15905:name
+msgctxt "term:15905:name"
+msgid "DIE LINKE"
+msgstr ""
+
+#: taxonomy:term:15906:name
+msgctxt "term:15906:name"
+msgid "FAMILIEN-PARTEI"
+msgstr ""
+
+#: taxonomy:term:15907:name
+msgctxt "term:15907:name"
+msgid "FDP"
+msgstr ""
+
+#: taxonomy:term:15908:name
+msgctxt "term:15908:name"
+msgid "FDP/DVP"
+msgstr ""
+
+#: taxonomy:term:15909:name
+msgctxt "term:15909:name"
+msgid "ÖDP"
+msgstr ""
+
+#: taxonomy:term:15910:name
+msgctxt "term:15910:name"
+msgid "PIRATEN"
+msgstr ""
+
+#: taxonomy:term:15911:name
+msgctxt "term:15911:name"
+msgid "SPD"
+msgstr ""
+
+#: taxonomy:term:15912:name
+msgctxt "term:15912:name"
+msgid "Tierschutzpartei"
+msgstr ""
+
+#: taxonomy:term:15913:name
+msgctxt "term:15913:name"
+msgid "Oberbayern"
+msgstr ""
+
+#: taxonomy:term:15914:name
+msgctxt "term:15914:name"
+msgid "Niederbayern"
+msgstr ""
+
+#: taxonomy:term:15915:name
+msgctxt "term:15915:name"
+msgid "Oberfranken"
+msgstr ""
+
+#: taxonomy:term:15916:name
+msgctxt "term:15916:name"
+msgid "Schwaben"
+msgstr ""
+
+#: taxonomy:term:15917:name
+msgctxt "term:15917:name"
+msgid "Unterfranken"
+msgstr ""
+
+#: taxonomy:term:15918:name
+msgctxt "term:15918:name"
+msgid "Oberbayern"
+msgstr ""
+
+#: taxonomy:term:15919:name
+msgctxt "term:15919:name"
+msgid "Neukölln"
+msgstr ""
+
+#: taxonomy:term:15920:name
+msgctxt "term:15920:name"
+msgid "Bayern"
+msgstr ""
+
+#: taxonomy:term:15921:name
+msgctxt "term:15921:name"
+msgid "Berlin"
+msgstr ""
+
+#: taxonomy:term:15922:name
+msgctxt "term:15922:name"
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: taxonomy:term:15923:name
+msgctxt "term:15923:name"
+msgid "Hamburg"
+msgstr ""
+
+#: taxonomy:term:15924:name
+msgctxt "term:15924:name"
+msgid "Sachsen-Anhalt"
+msgstr ""
+
+#: taxonomy:term:15925:name
+msgctxt "term:15925:name"
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: taxonomy:term:15926:name
+msgctxt "term:15926:name"
+msgid "Rheinland-Pfalz"
+msgstr ""
+
+#: taxonomy:term:15927:name
+msgctxt "term:15927:name"
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: taxonomy:term:15928:name
+msgctxt "term:15928:name"
+msgid "Brandenburg"
+msgstr ""
+
+#: taxonomy:term:15929:name
+msgctxt "term:15929:name"
+msgid "Saarland"
+msgstr ""
+
+#: taxonomy:term:15930:name
+msgctxt "term:15930:name"
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: taxonomy:term:15931:name
+msgctxt "term:15931:name"
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: taxonomy:term:15932:name
+msgctxt "term:15932:name"
+msgid "Bremen"
+msgstr ""
+
+#: taxonomy:term:15933:name
+msgctxt "term:15933:name"
+msgid "Sachsen"
+msgstr ""
+
+#: taxonomy:term:15934:name
+msgctxt "term:15934:name"
+msgid "Niedersachsen"
+msgstr ""
+
+#: taxonomy:term:15935:name
+msgctxt "term:15935:name"
+msgid "Saarland"
+msgstr ""
+
+#: taxonomy:term:15936:name
+msgctxt "term:15936:name"
+msgid "Schleswig-Holstein"
+msgstr ""
+
+#: taxonomy:term:15937:name
+msgctxt "term:15937:name"
+msgid "Sachsen"
+msgstr ""
+
+#: taxonomy:term:15938:name
+msgctxt "term:15938:name"
+msgid "Hamburg"
+msgstr ""
+
+#: taxonomy:term:15939:name
+msgctxt "term:15939:name"
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: taxonomy:term:15940:name
+msgctxt "term:15940:name"
+msgid "Saarland"
+msgstr ""
+
+#: taxonomy:term:15941:name
+msgctxt "term:15941:name"
+msgid "Bundesliste"
+msgstr ""
+
+#: taxonomy:term:15942:name
+msgctxt "term:15942:name"
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: taxonomy:term:15943:name
+msgctxt "term:15943:name"
+msgid "Bayern"
+msgstr ""
+
+#: taxonomy:term:15944:name
+msgctxt "term:15944:name"
+msgid "Berlin"
+msgstr ""
+
+#: taxonomy:term:15945:name
+msgctxt "term:15945:name"
+msgid "Brandenburg"
+msgstr ""
+
+#: taxonomy:term:15946:name
+msgctxt "term:15946:name"
+msgid "Bremen"
+msgstr ""
+
+#: taxonomy:term:15947:name
+msgctxt "term:15947:name"
+msgid "Hamburg"
+msgstr ""
+
+#: taxonomy:term:15948:name
+msgctxt "term:15948:name"
+msgid "Hessen"
+msgstr ""
+
+#: taxonomy:term:15949:name
+msgctxt "term:15949:name"
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: taxonomy:term:15950:name
+msgctxt "term:15950:name"
+msgid "Niedersachsen"
+msgstr ""
+
+#: taxonomy:term:15951:name
+msgctxt "term:15951:name"
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: taxonomy:term:15952:name
+msgctxt "term:15952:name"
+msgid "Saarland"
+msgstr ""
+
+#: taxonomy:term:15953:name
+msgctxt "term:15953:name"
+msgid "Sachsen"
+msgstr ""
+
+#: taxonomy:term:15954:name
+msgctxt "term:15954:name"
+msgid "Sachsen-Anhalt"
+msgstr ""
+
+#: taxonomy:term:15955:name
+msgctxt "term:15955:name"
+msgid "Schleswig-Holstein"
+msgstr ""
+
+#: taxonomy:term:15956:name
+msgctxt "term:15956:name"
+msgid "Thüringen"
+msgstr ""
+
+#: taxonomy:term:15957:name
+msgctxt "term:15957:name"
+msgid "Rheinland-Pfalz"
+msgstr ""
+
+#: taxonomy:term:15958:name
+msgctxt "term:15958:name"
+msgid "Aalen"
+msgstr ""
+
+#: taxonomy:term:15959:name
+msgctxt "term:15959:name"
+msgid "Hohenlohe"
+msgstr ""
+
+#: taxonomy:term:15960:name
+msgctxt "term:15960:name"
+msgid "Ludwigsburg"
+msgstr ""
+
+#: taxonomy:term:15961:name
+msgctxt "term:15961:name"
+msgid "Freudenstadt"
+msgstr ""
+
+#: taxonomy:term:15962:name
+msgctxt "term:15962:name"
+msgid "Hohenlohe"
+msgstr ""
+
+#: taxonomy:term:15963:name
+msgctxt "term:15963:name"
+msgid "Rosenheim-West"
+msgstr ""
+
+#: taxonomy:term:15964:name
+msgctxt "term:15964:name"
+msgid "Rottal-Inn"
+msgstr ""
+
+#: taxonomy:term:15965:name
+msgctxt "term:15965:name"
+msgid "Wahlkreisliste Oberfranken"
+msgstr ""
+
+#: taxonomy:term:15966:name
+msgctxt "term:15966:name"
+msgid "Wahlkreisliste Schwaben"
+msgstr ""
+
+#: taxonomy:term:15967:name
+msgctxt "term:15967:name"
+msgid "Haßberge, Rhön-Grabfeld"
+msgstr ""
+
+#: taxonomy:term:15968:name
+msgctxt "term:15968:name"
+msgid "Rosenheim-West"
+msgstr ""
+
+#: taxonomy:term:15969:name
+msgctxt "term:15969:name"
+msgid "Neukölln WK 2"
+msgstr ""
+
+#: taxonomy:term:15970:name
+msgctxt "term:15970:name"
+msgid "Berlin-Neukölln (BVV)"
+msgstr ""
+
+#: taxonomy:term:15971:name
+msgctxt "term:15971:name"
+msgid "Landesliste"
+msgstr ""
+
+#: taxonomy:term:15972:name
+msgctxt "term:15972:name"
+msgid "Bremen-Neustadt"
+msgstr ""
+
+#: taxonomy:term:15973:name
+msgctxt "term:15973:name"
+msgid "Bremen-Schwachhausen"
+msgstr ""
+
+#: taxonomy:term:15974:name
+msgctxt "term:15974:name"
+msgid "Bremen-Neustadt"
+msgstr ""
+
+#: taxonomy:term:15975:name
+msgctxt "term:15975:name"
+msgid "Bremen-Schwachhausen"
+msgstr ""
+
+#: taxonomy:term:15976:name
+msgctxt "term:15976:name"
+msgid "Amberg"
+msgstr ""
+
+#: taxonomy:term:15977:name
+msgctxt "term:15977:name"
+msgid "Berlin-Neukölln"
+msgstr ""
+
+#: taxonomy:term:15978:name
+msgctxt "term:15978:name"
+msgid "Düsseldorf II"
+msgstr ""
+
+#: taxonomy:term:15979:name
+msgctxt "term:15979:name"
+msgid "Hamburg-Mitte"
+msgstr ""
+
+#: taxonomy:term:15980:name
+msgctxt "term:15980:name"
+msgid "Harz"
+msgstr ""
+
+#: taxonomy:term:15981:name
+msgctxt "term:15981:name"
+msgid "Heidelberg"
+msgstr ""
+
+#: taxonomy:term:15982:name
+msgctxt "term:15982:name"
+msgid "Karlsruhe-Stadt"
+msgstr ""
+
+#: taxonomy:term:15983:name
+msgctxt "term:15983:name"
+msgid "Ludwigshafen/Frankenthal"
+msgstr ""
+
+#: taxonomy:term:15984:name
+msgctxt "term:15984:name"
+msgid "Mecklenburgische Seenplatte I - Vorpommern-Greifswald II"
+msgstr ""
+
+#: taxonomy:term:15985:name
+msgctxt "term:15985:name"
+msgid "Nürnberg-Nord"
+msgstr ""
+
+#: taxonomy:term:15986:name
+msgctxt "term:15986:name"
+msgid "Oberhavel - Havelland II"
+msgstr ""
+
+#: taxonomy:term:15987:name
+msgctxt "term:15987:name"
+msgid "Rottal-Inn"
+msgstr ""
+
+#: taxonomy:term:15988:name
+msgctxt "term:15988:name"
+msgid "Rottweil - Tuttlingen"
+msgstr ""
+
+#: taxonomy:term:15989:name
+msgctxt "term:15989:name"
+msgid "Saarbrücken"
+msgstr ""
+
+#: taxonomy:term:15990:name
+msgctxt "term:15990:name"
+msgid "Aalen-Heidenheim"
+msgstr ""
+
+#: taxonomy:term:15991:name
+msgctxt "term:15991:name"
+msgid "Bad Doberan - Güstrow - Müritz"
+msgstr ""
+
+#: taxonomy:term:15992:name
+msgctxt "term:15992:name"
+msgid "Bremen I"
+msgstr ""
+
+#: taxonomy:term:15993:name
+msgctxt "term:15993:name"
+msgid "Döbeln - Mittweida - Meißen II"
+msgstr ""
+
+#: taxonomy:term:15994:name
+msgctxt "term:15994:name"
+msgid "Göttingen"
+msgstr ""
+
+#: taxonomy:term:15995:name
+msgctxt "term:15995:name"
+msgid "Saarbrücken"
+msgstr ""
+
+#: taxonomy:term:15996:name
+msgctxt "term:15996:name"
+msgid "Segeberg - Stormarn-Nord"
+msgstr ""
+
+#: taxonomy:term:15997:name
+msgctxt "term:15997:name"
+msgid "Wismar - Nordwestmecklenburg - Parchim"
+msgstr ""
+
+#: taxonomy:term:15998:name
+msgctxt "term:15998:name"
+msgid "Erzgebirgskreis I"
+msgstr ""
+
+#: taxonomy:term:15999:name
+msgctxt "term:15999:name"
+msgid "Hamburg Nord"
+msgstr ""
+
+#: taxonomy:term:16000:name
+msgctxt "term:16000:name"
+msgid "Karlsruhe-Stadt"
+msgstr ""
+
+#: taxonomy:term:16001:name
+msgctxt "term:16001:name"
+msgid "Saarbrücken"
+msgstr ""
+
+#: taxonomy:term:16002:name
+msgctxt "term:16002:name"
+msgid "Solingen"
+msgstr ""
+
+#: taxonomy:term:16003:name
+msgctxt "term:16003:name"
+msgid "Darmstadt (Stadtverordnetenversammlung)"
+msgstr ""
+
+#: taxonomy:term:16004:name
+msgctxt "term:16004:name"
+msgid "Dresden (Stadtrat)"
+msgstr ""
+
+#: taxonomy:term:16005:name
+msgctxt "term:16005:name"
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: taxonomy:term:16006:name
+msgctxt "term:16006:name"
+msgid "Bayern"
+msgstr ""
+
+#: taxonomy:term:16007:name
+msgctxt "term:16007:name"
+msgid "Berlin"
+msgstr ""
+
+#: taxonomy:term:16008:name
+msgctxt "term:16008:name"
+msgid "Brandenburg"
+msgstr ""
+
+#: taxonomy:term:16009:name
+msgctxt "term:16009:name"
+msgid "Bremen"
+msgstr ""
+
+#: taxonomy:term:16010:name
+msgctxt "term:16010:name"
+msgid "Hessen"
+msgstr ""
+
+#: taxonomy:term:16011:name
+msgctxt "term:16011:name"
+msgid "Niedersachsen"
+msgstr ""
+
+#: taxonomy:term:16012:name
+msgctxt "term:16012:name"
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: taxonomy:term:16013:name
+msgctxt "term:16013:name"
+msgid "Rheinland-Pfalz"
+msgstr ""
+
+#: taxonomy:term:16014:name
+msgctxt "term:16014:name"
+msgid "Saarland"
+msgstr ""
+
+#: taxonomy:term:16015:name
+msgctxt "term:16015:name"
+msgid "Sachsen"
+msgstr ""
+
+#: taxonomy:term:16016:name
+msgctxt "term:16016:name"
+msgid "Schleswig-Holstein"
+msgstr ""
+
+#: taxonomy:term:16017:name
+msgctxt "term:16017:name"
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: taxonomy:term:16018:name
+msgctxt "term:16018:name"
+msgid "Bayern"
+msgstr ""
+
+#: taxonomy:term:16019:name
+msgctxt "term:16019:name"
+msgid "Berlin"
+msgstr ""
+
+#: taxonomy:term:16020:name
+msgctxt "term:16020:name"
+msgid "Brandenburg"
+msgstr ""
+
+#: taxonomy:term:16021:name
+msgctxt "term:16021:name"
+msgid "Bremen"
+msgstr ""
+
+#: taxonomy:term:16022:name
+msgctxt "term:16022:name"
+msgid "Hamburg"
+msgstr ""
+
+#: taxonomy:term:16023:name
+msgctxt "term:16023:name"
+msgid "Hessen"
+msgstr ""
+
+#: taxonomy:term:16024:name
+msgctxt "term:16024:name"
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: taxonomy:term:16025:name
+msgctxt "term:16025:name"
+msgid "Niedersachsen"
+msgstr ""
+
+#: taxonomy:term:16026:name
+msgctxt "term:16026:name"
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: taxonomy:term:16027:name
+msgctxt "term:16027:name"
+msgid "Rheinland-Pfalz"
+msgstr ""
+
+#: taxonomy:term:16028:name
+msgctxt "term:16028:name"
+msgid "Saarland"
+msgstr ""
+
+#: taxonomy:term:16029:name
+msgctxt "term:16029:name"
+msgid "Sachsen"
+msgstr ""
+
+#: taxonomy:term:16030:name
+msgctxt "term:16030:name"
+msgid "Schleswig-Holstein"
+msgstr ""
+
+#: taxonomy:term:16031:name
+msgctxt "term:16031:name"
+msgid "Thüringen"
+msgstr ""
+
+#: taxonomy:term:16032:name
+msgctxt "term:16032:name"
+msgid "Frankfurt am Main (Stadtverordnetenversammlung)"
+msgstr ""
+
+#: taxonomy:term:16033:name
+msgctxt "term:16033:name"
+msgid "Freiburg (Gemeinderat)"
+msgstr ""
+
+#: taxonomy:term:16034:name
+msgctxt "term:16034:name"
+msgid "Halle (Saale) (Stadtrat)"
+msgstr ""
+
+#: taxonomy:term:16035:name
+msgctxt "term:16035:name"
+msgid "Alstertal - Walddörfer"
+msgstr ""
+
+#: taxonomy:term:16036:name
+msgctxt "term:16036:name"
+msgid "Fuhlsbüttel - Alsterdorf  - Langenhorn"
+msgstr ""
+
+#: taxonomy:term:16037:name
+msgctxt "term:16037:name"
+msgid "Landesliste"
+msgstr ""
+
+#: taxonomy:term:16038:name
+msgctxt "term:16038:name"
+msgid "Lokstedt - Niendorf  - Schnelsen"
+msgstr ""
+
+#: taxonomy:term:16039:name
+msgctxt "term:16039:name"
+msgid "Hamburg-Eimsbüttel"
+msgstr ""
+
+#: taxonomy:term:16040:name
+msgctxt "term:16040:name"
+msgid "Hamburg-Mitte"
+msgstr ""
+
+#: taxonomy:term:16041:name
+msgctxt "term:16041:name"
+msgid "Hamburg-Wandsbek"
+msgstr ""
+
+#: taxonomy:term:16042:name
+msgctxt "term:16042:name"
+msgid "Fuhlsbüttel - Alsterdorf  - Langenhorn"
+msgstr ""
+
+#: taxonomy:term:16043:name
+msgctxt "term:16043:name"
+msgid "Hamburg - Mitte"
+msgstr ""
+
+#: taxonomy:term:16044:name
+msgctxt "term:16044:name"
+msgid "Harburg"
+msgstr ""
+
+#: taxonomy:term:16045:name
+msgctxt "term:16045:name"
+msgid "Landesliste"
+msgstr ""
+
+#: taxonomy:term:16046:name
+msgctxt "term:16046:name"
+msgid "Lokstedt - Niendorf  - Schnelsen"
+msgstr ""
+
+#: taxonomy:term:16047:name
+msgctxt "term:16047:name"
+msgid "Frankfurt am Main VI"
+msgstr ""
+
+#: taxonomy:term:16048:name
+msgctxt "term:16048:name"
+msgid "Kassel-Land I"
+msgstr ""
+
+#: taxonomy:term:16049:name
+msgctxt "term:16049:name"
+msgid "Main-Kinzig I"
+msgstr ""
+
+#: taxonomy:term:16050:name
+msgctxt "term:16050:name"
+msgid "Offenbach-Stadt"
+msgstr ""
+
+#: taxonomy:term:16051:name
+msgctxt "term:16051:name"
+msgid "Wetterau I"
+msgstr ""
+
+#: taxonomy:term:16052:name
+msgctxt "term:16052:name"
+msgid "Kassel-Land I"
+msgstr ""
+
+#: taxonomy:term:16053:name
+msgctxt "term:16053:name"
+msgid "Main-Kinzig I"
+msgstr ""
+
+#: taxonomy:term:16054:name
+msgctxt "term:16054:name"
+msgid "Main-Kinzig II"
+msgstr ""
+
+#: taxonomy:term:16055:name
+msgctxt "term:16055:name"
+msgid "Schwalm-Eder II"
+msgstr ""
+
+#: taxonomy:term:16056:name
+msgctxt "term:16056:name"
+msgid "Wetterau I"
+msgstr ""
+
+#: taxonomy:term:16057:name
+msgctxt "term:16057:name"
+msgid "Darmstadt-Dieburg I"
+msgstr ""
+
+#: taxonomy:term:16058:name
+msgctxt "term:16058:name"
+msgid "Kassel-Land I"
+msgstr ""
+
+#: taxonomy:term:16059:name
+msgctxt "term:16059:name"
+msgid "Main-Kinzig I"
+msgstr ""
+
+#: taxonomy:term:16060:name
+msgctxt "term:16060:name"
+msgid "Main-Kinzig II"
+msgstr ""
+
+#: taxonomy:term:16061:name
+msgctxt "term:16061:name"
+msgid "Schwalm-Eder II"
+msgstr ""
+
+#: taxonomy:term:16062:name
+msgctxt "term:16062:name"
+msgid "Wetterau I"
+msgstr ""
+
+#: taxonomy:term:16063:name
+msgctxt "term:16063:name"
+msgid "Darmstadt-Dieburg (Kreistag)"
+msgstr ""
+
+#: taxonomy:term:16064:name
+msgctxt "term:16064:name"
+msgid "Göttingen (Kreistag)"
+msgstr ""
+
+#: taxonomy:term:16065:name
+msgctxt "term:16065:name"
+msgid "Nordvorpommern II"
+msgstr ""
+
+#: taxonomy:term:16066:name
+msgctxt "term:16066:name"
+msgid "Rostock I"
+msgstr ""
+
+#: taxonomy:term:16067:name
+msgctxt "term:16067:name"
+msgid "Rostock II"
+msgstr ""
+
+#: taxonomy:term:16068:name
+msgctxt "term:16068:name"
+msgid "Rügen II"
+msgstr ""
+
+#: taxonomy:term:16069:name
+msgctxt "term:16069:name"
+msgid "Nordvorpommern I"
+msgstr ""
+
+#: taxonomy:term:16070:name
+msgctxt "term:16070:name"
+msgid "Rügen II"
+msgstr ""
+
+#: taxonomy:term:16071:name
+msgctxt "term:16071:name"
+msgid "Bremervörde"
+msgstr ""
+
+#: taxonomy:term:16072:name
+msgctxt "term:16072:name"
+msgid "Hadeln / Wesermünde"
+msgstr ""
+
+#: taxonomy:term:16073:name
+msgctxt "term:16073:name"
+msgid "Seevetal"
+msgstr ""
+
+#: taxonomy:term:16074:name
+msgctxt "term:16074:name"
+msgid "Cuxhaven"
+msgstr ""
+
+#: taxonomy:term:16075:name
+msgctxt "term:16075:name"
+msgid "Hadeln / Wesermünde"
+msgstr ""
+
+#: taxonomy:term:16076:name
+msgctxt "term:16076:name"
+msgid "Springe"
+msgstr ""
+
+#: taxonomy:term:16077:name
+msgctxt "term:16077:name"
+msgid "Wesel II"
+msgstr ""
+
+#: taxonomy:term:16078:name
+msgctxt "term:16078:name"
+msgid "Wesel IV"
+msgstr ""
+
+#: taxonomy:term:16079:name
+msgctxt "term:16079:name"
+msgid "Wesel II"
+msgstr ""
+
+#: taxonomy:term:16080:name
+msgctxt "term:16080:name"
+msgid "Aachen II"
+msgstr ""
+
+#: taxonomy:term:16081:name
+msgctxt "term:16081:name"
+msgid "Rhein-Kreis Neuss II"
+msgstr ""
+
+#: taxonomy:term:16082:name
+msgctxt "term:16082:name"
+msgid "Wesel II"
+msgstr ""
+
+#: taxonomy:term:16083:name
+msgctxt "term:16083:name"
+msgid "Offenbach am Main (Stadtverordnetenversammlung)"
+msgstr ""
+
+#: taxonomy:term:16084:name
+msgctxt "term:16084:name"
+msgid "Osnabrück (Rat der Stadt)"
+msgstr ""
+
+#: taxonomy:term:16085:name
+msgctxt "term:16085:name"
+msgid "Bad Marienberg (Westerwald) / Westerburg"
+msgstr ""
+
+#: taxonomy:term:16086:name
+msgctxt "term:16086:name"
+msgid "Landau in der Pfalz"
+msgstr ""
+
+#: taxonomy:term:16087:name
+msgctxt "term:16087:name"
+msgid "Speyer"
+msgstr ""
+
+#: taxonomy:term:16088:name
+msgctxt "term:16088:name"
+msgid "Südliche Weinstraße"
+msgstr ""
+
+#: taxonomy:term:16089:name
+msgctxt "term:16089:name"
+msgid "Bad Marienberg (Westerwald) / Westerburg"
+msgstr ""
+
+#: taxonomy:term:16090:name
+msgctxt "term:16090:name"
+msgid "Ludwigshafen am Rhein I"
+msgstr ""
+
+#: taxonomy:term:16091:name
+msgctxt "term:16091:name"
+msgid "Landesliste"
+msgstr ""
+
+#: taxonomy:term:16092:name
+msgctxt "term:16092:name"
+msgid "Neunkirchen"
+msgstr ""
+
+#: taxonomy:term:16093:name
+msgctxt "term:16093:name"
+msgid "Saarbrücken"
+msgstr ""
+
+#: taxonomy:term:16094:name
+msgctxt "term:16094:name"
+msgid "Neunkirchen"
+msgstr ""
+
+#: taxonomy:term:16095:name
+msgctxt "term:16095:name"
+msgid "Löbau-Zittau I"
+msgstr ""
+
+#: taxonomy:term:16096:name
+msgctxt "term:16096:name"
+msgid "Halle IV"
+msgstr ""
+
+#: taxonomy:term:16097:name
+msgctxt "term:16097:name"
+msgid "Halle IV"
+msgstr ""
+
+#: taxonomy:term:16098:name
+msgctxt "term:16098:name"
+msgid "Lauenburg-Nord"
+msgstr ""
+
+#: taxonomy:term:16099:name
+msgctxt "term:16099:name"
+msgid "Solingen (Stadtrat)"
+msgstr ""
+
+#: taxonomy:term:16100:name
+msgctxt "term:16100:name"
+msgid "Weimar"
+msgstr ""
+
+#: taxonomy:term:16101:name
+msgctxt "term:16101:name"
+msgid "FREIE WÄHLER"
+msgstr ""
+
+#: taxonomy:term:16102:name
+msgctxt "term:16102:name"
+msgid "AfD"
+msgstr ""
+
+#: taxonomy:term:16103:name
+msgctxt "term:16103:name"
+msgid "BüSo"
+msgstr ""
+
+#: taxonomy:term:16104:name
+msgctxt "term:16104:name"
+msgid "PBC"
+msgstr ""
+
+#: taxonomy:term:16105:name
+msgctxt "term:16105:name"
+msgid "PSG"
+msgstr ""
+
+#: taxonomy:term:16106:name
+msgctxt "term:16106:name"
+msgid "MLPD"
+msgstr ""
+
+#: taxonomy:term:16107:name
+msgctxt "term:16107:name"
+msgid "Die PARTEI"
+msgstr ""
+
+#: taxonomy:term:16108:name
+msgctxt "term:16108:name"
+msgid "CM"
+msgstr ""
+
+#: taxonomy:term:16109:name
+msgctxt "term:16109:name"
+msgid "AUF"
+msgstr ""
+
+#: taxonomy:term:16110:name
+msgctxt "term:16110:name"
+msgid "BAYERNPARTEI"
+msgstr ""
+
+#: taxonomy:term:16111:name
+msgctxt "term:16111:name"
+msgid "Pro NRW"
+msgstr ""
+
+#: taxonomy:term:16112:name
+msgctxt "term:16112:name"
+msgid "NPD"
+msgstr ""
+
+#: taxonomy:term:16113:name
+msgctxt "term:16113:name"
+msgid "REP"
+msgstr ""
+
+#: taxonomy:term:16114:name
+msgctxt "term:16114:name"
+msgid "DKP"
+msgstr ""
+
+#: taxonomy:term:16115:name
+msgctxt "term:16115:name"
+msgid "Volksabstimmung"
+msgstr ""
+
+#: taxonomy:vocabulary:34:name
+msgctxt "vocabulary:34:name"
+msgid "KC Votes"
+msgstr ""
+
+#: taxonomy:vocabulary:34:description
+msgctxt "vocabulary:34:description"
+msgid "Voting behavior in Kandidatencheck"
 msgstr ""
 
 #: taxonomy:vocabulary:24:name

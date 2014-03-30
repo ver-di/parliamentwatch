@@ -1302,7 +1302,7 @@ return $result;
   /* Display: Additional Links */
   $handler = $view->new_display('block', 'Additional Links', 'additional_links');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Additional Links of  [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
+  $handler->display->display_options['title'] = 'Weiterführende Links von [field_user_party-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1323,7 +1323,7 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="additional-links" class="add-sharethis" title="<?php print t(\'Additional links of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]\'); ?>"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div id="additional-links" class="add-sharethis" title="<?php print t(\'Additional links of\'); ?> [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
@@ -1375,7 +1375,7 @@ return $result;
   /* Display: Additional Links Page */
   $handler = $view->new_display('page', 'Additional Links Page', 'additional_links_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Additional Links of [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
+  $handler->display->display_options['title'] = 'Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -2579,7 +2579,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-    print l(t(\'go to profile\'), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+    print l(t(\'open profile\'), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
@@ -2761,7 +2761,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-    print l(t(\'go to profile\'), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+    print l(t(\'open profile\'), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
