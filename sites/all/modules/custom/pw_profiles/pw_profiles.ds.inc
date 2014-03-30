@@ -605,7 +605,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|8cb951080268e07b91e84bb9f40a0b10',
+    'block' => 'views|1269dd557bad56827781d3d678e62ebf',
     'block_render' => '2',
   );
   $export['additional_links'] = $ds_field;
