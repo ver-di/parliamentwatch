@@ -2406,7 +2406,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Infotext</div></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Im Wählergedächtnis finden Sie alle dokumentierten Legislaturperioden und Wahlen</div></div>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* Feld: Exkuded | User Name */
   $handler->display->display_options['fields']['user_name']['id'] = 'user_name';
