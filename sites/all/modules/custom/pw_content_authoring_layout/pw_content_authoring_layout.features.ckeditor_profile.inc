@@ -55,27 +55,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
         'js_conf' => '',
-        'loadPlugins' => array(
-          'autogrow' => array(
-            'name' => 'autogrow',
-            'desc' => 'Auto Grow plugin',
-            'path' => '%editor_path%plugins/autogrow/',
-            'buttons' => FALSE,
-            'default' => 'f',
-          ),
-          'drupalbreaks' => array(
-            'name' => 'drupalbreaks',
-            'desc' => 'Plugin for inserting Drupal teaser and page breaks.',
-            'path' => '%plugin_dir%drupalbreaks/',
-            'buttons' => array(
-              'DrupalBreak' => array(
-                'label' => 'DrupalBreak',
-                'icon' => 'images/drupalbreak.png',
-              ),
-            ),
-            'default' => 't',
-          ),
-        ),
+        'loadPlugins' => array(),
       ),
       'input_formats' => array(
         'filtered_html' => 'Basic',
