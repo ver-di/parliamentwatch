@@ -2480,6 +2480,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
     3 => 'number_of_speeches',
     4 => 'number_of_missed_votings',
     5 => 'nothing',
+    6 => 'php_1',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
@@ -2566,6 +2567,22 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'text-right';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Feld: PHP | Profile link */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'PHP | Profile link';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'text-right';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+    print l(t(\'go to profile\'), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Sort criterion: User archive cache: Timestamp */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'user_archive_cache';
@@ -2659,7 +2676,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
     2 => 'number_of_sideline_jobs',
     3 => 'number_of_speeches',
     4 => 'number_of_missed_votings',
-    5 => 'nothing',
+    5 => 'php_1',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
@@ -2732,20 +2749,22 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['number_of_missed_votings']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['number_of_missed_votings']['format_plural_singular'] = '1 missed voting';
   $handler->display->display_options['fields']['number_of_missed_votings']['format_plural_plural'] = '@count missed votings';
-  /* Feld: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Profil öffnen';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'profile/[user_name]/archive/[vid]';
-  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['trim_whitespace'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'text-right';
-  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
+  /* Feld: PHP | Profile link */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'PHP | Profile link';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'text-right';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+    print l(t(\'go to profile\'), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User archive cache: User name */
   $handler->display->display_options['arguments']['user_name']['id'] = 'user_name';
