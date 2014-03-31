@@ -801,6 +801,7 @@ function pw_profiles_field_group_info() {
       4 => 'field_user_links_more',
       5 => 'field_user_picture',
       6 => 'field_user_picture_copyright',
+      7 => 'group_user_ig_accordion',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
