@@ -299,8 +299,8 @@ function pw_profiles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'show_title' => 0,
-        'title_wrapper' => '',
+        'show_title' => 1,
+        'title_wrapper' => 'h2',
         'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:36:"pw_kandidatencheck-profile_slideshow";}',
         'load_terms' => 1,
         'ft' => array(
