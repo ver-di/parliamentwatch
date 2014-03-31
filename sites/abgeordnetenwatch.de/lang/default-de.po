@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-31 14:30+0200\n"
-"PO-Revision-Date: 2014-03-31 14:30+0200\n"
+"POT-Creation-Date: 2014-03-31 19:16+0200\n"
+"PO-Revision-Date: 2014-03-31 19:16+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -25762,10 +25762,6 @@ msgstr ""
 msgid "Example modules"
 msgstr ""
 
-#: /ga/admin/modules
-msgid "!enabled of !total"
-msgstr ""
-
 #: sites/all/modules/contrib/module_filter/js/module_filter_tab.js
 msgid "+@count"
 msgstr ""
@@ -26621,10 +26617,6 @@ msgstr ""
 
 #: /en-gb/users/gerry-adams
 msgid "Thank you! Your question has been submitted!"
-msgstr ""
-
-#: /en-gb/admin/structure/views/ajax/add-item/profile_list_solr/block_1/field
-msgid "@current of @total"
 msgstr ""
 
 #: /en-gb/admin/structure/features/profiles
@@ -33508,10 +33500,6 @@ msgstr ""
 
 #: /en-gb/admin/structure/views/add
 msgid "titles (linked)"
-msgstr ""
-
-#: /en-gb/admin/structure/views/add
-msgid "of"
 msgstr ""
 
 #: /en-gb/admin/structure/views/add
@@ -61482,14 +61470,6 @@ msgid ""
 "?>\"></div>"
 msgstr ""
 
-#: sites/all/themes/custom/parliamentwatch/js/scripts.js
-msgid "next thesis"
-msgstr ""
-
-#: sites/all/themes/custom/parliamentwatch/js/scripts.js
-msgid "previous thesis"
-msgstr ""
-
 #: /admin/modules
 msgid ""
 "Allows other developers to define paths that should use the overlay, "
@@ -62294,6 +62274,113 @@ msgstr ""
 msgid "Image Gallery Item"
 msgstr ""
 
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "Available countries"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "If no countries are selected, all countries will be available."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "Format handlers"
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid "Premium fields"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Pane settings"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Use view name"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Admin title"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Use view description"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Admin desc"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Link to view"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Use Panel path"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Argument input"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Allow settings"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Address-field"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Views_send_email_message"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Addressfield"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "I18n_translation"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Taxonomy_vocabulary"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Ds_views"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "A configurable tree provided by Menu block."
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "%menu menu tree"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "menu tree of %menu"
+msgstr ""
+
+#: /admin/structure/file-types
+msgid ""
+"There are disabled/deleted file types that can be migrated to their "
+"new alternatives. Visit <a href=\"!url\">migration page</a> to get "
+"more information."
+msgstr ""
+
+#: /admin/structure/file-types/manage/image/display
+msgid "pw_file_portrait_ms"
+msgstr ""
+
+#: /admin/structure/block/delete-featured-content-block/1
+msgid "Delete Featured Content block"
+msgstr ""
+
+#: /admin/structure/block/delete-featured-content-block/1
+msgid "Are you sure you want to delete the \"%name\" block?"
+msgstr ""
+
 msgid "Search"
 msgstr "Suche"
 
@@ -62709,7 +62796,7 @@ msgstr "Textfeld (mehrere Zeilen)"
 msgid "Text area with a summary"
 msgstr "Textbereich mit einer Zusammenfassung"
 
-#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js
+#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js; sites/all/modules/contrib/file_entity/file_entity.admin.js
 msgid "Disabled"
 msgstr "Deaktiviert"
 
@@ -62990,7 +63077,7 @@ msgstr "Eigentümer"
 msgid "The user who originally uploaded the file."
 msgstr "Der Benutzer der diese Datei ursprünglich hochgeladen hat."
 
-#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js
+#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js; sites/all/modules/contrib/file_entity/file_entity.admin.js
 msgid "Enabled"
 msgstr "Aktiviert"
 
@@ -71018,6 +71105,10 @@ msgstr ""
 "jedesmal das <a href=\"@update-php\">Aktualisierungsscript</a> durch, "
 "wenn ein Modul aktualisiert wird."
 
+#: /ga/admin/modules
+msgid "!enabled of !total"
+msgstr "!enabled von !total"
+
 msgid "Requires: !module-list"
 msgstr "Benötigt: !module-list"
 
@@ -71105,6 +71196,7 @@ msgstr "@name erstellen"
 msgid "@type %title has been created."
 msgstr "@type %title wurde erstellt."
 
+#: ; sites/all/modules/contrib/entity_translation/entity_translation.node-form.js
 msgid "Flag translations as outdated"
 msgstr "Übersetzung als veraltet markieren"
 
@@ -71717,6 +71809,10 @@ msgstr ""
 
 msgid "Height"
 msgstr "Höhe"
+
+#: /en-gb/admin/structure/views/ajax/add-item/profile_list_solr/block_1/field
+msgid "@current of @total"
+msgstr "@current von @total"
 
 msgid ""
 "This form lets administrators configure how fields should be displayed "
@@ -73450,6 +73546,10 @@ msgstr ""
 "Das Formular ist nicht mehr gültig. Speichern Sie alle noch nicht "
 "gespeicherten Arbeiten im untenstehenden Formular und dann <a "
 "href=\"@link\">laden Sie diese Seite</a> erneut."
+
+#: /en-gb/admin/structure/views/add
+msgid "of"
+msgstr "von"
 
 #: /en-gb/admin/structure/views/import
 msgid "no comments yet"
@@ -84742,6 +84842,14 @@ msgstr "@count verpasste Abstimmungen"
 msgid "twitter"
 msgstr "Twitter"
 
+#: sites/all/themes/custom/parliamentwatch/js/scripts.js
+msgid "next thesis"
+msgstr "nächste These"
+
+#: sites/all/themes/custom/parliamentwatch/js/scripts.js
+msgid "previous thesis"
+msgstr "vorherige These"
+
 msgid "Link urls to their destinations"
 msgstr "URLs als Link darstellen"
 
@@ -84884,4 +84992,8 @@ msgstr "Schlagwörter im Blog"
 msgctxt "vocabulary:24:description"
 msgid "Tags in the Blog"
 msgstr "Schlagwörter im Blog"
+
+#: /admin/structure/views/view/pw_kandidatencheck/preview/default/ajax
+msgid "@current of @max"
+msgstr "@current von @max"
 

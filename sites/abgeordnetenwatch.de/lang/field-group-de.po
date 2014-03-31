@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-31 14:30+0200\n"
-"PO-Revision-Date: 2014-03-31 14:30+0200\n"
+"POT-Creation-Date: 2014-03-31 19:16+0200\n"
+"PO-Revision-Date: 2014-03-31 19:16+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -213,6 +213,41 @@ msgstr ""
 #: field_group:user:user:form:group_user_ig_accordion_item:label
 msgctxt "user:user:form:group_user_ig_accordion_item:label"
 msgid "Image Gallery Item"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium:label
+msgctxt "user:user:form:group_user_premium:label"
+msgid "Premium fields"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_picture:label
+msgctxt "user:user:form:group_user_premium_picture:label"
+msgid "Profile picture"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_about:label
+msgctxt "user:user:form:group_user_premium_about:label"
+msgid "About"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_links:label
+msgctxt "user:user:form:group_user_premium_links:label"
+msgid "External Links"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_gallery:label
+msgctxt "user:user:form:group_user_premium_gallery:label"
+msgid "Image Gallery"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_goals:label
+msgctxt "user:user:form:group_user_premium_goals:label"
+msgid "Political Goals"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_twitter:label
+msgctxt "user:user:form:group_user_premium_twitter:label"
+msgid "Twitter"
 msgstr ""
 
 #: field_group:user:user:form:group_user_premium_fields:label
