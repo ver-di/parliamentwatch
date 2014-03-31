@@ -2703,10 +2703,10 @@ blockquote:before,
 .js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded {
     background-position: -360px -115px;
 }
-.js .responsive-layout-mobile .pw-expandable-mobile .view-content {
+.js .responsive-layout-mobile .pw-expandable-mobile .view {
     display: none;
 }
-.js .responsive-layout-mobile #pw-block-user-basics .view-content {
+.js .responsive-layout-mobile #pw-block-user-basics .view {
     display: block;
 }
 
