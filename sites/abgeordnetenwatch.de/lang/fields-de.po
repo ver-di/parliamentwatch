@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-30 14:21+0200\n"
-"PO-Revision-Date: 2014-03-30 14:21+0200\n"
+"POT-Creation-Date: 2014-03-31 14:30+0200\n"
+"PO-Revision-Date: 2014-03-31 14:30+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -158,19 +158,9 @@ msgctxt "field_user_answers_give:user:label"
 msgid "Answers Give"
 msgstr ""
 
-#: field:field_user_birthday:user:label
-msgctxt "field_user_birthday:user:label"
-msgid "Birthday"
-msgstr ""
-
 #: field:field_user_childs:user:label
 msgctxt "field_user_childs:user:label"
 msgid "Children"
-msgstr ""
-
-#: field:field_user_fname:user:label
-msgctxt "field_user_fname:user:label"
-msgid "First Name"
 msgstr ""
 
 #: field:field_user_gender:#allowed_values:m
@@ -186,16 +176,6 @@ msgstr ""
 #: field:field_user_gender:user:label
 msgctxt "field_user_gender:user:label"
 msgid "Gender"
-msgstr ""
-
-#: field:field_user_job_skills:user:label
-msgctxt "field_user_job_skills:user:label"
-msgid "Professional Qualification"
-msgstr ""
-
-#: field:field_user_lname:user:label
-msgctxt "field_user_lname:user:label"
-msgid "Last name"
 msgstr ""
 
 #: field:field_user_marriage_status:#allowed_values:married
@@ -608,24 +588,9 @@ msgctxt "field_calendar_entry_address:calendar_entry:label"
 msgid "Address"
 msgstr ""
 
-#: field:field_calendar_entry_date:calendar_entry:label
-msgctxt "field_calendar_entry_date:calendar_entry:label"
-msgid "Date"
-msgstr ""
-
 #: field:field_int_list_postiion:list_position:label
 msgctxt "field_int_list_postiion:list_position:label"
 msgid "Position"
-msgstr ""
-
-#: field:field_user_about:user:label
-msgctxt "field_user_about:user:label"
-msgid "About"
-msgstr ""
-
-#: field:field_user_address:user:label
-msgctxt "field_user_address:user:label"
-msgid "Address"
 msgstr ""
 
 #: field:field_user_commitee:user:label
@@ -638,11 +603,6 @@ msgctxt "field_user_constituency:user:label"
 msgid "Constituency"
 msgstr ""
 
-#: field:field_user_education:user:label
-msgctxt "field_user_education:user:label"
-msgid "Education"
-msgstr ""
-
 #: field:field_user_first_letter_lname:user:label
 msgctxt "field_user_first_letter_lname:user:label"
 msgid "user_first_letter_lname"
@@ -653,16 +613,6 @@ msgctxt "field_user_gender:#allowed_values:t"
 msgid "Transgender"
 msgstr ""
 
-#: field:field_user_image_gallery:user:label
-msgctxt "field_user_image_gallery:user:label"
-msgid "Image Gallery"
-msgstr ""
-
-#: field:field_user_list_position:user:label
-msgctxt "field_user_list_position:user:label"
-msgid "List Position"
-msgstr ""
-
 #: field:field_user_parliament:user:label
 msgctxt "field_user_parliament:user:label"
 msgid "Parliament"
@@ -671,11 +621,6 @@ msgstr ""
 #: field:field_user_party:user:label
 msgctxt "field_user_party:user:label"
 msgid "Party"
-msgstr ""
-
-#: field:field_user_political_goals:user:label
-msgctxt "field_user_political_goals:user:label"
-msgid "Political Goals"
 msgstr ""
 
 #: field:field_user_political_roles:user:label
@@ -716,16 +661,6 @@ msgstr ""
 #: field:field_user_age:user:label
 msgctxt "field_user_age:user:label"
 msgid "Age"
-msgstr ""
-
-#: field:field_user_links_more:user:label
-msgctxt "field_user_links_more:user:label"
-msgid "External Links"
-msgstr ""
-
-#: field:field_user_picture:user:label
-msgctxt "field_user_picture:user:label"
-msgid "Profile picture"
 msgstr ""
 
 #: field:field_user_qanda_ratio:user:label
@@ -848,11 +783,6 @@ msgctxt "field_user_election_result:user:label"
 msgid "Election Result"
 msgstr ""
 
-#: field:field_user_phone:user:label
-msgctxt "field_user_phone:user:label"
-msgid "Phone"
-msgstr ""
-
 #: field:field_user_picture_copyright:user:label
 msgctxt "field_user_picture_copyright:user:label"
 msgid "Picture copyright"
@@ -861,11 +791,6 @@ msgstr ""
 #: field:field_user_public_mail:user:label
 msgctxt "field_user_public_mail:user:label"
 msgid "Public Mail"
-msgstr ""
-
-#: field:field_user_title:user:label
-msgctxt "field_user_title:user:label"
-msgid "Title"
 msgstr ""
 
 #: field:field_parliament:dialogue_topics:label
@@ -997,13 +922,88 @@ msgctxt "field_pw_kc_votes_classname:pw_kc_votes:description"
 msgid "Defines the color of the output"
 msgstr ""
 
+#: field:field_user_birthday:user:label
+msgctxt "field_user_birthday:user:label"
+msgid "Birthday"
+msgstr "Geburtsdatum"
+
+#: field:field_user_fname:user:label
+msgctxt "field_user_fname:user:label"
+msgid "First Name"
+msgstr "Vorname/n"
+
+#: field:field_user_job_skills:user:label
+msgctxt "field_user_job_skills:user:label"
+msgid "Professional Qualification"
+msgstr "Aktuell ausgeübte Tätigkeit"
+
+#: field:field_user_lname:user:label
+msgctxt "field_user_lname:user:label"
+msgid "Last name"
+msgstr "Nachname"
+
 #: field:comment_body:comment_node_blogpost:label
 msgctxt "comment_body:comment_node_blogpost:label"
 msgid "Comment"
 msgstr "Kommentar"
 
+#: field:field_calendar_entry_date:calendar_entry:label
+msgctxt "field_calendar_entry_date:calendar_entry:label"
+msgid "Date"
+msgstr "Datum"
+
+#: field:field_user_about:user:label
+msgctxt "field_user_about:user:label"
+msgid "About"
+msgstr "Über mich"
+
+#: field:field_user_address:user:label
+msgctxt "field_user_address:user:label"
+msgid "Address"
+msgstr "Adresse"
+
+#: field:field_user_education:user:label
+msgctxt "field_user_education:user:label"
+msgid "Education"
+msgstr "Berufliche Qualifikation"
+
+#: field:field_user_image_gallery:user:label
+msgctxt "field_user_image_gallery:user:label"
+msgid "Image Gallery"
+msgstr "Bildergalerie"
+
+#: field:field_user_list_position:user:label
+msgctxt "field_user_list_position:user:label"
+msgid "List Position"
+msgstr "Listenplatz"
+
+#: field:field_user_political_goals:user:label
+msgctxt "field_user_political_goals:user:label"
+msgid "Political Goals"
+msgstr "Politische Ziele"
+
+#: field:field_user_links_more:user:label
+msgctxt "field_user_links_more:user:label"
+msgid "External Links"
+msgstr "Externe Links"
+
+#: field:field_user_picture:user:label
+msgctxt "field_user_picture:user:label"
+msgid "Profile picture"
+msgstr "Profilfoto"
+
 #: field:field_petition_required:pw_petition:label
 msgctxt "field_petition_required:pw_petition:label"
 msgid "Required signings"
 msgstr "Benötigte Unterschriften"
+
+#: field:field_user_phone:user:label
+msgctxt "field_user_phone:user:label"
+msgid "Phone"
+msgstr "Telefonnummer"
+
+#: field:field_user_title:user:label
+msgctxt "field_user_title:user:label"
+msgid "Title"
+msgstr "Titel"
 
