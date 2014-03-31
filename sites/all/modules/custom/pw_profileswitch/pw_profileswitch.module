@@ -18,23 +18,11 @@
  */
 function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langcode = NULL) {
 
-  // custom breadcrumb
-  $breadcrumb = array();
-  $breadcrumb[] = l(t('Home'), '<front>');
-  $breadcrumb[] = l(t('Parliaments'), 'parliaments');
-  if(!empty($account->field_user_parliament['und'][0]['tid'])){
-    $parliament_term = taxonomy_term_load($account->field_user_parliament['und'][0]['tid']);
-    $breadcrumb[] = l($parliament_term->name, 'parliaments/'.strtolower($parliament_term->name));
-    $is_candidate = array_search('Candidate', $account->roles);
-    if($is_candidate){
-      $breadcrumb[] = l(t('Candidates'), 'politicians/'.strtolower($parliament_term->name).'/candidates');
-    }
-    else{
-      $breadcrumb[] = l(t('Deputies'), 'politicians/'.strtolower($parliament_term->name).'/deputies');
-    }
-  }
-  $breadcrumb[] = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
-  drupal_set_breadcrumb($breadcrumb);
+  // set custom breadcrumb
+  pw_user_set_custom_breadcrumb($account);
+
+  // set custom page title
+  pw_user_set_custom_title($account);
 
   // retrieve user roles of the field field_user_roles_for_view_mode_switch:
   $assignedRoles = array();
@@ -53,6 +41,39 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
 }
 
 /**
+ * Set custom breadcrumb for user revision.
+ */
+function pw_user_set_custom_breadcrumb($account){
+  // custom breadcrumb
+  $breadcrumb = array();
+  $breadcrumb[] = l(t('Home'), '<front>');
+  $breadcrumb[] = l(t('Parliaments'), 'parliaments');
+  if(!empty($account->field_user_parliament['und'][0]['tid'])){
+    $parliament_term = taxonomy_term_load($account->field_user_parliament['und'][0]['tid']);
+    $breadcrumb[] = l($parliament_term->name, 'parliaments/'.strtolower($parliament_term->name));
+    $is_candidate = array_search('Candidate', $account->roles);
+    if($is_candidate){
+      $breadcrumb[] = l(t('Candidates'), 'politicians/'.strtolower($parliament_term->name).'/candidates');
+    }
+    else{
+      $breadcrumb[] = l(t('Deputies'), 'politicians/'.strtolower($parliament_term->name).'/deputies');
+    }
+  }
+  $account_full_name = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
+  #$breadcrumb[] = l($account_full_name, current_path());
+  drupal_set_breadcrumb($breadcrumb);
+}
+
+/**
+ * Set custom page title for user revision.
+ */
+function pw_user_set_custom_title($account){
+  // custom title
+  $account_full_name = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
+  drupal_set_title($account_full_name);
+}
+
+/**
  * Show a revision.
  */
 function pw_user_revision_show($user, $vid) {
@@ -68,6 +89,7 @@ function pw_user_revision_show($user, $vid) {
   } else {
     $account = user_revision_load($user->uid, $vid);
   }
+
   return pw_profileswitch_user_custom_view($account);
 }
 
