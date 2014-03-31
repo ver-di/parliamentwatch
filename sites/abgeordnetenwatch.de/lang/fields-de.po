@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-31 14:30+0200\n"
-"PO-Revision-Date: 2014-03-31 14:30+0200\n"
+"POT-Creation-Date: 2014-03-31 19:16+0200\n"
+"PO-Revision-Date: 2014-03-31 19:16+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -806,11 +806,6 @@ msgid ""
 "veröffentlicht."
 msgstr ""
 
-#: field:field_user_address:user:description
-msgctxt "field_user_address:user:description"
-msgid "Eine Adresse unter der wir Sie erreichen können."
-msgstr ""
-
 #: field:field_user_image_gallery:user:description
 msgctxt "field_user_image_gallery:user:description"
 msgid ""
@@ -922,6 +917,11 @@ msgctxt "field_pw_kc_votes_classname:pw_kc_votes:description"
 msgid "Defines the color of the output"
 msgstr ""
 
+#: field:field_webform_footer:webform:label
+msgctxt "field_webform_footer:webform:label"
+msgid "Footer"
+msgstr ""
+
 #: field:field_user_birthday:user:label
 msgctxt "field_user_birthday:user:label"
 msgid "Birthday"
@@ -960,7 +960,7 @@ msgstr "Über mich"
 #: field:field_user_address:user:label
 msgctxt "field_user_address:user:label"
 msgid "Address"
-msgstr "Adresse"
+msgstr "Wohnort"
 
 #: field:field_user_education:user:label
 msgctxt "field_user_education:user:label"

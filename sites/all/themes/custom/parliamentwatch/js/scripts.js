@@ -55,8 +55,7 @@ $('#block-views-pw-user-revision-switch-block .link-profile.active').parents('#b
         $('.responsive-layout-mobile #pw-block-user-basics h2').addClass('pw-mobile-expanded');
         $('.responsive-layout-mobile .pw-expandable-mobile h2').click(function(){
         //alert();
-            $(this).next('div').find('.view-content').slideToggle('slow');
-            $(this).parent('div').next('.view-content').slideToggle('slow');
+            $(this).next('.view').slideToggle('slow');
             $(this).toggleClass('pw-mobile-expanded');
         });
     });

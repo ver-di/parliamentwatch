@@ -11,8 +11,8 @@ function pw_webform_nodes_node_export_features_default() {
   $node_export = array(
   'code_string' => 'array(
   (object) array(
-      \'vid\' => \'10391\',
-      \'uid\' => \'1\',
+      \'vid\' => \'10630\',
+      \'uid\' => \'24952\',
       \'title\' => \'Newsletter Subscription\',
       \'log\' => \'\',
       \'status\' => \'1\',
@@ -29,9 +29,10 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'02763736-dab6-4d2f-9e45-87da9211d495\',
-      \'revision_timestamp\' => \'1395845253\',
-      \'revision_uid\' => \'0\',
+      \'revision_timestamp\' => \'1396268955\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(),
+      \'field_webform_footer\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -88,8 +89,20 @@ function pw_webform_nodes_node_export_features_default() {
         ),
       ),
       \'translations\' => (object) array(
-          \'original\' => NULL,
-          \'data\' => array(),
+          \'original\' => \'und\',
+          \'data\' => array(
+            \'und\' => array(
+              \'entity_type\' => \'node\',
+              \'entity_id\' => \'10380\',
+              \'language\' => \'und\',
+              \'source\' => \'\',
+              \'uid\' => \'24952\',
+              \'status\' => \'1\',
+              \'translate\' => \'0\',
+              \'created\' => \'1396268955\',
+              \'changed\' => \'1396268955\',
+            ),
+          ),
         ),
       \'webform\' => array(
         \'nid\' => \'10380\',
@@ -202,22 +215,22 @@ function pw_webform_nodes_node_export_features_default() {
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
       \'print_display_urllist\' => 0,
-      \'name\' => \'root\',
+      \'name\' => \'ruth\',
       \'picture\' => \'0\',
       \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
       \'weight_weight\' => FALSE,
-      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'79253\',
         \'source\' => \'node/10380\',
         \'alias\' => \'newsletter-subscription\',
         \'language\' => \'und\',
       ),
+      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'6313\',
-      \'uid\' => \'1\',
+      \'vid\' => \'10631\',
+      \'uid\' => \'24952\',
       \'title\' => \'Feedback\',
       \'log\' => \'\',
       \'status\' => \'1\',
@@ -234,8 +247,8 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'0f77bf60-ac14-40af-ad7e-b92912fabde1\',
-      \'revision_timestamp\' => \'1395845253\',
-      \'revision_uid\' => \'0\',
+      \'revision_timestamp\' => \'1396268955\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(
         \'und\' => array(
           array(
@@ -247,6 +260,7 @@ function pw_webform_nodes_node_export_features_default() {
           ),
         ),
       ),
+      \'field_webform_footer\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -303,8 +317,20 @@ function pw_webform_nodes_node_export_features_default() {
         ),
       ),
       \'translations\' => (object) array(
-          \'original\' => NULL,
-          \'data\' => array(),
+          \'original\' => \'und\',
+          \'data\' => array(
+            \'und\' => array(
+              \'entity_type\' => \'node\',
+              \'entity_id\' => \'6313\',
+              \'language\' => \'und\',
+              \'source\' => \'\',
+              \'uid\' => \'24952\',
+              \'status\' => \'1\',
+              \'translate\' => \'0\',
+              \'created\' => \'1396268955\',
+              \'changed\' => \'1396268955\',
+            ),
+          ),
         ),
       \'webform\' => array(
         \'nid\' => \'6313\',
@@ -488,22 +514,22 @@ function pw_webform_nodes_node_export_features_default() {
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
       \'print_display_urllist\' => 0,
-      \'name\' => \'root\',
+      \'name\' => \'ruth\',
       \'picture\' => \'0\',
       \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
       \'weight_weight\' => \'0\',
-      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'51509\',
         \'source\' => \'node/6313\',
         \'alias\' => \'feedback\',
         \'language\' => \'und\',
       ),
+      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'6578\',
-      \'uid\' => \'1\',
+      \'vid\' => \'10632\',
+      \'uid\' => \'24952\',
       \'title\' => \'Kontakt\',
       \'log\' => \'\',
       \'status\' => \'1\',
@@ -520,8 +546,8 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'2043edea-d674-4195-a18b-a9f1a2afbdb7\',
-      \'revision_timestamp\' => \'1395845253\',
-      \'revision_uid\' => \'0\',
+      \'revision_timestamp\' => \'1396268955\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(
         \'und\' => array(
           array(
@@ -533,6 +559,7 @@ function pw_webform_nodes_node_export_features_default() {
           ),
         ),
       ),
+      \'field_webform_footer\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -589,8 +616,20 @@ function pw_webform_nodes_node_export_features_default() {
         ),
       ),
       \'translations\' => (object) array(
-          \'original\' => NULL,
-          \'data\' => array(),
+          \'original\' => \'und\',
+          \'data\' => array(
+            \'und\' => array(
+              \'entity_type\' => \'node\',
+              \'entity_id\' => \'6578\',
+              \'language\' => \'und\',
+              \'source\' => \'\',
+              \'uid\' => \'24952\',
+              \'status\' => \'1\',
+              \'translate\' => \'0\',
+              \'created\' => \'1396268955\',
+              \'changed\' => \'1396268955\',
+            ),
+          ),
         ),
       \'webform\' => array(
         \'nid\' => \'6578\',
@@ -774,22 +813,22 @@ function pw_webform_nodes_node_export_features_default() {
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
       \'print_display_urllist\' => 0,
-      \'name\' => \'root\',
+      \'name\' => \'ruth\',
       \'picture\' => \'0\',
       \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
       \'weight_weight\' => \'0\',
-      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'51510\',
         \'source\' => \'node/6578\',
         \'alias\' => \'kontakt\',
         \'language\' => \'und\',
       ),
+      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10557\',
-      \'uid\' => \'1\',
+      \'vid\' => \'10633\',
+      \'uid\' => \'24952\',
       \'title\' => \'Frage stellen\',
       \'log\' => \'\',
       \'status\' => \'1\',
@@ -802,13 +841,21 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1395845253\',
-      \'changed\' => \'1395845253\',
+      \'changed\' => \'1396285650\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'451cb368-988c-4b6d-8f8c-0b36031901ca\',
-      \'revision_timestamp\' => \'1395845253\',
-      \'revision_uid\' => \'0\',
+      \'revision_timestamp\' => \'1396285650\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(),
+      \'field_webform_footer\' => array(
+        \'und\' => array(
+          array(
+            \'value\' => "<?php\\r\\ndrupal_add_library(\'system\', \'drupal.collapse\');\\r\\ndrupal_add_library(\'system\', \'drupal.form\');\\r\\n?>\\t\\r\\n<div>Die Freischaltung von Fragen kann je nach Nutzeraufkommen u.U. einige Stunden dauern, da alle eingehenden Fragen von einem Moderatorenteam überprüft werden. Ich habe den Moderations-Codex gelesen und sichergestellt, dass meine Frage nicht gegen diesen verstößt. <br/>\\r\\n    <fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Moderations-Codex anzeigen</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n                $node = node_load(7734);\\r\\n                $body_content = $node->body[$node->language][0][\'value\'];\\r\\n                print $body_content;\\r\\n             ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>\\r\\n<div>\\r\\n    Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem Moderator informiert. Aus Gründen der Rechtssicherheit wird Ihre IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhalten Sie in unserer\\r\\n    <fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Datenschutzerklärung</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n                $node =  node_load(10006);\\r\\n                $body_content = $node->body[$node->language][0][\'value\'];\\r\\n                print $body_content;\\r\\n            ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>",
+            \'format\' => \'php_code\',
+          ),
+        ),
+      ),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -865,8 +912,20 @@ function pw_webform_nodes_node_export_features_default() {
         ),
       ),
       \'translations\' => (object) array(
-          \'original\' => NULL,
-          \'data\' => array(),
+          \'original\' => \'und\',
+          \'data\' => array(
+            \'und\' => array(
+              \'entity_type\' => \'node\',
+              \'entity_id\' => \'10446\',
+              \'language\' => \'und\',
+              \'source\' => \'\',
+              \'uid\' => \'24952\',
+              \'status\' => \'1\',
+              \'translate\' => \'0\',
+              \'created\' => \'1396268955\',
+              \'changed\' => \'1396268955\',
+            ),
+          ),
         ),
       \'webform\' => array(
         \'nid\' => \'10446\',
@@ -1078,25 +1137,6 @@ function pw_webform_nodes_node_export_features_default() {
             \'weight\' => \'6\',
             \'page_num\' => 1,
           ),
-          14 => array(
-            \'nid\' => 10446,
-            \'cid\' => \'14\',
-            \'pid\' => \'0\',
-            \'form_key\' => \'text_codex\',
-            \'name\' => \'Hinweis Moderations-Codex\',
-            \'type\' => \'markup\',
-            \'value\' => "<?php\\r\\ndrupal_add_library(\'system\', \'drupal.collapse\');\\r\\ndrupal_add_library(\'system\', \'drupal.form\');\\r\\n?>\\t\\r\\n<div>Die Freischaltung von Fragen kann je nach Nutzeraufkommen u.U. einige Stunden dauern, da alle eingehenden Fragen von einem Moderatorenteam überprüft werden. Ich habe den Moderations-Codex gelesen und sichergestellt, dass meine Frage nicht gegen diesen verstößt. <br/>\\r\\n<fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n    <legend>\\r\\n        <span class=\\"fieldset-legend\\">Moderations-Codex anzeigen</span>\\r\\n    </legend>\\r\\n    <div class=\\"fieldset-wrapper comment\\">\\r\\n        <div class=\\"content-inner\\">\\r\\n        <?php\\r\\n            $node = node_load(7734);\\r\\n             $body_content = $node->body[$node->language][0][\'value\'];\\r\\n            print $body_content;\\r\\n        ?>\\r\\n        </div>\\r\\n    </div>\\r\\n</fieldset>\\r\\n</div>\\r\\n<div>\\r\\nFalls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem Moderator informiert. Aus Gründen der Rechtssicherheit wird Ihre IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhalten Sie in unserer\\r\\n<fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n    <legend>\\r\\n        <span class=\\"fieldset-legend\\">Datenschutzerklärung</span>\\r\\n    </legend>\\r\\n    <div class=\\"fieldset-wrapper comment\\">\\r\\n        <div class=\\"content-inner\\">\\r\\n        <?php\\r\\n             $node =  node_load(10006);\\r\\n             $body_content = $node->body[$node->language][0][\'value\'];\\r\\n            print $body_content;\\r\\n        ?>\\r\\n        </div>\\r\\n    </div>\\r\\n</fieldset>\\r\\n</div>\\r\\n\\r\\n\\r\\n\\r\\n</div>",
-            \'extra\' => array(
-              \'format\' => \'php_code\',
-              \'private\' => 0,
-              \'conditional_component\' => \'\',
-              \'conditional_operator\' => \'=\',
-              \'conditional_values\' => \'\',
-            ),
-            \'mandatory\' => \'0\',
-            \'weight\' => \'7\',
-            \'page_num\' => 1,
-          ),
           15 => array(
             \'nid\' => 10446,
             \'cid\' => \'15\',
@@ -1166,22 +1206,22 @@ function pw_webform_nodes_node_export_features_default() {
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
       \'print_display_urllist\' => 0,
-      \'name\' => \'root\',
+      \'name\' => \'ruth\',
       \'picture\' => \'0\',
       \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
       \'weight_weight\' => FALSE,
-      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'86951\',
         \'source\' => \'node/10446\',
         \'alias\' => \'frage-stellen\',
         \'language\' => \'und\',
       ),
+      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10380\',
-      \'uid\' => \'1\',
+      \'vid\' => \'10634\',
+      \'uid\' => \'24952\',
       \'title\' => \'Petition unterschreiben\',
       \'log\' => \'\',
       \'status\' => \'1\',
@@ -1198,8 +1238,8 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'7480b5f4-9c09-43e8-811b-468863974a17\',
-      \'revision_timestamp\' => \'1395845253\',
-      \'revision_uid\' => \'0\',
+      \'revision_timestamp\' => \'1396268955\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(
         \'de\' => array(
           array(
@@ -1220,6 +1260,7 @@ function pw_webform_nodes_node_export_features_default() {
           ),
         ),
       ),
+      \'field_webform_footer\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -1276,8 +1317,20 @@ function pw_webform_nodes_node_export_features_default() {
         ),
       ),
       \'translations\' => (object) array(
-          \'original\' => NULL,
-          \'data\' => array(),
+          \'original\' => \'de\',
+          \'data\' => array(
+            \'de\' => array(
+              \'entity_type\' => \'node\',
+              \'entity_id\' => \'10369\',
+              \'language\' => \'de\',
+              \'source\' => \'\',
+              \'uid\' => \'24952\',
+              \'status\' => \'1\',
+              \'translate\' => \'0\',
+              \'created\' => \'1396268955\',
+              \'changed\' => \'1396268955\',
+            ),
+          ),
         ),
       \'webform\' => array(
         \'nid\' => \'10369\',
@@ -1710,22 +1763,22 @@ function pw_webform_nodes_node_export_features_default() {
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
       \'print_display_urllist\' => 0,
-      \'name\' => \'root\',
+      \'name\' => \'ruth\',
       \'picture\' => \'0\',
       \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
       \'weight_weight\' => FALSE,
-      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'79240\',
         \'source\' => \'node/10369\',
         \'alias\' => \'petition-unterschreiben\',
         \'language\' => \'de\',
       ),
+      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10594\',
-      \'uid\' => \'0\',
+      \'vid\' => \'10635\',
+      \'uid\' => \'24952\',
       \'title\' => \'Unterstützen Sie abgeordnetenwatch.de!\',
       \'log\' => \'neuen Header eingebaut\',
       \'status\' => \'1\',
@@ -1742,8 +1795,8 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'be5a5fb5-27f9-473b-86e2-d48262a8dc45\',
-      \'revision_timestamp\' => \'1395854832\',
-      \'revision_uid\' => \'1454\',
+      \'revision_timestamp\' => \'1396268955\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(
         \'und\' => array(
           array(
@@ -1755,6 +1808,7 @@ function pw_webform_nodes_node_export_features_default() {
           ),
         ),
       ),
+      \'field_webform_footer\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -2931,22 +2985,22 @@ function pw_webform_nodes_node_export_features_default() {
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
       \'print_display_urllist\' => 0,
-      \'name\' => \'\',
+      \'name\' => \'ruth\',
       \'picture\' => \'0\',
-      \'data\' => NULL,
+      \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
       \'weight_weight\' => FALSE,
-      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'89362\',
         \'source\' => \'node/10508\',
         \'alias\' => \'ueber-uns/spendenformular\',
         \'language\' => \'und\',
       ),
+      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10529\',
-      \'uid\' => \'1\',
+      \'vid\' => \'10636\',
+      \'uid\' => \'24952\',
       \'title\' => \'Profilerweiterung buchen\',
       \'log\' => \'\',
       \'status\' => \'1\',
@@ -2963,9 +3017,10 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'d6f67351-8974-4e3a-88d8-150931a45f5b\',
-      \'revision_timestamp\' => \'1395845253\',
-      \'revision_uid\' => \'0\',
+      \'revision_timestamp\' => \'1396268955\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(),
+      \'field_webform_footer\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
@@ -3022,8 +3077,20 @@ function pw_webform_nodes_node_export_features_default() {
         ),
       ),
       \'translations\' => (object) array(
-          \'original\' => NULL,
-          \'data\' => array(),
+          \'original\' => \'und\',
+          \'data\' => array(
+            \'und\' => array(
+              \'entity_type\' => \'node\',
+              \'entity_id\' => \'10482\',
+              \'language\' => \'und\',
+              \'source\' => \'\',
+              \'uid\' => \'24952\',
+              \'status\' => \'1\',
+              \'translate\' => \'0\',
+              \'created\' => \'1396268955\',
+              \'changed\' => \'1396268955\',
+            ),
+          ),
         ),
       \'webform\' => array(
         \'nid\' => \'10482\',
@@ -3630,17 +3697,17 @@ function pw_webform_nodes_node_export_features_default() {
       \'print_display\' => 0,
       \'print_display_comment\' => 0,
       \'print_display_urllist\' => 0,
-      \'name\' => \'root\',
+      \'name\' => \'ruth\',
       \'picture\' => \'0\',
       \'data\' => \'a:5:{s:16:"ckeditor_default";s:1:"t";s:20:"ckeditor_show_toggle";s:1:"t";s:14:"ckeditor_width";s:4:"100%";s:13:"ckeditor_lang";s:2:"en";s:18:"ckeditor_auto_lang";s:1:"t";}\',
       \'weight_weight\' => FALSE,
-      \'menu\' => NULL,
       \'path\' => array(
         \'pid\' => \'88539\',
         \'source\' => \'node/10482\',
         \'alias\' => \'profilerweiterung-buchen\',
         \'language\' => \'und\',
       ),
+      \'menu\' => NULL,
       \'node_export_drupal_version\' => \'7\',
     ),
 )',

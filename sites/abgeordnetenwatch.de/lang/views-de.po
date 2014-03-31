@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-31 14:30+0200\n"
-"PO-Revision-Date: 2014-03-31 14:30+0200\n"
+"POT-Creation-Date: 2014-03-31 19:16+0200\n"
+"PO-Revision-Date: 2014-03-31 19:16+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -15850,6 +15850,21 @@ msgid ""
 "[field_user_lname], [field_user_party]</h3>"
 msgstr ""
 
+#: views:pw_kandidatencheck:default:display_title
+msgctxt "pw_kandidatencheck:default:display_title"
+msgid "Master"
+msgstr ""
+
+#: views:pw_kandidatencheck:default:title
+msgctxt "pw_kandidatencheck:default:title"
+msgid "Kandidaten-Check"
+msgstr ""
+
+#: views:pw_kandidatencheck:profile_slideshow:display_title
+msgctxt "pw_kandidatencheck:profile_slideshow:display_title"
+msgid "Slideshow"
+msgstr ""
+
 #: views:press_articles:default:title
 msgctxt "press_articles:default:title"
 msgid "Presseartikel"
@@ -16267,8 +16282,12 @@ msgstr "<h3>Bildergalerie</h3>"
 
 #: views:pw_user_profile_fields_rev:additional_links:title
 msgctxt "pw_user_profile_fields_rev:additional_links:title"
-msgid "Additional Links of [field_user_party-revision_id]"
-msgstr "Weiterführende Links von [field_user_party-revision_id]"
+msgid ""
+"Additional Links of [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]"
+msgstr ""
+"Weiterführende Links von [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]"
 
 #: views:pw_user_profile_fields_rev:additional_links_page:title
 msgctxt "pw_user_profile_fields_rev:additional_links_page:title"
@@ -16322,4 +16341,59 @@ msgid ""
 "<div class=\"text-right\">[follow] [name] <?php print t('on Twitter'); "
 "?></div>"
 msgstr "<div class=\"text-right\">[follow] [name] auf Twitter</div>"
+
+#: views:answers:default:field:node:created:label
+msgctxt "answers:default:field:node:created:label"
+msgid "to a question from "
+msgstr "zu einer Frage von "
+
+#: views:blog:default:title
+msgctxt "blog:default:title"
+msgid "Blogartikel mit dem Schlagwort \"%1\""
+msgstr "Blogartikel mit dem Schlagwort \"%1\""
+
+#: views:blog_comments:default:title
+msgctxt "blog_comments:default:title"
+msgid "Letzte Kommentare"
+msgstr "Letzte Kommentare"
+
+#: views:blog_comments:default:field:node:title:alter:text
+msgctxt "blog_comments:default:field:node:title:alter:text"
+msgid "[name] to [title] "
+msgstr "[name] zu [title] "
+
+#: views:blog_comments:default:field:node:title:alter:alt
+msgctxt "blog_comments:default:field:node:title:alter:alt"
+msgid "zum vollständigen Kommentar"
+msgstr "zum vollständigen Kommentar"
+
+#: views:blog_comments:default:field:comment:name:alter:text
+msgctxt "blog_comments:default:field:comment:name:alter:text"
+msgid "[name] zu"
+msgstr "[name] zu"
+
+#: views:profile_questions_answers:default:field:views:nothing:alter:text
+msgctxt "profile_questions_answers:default:field:views:nothing:alter:text"
+msgid "copy the link"
+msgstr "Link kopieren"
+
+#: views:answers:default:field:field_data_field_user_questions_get:field_user_questions_get:alter:text
+msgctxt "answers:default:field:field_data_field_user_questions_get:field_user_questions_get:alter:text"
+msgid "[field_user_questions_get] Frage(n)"
+msgstr "[field_user_questions_get] Frage(n)"
+
+#: views:answers:default:field:users:uid:alter:text
+msgctxt "answers:default:field:users:uid:alter:text"
+msgid "Profil besuchen"
+msgstr "Profil besuchen"
+
+#: views:pw_kandidatencheck:default:field:field_data_field_user_fname:field_user_fname:label
+msgctxt "pw_kandidatencheck:default:field:field_data_field_user_fname:field_user_fname:label"
+msgid "Position of"
+msgstr "Position von"
+
+#: views:pw_kandidatencheck:default:field:field_data_field_user_lname:field_user_lname:label
+msgctxt "pw_kandidatencheck:default:field:field_data_field_user_lname:field_user_lname:label"
+msgid "Position of"
+msgstr "Position von"
 

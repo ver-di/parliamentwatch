@@ -435,13 +435,32 @@ function pw_globals_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'colorbox' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'title' => array(
+          'weight' => '-5',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+      ),
       'display' => array(
         'webform' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '1',
             'visible' => TRUE,
           ),
         ),

@@ -792,7 +792,7 @@ function pw_profiles_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => 'Eine Adresse unter der wir Sie erreichen können.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -4710,7 +4710,6 @@ $entity_field[0][\'value\'] = $result;',
   t('Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
   t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
   t('Education');
-  t('Eine Adresse unter der wir Sie erreichen können.');
   t('Election Result');
   t('External Links');
   t('External URL');

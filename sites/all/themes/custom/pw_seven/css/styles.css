@@ -158,7 +158,7 @@ fieldset .fieldset-legend a {
 }
 #edit-field-user-title,
 #edit-field-user-fname,
-edit-field-user-lname {
+#edit-field-user-lname {
     float: left;
 }
 #edit-field-user-title,
@@ -173,4 +173,8 @@ edit-field-user-lname {
 }
 #user-profile-form .form-item {
     padding: 3px 0;
+}
+#edit-field-user-address .street-block,
+#edit-field-user-address .form-item-field-user-address-und-0-country {
+    display: none;
 }

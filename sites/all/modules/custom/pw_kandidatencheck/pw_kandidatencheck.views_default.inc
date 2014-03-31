@@ -22,6 +22,7 @@ function pw_kandidatencheck_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Kandidaten-Check';
   $handler->display->display_options['use_more_always'] = TRUE;
   $handler->display->display_options['use_more_text'] = 'to the Kandidatencheck';
   $handler->display->display_options['link_display'] = 'custom_url';
@@ -106,8 +107,7 @@ function pw_kandidatencheck_views_default_views() {
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
-  $handler->display->display_options['header']['php']['php_output'] = '<h3>Kandidatencheck</h3>
-<?php 
+  $handler->display->display_options['header']['php']['php_output'] = '<?php 
 $uid = arg(1);
 if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $user = user_load($user->uid);
@@ -218,7 +218,7 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler->display->display_options['fields']['field_user_picture']['label'] = '';
   $handler->display->display_options['fields']['field_user_picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'grid-1 alpha';
+  $handler->display->display_options['fields']['field_user_picture']['element_wrapper_class'] = 'float-left pw-kc-profile-picture push-bottom-s';
   $handler->display->display_options['fields']['field_user_picture']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture']['type'] = 'file_rendered';
@@ -234,7 +234,7 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler->display->display_options['fields']['body']['alter']['text'] = '<blockquote>[body]</blockquote>';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'grid-7 omega';
+  $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'pw-kc-argumentation';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   /* Feld: Global: Contextual Links */
