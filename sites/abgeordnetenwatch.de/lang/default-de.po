@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-30 14:21+0200\n"
-"PO-Revision-Date: 2014-03-30 14:21+0200\n"
+"POT-Creation-Date: 2014-03-31 14:30+0200\n"
+"PO-Revision-Date: 2014-03-31 14:30+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -2349,10 +2349,6 @@ msgstr ""
 
 #: /index.php
 msgid "The group the translation is in."
-msgstr ""
-
-#: /index.php
-msgid "Source"
 msgstr ""
 
 #: /index.php
@@ -5276,18 +5272,6 @@ msgstr ""
 
 #: /index.php
 msgid ""
-msgstr ""
-
-#: /index.php
-msgid "{current} of {total}"
-msgstr ""
-
-#: /index.php
-msgid "« Prev"
-msgstr ""
-
-#: /index.php
-msgid "Next »"
 msgstr ""
 
 #: /index.php
@@ -11342,10 +11326,6 @@ msgid "Answers Give"
 msgstr ""
 
 #: /index.php
-msgid "Birthday"
-msgstr ""
-
-#: /index.php
 msgid "Children"
 msgstr ""
 
@@ -12350,10 +12330,6 @@ msgstr ""
 
 #: /index.php
 msgid "Teaser Body"
-msgstr ""
-
-#: /index.php
-msgid "Profile image"
 msgstr ""
 
 #: /index.php
@@ -17517,10 +17493,6 @@ msgid "Recreate"
 msgstr ""
 
 #: /en-gb/admin/structure/features
-msgid "Missing"
-msgstr ""
-
-#: /en-gb/admin/structure/features
 msgid "Unmet dependencies: !dependencies"
 msgstr ""
 
@@ -21432,10 +21404,6 @@ msgstr ""
 
 #: /en-gb/node/17/webform/components/5?destination=node/17/webform
 msgid "Determines the placement of the component's label."
-msgstr ""
-
-#: /en-gb/node/17/webform/components/5?destination=node/17/webform
-msgid "Private"
 msgstr ""
 
 #: /en-gb/node/17/webform/components/5?destination=node/17/webform
@@ -29293,10 +29261,6 @@ msgid "Translate options"
 msgstr ""
 
 #: /en-gb/admin/structure/rate/1/edit
-msgid "Node types"
-msgstr ""
-
-#: /en-gb/admin/structure/rate/1/edit
 msgid "Select the node types on which to enable this widget."
 msgstr ""
 
@@ -35872,19 +35836,11 @@ msgid "Administer OAuth consumers"
 msgstr ""
 
 #: /index.php
-msgid "Add Twitter accounts"
-msgstr ""
-
-#: /index.php
 msgid "Add authenticated Twitter accounts"
 msgstr ""
 
 #: /index.php
 msgid "Administer Twitter accounts"
-msgstr ""
-
-#: /index.php
-msgid "Tweets"
 msgstr ""
 
 #: /index.php
@@ -35896,23 +35852,7 @@ msgid "Displays a formatted list of tweets"
 msgstr ""
 
 #: /index.php
-msgid "Twitter"
-msgstr ""
-
-#: /index.php
-msgid "Twitter message"
-msgstr ""
-
-#: /index.php
-msgid "Twitter status messages."
-msgstr ""
-
-#: /index.php
 msgid "Twitter status message ID"
-msgstr ""
-
-#: /index.php
-msgid "The ID of the Twitter status message."
 msgstr ""
 
 #: /index.php
@@ -35920,43 +35860,11 @@ msgid "In reply to status ID"
 msgstr ""
 
 #: /index.php
-msgid "The ID of the Twitter status this message is replying to."
-msgstr ""
-
-#: /index.php
 msgid "In reply to user name"
 msgstr ""
 
 #: /index.php
-msgid "The login account of the Twitter user this message is replying to."
-msgstr ""
-
-#: /index.php
-msgid "Login name"
-msgstr ""
-
-#: /index.php
 msgid "The screen name of the author of the tweet."
-msgstr ""
-
-#: /index.php
-msgid "Created time"
-msgstr ""
-
-#: /index.php
-msgid "The time the Twitter message was posted."
-msgstr ""
-
-#: /index.php
-msgid "Message text"
-msgstr ""
-
-#: /index.php
-msgid "The text of the Twitter message."
-msgstr ""
-
-#: /index.php
-msgid "The name of the application that posted the Twitter message."
 msgstr ""
 
 #: /index.php
@@ -35965,10 +35873,6 @@ msgstr ""
 
 #: /index.php
 msgid "Links to Reply, Retweet and Favorite a tweet."
-msgstr ""
-
-#: /index.php
-msgid "Follow"
 msgstr ""
 
 #: /index.php
@@ -35984,74 +35888,6 @@ msgid "Renders a tweet as it is shown at Twitter.com."
 msgstr ""
 
 #: /index.php
-msgid "The login account of the Twitter user."
-msgstr ""
-
-#: /index.php
-msgid "Full name"
-msgstr ""
-
-#: /index.php
-msgid "The full name Twitter account user."
-msgstr ""
-
-#: /index.php
-msgid "The description of the Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "The location of the Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "Followers"
-msgstr ""
-
-#: /index.php
-msgid "The number of users following this Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "The image used by the Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "The URL given by the Twitter account user."
-msgstr ""
-
-#: /index.php
-msgid "Protected status"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Whether posts from this Twitter account should be visible to the "
-"general public."
-msgstr ""
-
-#: /index.php
-msgid "Last refresh"
-msgstr ""
-
-#: /index.php
-msgid "The time the Twitter account statuses were retrieved."
-msgstr ""
-
-#: /index.php
-msgid "The UID of the Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "Import status"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Whether posts from this Twitter account should be imported "
-"automatically."
-msgstr ""
-
-#: /index.php
 msgid "_blank"
 msgstr ""
 
@@ -36061,22 +35897,6 @@ msgstr ""
 
 #: /index.php
 msgid "Tweets by @%1"
-msgstr ""
-
-#: /index.php
-msgid "Twitter @username converter"
-msgstr ""
-
-#: /index.php
-msgid "Converts Twitter-style @usernames into links to Twitter account pages."
-msgstr ""
-
-#: /index.php
-msgid "Twitter #hashtag converter"
-msgstr ""
-
-#: /index.php
-msgid "Converts Twitter-style #hashtags into links to hashtags.org."
 msgstr ""
 
 #: /index.php
@@ -36161,43 +35981,6 @@ msgstr ""
 
 #: /en-gb/admin/config/services/twitter/settings
 msgid ""
-"Import and display the Twitter statuses of site users who have entered "
-"their Twitter account information."
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "Delete old statuses"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "OAuth Settings"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid ""
-"To enable OAuth based access for twitter, you must <a "
-"href=\"@url\">register your application</a> with Twitter and add the "
-"provided keys here."
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "Callback URL"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "OAuth Consumer key"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "OAuth Consumer secret"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "Twitter Settings"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid ""
 "The following settings connect Twitter module with external APIs. "
 "Change them if, for example, you want to use Identi.ca."
 msgstr ""
@@ -36207,15 +35990,7 @@ msgid "Twitter host"
 msgstr ""
 
 #: /en-gb/admin/config/services/twitter/settings
-msgid "Twitter API"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
 msgid "Twitter search"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "TinyURL"
 msgstr ""
 
 #: /en-gb/admin/config/services/twitter
@@ -36252,10 +36027,6 @@ msgid ""
 msgstr ""
 
 #: /en-gb/admin/config/services/twitter
-msgid "Twitter account name"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter
 msgid ""
 "If you simply want to pull tweets from additional Twitter accounts, "
 "enter the Twitter account name below and click on the following "
@@ -36278,28 +36049,12 @@ msgstr ""
 msgid "Mentions"
 msgstr ""
 
-#: /en-gb/admin/config/services/twitter
-msgid "The Twitter account settings were updated."
-msgstr ""
-
 #: /en-gb/admin/structure/views/view/tweets/edit/page_2?destination=tweets/Dailwatch
 msgid "False"
 msgstr ""
 
 #: /en-gb/admin/reports/status
 msgid "Twitter Application keys"
-msgstr ""
-
-#: /en-gb/admin/reports/status
-msgid "Configured"
-msgstr ""
-
-#: /en-gb
-msgid "%time ago"
-msgstr ""
-
-#: /en-gb/users/root
-msgid "Twitter accounts"
 msgstr ""
 
 #: /en-gb/users/root
@@ -36459,22 +36214,6 @@ msgstr ""
 
 #: /en-gb/admin/modules
 msgid "Provides a UI for when OAuth is acting as a provider."
-msgstr ""
-
-#: /en-gb/admin/modules
-msgid "Adds integration with the Twitter microblogging service."
-msgstr ""
-
-#: /en-gb/admin/modules
-msgid "Exposes Drupal actions to send Twitter messages."
-msgstr ""
-
-#: /en-gb/admin/modules
-msgid "Enables posting to twitter"
-msgstr ""
-
-#: /en-gb/admin/modules
-msgid "Adds support for \"Sign in with Twitter\""
 msgstr ""
 
 #: /en-gb/admin/config/search/page-title
@@ -41685,10 +41424,6 @@ msgstr ""
 msgid ""
 "The CSS path is not empty. Please set the <strong>Editor CSS</strong> "
 "option to the <strong>Define CSS</strong> mode."
-msgstr ""
-
-#: /node/1515/edit
-msgid "Twitter-style #hashtags are linked to !url."
 msgstr ""
 
 #: /node/1515/edit
@@ -51162,10 +50897,6 @@ msgid "Parliament Info"
 msgstr ""
 
 #: /index.php
-msgid "[name] on Twitter"
-msgstr ""
-
-#: /index.php
 msgid "User Tweets Block on Profile"
 msgstr ""
 
@@ -51238,10 +50969,6 @@ msgstr ""
 
 #: /index.php
 msgid "Title text attribute"
-msgstr ""
-
-#: /index.php
-msgid "List Position"
 msgstr ""
 
 #: /index.php
@@ -51539,10 +51266,6 @@ msgstr ""
 msgid ""
 "[profile_image_url]\n"
 "[name]"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
-msgid "[follow] [name] on Twitter"
 msgstr ""
 
 #: /admin/config/people/accounts/fields
@@ -53225,10 +52948,6 @@ msgid ""
 msgstr ""
 
 #: /index.php
-msgid "<h3>Image Gallery</h3>"
-msgstr ""
-
-#: /index.php
 msgid "<p class=\"link-profile\">[view_user]</p>"
 msgstr ""
 
@@ -53683,10 +53402,6 @@ msgstr ""
 msgid "The full name of the @country"
 msgstr ""
 
-#: sites/all/themes/custom/parliamentwatch/js/scripts.js
-msgid "read less"
-msgstr ""
-
 #: /admin/appearance/settings/abgeordnetenwatch/reset
 msgid "Are you sure you want to reset the theme %name?"
 msgstr ""
@@ -53778,10 +53493,6 @@ msgid ""
 "</div>\n"
 "\n"
 "\n"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
-msgid "to full calendar"
 msgstr ""
 
 #: /admin/structure/features/profiles/status
@@ -57430,10 +57141,6 @@ msgid ""
 "$field_user_picture_copyright, $roles, $field_user_about, "
 "$field_user_political_goals, $field_user_valid:start are availliable "
 "for replacement."
-msgstr ""
-
-#: /admin/structure/features
-msgid "about"
 msgstr ""
 
 #: /admin/structure/features/pw_blog/status
@@ -61232,10 +60939,6 @@ msgid "valid"
 msgstr ""
 
 #: /index.php
-msgid "twitter"
-msgstr ""
-
-#: /index.php
 msgid "Bypass domain 301 redirect"
 msgstr ""
 
@@ -61996,18 +61699,6 @@ msgid "Candidates"
 msgstr ""
 
 #: /admin/structure/views/ajax/config-item/user_tweets/block_1/field/text
-msgid "Link urls to their destinations"
-msgstr ""
-
-#: /admin/structure/views/ajax/config-item/user_tweets/block_1/field/text
-msgid "Link Twitter @usernames to their Twitter.com urls"
-msgstr ""
-
-#: /admin/structure/views/ajax/config-item/user_tweets/block_1/field/text
-msgid "Link Twitter #hashtags to another url"
-msgstr ""
-
-#: /admin/structure/views/ajax/config-item/user_tweets/block_1/field/text
 msgid "Open links in new windows/tabs and add rel=\"nofollow\" attributes."
 msgstr ""
 
@@ -62117,6 +61808,490 @@ msgstr ""
 
 #: /index.php
 msgid "Weiterführende Links von [field_user_fname] [field_user_lname]"
+msgstr ""
+
+#: /admin/modules
+msgid "Generate content"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of nodes and comments. Optionally delete "
+"current items."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate menus"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of menus and menu links. Optionally delete "
+"current menus."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate redirects"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of redirects. Optionally delete current "
+"redirects."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate terms"
+msgstr ""
+
+#: /admin/modules
+msgid "Generate a given number of terms. Optionally delete current terms."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate users"
+msgstr ""
+
+#: /admin/modules
+msgid "Generate a given number of users. Optionally delete current users."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate vocabularies"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of vocabularies. Optionally delete current "
+"vocabularies."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate votes"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of votes on site content. Optionally delete "
+"existing votes."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Comments: "
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid ""
+"<strong>Delete all content</strong> in these content types before "
+"generating new content."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "How many nodes would you like to generate?"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "ago"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "How far back in time should the nodes be dated?"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid ""
+"Node creation dates will be distributed randomly from the current "
+"time, back to the selected time."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Maximum number of comments per node."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid ""
+"You must also enable comments for the content types you are "
+"generating. Note that some nodes will randomly receive zero comments. "
+"Some will receive the max."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Maximum number of words in titles"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Requires path.module"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Add an url alias for each node."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Add statistics for each node (node_counter table)."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Set language on nodes"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Requires locale.module"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Generate"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Finished creating @count nodes"
+msgstr ""
+
+#: /system/ajax
+msgid "Use widget configuration"
+msgstr ""
+
+#: /admin_menu/flush-cache?token=L8PnOeVe_KrPEccfZYpdMCdeJp0rn-TEyLEn0OYz4vM&destination=admin/config/regional/translate/translate
+msgid "Folgen Sie"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "-Select-"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "View: @view - Display: @display"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "View to insert"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "The view to insert into this area."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid ""
+"If checked, this view will receive the same contextual filters as its "
+"parent."
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Profil-Bild"
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Vollständiger Name"
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Login-name"
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Text der Nachricht"
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Erstellungszeit"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgctxt "Territory of a country"
+msgid "State"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "--"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Alabama"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Alaska"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Arizona"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Arkansas"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "California"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Colorado"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Connecticut"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Delaware"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "District Of Columbia"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Florida"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Hawaii"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Idaho"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Illinois"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Indiana"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Iowa"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Kansas"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Kentucky"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Louisiana"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Maine"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Maryland"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Massachusetts"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Michigan"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Minnesota"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Mississippi"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Missouri"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Montana"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Nebraska"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Nevada"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "New Hampshire"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "New Jersey"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "New Mexico"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "New York"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "North Carolina"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "North Dakota"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Ohio"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Oklahoma"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Oregon"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Pennsylvania"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Rhode Island"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "South Carolina"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "South Dakota"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Tennessee"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Texas"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Utah"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Vermont"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Virginia"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Washington"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "West Virginia"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Wisconsin"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Wyoming"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Armed Forces (Americas)"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Armed Forces (Europe, Canada, Middle East, Africa)"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Armed Forces (Pacific)"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Federated States of Micronesia"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Virgin Islands"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "ZIP Code"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "Revisions for @name"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "User Name"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "User Email"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "Time Zone"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "Current revision:"
+msgstr ""
+
+#: /user/26023/edit?render=overlay
+msgid "Angaben zur Person"
+msgstr ""
+
+#: /user/26023/edit?render=overlay
+msgid "Profilerweiterung\r\n"
+msgstr ""
+
+#: /user/26023/edit?render=overlay
+msgid "Geburtsdatum"
+msgstr ""
+
+#: /admin/config/media/colorbox
+msgid "Colorbox Node Integration"
+msgstr ""
+
+#: /admin/config/media/colorbox
+msgid "Enable Regions"
+msgstr ""
+
+#: /admin/config/media/colorbox
+msgid ""
+"This enables regions to be rendered inside the colorbox modal.  The "
+"context module can further target a colorbox modal."
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid ""
+"Add new group: the group name %group_name is too long. The name is "
+"limited to 32 characters, including the 'group_' prefix."
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid "Bounce slide"
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid "Image Gallery wrapper"
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid "Image Gallery Item"
 msgstr ""
 
 msgid "Search"
@@ -62848,6 +63023,9 @@ msgstr "Typ"
 msgid "Location"
 msgstr "Standort"
 
+msgid "Source"
+msgstr "Quelle"
+
 msgid "Version"
 msgstr "Version"
 
@@ -63064,6 +63242,18 @@ msgstr "Taxonomie"
 
 msgid "Blocks"
 msgstr "Blöcke"
+
+#: /index.php
+msgid "{current} of {total}"
+msgstr "{current} von {total}"
+
+#: /index.php
+msgid "« Prev"
+msgstr "« Zurück"
+
+#: /index.php
+msgid "Next »"
+msgstr "Weiter »"
 
 #: /index.php; sites/all/modules/contrib/custom_search/custom_search.js; sites/all/modules/contrib/taxonomy_manager/js/tree.js; sites/all/modules/contrib/custom_search/js/custom_search.js
 msgid "Close"
@@ -63349,6 +63539,10 @@ msgstr "Tags"
 msgid "Color"
 msgstr "Farbe"
 
+#: /index.php
+msgid "Birthday"
+msgstr "Geburtstag"
+
 msgid "Limit allowed HTML tags"
 msgstr "Erlaubte HTML-Tags begrenzen"
 
@@ -63615,6 +63809,9 @@ msgstr "Gast"
 
 msgid "authenticated user"
 msgstr "Authentifizierter Benutzer"
+
+msgid "Profile image"
+msgstr "Profil-Bild"
 
 msgid "@size KB"
 msgstr "@size KB"
@@ -65379,6 +65576,9 @@ msgstr "aufsteigend sortieren"
 msgid "Generate image style"
 msgstr "Bildstil erzeugen"
 
+msgid "Missing"
+msgstr "Fehlt"
+
 msgid "Save settings"
 msgstr "Einstellungen speichern"
 
@@ -66593,6 +66793,9 @@ msgstr "Beitragsinformationen nicht anzeigen"
 
 msgid "Parent menu items"
 msgstr "Übergeordnete Menüpunkte"
+
+msgid "Private"
+msgstr "Privat"
 
 msgid "!name field is required."
 msgstr "Das Feld „!name” ist erforderlich."
@@ -71814,6 +72017,9 @@ msgstr "Die angeforderte Seite konnte nicht gefunden werden."
 msgid "Created new term %term."
 msgstr "Der neue Begriff %term wurde erstellt."
 
+msgid "Node types"
+msgstr "Inhaltstypen"
+
 msgid "Public file system path"
 msgstr "Pfad des öffentlichen Dateisystems"
 
@@ -73657,7 +73863,7 @@ msgstr ""
 
 #: ; sites/all/themes/custom/parliamentwatch/js/scripts.js
 msgid "read more"
-msgstr "Weiterlesen"
+msgstr "Mehr anzeigen"
 
 msgctxt "Long month name"
 msgid "January"
@@ -73784,12 +73990,180 @@ msgstr ""
 msgid "Last blog entries"
 msgstr "Letzte Blogbeiträge"
 
+msgid "Add Twitter accounts"
+msgstr "Twitter Konten hinzufügen"
+
+msgid "Tweets"
+msgstr "Tweets"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Twitter message"
+msgstr "Twitter Nachricht (Tweet)"
+
+msgid "Twitter status messages."
+msgstr "Twitter Statusmeldungen."
+
+msgid "The ID of the Twitter status message."
+msgstr "Die ID der Twitter-Status-Nachricht."
+
+msgid "The ID of the Twitter status this message is replying to."
+msgstr "Die ID des Twitter Status auf den sich diese Nachricht bezieht."
+
+msgid "The login account of the Twitter user this message is replying to."
+msgstr ""
+"Das Benutzerkonto des Benutzer bei Twitter auf den sich diese "
+"Nachricht bezieht."
+
+msgid "Login name"
+msgstr "Login-name"
+
+msgid "Created time"
+msgstr "Erstellungszeit"
+
+msgid "The time the Twitter message was posted."
+msgstr "Die Zeit, als die Twitter-Nachricht (Tweet) erstellt wurde."
+
+msgid "Message text"
+msgstr "Text der Nachricht"
+
+msgid "The text of the Twitter message."
+msgstr "Der Text der Twitter-Nachricht (Tweet)."
+
+msgid "The name of the application that posted the Twitter message."
+msgstr "Der Name der Anwendung, die die Twitter-Nachricht (Tweet) erstellt."
+
+msgid "Follow"
+msgstr "Folgen Sie"
+
+msgid "The login account of the Twitter user."
+msgstr "Das Konto des Benutzers bei Twitter."
+
+msgid "Full name"
+msgstr "Vollständiger Name"
+
+msgid "The full name Twitter account user."
+msgstr "Der vollständige Name des Benutzerkontos bei Twitter."
+
+msgid "The description of the Twitter account."
+msgstr "Die Beschreibung des Twitter-Kontos."
+
+msgid "The location of the Twitter account."
+msgstr "Der Standort des Twitter-Kontos."
+
+msgid "Followers"
+msgstr "Follower"
+
+msgid "The number of users following this Twitter account."
+msgstr "Die Anzahl der Follower dieses Twitterkontos."
+
+msgid "The image used by the Twitter account."
+msgstr "Das Profilbild des Twitterkontos."
+
+msgid "The URL given by the Twitter account user."
+msgstr "Die URL des Twitterkontos."
+
+msgid "Protected status"
+msgstr "Geschützter Status"
+
+msgid ""
+"Whether posts from this Twitter account should be visible to the "
+"general public."
+msgstr "Sollen die Nachrichten öffentlich sichtbar sein."
+
+msgid "Last refresh"
+msgstr "Letzte Aktualisierung"
+
+msgid "The time the Twitter account statuses were retrieved."
+msgstr "Die Zeit, zu der der Status des Twitter-Kontos abgerufen wurde."
+
+msgid "The UID of the Twitter account."
+msgstr "Die UID des Twitter-Kontos."
+
+msgid "Import status"
+msgstr "Twitter-Nachricht(Tweet) import"
+
+msgid ""
+"Whether posts from this Twitter account should be imported "
+"automatically."
+msgstr ""
+"Ob Nachrichten von diesem Twitter-Konto automatisch importiert werden "
+"sollen."
+
+msgid "Twitter @username converter"
+msgstr "Twitter: Konverter für @username"
+
+msgid "Converts Twitter-style @usernames into links to Twitter account pages."
+msgstr "Twitter: Konvertiert @username in Links für Seiten von Twitterkonten."
+
+msgid "Twitter #hashtag converter"
+msgstr "Twitter: Konverter für #hashtag"
+
+msgid "Converts Twitter-style #hashtags into links to hashtags.org."
+msgstr "Konvertiert  #hashtags von Twitter in Links für hashtags.org."
+
+msgid ""
+"Import and display the Twitter statuses of site users who have entered "
+"their Twitter account information."
+msgstr ""
+"Import und Anzeige des Twitter-Status der Nutzer, die ihre "
+"Twitterkonten eingegeben haben."
+
+msgid "Delete old statuses"
+msgstr "Löschen von alten Status"
+
+msgid "OAuth Settings"
+msgstr "OAuth-Einstellungen"
+
+msgid ""
+"To enable OAuth based access for twitter, you must <a "
+"href=\"@url\">register your application</a> with Twitter and add the "
+"provided keys here."
+msgstr ""
+"Für OAuth- basierenden Zugang für Twitter, muß diese Seite als <a "
+"href=\"@url\">Anwendung</a> bei Twitter registriert werden und die "
+"dabei erhaltenen Schlüssel hier eingetragen werden."
+
+msgid "Callback URL"
+msgstr "Callback-URL"
+
+msgid "OAuth Consumer key"
+msgstr "OAuth Schlüssel"
+
+msgid "OAuth Consumer secret"
+msgstr "OAuth Geheimnis"
+
+msgid "Twitter Settings"
+msgstr "Twitter-Einstellungen"
+
+msgid "Twitter API"
+msgstr "Twitter API"
+
+msgid "TinyURL"
+msgstr "TinyURL"
+
+msgid "Twitter account name"
+msgstr "Name des Twitterkontos"
+
+msgid "The Twitter account settings were updated."
+msgstr "Die Twitter Kontoeinstellungen wurden aktualisiert."
+
+msgid "Configured"
+msgstr "Konfiguriert"
+
+msgid "%time ago"
+msgstr "vor %time"
+
 msgid "Error opening socket @socket"
 msgstr "Fehler beim Öffnen der Socket Verbindung @socket"
 
 msgctxt "Long month name"
 msgid "March"
 msgstr "März"
+
+msgid "Twitter accounts"
+msgstr "Twitter Konto"
 
 msgid "Enable <em>Display</em> field"
 msgstr "<em>Anzeige</em>-Feld aktivieren"
@@ -73815,6 +74189,20 @@ msgstr "Leer"
 msgctxt "Long month name"
 msgid "April"
 msgstr "April"
+
+msgid "Adds integration with the Twitter microblogging service."
+msgstr "Integration mit dem Microblogging-Dienst Twitter."
+
+msgid "Exposes Drupal actions to send Twitter messages."
+msgstr ""
+"Drupal Aktionen zur Verfügung stellen, um Twitter Nachrichten zu "
+"senden."
+
+msgid "Enables posting to twitter"
+msgstr "Beiträge auf Twitter veröffentlichen"
+
+msgid "Adds support for \"Sign in with Twitter\""
+msgstr "Ermöglicht die „Anmelden über Twitter“"
 
 msgid "Allowed values list"
 msgstr "Zulässige Werteliste"
@@ -74416,6 +74804,9 @@ msgstr ""
 
 msgid "Disabled text format %format."
 msgstr "Textformat %format wurde deaktiviert."
+
+msgid "Twitter-style #hashtags are linked to !url."
+msgstr "Twitter: #hashtags sind verlinkt auf !url."
 
 msgid "File upload error. Could not move uploaded file."
 msgstr ""
@@ -83788,11 +84179,13 @@ msgstr "Wahlprogramm runterladen"
 
 #: /index.php
 msgid "Calendar of [field_user_fname] [field_user_lname]"
-msgstr "Termine von [field_user_fname] [field_user_lname]"
+msgstr "Wahlkampftermine von [field_user_fname] [field_user_lname]"
 
 #: /index.php
 msgid "Calendar of [field_user_fname] [field_user_lname], [field_user_party]"
-msgstr "Termine von [field_user_fname] [field_user_lname], [field_user_party]"
+msgstr ""
+"Wahlkampftermine von [field_user_fname] [field_user_lname], "
+"[field_user_party]"
 
 #: /index.php
 msgid " About [field_user_fname] [field_user_lname]"
@@ -83819,12 +84212,20 @@ msgstr ""
 "[field_user_party]"
 
 #: /index.php
+msgid "[name] on Twitter"
+msgstr "[name] auf Twitter"
+
+#: /index.php
 msgid "Education"
 msgstr "Berufliche Qualifikation"
 
 #: /index.php
 msgid "Image Gallery"
 msgstr "Bildergalerie"
+
+#: /index.php
+msgid "List Position"
+msgstr "Listenplatz"
 
 #: /index.php
 msgid "Political Goals"
@@ -83837,6 +84238,10 @@ msgstr "PLZ"
 #: /admin/structure/features/profiles/status
 msgid "[field_user_questions_get] Questions"
 msgstr "[field_user_questions_get] Fragen"
+
+#: /admin/structure/features/profiles/status
+msgid "[follow] [name] on Twitter"
+msgstr "[follow] [name] auf Twitter"
 
 #: /index.php
 msgid "question"
@@ -83875,8 +84280,20 @@ msgid "About me"
 msgstr "Über mich"
 
 #: /index.php
+msgid "<h3>Image Gallery</h3>"
+msgstr "<h3>Bildergalerie</h3>"
+
+#: /index.php
 msgid "Questions to [field_user_fname] [field_user_lname]"
 msgstr "Fragen an [field_user_fname] [field_user_lname]"
+
+#: sites/all/themes/custom/parliamentwatch/js/scripts.js
+msgid "read less"
+msgstr "Weniger anzeigen"
+
+#: /admin/structure/features/profiles/status
+msgid "to full calendar"
+msgstr "zum vollständigen Kalender"
 
 #: /admin/structure/features/profiles/status
 msgid " % response rate"
@@ -83921,6 +84338,10 @@ msgstr "Benötigte Unterschriften"
 #: /abgeordnetenbestechung-bestrafen-korrupt
 msgid " people support this petition"
 msgstr " unterstützen die Petition"
+
+#: /admin/structure/features
+msgid "about"
+msgstr "über"
 
 #: /users/cansel-kiziltepe
 msgid "trim the link"
@@ -84318,6 +84739,18 @@ msgstr "@count gehaltene Reden"
 msgid "@count missed votings"
 msgstr "@count verpasste Abstimmungen"
 
+msgid "twitter"
+msgstr "Twitter"
+
+msgid "Link urls to their destinations"
+msgstr "URLs als Link darstellen"
+
+msgid "Link Twitter @usernames to their Twitter.com urls"
+msgstr "Verlinken von Twitter @usernames mit deren Twitter.com URLs"
+
+msgid "Link Twitter #hashtags to another url"
+msgstr "Verlinken von Twitter #hashtags auf andere URL"
+
 #: /profile/testuser/archive/48740
 msgid "Additional links of"
 msgstr "Weiterführende Links von"
@@ -84325,4 +84758,130 @@ msgstr "Weiterführende Links von"
 #: /profile/testuser/archive/48740
 msgid "open profile"
 msgstr "Profil öffnen"
+
+#: /profile/testuser
+msgid "Calendar of"
+msgstr "Wahlkampftermine von"
+
+#: /profile/testuser
+msgid "Imagegallery of "
+msgstr "Bildergalerie von"
+
+#: /profile/testuser
+msgid "Political Goals of"
+msgstr "Die politischen Ziele von"
+
+#: /profile/testuser/additional-links
+msgid "Additional Links of"
+msgstr "Weiterführende Links von"
+
+msgid "Post"
+msgstr "Beitrag"
+
+msgid "Sender"
+msgstr "Absender"
+
+msgid "!message"
+msgstr "!message"
+
+msgid "Default format string"
+msgstr "Standard Stringformat"
+
+msgid "Post to twitter.com"
+msgstr "Veröffentlichen auf twitter.com"
+
+msgid "Announce this post on Twitter"
+msgstr "Beiträge auf Twitter ankündigen (z.B. mit deren Titel)"
+
+msgid ""
+"The given text will be posted to twitter.com. You can use !url, "
+"!url-alias, !tinyurl, !title and !user as replacement text."
+msgstr ""
+"Der angegebene Texte wird auf twitter.com veröffentlicht. Sie können "
+"!url, !url-alias, !tinyurl, !title und !user als Platzhalter "
+"verwenden."
+
+msgid "Successfully posted to Twitter"
+msgstr "Nachricht erfolgreich gepostet"
+
+msgid "Post a message to Twitter"
+msgstr "Eine Nachricht bei Twitter veröffentlichen"
+
+msgid "Twitter actions"
+msgstr "Twitter actions"
+
+msgid "Invalid Twitter OAuth request"
+msgstr "Ungültige Twitter OAuth-Anfrage"
+
+msgid "Invalid OAuth token."
+msgstr "Ungültiges OAuth-Token."
+
+msgid "Twitter Post"
+msgstr "Twitter-Nachricht (Tweet)"
+
+msgid "Select sign-in button"
+msgstr "Anmelden"
+
+msgid "Automatically register new users"
+msgstr "Neue Benutzer automatisch registrieren"
+
+msgid ""
+"Warning, if you enable this, new user accounts will be created without "
+"email addresses."
+msgstr ""
+"Warnung, wenn Sie dies aktivieren, werden neue Benutzerkonten ohne "
+"e-Mail-Adressen erstellt."
+
+msgid "Sign in with Twitter"
+msgstr "Über Twitter anmelden"
+
+msgid ""
+"The nickname %name is already in use on this site, please register "
+"below with a new nick name, or @login to continue."
+msgstr ""
+"Der Spitzname %name wird auf dieser Site bereits verwendet, wählen "
+"Sie daher einen anderen Spitznamen oder @login um fortzufahren."
+
+msgid "Twitter Redirect"
+msgstr "Twitter umleiten"
+
+msgid "Sign-in"
+msgstr "Anmelden"
+
+msgid "Twitter Signin"
+msgstr "Twitter Anmeldung"
+
+msgid "The content of the tweet."
+msgstr "Der Inhalt des Tweets."
+
+msgid "Text to check"
+msgstr "Zu überprüfender Text"
+
+msgid "Text is under 140 characters"
+msgstr "Der Text ist kürzer als 140 Zeichen"
+
+msgid "Returns TRUE if the length of the text is 140 or less."
+msgstr "Gibt TRUE zurück, wenn der Text 140 Zeichen oder weniger hat."
+
+msgid "Please log in or register to relate your Twitter account with a user."
+msgstr ""
+"Bitte anmelden oder registrieren, um ein Twitter Konto mit einem "
+"Benutzer zu vernküpfen."
+
+msgid ""
+"You have related a Twitter account with your user. Next time you can "
+"sign in with Twitter."
+msgstr ""
+"Twitter Konto mit Benutzer verbunden. Ab sofort ist eine Anmeldung an "
+"dieser Seite mit Twitter möglich."
+
+#: taxonomy:vocabulary:24:name
+msgctxt "vocabulary:24:name"
+msgid "Blogtags"
+msgstr "Schlagwörter im Blog"
+
+#: taxonomy:vocabulary:24:description
+msgctxt "vocabulary:24:description"
+msgid "Tags in the Blog"
+msgstr "Schlagwörter im Blog"
 

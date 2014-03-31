@@ -89,7 +89,7 @@ function pw_profiles_views_default_views() {
   /* Display: Profile Calendar */
   $handler = $view->new_display('block', 'Profile Calendar', 'profile_block');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Termine von [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Wahlkampftermine von [field_user_fname] [field_user_lname]';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -303,7 +303,6 @@ function pw_profiles_views_default_views() {
   /* Display: Calendar Page */
   $handler = $view->new_display('page', 'Calendar Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Termine von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['display_description'] = 'Calendar Page for sharing';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -315,8 +314,8 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['ui_name'] = 'sharethis link';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Calendar of [field_user_fname] [field_user_lname], [field_user_party]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Kopfbereich: Global: View area */
   $handler->display->display_options['header']['view']['id'] = 'view';
@@ -325,6 +324,13 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['view']['empty'] = TRUE;
   $handler->display->display_options['header']['view']['view_to_insert'] = 'user_profile_fields:short_profile_premium_sub';
   $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
+  /* Kopfbereich: Global: Text area */
+  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['header']['area_1']['table'] = 'views';
+  $handler->display->display_options['header']['area_1']['field'] = 'area';
+  $handler->display->display_options['header']['area_1']['content'] = '<h3><?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]</h3>';
+  $handler->display->display_options['header']['area_1']['format'] = 'php_code';
+  $handler->display->display_options['header']['area_1']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
@@ -4440,8 +4446,8 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="About [field_user_fname] [field_user_lname]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="[field_user_fname] [field_user_lname] <?php print t(\'about\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Kopfbereich: Global: View area */
   $handler->display->display_options['header']['view']['id'] = 'view';
@@ -4813,8 +4819,8 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div id="political-goals" class="add-sharethis" title="Political Goals of [field_user_fname] [field_user_lname], [field_user_party]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<div id="political-goals" class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | Party */
@@ -4877,8 +4883,8 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Political Goals of [field_user_fname] [field_user_lname], [field_user_party]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Kopfbereich: Global: View area */
   $handler->display->display_options['header']['view']['id'] = 'view';
@@ -5062,8 +5068,8 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Additional Links of [field_user_fname] [field_user_lname], [field_user_party]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Additional Links of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Kopfbereich: Global: View area */
   $handler->display->display_options['header']['view']['id'] = 'view';
@@ -5076,7 +5082,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
-  $handler->display->display_options['header']['area_1']['content'] = '<h3>Additional information</h3>';
+  $handler->display->display_options['header']['area_1']['content'] = '<h3>Additional Links</h3>';
   $handler->display->display_options['header']['area_1']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: Global: Text area */
@@ -5144,6 +5150,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['field_user_links_more']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_links_more']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_links_more']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_user_links_more']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_user_links_more']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_links_more']['multi_type'] = 'ul';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
@@ -5336,7 +5343,9 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]&opacity=0.95';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -5569,11 +5578,13 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]&opacity=0.95';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'center push-bottom-l';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: User: Link: profile link */
@@ -5747,7 +5758,9 @@ drupal_set_title("");
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]&opacity=0.95';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -5981,7 +5994,9 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'users/[name]#pw-block-question-form';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]&opacity=0.95';
+  $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -6071,12 +6086,12 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
       'separator' => '',
     ),
   );
-  /* Feld: Twitter: Profile image */
+  /* Feld: Twitter: Profil-Bild */
   $handler->display->display_options['fields']['profile_image_url']['id'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['table'] = 'twitter_account';
   $handler->display->display_options['fields']['profile_image_url']['field'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['label'] = '';
-  /* Feld: Twitter: Message text */
+  /* Feld: Twitter: Text der Nachricht */
   $handler->display->display_options['fields']['text']['id'] = 'text';
   $handler->display->display_options['fields']['text']['table'] = 'twitter';
   $handler->display->display_options['fields']['text']['field'] = 'text';
@@ -6085,18 +6100,18 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['text']['link_urls'] = 1;
   $handler->display->display_options['fields']['text']['link_usernames'] = 1;
   $handler->display->display_options['fields']['text']['link_hashtags'] = 1;
-  /* Feld: Twitter: Created time */
+  /* Feld: Twitter: Erstellungszeit */
   $handler->display->display_options['fields']['created_time']['id'] = 'created_time';
   $handler->display->display_options['fields']['created_time']['table'] = 'twitter';
   $handler->display->display_options['fields']['created_time']['field'] = 'created_time';
   $handler->display->display_options['fields']['created_time']['label'] = '';
   $handler->display->display_options['fields']['created_time']['date_format'] = 'time ago';
-  /* Sort criterion: Twitter: Created time */
+  /* Sort criterion: Twitter: Erstellungszeit */
   $handler->display->display_options['sorts']['created_time']['id'] = 'created_time';
   $handler->display->display_options['sorts']['created_time']['table'] = 'twitter';
   $handler->display->display_options['sorts']['created_time']['field'] = 'created_time';
   $handler->display->display_options['sorts']['created_time']['order'] = 'DESC';
-  /* Filter criterion: Twitter: Protected status */
+  /* Filter criterion: Twitter: Geschützter Status */
   $handler->display->display_options['filters']['protected']['id'] = 'protected';
   $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['protected']['field'] = 'protected';
@@ -6198,12 +6213,12 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['twitter_id']['label'] = '';
   $handler->display->display_options['fields']['twitter_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['twitter_id']['element_label_colon'] = FALSE;
-  /* Feld: Twitter: Profile image */
+  /* Feld: Twitter: Profil-Bild */
   $handler->display->display_options['fields']['profile_image_url']['id'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['table'] = 'twitter_account';
   $handler->display->display_options['fields']['profile_image_url']['field'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['label'] = '';
-  /* Feld: Twitter: Full name */
+  /* Feld: Twitter: Vollständiger Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'twitter_account';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -6213,7 +6228,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['name']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Feld: Twitter: Login name */
+  /* Feld: Twitter: Login-name */
   $handler->display->display_options['fields']['screen_name']['id'] = 'screen_name';
   $handler->display->display_options['fields']['screen_name']['table'] = 'twitter';
   $handler->display->display_options['fields']['screen_name']['field'] = 'screen_name';
@@ -6224,13 +6239,13 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['screen_name']['alter']['prefix'] = '@';
   $handler->display->display_options['fields']['screen_name']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['screen_name']['element_label_colon'] = FALSE;
-  /* Feld: Twitter: Follow */
+  /* Feld: Twitter: Folgen Sie */
   $handler->display->display_options['fields']['follow']['id'] = 'follow';
   $handler->display->display_options['fields']['follow']['table'] = 'twitter';
   $handler->display->display_options['fields']['follow']['field'] = 'follow';
   $handler->display->display_options['fields']['follow']['label'] = '';
   $handler->display->display_options['fields']['follow']['element_label_colon'] = FALSE;
-  /* Feld: Twitter: Message text */
+  /* Feld: Twitter: Text der Nachricht */
   $handler->display->display_options['fields']['text']['id'] = 'text';
   $handler->display->display_options['fields']['text']['table'] = 'twitter';
   $handler->display->display_options['fields']['text']['field'] = 'text';
@@ -6239,7 +6254,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['text']['link_urls'] = 1;
   $handler->display->display_options['fields']['text']['link_usernames'] = 1;
   $handler->display->display_options['fields']['text']['link_hashtags'] = 1;
-  /* Feld: Twitter: Created time */
+  /* Feld: Twitter: Erstellungszeit */
   $handler->display->display_options['fields']['created_time']['id'] = 'created_time';
   $handler->display->display_options['fields']['created_time']['table'] = 'twitter';
   $handler->display->display_options['fields']['created_time']['field'] = 'created_time';
@@ -6252,7 +6267,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['web_intents']['label'] = '';
   $handler->display->display_options['fields']['web_intents']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Twitter: Login name */
+  /* Contextual filter: Twitter: Login-name */
   $handler->display->display_options['arguments']['screen_name']['id'] = 'screen_name';
   $handler->display->display_options['arguments']['screen_name']['table'] = 'twitter';
   $handler->display->display_options['arguments']['screen_name']['field'] = 'screen_name';
@@ -6284,7 +6299,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['row_options']['separator'] = ' &#8212; ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Twitter: Message text */
+  /* Feld: Twitter: Text der Nachricht */
   $handler->display->display_options['fields']['text']['id'] = 'text';
   $handler->display->display_options['fields']['text']['table'] = 'twitter';
   $handler->display->display_options['fields']['text']['field'] = 'text';
@@ -6294,7 +6309,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['text']['link_usernames'] = 1;
   $handler->display->display_options['fields']['text']['link_hashtags'] = 1;
   $handler->display->display_options['fields']['text']['link_attributes'] = 1;
-  /* Feld: Twitter: Created time */
+  /* Feld: Twitter: Erstellungszeit */
   $handler->display->display_options['fields']['created_time']['id'] = 'created_time';
   $handler->display->display_options['fields']['created_time']['table'] = 'twitter';
   $handler->display->display_options['fields']['created_time']['field'] = 'created_time';
@@ -6340,7 +6355,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['formatted_tweet']['label'] = '';
   $handler->display->display_options['fields']['formatted_tweet']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Twitter: Login name */
+  /* Contextual filter: Twitter: Login-name */
   $handler->display->display_options['arguments']['screen_name']['id'] = 'screen_name';
   $handler->display->display_options['arguments']['screen_name']['table'] = 'twitter';
   $handler->display->display_options['arguments']['screen_name']['field'] = 'screen_name';
@@ -6357,7 +6372,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   /* Display: User Tweets */
   $handler = $view->new_display('block', 'User Tweets', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '[name] on Twitter';
+  $handler->display->display_options['title'] = '[name] auf Twitter';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'twitter clear clearfix push-bottom-l relative';
   $handler->display->display_options['display_description'] = 'User Tweets Block on Profile';
@@ -6390,8 +6405,8 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="text-right">[follow] [name] on Twitter</div>';
-  $handler->display->display_options['footer']['area']['format'] = 'managed_content';
+  $handler->display->display_options['footer']['area']['content'] = '<div class="text-right">[follow] [name] <?php print t(\'on Twitter\'); ?></div>';
+  $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | Twitter Profile Image */
@@ -6413,6 +6428,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['follow']['ui_name'] = 'Exlcuded | Twitter Follow';
   $handler->display->display_options['fields']['follow']['label'] = '';
   $handler->display->display_options['fields']['follow']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['follow']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['follow']['element_label_colon'] = FALSE;
   /* Feld: Excluded |  Twitter Login Name */
   $handler->display->display_options['fields']['screen_name']['id'] = 'screen_name';
@@ -6435,7 +6451,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['name']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Feld: Twitter: Message text */
+  /* Feld: Twitter: Text der Nachricht */
   $handler->display->display_options['fields']['text']['id'] = 'text';
   $handler->display->display_options['fields']['text']['table'] = 'twitter';
   $handler->display->display_options['fields']['text']['field'] = 'text';

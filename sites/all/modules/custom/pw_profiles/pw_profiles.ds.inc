@@ -22,8 +22,8 @@ function pw_profiles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'short_profile' => array(
-      'weight' => '1',
+    'back_to_calendar' => array(
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -32,8 +32,8 @@ function pw_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'back_to_calendar' => array(
-      'weight' => '6',
+    'short_profile_premium_sub' => array(
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -43,7 +43,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -278,6 +278,22 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_premium';
   $ds_fieldsetting->settings = array(
+    'additional_links' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-links"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'pw_kandidatencheck' => array(
       'weight' => '8',
       'label' => 'hidden',
@@ -294,22 +310,6 @@ function pw_profiles_ds_field_settings_info() {
           'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
           'ow-def-cl' => FALSE,
           'ow-at' => 'id="pw-block-user-kc"',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'additional_links' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
-          'ow-def-cl' => FALSE,
-          'ow-at' => 'id="pw-block-user-links"',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -1133,7 +1133,7 @@ function pw_profiles_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'sharethis',
-        1 => 'short_profile',
+        1 => 'short_profile_premium_sub',
         2 => 'title',
         3 => 'field_calendar_entry_date',
         4 => 'field_calendar_entry_address',
@@ -1143,7 +1143,7 @@ function pw_profiles_ds_layout_settings_info() {
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
-      'short_profile' => 'ds_content',
+      'short_profile_premium_sub' => 'ds_content',
       'title' => 'ds_content',
       'field_calendar_entry_date' => 'ds_content',
       'field_calendar_entry_address' => 'ds_content',

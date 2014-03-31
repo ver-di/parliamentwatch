@@ -364,7 +364,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -436,7 +436,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'addressfield_tokens',
           'settings' => array(),
           'type' => 'addressfield_linear',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -521,7 +521,7 @@ function pw_profiles_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -755,7 +755,7 @@ function pw_profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '57',
       ),
     ),
   );
@@ -1456,7 +1456,7 @@ function pw_profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'options_buttons',
-        'weight' => '55',
+        'weight' => '56',
       ),
     ),
   );
@@ -1974,7 +1974,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '61',
       ),
     ),
   );
@@ -2217,7 +2217,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '1',
+        'weight' => '59',
       ),
     ),
   );
@@ -2340,7 +2340,7 @@ function pw_profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '4',
+        'weight' => '59',
       ),
     ),
   );
@@ -2596,7 +2596,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'link_field',
-        'weight' => '3',
+        'weight' => '58',
       ),
     ),
   );
@@ -2697,7 +2697,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '54',
+        'weight' => '55',
       ),
     ),
   );
@@ -3402,7 +3402,7 @@ function pw_profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => 0,
+        'weight' => '55',
       ),
     ),
   );
@@ -3527,7 +3527,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '1',
+        'weight' => '56',
       ),
     ),
   );
@@ -3667,7 +3667,7 @@ function pw_profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '5',
+        'weight' => '61',
       ),
     ),
   );
@@ -4582,7 +4582,7 @@ $entity_field[0][\'value\'] = $result;',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '6',
+        'weight' => '62',
       ),
     ),
   );
