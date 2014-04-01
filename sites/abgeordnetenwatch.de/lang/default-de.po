@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-03-31 19:16+0200\n"
-"PO-Revision-Date: 2014-03-31 19:16+0200\n"
+"POT-Creation-Date: 2014-04-01 12:42+0200\n"
+"PO-Revision-Date: 2014-04-01 12:42+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -60424,15 +60424,9 @@ msgstr ""
 msgid "A one-time login link has been sent to @username."
 msgstr ""
 
-#: /pw_login_once/24997/1394533328/zO8_1aMhPmm52THOMwriXn4i27gDgLTNnQ9OPKrYiRY?destination=user/24997
-msgid ""
-"It is not necessary to use this link to login anymore. You are already "
-"logged in."
-msgstr ""
-
 #: /pw_login_once/24997/1394533587/yOXPVKds1swuXXUQtUdvn1RRn-rc3fo9bY0P710-A1Y?destination=user/24997
 msgid "You have just used your one-time login link."
-msgstr ""
+msgstr "Sie haben soeben Ihren Link zum einmaligen Anmelden verwendet."
 
 #: /admin/config/people/accounts
 msgid "Available variables are:"
@@ -84818,6 +84812,14 @@ msgid ""
 msgstr ""
 "Wählen Sie diese Option falls Sie E-Mails nur ohne Grafiken und CSS "
 "Formatierung erhalten wollen."
+
+#: /pw_login_once/24997/1394533328/zO8_1aMhPmm52THOMwriXn4i27gDgLTNnQ9OPKrYiRY?destination=user/24997
+msgid ""
+"It is not necessary to use this link to login anymore. You are already "
+"logged in."
+msgstr ""
+"Es ist nicht notwendig diesen Link für den Login weiterhin zu benutzen."
+"Sie sind bereits eingeloggt."
 
 #: /profile/brigitta-martens
 msgid "@count questions"
