@@ -84818,7 +84818,7 @@ msgid ""
 "It is not necessary to use this link to login anymore. You are already "
 "logged in."
 msgstr ""
-"Es ist nicht notwendig diesen Link für den Login weiter zu benutzen. "
+"Es ist nicht notwendig diesen Link für den Login weiterhin zu benutzen."
 "Sie sind bereits eingeloggt."
 
 #: /profile/brigitta-martens
