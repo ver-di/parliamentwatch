@@ -1,0 +1,116 @@
+<?php
+
+/**
+ * @file Generates awesome tokens for mails.
+ */
+
+/**
+ * Implements hook_module_implements_alter().
+ * This hook forces to call pw_mailtokens_tokens hook prior all other hooks.
+ * This makes sure the updated password works with pw_login_once module.
+ */
+function pw_mailtokens_module_implements_alter(&$module_list, $hook){
+  // Only reorder token hooks
+  if($hook === "tokens"){
+    // Takes pw_mailtokens module and moves it to top
+    $module = 'pw_mailtokens';
+    $group = array($module => $module_list[$module]);
+    unset($module_list[$module]);
+    $module_list = $group + $module_list;
+  }
+}
+
+/**
+ * Implements hook_token_info().
+ * This hook will register mailtokens.
+ */
+function pw_mailtokens_token_info() {
+  $info['tokens']['user']['fullname'] = array(
+    'name' => t('Full name'),
+    'description' => t('User formal full name including title.'),
+  );
+  $info['tokens']['user']['greeting'] = array(
+    'name' => t('Greeting'),
+    'description' => t('Greeting opening for mails based on gender.'),
+  );
+  $info['tokens']['user']['password'] = array(
+    'name' => t('Greeting'),
+    'description' =>
+      t('Creates a new password for the user and displays it as plain text.'),
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ * This hook will operate the mailtokens and replace it with it's value.
+ */
+function pw_mailtokens_tokens($type, $tokens,
+                              array $data = array(),
+                              array $options = array()) {
+
+  $replacements = array();
+  $sanitize = !empty($options['sanitize']);
+
+  // Only operate user tokens on existing users
+  if ($type == 'user' && !empty($data['user'])) {
+
+    // Get the user object
+    $account = $data['user'];
+
+    // Operate the mailtokens
+    foreach ($tokens as $name => $original) {
+      switch ($name) {
+        case 'fullname':
+          $replacements[$original] = pw_mailtokens_fullname($account);
+          break;
+        case 'greeting':
+          $replacements[$original] = pw_mailtokens_greeting($account);
+          break;
+        case 'password':
+          $replacements[$original] = pw_mailtokens_password($account);
+          break;
+      }
+    }
+
+    return $replacements;
+  }
+}
+
+/**
+ * Generates a full name token including title (if available).
+ */
+function pw_mailtokens_fullname($account) {
+  $title = $account->field_user_title[LANGUAGE_NONE][0]['value'];
+  $fname = $account->field_user_fname[LANGUAGE_NONE][0]['value'];
+  $lname = $account->field_user_lname[LANGUAGE_NONE][0]['value'];
+  $fullname = '';
+  echo(empty($title)) ?
+    $fullname = $fname . ' ' . $lname
+      : $fullname = $title . ' ' . $fname . ' ' . $lname;
+  return $fullname;
+}
+
+/**
+ * Generates a mail opening based on gender.
+ */
+function pw_mailtokens_greeting($account) {
+  $gender = $account->field_user_gender[LANGUAGE_NONE][0]['value'];
+  $greeting = '';
+  echo($gender == 'm') ?
+    // @TODO t(make('translatable'));
+    $greeting = 'Sehr geehrter Herr' : $greeting = 'Sehr geehrte Frau';
+  return $greeting;
+}
+
+/**
+ * Generates a new password for the user and the associated token.
+ */
+function pw_mailtokens_password($account) {
+  $password = user_password(12);
+  $edit = array();
+  $edit['revision'] = 0;
+  $edit['pass'] = $password;
+  user_save($account, $edit);
+  return $password;
+}
