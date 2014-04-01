@@ -585,7 +585,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
   $handler->display->display_options['fields']['uid']['label'] = '';
   $handler->display->display_options['fields']['uid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['uid']['alter']['text'] = 'to full calendar';
+  $handler->display->display_options['fields']['uid']['alter']['text'] = 'zum vollständigen Kalender';
   $handler->display->display_options['fields']['uid']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['uid']['alter']['path'] = 'profile/[name]/calendar';
   $handler->display->display_options['fields']['uid']['alter']['link_class'] = 'link-calendar';
@@ -4685,7 +4685,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
-  $handler->display->display_options['header']['area_1']['content'] = '<h3>Image Gallery</h3>';
+  $handler->display->display_options['header']['area_1']['content'] = '<h3>Bildergalerie</h3>';
   $handler->display->display_options['header']['area_1']['format'] = 'managed_content';
   $handler->display->display_options['header']['area_1']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
