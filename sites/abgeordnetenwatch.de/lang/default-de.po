@@ -60426,7 +60426,7 @@ msgstr ""
 
 #: /pw_login_once/24997/1394533587/yOXPVKds1swuXXUQtUdvn1RRn-rc3fo9bY0P710-A1Y?destination=user/24997
 msgid "You have just used your one-time login link."
-msgstr ""
+msgstr "Sie haben soeben Ihren Link zum einmaligen Anmelden verwendet."
 
 #: /admin/config/people/accounts
 msgid "Available variables are:"
