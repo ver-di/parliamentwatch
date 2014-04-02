@@ -255,7 +255,7 @@ Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:
 + Selbstdarstellung Ihrer politischen Ziele
 + Lebenslauf
 + Terminkalender
-+ Einbindung Ihres Twitterkanals, Ihrer Facebookseite (sofern vorhanden) und weiterer Links, die persönlich oder politisch für Sie wichtig sind.
++ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.
 
 Zeigen Sie Profil und unterstützen Sie so abgeordnetenwatch.de!
 
@@ -285,11 +285,11 @@ Fragen an Sie werden von uns an Ihre bei uns hinterlegte Mailadresse geschickt, 
 
 Werden alle Fragen an mich veröffentlicht?
 
-Unsere geschulten Moderatorinnen und Moderatoren lesen jede Mail vor der Veröffentlichung und Weiterleitung an Sie durch. So verhindern wir, dass bloße Meinungsäußerungen, Fragen zum Privatleben, Beleidigungen oder Massenanfragen auf Ihrer Profilseite bei abgeordnetenwatch.de veröffentlicht werden. Bei unseren Moderationsentscheidungen orientieren wir uns an unserem Moderations-Codex, den Sie hier einsehen können: http://www.abgeordnetenwatch.de/moderations_codex-766-0.html
+Unsere geschulten Moderatorinnen und Moderatoren lesen jede Mail vor der Veröffentlichung und Weiterleitung an Sie durch. So verhindern wir, dass bloße Meinungsäußerungen, Fragen zum Privatleben, Beleidigungen oder Massenanfragen auf Ihrer Profilseite bei abgeordnetenwatch.de veröffentlicht werden. Bei unseren Moderationsentscheidungen orientieren wir uns an unserem Moderations-Codex, den Sie hier einsehen können: https://www.abgeordnetenwatch.de/ueber-uns/mehr/moderations-codex
 
 Sollten wir eine Frage wegen eines Verstoßes gegen den Moderations-Codex nicht freischalten, erhalten Sie (und der Fragesteller) eine Hinweismail über den Eingang und den Ablehnungsgrund der Frage. Ihnen steht es frei, die Frage dennoch öffentlich zu beantworten.
 
-Wenn Sie einmal mit einer Moderationsentscheidung nicht einverstanden sind, wenden Sie sich bitte an moderation@abgeordnetenwatch.de. Dort wird der Vorgang noch einmal geprüft. Sollten Sie auch danach noch nicht mit der getroffenen Entscheidung einverstanden sein, können Sie sich an unser Kuratorium aus unabhängigen Persönlichkeiten wenden: http://www.abgeordnetenwatch.de/kuratorium-876-0.html
+Wenn Sie einmal mit einer Moderationsentscheidung nicht einverstanden sind, wenden Sie sich bitte an moderation@abgeordnetenwatch.de. Dort wird der Vorgang noch einmal geprüft. Sollten Sie auch danach noch nicht mit der getroffenen Entscheidung einverstanden sein, können Sie sich an unser Kuratorium aus unabhängigen Persönlichkeiten wenden: https://www.abgeordnetenwatch.de/ueber-uns/mehr/kuratorium
 
 ====================================
 
