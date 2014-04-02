@@ -1170,16 +1170,6 @@ function pw_profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: view field_user_election_result.
-  $permissions['view field_user_election_result'] = array(
-    'name' => 'view field_user_election_result',
-    'roles' => array(
-      0 => 'anonymous user',
-      1 => 'authenticated user',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: view field_user_external_url.
   $permissions['view field_user_external_url'] = array(
     'name' => 'view field_user_external_url',
@@ -1427,16 +1417,6 @@ function pw_profiles_user_default_permissions() {
       4 => 'administrator',
       5 => 'anonymous user',
       6 => 'authenticated user',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: view field_user_roles_for_view_mode_s.
-  $permissions['view field_user_roles_for_view_mode_s'] = array(
-    'name' => 'view field_user_roles_for_view_mode_s',
-    'roles' => array(
-      0 => 'anonymous user',
-      1 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1853,17 +1833,6 @@ function pw_profiles_user_default_permissions() {
       2 => 'administrator',
     ),
     'module' => 'file_entity',
-  );
-
-  // Exported permission: view the administration theme.
-  $permissions['view the administration theme'] = array(
-    'name' => 'view the administration theme',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'Politician',
-      2 => 'administrator',
-    ),
-    'module' => 'system',
   );
 
   return $permissions;
