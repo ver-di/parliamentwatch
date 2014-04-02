@@ -268,7 +268,7 @@ Nur Grundeintrag überprüfen: [user:login-one-time]
 
 Login-Link: [site:login-url]
 Benutzername: [user:name]
-Passwort: [user:password]
+Passwort: [user:new-password]
 
 Wir wünschen Ihnen viel Erfolg im Wahlkampf und stehen Ihnen für Rückfragen jederzeit gerne zur Verfügung.
 

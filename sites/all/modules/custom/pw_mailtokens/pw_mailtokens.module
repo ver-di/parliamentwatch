@@ -33,7 +33,7 @@ function pw_mailtokens_token_info() {
     'name' => t('Greeting'),
     'description' => t('Greeting opening for mails based on gender.'),
   );
-  $info['tokens']['user']['password'] = array(
+  $info['tokens']['user']['new-password'] = array(
     'name' => t('Greeting'),
     'description' =>
       t('Creates a new password for the user and displays it as plain text.'),
@@ -67,8 +67,8 @@ function pw_mailtokens_tokens($type, $tokens,
         case 'greeting':
           $replacements[$original] = pw_mailtokens_greeting($account);
           break;
-        case 'password':
-          $replacements[$original] = pw_mailtokens_password($account);
+        case 'new-password':
+          $replacements[$original] = pw_mailtokens_new_password($account);
           break;
       }
     }
@@ -106,7 +106,7 @@ function pw_mailtokens_greeting($account) {
 /**
  * Generates a new password for the user and the associated token.
  */
-function pw_mailtokens_password($account) {
+function pw_mailtokens_new_password($account) {
   $password = user_password(12);
   $edit = array();
   $edit['revision'] = 0;
