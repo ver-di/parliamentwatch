@@ -178,3 +178,12 @@ fieldset .fieldset-legend a {
 #edit-field-user-address .form-item-field-user-address-und-0-country {
     display: none;
 }
+
+#user-profile-form #user_user_form_group_user_premium_fields {
+    display: none;
+}
+.role-premium-user #user-profile-form #user_user_form_group_user_premium_fields,
+.role-administrator #user-profile-form #user_user_form_group_user_premium_fields,
+.role-content-manager #user-profile-form #user_user_form_group_user_premium_fields {
+    display: block;
+}
