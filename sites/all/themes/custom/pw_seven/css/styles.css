@@ -179,7 +179,8 @@ fieldset .fieldset-legend a {
     display: none;
 }
 
-#user-profile-form #user_user_form_group_user_premium_fields {
+#user-profile-form #user_user_form_group_user_premium_fields,
+#user-profile-form #edit-mimemail {
     display: none;
 }
 .role-premium-user #user-profile-form #user_user_form_group_user_premium_fields,
