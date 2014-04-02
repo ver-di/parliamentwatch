@@ -259,12 +259,12 @@ Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:
 
 Zeigen Sie Profil und unterstützen Sie so abgeordnetenwatch.de!
 
-Ihre Profilerweiterung kostet regulär 179 Euro inkl. MwSt. Bis einschließlich 15. April 2014 bieten wir Ihnen einen Frühbucherrabatt von 30 Euro. Sie zahlen also nur 149 Euro inkl. MWSt.
+Ihre Profilerweiterung kostet regulär 179 Euro inkl. MwSt. Bis einschließlich 15. April 2014 bieten wir Ihnen einen Frühbucherrabatt von 30 Euro. Sie zahlen also nur 149 Euro inkl. MwSt.
 
 Profilerweiterung bestellen: [user:login-one-time]/booking_form
 Nur Grundeintrag überprüfen: [user:login-one-time]
 
-(Hier sollte noch ein zusätzlicher Satz rein.)
+Bitte beachten Sie: Aus Sicherheitsgründen können diese Links nur einmal genutzt werden. Sollten Sie Ihr Profil auch später noch bearbeiten wollen, nutzten Sie bitte den folgenden Login-Link mit dem angegebenen Benutzernamen und Passwort:
 
 Login-Link: [site:login-url]
 Benutzername: [user:name]
@@ -342,7 +342,7 @@ Die Parlamentwatch GmbH ist eingetragen beim Amtsgericht Hamburg unter HRB - 989
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'views_send_subject_pw_mass_mail:page';
-  $strongarm->value = 'Begrüßungsmail';
+  $strongarm->value = 'Begrüßungsmail Stage#4';
   $export['views_send_subject_pw_mass_mail:page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -364,7 +364,8 @@ Die Parlamentwatch GmbH ist eingetragen beim Amtsgericht Hamburg unter HRB - 989
     'field_user_fname_pos_5' => 'field_user_fname',
     'field_user_party_pos_6' => 'field_user_party',
     'field_user_parliament_pos_7' => 'field_user_parliament',
-    'users_created_pos_8' => 'created',
+    'uid_pos_8' => 'rid',
+    'users_created_pos_9' => 'created',
   );
   $export['views_send_tokens_pw_mass_mail:page'] = $strongarm;
 
