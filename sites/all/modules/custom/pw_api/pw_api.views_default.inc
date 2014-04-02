@@ -351,7 +351,7 @@ echo $base_url;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Benutzer (historical data): User Twitter Account */
+  /* Feld: Benutzer (historical data): Twitter */
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['id'] = 'field_user_twitter_account-revision_id';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['table'] = 'field_revision_field_user_twitter_account';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['field'] = 'field_user_twitter_account-revision_id';
@@ -386,7 +386,7 @@ echo $base_url;
   $handler = $view->new_display('views_data_export', 'XML-by-name', 'views_data_export_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_xml';
   $handler->display->display_options['style_options']['provide_file'] = 0;
@@ -3485,6 +3485,23 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['type'] = 'link_plain';
+  /* Feld: Benutzer (historical data): Address */
+  $handler->display->display_options['fields']['field_user_address-revision_id']['id'] = 'field_user_address-revision_id';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['table'] = 'field_revision_field_user_address';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['field'] = 'field_user_address-revision_id';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['label'] = 'location';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_address-revision_id']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_address-revision_id']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['type'] = 'addressfield_components';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['settings'] = array(
+    'components' => array(
+      'locality' => 'locality',
+      'postal_code' => 'postal_code',
+      'country' => 'country',
+    ),
+    'separator' => ', ',
+  );
   /* Sort criterion: User revision: Vid */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
   $handler->display->display_options['sorts']['vid']['table'] = 'user_revision';

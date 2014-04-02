@@ -1133,6 +1133,8 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
