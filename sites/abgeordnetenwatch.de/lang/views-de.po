@@ -8489,7 +8489,7 @@ msgstr ""
 
 #: views:pw_user_revision_switch:default:title
 msgctxt "pw_user_revision_switch:default:title"
-msgid "Wählergedächnis"
+msgid "Wählergedächtnis"
 msgstr ""
 
 #: views:pw_user_revision_switch:default:use_more_text
