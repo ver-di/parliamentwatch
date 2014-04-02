@@ -221,7 +221,7 @@ function pw_mass_mailing_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'views_send_from_name_pw_mass_mail:page';
-  $strongarm->value = 'Abgeordnetenwatch.de';
+  $strongarm->value = 'abgeordnetenwatch.de';
   $export['views_send_from_name_pw_mass_mail:page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -261,15 +261,14 @@ Zeigen Sie Profil und unterstützen Sie so abgeordnetenwatch.de!
 
 Ihre Profilerweiterung kostet regulär 179 Euro inkl. MwSt. Bis einschließlich 15. April 2014 bieten wir Ihnen einen Frühbucherrabatt von 30 Euro. Sie zahlen also nur 149 Euro inkl. MwSt.
 
-Profilerweiterung bestellen: [user:login-one-time]/booking_form
+Profilerweiterung bestellen: [user:login-one-time]#overlay=user/[user:uid]/booking_form
 Nur Grundeintrag überprüfen: [user:login-one-time]
 
 Bitte beachten Sie: Aus Sicherheitsgründen können diese Links nur einmal genutzt werden. Sollten Sie Ihr Profil auch später noch bearbeiten wollen, nutzten Sie bitte den folgenden Login-Link mit dem angegebenen Benutzernamen und Passwort:
 
-Login-Link: [site:login-url]
-Benutzername: [user:name]
-Passwort: [user:new-password]
-
+Login-Link: [site:login-url] 
+Benutzername: [user:name] 
+Passwort: [user:new-password] 
 Wir wünschen Ihnen viel Erfolg im Wahlkampf und stehen Ihnen für Rückfragen jederzeit gerne zur Verfügung.
 
 Mit freundlichen Grüßen
@@ -342,7 +341,7 @@ Die Parlamentwatch GmbH ist eingetragen beim Amtsgericht Hamburg unter HRB - 989
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'views_send_subject_pw_mass_mail:page';
-  $strongarm->value = 'Begrüßungsmail Stage#4';
+  $strongarm->value = 'Ihr Profil zur EU Wahl auf abgeordnetenwatch.de';
   $export['views_send_subject_pw_mass_mail:page'] = $strongarm;
 
   $strongarm = new stdClass();
