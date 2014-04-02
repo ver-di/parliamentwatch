@@ -47,7 +47,7 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:1';
   $feeds_tamper->plugin_id = 'username_creator';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Username Creator & Validator';
   $export['gdata_profiles_importer_v2-xpathparser_1-username_creator'] = $feeds_tamper;
@@ -55,44 +55,53 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_14-default_value';
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_14-find_replace_regex';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:14';
-  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
-    'default_value' => 'k.A.',
+    'find' => '/^\\s*$/',
+    'replace' => 'k.A.',
+    'limit' => '',
+    'real_limit' => -1,
   );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Set default value';
-  $export['gdata_profiles_importer_v2-xpathparser_14-default_value'] = $feeds_tamper;
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_profiles_importer_v2-xpathparser_14-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_16-default_value';
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_16-find_replace_regex';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:16';
-  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
-    'default_value' => 'k.A.',
+    'find' => '/^\\s*$/',
+    'replace' => 'k.A.',
+    'limit' => '',
+    'real_limit' => -1,
   );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Set default value';
-  $export['gdata_profiles_importer_v2-xpathparser_16-default_value'] = $feeds_tamper;
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_profiles_importer_v2-xpathparser_16-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_19-default_value';
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_19-find_replace_regex';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:19';
-  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
-    'default_value' => 'k.A.',
+    'find' => '/^\\s*$/',
+    'replace' => 'k.A.',
+    'limit' => '',
+    'real_limit' => -1,
   );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Set default value';
-  $export['gdata_profiles_importer_v2-xpathparser_19-default_value'] = $feeds_tamper;
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_profiles_importer_v2-xpathparser_19-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -101,7 +110,7 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:2';
   $feeds_tamper->plugin_id = 'set_default_email';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Set Default E-Mail';
   $export['gdata_profiles_importer_v2-xpathparser_2-set_default_email'] = $feeds_tamper;
@@ -109,30 +118,19 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_20-default_value';
-  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
-  $feeds_tamper->source = 'xpathparser:20';
-  $feeds_tamper->plugin_id = 'default_value';
-  $feeds_tamper->settings = array(
-    'default_value' => 'k.A.',
-  );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Set default value';
-  $export['gdata_profiles_importer_v2-xpathparser_20-default_value'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_21-default_value';
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_21-find_replace_regex';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:21';
-  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
-    'default_value' => 'k.A.',
+    'find' => '/^\\s*$/',
+    'replace' => 'k.A.',
+    'limit' => '',
+    'real_limit' => -1,
   );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Set default value';
-  $export['gdata_profiles_importer_v2-xpathparser_21-default_value'] = $feeds_tamper;
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_profiles_importer_v2-xpathparser_21-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -173,30 +171,36 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_27-default_value';
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_27-find_replace_regex';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:27';
-  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
-    'default_value' => 'k.A.',
+    'find' => '/^\\s*$/',
+    'replace' => 'k.A.',
+    'limit' => '',
+    'real_limit' => -1,
   );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Set default value';
-  $export['gdata_profiles_importer_v2-xpathparser_27-default_value'] = $feeds_tamper;
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_profiles_importer_v2-xpathparser_27-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_28-default_value';
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_28-find_replace_regex';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:28';
-  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
-    'default_value' => 'k.A.',
+    'find' => '/^\\s*$/',
+    'replace' => 'k.A.',
+    'limit' => '',
+    'real_limit' => -1,
   );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Set default value';
-  $export['gdata_profiles_importer_v2-xpathparser_28-default_value'] = $feeds_tamper;
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_profiles_importer_v2-xpathparser_28-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -233,16 +237,14 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_8-default_value';
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_8-set_empty_birthday';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:8';
-  $feeds_tamper->plugin_id = 'default_value';
-  $feeds_tamper->settings = array(
-    'default_value' => 'k.A.',
-  );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Set default value';
-  $export['gdata_profiles_importer_v2-xpathparser_8-default_value'] = $feeds_tamper;
+  $feeds_tamper->plugin_id = 'set_empty_birthday';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Set Empty Birthday';
+  $export['gdata_profiles_importer_v2-xpathparser_8-set_empty_birthday'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
