@@ -180,7 +180,8 @@ fieldset .fieldset-legend a {
 }
 
 #user-profile-form #user_user_form_group_user_premium_fields,
-#user-profile-form #edit-mimemail {
+#user-profile-form #edit-mimemail,
+#user-profile-form #edit-field-user-birthday {
     display: none;
 }
 .role-premium-user #user-profile-form #user_user_form_group_user_premium_fields,
