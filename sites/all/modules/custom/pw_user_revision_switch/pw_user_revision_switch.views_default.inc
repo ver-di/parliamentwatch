@@ -875,7 +875,7 @@ return $result;
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
-  $handler->display->display_options['header']['area_1']['content'] = '<h3>Image Gallery</h3>';
+  $handler->display->display_options['header']['area_1']['content'] = '<h3>Bildergalerie</h3>';
   $handler->display->display_options['header']['area_1']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: Global: Text area */
