@@ -1,4 +1,18 @@
 jQuery(document).ready(function() {
+
+// expand active user revision block in user revision switch
+
+$('#block-views-pw-user-revision-switch-block .link-profile.active').parents('#block-views-pw-user-revision-switch-block fieldset').removeClass('collapsed');
+
+
+// automatically adjust textarea heigh  with jQuery Autosize
+
+    $('textarea').autosize();
+
+// change slideshow controls links in pw_kandidatencheck
+
+    $(".view-pw-kandidatencheck .views_slideshow_controls_text_next a").text(Drupal.t('next thesis'));
+    $(".view-pw-kandidatencheck .views_slideshow_controls_text_previous a").text(Drupal.t('previous thesis'));
      
 // attach values of bef slider to handles
 
@@ -38,9 +52,10 @@ jQuery(document).ready(function() {
 ////// Make blocks expandable only for responsive mobile version
         
     $(window).load(function () { //https://drupal.org/node/1478648
-        $('.responsive-layout-mobile #pw-block-user-basics > h2').addClass('pw-mobile-expanded');
-        $('.responsive-layout-mobile .pw-expandable-mobile > h2').click(function(){
-            $(this).next('div').slideToggle('slow');
+        $('.responsive-layout-mobile #pw-block-user-basics h2').addClass('pw-mobile-expanded');
+        $('.responsive-layout-mobile .pw-expandable-mobile h2').click(function(){
+        //alert();
+            $(this).next('.view').slideToggle('slow');
             $(this).toggleClass('pw-mobile-expanded');
         });
     });
@@ -89,7 +104,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
     var domainparts = location.hostname.split('.');
     var sndleveldomain = domainparts.slice(-2).join('.');
 
-    jQuery("a[href*='http://']:not([href*='"+sndleveldomain+"']),[href*='https://']:not([href*='"+sndleveldomain+"'])")
+    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']),[href*='https://']:not([href*='"+sndleveldomain+"'])")
         .attr("rel","external")
         .attr("target","_blank")
         .addClass("external");

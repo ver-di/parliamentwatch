@@ -741,5 +741,92 @@ function pw_gdata_importer_feeds_importer_default() {
   );
   $export['gdata_states_importer'] = $feeds_importer;
 
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'gdata_subject_importer';
+  $feeds_importer->config = array(
+    'name' => 'GData Subject Importer',
+    'description' => 'imports subjects for question form',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsHTTPFetcher',
+      'config' => array(
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+        'request_timeout' => NULL,
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsXPathParserXML',
+      'config' => array(
+        'sources' => array(
+          'xpathparser:0' => 'systemuuid',
+          'xpathparser:1' => 'systemuuid',
+          'xpathparser:2' => 'subject',
+          'xpathparser:3' => 'parliament',
+        ),
+        'rawXML' => array(
+          'xpathparser:0' => 0,
+          'xpathparser:1' => 0,
+          'xpathparser:2' => 0,
+          'xpathparser:3' => 0,
+        ),
+        'context' => '//row',
+        'exp' => array(
+          'errors' => 0,
+          'debug' => array(
+            'context' => 0,
+            'xpathparser:0' => 0,
+            'xpathparser:1' => 0,
+            'xpathparser:2' => 0,
+            'xpathparser:3' => 0,
+          ),
+        ),
+        'allow_override' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'vocabulary' => 0,
+        'mappings' => array(
+          0 => array(
+            'source' => 'xpathparser:0',
+            'target' => 'uuid:uuid',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'xpathparser:1',
+            'target' => 'guid',
+            'unique' => 1,
+          ),
+          2 => array(
+            'source' => 'xpathparser:2',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'xpathparser:3',
+            'target' => 'field_parliament',
+            'term_search' => '0',
+            'autocreate' => 0,
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'dialogue_topics',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['gdata_subject_importer'] = $feeds_importer;
+
   return $export;
 }

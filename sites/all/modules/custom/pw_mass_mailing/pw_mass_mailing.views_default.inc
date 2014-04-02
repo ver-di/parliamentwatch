@@ -31,15 +31,8 @@ function pw_mass_mailing_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1000';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'views_send' => 'views_send',
@@ -148,6 +141,10 @@ function pw_mass_mailing_views_default_views() {
   $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
+  /* Feld: Benutzer: Rollen */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
   /* Feld: Benutzer: Created date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'users';
@@ -213,6 +210,40 @@ function pw_mass_mailing_views_default_views() {
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
   $handler->display->display_options['filters']['field_user_party_tid']['hierarchy'] = 1;
+  /* Filter criterion: Benutzer: Rollen */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    3 => '3',
+  );
+  $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Rollen';
+  $handler->display->display_options['filters']['rid']['expose']['use_operator'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
+  $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
+  $handler->display->display_options['filters']['rid']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['rid']['expose']['remember_roles'] = array(
+    2 => 0,
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['rid']['group_info']['label'] = 'Rollen';
+  $handler->display->display_options['filters']['rid']['group_info']['identifier'] = 'rid';
+  $handler->display->display_options['filters']['rid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['rid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['rid']['reduce_duplicates'] = TRUE;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

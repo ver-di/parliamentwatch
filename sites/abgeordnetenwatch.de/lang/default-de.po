@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-02-03 17:43+0100\n"
-"PO-Revision-Date: 2014-02-03 17:43+0100\n"
+"POT-Creation-Date: 2014-04-01 12:42+0200\n"
+"PO-Revision-Date: 2014-04-01 12:42+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -2349,10 +2349,6 @@ msgstr ""
 
 #: /index.php
 msgid "The group the translation is in."
-msgstr ""
-
-#: /index.php
-msgid "Source"
 msgstr ""
 
 #: /index.php
@@ -5276,18 +5272,6 @@ msgstr ""
 
 #: /index.php
 msgid ""
-msgstr ""
-
-#: /index.php
-msgid "{current} of {total}"
-msgstr ""
-
-#: /index.php
-msgid "« Prev"
-msgstr ""
-
-#: /index.php
-msgid "Next »"
 msgstr ""
 
 #: /index.php
@@ -11342,10 +11326,6 @@ msgid "Answers Give"
 msgstr ""
 
 #: /index.php
-msgid "Birthday"
-msgstr ""
-
-#: /index.php
 msgid "Children"
 msgstr ""
 
@@ -12350,10 +12330,6 @@ msgstr ""
 
 #: /index.php
 msgid "Teaser Body"
-msgstr ""
-
-#: /index.php
-msgid "Profile image"
 msgstr ""
 
 #: /index.php
@@ -15000,10 +14976,6 @@ msgid "Theme"
 msgstr ""
 
 #: /en-gb/batch?id=2&op=do
-msgid "Country"
-msgstr ""
-
-#: /en-gb/batch?id=2&op=do
 msgid "User mail text"
 msgstr ""
 
@@ -15013,10 +14985,6 @@ msgstr ""
 
 #: /en-gb/batch?id=2&op=do
 msgid "Mail text"
-msgstr ""
-
-#: /en-gb/batch?id=2&op=do; sites/all/modules/contrib/media/js/media.admin.js
-msgid "Select"
 msgstr ""
 
 #: /en-gb/batch?id=2&op=do
@@ -17522,10 +17490,6 @@ msgstr ""
 
 #: /en-gb/admin/structure/features
 msgid "Recreate"
-msgstr ""
-
-#: /en-gb/admin/structure/features
-msgid "Missing"
 msgstr ""
 
 #: /en-gb/admin/structure/features
@@ -21443,10 +21407,6 @@ msgid "Determines the placement of the component's label."
 msgstr ""
 
 #: /en-gb/node/17/webform/components/5?destination=node/17/webform
-msgid "Private"
-msgstr ""
-
-#: /en-gb/node/17/webform/components/5?destination=node/17/webform
 msgid "Private fields are shown only to users with results access."
 msgstr ""
 
@@ -21618,14 +21578,6 @@ msgstr ""
 
 #: /en-gb/media/browser?render=media-popup&types%5Bimage%5D=image&activePlugins=&enabledPlugins=&schemes%5Bprivate%5D=private&schemes%5Bpublic%5D=public&file_directory=trustees&file_extensions=png+gif+jpg+jpeg&max_filesize=&uri_scheme=public&plugins=undefined
 msgid "Library"
-msgstr ""
-
-#: /en-gb/media/browser?render=media-popup&types%5Bimage%5D=image&activePlugins=&enabledPlugins=&schemes%5Bprivate%5D=private&schemes%5Bpublic%5D=public&file_directory=trustees&file_extensions=png+gif+jpg+jpeg&max_filesize=&uri_scheme=public&plugins=undefined
-msgid "Upload a new file"
-msgstr ""
-
-#: /en-gb/media/browser?render=media-popup&types%5Bimage%5D=image&activePlugins=&enabledPlugins=&schemes%5Bprivate%5D=private&schemes%5Bpublic%5D=public&file_directory=trustees&file_extensions=png+gif+jpg+jpeg&max_filesize=&uri_scheme=public&plugins=undefined; sites/all/modules/contrib/media/js/media.format_form.js
-msgid "Submit"
 msgstr ""
 
 #: /en-gb/media/browser?render=media-popup&types%5Bimage%5D=image&activePlugins=&enabledPlugins=&schemes%5Bprivate%5D=private&schemes%5Bpublic%5D=public&file_directory=trustees&file_extensions=png+gif+jpg+jpeg&max_filesize=&uri_scheme=public&plugins=undefined
@@ -23747,10 +23699,6 @@ msgid "Spokesman"
 msgstr ""
 
 #: /en-gb/node/12/edit?destination=admin/content
-msgid "The link title is limited to @maxlength characters maximum."
-msgstr ""
-
-#: /en-gb/node/12/edit?destination=admin/content
 msgid "Link \"title\" attribute"
 msgstr ""
 
@@ -25814,14 +25762,6 @@ msgstr ""
 msgid "Example modules"
 msgstr ""
 
-#: /ga/admin/modules
-msgid "Filter list"
-msgstr ""
-
-#: /ga/admin/modules
-msgid "!enabled of !total"
-msgstr ""
-
 #: sites/all/modules/contrib/module_filter/js/module_filter_tab.js
 msgid "+@count"
 msgstr ""
@@ -26379,15 +26319,6 @@ msgid "@field_name End date"
 msgstr ""
 
 #: /en-gb/user/690/edit
-msgctxt "datetime"
-msgid "Date"
-msgstr ""
-
-#: /en-gb/user/690/edit
-msgid "E.g., @date"
-msgstr ""
-
-#: /en-gb/user/690/edit
 msgid "Masquerade autocomplete"
 msgstr ""
 
@@ -26686,10 +26617,6 @@ msgstr ""
 
 #: /en-gb/users/gerry-adams
 msgid "Thank you! Your question has been submitted!"
-msgstr ""
-
-#: /en-gb/admin/structure/views/ajax/add-item/profile_list_solr/block_1/field
-msgid "@current of @total"
 msgstr ""
 
 #: /en-gb/admin/structure/features/profiles
@@ -29323,10 +29250,6 @@ msgstr ""
 
 #: /en-gb/admin/structure/rate/1/edit
 msgid "Translate options"
-msgstr ""
-
-#: /en-gb/admin/structure/rate/1/edit
-msgid "Node types"
 msgstr ""
 
 #: /en-gb/admin/structure/rate/1/edit
@@ -33580,10 +33503,6 @@ msgid "titles (linked)"
 msgstr ""
 
 #: /en-gb/admin/structure/views/add
-msgid "of"
-msgstr ""
-
-#: /en-gb/admin/structure/views/add
 msgid "Should links be displayed below each node"
 msgstr ""
 
@@ -34946,10 +34865,6 @@ msgid "Ask a Question"
 msgstr ""
 
 #: /index.php
-msgid "to the full profile"
-msgstr ""
-
-#: /index.php
 msgid "<div class=\"question clear-both\">"
 msgstr ""
 
@@ -35909,19 +35824,11 @@ msgid "Administer OAuth consumers"
 msgstr ""
 
 #: /index.php
-msgid "Add Twitter accounts"
-msgstr ""
-
-#: /index.php
 msgid "Add authenticated Twitter accounts"
 msgstr ""
 
 #: /index.php
 msgid "Administer Twitter accounts"
-msgstr ""
-
-#: /index.php
-msgid "Tweets"
 msgstr ""
 
 #: /index.php
@@ -35933,23 +35840,7 @@ msgid "Displays a formatted list of tweets"
 msgstr ""
 
 #: /index.php
-msgid "Twitter"
-msgstr ""
-
-#: /index.php
-msgid "Twitter message"
-msgstr ""
-
-#: /index.php
-msgid "Twitter status messages."
-msgstr ""
-
-#: /index.php
 msgid "Twitter status message ID"
-msgstr ""
-
-#: /index.php
-msgid "The ID of the Twitter status message."
 msgstr ""
 
 #: /index.php
@@ -35957,43 +35848,11 @@ msgid "In reply to status ID"
 msgstr ""
 
 #: /index.php
-msgid "The ID of the Twitter status this message is replying to."
-msgstr ""
-
-#: /index.php
 msgid "In reply to user name"
 msgstr ""
 
 #: /index.php
-msgid "The login account of the Twitter user this message is replying to."
-msgstr ""
-
-#: /index.php
-msgid "Login name"
-msgstr ""
-
-#: /index.php
 msgid "The screen name of the author of the tweet."
-msgstr ""
-
-#: /index.php
-msgid "Created time"
-msgstr ""
-
-#: /index.php
-msgid "The time the Twitter message was posted."
-msgstr ""
-
-#: /index.php
-msgid "Message text"
-msgstr ""
-
-#: /index.php
-msgid "The text of the Twitter message."
-msgstr ""
-
-#: /index.php
-msgid "The name of the application that posted the Twitter message."
 msgstr ""
 
 #: /index.php
@@ -36002,10 +35861,6 @@ msgstr ""
 
 #: /index.php
 msgid "Links to Reply, Retweet and Favorite a tweet."
-msgstr ""
-
-#: /index.php
-msgid "Follow"
 msgstr ""
 
 #: /index.php
@@ -36021,74 +35876,6 @@ msgid "Renders a tweet as it is shown at Twitter.com."
 msgstr ""
 
 #: /index.php
-msgid "The login account of the Twitter user."
-msgstr ""
-
-#: /index.php
-msgid "Full name"
-msgstr ""
-
-#: /index.php
-msgid "The full name Twitter account user."
-msgstr ""
-
-#: /index.php
-msgid "The description of the Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "The location of the Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "Followers"
-msgstr ""
-
-#: /index.php
-msgid "The number of users following this Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "The image used by the Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "The URL given by the Twitter account user."
-msgstr ""
-
-#: /index.php
-msgid "Protected status"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Whether posts from this Twitter account should be visible to the "
-"general public."
-msgstr ""
-
-#: /index.php
-msgid "Last refresh"
-msgstr ""
-
-#: /index.php
-msgid "The time the Twitter account statuses were retrieved."
-msgstr ""
-
-#: /index.php
-msgid "The UID of the Twitter account."
-msgstr ""
-
-#: /index.php
-msgid "Import status"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Whether posts from this Twitter account should be imported "
-"automatically."
-msgstr ""
-
-#: /index.php
 msgid "_blank"
 msgstr ""
 
@@ -36098,22 +35885,6 @@ msgstr ""
 
 #: /index.php
 msgid "Tweets by @%1"
-msgstr ""
-
-#: /index.php
-msgid "Twitter @username converter"
-msgstr ""
-
-#: /index.php
-msgid "Converts Twitter-style @usernames into links to Twitter account pages."
-msgstr ""
-
-#: /index.php
-msgid "Twitter #hashtag converter"
-msgstr ""
-
-#: /index.php
-msgid "Converts Twitter-style #hashtags into links to hashtags.org."
 msgstr ""
 
 #: /index.php
@@ -36198,43 +35969,6 @@ msgstr ""
 
 #: /en-gb/admin/config/services/twitter/settings
 msgid ""
-"Import and display the Twitter statuses of site users who have entered "
-"their Twitter account information."
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "Delete old statuses"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "OAuth Settings"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid ""
-"To enable OAuth based access for twitter, you must <a "
-"href=\"@url\">register your application</a> with Twitter and add the "
-"provided keys here."
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "Callback URL"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "OAuth Consumer key"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "OAuth Consumer secret"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "Twitter Settings"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid ""
 "The following settings connect Twitter module with external APIs. "
 "Change them if, for example, you want to use Identi.ca."
 msgstr ""
@@ -36244,15 +35978,7 @@ msgid "Twitter host"
 msgstr ""
 
 #: /en-gb/admin/config/services/twitter/settings
-msgid "Twitter API"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
 msgid "Twitter search"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter/settings
-msgid "TinyURL"
 msgstr ""
 
 #: /en-gb/admin/config/services/twitter
@@ -36289,10 +36015,6 @@ msgid ""
 msgstr ""
 
 #: /en-gb/admin/config/services/twitter
-msgid "Twitter account name"
-msgstr ""
-
-#: /en-gb/admin/config/services/twitter
 msgid ""
 "If you simply want to pull tweets from additional Twitter accounts, "
 "enter the Twitter account name below and click on the following "
@@ -36315,28 +36037,12 @@ msgstr ""
 msgid "Mentions"
 msgstr ""
 
-#: /en-gb/admin/config/services/twitter
-msgid "The Twitter account settings were updated."
-msgstr ""
-
 #: /en-gb/admin/structure/views/view/tweets/edit/page_2?destination=tweets/Dailwatch
 msgid "False"
 msgstr ""
 
 #: /en-gb/admin/reports/status
 msgid "Twitter Application keys"
-msgstr ""
-
-#: /en-gb/admin/reports/status
-msgid "Configured"
-msgstr ""
-
-#: /en-gb
-msgid "%time ago"
-msgstr ""
-
-#: /en-gb/users/root
-msgid "Twitter accounts"
 msgstr ""
 
 #: /en-gb/users/root
@@ -36496,22 +36202,6 @@ msgstr ""
 
 #: /en-gb/admin/modules
 msgid "Provides a UI for when OAuth is acting as a provider."
-msgstr ""
-
-#: /en-gb/admin/modules
-msgid "Adds integration with the Twitter microblogging service."
-msgstr ""
-
-#: /en-gb/admin/modules
-msgid "Exposes Drupal actions to send Twitter messages."
-msgstr ""
-
-#: /en-gb/admin/modules
-msgid "Enables posting to twitter"
-msgstr ""
-
-#: /en-gb/admin/modules
-msgid "Adds support for \"Sign in with Twitter\""
 msgstr ""
 
 #: /en-gb/admin/config/search/page-title
@@ -41062,10 +40752,6 @@ msgid "Your CKEditor profile was created."
 msgstr ""
 
 #: /admin/structure/block/add
-msgid "Switch to plain text editor"
-msgstr ""
-
-#: /admin/structure/block/add
 msgid "Switch to rich text editor"
 msgstr ""
 
@@ -41726,10 +41412,6 @@ msgstr ""
 msgid ""
 "The CSS path is not empty. Please set the <strong>Editor CSS</strong> "
 "option to the <strong>Define CSS</strong> mode."
-msgstr ""
-
-#: /node/1515/edit
-msgid "Twitter-style #hashtags are linked to !url."
 msgstr ""
 
 #: /node/1515/edit
@@ -51133,14 +50815,6 @@ msgid "Calendar"
 msgstr ""
 
 #: /index.php
-msgid "Calendar of [field_user_fname] [field_user_lname]"
-msgstr ""
-
-#: /index.php
-msgid "Calendar of [field_user_fname] [field_user_lname], [field_user_party]"
-msgstr ""
-
-#: /index.php
 msgid "Calendar Page for sharing"
 msgstr ""
 
@@ -51163,15 +50837,7 @@ msgid "Contextual Basic Info Block on user for use with DS"
 msgstr ""
 
 #: /index.php
-msgid " About [field_user_fname] [field_user_lname]"
-msgstr ""
-
-#: /index.php
 msgid "Contextual About Block on user"
-msgstr ""
-
-#: /index.php
-msgid " Image Gallery of [field_user_fname] [field_user_lname]"
 msgstr ""
 
 #: /index.php
@@ -51187,19 +50853,11 @@ msgid "Contextual Political Goals Block on user"
 msgstr ""
 
 #: /index.php
-msgid "Additional Links of [field_user_fname] [field_user_lname]"
-msgstr ""
-
-#: /index.php
 msgid "Additional Links Goals Block on user"
 msgstr ""
 
 #: /index.php
 msgid "Profile Extension Text"
-msgstr ""
-
-#: /index.php
-msgid "About [field_user_fname] [field_user_lname], [field_user_party] "
 msgstr ""
 
 #: /index.php
@@ -51215,12 +50873,6 @@ msgid ""
 msgstr ""
 
 #: /index.php
-msgid ""
-"Additional Links of [field_user_fname] [field_user_lname], "
-"[field_user_party] "
-msgstr ""
-
-#: /index.php
 msgid "User Profile Picture and Copyright"
 msgstr ""
 
@@ -51230,10 +50882,6 @@ msgstr ""
 
 #: /index.php
 msgid "Parliament Info"
-msgstr ""
-
-#: /index.php
-msgid "[name] on Twitter"
 msgstr ""
 
 #: /index.php
@@ -51312,18 +50960,6 @@ msgid "Title text attribute"
 msgstr ""
 
 #: /index.php
-msgid "Image Gallery"
-msgstr ""
-
-#: /index.php
-msgid "List Position"
-msgstr ""
-
-#: /index.php
-msgid "Political Goals"
-msgstr ""
-
-#: /index.php
 msgid "User Twitter Account"
 msgstr ""
 
@@ -51357,10 +50993,6 @@ msgstr ""
 
 #: /index.php
 msgid "Dependent locality"
-msgstr ""
-
-#: /index.php
-msgid "Postal code"
 msgstr ""
 
 #: /index.php
@@ -51622,10 +51254,6 @@ msgstr ""
 msgid ""
 "[profile_image_url]\n"
 "[name]"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
-msgid "[follow] [name] on Twitter"
 msgstr ""
 
 #: /admin/config/people/accounts/fields
@@ -51994,19 +51622,7 @@ msgid "Address form (country-specific)"
 msgstr ""
 
 #: /user/1692/edit?destination=admin/people
-msgid "Address 1"
-msgstr ""
-
-#: /user/1692/edit?destination=admin/people
-msgid "Address 2"
-msgstr ""
-
-#: /user/1692/edit?destination=admin/people
 msgid "Postal Code"
-msgstr ""
-
-#: /user/1692/edit?destination=admin/people
-msgid "City"
 msgstr ""
 
 #: /user/1692/edit?destination=admin/people
@@ -53220,10 +52836,6 @@ msgid "Grunddaten von [field_user_fname] [field_user_lname]"
 msgstr ""
 
 #: /index.php
-msgid "About [field_user_fname] [field_user_lname], [field_user_party]"
-msgstr ""
-
-#: /index.php
 msgid ""
 "Bildgalerie von [field_user_fname] [field_user_lname], "
 "[field_user_party]"
@@ -53238,12 +52850,6 @@ msgstr ""
 #: /index.php
 msgid ""
 "Die politischen Ziele von [field_user_fname] [field_user_lname], "
-"[field_user_party]"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Additional Links of [field_user_fname] [field_user_lname], "
 "[field_user_party]"
 msgstr ""
 
@@ -53324,17 +52930,9 @@ msgid "Abgeordneten Status"
 msgstr ""
 
 #: /index.php
-msgid "About me"
-msgstr ""
-
-#: /index.php
 msgid ""
 "<div class=\"add-sharethis\" title=\"Image Gallery of "
 "[field_user_fname] [field_user_lname], [field_user_party]\"></div>\n"
-msgstr ""
-
-#: /index.php
-msgid "<h3>Image Gallery</h3>"
 msgstr ""
 
 #: /index.php
@@ -53792,10 +53390,6 @@ msgstr ""
 msgid "The full name of the @country"
 msgstr ""
 
-#: sites/all/themes/custom/parliamentwatch/js/scripts.js
-msgid "read less"
-msgstr ""
-
 #: /admin/appearance/settings/abgeordnetenwatch/reset
 msgid "Are you sure you want to reset the theme %name?"
 msgstr ""
@@ -53887,10 +53481,6 @@ msgid ""
 "</div>\n"
 "\n"
 "\n"
-msgstr ""
-
-#: /admin/structure/features/profiles/status
-msgid "to full calendar"
 msgstr ""
 
 #: /admin/structure/features/profiles/status
@@ -55059,10 +54649,6 @@ msgstr ""
 
 #: /user/24906/edit
 msgid "Personal Data"
-msgstr ""
-
-#: /user/24906/edit
-msgid "Premium Fields"
 msgstr ""
 
 #: /index.php
@@ -57545,10 +57131,6 @@ msgid ""
 "for replacement."
 msgstr ""
 
-#: /admin/structure/features
-msgid "about"
-msgstr ""
-
 #: /admin/structure/features/pw_blog/status
 msgid "PW page"
 msgstr ""
@@ -58473,84 +58055,4324 @@ msgstr ""
 msgid "an unknown service"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Pane settings"
+#: /admin/structure/context/settings
+msgid "Show all regions"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Use view name"
+#: /admin/structure/context/settings
+msgid ""
+"Show all regions including those that are empty. Enable if you are "
+"administering your site using the inline editor."
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Admin title"
+#: /admin/structure/context/settings
+msgid "Use Context Editor Dialog"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Use view description"
+#: /admin/structure/context/settings
+msgid ""
+"When enabled all contextual links will have a Edit Layout link that "
+"will refresh the page with the context editor in a dialog box."
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Admin desc"
+#: /admin/config/content/ckeditor/editg
+msgid "Edit the CKEditor Global profile"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Link to view"
+#: /admin/config/content/ckeditor/editg
+msgid "Update the global profile"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Use Panel path"
+#: /admin/config/content/ckeditor/editg
+msgid "Choose a CKEditor skin."
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Argument input"
+#: /admin/config/content/ckeditor/editg
+msgid "Path to CKEditor"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Allow settings"
+#: /admin/config/content/ckeditor/editg
+msgid "ckeditor.com"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=user/24522
-msgid "Some"
+#: /admin/config/content/ckeditor/editg
+msgid ""
+"The path to CKEditor (the WYSIWYG rich text editor downloaded from "
+"!ckeditorcom) relative to the document root."
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/config/content/ckeditor/editg
+msgid ""
+"Available placeholders:!b &ndash; path of the Drupal installation "
+"(!base) !m &ndash; path where the CKEditor module is stored "
+"(!module).!l &ndash; path to the libraries directory (!library)"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "Local path to CKEditor"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid ""
+"The path to the local directory (on the server) that points to the "
+"path defined above. Enter either an absolute server path or a path "
+"relative to the !indexphp file. If left empty, the CKEditor module "
+"will try to find the right path."
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "Path to the CKEditor plugins directory"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "Path to the CKEditor plugins directory relative to the document root."
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid ""
+"Available placeholders:!b &ndash; path of the Drupal installation "
+"(!base) !m &ndash; the base URL path where the CKEditor module is "
+"stored (!module).!l &ndash; the base URL path to the libraries "
+"directory (!library)"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "Local path to the CKEditor plugins directory"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "Path to CKFinder"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "ckfinder.com"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid ""
+"The path to CKFinder (AJAX based file manager downloaded from "
+"!ckfindercom) relative to the document root."
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "Local path to CKFinder"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "Aggregate <code>ckeditor.js</code>"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid ""
+"When enabled, <code>ckeditor.js</code> will be aggregated if "
+"JavaScript aggregation is enabled. <strong>Not recommended</strong>."
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid "Use toolbar Drag&Drop feature"
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid ""
+"When enabled, the toolbar can be built by using the drag-and-drop "
+"feature. Otherwise you will need to enter the toolbar configuration "
+"manually to the text box."
+msgstr ""
+
+#: /admin/config/content/ckeditor/editg
+msgid ""
+"The Global Profile allows you to define settings that are common for "
+"all profiles. Values defined in other profiles will be appended to the "
+"global configuration. This way you can avoid repeating some of the "
+"settings that are usually the same for each profile."
+msgstr ""
+
+#: /admin/structure/menu/item/3249/delete
+msgid "Spenden"
+msgstr ""
+
+#: /admin/config/system/cron
+msgid ""
+"More information about setting up scheduled tasks can be found by <a "
+"href=\"@url\">reading the cron tutorial on drupal.org</a>."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "Attach text"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"This text is used in building the feed link. By default it is the "
+"\"alt\" text for the feed image."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "Provide as file"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"By deselecting this, the xml file will be provided as a feed instead "
+"of a file for download."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"The filename that will be suggested to the browser for downloading "
+"purposes. You may include replacement patterns from the list below."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"<p>The following substitution patterns are available for this display. "
+"Use the pattern shown on the left to display the value indicated on "
+"the right.</p>"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "@argument value"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "Exposed filters"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "effective exposed filters, like <em>filter1_foo-filter2_bar</em>"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "Parent sort"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"Try to apply any additional sorting from the attached display like "
+"table sorting to the exported feed."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"This is the separator that is used to separate fields. CSV implies "
+"comma separated fields so this should not be changed unless you have "
+"specific requirements"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"Quote values. Useful for output that might contain your separator as "
+"part of one of the values."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"Trim whitespace from rendered fields. Can be useful for some themes "
+"where output results in extra newlines."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "Replace newlines in rendered fields."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "Replacement"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "Make first row a list of column headers."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "Character encoding conversion"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "No conversion"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid "ASCII"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_parliament_areacodes/views_data_export_1/style_options
+msgid ""
+"Optionally specify a character conversion that some CSV file readers "
+"need. Note, using an external tool is always preferred and you should "
+"only use this option as a last resort. This feature requires the "
+"\"iconv\" PHP extension."
+msgstr ""
+
+#: /system/ajax
+msgid "Current layout (after save)"
+msgstr ""
+
+#: /users/root
+msgid "overlay"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Title text attribute (for the profile formats x and xs the copyright "
+"will overwrite this field)"
+msgstr ""
+
+#: /admin/structure/features/pw_blog/status
+msgid "[field_user_qanda_ratio-revision_id-value] % Antwortquote"
+msgstr ""
+
+#: /admin/structure/features/pw_blog/status
+msgid "Profil besuchen"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "Fragen an [field_user_fname] [field_user_lname]"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "A content pane used on the election landingpage"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "Frage von"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid ""
+"<h3>Antwort von [field_user_fname] [field_user_lname]</h3>\n"
+"<p class=\"date\">[created_1]</p>\n"
+"<div class=\"content clear-both\">[comment_body]</div>"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "Weitere Informationen zur Antwort"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "Thema "
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "Frage und Antwort drucken"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "Permanent-Link zu obenstehender Frage und Antwort"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "edit answer"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "edit question"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "PW Dialogue answers"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "[field_user_questions_get],"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "go to full profile"
+msgstr ""
+
+#: /admin/structure/features/dialogues/status
+msgid "edit recipient"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid "[field_user_questions_get] Fragen"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid "% Antwortquote"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid "Berufliche Qualifikation"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Announcement"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "The last 4 announcement will be printed in a slider on the frontpage."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Announcements"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "to the archive"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Politicians answer!"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Background image"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "If no image is uploaded a default image will be shown."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Link the article you want to announce."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "This field will be used as link text in the slider."
+msgstr ""
+
+#: /admin/structure/taxonomy_manager/voc/parliaments
+msgid "maxlength"
+msgstr ""
+
+#: /admin/structure/feeds
+msgid "Tamper"
+msgstr ""
+
+#: /index.php
+msgid "Add the site's slogan as content."
+msgstr ""
+
+#: /admin/structure/features/dialogues/recreate?render=overlay
+msgid "zu einer Frage von "
+msgstr ""
+
+#: /admin/structure/features/pw_api/recreate?render=overlay
+msgid " Frage"
+msgstr ""
+
+#: /admin/structure/features/pw_api/recreate?render=overlay
+msgid " Antwort"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/display/full?destination=node/9681
+msgid "(Original: !orig)"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost
+msgid ""
+"The maximum length of the field in characters. Can be maximum 255 "
+"characters."
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost
+msgid "Count down message"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost
+msgid ""
+"The text used in the Javascript message under the input, where "
+"\"@limit\", \"@remaining\" and \"@count\" are replaced by the "
+"appropriate numbers."
+msgstr ""
+
+#: /admin/content?title=kommerzielle%20Haufen&type=All&author=&status=All&vid=All
+msgid "Fields for @bundle_key @label"
+msgstr ""
+
+#: /admin/content?title=kommerzielle%20Haufen&type=All&author=&status=All&vid=All; sites/all/modules/contrib/maxlength/js/maxlength.js
+msgid ""
+"Content limited to @limit characters, remaining: "
+"<strong>@remaining</strong>"
+msgstr ""
+
+#: /admin/content?title=kommerzielle%20Haufen&type=All&author=&status=All&vid=All
+msgid ""
+"Add new value(s) to %label, instead of overwriting the existing "
+"values."
+msgstr ""
+
+#: /admin/content?title=kommerzielle%20Haufen&type=All&author=&status=All&vid=All
+msgid "All Day"
+msgstr ""
+
+#: /admin/content?title=kommerzielle%20Haufen&type=All&author=&status=All&vid=All
+msgctxt "datetime"
+msgid "Time"
+msgstr ""
+
+#: /index.php
+msgid "Enter a number to choose which cache to clear."
+msgstr ""
+
+#: /index.php
+msgid "!key"
+msgstr ""
+
+#: /admin/structure/file-types/manage/image/display/pw_file_landscape_l?destination=node/10443
+msgid "pw_file_landscape_l"
+msgstr ""
+
+#: /admin/structure/file-types/manage/image/display/pw_file_landscape_l?destination=node/10443
+msgid "pw_file_portrait_xs"
+msgstr ""
+
+#: /admin/structure/file-types/manage/image/display/pw_file_landscape_l?destination=node/10443
+msgid "pw_file_portrait_l"
+msgstr ""
+
+#: /admin/structure/file-types/manage/image/display/pw_file_landscape_l?destination=node/10443
+msgid "pw_file_portrait_m"
+msgstr ""
+
+#: /admin/structure/file-types/manage/image/display/pw_file_landscape_l?destination=node/10443
+msgid "pw_file_portrait_s"
+msgstr ""
+
+#: /admin/modules
+msgid "Test feature for Features Extra."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Provides a user interface for per-module and site-wide mail_system "
+"selection."
+msgstr ""
+
+#: /admin/modules
+msgid "Send MIME-encoded emails with embedded images and attachments."
+msgstr ""
+
+#: /admin/modules
+msgid "Provide actions for Mime Mail."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Converts CSS to inline styles in an HTML message. (Requires the PHP "
+"DOM extension.)"
+msgstr ""
+
+#: /admin/modules
+msgid "Imports Calender Items from legacy database"
+msgstr ""
+
+#: /admin/modules
+msgid "Dialogues importer, content type and views"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Provides functionality for permitted users to send a one-time login "
+"link to other users."
+msgstr ""
+
+#: /admin/modules
+msgid "Settings for a mass mail site configuration."
+msgstr ""
+
+#: /admin/modules
+msgid "question webform"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Allow for site emails to be sent through an SMTP server of your "
+"choice."
+msgstr ""
+
+#: /admin/modules
+msgid "Controls access to context based upon term depth"
+msgstr ""
+
+#: /admin/modules
+msgid "Provides a way to send e-mails from a list created with Views"
+msgstr ""
+
+#: /admin/modules
+msgid "Add validation rules to webforms"
+msgstr ""
+
+#: /admin/structure/menu/manage/menu-main-menu-de
+msgid "You're about to create a new menu item with new %type content."
+msgstr ""
+
+#: /index.php
+msgid "Administer Mail System"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Select the default, per-module, and per-mailing <a "
+"href=\"!interface\"><code>@interface</code></a> to use for formatting "
+"and sending email messages."
+msgstr ""
+
+#: /index.php
+msgid "Edit Mime Mail user settings"
+msgstr ""
+
+#: /index.php
+msgid "Edit user specific settings for Mime Mail."
+msgstr ""
+
+#: /index.php
+msgid "Send arbitrary files"
+msgstr ""
+
+#: /index.php
+msgid "Attach or embed files located outside the public files directory."
+msgstr ""
+
+#: /index.php
+msgid "Administer schema module"
+msgstr ""
+
+#: /index.php
+msgid "Send a pw login once link"
+msgstr ""
+
+#: /index.php
+msgid "Use a pw login once link"
+msgstr ""
+
+#: /index.php
+msgid "Administer SMTP Authentication Support module"
+msgstr ""
+
+#: /index.php
+msgid "Perform administration tasks for SMTP Authentication Support module."
+msgstr ""
+
+#: /index.php
+msgid "Administer mass mail with Views"
+msgstr ""
+
+#: /index.php
+msgid "Configure sending of e-mails to a list created with Views."
+msgstr ""
+
+#: /index.php
+msgid "Send mass mail with Views"
+msgstr ""
+
+#: /index.php
+msgid "Send e-mails to a list created with Views."
+msgstr ""
+
+#: /index.php
+msgid "Use attachments with Views Send"
+msgstr ""
+
+#: /index.php
+msgid "Attach files to e-mails sent with Views Send."
+msgstr ""
+
+#: /index.php
+msgid "Before importing feed"
+msgstr ""
+
+#: /index.php
+msgid "After importing feed"
+msgstr ""
+
+#: /index.php
+msgid "When the user has used their one time login."
+msgstr ""
+
+#: /index.php
+msgid "PW Login Once"
+msgstr ""
+
+#: /index.php
+msgid "The user's account"
+msgstr ""
+
+#: /index.php
+msgid "Views Send"
+msgstr ""
+
+#: /index.php
+msgid "After sending an individual email"
+msgstr ""
+
+#: /index.php
+msgid "e-mail message"
+msgstr ""
+
+#: /index.php
+msgid "All information about the message."
+msgstr ""
+
+#: /index.php
+msgid "After adding all e-mails to the spool"
+msgstr ""
+
+#: /index.php
+msgid "message count"
+msgstr ""
+
+#: /index.php
+msgid "The number of messages added to the spool."
+msgstr ""
+
+#: /index.php
+msgid "After adding an individual e-mail to the spool"
+msgstr ""
+
+#: /index.php
+msgid "Feeds source"
+msgstr ""
+
+#: /index.php
+msgid "The machine readable name of the source importer."
+msgstr ""
+
+#: /index.php
+msgid "Date imported"
+msgstr ""
+
+#: /index.php
+msgid "The date the source was last imported."
+msgstr ""
+
+#: /index.php
+msgid "Views Send e-mail message"
+msgstr ""
+
+#: /index.php
+msgid "Sender's name"
+msgstr ""
+
+#: /index.php
+msgid "Sender's e-mail"
+msgstr ""
+
+#: /index.php
+msgid "Recipient's name"
+msgstr ""
+
+#: /index.php
+msgid "Recipient's e-mail"
+msgstr ""
+
+#: /index.php
+msgid "E-mail body"
+msgstr ""
+
+#: /index.php
+msgid "E-mail headers (serialized)"
+msgstr ""
+
+#: /index.php
+msgid "Send HTML e-mail"
+msgstr ""
+
+#: /index.php
+msgid "A key to identify the e-mail sent."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The mail's recipient address. The formatting of this string must "
+"comply with RFC 2822."
+msgstr ""
+
+#: /index.php
+msgid "CC Recipient"
+msgstr ""
+
+#: /index.php
+msgid ""
+"The mail's carbon copy address. You may separate multiple addresses "
+"with comma."
+msgstr ""
+
+#: /index.php
+msgid "BCC Recipient"
+msgstr ""
+
+#: /index.php
+msgid ""
+"The mail's blind carbon copy address. You may separate multiple "
+"addresses with comma."
+msgstr ""
+
+#: /index.php
+msgid "Sender name"
+msgstr ""
+
+#: /index.php
+msgid ""
+"The sender's name. Leave it empty to use the site-wide configured "
+"name."
+msgstr ""
+
+#: /index.php
+msgid "Sender e-mail address"
+msgstr ""
+
+#: /index.php
+msgid ""
+"The sender's address. Leave it empty to use the site-wide configured "
+"address."
+msgstr ""
+
+#: /index.php
+msgid "Reply e-mail address"
+msgstr ""
+
+#: /index.php
+msgid "The address to reply to. Leave it empty to use the sender's address."
+msgstr ""
+
+#: /index.php
+msgid "The mail's message HTML body."
+msgstr ""
+
+#: /index.php
+msgid "Plain text body"
+msgstr ""
+
+#: /index.php
+msgid "The mail's message plaintext body."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The mail's attachments, one file per line e.g. "
+"\"files/images/mypic.png\" without quotes."
+msgstr ""
+
+#: /index.php
+msgid "Send HTML mail to all users of a role"
+msgstr ""
+
+#: /index.php
+msgid "Send mail only to active users."
+msgstr ""
+
+#: /index.php
+msgid "Plaintext body"
+msgstr ""
+
+#: /index.php
+msgid "Send mail in each recipient's language"
+msgstr ""
+
+#: /index.php
+msgid ""
+"If checked, the mail message and subject will be sent in each user's "
+"preferred language. <strong>You can safely leave the language selector "
+"below empty if this option is selected.</strong>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"If specified, the fixed language used for getting the mail message and "
+"subject."
+msgstr ""
+
+#: /index.php
+msgid "Send a login one-time email."
+msgstr ""
+
+#: /index.php
+msgid "Recipient User"
+msgstr ""
+
+#: /index.php
+msgid "Destination path"
+msgstr ""
+
+#: /index.php
+msgid "PW Mass Mail"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Grunddaten von [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid "Über [field_user_fname-revision_id] [field_user_lname-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Bildergalerie von [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Die politischen Ziele von [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid "@field-label - @property-label"
+msgstr ""
+
+#: /index.php
+msgid "Provide a checkbox to select the row for e-mail sending."
+msgstr ""
+
+#: /index.php
+msgid "E-Mail senden"
+msgstr ""
+
+#: /index.php
+msgid "Filter this view by parliament."
+msgstr ""
+
+#: /index.php
+msgid "Filter this view by party."
+msgstr ""
+
+#: /index.php
+msgid ""
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div class=\"add-sharethis\" title=\"About "
+"[field_user_fname-revision_id] [field_user_lname-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div class=\"add-sharethis\" title=\"Image Gallery of "
+"[field_user_fname-revision_id]  [[field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid "<p class=\"link-profile\">[nothing]</p>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div class=\"add-sharethis\" title=\"Additional Links of "
+"[field_user_fname-revision_id]  [field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Tokens related to address field values and their components."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Country name"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The full name of the country."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Country code"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The two letter ISO country code."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Administrative area (i.e. State/Province)"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid ""
+"The administrative area value, expanded to the full name if "
+"applicable."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Administrative area (raw value)"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The raw administrative area value."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The locality value."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The postal code value."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The thoroughfare value."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Premise (i.e. Street address)"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Organisation"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The organisation name value."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The name line value of the address."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The first name value."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The last name value."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Address formatted for MailChimp"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "The full address formatted for import into MailChimp."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "PW Login Once link"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "A one-time login link set to the configured default path."
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Tokens for Views Send e-mail message."
+msgstr ""
+
+#: /index.php
+msgid "Wählergedächtnis"
+msgstr ""
+
+#: /index.php
+msgid "Election"
+msgstr ""
+
+#: /index.php
+msgid "Election Result"
+msgstr ""
+
+#: /index.php
+msgid "Phone"
+msgstr ""
+
+#: /index.php
+msgid "Picture copyright"
+msgstr ""
+
+#: /index.php
+msgid "Public Mail"
+msgstr ""
+
+#: /user
+msgid "Filter on %field"
+msgstr ""
+
+#: /user
+msgid "Sort by %field"
+msgstr ""
+
+#: /user
+msgid "Data table"
+msgstr ""
+
+#: /petitions/unternehmensspenden-verbieten
+msgid "Mime Mail module settings form elements."
+msgstr ""
+
+#: /index.php
+msgid "Show the Drupal schema definition for table(s)"
+msgstr ""
+
+#: /index.php
+msgid "A comma delimited list of table names"
+msgstr ""
+
+#: /index.php
+msgid "An alternate connection key to inspect"
+msgstr ""
+
+#: /index.php
+msgid "List tables that match, mismatch, are missing or are extra"
+msgstr ""
+
+#: /index.php
+msgid ""
+"The type of tables to list, one of \"match\", \"mismatch\", "
+"\"missing\" or \"extra\"."
+msgstr ""
+
+#: /index.php
+msgid ""
+"List all tables in the database whose schemas match their schema "
+"definitions."
+msgstr ""
+
+#: /index.php
+msgid ""
+"List all tables in the database whose schemas do not match their "
+"schema definitions."
+msgstr ""
+
+#: /index.php
+msgid ""
+"List all missing tables from the database existing in schema "
+"definitions."
+msgstr ""
+
+#: /index.php
+msgid "List all tables in the database whose schema definitions do not exist."
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"calendar\" class=\"add-sharethis\" title=\"Calendar of "
+"[field_user_fname] [field_user_lname], [field_user_party]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Wenn Ihnen ein Fehler bzgl. der Angaben zu [field_user_fname] "
+"[field_user_lname] aufgefallen ist, teilen Sie uns diesen bitte über "
+"das Formular mit:"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Daten zu [field_user_fname] [field_user_lname] stehen Ihnen auch als "
+"XML zur Verfügung."
+msgstr ""
+
+#: /index.php
+msgid "Link zur API"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"\" class=\"add-sharethis\" "
+"title=\"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat "
+"abgeordnetenwatch einmalig mit 179 Euro (149 Euro als "
+"Frühbucherrabatt). "
+msgstr ""
+
+#: /index.php
+msgid "Berufliche Qualifikationen"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"about\" class=\"add-sharethis\" title=\"About "
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>\n"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"imagegallery\" class=\"add-sharethis\" title=\"Imagegallery "
+"of [field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"political-goals\" class=\"add-sharethis\" title=\"Political "
+"Goals of [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"additional-links\" class=\"add-sharethis\" "
+"title=\"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"\" class=\"add-sharethis\" "
+"title=\"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid "Candidate of [name_1] "
+msgstr ""
+
+#: /index.php
+msgid ""
+"[nothing]<br/>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]\n"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"\" class=\"add-sharethis\" "
+"title=\"[field_user_fname-revision_id] [field_user_lname-revision_id] "
+", [field_user_party-revision_id] \"></div>"
+msgstr ""
+
+#: /index.php
+msgid "Candidate of [name]"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"\" class=\"add-sharethis\" "
+"title=\"[field_user_fname-revision_id] [field_user_lname-revision_id] "
+", [field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid "Member of [name]"
+msgstr ""
+
+#: /index.php
+msgid ""
+"[nothing]<br/>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid "Parliament name"
+msgstr ""
+
+#: /index.php
+msgid "[parliament_name_1] "
+msgstr ""
+
+#: /index.php
+msgid "Number of questions"
+msgstr ""
+
+#: /index.php
+msgid "[number_of_questions] Fragen /"
+msgstr ""
+
+#: /index.php
+msgid "Number of answers"
+msgstr ""
+
+#: /index.php
+msgid "[number_of_questions] / [number_of_answers]"
+msgstr ""
+
+#: /index.php
+msgid "Number of sideline jobs"
+msgstr ""
+
+#: /index.php
+msgid "[number_of_sideline_jobs] Nebentätigkeiten"
+msgstr ""
+
+#: /index.php
+msgid "Number of speeches"
+msgstr ""
+
+#: /index.php
+msgid "[number_of_speeches] Gehaltene Reden"
+msgstr ""
+
+#: /index.php
+msgid "Number of missed votings"
+msgstr ""
+
+#: /index.php
+msgid "[number_of_missed_votings] Verpasste Abstimmungen"
+msgstr ""
+
+#: /index.php
+msgid "Zeitraumsprofil öffnen"
+msgstr ""
+
+#: /index.php
+msgid "Kandidatenprofil [parliament_name_1] "
+msgstr ""
+
+#: /index.php
+msgid "Profil öffnen"
+msgstr ""
+
+#: /users/root
+msgid "Send pw login once link to @username"
+msgstr ""
+
+#: /user
+msgid "Configure the settings for PW Login Once."
+msgstr ""
+
+#: /user
+msgid "Mail System"
+msgstr ""
+
+#: /user
+msgid "Configure per-module Mail System settings."
+msgstr ""
+
+#: /user
+msgid "Mime Mail"
+msgstr ""
+
+#: /user
+msgid "Manage mime mail system settings."
+msgstr ""
+
+#: /user
+msgid "SMTP Authentication Support"
+msgstr ""
+
+#: /user
+msgid "Configure Views Send general options."
+msgstr ""
+
+#: /user
+msgid "Import importer"
+msgstr ""
+
+#: /user
+msgid "Manage the database schema for this system."
+msgstr ""
+
+#: /user
+msgid "Describe"
+msgstr ""
+
+#: /user
+msgid "Inspect"
+msgstr ""
+
+#: /user
+msgid "SQL"
+msgstr ""
+
+#: /user
+msgid "schema"
+msgstr ""
+
+#: /user
+msgid "smtp"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid "Request timeout"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"Timeout in seconds to wait for an HTTP get request to "
+"finish.</br><b>Note:</b> this setting will override the global "
+"setting.</br>When left empty, the global value is used."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"Fields <strong>guid, name</strong> are mandatory and values in these "
+"columns are considered unique: only one entry per value in one of "
+"these columns will be created."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid "The variable %variable is available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid "The variables %variable are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variable <em class=\"placeholder\">$guid</em> is available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, "
+"$field_user_valid:end</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname</em> "
+"are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, "
+"$field_user_address:locality</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs</em> are available "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education</em> are available "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles</em> are available "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency</em> are available "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency, "
+"$field_user_list_position</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency, "
+"$field_user_list_position, $field_user_election_result</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency, "
+"$field_user_list_position, $field_user_election_result, "
+"$field_user_picture</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency, "
+"$field_user_list_position, $field_user_election_result, "
+"$field_user_picture, $field_user_picture_copyright</em> are available "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency, "
+"$field_user_list_position, $field_user_election_result, "
+"$field_user_picture, $field_user_picture_copyright, "
+"$field_user_about</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency, "
+"$field_user_list_position, $field_user_election_result, "
+"$field_user_picture, $field_user_picture_copyright, $field_user_about, "
+"$field_user_twitter_account</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency, "
+"$field_user_list_position, $field_user_election_result, "
+"$field_user_picture, $field_user_picture_copyright, $field_user_about, "
+"$field_user_twitter_account, $field_user_external_url:url</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid "Replace existing @entities"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $name, $mail, "
+"$uuid:uuid, $roles, $field_user_valid:start, $field_user_valid:end, "
+"$field_user_title, $field_user_birthday:start, "
+"$field_user_birthday:end, $field_user_gender, $field_user_fname, "
+"$field_user_lname, $field_user_public_mail, $field_user_phone, "
+"$field_user_address:administrative_area, $field_user_address:locality, "
+"$field_user_address:postal_code, $field_user_childs, "
+"$field_user_marriage_status, $field_user_education, "
+"$field_user_job_skills, $field_user_political_roles, "
+"$field_user_political_goals, $field_user_party, "
+"$field_user_parliament, $field_user_constituency, "
+"$field_user_list_position, $field_user_election_result, "
+"$field_user_picture, $field_user_picture_copyright, $field_user_about, "
+"$field_user_twitter_account, $field_user_external_url:url, "
+"$field_user_links_more:url</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2/mapping?render=overlay
+msgid "Role ID"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2/mapping?render=overlay
+msgid "Set the user role system wide"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2/mapping?render=overlay
+msgid "Search taxonomy terms by: <strong>@search</strong>"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2/mapping?render=overlay
+msgid "- Select a source -"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2/mapping?render=overlay
+msgid "An element from the feed."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2/mapping?render=overlay
+msgid "- Select a target -"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_profiles_importer_v2/mapping?render=overlay
+msgid "The field that stores the data."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Fields <strong>name, guid</strong> are mandatory and values in these "
+"columns are considered unique: only one entry per value in one of "
+"these columns will be created."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The variable <em class=\"placeholder\">$uuid:uuid</em> is available "
+"for replacement."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The variables <em class=\"placeholder\">$uuid:uuid, $name</em> are "
+"available for replacement."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The variables <em class=\"placeholder\">$uuid:uuid, $name, "
+"$field_parliament_election:start</em> are available for replacement."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The variables <em class=\"placeholder\">$uuid:uuid, $name, "
+"$field_parliament_election:start, $field_parliament_valid:start</em> "
+"are available for replacement."
+msgstr ""
+
+#: /index.php
+msgid ""
+"The variables <em class=\"placeholder\">$uuid:uuid, $name, "
+"$field_parliament_election:start, $field_parliament_valid:start, "
+"$field_parliament_valid:end</em> are available for replacement."
+msgstr ""
+
+#: /index.php
+msgid "Importing !feed from !file"
+msgstr ""
+
+#: /index.php
+msgid "Preparing batch."
+msgstr ""
+
+#: /index.php
+msgid "Importing !feed_name"
+msgstr ""
+
+#: /admin/structure/feeds/gdata_constituency_importer?render=overlay
+msgid ""
+"The variable <em class=\"placeholder\">$field_parliament</em> is "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_constituency_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_parliament, $name</em> "
+"are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_constituency_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_parliament, $name, "
+"$field_constituency_nr</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_constituency_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_parliament, $name, "
+"$field_constituency_nr, $uuid:uuid</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_constituency_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_parliament, $name, "
+"$field_constituency_nr, $uuid:uuid, $guid</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/gdata_constituency_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_parliament, $name, "
+"$field_constituency_nr, $uuid:uuid, $guid, "
+"$field_constituency_area_codes</em> are available for replacement."
+msgstr ""
+
+#: /blog/2014-02-25/spd-abgeordnete-im-tv-ja-die-politik-hat-sich-der-genmaislobby-gebeugt
+msgid "Form validation"
+msgstr ""
+
+#: /admin/config/search/path/update_bulk?render=overlay
+msgid ""
+"Bulk generation will only generate URL aliases for items that "
+"currently have no aliases. This is typically used when installing "
+"Pathauto on a site that has existing un-aliased content that needs to "
+"be aliased in bulk."
+msgstr ""
+
+#: /batch?id=25049&op=do
+msgid "Twitter account added successfully"
+msgstr ""
+
+#: /profile/niclas-herbst
+msgid ""
+"Bei \"normaler Ansicht\" erhalten Sie die Fragen und Antworten in "
+"voller Länge. Um sich schnell einen Überblick zu verschaffen, "
+"wählen Sie \"verschlagwortete Ansicht\". Dann wird Ihnen ein "
+"redaktionell ausgewählter Ausschnitt aus den Fragen und Antworten "
+"angezeigt."
+msgstr ""
+
+#: /profile/niclas-herbst
+msgid "Teaser View"
+msgstr ""
+
+#: /profile/niclas-herbst
+msgid "View: @view"
+msgstr ""
+
+#: /profile/franziska-keller
+msgid "User Basics"
+msgstr ""
+
+#: /profile/franziska-keller
+msgid "User Polls"
+msgstr ""
+
+#: /profile/franziska-keller
+msgid "User Roles"
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "SimpleXML"
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "SimpleXML PHP module is required for Feeds Syndication Parser."
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "SimplePie"
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "Unknown at install time."
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "SimplePie library is required for Feeds SimplePie Parser."
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid ""
+"Download the compiled version of the library from <a "
+"href=\"@simplepie-download-url\">SimplePie download page</a>."
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "Field @table.@field: no Schema type for @engine type @type."
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "%table.%field: no %engine type for Schema type %type."
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "TODO: please describe this field!"
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "@count modules with matching tables"
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "@count extra tables"
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "@count modules with missing tables"
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "@count modules with mis-matching tables"
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "The Schema comparison report shows: "
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid ""
+"You should follow the instructions under <strong>@title</strong>\n"
+"            now or run the <a href=\"@compare\">database schema "
+"comparison report</a>\n"
+"            for more details."
+msgstr ""
+
+#: /admin/reports/status?render=overlay
+msgid "Database schema"
+msgstr ""
+
+#: /admin/reports/fields/permissions?render=overlay
+msgid "All users have this permission"
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variable <em class=\"placeholder\">$field_dialogue_annotation</em> "
+"is available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name</em> are available "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created</em> "
+"are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type, $field_dialogue_message_id</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type, $field_dialogue_message_id, $guid</em> "
+"are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type, $field_dialogue_message_id, $guid, "
+"$field_dialogue_documents:url</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type, $field_dialogue_message_id, $guid, "
+"$field_dialogue_documents:url, $field_dialogue_id</em> are available "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type, $field_dialogue_message_id, $guid, "
+"$field_dialogue_documents:url, $field_dialogue_id, $body</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type, $field_dialogue_message_id, $guid, "
+"$field_dialogue_documents:url, $field_dialogue_id, $body, "
+"$body:summary</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type, $field_dialogue_message_id, $guid, "
+"$field_dialogue_documents:url, $field_dialogue_id, $body, "
+"$body:summary, $uid:uuid</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$field_dialogue_annotation, "
+"$field_dialogue_topic, $field_dialogue_sender_name, $title, "
+"$field_dialogue_tags, $field_dialogue_recipient:uuid, $created, "
+"$field_dialogue_message_type, $field_dialogue_message_id, $guid, "
+"$field_dialogue_documents:url, $field_dialogue_id, $body, "
+"$body:summary, $uid:uuid, $status</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_importer?render=overlay
+msgid "Bundle"
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variable <em class=\"placeholder\">$nid_by_guid</em> is available "
+"for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid</em> "
+"are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid</em> "
+"are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created, $name</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created, $name, $field_dialogue_message_type</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created, $name, $field_dialogue_message_type, "
+"$field_dialogue_message_id</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created, $name, $field_dialogue_message_type, "
+"$field_dialogue_message_id, $guid</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created, $name, $field_dialogue_message_type, "
+"$field_dialogue_message_id, $guid, $field_dialogue_documents:url</em> "
+"are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created, $name, $field_dialogue_message_type, "
+"$field_dialogue_message_id, $guid, $field_dialogue_documents:url, "
+"$field_dialogue_id</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created, $name, $field_dialogue_message_type, "
+"$field_dialogue_message_id, $guid, $field_dialogue_documents:url, "
+"$field_dialogue_id, $field_dialogue_annotation</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/dialogue_message_importer?render=overlay
+msgid ""
+"The variables <em class=\"placeholder\">$nid_by_guid, $uid:uuid, "
+"$field_dialogue_topic, $field_dialogue_tags, "
+"$field_dialogue_sender_fullname, $field_dialogue_recipient:uuid, "
+"$status, $created, $name, $field_dialogue_message_type, "
+"$field_dialogue_message_id, $guid, $field_dialogue_documents:url, "
+"$field_dialogue_id, $field_dialogue_annotation, $comment_body</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Provides two dimensional storage space for arbitrary data sets."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Admin UI for Data Module"
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Defines data tables as entity types."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Provides search and views search integration for Data tables."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Feeds Tamper plugin to execute php code"
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid ""
+"Provides role and module filters to simplify the user permissions "
+"page."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid ""
+"An image/file uploader and browser supporting personal directories and "
+"user quota."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid ""
+"Makes IMCE available as plugin for client-side editors integrated via "
+"Wysiwyg API."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid ""
+"Gives select all/deselect all options on the permissions section of "
+"the Drupal admin."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "sends email when a politicians account has been updated"
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "sends email when a poiiticians account has been updated"
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Custom Feeds Tamper"
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "creates/manages a table in the Drupal database to archive user data."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "The Schema module provides functionality built on the Schema API."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Show difference between user revisions."
+msgstr ""
+
+#: /profile/david
+msgid "One-time login link for [user:name] at [site:name]"
+msgstr ""
+
+#: /profile/david
+msgid ""
+"[user:name],\n"
+"\n"
+"A request to give you a one-time login for your account has been made "
+"at [site:name].\n"
+"\n"
+"You may now log in to [site:url-brief] by clicking on this link or "
+"copying and pasting it in your browser:\n"
+"\n"
+"[user:login-one-time]\n"
+"\n"
+"This is a one-time login, so it can be used only once.  It expires in "
+"two weeks and nothing will happen if it's not used.\n"
+"\n"
+"--  [site:name] team"
+msgstr ""
+
+#: /profile/david
+msgid "A one-time login link has been sent to @username."
+msgstr ""
+
+#: /pw_login_once/24997/1394533587/yOXPVKds1swuXXUQtUdvn1RRn-rc3fo9bY0P710-A1Y?destination=user/24997
+msgid "You have just used your one-time login link."
+msgstr "Sie haben soeben Ihren Link zum einmaligen Anmelden verwendet."
+
+#: /admin/config/people/accounts
+msgid "Available variables are:"
+msgstr ""
+
+#: /admin/config/people/accounts
+msgid "PW Login Once e-mail"
+msgstr ""
+
+#: /admin/config/people/accounts
+msgid "Customize pw login once e-mail messages sent to users."
+msgstr ""
+
+#: /admin/config/people/accounts/display/user_deputy
+msgid "User Basics Additional"
+msgstr ""
+
+#: /admin/config/people/accounts/display/user_deputy
+msgid "User Basics Data"
+msgstr ""
+
+#: /admin/config/people/accounts/display/user_deputy
+msgid "User Polls Archive"
+msgstr ""
+
+#: /admin/config/people/accounts/display/user_deputy
+msgid "User Polls Current"
+msgstr ""
+
+#: /admin/config/people/accounts/display/user_deputy
+msgid "User Roles Archive"
+msgstr ""
+
+#: /admin/config/people/accounts/display/user_deputy
+msgid "User Roles Current"
+msgstr ""
+
+#: /system/ajax
+msgid "Exported data"
+msgstr ""
+
+#: /frage-stellen
+msgid "Frage abschicken"
+msgstr ""
+
+#: /admin/config/search/redirect/edit/11?destination=admin/config/search/redirect%3Fsort%3Ddesc%26order%3DFrom
+msgid "Edit redirect"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Deslash"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, this option will remove the trailing slash from requests. "
+"This stops requests such as <code>example.com/node/1/</code> failing "
+"to match the corresponding alias and can cause duplicate content. On "
+"the other hand, if you require certain requests to have a trailing "
+"slash, this feature can cause problems so may need to be disabled."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Non-clean to Clean"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, this option will redirect from non-clean to clean URL (if "
+"Clean URL's are enabled). This will stop, for example, node 1  "
+"existing on both <code>example.com/node/1</code> AND "
+"<code>example.com?q=node/1</code>."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Remove Trailing Zero Argument"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, any instance of \"/0\" will be trimmed from the right of "
+"the URL. This stops duplicate pages such as \"taxonomy/term/1\" and "
+"\"taxonomy/term/1/0\" where 0 is the default depth. There is an option "
+"of limiting this feature to taxonomy term pages ONLY or allowing it to "
+"effect any page. <strong>By default this feature is disabled to avoid "
+"any unexpected behavior. Also of note, the trailing /0 \"depth "
+"modifier\" was removed from Drupal 7.</strong>"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Enabled for all pages"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Enabled for taxonomy term pages only"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Menu Access Checking"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, the module will check the user has access to the page "
+"before redirecting. This helps to stop redirection on protected pages "
+"and avoids giving away <em>secret</em> URL's. <strong>By default this "
+"feature is disabled to avoid any unexpected behavior</strong>"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Case Sensitive URL Checking"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, the module will compare the current URL to the alias "
+"stored in the system. If there are any differences in case then the "
+"user will be redirected to the correct URL."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Language Path Checking"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, the module will check that the page being viewed matches "
+"the language in the URL or the system default. For example, viewing a "
+"French node while the site is in English will cause a redirect to the "
+"English node."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Add Canonical Link"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, will add a <a href=\"!canonical\">canonical link</a> to "
+"each page."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Set Content Location Header"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, will add a <a href=\"!canonical\">Content-Location</a> "
+"header."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Taxonomy Term Path Handler"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, any request to a taxonomy/term/[tid] page will check that "
+"the correct path is being used for the term's vocabulary."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Frontpage Redirect Handler"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Site Information"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, any request to the frontpage path will redirect to the "
+"site root.<br />\n"
+"                         Whatever you set as the path of the front "
+"page on the !link settings page will redirect to the site root (e.g. "
+"\"node\" or \"node/1\" and also its alias (e.g. in case you have set "
+"\"node/1\" as your home page but that page also has an alias "
+"\"home\"))."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Ignore Admin Path"
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid ""
+"If enabled, any request to the admin section of the site will be "
+"ignored by Global Redirect.<br />\n"
+"                         This is useful if you are experiencing "
+"problems with Global Redirect and want to protect the admin section of "
+"your website. NOTE: This may not be desirable if you are using path "
+"aliases for certain admin URLs."
+msgstr ""
+
+#: /admin/config/system/globalredirect
+msgid "Save Configuration"
+msgstr ""
+
+#: /comment/reply/10481/137865
+msgid "SMTP Error: Data not accepted."
+msgstr ""
+
+#: /comment/reply/10481/137865
+msgid "SMTP server error: !lasterror"
+msgstr ""
+
+#: /admin/structure/menu/item/4042/delete
+msgid "Blog tagdelic (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/4043/delete
+msgid "Blogcategories (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/4045/delete
+msgid "Blogtags (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/4046/delete
+msgid "Blogterms (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu/item/4130/delete
+msgid "Trustee (menu position rule)"
+msgstr ""
+
+#: /admin/structure/menu-position
+msgid "The new rules ordering has been applied."
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=138196"
+msgstr ""
+
+#: /admin/structure/menu/item/4140/delete
+msgid "Lobbyistenspenden verbieten"
+msgstr ""
+
+#: /admin/structure/menu/item/4141/delete
+msgid "Abgeordnetenbestechung bestrafen"
+msgstr ""
+
+#: /index.php
+msgid "Menu \"!menu\" has been exported to \"!file\"."
+msgstr ""
+
+#: /index.php
+msgid "File \"!file\" already exists or cannot be created."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). "
+"Aus technischen Gründen kann es bis zu 30min dauern, bis diese "
+"Information in Ihrem Profil angezeigt wird."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in "
+"Ihrem Profil zu veröffentlichen."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht "
+"veröffentlicht."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid "Diese E-Mail Adresse wird öffentlich in Profil angezeigt."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid "Eine Adresse unter der wir Sie erreichen können."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Hier können Sie beliebige Links ergänzen, die in Ihrem Profil "
+"öffentlich angezeigt werden sollen."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu "
+"auf \"Auswählen\", suchen Sie dann eine Bilddatei von Ihrem Computer "
+"aus und klicken Sie auf \"Abschicken\"."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine "
+"Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil "
+"veröffentlicht."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, "
+"Fraktionsvorsitzender, etc."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid ""
+"Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem "
+"Profil veröffentlicht."
+msgstr ""
+
+#: /admin/structure/features?render=overlay
+msgid "Wählen Sie hier Ihren Listenplatz aus."
+msgstr ""
+
+#: /admin/structure/features/pw_blog/status
+msgid ""
+"Adds a block with information to the premium profile to the user edit "
+"form"
+msgstr ""
+
+#: /index.php
+msgid "Einfache Seite"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Benutzen Sie <em>Einfache Seiten</em> für statischen Inhalt, wie z.B. "
+"eine „Über uns“ Seite."
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/status
+msgid "[php] [parliament_name_1] "
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Calendar Entries of Committee Memberships"
+msgstr ""
+
+#: /import
+msgid "PW Userarchives Cron"
+msgstr ""
+
+#: /import
+msgid "Run daily cron manually."
+msgstr ""
+
+#: /index.php
+msgid "Extensions not available"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Either the <a "
+"href=\"http://php.net/manual/en/book.memcache.php\">memcache</a> or <a "
+"href=\"http://php.net/manual/en/book.memcached.php\">memcached</a> "
+"extensions must be installed in order to use memcache integration."
+msgstr ""
+
+#: /index.php
+msgid "Module !module doesn't meet the requirements to be enabled."
+msgstr ""
+
+#: /profile/brigitta-martens
+msgid "Kandidatenprofil"
+msgstr ""
+
+#: /profilerweiterung-buchen
+msgid "Profilerweiterung buchen"
+msgstr ""
+
+#: /profile/brigitta-martens
+msgid "Abgeordnetenprofil"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Image Gallery of  [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid "<p class=\"link-profile\">[nothing_1]</p>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div class=\"add-sharethis\" title=\"Political Goals of "
+"[field_user_fname-revision_id] [field_user_lname-revision_id]\"></div>"
+msgstr ""
+
+#: /index.php
+msgid "Inline User diff"
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid "user_diff"
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid "Latest differences (Formatted)"
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid ""
+"The differences between the current revision and the previous revision "
+"of this user. (With better formatting)"
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid ""
+"The differences between the current revision and the previous revision "
+"of this user."
+msgstr ""
+
+#: /node/10396/sites/abgeordnetenwatch.de/files/foto_.jpg
+msgid ""
+"The differences between the current revision and the previous revision "
+"of this user, but with a marked-down form of each revision used for "
+"comparison."
+msgstr ""
+
+#: /profile/martina-poser
+msgid "Show latest diff"
+msgstr ""
+
+#: /user/25050/revisions?render=overlay
+msgid "Revisions for @title"
+msgstr ""
+
+#: /user/25050/revisions?render=overlay
+msgid "Show diff"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/fields/body
+msgid "Force text truncate"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/fields/body
+msgid ""
+"Check this option if you want that the html (or the text) that the "
+"user inserts into the field to be truncated."
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/fields/body
+msgid "Truncate html"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/fields/body
+msgid ""
+"Check this option if the input field may contain html text and you "
+"want to truncate it safely. This will also overwrite the maxlength "
+"validation from core, so that it will strip the tags before checking "
+"the length."
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/fields/body
+msgid "Apply responsive images and styles to this field"
+msgstr ""
+
+#: /admin/structure/types/manage/blogpost/fields/body
+msgid ""
+"If selected, responsive images and styles will be applied to the "
+"content of this field."
+msgstr ""
+
+#: /index.php
+msgid "list_position"
+msgstr ""
+
+#: /index.php
+msgid "election_result"
+msgstr ""
+
+#: /index.php
+msgid "roles"
+msgstr ""
+
+#: /index.php
+msgid "title"
+msgstr ""
+
+#: /index.php
+msgid "birthday"
+msgstr ""
+
+#: /index.php
+msgid "profession"
+msgstr ""
+
+#: /index.php
+msgid "valid"
+msgstr ""
+
+#: /index.php
+msgid "Bypass domain 301 redirect"
+msgstr ""
+
+#: /index.php
+msgid ""
+"If this permission is set, the user will not be 301 redirected if the "
+"domain does not match the main domain."
+msgstr ""
+
+#: /profile/root
+msgid "Domain 301 Redirect"
+msgstr ""
+
+#: /profile/root
+msgid "Manage domain 301 redirection."
+msgstr ""
+
+#: /profile/root
+msgid "domain_301_redirect"
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid ""
+"The Domain 301 Redirect module allows sites to 301 redirect to a "
+"domain that is marked as the main domain. This means you can have all "
+"subdomains and other domains 301 redirect to a domain that you choose "
+"as the main domain. This provides great SEO benefit."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid ""
+"Allows you to 301 redirect any domain to the main domain associated "
+"with a site."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "High performance integration with memcache."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Adds a User Interface to monitor the Memcache for this site."
+msgstr ""
+
+#: /admin/modules?render=overlay
+msgid "Performance and scalability"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid ""
+"Enable this setting to start 301 redirects to the domain below for all "
+"other domains."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid ""
+"This is the domain that all other domains that point to this site will "
+"be 301 redirected to. This value should also include the scheme (http "
+"or https). E.g. http://www.testsite.com"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Domain Check"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid ""
+"This option selects the period between domain validation checks. If "
+"the Domain no longer points to this site, Domain 301 Redirection will "
+"be disabled."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "2 hours"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "3 hours"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "6 hours"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "12 hours"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Domain retries"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid ""
+"Number of times to check domain availability before disabling "
+"redirects."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Re-enable domain redirection"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Turn domain redirection on when the domain becomes available."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay
+msgid "Redirect on specific pages"
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay&render=overlay
+msgid ""
+"Domain 301 redirection can not be enabled as the domain you set does "
+"not currently point to this site."
+msgstr ""
+
+#: /admin/config/search/domain_301_redirect?render=overlay&render=overlay
+msgid ""
+"The domain cannot be set, as it causes a redirect loop (within @num "
+"redirects)."
+msgstr ""
+
+#: /domain_301_redirect_check/1395225593
+msgid "Domain 301 Redirect Check"
+msgstr ""
+
+#: /domain_301_redirect_check/1395225593
+msgid "Checks that the main domain listed actually points to the same site."
+msgstr ""
+
+#: /api/parliament/hamburg%202004-2008/profile/brigitta-martens/profile-authorized.xml
+msgid "!start-date to !end-date"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "Transform spaces"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid ""
+"Transform spaces to valid XML in field labels (spaces create invalid "
+"XML markup). Note that invalid XML tag characters will always be "
+"converted."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "Transform type"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "Dash"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "camelCase"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_api_internal_profile/views_data_export_5/style_options
+msgid "PascalCase"
+msgstr ""
+
+#: /system/ajax
+msgid "Updated term data"
+msgstr ""
+
+#: /taxonomy/term/14684/edit?destination=admin%2Fstructure%2Ftaxonomy%2Fparliaments&render=overlay&render=overlay
+msgid "The year is missing."
+msgstr ""
+
+#: /taxonomy/term/14684/edit?destination=admin%2Fstructure%2Ftaxonomy%2Fparliaments&render=overlay&render=overlay
+msgid "The value input for field %field is invalid:"
+msgstr ""
+
+#: /taxonomy/term/14684/edit?destination=admin%2Fstructure%2Ftaxonomy%2Fparliaments&render=overlay&render=overlay&render=overlay
+msgid "The dates are invalid."
+msgstr ""
+
+#: /taxonomy/term/14684/edit?destination=admin%2Fstructure%2Ftaxonomy%2Fparliaments&render=overlay&render=overlay&render=overlay
+msgid "There are errors in @field_name value #@delta:"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=138805"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=138829"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=138828"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=138827"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid ""
+"submitting spam: can not get a response back from the service provider "
+"Akismet"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=138826"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=138830"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_title
+msgid ""
+"Limit the maximum length of the field in characters using the "
+"\"<strong>Maximum length</strong>\" value set in the <strong>field "
+"settings</strong> using Javascript."
+msgstr ""
+
+#: /user/25050/revisions/45809/view
+msgid ""
+"The revisions let you track differences between multiple versions of a "
+"user."
+msgstr ""
+
+#: /index.php
+msgid "Clearing !feed_name"
+msgstr ""
+
+#: /index.php
+msgid "There are no @entities to be deleted."
+msgstr ""
+
+#: /batch?id=25562&op=do
+msgid "Term name missing."
+msgstr ""
+
+#: /index.php
+msgid "List of comments"
+msgstr ""
+
+#: /index.php
+msgid "Display the node's list of comments."
+msgstr ""
+
+#: /index.php
+msgid "AJAX Add Comment"
+msgstr ""
+
+#: /index.php
+msgid "Adds an inline AJAX comment form."
+msgstr ""
+
+#: /admin/modules
+msgid "AJAX comments"
+msgstr ""
+
+#: /admin/modules
+msgid "AJAXifies comments on site."
+msgstr ""
+
+#: /admin/modules
+msgid "Module makes comments load without a page refresh via AJAX"
+msgstr ""
+
+#: /admin/modules
+msgid "Integrates Nodejs with Ajax Comments"
+msgstr ""
+
+#: /admin/config/content/ajax_comments
+msgid ""
+"Select node types you want to activate ajax comments on. If you select "
+"nothing, AJAX Comments will be enabled everywhere."
+msgstr ""
+
+#: /admin/config/content/ajax_comments
+msgid "Notification Message"
+msgstr ""
+
+#: /admin/config/content/ajax_comments
+msgid "Add notification message to comment when posted."
+msgstr ""
+
+#: /system/ajax
+msgid "Your comment has been posted"
+msgstr ""
+
+#: /system/ajax
+msgid "Your comment has been deleted"
+msgstr ""
+
+#: /batch?id=25610&op=do
+msgid "The Twitter account <em>@screen_name</em> has been added already."
+msgstr ""
+
+#: /admin/appearance
+msgid "This is a sub-theme of theme Seven"
+msgstr ""
+
+#: /admin/appearance
+msgid "PW Seven"
+msgstr ""
+
+#: /profile/manfred-weber-1
+msgid ""
+"<div class=\"ic-info\"><div class=\"info-title\"></div><div "
+"class=\"info-content element-hidden\">Durchsuchen Sie die Fragen und "
+"Antworten in diesem Profil nach einem bestimmten "
+"Schlagwort</div></div>"
+msgstr ""
+
+#: /profile/manfred-weber-1
+msgid ""
+"<div class=\"ic-info\"><div class=\"info-title\"></div><div "
+"class=\"info-content element-hidden\">Filtern Sie die Fragen und "
+"Antworten in diesem Profil nach einem bestimmten Thema</div></div>"
+msgstr ""
+
+#: /profile/manfred-weber-1
+msgid ""
+"<div class=\"ic-info\"><div class=\"info-title\"></div><div "
+"class=\"info-content element-hidden\">Als 'unbeantwortet' gelten auch "
+"Fragen, auf die Politikerinnen und Politiker mit standardisierten "
+"Textbausteinen reagieren</div></div>"
+msgstr ""
+
+#: /node/10446/webform/components/8?destination=node/10446/webform
+msgid "Markup allows you to enter custom HTML or PHP logic into your form."
+msgstr ""
+
+#: /admin/modules
+msgid "Directly administer your Drupal database."
+msgstr ""
+
+#: /admin/reports/dblog
+msgid ""
+"%form_id post blocked by CAPTCHA module: challenge %challenge (by "
+"module %module), user answered \"@response\", but the solution was "
+"\"@solution\"."
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "Sending mail to: @to"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "_antispam_comment_save: it is HAM"
+msgstr ""
+
+#: /admin/config/workflow/rules/components/add
+msgid "Component plugin"
+msgstr ""
+
+#: /admin/config/workflow/rules/components/add
+msgid ""
+"Choose which kind of component to create. Each component type is "
+"described in <a href=\"@url\">the online documentation</a>."
+msgstr ""
+
+#: /system/ajax
+msgid ""
+"You may enter relative URLs like %url as well as absolute URLs like "
+"%absolute-url."
+msgstr ""
+
+#: /index.php
+msgid "KC Position"
+msgstr ""
+
+#: /index.php
+msgid "Position of an politician to a thesis"
+msgstr ""
+
+#: /index.php
+msgid "KC Thesis"
+msgstr ""
+
+#: /index.php
+msgid "Pressemitteilung"
+msgstr ""
+
+#: /index.php
+msgid "[field_user_fname] [field_user_lname] über sich"
+msgstr ""
+
+#: /index.php
+msgid ""
+"[field_user_fname-revision_id] [field_user_lname-revision_id] über "
+"sich"
+msgstr ""
+
+#: /index.php
+msgid ""
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id] über sich"
+msgstr ""
+
+#: /index.php
+msgid "zum vollständigen Profil"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<?php\n"
+"drupal_set_title(\"About [field_user_fname] [field_user_lname], "
+"[field_user_party]\");\n"
+"?>"
+msgstr ""
+
+#: /index.php
+msgid "to the Kandidatencheck"
+msgstr ""
+
+#: /index.php
+msgid "Slideshow for profiles"
+msgstr ""
+
+#: /index.php
+msgid "Älteste zuerst"
+msgstr ""
+
+#: /index.php
+msgid "Neueste zuerst"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"about\" class=\"add-sharethis\" title=\"<?php print t('About "
+"[field_user_fname] [field_user_lname], [field_user_party]'); "
+"?>\"></div>\n"
+msgstr ""
+
+#: /index.php
+msgid "Argumentation"
+msgstr ""
+
+#: /index.php
+msgid "Class name"
+msgstr ""
+
+#: /index.php
+msgid "Defines the color of the output"
+msgstr ""
+
+#: /index.php
+msgid "Thesis"
+msgstr ""
+
+#: /index.php
+msgid "Thesis Reference"
+msgstr ""
+
+#: /index.php
+msgid "« erste These"
+msgstr ""
+
+#: /index.php
+msgid "vorherige These"
+msgstr ""
+
+#: /index.php
+msgid "nächste These"
+msgstr ""
+
+#: /index.php
+msgid "letzte These »"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div class=\"messages warning\">Leider hat der/die Kandidat/in nicht "
+"am Kandidaten-Check Stellung bezogen.</div>"
+msgstr ""
+
+#: /index.php
+msgid "field_pw_kc_thesis_reference_target_id"
+msgstr ""
+
+#: /index.php
+msgid "field_pw_kc_user_reference_target_id"
+msgstr ""
+
+#: /index.php
+msgid "field_pw_kc_vote_reference_tid"
+msgstr ""
+
+#: /index.php
+msgid "edit KC Position"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Broken handler "
+"field_data_field_pw_kc_votes_classname.field_pw_kc_votes_classname"
+msgstr ""
+
+#: /index.php
+msgid "Position von"
+msgstr ""
+
+#: /index.php
+msgid " [field_user_fname] [field_user_lname]:"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Broken handler "
+"field_data_field_pw_kc_vote_reference.field_pw_kc_vote_reference"
+msgstr ""
+
+#: /index.php
+msgid "<blockquote>[body]</blockquote>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"about\" class=\"add-sharethis\" title=\"<?php print t('About "
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]'); ?>\"></div>\n"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"imagegallery\" class=\"add-sharethis\" title=\"<?php print "
+"t('Imagegallery of [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]'); "
+"?>\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"political-goals\" class=\"add-sharethis\" title=\"<?php "
+"print t('Political Goals of [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]'); "
+"?>\"></div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div id=\"additional-links\" class=\"add-sharethis\" title=\"<?php "
+"print t('Additional links of [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]'); "
+"?>\"></div>"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Allows other developers to define paths that should use the overlay, "
+"but not an admin theme"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Provides a UI for overlay paths, allow site builders to select paths "
+"that should appear in the overlay."
+msgstr ""
+
+#: /admin/modules
+msgid "Custom Donation Webform"
+msgstr ""
+
+#: /admin/modules
+msgid "booking form for extended profiles"
+msgstr ""
+
+#: /admin/modules
+msgid "module handles mostly everything regarding politicians profiles"
+msgstr ""
+
+#: /admin/modules
+msgid "Custom Question Webform"
+msgstr ""
+
+#: /admin/modules
+msgid "Adds AJAX support to Webforms"
+msgstr ""
+
+#: /admin/modules
+msgid "This module allows to export Webforms into Features."
+msgstr ""
+
+#: /admin/structure/features/pw_kandidatencheck/status
+msgid "Inhalt entity referenced from field_pw_kc_thesis_reference"
+msgstr ""
+
+#: /admin/structure/features/pw_kandidatencheck/status
+msgid "Benutzer entity referenced from field_pw_kc_user_reference"
+msgstr ""
+
+#: /admin/structure/features/pw_kandidatencheck/status
+msgid "term from field_pw_kc_vote_reference"
+msgstr ""
+
+#: /index.php
+msgid "Generate a statistical SQL server report."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Command !command needs the following module(s) enabled to run: "
+"!dependencies."
+msgstr ""
+
+#: /index.php
+msgid "The drush command '!args' could not be executed."
+msgstr ""
+
+#: /node/10482/edit?destination=admin/content%3Ftitle%3D%26type%3Dwebform%26author%3D%26status%3DAll%26vid%3DAll
+msgid ""
+"A unique machine-readable name for this webform. It must only contain "
+"lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: /node/10482/webform/configure
+msgid "AJAX"
+msgstr ""
+
+#: /node/10482/webform/configure
+msgid "AJAX mode"
+msgstr ""
+
+#: /node/10482/webform/configure
+msgid ""
+"When set, all page changes (from pagebreak component), and webform "
+"submission will be achieved in AJAX."
+msgstr ""
+
+#: /node/10482/webform/configure
+msgid "Show confirmation screen"
+msgstr ""
+
+#: /node/10482/webform/configure
+msgid ""
+"Choose wether to retrieve in AJAX, after webform submit, the "
+"confirmation screen, or the webform itself. Available only when "
+"redirection is set to \"No redirect\"."
+msgstr ""
+
+#: /node/10482/webform/components/31?destination=node/10482/webform
+msgid ""
+"A unique machine-readable name for this webform component. It must "
+"only contain lowercase letters, numbers, and underscores."
+msgstr ""
+
+#: /admin/config/system
+msgid "Overlay paths"
+msgstr ""
+
+#: /admin/config/system
+msgid ""
+"Allows you to specify paths that should use the overlay without using "
+"the admin theme."
+msgstr ""
+
+#: /admin/config/system/overlay_paths_ui
+msgid "Non-admin overlay paths"
+msgstr ""
+
+#: /admin/config/system/overlay_paths_ui
+msgid ""
+"Specify non-admin pages that should appear in the overlay by using "
+"their paths. Enter one path per line. The '*' character is a wildcard. "
+"Example paths are blog for the blog page and blog/* for every personal "
+"blog. <front> is the front page. You may also use a '|' (pipe) "
+"character after the path to specify an option, either a CSS width, to "
+"specify a width for that path in the overlay, or FALSE to specify that "
+"that path shouldn't appear in the overlay. For example node/add|600px "
+"or user/register/step/2|FALSE"
+msgstr ""
+
+#: /profile/testuser
+msgid "About Test User, FREIE WÄHLER"
+msgstr ""
+
+#: /profile/testuser
+msgid "Imagegallery of Test User, FREIE WÄHLER"
+msgstr ""
+
+#: /profile/testuser
+msgid "Political Goals of Test User, FREIE WÄHLER"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=139998"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=139997"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/recreate?render=overlay&render=overlay
+msgid "Über mich"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/recreate?render=overlay&render=overlay
+msgid "Politische Ziele"
+msgstr ""
+
+#: /newsletter-subscription
+msgid ""
+"The value %value has already been submitted once for the %title field. "
+"You may have already submitted this form, or you need to use a "
+"different value."
+msgstr ""
+
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "Attachment settings"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+msgid "Not defined"
+msgstr ""
+
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "Attachment position"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "Before"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "After"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "Both"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "Inherit contextual filters"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "Inherit exposed filters"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "Inherit pager"
 msgstr ""
 
-#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
 msgid "Render pager"
 msgstr ""
 
-#: /user/24522/revisions/45342/view
-msgid "Teaser View"
+#: /profile/uwe-ahlers/archive/48382
+msgid "Parliaments"
+msgstr ""
+
+#: /profile/uwe-ahlers/archive/48382
+msgid "Candidates"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_tweets/block_1/field/text
+msgid "Open links in new windows/tabs and add rel=\"nofollow\" attributes."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block_1/link_display
+msgid "Which display to use for path"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block_1/link_display
+msgid ""
+"Which display to use to get this display's path for things like "
+"summary links, rss feed links, more links, etc."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block_1/link_display
+msgid "<p>The following tokens are available for this link.</p>"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block_1/link_display
+msgid ""
+"A Drupal path or external URL the more link will point to. Note that "
+"this will override the link display setting above."
+msgstr ""
+
+#: /admin/config/services/twitter
+msgid ""
+"Tweets are pulled from Twitter by <a href=\"@run-cron\">running "
+"cron</a>."
+msgstr ""
+
+#: /admin/config/services/twitter
+msgid ""
+"You can view the full list of tweets at the <a "
+"href=\"@tweets\">Tweets</a> view."
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid "[field_user_fname]"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid "[field_user_lname]"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid ""
+"[field_user_fname-revision_id_1] [field_user_lname-revision_id_1], "
+"[field_user_party-revision_id]"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid "[field_user_fname-revision_id_1]"
+msgstr ""
+
+#: /index.php
+msgid "SMTP Error: Could not connect to SMTP host."
+msgstr ""
+
+#: /admin/structure/features/pw_globals/recreate
+msgid "Broken handler twitter_account.profile_image_url"
+msgstr ""
+
+#: /admin/structure/features/latest_tweets
+msgid "Conflicts with another feature"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The feature !module cannot be enabled because it conflicts with "
+"!conflict."
+msgstr ""
+
+#: /profile/testuser
+msgid "Additional links of Test User, Test User, FREIE WÄHLER"
+msgstr ""
+
+#: /profile/harm-adam/archive/48636
+msgid "go to profile"
+msgstr ""
+
+#: /admin/structure/views/view/calendar/edit/calendar_admin_block
+msgid "Multiple roles"
+msgstr ""
+
+#: /profile/testuser
+msgid "About Test User neue REV, FREIE WÄHLER"
+msgstr ""
+
+#: /profile/testuser
+msgid "Imagegallery of Test User neue REV, FREIE WÄHLER"
+msgstr ""
+
+#: /profile/testuser
+msgid "Political Goals of Test User neue REV, FREIE WÄHLER"
+msgstr ""
+
+#: /index.php
+msgid "Available features"
+msgstr ""
+
+#: /index.php
+msgid "Module appears to already exist in !dir"
+msgstr ""
+
+#: /index.php
+msgid "Created module: !module in !directory"
+msgstr ""
+
+#: /index.php
+msgid "Weiterführende Links von [field_user_fname] [field_user_lname]"
+msgstr ""
+
+#: /admin/modules
+msgid "Generate content"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of nodes and comments. Optionally delete "
+"current items."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate menus"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of menus and menu links. Optionally delete "
+"current menus."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate redirects"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of redirects. Optionally delete current "
+"redirects."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate terms"
+msgstr ""
+
+#: /admin/modules
+msgid "Generate a given number of terms. Optionally delete current terms."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate users"
+msgstr ""
+
+#: /admin/modules
+msgid "Generate a given number of users. Optionally delete current users."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate vocabularies"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of vocabularies. Optionally delete current "
+"vocabularies."
+msgstr ""
+
+#: /admin/modules
+msgid "Generate votes"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Generate a given number of votes on site content. Optionally delete "
+"existing votes."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Comments: "
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid ""
+"<strong>Delete all content</strong> in these content types before "
+"generating new content."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "How many nodes would you like to generate?"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "ago"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "How far back in time should the nodes be dated?"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid ""
+"Node creation dates will be distributed randomly from the current "
+"time, back to the selected time."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Maximum number of comments per node."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid ""
+"You must also enable comments for the content types you are "
+"generating. Note that some nodes will randomly receive zero comments. "
+"Some will receive the max."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Maximum number of words in titles"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Requires path.module"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Add an url alias for each node."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Add statistics for each node (node_counter table)."
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Set language on nodes"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Requires locale.module"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Generate"
+msgstr ""
+
+#: /admin/config/development/generate/content
+msgid "Finished creating @count nodes"
+msgstr ""
+
+#: /system/ajax
+msgid "Use widget configuration"
+msgstr ""
+
+#: /admin_menu/flush-cache?token=L8PnOeVe_KrPEccfZYpdMCdeJp0rn-TEyLEn0OYz4vM&destination=admin/config/regional/translate/translate
+msgid "Folgen Sie"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "-Select-"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "View: @view - Display: @display"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "View to insert"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid "The view to insert into this area."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/additional_links_page/header/view
+msgid ""
+"If checked, this view will receive the same contextual filters as its "
+"parent."
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Profil-Bild"
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Vollständiger Name"
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Login-name"
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Text der Nachricht"
+msgstr ""
+
+#: /admin/structure/views/view/user_tweets/edit/block_1
+msgid "Erstellungszeit"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgctxt "Territory of a country"
+msgid "State"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "--"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Alabama"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Alaska"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Arizona"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Arkansas"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "California"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Colorado"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Connecticut"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Delaware"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "District Of Columbia"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Florida"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Hawaii"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Idaho"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Illinois"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Indiana"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Iowa"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Kansas"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Kentucky"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Louisiana"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Maine"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Maryland"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Massachusetts"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Michigan"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Minnesota"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Mississippi"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Missouri"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Montana"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Nebraska"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Nevada"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "New Hampshire"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "New Jersey"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "New Mexico"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "New York"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "North Carolina"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "North Dakota"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Ohio"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Oklahoma"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Oregon"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Pennsylvania"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Rhode Island"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "South Carolina"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "South Dakota"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Tennessee"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Texas"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Utah"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Vermont"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Virginia"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Washington"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "West Virginia"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Wisconsin"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Wyoming"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Armed Forces (Americas)"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Armed Forces (Europe, Canada, Middle East, Africa)"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Armed Forces (Pacific)"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Federated States of Micronesia"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "Virgin Islands"
+msgstr ""
+
+#: /node/10514/edit?destination=admin/content
+msgid "ZIP Code"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "Revisions for @name"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "User Name"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "User Email"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "Time Zone"
+msgstr ""
+
+#: /user/26023/edit?render=overlay&render=overlay
+msgid "Current revision:"
+msgstr ""
+
+#: /user/26023/edit?render=overlay
+msgid "Angaben zur Person"
+msgstr ""
+
+#: /user/26023/edit?render=overlay
+msgid "Profilerweiterung\r\n"
+msgstr ""
+
+#: /user/26023/edit?render=overlay
+msgid "Geburtsdatum"
+msgstr ""
+
+#: /admin/config/media/colorbox
+msgid "Colorbox Node Integration"
+msgstr ""
+
+#: /admin/config/media/colorbox
+msgid "Enable Regions"
+msgstr ""
+
+#: /admin/config/media/colorbox
+msgid ""
+"This enables regions to be rendered inside the colorbox modal.  The "
+"context module can further target a colorbox modal."
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid ""
+"Add new group: the group name %group_name is too long. The name is "
+"limited to 32 characters, including the 'group_' prefix."
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid "Bounce slide"
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid "Image Gallery wrapper"
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid "Image Gallery Item"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "Available countries"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "If no countries are selected, all countries will be available."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "Format handlers"
+msgstr ""
+
+#: /admin/config/people/accounts/fields
+msgid "Premium fields"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Pane settings"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Use view name"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Admin title"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Use view description"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Admin desc"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Link to view"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Use Panel path"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Argument input"
+msgstr ""
+
+#: /admin/structure/views/view/pw_kandidatencheck/edit/profile_slideshow
+msgid "Allow settings"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Address-field"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Views_send_email_message"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Addressfield"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "I18n_translation"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Taxonomy_vocabulary"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "Ds_views"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "A configurable tree provided by Menu block."
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "%menu menu tree"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/pw_kandidatencheck/views_panes/pw_kandidatencheck-profile_slideshow/form
+msgid "menu tree of %menu"
+msgstr ""
+
+#: /admin/structure/file-types
+msgid ""
+"There are disabled/deleted file types that can be migrated to their "
+"new alternatives. Visit <a href=\"!url\">migration page</a> to get "
+"more information."
+msgstr ""
+
+#: /admin/structure/file-types/manage/image/display
+msgid "pw_file_portrait_ms"
+msgstr ""
+
+#: /admin/structure/block/delete-featured-content-block/1
+msgid "Delete Featured Content block"
+msgstr ""
+
+#: /admin/structure/block/delete-featured-content-block/1
+msgid "Are you sure you want to delete the \"%name\" block?"
 msgstr ""
 
 msgid "Search"
@@ -58968,7 +62790,7 @@ msgstr "Textfeld (mehrere Zeilen)"
 msgid "Text area with a summary"
 msgstr "Textbereich mit einer Zusammenfassung"
 
-#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js
+#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js; sites/all/modules/contrib/file_entity/file_entity.admin.js
 msgid "Disabled"
 msgstr "Deaktiviert"
 
@@ -59249,7 +63071,7 @@ msgstr "Eigentümer"
 msgid "The user who originally uploaded the file."
 msgstr "Der Benutzer der diese Datei ursprünglich hochgeladen hat."
 
-#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js
+#: ; sites/all/modules/contrib/weight/weight.js; sites/all/modules/contrib/ds/modules/ds_extras/js/ds_extras.admin.js; modules/filter/filter.admin.js; sites/all/modules/contrib/file_entity/file_entity.admin.js
 msgid "Enabled"
 msgstr "Aktiviert"
 
@@ -59281,6 +63103,9 @@ msgstr "Typ"
 
 msgid "Location"
 msgstr "Standort"
+
+msgid "Source"
+msgstr "Quelle"
 
 msgid "Version"
 msgstr "Version"
@@ -59498,6 +63323,18 @@ msgstr "Taxonomie"
 
 msgid "Blocks"
 msgstr "Blöcke"
+
+#: /index.php
+msgid "{current} of {total}"
+msgstr "{current} von {total}"
+
+#: /index.php
+msgid "« Prev"
+msgstr "« Zurück"
+
+#: /index.php
+msgid "Next »"
+msgstr "Weiter »"
 
 #: /index.php; sites/all/modules/contrib/custom_search/custom_search.js; sites/all/modules/contrib/taxonomy_manager/js/tree.js; sites/all/modules/contrib/custom_search/js/custom_search.js
 msgid "Close"
@@ -59783,6 +63620,10 @@ msgstr "Tags"
 msgid "Color"
 msgstr "Farbe"
 
+#: /index.php
+msgid "Birthday"
+msgstr "Geburtstag"
+
 msgid "Limit allowed HTML tags"
 msgstr "Erlaubte HTML-Tags begrenzen"
 
@@ -60050,6 +63891,9 @@ msgstr "Gast"
 msgid "authenticated user"
 msgstr "Authentifizierter Benutzer"
 
+msgid "Profile image"
+msgstr "Profil-Bild"
+
 msgid "@size KB"
 msgstr "@size KB"
 
@@ -60282,7 +64126,7 @@ msgstr "!title !required"
 msgid "Primary tabs"
 msgstr "Haupt-Reiter"
 
-#: ; misc/vertical-tabs.js
+#: ; misc/vertical-tabs.js; modules/overlay/overlay-child.js
 msgid "(active tab)"
 msgstr "(aktiver Reiter)"
 
@@ -61357,6 +65201,10 @@ msgstr "Token mit Bezug zum momentan angemeldeten Benutzer."
 msgid "The URL of the account edit page."
 msgstr "Die URL der Benutzerprofilseite."
 
+#: /en-gb/batch?id=2&op=do
+msgid "Country"
+msgstr "Land"
+
 msgid "Time zone"
 msgstr "Zeitzone"
 
@@ -61368,6 +65216,10 @@ msgstr "Datumsformat"
 
 msgid "E-mail address"
 msgstr "E-Mail-Adresse"
+
+#: /en-gb/batch?id=2&op=do; sites/all/modules/contrib/media/js/media.admin.js
+msgid "Select"
+msgstr "Auswählen"
 
 msgid "Multilingual support"
 msgstr "Unterstützung von Mehrsprachigkeit"
@@ -61804,6 +65656,9 @@ msgstr "aufsteigend sortieren"
 
 msgid "Generate image style"
 msgstr "Bildstil erzeugen"
+
+msgid "Missing"
+msgstr "Fehlt"
 
 msgid "Save settings"
 msgstr "Einstellungen speichern"
@@ -62265,6 +66120,7 @@ msgstr ""
 "Sie keinen abschließenden Schrägstrich hinzu, ansonsten funktioniert "
 "der URL-Alias nicht."
 
+#: ; modules/overlay/overlay-child.js
 msgid "Loading"
 msgstr "Laden"
 
@@ -63019,6 +66875,9 @@ msgstr "Beitragsinformationen nicht anzeigen"
 msgid "Parent menu items"
 msgstr "Übergeordnete Menüpunkte"
 
+msgid "Private"
+msgstr "Privat"
+
 msgid "!name field is required."
 msgstr "Das Feld „!name” ist erforderlich."
 
@@ -63100,11 +66959,19 @@ msgstr "Einschränken"
 msgid "Undo"
 msgstr "Rückgängig"
 
+#: /en-gb/media/browser?render=media-popup&types%5Bimage%5D=image&activePlugins=&enabledPlugins=&schemes%5Bprivate%5D=private&schemes%5Bpublic%5D=public&file_directory=trustees&file_extensions=png+gif+jpg+jpeg&max_filesize=&uri_scheme=public&plugins=undefined
+msgid "Upload a new file"
+msgstr "Eine neue Datei hochladen"
+
 msgid "Files must be less than !size."
 msgstr "Die Dateien müssen kleiner als !size sein."
 
 msgid "Allowed file types: !extensions."
 msgstr "Zulässige Dateierweiterungen: !extensions."
+
+#: /en-gb/media/browser?render=media-popup&types%5Bimage%5D=image&activePlugins=&enabledPlugins=&schemes%5Bprivate%5D=private&schemes%5Bpublic%5D=public&file_directory=trustees&file_extensions=png+gif+jpg+jpeg&max_filesize=&uri_scheme=public&plugins=undefined; sites/all/modules/contrib/media/js/media.format_form.js
+msgid "Submit"
+msgstr "Abschicken"
 
 msgid "Choose a file"
 msgstr "Datei auswählen"
@@ -64810,6 +68677,10 @@ msgstr ""
 "Beim Prüfen auf <a href=\"@update-report\">verfügbare "
 "Aktualisierungen</a> für Ihre Module oder Themes ist ein Problem "
 "aufgetreten."
+
+#: /en-gb/node/12/edit?destination=admin/content
+msgid "The link title is limited to @maxlength characters maximum."
+msgstr "Der Linktitel ist auf @maxlength Zeichen begrenzt."
 
 msgid "Width"
 msgstr "Breite"
@@ -67206,6 +71077,10 @@ msgstr "Steuert die Benutzerregistrierung und das Anmeldesystem."
 msgid "Testing"
 msgstr "Testmodus"
 
+#: /ga/admin/modules
+msgid "Filter list"
+msgstr "Liste filtern"
+
 msgid ""
 "Download additional <a href=\"@modules\">contributed modules</a> to "
 "extend Drupal's functionality."
@@ -67223,6 +71098,10 @@ msgstr ""
 "Sie diese, um eine sichere und aktuelle Website zu haben. Führen Sie "
 "jedesmal das <a href=\"@update-php\">Aktualisierungsscript</a> durch, "
 "wenn ein Modul aktualisiert wird."
+
+#: /ga/admin/modules
+msgid "!enabled of !total"
+msgstr "!enabled von !total"
 
 msgid "Requires: !module-list"
 msgstr "Benötigt: !module-list"
@@ -67311,6 +71190,7 @@ msgstr "@name erstellen"
 msgid "@type %title has been created."
 msgstr "@type %title wurde erstellt."
 
+#: ; sites/all/modules/contrib/entity_translation/entity_translation.node-form.js
 msgid "Flag translations as outdated"
 msgstr "Übersetzung als veraltet markieren"
 
@@ -67620,11 +71500,11 @@ msgid ""
 "used if you wish to receive a new password or wish to receive certain "
 "news or notifications by e-mail."
 msgstr ""
-"Eine gültige E-Mail-Adresse. Alle E-Mails der Website werden an diese "
-"Adresse geschickt. Die Adresse wird nicht veröffentlicht und wird nur "
-"verwendet, wenn Sie ein neues Passwort anfordern oder wenn Sie "
-"einstellen, bestimmte Informationen oder Benachrichtigungen per E-Mail "
-"zu erhalten."
+"Eine gültige E-Mail-Adresse. Alle E-Mails der Website wie auch "
+"eingehenden Nutzer-Fragen werden an diese Adresse geschickt. Die "
+"Adresse wird nicht veröffentlicht und wird nur verwendet, wenn Sie "
+"ein neues Passwort anfordern oder wenn Sie einstellen, bestimmte "
+"Informationen oder Benachrichtigungen per E-Mail zu erhalten."
 
 msgid ""
 "To change the current user password, enter the new password in both "
@@ -67737,6 +71617,15 @@ msgstr "Stark"
 
 msgid "Passwords match:"
 msgstr "Passwörter stimmen überein:"
+
+#: /en-gb/user/690/edit
+msgctxt "datetime"
+msgid "Date"
+msgstr "Datum"
+
+#: /en-gb/user/690/edit
+msgid "E.g., @date"
+msgstr "Zum Beispiel @date"
 
 #: ; modules/locale/locale.datepicker.js
 msgid "Prev"
@@ -67914,6 +71803,10 @@ msgstr ""
 
 msgid "Height"
 msgstr "Höhe"
+
+#: /en-gb/admin/structure/views/ajax/add-item/profile_list_solr/block_1/field
+msgid "@current of @total"
+msgstr "@current von @total"
 
 msgid ""
 "This form lets administrators configure how fields should be displayed "
@@ -68213,6 +72106,9 @@ msgstr "Die angeforderte Seite konnte nicht gefunden werden."
 
 msgid "Created new term %term."
 msgstr "Der neue Begriff %term wurde erstellt."
+
+msgid "Node types"
+msgstr "Inhaltstypen"
 
 msgid "Public file system path"
 msgstr "Pfad des öffentlichen Dateisystems"
@@ -69645,6 +73541,10 @@ msgstr ""
 "gespeicherten Arbeiten im untenstehenden Formular und dann <a "
 "href=\"@link\">laden Sie diese Seite</a> erneut."
 
+#: /en-gb/admin/structure/views/add
+msgid "of"
+msgstr "von"
+
 #: /en-gb/admin/structure/views/import
 msgid "no comments yet"
 msgstr "keine Kommentare"
@@ -70042,6 +73942,10 @@ msgstr "Soll der Block %name wirklich gelöscht werden?"
 msgid "The block %name has been removed."
 msgstr "Der Block %name wurde gelöscht."
 
+#: /index.php
+msgid "to the full profile"
+msgstr "zum vollständigen Profil"
+
 msgid "Blog"
 msgstr "Blog"
 
@@ -70053,7 +73957,7 @@ msgstr ""
 
 #: ; sites/all/themes/custom/parliamentwatch/js/scripts.js
 msgid "read more"
-msgstr "Weiterlesen"
+msgstr "Mehr anzeigen"
 
 msgctxt "Long month name"
 msgid "January"
@@ -70180,12 +74084,180 @@ msgstr ""
 msgid "Last blog entries"
 msgstr "Letzte Blogbeiträge"
 
+msgid "Add Twitter accounts"
+msgstr "Twitter Konten hinzufügen"
+
+msgid "Tweets"
+msgstr "Tweets"
+
+msgid "Twitter"
+msgstr "Twitter"
+
+msgid "Twitter message"
+msgstr "Twitter Nachricht (Tweet)"
+
+msgid "Twitter status messages."
+msgstr "Twitter Statusmeldungen."
+
+msgid "The ID of the Twitter status message."
+msgstr "Die ID der Twitter-Status-Nachricht."
+
+msgid "The ID of the Twitter status this message is replying to."
+msgstr "Die ID des Twitter Status auf den sich diese Nachricht bezieht."
+
+msgid "The login account of the Twitter user this message is replying to."
+msgstr ""
+"Das Benutzerkonto des Benutzer bei Twitter auf den sich diese "
+"Nachricht bezieht."
+
+msgid "Login name"
+msgstr "Login-name"
+
+msgid "Created time"
+msgstr "Erstellungszeit"
+
+msgid "The time the Twitter message was posted."
+msgstr "Die Zeit, als die Twitter-Nachricht (Tweet) erstellt wurde."
+
+msgid "Message text"
+msgstr "Text der Nachricht"
+
+msgid "The text of the Twitter message."
+msgstr "Der Text der Twitter-Nachricht (Tweet)."
+
+msgid "The name of the application that posted the Twitter message."
+msgstr "Der Name der Anwendung, die die Twitter-Nachricht (Tweet) erstellt."
+
+msgid "Follow"
+msgstr "Folgen Sie"
+
+msgid "The login account of the Twitter user."
+msgstr "Das Konto des Benutzers bei Twitter."
+
+msgid "Full name"
+msgstr "Vollständiger Name"
+
+msgid "The full name Twitter account user."
+msgstr "Der vollständige Name des Benutzerkontos bei Twitter."
+
+msgid "The description of the Twitter account."
+msgstr "Die Beschreibung des Twitter-Kontos."
+
+msgid "The location of the Twitter account."
+msgstr "Der Standort des Twitter-Kontos."
+
+msgid "Followers"
+msgstr "Follower"
+
+msgid "The number of users following this Twitter account."
+msgstr "Die Anzahl der Follower dieses Twitterkontos."
+
+msgid "The image used by the Twitter account."
+msgstr "Das Profilbild des Twitterkontos."
+
+msgid "The URL given by the Twitter account user."
+msgstr "Die URL des Twitterkontos."
+
+msgid "Protected status"
+msgstr "Geschützter Status"
+
+msgid ""
+"Whether posts from this Twitter account should be visible to the "
+"general public."
+msgstr "Sollen die Nachrichten öffentlich sichtbar sein."
+
+msgid "Last refresh"
+msgstr "Letzte Aktualisierung"
+
+msgid "The time the Twitter account statuses were retrieved."
+msgstr "Die Zeit, zu der der Status des Twitter-Kontos abgerufen wurde."
+
+msgid "The UID of the Twitter account."
+msgstr "Die UID des Twitter-Kontos."
+
+msgid "Import status"
+msgstr "Twitter-Nachricht(Tweet) import"
+
+msgid ""
+"Whether posts from this Twitter account should be imported "
+"automatically."
+msgstr ""
+"Ob Nachrichten von diesem Twitter-Konto automatisch importiert werden "
+"sollen."
+
+msgid "Twitter @username converter"
+msgstr "Twitter: Konverter für @username"
+
+msgid "Converts Twitter-style @usernames into links to Twitter account pages."
+msgstr "Twitter: Konvertiert @username in Links für Seiten von Twitterkonten."
+
+msgid "Twitter #hashtag converter"
+msgstr "Twitter: Konverter für #hashtag"
+
+msgid "Converts Twitter-style #hashtags into links to hashtags.org."
+msgstr "Konvertiert  #hashtags von Twitter in Links für hashtags.org."
+
+msgid ""
+"Import and display the Twitter statuses of site users who have entered "
+"their Twitter account information."
+msgstr ""
+"Import und Anzeige des Twitter-Status der Nutzer, die ihre "
+"Twitterkonten eingegeben haben."
+
+msgid "Delete old statuses"
+msgstr "Löschen von alten Status"
+
+msgid "OAuth Settings"
+msgstr "OAuth-Einstellungen"
+
+msgid ""
+"To enable OAuth based access for twitter, you must <a "
+"href=\"@url\">register your application</a> with Twitter and add the "
+"provided keys here."
+msgstr ""
+"Für OAuth- basierenden Zugang für Twitter, muß diese Seite als <a "
+"href=\"@url\">Anwendung</a> bei Twitter registriert werden und die "
+"dabei erhaltenen Schlüssel hier eingetragen werden."
+
+msgid "Callback URL"
+msgstr "Callback-URL"
+
+msgid "OAuth Consumer key"
+msgstr "OAuth Schlüssel"
+
+msgid "OAuth Consumer secret"
+msgstr "OAuth Geheimnis"
+
+msgid "Twitter Settings"
+msgstr "Twitter-Einstellungen"
+
+msgid "Twitter API"
+msgstr "Twitter API"
+
+msgid "TinyURL"
+msgstr "TinyURL"
+
+msgid "Twitter account name"
+msgstr "Name des Twitterkontos"
+
+msgid "The Twitter account settings were updated."
+msgstr "Die Twitter Kontoeinstellungen wurden aktualisiert."
+
+msgid "Configured"
+msgstr "Konfiguriert"
+
+msgid "%time ago"
+msgstr "vor %time"
+
 msgid "Error opening socket @socket"
 msgstr "Fehler beim Öffnen der Socket Verbindung @socket"
 
 msgctxt "Long month name"
 msgid "March"
 msgstr "März"
+
+msgid "Twitter accounts"
+msgstr "Twitter Konto"
 
 msgid "Enable <em>Display</em> field"
 msgstr "<em>Anzeige</em>-Feld aktivieren"
@@ -70211,6 +74283,20 @@ msgstr "Leer"
 msgctxt "Long month name"
 msgid "April"
 msgstr "April"
+
+msgid "Adds integration with the Twitter microblogging service."
+msgstr "Integration mit dem Microblogging-Dienst Twitter."
+
+msgid "Exposes Drupal actions to send Twitter messages."
+msgstr ""
+"Drupal Aktionen zur Verfügung stellen, um Twitter Nachrichten zu "
+"senden."
+
+msgid "Enables posting to twitter"
+msgstr "Beiträge auf Twitter veröffentlichen"
+
+msgid "Adds support for \"Sign in with Twitter\""
+msgstr "Ermöglicht die „Anmelden über Twitter“"
 
 msgid "Allowed values list"
 msgstr "Zulässige Werteliste"
@@ -70720,6 +74806,10 @@ msgstr "Keine Module zum Deinstallieren verfügbar."
 msgid "Advanced options"
 msgstr "Erweiterte Optionen"
 
+#: /admin/structure/block/add
+msgid "Switch to plain text editor"
+msgstr "Zu Text-Editor wechseln"
+
 msgid "No pending updates."
 msgstr "Keine ausstehenden Aktualisierungen."
 
@@ -70808,6 +74898,9 @@ msgstr ""
 
 msgid "Disabled text format %format."
 msgstr "Textformat %format wurde deaktiviert."
+
+msgid "Twitter-style #hashtags are linked to !url."
+msgstr "Twitter: #hashtags sind verlinkt auf !url."
 
 msgid "File upload error. Could not move uploaded file."
 msgstr ""
@@ -74113,7 +78206,7 @@ msgid "View full user profile"
 msgstr "Vollständiges Benutzerprofil anzeigen"
 
 msgid "About %name"
-msgstr "Über %name"
+msgstr "%name über sich"
 
 msgid ""
 "Put each item on a separate line or separate them by commas. No HTML "
@@ -76928,6 +81021,7 @@ msgstr "Zugriff auf den administrativen Overlay"
 msgid "View administrative pages in the overlay."
 msgstr "Administrative Seiten in dem Overlay anzeigen."
 
+#: ; modules/overlay/overlay-parent.js
 msgid "@title dialog"
 msgstr "@title Dialog"
 
@@ -80178,12 +84272,70 @@ msgid "download election programme"
 msgstr "Wahlprogramm runterladen"
 
 #: /index.php
+msgid "Calendar of [field_user_fname] [field_user_lname]"
+msgstr "Wahlkampftermine von [field_user_fname] [field_user_lname]"
+
+#: /index.php
+msgid "Calendar of [field_user_fname] [field_user_lname], [field_user_party]"
+msgstr ""
+"Wahlkampftermine von [field_user_fname] [field_user_lname], "
+"[field_user_party]"
+
+#: /index.php
+msgid " About [field_user_fname] [field_user_lname]"
+msgstr "[field_user_fname] [field_user_lname] über sich"
+
+#: /index.php
+msgid " Image Gallery of [field_user_fname] [field_user_lname]"
+msgstr "Bildergalerie von [field_user_fname] [field_user_lname]"
+
+#: /index.php
+msgid "Additional Links of [field_user_fname] [field_user_lname]"
+msgstr "Weiterführende Links von [field_user_fname] [field_user_lname]"
+
+#: /index.php
+msgid "About [field_user_fname] [field_user_lname], [field_user_party] "
+msgstr "[field_user_fname] [field_user_lname], [field_user_party] über sich"
+
+#: /index.php
+msgid ""
+"Additional Links of [field_user_fname] [field_user_lname], "
+"[field_user_party] "
+msgstr ""
+"Weiterführende Links von [field_user_fname] [field_user_lname], "
+"[field_user_party]"
+
+#: /index.php
+msgid "[name] on Twitter"
+msgstr "[name] auf Twitter"
+
+#: /index.php
 msgid "Education"
 msgstr "Berufliche Qualifikation"
+
+#: /index.php
+msgid "Image Gallery"
+msgstr "Bildergalerie"
+
+#: /index.php
+msgid "List Position"
+msgstr "Listenplatz"
+
+#: /index.php
+msgid "Political Goals"
+msgstr "Politische Ziele"
+
+#: /index.php
+msgid "Postal code"
+msgstr "PLZ"
 
 #: /admin/structure/features/profiles/status
 msgid "[field_user_questions_get] Questions"
 msgstr "[field_user_questions_get] Fragen"
+
+#: /admin/structure/features/profiles/status
+msgid "[follow] [name] on Twitter"
+msgstr "[follow] [name] auf Twitter"
 
 #: /index.php
 msgid "question"
@@ -80193,9 +84345,49 @@ msgstr " Frage"
 msgid "answer"
 msgstr " Antwort"
 
+#: /user/1692/edit?destination=admin/people
+msgid "Address 1"
+msgstr "Strasse und Hausnummer"
+
+#: /user/1692/edit?destination=admin/people
+msgid "Address 2"
+msgstr "Adresszusatz"
+
+#: /user/1692/edit?destination=admin/people
+msgid "City"
+msgstr "Stadt"
+
+#: /index.php
+msgid "About [field_user_fname] [field_user_lname], [field_user_party]"
+msgstr "[field_user_fname] [field_user_lname], [field_user_party] über sich"
+
+#: /index.php
+msgid ""
+"Additional Links of [field_user_fname] [field_user_lname], "
+"[field_user_party]"
+msgstr ""
+"Weiterführende Linke von [field_user_fname] [field_user_lname], "
+"[field_user_party]"
+
+#: /index.php
+msgid "About me"
+msgstr "Über mich"
+
+#: /index.php
+msgid "<h3>Image Gallery</h3>"
+msgstr "<h3>Bildergalerie</h3>"
+
 #: /index.php
 msgid "Questions to [field_user_fname] [field_user_lname]"
 msgstr "Fragen an [field_user_fname] [field_user_lname]"
+
+#: sites/all/themes/custom/parliamentwatch/js/scripts.js
+msgid "read less"
+msgstr "Weniger anzeigen"
+
+#: /admin/structure/features/profiles/status
+msgid "to full calendar"
+msgstr "zum vollständigen Kalender"
 
 #: /admin/structure/features/profiles/status
 msgid " % response rate"
@@ -80229,6 +84421,10 @@ msgstr " Antworten"
 msgid " questions"
 msgstr " Fragen"
 
+#: /user/24906/edit
+msgid "Premium Fields"
+msgstr "Profilerweiterung"
+
 #: /index.php
 msgid "Required signings"
 msgstr "Benötigte Unterschriften"
@@ -80236,6 +84432,10 @@ msgstr "Benötigte Unterschriften"
 #: /abgeordnetenbestechung-bestrafen-korrupt
 msgid " people support this petition"
 msgstr " unterstützen die Petition"
+
+#: /admin/structure/features
+msgid "about"
+msgstr "über"
 
 #: /users/cansel-kiziltepe
 msgid "trim the link"
@@ -80572,4 +84772,230 @@ msgstr "Ansicht wechseln"
 #: /user/24522/revisions/45342/view
 msgid "Full View"
 msgstr "Normale Ansicht"
+
+#: /index.php
+msgid ""
+"About [field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]"
+msgstr ""
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id] über sich"
+
+#: /index.php
+msgid ""
+"Additional Links of  [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
+msgstr ""
+"Weiterführende Links von [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
+
+#: /index.php
+msgid ""
+"Additional Links of [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
+msgstr ""
+"Weiterführende Links von [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
+
+#: /users/root
+msgid "Plaintext email only"
+msgstr "E-Mails ausschließlich als Klartext empfangen"
+
+#: /user/25147/edit?render=overlay
+msgid "Email settings"
+msgstr "E-Mail Einstellungen"
+
+#: /user/25147/edit?render=overlay
+msgid ""
+"Check this option if you do not wish to receive email messages with "
+"graphics and styles."
+msgstr ""
+"Wählen Sie diese Option falls Sie E-Mails nur ohne Grafiken und CSS "
+"Formatierung erhalten wollen."
+
+#: /pw_login_once/24997/1394533328/zO8_1aMhPmm52THOMwriXn4i27gDgLTNnQ9OPKrYiRY?destination=user/24997
+msgid ""
+"It is not necessary to use this link to login anymore. You are already "
+"logged in."
+msgstr ""
+"Es ist nicht notwendig diesen Link für den Login weiterhin zu benutzen."
+"Sie sind bereits eingeloggt."
+
+#: /profile/brigitta-martens
+msgid "@count questions"
+msgstr "@count Fragen"
+
+#: /profile/brigitta-martens
+msgid "@count answers"
+msgstr "@count Antworten"
+
+#: /profile/brigitta-martens
+msgid "@count sideline jobs"
+msgstr "@count Nebentätigkeiten"
+
+#: /profile/brigitta-martens
+msgid "@count speeches"
+msgstr "@count gehaltene Reden"
+
+#: /profile/brigitta-martens
+msgid "@count missed votings"
+msgstr "@count verpasste Abstimmungen"
+
+msgid "twitter"
+msgstr "Twitter"
+
+#: sites/all/themes/custom/parliamentwatch/js/scripts.js
+msgid "next thesis"
+msgstr "nächste These"
+
+#: sites/all/themes/custom/parliamentwatch/js/scripts.js
+msgid "previous thesis"
+msgstr "vorherige These"
+
+msgid "Link urls to their destinations"
+msgstr "URLs als Link darstellen"
+
+msgid "Link Twitter @usernames to their Twitter.com urls"
+msgstr "Verlinken von Twitter @usernames mit deren Twitter.com URLs"
+
+msgid "Link Twitter #hashtags to another url"
+msgstr "Verlinken von Twitter #hashtags auf andere URL"
+
+#: /profile/testuser/archive/48740
+msgid "Additional links of"
+msgstr "Weiterführende Links von"
+
+#: /profile/testuser/archive/48740
+msgid "open profile"
+msgstr "Profil öffnen"
+
+#: /profile/testuser
+msgid "Calendar of"
+msgstr "Wahlkampftermine von"
+
+#: /profile/testuser
+msgid "Imagegallery of "
+msgstr "Bildergalerie von"
+
+#: /profile/testuser
+msgid "Political Goals of"
+msgstr "Die politischen Ziele von"
+
+#: /profile/testuser/additional-links
+msgid "Additional Links of"
+msgstr "Weiterführende Links von"
+
+msgid "Post"
+msgstr "Beitrag"
+
+msgid "Sender"
+msgstr "Absender"
+
+msgid "!message"
+msgstr "!message"
+
+msgid "Default format string"
+msgstr "Standard Stringformat"
+
+msgid "Post to twitter.com"
+msgstr "Veröffentlichen auf twitter.com"
+
+msgid "Announce this post on Twitter"
+msgstr "Beiträge auf Twitter ankündigen (z.B. mit deren Titel)"
+
+msgid ""
+"The given text will be posted to twitter.com. You can use !url, "
+"!url-alias, !tinyurl, !title and !user as replacement text."
+msgstr ""
+"Der angegebene Texte wird auf twitter.com veröffentlicht. Sie können "
+"!url, !url-alias, !tinyurl, !title und !user als Platzhalter "
+"verwenden."
+
+msgid "Successfully posted to Twitter"
+msgstr "Nachricht erfolgreich gepostet"
+
+msgid "Post a message to Twitter"
+msgstr "Eine Nachricht bei Twitter veröffentlichen"
+
+msgid "Twitter actions"
+msgstr "Twitter actions"
+
+msgid "Invalid Twitter OAuth request"
+msgstr "Ungültige Twitter OAuth-Anfrage"
+
+msgid "Invalid OAuth token."
+msgstr "Ungültiges OAuth-Token."
+
+msgid "Twitter Post"
+msgstr "Twitter-Nachricht (Tweet)"
+
+msgid "Select sign-in button"
+msgstr "Anmelden"
+
+msgid "Automatically register new users"
+msgstr "Neue Benutzer automatisch registrieren"
+
+msgid ""
+"Warning, if you enable this, new user accounts will be created without "
+"email addresses."
+msgstr ""
+"Warnung, wenn Sie dies aktivieren, werden neue Benutzerkonten ohne "
+"e-Mail-Adressen erstellt."
+
+msgid "Sign in with Twitter"
+msgstr "Über Twitter anmelden"
+
+msgid ""
+"The nickname %name is already in use on this site, please register "
+"below with a new nick name, or @login to continue."
+msgstr ""
+"Der Spitzname %name wird auf dieser Site bereits verwendet, wählen "
+"Sie daher einen anderen Spitznamen oder @login um fortzufahren."
+
+msgid "Twitter Redirect"
+msgstr "Twitter umleiten"
+
+msgid "Sign-in"
+msgstr "Anmelden"
+
+msgid "Twitter Signin"
+msgstr "Twitter Anmeldung"
+
+msgid "The content of the tweet."
+msgstr "Der Inhalt des Tweets."
+
+msgid "Text to check"
+msgstr "Zu überprüfender Text"
+
+msgid "Text is under 140 characters"
+msgstr "Der Text ist kürzer als 140 Zeichen"
+
+msgid "Returns TRUE if the length of the text is 140 or less."
+msgstr "Gibt TRUE zurück, wenn der Text 140 Zeichen oder weniger hat."
+
+msgid "Please log in or register to relate your Twitter account with a user."
+msgstr ""
+"Bitte anmelden oder registrieren, um ein Twitter Konto mit einem "
+"Benutzer zu vernküpfen."
+
+msgid ""
+"You have related a Twitter account with your user. Next time you can "
+"sign in with Twitter."
+msgstr ""
+"Twitter Konto mit Benutzer verbunden. Ab sofort ist eine Anmeldung an "
+"dieser Seite mit Twitter möglich."
+
+#: taxonomy:vocabulary:24:name
+msgctxt "vocabulary:24:name"
+msgid "Blogtags"
+msgstr "Schlagwörter im Blog"
+
+#: taxonomy:vocabulary:24:description
+msgctxt "vocabulary:24:description"
+msgid "Tags in the Blog"
+msgstr "Schlagwörter im Blog"
+
+#: /admin/structure/views/view/pw_kandidatencheck/preview/default/ajax
+msgid "@current of @max"
+msgstr "@current von @max"
 

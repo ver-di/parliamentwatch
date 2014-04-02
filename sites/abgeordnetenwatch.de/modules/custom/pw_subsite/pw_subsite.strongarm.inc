@@ -39,16 +39,9 @@ function pw_subsite_strongarm() {
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => 'HbkpPCos8m9H3WTwTn4kTZKGdRfMxh_NwfcDQUaJbEU',
+    'javascript' => 'B-XTgVr8mXKs2RikveQAqchm4fh_ODQmlRuCNnYdFIU',
   );
   $export['language_default'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_announcement_de_pattern';
-  $strongarm->value = 'news/[node:created:custom:Y-m-d]/[node:title]';
-  $export['pathauto_node_announcement_de_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

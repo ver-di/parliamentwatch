@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-02-03 16:43+0100\n"
-"PO-Revision-Date: 2014-02-03 16:43+0100\n"
+"POT-Creation-Date: 2014-03-31 19:16+0200\n"
+"PO-Revision-Date: 2014-03-31 19:16+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -16,20 +16,15 @@ msgstr ""
 #: quicktabs:title:politicians_answer
 msgctxt "title:politicians_answer"
 msgid "Politicians answer!"
-msgstr ""
+msgstr "Politiker antworten!"
 
 #: quicktabs:tab:politicians_answer-0:title
 msgctxt "tab:politicians_answer-0:title"
 msgid "Answers"
-msgstr ""
+msgstr "Antworten"
 
 #: quicktabs:tab:politicians_answer-1:title
 msgctxt "tab:politicians_answer-1:title"
 msgid "Questions"
-msgstr ""
-
-#: quicktabs:tab:politicians_answer-2:title
-msgctxt "tab:politicians_answer-2:title"
-msgid "Votes"
-msgstr ""
+msgstr "Fragen"
 

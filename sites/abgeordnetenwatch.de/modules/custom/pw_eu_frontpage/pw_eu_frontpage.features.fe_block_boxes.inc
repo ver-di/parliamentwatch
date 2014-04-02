@@ -43,7 +43,7 @@ function pw_eu_frontpage_default_fe_block_boxes() {
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'aw_eu_parliament_archive';
   $fe_block_boxes->body = '<p>
-	Lorem ipsum ad qui amet dolore, vitae cetero quaerendum mel ea. Facilis fastidii duo no.
+	Was antworteten die deutschen EU-Abgeordneten in der vergangenen Wahlperiode? Wie stimmten Sie ab? Machen Sie sich selbst ein Bild:
 </p>
 <ul>
 	<li>

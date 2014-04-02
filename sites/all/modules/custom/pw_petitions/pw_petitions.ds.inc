@@ -17,22 +17,6 @@ function pw_petitions_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'pw_petition';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'pw_petition_form' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'pw-petition-form',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'sharethis' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -69,6 +53,22 @@ function pw_petitions_ds_field_settings_info() {
         ),
       ),
     ),
+    'pw_petition_form' => array(
+      'weight' => '10',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-petition-form',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'pw_petition_progress' => array(
       'weight' => '6',
       'label' => 'hidden',
@@ -87,7 +87,13 @@ function pw_petitions_ds_field_settings_info() {
     'body' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'managed-content',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),

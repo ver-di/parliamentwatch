@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-02-03 16:43+0100\n"
-"PO-Revision-Date: 2014-02-03 16:43+0100\n"
+"POT-Creation-Date: 2014-03-31 19:16+0200\n"
+"PO-Revision-Date: 2014-03-31 19:16+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -113,16 +113,6 @@ msgctxt "user:user:default:group_user_polls:label"
 msgid "Polls"
 msgstr ""
 
-#: field_group:node:pw_petition:form:group_petition_recipient:label
-msgctxt "node:pw_petition:form:group_petition_recipient:label"
-msgid "Recipients"
-msgstr ""
-
-#: field_group:node:pw_petition:form:group_petition_content:label
-msgctxt "node:pw_petition:form:group_petition_content:label"
-msgid "Description"
-msgstr ""
-
 #: field_group:user:user:user_search:group_user_name:label
 msgctxt "user:user:user_search:group_user_name:label"
 msgid "User name"
@@ -183,14 +173,11 @@ msgctxt "user:user:pw_profiles_list_compact:group_profiles_mouseover:label"
 msgid "Mouseover"
 msgstr ""
 
-#: field_group:user:user:form:group_user_premium_fields:label
-msgctxt "user:user:form:group_user_premium_fields:label"
-msgid "Premium Fields"
-msgstr ""
-
-#: field_group:user:user:form:group_user_personal_data:label
-msgctxt "user:user:form:group_user_personal_data:label"
-msgid "Personal Data"
+#: field_group:user:user:form:group_user_premium_fields:description
+msgctxt "user:user:form:group_user_premium_fields:description"
+msgid ""
+"Profilfoto, Social-Media, Bildergalerie, Kalender, Biografie, "
+"politische Ziele"
 msgstr ""
 
 #: field_group:user:user:form:group_user_dialogue:label
@@ -207,4 +194,69 @@ msgstr ""
 msgctxt "user:user:form:group_user_admin:label"
 msgid "Admin Settings"
 msgstr ""
+
+#: field_group:node:pw_petition:form:group_petition_recipient:label
+msgctxt "node:pw_petition:form:group_petition_recipient:label"
+msgid "Recipients"
+msgstr ""
+
+#: field_group:node:pw_petition:form:group_petition_content:label
+msgctxt "node:pw_petition:form:group_petition_content:label"
+msgid "Description"
+msgstr ""
+
+#: field_group:user:user:form:group_user_ig_accordion:label
+msgctxt "user:user:form:group_user_ig_accordion:label"
+msgid "Image Gallery"
+msgstr ""
+
+#: field_group:user:user:form:group_user_ig_accordion_item:label
+msgctxt "user:user:form:group_user_ig_accordion_item:label"
+msgid "Image Gallery Item"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium:label
+msgctxt "user:user:form:group_user_premium:label"
+msgid "Premium fields"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_picture:label
+msgctxt "user:user:form:group_user_premium_picture:label"
+msgid "Profile picture"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_about:label
+msgctxt "user:user:form:group_user_premium_about:label"
+msgid "About"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_links:label
+msgctxt "user:user:form:group_user_premium_links:label"
+msgid "External Links"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_gallery:label
+msgctxt "user:user:form:group_user_premium_gallery:label"
+msgid "Image Gallery"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_goals:label
+msgctxt "user:user:form:group_user_premium_goals:label"
+msgid "Political Goals"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_twitter:label
+msgctxt "user:user:form:group_user_premium_twitter:label"
+msgid "Twitter"
+msgstr ""
+
+#: field_group:user:user:form:group_user_premium_fields:label
+msgctxt "user:user:form:group_user_premium_fields:label"
+msgid "Premium Fields"
+msgstr "Profilerweiterung\r\n"
+
+#: field_group:user:user:form:group_user_personal_data:label
+msgctxt "user:user:form:group_user_personal_data:label"
+msgid "Personal Data"
+msgstr "Angaben zur Person"
 

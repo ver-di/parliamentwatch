@@ -52,7 +52,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Managed Content',
-    'weight' => '9',
+    'weight' => '10',
     'children' => array(
       0 => 'field_user_gender',
       1 => 'field_user_first_letter_lname',
@@ -203,7 +203,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Admin Settings',
-    'weight' => '11',
+    'weight' => '12',
     'children' => array(
       0 => 'field_user_external_url',
       1 => 'ckeditor',
@@ -236,16 +236,14 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Political Affiliation',
-    'weight' => '8',
+    'weight' => '7',
     'children' => array(
       0 => 'field_user_commitee',
-      1 => 'field_user_constituency',
-      2 => 'field_user_list_position',
-      3 => 'field_user_parliament',
-      4 => 'field_user_party',
-      5 => 'field_user_political_roles',
-      6 => 'field_user_valid',
-      7 => 'field_user_election_result',
+      1 => 'field_user_parliament',
+      2 => 'field_user_party',
+      3 => 'field_user_political_roles',
+      4 => 'field_user_valid',
+      5 => 'field_user_election_result',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -400,7 +398,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Basics',
-    'weight' => '36',
+    'weight' => '43',
     'children' => array(
       0 => 'group_user_basics_additional',
       1 => 'group_user_basics_data',
@@ -479,7 +477,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dialogue Data',
-    'weight' => '10',
+    'weight' => '11',
     'children' => array(
       0 => 'field_user_answers_give',
       1 => 'field_user_questions_get',
@@ -611,12 +609,12 @@ function pw_profiles_field_group_info() {
       3 => 'field_user_marriage_status',
       4 => 'field_user_pseudonym',
       5 => 'field_user_address',
-      6 => 'field_user_education',
-      7 => 'field_user_age',
-      8 => 'field_user_links_more',
-      9 => 'field_user_phone',
-      10 => 'field_user_public_mail',
-      11 => 'field_user_title',
+      6 => 'field_user_constituency',
+      7 => 'field_user_education',
+      8 => 'field_user_list_position',
+      9 => 'field_user_age',
+      10 => 'field_user_phone',
+      11 => 'field_user_public_mail',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -768,7 +766,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Polls',
-    'weight' => '37',
+    'weight' => '44',
     'children' => array(
       0 => 'group_user_polls_archive',
       1 => 'group_user_polls_current',
@@ -786,6 +784,33 @@ function pw_profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_premium_about|user|user|form';
+  $field_group->group_name = 'group_user_premium_about';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user_premium';
+  $field_group->data = array(
+    'label' => 'About',
+    'weight' => '18',
+    'children' => array(
+      0 => 'field_user_about',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_user_premium_about|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_user_premium_fields|user|user|form';
   $field_group->group_name = 'group_user_premium_fields';
   $field_group->entity_type = 'user';
@@ -796,10 +821,7 @@ function pw_profiles_field_group_info() {
     'label' => 'Premium Fields',
     'weight' => '9',
     'children' => array(
-      0 => 'field_user_about',
-      1 => 'field_user_image_gallery',
-      2 => 'field_user_political_goals',
-      3 => 'field_user_twitter_account',
+      0 => 'group_user_premium',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -807,12 +829,178 @@ function pw_profiles_field_group_info() {
       'instance_settings' => array(
         'required_fields' => 1,
         'classes' => '',
-        'description' => '',
+        'description' => 'Profilfoto, Social-Media, Bildergalerie, Kalender, Biografie, politische Ziele',
       ),
       'formatter' => 'collapsed',
     ),
   );
   $export['group_user_premium_fields|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_premium_gallery|user|user|form';
+  $field_group->group_name = 'group_user_premium_gallery';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user_premium';
+  $field_group->data = array(
+    'label' => 'Image Gallery',
+    'weight' => '20',
+    'children' => array(
+      0 => 'field_user_image_gallery',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_user_premium_gallery|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_premium_goals|user|user|form';
+  $field_group->group_name = 'group_user_premium_goals';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user_premium';
+  $field_group->data = array(
+    'label' => 'Political Goals',
+    'weight' => '21',
+    'children' => array(
+      0 => 'field_user_political_goals',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_user_premium_goals|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_premium_links|user|user|form';
+  $field_group->group_name = 'group_user_premium_links';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user_premium';
+  $field_group->data = array(
+    'label' => 'External Links',
+    'weight' => '19',
+    'children' => array(
+      0 => 'field_user_links_more',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_user_premium_links|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_premium_picture|user|user|form';
+  $field_group->group_name = 'group_user_premium_picture';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user_premium';
+  $field_group->data = array(
+    'label' => 'Profile picture',
+    'weight' => '17',
+    'children' => array(
+      0 => 'field_user_picture',
+      1 => 'field_user_picture_copyright',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_user_premium_picture|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_premium_twitter|user|user|form';
+  $field_group->group_name = 'group_user_premium_twitter';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user_premium';
+  $field_group->data = array(
+    'label' => 'Twitter',
+    'weight' => '22',
+    'children' => array(
+      0 => 'field_user_twitter_account',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => '',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $export['group_user_premium_twitter|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_user_premium|user|user|form';
+  $field_group->group_name = 'group_user_premium';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_user_premium_fields';
+  $field_group->data = array(
+    'label' => 'Premium fields',
+    'weight' => '8',
+    'children' => array(
+      0 => 'group_user_premium_picture',
+      1 => 'group_user_premium_about',
+      2 => 'group_user_premium_links',
+      3 => 'group_user_premium_gallery',
+      4 => 'group_user_premium_goals',
+      5 => 'group_user_premium_twitter',
+    ),
+    'format_type' => 'tabs',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => '',
+      ),
+    ),
+  );
+  $export['group_user_premium|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -876,7 +1064,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Roles',
-    'weight' => '38',
+    'weight' => '45',
     'children' => array(
       0 => 'group_user_roles_archive',
       1 => 'group_user_roles_current',

@@ -101,8 +101,8 @@
     border-bottom: 1px dotted #fff;
     padding: 0;
 }
-#nav ul ul li.last a
-#nav ul ul li.last ul li:last a {
+#nav ul ul li.last > a,
+#nav ul ul li.last ul li.last > a {
     border-bottom: 0;
 }
 

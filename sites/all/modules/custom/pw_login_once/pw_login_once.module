@@ -25,7 +25,7 @@ function pw_login_once_permission() {
 function pw_login_once_menu() {
   $items = array();
 
-  $items['pw_login_once/%/%/%'] = array(
+  $items['politician-login/%/%/%'] = array(
     'title' => 'PW Login Once',
     'page callback' => 'pw_login_once_page',
     'page arguments' => array(1, 2, 3),
@@ -49,6 +49,19 @@ function pw_login_once_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_module_implements_alter(). This hook forces to call pw_login_once_tokens hook last.
+ */
+function pw_login_once_module_implements_alter(&$module_list, $hook){
+  if($hook === "tokens"){
+    $temp = $module_list['pw_login_once'];
+    // Removing the pw_login_once key/value
+    unset($module_list['pw_login_once']);
+    // Adding the pw_login_once key value as the last member in the list
+    $module_list['pw_login_once'] = $temp;
+  }
 }
 
 /**
@@ -511,7 +524,7 @@ function pw_login_once_get_link($account, $path = NULL) {
 
   $timestamp = REQUEST_TIME;
   return url(
-    "pw_login_once/" . $account->uid . "/" . $timestamp . "/" .
+    "politician-login/" . $account->uid . "/" . $timestamp . "/" .
       user_pass_rehash($account->pass, $timestamp, $account->login),
     array(
       'query' => array('destination' => $path),

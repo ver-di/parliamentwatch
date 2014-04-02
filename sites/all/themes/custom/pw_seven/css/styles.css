@@ -1,0 +1,180 @@
+html {
+    font-size: 12px;
+}
+*:focus {
+    outline: 1px dotted #f63 !important;
+}
+body {
+    background: #fff;
+    font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
+    font: 1.2em/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
+    color: #333;
+}
+a {
+    color: #f63;
+    text-decoration: none;
+    font-weight: bold;
+}
+p {
+    margin: 0 0 1em;
+}
+a:hover,
+a:focus,
+a:active {
+    color: #999;
+    text-decoration: none;
+}
+h1 a,
+h2 a,
+h3 a {
+    font-weight: normal;
+}
+h1,
+h2,
+h3 {
+    font-weight: normal;
+    line-height: 1.2em;
+    font-family: 'Times New Roman', Georgia, serif;
+}
+h1 {
+    color: #f63;
+    font-size: 24px;
+    font-size: 2.4rem;
+}
+h2 {
+    color: #f63;
+    font-size: 24px;
+    font-size: 2.4rem;
+    letter-spacing: 0.04ex;
+    margin-bottom: 9px;
+    margin-bottom: 0.9rem;
+}
+h3 {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 20px;
+    font-size: 2rem;
+    line-height: 22px;
+    line-height: 2.2rem;
+    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
+}
+h2 a:link,
+h2 a:visited,
+h3 a:link,
+h3 a:visited,
+h4 a:link,
+h4 a:visited {
+    color: #333;
+    text-decoration: none;
+}
+h4 {
+    font-size: 12px;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+.marker,
+.form-required,
+.media-widget .preview .media-item .label-wrapper label {
+    color: #f63;
+}
+.media-widget .preview .media-item:hover {
+    border-color: #f63;
+}
+form .field-multiple-table th.field-label {
+    padding-left: 7px;
+}
+fieldset {
+    border: 0;
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 1em;
+}
+fieldset fieldset {
+    border: 0;
+}
+fieldset .fieldset-wrapper {
+    padding-left: 36px;
+}
+fieldset fieldset .fieldset-wrapper {
+    padding-left: 0;
+}
+fieldset .fieldset-legend {
+    text-transform: none;
+    font-family: 'Times New Roman',Georgia,serif;
+    font-weight: normal;
+    line-height: 1.2em;
+    font-size: 1.8rem;
+    letter-spacing: 0.04ex;
+    margin-bottom: 0.9rem;
+}
+html.js fieldset.collapsible .fieldset-legend {
+    padding-left: 36px;
+    background: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png) -360px -115px no-repeat;
+    cursor: pointer;
+}
+html.js fieldset.collapsible fieldset .fieldset-legend {
+    padding-left: 0;
+    background: transparent;
+    cursor: default;
+}
+html.js fieldset.collapsible.collapsed .fieldset-legend {
+    background-position: -280px -195px;
+}
+fieldset .fieldset-legend a {
+    font-weight: normal;
+    color: #333333;
+}
+
+/* user edit form */
+
+#edit-submit {
+    background: #ff6733; /* Old browsers */
+    background-image: #ff8157; /* Old browsers */
+    background-image: -moz-linear-gradient(top,  #ff8157 0%, #ff6c3f 64%, #ff622d 65%, #ff602b 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff8157), color-stop(64%,#ff6c3f), color-stop(65%,#ff622d), color-stop(100%,#ff602b)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* IE10+ */
+    background-image: linear-gradient(top,  #ff8157 0%,#ff6c3f 64%,#ff622d 65%,#ff602b 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8157', endColorstr='#ff602b',GradientType=0 ); /* IE6-9 */
+    border-color: 0;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 7px 10px;
+    text-shadow: 0 0 0;
+    vertical-align: top;
+    margin-top: 1px;
+    
+    -webkit-box-shadow: 0 0 2px 2px #DEDEDE;
+    -moz-box-shadow: 0 0 2px 2px #DEDEDE;
+    box-shadow: 0 0 2px 2px #DEDEDE;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+#edit-overlay-control {
+    display: none;
+}
+#edit-field-user-title,
+#edit-field-user-fname,
+#edit-field-user-lname {
+    float: left;
+}
+#edit-field-user-title,
+#edit-field-user-fname {
+    margin-right: 20px;
+}
+#edit-account {
+    clear: both;
+}
+#user-profile-form .container-inline-date .date-padding {
+    padding: 0;
+}
+#user-profile-form .form-item {
+    padding: 3px 0;
+}
+#edit-field-user-address .street-block,
+#edit-field-user-address .form-item-field-user-address-und-0-country {
+    display: none;
+}

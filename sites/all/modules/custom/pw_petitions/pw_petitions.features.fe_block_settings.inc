@@ -14,7 +14,9 @@ function pw_petitions_default_fe_block_settings() {
 
   $export['block-petitions_description'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => '0',
+    'i18n_block_language' => array(),
     'i18n_mode' => '1',
     'machine_name' => 'petitions_description',
     'module' => 'block',
@@ -28,10 +30,10 @@ function pw_petitions_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '0',
       ),
-      'seven' => array(
+      'pw_seven' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'seven',
+        'theme' => 'pw_seven',
         'weight' => '0',
       ),
     ),

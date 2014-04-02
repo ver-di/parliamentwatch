@@ -5,7 +5,8 @@ Parlamente {"url":"http:\/\/www.abgeordnetenwatch.de\/parlamente-210-0.html","ex
 --Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-991-0.html"}
 --Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-123-0.html"}
 --Wahlrecht {"url":"bundestag\/wahlrecht"}
---Petitionen {"url":"petitions","expanded":true}
+--Petitionen {"url":"petitionen","expanded":true}
+---Petition (menu position rule) {"url":"menu-position\/18","description":"Sets access to all menu position links.","hidden":true}
 --Grußwort {"url":"bundestag\/grusswort"}
 -EU {"url":"http:\/\/www.abgeordnetenwatch.de\/eu-336-0.html","expanded":true}
 --Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-669-0.html"}
@@ -41,6 +42,10 @@ Parlamente {"url":"http:\/\/www.abgeordnetenwatch.de\/parlamente-210-0.html","ex
 --Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-924-0.html"}
 --Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-251-0.html"}
 --Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-624-0.html"}
+-Rheinland-Pfalz {"url":"http:\/\/www.abgeordnetenwatch.de\/rheinland_pfalz-531-0.html","expanded":true}
+--Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-451-0.html"}
+--Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-448-0.html"}
+--Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-446-0.html"}
 -Sachsen {"url":"http:\/\/www.abgeordnetenwatch.de\/sachsen-146-0.html","expanded":true}
 --Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-764-0.html"}
 --Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-984-0.html"}
@@ -54,13 +59,12 @@ Kommunen {"url":"http:\/\/www.abgeordnetenwatch.de\/kommunen-933-0.html","expand
 Presse {"url":"ueber-uns\/presse","expanded":true}
 -Pressespiegel {"url":"ueber-uns\/presse"}
 -Pressemitteilungen {"url":"ueber-uns\/presse\/pressemitteilungen"}
---Press release (menu position rule) {"url":"menu-position\/5","description":"Sets access to all menu position links.","hidden":true}
+--Press release (menu position rule) {"url":"menu-position\/16","description":"Sets access to all menu position links.","hidden":true}
 Blog {"url":"blog"}
--Blog tagdelic (menu position rule) {"url":"menu-position\/4","description":"Sets access to all menu position links.","hidden":true}
--Blogcategories (menu position rule) {"url":"menu-position\/6","description":"Sets access to all menu position links.","hidden":true}
--Blogpost (menu position rule) {"url":"menu-position\/1","description":"Sets access to all menu position links.","hidden":true}
--Blogtags (menu position rule) {"url":"menu-position\/2","description":"Sets access to all menu position links.","hidden":true}
--Blogterms (menu position rule) {"url":"menu-position\/3","description":"Sets access to all menu position links.","hidden":true}
+-Blog tagadelic (menu position rule) {"url":"menu-position\/15","description":"Sets access to all menu position links.","hidden":true}
+-Blogcategories (menu position rule) {"url":"menu-position\/13","description":"Sets access to all menu position links.","hidden":true}
+-Blogpost (menu position rule) {"url":"menu-position\/14","description":"Sets access to all menu position links.","hidden":true}
+-Blogtags (menu position rule) {"url":"menu-position\/12","description":"Sets access to all menu position links.","hidden":true}
 Archiv {"url":"http:\/\/www.abgeordnetenwatch.de\/archiv-391-0.html","expanded":true}
 -2013 {"url":"http:\/\/www.abgeordnetenwatch.de\/2013-1315-0.html","expanded":true}
 --Bundestagswahl {"url":"http:\/\/www.abgeordnetenwatch.de\/bundestagswahl-1481-0.html"}
@@ -135,7 +139,7 @@ Wir über uns {"url":"ueber-uns","expanded":true}
 --Erfolge {"url":"ueber-uns\/mehr\/erfolge"}
 --Mitwirkende {"url":"ueber-uns\/mehr\/mitwirkende"}
 --Kuratorium {"url":"ueber-uns\/mehr\/kuratorium"}
----Trustee (menu position rule) {"url":"menu-position\/7","description":"Sets access to all menu position links.","hidden":true}
+---Trustees (menu position rule) {"url":"menu-position\/17","description":"Sets access to all menu position links.","hidden":true}
 --Moderations-Codex {"url":"ueber-uns\/mehr\/moderations-codex"}
 --Finanzierung {"url":"ueber-uns\/mehr\/finanzierung"}
 ---Finanzierung Parlamentwatch GmbH {"url":"ueber-uns\/mehr\/finanzierung\/parlamentwatch-GmbH","hidden":true}

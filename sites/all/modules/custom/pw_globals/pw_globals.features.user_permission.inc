@@ -193,15 +193,6 @@ function pw_globals_user_default_permissions() {
     'module' => 'webform',
   );
 
-  // Exported permission: moderate spam in nodes of type Basic page.
-  $permissions['moderate spam in nodes of type Basic page'] = array(
-    'name' => 'moderate spam in nodes of type Basic page',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'antispam',
-  );
-
   // Exported permission: moderate spam in nodes of type Webform.
   $permissions['moderate spam in nodes of type Webform'] = array(
     'name' => 'moderate spam in nodes of type Webform',

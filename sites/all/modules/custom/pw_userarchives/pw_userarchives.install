@@ -72,3 +72,10 @@ function pw_userarchives_schema() {
 
   return $schema;
 }
+
+/**
+ * Adds further column user_role
+ */
+function pw_userarchives_update_7100() {
+  db_add_field('user_archive_cache', 'user_role', array('type' => 'varchar', 'length' => '45', 'not null' => FALSE, 'description' => 'Role of user: candidate or deputy.'));
+}

@@ -22,8 +22,8 @@ function pw_profiles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
     ),
-    'short_profile' => array(
-      'weight' => '1',
+    'back_to_calendar' => array(
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -32,8 +32,8 @@ function pw_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'back_to_calendar' => array(
-      'weight' => '6',
+    'short_profile_premium_sub' => array(
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -43,7 +43,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -112,8 +112,8 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_deputy';
   $ds_fieldsetting->settings = array(
-    'additional_links' => array(
-      'weight' => '3',
+    'bundestagsradar' => array(
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -121,10 +121,40 @@ function pw_profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'clear clearfix push-bottom-l relative',
-          'ow-def-cl' => FALSE,
+          'ow-cl' => 'block',
+          'ow-def-cl' => TRUE,
           'ow-at' => '',
+          'ow-def-at' => TRUE,
+        ),
+      ),
+    ),
+    'pw_kandidatencheck' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 1,
+        'title_wrapper' => 'h3',
+        'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:36:"pw_kandidatencheck-profile_slideshow";}',
+        'load_terms' => 1,
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-kc"',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'question_and_answers_filter' => array(
+      'weight' => '11',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
         ),
       ),
     ),
@@ -153,14 +183,19 @@ function pw_profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'clear clearfix push-bottom-l',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'id="pw-block-user-basics"',
           'ow-def-at' => FALSE,
         ),
       ),
     ),
-    'bundestagsradar' => array(
+    'user_og_description' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'user_profile_api_link' => array(
       'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
@@ -176,39 +211,8 @@ function pw_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'question_and_answers_filter' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-        ),
-      ),
-    ),
-    'user_og_description' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'user_profile_api_link' => array(
-      'weight' => '7',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'block',
-          'ow-def-cl' => TRUE,
-          'ow-at' => '',
-          'ow-def-at' => TRUE,
-        ),
-      ),
-    ),
     'user_questions_and_answers' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -228,7 +232,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '6',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -244,7 +248,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '4',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -260,7 +264,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_revision_switch' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -283,10 +287,50 @@ function pw_profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'clear clearfix push-bottom-l relative',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'id="pw-block-user-links"',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'pw_kandidatencheck' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 1,
+        'title_wrapper' => 'h2',
+        'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:36:"pw_kandidatencheck-profile_slideshow";}',
+        'load_terms' => 1,
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-kc"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'question_and_answers_filter' => array(
+      'weight' => '14',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
+    'question_and_answers_switcher' => array(
+      'weight' => '15',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -315,9 +359,9 @@ function pw_profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'clear clearfix push-bottom-l relative',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'id="pw-block-user-about"',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -331,9 +375,25 @@ function pw_profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'clear clearfix push-bottom-l',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'id="pw-block-user-basics"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'user_calendar' => array(
+      'weight' => '7',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-calendar"',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -347,9 +407,9 @@ function pw_profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'clear clearfix push-bottom-l relative',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'id="pw-block-user-gallery"',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -363,51 +423,15 @@ function pw_profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'clear clearfix push-bottom-l relative',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'question_and_answers_filter' => array(
-      'weight' => '13',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-        ),
-      ),
-    ),
-    'question_and_answers_switcher' => array(
-      'weight' => '14',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
-    'user_calendar' => array(
-      'weight' => '7',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'clear clearfix push-bottom-l relative',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'id="pw-block-user-goals"',
           'ow-def-at' => FALSE,
         ),
       ),
     ),
     'user_profile_api_link' => array(
-      'weight' => '11',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -423,7 +447,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '12',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -448,12 +472,18 @@ function pw_profiles_ds_field_settings_info() {
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-twitter"',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '10',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -469,7 +499,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -485,7 +515,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_revision_switch' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -575,7 +605,7 @@ function pw_profiles_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|8cb951080268e07b91e84bb9f40a0b10',
+    'block' => 'views|1269dd557bad56827781d3d678e62ebf',
     'block_render' => '2',
   );
   $export['additional_links'] = $ds_field;
@@ -599,15 +629,25 @@ function pw_profiles_ds_custom_fields_info() {
   $ds_field->api_version = 1;
   $ds_field->field = 'bundestagsradar';
   $ds_field->label = 'Bundestagsradar';
-  $ds_field->field_type = 6;
+  $ds_field->field_type = 5;
   $ds_field->entities = array(
-    'node' => 'node',
     'user' => 'user',
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'block|22',
-    'block_render' => '2',
+    'code' => array(
+      'value' => '<?php
+$uid = arg(1);
+$user_fields = user_load($uid);
+$field_user_parliament = $user_fields->field_user_parliament[\'und\'][0][\'tid\'];
+if($field_user_parliament == 6501){
+    $block = block_load(\'block\', \'23\');
+    print drupal_render(_block_get_renderable_array(_block_render_blocks(array($block))));
+}
+?>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 0,
   );
   $export['bundestagsradar'] = $ds_field;
 
@@ -1093,7 +1133,7 @@ function pw_profiles_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'sharethis',
-        1 => 'short_profile',
+        1 => 'short_profile_premium_sub',
         2 => 'title',
         3 => 'field_calendar_entry_date',
         4 => 'field_calendar_entry_address',
@@ -1103,7 +1143,7 @@ function pw_profiles_ds_layout_settings_info() {
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
-      'short_profile' => 'ds_content',
+      'short_profile_premium_sub' => 'ds_content',
       'title' => 'ds_content',
       'field_calendar_entry_date' => 'ds_content',
       'field_calendar_entry_address' => 'ds_content',
@@ -1137,7 +1177,7 @@ function pw_profiles_ds_layout_settings_info() {
         0 => 'user_og_description',
         1 => 'short_profile_deputy_main',
         2 => 'user_basic_info',
-        3 => 'additional_links',
+        3 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
         4 => 'pw_slider',
@@ -1162,7 +1202,7 @@ function pw_profiles_ds_layout_settings_info() {
       'user_og_description' => 'left_1',
       'short_profile_deputy_main' => 'left_1',
       'user_basic_info' => 'left_1',
-      'additional_links' => 'left_1',
+      'pw_kandidatencheck' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
@@ -1210,22 +1250,23 @@ function pw_profiles_ds_layout_settings_info() {
         5 => 'user_tweets',
         6 => 'additional_links',
         7 => 'user_calendar',
+        8 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        8 => 'pw_slider',
-        9 => 'user_revision_switch',
-        10 => 'user_wrong_data',
-        11 => 'user_profile_api_link',
+        9 => 'pw_slider',
+        10 => 'user_revision_switch',
+        11 => 'user_wrong_data',
+        12 => 'user_profile_api_link',
       ),
       'left_2' => array(
-        12 => 'user_questions_and_answers',
+        13 => 'user_questions_and_answers',
       ),
       'right_2' => array(
-        13 => 'question_and_answers_filter',
-        14 => 'question_and_answers_switcher',
+        14 => 'question_and_answers_filter',
+        15 => 'question_and_answers_switcher',
       ),
       'ds_hidden' => array(
-        15 => 'field_user_party',
+        16 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1237,6 +1278,7 @@ function pw_profiles_ds_layout_settings_info() {
       'user_tweets' => 'left_1',
       'additional_links' => 'left_1',
       'user_calendar' => 'left_1',
+      'pw_kandidatencheck' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',

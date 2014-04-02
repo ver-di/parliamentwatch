@@ -99,6 +99,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '2',
         ),
+        'pw_file_portrait_ms' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
         'pw_file_portrait_s' => array(
           'label' => 'above',
           'settings' => array(),
@@ -230,6 +236,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '4',
         ),
+        'pw_file_portrait_ms' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
+        ),
         'pw_file_portrait_s' => array(
           'label' => 'above',
           'settings' => array(),
@@ -317,6 +329,9 @@ function pw_profiles_field_default_fields() {
         0 => 'node',
       ),
       'field_name' => 'body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -349,7 +364,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -421,7 +436,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'addressfield_tokens',
           'settings' => array(),
           'type' => 'addressfield_linear',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -506,7 +521,7 @@ function pw_profiles_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -641,11 +656,11 @@ function pw_profiles_field_default_fields() {
         0 => array(
           'summary' => '',
           'value' => '',
-          'format' => 'managed_content',
+          'format' => 'filtered_html',
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil veröffentlicht.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -669,13 +684,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '63',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '63',
+          'weight' => '69',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -694,7 +709,8 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 0,
-            'managed_content' => 'managed_content',
+            'html_mail' => 0,
+            'managed_content' => 0,
             'php_code' => 0,
             'plain_text' => 0,
           ),
@@ -708,6 +724,9 @@ function pw_profiles_field_default_fields() {
               'full_html' => array(
                 'weight' => '-8',
               ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
               'managed_content' => array(
                 'weight' => '-10',
               ),
@@ -720,7 +739,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
-        'display_summary' => 1,
+        'display_summary' => 0,
         'text_processing' => '1',
         'user_register_form' => 0,
       ),
@@ -728,11 +747,15 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
           'rows' => '20',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '21',
+        'weight' => '57',
       ),
     ),
   );
@@ -793,13 +816,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '50',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '61',
+          'weight' => '67',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -830,9 +853,10 @@ function pw_profiles_field_default_fields() {
             'name-full' => 0,
             'name-oneline' => 0,
           ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'addressfield_standard',
-        'weight' => '46',
+        'weight' => '45',
       ),
     ),
   );
@@ -898,13 +922,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '62',
+          'weight' => '69',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '43',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -982,13 +1006,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '60',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '61',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1085,13 +1109,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '41',
+          'weight' => '48',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '59',
+          'weight' => '65',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1183,13 +1207,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '56',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '59',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1299,7 +1323,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '52',
+          'weight' => '58',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1319,7 +1343,9 @@ function pw_profiles_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'options_buttons',
         'weight' => '10',
       ),
@@ -1405,7 +1431,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '57',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1430,7 +1456,7 @@ function pw_profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'options_buttons',
-        'weight' => '9',
+        'weight' => '56',
       ),
     ),
   );
@@ -1495,13 +1521,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '60',
+          'weight' => '67',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '48',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1520,6 +1546,7 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -1533,6 +1560,9 @@ function pw_profiles_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -1557,6 +1587,8 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -1573,6 +1605,9 @@ function pw_profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_election_result',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -1611,13 +1646,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '41',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '40',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1626,18 +1661,60 @@ function pw_profiles_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_election_result',
       'label' => 'Election Result',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'text_processing' => 0,
-        'user_register_form' => FALSE,
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => 0,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => 60,
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '60',
         ),
         'type' => 'text_textfield',
         'weight' => '13',
@@ -1712,13 +1789,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '59',
+          'weight' => '66',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '40',
+          'weight' => '46',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1759,7 +1836,9 @@ function pw_profiles_field_default_fields() {
       'widget' => array(
         'active' => 0,
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'link_field',
         'weight' => '11',
       ),
@@ -1826,13 +1905,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '54',
+          'weight' => '61',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '55',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1851,6 +1930,7 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -1864,6 +1944,9 @@ function pw_profiles_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -1888,10 +1971,12 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '61',
       ),
     ),
   );
@@ -1964,13 +2049,13 @@ function pw_profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '11',
+          'weight' => '12',
         ),
         'user_premium' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '49',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1989,6 +2074,7 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -2002,6 +2088,9 @@ function pw_profiles_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -2026,7 +2115,9 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => '60',
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '25',
         ),
         'type' => 'text_textfield',
         'weight' => '2',
@@ -2098,13 +2189,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '55',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '50',
+          'weight' => '56',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2124,9 +2215,11 @@ function pw_profiles_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'options_select',
-        'weight' => '1',
+        'weight' => '59',
       ),
     ),
   );
@@ -2167,7 +2260,7 @@ function pw_profiles_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'user',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2191,13 +2284,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '57',
+          'weight' => '64',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '64',
+          'weight' => '70',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2232,6 +2325,7 @@ function pw_profiles_field_default_fields() {
             'youtube' => 0,
           ),
           'allowed_types' => array(
+            'application' => 0,
             'audio' => 0,
             'document' => 0,
             'image' => 'image',
@@ -2239,15 +2333,16 @@ function pw_profiles_field_default_fields() {
           ),
           'browser_plugins' => array(
             'media_default--media_browser_1' => 0,
-            'media_default--media_browser_my_files' => 0,
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
             'media_internet' => 0,
             'upload' => 'upload',
             'youtube' => 0,
           ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '22',
+        'weight' => '59',
       ),
     ),
   );
@@ -2319,13 +2414,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '49',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '58',
+          'weight' => '64',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2344,6 +2439,7 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -2357,6 +2453,9 @@ function pw_profiles_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -2428,7 +2527,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Hier können Sie beliebige Links ergänzen, die in Ihrem Profil öffentlich angezeigt werden sollen.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2447,13 +2546,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '39',
+          'weight' => '46',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '42',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2499,7 +2598,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'link_field',
-        'weight' => '54',
+        'weight' => '58',
       ),
     ),
   );
@@ -2546,7 +2645,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Wählen Sie hier Ihren Listenplatz aus.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2570,13 +2669,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '51',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '60',
+          'weight' => '66',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2596,9 +2695,11 @@ function pw_profiles_field_default_fields() {
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'options_select',
-        'weight' => '11',
+        'weight' => '55',
       ),
     ),
   );
@@ -2671,13 +2772,13 @@ function pw_profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '12',
+          'weight' => '13',
         ),
         'user_premium' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '50',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2804,13 +2905,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '50',
+          'weight' => '57',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '57',
+          'weight' => '63',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2910,13 +3011,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '52',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '62',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3018,14 +3119,14 @@ function pw_profiles_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '13',
+          'weight' => '14',
         ),
         'user_premium' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3061,7 +3162,7 @@ function pw_profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_phone',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(
         'format' => array(
@@ -3088,7 +3189,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3101,13 +3202,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '39',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '24',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3126,6 +3227,7 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -3139,6 +3241,9 @@ function pw_profiles_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -3163,10 +3268,12 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '45',
+        'weight' => '46',
       ),
     ),
   );
@@ -3207,7 +3314,7 @@ function pw_profiles_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'user',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu auf "Auswählen", suchen Sie dann eine Bilddatei von Ihrem Computer aus und klicken Sie auf "Abschicken".',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3235,13 +3342,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '40',
+          'weight' => '47',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '41',
+          'weight' => '47',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3280,6 +3387,7 @@ function pw_profiles_field_default_fields() {
             'youtube' => 0,
           ),
           'allowed_types' => array(
+            'application' => 0,
             'audio' => 0,
             'document' => 0,
             'image' => 'image',
@@ -3292,10 +3400,11 @@ function pw_profiles_field_default_fields() {
             'upload' => 'upload',
             'youtube' => 0,
           ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '0',
+        'weight' => '55',
       ),
     ),
   );
@@ -3308,6 +3417,9 @@ function pw_profiles_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_picture_copyright',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -3346,13 +3458,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '36',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '25',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3361,21 +3473,63 @@ function pw_profiles_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_picture_copyright',
       'label' => 'Picture copyright',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'text_processing' => 0,
-        'user_register_form' => FALSE,
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => 0,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => 60,
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '1',
+        'weight' => '56',
       ),
     ),
   );
@@ -3416,11 +3570,11 @@ function pw_profiles_field_default_fields() {
         0 => array(
           'summary' => '',
           'value' => '',
-          'format' => 'managed_content',
+          'format' => 'filtered_html',
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem Profil veröffentlicht.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3444,13 +3598,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '62',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '62',
+          'weight' => '68',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3469,7 +3623,8 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 0,
-            'managed_content' => 'managed_content',
+            'html_mail' => 0,
+            'managed_content' => 0,
             'php_code' => 0,
             'plain_text' => 0,
           ),
@@ -3483,6 +3638,9 @@ function pw_profiles_field_default_fields() {
               'full_html' => array(
                 'weight' => '-8',
               ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
               'managed_content' => array(
                 'weight' => '-10',
               ),
@@ -3495,7 +3653,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
-        'display_summary' => 1,
+        'display_summary' => 0,
         'text_processing' => '1',
         'user_register_form' => 0,
       ),
@@ -3511,7 +3669,7 @@ function pw_profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '23',
+        'weight' => '61',
       ),
     ),
   );
@@ -3558,7 +3716,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -3588,7 +3746,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '54',
+          'weight' => '60',
         ),
         'user_search' => array(
           'label' => 'hidden',
@@ -3610,6 +3768,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'taxonomy',
         'settings' => array(
           'autocomplete_path' => 'taxonomy/autocomplete',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
@@ -3684,13 +3843,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '58',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '54',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3763,7 +3922,7 @@ function pw_profiles_field_default_fields() {
       'entity_types' => array(),
       'field_name' => 'field_user_public_mail',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(
         'format' => array(
@@ -3790,7 +3949,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Diese E-Mail Adresse wird öffentlich in Profil angezeigt.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3803,13 +3962,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '40',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '26',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3828,6 +3987,7 @@ function pw_profiles_field_default_fields() {
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -3841,6 +4001,9 @@ function pw_profiles_field_default_fields() {
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -3865,6 +4028,8 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -3945,13 +4110,13 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '53',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '38',
+          'weight' => '44',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4029,13 +4194,13 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '52',
+          'weight' => '59',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '53',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4059,7 +4224,9 @@ $entity_field[0][\'value\'] = $result;',
       'widget' => array(
         'active' => 0,
         'module' => 'number',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'number',
         'weight' => '28',
       ),
@@ -4075,7 +4242,7 @@ $entity_field[0][\'value\'] = $result;',
       'entity_types' => array(),
       'field_name' => 'field_user_roles_for_view_mode_s',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(
         'tid' => array(
@@ -4126,13 +4293,13 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '42',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '41',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4152,9 +4319,11 @@ $entity_field[0][\'value\'] = $result;',
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'options_buttons',
-        'weight' => '31',
+        'weight' => '13',
       ),
     ),
   );
@@ -4167,6 +4336,9 @@ $entity_field[0][\'value\'] = $result;',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_user_title',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -4205,13 +4377,13 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '37',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '27',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4220,21 +4392,63 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_title',
       'label' => 'Title',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
-        'text_processing' => 0,
-        'user_register_form' => FALSE,
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => 0,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => 60,
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '25',
         ),
         'type' => 'text_textfield',
-        'weight' => '43',
+        'weight' => '1',
       ),
     ),
   );
@@ -4275,7 +4489,7 @@ $entity_field[0][\'value\'] = $result;',
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). Aus technischen Gründen kann es bis zu 30min dauern, bis diese Information in Ihrem Profil angezeigt wird.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -4299,13 +4513,13 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '58',
+          'weight' => '65',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '52',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4317,13 +4531,14 @@ $entity_field[0][\'value\'] = $result;',
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_twitter_account',
-      'label' => 'User Twitter Account',
+      'label' => 'Twitter',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -4337,6 +4552,9 @@ $entity_field[0][\'value\'] = $result;',
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -4361,10 +4579,12 @@ $entity_field[0][\'value\'] = $result;',
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '24',
+        'weight' => '62',
       ),
     ),
   );
@@ -4429,13 +4649,13 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '61',
+          'weight' => '68',
         ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '39',
+          'weight' => '45',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4482,17 +4702,24 @@ $entity_field[0][\'value\'] = $result;',
   t('Alt Text');
   t('Answers Give');
   t('Birthday');
+  t('Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). Aus technischen Gründen kann es bis zu 30min dauern, bis diese Information in Ihrem Profil angezeigt wird.');
   t('Body');
   t('Children');
   t('Committee');
   t('Constituency');
   t('Date');
+  t('Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
+  t('Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
+  t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
   t('Education');
   t('Election Result');
   t('External Links');
   t('External URL');
   t('First Name');
   t('Gender');
+  t('Hier können Sie beliebige Links ergänzen, die in Ihrem Profil öffentlich angezeigt werden sollen.');
+  t('Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu auf "Auswählen", suchen Sie dann eine Bilddatei von Ihrem Computer aus und klicken Sie auf "Abschicken".');
+  t('Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil veröffentlicht.');
   t('Image Gallery');
   t('Last name');
   t('List Position');
@@ -4503,6 +4730,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Picture copyright');
   t('Political Goals');
   t('Political Roles');
+  t('Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.');
   t('Position');
   t('Professional Qualification');
   t('Profile picture');
@@ -4513,8 +4741,10 @@ $entity_field[0][\'value\'] = $result;',
   t('Title');
   t('Title Text');
   t('Title text attribute (for the profile formats x and xs the copyright will overwrite this field)');
-  t('User Twitter Account');
+  t('Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem Profil veröffentlicht.');
+  t('Twitter');
   t('Valid');
+  t('Wählen Sie hier Ihren Listenplatz aus.');
   t('user_first_letter_lname');
   t('user_roles_for_view_mode_switch');
 
