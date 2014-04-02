@@ -55,6 +55,76 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_14-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:14';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'k.A.',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['gdata_profiles_importer_v2-xpathparser_14-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_16-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:16';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'k.A.',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['gdata_profiles_importer_v2-xpathparser_16-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_19-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:19';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'k.A.',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['gdata_profiles_importer_v2-xpathparser_19-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_20-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:20';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'k.A.',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['gdata_profiles_importer_v2-xpathparser_20-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_21-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:21';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'k.A.',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['gdata_profiles_importer_v2-xpathparser_21-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_25-required';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:25';
@@ -91,6 +161,34 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_27-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:27';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'k.A.',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['gdata_profiles_importer_v2-xpathparser_27-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_28-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:28';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'k.A.',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['gdata_profiles_importer_v2-xpathparser_28-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_35-explode';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:35';
@@ -119,6 +217,20 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
   $export['gdata_profiles_importer_v2-xpathparser_4-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_8-default_value';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:8';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'k.A.',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['gdata_profiles_importer_v2-xpathparser_8-default_value'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
