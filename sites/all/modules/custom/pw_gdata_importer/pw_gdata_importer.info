@@ -31,6 +31,7 @@ features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_1-username_cre
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_14-default_value
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_16-default_value
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_19-default_value
+features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_2-set_default_email
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_20-default_value
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_21-default_value
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_25-required
