@@ -23,7 +23,6 @@ function pw_dialogues_view_views_query_alter(&$view, &$query) {
         $query->add_field('node', 'nid', 'node_nid', array('function' => 'groupby'));
         $query->add_groupby('node.nid');
         $query->distinct = TRUE;
-        dpm($query);
       }
 
     break;
