@@ -59061,7 +59061,7 @@ msgid "Tokens for Views Send e-mail message."
 msgstr ""
 
 #: /index.php
-msgid "Wählergedächnis"
+msgid "Wählergedächtnis"
 msgstr ""
 
 #: /index.php
