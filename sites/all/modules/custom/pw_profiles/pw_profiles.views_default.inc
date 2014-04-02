@@ -670,6 +670,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['label'] = 'Calendar Admin';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Edit Calendar
 [nothing_3]';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
