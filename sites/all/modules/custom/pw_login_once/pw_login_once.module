@@ -662,7 +662,7 @@ function pw_login_once_page($uid, $timestamp, $hashed_pass) {
     // Time out, in seconds, until login URL expires. 24 hours = 86400 seconds.
     $timeout = variable_get('pw_login_once_expiry', '');
     if (!$timeout) {
-      $timeout = 86400 * 14;
+      $timeout = 86400 * 7 * 8; // default 8 weeks
     }
     $current = REQUEST_TIME ;
     // Some redundant checks for extra security ?
