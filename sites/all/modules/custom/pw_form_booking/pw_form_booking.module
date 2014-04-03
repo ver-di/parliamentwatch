@@ -41,10 +41,10 @@ function pw_form_booking_form_alter(&$form, &$form_state, $form_id) {
     $form['submitted']['user_first_name']['#default_value'] = $user->field_user_fname['und'][0]['value'];
     $form['submitted']['user_last_name']['#default_value'] = $user->field_user_lname['und'][0]['value'];
     $form['submitted']['user_email']['#default_value'] = $user->mail;
-    $form['submitted']['user_phone']['#default_value'] = $user->field_user_phone['und'][0]['value'];
+    $form['submitted']['user_phone']['#default_value'] = $user->field_user_phone['und'][0]['value'] != 'k.A.'?$user->field_user_phone['und'][0]['value']:'';
     $form['submitted']['user_address_street']['#default_value'] = $user->field_user_address['und'][0]['thoroughfare'];
-    $form['submitted']['user_address_postal_code']['#default_value'] = $user->field_user_address['und'][0]['postal_code'];
-    $form['submitted']['user_address_city']['#default_value'] = $user->field_user_address['und'][0]['locality'];
+    $form['submitted']['user_address_postal_code']['#default_value'] = $user->field_user_address['und'][0]['postal_code'] != 'k.A.'?$user->field_user_address['und'][0]['postal_code']:'';
+    $form['submitted']['user_address_city']['#default_value'] = $user->field_user_address['und'][0]['locality'] != 'k.A.'?$user->field_user_address['und'][0]['locality']:'';
   }
 }
 
