@@ -82,7 +82,7 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   $handler->display->display_options['relationships']['user_to_file']['table'] = 'file_usage';
   $handler->display->display_options['relationships']['user_to_file']['field'] = 'user_to_file';
   $handler->display->display_options['relationships']['user_to_file']['relationship'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['relationships']['user_to_file']['label'] = 'Profile picture';
+  $handler->display->display_options['relationships']['user_to_file']['label'] = 'Profilfoto';
   /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
@@ -205,7 +205,7 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
   $handler->display->display_options['fields']['fieldset_5']['id'] = 'fieldset_5';
   $handler->display->display_options['fields']['fieldset_5']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_5']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_5']['label'] = 'Profile picture';
+  $handler->display->display_options['fields']['fieldset_5']['label'] = 'Profilfoto';
   $handler->display->display_options['fields']['fieldset_5']['children'] = array(
     0 => 'field_user_picture',
     1 => 'field_image_copyright',
