@@ -101,6 +101,83 @@ function pw_mass_mailing_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_expiry';
+  $strongarm->value = '4838400';
+  $export['pw_login_once_expiry'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_path_current';
+  $strongarm->value = 1;
+  $export['pw_login_once_path_current'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_path_custom';
+  $strongarm->value = '';
+  $export['pw_login_once_path_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_path_default';
+  $strongarm->value = 'user';
+  $export['pw_login_once_path_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_path_front';
+  $strongarm->value = 1;
+  $export['pw_login_once_path_front'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_path_user';
+  $strongarm->value = 1;
+  $export['pw_login_once_path_user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_path_user_edit';
+  $strongarm->value = 1;
+  $export['pw_login_once_path_user_edit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_user_select';
+  $strongarm->value = 0;
+  $export['pw_login_once_user_select'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_user_set_mail';
+  $strongarm->value = 0;
+  $export['pw_login_once_user_set_mail'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_user_view';
+  $strongarm->value = 0;
+  $export['pw_login_once_user_view'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_login_once_user_widget';
+  $strongarm->value = 'autocomplete';
+  $export['pw_login_once_user_widget'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'smtp_allowhtml';
   $strongarm->value = 1;
   $export['smtp_allowhtml'] = $strongarm;
