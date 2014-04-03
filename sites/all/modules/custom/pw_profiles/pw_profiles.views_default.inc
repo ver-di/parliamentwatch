@@ -672,8 +672,9 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['label'] = 'Calendar Admin';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
-  $handler->display->display_options['header']['php']['php_output'] = '<?php print t("Edit Calendar") ?>
-<br/>
+  $handler->display->display_options['header']['php']['php_output'] = '<fieldset>
+<legend><span class="fieldset-legend"><?php print t("Edit Calendar") ?></span></legend>
+<div class="fieldset-wrapper">
 <a href="<?php
 Global $base_url;
 $cpath = explode(\'/\',current_path());
@@ -681,7 +682,9 @@ $path_uid = $cpath[1];
 $base_url;
 $link =$base_url."/node/add/calendar-entry?width=800&height=600&destination=user/".$path_uid."/edit";
 print_r($link);
-?>" class="colorbox-node init-colorbox-processed-processed">+Add Calendar Entry</a>';
+?>" class="colorbox-node init-colorbox-processed-processed"><?php print t(\'+ Add Calendar Entry\'); ?></a>
+</div>
+</fieldset>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Excluded | nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';

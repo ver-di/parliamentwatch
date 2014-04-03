@@ -106,10 +106,10 @@ fieldset .fieldset-legend {
     letter-spacing: 0.04ex;
     margin-bottom: 0.9rem;
 }
-html.js fieldset.collapsible .fieldset-legend {
+html.js fieldset.collapsible .fieldset-legend,
+fieldset .fieldset-legend {
     padding-left: 36px;
     background: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png) -360px -115px no-repeat;
-    cursor: pointer;
 }
 html.js fieldset.collapsible fieldset .fieldset-legend {
     padding-left: 0;
@@ -118,6 +118,7 @@ html.js fieldset.collapsible fieldset .fieldset-legend {
 }
 html.js fieldset.collapsible.collapsed .fieldset-legend {
     background-position: -280px -195px;
+    cursor: pointer;
 }
 fieldset .fieldset-legend a {
     font-weight: normal;
@@ -187,4 +188,7 @@ fieldset .fieldset-legend a {
 .role-administrator #user-profile-form #user_user_form_group_user_premium_fields,
 .role-content-manager #user-profile-form #user_user_form_group_user_premium_fields {
     display: block;
+}
+#user-profile-form .view-display-id-calendar_admin_block .view-content {
+    padding-left: 36px;
 }

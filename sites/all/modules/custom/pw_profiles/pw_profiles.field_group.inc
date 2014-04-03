@@ -112,10 +112,7 @@ function pw_profiles_field_group_info() {
   $field_group->data = array(
     'label' => 'Premium',
     'weight' => '8',
-    'children' => array(
-      0 => 'field_user_picture',
-      1 => 'field_user_picture_copyright',
-    ),
+    'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'formatter' => 'collapsible',
@@ -791,19 +788,20 @@ function pw_profiles_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = 'group_user_premium';
   $field_group->data = array(
-    'label' => 'About',
+    'label' => 'About me',
     'weight' => '18',
     'children' => array(
       0 => 'field_user_about',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
-      'formatter' => 'closed',
+      'label' => 'About me',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => '',
         'required_fields' => 1,
+        'classes' => '',
+        'description' => '',
       ),
+      'formatter' => 'closed',
     ),
   );
   $export['group_user_premium_about|user|user|form'] = $field_group;
@@ -985,11 +983,11 @@ function pw_profiles_field_group_info() {
     'label' => 'Premium fields',
     'weight' => '8',
     'children' => array(
-      0 => 'group_user_premium_picture',
-      1 => 'group_user_premium_about',
-      2 => 'group_user_premium_links',
-      3 => 'group_user_premium_gallery',
-      4 => 'group_user_premium_goals',
+      0 => 'group_user_premium_about',
+      1 => 'group_user_premium_gallery',
+      2 => 'group_user_premium_goals',
+      3 => 'group_user_premium_links',
+      4 => 'group_user_premium_picture',
       5 => 'group_user_premium_twitter',
     ),
     'format_type' => 'tabs',
