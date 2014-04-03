@@ -3013,13 +3013,23 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1395845253\',
-      \'changed\' => \'1395845253\',
+      \'changed\' => \'1396514618\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'d6f67351-8974-4e3a-88d8-150931a45f5b\',
-      \'revision_timestamp\' => \'1396440173\',
-      \'revision_uid\' => \'0\',
-      \'body\' => array(),
+      \'revision_timestamp\' => \'1396514618\',
+      \'revision_uid\' => \'1454\',
+      \'body\' => array(
+        \'und\' => array(
+          array(
+            \'value\' => "<p>\\r\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\r\\n</p>\\r\\n<p>\\r\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\r\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\r\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\r\\n\\t+ Lebenslauf<br />\\r\\n\\t+ Terminkalender<br />\\r\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\r\\n</p>\\r\\n<p>\\r\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 149 Euro inkl. MwSt.\\r\\n</p>\\r\\n",
+            \'summary\' => \'\',
+            \'format\' => \'managed_content\',
+            \'safe_value\' => "<p>\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\n</p>\\n<p>\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\n\\t+ Lebenslauf<br />\\n\\t+ Terminkalender<br />\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\n</p>\\n<p>\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 149 Euro inkl. MwSt.\\n</p>\\n",
+            \'safe_summary\' => \'\',
+          ),
+        ),
+      ),
       \'field_webform_footer\' => array(),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
