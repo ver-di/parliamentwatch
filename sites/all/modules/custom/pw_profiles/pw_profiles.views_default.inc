@@ -666,26 +666,23 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['label'] = 'Calendar Admin';
-  $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = 'Edit Calendar
-[nothing_3]';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
-  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  /* Kopfbereich: Global: PHP */
+  $handler->display->display_options['header']['php']['id'] = 'php';
+  $handler->display->display_options['header']['php']['table'] = 'views';
+  $handler->display->display_options['header']['php']['field'] = 'php';
+  $handler->display->display_options['header']['php']['label'] = 'Calendar Admin';
+  $handler->display->display_options['header']['php']['empty'] = TRUE;
+  $handler->display->display_options['header']['php']['php_output'] = '<?php print t("Edit Calendar") ?>
+<br/>
+<a href="<?php
+Global $base_url;
+$cpath = explode(\'/\',current_path());
+$path_uid = $cpath[1];
+$base_url;
+$link =$base_url."/node/add/calendar-entry?width=800&height=600&destination=user/".$path_uid."/edit";
+print_r($link);
+?>" class="colorbox-node init-colorbox-processed-processed">+Add Calendar Entry</a>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Custom Text | Lightbox Definition */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['ui_name'] = 'Custom Text | Lightbox Definition';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'lightframe[|width:800px; height:600px; scrolling: auto;]';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Feld: Excluded | nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -757,19 +754,6 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node init-colorbox-processed-processed';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | add-calendar-entry */
-  $handler->display->display_options['fields']['nothing_3']['id'] = 'nothing_3';
-  $handler->display->display_options['fields']['nothing_3']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Excluded | add-calendar-entry';
-  $handler->display->display_options['fields']['nothing_3']['label'] = '';
-  $handler->display->display_options['fields']['nothing_3']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '+ Add calendar entry';
-  $handler->display->display_options['fields']['nothing_3']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_3']['alter']['path'] = 'node/add/calendar-entry?width=800&height=600&destination=user/[uid]/edit';
-  $handler->display->display_options['fields']['nothing_3']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['nothing_3']['alter']['link_class'] = 'colorbox-node init-colorbox-processed-processed';
-  $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Inhalt: Author uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
