@@ -43,7 +43,7 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['block-pw_donation_smallprint'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'medium',
     'custom' => '0',
     'i18n_block_language' => array(),
     'i18n_mode' => '0',
@@ -231,7 +231,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-64',
+        'weight' => '-75',
       ),
       'pw_seven' => array(
         'region' => 'content',
@@ -434,7 +434,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-62',
+        'weight' => '-74',
       ),
       'pw_seven' => array(
         'region' => 'content',

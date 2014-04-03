@@ -64,12 +64,6 @@ function pw_subsite_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'block-33' => array(
-          'module' => 'block',
-          'delta' => '33',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',
