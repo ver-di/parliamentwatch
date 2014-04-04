@@ -355,7 +355,6 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['id'] = 'field_user_twitter_account-revision_id';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['table'] = 'field_revision_field_user_twitter_account';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['field'] = 'field_user_twitter_account-revision_id';
-  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['label'] = 'twitter';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['element_label_colon'] = FALSE;
   /* Sort criterion: User revision: Vid */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
@@ -3474,14 +3473,14 @@ echo $base_url;
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'url_profile';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[php]/user/[uid]/revisions/[vid]/view';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[php]/profile/[name]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Feld: Benutzer (historical data): External URL */
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['id'] = 'field_user_external_url-revision_id';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['table'] = 'field_revision_field_user_external_url';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['field'] = 'field_user_external_url-revision_id';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['label'] = 'url_profile';
+  $handler->display->display_options['fields']['field_user_external_url-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['type'] = 'link_plain';
