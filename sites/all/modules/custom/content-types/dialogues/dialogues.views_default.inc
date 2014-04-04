@@ -2687,7 +2687,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'comment answer push-bottom-l';

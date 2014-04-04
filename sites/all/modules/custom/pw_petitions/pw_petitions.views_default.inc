@@ -34,7 +34,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
