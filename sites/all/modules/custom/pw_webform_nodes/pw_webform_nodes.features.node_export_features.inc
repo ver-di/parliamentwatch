@@ -127,10 +127,10 @@ function pw_webform_nodes_node_export_features_default() {
           \'2\',
         ),
         \'emails\' => array(
-          1 => array(
+          2 => array(
             \'nid\' => \'10380\',
-            \'eid\' => \'1\',
-            \'email\' => NULL,
+            \'eid\' => \'2\',
+            \'email\' => \'4\',
             \'subject\' => \'Bitte bestätigen Sie Ihr Newsletter Abonnement\',
             \'from_name\' => \'default\',
             \'from_address\' => \'default\',
@@ -542,12 +542,12 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1395845253\',
-      \'changed\' => \'1395845253\',
+      \'changed\' => \'1396528644\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'2043edea-d674-4195-a18b-a9f1a2afbdb7\',
-      \'revision_timestamp\' => \'1396440173\',
-      \'revision_uid\' => \'0\',
+      \'revision_timestamp\' => \'1396528644\',
+      \'revision_uid\' => \'1454\',
       \'body\' => array(
         \'und\' => array(
           array(
@@ -647,7 +647,7 @@ function pw_webform_nodes_node_export_features_default() {
         \'submit_interval\' => \'3600\',
         \'total_submit_limit\' => \'-1\',
         \'total_submit_interval\' => \'-1\',
-        \'webform_ajax\' => \'0\',
+        \'webform_ajax\' => \'1\',
         \'record_exists\' => TRUE,
         \'roles\' => array(
           \'1\',
@@ -841,12 +841,12 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1395845253\',
-      \'changed\' => \'1396445264\',
+      \'changed\' => \'1396601266\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'451cb368-988c-4b6d-8f8c-0b36031901ca\',
-      \'revision_timestamp\' => \'1396445264\',
-      \'revision_uid\' => \'1454\',
+      \'revision_timestamp\' => \'1396601266\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(),
       \'field_webform_footer\' => array(
         \'und\' => array(
@@ -932,7 +932,7 @@ function pw_webform_nodes_node_export_features_default() {
         \'confirmation\' => \'\',
         \'confirmation_format\' => \'managed_content\',
         \'redirect_url\' => \'frage-stellen/vielen-dank\',
-        \'status\' => \'1\',
+        \'status\' => \'0\',
         \'block\' => \'0\',
         \'teaser\' => \'0\',
         \'allow_draft\' => \'0\',
@@ -1791,19 +1791,19 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1390568546\',
-      \'changed\' => \'1395854832\',
+      \'changed\' => \'1396519704\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'be5a5fb5-27f9-473b-86e2-d48262a8dc45\',
-      \'revision_timestamp\' => \'1396440173\',
-      \'revision_uid\' => \'0\',
+      \'revision_timestamp\' => \'1396519704\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(
         \'und\' => array(
           array(
-            \'value\' => "<p>\\r\\n\\tabgeordnetenwatch.de schaut Abgeordneten und den Parteien auf die Finger. Bitte unterstützen Sie unsere Arbeit für mehr Transparenz und Bürgernähe.\\r\\n</p>\\r\\n<p>\\r\\n\\tWir setzen Ihre Spende sparsam und effizient ein. Wie genau, erfahren Sie in unserem<br />\\r\\n\\t<a class=\\"link-download\\" href=\\"/node/7759\\">Jahres- und Wirkungsbericht 2012</a>.\\r\\n</p>\\r\\n",
+            \'value\' => "<h3>\\r\\n\\tSpenden sichern die Unabhängigkeit&nbsp;und Überparteilichkeit&nbsp;von abgeordnetenwatch.de\\r\\n</h3>\\r\\n<p>\\r\\n\\tabgeordnetenwatch.de schaut Abgeordneten und den Parteien auf die Finger. Bitte unterstützen Sie unsere Arbeit für mehr Transparenz und Bürgernähe.\\r\\n</p>\\r\\n<p>\\r\\n\\tWir setzen Ihre Spende sparsam und effizient ein. Wie genau, erfahren Sie in unserem<br />\\r\\n\\t<a class=\\"link-download\\" href=\\"/node/7759\\">Jahres- und Wirkungsbericht 2012</a>.\\r\\n</p>\\r\\n",
             \'summary\' => \'\',
             \'format\' => \'managed_content\',
-            \'safe_value\' => "<p>\\n\\tabgeordnetenwatch.de schaut Abgeordneten und den Parteien auf die Finger. Bitte unterstützen Sie unsere Arbeit für mehr Transparenz und Bürgernähe.\\n</p>\\n<p>\\n\\tWir setzen Ihre Spende sparsam und effizient ein. Wie genau, erfahren Sie in unserem<br /><a class=\\"link-download\\" href=\\"/ueber-uns/mehr/finanzierung/parlamentwatch-eV\\">Jahres- und Wirkungsbericht 2012</a>.\\n</p>\\n",
+            \'safe_value\' => "<h3>\\n\\tSpenden sichern die Unabhängigkeit und Überparteilichkeit von abgeordnetenwatch.de<br /></h3>\\n<p>\\n\\tabgeordnetenwatch.de schaut Abgeordneten und den Parteien auf die Finger. Bitte unterstützen Sie unsere Arbeit für mehr Transparenz und Bürgernähe.\\n</p>\\n<p>\\n\\tWir setzen Ihre Spende sparsam und effizient ein. Wie genau, erfahren Sie in unserem<br /><a class=\\"link-download\\" href=\\"/ueber-uns/mehr/finanzierung/parlamentwatch-eV\\">Jahres- und Wirkungsbericht 2012</a>.\\n</p>\\n",
             \'safe_summary\' => \'\',
           ),
         ),
@@ -3013,24 +3013,32 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1395845253\',
-      \'changed\' => \'1396514618\',
+      \'changed\' => \'1396565798\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'d6f67351-8974-4e3a-88d8-150931a45f5b\',
-      \'revision_timestamp\' => \'1396514618\',
+      \'revision_timestamp\' => \'1396565798\',
       \'revision_uid\' => \'1454\',
       \'body\' => array(
         \'und\' => array(
           array(
-            \'value\' => "<p>\\r\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\r\\n</p>\\r\\n<p>\\r\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\r\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\r\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\r\\n\\t+ Lebenslauf<br />\\r\\n\\t+ Terminkalender<br />\\r\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\r\\n</p>\\r\\n<p>\\r\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 149 Euro inkl. MwSt.\\r\\n</p>\\r\\n",
+            \'value\' => "<p>\\r\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\r\\n</p>\\r\\n<p>\\r\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\r\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\r\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\r\\n\\t+ Lebenslauf<br />\\r\\n\\t+ Terminkalender<br />\\r\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\r\\n</p>\\r\\n<p>\\r\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 149 Euro inkl. MwSt.\\r\\n</p>\\r\\n<p>\\r\\n\\tWenn Sie per Lastschrift zahlen, wird Ihre Profilerweiterung <strong>unmittelbar freigeschaltet</strong>.\\r\\n</p>\\r\\n",
             \'summary\' => \'\',
             \'format\' => \'managed_content\',
-            \'safe_value\' => "<p>\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\n</p>\\n<p>\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\n\\t+ Lebenslauf<br />\\n\\t+ Terminkalender<br />\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\n</p>\\n<p>\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 149 Euro inkl. MwSt.\\n</p>\\n",
+            \'safe_value\' => "<p>\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\n</p>\\n<p>\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\n\\t+ Lebenslauf<br />\\n\\t+ Terminkalender<br />\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\n</p>\\n<p>\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 149 Euro inkl. MwSt.\\n</p>\\n<p>\\n\\tWenn Sie per Lastschrift zahlen, wird Ihre Profilerweiterung <strong>unmittelbar freigeschaltet</strong>.\\n</p>\\n",
             \'safe_summary\' => \'\',
           ),
         ),
       ),
-      \'field_webform_footer\' => array(),
+      \'field_webform_footer\' => array(
+        \'und\' => array(
+          array(
+            \'value\' => "<p>\\r\\n\\tZum Schutz der Daten erfolgt die Übertragung der Formular-Daten ausschließlich über zertifizierte SSL-Verschlüsselung.\\r\\n</p>\\r\\n<p>\\r\\n\\tHinweis für Zahlung per SEPA-Lastschrift: Wir nehmen den Einzug von Ihrem Konto frühestens 2 Tage nach Ihrer Buchung vor.\\r\\n</p>\\r\\n",
+            \'format\' => \'managed_content\',
+            \'safe_value\' => "<p>\\n\\tZum Schutz der Daten erfolgt die Übertragung der Formular-Daten ausschließlich über zertifizierte SSL-Verschlüsselung.\\n</p>\\n<p>\\n\\tHinweis für Zahlung per SEPA-Lastschrift: Wir nehmen den Einzug von Ihrem Konto frühestens 2 Tage nach Ihrer Buchung vor.\\n</p>\\n",
+          ),
+        ),
+      ),
       \'rdf_mapping\' => array(
         \'rdftype\' => array(
           \'sioc:Item\',
