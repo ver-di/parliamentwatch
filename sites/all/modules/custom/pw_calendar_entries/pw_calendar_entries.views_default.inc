@@ -39,7 +39,7 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Feld: Feld: Date */
+  /* Feld: Inhalt: Date */
   $handler->display->display_options['fields']['field_valid']['id'] = 'field_valid';
   $handler->display->display_options['fields']['field_valid']['table'] = 'field_data_field_valid';
   $handler->display->display_options['fields']['field_valid']['field'] = 'field_valid';
@@ -157,7 +157,7 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['relationships']['field_user_name_target_id']['table'] = 'field_data_field_user_name';
   $handler->display->display_options['relationships']['field_user_name_target_id']['field'] = 'field_user_name_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Feld: Date */
+  /* Feld: Inhalt: Date */
   $handler->display->display_options['fields']['field_valid']['id'] = 'field_valid';
   $handler->display->display_options['fields']['field_valid']['table'] = 'field_data_field_valid';
   $handler->display->display_options['fields']['field_valid']['field'] = 'field_valid';
