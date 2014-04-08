@@ -1497,7 +1497,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'z.B. "Jurist" oder "Diplom Ingenieur"',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -2383,7 +2383,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'z.B. "selbständiger IT-Berater" oder "Bürgermeister"',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -4747,6 +4747,8 @@ $entity_field[0][\'value\'] = $result;',
   t('Wählen Sie hier Ihren Listenplatz aus.');
   t('user_first_letter_lname');
   t('user_roles_for_view_mode_switch');
+  t('z.B. "Jurist" oder "Diplom Ingenieur"');
+  t('z.B. "selbständiger IT-Berater" oder "Bürgermeister"');
 
   return $fields;
 }
