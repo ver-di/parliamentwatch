@@ -2064,8 +2064,13 @@ form .webform-component-checkboxes .description {
 }
 #user-register-form label,
 #user-login label,
-#search-form label {
+#search-form label,
+#user-pass label {
     display: block;
+}
+#user-pass .form-item {
+    width: 265px;
+    margin-bottom: 1em;
 }
 
 
