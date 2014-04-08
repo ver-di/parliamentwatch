@@ -4241,7 +4241,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat abgeordnetenwatch einmalig mit 179 Euro (149 Euro als Frühbucherrabatt). 
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Durch die Verwendung einer Profilerweiterung wird abgeordnetenwatch.de unterstützt.
 ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
@@ -5290,7 +5290,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate of [name_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
@@ -5310,7 +5310,7 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
 $profiluser = $myuser = user_load($row->uid);
 $profiluserroles = $profiluser->roles;
 if(in_array("Premium User",$profiluserroles)) {
-print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat abgeordnetenwatch einmalig mit 179 Euro (149 Euro als Frühbucherrabatt).";
+print "Durch die Verwendung einer Profilerweiterung wird abgeordnetenwatch.de unterstützt";
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -5515,7 +5515,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Candidate of [name_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
@@ -5707,7 +5707,7 @@ print "Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat ab
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Member of [name_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
@@ -5923,7 +5923,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Member of [name_1]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[name_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';

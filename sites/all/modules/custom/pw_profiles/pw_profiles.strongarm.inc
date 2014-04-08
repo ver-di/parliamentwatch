@@ -291,6 +291,20 @@ function pw_profiles_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pw_logouttab_url';
+  $strongarm->value = 'user';
+  $export['pw_logouttab_url'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pw_logouttab_weight';
+  $strongarm->value = '30';
+  $export['pw_logouttab_weight'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pw_profileswitch_assignment';
   $strongarm->value = array(
     7030 => 'user_premium',
