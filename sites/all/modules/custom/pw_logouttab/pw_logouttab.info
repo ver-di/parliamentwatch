@@ -1,0 +1,8 @@
+name = PW Logout Tab
+description = Adds a logout tab to the user profile.
+package = Parliamentwatch
+core = 7.x
+configure = admin/config/people/pw_logouttab
+version = 7.x-20140408
+project = pw_logouttab
+

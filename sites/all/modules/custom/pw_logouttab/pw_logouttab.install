@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the pw_logouttab module.
+ */
+
+/**
+ * Implements hook_uninstall()
+ */
+function pw_logouttab_uninstall() {
+  variable_del('pw_logouttab_url');
+  variable_del('pw_logouttab_weight');
+}
