@@ -4317,12 +4317,21 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_education']['element_wrapper_class'] = 'views-row-odd clear clearfix';
   $handler->display->display_options['fields']['field_user_education']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_education']['empty'] = '-';
+  /* Feld: Benutzer: Professional Qualification */
+  $handler->display->display_options['fields']['field_user_job_skills']['id'] = 'field_user_job_skills';
+  $handler->display->display_options['fields']['field_user_job_skills']['table'] = 'field_data_field_user_job_skills';
+  $handler->display->display_options['fields']['field_user_job_skills']['field'] = 'field_user_job_skills';
+  $handler->display->display_options['fields']['field_user_job_skills']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_job_skills']['empty'] = '-';
   /* Feld: Benutzer: Address */
   $handler->display->display_options['fields']['field_user_address']['id'] = 'field_user_address';
   $handler->display->display_options['fields']['field_user_address']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['fields']['field_user_address']['field'] = 'field_user_address';
   $handler->display->display_options['fields']['field_user_address']['label'] = 'Wohnort';
   $handler->display->display_options['fields']['field_user_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_address']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_address']['element_wrapper_class'] = 'views-row-odd clear clearfix';
+  $handler->display->display_options['fields']['field_user_address']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_address']['empty'] = '-';
   $handler->display->display_options['fields']['field_user_address']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_user_address']['click_sort_column'] = 'country';
@@ -4340,8 +4349,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['name_1']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['fields']['name_1']['label'] = 'Wahlkreis';
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['name_1']['element_wrapper_class'] = 'views-row-odd clear clearfix';
   $handler->display->display_options['fields']['name_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name_1']['empty'] = '-';
   /* Feld: Taxonomie-Begriff: Name */
@@ -4351,6 +4358,9 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['name']['relationship'] = 'field_user_list_position_tid';
   $handler->display->display_options['fields']['name']['label'] = 'Listenplatz';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'views-row-odd clear clearfix';
+  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['empty'] = '-';
 
   /* Display: About */
