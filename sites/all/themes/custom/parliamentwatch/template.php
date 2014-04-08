@@ -10,6 +10,23 @@
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
+ 
+
+/*
+ * Overrides hook_preprocess_mimemail_message() css settings
+ */
+function parliamentwatch_preprocess_mimemail_message(&$variables) {
+    $variables['css'] = "a {
+                              color: #f63;
+                              text-decoration: none;
+                              font-weight: bold;
+                          }
+                          a:hover,
+                          a:focus,
+                          a:active {
+                              color: #999;
+                          }";
+}
 
 /*
  * adding jqueryui libraries
