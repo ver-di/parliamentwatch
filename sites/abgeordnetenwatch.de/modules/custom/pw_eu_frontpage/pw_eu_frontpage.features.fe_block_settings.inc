@@ -108,12 +108,12 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_schirmherrin',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'parlamente/eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_second',
+        'status' => '1',
         'theme' => 'abgeordnetenwatch',
         'weight' => '0',
       ),
@@ -125,7 +125,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
       ),
     ),
     'title' => 'Schirmherrin von abgeordnetenwatch.de',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   $export['quicktabs-politicians_answer'] = array(
