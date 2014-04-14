@@ -316,7 +316,6 @@ function pw_mass_mailing_strongarm() {
     'value' => '[user:greeting] [user:fullname],
 
 Sie kandidieren am 25. Mai 2014 zu den Europawahlen. Wir haben Sie daher mit einem kostenlosen Grundeintrag auf abgeordnetenwatch.de aufgenommen und bitten Sie, Ihre Daten über den Link am Ende dieser Mail zu überprüfen.
-
 abgeordnetenwatch.de zur Europawahl 2014 gibt Bürgerinnen und Bürgern die Möglichkeit, Sie und die Kandidierenden aller Parteien öffentlich zu befragen. Sie können dann unmittelbar und direkt online antworten. Das ist für alle einsehbar, also öffentlich und im besten Sinne demokratisch.
 
 Zusätzlich möchten wir Ihnen eine Profilerweiterung anbieten. Diese beinhaltet u.a. ein Porträtfoto, die Gelegenheit zu einer Einbindung des eigenen Facebook- und Twitter-Kanals sowie die Möglichkeit zur Darstellung der eigenen politischen Ziele.
@@ -324,7 +323,6 @@ Zusätzlich möchten wir Ihnen eine Profilerweiterung anbieten. Diese beinhaltet
 Die Profile der Kandidierenden zur Europawahl werden auf Portalen wie SPIEGEL ONLINE prominent eingebunden. Damit Bürgerinnen und Bürger die Kandidierenden aus ihrer Nachbarschaft trotz des Listenwahlrechts leicht auffinden können, planen wir eine Deutschlandkarte, über die Interessierte zu den Profilseiten ihrer heimischen Politikerinnen und Politiker finden können.
 
 Positionieren Sie sich im Wahlkampf!
-
 Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:
 
 + Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner
@@ -339,17 +337,17 @@ Zeigen Sie Profil und unterstützen Sie so abgeordnetenwatch.de!
 Ihre Profilerweiterung kostet regulär 179 Euro inkl. MwSt. Bis einschließlich 15. April 2014 bieten wir Ihnen einen Frühbucherrabatt von 30 Euro. Sie zahlen also nur 149 Euro inkl. MwSt.
 
 Profilerweiterung bestellen: [user:login-one-time]#overlay=user/[user:uid]/booking_form
+
 Nur Grundeintrag überprüfen: [user:login-one-time]
 
 Bitte beachten Sie: Aus Sicherheitsgründen können diese Links nur einmal genutzt werden. Sollten Sie Ihr Profil auch später noch bearbeiten wollen, nutzten Sie bitte den folgenden Login-Link mit dem angegebenen Benutzernamen und Passwort:
-
 Login-Link: [site:login-url] 
 Benutzername: [user:name] 
 Passwort: [user:new-password] 
+
 Wir wünschen Ihnen viel Erfolg im Wahlkampf und stehen Ihnen für Rückfragen jederzeit gerne zur Verfügung.
 
 Mit freundlichen Grüßen
-
 Gregor Hackmack und Boris Hekele
 
 PS: Mit diesem Betrag zeigen Sie nicht nur Profil sondern unterstützen zudem ein gutes Projekt. Denn abgeordnetenwatch.de ist eine unabhängige und überparteiliche Plattform, die den Dialog zwischen Bürgerinnen und Bürgern und Kandidatinnen und Kandidaten fördert. Darüber hinaus: Im Vergleich zu einer Anzeige in Ihrer Lokalzeitung ist eine Profilerweiterung eine günstige Möglichkeit für die eigenen Positionen zu werben.
@@ -369,8 +367,8 @@ Sollten wir eine Frage wegen eines Verstoßes gegen den Moderations-Codex nicht 
 Wenn Sie einmal mit einer Moderationsentscheidung nicht einverstanden sind, wenden Sie sich bitte an moderation@abgeordnetenwatch.de. Dort wird der Vorgang noch einmal geprüft. Sollten Sie auch danach noch nicht mit der getroffenen Entscheidung einverstanden sein, können Sie sich an unser Kuratorium aus unabhängigen Persönlichkeiten wenden: https://www.abgeordnetenwatch.de/ueber-uns/mehr/kuratorium
 
 ====================================
-
 IMPRESSUM:
+
 Parlamentwatch e.V. / Parlamentwatch GmbH
 Mittelweg 12
 20148 Hamburg
@@ -456,7 +454,7 @@ Die Parlamentwatch GmbH ist eingetragen beim Amtsgericht Hamburg unter HRB - 989
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'views_send_to_name_pw_mass_mail:page';
-  $strongarm->value = 'field_user_lname_pos_4';
+  $strongarm->value = 'users_mail_pos_3';
   $export['views_send_to_name_pw_mass_mail:page'] = $strongarm;
 
   return $export;
