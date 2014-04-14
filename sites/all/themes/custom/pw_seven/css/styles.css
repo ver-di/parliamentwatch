@@ -80,24 +80,43 @@ h4 {
 .media-widget .preview .media-item:hover {
     border-color: #f63;
 }
-form .field-multiple-table th.field-label {
+
+/* user edit form */
+
+#edit-overlay-control,
+#edit-field-user-address .street-block,
+#edit-field-user-address .form-item-field-user-address-und-0-country,
+#user-profile-form #user_user_form_group_user_premium_fields,
+#user-profile-form #edit-mimemail {
+    display: none;
+}
+.role-premium-user #user-profile-form #user_user_form_group_user_premium_fields,
+.role-administrator #user-profile-form #user_user_form_group_user_premium_fields,
+.role-content-manager #user-profile-form #user_user_form_group_user_premium_fields {
+    display: block;
+}
+#user-profile-form .field-multiple-table th.field-label {
     padding-left: 7px;
 }
-fieldset {
+#user-profile-form fieldset {
     border: 0;
-    border-bottom: 1px solid #CCCCCC;
     padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
 }
-fieldset fieldset {
-    border: 0;
+#user-profile-form fieldset fieldset {
+    border-bottom: 0;
+    padding-bottom: 0;
 }
-fieldset .fieldset-wrapper {
-    padding-left: 36px;
-}
-fieldset fieldset .fieldset-wrapper {
+#user-profile-form fieldset .fieldset-wrapper,
+#user-profile-form fieldset fieldset .fieldset-wrapper,
+#user-profile-form fieldset.collapsible fieldset .fieldset-wrapper {
     padding-left: 0;
 }
-fieldset .fieldset-legend {
+#user-profile-form fieldset.collapsible .fieldset-wrapper,
+#user-profile-form fieldset.collapsible fieldset.collapsible .fieldset-wrapper {
+    padding-left: 36px;
+}
+#user-profile-form fieldset .fieldset-legend {
     text-transform: none;
     font-family: 'Times New Roman',Georgia,serif;
     font-weight: normal;
@@ -106,27 +125,23 @@ fieldset .fieldset-legend {
     letter-spacing: 0.04ex;
     margin-bottom: 0.9rem;
 }
-html.js fieldset.collapsible .fieldset-legend,
-fieldset .fieldset-legend {
-    padding-left: 36px;
-    background: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png) -360px -115px no-repeat;
-}
-html.js fieldset.collapsible fieldset .fieldset-legend {
+#user-profile-form fieldset .fieldset-legend {
     padding-left: 0;
     background: transparent;
     cursor: default;
 }
-html.js fieldset.collapsible.collapsed .fieldset-legend {
-    background-position: -280px -195px;
+#user-profile-form fieldset.collapsible > legend > .fieldset-legend {
+    padding-left: 36px;
+    background: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png) -360px -115px no-repeat;
     cursor: pointer;
 }
-fieldset .fieldset-legend a {
+#user-profile-form  fieldset.collapsible.collapsed .fieldset-legend {
+    background-position: -280px -195px;
+}
+#user-profile-form fieldset .fieldset-legend a {
     font-weight: normal;
     color: #333333;
 }
-
-/* user edit form */
-
 #edit-submit {
     background: #ff6733; /* Old browsers */
     background-image: #ff8157; /* Old browsers */
@@ -154,9 +169,6 @@ fieldset .fieldset-legend a {
     text-decoration: none;
     letter-spacing: 1px;
 }
-#edit-overlay-control {
-    display: none;
-}
 #edit-field-user-title,
 #edit-field-user-fname,
 #edit-field-user-lname {
@@ -175,20 +187,21 @@ fieldset .fieldset-legend a {
 #user-profile-form .form-item {
     padding: 3px 0;
 }
-#edit-field-user-address .street-block,
-#edit-field-user-address .form-item-field-user-address-und-0-country {
-    display: none;
+#user-profile-form .view-display-id-calendar_admin_block fieldset .fieldset-legend {
+    padding-left: 36px;
+    background: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png) -360px -115px no-repeat;
 }
-
-#user-profile-form #user_user_form_group_user_premium_fields,
-#user-profile-form #edit-mimemail {
-    display: none;
+#user-profile-form .view-display-id-calendar_admin_block {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1em;
 }
-.role-premium-user #user-profile-form #user_user_form_group_user_premium_fields,
-.role-administrator #user-profile-form #user_user_form_group_user_premium_fields,
-.role-content-manager #user-profile-form #user_user_form_group_user_premium_fields {
-    display: block;
+#user-profile-form .view-display-id-calendar_admin_block fieldset {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
+#user-profile-form .view-display-id-calendar_admin_block .fieldset-wrapper,
 #user-profile-form .view-display-id-calendar_admin_block .view-content {
     padding-left: 36px;
 }
