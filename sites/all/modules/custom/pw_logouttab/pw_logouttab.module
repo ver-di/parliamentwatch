@@ -27,10 +27,15 @@ function pw_logouttab_menu() {
 }
 
 /**
- * Redirects user to defined page.
+ * Logs out the current user and redirects to defined page.
  */
 function _pw_logouttab_redirect_url() {
+  global $user;
+  watchdog('user', 'Session closed for %name.', array('%name' => $user->name));
+  module_invoke_all('user_logout', $user);
+  session_destroy();
   drupal_goto(variable_get('pw_logouttab_url', 'user/logout'));
+  drupal_set_message(t('You have been successfully logged out.'), 'status');
 }
 
 /**
