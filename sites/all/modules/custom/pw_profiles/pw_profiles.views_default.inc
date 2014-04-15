@@ -6395,7 +6395,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<a href="https://twitter.com/[screen_name]"><span class="float-left push-right-s push-bottom-s">[profile_image_url]</span><span class="pw-twitter-name">[name]</span>
+  $handler->display->display_options['header']['area']['content'] = '<a href="https://twitter.com/[screen_name]"><span class="float-left push-right-s push-bottom-s"><img src="/sites/abgeordnetenwatch.de/files/Twitter_logo_blue.png" width="48" height="48" alt="" /></span><span class="pw-twitter-name">[name]</span>
 <span class="pw-twitter-screenname">[screen_name]</span></a>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
@@ -6408,18 +6408,6 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['footer']['area']['format'] = 'php_code';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Excluded | Twitter Profile Image */
-  $handler->display->display_options['fields']['profile_image_url']['id'] = 'profile_image_url';
-  $handler->display->display_options['fields']['profile_image_url']['table'] = 'twitter_account';
-  $handler->display->display_options['fields']['profile_image_url']['field'] = 'profile_image_url';
-  $handler->display->display_options['fields']['profile_image_url']['ui_name'] = 'Excluded | Twitter Profile Image';
-  $handler->display->display_options['fields']['profile_image_url']['label'] = '';
-  $handler->display->display_options['fields']['profile_image_url']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['profile_image_url']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['profile_image_url']['alter']['preserve_tags'] = '<img>';
-  $handler->display->display_options['fields']['profile_image_url']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['profile_image_url']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['profile_image_url']['hide_alter_empty'] = FALSE;
   /* Feld: Exlcuded | Twitter Follow */
   $handler->display->display_options['fields']['follow']['id'] = 'follow';
   $handler->display->display_options['fields']['follow']['table'] = 'twitter';
@@ -6459,24 +6447,22 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['text']['link_urls'] = 1;
   $handler->display->display_options['fields']['text']['link_usernames'] = 1;
   $handler->display->display_options['fields']['text']['link_hashtags'] = 1;
-  /* Feld: Excluded | Benutzer: Created date */
-  $handler->display->display_options['fields']['created']['id'] = 'created';
-  $handler->display->display_options['fields']['created']['table'] = 'users';
-  $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['ui_name'] = 'Excluded | Benutzer: Created date';
-  $handler->display->display_options['fields']['created']['label'] = '';
-  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['created']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'time ago';
+  /* Feld: Excluded | Twitter: Erstellungszeit */
+  $handler->display->display_options['fields']['created_time']['id'] = 'created_time';
+  $handler->display->display_options['fields']['created_time']['table'] = 'twitter';
+  $handler->display->display_options['fields']['created_time']['field'] = 'created_time';
+  $handler->display->display_options['fields']['created_time']['ui_name'] = 'Excluded | Twitter: Erstellungszeit';
+  $handler->display->display_options['fields']['created_time']['label'] = '';
+  $handler->display->display_options['fields']['created_time']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created_time']['date_format'] = 'time ago';
   /* Feld: Twitter: Web Intents */
   $handler->display->display_options['fields']['web_intents']['id'] = 'web_intents';
   $handler->display->display_options['fields']['web_intents']['table'] = 'twitter';
   $handler->display->display_options['fields']['web_intents']['field'] = 'web_intents';
   $handler->display->display_options['fields']['web_intents']['label'] = '';
   $handler->display->display_options['fields']['web_intents']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['web_intents']['alter']['text'] = '[created] [web_intents]';
+  $handler->display->display_options['fields']['web_intents']['alter']['text'] = '[created_time] [web_intents]';
   $handler->display->display_options['fields']['web_intents']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['web_intents']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['web_intents']['element_wrapper_class'] = 'footer small';

@@ -278,22 +278,6 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_premium';
   $ds_fieldsetting->settings = array(
-    'additional_links' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
-          'ow-def-cl' => FALSE,
-          'ow-at' => 'id="pw-block-user-links"',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'pw_kandidatencheck' => array(
       'weight' => '8',
       'label' => 'hidden',
@@ -310,6 +294,22 @@ function pw_profiles_ds_field_settings_info() {
           'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
           'ow-def-cl' => FALSE,
           'ow-at' => 'id="pw-block-user-kc"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'additional_links' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-links"',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -413,6 +413,11 @@ function pw_profiles_ds_field_settings_info() {
           'ow-def-at' => FALSE,
         ),
       ),
+    ),
+    'user_og_description' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
     'user_political_goals' => array(
       'weight' => '4',
@@ -1243,34 +1248,36 @@ function pw_profiles_ds_layout_settings_info() {
     'regions' => array(
       'left_1' => array(
         0 => 'short_profile',
-        1 => 'user_basic_info',
-        2 => 'user_about',
-        3 => 'user_image_gallery',
-        4 => 'user_political_goals',
-        5 => 'user_tweets',
-        6 => 'additional_links',
-        7 => 'user_calendar',
-        8 => 'pw_kandidatencheck',
+        1 => 'user_og_description',
+        2 => 'user_basic_info',
+        3 => 'user_about',
+        4 => 'user_image_gallery',
+        5 => 'user_political_goals',
+        6 => 'user_tweets',
+        7 => 'additional_links',
+        8 => 'user_calendar',
+        9 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        9 => 'pw_slider',
-        10 => 'user_revision_switch',
-        11 => 'user_wrong_data',
-        12 => 'user_profile_api_link',
+        10 => 'pw_slider',
+        11 => 'user_revision_switch',
+        12 => 'user_wrong_data',
+        13 => 'user_profile_api_link',
       ),
       'left_2' => array(
-        13 => 'user_questions_and_answers',
+        14 => 'user_questions_and_answers',
       ),
       'right_2' => array(
-        14 => 'question_and_answers_filter',
-        15 => 'question_and_answers_switcher',
+        15 => 'question_and_answers_filter',
+        16 => 'question_and_answers_switcher',
       ),
       'ds_hidden' => array(
-        16 => 'field_user_party',
+        17 => 'field_user_party',
       ),
     ),
     'fields' => array(
       'short_profile' => 'left_1',
+      'user_og_description' => 'left_1',
       'user_basic_info' => 'left_1',
       'user_about' => 'left_1',
       'user_image_gallery' => 'left_1',
