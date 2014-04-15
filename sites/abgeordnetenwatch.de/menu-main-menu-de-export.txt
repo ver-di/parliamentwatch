@@ -155,5 +155,5 @@ Wir über uns {"url":"ueber-uns","expanded":true}
 -Datenschutzerklärung {"url":"datenschutzerklaerung","hidden":true}
 -Login-Bereich {"url":"http:\/\/www.abgeordnetenwatch.de\/login_bereich-846-0.html"}
 -Impressum {"url":"ueber-uns\/impressum"}
--Spenden {"url":"http:\/\/www.abgeordnetenwatch.de\/spenden-452-0.html"}
+-Spenden {"url":"ueber-uns\/spendenformular"}
 -API {"url":"api"}
