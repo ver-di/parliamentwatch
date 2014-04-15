@@ -14,3 +14,17 @@ function pw_globals_query_alter($query) {
     $query->condition('type', array('announcement', 'page', 'trustee', 'webform', 'pw_slider'), 'IN');
   }
 }
+
+/**
+ * Custom: Checks if User (Revision) is Premium User
+ */
+function _pw_is_premium_user($user){
+  $term_premium_user = taxonomy_get_term_by_name('Premium User', 'pw_profile_roles_for_view_mode_switch');
+  $tid_premium_user = key($term_premium_user);
+  foreach($user->field_user_roles_for_view_mode_s['und'] as $role){
+    if($tid_premium_user == $role['tid']){
+      return true;
+    }
+  }
+  return false;
+}
