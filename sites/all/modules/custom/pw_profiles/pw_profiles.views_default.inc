@@ -753,7 +753,7 @@ print_r($link);
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Löschen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid]/delete?width=400&height=100&destination=user/1802/edit?';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid]/delete?width=400&height=100&destination=user/[uid]/edit?';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node init-colorbox-processed-processed';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
