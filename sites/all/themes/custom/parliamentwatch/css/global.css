@@ -2282,7 +2282,7 @@ form .webform-component-checkboxes .description {
 
 .announcement.slideshow {
     background: #ccc;
-    padding: 18px 30px 34px 0;
+    padding: 18px 0 34px;
     position: relative;
     margin-bottom: 43px;
     margin-bottom: 4.3rem;
@@ -2318,9 +2318,8 @@ form .webform-component-checkboxes .description {
     background: url(../images/bg_fff50.png);
     padding: 8px 10px 12px 20px;
 }
-.announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
-    background: url(../images/bg_fff50.png);
-    padding: 8px 10px 12px 20px;width: 560px;
+.views-slideshow-cycle-main-frame-row {
+    width: 100%;
 }
 .announcement.slideshow .content p:last-child {
     margin-bottom: 5px;
