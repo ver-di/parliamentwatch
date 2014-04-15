@@ -80,6 +80,11 @@ h4 {
 .media-widget .preview .media-item:hover {
     border-color: #f63;
 }
+ul.tips,
+div.description,
+.form-item div.description {
+    font-size: 0.823em;
+}
 
 /* user edit form */
 
@@ -204,4 +209,11 @@ h4 {
 #user-profile-form .view-display-id-calendar_admin_block .fieldset-wrapper,
 #user-profile-form .view-display-id-calendar_admin_block .view-content {
     padding-left: 36px;
+}
+
+
+/* view politicians */
+
+.view-politicians .view-filters .form-text {
+    width: 150px;
 }
