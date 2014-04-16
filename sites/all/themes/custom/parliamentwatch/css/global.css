@@ -308,8 +308,25 @@ a.medium,
     font-weight: normal;
 }
 .dark,
+.dark > a,
 a.dark {
     color: #333;
+}
+.dark > a:hover,
+a.dark:hover {
+    color: #666;
+}
+a.external {
+    background-image: url(../images/sprite.png);
+    background-position: -572px -1583px;
+    padding-left: 19px;
+}
+.dark a.external,
+a.dark.external {
+    background-position: -612px -1543px;
+}
+a.external:hover {
+    background-position: -532px -1623px;
 }
 .copyright {
     color: #666;
@@ -317,7 +334,8 @@ a.dark {
     font-size: 11px;
     font-size: 1.1rem;
 }
-.normal-weight {
+.normal-weight,
+.normal-weight > a {
     font-weight: normal;
 }
 .label-inline {
@@ -2258,6 +2276,10 @@ form .webform-component-checkboxes .description {
 .twitter a {
     color: #30b3eb;
     font-weight: normal;
+}
+.twitter a.external {
+    padding-left: 0;
+    background: transparent;
 }
 .twitter .pw-list-item-light a {
     color: #999;

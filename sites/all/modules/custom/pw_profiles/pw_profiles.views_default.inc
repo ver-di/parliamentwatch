@@ -5026,7 +5026,10 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['field_user_links_more']['table'] = 'field_data_field_user_links_more';
   $handler->display->display_options['fields']['field_user_links_more']['field'] = 'field_user_links_more';
   $handler->display->display_options['fields']['field_user_links_more']['label'] = '';
+  $handler->display->display_options['fields']['field_user_links_more']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_user_links_more']['element_class'] = 'dark normal-weight';
   $handler->display->display_options['fields']['field_user_links_more']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_links_more']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_links_more']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_links_more']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_user_links_more']['group_rows'] = FALSE;
@@ -5146,6 +5149,8 @@ drupal_set_title("About [field_user_fname] [field_user_lname], [field_user_party
   $handler->display->display_options['fields']['field_user_links_more']['table'] = 'field_data_field_user_links_more';
   $handler->display->display_options['fields']['field_user_links_more']['field'] = 'field_user_links_more';
   $handler->display->display_options['fields']['field_user_links_more']['label'] = '';
+  $handler->display->display_options['fields']['field_user_links_more']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_user_links_more']['element_class'] = 'dark normal-weight';
   $handler->display->display_options['fields']['field_user_links_more']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_links_more']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_links_more']['click_sort_column'] = 'url';
