@@ -320,15 +320,6 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 .view-pw-user-profile-fields-rev.view-display-id-additional_links .views-row-even {
     background: #f4f4f4;
 }
-.view-display-id-additional_links .view-content a,
-.view-display-id-additional_links_page .zebra a {
-    color: #333;
-    font-weight: normal;
-}
-.view-display-id-additional_links .view-content a:hover,
-.view-display-id-additional_links_page .zebra a:hover {
-    color: #999;
-}
 .view-pw-user-profile-fields-rev.view-display-id-basic_info dt,
 .view-pw-user-profile-fields-rev.view-display-id-basic_info dd {
     padding: 2px 0.5%;

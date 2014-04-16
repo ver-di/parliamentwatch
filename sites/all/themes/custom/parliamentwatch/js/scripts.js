@@ -104,10 +104,13 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
     var domainparts = location.hostname.split('.');
     var sndleveldomain = domainparts.slice(-2).join('.');
 
-    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']),[href*='https://']:not([href*='"+sndleveldomain+"'])")
+    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']),#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"'])")
         .attr("rel","external")
         .attr("target","_blank")
         .addClass("external");
+    // remove class .external from images and slider
+    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']) img,#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"']) img").parent('a').removeClass('external');
+    jQuery('.view-slider a.external').removeClass('external');
 
 ////// intelligent on:blur
 
