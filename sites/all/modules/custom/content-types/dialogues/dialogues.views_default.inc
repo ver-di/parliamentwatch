@@ -956,12 +956,14 @@ print shorten_url($original = $path, $service = \'tinyURL\');
 $path_uid = $cpath[1];
 
 //if revision id is in url get parliament name form user_archive_cache table
-//else return parliamemt id from show profile
+//else return parliament id from current profile
 
 if (array_key_exists(3, $cpath)) {
   $path_vid  =  $cpath[3];
-  $result = db_query("SELECT parliament_name FROM {user_archive_cache} p WHERE vid = (:vids)", array(\':vids\' => $path_vid))->fetchField();
-  return $result;
+  $term_name = db_query("SELECT parliament_name FROM {user_archive_cache} p WHERE vid = (:vids)", array(\':vids\' => $path_vid))->fetchField();
+  $terms = taxonomy_get_term_by_name($term_name);
+  $first_term = array_shift($terms);
+  return $first_term->tid;
 }
 else {
   $user_fields = user_load($path_uid);
@@ -976,8 +978,7 @@ else {
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
   );
-  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'empty';
+  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'summary';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Inhalt: Veröffentlicht */
