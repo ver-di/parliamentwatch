@@ -2639,7 +2639,8 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
     $actual_vid =db_query("SELECT vid FROM {user_archive_cache} u WHERE uid = (:uids) ORDER BY timestamp DESC LIMIT 0,1", array(\':uids\' => $row->uid))->fetchField();
-    if($actual_vid == $row->vid) {
+    //if($actual_vid == $row->vid) {
+    if(!isset($static)) {
         print l(t(\'open profile\'), \'profile/\'.$row->user_name, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
     }
     else {
@@ -2648,6 +2649,18 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Feld: Excluded | Pre-Set Static */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Excluded | Pre-Set Static';
+  $handler->display->display_options['fields']['php_2']['label'] = '';
+  $handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_output'] = '$static = \'xxx\';';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Sort criterion: User archive cache: Timestamp */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'user_archive_cache';
@@ -2834,9 +2847,11 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-    $actual_vid =db_query("SELECT vid FROM {user_archive_cache} u WHERE uid = (:uids) ORDER BY timestamp DESC LIMIT 0,1", array(\':uids\' => $row->uid))->fetchField();
-    if($actual_vid == $row->vid) {
+    // $actual_vid =db_query("SELECT vid FROM {user_archive_cache} u WHERE uid = (:uids) ORDER BY timestamp DESC LIMIT 0,1", array(\':uids\' => $row->uid))->fetchField();
+    //if($actual_vid == $row->vid) {
+    if(!isset($static) || $static != \'set\') {
         print l(t(\'open profile\'), \'profile/\'.$row->user_name, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+        $static = \'set\';
     }
     else {
     print l(t(\'open profile\'), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
