@@ -2226,8 +2226,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -2611,26 +2611,25 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date Question';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Parliament (field_user_parliament) */
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_options']['use_alias'] = TRUE;
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['vocabularies'] = array(
+  /* Contextual filter: Inhalt: Parliament (field_pw_parmliament) */
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['id'] = 'field_pw_parmliament_tid';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['table'] = 'field_data_field_pw_parmliament';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['field'] = 'field_pw_parmliament_tid';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
   );
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['validate_options']['transform'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Inhalt: Veröffentlicht */
@@ -2928,14 +2927,6 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['edit_node_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node_1']['text'] = 'edit question';
-  /* Feld: excluded | recipient parliament */
-  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['relationship'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['fields']['field_user_parliament']['ui_name'] = 'excluded | recipient parliament';
-  $handler->display->display_options['fields']['field_user_parliament']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
   /* Feld: Global: Contextual Links */
   $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
   $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
@@ -2956,26 +2947,27 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Benutzer: Parliament (field_user_parliament) */
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_options']['index'] = '1';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_options']['use_alias'] = TRUE;
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['vocabularies'] = array(
+  /* Contextual filter: Inhalt: Parliament (field_pw_parmliament) (translated) */
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['id'] = 'field_pw_parmliament_tid_i18n';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['table'] = 'field_data_field_pw_parmliament';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['field'] = 'field_pw_parmliament_tid_i18n';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['relationship'] = 'nid';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
   );
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate']['fail'] = 'empty';
   /* Filter criterion: Kommentar: Approved */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'comment';
