@@ -1740,8 +1740,8 @@ img.no-outline {
 .poll-behavior .block.absent {
     background: #5876f1;
 }
-.poll-behavior .icon.blank,
-.poll-behavior .block.blank {
+.poll-behavior .icon.neutral,
+.poll-behavior .block.neutral {
     background: #999;
 }
 .poll-behavior .inline {
@@ -1756,7 +1756,7 @@ img.no-outline {
 .poll-behavior .inline.absent {
     color: #5876f1;
 }
-.poll-behavior .inline.blank {
+.poll-behavior .inline.neutral {
     color: #999;
 }
 .poll-behavior .icon {
