@@ -273,7 +273,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-80',
+        'weight' => '-72',
       ),
       'blank' => array(
         'region' => 'content',
@@ -518,7 +518,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-74',
+        'weight' => '-72',
       ),
       'blank' => array(
         'region' => 'content',

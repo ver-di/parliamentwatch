@@ -2287,7 +2287,7 @@ form .webform-component-checkboxes .description {
 
 /* /////////////////////////// Twitter /////////////////////// */
 
-.twitter a {
+#pw-block-user-twitter a {
     color: #30b3eb;
     font-weight: normal;
 }
@@ -2295,8 +2295,18 @@ form .webform-component-checkboxes .description {
     padding-left: 0;
     background: transparent;
 }
-.twitter .pw-list-item-light a {
+#pw-block-user-twitter .twitter .pw-list-item-light a,
+.twitter-item a {
     color: #999;
+    font-weight: normal;
+}
+#pw-block-user-twitter .twitter .pw-list-item-light a:hover,
+#pw-block-user-twitter .twitter .pw-list-item-light a:active,
+#pw-block-user-twitter .twitter .pw-list-item-light a:focus,
+.twitter-item a:hover,
+.twitter-item a:active,
+.twitter-item a:focus {
+    color: #666;
 }
 .twitter .pw-twitter-name,
 .twitter .pw-twitter-screenname {

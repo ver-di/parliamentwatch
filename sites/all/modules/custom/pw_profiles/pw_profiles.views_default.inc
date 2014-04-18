@@ -4004,7 +4004,7 @@ return false;';
   $handler = $view->new_display('default', 'Tweets', 'default');
   $handler->display->display_options['css_class'] = 'twitter';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'weiterlesen';
+  $handler->display->display_options['use_more_text'] = 'zum Twitterkanal';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
@@ -4230,14 +4230,26 @@ return false;';
   $handler->display->display_options['arguments']['screen_name']['limit'] = '0';
   $handler->display->display_options['path'] = 'tweets-raw';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: a_watch Block */
+  $handler = $view->new_display('block', 'a_watch Block', 'a_watch');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Twitter Ticker';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
+  $handler->display->display_options['defaults']['link_display'] = FALSE;
+  $handler->display->display_options['link_display'] = 'custom_url';
+  $handler->display->display_options['link_url'] = 'https://twitter.com/a_watch';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['grouping'] = '';
+  $handler->display->display_options['style_options']['row_class'] = 'twitter-item';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -4248,6 +4260,16 @@ return false;';
   $handler->display->display_options['row_options']['separator'] = ' &#8212; ';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Twitter: Erstellungszeit */
+  $handler->display->display_options['fields']['created_time_1']['id'] = 'created_time_1';
+  $handler->display->display_options['fields']['created_time_1']['table'] = 'twitter';
+  $handler->display->display_options['fields']['created_time_1']['field'] = 'created_time';
+  $handler->display->display_options['fields']['created_time_1']['label'] = '';
+  $handler->display->display_options['fields']['created_time_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created_time_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['created_time_1']['element_wrapper_class'] = 'light';
+  $handler->display->display_options['fields']['created_time_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['created_time_1']['date_format'] = 'date_and_time';
   /* Feld: Twitter: Text der Nachricht */
   $handler->display->display_options['fields']['text']['id'] = 'text';
   $handler->display->display_options['fields']['text']['table'] = 'twitter';
@@ -4258,13 +4280,21 @@ return false;';
   $handler->display->display_options['fields']['text']['link_usernames'] = 1;
   $handler->display->display_options['fields']['text']['link_hashtags'] = 1;
   $handler->display->display_options['fields']['text']['link_attributes'] = 1;
-  /* Feld: Twitter: Erstellungszeit */
-  $handler->display->display_options['fields']['created_time']['id'] = 'created_time';
-  $handler->display->display_options['fields']['created_time']['table'] = 'twitter';
-  $handler->display->display_options['fields']['created_time']['field'] = 'created_time';
-  $handler->display->display_options['fields']['created_time']['label'] = '';
-  $handler->display->display_options['fields']['created_time']['date_format'] = 'time ago';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Twitter: Geschützter Status */
+  $handler->display->display_options['filters']['protected']['id'] = 'protected';
+  $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
+  $handler->display->display_options['filters']['protected']['field'] = 'protected';
+  $handler->display->display_options['filters']['protected']['value'] = 0;
+  $handler->display->display_options['filters']['protected']['group'] = '0';
+  $handler->display->display_options['filters']['protected']['expose']['operator'] = FALSE;
+  /* Filter criterion: Twitter: Login-name */
+  $handler->display->display_options['filters']['screen_name']['id'] = 'screen_name';
+  $handler->display->display_options['filters']['screen_name']['table'] = 'twitter_account';
+  $handler->display->display_options['filters']['screen_name']['field'] = 'screen_name';
+  $handler->display->display_options['filters']['screen_name']['value'] = 'a_watch';
   $handler->display->display_options['block_description'] = 'Tweets';
 
   /* Display: Tweets */

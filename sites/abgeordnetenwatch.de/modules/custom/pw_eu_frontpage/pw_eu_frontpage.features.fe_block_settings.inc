@@ -28,7 +28,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-77',
+        'weight' => '-72',
       ),
       'blank' => array(
         'region' => 'content',
@@ -63,7 +63,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-78',
+        'weight' => '-72',
       ),
       'blank' => array(
         'region' => 'content',
@@ -168,7 +168,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-75',
+        'weight' => '-72',
       ),
       'blank' => array(
         'region' => 'content',
@@ -203,7 +203,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-76',
+        'weight' => '-72',
       ),
       'blank' => array(
         'region' => 'content',
@@ -220,6 +220,41 @@ function pw_eu_frontpage_default_fe_block_settings() {
     ),
     'title' => '',
     'visibility' => '1',
+  );
+
+  $export['views-user_tweets-a_watch'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => '0',
+    'delta' => 'user_tweets-a_watch',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
   );
 
   return $export;

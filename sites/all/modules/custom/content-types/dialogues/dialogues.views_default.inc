@@ -2871,7 +2871,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['view_user']['element_class'] = 'link-profile';
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_user']['text'] = 'go to full profile';
+  $handler->display->display_options['fields']['view_user']['text'] = 'Profil besuchen';
   /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation']['id'] = 'field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['table'] = 'field_data_field_dialogue_annotation';
@@ -2893,7 +2893,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'bg-white clear';
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'read complete question and answer';
+  $handler->display->display_options['fields']['view_node']['text'] = 'Frage und ganze Antwort lesen';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox'] = TRUE;
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';

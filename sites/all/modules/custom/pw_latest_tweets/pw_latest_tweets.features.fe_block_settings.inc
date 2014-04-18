@@ -30,6 +30,12 @@ function pw_latest_tweets_default_fe_block_settings() {
         'theme' => 'abgeordnetenwatch',
         'weight' => '-40',
       ),
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '-40',
+      ),
       'pw_seven' => array(
         'region' => '',
         'status' => 0,
@@ -57,6 +63,12 @@ function pw_latest_tweets_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'abgeordnetenwatch',
+        'weight' => '8',
+      ),
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
         'weight' => '8',
       ),
       'pw_seven' => array(
