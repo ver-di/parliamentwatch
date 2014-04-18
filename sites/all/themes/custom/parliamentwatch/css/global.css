@@ -328,7 +328,8 @@ a.dark.external {
 a.external:hover {
     background-position: -532px -1623px;
 }
-.copyright {
+.copyright,
+.field-name-field-image-copyright {
     color: #666;
     font-weight: normal;
     font-size: 11px;
