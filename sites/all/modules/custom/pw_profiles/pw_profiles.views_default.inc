@@ -303,6 +303,7 @@ function pw_profiles_views_default_views() {
   /* Display: Calendar Page */
   $handler = $view->new_display('page', 'Calendar Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Wahlkampftermine von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['display_description'] = 'Calendar Page for sharing';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -323,7 +324,6 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['empty'] = TRUE;
   $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
-  $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
@@ -1916,6 +1916,15 @@ if($record->value == 0){
   $handler->display->display_options['style_options']['columns'] = '3';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="pw-messages warning">
+Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie eine neue Auswahl über einen der angebotenen Filter.
+</div>';
+  $handler->display->display_options['empty']['area']['format'] = 'managed_content';
   /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
