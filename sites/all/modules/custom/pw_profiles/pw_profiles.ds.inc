@@ -684,21 +684,6 @@ if($field_user_parliament == 6501){
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'parliament_info_block';
-  $ds_field->label = 'Parliament Info Block';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'user' => 'user',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'views|8a05376dfc4831ce88592b0045b1a661',
-    'block_render' => '3',
-  );
-  $export['parliament_info_block'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
   $ds_field->field = 'polls_archive_view';
   $ds_field->label = 'Polls archive view';
   $ds_field->field_type = 6;
@@ -726,51 +711,6 @@ if($field_user_parliament == 6501){
     'block_render' => '1',
   );
   $export['polls_profile_last'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'profil_picture_views_block';
-  $ds_field->label = 'Profil Picture Views Block';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'user' => 'user',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'views|bb2bc4bf6c722a251dda49d38c4f36a0',
-    'block_render' => '3',
-  );
-  $export['profil_picture_views_block'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'profile_extension';
-  $ds_field->label = 'Profile Extension';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'user' => 'user',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'views|66c15b9f7adf72949d75707559106a91',
-    'block_render' => '3',
-  );
-  $export['profile_extension'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
-  $ds_field->field = 'profile_picture';
-  $ds_field->label = 'Profile Picture';
-  $ds_field->field_type = 6;
-  $ds_field->entities = array(
-    'user' => 'user',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'block' => 'views|1ed77cfca6fb78161c79828e2a5829e5',
-    'block_render' => '3',
-  );
-  $export['profile_picture'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
