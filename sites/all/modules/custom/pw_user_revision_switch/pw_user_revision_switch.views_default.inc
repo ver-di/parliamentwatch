@@ -740,7 +740,7 @@ return $result;
   $handler->display->display_options['arguments']['vid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['vid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['vid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'profile/%/about/%';
+  $handler->display->display_options['path'] = 'profile/%/archive/%/about';
 
   /* Display: Image Gallery */
   $handler = $view->new_display('block', 'Image Gallery', 'image_gallery');
@@ -1053,7 +1053,7 @@ return $result;
   $handler->display->display_options['arguments']['vid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['vid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['vid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'profile/%/imagegallery/%';
+  $handler->display->display_options['path'] = 'profile/%/archive/%/imagegallery';
 
   /* Display: Political Goals */
   $handler = $view->new_display('block', 'Political Goals', 'political_goals');
@@ -1311,7 +1311,7 @@ return $result;
   $handler->display->display_options['arguments']['vid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['vid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['vid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'profile/%/political-goals/%';
+  $handler->display->display_options['path'] = 'profile/%/archive/%/political-goals';
 
   /* Display: Additional Links */
   $handler = $view->new_display('block', 'Additional Links', 'additional_links');
@@ -1557,7 +1557,7 @@ return $result;
   $handler->display->display_options['arguments']['vid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['vid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['vid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['path'] = 'profile/%/additional-links/%';
+  $handler->display->display_options['path'] = 'profile/%/archive/%/additional-links';
 
   /* Display: Short Profile Premium Mainpage */
   $handler = $view->new_display('block', 'Short Profile Premium Mainpage', 'short_profile_premium_main');
