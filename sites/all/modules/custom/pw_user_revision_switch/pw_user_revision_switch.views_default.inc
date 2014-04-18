@@ -1604,19 +1604,25 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Feld: Rewritten | dialogue count and qa link */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Rewritten | dialogue count and qa link';
-  $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[nothing]<br/>
-[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]
-';
-  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'float-left bubble tiny';
-  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  /* Feld: Benutzer (historical data): Questions Get */
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['id'] = 'field_user_questions_get-revision_id_1';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['table'] = 'field_revision_field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['field'] = 'field_user_questions_get-revision_id';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '[nothing]<br/>
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_class'] = 'float-left bubble tiny';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty'] = 'An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt<br/>
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
@@ -2080,18 +2086,25 @@ return $result;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '#pw-block-questions-and-answers';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Feld: Rewritten | dialogue count and qa link */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Rewritten | dialogue count and qa link';
-  $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[nothing]<br/>
+  /* Feld: Benutzer (historical data): Questions Get */
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['id'] = 'field_user_questions_get-revision_id_1';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['table'] = 'field_revision_field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['field'] = 'field_user_questions_get-revision_id';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '[nothing]<br/>
 [field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
-  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'float-left bubble tiny';
-  $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_class'] = 'float-left bubble tiny';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty'] = 'An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt<br/>
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
 
   /* Display: Short Profile Deputy Subpage */
   $handler = $view->new_display('block', 'Short Profile Deputy Subpage', 'short_profile_deputy_sub');
