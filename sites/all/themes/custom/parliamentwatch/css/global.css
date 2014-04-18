@@ -1458,10 +1458,23 @@ a#text_resize_increase:active {
     margin: 0 0 0 -7px;
     list-style: none;
 }
-.floatbox ul li a {
+.floatbox a {
     color: #333;
     font-weight: normal;
     text-decoration: none;
+}
+.floatbox a:hover,
+.floatbox a:focus,
+.floatbox a:active {
+    color: #999;
+    font-weight: normal;
+    text-decoration: none;
+}
+.floatbox a.external {
+    background-position: -612px -1543px;
+}
+.floatbox a.external:hover {
+    background-position: -532px -1623px;
 }
 .floatbox ul li:hover,
 .floatbox ul li:focus,
