@@ -151,9 +151,24 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 ////// add a sharethis link to an anchor
 
     jQuery('.add-sharethis').each(function (i) {
-    
-        //for subsite
-        var st_url = location.protocol + '//'+location.host+location.pathname + '/' + jQuery(this).closest('div').attr('id');
+
+        //revision vid
+        var vid = jQuery(this).closest('div').attr('vid');
+        var id = jQuery(this).closest('div').attr('id');
+
+        //check if the path containes archive
+        var localPath = location.protocol + '//'+location.host+location.pathname;
+        var isArchivePage = localPath.indexOf("archive");
+
+        var st_url;
+
+        if(typeof vid != "undefined" && isArchivePage == -1)
+        {
+            st_url = localPath + '/archive/' + vid + "/" + id;
+        }
+        else {
+            st_url = localPath + '/' + id;
+        }
         // for anchor
         var link_title = jQuery(this).closest('div').attr('title');
         jQuery(this).append('<span class="sharethis-wrapper"><span class="st_sharethis_hcount" onhover="false" st_title="'+link_title+'" st_url="'+st_url+'" displayText="'+link_title+'"></span></span>');
