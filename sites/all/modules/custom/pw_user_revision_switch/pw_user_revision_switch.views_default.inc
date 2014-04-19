@@ -1610,13 +1610,13 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['field'] = 'field_user_questions_get-revision_id';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '[nothing]<br/>
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '<div class="pw-dialogues-link">[nothing]</div>
 [field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_class'] = 'float-left bubble tiny';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty'] = 'An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt<br/>
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty'] = '<div class="pw-dialogues-link">An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt</div>
 [field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
@@ -2092,13 +2092,13 @@ return $result;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['field'] = 'field_user_questions_get-revision_id';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '[nothing]<br/>
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '<div class="pw-dialogues-link">[nothing]</div>
 [field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_class'] = 'float-left bubble tiny';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty'] = 'An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt<br/>
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty'] = '<div class="pw-dialogues-link">An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt</div>
 [field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
