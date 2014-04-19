@@ -2187,6 +2187,12 @@ form .webform-component-checkboxes .description {
 .answer .more-info.content-inner {
     padding: 20px 24px;
 }
+.answer .more-info.content-inner legend {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 100%;
+}
 .answer .more-info.content-inner .fieldset-wrapper {
     margin-top: 1.5em;
 }
