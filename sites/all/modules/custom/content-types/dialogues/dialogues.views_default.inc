@@ -506,7 +506,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
       'secondary_label' => 'Advanced options',
     ),
     'sort' => array(
-      'bef_format' => 'bef',
+      'bef_format' => 'default',
       'advanced' => array(
         'collapsible' => 0,
         'collapsible_label' => 'Sort options',

@@ -337,6 +337,12 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
 
 /* filters */
 
+#views-exposed-form-profile-questions-answers-profile .views-widget-sort-order label,
+#views-exposed-form-profile-questions-answers-profile .views-widget-sort-by label {
+    display: block;
+    padding-bottom: 4px;
+}
+
 #edit-field-user-constituency-tid-select-1 {
     width: 87%;
 }
