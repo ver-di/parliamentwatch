@@ -585,9 +585,10 @@ a.ic-print {
 .views-exposed-widgets {
     padding-top: 3em;
 }
-.views-exposed-widgets .views-reset-button {
+.views-exposed-widget.views-reset-button {
     position: absolute;
     top: 0;
+    margin: 0 0 0.8em 0 !important;
 }
 .ic-info {
     position: absolute;
@@ -1903,7 +1904,7 @@ input[type="week"],
     background-color: #fff;
     max-width: 100%;
 }
-.views-exposed-widgets .views-reset-button input[type="submit"] {
+.views-exposed-widget.views-reset-button input[type="submit"] {
     border: 0;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -1911,14 +1912,18 @@ input[type="week"],
     color: #666;
     padding: 0 0 0 16px;
     height: auto;
-    margin-bottom: 8px;
-    margin-bottom: 0.8rem;
+    margin: 8px 0;
+    margin-bottom: 0.8rem 0;
     line-height: auto;
     background: transparent url(../images/sprite.png) -120px -2539px no-repeat;
 }
-.views-exposed-widgets .views-reset-button input[type="submit"]:hover,
-.views-exposed-widgets .views-reset-button input[type="submit"]:focus,
-.views-exposed-widgets .views-reset-button input[type="submit"]:active {
+.ctools-use-ajax.ctools-auto-submit-click {
+    position: absolute;
+    left: -50000em;
+}
+.views-exposed-widget.views-reset-button input[type="submit"]:hover,
+.views-exposed-widget.views-reset-button input[type="submit"]:focus,
+.views-exposed-widget.views-reset-button input[type="submit"]:active {
     background: transparent url(../images/sprite.png) -160px -2499px no-repeat;
     color: #ccc;
 

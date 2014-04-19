@@ -185,7 +185,7 @@ function pw_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'user_premium' => array(
-            'weight' => '51',
+            'weight' => '47',
             'visible' => FALSE,
           ),
           'user_deputy' => array(
@@ -203,7 +203,7 @@ function pw_profiles_strongarm() {
         ),
         'mimemail' => array(
           'user_premium' => array(
-            'weight' => '23',
+            'weight' => '31',
             'visible' => FALSE,
           ),
           'user_deputy' => array(
