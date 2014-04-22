@@ -27,3 +27,15 @@ nbproject/.gitignore
 
 # Ignore gdata stuff
 gdata
+
+# Ignore drupal txt files
+CHANGELOG.txt
+COPYRIGHT.txt
+INSTALL.mysql.txt
+INSTALL.pgsql.txt
+INSTALL.sqlite.txt
+INSTALL.txt
+LICENSE.txt
+MAINTAINERS.txt
+README.txt
+UPGRADE.txt

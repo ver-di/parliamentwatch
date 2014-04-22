@@ -110,8 +110,8 @@ function dialogues_feeds_importer_default() {
           1 => array(
             'source' => 'xpathparser:14',
             'target' => 'field_dialogue_topic',
-            'term_search' => '0',
-            'autocreate' => 1,
+            'term_search' => '1',
+            'autocreate' => 0,
           ),
           2 => array(
             'source' => 'xpathparser:15',
