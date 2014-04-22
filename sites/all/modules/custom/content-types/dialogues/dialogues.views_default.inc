@@ -669,7 +669,7 @@ $path_uid = $cpath[1];
 if (array_key_exists(3, $cpath)) {
   $path_vid  =  $cpath[3];
   $term_name = db_query("SELECT parliament_name FROM {user_archive_cache} p WHERE vid = (:vids)", array(\':vids\' => $path_vid))->fetchField();
-  $terms = taxonomy_get_term_by_name($term_name);
+  $terms = taxonomy_get_term_by_name($term_name,\'parliaments\');
   $first_term = array_shift($terms);
   return $first_term->tid;
 }
@@ -1272,7 +1272,7 @@ $path_uid = $cpath[1];
 if (array_key_exists(3, $cpath)) {
   $path_vid  =  $cpath[3];
   $term_name = db_query("SELECT parliament_name FROM {user_archive_cache} p WHERE vid = (:vids)", array(\':vids\' => $path_vid))->fetchField();
-  $terms = taxonomy_get_term_by_name($term_name);
+  $terms = taxonomy_get_term_by_name($term_name,\'parliaments\');
   $first_term = array_shift($terms);
   return $first_term->tid;
 }
