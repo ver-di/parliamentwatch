@@ -99,16 +99,6 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['separator'] = '||';
-  /* Feld: Benutzer (historical data): Answers Give */
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['table'] = 'field_revision_field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['field'] = 'field_user_answers_give-revision_id';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['label'] = 'answers_given';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
   /* Feld: Benutzer (historical data): Committee */
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['id'] = 'field_user_commitee-revision_id';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['table'] = 'field_revision_field_user_commitee';
@@ -185,7 +175,19 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['field'] = 'field_user_questions_get-revision_id';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['label'] = 'questions_get';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['type'] = 'number_unformatted';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Feld: Benutzer (historical data): Answers Give */
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['table'] = 'field_revision_field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['field'] = 'field_user_answers_give-revision_id';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['label'] = 'answers_given';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
@@ -3315,16 +3317,6 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['separator'] = '||';
-  /* Feld: Benutzer (historical data): Answers Give */
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['table'] = 'field_revision_field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['field'] = 'field_user_answers_give-revision_id';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['label'] = 'answers_given';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['settings'] = array(
-    'thousand_separator' => '',
-    'prefix_suffix' => 1,
-  );
   /* Feld: Benutzer (historical data): Committee */
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['id'] = 'field_user_commitee-revision_id';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['table'] = 'field_revision_field_user_commitee';
@@ -3340,6 +3332,23 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_education-revision_id']['field'] = 'field_user_education-revision_id';
   $handler->display->display_options['fields']['field_user_education-revision_id']['label'] = 'education';
   $handler->display->display_options['fields']['field_user_education-revision_id']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer (historical data): Address */
+  $handler->display->display_options['fields']['field_user_address-revision_id']['id'] = 'field_user_address-revision_id';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['table'] = 'field_revision_field_user_address';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['field'] = 'field_user_address-revision_id';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['label'] = 'location';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_address-revision_id']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_address-revision_id']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['type'] = 'addressfield_components';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['settings'] = array(
+    'components' => array(
+      'locality' => 'locality',
+      'postal_code' => 'postal_code',
+      'country' => 'country',
+    ),
+    'separator' => ', ',
+  );
   /* Feld: excluded | constituency_uuid */
   $handler->display->display_options['fields']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['fields']['uuid_1']['table'] = 'taxonomy_term_data';
@@ -3431,7 +3440,19 @@ $query = db_select(\'user_revision\', \'ur\');
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['field'] = 'field_user_questions_get-revision_id';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['label'] = 'questions_get';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['type'] = 'number_unformatted';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Feld: Benutzer (historical data): Answers Give */
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['table'] = 'field_revision_field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['field'] = 'field_user_answers_give-revision_id';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['label'] = 'answers_given';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
@@ -3484,23 +3505,6 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['type'] = 'link_plain';
-  /* Feld: Benutzer (historical data): Address */
-  $handler->display->display_options['fields']['field_user_address-revision_id']['id'] = 'field_user_address-revision_id';
-  $handler->display->display_options['fields']['field_user_address-revision_id']['table'] = 'field_revision_field_user_address';
-  $handler->display->display_options['fields']['field_user_address-revision_id']['field'] = 'field_user_address-revision_id';
-  $handler->display->display_options['fields']['field_user_address-revision_id']['label'] = 'location';
-  $handler->display->display_options['fields']['field_user_address-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_address-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_address-revision_id']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_user_address-revision_id']['type'] = 'addressfield_components';
-  $handler->display->display_options['fields']['field_user_address-revision_id']['settings'] = array(
-    'components' => array(
-      'locality' => 'locality',
-      'postal_code' => 'postal_code',
-      'country' => 'country',
-    ),
-    'separator' => ', ',
-  );
   /* Sort criterion: User revision: Vid */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
   $handler->display->display_options['sorts']['vid']['table'] = 'user_revision';
