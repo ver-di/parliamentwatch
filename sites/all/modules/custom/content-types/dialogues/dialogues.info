@@ -18,6 +18,7 @@ dependencies[] = i18n_taxonomy
 dependencies[] = link
 dependencies[] = list
 dependencies[] = number
+dependencies[] = pw_dialogues_view
 dependencies[] = pw_globals
 dependencies[] = pw_subsite
 dependencies[] = strongarm
