@@ -546,14 +546,14 @@ function pw_subsite_default_fe_block_settings() {
     'i18n_mode' => '1',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'politicians/*',
+    'pages' => 'profile/*',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-75',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -623,7 +623,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-17',
+        'weight' => '-78',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
