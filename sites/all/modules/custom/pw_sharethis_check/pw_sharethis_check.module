@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * @File
+ * Registers the alias to the sharethis_check.php
+ */
+
+include_once 'pw_sharethis_check.config.inc';
+include_once 'pw_sharethis_check.api.inc';
+
+/**
+ * Implements hook_cron()
+ */
+function pw_sharethis_check_cron() {
+    
+  pw_sharethis_check_iterateNodes();
+  pw_sharethis_check_iterateUsers();
+    
+}
+
+function pw_sharethis_check_menu() {
+  $items['admin/config/sharethis_check/settings'] = array (
+        'title' => 'ShareThis Check settings',
+        'page callback' => 'pw_sharethis_check_options',
+        'type' => MENU_NORMAL_ITEM,
+        'access arguments' => array('administer site configuration'),
+    );
+  $items['sharethis_check'] = array(
+    'page callback' => 'pw_sharethis_check_update',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function pw_sharethis_check_update() {
+  $url = htmlspecialchars($_GET['url']);
+
+  $apikey = variable_get('pw_sharethis_check_apikey', false);
+  $contents = drupal_http_request('http://rest.sharethis.com/v1/count/urlinfo?url=' . $url . '&api_key='. $apikey);
+  $json = json_decode($contents->data, true);
+
+  if ($json != null) { // http://aw20140402stage.localhost/sharethis_check?url=http://www.abgeordnetenwatch.de/2010/04/14/der-neue-blog-von-abgeordnetenwatch-de
+
+      $sum = $json['total']['inbound'];
+
+      $query = db_select('sharethis_meta', 'sm')
+                  ->fields('sm')
+                  ->condition('sm.url', $url)
+                  ->execute();
+
+      $record = $query->fetchAssoc();
+
+      if (isset($record['id'])) { // This assumes that an entry already exists. This might not be the case!
+
+          $record['share_sum'] = $sum + $record['share_basevalue'];
+
+          $exists = db_select('sharethis_meta', 'sm')
+                  ->fields('sm')
+                  ->condition('url', $url)
+                  ->range(0, 1)
+                  ->execute()
+                  ->rowCount();
+
+          if($exists) {
+              db_update('sharethis_meta')
+                  ->condition('url', $record['url'])
+                  ->fields($record)
+                  ->execute();
+          }
+      } 
+      // Inserting is performed within the cron
+  }
+  
+}
