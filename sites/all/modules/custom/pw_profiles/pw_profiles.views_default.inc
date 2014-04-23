@@ -1760,7 +1760,7 @@ if($record->value == 0){
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Übersicht der Abgeordneten';
+  $handler->display->display_options['title'] = '%1';
   $handler->display->display_options['css_class'] = 'pager-full';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -2291,9 +2291,9 @@ $term_role = taxonomy_get_term_by_name($term_name, \'pw_profile_roles_for_view_m
 if($term_role){
   $term_role_id = key($term_role);
   $handler->argument = $term_role_id;
-  return true;
+  return TRUE;
 }
-return false;';
+return FALSE;';
   /* Filter criterion: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
@@ -3086,6 +3086,7 @@ return false;';
     140336230 => 0,
     237793809 => 0,
   );
+  $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
   /* Filter criterion: Benutzer (historical data): Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
@@ -3185,7 +3186,7 @@ return false;';
     140336230 => 0,
     237793809 => 0,
   );
-  $handler->display->display_options['path'] = 'politicians/%/%';
+  $handler->display->display_options['path'] = 'profile/%/%';
 
   /* Display: Listenansicht */
   $handler = $view->new_display('attachment', 'Listenansicht', 'attachment_1');
