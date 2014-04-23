@@ -1760,7 +1760,7 @@ if($record->value == 0){
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '%1';
+  $handler->display->display_options['title'] = 'Profile';
   $handler->display->display_options['css_class'] = 'pager-full';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -2254,8 +2254,6 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['title'] = '%1';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['format'] = 'default_summary';
