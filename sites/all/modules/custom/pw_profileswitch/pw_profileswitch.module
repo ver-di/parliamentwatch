@@ -88,10 +88,14 @@ function pw_user_revision_show($user, $vid) {
     while ($row = $res->fetchAssoc()) {
       $account = user_revision_load($row["uid"], $vid); // Can only be one result maximum
     }
+    // redirect legacy account
+    // $account->field_user_parliament['und'][0]['tid'] != 16117
+    if(!empty($account->field_user_external_url['und'][0]['url'])){
+      drupal_goto($account->field_user_external_url['und'][0]['url'], array(), 307);
+    }
   } else {
     $account = user_revision_load($user->uid, $vid);
   }
-
   return pw_profileswitch_user_custom_view($account);
 }
 

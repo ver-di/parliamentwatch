@@ -2316,11 +2316,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Wählergedächtnis';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'role';
-  $handler->display->display_options['access']['role'] = array(
-    3 => '3',
-    51622513 => '51622513',
-  );
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -2434,6 +2430,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['number_of_answers']['field'] = 'number_of_answers';
   $handler->display->display_options['fields']['number_of_answers']['ui_name'] = 'Overwritten | Questions + Answers';
   $handler->display->display_options['fields']['number_of_answers']['label'] = '';
+  $handler->display->display_options['fields']['number_of_answers']['exclude'] = TRUE;
   $handler->display->display_options['fields']['number_of_answers']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['number_of_answers']['alter']['text'] = '[number_of_questions] / [number_of_answers]';
   $handler->display->display_options['fields']['number_of_answers']['element_label_colon'] = FALSE;
@@ -2658,6 +2655,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['number_of_answers']['field'] = 'number_of_answers';
   $handler->display->display_options['fields']['number_of_answers']['ui_name'] = 'Overwritten | Questions + Answers';
   $handler->display->display_options['fields']['number_of_answers']['label'] = '';
+  $handler->display->display_options['fields']['number_of_answers']['exclude'] = TRUE;
   $handler->display->display_options['fields']['number_of_answers']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['number_of_answers']['alter']['text'] = '[number_of_questions] / [number_of_answers]';
   $handler->display->display_options['fields']['number_of_answers']['element_label_colon'] = FALSE;
@@ -2723,8 +2721,6 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-    // $actual_vid =db_query("SELECT vid FROM {user_archive_cache} u WHERE uid = (:uids) ORDER BY timestamp DESC LIMIT 0,1", array(\':uids\' => $row->uid))->fetchField();
-    //if($actual_vid == $row->vid) {
     if(!isset($static) || $static != \'set\') {
         print l(t(\'open profile\'), \'profile/\'.$row->user_name, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
         $static = \'set\';
