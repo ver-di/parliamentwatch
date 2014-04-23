@@ -51,6 +51,7 @@ dependencies[] = viewfield
 dependencies[] = views
 dependencies[] = views_between_dates_filter
 dependencies[] = views_content
+dependencies[] = views_sort_null_field
 dependencies[] = webform
 dependencies[] = webform_rules
 features[ctools][] = context:context:3

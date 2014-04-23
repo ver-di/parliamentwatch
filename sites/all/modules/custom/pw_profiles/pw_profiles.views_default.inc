@@ -2227,12 +2227,11 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['vid']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
   $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
-  /* Sort criterion: Taxonomie-Begriff: Begriff-ID */
-  $handler->display->display_options['sorts']['tid']['id'] = 'tid';
-  $handler->display->display_options['sorts']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['tid']['field'] = 'tid';
-  $handler->display->display_options['sorts']['tid']['relationship'] = 'field_user_parliament_tid';
-  $handler->display->display_options['sorts']['tid']['order'] = 'DESC';
+  /* Sort criterion: Benutzer: Profile picture (field_user_picture:fid:null sort) */
+  $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['id'] = 'field_user_picture_fid_nullsort';
+  $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['field'] = 'field_user_picture_fid_nullsort';
+  $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['relationship'] = 'uid';
   /* Sort criterion: Benutzer: QuestionAnswerRatio (field_user_qanda_ratio) */
   $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['id'] = 'field_user_qanda_ratio_value';
   $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['table'] = 'field_data_field_user_qanda_ratio';
