@@ -14,17 +14,16 @@ function pw_eu_frontpage_default_fe_block_boxes() {
   $fe_block_boxes->info = 'AW EU Intro';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'aw_eu_intro';
-  $fe_block_boxes->body = '<h3>
-	Informationen zur EU Wahl
-</h3>
-<p>
-	Am 25. Mai findet die Wahl zum Europäischen Parlament statt. Über abgeordnetenwatch.de können Sie alle Kandidierenden öffentlich befragen.
+  $fe_block_boxes->body = '<p>
+	Am 25. Mai findet die Wahl zum Europäischen Parlament statt. Über abgeordnetenwatch.de können Sie jeden der 945 Kandidierenden öffentlich befragen. Alle Antworten werden veröffentlicht. Finden Sie so heraus, wer Ihre Positionen vertritt.
 </p>
 <p>
-	<a class="read-more" href="eu/profile">Alle Kandidierende im Überblick</a><br />
-	<a class="read-more" href="wahlprogramme/eu">Wahlprogramme der Parteien</a><br />
-	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a><br />
-	<a class="read-more" href="/node/7755" title="EU-Wahlrecht">Gesetzgebende Verfahren</a>
+	Nutzen Sie zum Einstieg die Karte oder klicken Sie sich in die Übersicht aller Kandidierenden.
+</p>
+<p>
+	<a class="read-more" href="eu/profile">Alle Kandidierende in der Übersicht</a><br />
+	<a class="read-more" href="eu/wahlprogramme">Wahlprogramme der Parteien</a><br />
+	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a>
 </p>
 ';
 
