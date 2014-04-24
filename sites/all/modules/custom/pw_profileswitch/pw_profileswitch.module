@@ -80,6 +80,7 @@ function pw_user_set_custom_title($account){
  * Show a revision.
  */
 function pw_user_revision_show($user, $vid) {
+  global $pwAccountRev; // this variable is needed in sub views such as Q&A to show the correct names and pictures according to revision
   if ($user->uid == "0") {
     // Load user by vid:
     $query = db_select('user_revision', 'ur');
@@ -97,6 +98,7 @@ function pw_user_revision_show($user, $vid) {
   } else {
     $account = user_revision_load($user->uid, $vid);
   }
+  $pwAccountRev = $account;
   return pw_profileswitch_user_custom_view($account);
 }
 
