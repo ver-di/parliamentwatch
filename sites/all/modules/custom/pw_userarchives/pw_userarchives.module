@@ -7,8 +7,8 @@
 
 // -- hooks
 
-function pw_userarchives_cron() {
-    $query = check_user_archives_database();    
+function pw_userarchives_cron($uid=null) {
+    $query = check_user_archives_database($uid);    
 
     // Delete the archive entries for the chosen users first:
     $res = $query->execute();
@@ -86,7 +86,7 @@ function pw_userarchives_cron() {
  * their revisions that have changed in the last 24 hours.
  * @return type
  */
-function check_user_archives_database() {
+function check_user_archives_database($uid=null) {
     
     $a_day_ago = time() - (2000 * 60 * 60);
     
@@ -102,10 +102,12 @@ function check_user_archives_database() {
     $query->join('field_revision_field_user_roles_for_view_mode_s', 'ro', 'ro.entity_id=ur.uid AND ro.revision_id=ur.vid');
     $query->join('taxonomy_term_data', 'rn', 'rn.tid=ro.field_user_roles_for_view_mode_s_tid');
     $query->condition('ur.status', '1');
-//    $query->condition('ur.uid', 25050); // only for testing
+    if ($uid != null) {
+      $query->condition('ur.uid', $uid);
+    }
     $query->condition('ur.timestamp', $a_day_ago, '>');
     $query->condition('rn.name', array('Deputy', 'Candidate'), 'IN');
-    $query->groupBy('ur.uid, up.field_user_parliament_tid');
+    $query->groupBy('ur.uid, up.field_user_parliament_tid, ro.field_user_roles_for_view_mode_s_tid');
     
     return $query;
 }
