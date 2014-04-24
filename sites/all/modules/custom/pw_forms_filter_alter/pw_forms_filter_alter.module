@@ -54,5 +54,33 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
       }
     }
     $form['field_user_constituency_tid']['#options'] = $options;
+
+    // address (field_user_address:administrative_area) - checks url and sets filter
+    if(!$form_was_submitted){
+      foreach ($form['field_user_address_administrative_area']['#options'] as $index => $area) {
+        if(in_array($area, $url_parameters)){
+          $form_state['input']['field_user_address_administrative_area'] = $index;
+        }
+      }
+    }
+    /*
+    $sql = "SELECT DISTINCT address.field_user_address_administrative_area
+            FROM field_data_field_user_address AS address
+            WHERE address.field_user_address_administrative_area IS NOT NULL AND address.field_user_address_administrative_area != ''
+            ORDER BY address.field_user_address_administrative_area";
+    $result = db_query($sql, $a_parameter);
+    $areas = $result->fetchAll();
+
+    $options = array('All' => 'Alle');
+    foreach ($areas as $index => $area) {
+      $options[$index] = $area->field_user_address_administrative_area;
+
+      // checks url and sets filter
+      //if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
+      //  $form_state['input']['field_user_address_administrative_area'] = $term->tid;
+      //}
+    }
+    $form['field_user_address_administrative_area']['#options'] = $options;
+    */
   }
 }
