@@ -130,6 +130,7 @@ function pw_breadcrumb_strongarm() {
     17 => 0,
     25 => 0,
     26 => 0,
+    34 => 0,
     32 => 0,
     18 => 0,
     19 => 0,
@@ -159,11 +160,14 @@ function pw_breadcrumb_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'custom_breadcrumbs_taxonomy_node_types';
   $strongarm->value = array(
+    'announcement' => 0,
     'article' => 0,
-    'page' => 0,
     'blogpost' => 0,
     'calendar_entry' => 0,
     'dialogue' => 0,
+    'page' => 0,
+    'pw_kc_position' => 0,
+    'pw_kc_thesis' => 0,
     'migrate_extras_media_example' => 0,
     'migrate_example_pathauto' => 0,
     'pw_poll' => 0,
