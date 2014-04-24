@@ -1817,6 +1817,22 @@ if($record->value == 0){
         ),
       ),
     ),
+    'field_user_address_administrative_area' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
     'field_user_party_tid' => array(
       'bef_format' => 'bef',
       'more_options' => array(
@@ -3062,6 +3078,111 @@ return FALSE;';
       'value' => 'Z',
     ),
   );
+  /* Filter criterion: Benutzer (historical data): Address (field_user_address:administrative_area) */
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['id'] = 'field_user_address_administrative_area';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['table'] = 'field_revision_field_user_address';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['field'] = 'field_user_address_administrative_area';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['group'] = 1;
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['expose']['operator_id'] = 'field_user_address_administrative_area_op';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['expose']['label'] = 'Bundesland';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['expose']['operator'] = 'field_user_address_administrative_area_op';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['expose']['identifier'] = 'field_user_address_administrative_area';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['group_info']['label'] = 'Bundesland auswählen';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['group_info']['identifier'] = 'field_user_address_administrative_area';
+  $handler->display->display_options['filters']['field_user_address_administrative_area']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Bayern',
+      'operator' => '=',
+      'value' => 'Bayern',
+    ),
+    2 => array(
+      'title' => 'Baden-Württemberg',
+      'operator' => '=',
+      'value' => 'Baden-Württemberg',
+    ),
+    3 => array(
+      'title' => 'Berlin',
+      'operator' => '=',
+      'value' => 'Berlin',
+    ),
+    4 => array(
+      'title' => 'Brandenburg',
+      'operator' => '=',
+      'value' => 'Brandenburg',
+    ),
+    5 => array(
+      'title' => 'Bremen',
+      'operator' => '=',
+      'value' => 'Bremen',
+    ),
+    6 => array(
+      'title' => 'Hamburg',
+      'operator' => '=',
+      'value' => 'Hamburg',
+    ),
+    7 => array(
+      'title' => 'Hessen',
+      'operator' => '=',
+      'value' => 'Hessen',
+    ),
+    8 => array(
+      'title' => 'Mecklenburg-Vorpommern',
+      'operator' => '=',
+      'value' => 'Mecklenburg-Vorpommern',
+    ),
+    9 => array(
+      'title' => 'Niedersachsen',
+      'operator' => '=',
+      'value' => 'Niedersachsen',
+    ),
+    10 => array(
+      'title' => 'Nordrhein-Westfalen',
+      'operator' => '=',
+      'value' => 'Nordrhein-Westfalen',
+    ),
+    11 => array(
+      'title' => 'Rheinland-Pfalz',
+      'operator' => '=',
+      'value' => 'Rheinland-Pfalz',
+    ),
+    12 => array(
+      'title' => 'Saarland',
+      'operator' => '=',
+      'value' => 'Saarland',
+    ),
+    13 => array(
+      'title' => 'Sachsen',
+      'operator' => '=',
+      'value' => 'Sachsen',
+    ),
+    14 => array(
+      'title' => 'Sachsen-Anhalt',
+      'operator' => '=',
+      'value' => 'Sachsen-Anhalt',
+    ),
+    15 => array(
+      'title' => 'Schleswig-Holstein',
+      'operator' => '=',
+      'value' => 'Schleswig-Holstein',
+    ),
+    16 => array(
+      'title' => 'Thüringen',
+      'operator' => '=',
+      'value' => 'Thüringen',
+    ),
+  );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
@@ -3070,18 +3191,18 @@ return FALSE;';
   $handler->display->display_options['filters']['field_user_constituency_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_user_constituency_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['operator_id'] = 'field_user_constituency_tid_op';
-  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['label'] = 'Bundesland wählen';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['label'] = 'Wahlkreis';
   $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['operator'] = 'field_user_constituency_tid_op';
   $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['identifier'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
-    181527986 => 0,
     51622513 => 0,
-    185431326 => 0,
+    181527986 => 0,
     140336230 => 0,
-    237793809 => 0,
+    185431326 => 0,
+    178386088 => 0,
   );
   $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
