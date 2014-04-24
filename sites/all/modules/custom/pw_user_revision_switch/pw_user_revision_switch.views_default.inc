@@ -1557,9 +1557,8 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]&opacity=0.95';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'frage-stellen?recipient=[name]';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
@@ -1829,7 +1828,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]&opacity=0.95';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'frage-stellen?recipient=[name]';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
@@ -2041,7 +2040,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]&opacity=0.95';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'frage-stellen?recipient=[name]';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
@@ -2280,7 +2279,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'node/10446?width=600&height=600&uuid=[uuid]&opacity=0.95';
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'frage-stellen?recipient=[name]';
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_1']['element_type'] = 'span';
