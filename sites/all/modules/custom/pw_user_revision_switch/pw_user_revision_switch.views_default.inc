@@ -2388,8 +2388,8 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $urole = $row->user_role;
-if ( !empty($urole) && $urole ==  "candidate") print t("Profil");
-else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
+if ( !empty($urole) && $urole ==  "candidate") print t("Profil zur Wahl");
+else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordneten-Profil");
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
@@ -2614,8 +2614,8 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $urole = $row->user_role;
-if ( !empty($urole) && $urole ==  "candidate") print t("Profil");
-else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordnetenprofil");
+if ( !empty($urole) && $urole ==  "candidate") print t("Profil zur Wahl");
+else if ( !empty($urole) && $urole ==  "deputy") print t("Abgeordneten-Profil");
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
