@@ -21,7 +21,7 @@ function pw_eu_frontpage_default_fe_block_boxes() {
 	Nutzen Sie zum Einstieg die Karte oder klicken Sie sich in die Übersicht aller Kandidierenden.
 </p>
 <p>
-	<a class="read-more" href="eu/profile">Alle Kandidierende in der Übersicht</a><br />
+	<a class="link-profile" href="eu/profile">Alle Kandidierenden in der Übersicht</a><br />
 	<a class="read-more" href="eu/wahlprogramme">Wahlprogramme der Parteien</a><br />
 	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a>
 </p>
@@ -60,6 +60,39 @@ function pw_eu_frontpage_default_fe_block_boxes() {
 ';
 
   $export['aw_eu_parliament_archive'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'AW EU Pressemappe';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'aw_eu_pressemappe';
+  $fe_block_boxes->body = '<p>
+	Ausführliche Informationen finden Sie in unserer Pressemappe.
+</p>
+<p class="rteright clear">
+	<a class="link-download" href="/sites/abgeordnetenwatch.de/files/pressemappe_europawahl2014.pdf">Download Pressemappe (PDF)</a>
+</p>';
+
+  $export['aw_eu_pressemappe'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'AW EU Schirmherr 2014';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'aw_eu_schirmherr';
+  $fe_block_boxes->body = '<div>
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__14771 img__view_mode__pw_file_portrait_m attr__format__pw_file_portrait_m attr__field_file_image_alt_text[und][0][value]__Rainer Wieland attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__Rainer Wieland, Vizepräsident des EU-Parlamentes" src="/sites/abgeordnetenwatch.de/files/rainer_wieland_frei_web_0.jpg" style="float: right; width: 100px; margin-left: 10px; margin-bottom: 10px;" title="" typeof="foaf:Image" />
+	<div class="copyright">
+		Rainer Wieland, Vizepräsident des Europaparlamentes
+	</div>
+</div>
+<blockquote>
+	abgeordnetenwatch.de bildet eine Möglichkeit, die Arbeit Ihres Abgeordneten zu unterstützen, indem Sie durch Fragen auf Probleme in Europa aufmerksam machen
+</blockquote>
+<p class="rteright clear">
+	<a class="read-more" href="/node/12707">Grußwort lesen</a>
+</p>
+';
+
+  $export['aw_eu_schirmherr'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'AW Schirmherrin';

@@ -98,7 +98,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-76',
+        'weight' => '-77',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -126,12 +126,12 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_schirmherrin',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'eu',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'abgeordnetenwatch',
         'weight' => '-77',
       ),
@@ -238,7 +238,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-72',
+        'weight' => '-73',
       ),
       'blank' => array(
         'region' => '',
