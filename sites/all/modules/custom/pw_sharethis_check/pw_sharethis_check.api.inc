@@ -49,6 +49,14 @@ function pw_sharethis_check_iterateNodes() {
         $record['entity_id'] = $fetch['nid'];
         $record['entity_type'] = $fetch['type'];
         $record['url'] = $url;
+        
+        $record_sum['entity_type'] = 'node';
+        $record_sum['bundle'] = $fetch['type'];
+        $record_sum['deleted'] = 0;
+        $record_sum['entity_id'] = $fetch['nid'];
+        $record_sum['revision_id'] = 0;
+        $record_sum['language'] = 'und';
+        $record_sum['delta'] = 0;
 
         if (in_array($record['entity_type'], $baseTypes)) {
 
@@ -76,7 +84,7 @@ function pw_sharethis_check_iterateNodes() {
         
         $json = json_decode($content->data, true);
         $record['share_sum'] = $record['share_basevalue'] + $json['total']['inbound'];
-        
+        $record_sum['field_share_sum_value'] = $record['share_sum'];
 
         $exists = db_select('sharethis_meta', 'sm')
                 ->fields('sm')
@@ -86,20 +94,35 @@ function pw_sharethis_check_iterateNodes() {
                 ->rowCount();
         
         if($exists) {
-            
             db_update('sharethis_meta')
                 ->condition('url', $record['url'])
                 ->fields($record)
                 ->execute();
-            
         } else {
-            
             db_insert('sharethis_meta')
                 ->fields($record)
                 ->execute();
-            
         }
         
+        $exists_sum = db_select('field_revision_field_share_sum', 's')
+                ->fields('s')
+                ->condition('entity_id', $record_sum['entity_id'])
+                ->condition('entity_type', 'user')
+                ->range(0, 1)
+                ->execute()
+                ->rowCount();
+        
+        if($exists_sum) {
+            db_update('field_revision_field_share_sum')
+                ->condition('entity_id', $record_sum['entity_id'])
+                ->condition('entity_type', 'node')
+                ->fields($record)
+                ->execute();
+        } else {
+            db_insert('field_revision_field_share_sum')
+                ->fields($record_sum)
+                ->execute();
+        }
         
     }
     
@@ -126,13 +149,13 @@ function pw_sharethis_check_iterateUsers() {
 
     variable_set('pw_sharethis_check_delaytype', 'user');
     
-    // Which entries do we already have:
+    // Which entries do we already have, assuming we import all their revisions en bloc:
     $subquery = db_select('sharethis_meta', 'sm')
       ->fields('sm', array('entity_id'))
       ->condition('sm.entity_type', 'user');
     
     // fetch users who do not have an entry yet:
-    $query = db_select('users', 'u')
+    $query = db_select('user_revision', 'u')
         ->fields('u')
         ->condition('u.uid', $subquery, 'NOT IN');    
     
@@ -144,12 +167,23 @@ function pw_sharethis_check_iterateUsers() {
         
         $count++;
         $path = drupal_get_path_alias('user/' . $fetch['uid']);
-        $url = 'http://www' . $domain . '/' . $path;
+        $url = 'http://www' . $domain . '/' . $path . '/archive/' . $fetch['vid']; // this limits the request to archive entries
         
+        // record for sharethis_meta table:
         $record['entity_id'] = $fetch['uid'];
         $record['entity_type'] = 'user';
         $record['url'] = $url;
         $record['share_basevalue'] = 0;
+        $record['revision_id'] = $fetch['vid'];
+        
+        // record for field_revision_field_share_sum table:
+        $record_sum['entity_type'] = 'user';
+        $record_sum['bundle'] = 'user';
+        $record_sum['deleted'] = 0;
+        $record_sum['entity_id'] = $fetch['uid'];
+        $record_sum['revision_id'] = $fetch['vid'];
+        $record_sum['language'] = 'und';
+        $record_sum['delta'] = 0;
         
         $content = drupal_http_request('http://rest.sharethis.com/v1/count/urlinfo?url='
                 . $url . '&api_key=' . $apikey);
@@ -161,6 +195,7 @@ function pw_sharethis_check_iterateUsers() {
         
         $json = json_decode($content->data, true);
         $record['share_sum'] = $record['share_basevalue'] + $json['total']['inbound'];
+        $record_sum['field_share_sum_value'] = $record['share_sum'];
        
         $exists = db_select('sharethis_meta', 'sm')
                 ->fields('sm')
@@ -170,20 +205,37 @@ function pw_sharethis_check_iterateUsers() {
                 ->rowCount();
         
         if($exists) {
-            
             db_update('sharethis_meta')
                 ->condition('url', $record['url'])
                 ->fields($record)
                 ->execute();
-            
         } else {
-            
             db_insert('sharethis_meta')
                 ->fields($record)
                 ->execute();
-            
         }
         
+        $exists_sum = db_select('field_revision_field_share_sum', 's')
+                ->fields('s')
+                ->condition('entity_id', $record_sum['entity_id'])
+                ->condition('revision_id', $record_sum['revision_id'])
+                ->condition('entity_type', 'user')
+                ->range(0, 1)
+                ->execute()
+                ->rowCount();
+        
+        if($exists_sum) {
+            db_update('field_revision_field_share_sum')
+                ->condition('entity_id', $record_sum['entity_id'])
+                ->condition('revision_id', $record_sum['revision_id'])
+                ->condition('entity_type', 'user')
+                ->fields($record)
+                ->execute();
+        } else {
+            db_insert('field_revision_field_share_sum')
+                ->fields($record_sum)
+                ->execute();
+        }
         
     }
     
