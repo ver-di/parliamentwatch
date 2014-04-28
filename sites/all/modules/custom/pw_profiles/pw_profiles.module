@@ -188,8 +188,17 @@ function pw_profiles_views_query_alter(&$view, &$query) {
   switch($view->name) {
     case 'profile_list_rev':
      // add the group by on the user id field to prevent duplicates caused by user revisions
-     $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
-     $query->add_groupby('users_uid');
+     // $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
+     // $query->add_groupby('users_uid');
+
+     // add join user_archive_cache table to get rid of duplicates
+     $join = new views_join();
+     $join->table = 'user_archive_cache';
+     $join->field = 'vid';
+     $join->left_table = 'user_revision';
+     $join->left_field = 'vid';
+     $join->type = 'INNER';
+     $query->add_relationship('user_archive_cache', $join, 'user_revision');
      break;
   }
 }

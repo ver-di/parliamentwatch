@@ -21,7 +21,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_eu_intro',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
@@ -56,7 +56,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_eu_map',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
@@ -91,14 +91,14 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_eu_parliament_archive',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-76',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -126,14 +126,14 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_schirmherrin',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-77',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -161,7 +161,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'i18n_mode' => '0',
     'module' => 'quicktabs',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
@@ -196,7 +196,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'i18n_mode' => '0',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
@@ -231,14 +231,14 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'i18n_mode' => '0',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-72',
       ),
       'blank' => array(
         'region' => '',

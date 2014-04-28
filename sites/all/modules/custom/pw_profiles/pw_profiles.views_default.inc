@@ -1760,7 +1760,7 @@ if($record->value == 0){
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Übersicht der Abgeordneten';
+  $handler->display->display_options['title'] = 'Profile';
   $handler->display->display_options['css_class'] = 'pager-full';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -2227,12 +2227,6 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['vid']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
   $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
-  /* Sort criterion: Taxonomie-Begriff: Begriff-ID */
-  $handler->display->display_options['sorts']['tid']['id'] = 'tid';
-  $handler->display->display_options['sorts']['tid']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['sorts']['tid']['field'] = 'tid';
-  $handler->display->display_options['sorts']['tid']['relationship'] = 'field_user_parliament_tid';
-  $handler->display->display_options['sorts']['tid']['order'] = 'DESC';
   /* Sort criterion: Benutzer: QuestionAnswerRatio (field_user_qanda_ratio) */
   $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['id'] = 'field_user_qanda_ratio_value';
   $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['table'] = 'field_data_field_user_qanda_ratio';
@@ -2245,6 +2239,11 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['sorts']['field_user_answers_give_value']['field'] = 'field_user_answers_give_value';
   $handler->display->display_options['sorts']['field_user_answers_give_value']['relationship'] = 'uid';
   $handler->display->display_options['sorts']['field_user_answers_give_value']['order'] = 'DESC';
+  /* Sort criterion: Benutzer: Profile picture (field_user_picture:fid:null sort) */
+  $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['id'] = 'field_user_picture_fid_nullsort';
+  $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['table'] = 'field_data_field_user_picture';
+  $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['field'] = 'field_user_picture_fid_nullsort';
+  $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['relationship'] = 'uid';
   /* Sort criterion: Benutzer (historical data): Last name (field_user_lname) */
   $handler->display->display_options['sorts']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['sorts']['field_user_lname_value']['table'] = 'field_revision_field_user_lname';
@@ -2255,8 +2254,6 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['title_enable'] = TRUE;
-  $handler->display->display_options['arguments']['field_user_parliament_tid']['title'] = '%1';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['format'] = 'default_summary';
@@ -2291,9 +2288,9 @@ $term_role = taxonomy_get_term_by_name($term_name, \'pw_profile_roles_for_view_m
 if($term_role){
   $term_role_id = key($term_role);
   $handler->argument = $term_role_id;
-  return true;
+  return TRUE;
 }
-return false;';
+return FALSE;';
   /* Filter criterion: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
@@ -2788,7 +2785,7 @@ return false;';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['path'] = 'profile/[name]/archive/[vid_1]';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['path'] = 'profile/[name]';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_wrapper_type'] = 'div';
@@ -2900,7 +2897,7 @@ return false;';
   $handler->display->display_options['fields']['vid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['vid']['alter']['text'] = 'Profil besuchen';
   $handler->display->display_options['fields']['vid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['vid']['alter']['path'] = 'profile/[name]/archive/[vid_1]';
+  $handler->display->display_options['fields']['vid']['alter']['path'] = 'profile/[name]';
   $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['vid']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
@@ -3086,6 +3083,7 @@ return false;';
     140336230 => 0,
     237793809 => 0,
   );
+  $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
   /* Filter criterion: Benutzer (historical data): Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
@@ -3185,7 +3183,7 @@ return false;';
     140336230 => 0,
     237793809 => 0,
   );
-  $handler->display->display_options['path'] = 'politicians/%/%';
+  $handler->display->display_options['path'] = 'profile/%/%';
 
   /* Display: Listenansicht */
   $handler = $view->new_display('attachment', 'Listenansicht', 'attachment_1');
