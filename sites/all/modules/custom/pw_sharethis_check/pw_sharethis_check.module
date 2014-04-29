@@ -35,41 +35,68 @@ function pw_sharethis_check_menu() {
 
 function pw_sharethis_check_update() {
   $url = htmlspecialchars($_GET['url']);
-
-  $apikey = variable_get('pw_sharethis_check_apikey', false);
-  $contents = drupal_http_request('http://rest.sharethis.com/v1/count/urlinfo?url=' . $url . '&api_key='. $apikey);
-  $json = json_decode($contents->data, true);
-
-  if ($json != null) { // http://aw20140402stage.localhost/sharethis_check?url=http://www.abgeordnetenwatch.de/2010/04/14/der-neue-blog-von-abgeordnetenwatch-de
-
-      $sum = $json['total']['inbound'];
-
-      $query = db_select('sharethis_meta', 'sm')
-                  ->fields('sm')
-                  ->condition('sm.url', $url)
-                  ->execute();
-
-      $record = $query->fetchAssoc();
-
-      if (isset($record['id'])) { // This assumes that an entry already exists. This might not be the case!
-
-          $record['share_sum'] = $sum + $record['share_basevalue'];
-
-          $exists = db_select('sharethis_meta', 'sm')
-                  ->fields('sm')
-                  ->condition('url', $url)
-                  ->range(0, 1)
-                  ->execute()
-                  ->rowCount();
-
-          if($exists) {
-              db_update('sharethis_meta')
-                  ->condition('url', $record['url'])
-                  ->fields($record)
-                  ->execute();
-          }
-      } 
-      // Inserting is performed within the cron
+  
+  $record['url'] = $url; // TODO: prüfung auf sinnhaftigkeit:
+  // 1. /profile/<username>/archive/<revisionnumber> -> Benutzer nach Benutzernamen laden. --> uid, revisionnumber (können wir auch ignorieren und einfach en bloc alle Revisionen aktualisieren)
+  // 2. /petitionen/<name> und /petitions/<name> -> von diesem String die Source aus dem Alias holen --> nid
+  // 3. blog/<artikelname> -> von diesem String die Source aus dem Alias holen --> nid
+  // 4. <username>/question/<datum>/<nid> -> [von diesem String die Source aus dem Alias holen, eigentlich nicht nötig, da die NID in der URL drin ist] --> nid
+  // Laden von URL-Alias reicht nicht: Die Archivprofile sind da nicht drin... Aber bei allen nodes sollte das gehen.
+  
+  $record['entity_id'] = 0;
+  $record['revision_id'] = 0;
+  $record['entity_type'] = 0;
+  
+  $doInsert = true;
+  if (substr_count($url, '/profile/') == 1) {
+    $urlArr = explode('/', $url);
+    $usernameKey = array_search('profile', $urlArr) + 1;
+    if (array_key_exists($usernameKey, $urlArr)) {
+      $username = $urlArr[$usernameKey];
+      $user = user_load_by_name($username);
+      if ($user) {
+        $record['entity_id'] = $user->uid;
+      } else {
+        $doInsert = false;
+      }
+    } else {
+      $doInsert = false;
+    }
+    
+    $revisionKey = array_search('archive', $urlArr) + 1;
+    if (array_key_exists($revisionKey, $urlArr)) {
+      $revisionId = (int)$urlArr[$revisionKey];
+      $record['revision_id'] = $revisionId;
+    }
+    
+    $record['entity_type'] = 'user';
+  } else if (substr_count($url, '/petition') == 1 || substr_count($url, '/blog') == 1) { // works for /petitionen and /petitions
+    $urlArr = explode('/', $url);
+    $record['entity_type'] = 'node';
+    if (array_key_exists(3, $urlArr) && array_key_exists(4, $urlArr)) {
+      $sourcePath = drupal_lookup_path('source', $urlArr[3].'/'.$urlArr[4]);
+      if ($sourcePath && substr_count($sourcePath, 'node') == 1) {
+        $record['entity_id'] = (int)str_replace('node/', '', $sourcePath);
+      } else {
+        $doInsert = false;
+      }
+    } else {
+      $doInsert = false;
+    }
+            
+  } else if (substr_count($url, '/question/') == 1) {
+      $urlArr = explode('/', $url);
+      $record['entity_type'] = 'node';
+      $questionKey = count($urlArr) - 1;
+      $questionNid = (int)$urlArr[$questionKey];
+      $record['entity_id'] = $questionNid;
+  } else {
+    $doInsert = false;
   }
   
+  if ($doInsert) {
+    db_insert('sharethis_queue')
+      ->fields($record)
+      ->execute();  
+  }
 }
