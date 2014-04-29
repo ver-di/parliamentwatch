@@ -12,9 +12,10 @@ include_once 'pw_sharethis_check.api.inc';
  * Implements hook_cron()
  */
 function pw_sharethis_check_cron() {
-    
-  pw_sharethis_check_iterateNodes();
-  pw_sharethis_check_iterateUsers();
+//  pw_sharethis_check_iterateNodes('queue'); // updated all queued nodes
+//  pw_sharethis_check_iterateNodes('migration'); // updates non-existant nodes 
+//  pw_sharethis_check_iterateUsers('queue');
+  pw_sharethis_check_iterateUsers('migration');
     
 }
 
