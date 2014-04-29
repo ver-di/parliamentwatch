@@ -174,12 +174,12 @@ return $result;
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['id'] = 'field_user_birthday-revision_id';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['table'] = 'field_revision_field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['field'] = 'field_user_birthday-revision_id';
-  $handler->display->display_options['fields']['field_user_birthday-revision_id']['label'] = 'Geburtstag';
+  $handler->display->display_options['fields']['field_user_birthday-revision_id']['label'] = 'Jahrgang';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['empty'] = '-';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['settings'] = array(
-    'format_type' => 'date_only_short',
+    'format_type' => 'year_only',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

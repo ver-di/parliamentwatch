@@ -304,7 +304,7 @@ function pw_globals_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '0',
+        'weight' => 0,
       ),
     ),
   );
