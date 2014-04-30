@@ -8,12 +8,14 @@ Parlamente {"url":"http:\/\/www.abgeordnetenwatch.de\/parlamente-210-0.html","ex
 --Petitionen {"url":"petitionen","expanded":true}
 ---Petition (menu position rule) {"url":"menu-position\/18","description":"Sets access to all menu position links.","hidden":true}
 --Grußwort {"url":"bundestag\/grusswort"}
--EU {"url":"http:\/\/www.abgeordnetenwatch.de\/eu-336-0.html","expanded":true}
---Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-669-0.html"}
---Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-105-0.html"}
---Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-107-0.html"}
+-EU {"url":"eu"}
 --Wahlrecht {"url":"eu\/wahlrecht"}
 --Gesetzgebende Verfahren {"url":"eu\/gesetzgebende-verfahren"}
+--Grußwort vom Schirmherren {"url":"eu\/grusswort"}
+-EU {"url":"http:\/\/www.abgeordnetenwatch.de\/eu-336-0.html","hidden":true,"expanded":true}
+--Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-669-0.html","hidden":true}
+--Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-105-0.html","hidden":true}
+--Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-107-0.html","hidden":true}
 -Baden-Würtemberg {"url":"http:\/\/www.abgeordnetenwatch.de\/baden_wuerttemberg-913-0.html","expanded":true}
 --Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-182-0.html"}
 --Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-149-0.html"}
