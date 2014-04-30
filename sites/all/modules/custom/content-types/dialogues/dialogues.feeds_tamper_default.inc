@@ -17,7 +17,7 @@ function dialogues_feeds_tamper_default() {
   $feeds_tamper->importer = 'dialogue_importer';
   $feeds_tamper->source = 'xpathparser:14';
   $feeds_tamper->plugin_id = 'find_dialogues_term_id';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find Dialogues Term ID by Term and Parliament';
   $export['dialogue_importer-xpathparser_14-find_dialogues_term_id'] = $feeds_tamper;
@@ -29,7 +29,7 @@ function dialogues_feeds_tamper_default() {
   $feeds_tamper->importer = 'dialogue_importer';
   $feeds_tamper->source = 'xpathparser:14';
   $feeds_tamper->plugin_id = 'required';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Pflichtfeld';
   $export['dialogue_importer-xpathparser_14-required'] = $feeds_tamper;

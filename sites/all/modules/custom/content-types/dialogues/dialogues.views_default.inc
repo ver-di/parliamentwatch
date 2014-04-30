@@ -813,6 +813,7 @@ else {
 
   /* Display: Profile teasered */
   $handler = $view->new_display('attachment', 'Profile teasered', 'profile_teasered');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'qanda-teaser';
   $handler->display->display_options['display_description'] = 'An attachment with teasered questions and answers for the profile page';

@@ -67,7 +67,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:17' => 0,
           'xpathparser:18' => 0,
         ),
-        'context' => '//dialogue',
+        'context' => '//dialogue[message[1]/status>0]',
         'exp' => array(
           'errors' => 1,
           'tidy' => 0,
