@@ -2679,8 +2679,8 @@ return FALSE;';
     1 => 'field_user_fname-revision_id_1',
     2 => 'field_user_lname-revision_id_1',
     3 => 'field_user_party-revision_id',
-    4 => 'field_user_questions_get-revision_id',
-    5 => 'field_user_answers_give-revision_id',
+    4 => 'field_user_questions_get-revision_id_1',
+    5 => 'field_user_answers_give-revision_id_1',
     6 => 'nothing_2',
     7 => 'fieldset_1',
   );
@@ -2733,35 +2733,27 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Excluded | User (historical data): Questions Get */
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['id'] = 'field_user_questions_get-revision_id';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['table'] = 'field_revision_field_user_questions_get';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['field'] = 'field_user_questions_get-revision_id';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['ui_name'] = 'Excluded | User (historical data): Questions Get';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['alter']['text'] = '[field_user_questions_get-revision_id-value] Fragen';
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_questions_get-revision_id']['settings'] = array(
+  /* Feld: Benutzer (historical data): Questions Get */
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['id'] = 'field_user_questions_get-revision_id_1';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['table'] = 'field_revision_field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['field'] = 'field_user_questions_get-revision_id';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '[field_user_questions_get-revision_id_1]';
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Feld: Excluded | User (historical data): Answers Give */
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['table'] = 'field_revision_field_user_answers_give';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['field'] = 'field_user_answers_give-revision_id';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['ui_name'] = 'Excluded | User (historical data): Answers Give';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['alter']['text'] = '[field_user_answers_give-revision_id-value] Antworten';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_wrapper_class'] = 'row push-bottom-s';
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_answers_give-revision_id']['settings'] = array(
+  /* Feld: Benutzer (historical data): Answers Give */
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['id'] = 'field_user_answers_give-revision_id_1';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['table'] = 'field_revision_field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['field'] = 'field_user_answers_give-revision_id';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['label'] = '';
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['settings'] = array(
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
@@ -2771,7 +2763,7 @@ return FALSE;';
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Rewritten | Custom text: Questions, Answers';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
-  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '[field_user_questions_get-revision_id], [field_user_answers_give-revision_id]';
+  $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '[field_user_questions_get-revision_id_1], [field_user_answers_give-revision_id_1]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
   /* Feld: Global: Fieldset */
@@ -2873,7 +2865,7 @@ return FALSE;';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Reused | Questions get';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_user_questions_get-revision_id]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_user_questions_get-revision_id_1]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'row';
@@ -2884,7 +2876,7 @@ return FALSE;';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Reused | Answers give';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_user_answers_give-revision_id]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_user_answers_give-revision_id_1]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'row push-bottom-s';

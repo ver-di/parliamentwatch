@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-18 20:56+0200\n"
-"PO-Revision-Date: 2014-04-18 20:56+0200\n"
+"POT-Creation-Date: 2014-04-29 21:07+0200\n"
+"PO-Revision-Date: 2014-04-29 21:07+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -31516,10 +31516,6 @@ msgstr ""
 msgid "Profile Name"
 msgstr ""
 
-#: /en-gb/admin/structure/views/view/answers/edit
-msgid "Load more"
-msgstr ""
-
 #: /en-gb/admin/structure/views/ajax/display/answers/block/pager_options
 msgid "Items to display"
 msgstr ""
@@ -55732,11 +55728,11 @@ msgstr ""
 msgid "Ausgeschiedene Abgeordnete"
 msgstr ""
 
-#: sites/all/modules/custom/better_exposed_filters/better_exposed_filters.js
+#: sites/all/modules/custom/better_exposed_filters/better_exposed_filters.js; sites/all/modules/contrib/better_exposed_filters/better_exposed_filters.js
 msgid "Select All"
 msgstr ""
 
-#: sites/all/modules/custom/better_exposed_filters/better_exposed_filters.js
+#: sites/all/modules/custom/better_exposed_filters/better_exposed_filters.js; sites/all/modules/contrib/better_exposed_filters/better_exposed_filters.js
 msgid "Select None"
 msgstr ""
 
@@ -58364,10 +58360,6 @@ msgstr ""
 
 #: /admin/structure/features/cleanup/clear
 msgid "Announcements"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "to the archive"
 msgstr ""
 
 #: /admin/structure/features/cleanup/clear
@@ -87547,6 +87539,541 @@ msgid ""
 "[field_user_lname-revision_id], [field_user_party-revision_id]"
 msgstr ""
 
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid "Add a more link to the bottom of the display."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid "Create more link"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid ""
+"This will add a more link to the bottom of this view, which will link "
+"to the page view. If you have more than one page view, the link will "
+"point to the display specified in 'Link display' section under "
+"advanced. You can override the url at the link display setting."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid "Display 'more' link only if there is more content"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid ""
+"Leave this unchecked to display the 'more' link even if there are no "
+"more items to display."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid "The text to display for the more link."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/link_display
+msgid "Which display to use for path"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/link_display
+msgid ""
+"Which display to use to get this display's path for things like "
+"summary links, rss feed links, more links, etc."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/link_display
+msgid ""
+"A Drupal path or external URL the more link will point to. Note that "
+"this will override the link display setting above."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/calendar/page/field/title
+msgid "Colorbox Rel"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/calendar/page/field/title
+msgid ""
+"Enter a rel attribute here to group colorbox node links into a "
+"gallery."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/display_id
+msgid "The machine name of this display"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/display_id
+msgid "This is machine name of the display."
+msgstr ""
+
+#: /admin/structure/features/dialogues/recreate
+msgid "Frage und ganze Antwort lesen"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile
+msgid "Link title to page"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile
+msgid "Num items"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile
+msgid "Select the number of items to display, or 0 to display all results."
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Address-field"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Views_send_email_message"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Addressfield"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "I18n_translation"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Taxonomy_vocabulary"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Ds_views"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "A configurable tree provided by Menu block."
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "%menu menu tree"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "menu tree of %menu"
+msgstr ""
+
+#: /system/ajax
+msgid "Use widget configuration"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form
+msgid "Sort options"
+msgstr ""
+
+#: /admin/modules
+msgid "Imports Kandidaten-Check Thesis and Positions"
+msgstr ""
+
+#: /update.php?op=selection&token=QnPCtGgBDR45kKLc17gINHK079BeUJOZ9McyP0aCp7c
+msgid "Better exposed filters"
+msgstr ""
+
+#: /update.php?op=selection&token=QnPCtGgBDR45kKLc17gINHK079BeUJOZ9McyP0aCp7c
+msgid "Custom strings."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Toggle Links"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Select a format for the exposed sort options. Note: the \"toggle "
+"links\" option will only work correctly if \"Combine sort order with "
+"sort by\" is checked in the \"Advanced Sort Options\" section."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Combines the sort by options and order (ascending or decending) into a "
+"single list.  Use this to display \"Option1 Desc\", \"Option1 Asc\", "
+"\"Option2 Desc\", \"Option2 Asc\" in a single form element."
+msgstr ""
+
+#: /index.php
+msgid "Kandidierende zur Europawahl 2014"
+msgstr ""
+
+#: /index.php
+msgid "zum Twitterkanal"
+msgstr ""
+
+#: /index.php
+msgid "Twitter Ticker"
+msgstr ""
+
+#: /index.php
+msgid "Bundesland"
+msgstr ""
+
+#: /index.php
+msgid "Bundesland auswählen"
+msgstr ""
+
+#: /user
+msgid "Bayern"
+msgstr ""
+
+#: /user
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: /user
+msgid "Berlin"
+msgstr ""
+
+#: /user
+msgid "Brandenburg"
+msgstr ""
+
+#: /user
+msgid "Bremen"
+msgstr ""
+
+#: /user
+msgid "Hamburg"
+msgstr ""
+
+#: /user
+msgid "Hessen"
+msgstr ""
+
+#: /user
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: /user
+msgid "Niedersachsen"
+msgstr ""
+
+#: /user
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: /user
+msgid "Rheinland-Pfalz"
+msgstr ""
+
+#: /user
+msgid "Saarland"
+msgstr ""
+
+#: /user
+msgid "Sachsen"
+msgstr ""
+
+#: /user
+msgid "Sachsen-Anhalt"
+msgstr ""
+
+#: /user
+msgid "Schleswig-Holstein"
+msgstr ""
+
+#: /user
+msgid "Thüringen"
+msgstr ""
+
+#: /profile/ruth-geisenfelder
+msgid ""
+"<div class=\"pw-dialogues-link\">[nothing]</div>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: /profile/ruth-geisenfelder
+msgid ""
+"<div class=\"pw-dialogues-link\">An [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]  wurden bisher noch keine Fragen "
+"gestellt</div>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: /profile/ruth-geisenfelder
+msgid "Profil zur Wahl"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "Available countries"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "If no countries are selected, all countries will be available."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "Format handlers"
+msgstr ""
+
+#: /admin/modules
+msgid "module implements hooks to alter views"
+msgstr ""
+
+#: /admin/modules
+msgid "Make Sharethis sortable and sum beta + www"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Checks whether the visible share count is correct and adjusts it "
+"accordingly"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Provides a Views sort handler to sort fields by whether they are "
+"empty."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_addrs/field-settings?destinations[0]=admin/config/people/accounts/fields/field_addrs&destinations[1]=admin/config/people/accounts/fields
+msgid "@label (!name:!column:null sort)"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_addrs/field-settings?destinations[0]=admin/config/people/accounts/fields/field_addrs&destinations[1]=admin/config/people/accounts/fields
+msgid "@label:!column:null sort"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_addrs/field-settings?destinations[0]=admin/config/people/accounts/fields/field_addrs&destinations[1]=admin/config/people/accounts/fields
+msgid "Null sort - Appears in: @bundles."
+msgstr ""
+
+#: /system/ajax
+msgctxt "Territory of a country"
+msgid "State"
+msgstr ""
+
+#: /system/ajax
+msgid "--"
+msgstr ""
+
+#: /system/ajax
+msgid "Alabama"
+msgstr ""
+
+#: /system/ajax
+msgid "Alaska"
+msgstr ""
+
+#: /system/ajax
+msgid "Arizona"
+msgstr ""
+
+#: /system/ajax
+msgid "Arkansas"
+msgstr ""
+
+#: /system/ajax
+msgid "California"
+msgstr ""
+
+#: /system/ajax
+msgid "Colorado"
+msgstr ""
+
+#: /system/ajax
+msgid "Connecticut"
+msgstr ""
+
+#: /system/ajax
+msgid "Delaware"
+msgstr ""
+
+#: /system/ajax
+msgid "District Of Columbia"
+msgstr ""
+
+#: /system/ajax
+msgid "Florida"
+msgstr ""
+
+#: /system/ajax
+msgid "Hawaii"
+msgstr ""
+
+#: /system/ajax
+msgid "Idaho"
+msgstr ""
+
+#: /system/ajax
+msgid "Illinois"
+msgstr ""
+
+#: /system/ajax
+msgid "Indiana"
+msgstr ""
+
+#: /system/ajax
+msgid "Iowa"
+msgstr ""
+
+#: /system/ajax
+msgid "Kansas"
+msgstr ""
+
+#: /system/ajax
+msgid "Kentucky"
+msgstr ""
+
+#: /system/ajax
+msgid "Louisiana"
+msgstr ""
+
+#: /system/ajax
+msgid "Maine"
+msgstr ""
+
+#: /system/ajax
+msgid "Maryland"
+msgstr ""
+
+#: /system/ajax
+msgid "Massachusetts"
+msgstr ""
+
+#: /system/ajax
+msgid "Michigan"
+msgstr ""
+
+#: /system/ajax
+msgid "Minnesota"
+msgstr ""
+
+#: /system/ajax
+msgid "Mississippi"
+msgstr ""
+
+#: /system/ajax
+msgid "Missouri"
+msgstr ""
+
+#: /system/ajax
+msgid "Montana"
+msgstr ""
+
+#: /system/ajax
+msgid "Nebraska"
+msgstr ""
+
+#: /system/ajax
+msgid "Nevada"
+msgstr ""
+
+#: /system/ajax
+msgid "New Hampshire"
+msgstr ""
+
+#: /system/ajax
+msgid "New Jersey"
+msgstr ""
+
+#: /system/ajax
+msgid "New Mexico"
+msgstr ""
+
+#: /system/ajax
+msgid "New York"
+msgstr ""
+
+#: /system/ajax
+msgid "North Carolina"
+msgstr ""
+
+#: /system/ajax
+msgid "North Dakota"
+msgstr ""
+
+#: /system/ajax
+msgid "Ohio"
+msgstr ""
+
+#: /system/ajax
+msgid "Oklahoma"
+msgstr ""
+
+#: /system/ajax
+msgid "Oregon"
+msgstr ""
+
+#: /system/ajax
+msgid "Pennsylvania"
+msgstr ""
+
+#: /system/ajax
+msgid "Rhode Island"
+msgstr ""
+
+#: /system/ajax
+msgid "South Carolina"
+msgstr ""
+
+#: /system/ajax
+msgid "South Dakota"
+msgstr ""
+
+#: /system/ajax
+msgid "Tennessee"
+msgstr ""
+
+#: /system/ajax
+msgid "Texas"
+msgstr ""
+
+#: /system/ajax
+msgid "Utah"
+msgstr ""
+
+#: /system/ajax
+msgid "Vermont"
+msgstr ""
+
+#: /system/ajax
+msgid "Virginia"
+msgstr ""
+
+#: /system/ajax
+msgid "Washington"
+msgstr ""
+
+#: /system/ajax
+msgid "West Virginia"
+msgstr ""
+
+#: /system/ajax
+msgid "Wisconsin"
+msgstr ""
+
+#: /system/ajax
+msgid "Wyoming"
+msgstr ""
+
+#: /system/ajax
+msgid "Armed Forces (Americas)"
+msgstr ""
+
+#: /system/ajax
+msgid "Armed Forces (Europe, Canada, Middle East, Africa)"
+msgstr ""
+
+#: /system/ajax
+msgid "Armed Forces (Pacific)"
+msgstr ""
+
+#: /system/ajax
+msgid "Federated States of Micronesia"
+msgstr ""
+
+#: /system/ajax
+msgid "Virgin Islands"
+msgstr ""
+
+#: /system/ajax
+msgid "ZIP Code"
+msgstr ""
+
 msgid "Search"
 msgstr "Suche"
 
@@ -98427,6 +98954,10 @@ msgstr ""
 
 msgid "The name %name is already taken."
 msgstr "Der Name %name ist leider schon vergeben."
+
+#: /en-gb/admin/structure/views/view/answers/edit
+msgid "Load more"
+msgstr "Mehr laden"
 
 msgid "Add field"
 msgstr "Feld hinzufügen"
@@ -109659,6 +110190,10 @@ msgstr "Link kürzen"
 msgid "go to full profile"
 msgstr "Profil besuchen"
 
+#: /admin/structure/features/cleanup/clear
+msgid "to the archive"
+msgstr "Zum Archiv"
+
 #: views:profile_questions_answers:default:field:views:fieldset:label
 msgctxt "profile_questions_answers:default:field:views:fieldset:label"
 msgid "more information to the answer"
@@ -110234,4 +110769,52 @@ msgid "Submissions for this form are closed."
 msgstr ""
 "Die Fragefunktion ist derzeit deaktiviert. Die Vorbereitungen laufen "
 "noch. Bitte gedulden Sie sich bis zum Projektstart."
+
+#: /profile/cecile-bonnet/archive/54261
+msgid "Profiles Overview"
+msgstr "Profile Übersicht"
+
+#: /user/29777/edit?render=overlay
+msgid "Baden-Wuerttemberg"
+msgstr "Baden-Württemberg"
+
+#: /user/29777/edit?render=overlay
+msgid "Bavaria"
+msgstr "Bayern"
+
+#: /user/29777/edit?render=overlay
+msgid "Hesse"
+msgstr "Hessen"
+
+#: /user/29777/edit?render=overlay
+msgid "Lower Saxony"
+msgstr "Niedersachsen"
+
+#: /user/29777/edit?render=overlay
+msgid "North Rhine-Westphalia"
+msgstr "Nordrhein-Westfalen"
+
+#: /user/29777/edit?render=overlay
+msgid "Rhineland-Palatinate"
+msgstr "Rheinland-Pfalz"
+
+#: /user/29777/edit?render=overlay
+msgid "Saxony"
+msgstr "Sachsen"
+
+#: /user/29777/edit?render=overlay
+msgid "Saxony-Anhalt"
+msgstr "Sachsen-Anhalt"
+
+#: /user/29777/edit?render=overlay
+msgid "Thuringia"
+msgstr "Thüringen"
+
+#: /profile/all/all?field_user_first_letter_lname_value=All&field_user_address_administrative_area=All&field_user_constituency_tid=All&&field_user_qanda_ratio_value%5Bmin%5D=0&field_user_qanda_ratio_value%5Bmax%5D=100&field_user_age_value%5Bmin%5D=0&field_user_age_value%5Bmax%5D=90&&page=17
+msgid " question"
+msgstr " Frage"
+
+#: /profile/all/all?field_user_first_letter_lname_value=All&field_user_address_administrative_area=All&field_user_constituency_tid=All&&field_user_qanda_ratio_value%5Bmin%5D=0&field_user_qanda_ratio_value%5Bmax%5D=100&field_user_age_value%5Bmin%5D=0&field_user_age_value%5Bmax%5D=90&&page=17
+msgid " answer"
+msgstr " Antwort"
 

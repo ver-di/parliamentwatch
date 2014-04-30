@@ -452,6 +452,30 @@ function addressfield_format_address_generate(&$format, $address, $context = arr
       'CIT' => t('Chatham Islands Territory'),
     );
   }
+  else if ($address['country'] == 'DE') {
+    $format['locality_block']['administrative_area']['#render_option_value'] = TRUE;
+    $format['locality_block']['administrative_area']['#title'] = t('Bundesland');
+    $format['locality_block']['administrative_area']['#required'] = FALSE;
+    $format['locality_block']['administrative_area']['#options'] = array(
+      ''   => t('--'),
+      'BW'  => t('Baden-Wuerttemberg'),
+      'BY'  => t('Bavaria'),
+      'BE'  => t('Berlin'),
+      'BB'  => t('Brandenburg'),
+      'HB'  => t('Bremen'),
+      'HH'  => t('Hamburg'),
+      'HE'  => t('Hesse'),
+      'MV'  => t('Mecklenburg-Vorpommern'),
+      'NI'  => t('Lower Saxony'),
+      'NW'  => t('North Rhine-Westphalia'),
+      'RP'  => t('Rhineland-Palatinate'),
+      'SL'  => t('Saarland'),
+      'SN'  => t('Saxony'),
+      'ST'  => t('Saxony-Anhalt'),
+      'SH'  => t('Schleswig-Holstein'),
+      'TH'  => t('Thuringia')
+    );
+  }
 
   // Those countries tend to put the postal code after the locality.
   static $countries_postal_code_after_locality = array('AU', 'BD', 'BF', 'BH', 'BM', 'BN', 'BT', 'CA', 'FM', 'GB', 'ID', 'IN', 'JM', 'JO', 'KH', 'LB', 'LS', 'LV', 'MM', 'MN', 'MV', 'MW', 'NG', 'NP', 'NZ', 'PE', 'PK', 'PR', 'PW', 'SA', 'SG', 'SO', 'TH', 'US', 'VI', 'VG', 'VN');
