@@ -176,6 +176,14 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
     
     });
 
+////// call check url if sharethisbutton is clicked
+
+    jQuery(".sharethis-wrapper").click(function() {
+        var st_url =  $(this).children("span").attr("st_url");
+        if(st_url != undefined)callCheckURL(st_url);
+    });
+
+
 //// Report Link
 
    jQuery("a.report_message").click(function () {
@@ -234,4 +242,20 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 function changeImage(imageSRC2){
     var imageSRC = document.getElementById('map').src;
     document.getElementById('map').src=imageSRC2;
+}
+
+////// call checkurl for sharethis node update cue
+
+function callCheckURL(st_url) {
+    var st_url = st_url;
+    //var localPath = location.protocol + '//'+location.host+location.pathname;
+    var check_url = "/sharethis_check?url=";
+    var complete_url = check_url+st_url;
+    //console.log(complete_url);
+    $.ajax({
+        type: "GET",
+        url : complete_url
+    }).done(function() {
+        //console.log("done");
+    });
 }
