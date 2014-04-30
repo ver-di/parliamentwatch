@@ -2243,18 +2243,16 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['vid']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
   $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
-  /* Sort criterion: Benutzer: QuestionAnswerRatio (field_user_qanda_ratio) */
-  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['id'] = 'field_user_qanda_ratio_value';
-  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['table'] = 'field_data_field_user_qanda_ratio';
-  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['field'] = 'field_user_qanda_ratio_value';
-  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['relationship'] = 'uid';
-  $handler->display->display_options['sorts']['field_user_qanda_ratio_value']['order'] = 'DESC';
-  /* Sort criterion: Benutzer: Answers Give (field_user_answers_give) */
-  $handler->display->display_options['sorts']['field_user_answers_give_value']['id'] = 'field_user_answers_give_value';
-  $handler->display->display_options['sorts']['field_user_answers_give_value']['table'] = 'field_data_field_user_answers_give';
-  $handler->display->display_options['sorts']['field_user_answers_give_value']['field'] = 'field_user_answers_give_value';
-  $handler->display->display_options['sorts']['field_user_answers_give_value']['relationship'] = 'uid';
-  $handler->display->display_options['sorts']['field_user_answers_give_value']['order'] = 'DESC';
+  /* Sort criterion: Benutzer (historical data): Answers Give (field_user_answers_give) */
+  $handler->display->display_options['sorts']['field_user_answers_give_value_1']['id'] = 'field_user_answers_give_value_1';
+  $handler->display->display_options['sorts']['field_user_answers_give_value_1']['table'] = 'field_revision_field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give_value_1']['field'] = 'field_user_answers_give_value';
+  $handler->display->display_options['sorts']['field_user_answers_give_value_1']['order'] = 'DESC';
+  /* Sort criterion: Benutzer (historical data): Questions Get (field_user_questions_get) */
+  $handler->display->display_options['sorts']['field_user_questions_get_value']['id'] = 'field_user_questions_get_value';
+  $handler->display->display_options['sorts']['field_user_questions_get_value']['table'] = 'field_revision_field_user_questions_get';
+  $handler->display->display_options['sorts']['field_user_questions_get_value']['field'] = 'field_user_questions_get_value';
+  $handler->display->display_options['sorts']['field_user_questions_get_value']['order'] = 'DESC';
   /* Sort criterion: Benutzer: Profile picture (field_user_picture:fid:null sort) */
   $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['id'] = 'field_user_picture_fid_nullsort';
   $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['table'] = 'field_data_field_user_picture';
@@ -2524,7 +2522,6 @@ return FALSE;';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['value']['min'] = '0';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['value']['max'] = '100';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_user_qanda_ratio_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['expose']['operator_id'] = 'field_user_qanda_ratio_value_op';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['expose']['label'] = 'Antwortquote';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['expose']['operator'] = 'field_user_qanda_ratio_value_op';
@@ -2898,6 +2895,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['field'] = 'field_user_qanda_ratio-revision_id';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['ui_name'] = ' Response rate';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['alter']['text'] = '[field_user_qanda_ratio-revision_id-value] % Antwortquote';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['element_label_colon'] = FALSE;
@@ -3237,7 +3235,6 @@ return FALSE;';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['value']['min'] = '0';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['value']['max'] = '100';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['group'] = 1;
-  $handler->display->display_options['filters']['field_user_qanda_ratio_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['expose']['operator_id'] = 'field_user_qanda_ratio_value_op';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['expose']['label'] = 'Antwortquote';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['expose']['operator'] = 'field_user_qanda_ratio_value_op';
