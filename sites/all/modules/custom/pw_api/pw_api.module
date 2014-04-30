@@ -292,14 +292,30 @@ function pw_api_deliver_xml($page_result) {
       $writer->writeAttribute('edited', $item['edited']);
       $writer->writeElement('name', $item['name']);
       $writer->writeElement('uuid', $item['uuid']);
+      $writer->writeElement('gender', $item['gender']);
       $writer->writeElement('first_name', $item['first_name']);
       $writer->writeElement('last_name', $item['last_name']);
       $writer->writeElement('party', $item['party']);
+      $writer->writeElement('parliament', $item['parliament']);
       $writer->startElement('constituency');
       $writer->writeElement('uuid', $item['constituency']['uuid']);
       $writer->writeElement('name', $item['constituency']['name']);
       $writer->writeElement('number', $item['constituency']['number']);
       $writer->endElement();
+      $writer->writeElement('education', $item['education']);
+      $writer->startElement('location');
+      $writer->writeElement('country', $item['location']['country']);
+      $writer->writeElement('county', $item['location']['county']);
+      $writer->writeElement('city', $item['location']['city']);
+      $writer->writeElement('postal_code', $item['location']['postal_code']);
+      $writer->endElement();
+      $writer->startElement('picture');
+      $writer->writeElement('url', $item['picture']['url_picture']);
+      $writer->writeElement('copyright', $item['picture']['copyright_picture']);
+      $writer->endElement();
+      $writer->writeElement('questions_get', $item['questions_get']);
+      $writer->writeElement('answers_give', $item['answers_give']);
+      $writer->writeElement('url_profile', $item['url_profile']);
       $writer->endElement();
     }
     $writer->endElement();
@@ -347,6 +363,7 @@ function pw_api_deliver_csv($page_result) {
     foreach ($page_result as $item) {
       $fields = array(
         $item['uuid'],
+        $item['gender'],
         $item['name'],
         $item['first_name'],
         $item['last_name'],
@@ -380,28 +397,48 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
   $query = db_select('user_revision', 'ur');
   $users_alias = $query->join('users', 'u', '%alias.uid = ur.uid');
   $roles_alias = $query->join('users_roles', 'uro', '%alias.uid = ur.uid');
-  
-  $user_fname_alias = $query->leftJoin('field_revision_field_user_fname', 'frfuf', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'"); // choose only one language, otherwise this user will be displayed more than once
+#  $users_cache_alias = $query->join('user_archive_cache', 'uac', '%alias.vid = ur.vid');
+  $user_gender_alias = $query->leftJoin('field_revision_field_user_gender', 'frfug', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'"); // choose only one language, otherwise this user will be displayed more than once
+  $user_fname_alias = $query->leftJoin('field_revision_field_user_fname', 'frfuf', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'"); // dito
   $user_lname_alias = $query->leftJoin('field_revision_field_user_lname', 'frful', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'"); // dito
   $user_party_alias = $query->leftJoin('field_revision_field_user_party', 'frfup', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.delta=0"); // we assume that a user is only in one party
   $user_constituency_alias = $query->leftJoin('field_revision_field_user_constituency', 'frfuc', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user'"); // we assume that a user is in only one constituency
   // removed  AND %alias.delta=0 from field_revision_field_user_constituency query part
   $user_parliament_alias = $query->leftJoin('field_revision_field_user_parliament', 'frfupm', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.delta=0"); // we assume that a user is in only one parliament
-  
   $term_party_alias = $query->join('taxonomy_term_data', 'p', "%alias.tid = $user_party_alias.field_user_party_tid");
   $term_constituency_alias = $query->join('taxonomy_term_data', 'c', "%alias.tid = $user_constituency_alias.field_user_constituency_tid");
   $term_parliament_alias = $query->join('taxonomy_term_data', 'pm', "%alias.tid = $user_parliament_alias.field_user_parliament_tid");
   $constituency_number_alias = $query->join('field_data_field_constituency_nr', 'fdfcn', "%alias.entity_id = $user_constituency_alias.field_user_constituency_tid AND %alias.entity_type = 'taxonomy_term'");
+  $user_education_alias = $query->leftJoin('field_revision_field_user_education', 'frfue', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
+  $user_address_alias = $query->leftJoin('field_revision_field_user_address', 'frfua', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
+  $user_picture_alias = $query->leftJoin('field_revision_field_user_picture', 'frfupic', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
+  $user_file_alias = $query->leftJoin('file_managed', 'frfufile', "%alias.fid = frfupic.field_user_picture_fid");
+  $user_copyright_alias = $query->leftJoin('field_revision_field_image_copyright', 'frfucr', "%alias.revision_id = ur.vid AND %alias.entity_type = 'file' AND %alias.language='und'");
+  $user_questions_get_alias = $query->leftJoin('field_data_field_user_questions_get', 'frfuqg', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
+  $user_answers_give_alias = $query->leftJoin('field_data_field_user_answers_give', 'frfuag', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
   
   $query->addField('ur', 'name');
+  $query->addField('ur', 'vid');
   $query->addField('ur', 'timestamp');
   $query->addField($users_alias, 'uuid');
+  $query->addField($user_gender_alias, 'field_user_gender_value', 'gender');
   $query->addField($user_fname_alias, 'field_user_fname_value', 'first_name');
   $query->addField($user_lname_alias, 'field_user_lname_value', 'last_name');
   $query->addField($term_party_alias, 'name', 'party');
+  $query->addField($term_parliament_alias, 'name', 'parliament');
   $query->addField($term_constituency_alias, 'name', 'constituency_name');
   $query->addField($term_constituency_alias, 'uuid', 'constituency_uuid');
   $query->addField($constituency_number_alias, 'field_constituency_nr_value', 'constituency_number');
+  $query->addField($user_education_alias, 'field_user_education_value', 'education');
+  $query->addField($user_address_alias, 'field_user_address_country', 'location_country');
+  $query->addField($user_address_alias, 'field_user_address_administrative_area', 'location_county');
+  $query->addField($user_address_alias, 'field_user_address_locality', 'location_city');
+  $query->addField($user_file_alias, 'uri', 'picture_uri');
+  $query->addField($user_copyright_alias, 'field_image_copyright_value', 'copyright');
+  $query->addField($user_questions_get_alias, 'field_user_questions_get_value', 'questions_get');
+  $query->addField($user_answers_give_alias, 'field_user_answers_give_value', 'answers_give');
+
+
   $query->where("$roles_alias.rid = :rid", array('rid' => 181527986))
     ->orderBy("$users_alias.uuid", 'ASC')
     ->orderBy('ur.vid', 'DESC' );
@@ -438,18 +475,53 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
   $profiles = array();
   
   foreach ($query->execute() as $row) {
+    // set picture url
+    $url_picture = !empty($row->picture_uri)?file_create_url($row->picture_uri):'';
+
+    // set full gender
+    switch($row->gender){
+      case 'm':
+        $gender = 'male';
+        break;
+      case 'f':
+        $gender = 'female';
+        break;
+      case 't':
+        $gender = 'transgender';
+        break;
+    }
+
+    // set url to profile # .'/archive/'.$row->vid
+    $url_profile = url('profile/'.$row->name, array('absolute' => TRUE));
+
     $profiles[] = array(
       'edited' => date('Y-m-d H:i', $row->timestamp),
       'name' => $row->name,
+      'gender' => $gender,
       'first_name' => $row->first_name,
       'last_name' => $row->last_name,
       'uuid' => $row->uuid,
       'party' => $row->party,
+      'parliament' => $row->parliament,
       'constituency' => array(
         'uuid' => $row->constituency_uuid,
         'name' => $row->constituency_name,
         'number' => $row->constituency_number,
       ),
+      'education' => $row->education,
+      'location' => array(
+        'country' => $row->location_country,
+        'county' => $row->location_county,
+        'city' => $row->location_city,
+        'postal_code' => $row->location_postal_code,
+      ),
+      'picture' => array(
+        'url_picture' => $url_picture,
+        'copyright_picture' => $row->copyright,
+      ),
+      'questions_get' => $row->questions_get,
+      'answers_give' => $row->answers_give,
+      'url_profile' => $url_profile,
     );
   }
 
