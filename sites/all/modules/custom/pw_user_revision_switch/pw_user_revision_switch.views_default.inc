@@ -1386,7 +1386,7 @@ return $result;
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
@@ -1404,11 +1404,11 @@ return $result;
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Excluded: User: Vid */
+  /* Feld: Excluded | User: Vid */
   $handler->display->display_options['fields']['vid']['id'] = 'vid';
   $handler->display->display_options['fields']['vid']['table'] = 'user_revision';
   $handler->display->display_options['fields']['vid']['field'] = 'vid';
-  $handler->display->display_options['fields']['vid']['ui_name'] = 'Excluded: User: Vid';
+  $handler->display->display_options['fields']['vid']['ui_name'] = 'Excluded | User: Vid';
   $handler->display->display_options['fields']['vid']['label'] = '';
   $handler->display->display_options['fields']['vid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
@@ -1899,7 +1899,7 @@ return $result;
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
@@ -1916,6 +1916,14 @@ return $result;
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | User:Vid */
+  $handler->display->display_options['fields']['vid']['id'] = 'vid';
+  $handler->display->display_options['fields']['vid']['table'] = 'user_revision';
+  $handler->display->display_options['fields']['vid']['field'] = 'vid';
+  $handler->display->display_options['fields']['vid']['ui_name'] = 'Excluded | User:Vid';
+  $handler->display->display_options['fields']['vid']['label'] = '';
+  $handler->display->display_options['fields']['vid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
   /* Feld: Excluded | User UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
