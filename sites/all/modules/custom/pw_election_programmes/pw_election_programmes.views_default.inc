@@ -71,19 +71,17 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['field_teaser_image']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['field'] = 'field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['label'] = '';
-  $handler->display->display_options['fields']['field_teaser_image']['alter']['path'] = '[field_election_programme_open_1]';
+  $handler->display->display_options['fields']['field_teaser_image']['alter']['path'] = '[field_election_programme_open]';
   $handler->display->display_options['fields']['field_teaser_image']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser_image']['alter']['external'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser_image']['alter']['alt'] = 'Wahlprogramm öffnen';
   $handler->display->display_options['fields']['field_teaser_image']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_teaser_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_class'] = 'file-image float-left';
   $handler->display->display_options['fields']['field_teaser_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_teaser_image']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_teaser_image']['settings'] = array(
-    'image_style' => 'pw_landscape_l',
-    'image_link' => '',
+    'file_view_mode' => 'default',
   );
   /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -91,6 +89,16 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Feld: Inhalt: Link */
+  $handler->display->display_options['fields']['field_election_programme_open']['id'] = 'field_election_programme_open';
+  $handler->display->display_options['fields']['field_election_programme_open']['table'] = 'field_data_field_election_programme_open';
+  $handler->display->display_options['fields']['field_election_programme_open']['field'] = 'field_election_programme_open';
+  $handler->display->display_options['fields']['field_election_programme_open']['label'] = '';
+  $handler->display->display_options['fields']['field_election_programme_open']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_election_programme_open']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_election_programme_open']['element_wrapper_class'] = 'read-more';
+  $handler->display->display_options['fields']['field_election_programme_open']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_election_programme_open']['click_sort_column'] = 'url';
   /* Feld: Datei: Pfad */
   $handler->display->display_options['fields']['uri']['id'] = 'uri';
   $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
@@ -104,20 +112,9 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['uri']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['uri']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uri']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['uri']['element_wrapper_class'] = 'text-right link-download';
+  $handler->display->display_options['fields']['uri']['element_wrapper_class'] = 'link-download';
   $handler->display->display_options['fields']['uri']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
-  /* Feld: Inhalt: Link */
-  $handler->display->display_options['fields']['field_election_programme_open']['id'] = 'field_election_programme_open';
-  $handler->display->display_options['fields']['field_election_programme_open']['table'] = 'field_data_field_election_programme_open';
-  $handler->display->display_options['fields']['field_election_programme_open']['field'] = 'field_election_programme_open';
-  $handler->display->display_options['fields']['field_election_programme_open']['label'] = '';
-  $handler->display->display_options['fields']['field_election_programme_open']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_election_programme_open']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_election_programme_open']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_election_programme_open']['element_wrapper_class'] = 'text-right read-more';
-  $handler->display->display_options['fields']['field_election_programme_open']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_election_programme_open']['click_sort_column'] = 'url';
   /* Feld: Inhalt: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
