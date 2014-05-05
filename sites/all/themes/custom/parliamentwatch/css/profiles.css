@@ -109,9 +109,9 @@ div.horizontal-tabs .view-content {
     margin-right: 0;
     text-align: right;
 }
-.profiles-list-compact-wrapper:hover .element-hidden,
-.profiles-list-compact-wrapper:focus .element-hidden,
-.profiles-list-compact-wrapper:active .element-hidden {
+.responsive-layout-normal .profiles-list-compact-wrapper:hover .element-hidden,
+.responsive-layout-normal .profiles-list-compact-wrapper:focus .element-hidden,
+.responsive-layout-normal .profiles-list-compact-wrapper:active .element-hidden {
     display: block;
     position: absolute;
     z-index: 123;
