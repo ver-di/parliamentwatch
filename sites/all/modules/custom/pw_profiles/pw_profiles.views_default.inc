@@ -1951,6 +1951,10 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Benutzer (historical data): Profile picture (field_user_picture:fid) */
+  $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
+  $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_revision_field_user_picture';
+  $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -2676,13 +2680,15 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'field_user_picture-revision_id_1',
-    1 => 'field_user_fname-revision_id_1',
-    2 => 'field_user_lname-revision_id_1',
-    3 => 'field_user_party-revision_id',
-    4 => 'field_user_questions_get-revision_id_1',
-    5 => 'field_user_answers_give-revision_id_1',
-    6 => 'nothing_2',
-    7 => 'fieldset_1',
+    1 => 'field_user_picture_copyright-revision_id',
+    2 => 'field_image_copyright',
+    3 => 'field_user_fname-revision_id_1',
+    4 => 'field_user_lname-revision_id_1',
+    5 => 'field_user_party-revision_id',
+    6 => 'field_user_questions_get-revision_id_1',
+    7 => 'field_user_answers_give-revision_id_1',
+    8 => 'nothing_2',
+    9 => 'fieldset_1',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'profiles-list-compact-wrapper';
@@ -2692,12 +2698,24 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['field'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['label'] = '';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['alter']['text'] = '[field_user_picture-revision_id_1]';
+  $handler->display->display_options['fields']['field_user_picture-revision_id_1']['alter']['path'] = 'profile/[name]';
+  $handler->display->display_options['fields']['field_user_picture-revision_id_1']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_user_picture-revision_id_1']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['settings'] = array(
-    'file_view_mode' => 'pw_file_portrait_m',
+    'image_style' => 'pw_portrait_m',
+    'image_link' => 'content',
   );
+  /* Feld: Datei: copyright */
+  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
+  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_user_picture_fid';
+  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
+  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'copyright push-bottom-xs';
+  $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
   /* Feld: Excluded | User (historical data): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id_1']['id'] = 'field_user_fname-revision_id_1';
   $handler->display->display_options['fields']['field_user_fname-revision_id_1']['table'] = 'field_revision_field_user_fname';
