@@ -3095,82 +3095,82 @@ return FALSE;';
     1 => array(
       'title' => 'Bayern',
       'operator' => '=',
-      'value' => 'Bayern',
+      'value' => 'BY',
     ),
     2 => array(
       'title' => 'Baden-Württemberg',
       'operator' => '=',
-      'value' => 'Baden-Württemberg',
+      'value' => 'BW',
     ),
     3 => array(
       'title' => 'Berlin',
       'operator' => '=',
-      'value' => 'Berlin',
+      'value' => 'BE',
     ),
     4 => array(
       'title' => 'Brandenburg',
       'operator' => '=',
-      'value' => 'Brandenburg',
+      'value' => 'BB',
     ),
     5 => array(
       'title' => 'Bremen',
       'operator' => '=',
-      'value' => 'Bremen',
+      'value' => 'HB',
     ),
     6 => array(
       'title' => 'Hamburg',
       'operator' => '=',
-      'value' => 'Hamburg',
+      'value' => 'HH',
     ),
     7 => array(
       'title' => 'Hessen',
       'operator' => '=',
-      'value' => 'Hessen',
+      'value' => 'HE',
     ),
     8 => array(
       'title' => 'Mecklenburg-Vorpommern',
       'operator' => '=',
-      'value' => 'Mecklenburg-Vorpommern',
+      'value' => 'MV',
     ),
     9 => array(
       'title' => 'Niedersachsen',
       'operator' => '=',
-      'value' => 'Niedersachsen',
+      'value' => 'NI',
     ),
     10 => array(
       'title' => 'Nordrhein-Westfalen',
       'operator' => '=',
-      'value' => 'Nordrhein-Westfalen',
+      'value' => 'NW',
     ),
     11 => array(
       'title' => 'Rheinland-Pfalz',
       'operator' => '=',
-      'value' => 'Rheinland-Pfalz',
+      'value' => 'RP',
     ),
     12 => array(
       'title' => 'Saarland',
       'operator' => '=',
-      'value' => 'Saarland',
+      'value' => 'SL',
     ),
     13 => array(
       'title' => 'Sachsen',
       'operator' => '=',
-      'value' => 'Sachsen',
+      'value' => 'SN',
     ),
     14 => array(
       'title' => 'Sachsen-Anhalt',
       'operator' => '=',
-      'value' => 'Sachsen-Anhalt',
+      'value' => 'ST',
     ),
     15 => array(
       'title' => 'Schleswig-Holstein',
       'operator' => '=',
-      'value' => 'Schleswig-Holstein',
+      'value' => 'SH',
     ),
     16 => array(
       'title' => 'Thüringen',
       'operator' => '=',
-      'value' => 'Thüringen',
+      'value' => 'TH',
     ),
   );
   /* Filter criterion: Benutzer: Constituency (field_user_constituency) */

@@ -491,6 +491,58 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
         break;
     }
 
+    // set full county
+    switch($row->location_county){
+      case 'BW':
+         $county = 'Baden-Wuerttemberg';
+         break;
+      case 'BY':
+         $county = 'Bavaria';
+         break;
+      case 'BE':
+         $county = 'Berlin';
+         break;
+      case 'BB':
+         $county = 'Brandenburg';
+         break;
+      case 'HB':
+         $county = 'Bremen';
+         break;
+      case 'HH':
+         $county = 'Hamburg';
+         break;
+      case 'HE':
+         $county = 'Hesse';
+         break;
+      case 'MV':
+         $county = 'Mecklenburg-Vorpommern';
+         break;
+      case 'NI':
+         $county = 'Lower Saxony';
+         break;
+      case 'NW':
+         $county = 'North Rhine-Westphalia';
+         break;
+      case 'RP':
+         $county = 'Rhineland-Palatinate';
+         break;
+      case 'SL':
+         $county = 'Saarland';
+         break;
+      case 'SN':
+         $county = 'Saxony';
+         break;
+      case 'ST':
+         $county = 'Saxony-Anhalt';
+         break;
+      case 'SH':
+         $county = 'Schleswig-Holstein';
+         break;
+      case 'TH':
+         $county = 'Thuringia';
+         break;
+    }
+
     // set url to profile # .'/archive/'.$row->vid
     $url_profile = url('profile/'.$row->name, array('absolute' => TRUE));
 
@@ -511,7 +563,7 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
       'education' => $row->education,
       'location' => array(
         'country' => $row->location_country,
-        'county' => $row->location_county,
+        'county' => t($county),
         'city' => $row->location_city,
         'postal_code' => $row->location_postal_code,
       ),
