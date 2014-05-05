@@ -303,7 +303,6 @@ function pw_profiles_views_default_views() {
   /* Display: Calendar Page */
   $handler = $view->new_display('page', 'Calendar Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Wahlkampftermine von [field_user_fname] [field_user_lname], [field_user_party]';
   $handler->display->display_options['display_description'] = 'Calendar Page for sharing';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -323,7 +322,8 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['empty'] = TRUE;
-  $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
+  $handler->display->display_options['header']['view']['view_to_insert'] = 'user_profile_fields:short_profile_premium_sub';
+  $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
   /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
@@ -753,7 +753,7 @@ print_r($link);
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Löschen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid]/delete?width=400&height=100&destination=user/[uid]/edit?';
+  $handler->display->display_options['fields']['nothing_2']['alter']['path'] = 'node/[nid]/delete?width=400&height=100&destination=user/1802/edit?';
   $handler->display->display_options['fields']['nothing_2']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node init-colorbox-processed-processed';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
@@ -1147,6 +1147,551 @@ else
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   $export['constituency_for_the_profile'] = $view;
+
+  $view = new view();
+  $view->name = 'politicians';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'users';
+  $view->human_name = 'Politicians';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Politicians';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'administer users';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'name' => 'name',
+    'mail' => 'mail',
+    'field_user_party' => 'field_user_party',
+    'field_user_parliament' => 'field_user_parliament',
+    'field_user_constituency' => 'field_user_constituency',
+    'field_user_commitee' => 'field_user_commitee',
+    'field_user_questions_get' => 'field_user_questions_get',
+    'field_user_answers_give' => 'field_user_answers_give',
+    'field_user_address_locality' => 'field_user_address_locality',
+    'rid' => 'rid',
+    'edit_node' => 'edit_node',
+    'field_user_fname' => 'field_user_fname',
+    'field_user_lname' => 'field_user_lname',
+    'field_user_list_position' => 'field_user_list_position',
+  );
+  $handler->display->display_options['style_options']['default'] = 'name';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_party' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_parliament' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_constituency' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_commitee' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_questions_get' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_answers_give' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_address_locality' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'rid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_fname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_lname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_list_position' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Feld: Bulk operations: Benutzer */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::user_block_user_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::1399' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          '_all_' => '_all_',
+        ),
+      ),
+    ),
+    'action::views_bulk_operations_user_roles_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::pw_login_once_send_mail_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::pathauto_user_update_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Feld: Benutzer: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  /* Feld: Benutzer: E-Mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Feld: Benutzer: Party */
+  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  /* Feld: Benutzer: Parliament */
+  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
+  /* Feld: Benutzer: Constituency */
+  $handler->display->display_options['fields']['field_user_constituency']['id'] = 'field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['table'] = 'field_data_field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['field'] = 'field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['delta_offset'] = '0';
+  /* Feld: Benutzer: Committee */
+  $handler->display->display_options['fields']['field_user_commitee']['id'] = 'field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['table'] = 'field_data_field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['field'] = 'field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['delta_offset'] = '0';
+  /* Feld: Benutzer: Questions Get */
+  $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['label'] = 'Fragen';
+  $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Feld: Benutzer: Answers Give */
+  $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['label'] = 'Antworten';
+  $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Feld: Benutzer: Address - Locality (i.e. City) */
+  $handler->display->display_options['fields']['field_user_address_locality']['id'] = 'field_user_address_locality';
+  $handler->display->display_options['fields']['field_user_address_locality']['table'] = 'field_data_field_user_address';
+  $handler->display->display_options['fields']['field_user_address_locality']['field'] = 'field_user_address_locality';
+  $handler->display->display_options['fields']['field_user_address_locality']['label'] = 'Ort';
+  /* Feld: Benutzer: Rollen */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  /* Feld: Benutzer: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer: First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer: Last name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer: List Position */
+  $handler->display->display_options['fields']['field_user_list_position']['id'] = 'field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['table'] = 'field_data_field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['field'] = 'field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['label'] = 'Listenplatz';
+  /* Sort criterion: Benutzer: Created date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'users';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Benutzer: Aktiv */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Benutzer: First Name (field_user_fname) */
+  $handler->display->display_options['filters']['field_user_fname_value']['id'] = 'field_user_fname_value';
+  $handler->display->display_options['filters']['field_user_fname_value']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['filters']['field_user_fname_value']['field'] = 'field_user_fname_value';
+  $handler->display->display_options['filters']['field_user_fname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_user_fname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['operator_id'] = 'field_user_fname_value_op';
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['label'] = 'Vorname';
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['description'] = 'Suche nach Vornamen.';
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['operator'] = 'field_user_fname_value_op';
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['identifier'] = 'field_user_fname_value';
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_field'] = 'field_user_fname';
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Benutzer: Last name (field_user_lname) */
+  $handler->display->display_options['filters']['field_user_lname_value']['id'] = 'field_user_lname_value';
+  $handler->display->display_options['filters']['field_user_lname_value']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['filters']['field_user_lname_value']['field'] = 'field_user_lname_value';
+  $handler->display->display_options['filters']['field_user_lname_value']['operator'] = 'contains';
+  $handler->display->display_options['filters']['field_user_lname_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['operator_id'] = 'field_user_lname_value_op';
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['label'] = 'Nachname';
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['description'] = 'Suche nach Nachnamen.';
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['operator'] = 'field_user_lname_value_op';
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['identifier'] = 'field_user_lname_value';
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_field'] = 'field_user_lname';
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Benutzer: Rollen */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    181527986 => '181527986',
+  );
+  $handler->display->display_options['filters']['rid']['reduce_duplicates'] = TRUE;
+  /* Filter criterion: Benutzer: E-Mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['operator'] = 'contains';
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'E-Mail';
+  $handler->display->display_options['filters']['mail']['expose']['description'] = 'Suche nach E-Mail-Adressen.';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['mail']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['mail']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['mail']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['mail']['expose']['autocomplete_field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['mail']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Benutzer: Party (field_user_party) */
+  $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
+  $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['filters']['field_user_party_tid']['field'] = 'field_user_party_tid';
+  $handler->display->display_options['filters']['field_user_party_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_user_party_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_party_tid']['expose']['operator_id'] = 'field_user_party_tid_op';
+  $handler->display->display_options['filters']['field_user_party_tid']['expose']['label'] = 'Partei';
+  $handler->display->display_options['filters']['field_user_party_tid']['expose']['description'] = 'Suche nach Parteien.';
+  $handler->display->display_options['filters']['field_user_party_tid']['expose']['operator'] = 'field_user_party_tid_op';
+  $handler->display->display_options['filters']['field_user_party_tid']['expose']['identifier'] = 'field_user_party_tid';
+  $handler->display->display_options['filters']['field_user_party_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_party_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'textfield';
+  $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
+  /* Filter criterion: Benutzer: Parliament (field_user_parliament) */
+  $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_parliament_tid']['expose']['operator_id'] = 'field_user_parliament_tid_op';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['expose']['label'] = 'Parlament';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['expose']['description'] = 'Suche nach Parlamenten.';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['expose']['operator'] = 'field_user_parliament_tid_op';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['expose']['identifier'] = 'field_user_parliament_tid';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_parliament_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_user_parliament_tid']['type'] = 'textfield';
+  $handler->display->display_options['filters']['field_user_parliament_tid']['vocabulary'] = 'parliaments';
+  /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
+  $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['operator_id'] = 'field_user_constituency_tid_op';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['label'] = 'Wahlkreis';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['description'] = 'Suche nach Wahlkreisen.';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['operator'] = 'field_user_constituency_tid_op';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['identifier'] = 'field_user_constituency_tid';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_constituency_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'textfield';
+  $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
+  /* Filter criterion: Benutzer: Committee (field_user_commitee) */
+  $handler->display->display_options['filters']['field_user_commitee_tid']['id'] = 'field_user_commitee_tid';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['table'] = 'field_data_field_user_commitee';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['field'] = 'field_user_commitee_tid';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_commitee_tid']['expose']['operator_id'] = 'field_user_commitee_tid_op';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['expose']['label'] = 'Ausschuss';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['expose']['description'] = 'Suche nach Ausschüssen.';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['expose']['operator'] = 'field_user_commitee_tid_op';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['expose']['identifier'] = 'field_user_commitee_tid';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_commitee_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_user_commitee_tid']['type'] = 'textfield';
+  $handler->display->display_options['filters']['field_user_commitee_tid']['vocabulary'] = 'committee';
+  /* Filter criterion: Benutzer: Address - Locality (i.e. City) */
+  $handler->display->display_options['filters']['field_user_address_locality']['id'] = 'field_user_address_locality';
+  $handler->display->display_options['filters']['field_user_address_locality']['table'] = 'field_data_field_user_address';
+  $handler->display->display_options['filters']['field_user_address_locality']['field'] = 'field_user_address_locality';
+  $handler->display->display_options['filters']['field_user_address_locality']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['operator_id'] = 'field_user_address_locality_op';
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['label'] = 'Wohnort';
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['description'] = 'Suche nach Wohnorten.';
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['operator'] = 'field_user_address_locality_op';
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['identifier'] = 'field_user_address_locality';
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_filter'] = 1;
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_items'] = '10';
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_min_chars'] = '0';
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_field'] = 'field_user_address_locality';
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_suggestion'] = 1;
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_dropdown'] = 1;
+  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_dependent'] = 0;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'admin/people/politicians';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Politicians';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $export['politicians'] = $view;
 
   $view = new view();
   $view->name = 'polls_profile';
