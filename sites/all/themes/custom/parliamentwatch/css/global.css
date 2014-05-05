@@ -766,6 +766,30 @@ h1#page-title {
 
 /* colorbox */
 
+
+#colorbox #pw_block_user_questionform,
+#colorbox #node-webform-6313,
+#colorbox #node-webform-6578 {
+    padding-top: 62px;
+    background: url('/sites/abgeordnetenwatch.de/themes/abgeordnetenwatch/logo.png') no-repeat;
+}
+
+#cboxOverlay {
+    background: #666;
+}
+#cboxLoadedContent {
+    margin: 0;
+}
+#cboxClose {
+    color: #444444;
+    position: absolute;
+    top: 0;
+    background: url(../images/sprite.png) no-repeat;
+    background-position: -720px -3864px;
+    width: 16px;
+    height: 16px;
+    text-indent: -5000em;
+}
 #cboxNode {
     padding: 20px;
 }
@@ -2113,17 +2137,17 @@ form .webform-component-checkboxes .description {
 
 /* /////////////////////////// question form //////////////////// */
 
-#node-webform-10446 #webform-component-firstname {
-    float: left;
-    width: 48%;
-    margin-right: 2%;
-    margin-bottom: 0.5em;
-}
+#node-webform-10446 #webform-component-firstname,
 #node-webform-10446 #webform-component-lastname {
     float: left;
     width: 48%;
-    margin-left: 2%;
     margin-bottom: 0.5em;
+}
+#node-webform-10446 #webform-component-firstname {
+    margin-right: 2%;
+}
+#node-webform-10446 #webform-component-lastname {
+    margin-left: 2%;
 }
 #node-webform-10446 #webform-component-email {
     clear: both;
@@ -2707,26 +2731,40 @@ blockquote:before,
 .shorten span.processed,
 .shorten span,
 .icon-link,
-.collapse-processed .fieldset-title {
+.collapse-processed .fieldset-title,
+.js .pw-collapsible .fieldset-legend {
     background-image: url("../images/sprite.png");
     background-repeat: no-repeat;
 }
 
-.collapse-processed a.fieldset-title {
+.js .pw-collapsible .fieldset-legend {
+    font-weight: bold;
+    cursor: pointer;
+    color: #f63;
+}
+.collapse-processed a.fieldset-title,
+.js .pw-collapsible .fieldset-legend {
     padding-left: 15px;
     background-position: -647px -2020px; 
 }
 .collapse-processed a.fieldset-title:hover,
 .collapse-processed a.fieldset-title:focus,
-.collapse-processed a.fieldset-title:active {
+.collapse-processed a.fieldset-title:active,
+.js .pw-collapsible .fieldset-legend:hover,
+.js .pw-collapsible .fieldset-legend:focus,
+.js .pw-collapsible .fieldset-legend:active {
     background-position: -608px -2061px; 
 }
-.collapse-processed.collapsed a.fieldset-title {
+.collapse-processed.collapsed a.fieldset-title,
+.js .pw-collapsible .fieldset-legend {
     background-position: -810px -1858px; 
 }
 .collapse-processed.collapsed a.fieldset-title:hover,
 .collapse-processed.collapsed a.fieldset-title:focus,
-.collapse-processed.collapsed a.fieldset-title:active {
+.collapse-processed.collapsed a.fieldset-title:active,
+.js .pw-collapsible .fieldset-legend:hover,
+.js .pw-collapsible .fieldset-legend:focus,
+.js .pw-collapsible .fieldset-legend:active {
     background-position: -770px -1898px;
 }
 .more-info.collapse-processed a.fieldset-title {
@@ -2753,7 +2791,9 @@ blockquote:before,
 .responsive-layout-mobile #block-views-slider-block,
 .responsive-layout-mobile .view-slider,
 .responsive-layout-mobile .field-name-pw-slider,
-.responsive-layout-mobile #block-block-33 {
+.responsive-layout-mobile #block-block-33,
+.js .responsive-layout-mobile .pw-expandable-mobile .view,
+.js .responsive-layout-normal #pw_block_user_questionform {
     display: none;
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2 {
@@ -2764,10 +2804,9 @@ blockquote:before,
 .js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded {
     background-position: -360px -115px;
 }
-.js .responsive-layout-mobile .pw-expandable-mobile .view {
-    display: none;
-}
-.js .responsive-layout-mobile #pw-block-user-basics .view {
+.js .responsive-layout-normal #colorbox #pw_block_user_questionform,
+.js .responsive-layout-mobile #pw-block-user-basics .view,
+.js .responsive-layout-mobile #pw_block_user_questionform {
     display: block;
 }
 

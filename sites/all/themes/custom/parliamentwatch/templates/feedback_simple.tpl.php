@@ -17,7 +17,7 @@
 <?php if ($enabled): ?>
 <div id='feedback_simple'>
   <a
-    href='<?php print $link ?>?width=600&height=400'
+    href='<?php print $link ?>?width=600&height=500'
     class='colorbox-node feedback_simple-<?php print $align ?> <?php print implode(' ', $class) ?>'
     style='top: <?php print $top ?>; height: <?php print $height ?>px; width: <?php print $width ?>px;'>
       <img

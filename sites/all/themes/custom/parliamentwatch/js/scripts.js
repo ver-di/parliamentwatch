@@ -230,6 +230,37 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
         goToByScroll("pw-block-questions-and-answers");
         return false;
     });
+    
+    jQuery('body').bind('responsivelayout', function() { 
+        
+        jQuery(".responsive-layout-mobile .link-question").click(function () {
+            goToByScroll("pw_block_user_questionform");
+            return false;
+        });        
+        jQuery(".responsive-layout-normal .link-question").click(function () {
+            $(".responsive-layout-normal .link-question").colorbox({
+                inline:true,
+                href:'#pw_block_user_questionform',
+                width: '1000px',
+                maxWidth: '100%',
+                height: '800px',
+                onComplete:function(){
+                    jQuery(".pw-collapsible .fieldset-wrapper").hide();
+                    $.colorbox.resize();        
+                    jQuery(".pw-collapsible .fieldset-legend").click(function () {
+                        $(this).parent().parent().find('.fieldset-wrapper').slideToggle("fast",function(){
+                            $.colorbox.resize({
+                                reposition: 'false'
+                            });
+                            position = $(this).position().top;
+                            $( "body" ).scrollTop( position );
+                        });
+                    });
+                }
+            });
+        });
+    
+    } );
     jQuery(".anchor-to-top a").click(function () {
         goToByScroll("page");
         return false;
