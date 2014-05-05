@@ -1,0 +1,354 @@
+<?php
+
+/**
+ * @File
+ * Registers the alias to the sharethis_check.php
+ */
+
+include_once 'pw_sharethis_check.config.inc.php';
+
+/**
+ * Implements hook_cron()
+ */
+function pw_sharethis_check_cron() {
+  pw_sharethis_check_iterateNodes('queue'); // updates all queued nodes
+  pw_sharethis_check_iterateNodes('migration'); // updates non-existant nodes 
+  pw_sharethis_check_iterateUsers('queue'); // updates all queued users
+  pw_sharethis_check_iterateUsers('migration'); // updates non-existant users   
+}
+
+function pw_sharethis_check_menu() {
+  $items['admin/config/sharethis_check/settings'] = array (
+        'title' => 'ShareThis Check settings',
+        'page callback' => 'pw_sharethis_check_options',
+        'type' => MENU_NORMAL_ITEM,
+        'access arguments' => array('administer site configuration'),
+    );
+  $items['sharethis_check'] = array(
+    'page callback' => 'pw_sharethis_check_update',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+/**
+ * This is called on each click on a ShareThis link on the website. It saves
+ * the click in sharethis_queue to be processed later by the cron
+ */
+function pw_sharethis_check_update() {
+  $url = htmlspecialchars($_GET['url']);
+  
+  $record['url'] = $url;
+  
+  // Retrieve entity IDs for the following four cases:
+  // 1. /profile/<username>/archive/<revisionnumber> -> load user by username, retrieve his UID
+  // 2. /petitionen/<name> and /petitions/<name> -> load source of alias, retrieve node's NID
+  // 3. blog/<artikelname> -> load source of alias, retrieve node's NID
+  // 4. <username>/question/<datum>/<nid> -> directly use the NID provided in the URL
+  
+  $record['entity_id'] = 0;
+  $record['revision_id'] = 0; // not currently used by the queue cron; could be used for optimization later
+  $record['entity_type'] = 0;
+  
+  $doInsert = true;
+  if (substr_count($url, '/profile/') == 1) {
+    $urlArr = explode('/', $url);
+    $usernameKey = array_search('profile', $urlArr) + 1;
+    if (array_key_exists($usernameKey, $urlArr)) {
+      $username = $urlArr[$usernameKey];
+      $user = user_load_by_name($username);
+      if ($user) {
+        $record['entity_id'] = $user->uid;
+      } else {
+        $doInsert = false;
+      }
+    } else {
+      $doInsert = false;
+    }
+    
+    $revisionKey = array_search('archive', $urlArr) + 1;
+    if (array_key_exists($revisionKey, $urlArr)) {
+      $revisionId = (int)$urlArr[$revisionKey];
+      $record['revision_id'] = $revisionId;
+    }
+    
+    $record['entity_type'] = 'user';
+  } else if (substr_count($url, '/petition') == 1 || substr_count($url, '/blog') == 1) { // works for /petitionen and /petitions
+    $urlArr = explode('/', $url);
+    $record['entity_type'] = 'node';
+    if (array_key_exists(3, $urlArr) && array_key_exists(4, $urlArr)) {
+      $sourcePath = drupal_lookup_path('source', $urlArr[3].'/'.$urlArr[4]);
+      if ($sourcePath && substr_count($sourcePath, 'node') == 1) {
+        $record['entity_id'] = (int)str_replace('node/', '', $sourcePath);
+      } else {
+        $doInsert = false;
+      }
+    } else {
+      $doInsert = false;
+    }
+            
+  } else if (substr_count($url, '/question/') == 1) {
+      $urlArr = explode('/', $url);
+      $record['entity_type'] = 'node';
+      $questionKey = count($urlArr) - 1;
+      $questionNid = (int)$urlArr[$questionKey];
+      $record['entity_id'] = $questionNid;
+  } else {
+    $doInsert = false;
+  }
+  
+  if ($doInsert) {
+    db_insert('sharethis_queue')
+      ->fields($record)
+      ->execute();  
+  }
+}
+
+/**
+ * Iterates through nodes and adds or updates their entries in the sharethis_meta table
+ * and their corresponding Content Type. Additionally sets the share_basevalue if 
+ * the node type is configured in the base types variable.
+ */
+function pw_sharethis_check_iterateNodes($mode = 'queue') {
+
+  // retrieve necessary configuration:
+  $apikey = variable_get('pw_sharethis_check_apikey', false);
+  $sub = variable_get('pw_sharethis_check_sub', 'beta');
+  $types = variable_get('pw_sharethis_check_types', array());
+  $baseTypes = variable_get('pw_sharethis_check_basetypes', array());
+  $domain = '.abgeordnetenwatch.de';
+
+  // prepare node query:
+  $query = db_select('node', 'n')
+          ->fields('n')
+          ->condition('type', $types);
+
+  if ($mode != 'queue') { // migration mode:
+    // Which entries do we already have:
+    $subquery = db_select('sharethis_meta', 'sm')
+            ->fields('sm', array('entity_id'))
+            ->condition('sm.entity_type', $types, 'IN');
+    $query->condition('n.nid', $subquery, 'NOT IN') // select the ones we do not have yet
+            ->range(0, 30); // prevent from flooding ShareThis
+  } else { // queue mode:
+    // Which entries are in the queue:
+    $subquery = db_select('sharethis_queue', 'sq')
+            ->fields('sq', array('entity_id'))
+            ->condition('sq.entity_type', 'node')
+            ->groupBy('sq.entity_id, entity_type'); // saves ShareThis calls
+    $query->condition('n.nid', $subquery, 'IN');
+  }
+
+  $results = $query->execute();
+
+  $errorOccurred = false;
+
+  while ($fetch = $results->fetchAssoc()) {
+    $path = drupal_get_path_alias('node/' . $fetch['nid']);
+    $subUrl = 'http://' . $sub . $domain . '/' . $path;
+    $url = 'http://www' . $domain . '/' . $path;
+
+    // prepare record for sharethis_meta:
+    $record['entity_id'] = $fetch['nid'];
+    $record['entity_type'] = $fetch['type'];
+    $record['url'] = $url;
+
+    // prepare record for field_revision_field_share_sum (content type field table)
+    $record_sum['entity_type'] = 'node';
+    $record_sum['bundle'] = $fetch['type'];
+    $record_sum['deleted'] = 0;
+    $record_sum['entity_id'] = $fetch['nid'];
+    $record_sum['revision_id'] = 0;
+    $record_sum['language'] = 'und';
+    $record_sum['delta'] = 0;
+
+    if (in_array($record['entity_type'], $baseTypes)) {
+
+      $content = drupal_http_request('http://rest.sharethis.com/v1/count/urlinfo?url='
+              . $subUrl . '&api_key=' . $apikey);
+
+      if (isset($content->error)) {
+        $errorOccurred = true;
+        break;
+      }
+
+      $json = json_decode($content->data, true);
+      $record['share_basevalue'] = $json['total']['inbound'];
+    } else {
+      $record['share_basevalue'] = 0;
+    }
+
+    $content = drupal_http_request('http://rest.sharethis.com/v1/count/urlinfo?url='
+            . $url . '&api_key=' . $apikey);
+
+    if (isset($content->error)) {
+      $errorOccurred = true;
+      break;
+    }
+
+    $json = json_decode($content->data, true);
+    $record['share_sum'] = $record['share_basevalue'] + $json['total']['inbound'];
+    $record_sum['field_share_sum_value'] = $record['share_sum'];
+
+    $exists = db_select('sharethis_meta', 'sm')
+            ->fields('sm')
+            ->condition('url', $record['url'])
+            ->range(0, 1)
+            ->execute()
+            ->rowCount();
+
+    if ($exists) {
+      db_update('sharethis_meta')
+              ->condition('url', $record['url'])
+              ->fields($record)
+              ->execute();
+    } else {
+      db_insert('sharethis_meta')
+              ->fields($record)
+              ->execute();
+    }
+
+    $exists_sum = db_select('field_revision_field_share_sum', 's')
+            ->fields('s')
+            ->condition('entity_id', $record_sum['entity_id'])
+            ->condition('entity_type', 'node')
+            ->range(0, 1)
+            ->execute()
+            ->rowCount();
+
+    if ($exists_sum) {
+      db_update('field_revision_field_share_sum')
+              ->condition('entity_id', $record_sum['entity_id'])
+              ->condition('entity_type', 'node')
+              ->fields($record_sum)
+              ->execute();
+    } else {
+      db_insert('field_revision_field_share_sum')
+              ->fields($record_sum)
+              ->execute();
+    }
+  }
+
+  // delete queued entries if no error occurred before:
+  if (!$errorOccurred && $mode == 'queue') {
+    db_delete('sharethis_queue')
+            ->condition('entity_type', 'node')
+            ->execute();
+  }
+}
+
+/**
+ * Iterates through users and adds or updates their entries in the sharethis_meta table
+ * and their corresponding Content Type.
+ */
+function pw_sharethis_check_iterateUsers($mode = 'queue') {
+
+  // retrieve necessary configuration:
+  $apikey = variable_get('pw_sharethis_check_apikey', false);
+  $domain = '.abgeordnetenwatch.de';
+  
+  // prepare user query:
+  $query = db_select('user_revision', 'u')
+          ->fields('u');
+
+  if ($mode == 'migration') {
+    // Which entries do we already have, assuming we import all their revisions en bloc:
+    $subquery = db_select('sharethis_meta', 'sm')
+      ->fields('sm', array('entity_id'))
+      ->condition('sm.entity_type', 'user');
+    $query->condition('u.uid', $subquery, 'NOT IN')
+          ->range(0, 30); // do not flood ShareThis
+  } else { // queue mode:
+    // Which entries are in the queue:
+    $subqueryQueue = db_select('sharethis_queue', 'sq')
+          ->fields('sq', array('entity_id'))
+          ->condition('sq.entity_type', 'user')
+          ->groupBy('sq.entity_id, entity_type'); // saves ShareThis calls
+    $query->condition('u.uid', $subqueryQueue, 'IN');
+  }
+
+  $results = $query->execute();
+  
+  $errorOccurred = false;
+
+  while ($fetch = $results->fetchAssoc()) {
+
+    $path = drupal_get_path_alias('user/' . $fetch['uid']);
+    $url = 'http://www' . $domain . '/' . $path . '/archive/' . $fetch['vid']; // this limits the request to archive entries
+    
+    // record for sharethis_meta table:
+    $record['entity_id'] = $fetch['uid'];
+    $record['entity_type'] = 'user';
+    $record['url'] = $url;
+    $record['share_basevalue'] = 0;
+    $record['revision_id'] = $fetch['vid'];
+
+    // record for field_revision_field_share_sum table:
+    $record_sum['entity_type'] = 'user';
+    $record_sum['bundle'] = 'user';
+    $record_sum['deleted'] = 0;
+    $record_sum['entity_id'] = $fetch['uid'];
+    $record_sum['revision_id'] = $fetch['vid'];
+    $record_sum['language'] = 'und';
+    $record_sum['delta'] = 0;
+
+    $content = drupal_http_request('http://rest.sharethis.com/v1/count/urlinfo?url='
+            . $url . '&api_key=' . $apikey);
+
+    if (isset($content->error)) {
+      $errorOccurred = true;
+      break;
+    }
+
+    $json = json_decode($content->data, true);
+    $record['share_sum'] = $record['share_basevalue'] + $json['total']['inbound'];
+    $record_sum['field_share_sum_value'] = $record['share_sum'];
+
+    $exists = db_select('sharethis_meta', 'sm')
+            ->fields('sm')
+            ->condition('url', $record['url'])
+            ->range(0, 1)
+            ->execute()
+            ->rowCount();
+
+    if ($exists) {
+      db_update('sharethis_meta')
+              ->condition('url', $record['url'])
+              ->fields($record)
+              ->execute();
+    } else {
+      db_insert('sharethis_meta')
+              ->fields($record)
+              ->execute();
+    }
+
+    $exists_sum = db_select('field_revision_field_share_sum', 's')
+            ->fields('s')
+            ->condition('entity_id', $record_sum['entity_id'])
+            ->condition('revision_id', $record_sum['revision_id'])
+            ->condition('entity_type', 'user')
+            ->range(0, 1)
+            ->execute()
+            ->rowCount();
+
+    if ($exists_sum) {
+      db_update('field_revision_field_share_sum')
+              ->condition('entity_id', $record_sum['entity_id'])
+              ->condition('revision_id', $record_sum['revision_id'])
+              ->condition('entity_type', 'user')
+              ->fields($record_sum)
+              ->execute();
+    } else {
+      db_insert('field_revision_field_share_sum')
+              ->fields($record_sum)
+              ->execute();
+    }
+  }
+
+  if ($mode != 'migration' && !$errorOccurred) {
+    db_delete('sharethis_queue')
+            ->condition('entity_type', 'user')
+            ->execute();
+  }
+}

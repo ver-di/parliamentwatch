@@ -1,6 +1,6 @@
 name = PW Dialogue Importer
 core = 7.x
-version = 7.x-1.0-20140109
+version = 7.x-1.0-20140424
 dependencies[] = dialogues
 dependencies[] = uuid
 package = Parliamentwatch

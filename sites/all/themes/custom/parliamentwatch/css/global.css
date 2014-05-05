@@ -308,16 +308,35 @@ a.medium,
     font-weight: normal;
 }
 .dark,
+.dark > a,
 a.dark {
     color: #333;
 }
-.copyright {
+.dark > a:hover,
+a.dark:hover {
+    color: #666;
+}
+a.external {
+    background-image: url(../images/sprite.png);
+    background-position: -572px -1583px;
+    padding-left: 19px;
+}
+.dark a.external,
+a.dark.external {
+    background-position: -612px -1543px;
+}
+a.external:hover {
+    background-position: -532px -1623px;
+}
+.copyright,
+.field-name-field-image-copyright {
     color: #666;
     font-weight: normal;
     font-size: 11px;
     font-size: 1.1rem;
 }
-.normal-weight {
+.normal-weight,
+.normal-weight > a {
     font-weight: normal;
 }
 .label-inline {
@@ -566,9 +585,10 @@ a.ic-print {
 .views-exposed-widgets {
     padding-top: 3em;
 }
-.views-exposed-widgets .views-reset-button {
+.views-exposed-widget.views-reset-button {
     position: absolute;
     top: 0;
+    margin: 0 0 0.8em 0 !important;
 }
 .ic-info {
     position: absolute;
@@ -1439,10 +1459,23 @@ a#text_resize_increase:active {
     margin: 0 0 0 -7px;
     list-style: none;
 }
-.floatbox ul li a {
+.floatbox a {
     color: #333;
     font-weight: normal;
     text-decoration: none;
+}
+.floatbox a:hover,
+.floatbox a:focus,
+.floatbox a:active {
+    color: #999;
+    font-weight: normal;
+    text-decoration: none;
+}
+.floatbox a.external {
+    background-position: -612px -1543px;
+}
+.floatbox a.external:hover {
+    background-position: -532px -1623px;
 }
 .floatbox ul li:hover,
 .floatbox ul li:focus,
@@ -1722,8 +1755,8 @@ img.no-outline {
 .poll-behavior .block.absent {
     background: #5876f1;
 }
-.poll-behavior .icon.blank,
-.poll-behavior .block.blank {
+.poll-behavior .icon.neutral,
+.poll-behavior .block.neutral {
     background: #999;
 }
 .poll-behavior .inline {
@@ -1738,7 +1771,7 @@ img.no-outline {
 .poll-behavior .inline.absent {
     color: #5876f1;
 }
-.poll-behavior .inline.blank {
+.poll-behavior .inline.neutral {
     color: #999;
 }
 .poll-behavior .icon {
@@ -1871,7 +1904,7 @@ input[type="week"],
     background-color: #fff;
     max-width: 100%;
 }
-.views-exposed-widgets .views-reset-button input[type="submit"] {
+.views-exposed-widget.views-reset-button input[type="submit"] {
     border: 0;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -1879,14 +1912,18 @@ input[type="week"],
     color: #666;
     padding: 0 0 0 16px;
     height: auto;
-    margin-bottom: 8px;
-    margin-bottom: 0.8rem;
+    margin: 8px 0;
+    margin-bottom: 0.8rem 0;
     line-height: auto;
     background: transparent url(../images/sprite.png) -120px -2539px no-repeat;
 }
-.views-exposed-widgets .views-reset-button input[type="submit"]:hover,
-.views-exposed-widgets .views-reset-button input[type="submit"]:focus,
-.views-exposed-widgets .views-reset-button input[type="submit"]:active {
+.ctools-use-ajax.ctools-auto-submit-click {
+    position: absolute;
+    left: -50000em;
+}
+.views-exposed-widget.views-reset-button input[type="submit"]:hover,
+.views-exposed-widget.views-reset-button input[type="submit"]:focus,
+.views-exposed-widget.views-reset-button input[type="submit"]:active {
     background: transparent url(../images/sprite.png) -160px -2499px no-repeat;
     color: #ccc;
 
@@ -2150,6 +2187,12 @@ form .webform-component-checkboxes .description {
 .answer .more-info.content-inner {
     padding: 20px 24px;
 }
+.answer .more-info.content-inner legend {
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 100%;
+}
 .answer .more-info.content-inner .fieldset-wrapper {
     margin-top: 1.5em;
 }
@@ -2255,12 +2298,26 @@ form .webform-component-checkboxes .description {
 
 /* /////////////////////////// Twitter /////////////////////// */
 
-.twitter a {
+#pw-block-user-twitter a {
     color: #30b3eb;
     font-weight: normal;
 }
-.twitter .pw-list-item-light a {
+.twitter a.external {
+    padding-left: 0;
+    background: transparent;
+}
+#pw-block-user-twitter .twitter .pw-list-item-light a,
+.twitter-item a {
     color: #999;
+    font-weight: normal;
+}
+#pw-block-user-twitter .twitter .pw-list-item-light a:hover,
+#pw-block-user-twitter .twitter .pw-list-item-light a:active,
+#pw-block-user-twitter .twitter .pw-list-item-light a:focus,
+.twitter-item a:hover,
+.twitter-item a:active,
+.twitter-item a:focus {
+    color: #666;
 }
 .twitter .pw-twitter-name,
 .twitter .pw-twitter-screenname {
@@ -2282,7 +2339,7 @@ form .webform-component-checkboxes .description {
 
 .announcement.slideshow {
     background: #ccc;
-    padding: 18px 30px 34px 0;
+    padding: 18px 0 34px;
     position: relative;
     margin-bottom: 43px;
     margin-bottom: 4.3rem;
@@ -2318,9 +2375,8 @@ form .webform-component-checkboxes .description {
     background: url(../images/bg_fff50.png);
     padding: 8px 10px 12px 20px;
 }
-.announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
-    background: url(../images/bg_fff50.png);
-    padding: 8px 10px 12px 20px;width: 560px;
+.views-slideshow-cycle-main-frame-row {
+    width: 100%;
 }
 .announcement.slideshow .content p:last-child {
     margin-bottom: 5px;

@@ -3,6 +3,7 @@ jQuery(document).ready(function() {
 // expand active user revision block in user revision switch
 
     $('#block-views-pw-user-revision-switch-block .link-profile.active').parents('#block-views-pw-user-revision-switch-block fieldset').removeClass('collapsed');
+    $('#block-views-pw-user-revision-switch-block .link-profile').not('.active').parents('#block-views-pw-user-revision-switch-block fieldset').last().removeClass('collapsed');
 
 
 // automatically adjust textarea heigh  with jQuery Autosize
@@ -104,10 +105,13 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
     var domainparts = location.hostname.split('.');
     var sndleveldomain = domainparts.slice(-2).join('.');
 
-    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']),[href*='https://']:not([href*='"+sndleveldomain+"'])")
+    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']),#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"'])")
         .attr("rel","external")
         .attr("target","_blank")
         .addClass("external");
+    // remove class .external from images and slider
+    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']) img,#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"']) img").parent('a').removeClass('external');
+    jQuery('.view-slider a.external').removeClass('external');
 
 ////// intelligent on:blur
 
@@ -148,14 +152,37 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 ////// add a sharethis link to an anchor
 
     jQuery('.add-sharethis').each(function (i) {
-    
-        //for subsite
-        var st_url = location.protocol + '//'+location.host+location.pathname + '/' + jQuery(this).closest('div').attr('id');
+
+        //revision vid
+        var vid = jQuery(this).closest('div').attr('vid');
+        var id = jQuery(this).closest('div').attr('id');
+
+        //check if the path containes archive
+        var localPath = location.protocol + '//'+location.host+location.pathname;
+        var isArchivePage = localPath.indexOf("archive");
+
+        var st_url;
+
+        if(typeof vid != "undefined" && isArchivePage == -1)
+        {
+            st_url = localPath + '/archive/' + vid + "/" + id;
+        }
+        else {
+            st_url = localPath + '/' + id;
+        }
         // for anchor
         var link_title = jQuery(this).closest('div').attr('title');
         jQuery(this).append('<span class="sharethis-wrapper"><span class="st_sharethis_hcount" onhover="false" st_title="'+link_title+'" st_url="'+st_url+'" displayText="'+link_title+'"></span></span>');
     
     });
+
+////// call check url if sharethisbutton is clicked
+
+    jQuery(".sharethis-wrapper").click(function() {
+        var st_url =  $(this).children("span").attr("st_url");
+        if(st_url != undefined)callCheckURL(st_url);
+    });
+
 
 //// Report Link
 
@@ -215,4 +242,20 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
 function changeImage(imageSRC2){
     var imageSRC = document.getElementById('map').src;
     document.getElementById('map').src=imageSRC2;
+}
+
+////// call checkurl for sharethis node update cue
+
+function callCheckURL(st_url) {
+    var st_url = st_url;
+    //var localPath = location.protocol + '//'+location.host+location.pathname;
+    var check_url = "/sharethis_check?url=";
+    var complete_url = check_url+st_url;
+    //console.log(complete_url);
+    $.ajax({
+        type: "GET",
+        url : complete_url
+    }).done(function() {
+        //console.log("done");
+    });
 }

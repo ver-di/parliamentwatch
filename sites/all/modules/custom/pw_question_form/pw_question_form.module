@@ -11,18 +11,22 @@
 function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'webform_client_form_10446') {
 
+    // add custom validations
+    $form['#validate'][] = 'pw_question_form_form_validate';
+
     // load recipient user
-    $user_uuid = $form['submitted']['recipient_external_id']['#value'];
-    $user = entity_uuid_load('user', array($user_uuid), array(), TRUE);
-    if(sizeof($user) == 0){
+    $user_name = $form['submitted']['recipient']['#value'];
+    $user = user_load_by_name($user_name);
+
+    if($user === FALSE){
       return;
     }
-    $user_obj = array_pop($user);
-    
+
+    // set uuid as recipient external id
+    $form['submitted']['recipient_external_id']['#value'] = $user->uuid;
+
     // retrieve parliament tag from user
-    $parliament_uuid = $user_obj->field_user_parliament['und'][0]['tid'];
-    $parliament = entity_uuid_load('taxonomy_term', array($parliament_uuid), array(), TRUE);
-    $parliament_tid = key($parliament);
+    $parliament_tid = $user->field_user_parliament['und'][0]['tid'];
 
     // query for subject terms tagged with same parliament as user has
     $query = new EntityFieldQuery();
@@ -33,14 +37,11 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     $subject_terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']));
 
     // add subject to form element
-    $a_subjects = array();
+    $a_options = array();
     foreach($subject_terms as $subject_key => $subject_term){
-      $a_subjects[$subject_term->name] = $subject_term->name;
+      $a_options[$subject_term->name] = $subject_term->name;
     }
-    $form['submitted']['subject']['#options'] = $a_subjects;
-
-    // add custom validations
-    $form['#validate'][] = 'pw_question_form_form_validate';
+    $form['submitted']['subject']['#options'] = $a_options;
   }
 }
 
@@ -56,9 +57,9 @@ function pw_question_form_form_validate($form_id, $form_values){
   }
 
   // check user exists
-  $user_uuid = $form_values['values']['submitted']['recipient_external_id'];
-  $user = entity_uuid_load('user', array($user_uuid), array(), TRUE);
-  if(sizeof($user) == 0){
+  $user_name = $form_values['values']['submitted']['recipient'];
+  $user = user_load_by_name($user_name);
+  if($user === FALSE){
     form_set_error('user', 'Empfänger existiert nicht.');
   }
 }

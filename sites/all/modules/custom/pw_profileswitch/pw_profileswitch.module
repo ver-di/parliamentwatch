@@ -49,17 +49,18 @@ function pw_user_set_custom_breadcrumb($account){
   // custom breadcrumb
   $breadcrumb = array();
   $breadcrumb[] = l(t('Home'), '<front>');
-  $breadcrumb[] = l(t('Parliaments'), 'parliaments');
+  $breadcrumb[] = l(t('Parliaments'), 'parlamente-210-0.html');
   if(!empty($account->field_user_parliament['und'][0]['tid'])){
     $parliament_term = taxonomy_term_load($account->field_user_parliament['und'][0]['tid']);
-    $breadcrumb[] = l($parliament_term->name, 'parliaments/'.strtolower($parliament_term->name));
+    $breadcrumb[] = l($parliament_term->name, strtolower($parliament_term->name));
     $is_deputy = array_search('Deputy', $account->roles);
     if($is_deputy){
-      $breadcrumb[] = l(t('Deputies'), 'politicians/'.strtolower($parliament_term->name).'/deputies');
+      $path_alias = drupal_lookup_path('alias', 'profile/'.strtolower($parliament_term->name).'/deputies');
     }
     else{
-      $breadcrumb[] = l(t('Candidates'), 'politicians/'.strtolower($parliament_term->name).'/candidates');
+      $path_alias = drupal_lookup_path('alias', 'profile/'.strtolower($parliament_term->name).'/candidates');
     }
+    $breadcrumb[] = l(t('Profiles Overview'), $path_alias);
   }
   $account_full_name = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
   #$breadcrumb[] = l($account_full_name, current_path());
@@ -79,6 +80,7 @@ function pw_user_set_custom_title($account){
  * Show a revision.
  */
 function pw_user_revision_show($user, $vid) {
+  global $pwAccountRev; // this variable is needed in sub views such as Q&A to show the correct names and pictures according to revision
   if ($user->uid == "0") {
     // Load user by vid:
     $query = db_select('user_revision', 'ur');
@@ -88,10 +90,15 @@ function pw_user_revision_show($user, $vid) {
     while ($row = $res->fetchAssoc()) {
       $account = user_revision_load($row["uid"], $vid); // Can only be one result maximum
     }
+    // redirect legacy account
+    // $account->field_user_parliament['und'][0]['tid'] != 16117
+    if(!empty($account->field_user_external_url['und'][0]['url'])){
+      drupal_goto($account->field_user_external_url['und'][0]['url'], array(), 307);
+    }
   } else {
     $account = user_revision_load($user->uid, $vid);
   }
-
+  $pwAccountRev = $account;
   return pw_profileswitch_user_custom_view($account);
 }
 

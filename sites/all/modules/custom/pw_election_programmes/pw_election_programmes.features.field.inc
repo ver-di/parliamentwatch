@@ -304,8 +304,11 @@ function pw_election_programmes_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
+          'module' => 'shs',
+          'settings' => array(
+            'linked' => FALSE,
+          ),
+          'type' => 'shs_default',
           'weight' => '5',
         ),
       ),
@@ -370,8 +373,11 @@ function pw_election_programmes_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
+          'module' => 'shs',
+          'settings' => array(
+            'linked' => FALSE,
+          ),
+          'type' => 'shs_default',
           'weight' => '3',
         ),
       ),

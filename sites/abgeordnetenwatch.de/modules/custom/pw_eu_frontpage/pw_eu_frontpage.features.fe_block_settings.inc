@@ -14,20 +14,26 @@ function pw_eu_frontpage_default_fe_block_settings() {
 
   $export['block-aw_eu_intro'] = array(
     'cache' => -1,
-    'css_class' => 'grid_5 push-bottom-m omega',
+    'css_class' => 'grid-5 push-bottom-m omega',
     'custom' => '0',
     'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'machine_name' => 'aw_eu_intro',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
+        'weight' => '-70',
+      ),
+      'blank' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'blank',
         'weight' => '-78',
       ),
       'pw_seven' => array(
@@ -50,13 +56,19 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_eu_map',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
+        'weight' => '-71',
+      ),
+      'blank' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'blank',
         'weight' => '-79',
       ),
       'pw_seven' => array(
@@ -79,13 +91,19 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_eu_parliament_archive',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
+        'weight' => '-77',
+      ),
+      'blank' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'blank',
         'weight' => '0',
       ),
       'pw_seven' => array(
@@ -108,13 +126,19 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_schirmherrin',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '-77',
+      ),
+      'blank' => array(
         'region' => 'sidebar_second',
         'status' => '1',
-        'theme' => 'abgeordnetenwatch',
+        'theme' => 'blank',
         'weight' => '0',
       ),
       'pw_seven' => array(
@@ -137,13 +161,19 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'i18n_mode' => '0',
     'module' => 'quicktabs',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
+        'weight' => '-65',
+      ),
+      'blank' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'blank',
         'weight' => '-76',
       ),
       'pw_seven' => array(
@@ -159,20 +189,26 @@ function pw_eu_frontpage_default_fe_block_settings() {
 
   $export['views-pw_announcement-slideshow'] = array(
     'cache' => -1,
-    'css_class' => '',
+    'css_class' => 'clear',
     'custom' => '0',
     'delta' => 'pw_announcement-slideshow',
     'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'parlamente/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
+        'weight' => '-69',
+      ),
+      'blank' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'blank',
         'weight' => '-77',
       ),
       'pw_seven' => array(
@@ -180,6 +216,41 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'status' => '1',
         'theme' => 'pw_seven',
         'weight' => '-75',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '1',
+  );
+
+  $export['views-user_tweets-a_watch'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => '0',
+    'delta' => 'user_tweets-a_watch',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'eu',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '-73',
+      ),
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
       ),
     ),
     'title' => '',

@@ -222,7 +222,7 @@ function dialogues_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_dialogue_pattern';
-  $strongarm->value = '[node:field-dialogue-recipient:name]/question/[node:created:custom:Y-m-d]/[node:nid]';
+  $strongarm->value = 'profile/[node:field-dialogue-recipient:name]/question/[node:created:custom:Y-m-d]/[node:field-dialogue-id]';
   $export['pathauto_node_dialogue_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

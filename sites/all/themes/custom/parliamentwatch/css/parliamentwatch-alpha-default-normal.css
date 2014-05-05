@@ -42,6 +42,9 @@ html {
 
 /* /////////////////////////// Announcement ///////////////// */
 
+.announcement.slideshow {
+    padding: 18px 30px 34px 0;
+}
 .announcement.slideshow .background-image {
     display: block;
     width: 620px;

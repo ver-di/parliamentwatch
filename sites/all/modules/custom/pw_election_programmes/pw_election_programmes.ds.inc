@@ -79,20 +79,6 @@ function pw_election_programmes_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'hide_empty_regions' => 0,
     'hide_sidebars' => 0,
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'field_teaser_image',
-        1 => 'body',
-        2 => 'field_election_programme_open',
-        3 => 'field_pdf_download',
-      ),
-    ),
-    'fields' => array(
-      'field_teaser_image' => 'ds_content',
-      'body' => 'ds_content',
-      'field_election_programme_open' => 'ds_content',
-      'field_pdf_download' => 'ds_content',
-    ),
     'classes' => array(),
   );
   $export['node|election_programme|default'] = $ds_layout;

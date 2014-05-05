@@ -8,7 +8,7 @@ $plugin = array(
   // Optional validation callback.
   'validate' => 'term_id_by_term_and_parliament_validate',
   'callback' => 'term_id_by_term_and_parliament',
-  'name' => 'Term ID by Term and Parliament',
+  'name' => 'Constituency Term ID by Term and Parliament',
   'multi' => 'loop',
   'category' => 'Custom',
 );

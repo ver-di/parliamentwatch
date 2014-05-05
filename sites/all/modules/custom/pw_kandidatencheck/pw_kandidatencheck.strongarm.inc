@@ -14,14 +14,14 @@ function pw_kandidatencheck_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_pw_kc_position';
-  $strongarm->value = 'edit-print';
+  $strongarm->value = 'edit-workflow';
   $export['additional_settings__active_tab_pw_kc_position'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_pw_kc_thesis';
-  $strongarm->value = 'edit-weight-settings';
+  $strongarm->value = 'edit-workflow';
   $export['additional_settings__active_tab_pw_kc_thesis'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -366,14 +366,18 @@ function pw_kandidatencheck_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_pw_kc_position';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'status',
+  );
   $export['node_options_pw_kc_position'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_options_pw_kc_thesis';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'status',
+  );
   $export['node_options_pw_kc_thesis'] = $strongarm;
 
   $strongarm = new stdClass();

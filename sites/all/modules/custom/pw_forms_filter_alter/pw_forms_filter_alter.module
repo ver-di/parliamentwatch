@@ -10,15 +10,13 @@
  */
 function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'profile_list_rev' && $form_state['view']->current_display == 'grid') {
-    // prepare query
-    $current_uri = check_plain(request_uri());
-    $current_uri = rawurldecode($current_uri);
-    $a_url = explode("/", $current_uri);
-    if (!array_key_exists(3, $a_url)){
-      return;
-    }
-    $role_name = $a_url[3] == 'candidates' ? 'Candidate' : 'Deputy';
-    $parliament_name = $a_url[2];
+
+    // vars
+    $url_parameters = array_keys(drupal_get_query_parameters());
+    $form_was_submitted = sizeof($form_state['view']->exposed_input) > 1;
+    $role_name = arg(2) == 'deputies' ? 'Deputy' : 'Candidate';
+    $parliament_name = arg(1);
+    $constituency_name = key($url_parameters);
     $a_parameter = array(':role_name' => $role_name, ':parliament_name' => $parliament_name);
 
     // parties - query database
@@ -28,15 +26,19 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
           AND input_parliament_name=:parliament_name";
     $result = db_query($sql, $a_parameter);
     $terms = $result->fetchAll();
-
     $options = array();
     foreach ($terms as $term) {
       $options[$term->tid] = $term->name;
+
+      // checks url and sets filter
+      if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
+        $form_state['input']['field_user_party_tid'][] = $term->tid;
+      }
     }
     $form['field_user_party_tid']['#options'] = $options;
 
     // constituencies - query database
-    /*$sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache} 
+    $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache} 
           WHERE input_output_type='constituency' 
           AND input_role_name=:role_name 
           AND input_parliament_name=:parliament_name";
@@ -45,9 +47,40 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
     $options = array('All' => 'Alle');
     foreach ($terms as $term) {
       $options[$term->tid] = $term->name;
+
+      // checks url and sets filter
+      if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
+        $form_state['input']['field_user_constituency_tid'] = $term->tid;
+      }
     }
     $form['field_user_constituency_tid']['#options'] = $options;
 
-    dpm($form);*/
+    // address (field_user_address:administrative_area) - checks url and sets filter
+    if(!$form_was_submitted){
+      foreach ($form['field_user_address_administrative_area']['#options'] as $index => $area) {
+        if(in_array($area, $url_parameters)){
+          $form_state['input']['field_user_address_administrative_area'] = $index;
+        }
+      }
+    }
+    /*
+    $sql = "SELECT DISTINCT address.field_user_address_administrative_area
+            FROM field_data_field_user_address AS address
+            WHERE address.field_user_address_administrative_area IS NOT NULL AND address.field_user_address_administrative_area != ''
+            ORDER BY address.field_user_address_administrative_area";
+    $result = db_query($sql, $a_parameter);
+    $areas = $result->fetchAll();
+
+    $options = array('All' => 'Alle');
+    foreach ($areas as $index => $area) {
+      $options[$index] = $area->field_user_address_administrative_area;
+
+      // checks url and sets filter
+      //if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
+      //  $form_state['input']['field_user_address_administrative_area'] = $term->tid;
+      //}
+    }
+    $form['field_user_address_administrative_area']['#options'] = $options;
+    */
   }
 }

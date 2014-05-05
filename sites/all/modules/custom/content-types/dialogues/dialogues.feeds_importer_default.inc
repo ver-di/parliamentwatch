@@ -67,7 +67,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:17' => 0,
           'xpathparser:18' => 0,
         ),
-        'context' => '//dialogue',
+        'context' => '//dialogue[message[1]/status>0]',
         'exp' => array(
           'errors' => 1,
           'tidy' => 0,
@@ -110,8 +110,8 @@ function dialogues_feeds_importer_default() {
           1 => array(
             'source' => 'xpathparser:14',
             'target' => 'field_dialogue_topic',
-            'term_search' => '0',
-            'autocreate' => 1,
+            'term_search' => '1',
+            'autocreate' => 0,
           ),
           2 => array(
             'source' => 'xpathparser:15',

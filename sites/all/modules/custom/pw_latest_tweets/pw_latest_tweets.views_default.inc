@@ -37,7 +37,7 @@ function pw_latest_tweets_views_default_views() {
   $handler->display->display_options['fields']['twitter_id']['id'] = 'twitter_id';
   $handler->display->display_options['fields']['twitter_id']['table'] = 'twitter';
   $handler->display->display_options['fields']['twitter_id']['field'] = 'twitter_id';
-  /* Sort criterion: Twitter: Created time */
+  /* Sort criterion: Twitter: Erstellungszeit */
   $handler->display->display_options['sorts']['created_time']['id'] = 'created_time';
   $handler->display->display_options['sorts']['created_time']['table'] = 'twitter';
   $handler->display->display_options['sorts']['created_time']['field'] = 'created_time';

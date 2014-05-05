@@ -11,7 +11,7 @@ function pw_webform_nodes_node_export_features_default() {
   $node_export = array(
   'code_string' => 'array(
   (object) array(
-      \'vid\' => \'10611\',
+      \'vid\' => \'10693\',
       \'uid\' => \'0\',
       \'title\' => \'Newsletter Subscription\',
       \'log\' => \'\',
@@ -29,7 +29,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'02763736-dab6-4d2f-9e45-87da9211d495\',
-      \'revision_timestamp\' => \'1396440173\',
+      \'revision_timestamp\' => \'1398169715\',
       \'revision_uid\' => \'0\',
       \'body\' => array(),
       \'field_webform_footer\' => array(),
@@ -229,7 +229,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10612\',
+      \'vid\' => \'10694\',
       \'uid\' => \'0\',
       \'title\' => \'Feedback\',
       \'log\' => \'\',
@@ -247,7 +247,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'0f77bf60-ac14-40af-ad7e-b92912fabde1\',
-      \'revision_timestamp\' => \'1396440173\',
+      \'revision_timestamp\' => \'1398169715\',
       \'revision_uid\' => \'0\',
       \'body\' => array(
         \'und\' => array(
@@ -528,7 +528,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10613\',
+      \'vid\' => \'10695\',
       \'uid\' => \'0\',
       \'title\' => \'Kontakt\',
       \'log\' => \'\',
@@ -546,8 +546,8 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'2043edea-d674-4195-a18b-a9f1a2afbdb7\',
-      \'revision_timestamp\' => \'1396528644\',
-      \'revision_uid\' => \'1454\',
+      \'revision_timestamp\' => \'1398169715\',
+      \'revision_uid\' => \'0\',
       \'body\' => array(
         \'und\' => array(
           array(
@@ -827,7 +827,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10614\',
+      \'vid\' => \'10696\',
       \'uid\' => \'0\',
       \'title\' => \'Frage stellen\',
       \'log\' => \'\',
@@ -841,17 +841,17 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1395845253\',
-      \'changed\' => \'1396601266\',
+      \'changed\' => \'1398859089\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'451cb368-988c-4b6d-8f8c-0b36031901ca\',
-      \'revision_timestamp\' => \'1396601266\',
+      \'revision_timestamp\' => \'1398859089\',
       \'revision_uid\' => \'24952\',
       \'body\' => array(),
       \'field_webform_footer\' => array(
         \'und\' => array(
           array(
-            \'value\' => "<?php\\r\\ndrupal_add_library(\'system\', \'drupal.collapse\');\\r\\ndrupal_add_library(\'system\', \'drupal.form\');\\r\\n?>\\t\\r\\n<div>Die Freischaltung von Fragen kann je nach Nutzeraufkommen u.U. einige Stunden dauern, da alle eingehenden Fragen von einem Moderatorenteam überprüft werden. Ich habe den Moderations-Codex gelesen und sichergestellt, dass meine Frage nicht gegen diesen verstößt. <br/>\\r\\n    <fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Moderations-Codex anzeigen</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n            $node = node_load(7734);\\r\\n             $body_content = $node->body[$node->language][0][\'value\'];\\r\\n            print $body_content;\\r\\n             ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>\\r\\n<div>\\r\\n    Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem Moderator informiert. Aus Gründen der Rechtssicherheit wird Ihre IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhalten Sie in unserer\\r\\n    <fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Datenschutzerklärung</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n             $node =  node_load(10006);\\r\\n             $body_content = $node->body[$node->language][0][\'value\'];\\r\\n            print $body_content;\\r\\n            ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>",
+            \'value\' => "<?php\\r\\ndrupal_add_library(\'system\', \'drupal.collapse\');\\r\\ndrupal_add_library(\'system\', \'drupal.form\');\\r\\n?>\\t\\r\\n<div>Die Freischaltung von Fragen kann je nach Nutzeraufkommen u.U. einige Stunden dauern, da alle eingehenden Fragen von einem Moderatorenteam überprüft werden. Ich habe den Moderations-Codex gelesen und sichergestellt, dass meine Frage nicht gegen diesen verstößt. <br/>\\r\\n    <fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Moderations-Codex anzeigen</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n$node = node_load(7734);\\r\\n$body_content = $node->body[$node->language][0][\\"value\\"];\\r\\nprint $body_content;\\r\\n             ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>\\r\\n<div>\\r\\n    Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem Moderator informiert. Aus Gründen der Rechtssicherheit wird Ihre IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhalten Sie in unserer\\r\\n    <fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Datenschutzerklärung</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n$node = node_load(10006);\\r\\n$body_content = $node->body[$node->language][0][\\"value\\"];\\r\\nprint $body_content;\\r\\n            ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>",
             \'format\' => \'php_code\',
           ),
         ),
@@ -931,8 +931,8 @@ function pw_webform_nodes_node_export_features_default() {
         \'nid\' => \'10446\',
         \'confirmation\' => \'\',
         \'confirmation_format\' => \'managed_content\',
-        \'redirect_url\' => \'frage-stellen/vielen-dank\',
-        \'status\' => \'0\',
+        \'redirect_url\' => \'profile/%value[recipient]#overlay=frage-stellen/vielen-dank\',
+        \'status\' => \'1\',
         \'block\' => \'0\',
         \'teaser\' => \'0\',
         \'allow_draft\' => \'0\',
@@ -1179,10 +1179,10 @@ function pw_webform_nodes_node_export_features_default() {
             \'nid\' => 10446,
             \'cid\' => \'17\',
             \'pid\' => \'0\',
-            \'form_key\' => \'recipient_external_id\',
+            \'form_key\' => \'recipient\',
             \'name\' => \'Empfänger\',
             \'type\' => \'hidden\',
-            \'value\' => \'%get[uuid]\',
+            \'value\' => \'%get[recipient]\',
             \'extra\' => array(
               \'hidden_type\' => \'value\',
               \'conditional_operator\' => \'=\',
@@ -1192,6 +1192,25 @@ function pw_webform_nodes_node_export_features_default() {
             ),
             \'mandatory\' => \'0\',
             \'weight\' => \'10\',
+            \'page_num\' => 1,
+          ),
+          18 => array(
+            \'nid\' => 10446,
+            \'cid\' => \'18\',
+            \'pid\' => \'0\',
+            \'form_key\' => \'recipient_external_id\',
+            \'name\' => \'Empfänger UUID\',
+            \'type\' => \'hidden\',
+            \'value\' => \'\',
+            \'extra\' => array(
+              \'hidden_type\' => \'value\',
+              \'conditional_operator\' => \'=\',
+              \'private\' => 0,
+              \'conditional_component\' => \'\',
+              \'conditional_values\' => \'\',
+            ),
+            \'mandatory\' => \'0\',
+            \'weight\' => \'11\',
             \'page_num\' => 1,
           ),
         ),
@@ -1220,7 +1239,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10615\',
+      \'vid\' => \'10697\',
       \'uid\' => \'0\',
       \'title\' => \'Petition unterschreiben\',
       \'log\' => \'\',
@@ -1238,7 +1257,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'7480b5f4-9c09-43e8-811b-468863974a17\',
-      \'revision_timestamp\' => \'1396440173\',
+      \'revision_timestamp\' => \'1398169715\',
       \'revision_uid\' => \'0\',
       \'body\' => array(
         \'de\' => array(
@@ -1362,9 +1381,10 @@ function pw_webform_nodes_node_export_features_default() {
             \'subject\' => \'Bitte bestätigen Sie Ihre Zeichnung!\',
             \'from_name\' => \'default\',
             \'from_address\' => \'default\',
-            \'template\' => "Hallo %value[first_name] %value[last_name],\\n\\nvielen Dank, dass Sie die Petition unterstützen! Damit Ihre Unterschrift gezählt werden kann, klicken Sie bitte auf den folgenden Bestätigungslink:\\n\\n%confirm_url\\n\\nGemeinsam werden wir erfolgreich sein!\\n\\nBeste Grüße aus Hamburg,\\nGregor Hackmack, Boris Hekele\\nund das abgeordnetenwatch.de-Team\\n\\nKontakt:\\ninfo@abgeordnetenwatch.de\\nTel.: 040 - 317 69 10 - 26\\nFax: 040 - 317 69 10 - 28\\n\\nImmer auf dem Laufenden bleiben:\\n\\nim Blog: http://blog.abgeordnetenwatch.de/\\nbei Twitter: http://www.twitter.com/a_watch\\nbei Facebook: https://www.facebook.com/abgeordnetenwatch.de\\nbei Google+: https://plus.google.com/+abgeordnetenwatch/posts\\nMittelweg 12\\n20148 Hamburg\\nwww.abgeordnetenwatch.de",
+            \'template\' => "Hallo %value[first_name] %value[last_name],\\n\\nvielen Dank, dass Sie die Petition unterstützen! Damit Ihre Unterschrift gezählt werden kann, klicken Sie bitte auf den folgenden Bestätigungslink:\\n\\n%confirm_url\\n\\nGemeinsam werden wir erfolgreich sein!\\n\\nBeste Grüße aus Hamburg,\\nGregor Hackmack, Boris Hekele\\nund das abgeordnetenwatch.de-Team\\n\\nKontakt:\\ninfo@abgeordnetenwatch.de\\nTel.: 040 - 317 69 10 - 26\\nFax: 040 - 317 69 10 - 28\\n\\nImmer auf dem Laufenden bleiben:\\n\\nim Blog: https://www.abgeordnetenwatch.de/blog\\nbei Twitter: https://www.twitter.com/a_watch\\nbei Facebook: https://www.facebook.com/abgeordnetenwatch.de\\nbei Google+: https://plus.google.com/+abgeordnetenwatch/posts\\nMittelweg 12\\n20148 Hamburg",
             \'excluded_components\' => array(
               \'13\',
+              \'21\',
             ),
             \'html\' => \'0\',
             \'attachments\' => \'0\',
@@ -1777,7 +1797,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10616\',
+      \'vid\' => \'10698\',
       \'uid\' => \'0\',
       \'title\' => \'Unterstützen Sie abgeordnetenwatch.de!\',
       \'log\' => \'neuen Header eingebaut\',
@@ -1795,8 +1815,8 @@ function pw_webform_nodes_node_export_features_default() {
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'be5a5fb5-27f9-473b-86e2-d48262a8dc45\',
-      \'revision_timestamp\' => \'1396519704\',
-      \'revision_uid\' => \'24952\',
+      \'revision_timestamp\' => \'1398169715\',
+      \'revision_uid\' => \'0\',
       \'body\' => array(
         \'und\' => array(
           array(
@@ -2999,7 +3019,7 @@ function pw_webform_nodes_node_export_features_default() {
       \'node_export_drupal_version\' => \'7\',
     ),
   (object) array(
-      \'vid\' => \'10617\',
+      \'vid\' => \'10699\',
       \'uid\' => \'0\',
       \'title\' => \'Profilerweiterung buchen\',
       \'log\' => \'\',
@@ -3013,19 +3033,19 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1395845253\',
-      \'changed\' => \'1396565798\',
+      \'changed\' => \'1398673823\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'d6f67351-8974-4e3a-88d8-150931a45f5b\',
-      \'revision_timestamp\' => \'1396565798\',
-      \'revision_uid\' => \'1454\',
+      \'revision_timestamp\' => \'1398673823\',
+      \'revision_uid\' => \'1344\',
       \'body\' => array(
         \'und\' => array(
           array(
-            \'value\' => "<p>\\r\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\r\\n</p>\\r\\n<p>\\r\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\r\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\r\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\r\\n\\t+ Lebenslauf<br />\\r\\n\\t+ Terminkalender<br />\\r\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\r\\n</p>\\r\\n<p>\\r\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 149 Euro inkl. MwSt.\\r\\n</p>\\r\\n<p>\\r\\n\\tWenn Sie per Lastschrift zahlen, wird Ihre Profilerweiterung <strong>unmittelbar freigeschaltet</strong>.\\r\\n</p>\\r\\n",
+            \'value\' => "<p>\\r\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\r\\n</p>\\r\\n<p>\\r\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\r\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\r\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\r\\n\\t+ Lebenslauf<br />\\r\\n\\t+ Terminkalender<br />\\r\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\r\\n</p>\\r\\n<p>\\r\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 179 Euro inkl. MwSt.\\r\\n</p>\\r\\n<p>\\r\\n\\tWenn Sie per Lastschrift zahlen, wird Ihre Profilerweiterung <strong>unmittelbar freigeschaltet</strong>.\\r\\n</p>\\r\\n",
             \'summary\' => \'\',
             \'format\' => \'managed_content\',
-            \'safe_value\' => "<p>\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\n</p>\\n<p>\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\n\\t+ Lebenslauf<br />\\n\\t+ Terminkalender<br />\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\n</p>\\n<p>\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 149 Euro inkl. MwSt.\\n</p>\\n<p>\\n\\tWenn Sie per Lastschrift zahlen, wird Ihre Profilerweiterung <strong>unmittelbar freigeschaltet</strong>.\\n</p>\\n",
+            \'safe_value\' => "<p>\\n\\t<strong>Ihre Zusatzfunktionen einer Profilerweiterung im Überblick:</strong>\\n</p>\\n<p>\\n\\t+ Porträtfoto auf abgeordnetenwatch.de und den Portalseiten unserer Medienpartner<br />\\n\\t+ Link zu Ihrer privaten Webseite oder Ihrem Blog<br />\\n\\t+ Selbstdarstellung Ihrer politischen Ziele<br />\\n\\t+ Lebenslauf<br />\\n\\t+ Terminkalender<br />\\n\\t+ Einbindung Ihres Twitterkanals und weiterer Links (z.B. Ihrer Facebook-Seite), die persönlich oder politisch für Sie wichtig sind.\\n</p>\\n<p>\\n\\tBuchen Sie jetzt mit Frühbucherrabatt für einmalig 179 Euro inkl. MwSt.\\n</p>\\n<p>\\n\\tWenn Sie per Lastschrift zahlen, wird Ihre Profilerweiterung <strong>unmittelbar freigeschaltet</strong>.\\n</p>\\n",
             \'safe_summary\' => \'\',
           ),
         ),
@@ -3114,7 +3134,7 @@ function pw_webform_nodes_node_export_features_default() {
         \'nid\' => \'10482\',
         \'confirmation\' => \'\',
         \'confirmation_format\' => \'managed_content\',
-        \'redirect_url\' => \'<none>\',
+        \'redirect_url\' => \'profile/boris-test#overlay=pe-buchung/vielen-dank\',
         \'status\' => \'1\',
         \'block\' => \'0\',
         \'teaser\' => \'0\',
@@ -3488,7 +3508,7 @@ function pw_webform_nodes_node_export_features_default() {
             \'form_key\' => \'preis\',
             \'name\' => \'Preis\',
             \'type\' => \'hidden\',
-            \'value\' => \'149\',
+            \'value\' => \'179\',
             \'extra\' => array(
               \'hidden_type\' => \'value\',
               \'conditional_operator\' => \'=\',

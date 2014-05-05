@@ -118,6 +118,23 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_20-find_replace_regex';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:20';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/^\\s*$/',
+    'replace' => 'k.A.',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_profiles_importer_v2-xpathparser_20-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_21-find_replace_regex';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:21';
@@ -165,7 +182,7 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper->plugin_id = 'term_id_by_term_and_parliament';
   $feeds_tamper->settings = array();
   $feeds_tamper->weight = 10;
-  $feeds_tamper->description = 'Term ID by Term and Parliament';
+  $feeds_tamper->description = 'Find Constituency Term ID';
   $export['gdata_profiles_importer_v2-xpathparser_26-term_id_by_term_and_parliament'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
@@ -241,7 +258,7 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:8';
   $feeds_tamper->plugin_id = 'set_empty_birthday';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 2;
   $feeds_tamper->description = 'Set Empty Birthday';
   $export['gdata_profiles_importer_v2-xpathparser_8-set_empty_birthday'] = $feeds_tamper;

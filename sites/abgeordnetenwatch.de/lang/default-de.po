@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-10 14:15+0200\n"
-"PO-Revision-Date: 2014-04-10 14:15+0200\n"
+"POT-Creation-Date: 2014-04-29 21:07+0200\n"
+"PO-Revision-Date: 2014-04-29 21:07+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -27453,10 +27453,6 @@ msgstr ""
 msgid "</h3>"
 msgstr ""
 
-#: /en-gb/admin/structure/views/import
-msgid "read complete question and answer"
-msgstr ""
-
 #: /en-gb/admin/structure/views/view/answers/edit
 msgid "delete view"
 msgstr ""
@@ -31518,10 +31514,6 @@ msgstr ""
 
 #: /en-gb/admin/config/system/backup_migrate/profile/list/edit/default
 msgid "Profile Name"
-msgstr ""
-
-#: /en-gb/admin/structure/views/view/answers/edit
-msgid "Load more"
 msgstr ""
 
 #: /en-gb/admin/structure/views/ajax/display/answers/block/pager_options
@@ -55736,11 +55728,11 @@ msgstr ""
 msgid "Ausgeschiedene Abgeordnete"
 msgstr ""
 
-#: sites/all/modules/custom/better_exposed_filters/better_exposed_filters.js
+#: sites/all/modules/custom/better_exposed_filters/better_exposed_filters.js; sites/all/modules/contrib/better_exposed_filters/better_exposed_filters.js
 msgid "Select All"
 msgstr ""
 
-#: sites/all/modules/custom/better_exposed_filters/better_exposed_filters.js
+#: sites/all/modules/custom/better_exposed_filters/better_exposed_filters.js; sites/all/modules/contrib/better_exposed_filters/better_exposed_filters.js
 msgid "Select None"
 msgstr ""
 
@@ -58343,10 +58335,6 @@ msgid "[field_user_questions_get],"
 msgstr ""
 
 #: /admin/structure/features/dialogues/status
-msgid "go to full profile"
-msgstr ""
-
-#: /admin/structure/features/dialogues/status
 msgid "edit recipient"
 msgstr ""
 
@@ -58372,10 +58360,6 @@ msgstr ""
 
 #: /admin/structure/features/cleanup/clear
 msgid "Announcements"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "to the archive"
 msgstr ""
 
 #: /admin/structure/features/cleanup/clear
@@ -85491,6 +85475,2605 @@ msgstr ""
 msgid "Expires"
 msgstr ""
 
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=143100"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=143099"
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=143098"
+msgstr ""
+
+#: /admin/reports/status
+msgid ""
+"The <a href=\"@compare\">database schema comparison report</a>\n"
+"            provides more details."
+msgstr ""
+
+#: /admin/reports/dblog
+msgid "antispam_content_spam_operation: content_id=143327"
+msgstr ""
+
+#: /index.php
+msgid "Logout settings"
+msgstr ""
+
+#: /index.php
+msgid "Choose the page that the user account logout tab link goes to."
+msgstr ""
+
+#: /index.php
+msgid "z.B. \"Jurist\" oder \"Diplom Ingenieur\""
+msgstr ""
+
+#: /index.php
+msgid "z.B. \"selbständiger IT-Berater\" oder \"Bürgermeister\""
+msgstr ""
+
+#: /index.php
+msgid "administer theme assignments"
+msgstr ""
+
+#: /index.php
+msgid "TODO Add a description for 'administer theme assignments'"
+msgstr ""
+
+#: /index.php
+msgid "administer themekey settings"
+msgstr ""
+
+#: /index.php
+msgid "TODO Add a description for 'administer themekey settings'"
+msgstr ""
+
+#: /index.php
+msgid "!path"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Locale: Language - The code of the current site language, formatted "
+"like \"en\" or \"de\" or \"neutral\". See !link for the codes of your "
+"enabled languages"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Locale: Language Content - The code of the current content language, "
+"formatted like \"en\" or \"de\" or \"neutral\". See !link for the "
+"codes of your enabled languages"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Locale: Language From Browser - Identify best matching language from "
+"the Accept-language HTTP header we got."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Changed date - The date when the node was last edited/updated, "
+"formatted as unix timestamp like \"1248873565\"."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Created date - The date when the node was created, formatted as "
+"unix timestamp like \"1248873565\"."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Changed date - The date including the time when the node was "
+"last edited/updated, formatted like \"2009-12-24 18:13:24\""
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Created date - The date including the time when the node was "
+"created, formatted like \"2009-12-24 18:13:24\""
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Changed date - The date without the time when the node was last "
+"edited/updated, formatted like \"2009-12-24\""
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Created date - The date without the time when the node was "
+"created, formatted like \"2009-12-24\""
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Language - The code of the selected language of a node "
+"(formatted like \"en\" or \"de\") or \"neutral\". See !link for the "
+"codes of your enabled languages"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: ID - The id of a node (nid), can be found in the URL of the "
+"node, \"node/23\" or \"node/23/edit\" (23 = nid)"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: The version id of a node (vid), mostly for internal use within "
+"ThemeKey. In most cases it's better to use node:nid within your rule "
+"chains."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Promoted - If the node is promoted to the front page. Possible "
+"values are \"0\" for true and \"1\" for false."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Sticky - If the node is set \"Sticky at top of lists\". Possible "
+"values are \"0\" for true and \"1\" for false."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Type - The machine-readable content type of the node. See !link "
+"for your content types (use column \"Type\"). Drupal default types are "
+"\"page\" and \"story\"."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: User ID - The node author's user id (uid). The user id can be "
+"found in the URL of the user's profile page, \"user/23\" or "
+"\"user/23/edit\" (23 = uid). See !link for your users."
+msgstr ""
+
+#: /index.php
+msgid "Node: Title - The title of the node."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Node: Field Value - The (simple scalar) value of the column %column of "
+"the field %field_name. The value will be converted in its string "
+"representation."
+msgstr ""
+
+#: /index.php
+msgid ""
+"User: Hostname - The user hostname property which is the IP address of "
+"client machine, adjusted for reverse proxy. Text from Drupal "
+"bootstrap.inc:\n"
+"      If Drupal is behind a reverse proxy, we use the X-Forwarded-For "
+"header instead of $_SERVER['REMOTE_ADDR'], which would be the IP "
+"address of the proxy server, and not the client's."
+msgstr ""
+
+#: /index.php
+msgid ""
+"User: Language - The language the user has set in the settings of his "
+"profile page.\n"
+"      Format is the language code (for example \"en\" for English or "
+"\"de\" for German) that can be found on !link."
+msgstr ""
+
+#: /index.php
+msgid "User: Name - The username of the user. See !link for your users."
+msgstr ""
+
+#: /index.php
+msgid ""
+"User: ID - The id of the user (uid). The user id can be found in the "
+"URL of the users profile page, \"user/23\" or \"user/23/edit\" (23 = "
+"uid). See !link for your users."
+msgstr ""
+
+#: /index.php
+msgid ""
+"User: Role - Defined user roles (examples: 'anonymous user', "
+"'authenticated user')"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Comment: ID - The id of a comment (cid). See !link for your published "
+"comments or !link_unpublished for comments awaiting approval"
+msgstr ""
+
+#: /index.php
+msgid "Views: VID - The vid of a view (vid)"
+msgstr ""
+
+#: /index.php
+msgid "Views: Machine Name - The machine name of a view"
+msgstr ""
+
+#: /index.php
+msgid "Views: Human Name - The (human readable) name of a view"
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: HTTP_HOST - The hostname/domain of the site without http:// or "
+"https://, like \"www.drupal.org\" or \"www.biologis.com\""
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Query Parameter - Every single query parameter other than 'q' "
+"and its value, if present. Note that values are url decoded. Example: "
+"'?q=node&foo=bar&dummy&filter=tid%3A27' will cause three entries "
+"'foo=bar', 'dummy' and 'filter=tid:27'. For 'q', see property "
+"drupal:get_q."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Query String - Complete query string except parameter 'q'. "
+"Example: '?q=node&foo=bar&dummy&filter=tid%3A27' will result in "
+"'foo=bar&dummy&filter=tid%3A27'. For 'q' see property drupal:get_q."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Cookie - Every single cookie and its value if present will be "
+"formatted like 'COOKIE_NAME=COOKIE_VALUE'"
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: HTTP Header - Every single HTTP header and its value if "
+"present will be formatted like 'HEADER_NAME=HEADER_VALUE'"
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: POST - Every single POST value formatted like "
+"'POST_VARIABLE_NAME=POST_VARIABLE_VALUE'. Example: form_id=node_form. "
+"If the POST value is not a scalar but a complex type like array or "
+"object, the resulting string is formatted as 'POST_VARIABLE_NAME' "
+"without a value."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: 'SERVER_ADDR' - The IP address of the server under which the "
+"current script is executing."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: 'SERVER_PORT' - The port on the server machine being used by "
+"the web server for communication. For default setups, this will be "
+"'80'; using SSL, for instance, will change this to whatever your "
+"defined secure HTTP port is."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System:  'SERVER_NAME' - The name of the server host under which the "
+"current script is executing. If the script is running on a virtual "
+"host, this will be the value defined for that virtual host."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: 'HTTPS' - Set to 'true' value if the script was queried "
+"through the HTTPS protocol, otherwise 'false'."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: 'REMOTE_ADDR' - The IP address from which the user is viewing "
+"the current page."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: 'HTTP_REFERER' - The address of the page (if any) which "
+"referred the user agent to the current page. This is set by the user "
+"agent. Not all user agents will set this, and some provide the ability "
+"to modify HTTP_REFERER as a feature. In short, it cannot really be "
+"trusted."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: 'HTTP_USER_AGENT' - Contents of the User-Agent: header from "
+"the current request, if there is one. This is a string denoting the "
+"user agent which is accessing the page. A typical example is: "
+"Mozilla/4.5 [en] (X11; U; Linux 2.2.9 i586)."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Browser - Information about user's browser. Possible values: "
+"'Blazer [VERSION]', 'Internet Explorer [VERSION]', 'Internet Explorer "
+"Mobile [VERSION]', 'Mozilla Firefox [VERSION]', 'Netscape [VERSION]', "
+"'Google Chrome [VERSION]', 'Safari [VERSION]', 'Galeon [VERSION]', "
+"'Konqueror [VERSION]', 'Gecko based', 'Opera [VERSION]', 'Lynx "
+"[VERSION]', 'Fennec [VERSION]', 'Maemo [VERSION]', 'unknown'"
+msgstr ""
+
+#: /index.php
+msgid "Browscap"
+msgstr ""
+
+#: /index.php
+msgid "Mobile Detect API"
+msgstr ""
+
+#: /index.php
+msgid "Mobile Detect"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Property system:user_browser is deprecated. Consider to use one of the "
+"new properties ThemeKey provides in combination with !browscap, "
+"!mobile_detect_api, or !mobile_detect."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Browser - Simplified information about user's browser. "
+"Possible values: 'Blazer', 'Internet Explorer', 'Internet Explorer "
+"Mobile', 'Mozilla Firefox', 'Netscape', 'Google Chrome', 'Safari', "
+"'Galeon', 'Konqueror', 'Gecko based', 'Opera', 'Lynx', 'Fennec', "
+"'Maemo', 'unknown'"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Property system:user_browser_simplified is deprecated. Consider to use "
+"one of the new properties ThemeKey provides in combination with "
+"!browscap, !mobile_detect_api, or !mobile_detect."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Operating System - Information about user's browser. Possible "
+"values: 'Windows XP', 'Windows Vista', 'Windows 98', 'Windows 2000', "
+"'Windows 2003 server', 'Windows NT',  'Windows ME', 'Windows CE', "
+"'Windows ME', 'Windows Phone', 'iPhone', 'iPad', 'Mac OS X', "
+"'Macintosh', 'Linux', 'Free BSD', 'Symbian', 'webOS', 'Android', "
+"'Blackberry', 'unknown'"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Property system:user_os is deprecated. Consider to use one of the new "
+"properties ThemeKey provides in combination with !browscap, "
+"!mobile_detect_api, or !mobile_detect."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Operating System - Simplified information about user's "
+"browser. Possible values: 'Windows', 'Windows Phone', 'iPhone', "
+"'iPad', 'Mac OS X', 'Macintosh', 'Linux', 'Free BSD', 'Symbian', "
+"'webOS', 'Android', 'Blackberry', 'unknown'"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Property system:user_os_simplified is deprecated. Consider to use one "
+"of the new properties ThemeKey provides in combination with !browscap, "
+"!mobile_detect_api, or !mobile_detect."
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Date Time - Current time formatted as Y-m-d H:i:s (example: "
+"2009-12-24 18:30:10)"
+msgstr ""
+
+#: /index.php
+msgid "System: Date - Current time formatted as Y-m-d (example: 2009-12-24)"
+msgstr ""
+
+#: /index.php
+msgid "System: Month - Current month formatted as 'Jan' through 'Dec'"
+msgstr ""
+
+#: /index.php
+msgid "System: Time - Current time formatted as H:i:s (example: 18:30:10)"
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Day of Week - Current day of the week formatted as three "
+"letters 'Mon' through 'Sun'"
+msgstr ""
+
+#: /index.php
+msgid "System: Day of Month - Current day of the month formatted as 1 - 31"
+msgstr ""
+
+#: /index.php
+msgid "System: Dummy - Dummy property. Value is always 'dummy'"
+msgstr ""
+
+#: /index.php
+msgid ""
+"System: Session - Every single session parameter and its value, if a "
+"value is present and a simple type (string, integer, boolean). "
+"Booleans are represented as integers; '1' as TRUE and '0' as FALSE."
+msgstr ""
+
+#: /index.php
+msgid "System: Random - A random value that could be '0' or 1'."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Drupal: Drupal path like \"node/add/story\" or path alias with support "
+"for wildcards.<br />\n"
+"Query parameters are stripped off before the path gets examined. P.e. "
+"\"node/add/story?destination=node\" becomes \"node/add/story\" first. "
+"If you want to access query parameters, have a look at the "
+"<strong>system:query_param</strong> property.<br />\n"
+"Wildcard characters are \"#\" for numeric parts and \"%\" for all "
+"characters. To match conditions against a certain part, use an "
+"identifier with the wildcard. For example \"comment/reply/#xyz\" "
+"matches all paths with \"comment/reply\" and a numeric third argument. "
+"You can then specify conditions for every wildcard argument using the "
+"property \"drupal:path:wildcard\" and the identifier you choose "
+"(\"xyz\" in this example).<br />\n"
+"These are the possible wildcard replacements for foo/bar/42/test.html:"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Wildcard of \"drupal:path\". See explanation of \"drupal:path\" for "
+"details."
+msgstr ""
+
+#: /index.php
+msgid "Drupal: $_GET['q'] - Current value of Drupal's query parameter \"q\""
+msgstr ""
+
+#: /index.php
+msgid ""
+"Drupal: Base path - If Drupal is installed in a subdirectory, the base "
+"path will be '/[subdirectory]/', otherwise just '/'."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Drupal: Is front page - 'true' if current page is front page, "
+"otherwise just 'false'."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Drupal: Path is admin - 'true' if current page's path belongs to the "
+"admin section, otherwise just 'false'."
+msgstr ""
+
+#: /index.php
+msgid "Path: Node alias - The path alias assigned to a node."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Taxonomy: Vocabulary - The vocabulary id (vid) of a taxonomy "
+"vocabulary. See !link for your vocabularies."
+msgstr ""
+
+#: /index.php
+msgid "Taxonomy: Term - The term id (tid) of a taxonomy term."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Taxonomy: Term and its childs - The term id (tid) of a taxonomy term. "
+"If set, all child terms of this term will be used too."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Taxonomy: Name - The term name (name) of a taxonomy term without "
+"support for translations."
+msgstr ""
+
+#: /index.php
+msgid "function overlay_set_mode documentation"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Overlay: Mode - The current overlay mode used to show the content. "
+"Note: If you add such a rule, the mode 'none' will not work anymore. "
+"That means that different modules won't be able to turn off overlay "
+"manually. That's not an issue for drupal core. See !link for details."
+msgstr ""
+
+#: /profile/boris-hekele
+msgid "Abmelden"
+msgstr ""
+
+#: /admin/structure/features
+msgid "ThemeKey"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Set up rules to switch the site's appearance (theme) dynamically, "
+"depending on Drupal paths or different properties."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Theme Switching Rule Chain"
+msgstr ""
+
+#: /admin/structure/features
+msgid "themekey"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid ""
+"[field_user_title] [field_user_fname] [field_user_lname], "
+"[field_user_party]"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/status
+msgid "[field_user_party]"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/status
+msgid "Ausgeübte Tätigkeit"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/status
+msgid ""
+"[field_user_title-revision_id] [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
+msgstr ""
+
+#: /admin/config/people/pw_logouttab
+msgid "URL for the account help page"
+msgstr ""
+
+#: /admin/config/people/pw_logouttab
+msgid "Enter the relative path for the user account logout page."
+msgstr ""
+
+#: /admin/config/people/pw_logouttab
+msgid "Weight of the logout tab"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/diff
+msgid "[name_1] "
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/diff
+msgid "[name]"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/about_page/header/view
+msgid "-Select-"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/about_page/header/view
+msgid "View: @view - Display: @display"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/about_page/header/view
+msgid "View to insert"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/about_page/header/view
+msgid "The view to insert into this area."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/about_page/header/view
+msgid "Inherit contextual filters"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/user_profile_fields/about_page/header/view
+msgid ""
+"If checked, this view will receive the same contextual filters as its "
+"parent."
+msgstr ""
+
+#: /admin/appearance
+msgid "An output of the normal PW page without blocks an fancy stuff"
+msgstr ""
+
+#: /admin/appearance
+msgid "White labeled"
+msgstr ""
+
+#: /admin/modules
+msgid "Generates a printer-friendly version of Drupal pages."
+msgstr ""
+
+#: /admin/modules
+msgid "Adds a logout tab to the user profile."
+msgstr ""
+
+#: /admin/modules
+msgid "Tutorials"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Rule Chaining: Using a special theme for content creation depending on "
+"user roles"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Note: This tutorial uses some ThemeKey properties from an additional "
+"module called !themekey_properties_link."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"In this tutorial you'll learn how to define ThemeKey rules and how to "
+"cascade them to achieve sophisticated rule chains."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"The use case is to use a different theme during content creation for "
+"premium users, e.g., you don't want to show advertisements or you want "
+"to show some advanced help blocks ..."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Therefore, you created two user roles called \"premium user\" and "
+"\"standard user\". Using ThemeKey it's easy to create a rule that "
+"switches the theme if a user's role is \"premium user\":"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"ThemeKey rule that switches the theme if the user's role is \"premium "
+"user\""
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Similarly, we can create a rule that switches the theme if a content "
+"creation form is requested. To do this for any kind of content we use "
+"ThemeKey's drupal:path property and its wildcard feature:"
+msgstr ""
+
+#: /admin/modules
+msgid "ThemeKey rule that switches the theme on content creation forms"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"But having these two separate rules is not what our use case "
+"specified. To implement our use case, we have to cascade or \"chain\" "
+"both rules. By clicking and dragging the cross icon in front of a "
+"rule, you can move any rule up and down, or indent it. The chain we "
+"need should like this:"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"ThemeKey rule chain that switches the theme on content creation forms "
+"for premium users"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Now using this chain, ThemeKey only switches the theme on content "
+"creation forms if the current user's role is \"premium user\". "
+"Non-premium users will use the current system standard theme."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"You might have noticed that the theme select box for the first rule "
+"disappeared as you indented the second one. That's because both "
+"separate rules became one."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Now it's possible to extend our chain to use another dedicated theme "
+"on content creation forms for \"standard users\"."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"ThemeKey rule chain that switches to different themes on content "
+"creation forms for different user roles"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"If you have more than these two roles in your system and you simply "
+"want to use one theme for premium users and another for non-premium "
+"users on content creation pages, you don't need to add one rule per "
+"role, as decribed above. In this case, it's easier to change the "
+"latest rule we added, and say any other rule than \"premium user\", "
+"using ThemeKey's not operator \"!\"."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Another ThemeKey rule chain that switches to different themes on "
+"content creation forms for different user roles"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Now we have implemented our use case using chained ThemeKey rules, and "
+"you can add more rules to ThemeKey's Rule Chain to implement different "
+"use cases. The only decision you have to make is the order the rules "
+"are checked by ThemeKey on every page request. To demonstrate this, "
+"let's add another rule that switches the theme if the user uses an "
+"iPhone to access your page."
+msgstr ""
+
+#: /admin/modules
+msgid "ThemeKey rule chain selecting special theme for iPhones"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"What happens now is that ThemeKey switches to a special theme for "
+"iPhones whenever the user accesses your page using such a device, "
+"because ThemeKey stops processing the rules if a rule, or one set of "
+"chained rules, matches. This means that content creation forms are "
+"shown using the iPhone theme, regardless of the role assigned to the "
+"current user."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"I think that's a good choice. If you move the iPhone rule below the "
+"chain for the content cration form these forms will use the configured "
+"themes even on the iPhone, which might not be suitable for displaying "
+"them."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"If you'd like to treat node creation forms differently, even on the "
+"iPhone, you should \"chain\" a dedicated set of rules for that."
+msgstr ""
+
+#: /admin/modules
+msgid "Sophisticated ThemeKey rule chain"
+msgstr ""
+
+#: /admin/modules
+msgid "Have Fun!"
+msgstr ""
+
+#: /admin/modules
+msgid "Versions used to create this tutorial"
+msgstr ""
+
+#: /admin/modules
+msgid "ThemeKey Properties"
+msgstr ""
+
+#: /admin/modules
+msgid "Set a special theme for site administrator"
+msgstr ""
+
+#: /admin/modules
+msgid "Create a Theme Switching Rules:"
+msgstr ""
+
+#: /admin/modules
+msgid "Select a theme for Firefox 3.0.x, but not Firefox 3.5.x"
+msgstr ""
+
+#: /admin/modules
+msgid "Cascade following Theme Switching Rules:"
+msgstr ""
+
+#: /admin/modules
+msgid "Select a theme for IE 6"
+msgstr ""
+
+#: /admin/modules
+msgid "Select a theme for Christmas 2009"
+msgstr ""
+
+#: /admin/modules
+msgid "Select a theme for New Year 2010"
+msgstr ""
+
+#: /admin/modules
+msgid "Create a Theme Switching Rule:"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Select a theme dedicated for use on your start page (front page, index "
+"page, ...)"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Unsupported! If you enable page caching on your system, you have to "
+"ensure that any rule using this property is wrapped by another rule "
+"that excludes anonymous users, such as \"user:uid > 0\"."
+msgstr ""
+
+#: /admin/modules
+msgid "Supported"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Supported if you enable \"Cron cleans up page cache\" at !link and run "
+"your cron frequently enough. During the cron run ThemeKey deletes the "
+"page cache if necessary depending on your Theme Switching Rules."
+msgstr ""
+
+#: /admin/modules
+msgid "Properties explained"
+msgstr ""
+
+#: /admin/modules
+msgid "Page Cache"
+msgstr ""
+
+#: /admin/modules
+msgid "Deprecated"
+msgstr ""
+
+#: /admin/modules
+msgid "Operators explained"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"<strong>=</strong><br />equals (exact value of a property, consider "
+"ThemeKey Debug to get an impression of the possible values)"
+msgstr ""
+
+#: /admin/modules
+msgid "<strong>!</strong><br />not equals"
+msgstr ""
+
+#: /admin/modules
+msgid "<strong>*</strong><br />contains"
+msgstr ""
+
+#: /admin/modules
+msgid "<strong>!*</strong><br />not contains"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"<strong>&lt;</strong><br />less than (alphanumeric values are treated "
+"in alphabetical order: \"A\" is less than \"B\" but \"B\" is less than "
+"\"a\")"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"<strong>&lt;=</strong><br />less than or equal to (alphanumeric values "
+"are treated in alphabetical order: \"a\" is less than \"b\" but \"B\" "
+"is less than \"a\" and \"A\" is less than \"a\")"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"<strong>&gt;</strong><br />greater (alphanumeric values are treated in "
+"alphabetical order: \"b\" is greater than \"a\" but \"a\" is greater "
+"than \"B\")"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"<strong>=&gt;</strong><br />greater than or equal (alphanumeric values "
+"are treated in alphabetical order: \"b\" is greater than \"a\" but "
+"\"a\" is greater than \"B\" and \"a\" is greater than \"A\")"
+msgstr ""
+
+#: /admin/modules
+msgid "PHP Manual"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"<strong>~</strong><br />regular expression, including delimiters and "
+"modifiers (see !link)"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"<strong>!~</strong><br />non matchting regular expression, including "
+"delimiters and modifiers (see !link)"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"For every page request, Drupal steps through this Theme Switching Rule "
+"Chain until an activated rule matches or it reaches the end. If a rule "
+"matches, the theme associated with this rule will be applied to render "
+"the requested page."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"ThemeKey allows you to define simple or sophisticated Theme Switching "
+"Rules. Using these rules, you can use a different theme depending on "
+"the current path, taxonomy terms, language, node type, and many, many "
+"other properties. It can also be easily extended to support additional "
+"properties, as exposed by other modules."
+msgstr ""
+
+#: /admin/modules
+msgid "Map themes to Drupal paths or object properties."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Optionally disable the theme switching capability of core and "
+"additional modules. Their theme switching capabilities will become "
+"part of ThemeKey's theme switching rule chain instead and therefor "
+"configurable."
+msgstr ""
+
+#: /admin/modules
+msgid "Define rules to dynamically add CSS files to a page. Experimental!"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Debug ThemeKey, see which rules are applied and the current values of "
+"all properties."
+msgstr ""
+
+#: /admin/modules
+msgid "Implements parts of the ThemeKey API as an example for Developers."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Integrates ThemeKey with Features. Warning! Don't use in production! "
+"Highly Experimental!"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Provides an additional rule chain to define rules to redirect the "
+"user."
+msgstr ""
+
+#: /admin/modules
+msgid "Just a fake module for testing ThemeKey's module plugins"
+msgstr ""
+
+#: /admin/modules
+msgid "Integrates ThemeKey with Drupal administration forms."
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Allows users to select their own theme for this site. Replaces the "
+"corresponding feature that existed in Drupal 6 Core."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid "Property drupal:path is case sensitive"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid ""
+"Drupal paths are case insensitive by default. Modules like Global "
+"Redirect might change this behavior."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid "Provide all themes for selection"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid ""
+"Make all installed themes available for selection, not enabled ones "
+"only."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid "Retain the theme until a new theme is set"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid ""
+"Select this option to have logged-in users stay in the same theme "
+"until they browse to a new page with an explicit theme set."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid "Retain the theme until a new theme is set for anonymous users"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid ""
+"Select this option to have anonymous users stay in the same theme "
+"until they browse to a new page with an explicit theme set."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid "Cron cleans up page cache"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings
+msgid ""
+"Select this option if ThemeKey should check rules containing "
+"time-based properties when cron runs. ThemeKey will carefully clean up "
+"the page cache if necessary to provide the right theme to anonymous "
+"users automatically, for example, a Christmas theme."
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid "System default"
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid "tutorials"
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid ""
+"To get an idea how to get started, you might have a look at the "
+"!tutorials_link."
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid "Page<br />Cache"
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid ""
+"%admin_theme is configured as administration theme at !link. This "
+"setting is more powerful than a corresponding ThemeKey rule."
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid ""
+"As configured at !link, adding or editing a node will use the "
+"administration theme, %admin_theme."
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid "New Rule:"
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid "Theme is not enabled."
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid ""
+"The configuration options have been saved. Trying to clear page cache "
+"..."
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid "page caching"
+msgstr ""
+
+#: /admin/config/user-interface/themekey
+msgid ""
+"!page_cache_icon Your site uses !page_caching, but the Theme Switching "
+"Rule Chain contains properties that do not support page caching. You "
+"have to ensure that any rule using those properties are wrapped by a "
+"different rule that excludes anonymous users like \"user:uid > 0\"."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid "Ajax Settings"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid "Use current theme for Ajax responses."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid ""
+"Many different pages can invoke an Ajax request to system/ajax or "
+"another generic Ajax path. It is almost always desired for an Ajax "
+"response to be rendered using the same theme as the base page, because "
+"most themes are built with the assumption that they control the entire "
+"page, so if the CSS for two themes are both loaded for a given page, "
+"they may conflict with each other. Drupal provides a generic "
+"functionality to handle this issue. Unfortunately some modules do not "
+"use it the right way. Therefor ThemeKey provides a generic workaround "
+"which solves the issue for some modules."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid ""
+"Bypass a request forgery protection in theme selection for Ajax "
+"responses."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid ""
+"The option \"%option\" is only working for non-cached pages due to a "
+"request forgery protection in core that prevents that a user can force "
+"a different theme by injecting a different theme name in the Ajax "
+"request. By disabling this protection you can get more use-cases to "
+"work. To disable the protection is risky if you installed a theme that "
+"provides additional features or bypasses access rights on the theme "
+"level. Or if you configured a theme to expose non-public data, for "
+"example as a block. To reduce that risk you should provide a list of "
+"\"Safe Themes\" below."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid "Always consider the default theme to be safe."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid ""
+"Always consider the default theme to be safe independent from the list "
+"of \"Safe Themes\" below."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid ""
+"Enable the \"ThemeKey UI\" module to get a graphical selector for "
+"\"Safe Themes\""
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid "Safe Themes"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/settings/ajax
+msgid ""
+"Select all themes that are safe to be used by Ajax calls triggered by "
+"anonymous users."
+msgstr ""
+
+#: /admin/config/user-interface/themekey/rules/delete/2
+msgid "Delete ThemeKey Rule"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/rules/delete/2
+msgid "Are you sure you want to delete the ThemeKey rule, %title?"
+msgstr ""
+
+#: /admin/config/user-interface/themekey/rules
+msgid "Possible values are \"true\" and \"false\""
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_user_revision_switch/default/field_language
+msgid "You don't have translatable entity types."
+msgstr ""
+
+#: /index.php
+msgid ""
+"<a href=\"https://twitter.com/[screen_name]\"><span class=\"float-left "
+"push-right-s push-bottom-s\"><img "
+"src=\"/sites/abgeordnetenwatch.de/files/Twitter_logo_blue.png\" "
+"width=\"48\" height=\"48\" alt=\"\" /></span><span "
+"class=\"pw-twitter-name\">[name]</span>\n"
+"<span class=\"pw-twitter-screenname\">[screen_name]</span></a>"
+msgstr ""
+
+#: /index.php
+msgid "[created_time] [web_intents]"
+msgstr ""
+
+#: /profile/prof-dr-klaus-buchner/archive/54920
+msgid "Wählergedächtnis"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Pane settings"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Use view name"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Admin title"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Use view description"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Admin desc"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Link to view"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Use Panel path"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Argument input"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Allow settings"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile?destination=profile/prof-dr-klaus-buchner/archive/54234
+msgid "Some"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Enable secondary exposed form options"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Allows you to specify some exposed form elements as being secondary "
+"options and places those elements in a collapsible fieldset. Use this "
+"option to place some exposed filters in an \"Advanced Search\" area of "
+"the form, for example."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Secondary options label"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"The name of the fieldset to hold secondary options. This cannot be "
+"left blank or there will be no way to show/hide these options."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Display exposed sort options as"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Default select list"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Radio Buttons"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Select a format for the exposed sort options."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Advanced sort options"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Make sort options collapsible"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Puts the sort options in a collapsible fieldset"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Collapsible fieldset title"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"This cannot be left blank or there will be no way to show/hide sort "
+"options."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Combine sort order with sort by"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Combines the sort by options and order (ascending or decending) into a "
+"single list.  Use this to display \"Option1 (ascending)\", \"Option1 "
+"(descending)\", \"Option2 (ascending)\", \"Option2 (descending)\" in a "
+"single form element."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Rewrite the text displayed"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Use this field to rewrite the text displayed for combined sort options "
+"and sort order. Use the format of current_value|replacement_value, one "
+"replacement per line. For example: <pre>\n"
+"Post date Asc|Oldest first\n"
+"Post date Desc|Newest first\n"
+"Title Asc|A -> Z\n"
+"Title Desc|Z -> A</pre> Leave the replacement value blank to remove an "
+"option altogether."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Include a \"Reset sort\" option"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Adds a \"Reset sort\" link; Views will use the default sort order."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "\"Reset sort\" label"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "This cannot be left blank if the above option is checked"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "This is a secondary option"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Places this element in the secondary options portion of the exposed "
+"form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Require input before results are shown"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Emulates the built in <em>Input Required</em> exposed filter handler"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Text on demand"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Text to display instead of results until the user selects and applies "
+"an exposed filter."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "BEF settings documentation"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Exposed Filter Settings"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"This section lets you select additional options for exposed filters. "
+"Some options are only available in certain situations. If you do not "
+"see the options you expect, please see the !link page for more "
+"details."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid " (Filter label: \"@fl\")"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Display @identifier exposed filter as"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "More options for @identifier"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Override \"Any\" option label"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Leave blank to use views default value. <em>Note: overriding this "
+"label will break translations and localizations. Leave this field "
+"blank if preserving internationalization is important to your "
+"site.</em>"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Adds descriptive text to the exposed filter.  This is usually rendered "
+"in smaller print under the label or the options."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Rewrite filter options"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"\n"
+"          Use this field to rewrite the filter options displayed. Use "
+"the format\n"
+"          of current_value|replacement_value, one replacement per "
+"line. For\n"
+"          example: <pre>\n"
+"0|Zero\n"
+"1|One\n"
+"2|Two\n"
+"</pre> Leave the replacement value blank to remove an option "
+"altogether. If using hierarchical taxonomy filters, do not including "
+"leading hyphens in the current value.\n"
+"        "
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Checkboxes/Radio Buttons"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Add select all/none links"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Add a \"Select All/None\" link when rendering the exposed filter "
+"using\n"
+"              checkboxes. If this option is disabled, edit the filter "
+"and check the\n"
+"              \"Allow multiple selections\"."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Make this filter collapsible"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Puts this filter in a collapsible fieldset"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "jQuery UI slider"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Slider options for @identifier"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Range minimum"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"The minimum allowed value for the jQuery range slider. It can be "
+"positive, negative, or zero and have up to 11 decimal places."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Range maximum"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"The maximum allowed value for the jQuery range slider. It can be "
+"positive, negative, or zero and have up to 11 decimal places."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Step"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Determines the size or amount of each interval or step the slider "
+"takes between the min and max."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"The full specified value range of the slider (Range maximum - Range "
+"minimum) must be evenly divisible by the step."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "The step must be a positive number of up to 5 decimal places."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Animate"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Whether to slide handle smoothly when user click outside handle on the "
+"bar. Allowed values are \"slow\", \"normal\", \"fast\" or the number "
+"of milliseconds to run the animation (e.g. 1000). If left blank, there "
+"will be no animation, the slider will just jump to the new value "
+"instantly."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Orientation"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Horizontal"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Vertical"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "The orientation of the jQuery range slider."
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+msgid "Attachment settings"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+msgid "Attachment position"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+msgid "Before"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+msgid "After"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+msgid "Inherit exposed filters"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+msgid "Inherit pager"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/edit/profile_teasered
+msgid "Render pager"
+msgstr ""
+
+#: /admin/structure/feeds/kc_thesis_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $uuid:uuid</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/kc_thesis_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $uuid:uuid, $body</em> "
+"are available for replacement."
+msgstr ""
+
+#: /system/ajax
+msgid "Search taxonomy terms by"
+msgstr ""
+
+#: /system/ajax
+msgid "Auto create"
+msgstr ""
+
+#: /system/ajax
+msgid "Create the term if it doesn't exist."
+msgstr ""
+
+#: /admin/structure/feeds/kc_thesis_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $uuid:uuid, $body, "
+"$field_pw_parmliament</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/kc_thesis_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, $uuid:uuid, $body, "
+"$field_pw_parmliament, $title</em> are available for replacement."
+msgstr ""
+
+#: /admin/config/pw_profileswitch/settings
+msgid "Assignment 2"
+msgstr ""
+
+#: /admin/config/pw_profileswitch/settings
+msgid "Assignment 3"
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid "jQuery Version"
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid "Select which jQuery version branch to use."
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid "jQuery compression level"
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid "Production (minified)"
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid "Development (uncompressed)"
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid "jQuery and jQuery UI CDN"
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid "Microsoft"
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid "jQuery"
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid ""
+"Use jQuery and jQuery UI from a CDN. If the CDN is not available the "
+"local version of jQuery and jQuery UI will be used."
+msgstr ""
+
+#: /admin/config/development/jquery_update
+msgid ""
+"Configure how <a href=\"@jquery\">jQuery</a> behaves on the site. "
+"Select which jQuery version, the compression level and whether or not "
+"to use a CDN."
+msgstr ""
+
+#: /admin/structure/feeds/kc_positions_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, "
+"$field_pw_kc_user_reference:uuid</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/kc_positions_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, "
+"$field_pw_kc_user_reference:uuid, "
+"$field_pw_kc_thesis_reference:uuid</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/kc_positions_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, "
+"$field_pw_kc_user_reference:uuid, $field_pw_kc_thesis_reference:uuid, "
+"$field_pw_kc_vote_reference</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Choose the data source for view arguments"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Multiple taxonomy terms, as a group."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Term ID of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Term ID of all term, separated by + or ,"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Term name of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Term name of first term, lowercased and spaces converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Term name of all terms, separated by + or ,"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid ""
+"Term name of all terms, separated by + or , and lowercased and spaces "
+"converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Vocabulary ID of first term"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Node edit form"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "A node edit form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Enter the node ID of a node for this argument:"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "A single taxonomy vocabulary object."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "User edit form"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "A user edit form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Enter the user ID of a user for this argument:"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "A single taxonomy term object."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Term name, lowercased and spaces converted to dashes"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Term Description"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "A context that is just a string."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Raw string"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "HTML-safe string"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Enter the string for this context."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "A node object."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Enter the node ID of a node for this context."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "A context that contains token replacements from token.module."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Node add form"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "A node add form."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Enter the node type this context."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid ""
+"Loads a view result into a context that can then be displayed across a "
+"panel or turned into other contexts."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "No argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Argument wildcard"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "From context"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "From panel argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Input on pane config"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "@arg source"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Required context"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "If \"From context\" is selected, which type of context to use."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Context is optional"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid ""
+"This context need not be present for the pane to function. If you plan "
+"to use this, ensure that the argument handler can handle empty values "
+"gracefully."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Panel argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "If \"From panel argument\" is selected, which panel argument to use."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Fifth"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Sixth"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "Fixed argument"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid "If \"Fixed\" is selected, what to use as an argument."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/argument_input
+msgid ""
+"If this argument is presented to the panels user, what label to apply "
+"to it."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/allow
+msgid ""
+"Checked settings will be available in the panel pane config dialog for "
+"modification by the panels user. Unchecked settings will not be "
+"available and will only use the settings in this display."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/allow
+msgid "Pager offset"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/allow
+msgid "Path override"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/allow
+msgid "Title override"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/allow
+msgid "Use exposed widgets form as pane configuration"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/allow
+msgid "Fields override"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/inherit_panels_path
+msgid "Inherit path from panel display"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/inherit_panels_path
+msgid ""
+"If yes, all links generated by Views, such as more links, summary "
+"links, and exposed input links will go to the panels display path, not "
+"the view, if the display has a path."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/pane_category
+msgid "Administrative description"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/pane_category
+msgid "This is category the pane will appear in on the add content dialog."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_dialogue_answers/panel_pane_1/pane_category
+msgid ""
+"This is the default weight of the category. Note that if the weight of "
+"a category is defined in multiple places, only the first one Panels "
+"sees will get that definition, so if the weight does not appear to be "
+"working, check other places that the weight might be set."
+msgstr ""
+
+#: /import/kc_positions_importer/log
+msgid "Created 1 beitrag."
+msgstr ""
+
+#: /import/kc_positions_importer/log
+msgid "Updated 17 beiträge."
+msgstr ""
+
+#: /import/kc_positions_importer/log
+msgid "Updated 1 beitrag."
+msgstr ""
+
+#: /import/kc_positions_importer/log
+msgid "Created 18 beiträge."
+msgstr ""
+
+#: /admin/structure/feeds/kc_positions_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, "
+"$field_pw_kc_user_reference:uuid, $field_pw_kc_thesis_reference:uuid, "
+"$field_pw_kc_vote_reference, $title</em> are available for "
+"replacement."
+msgstr ""
+
+#: /admin/structure/feeds/kc_positions_importer/mapping
+msgid "Mapping has been removed."
+msgstr ""
+
+#: /admin/structure/feeds/kc_positions_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, "
+"$field_pw_kc_user_reference:uuid, $field_pw_kc_vote_reference</em> are "
+"available for replacement."
+msgstr ""
+
+#: /admin/structure/feeds/kc_positions_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, "
+"$field_pw_kc_user_reference:uuid, $field_pw_kc_vote_reference, "
+"$title</em> are available for replacement."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/pw_kandidatencheck/profile_slideshow/pager
+msgid "Changes cannot be made to a locked view."
+msgstr ""
+
+#: /admin/structure/feeds/kc_positions_importer/mapping
+msgid ""
+"The variables <em class=\"placeholder\">$guid, "
+"$field_pw_kc_user_reference:uuid, $field_pw_kc_vote_reference, $title, "
+"$field_pw_kc_thesis_reference</em> are available for replacement."
+msgstr ""
+
+#: /index.php
+msgid "[php]/profile/[name]"
+msgstr ""
+
+#: /profile/prof-dr-klaus-buchner/archive/55326/imagegallery
+msgid "Image Gallery of"
+msgstr ""
+
+#: /admin/structure/features/pw_profiles/recreate
+msgid "The unlink file was successfully created."
+msgstr ""
+
+#: /profile/prof-dr-klaus-buchner
+msgid "open profiles"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/status
+msgid ""
+"<div id=\"about\" class=\"add-sharethis\" vid=\"[vid]\" "
+"title=\"[field_user_fname-revision_id] [field_user_lname-revision_id] "
+"<?php print t('about'); ?> [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>\n"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/status
+msgid ""
+"<div id=\"imagegallery\" class=\"add-sharethis\" vid=\"[vid]\" "
+"title=\"<?php print t('Imagegallery of '); ?> "
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/status
+msgid ""
+"<div id=\"political-goals\" class=\"add-sharethis\" vid=\"[vid]\" "
+"title=\"<?php print t('Political Goals of'); ?> "
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /admin/structure/features/pw_user_revision_switch/status
+msgid ""
+"<div id=\"additional-links\" class=\"add-sharethis\" vid=\"[vid]\" "
+"title=\"<?php print t('Additional links of'); ?> "
+"[field_user_party-revision_id]\"></div>"
+msgstr ""
+
+#: /admin/structure/views/view/profile_list_rev/edit/attachment_1
+msgid "Not defined"
+msgstr ""
+
+#: /admin/structure/views/view/profile_questions_answers/preview/profile/ajax
+msgid "Attachment after"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Wahlkampftermine von [field_user_fname] [field_user_lname], "
+"[field_user_party]"
+msgstr ""
+
+#: /index.php
+msgid ""
+"<div class=\"pw-messages warning\">\n"
+"Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte "
+"treffen Sie eine neue Auswahl über einen der angebotenen Filter.\n"
+"</div>"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Image Gallery of  [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Die politischen Ziele von [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid "Add a more link to the bottom of the display."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid "Create more link"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid ""
+"This will add a more link to the bottom of this view, which will link "
+"to the page view. If you have more than one page view, the link will "
+"point to the display specified in 'Link display' section under "
+"advanced. You can override the url at the link display setting."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid "Display 'more' link only if there is more content"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid ""
+"Leave this unchecked to display the 'more' link even if there are no "
+"more items to display."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/use_more
+msgid "The text to display for the more link."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/link_display
+msgid "Which display to use for path"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/link_display
+msgid ""
+"Which display to use to get this display's path for things like "
+"summary links, rss feed links, more links, etc."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/link_display
+msgid ""
+"A Drupal path or external URL the more link will point to. Note that "
+"this will override the link display setting above."
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/calendar/page/field/title
+msgid "Colorbox Rel"
+msgstr ""
+
+#: /admin/structure/views/ajax/config-item/calendar/page/field/title
+msgid ""
+"Enter a rel attribute here to group colorbox node links into a "
+"gallery."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/display_id
+msgid "The machine name of this display"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/user_tweets/block/display_id
+msgid "This is machine name of the display."
+msgstr ""
+
+#: /admin/structure/features/dialogues/recreate
+msgid "Frage und ganze Antwort lesen"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile
+msgid "Link title to page"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile
+msgid "Num items"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile
+msgid "Select the number of items to display, or 0 to display all results."
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Address-field"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Views_send_email_message"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Addressfield"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "I18n_translation"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Taxonomy_vocabulary"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "Ds_views"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "A configurable tree provided by Menu block."
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "%menu menu tree"
+msgstr ""
+
+#: /admin/structure/ds/fields/manage_ctools/content/edit/user/user_questions_and_answers/views_panes/profile_questions_answers-profile/form
+msgid "menu tree of %menu"
+msgstr ""
+
+#: /system/ajax
+msgid "Use widget configuration"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form
+msgid "Sort options"
+msgstr ""
+
+#: /admin/modules
+msgid "Imports Kandidaten-Check Thesis and Positions"
+msgstr ""
+
+#: /update.php?op=selection&token=QnPCtGgBDR45kKLc17gINHK079BeUJOZ9McyP0aCp7c
+msgid "Better exposed filters"
+msgstr ""
+
+#: /update.php?op=selection&token=QnPCtGgBDR45kKLc17gINHK079BeUJOZ9McyP0aCp7c
+msgid "Custom strings."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid "Toggle Links"
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Select a format for the exposed sort options. Note: the \"toggle "
+"links\" option will only work correctly if \"Combine sort order with "
+"sort by\" is checked in the \"Advanced Sort Options\" section."
+msgstr ""
+
+#: /admin/structure/views/ajax/display/profile_questions_answers/profile/exposed_form_options
+msgid ""
+"Combines the sort by options and order (ascending or decending) into a "
+"single list.  Use this to display \"Option1 Desc\", \"Option1 Asc\", "
+"\"Option2 Desc\", \"Option2 Asc\" in a single form element."
+msgstr ""
+
+#: /index.php
+msgid "Kandidierende zur Europawahl 2014"
+msgstr ""
+
+#: /index.php
+msgid "zum Twitterkanal"
+msgstr ""
+
+#: /index.php
+msgid "Twitter Ticker"
+msgstr ""
+
+#: /index.php
+msgid "Bundesland"
+msgstr ""
+
+#: /index.php
+msgid "Bundesland auswählen"
+msgstr ""
+
+#: /user
+msgid "Bayern"
+msgstr ""
+
+#: /user
+msgid "Baden-Württemberg"
+msgstr ""
+
+#: /user
+msgid "Berlin"
+msgstr ""
+
+#: /user
+msgid "Brandenburg"
+msgstr ""
+
+#: /user
+msgid "Bremen"
+msgstr ""
+
+#: /user
+msgid "Hamburg"
+msgstr ""
+
+#: /user
+msgid "Hessen"
+msgstr ""
+
+#: /user
+msgid "Mecklenburg-Vorpommern"
+msgstr ""
+
+#: /user
+msgid "Niedersachsen"
+msgstr ""
+
+#: /user
+msgid "Nordrhein-Westfalen"
+msgstr ""
+
+#: /user
+msgid "Rheinland-Pfalz"
+msgstr ""
+
+#: /user
+msgid "Saarland"
+msgstr ""
+
+#: /user
+msgid "Sachsen"
+msgstr ""
+
+#: /user
+msgid "Sachsen-Anhalt"
+msgstr ""
+
+#: /user
+msgid "Schleswig-Holstein"
+msgstr ""
+
+#: /user
+msgid "Thüringen"
+msgstr ""
+
+#: /profile/ruth-geisenfelder
+msgid ""
+"<div class=\"pw-dialogues-link\">[nothing]</div>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: /profile/ruth-geisenfelder
+msgid ""
+"<div class=\"pw-dialogues-link\">An [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]  wurden bisher noch keine Fragen "
+"gestellt</div>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: /profile/ruth-geisenfelder
+msgid "Profil zur Wahl"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "Available countries"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "If no countries are selected, all countries will be available."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_user_address
+msgid "Format handlers"
+msgstr ""
+
+#: /admin/modules
+msgid "module implements hooks to alter views"
+msgstr ""
+
+#: /admin/modules
+msgid "Make Sharethis sortable and sum beta + www"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Checks whether the visible share count is correct and adjusts it "
+"accordingly"
+msgstr ""
+
+#: /admin/modules
+msgid ""
+"Provides a Views sort handler to sort fields by whether they are "
+"empty."
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_addrs/field-settings?destinations[0]=admin/config/people/accounts/fields/field_addrs&destinations[1]=admin/config/people/accounts/fields
+msgid "@label (!name:!column:null sort)"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_addrs/field-settings?destinations[0]=admin/config/people/accounts/fields/field_addrs&destinations[1]=admin/config/people/accounts/fields
+msgid "@label:!column:null sort"
+msgstr ""
+
+#: /admin/config/people/accounts/fields/field_addrs/field-settings?destinations[0]=admin/config/people/accounts/fields/field_addrs&destinations[1]=admin/config/people/accounts/fields
+msgid "Null sort - Appears in: @bundles."
+msgstr ""
+
+#: /system/ajax
+msgctxt "Territory of a country"
+msgid "State"
+msgstr ""
+
+#: /system/ajax
+msgid "--"
+msgstr ""
+
+#: /system/ajax
+msgid "Alabama"
+msgstr ""
+
+#: /system/ajax
+msgid "Alaska"
+msgstr ""
+
+#: /system/ajax
+msgid "Arizona"
+msgstr ""
+
+#: /system/ajax
+msgid "Arkansas"
+msgstr ""
+
+#: /system/ajax
+msgid "California"
+msgstr ""
+
+#: /system/ajax
+msgid "Colorado"
+msgstr ""
+
+#: /system/ajax
+msgid "Connecticut"
+msgstr ""
+
+#: /system/ajax
+msgid "Delaware"
+msgstr ""
+
+#: /system/ajax
+msgid "District Of Columbia"
+msgstr ""
+
+#: /system/ajax
+msgid "Florida"
+msgstr ""
+
+#: /system/ajax
+msgid "Hawaii"
+msgstr ""
+
+#: /system/ajax
+msgid "Idaho"
+msgstr ""
+
+#: /system/ajax
+msgid "Illinois"
+msgstr ""
+
+#: /system/ajax
+msgid "Indiana"
+msgstr ""
+
+#: /system/ajax
+msgid "Iowa"
+msgstr ""
+
+#: /system/ajax
+msgid "Kansas"
+msgstr ""
+
+#: /system/ajax
+msgid "Kentucky"
+msgstr ""
+
+#: /system/ajax
+msgid "Louisiana"
+msgstr ""
+
+#: /system/ajax
+msgid "Maine"
+msgstr ""
+
+#: /system/ajax
+msgid "Maryland"
+msgstr ""
+
+#: /system/ajax
+msgid "Massachusetts"
+msgstr ""
+
+#: /system/ajax
+msgid "Michigan"
+msgstr ""
+
+#: /system/ajax
+msgid "Minnesota"
+msgstr ""
+
+#: /system/ajax
+msgid "Mississippi"
+msgstr ""
+
+#: /system/ajax
+msgid "Missouri"
+msgstr ""
+
+#: /system/ajax
+msgid "Montana"
+msgstr ""
+
+#: /system/ajax
+msgid "Nebraska"
+msgstr ""
+
+#: /system/ajax
+msgid "Nevada"
+msgstr ""
+
+#: /system/ajax
+msgid "New Hampshire"
+msgstr ""
+
+#: /system/ajax
+msgid "New Jersey"
+msgstr ""
+
+#: /system/ajax
+msgid "New Mexico"
+msgstr ""
+
+#: /system/ajax
+msgid "New York"
+msgstr ""
+
+#: /system/ajax
+msgid "North Carolina"
+msgstr ""
+
+#: /system/ajax
+msgid "North Dakota"
+msgstr ""
+
+#: /system/ajax
+msgid "Ohio"
+msgstr ""
+
+#: /system/ajax
+msgid "Oklahoma"
+msgstr ""
+
+#: /system/ajax
+msgid "Oregon"
+msgstr ""
+
+#: /system/ajax
+msgid "Pennsylvania"
+msgstr ""
+
+#: /system/ajax
+msgid "Rhode Island"
+msgstr ""
+
+#: /system/ajax
+msgid "South Carolina"
+msgstr ""
+
+#: /system/ajax
+msgid "South Dakota"
+msgstr ""
+
+#: /system/ajax
+msgid "Tennessee"
+msgstr ""
+
+#: /system/ajax
+msgid "Texas"
+msgstr ""
+
+#: /system/ajax
+msgid "Utah"
+msgstr ""
+
+#: /system/ajax
+msgid "Vermont"
+msgstr ""
+
+#: /system/ajax
+msgid "Virginia"
+msgstr ""
+
+#: /system/ajax
+msgid "Washington"
+msgstr ""
+
+#: /system/ajax
+msgid "West Virginia"
+msgstr ""
+
+#: /system/ajax
+msgid "Wisconsin"
+msgstr ""
+
+#: /system/ajax
+msgid "Wyoming"
+msgstr ""
+
+#: /system/ajax
+msgid "Armed Forces (Americas)"
+msgstr ""
+
+#: /system/ajax
+msgid "Armed Forces (Europe, Canada, Middle East, Africa)"
+msgstr ""
+
+#: /system/ajax
+msgid "Armed Forces (Pacific)"
+msgstr ""
+
+#: /system/ajax
+msgid "Federated States of Micronesia"
+msgstr ""
+
+#: /system/ajax
+msgid "Virgin Islands"
+msgstr ""
+
+#: /system/ajax
+msgid "ZIP Code"
+msgstr ""
+
 msgid "Search"
 msgstr "Suche"
 
@@ -94991,6 +97574,10 @@ msgstr "[field_user_questions_get] Frage(n)"
 msgid "[field_user_questions_get], [field_user_answers_give] answer(s)"
 msgstr "[field_user_questions_get], [field_user_answers_give] Antwort(en)"
 
+#: /en-gb/admin/structure/views/import
+msgid "read complete question and answer"
+msgstr "Frage und ganze Antwort lesen"
+
 msgid ""
 "These settings apply to the %field field everywhere it is used. "
 "Because the field already has data, some settings can no longer be "
@@ -96367,6 +98954,10 @@ msgstr ""
 
 msgid "The name %name is already taken."
 msgstr "Der Name %name ist leider schon vergeben."
+
+#: /en-gb/admin/structure/views/view/answers/edit
+msgid "Load more"
+msgstr "Mehr laden"
 
 msgid "Add field"
 msgstr "Feld hinzufügen"
@@ -107595,6 +110186,14 @@ msgstr "über"
 msgid "trim the link"
 msgstr "Link kürzen"
 
+#: /admin/structure/features/dialogues/status
+msgid "go to full profile"
+msgstr "Profil besuchen"
+
+#: /admin/structure/features/cleanup/clear
+msgid "to the archive"
+msgstr "Zum Archiv"
+
 #: views:profile_questions_answers:default:field:views:fieldset:label
 msgctxt "profile_questions_answers:default:field:views:fieldset:label"
 msgid "more information to the answer"
@@ -108170,4 +110769,52 @@ msgid "Submissions for this form are closed."
 msgstr ""
 "Die Fragefunktion ist derzeit deaktiviert. Die Vorbereitungen laufen "
 "noch. Bitte gedulden Sie sich bis zum Projektstart."
+
+#: /profile/cecile-bonnet/archive/54261
+msgid "Profiles Overview"
+msgstr "Profile Übersicht"
+
+#: /user/29777/edit?render=overlay
+msgid "Baden-Wuerttemberg"
+msgstr "Baden-Württemberg"
+
+#: /user/29777/edit?render=overlay
+msgid "Bavaria"
+msgstr "Bayern"
+
+#: /user/29777/edit?render=overlay
+msgid "Hesse"
+msgstr "Hessen"
+
+#: /user/29777/edit?render=overlay
+msgid "Lower Saxony"
+msgstr "Niedersachsen"
+
+#: /user/29777/edit?render=overlay
+msgid "North Rhine-Westphalia"
+msgstr "Nordrhein-Westfalen"
+
+#: /user/29777/edit?render=overlay
+msgid "Rhineland-Palatinate"
+msgstr "Rheinland-Pfalz"
+
+#: /user/29777/edit?render=overlay
+msgid "Saxony"
+msgstr "Sachsen"
+
+#: /user/29777/edit?render=overlay
+msgid "Saxony-Anhalt"
+msgstr "Sachsen-Anhalt"
+
+#: /user/29777/edit?render=overlay
+msgid "Thuringia"
+msgstr "Thüringen"
+
+#: /profile/all/all?field_user_first_letter_lname_value=All&field_user_address_administrative_area=All&field_user_constituency_tid=All&&field_user_qanda_ratio_value%5Bmin%5D=0&field_user_qanda_ratio_value%5Bmax%5D=100&field_user_age_value%5Bmin%5D=0&field_user_age_value%5Bmax%5D=90&&page=17
+msgid " question"
+msgstr " Frage"
+
+#: /profile/all/all?field_user_first_letter_lname_value=All&field_user_address_administrative_area=All&field_user_constituency_tid=All&&field_user_qanda_ratio_value%5Bmin%5D=0&field_user_qanda_ratio_value%5Bmax%5D=100&field_user_age_value%5Bmin%5D=0&field_user_age_value%5Bmax%5D=90&&page=17
+msgid " answer"
+msgstr " Antwort"
 
