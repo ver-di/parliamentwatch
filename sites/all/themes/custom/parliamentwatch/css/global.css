@@ -2753,7 +2753,8 @@ blockquote:before,
 .responsive-layout-mobile #block-views-slider-block,
 .responsive-layout-mobile .view-slider,
 .responsive-layout-mobile .field-name-pw-slider,
-.responsive-layout-mobile #block-block-33 {
+.responsive-layout-mobile #block-block-33,
+.responsive-layout-mobile #block-views-exp-profile-list-rev-grid {
     display: none;
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2 {
