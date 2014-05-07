@@ -59,3 +59,16 @@ html {
 .announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
     width: 560px;
 }
+
+.view-id-profile_list_rev .view-content ul {
+    background: url(../images/bg_list-rev.png) repeat-y;
+}
+.view-id-profile_list_rev .view-content li {
+    border-width: 1px 0 0;
+    width: 33%;
+    float: left;
+}
+.view-id-profile_list_rev .view-content .profile-picture {
+    float: none;
+    margin-right: 0;
+}

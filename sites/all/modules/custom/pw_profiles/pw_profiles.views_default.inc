@@ -1927,10 +1927,12 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['tags']['previous'] = 'zurück';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
-  $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['row_class'] = 'profiles-list-compact';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['class'] = 'clearfix';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   /* No results behavior: Global: Text area */
@@ -2679,19 +2681,28 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'field_user_picture-revision_id_1',
-    1 => 'field_user_picture_copyright-revision_id',
-    2 => 'field_image_copyright',
-    3 => 'field_user_fname-revision_id_1',
-    4 => 'field_user_lname-revision_id_1',
-    5 => 'field_user_party-revision_id',
-    6 => 'field_user_questions_get-revision_id_1',
-    7 => 'field_user_answers_give-revision_id_1',
-    8 => 'nothing_2',
-    9 => 'fieldset_1',
+    0 => 'fieldset_2',
+    1 => 'field_user_fname-revision_id_1',
+    2 => 'field_user_lname-revision_id_1',
+    3 => 'field_user_party-revision_id',
+    4 => 'field_user_questions_get-revision_id_1',
+    5 => 'field_user_answers_give-revision_id_1',
+    6 => 'nothing_2',
+    7 => 'fieldset_1',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'profiles-list-compact-wrapper';
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
+  $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_2']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['fieldset_2']['children'] = array(
+    0 => 'field_user_picture-revision_id_1',
+    1 => 'field_image_copyright',
+  );
+  $handler->display->display_options['fields']['fieldset_2']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset_2']['fieldset']['classes'] = 'profile-picture';
   /* Feld: Benutzer (historical data): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['id'] = 'field_user_picture-revision_id_1';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['table'] = 'field_revision_field_user_picture';
@@ -2701,6 +2712,9 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['alter']['path'] = 'profile/[name]';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_picture-revision_id_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_picture-revision_id_1']['element_wrapper_class'] = 'file-image';
+  $handler->display->display_options['fields']['field_user_picture-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['settings'] = array(
     'image_style' => 'pw_portrait_m',

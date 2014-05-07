@@ -35,26 +35,28 @@ div.horizontal-tabs .view-content {
 
 
 
-.view-id-profile_list_rev table {
+.view-id-profile_list_rev .view-content ul {
     width: 100%;
     margin-bottom: 2.6rem;
 }
-.view-id-profile_list_rev td {
-    padding: 16px 22px;
+.view-id-profile_list_rev .view-content li {
     border: 1px solid #eee;
-    width: 33%;
+    border-width: 0 0 1px;
 }
-.view-id-profile_list_rev td.col-first {
-    border-left: 0;
-}
-.view-id-profile_list_rev td.col-last {
-    border-right: 0;
-}
-.view-id-profile_list_rev .row-first td {
+.view-id-profile_list_rev .view-content li:nth-child(1),
+.view-id-profile_list_rev .view-content li:nth-child(2),
+.view-id-profile_list_rev .view-content li:nth-child(3) {
     border-top: 0;
 }
-.view-id-profile_list_rev .row-last td {
-    border-bottom: 0;
+.view-id-profile_list_rev .view-content li:nth-child(3n) {
+    border-right: 0;
+}
+.view-id-profile_list_rev .view-content li:nth-child(3n+1) {
+    clear: both;
+}
+.view-id-profile_list_rev .view-content .profile-picture {
+    float: left;
+    margin-right: 10px;
 }
 .view-id-profile_list_rev .profile-list-compact-info .file-image .content {
     width: 140px;
@@ -95,6 +97,7 @@ div.horizontal-tabs .view-content {
     margin-bottom: 4px;
 }
 .profiles-list-compact-wrapper {
+    padding: 16px 22px;
     position: relative;
 }
 .profiles-list-compact-wrapper .row {
