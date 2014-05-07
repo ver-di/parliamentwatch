@@ -89,14 +89,14 @@ Sie können uns auch "flattrn".
 		Hintergrundinformationen über Sie und Ihre politischen Ziele
 	</li>
 </ol>
+<p>Wie eine Profilerweiterung aussehen könnte können Sie hier am Beispiel von <a href="/profile/jakob-maria-mierscheid">Jakob Maria Mierscheid</a> sehen.</p>
 <p>
 <?php
   global $user;
   $link_booking_form = \'/user/\'.$user->uid.\'/booking_form\';
 ?>
 	Buchen Sie ganz einfach per <a href="<?=$link_booking_form?>">Formular</a> oder schreiben Sie uns eine <a href="mailto: service@abgeordnetenwatch.de">E-Mail</a>. Telefonisch erreichen Sie uns unter: 040 / 317 69 10 26
-</p>
-';
+</p>';
 
   $export['pw_premium_promo'] = $fe_block_boxes;
 
