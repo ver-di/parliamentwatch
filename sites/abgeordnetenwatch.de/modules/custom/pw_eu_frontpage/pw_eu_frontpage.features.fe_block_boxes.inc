@@ -21,7 +21,7 @@ function pw_eu_frontpage_default_fe_block_boxes() {
 	Nutzen Sie zum Einstieg die Karte oder klicken Sie sich in die Übersicht aller Kandidierenden.
 </p>
 <p>
-	<a class="link-profile" href="eu/profile">Alle Kandidierenden in der Übersicht</a><br />
+	<a class="link-committees" href="eu/profile">Alle Kandidierenden in der Übersicht</a><br />
 	<a class="read-more" href="eu/wahlprogramme">Wahlprogramme der Parteien</a><br />
 	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a>
 </p>
