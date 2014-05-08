@@ -1299,7 +1299,7 @@ else
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
     'action::user_block_user_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1313,7 +1313,7 @@ else
       'label' => '',
     ),
     'action::views_bulk_operations_delete_item' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1334,13 +1334,13 @@ else
       'label' => '',
     ),
     'action::views_bulk_operations_modify_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
       'settings' => array(
-        'show_all_tokens' => 1,
+        'show_all_tokens' => 0,
         'display_values' => array(
           '_all_' => '_all_',
         ),
@@ -1370,7 +1370,7 @@ else
       'label' => '',
     ),
     'action::pathauto_user_update_action' => array(
-      'selected' => 1,
+      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
