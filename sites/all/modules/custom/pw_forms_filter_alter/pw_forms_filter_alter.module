@@ -13,6 +13,9 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
 
     // vars
     $url_parameters = array_keys(drupal_get_query_parameters());
+    if(!empty($url_parameters)){
+      $url_parameters = explode(',', $url_parameters[0]);
+    }
     $form_was_submitted = sizeof($form_state['view']->exposed_input) > 1;
     $role_name = arg(2) == 'deputies' ? 'Deputy' : 'Candidate';
     $parliament_name = arg(1);
@@ -31,7 +34,8 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
       $options[$term->tid] = $term->name;
 
       // checks url and sets filter
-      if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
+      $term_encoded = str_replace(' ', '_', $term->name);
+      if(!$form_was_submitted && in_array($term_encoded, $url_parameters)){
         $form_state['input']['field_user_party_tid'][] = $term->tid;
       }
     }
