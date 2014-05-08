@@ -9,16 +9,26 @@
  * Implements hook_form_alter()..
  */
 function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
+
   if ($form_id == 'webform_client_form_10446') {
 
     // add custom validations
     $form['#validate'][] = 'pw_question_form_form_validate';
 
-    // load recipient user
-    $user_name = $form['submitted']['recipient']['#value'];
-    $user = user_load_by_name($user_name);
+    // load recipient user by path
+    if(empty($form['submitted']['recipient']['#value'])){
+      if(arg(0) == 'user' && is_numeric(arg(1))){
+        $user = user_load(arg(1));
+      }
+    }
+    // load recipient user by parameter
+    else{
+      $user_name = $form['submitted']['recipient']['#value'];
+      $user = user_load_by_name($user_name);
+    }
 
-    if($user === FALSE){
+    // exit if user was not found
+    if(empty($user) || $user === FALSE){
       return;
     }
 
