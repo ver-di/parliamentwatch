@@ -2796,8 +2796,10 @@ blockquote:before,
 .responsive-layout-mobile .view-slider,
 .responsive-layout-mobile .field-name-pw-slider,
 .responsive-layout-mobile #block-block-33,
+.responsive-layout-mobile #block-views-exp-profile-list-rev-grid,
 .js .responsive-layout-mobile .pw-expandable-mobile .view,
-.js .responsive-layout-normal #pw_block_user_questionform {
+.js .responsive-layout-normal #pw_block_user_questionform,
+.desktop-only {
     display: none;
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2 {
