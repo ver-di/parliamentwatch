@@ -3222,7 +3222,7 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'field_user_picture-revision_id_1',
+    0 => 'fieldset_2',
     1 => 'field_user_fname-revision_id_1',
     2 => 'field_user_lname-revision_id_1',
     3 => 'field_user_party-revision_id',
