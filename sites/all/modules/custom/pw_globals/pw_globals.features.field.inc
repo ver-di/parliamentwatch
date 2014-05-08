@@ -349,6 +349,13 @@ function pw_globals_field_default_fields() {
       'deleted' => '0',
       'description' => '',
       'display' => array(
+        'colorbox' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '2',
+        ),
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',

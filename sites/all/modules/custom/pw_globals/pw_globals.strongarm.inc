@@ -477,6 +477,10 @@ function pw_globals_strongarm() {
             'weight' => '1',
             'visible' => TRUE,
           ),
+          'colorbox' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
         ),
       ),
     ),
@@ -1079,6 +1083,10 @@ function pw_globals_strongarm() {
     ),
     'client-block-10369' => array(
       'display' => 'form',
+      'pages_block' => 1,
+    ),
+    'client-block-10446' => array(
+      'display' => 'full',
       'pages_block' => 1,
     ),
   );

@@ -278,6 +278,22 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_premium';
   $ds_fieldsetting->settings = array(
+    'question_form' => array(
+      'weight' => '15',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw_block_user_questionform"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'pw_kandidatencheck' => array(
       'weight' => '9',
       'label' => 'hidden',
@@ -315,7 +331,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_filter' => array(
-      'weight' => '15',
+      'weight' => '16',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -325,7 +341,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_switcher' => array(
-      'weight' => '16',
+      'weight' => '17',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -764,8 +780,8 @@ if($field_user_parliament == 6501){
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'webform|client-block-6578',
-    'block_render' => '2',
+    'block' => 'webform|client-block-10446',
+    'block_render' => '3',
   );
   $export['question_form'] = $ds_field;
 
@@ -1206,13 +1222,14 @@ function pw_profiles_ds_layout_settings_info() {
       ),
       'left_2' => array(
         14 => 'user_questions_and_answers',
+        15 => 'question_form',
       ),
       'right_2' => array(
-        15 => 'question_and_answers_filter',
-        16 => 'question_and_answers_switcher',
+        16 => 'question_and_answers_filter',
+        17 => 'question_and_answers_switcher',
       ),
       'ds_hidden' => array(
-        17 => 'field_user_party',
+        18 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1231,6 +1248,7 @@ function pw_profiles_ds_layout_settings_info() {
       'user_wrong_data' => 'right_1',
       'user_profile_api_link' => 'right_1',
       'user_questions_and_answers' => 'left_2',
+      'question_form' => 'left_2',
       'question_and_answers_filter' => 'right_2',
       'question_and_answers_switcher' => 'right_2',
       'field_user_party' => 'ds_hidden',
