@@ -1160,7 +1160,7 @@ else
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Politicians';
+  $handler->display->display_options['title'] = 'Politicians Overview';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'administer users';
@@ -1170,10 +1170,15 @@ else
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle anzeigen -';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -1188,12 +1193,12 @@ else
     'field_user_answers_give' => 'field_user_answers_give',
     'field_user_address_locality' => 'field_user_address_locality',
     'rid' => 'rid',
+    'field_user_list_position' => 'field_user_list_position',
     'edit_node' => 'edit_node',
     'field_user_fname' => 'field_user_fname',
     'field_user_lname' => 'field_user_lname',
-    'field_user_list_position' => 'field_user_list_position',
   );
-  $handler->display->display_options['style_options']['default'] = 'name';
+  $handler->display->display_options['style_options']['default'] = 'field_user_list_position';
   $handler->display->display_options['style_options']['info'] = array(
     'views_bulk_operations' => array(
       'align' => '',
@@ -1217,64 +1222,45 @@ else
     'field_user_party' => array(
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_user_parliament' => array(
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_user_constituency' => array(
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_user_commitee' => array(
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_user_questions_get' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_user_answers_give' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_user_address_locality' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'rid' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'edit_node' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_user_fname' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_user_lname' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -1284,7 +1270,26 @@ else
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
+      'empty_column' => 1,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
       'empty_column' => 0,
+    ),
+    'field_user_fname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_lname' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
     ),
   );
   /* Feld: Bulk operations: Benutzer */
@@ -1432,6 +1437,11 @@ else
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  /* Feld: Benutzer: List Position */
+  $handler->display->display_options['fields']['field_user_list_position']['id'] = 'field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['table'] = 'field_data_field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['field'] = 'field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['label'] = 'Listenplatz';
   /* Feld: Benutzer: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
@@ -1442,21 +1452,16 @@ else
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = 'hidden';
   $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
   /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname']['label'] = '';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = 'hidden';
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Feld: Benutzer: List Position */
-  $handler->display->display_options['fields']['field_user_list_position']['id'] = 'field_user_list_position';
-  $handler->display->display_options['fields']['field_user_list_position']['table'] = 'field_data_field_user_list_position';
-  $handler->display->display_options['fields']['field_user_list_position']['field'] = 'field_user_list_position';
-  $handler->display->display_options['fields']['field_user_list_position']['label'] = 'Listenplatz';
   /* Sort criterion: Benutzer: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -1685,12 +1690,657 @@ else
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_dependent'] = 0;
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: Politicians Overview */
+  $handler = $view->new_display('page', 'Politicians Overview', 'page');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'name' => 'name',
+    'field_user_fname' => 'field_user_fname',
+    'field_user_lname' => 'field_user_lname',
+    'mail' => 'mail',
+    'field_user_party' => 'field_user_party',
+    'field_user_parliament' => 'field_user_parliament',
+    'field_user_constituency' => 'field_user_constituency',
+    'field_user_commitee' => 'field_user_commitee',
+    'field_user_questions_get' => 'field_user_questions_get',
+    'field_user_answers_give' => 'field_user_answers_give',
+    'field_user_address_locality' => 'field_user_address_locality',
+    'rid' => 'rid',
+    'field_user_list_position' => 'field_user_list_position',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_user_list_position';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_fname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_lname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'mail' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_party' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_parliament' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_constituency' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_commitee' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_questions_get' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_answers_give' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_address_locality' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'rid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_list_position' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Bulk operations: Benutzer */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::user_block_user_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::1399' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 0,
+        'display_values' => array(
+          '_all_' => '_all_',
+        ),
+      ),
+    ),
+    'action::views_bulk_operations_user_roles_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::pw_login_once_send_mail_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::pathauto_user_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Feld: Benutzer: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'Politiker';
+  /* Feld: Benutzer: First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer: Last name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer: E-Mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  /* Feld: Benutzer: Party */
+  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['label'] = 'Partei';
+  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  /* Feld: Benutzer: Parliament */
+  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['label'] = 'Parlament';
+  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
+  /* Feld: Benutzer: Constituency */
+  $handler->display->display_options['fields']['field_user_constituency']['id'] = 'field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['table'] = 'field_data_field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['field'] = 'field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['label'] = 'Wahlkreis';
+  $handler->display->display_options['fields']['field_user_constituency']['delta_offset'] = '0';
+  /* Feld: Benutzer: Committee */
+  $handler->display->display_options['fields']['field_user_commitee']['id'] = 'field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['table'] = 'field_data_field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['field'] = 'field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['label'] = 'Ausschuss';
+  $handler->display->display_options['fields']['field_user_commitee']['delta_offset'] = '0';
+  /* Feld: Benutzer: Questions Get */
+  $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['label'] = 'Fragen';
+  $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Feld: Benutzer: Answers Give */
+  $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['label'] = 'Antworten';
+  $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Feld: Benutzer: Address - Locality (i.e. City) */
+  $handler->display->display_options['fields']['field_user_address_locality']['id'] = 'field_user_address_locality';
+  $handler->display->display_options['fields']['field_user_address_locality']['table'] = 'field_data_field_user_address';
+  $handler->display->display_options['fields']['field_user_address_locality']['field'] = 'field_user_address_locality';
+  $handler->display->display_options['fields']['field_user_address_locality']['label'] = 'Ort';
+  /* Feld: Benutzer: Rollen */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  /* Feld: Benutzer: List Position */
+  $handler->display->display_options['fields']['field_user_list_position']['id'] = 'field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['table'] = 'field_data_field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['field'] = 'field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['label'] = 'Listenplatz';
+  /* Feld: Benutzer: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'users';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = '';
+  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'admin/people/politicians';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Politicians';
   $handler->display->display_options['menu']['name'] = 'management';
+
+  /* Display: Politicians Bulk Edit */
+  $handler = $view->new_display('page_with_page_title', 'Politicians Bulk Edit', 'page_with_page_title_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Politicians Bulk Edit';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Politiker pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '5, 10, 20, 50, 100';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle anzeigen -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'nächste Seite ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'editableviews_table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'name' => 'name',
+    'field_user_fname' => 'field_user_fname',
+    'field_user_lname' => 'field_user_lname',
+    'mail' => 'mail',
+    'field_user_party_editable' => 'field_user_party_editable',
+    'field_user_party' => 'field_user_party',
+    'field_user_parliament_editable' => 'field_user_parliament_editable',
+    'field_user_parliament' => 'field_user_parliament',
+    'field_user_constituency_editable' => 'field_user_constituency_editable',
+    'field_user_constituency' => 'field_user_constituency',
+    'field_user_commitee_editable' => 'field_user_commitee_editable',
+    'field_user_commitee' => 'field_user_commitee',
+    'field_user_questions_get' => 'field_user_questions_get',
+    'field_user_answers_give' => 'field_user_answers_give',
+    'field_user_political_roles_editable' => 'field_user_political_roles_editable',
+    'field_user_election_result_editable' => 'field_user_election_result_editable',
+    'field_user_address_editable' => 'field_user_address_editable',
+    'field_user_address_locality' => 'field_user_address_locality',
+    'rid' => 'rid',
+    'field_user_list_position_editable' => 'field_user_list_position_editable',
+    'field_user_list_position' => 'field_user_list_position',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_user_list_position';
+  $handler->display->display_options['style_options']['info'] = array(
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_fname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_lname' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'mail' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_party_editable' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_party' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_parliament_editable' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_parliament' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_constituency_editable' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_constituency' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_commitee_editable' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_commitee' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_questions_get' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_answers_give' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'field_user_political_roles_editable' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_election_result_editable' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_address_editable' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_address_locality' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+    'rid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_list_position_editable' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_user_list_position' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Benutzer: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = 'Politiker';
+  /* Feld: Benutzer: First Name */
+  $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
+  $handler->display->display_options['fields']['field_user_fname']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer: Last name */
+  $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
+  $handler->display->display_options['fields']['field_user_lname']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
+  /* Feld: Benutzer: E-Mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['label'] = 'hidden';
+  $handler->display->display_options['fields']['mail']['exclude'] = TRUE;
+  /* Feld: Benutzer: Party (editable) */
+  $handler->display->display_options['fields']['field_user_party_editable']['id'] = 'field_user_party_editable';
+  $handler->display->display_options['fields']['field_user_party_editable']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party_editable']['field'] = 'field_user_party_editable';
+  $handler->display->display_options['fields']['field_user_party_editable']['label'] = 'Partei';
+  $handler->display->display_options['fields']['field_user_party_editable']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_party_editable']['widget_type'] = 'options_select';
+  $handler->display->display_options['fields']['field_user_party_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_user_party_editable']['suppress_description'] = 1;
+  /* Feld: Benutzer: Party */
+  $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
+  $handler->display->display_options['fields']['field_user_party']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
+  /* Feld: Benutzer: Parliament (editable) */
+  $handler->display->display_options['fields']['field_user_parliament_editable']['id'] = 'field_user_parliament_editable';
+  $handler->display->display_options['fields']['field_user_parliament_editable']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament_editable']['field'] = 'field_user_parliament_editable';
+  $handler->display->display_options['fields']['field_user_parliament_editable']['label'] = 'Parlament';
+  $handler->display->display_options['fields']['field_user_parliament_editable']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_parliament_editable']['widget_type'] = 'options_select';
+  $handler->display->display_options['fields']['field_user_parliament_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_user_parliament_editable']['suppress_description'] = 1;
+  /* Feld: Benutzer: Parliament */
+  $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
+  $handler->display->display_options['fields']['field_user_parliament']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_parliament']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
+  /* Feld: Benutzer: Constituency (editable) */
+  $handler->display->display_options['fields']['field_user_constituency_editable']['id'] = 'field_user_constituency_editable';
+  $handler->display->display_options['fields']['field_user_constituency_editable']['table'] = 'field_data_field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency_editable']['field'] = 'field_user_constituency_editable';
+  $handler->display->display_options['fields']['field_user_constituency_editable']['label'] = 'Wahlkreis';
+  $handler->display->display_options['fields']['field_user_constituency_editable']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_constituency_editable']['widget_type'] = 'options_select';
+  $handler->display->display_options['fields']['field_user_constituency_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_user_constituency_editable']['suppress_description'] = 1;
+  /* Feld: Benutzer: Constituency */
+  $handler->display->display_options['fields']['field_user_constituency']['id'] = 'field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['table'] = 'field_data_field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['field'] = 'field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_constituency']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency']['delta_offset'] = '0';
+  /* Feld: Benutzer: Committee (editable) */
+  $handler->display->display_options['fields']['field_user_commitee_editable']['id'] = 'field_user_commitee_editable';
+  $handler->display->display_options['fields']['field_user_commitee_editable']['table'] = 'field_data_field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee_editable']['field'] = 'field_user_commitee_editable';
+  $handler->display->display_options['fields']['field_user_commitee_editable']['label'] = 'Ausschuss';
+  $handler->display->display_options['fields']['field_user_commitee_editable']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_commitee_editable']['widget_type'] = 'options_select';
+  $handler->display->display_options['fields']['field_user_commitee_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_user_commitee_editable']['suppress_description'] = 1;
+  /* Feld: Benutzer: Committee */
+  $handler->display->display_options['fields']['field_user_commitee']['id'] = 'field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['table'] = 'field_data_field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['field'] = 'field_user_commitee';
+  $handler->display->display_options['fields']['field_user_commitee']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_commitee']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_commitee']['delta_offset'] = '0';
+  /* Feld: Benutzer: Questions Get */
+  $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
+  $handler->display->display_options['fields']['field_user_questions_get']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_questions_get']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_questions_get']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Feld: Benutzer: Answers Give */
+  $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
+  $handler->display->display_options['fields']['field_user_answers_give']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_answers_give']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_answers_give']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Feld: Benutzer: Political Roles (editable) */
+  $handler->display->display_options['fields']['field_user_political_roles_editable']['id'] = 'field_user_political_roles_editable';
+  $handler->display->display_options['fields']['field_user_political_roles_editable']['table'] = 'field_data_field_user_political_roles';
+  $handler->display->display_options['fields']['field_user_political_roles_editable']['field'] = 'field_user_political_roles_editable';
+  $handler->display->display_options['fields']['field_user_political_roles_editable']['label'] = 'Politische Rollen';
+  $handler->display->display_options['fields']['field_user_political_roles_editable']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_user_political_roles_editable']['widget_type'] = 'options_select';
+  $handler->display->display_options['fields']['field_user_political_roles_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_user_political_roles_editable']['suppress_description'] = 1;
+  /* Feld: Benutzer: Election Result (editable) */
+  $handler->display->display_options['fields']['field_user_election_result_editable']['id'] = 'field_user_election_result_editable';
+  $handler->display->display_options['fields']['field_user_election_result_editable']['table'] = 'field_data_field_user_election_result';
+  $handler->display->display_options['fields']['field_user_election_result_editable']['field'] = 'field_user_election_result_editable';
+  $handler->display->display_options['fields']['field_user_election_result_editable']['label'] = 'Wahlergebnis';
+  $handler->display->display_options['fields']['field_user_election_result_editable']['widget_type'] = '0';
+  $handler->display->display_options['fields']['field_user_election_result_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_user_election_result_editable']['suppress_description'] = 1;
+  /* Feld: Benutzer: Address (editable) */
+  $handler->display->display_options['fields']['field_user_address_editable']['id'] = 'field_user_address_editable';
+  $handler->display->display_options['fields']['field_user_address_editable']['table'] = 'field_data_field_user_address';
+  $handler->display->display_options['fields']['field_user_address_editable']['field'] = 'field_user_address_editable';
+  $handler->display->display_options['fields']['field_user_address_editable']['label'] = 'Addresse';
+  $handler->display->display_options['fields']['field_user_address_editable']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_user_address_editable']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
+  $handler->display->display_options['fields']['field_user_address_editable']['widget_type'] = 'addressfield_standard';
+  $handler->display->display_options['fields']['field_user_address_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_user_address_editable']['suppress_description'] = 1;
+  /* Feld: Benutzer: Address - Locality (i.e. City) */
+  $handler->display->display_options['fields']['field_user_address_locality']['id'] = 'field_user_address_locality';
+  $handler->display->display_options['fields']['field_user_address_locality']['table'] = 'field_data_field_user_address';
+  $handler->display->display_options['fields']['field_user_address_locality']['field'] = 'field_user_address_locality';
+  $handler->display->display_options['fields']['field_user_address_locality']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_address_locality']['exclude'] = TRUE;
+  /* Feld: Benutzer: Rollen */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  $handler->display->display_options['fields']['rid']['label'] = 'hidden';
+  $handler->display->display_options['fields']['rid']['exclude'] = TRUE;
+  /* Feld: Benutzer: List Position (editable) */
+  $handler->display->display_options['fields']['field_user_list_position_editable']['id'] = 'field_user_list_position_editable';
+  $handler->display->display_options['fields']['field_user_list_position_editable']['table'] = 'field_data_field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position_editable']['field'] = 'field_user_list_position_editable';
+  $handler->display->display_options['fields']['field_user_list_position_editable']['label'] = 'Listenplatz';
+  $handler->display->display_options['fields']['field_user_list_position_editable']['widget_type'] = 'options_select';
+  $handler->display->display_options['fields']['field_user_list_position_editable']['suppress_label'] = 1;
+  $handler->display->display_options['fields']['field_user_list_position_editable']['suppress_description'] = 1;
+  /* Feld: Benutzer: List Position */
+  $handler->display->display_options['fields']['field_user_list_position']['id'] = 'field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['table'] = 'field_data_field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['field'] = 'field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position']['label'] = 'hidden';
+  $handler->display->display_options['fields']['field_user_list_position']['exclude'] = TRUE;
+  $handler->display->display_options['path'] = 'admin/people/politicians/edit';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Bulk Edit';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['politicians'] = $view;
 
   $view = new view();
