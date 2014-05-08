@@ -39,66 +39,36 @@ function pw_sharethis_check_menu() {
 function pw_sharethis_check_update() {
   $url = htmlspecialchars($_GET['url']);
   
-  $record['url'] = $url;
-  
   // Retrieve entity IDs for the following four cases:
   // 1. /profile/<username>/archive/<revisionnumber> -> load user by username, retrieve his UID
   // 2. /petitionen/<name> and /petitions/<name> -> load source of alias, retrieve node's NID
   // 3. blog/<artikelname> -> load source of alias, retrieve node's NID
   // 4. <username>/question/<datum>/<nid> -> directly use the NID provided in the URL
+  // (and all other node cases that might occur due to changes in the URL structure)
   
+  // initialize the record to save in sharethis_queue:
   $record['entity_id'] = 0;
   $record['revision_id'] = 0; // not currently used by the queue cron; could be used for optimization later
   $record['entity_type'] = 0;
   
-  $doInsert = true;
-  if (substr_count($url, '/profile/') == 1) {
-    $urlArr = explode('/', $url);
-    $usernameKey = array_search('profile', $urlArr) + 1;
-    if (array_key_exists($usernameKey, $urlArr)) {
-      $username = $urlArr[$usernameKey];
-      $user = user_load_by_name($username);
-      if ($user) {
-        $record['entity_id'] = $user->uid;
-      } else {
-        $doInsert = false;
-      }
-    } else {
-      $doInsert = false;
+  $pathArr = parse_url($url); // get URL path after domain, without GET parameters
+  $path = trim($pathArr['path'], '/'); // remove preceding and trailing slashes from URL, as needed for drupal_lookup_path
+  $record['url'] = drupal_lookup_path('source', $path); // this returns either node/NID or user/UID for all URLs except for profile/username/archive/rid
+  
+  if (!$record['url']) { // URL could not be identified by drupal_lookup_path
+    // is the URL a profile-archive URL (profile/username/archive/rid)?
+    if (substr_count($path, '/archive/') == 1) {
+      $urlArr = explode('/', $path);
+      $record['revision_id'] = (int)$urlArr[count($urlArr) - 1];
+      $record['url'] = drupal_lookup_path('source', $urlArr[0].'/'.$urlArr[1]);
     }
-    
-    $revisionKey = array_search('archive', $urlArr) + 1;
-    if (array_key_exists($revisionKey, $urlArr)) {
-      $revisionId = (int)$urlArr[$revisionKey];
-      $record['revision_id'] = $revisionId;
-    }
-    
-    $record['entity_type'] = 'user';
-  } else if (substr_count($url, '/petition') == 1 || substr_count($url, '/blog') == 1) { // works for /petitionen and /petitions
-    $urlArr = explode('/', $url);
-    $record['entity_type'] = 'node';
-    if (array_key_exists(3, $urlArr) && array_key_exists(4, $urlArr)) {
-      $sourcePath = drupal_lookup_path('source', $urlArr[3].'/'.$urlArr[4]);
-      if ($sourcePath && substr_count($sourcePath, 'node') == 1) {
-        $record['entity_id'] = (int)str_replace('node/', '', $sourcePath);
-      } else {
-        $doInsert = false;
-      }
-    } else {
-      $doInsert = false;
-    }
-            
-  } else if (substr_count($url, '/question/') == 1) {
-      $urlArr = explode('/', $url);
-      $record['entity_type'] = 'node';
-      $questionKey = count($urlArr) - 1;
-      $questionNid = (int)$urlArr[$questionKey];
-      $record['entity_id'] = $questionNid;
-  } else {
-    $doInsert = false;
   }
   
-  if ($doInsert) {
+  if ($record['url']) { // the internal path must not be false
+    $urlArr = explode('/', $record['url']);
+    $record['entity_type'] = $urlArr[0];
+    $record['entity_id'] = $urlArr[1];
+
     db_insert('sharethis_queue')
       ->fields($record)
       ->execute();  
