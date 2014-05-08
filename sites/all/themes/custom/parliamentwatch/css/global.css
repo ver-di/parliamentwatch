@@ -321,6 +321,10 @@ a.external {
     background-position: -572px -1583px;
     padding-left: 19px;
 }
+.username.external { /* AW-596 not needed anymore after db update  */
+    background: transparent;
+    padding-left: 0;
+}
 .dark a.external,
 a.dark.external {
     background-position: -612px -1543px;
