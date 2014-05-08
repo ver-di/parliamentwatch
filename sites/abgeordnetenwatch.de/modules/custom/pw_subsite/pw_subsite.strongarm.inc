@@ -874,6 +874,10 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">vname</em> of the field <em class="placeholder">field_pw_views_reference</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_share_sum_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_share_sum</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_slider_teaserbody_format' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_slider_teaserbody</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -2722,136 +2726,147 @@ foo
       ),
     ),
     146 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_share_sum_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_share_sum',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    147 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    147 => array(
+    148 => array(
       'src' => 'comment:cid',
       'dst' => 'node:nid',
       'callback' => 'themekey_comment_cid2nid',
     ),
-    148 => array(
+    149 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    149 => array(
+    150 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    150 => array(
+    151 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
     ),
-    151 => array(
+    152 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    152 => array(
+    153 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    153 => array(
+    154 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    154 => array(
+    155 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    155 => array(
+    156 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    156 => array(
+    157 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    157 => array(
+    158 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    158 => array(
+    159 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    159 => array(
+    160 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    160 => array(
+    161 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    161 => array(
+    162 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    162 => array(
+    163 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    163 => array(
+    164 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    164 => array(
+    165 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    165 => array(
+    166 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    166 => array(
+    167 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    167 => array(
+    168 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    168 => array(
+    169 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    169 => array(
+    170 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    170 => array(
+    171 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    171 => array(
+    172 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    172 => array(
+    173 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
@@ -3134,6 +3149,7 @@ foo
     'node:field_pw_raw_csv_data_value' => 'node:field_pw_raw_csv_data_value',
     'node:field_pw_views_reference_vargs' => 'node:field_pw_views_reference_vargs',
     'node:field_pw_views_reference_vname' => 'node:field_pw_views_reference_vname',
+    'node:field_share_sum_value' => 'node:field_share_sum_value',
     'node:field_slider_teaserbody_format' => 'node:field_slider_teaserbody_format',
     'node:field_slider_teaserbody_value' => 'node:field_slider_teaserbody_value',
     'node:field_slider_url_attributes' => 'node:field_slider_url_attributes',
