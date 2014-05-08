@@ -73,7 +73,6 @@ function pw_sharethis_check_update() {
       ->fields($record)
       ->execute();  
   }
-  
 }
 
 /**
