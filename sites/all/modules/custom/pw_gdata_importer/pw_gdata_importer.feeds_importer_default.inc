@@ -13,6 +13,97 @@ function pw_gdata_importer_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'csv_importer';
+  $feeds_importer->config = array(
+    'name' => 'CSV Importer',
+    'description' => 'bulk updater for imported profiles',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsUserProcessor',
+      'config' => array(
+        'roles' => array(
+          3 => 0,
+          51622513 => 0,
+          181527986 => 0,
+          140336230 => 0,
+          185431326 => 0,
+          178386088 => 0,
+        ),
+        'status' => '1',
+        'defuse_mail' => 0,
+        'mappings' => array(
+          0 => array(
+            'source' => 'county',
+            'target' => 'field_user_address:administrative_area',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'system_uuid',
+            'target' => 'guid',
+            'unique' => 1,
+          ),
+          2 => array(
+            'source' => 'system_username',
+            'target' => 'name',
+            'unique' => 1,
+          ),
+          3 => array(
+            'source' => 'country_default',
+            'target' => 'field_user_address:country',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'list_position',
+            'target' => 'field_user_list_position',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'city',
+            'target' => 'field_user_address:locality',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'postal_code',
+            'target' => 'field_user_address:postal_code',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 1,
+        'bundle' => 'user',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['csv_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
   $feeds_importer->id = 'gdata_constituency_importer';
   $feeds_importer->config = array(
     'name' => 'GData Constituency Importer',

@@ -13,6 +13,64 @@ function pw_gdata_importer_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'csv_importer-city-php';
+  $feeds_tamper->importer = 'csv_importer';
+  $feeds_tamper->source = 'city';
+  $feeds_tamper->plugin_id = 'php';
+  $feeds_tamper->settings = array(
+    'php' => '$user_name = $item[\'system_username\'];
+$user = user_load_by_name($user_name);
+return $user->field_user_address[\'und\'][0][\'locality\'];',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Execute php code';
+  $export['csv_importer-city-php'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'csv_importer-country_default-default_value';
+  $feeds_tamper->importer = 'csv_importer';
+  $feeds_tamper->source = 'country_default';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'DE',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set default value';
+  $export['csv_importer-country_default-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'csv_importer-county-replace_county_code';
+  $feeds_tamper->importer = 'csv_importer';
+  $feeds_tamper->source = 'county';
+  $feeds_tamper->plugin_id = 'replace_county_code';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Replace German county name to abbrev';
+  $export['csv_importer-county-replace_county_code'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'csv_importer-postal_code-php';
+  $feeds_tamper->importer = 'csv_importer';
+  $feeds_tamper->source = 'postal_code';
+  $feeds_tamper->plugin_id = 'php';
+  $feeds_tamper->settings = array(
+    'php' => '$user_name = $item[\'system_username\'];
+$user = user_load_by_name($user_name);
+return $user->field_user_address[\'und\'][0][\'postal_code\'];',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Execute php code';
+  $export['csv_importer-postal_code-php'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_constituency_importer-xpathparser_6-explode';
   $feeds_tamper->importer = 'gdata_constituency_importer';
   $feeds_tamper->source = 'xpathparser:6';
