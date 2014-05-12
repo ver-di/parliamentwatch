@@ -39,14 +39,34 @@ function subscribe_to_newsletter(){
 
 			// load webform module
 			module_load_include('inc', 'webform', 'includes/webform.submissions');
+
+			// query db to retrieve webform components
+			$sql = "SELECT wf_comp.cid, wf_comp.form_key
+					FROM webform_component wf_comp
+					WHERE wf_comp.nid = :nid";
+			$form_fields = db_query($sql, array(':nid' => $node->nid))->fetchAllAssoc('cid');
+			$cid_email_field = false;
+			$cid_status_field = false;
+			$cid_node_path_field = false;
+			foreach($form_fields as $cid => $component){
+				if($component->form_key == 'e_mail'){
+					$cid_email_field = $cid;
+				}
+				elseif($component->form_key == 'status'){
+					$cid_status_field = $cid;
+				}
+				elseif($component->form_key == 'node_path'){
+					$cid_node_path_field = $cid;
+				}
+			}
 		
 			// load webform submissions
 			$webform_submissions = webform_get_submissions($node->nid);
 
 			// check if address is on list
 			foreach($webform_submissions as $webform_submission){
-				if($webform_submission->data[1]['value'][0] == $email){
-					$status = $webform_submission->data[2]['value'][0];
+				if($webform_submission->data[$cid_email_field]['value'][0] == $email){
+					$status = $webform_submission->data[$cid_status_field]['value'][0];
 					if($status == 'exported'){
 						print 'already_in_list';
 					}
@@ -59,9 +79,9 @@ function subscribe_to_newsletter(){
 
 			// submit as webform
 			$data = array(
-				1 => array('value' => array($email)),
-				2 => array('value' => array('subscribed')),
-				3 => array('value' => array($internal_path)),
+				$cid_email_field => array('value' => array($email)),
+				$cid_status_field => array('value' => array('subscribed')),
+				$cid_node_path_field => array('value' => array($internal_path)),
 			);
 			$submission = (object) array(
 				'nid' => $node->nid,
