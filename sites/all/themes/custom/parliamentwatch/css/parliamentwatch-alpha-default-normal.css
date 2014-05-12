@@ -45,22 +45,12 @@ html {
 
 /* /////////////////////////// Announcement ///////////////// */
 
-.announcement.slideshow {
+.announcement.slideshow .wrapper {
     padding: 18px 30px 34px 0;
+    padding: 1.8rem 30px 3.4rem 0;
 }
-.announcement.slideshow .background-image {
-    display: block;
-    width: 620px;
-    height: 220px;
-    position: absolute;
-    left: 0;
-    top: -41px;
-    top: -4.1rem;
-    z-index: -1;
-    background: url(../images/bg_announcement.jpg);
-}
-.announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
-    width: 560px;
+.announcement.slideshow .views-slideshow-controls-top {
+    width: 550px;
 }
 
 .view-id-profile_list_rev .view-content ul {
