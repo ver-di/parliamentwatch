@@ -1,0 +1,16 @@
+name = Views Dynamic Fields
+description = Be able to pick and choose fields to display in your view e.g. for custom reports
+package = Views
+dependencies[] = views
+dependencies[] = ctools
+core = 7.x
+
+; Views handlers
+files[] = handlers/views_handler_filter_dynamic_fields.inc
+
+; Information added by Drupal.org packaging script on 2014-05-13
+version = "7.x-1.0-alpha1"
+core = "7.x"
+project = "views_dynamic_fields"
+datestamp = "1399973033"
+
