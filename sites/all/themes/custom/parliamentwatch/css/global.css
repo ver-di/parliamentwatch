@@ -894,14 +894,22 @@ ol.search-results li,
 
 /* //////////////////////////// taxonomy /////////////////// */
 
-a.tagadelic {
+a.tagadelic,
+.tagadelic a {
     text-decoration: none;
     color: #666;
+    padding-left: 0;
+    background: transparent;
+    line-height: 18px;
 }
 a.tagadelic.level1,
 a.tagadelic.level2,
 a.tagadelic.level3,
-a.tagadelic.level4 {
+a.tagadelic.level4,
+.tagadelic .level1 a,
+.tagadelic .level2 a,
+.tagadelic .level3 a,
+.tagadelic .level4 a {
     font-weight: normal;
 }
 

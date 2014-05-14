@@ -66,22 +66,35 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'field_teaser_image',
+    1 => 'body',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'clearfix push-bottom-s';
   /* Feld: Inhalt: Teaser image */
   $handler->display->display_options['fields']['field_teaser_image']['id'] = 'field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['field'] = 'field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['label'] = '';
-  $handler->display->display_options['fields']['field_teaser_image']['alter']['path'] = '[field_election_programme_open]';
+  $handler->display->display_options['fields']['field_teaser_image']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_teaser_image']['alter']['path'] = '[field_election_programme_open_1]';
   $handler->display->display_options['fields']['field_teaser_image']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_teaser_image']['alter']['alt'] = 'Wahlprogramm durchblättern';
   $handler->display->display_options['fields']['field_teaser_image']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_teaser_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_class'] = 'file-image float-left';
   $handler->display->display_options['fields']['field_teaser_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_teaser_image']['type'] = 'file_rendered';
   $handler->display->display_options['fields']['field_teaser_image']['settings'] = array(
-    'file_view_mode' => 'default',
+    'image_style' => 'pw_landscape_l__normal',
+    'image_link' => '',
   );
   /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -89,6 +102,17 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'field_election_programme_open',
+    1 => 'uri',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'clear text-right';
   /* Feld: Inhalt: Link */
   $handler->display->display_options['fields']['field_election_programme_open']['id'] = 'field_election_programme_open';
   $handler->display->display_options['fields']['field_election_programme_open']['table'] = 'field_data_field_election_programme_open';
