@@ -89,7 +89,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['field_teaser_image']['alter']['target'] = '_blank';
   $handler->display->display_options['fields']['field_teaser_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_class'] = 'file-image float-left';
+  $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_class'] = 'file-image float-left push-bottom-s';
   $handler->display->display_options['fields']['field_teaser_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_teaser_image']['settings'] = array(
