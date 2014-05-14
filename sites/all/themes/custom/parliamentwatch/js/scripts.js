@@ -231,7 +231,17 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
         return false;
     });
     
-    jQuery('body').bind('responsivelayout', function() { 
+    
+    jQuery(".pw-collapsible .fieldset-wrapper").hide();       
+    jQuery(".pw-collapsible .fieldset-legend").click(function () {
+        $(this).parent().parent().find('.fieldset-wrapper').slideToggle("fast",function(){
+            $.colorbox.resize({
+                reposition: 'false'
+            });
+        });
+    });
+
+    jQuery('body').bind('responsivelayout', function() {
         
         jQuery(".responsive-layout-mobile .link-question").click(function () {
             goToByScroll("pw_block_user_questionform");
@@ -245,17 +255,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
                 maxWidth: '100%',
                 height: '800px',
                 onComplete:function(){
-                    jQuery(".pw-collapsible .fieldset-wrapper").hide();
-                    $.colorbox.resize();        
-                    jQuery(".pw-collapsible .fieldset-legend").click(function () {
-                        $(this).parent().parent().find('.fieldset-wrapper').slideToggle("fast",function(){
-                            $.colorbox.resize({
-                                reposition: 'false'
-                            });
-                            position = $(this).position().top;
-                            $( "body" ).scrollTop( position );
-                        });
-                    });
+                    $.colorbox.resize();
                 }
             });
         });
