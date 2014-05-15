@@ -42,9 +42,10 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'taxonomy_term')
           ->entityCondition('bundle', 'dialogue_topics')
-          ->fieldCondition('field_parliament', 'tid', $parliament_tid);
+          ->fieldCondition('field_parliament', 'tid', $parliament_tid)
+          ->propertyOrderBy('name');
     $result = $query->execute();
-    $subject_terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']));
+    $subject_terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']), 'dialogue_topics');
 
     // add subject to form element
     $a_options = array();
