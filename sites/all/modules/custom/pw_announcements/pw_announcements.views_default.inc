@@ -55,13 +55,13 @@ function pw_announcements_views_default_views() {
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
     'field_announce_tab_title' => 'field_announce_tab_title',
+    'uri' => 0,
     'edit_node' => 0,
-    'field_announce_background_image' => 0,
-    'contextual_links' => 0,
     'created' => 0,
     'title_1' => 0,
     'field_announce_body' => 0,
     'field_announce_link' => 0,
+    'contextual_links' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -69,14 +69,14 @@ function pw_announcements_views_default_views() {
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'field_announce_background_image' => 'field_announce_background_image',
+    'uri' => 0,
     'field_announce_tab_title' => 0,
     'edit_node' => 0,
-    'contextual_links' => 0,
     'created' => 0,
     'title_1' => 0,
     'field_announce_body' => 0,
     'field_announce_link' => 0,
+    'contextual_links' => 0,
   );
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
@@ -98,6 +98,16 @@ function pw_announcements_views_default_views() {
   $handler->display->display_options['relationships']['node_to_file']['id'] = 'node_to_file';
   $handler->display->display_options['relationships']['node_to_file']['table'] = 'file_usage';
   $handler->display->display_options['relationships']['node_to_file']['field'] = 'node_to_file';
+  /* Feld: Excluded | File: Path */
+  $handler->display->display_options['fields']['uri']['id'] = 'uri';
+  $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
+  $handler->display->display_options['fields']['uri']['field'] = 'uri';
+  $handler->display->display_options['fields']['uri']['relationship'] = 'node_to_file';
+  $handler->display->display_options['fields']['uri']['ui_name'] = 'Excluded | File: Path';
+  $handler->display->display_options['fields']['uri']['label'] = '';
+  $handler->display->display_options['fields']['uri']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uri']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
   /* Feld: Excluded | Content: Tab title */
   $handler->display->display_options['fields']['field_announce_tab_title']['id'] = 'field_announce_tab_title';
   $handler->display->display_options['fields']['field_announce_tab_title']['table'] = 'field_data_field_announce_tab_title';
@@ -114,42 +124,6 @@ function pw_announcements_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | File: Path */
-  $handler->display->display_options['fields']['uri']['id'] = 'uri';
-  $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
-  $handler->display->display_options['fields']['uri']['field'] = 'uri';
-  $handler->display->display_options['fields']['uri']['relationship'] = 'node_to_file';
-  $handler->display->display_options['fields']['uri']['ui_name'] = 'Excluded | File: Path';
-  $handler->display->display_options['fields']['uri']['label'] = '';
-  $handler->display->display_options['fields']['uri']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['uri']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['uri']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
-  /* Feld: PHP: Background Image */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'PHP: Background Image';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<div class="background-image" <?php if($row->uri != \'\') { print \'style="background-image:url(\'.image_style_url(\'pw_grid_8_normal\',$row->uri).\');"\';}?>></div>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: Contextual Links */
-  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
-  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
-  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
-  $handler->display->display_options['fields']['contextual_links']['label'] = '';
-  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
-    'edit_node' => 'edit_node',
-    'field_announce_tab_title' => 0,
-    'created' => 0,
-    'title_1' => 0,
-    'field_announce_body' => 0,
-    'field_announce_link' => 0,
-  );
   /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -194,6 +168,21 @@ function pw_announcements_views_default_views() {
   $handler->display->display_options['fields']['field_announce_link']['element_wrapper_class'] = 'text-right read-more';
   $handler->display->display_options['fields']['field_announce_link']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_announce_link']['click_sort_column'] = 'url';
+  /* Feld: Global: Contextual Links */
+  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
+  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
+  $handler->display->display_options['fields']['contextual_links']['label'] = '';
+  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
+    'edit_node' => 'edit_node',
+    'uri' => 0,
+    'field_announce_tab_title' => 0,
+    'created' => 0,
+    'title_1' => 0,
+    'field_announce_body' => 0,
+    'field_announce_link' => 0,
+  );
   /* Sort criterion: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

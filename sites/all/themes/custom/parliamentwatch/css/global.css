@@ -894,14 +894,22 @@ ol.search-results li,
 
 /* //////////////////////////// taxonomy /////////////////// */
 
-a.tagadelic {
+a.tagadelic,
+.tagadelic a {
     text-decoration: none;
     color: #666;
+    padding-left: 0;
+    background: transparent;
+    line-height: 18px;
 }
 a.tagadelic.level1,
 a.tagadelic.level2,
 a.tagadelic.level3,
-a.tagadelic.level4 {
+a.tagadelic.level4,
+.tagadelic .level1 a,
+.tagadelic .level2 a,
+.tagadelic .level3 a,
+.tagadelic .level4 a {
     font-weight: normal;
 }
 
@@ -2366,27 +2374,38 @@ form .webform-component-checkboxes .description {
 /* /////////////////////////// Announcement ///////////////// */
 
 .announcement.slideshow {
-    background: #ccc;
-    padding: 18px 0 34px;
-    position: relative;
-    margin-bottom: 43px;
-    margin-bottom: 4.3rem;
-    min-height: 168px;
-    min-height: 16.8rem;
+    background-color: #999;
     -webkit-box-shadow: 0px 0px 4px 1px #ebebeb;
     -moz-box-shadow: 0px 0px 4px 1px #ebebeb;
     box-shadow: 0px 0px 4px 1px #ebebeb;
+    margin-bottom: 43px;
+    margin-bottom: 4.3rem;
+    position: relative;
 }
-.announcement.slideshow .background-image {
-    display: none;
+.announcement.slideshow .wrapper {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100%;
+    min-height: 168px;
+    min-height: 16.8rem;
+    padding: 38px 0 34px 0;
+    padding: 3.8rem 0 3.2rem 0;
+}
+.announcement.slideshow .wrapper-inner {
+    background: url(../images/bg_fff50.png);
+    padding: 8px 10px 12px 20px;
+    margin-top: 23px;
 }
 .announcement.slideshow .views-slideshow-controls-top {
     background: url(../images/bg_fff50.png);
     padding: 2px 20px;
     padding: 0.2rem 20px;
     margin-bottom: 1px;
-    position: relative;
-    z-index: 10;
+    position: absolute;
+    width: 93%;
+    top: 18px;
+    z-index: 990;
 }
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
@@ -2398,10 +2417,6 @@ form .webform-component-checkboxes .description {
 }
 .announcement.slideshow .views-slideshow-controls-top .views-slideshow-pager-field-item {
     float: left;
-}
-.announcement.slideshow .views-slideshow-cycle-main-frame-row-item {
-    background: url(../images/bg_fff50.png);
-    padding: 8px 10px 12px 20px;
 }
 .views-slideshow-cycle-main-frame-row {
     width: 100%;

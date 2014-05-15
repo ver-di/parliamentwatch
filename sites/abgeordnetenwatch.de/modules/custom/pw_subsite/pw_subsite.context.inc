@@ -57,24 +57,30 @@ function pw_subsite_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'ueber-uns/spendenformular' => 'ueber-uns/spendenformular',
+        'node/10508' => 'node/10508',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-33' => array(
+          'module' => 'block',
+          'delta' => '33',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'system-main' => array(
           'module' => 'system',
           'delta' => 'main',
           'region' => 'content',
-          'weight' => '-8',
+          'weight' => '-9',
         ),
         'block-30' => array(
           'module' => 'block',
           'delta' => '30',
           'region' => 'content',
-          'weight' => '-7',
+          'weight' => '-8',
         ),
         'block-32' => array(
           'module' => 'block',
