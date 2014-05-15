@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Do super awesome thing, more awesome than boris' plugin.
+ * Do super awesome thing, more awesome than alex plugin.
  */
 $plugin = array(
 
