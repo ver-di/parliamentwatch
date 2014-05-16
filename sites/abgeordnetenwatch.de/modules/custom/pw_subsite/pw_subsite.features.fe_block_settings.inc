@@ -574,7 +574,7 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['views-pw_user_revision_switch-block'] = array(
     'cache' => -1,
-    'css_class' => 'relative',
+    'css_class' => 'relative desktop-only',
     'custom' => '0',
     'delta' => 'pw_user_revision_switch-block',
     'i18n_block_language' => array(),
@@ -626,8 +626,8 @@ function pw_subsite_default_fe_block_settings() {
         'weight' => '-79',
       ),
       'blank' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'blank',
         'weight' => '-17',
       ),

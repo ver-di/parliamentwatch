@@ -3,9 +3,8 @@
 }
 .view-slider,
 #edit-field-user-age-value-wrapper {
-    display: none;
+    display: none !important;
 }
-
 .view-id-profile_list_rev .view-content ul {
     background: transparent !important;
 }
