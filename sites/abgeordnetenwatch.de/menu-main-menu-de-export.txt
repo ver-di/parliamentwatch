@@ -1,6 +1,6 @@
 Wahlen {"url":"http:\/\/www.abgeordnetenwatch.de\/wahlen-733-0.html","hidden":true}
 Parlamente {"url":"http:\/\/www.abgeordnetenwatch.de\/parlamente-210-0.html","expanded":true}
--Bundestag {"url":"http:\/\/www.abgeordnetenwatch.de\/bundestag-360-0.html","expanded":true}
+-Bundestag {"url":"http:\/\/www.abgeordnetenwatch.de\/bundestag-825-0.html","expanded":true}
 --Abgeordnete {"url":"http:\/\/www.abgeordnetenwatch.de\/abgeordnete-337-0.html"}
 --Abstimmungen {"url":"http:\/\/www.abgeordnetenwatch.de\/abstimmungen-991-0.html"}
 --Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-123-0.html"}
