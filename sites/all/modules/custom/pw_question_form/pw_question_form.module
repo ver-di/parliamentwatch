@@ -19,6 +19,7 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     if(empty($form['submitted']['recipient']['#value'])){
       if(arg(0) == 'user' && is_numeric(arg(1))){
         $user = user_load(arg(1));
+        $form['submitted']['recipient']['#value'] = $user->name;
       }
     }
     // load recipient user by parameter
@@ -34,6 +35,10 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
 
     // set uuid as recipient external id
     $form['submitted']['recipient_external_id']['#value'] = $user->uuid;
+
+    // set recipient parliament
+    $parliament_name = $user->field_user_parliament['und'][0]['taxonomy_term']->name;
+    $form['submitted']['recipient_parliament']['#value'] = $parliament_name;
 
     // retrieve parliament tag from user
     $parliament_tid = $user->field_user_parliament['und'][0]['tid'];
