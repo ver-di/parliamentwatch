@@ -15,6 +15,13 @@ function pw_subsite_default_rules_configuration() {
       "TAGS" : [ "blog" ],
       "REQUIRES" : [ "rules", "comment" ],
       "ON" : [ "comment_approve" ],
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "comment:node" ],
+            "type" : { "value" : { "blogpost" : "blogpost" } }
+          }
+        }
+      ],
       "DO" : [
         { "mail" : {
             "to" : "info@abgeordnetenwatch.de",
