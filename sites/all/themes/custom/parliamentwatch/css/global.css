@@ -1584,9 +1584,9 @@ a#text_resize_increase:active {
 .views-exposed-form .bef-checkboxes .form-item:hover {
     background: #eee;
 }
-.views-exposed-form .form-radios label,
-.views-exposed-form .form-checkboxes label,
-.views-exposed-form .bef-checkboxes label {
+.grid-4 .views-exposed-form .form-radios label,
+.grid-4 .views-exposed-form .form-checkboxes label,
+.grid-4 .views-exposed-form .bef-checkboxes label {
     position: absolute;
     display: block;
     width: 279px;

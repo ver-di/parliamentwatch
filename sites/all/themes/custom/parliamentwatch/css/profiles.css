@@ -488,6 +488,9 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     float: left;
     padding: 0;
 }
+#edit-field-user-first-letter-lname-value-wrapper .form-item:hover {
+    background: transparent;
+}
 
 /* calendar */
 
