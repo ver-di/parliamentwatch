@@ -358,6 +358,8 @@ function pw_gdata_importer_feeds_importer_default() {
         'context' => '//row',
         'exp' => array(
           'errors' => 1,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -365,7 +367,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:2' => 0,
           ),
         ),
-        'allow_override' => 1,
+        'allow_override' => 0,
       ),
     ),
     'processor' => array(
