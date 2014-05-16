@@ -240,6 +240,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:2' => 'dateperiodstart',
           'xpathparser:4' => 'dateperiodend',
           'xpathparser:5' => 'systemuuid',
+          'xpathparser:6' => 'premiumprice',
         ),
         'rawXML' => array(
           'xpathparser:3' => 0,
@@ -248,10 +249,13 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:2' => 0,
           'xpathparser:4' => 0,
           'xpathparser:5' => 0,
+          'xpathparser:6' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 1,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:3' => 0,
@@ -260,9 +264,10 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:2' => 0,
             'xpathparser:4' => 0,
             'xpathparser:5' => 0,
+            'xpathparser:6' => 0,
           ),
         ),
-        'allow_override' => 1,
+        'allow_override' => 0,
       ),
     ),
     'processor' => array(
@@ -298,6 +303,11 @@ function pw_gdata_importer_feeds_importer_default() {
             'source' => 'xpathparser:5',
             'target' => 'guid',
             'unique' => 1,
+          ),
+          6 => array(
+            'source' => 'xpathparser:6',
+            'target' => 'field_premium_profile_price',
+            'unique' => FALSE,
           ),
         ),
         'update_existing' => '2',
@@ -852,24 +862,20 @@ function pw_gdata_importer_feeds_importer_default() {
       'plugin_key' => 'FeedsXPathParserXML',
       'config' => array(
         'sources' => array(
-          'xpathparser:0' => 'systemuuid',
-          'xpathparser:1' => 'systemuuid',
           'xpathparser:2' => 'subject',
           'xpathparser:3' => 'parliament',
         ),
         'rawXML' => array(
-          'xpathparser:0' => 0,
-          'xpathparser:1' => 0,
           'xpathparser:2' => 0,
           'xpathparser:3' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 0,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
-            'xpathparser:0' => 0,
-            'xpathparser:1' => 0,
             'xpathparser:2' => 0,
             'xpathparser:3' => 0,
           ),
@@ -883,24 +889,14 @@ function pw_gdata_importer_feeds_importer_default() {
         'vocabulary' => 0,
         'mappings' => array(
           0 => array(
-            'source' => 'xpathparser:0',
-            'target' => 'uuid:uuid',
-            'unique' => FALSE,
-          ),
-          1 => array(
-            'source' => 'xpathparser:1',
-            'target' => 'guid',
-            'unique' => 1,
-          ),
-          2 => array(
             'source' => 'xpathparser:2',
             'target' => 'name',
-            'unique' => FALSE,
+            'unique' => 1,
           ),
-          3 => array(
+          1 => array(
             'source' => 'xpathparser:3',
             'target' => 'field_parliament',
-            'term_search' => '0',
+            'term_search' => '1',
             'autocreate' => 0,
           ),
         ),
