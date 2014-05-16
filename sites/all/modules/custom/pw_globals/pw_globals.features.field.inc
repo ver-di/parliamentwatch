@@ -609,7 +609,7 @@ function pw_globals_field_default_fields() {
   $fields['taxonomy_term-constituency-field_parliament'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_parliament',
@@ -671,6 +671,74 @@ function pw_globals_field_default_fields() {
         'settings' => array(),
         'type' => 'options_select',
         'weight' => '33',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-parliaments-field_candidate_check_activated'.
+  $fields['taxonomy_term-parliaments-field_candidate_check_activated'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_candidate_check_activated',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'parliaments',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 3,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_candidate_check_activated',
+      'label' => 'Candidate-Check activated',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_onoff',
+        'weight' => '5',
       ),
     ),
   );
@@ -747,7 +815,7 @@ function pw_globals_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '31',
+        'weight' => '3',
       ),
     ),
   );
@@ -841,7 +909,73 @@ function pw_globals_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_select',
-        'weight' => '1',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-parliaments-field_premium_profile_price'.
+  $fields['taxonomy_term-parliaments-field_premium_profile_price'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_premium_profile_price',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'parliaments',
+      'default_value' => array(
+        0 => array(
+          'value' => '179',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 2,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_premium_profile_price',
+      'label' => 'Premium Profile Price',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'number',
+        'weight' => '4',
       ),
     ),
   );
@@ -1054,12 +1188,14 @@ function pw_globals_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Area Codes');
   t('Body');
+  t('Candidate-Check activated');
   t('Color');
   t('Comment');
   t('Election');
   t('Footer');
   t('Number');
   t('Parliament');
+  t('Premium Profile Price');
   t('Valid Date');
   t('Value');
   t('constituency number or similar identifier ');
