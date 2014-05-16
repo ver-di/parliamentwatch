@@ -841,17 +841,17 @@ function pw_webform_nodes_node_export_features_default() {
       \'type\' => \'webform\',
       \'language\' => \'und\',
       \'created\' => \'1395845253\',
-      \'changed\' => \'1399539747\',
+      \'changed\' => \'1400081930\',
       \'tnid\' => \'0\',
       \'translate\' => \'0\',
       \'uuid\' => \'451cb368-988c-4b6d-8f8c-0b36031901ca\',
-      \'revision_timestamp\' => \'1399539747\',
-      \'revision_uid\' => \'1454\',
+      \'revision_timestamp\' => \'1400081930\',
+      \'revision_uid\' => \'24952\',
       \'body\' => array(),
       \'field_webform_footer\' => array(
         \'und\' => array(
           array(
-            \'value\' => "<?php\\r\\ndrupal_add_library(\'system\', \'drupal.collapse\');\\r\\ndrupal_add_library(\'system\', \'drupal.form\');\\r\\n?>\\t\\r\\n<div>Die Freischaltung von Fragen kann je nach Nutzeraufkommen u.U. einige Stunden dauern, da alle eingehenden Fragen von einem Moderatorenteam überprüft werden. Ich habe den Moderations-Codex gelesen und sichergestellt, dass meine Frage nicht gegen diesen verstößt. <br/>\\r\\n    <fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Moderations-Codex anzeigen</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n$node = node_load(7734);\\r\\n$body_content = $node->body[$node->language][0][\\"value\\"];\\r\\nprint $body_content;\\r\\n             ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>\\r\\n<div>\\r\\n    Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem Moderator informiert. Aus Gründen der Rechtssicherheit wird Ihre IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhalten Sie in unserer\\r\\n    <fieldset class=\\"collapsible collapsed form-wrapper push-bottom-m\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Datenschutzerklärung</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n$node = node_load(10006);\\r\\n$body_content = $node->body[$node->language][0][\\"value\\"];\\r\\nprint $body_content;\\r\\n            ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>",
+            \'value\' => "<div>Die Freischaltung von Fragen kann je nach Nutzeraufkommen u.U. einige Stunden dauern, da alle eingehenden Fragen von einem Moderatorenteam überprüft werden. Ich habe den Moderations-Codex gelesen und sichergestellt, dass meine Frage nicht gegen diesen verstößt. <br/>\\r\\n    <fieldset class=\\"pw-collapsible pw-collapsed form-wrapper push-bottom-m managed-content\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Moderations-Codex anzeigen</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n$node = node_load(7734);\\r\\n$body_content = $node->body[$node->language][0][\\"value\\"];\\r\\nprint $body_content;\\r\\n             ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>\\r\\n<div>\\r\\n    Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem Moderator informiert. Aus Gründen der Rechtssicherheit wird Ihre IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhalten Sie in unserer\\r\\n    <fieldset class=\\"pw-collapsible pw-collapsed form-wrapper push-bottom-m managed-content\\">\\r\\n        <legend>\\r\\n            <span class=\\"fieldset-legend\\">Datenschutzerklärung</span>\\r\\n        </legend>\\r\\n        <div class=\\"fieldset-wrapper comment\\">\\r\\n            <div class=\\"content-inner\\">\\r\\n            <?php\\r\\n$node = node_load(10006);\\r\\n$body_content = $node->body[$node->language][0][\\"value\\"];\\r\\nprint $body_content;\\r\\n            ?>\\r\\n            </div>\\r\\n        </div>\\r\\n    </fieldset>\\r\\n</div>",
             \'format\' => \'php_code\',
           ),
         ),
