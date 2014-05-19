@@ -433,6 +433,7 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
   $query->addField($user_address_alias, 'field_user_address_country', 'location_country');
   $query->addField($user_address_alias, 'field_user_address_administrative_area', 'location_county');
   $query->addField($user_address_alias, 'field_user_address_locality', 'location_city');
+  $query->addField($user_address_alias, 'field_user_address_postal_code', 'location_postal_code');
   $query->addField($user_file_alias, 'uri', 'picture_uri');
   $query->addField($user_copyright_alias, 'field_image_copyright_value', 'copyright');
   $query->addField($user_questions_get_alias, 'field_user_questions_get_value', 'questions_get');
