@@ -408,7 +408,7 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
   $term_party_alias = $query->join('taxonomy_term_data', 'p', "%alias.tid = $user_party_alias.field_user_party_tid");
   $term_constituency_alias = $query->join('taxonomy_term_data', 'c', "%alias.tid = $user_constituency_alias.field_user_constituency_tid");
   $term_parliament_alias = $query->join('taxonomy_term_data', 'pm', "%alias.tid = $user_parliament_alias.field_user_parliament_tid");
-  $constituency_number_alias = $query->join('field_data_field_constituency_nr', 'fdfcn', "%alias.entity_id = $user_constituency_alias.field_user_constituency_tid AND %alias.entity_type = 'taxonomy_term'");
+  $constituency_number_alias = $query->leftJoin('field_data_field_constituency_nr', 'fdfcn', "%alias.entity_id = $user_constituency_alias.field_user_constituency_tid AND %alias.entity_type = 'taxonomy_term'");
   $user_education_alias = $query->leftJoin('field_revision_field_user_education', 'frfue', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
   $user_address_alias = $query->leftJoin('field_revision_field_user_address', 'frfua', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
   $user_picture_alias = $query->leftJoin('field_revision_field_user_picture', 'frfupic', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
