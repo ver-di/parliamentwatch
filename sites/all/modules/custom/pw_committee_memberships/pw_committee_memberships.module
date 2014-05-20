@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the PW Committee Memberships feature.
- */
-
-include_once 'pw_committee_memberships.features.inc';
