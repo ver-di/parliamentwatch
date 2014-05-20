@@ -15,7 +15,7 @@ function pw_calender_items_importer_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'committee_importer';
   $feeds_importer->config = array(
-    'name' => 'Committee Importer',
+    'name' => 'Committee Importer (CSV)',
     'description' => 'Fetches Committees from CSV and put in committee taxonomie',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
@@ -124,7 +124,7 @@ function pw_calender_items_importer_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'pw_committee_memberships_importer';
   $feeds_importer->config = array(
-    'name' => 'Committee Memberships Importer',
+    'name' => 'Committee Memberships Importer (CSV)',
     'description' => 'Fetches Committee Membership CSV Data',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
