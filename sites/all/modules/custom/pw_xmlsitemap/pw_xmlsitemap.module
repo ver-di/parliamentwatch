@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PW XMLSitemap feature.
+ */
+
+include_once 'pw_xmlsitemap.features.inc';
