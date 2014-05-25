@@ -546,7 +546,7 @@ function pw_subsite_default_fe_block_settings() {
     'i18n_mode' => '1',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'profile/*',
+    'pages' => '*/profile',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(

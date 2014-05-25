@@ -10,111 +10,6 @@
 function dialogues_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'comment-comment_node_dialogue-comment_body'.
-  $fields['comment-comment_node_dialogue-comment_body'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(
-        0 => 'comment',
-      ),
-      'field_name' => 'comment_body',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'comment_node_dialogue',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 13,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'comment',
-      'field_name' => 'comment_body',
-      'label' => 'Body',
-      'required' => 0,
-      'settings' => array(
-        'better_formats' => array(
-          'allowed_formats' => array(
-            'ds_code' => 0,
-            'filtered_html' => 0,
-            'full_html' => 0,
-            'managed_content' => 'managed_content',
-            'php_code' => 0,
-            'plain_text' => 0,
-          ),
-          'allowed_formats_toggle' => 1,
-          'default_order_toggle' => 0,
-          'default_order_wrapper' => array(
-            'formats' => array(
-              'ds_code' => array(
-                'weight' => '-5',
-              ),
-              'filtered_html' => array(
-                'weight' => '-9',
-              ),
-              'full_html' => array(
-                'weight' => '-8',
-              ),
-              'managed_content' => array(
-                'weight' => '-10',
-              ),
-              'php_code' => array(
-                'weight' => '-6',
-              ),
-              'plain_text' => array(
-                'weight' => '-7',
-              ),
-            ),
-          ),
-        ),
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '1',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'rows' => '5',
-        ),
-        'type' => 'text_textarea',
-        'weight' => '26',
-      ),
-    ),
-  );
-
   // Exported field: 'comment-comment_node_dialogue-field_dialogue_annotation'.
   $fields['comment-comment_node_dialogue-field_dialogue_annotation'] = array(
     'field_config' => array(
@@ -268,7 +163,7 @@ function dialogues_field_default_fields() {
             ),
           ),
         ),
-        'display_summary' => 0,
+        'display_summary' => 1,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -444,8 +339,8 @@ function dialogues_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => '',
-          1 => '',
+          0 => '0',
+          1 => '1',
         ),
         'allowed_values_function' => '',
       ),
@@ -995,7 +890,7 @@ function dialogues_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '28',
+          'weight' => '30',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -1091,7 +986,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '38',
         ),
         'print' => array(
           'label' => 'above',
@@ -1187,7 +1082,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '31',
+          'weight' => '33',
         ),
         'print' => array(
           'label' => 'above',
@@ -1286,7 +1181,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '34',
+          'weight' => '36',
         ),
         'print' => array(
           'label' => 'above',
@@ -1372,7 +1267,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '37',
         ),
         'print' => array(
           'label' => 'above',
@@ -1467,7 +1362,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '33',
+          'weight' => '35',
         ),
         'print' => array(
           'label' => 'above',
@@ -1570,7 +1465,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '32',
+          'weight' => '34',
         ),
         'print' => array(
           'label' => 'above',
@@ -1664,7 +1559,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '39',
         ),
         'print' => array(
           'label' => 'above',
@@ -1802,7 +1697,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '30',
+          'weight' => '32',
         ),
         'print' => array(
           'label' => 'above',
@@ -1902,7 +1797,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '29',
+          'weight' => '31',
         ),
         'print' => array(
           'label' => 'above',
@@ -2002,7 +1897,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '28',
         ),
         'print' => array(
           'label' => 'above',

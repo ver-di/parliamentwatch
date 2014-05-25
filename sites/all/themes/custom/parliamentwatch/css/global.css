@@ -126,6 +126,7 @@ small {
 }
 .subline {
     font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
+    display: block;
 }
 .bg-white {
     background: #fff;
@@ -579,6 +580,7 @@ a.ic-print {
 .ic-info {
     position: relative;
     display: inline;
+    top: 4px;
 }
 #views-exposed-form-profile-questions-answers-profile,
 #views-exposed-form-profile-list-rev-grid,
@@ -594,7 +596,7 @@ a.ic-print {
     top: 0;
     margin: 0 0 0.8em 0 !important;
 }
-.ic-info {
+.views-exposed-widgets .ic-info {
     position: absolute;
     top: 0;
     right: 0;
@@ -620,6 +622,9 @@ a.ic-print {
     right: 30px;
     top: -3px;
     width: 260px;
+}
+.ic-info.ic-right .info-content {
+    left: 30px;
 }
 
 .ajax-progress, .ajax-progress-throbber {
@@ -1592,6 +1597,12 @@ a#text_resize_increase:active {
 .views-exposed-form .bef-checkboxes .form-item:hover {
     background: #eee;
 }
+.grid-4 .views-exposed-form .form-radios .form-item-field-dialogue-topic-tid label,
+.grid-4 .views-exposed-form .form-checkboxes .form-item-field-dialogue-topic-tid label,
+.grid-4 .views-exposed-form .bef-checkboxes .form-item-field-dialogue-topic-tid label {
+    position: relative;
+    width: auto;
+}
 .grid-4 .views-exposed-form .form-radios label,
 .grid-4 .views-exposed-form .form-checkboxes label,
 .grid-4 .views-exposed-form .bef-checkboxes label {
@@ -2251,12 +2262,18 @@ form .webform-component-checkboxes .description {
 }
 
 .view-profile-questions-answers .sharethis-wrapper,
-#quicktabs-tabpage-politicians_answer-1 .sharethis-wrapper  {
+#quicktabs-tabpage-politicians_answer-1 .sharethis-wrapper,
+.node-type-dialogue .sharethis-wrapper {
     top: 2em;
 }
 .view-answers .comment.answer .sharethis-wrapper {
     top: 25px;
     right: 12px;
+}
+.annotation {
+    margin-top: 0.5em;
+    border-top: 1px dotted #ccc;
+    padding-top: 0.5em;
 }
 
 
@@ -2462,10 +2479,6 @@ form .webform-component-checkboxes .description {
 .st_fbrec_hcount {
     position: relative;
     top: 1px;
-}
-.view-mode-full .sharethis-buttons,
-.view-mode-full .sharethis-wrapper {
-	top: 0.5em;
 }
 .stButton .chicklets {
     padding-left: 0 !important;
