@@ -24,7 +24,6 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
   // retrieve user roles of the field field_user_roles_for_view_mode_switch:
   $assignedRoles = array();
   foreach ($account->field_user_roles_for_view_mode_s['und'] as $role) {
-    // dpm($role);
     $assignedRoles[$role['tid']] = $role['tid'];
   }
   
@@ -56,11 +55,13 @@ function pw_user_set_custom_breadcrumb($account){
     $is_deputy = array_search('Deputy', $account->roles);
     if($is_deputy){
       $path_alias = drupal_lookup_path('alias', 'profile/'.strtolower($parliament_term->name).'/deputies');
+      $path_profiles = $path_alias?$path_alias:'profile/'.strtolower($parliament_term->name).'/deputies';
     }
     else{
       $path_alias = drupal_lookup_path('alias', 'profile/'.strtolower($parliament_term->name).'/candidates');
+      $path_profiles = $path_alias?$path_alias:'profile/'.strtolower($parliament_term->name).'/candidates';
     }
-    $breadcrumb[] = l(t('Profiles Overview'), $path_alias);
+    $breadcrumb[] = l(t('Profiles Overview'), $path_profiles);
   }
   $account_full_name = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
   #$breadcrumb[] = l($account_full_name, current_path());
@@ -73,7 +74,7 @@ function pw_user_set_custom_breadcrumb($account){
 function pw_user_set_custom_title($account){
   // custom title
   $account_full_name = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
-  drupal_set_title($account_full_name);
+  // drupal_set_page_title($account_full_name);
 }
 
 /**
