@@ -2407,6 +2407,10 @@ form .webform-component-checkboxes .description {
     top: 18px;
     z-index: 990;
 }
+.announcement.slideshow:hover .wrapper-inner,
+.announcement.slideshow:hover .views-slideshow-controls-top {
+    background: url(../images/bg_fff90.png);
+}
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
     cursor: pointer;
