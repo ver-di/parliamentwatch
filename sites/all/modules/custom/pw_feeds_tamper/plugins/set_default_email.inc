@@ -29,7 +29,7 @@ function pw_set_default_email($source, $item_key, $element_key, &$field, $settin
 
   if(empty($field)) {
 
-    // create a new user with constructed uname
+    // set generic email
     $field = "noemail+".microtime()."@parliamentwatch.org";
     return;
 
