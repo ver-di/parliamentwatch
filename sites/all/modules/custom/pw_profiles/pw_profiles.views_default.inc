@@ -4801,7 +4801,7 @@ return FALSE;';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['expose']['identifier'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['is_grouped'] = TRUE;
-  $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['label'] = 'Abgeordnete nach Namen filtern';
+  $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['label'] = 'Nach Namen filtern';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['identifier'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['widget'] = 'radios';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['group_info']['group_items'] = array(
@@ -5071,7 +5071,7 @@ return FALSE;';
   $handler->display->display_options['filters']['field_user_party_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_user_party_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_user_party_tid']['expose']['operator_id'] = 'field_user_party_tid_op';
-  $handler->display->display_options['filters']['field_user_party_tid']['expose']['label'] = 'Abgeordnete nach Partei filtern';
+  $handler->display->display_options['filters']['field_user_party_tid']['expose']['label'] = 'Nach Partei filtern';
   $handler->display->display_options['filters']['field_user_party_tid']['expose']['operator'] = 'field_user_party_tid_op';
   $handler->display->display_options['filters']['field_user_party_tid']['expose']['identifier'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['expose']['multiple'] = TRUE;
@@ -5079,11 +5079,11 @@ return FALSE;';
     2 => '2',
     1 => 0,
     3 => 0,
-    181527986 => 0,
     51622513 => 0,
-    185431326 => 0,
+    181527986 => 0,
     140336230 => 0,
-    237793809 => 0,
+    185431326 => 0,
+    178386088 => 0,
   );
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
