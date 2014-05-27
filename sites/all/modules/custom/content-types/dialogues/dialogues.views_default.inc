@@ -379,7 +379,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
 $path = url($path, array(\'absolute\' => true));
-print \'<input type="text" value="\'.$path.\'" />\';
+print \'<input type="text" value="\'.$path.\'" readonly />\';
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
@@ -1226,7 +1226,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
 $path = url($path, array(\'absolute\' => true));
-print \'<input type="text" value="\'.$path.\'" />\';
+print \'<input type="text" value="\'.$path.\'" readonly />\';
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
@@ -1834,7 +1834,7 @@ else {
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
 $path = url($path, array(\'absolute\' => true));
-print \'<input type="text" value="\'.$path.\'" />\';
+print \'<input type="text" value="\'.$path.\'" readonly />\';
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
@@ -2333,7 +2333,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
 $path = url($path, array(\'absolute\' => true));
-print \'<input type="text" value="\'.$path.\'" />\';
+print \'<input type="text" value="\'.$path.\'" readonly />\';
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
