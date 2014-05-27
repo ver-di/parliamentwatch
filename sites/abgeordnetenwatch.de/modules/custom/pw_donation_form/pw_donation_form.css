@@ -76,7 +76,17 @@ responsive layout for mobile
     margin: 0 0 0.2em;
 } 
 .responsive-layout-mobile #webform-client-form-10508 .form-text {
-    width: 349px;
+    width: 100%;
+}
+.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-yourdata--address-zipcode,
+.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-yourdata--address-city,
+.responsive-layout-mobile #webform-client-form-10508 #edit-submitted-fieldset-donationform-yourdata-address-country {
+    float: none;
+    margin-right: 0;
+    width: 100%;
+}
+.responsive-layout-mobile #webform-client-form-10508 #payment_accordion .form-text {
+    width: 100%;
 }
 .responsive-layout-mobile #webform-client-form-10508 #edit-submitted-fieldset-donationform-yourdonation-donation-free-amount.form-text {
     width: 8em;
@@ -89,4 +99,9 @@ responsive layout for mobile
 }
 .responsive-layout-mobile #webform-client-form-10508 .ui-accordion .ui-accordion-content label {
     font-size: 0.8em;
+}
+.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-paymentinfo--payment-accordion--payment-tab-direct-debit--payment-direct-debit-holder label,
+.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-paymentinfo--payment-accordion--payment-tab-sepa--payment-sepa-holder label {
+    line-height: 1.1em;
+    margin-top: 0.7em;
 }

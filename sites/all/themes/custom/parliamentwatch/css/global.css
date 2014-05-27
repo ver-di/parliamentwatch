@@ -2029,6 +2029,7 @@ input[type="button"],
     border-radius: 0;
     color: #fff;
     cursor: pointer;
+    display: inline-block;
     font-weight: normal;
     padding: 7px 10px;
     text-shadow: 0 0 0;
@@ -2406,6 +2407,10 @@ form .webform-component-checkboxes .description {
     width: 93%;
     top: 18px;
     z-index: 990;
+}
+.announcement.slideshow:hover .wrapper-inner,
+.announcement.slideshow:hover .views-slideshow-controls-top {
+    background: url(../images/bg_fff90.png);
 }
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
