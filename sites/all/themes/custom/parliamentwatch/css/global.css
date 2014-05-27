@@ -577,11 +577,6 @@ a.ic-print {
     vertical-align: middle;
     margin: 0 5px;
 }
-.ic-info {
-    position: relative;
-    display: inline;
-    top: 4px;
-}
 #views-exposed-form-profile-questions-answers-profile,
 #views-exposed-form-profile-list-rev-grid,
 .views-exposed-widget,
@@ -596,14 +591,19 @@ a.ic-print {
     top: 0;
     margin: 0 0 0.8em 0 !important;
 }
-.views-exposed-widgets .ic-info {
+#views-exposed-form-profile-list-rev-grid .ic-info {
+    top: 0;
+}
+div.ic-info {
     position: absolute;
     top: 0;
     right: 0;
     z-index: 200;
 }
-#views-exposed-form-profile-list-rev-grid .ic-info {
-    top: 0;
+span.ic-info {
+    position: relative;
+    display: inline;
+    top: 4px;
 }
 .ic-info .info-title {
     text-indent: -50000px;
