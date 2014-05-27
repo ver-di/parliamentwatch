@@ -324,6 +324,62 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_updater-xpathparser_1-find_username_by_uuid';
+  $feeds_tamper->importer = 'gdata_profiles_updater';
+  $feeds_tamper->source = 'xpathparser:1';
+  $feeds_tamper->plugin_id = 'find_username_by_uuid';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Finds username by his UUID';
+  $export['gdata_profiles_updater-xpathparser_1-find_username_by_uuid'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_updater-xpathparser_1-required';
+  $feeds_tamper->importer = 'gdata_profiles_updater';
+  $feeds_tamper->source = 'xpathparser:1';
+  $feeds_tamper->plugin_id = 'required';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Pflichtfeld';
+  $export['gdata_profiles_updater-xpathparser_1-required'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_updater-xpathparser_5-explode';
+  $feeds_tamper->importer = 'gdata_profiles_updater';
+  $feeds_tamper->source = 'xpathparser:5';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['gdata_profiles_updater-xpathparser_5-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_updater-xpathparser_6-explode';
+  $feeds_tamper->importer = 'gdata_profiles_updater';
+  $feeds_tamper->source = 'xpathparser:6';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['gdata_profiles_updater-xpathparser_6-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_subject_importer-xpathparser_3-add_parliament';
   $feeds_tamper->importer = 'gdata_subject_importer';
   $feeds_tamper->source = 'xpathparser:3';
