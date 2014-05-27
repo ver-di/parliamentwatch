@@ -52,7 +52,7 @@ function pw_userarchives_cron($uid=null) {
       }
       
       $answerQuery = db_select('comment', 'c');
-      $answerQuery->addExpression('COUNT(c.cid)', 'count');
+      $answerQuery->addExpression('COUNT(DISTINCT c.nid)', 'count');
       $answerQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'comment\' AND f.entity_id = c.cid');
       $answerQuery->join('node', 'n', 'n.nid=c.nid');
       $answerQuery->join('field_revision_field_pw_parmliament', 'p', 'p.entity_id=n.nid');
