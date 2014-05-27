@@ -241,6 +241,8 @@ function pw_profiles_field_group_info() {
       3 => 'field_user_political_roles',
       4 => 'field_user_valid',
       5 => 'field_user_election_result',
+      6 => 'field_user_constituency_won',
+      7 => 'field_user_list_won',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
