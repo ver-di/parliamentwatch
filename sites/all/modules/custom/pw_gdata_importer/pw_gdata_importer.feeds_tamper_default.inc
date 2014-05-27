@@ -87,6 +87,18 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_elected_profiles-xpathparser_1-find_username_by_uuid';
+  $feeds_tamper->importer = 'gdata_elected_profiles';
+  $feeds_tamper->source = 'xpathparser:1';
+  $feeds_tamper->plugin_id = 'find_username_by_uuid';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Finds username by UUID';
+  $export['gdata_elected_profiles-xpathparser_1-find_username_by_uuid'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_profiles_importer_v2-blank_source_1-default_value';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'Blank source 1';
@@ -329,7 +341,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->source = 'xpathparser:1';
   $feeds_tamper->plugin_id = 'find_username_by_uuid';
   $feeds_tamper->settings = array();
-  $feeds_tamper->weight = 0;
+  $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Finds username by his UUID';
   $export['gdata_profiles_updater-xpathparser_1-find_username_by_uuid'] = $feeds_tamper;
 
@@ -341,7 +353,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->source = 'xpathparser:1';
   $feeds_tamper->plugin_id = 'required';
   $feeds_tamper->settings = array();
-  $feeds_tamper->weight = 1;
+  $feeds_tamper->weight = 3;
   $feeds_tamper->description = 'Pflichtfeld';
   $export['gdata_profiles_updater-xpathparser_1-required'] = $feeds_tamper;
 
