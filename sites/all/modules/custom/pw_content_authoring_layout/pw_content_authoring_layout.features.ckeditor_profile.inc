@@ -124,7 +124,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
         'html_entities' => 'f',
         'scayt_autoStartup' => 't',
         'theme_config_js' => 'f',
-        'js_conf' => '',
+        'js_conf' => 'config.templates_replaceContent = false;',
         'loadPlugins' => array(
           'counter' => array(
             'name' => 'counter',
@@ -229,7 +229,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
-        'js_conf' => '',
+        'js_conf' => 'config.templates_replaceContent = false;',
         'loadPlugins' => array(
           'counter' => array(
             'name' => 'counter',
