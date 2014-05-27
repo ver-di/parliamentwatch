@@ -33,6 +33,9 @@
     font-size: 1.1rem;
     line-height: 1.6em;
 }
+.view-slider .views-slideshow-cycle-main-frame-row-item:hover {
+    background: url(/sites/all/themes/custom/parliamentwatch/images/bg_fff90.png);
+}
 .view-slider {
     height: 168px !important;
     height: 16.8rem !important;
