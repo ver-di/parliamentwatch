@@ -126,7 +126,7 @@ function dialogues_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'comment',
       'field_name' => 'field_dialogue_comment_body',
-      'label' => 'Body',
+      'label' => 'Comment Body',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
@@ -2015,6 +2015,7 @@ function dialogues_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Annotation');
   t('Body');
+  t('Comment Body');
   t('Dialogue ID');
   t('Documents');
   t('Message ID');

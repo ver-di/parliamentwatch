@@ -276,7 +276,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['empty_zero'] = TRUE;
-  /* Feld: Kommentar: Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -1120,7 +1120,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['empty_zero'] = TRUE;
-  /* Feld: Kommentar: Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -1733,7 +1733,7 @@ else {
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['empty_zero'] = TRUE;
-  /* Feld: Kommentar: Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -2232,7 +2232,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'Profil besuchen';
-  /* Feld: Kommentar: Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -2707,7 +2707,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'Profil besuchen';
-  /* Feld: Kommentar: Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -2841,7 +2841,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['filters']['type']['value'] = array(
     'dialogue' => 'dialogue',
   );
-  /* Filter criterion: Kommentar: Body (field_dialogue_comment_body:summary) */
+  /* Filter criterion: Kommentar: Comment Body (field_dialogue_comment_body:summary) */
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['id'] = 'field_dialogue_comment_body_summary';
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['field'] = 'field_dialogue_comment_body_summary';
