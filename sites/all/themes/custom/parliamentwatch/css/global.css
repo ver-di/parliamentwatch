@@ -1917,7 +1917,6 @@ form:after {
 :first-child + html form {
     min-height: 1%;
 }
-.text-field,
 textarea,
 select,
 input[type="date"],
@@ -1974,16 +1973,6 @@ input[type="week"],
     background: transparent url(../images/sprite.png) -160px -2499px no-repeat;
     color: #ccc;
 
-}
-.text-field {
-    line-height: 2.5em;
-    background: #fff;
-    margin-bottom: 3px;
-}
-.pw-question-link .text-field {
-    height: auto;
-    line-height: normal;
-    padding: 6px;
 }
 textarea {
     min-height: 7em;
@@ -2155,6 +2144,9 @@ form .webform-component-checkboxes .description {
 #user-pass .form-item {
     width: 265px;
     margin-bottom: 1em;
+}
+.permalink input {
+    width: 100%;
 }
 
 

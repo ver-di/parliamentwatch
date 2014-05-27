@@ -203,14 +203,13 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['fieldset_3']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset_3']['label'] = 'Fieldset Answer Inner';
   $handler->display->display_options['fields']['fieldset_3']['children'] = array(
-    0 => 'fieldset_5',
-    1 => 'field_user_picture',
-    2 => 'field_user_fname',
-    3 => 'field_user_lname',
-    4 => 'created_1',
-    5 => 'field_dialogue_is_standard_reply',
-    6 => 'field_dialogue_comment_body',
-    7 => 'field_dialogue_annotation',
+    0 => 'field_user_picture',
+    1 => 'field_user_fname',
+    2 => 'field_user_lname',
+    3 => 'created_1',
+    4 => 'field_dialogue_is_standard_reply',
+    5 => 'field_dialogue_comment_body',
+    6 => 'field_dialogue_annotation',
   );
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'content-inner clearfix';
@@ -348,8 +347,9 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
     1 => 'path',
-    2 => 'php',
-    3 => 'php_2',
+    2 => 'php_1',
+    3 => 'php',
+    4 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';
@@ -364,19 +364,25 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
-  /* Feld: Content: Path: Permalink */
-  $handler->display->display_options['fields']['path']['id'] = 'path';
-  $handler->display->display_options['fields']['path']['table'] = 'node';
-  $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['ui_name'] = 'Content: Path: Permalink';
-  $handler->display->display_options['fields']['path']['label'] = '';
-  $handler->display->display_options['fields']['path']['element_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_class'] = 'text-field permalink';
-  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'pw-question-link';
-  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Feld: Global: PHP: Permalink */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Global: PHP: Permalink';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'permalink';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+$path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
+$path = url($path, array(\'absolute\' => true));
+print \'<input type="text" value="\'.$path.\'" />\';
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Feld: Global: PHP: tinyURL */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -1188,9 +1194,10 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset_4']['label'] = 'permalink-wrapper';
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
-    1 => 'path',
-    2 => 'php',
-    3 => 'php_2',
+    1 => 'php_1',
+    2 => 'path',
+    3 => 'php',
+    4 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';
@@ -1205,19 +1212,24 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
-  /* Feld: Content: Path: Permalink */
-  $handler->display->display_options['fields']['path']['id'] = 'path';
-  $handler->display->display_options['fields']['path']['table'] = 'node';
-  $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['ui_name'] = 'Content: Path: Permalink';
-  $handler->display->display_options['fields']['path']['label'] = '';
-  $handler->display->display_options['fields']['path']['element_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_class'] = 'text-field';
-  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'pw-question-link';
-  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Feld: Global: PHP: Permalink */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Global: PHP: Permalink';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'permalink';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+$path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
+$path = url($path, array(\'absolute\' => true));
+print \'<input type="text" value="\'.$path.\'" />\';
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Feld: Global: PHP: tinyURL */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -1791,8 +1803,9 @@ else {
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
     1 => 'path',
-    2 => 'php',
-    3 => 'php_2',
+    2 => 'php_1',
+    3 => 'php',
+    4 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';
@@ -1807,19 +1820,24 @@ else {
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
-  /* Feld: Content: Path: Permalink */
-  $handler->display->display_options['fields']['path']['id'] = 'path';
-  $handler->display->display_options['fields']['path']['table'] = 'node';
-  $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['ui_name'] = 'Content: Path: Permalink';
-  $handler->display->display_options['fields']['path']['label'] = '';
-  $handler->display->display_options['fields']['path']['element_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_class'] = 'text-field permalink';
-  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'pw-question-link';
-  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Feld: Global: PHP: Permalink */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Global: PHP: Permalink';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'permalink';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+$path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
+$path = url($path, array(\'absolute\' => true));
+print \'<input type="text" value="\'.$path.\'" />\';
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Feld: Global: PHP: tinyURL */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -2283,9 +2301,10 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset_4']['label'] = 'permalink-wrapper';
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
-    1 => 'path',
-    2 => 'php',
-    3 => 'php_2',
+    1 => 'php_1',
+    2 => 'path',
+    3 => 'php',
+    4 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';
@@ -2300,19 +2319,24 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
-  /* Feld: Content: Path: Permalink */
-  $handler->display->display_options['fields']['path']['id'] = 'path';
-  $handler->display->display_options['fields']['path']['table'] = 'node';
-  $handler->display->display_options['fields']['path']['field'] = 'path';
-  $handler->display->display_options['fields']['path']['ui_name'] = 'Content: Path: Permalink';
-  $handler->display->display_options['fields']['path']['label'] = '';
-  $handler->display->display_options['fields']['path']['element_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_class'] = 'text-field permalink';
-  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['path']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'pw-question-link';
-  $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['path']['absolute'] = TRUE;
+  /* Feld: Global: PHP: Permalink */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'Global: PHP: Permalink';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'permalink';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+$path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
+$path = url($path, array(\'absolute\' => true));
+print \'<input type="text" value="\'.$path.\'" />\';
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Feld: Global: PHP: tinyURL */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -2351,6 +2375,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['edit_comment_1']['field'] = 'edit_comment';
   $handler->display->display_options['fields']['edit_comment_1']['relationship'] = 'cid';
   $handler->display->display_options['fields']['edit_comment_1']['label'] = '';
+  $handler->display->display_options['fields']['edit_comment_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_comment_1']['element_label_colon'] = FALSE;
   /* Feld: Inhalt: Edit link */
   $handler->display->display_options['fields']['edit_node_1']['id'] = 'edit_node_1';
