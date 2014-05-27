@@ -2,8 +2,10 @@ jQuery(document).ready(function() {
 
 // expand active user revision block in user revision switch
 
+    if ($('#block-views-pw-user-revision-switch-block .link-profile.active').length == 0) {
+        $('#block-views-pw-user-revision-switch-block .pw-list-expander:first-child .link-profile').addClass('active');
+    }
     $('#block-views-pw-user-revision-switch-block .link-profile.active').parents('#block-views-pw-user-revision-switch-block fieldset').removeClass('collapsed');
-    $('#block-views-pw-user-revision-switch-block .link-profile').not('.active').parents('#block-views-pw-user-revision-switch-block fieldset').last().removeClass('collapsed');
 
 
 // automatically adjust textarea heigh  with jQuery Autosize
