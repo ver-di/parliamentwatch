@@ -58,6 +58,8 @@ Parlamente {"url":"http:\/\/www.abgeordnetenwatch.de\/parlamente-210-0.html","ex
 --Ausschüsse {"url":"http:\/\/www.abgeordnetenwatch.de\/ausschuesse-808-0.html"}
 Kommunen {"url":"http:\/\/www.abgeordnetenwatch.de\/kommunen-933-0.html","expanded":true}
 -Alle Kommunen {"url":"http:\/\/www.abgeordnetenwatch.de\/alle_kommunen-909-0.html"}
+-Kommunalwahl Wuppertal {"url":"wuppertal"}
+-Landratwahl Mansfeld-Südharz {"url":"mansfeld-sudharz"}
 Presse {"url":"ueber-uns\/presse","expanded":true}
 -Pressespiegel {"url":"ueber-uns\/presse"}
 -Pressemitteilungen {"url":"ueber-uns\/presse\/pressemitteilungen"}
