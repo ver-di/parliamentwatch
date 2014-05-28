@@ -73,8 +73,10 @@ function pw_user_set_custom_breadcrumb($account){
  */
 function pw_user_set_custom_title($account){
   // custom title
-  $account_full_name = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
-  // drupal_set_page_title($account_full_name);
+  if(!strpos(request_uri(), 'archive')){
+    $account_full_name = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
+    drupal_set_title($account_full_name);
+  }
 }
 
 /**
