@@ -788,6 +788,7 @@ h1#page-title {
 }
 #cboxLoadedContent {
     margin: 0;
+    overflow-x: hidden !important;
 }
 #cboxClose {
     color: #444444;
@@ -816,6 +817,9 @@ h1#page-title {
 }
 #cboxCurrent {
     left: 120px;
+}
+#colorbox .topic.float-right {
+    margin-right: 20px;
 }
 
 
