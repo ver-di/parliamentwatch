@@ -263,6 +263,24 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler = $view->new_display('panel_pane', 'Slideshow', 'profile_slideshow');
   $handler->display->display_options['display_description'] = 'Slideshow for profiles';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Feld: Parliament (field_parliament) */
+  $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
+  $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_parliament_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_argument_options']['code'] = '// load parliament term from profile url
+$term = _pw_get_current_parliament_term();
+return $term->tid;';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_parliament_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['vocabularies'] = array(
+    'parliaments' => 'parliaments',
+  );
   /* Contextual filter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
@@ -270,8 +288,9 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler->display->display_options['arguments']['uid']['relationship'] = 'field_pw_kc_user_reference_target_id';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['code'] = '$user = _pw_get_current_user();
+return $user->uid; ';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
