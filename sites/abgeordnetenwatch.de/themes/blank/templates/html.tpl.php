@@ -6,6 +6,11 @@
   <?php print $styles; ?>
   <?php print $scripts; ?>
   <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!-- affiliate css and js -->
+  <?php if (array_shift(explode(".",$_SERVER['HTTP_HOST'])) == 'affiliate'): ?>
+      <link href="http://www.labanda.de/sites/labanda.de/files/css/css_AcDPoG9U4yy9WjsSBtFs1ttAraFSeZHzFQtND7apB2Y.css" rel="stylesheet" type="text/css" />
+  <?php endif; ?>
+  <!-- /affiliate css and js -->
 </head>
 <body<?php print $attributes;?>>
   <?php echo render($pw_tracking) ?>
