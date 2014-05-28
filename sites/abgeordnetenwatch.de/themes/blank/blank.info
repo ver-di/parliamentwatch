@@ -5,6 +5,7 @@ engine = 'phptemplate'
 screenshot = 'screenshot.png'
 base theme = 'abgeordnetenwatch'
 
+regions[pw_affilliate_code] = 'PW Affiliate CSS and JS'
 regions[pw_tracking] = 'PW Tracking Code'
 regions[page_top] = 'Page Top'
 regions[page_bottom] = 'Page Bottom'
