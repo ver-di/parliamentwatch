@@ -28,3 +28,69 @@ function _pw_is_premium_user($user){
   }
   return false;
 }
+
+/**
+ * Custom: Retrieve parliament term depending on currently viewed node or user. 
+ */
+function _pw_get_current_parliament_term(){
+
+  switch(arg(0)){
+
+    // load by archived user profile
+    case 'profile': 
+      $user = user_load_by_name(arg(1));
+      $user_id = $user->uid;
+      $vid = arg(3);
+      $user = user_revision_load($user_id, $vid);
+      $term_parliament_id = $user->field_user_parliament['und'][0]['tid'];
+      $term_parliament = taxonomy_term_load($term_parliament_id);
+      return $term_parliament;
+      break;
+
+    // load by user profile
+    case 'user':
+      $user = menu_get_object('user');
+      if(isset($user->field_user_parliament)){
+        $term_parliament_id = $user->field_user_parliament['und'][0]['tid'];
+        $term_parliament = taxonomy_term_load($term_parliament_id);
+        return $term_parliament;
+      }
+      break;
+
+    // load by node
+    case 'node':
+      $node = menu_get_object();
+      if(isset($node->field_parliament)){
+        $term_parliament_id = $node->field_parliament['und'][0]['tid'];
+        $term_parliament = taxonomy_term_load($term_parliament_id);
+        return $term_parliament;
+      }
+      break;
+  }
+  return FALSE;
+}
+
+/**
+ * Custom: Retrieve user depending on user or archived user is viewed. 
+ */
+function _pw_get_current_user(){
+
+  switch(arg(0)){
+
+    // load by archived user profile
+    case 'profile': 
+      $user = user_load_by_name(arg(1));
+      $user_id = $user->uid;
+      $vid = arg(3);
+      $user = user_revision_load($user_id, $vid);
+      return $user;
+      break;
+
+    // load by user profile
+    case 'user':
+      $user = menu_get_object('user');
+      return $user;
+      break;
+  }
+  return FALSE;
+}
