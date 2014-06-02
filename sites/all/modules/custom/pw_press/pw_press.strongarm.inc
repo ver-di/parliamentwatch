@@ -400,27 +400,6 @@ function pw_press_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_comment_press_release';
-  $strongarm->value = 0;
-  $export['print_display_comment_press_release'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_press_release';
-  $strongarm->value = 0;
-  $export['print_display_press_release'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_urllist_press_release';
-  $strongarm->value = 0;
-  $export['print_display_urllist_press_release'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'siblingmenutree_display_press_release';
   $strongarm->value = '0';
   $export['siblingmenutree_display_press_release'] = $strongarm;

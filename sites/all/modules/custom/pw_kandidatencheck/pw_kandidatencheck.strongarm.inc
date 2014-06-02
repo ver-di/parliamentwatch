@@ -411,48 +411,6 @@ function pw_kandidatencheck_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_comment_pw_kc_position';
-  $strongarm->value = 0;
-  $export['print_display_comment_pw_kc_position'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_comment_pw_kc_thesis';
-  $strongarm->value = 0;
-  $export['print_display_comment_pw_kc_thesis'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_pw_kc_position';
-  $strongarm->value = 0;
-  $export['print_display_pw_kc_position'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_pw_kc_thesis';
-  $strongarm->value = 0;
-  $export['print_display_pw_kc_thesis'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_urllist_pw_kc_position';
-  $strongarm->value = 0;
-  $export['print_display_urllist_pw_kc_position'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_urllist_pw_kc_thesis';
-  $strongarm->value = 0;
-  $export['print_display_urllist_pw_kc_thesis'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'resp_img_node_pw_kc_position_body';
   $strongarm->value = 0;
   $export['resp_img_node_pw_kc_position_body'] = $strongarm;

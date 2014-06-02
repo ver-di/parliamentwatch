@@ -47,11 +47,11 @@ function pw_press_node_info() {
       'help' => '',
     ),
     'press_release' => array(
-      'name' => t('Pressemitteilung'),
+      'name' => t('Press release'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
   );

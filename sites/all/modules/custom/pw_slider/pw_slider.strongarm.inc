@@ -162,27 +162,6 @@ function pw_slider_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_comment_pw_slider';
-  $strongarm->value = 0;
-  $export['print_display_comment_pw_slider'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_pw_slider';
-  $strongarm->value = 1;
-  $export['print_display_pw_slider'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_urllist_pw_slider';
-  $strongarm->value = 1;
-  $export['print_display_urllist_pw_slider'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'siblingmenutree_display_pw_slider';
   $strongarm->value = '0';
   $export['siblingmenutree_display_pw_slider'] = $strongarm;

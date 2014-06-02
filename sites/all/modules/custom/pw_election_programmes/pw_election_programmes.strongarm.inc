@@ -237,27 +237,6 @@ function pw_election_programmes_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_comment_election_programme';
-  $strongarm->value = 0;
-  $export['print_display_comment_election_programme'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_election_programme';
-  $strongarm->value = 0;
-  $export['print_display_election_programme'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_urllist_election_programme';
-  $strongarm->value = 0;
-  $export['print_display_urllist_election_programme'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'save_continue_election_programme';
   $strongarm->value = 'Speichern und Felder hinzufügen';
   $export['save_continue_election_programme'] = $strongarm;

@@ -255,27 +255,6 @@ function pw_trustees_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_comment_trustee';
-  $strongarm->value = 0;
-  $export['print_display_comment_trustee'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_trustee';
-  $strongarm->value = 0;
-  $export['print_display_trustee'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_urllist_trustee';
-  $strongarm->value = 0;
-  $export['print_display_urllist_trustee'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'siblingmenutree_display_trustee';
   $strongarm->value = '0';
   $export['siblingmenutree_display_trustee'] = $strongarm;

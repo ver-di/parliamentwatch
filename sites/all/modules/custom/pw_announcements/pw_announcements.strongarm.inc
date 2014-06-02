@@ -228,27 +228,6 @@ function pw_announcements_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_announcement';
-  $strongarm->value = 0;
-  $export['print_display_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_comment_announcement';
-  $strongarm->value = 0;
-  $export['print_display_comment_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'print_display_urllist_announcement';
-  $strongarm->value = 0;
-  $export['print_display_urllist_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'resp_img_node_announcement_field_announce_body';
   $strongarm->value = 0;
   $export['resp_img_node_announcement_field_announce_body'] = $strongarm;
