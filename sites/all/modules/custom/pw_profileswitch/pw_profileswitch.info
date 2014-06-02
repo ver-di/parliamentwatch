@@ -3,6 +3,6 @@ description = Display Mode switch based on User Role
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-20140527
+version = 7.x-1.0-20140602
 project = profiles
 dependencies[] = ds

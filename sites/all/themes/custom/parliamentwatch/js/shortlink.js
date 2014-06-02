@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
         $(this).find('span').toggleClass('processed');
         return false;
     });
-    $(document).on("click",".permalink-wrapper .text-field",function(){
-        $(this).selectText(); //working with https://github.com/emilkje/jquery.selectText
+    $(document).on("click",".permalink input",function(){
+        $(this).select();
     });
 });

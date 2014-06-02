@@ -270,8 +270,9 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler->display->display_options['arguments']['uid']['relationship'] = 'field_pw_kc_user_reference_target_id';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['code'] = '$user = _pw_get_current_user();
+return $user->uid; ';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
@@ -281,6 +282,24 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler->display->display_options['arguments']['uid']['validate_options']['restrict_roles'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate_options']['roles'] = array(
     181527986 => '181527986',
+  );
+  /* Contextual filter: Feld: Parliament (field_parliament) (translated) */
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['id'] = 'field_parliament_tid_i18n';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['table'] = 'field_data_field_parliament';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['field'] = 'field_parliament_tid_i18n';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['default_argument_options']['code'] = '// load parliament term from profile url
+$term = _pw_get_current_parliament_term();
+return $term->tid;';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['validate_options']['vocabularies'] = array(
+    'parliaments' => 'parliaments',
   );
   $export['pw_kandidatencheck'] = $view;
 

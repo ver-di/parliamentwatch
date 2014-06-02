@@ -1,10 +1,12 @@
-name = 'White labeled'
+name = 'Blank'
 description = 'An output of the normal PW page without blocks an fancy stuff'
 core = '7.x'
 engine = 'phptemplate'
 screenshot = 'screenshot.png'
 base theme = 'abgeordnetenwatch'
 
+regions[pw_affilliate_code] = 'PW Affiliate CSS and JS'
+regions[pw_tracking] = 'PW Tracking Code'
 regions[page_top] = 'Page Top'
 regions[page_bottom] = 'Page Bottom'
 regions[content] = 'Content'

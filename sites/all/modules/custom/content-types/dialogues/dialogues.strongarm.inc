@@ -111,7 +111,7 @@ function dialogues_strongarm() {
       'display' => array(
         'webform' => array(
           'full' => array(
-            'weight' => '27',
+            'weight' => '29',
             'visible' => FALSE,
           ),
           'default' => array(

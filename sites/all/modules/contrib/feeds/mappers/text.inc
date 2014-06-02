@@ -26,6 +26,14 @@ function text_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_nam
         'callback' => 'text_feeds_set_target',
         'description' => t('The @label field of the entity.', array('@label' => $instance['label'])),
       );
+      if ($info['type'] == 'text_with_summary') {
+        // Allow mapping to summary.
+        $targets[$name . ':summary'] = array(
+          'name' => t('@name: Summary', array('@name' => $instance['label'])),
+          'callback' => 'text_feeds_set_target',
+          'description' => t('The @label field of the entity.', array('@label' => $instance['label'])),
+        );
+      }
     }
   }
 }
@@ -34,28 +42,39 @@ function text_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_nam
  * Callback for mapping text fields.
  */
 function text_feeds_set_target($source, $entity, $target, array $values) {
+  list($field_name, $column) = explode(':', $target . ':value');
+  $info = field_info_field($field_name);
+
   if (isset($source->importer->processor->config['input_format'])) {
     $format = $source->importer->processor->config['input_format'];
   }
 
-  $field = isset($entity->$target) ? $entity->$target : array('und' => array());
+  $field = isset($entity->$field_name) ? $entity->$field_name : array('und' => array());
 
   // Iterate over all values.
+  $delta = 0;
   foreach ($values as $value) {
+    if ($info['cardinality'] == $delta) {
+      break;
+    }
+
+    if (!isset($field['und'][$delta])) {
+      $field['und'][$delta] = array();
+    }
 
     if (is_object($value) && ($value instanceof FeedsElement)) {
       $value = $value->getValue();
     }
 
     if (is_scalar($value) && strlen($value)) {
-      $value = array('value' => (string) $value);
+      $field['und'][$delta][$column] = (string) $value;
       if (isset($format)) {
-        $value['format'] = $format;
+        $field['und'][$delta]['format'] = $format;
       }
-
-      $field['und'][] = $value;
     }
+
+    $delta++;
   }
 
-  $entity->$target = $field;
+  $entity->$field_name = $field;
 }

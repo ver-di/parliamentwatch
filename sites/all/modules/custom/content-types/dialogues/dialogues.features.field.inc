@@ -10,111 +10,6 @@
 function dialogues_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'comment-comment_node_dialogue-comment_body'.
-  $fields['comment-comment_node_dialogue-comment_body'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(
-        0 => 'comment',
-      ),
-      'field_name' => 'comment_body',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'text_long',
-    ),
-    'field_instance' => array(
-      'bundle' => 'comment_node_dialogue',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 13,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'comment',
-      'field_name' => 'comment_body',
-      'label' => 'Body',
-      'required' => 0,
-      'settings' => array(
-        'better_formats' => array(
-          'allowed_formats' => array(
-            'ds_code' => 0,
-            'filtered_html' => 0,
-            'full_html' => 0,
-            'managed_content' => 'managed_content',
-            'php_code' => 0,
-            'plain_text' => 0,
-          ),
-          'allowed_formats_toggle' => 1,
-          'default_order_toggle' => 0,
-          'default_order_wrapper' => array(
-            'formats' => array(
-              'ds_code' => array(
-                'weight' => '-5',
-              ),
-              'filtered_html' => array(
-                'weight' => '-9',
-              ),
-              'full_html' => array(
-                'weight' => '-8',
-              ),
-              'managed_content' => array(
-                'weight' => '-10',
-              ),
-              'php_code' => array(
-                'weight' => '-6',
-              ),
-              'plain_text' => array(
-                'weight' => '-7',
-              ),
-            ),
-          ),
-        ),
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '1',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'rows' => '5',
-        ),
-        'type' => 'text_textarea',
-        'weight' => '26',
-      ),
-    ),
-  );
-
   // Exported field: 'comment-comment_node_dialogue-field_dialogue_annotation'.
   $fields['comment-comment_node_dialogue-field_dialogue_annotation'] = array(
     'field_config' => array(
@@ -174,6 +69,117 @@ function dialogues_field_default_fields() {
         ),
         'type' => 'text_textarea_with_summary',
         'weight' => '12',
+      ),
+    ),
+  );
+
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_comment_body'.
+  $fields['comment-comment_node_dialogue-field_dialogue_comment_body'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dialogue_comment_body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_with_summary',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_dialogue',
+      'default_value' => array(
+        0 => array(
+          'summary' => '',
+          'value' => '',
+          'format' => 'managed_content',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 14,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'comment',
+      'field_name' => 'field_dialogue_comment_body',
+      'label' => 'Comment Body',
+      'required' => 0,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'display_summary' => 1,
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '20',
+          'summary_rows' => 5,
+        ),
+        'type' => 'text_textarea_with_summary',
+        'weight' => '27',
       ),
     ),
   );
@@ -308,6 +314,74 @@ function dialogues_field_default_fields() {
         'settings' => array(),
         'type' => 'number',
         'weight' => '18',
+      ),
+    ),
+  );
+
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_is_standard_reply'.
+  $fields['comment-comment_node_dialogue-field_dialogue_is_standard_reply'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dialogue_is_standard_reply',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '0',
+          1 => '1',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_dialogue',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 15,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'comment',
+      'field_name' => 'field_dialogue_is_standard_reply',
+      'label' => 'Standard reply',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_onoff',
+        'weight' => '28',
       ),
     ),
   );
@@ -498,6 +572,65 @@ function dialogues_field_default_fields() {
         ),
         'type' => 'entityreference_autocomplete',
         'weight' => '14',
+      ),
+    ),
+  );
+
+  // Exported field: 'comment-comment_node_dialogue-field_dialogue_response_time'.
+  $fields['comment-comment_node_dialogue-field_dialogue_response_time'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_dialogue_response_time',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'computed_field',
+      'settings' => array(
+        'code' => '$entity_field[0][\'value\'] = "";',
+        'database' => array(
+          'data_default' => '',
+          'data_index' => 0,
+          'data_length' => '32',
+          'data_not_NULL' => 0,
+          'data_precision' => '10',
+          'data_scale' => '2',
+          'data_size' => 'normal',
+          'data_type' => 'varchar',
+        ),
+        'display_format' => '$display_output = $entity_field_item[\'value\'];',
+        'store' => 1,
+      ),
+      'translatable' => '0',
+      'type' => 'computed',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_dialogue',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'computed_field',
+          'settings' => array(),
+          'type' => 'computed_field_plain',
+          'weight' => 16,
+        ),
+      ),
+      'entity_type' => 'comment',
+      'field_name' => 'field_dialogue_response_time',
+      'label' => 'Response time',
+      'required' => FALSE,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'computed_field',
+        'settings' => array(),
+        'type' => 'computed',
+        'weight' => '29',
       ),
     ),
   );
@@ -757,7 +890,7 @@ function dialogues_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '28',
+          'weight' => '30',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -853,7 +986,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '38',
         ),
         'print' => array(
           'label' => 'above',
@@ -949,7 +1082,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '31',
+          'weight' => '33',
         ),
         'print' => array(
           'label' => 'above',
@@ -1048,7 +1181,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '34',
+          'weight' => '36',
         ),
         'print' => array(
           'label' => 'above',
@@ -1134,7 +1267,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '37',
         ),
         'print' => array(
           'label' => 'above',
@@ -1229,7 +1362,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '33',
+          'weight' => '35',
         ),
         'print' => array(
           'label' => 'above',
@@ -1332,7 +1465,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '32',
+          'weight' => '34',
         ),
         'print' => array(
           'label' => 'above',
@@ -1426,7 +1559,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '39',
         ),
         'print' => array(
           'label' => 'above',
@@ -1564,7 +1697,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '30',
+          'weight' => '32',
         ),
         'print' => array(
           'label' => 'above',
@@ -1664,7 +1797,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '29',
+          'weight' => '31',
         ),
         'print' => array(
           'label' => 'above',
@@ -1764,7 +1897,7 @@ function dialogues_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '28',
         ),
         'print' => array(
           'label' => 'above',
@@ -1882,14 +2015,17 @@ function dialogues_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Annotation');
   t('Body');
+  t('Comment Body');
   t('Dialogue ID');
   t('Documents');
   t('Message ID');
   t('Message type');
   t('Parliament');
   t('Recipient');
+  t('Response time');
   t('Sender Name');
   t('Sender fullname');
+  t('Standard reply');
   t('Tags');
   t('Topic');
 
