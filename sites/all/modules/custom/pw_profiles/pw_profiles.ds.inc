@@ -112,26 +112,6 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_deputy';
   $ds_fieldsetting->settings = array(
-    'pw_kandidatencheck' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'show_title' => 1,
-        'title_wrapper' => 'h3',
-        'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:36:"pw_kandidatencheck-profile_slideshow";}',
-        'load_terms' => 1,
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
-          'ow-def-cl' => FALSE,
-          'ow-at' => 'id="pw-block-user-kc"',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'bundestagsradar' => array(
       'weight' => '8',
       'label' => 'hidden',
@@ -1173,33 +1153,31 @@ function pw_profiles_ds_layout_settings_info() {
         0 => 'user_og_description',
         1 => 'short_profile_deputy_main',
         2 => 'user_basic_info',
-        3 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        4 => 'pw_slider',
-        5 => 'user_revision_switch',
-        6 => 'user_wrong_data',
-        7 => 'user_profile_api_link',
-        8 => 'bundestagsradar',
+        3 => 'pw_slider',
+        4 => 'user_revision_switch',
+        5 => 'user_wrong_data',
+        6 => 'user_profile_api_link',
+        7 => 'bundestagsradar',
       ),
       'left_2' => array(
-        9 => 'user_questions_and_answers',
-        10 => 'question_form',
+        8 => 'user_questions_and_answers',
+        9 => 'question_form',
       ),
       'right_2' => array(
-        11 => 'question_and_answers_filter',
+        10 => 'question_and_answers_filter',
       ),
       'ds_hidden' => array(
-        12 => 'field_user_fname',
-        13 => 'field_user_lname',
-        14 => 'field_user_party',
+        11 => 'field_user_fname',
+        12 => 'field_user_lname',
+        13 => 'field_user_party',
       ),
     ),
     'fields' => array(
       'user_og_description' => 'left_1',
       'short_profile_deputy_main' => 'left_1',
       'user_basic_info' => 'left_1',
-      'pw_kandidatencheck' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
@@ -1226,6 +1204,8 @@ function pw_profiles_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
     'hide_sidebars' => 1,
   );
   $export['user|user|user_deputy'] = $ds_layout;
