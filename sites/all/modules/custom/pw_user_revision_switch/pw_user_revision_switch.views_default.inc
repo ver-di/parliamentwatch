@@ -2469,7 +2469,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '#pw_block_user_questionform';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
-  $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question ui-state-disabled';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-l';
