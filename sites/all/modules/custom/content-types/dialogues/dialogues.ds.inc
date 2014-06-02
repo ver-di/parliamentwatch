@@ -41,15 +41,41 @@ function dialogues_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'dialogue';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'dialogue_full_content' => array(
+    'question_form' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw_block_user_questionform"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'short_profile_dialogue' => array(
       'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'dialogue_full_content' => array(
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'show_title' => 0,
         'title_wrapper' => '',
         'ctools' => 'a:3:{s:4:"conf";a:4:{s:12:"link_to_view";i:0;s:9:"use_pager";i:0;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:1:"1";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:38:"profile_questions_answers-full_content";}',
-        'load_terms' => 0,
+        'load_terms' => 1,
         'ft' => array(
           'func' => 'theme_ds_field_reset',
         ),
@@ -108,6 +134,21 @@ function dialogues_ds_custom_fields_info() {
   );
   $export['dialogue_full_content'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'short_profile_dialogue';
+  $ds_field->label = 'Short profile dialogue';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'views|bdbf278faddbdf4cc4ddd6543ed40cb5',
+    'block_render' => '1',
+  );
+  $export['short_profile_dialogue'] = $ds_field;
+
   return $export;
 }
 
@@ -157,11 +198,15 @@ function dialogues_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'dialogue_full_content',
+        0 => 'short_profile_dialogue',
+        1 => 'dialogue_full_content',
+        2 => 'question_form',
       ),
     ),
     'fields' => array(
+      'short_profile_dialogue' => 'ds_content',
       'dialogue_full_content' => 'ds_content',
+      'question_form' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

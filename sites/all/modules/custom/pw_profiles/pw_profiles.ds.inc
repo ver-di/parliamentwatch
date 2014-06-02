@@ -810,6 +810,7 @@ if($field_user_parliament == 6501){
   $ds_field->label = 'Question form';
   $ds_field->field_type = 6;
   $ds_field->entities = array(
+    'node' => 'node',
     'user' => 'user',
   );
   $ds_field->ui_limit = '';

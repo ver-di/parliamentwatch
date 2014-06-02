@@ -123,6 +123,7 @@ small {
 }
 .subline {
     font: 12px/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
+    display: block;
 }
 .bg-white {
     background: #fff;
@@ -573,10 +574,6 @@ a.ic-print {
     vertical-align: middle;
     margin: 0 5px;
 }
-.ic-info {
-    position: relative;
-    display: inline;
-}
 #views-exposed-form-profile-questions-answers-profile,
 #views-exposed-form-profile-list-rev-grid,
 .views-exposed-widget,
@@ -591,14 +588,19 @@ a.ic-print {
     top: 0;
     margin: 0 0 0.8em 0 !important;
 }
-.ic-info {
+#views-exposed-form-profile-list-rev-grid .ic-info {
+    top: 0;
+}
+div.ic-info {
     position: absolute;
     top: 0;
     right: 0;
     z-index: 200;
 }
-#views-exposed-form-profile-list-rev-grid .ic-info {
-    top: 0;
+span.ic-info {
+    position: relative;
+    display: inline;
+    top: 4px;
 }
 .ic-info .info-title {
     text-indent: -50000px;
@@ -617,6 +619,9 @@ a.ic-print {
     right: 30px;
     top: -3px;
     width: 260px;
+}
+.ic-info.ic-right .info-content {
+    left: 30px;
 }
 
 .ajax-progress, .ajax-progress-throbber {
@@ -780,6 +785,7 @@ h1#page-title {
 }
 #cboxLoadedContent {
     margin: 0;
+    overflow-x: hidden !important;
 }
 #cboxClose {
     color: #444444;
@@ -808,6 +814,9 @@ h1#page-title {
 }
 #cboxCurrent {
     left: 120px;
+}
+#colorbox .topic.float-right {
+    margin-right: 20px;
 }
 
 
@@ -1589,6 +1598,12 @@ a#text_resize_increase:active {
 .views-exposed-form .bef-checkboxes .form-item:hover {
     background: #eee;
 }
+.grid-4 .views-exposed-form .form-radios .form-item-field-dialogue-topic-tid label,
+.grid-4 .views-exposed-form .form-checkboxes .form-item-field-dialogue-topic-tid label,
+.grid-4 .views-exposed-form .bef-checkboxes .form-item-field-dialogue-topic-tid label {
+    position: relative;
+    width: auto;
+}
 .grid-4 .views-exposed-form .form-radios label,
 .grid-4 .views-exposed-form .form-checkboxes label,
 .grid-4 .views-exposed-form .bef-checkboxes label {
@@ -1903,7 +1918,6 @@ form:after {
 :first-child + html form {
     min-height: 1%;
 }
-.text-field,
 textarea,
 select,
 input[type="date"],
@@ -1960,16 +1974,6 @@ input[type="week"],
     background: transparent url(../images/sprite.png) -160px -2499px no-repeat;
     color: #ccc;
 
-}
-.text-field {
-    line-height: 2.5em;
-    background: #fff;
-    margin-bottom: 3px;
-}
-.pw-question-link .text-field {
-    height: auto;
-    line-height: normal;
-    padding: 6px;
 }
 textarea {
     min-height: 7em;
@@ -2143,6 +2147,9 @@ form .webform-component-checkboxes .description {
     width: 265px;
     margin-bottom: 1em;
 }
+.permalink input {
+    width: 100%;
+}
 
 
 /* /////////////////////////// question form //////////////////// */
@@ -2249,12 +2256,18 @@ form .webform-component-checkboxes .description {
 }
 
 .view-profile-questions-answers .sharethis-wrapper,
-#quicktabs-tabpage-politicians_answer-1 .sharethis-wrapper  {
+#quicktabs-tabpage-politicians_answer-1 .sharethis-wrapper,
+.node-type-dialogue .sharethis-wrapper {
     top: 2em;
 }
 .view-answers .comment.answer .sharethis-wrapper {
     top: 25px;
     right: 12px;
+}
+.annotation {
+    margin-top: 0.5em;
+    border-top: 1px dotted #ccc;
+    padding-top: 0.5em;
 }
 
 
@@ -2464,10 +2477,6 @@ form .webform-component-checkboxes .description {
 .st_fbrec_hcount {
     position: relative;
     top: 1px;
-}
-.view-mode-full .sharethis-buttons,
-.view-mode-full .sharethis-wrapper {
-	top: 0.5em;
 }
 .stButton .chicklets {
     padding-left: 0 !important;
