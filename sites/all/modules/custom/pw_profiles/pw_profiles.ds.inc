@@ -220,8 +220,8 @@ function pw_profiles_ds_field_settings_info() {
       'formatter_settings' => array(
         'show_title' => 1,
         'title_wrapper' => 'h2',
-        'ctools' => 'a:3:{s:4:"conf";a:4:{s:12:"link_to_view";i:0;s:9:"use_pager";i:1;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:1:"5";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:33:"profile_questions_answers-profile";}',
-        'load_terms' => 0,
+        'ctools' => 'a:3:{s:4:"conf";a:4:{s:12:"link_to_view";i:0;s:9:"use_pager";i:0;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:1:"0";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:33:"profile_questions_answers-profile";}',
+        'load_terms' => 1,
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
@@ -488,8 +488,8 @@ function pw_profiles_ds_field_settings_info() {
       'formatter_settings' => array(
         'show_title' => 1,
         'title_wrapper' => 'h2',
-        'ctools' => 'a:3:{s:4:"conf";a:4:{s:12:"link_to_view";i:0;s:9:"use_pager";i:1;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:1:"5";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:33:"profile_questions_answers-profile";}',
-        'load_terms' => 0,
+        'ctools' => 'a:3:{s:4:"conf";a:4:{s:12:"link_to_view";i:0;s:9:"use_pager";i:0;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:1:"0";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:33:"profile_questions_answers-profile";}',
+        'load_terms' => 1,
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
@@ -1284,6 +1284,8 @@ function pw_profiles_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
     'hide_sidebars' => 1,
   );
   $export['user|user|user_premium'] = $ds_layout;
