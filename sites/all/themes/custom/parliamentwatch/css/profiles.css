@@ -1,3 +1,8 @@
+#views-exposed-form-profile-questions-answers-profile #edit-combine-wrapper,
+#views-exposed-form-profile-questions-answers-profile #edit-field-dialogue-topic-tid-wrapper {
+    display: none;
+}
+
 /* user page */
 
 div.horizontal-tabs .field-item.even,
