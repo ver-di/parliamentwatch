@@ -124,5 +124,59 @@ return $o;';
   $handler = $view->new_display('block', 'Block', 'block_1');
   $export['letzte_spender'] = $view;
 
+  $view = new view();
+  $view->name = 'spenden_nach_bundesland';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'xml';
+  $view->human_name = 'Spenden nach Bundesland';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Spenden nach Bundesland';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['xml_file'] = 'sites/abgeordnetenwatch.de/files/private/import/civicrm/donations-by-state.xml';
+  $handler->display->display_options['query']['options']['row_xpath'] = '/donations/state';
+  $handler->display->display_options['query']['options']['show_errors'] = 1;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'grid';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Feld: name: Text */
+  $handler->display->display_options['fields']['text']['id'] = 'text';
+  $handler->display->display_options['fields']['text']['table'] = 'xml';
+  $handler->display->display_options['fields']['text']['field'] = 'text';
+  $handler->display->display_options['fields']['text']['label'] = '';
+  $handler->display->display_options['fields']['text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['text']['xpath_selector'] = 'name';
+  $handler->display->display_options['fields']['text']['multiple'] = 0;
+  /* Feld: amount: Text */
+  $handler->display->display_options['fields']['text_1']['id'] = 'text_1';
+  $handler->display->display_options['fields']['text_1']['table'] = 'xml';
+  $handler->display->display_options['fields']['text_1']['field'] = 'text';
+  $handler->display->display_options['fields']['text_1']['label'] = 'sum';
+  $handler->display->display_options['fields']['text_1']['xpath_selector'] = 'amount';
+  $handler->display->display_options['fields']['text_1']['multiple'] = 0;
+  /* Feld: donors: Text */
+  $handler->display->display_options['fields']['text_2']['id'] = 'text_2';
+  $handler->display->display_options['fields']['text_2']['table'] = 'xml';
+  $handler->display->display_options['fields']['text_2']['field'] = 'text';
+  $handler->display->display_options['fields']['text_2']['label'] = 'recurring donors';
+  $handler->display->display_options['fields']['text_2']['xpath_selector'] = 'donors';
+  $handler->display->display_options['fields']['text_2']['multiple'] = 0;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['spenden_nach_bundesland'] = $view;
+
   return $export;
 }
