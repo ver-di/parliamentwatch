@@ -15,15 +15,16 @@ function pw_eu_frontpage_default_fe_block_boxes() {
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'aw_eu_intro';
   $fe_block_boxes->body = '<p>
-	Am 25. Mai findet die Wahl zum Europäischen Parlament statt. Über abgeordnetenwatch.de können Sie jeden der 945 Kandidierenden öffentlich befragen. Alle Antworten werden veröffentlicht. Finden Sie so heraus, wer Ihre Positionen vertritt.
+	Am 25. Mai fand die Wahl zum Europäischen Parlament statt. Über abgeordnetenwatch.de konnten Sie <a href="eu/profile/kandidierende">jeden der 945 Kandidierenden</a> öffentlich befragen.&nbsp;
 </p>
 <p>
-	Nutzen Sie zum Einstieg die Karte oder klicken Sie sich in die Übersicht aller Kandidierenden.
+	Voraussichtlich ab den 21.06.2014 werden Sie hier die frisch gewählten Abgeordneten befragen können. Wenn wir Sie über den genauen Starttermin benachrichten sollen, tragen Sie sich in <a class="colorbox-load" href="https://secured.abgeordnetenwatch.de/tools/newsletter.php?width=800&amp;height=350&amp;iframe=true">unseren Newsletter</a> ein. Eine Übersicht über die gewählten Abgeordneten erhalten Sie wenn Sie dem folgenden Link folgen.
 </p>
 <p>
-	<a class="link-committees" href="eu/profile">Alle Kandidierenden in der Übersicht</a><br />
+	<a class="link-committees" href="eu/profile">Die gewählten Abgeordneten</a><br />
 	<a class="read-more" href="eu/wahlprogramme">Wahlprogramme der Parteien</a><br />
-	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a>
+	<a class="read-more" href="/node/7754" title="EU-Wahlrecht">Wahlrecht – das müssen Sie wissen</a><br />
+	<a href="http://www.spiegel.de/static/happ/politik/2014/eu-wahl-abgeordnete/v0/pub/" target="_blank" title="EU Kandidierenden auf der Karte">Alle Kandidierenden auf der Karte</a> (extern, Spiegel Online)
 </p>
 ';
 
