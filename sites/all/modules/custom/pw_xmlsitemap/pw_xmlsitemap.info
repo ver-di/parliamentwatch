@@ -19,6 +19,5 @@ features[variable][] = xmlsitemap_engines_custom_urls
 features[variable][] = xmlsitemap_engines_engines
 features[variable][] = xmlsitemap_engines_minimum_lifetime
 features[variable][] = xmlsitemap_engines_submit_updated
-features[variable][] = xmlsitemap_regenerate_needed
 features[variable][] = xmlsitemap_settings_menu_link_menu-main-menu-de
 features[variable][] = xmlsitemap_settings_user_user
