@@ -82,7 +82,7 @@ function pw_userarchives_update_7100() {
 
 
 /**
- * Add indicies to uid, user_name, user_role, vid, parliament_name to the table to optimize select queries.
+ * Add indicies for uid, user_name, user_role, vid, parliament_name to table user_archive_cache.
  */
 function pw_userarchives_update_7101() {
   db_add_index('user_archive_cache', 'uid', array('uid'));
