@@ -31,7 +31,7 @@ function dialogues_feeds_importer_default() {
       'plugin_key' => 'FeedsXPathParserXML',
       'config' => array(
         'sources' => array(
-          'xpathparser:12' => 'annotation',
+          'xpathparser:12' => 'annotation.text',
           'xpathparser:14' => 'topic',
           'xpathparser:15' => 'sender',
           'xpathparser:0' => 'concat(\'Question to \', recipient, \' (@id: \', ../@id, \')\')',
