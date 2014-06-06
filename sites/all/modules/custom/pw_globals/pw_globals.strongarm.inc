@@ -1021,6 +1021,13 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'user_revision_by_default';
+  $strongarm->value = 1;
+  $export['user_revision_by_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'webform_blocks';
   $strongarm->value = array(
     'client-block-17' => array(
