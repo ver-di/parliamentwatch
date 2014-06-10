@@ -87,6 +87,7 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
 
     // if there is a message - keep question form closed
     if(!empty($body_markup)){
+      unset($form['#node']->content['field_webform_footer']);
       unset($form['submitted']);
       unset($form['actions']);
       return;
