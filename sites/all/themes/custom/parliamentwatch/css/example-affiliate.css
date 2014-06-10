@@ -1,10 +1,13 @@
 *:focus {
     outline: 1px dotted #f63 !important;
 }
-
-/* set font colors */
 body {
     background: #fff;
+}
+
+/* set font colors */
+
+body {
     color: #333;
 }
 a:link,
@@ -108,4 +111,104 @@ span.form-submit:active {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ababab', endColorstr='#999999',GradientType=0 );
     
     color: #fff;
+}
+
+/* icons */
+
+.item-list ul.pager li.pager-previous a,
+.item-list ul.pager li.pager-first span,
+.item-list ul.pager li.pager-first a,
+.item-list ul.pager li.pager-last a,
+.item-list ul.pager li.pager-last span,
+.item-list ul.pager li.pager-next a,
+#region-postscript-fourth a,
+#cboxClose,
+.comment-reply,
+.comment .submitted .author,
+.bubble,
+#block-delta-blocks-feed-icons .content,
+#views_slideshow_cycle_teaser_section_slider-block .icon-share,
+#comment-form #edit-author--2,
+#forward-form #edit-instructions p:first-child,
+#block-views-blog-block-1 .views-row,
+.comment-count,
+.icon-taxonomy,
+.icon-edit,
+.floatbox ul li,
+.floatbox h3,
+a#text_resize_decrease,
+a#text_resize_reset,
+a#text_resize_increase,
+a.print-page,
+a.print_mail,
+a.print-pdf,
+#block-system-user-menu .first a,
+#block-system-user-menu .last a,
+#region-user-second .block h2,
+.arrow-item,
+.pw-list-expander fieldset.collapse-processed.collapsed a.fieldset-title,
+.twitter-item,
+.back,
+.views-more-link,
+.read-more a,
+.read-less a,
+.views-more-link,
+a.read-more,
+a.read-less,
+.read-codex a,
+a.read-codex,
+.link-profile a,
+a.link-profile,
+.link-committees a,
+a.link-committees,
+.link-poll a,
+a.link-poll,
+.link-report a,
+a.link-report,
+.link-download a,
+a.link-download,
+.ic-print a,
+a.ic-print,
+.link-pdf a,
+a.link-pdf,
+.link-participate a,
+a.link-participate,
+.link-sign a,
+a.link-sign,
+.link-calendar a,
+a.link-calendar,
+.view-calendar .more-link a,
+.link-video a,
+a.link-video,
+.link-sound a,
+a.link-sound,
+a.external,
+.ic-info .info-title,
+blockquote:before,
+.zero-clipboard,
+.shorten span.processed,
+.shorten span,
+.icon-link,
+.collapse-processed .fieldset-title,
+.js .pw-collapsible .fieldset-legend,
+.js .responsive-layout-mobile .pw-expandable-mobile h2,
+.item-list ul.pager.pager-load-more a span,
+#quicktabs-politicians_answer .quicktabs-tabs a span,
+#quicktabs-homepage_tabs a span,
+#section-content .block.newsletter-subscribe .content-wrapper,
+.views-exposed-widget.views-reset-button input[type="submit"],
+.views-exposed-widget.views-reset-button input[type="submit"]:hover,
+.views-exposed-widget.views-reset-button input[type="submit"]:focus,
+.views-exposed-widget.views-reset-button input[type="submit"]:active,
+.form-submit.big.link-question a {
+    /* background-image: url("YOUR SPRITE"); */
+}
+.ajax-progress .throbber {
+	width: 118px; /* dimensions of the throbber */
+	height: 119px;
+	/* background: url("YOUR THROBBER") no-repeat; */
+}
+.jcarousel-skin-default .jcarousel-next,
+.jcarousel-skin-default .jcarousel-prev {
+  /* background-image: url("YOUR ARROWS SPRITE"); */
 }

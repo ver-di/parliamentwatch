@@ -316,7 +316,6 @@ a.dark:hover {
     color: #666;
 }
 a.external {
-    background-image: url(../images/sprite.png);
     background-position: -572px -1583px;
     padding-left: 19px;
 }
@@ -792,7 +791,6 @@ h1#page-title {
     color: #444444;
     position: absolute;
     top: 0;
-    background: url(../images/sprite.png) no-repeat;
     background-position: -720px -3864px;
     width: 16px;
     height: 16px;
@@ -1123,7 +1121,7 @@ ul.tabs li a:active {
     top: 0;
 }
 .item-list ul.pager.pager-load-more a span {
-    background: url(../images/sprite.png) right -3311px no-repeat;
+    background-position: right -3311px;
     padding-right: 19px;
     color: #333;
     font-weight: normal;
@@ -1159,7 +1157,6 @@ ul.tabs li a:active {
     line-height: 3.5rem;
     padding-left: 30px;
     margin-left: -15px;
-    background-image: url(../images/sprite.png);
 }
 #quicktabs-tab-politicians_answer-0 span {
     background-position: -407px -3085px;
@@ -1207,7 +1204,6 @@ ul.tabs li a:active {
 /* frontpage */
 
 #quicktabs-homepage_tabs a span {
-    background-image: url(../images/sprite.png);
     padding-left: 29px;
     display: inline-block;
     line-height: 3.6em;
@@ -1963,7 +1959,7 @@ input[type="week"],
     margin: 8px 0;
     margin-bottom: 0.8rem 0;
     line-height: auto;
-    background: transparent url(../images/sprite.png) -120px -2539px no-repeat;
+    background-position: -120px -2539px;
 }
 .ctools-use-ajax.ctools-auto-submit-click {
     position: absolute;
@@ -1972,7 +1968,7 @@ input[type="week"],
 .views-exposed-widget.views-reset-button input[type="submit"]:hover,
 .views-exposed-widget.views-reset-button input[type="submit"]:focus,
 .views-exposed-widget.views-reset-button input[type="submit"]:active {
-    background: transparent url(../images/sprite.png) -160px -2499px no-repeat;
+    background-position: -160px -2499px;
     color: #ccc;
 
 }
@@ -2090,7 +2086,7 @@ span.form-submit.big {
     padding: 0 30px;
 }
 .form-submit.big.link-question a {
-    background: url(../images/sprite.png) -308px -3184px no-repeat;
+    background-position: -308px -3184px;
     padding-left: 34px;
     color: #fff;
     font-weight: normal;
@@ -2569,7 +2565,7 @@ form .webform-component-checkboxes .description {
     padding: 10px 0 0;
 }
 #section-content .block.newsletter-subscribe .content-wrapper {
-    background: url(../images/sprite.png) -745px -2713px no-repeat;
+    background-position: -745px -2713px;
     padding: 15px 20px 15px 60px;
 }
 #section-content .block.newsletter-subscribe .block-inner {
@@ -2697,6 +2693,7 @@ form .webform-component-checkboxes .description {
 .item-list ul.pager li.pager-last span,
 .item-list ul.pager li.pager-next a,
 #region-postscript-fourth a,
+#cboxClose,
 .comment-reply,
 .comment .submitted .author,
 .bubble,
@@ -2756,6 +2753,7 @@ a.link-calendar,
 a.link-video,
 .link-sound a,
 a.link-sound,
+a.external,
 .ic-info .info-title,
 blockquote:before,
 .zero-clipboard,
@@ -2763,7 +2761,17 @@ blockquote:before,
 .shorten span,
 .icon-link,
 .collapse-processed .fieldset-title,
-.js .pw-collapsible .fieldset-legend {
+.js .pw-collapsible .fieldset-legend,
+.js .responsive-layout-mobile .pw-expandable-mobile h2,
+.item-list ul.pager.pager-load-more a span,
+#quicktabs-politicians_answer .quicktabs-tabs a span,
+#quicktabs-homepage_tabs a span,
+#section-content .block.newsletter-subscribe .content-wrapper,
+.views-exposed-widget.views-reset-button input[type="submit"],
+.views-exposed-widget.views-reset-button input[type="submit"]:hover,
+.views-exposed-widget.views-reset-button input[type="submit"]:focus,
+.views-exposed-widget.views-reset-button input[type="submit"]:active,
+.form-submit.big.link-question a  {
     background-image: url("../images/sprite.png");
     background-repeat: no-repeat;
 }
@@ -2831,7 +2839,7 @@ blockquote:before,
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2 {
     padding-left: 36px;
-    background: url(../images/sprite.png) -280px -195px no-repeat;
+    background-position: -280px -195px;
     cursor: pointer;
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded {
