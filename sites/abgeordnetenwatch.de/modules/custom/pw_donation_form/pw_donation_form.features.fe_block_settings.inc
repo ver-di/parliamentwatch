@@ -50,8 +50,10 @@ function pw_donation_form_default_fe_block_settings() {
   $export['views-spenden_nach_bundesland-block'] = array(
     'cache' => -1,
     'css_class' => '',
+    'custom' => '0',
     'delta' => 'spenden_nach_bundesland-block',
     'i18n_block_language' => array(),
+    'i18n_mode' => '0',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
@@ -61,21 +63,23 @@ function pw_donation_form_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'abgeordnetenwatch',
-        'weight' => 0,
+        'weight' => '0',
       ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
-        'weight' => 0,
+        'weight' => '0',
       ),
       'pw_seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'pw_seven',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
+    'title' => '',
+    'visibility' => '0',
   );
 
   return $export;
