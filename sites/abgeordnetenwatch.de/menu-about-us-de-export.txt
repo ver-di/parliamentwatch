@@ -1,6 +1,0 @@
-Wir über uns {"url":"http:\/\/www.abgeordnetenwatch.de\/wir_ueber_uns-150-0.html"}
-Kuratorium {"url":"http:\/\/www.abgeordnetenwatch.de\/kuratorium-876-0.html"}
-Moderations-Codex {"url":"https:\/\/admin.abgeordnetenwatch.de\/admin\/moderations_codex-766-0.html"}
-Finanzierung {"url":"http:\/\/www.abgeordnetenwatch.de\/finanzierung-632-0.html"}
-Impressum {"url":"https:\/\/admin.abgeordnetenwatch.de\/admin\/impressum-173-0.html"}
-Datenschutzerklärung {"url":"http:\/\/www.abgeordnetenwatch.de\/datenschutzerklaerung-176-0.html"}

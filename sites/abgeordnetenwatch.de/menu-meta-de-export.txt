@@ -1,4 +1,0 @@
-Newsletter {"url":"http:\/\/www.abgeordnetenwatch.de\/tools\/newsletter.php"}
-FAQ {"url":"ueber-uns\/faq"}
-English {"url":"ueber-uns\/mehr\/international"}
-Login-Bereich {"url":"http:\/\/www.abgeordnetenwatch.de\/login_bereich-846-0.html"}
