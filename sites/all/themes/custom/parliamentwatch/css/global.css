@@ -746,6 +746,12 @@ h1#page-title {
     border-bottom: 0;
     margin-bottom: 0;
 }
+.pw-donation-list li {
+    list-style-type: none;
+    padding-left: 34px;
+    background: url(../images/sprite.png);
+    background-position: -220px -256px;
+}
 .node.view-mode-full {
     border-bottom: 0;
 }
@@ -1850,20 +1856,43 @@ html.js fieldset.collapsed {
     margin-left: 24px;
 }
 
-/* petitions */
+/* progress */
 
+.pw-progress-wrapper,
+.pw-progress {
+    height: 14px;
+    width: 199px;
+}
+.pw-progress-wrapper,
 .pw-petition-progress-wrapper {
-    height: 32px;
-    width: 314px;
     margin-bottom: 2px; 
     border: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
     box-shadow: inset 0px 0px 2px 2px #ececec;
+    text-indent: -5000em;
 }
+.pw-progress {
+    background: #78b70c; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc4YjcwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhOGU2M2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left,  #78b70c 0%, #a8e63c 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#78b70c), color-stop(100%,#a8e63c)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* IE10+ */
+    background: linear-gradient(to right,  #78b70c 0%,#a8e63c 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b70c', endColorstr='#a8e63c',GradientType=1 ); /* IE6-8 */
+}
+
+/* petitions */
+
+.pw-petition-progress-wrapper,
 .pw-petition-progress {
     height: 32px;
     width: 314px;
+}
+.pw-petition-progress {
     background: #ff6633;
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNjYzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmVlMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     background: -moz-linear-gradient(left,  #ff6633 0%, #ffee33 314px);

@@ -21,6 +21,69 @@
 }
 
 
+/* state icons DE */
+
+.state-de {
+    background: url(../images/sprite_states_de.png);
+    width: 50px;
+    height: 60px;
+    text-indent: -5000em;
+}
+.state-de.baden-wuerttemberg {
+    background-position: 0 0;
+}
+.state-de.bayern {
+    background-position: -60px 0;
+}
+.state-de.berlin {
+    background-position: -120px 0;
+}
+.state-de.brandenburg {
+    background-position: -180px 0;
+}
+.state-de.bremen {
+    background-position: -240px 0;
+}
+.state-de.hamburg {
+    background-position: -300px 0;
+}
+.state-de.hessen {
+    background-position: 360px 0;
+}
+.state-de.mecklenburg-vorpommern {
+    background-position: -420px 0;
+}
+.state-de.deutschland {
+    background-position: -480px 0;
+}
+.state-de.niedersachsen {
+    background-position: 0 -60px;
+}
+.state-de.nordrhein-westfalen {
+    background-position: -60px -60px;
+}
+.state-de.rheinland-pfalz {
+    background-position: -120px -60px;
+}
+.state-de.saarland {
+    background-position: -180px -60px;
+}
+.state-de.sachsen-anhalt {
+    background-position: -240px -60px;
+}
+.state-de.sachsen {
+    background-position: -300px -60px;
+}
+.state-de.schleswig-holstein {
+    background-position: -360px -60px;
+}
+.state-de.thueringen {
+    background-position: -420px -60px;
+}
+.state-de.abgeordnetenwatch {
+    background-position: -480px -60px;
+}
+
 /* menu country icons */
 
 @media only screen and ( min-width: 600px ) {

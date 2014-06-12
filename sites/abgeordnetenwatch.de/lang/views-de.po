@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-10 14:16+0200\n"
-"PO-Revision-Date: 2014-04-10 14:16+0200\n"
+"POT-Creation-Date: 2014-06-12 14:54+0200\n"
+"PO-Revision-Date: 2014-06-12 14:54+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -2429,12 +2429,12 @@ msgstr ""
 
 #: views:media_default:default:filter:file_managed:filename:expose:label
 msgctxt "media_default:default:filter:file_managed:filename:expose:label"
-msgid "Dateiname"
+msgid "File name"
 msgstr ""
 
 #: views:media_default:default:filter:file_managed:type:expose:label
 msgctxt "media_default:default:filter:file_managed:type:expose:label"
-msgid "Typ"
+msgid "Type"
 msgstr ""
 
 #: views:media_default:media_browser_1:title
@@ -2569,12 +2569,12 @@ msgstr ""
 
 #: views:media_default:media_browser_my_files:filter:file_managed:filename:expose:label
 msgctxt "media_default:media_browser_my_files:filter:file_managed:filename:expose:label"
-msgid "Dateiname"
+msgid "File name"
 msgstr ""
 
 #: views:media_default:media_browser_my_files:filter:file_managed:type:expose:label
 msgctxt "media_default:media_browser_my_files:filter:file_managed:type:expose:label"
-msgid "Typ"
+msgid "Type"
 msgstr ""
 
 #: views:menu_existing_content_selection:default:title
@@ -4550,7 +4550,7 @@ msgstr ""
 
 #: views:election_programme:default:field:field_data_field_teaser_image:field_teaser_image:alter:alt
 msgctxt "election_programme:default:field:field_data_field_teaser_image:field_teaser_image:alter:alt"
-msgid "Wahlprogramm öffnen"
+msgid "Wahlprogramm durchblättern"
 msgstr ""
 
 #: views:election_programme:default:field:file_managed:uri:alter:text
@@ -8835,8 +8835,9 @@ msgstr ""
 #: views:user_profile_fields:profile_extension:field:views:nothing:alter:text
 msgctxt "user_profile_fields:profile_extension:field:views:nothing:alter:text"
 msgid ""
-"Durch die Verwendung einer Profilerweiterung wird abgeordnetenwatch.de "
-"unterstützt.\n"
+"Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat "
+"abgeordnetenwatch einmalig mit 179 Euro (149 Euro als "
+"Frühbucherrabatt). \n"
 msgstr ""
 
 #: views:user_profile_fields:basic_info:display_title
@@ -9473,7 +9474,9 @@ msgstr ""
 
 #: views:user_profile_fields:short_profile_premium_main:field:views:nothing_5:alter:text
 msgctxt "user_profile_fields:short_profile_premium_main:field:views:nothing_5:alter:text"
-msgid "[field_user_fname] [field_user_lname], [field_user_party]"
+msgid ""
+"[field_user_title] [field_user_fname] [field_user_lname], "
+"[field_user_party]"
 msgstr ""
 
 #: views:user_profile_fields:short_profile_premium_main:field:views:nothing_1:alter:text
@@ -9550,7 +9553,9 @@ msgstr ""
 
 #: views:user_profile_fields:short_profile_premium_sub:field:views:nothing_3:alter:text
 msgctxt "user_profile_fields:short_profile_premium_sub:field:views:nothing_3:alter:text"
-msgid "[field_user_fname] [field_user_lname], [field_user_party]"
+msgid ""
+"[field_user_title] [field_user_fname] [field_user_lname], "
+"[field_user_party]"
 msgstr ""
 
 #: views:user_profile_fields:short_profile_premium_sub:field:views:nothing_1:alter:text
@@ -9627,12 +9632,14 @@ msgstr ""
 
 #: views:user_profile_fields:short_profile_deputy_main:field:views:nothing_4:alter:text
 msgctxt "user_profile_fields:short_profile_deputy_main:field:views:nothing_4:alter:text"
-msgid "[field_user_fname] [field_user_lname], [field_user_party]"
+msgid ""
+"[field_user_title] [field_user_fname] [field_user_lname], "
+"[field_user_party]"
 msgstr ""
 
 #: views:user_profile_fields:short_profile_deputy_main:field:views:nothing_1:alter:text
 msgctxt "user_profile_fields:short_profile_deputy_main:field:views:nothing_1:alter:text"
-msgid "[name_1]"
+msgid "Member of [name_1]"
 msgstr ""
 
 #: views:user_profile_fields:short_profile_deputy_main:field:views:nothing:alter:text
@@ -9704,12 +9711,14 @@ msgstr ""
 
 #: views:user_profile_fields:short_profile_deputy_sub:field:field_data_field_user_party:field_user_party:alter:text
 msgctxt "user_profile_fields:short_profile_deputy_sub:field:field_data_field_user_party:field_user_party:alter:text"
-msgid "[field_user_fname] [field_user_lname], [field_user_party]"
+msgid ""
+"[field_user_title] [field_user_fname] [field_user_lname], "
+"[field_user_party]"
 msgstr ""
 
 #: views:user_profile_fields:short_profile_deputy_sub:field:views:nothing_1:alter:text
 msgctxt "user_profile_fields:short_profile_deputy_sub:field:views:nothing_1:alter:text"
-msgid "[name_1]"
+msgid "Member of [name_1]"
 msgstr ""
 
 #: views:user_profile_fields:short_profile_deputy_sub:field:views:nothing_2:alter:text
@@ -9732,7 +9741,7 @@ msgstr ""
 
 #: views:user_profile_fields:short_profile_deputy_sub:field:views:nothing_3:alter:text
 msgctxt "user_profile_fields:short_profile_deputy_sub:field:views:nothing_3:alter:text"
-msgid "[field_user_fname] [field_user_lname], [field_user_party]"
+msgid "[field_user_party]"
 msgstr ""
 
 #: views:user_profile_fields:short_profile_deputy_sub:argument:users:uid:exception:title
@@ -10043,7 +10052,7 @@ msgstr ""
 
 #: views:pw_user_profile_fields_rev:basic_info:field:field_revision_field_user_birthday:field_user_birthday-revision_id:label
 msgctxt "pw_user_profile_fields_rev:basic_info:field:field_revision_field_user_birthday:field_user_birthday-revision_id:label"
-msgid "Geburtstag"
+msgid "Jahrgang"
 msgstr ""
 
 #: views:pw_user_profile_fields_rev:basic_info:field:field_revision_field_user_birthday:field_user_birthday-revision_id:empty
@@ -10141,7 +10150,7 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:about:header:views:area:content
 msgctxt "pw_user_profile_fields_rev:about:header:views:area:content"
 msgid ""
-"<div id=\"about\" class=\"add-sharethis\" "
+"<div id=\"about\" class=\"add-sharethis\" vid=\"[vid]\" "
 "title=\"[field_user_fname-revision_id] [field_user_lname-revision_id] "
 "<?php print t('about'); ?> [field_user_fname-revision_id] "
 "[field_user_lname-revision_id], "
@@ -10276,9 +10285,9 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:image_gallery:header:views:area:content
 msgctxt "pw_user_profile_fields_rev:image_gallery:header:views:area:content"
 msgid ""
-"<div id=\"imagegallery\" class=\"add-sharethis\" title=\"<?php print "
-"t('Imagegallery of '); ?> [field_user_fname-revision_id] "
-"[field_user_lname-revision_id], "
+"<div id=\"imagegallery\" class=\"add-sharethis\" vid=\"[vid]\" "
+"title=\"<?php print t('Imagegallery of '); ?> "
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
 "[field_user_party-revision_id]\"></div>"
 msgstr ""
 
@@ -10291,7 +10300,7 @@ msgstr ""
 msgctxt "pw_user_profile_fields_rev:image_gallery_page:title"
 msgid ""
 "Image Gallery of  [field_user_fname-revision_id] "
-"[field_user_lname-revision_id]"
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
 msgstr ""
 
 #: views:pw_user_profile_fields_rev:image_gallery_page:use_more_text
@@ -10408,9 +10417,9 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:political_goals:header:views:area:content
 msgctxt "pw_user_profile_fields_rev:political_goals:header:views:area:content"
 msgid ""
-"<div id=\"political-goals\" class=\"add-sharethis\" title=\"<?php "
-"print t('Political Goals of'); ?> [field_user_fname-revision_id] "
-"[field_user_lname-revision_id], "
+"<div id=\"political-goals\" class=\"add-sharethis\" vid=\"[vid]\" "
+"title=\"<?php print t('Political Goals of'); ?> "
+"[field_user_fname-revision_id] [field_user_lname-revision_id], "
 "[field_user_party-revision_id]\"></div>"
 msgstr ""
 
@@ -10423,7 +10432,7 @@ msgstr ""
 msgctxt "pw_user_profile_fields_rev:political_goals_page:title"
 msgid ""
 "Die politischen Ziele von [field_user_fname-revision_id] "
-"[field_user_lname-revision_id]"
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
 msgstr ""
 
 #: views:pw_user_profile_fields_rev:political_goals_page:use_more_text
@@ -10534,8 +10543,8 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:additional_links:header:views:area:content
 msgctxt "pw_user_profile_fields_rev:additional_links:header:views:area:content"
 msgid ""
-"<div id=\"additional-links\" class=\"add-sharethis\" title=\"<?php "
-"print t('Additional links of'); ?> "
+"<div id=\"additional-links\" class=\"add-sharethis\" vid=\"[vid]\" "
+"title=\"<?php print t('Additional links of'); ?> "
 "[field_user_party-revision_id]\"></div>"
 msgstr ""
 
@@ -10665,7 +10674,7 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:short_profile_premium_main:header:views:area_text_custom:content
 msgctxt "pw_user_profile_fields_rev:short_profile_premium_main:header:views:area_text_custom:content"
 msgid ""
-"<div id=\"\" class=\"add-sharethis\" "
+"<div id=\"\" class=\"add-sharethis\" vid=\"[vid]\" "
 "title=\"[field_user_fname-revision_id] [field_user_lname-revision_id], "
 "[field_user_party-revision_id]\"></div>"
 msgstr ""
@@ -10685,8 +10694,8 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:short_profile_premium_main:field:views:nothing_4:alter:text
 msgctxt "pw_user_profile_fields_rev:short_profile_premium_main:field:views:nothing_4:alter:text"
 msgid ""
-"[field_user_fname-revision_id] [field_user_lname-revision_id], "
-"[field_user_party-revision_id]"
+"[field_user_title-revision_id] [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
 msgstr ""
 
 #: views:pw_user_profile_fields_rev:short_profile_premium_main:field:views:nothing_3:alter:text
@@ -10772,8 +10781,8 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:short_profile_premium_sub:field:views:nothing:alter:text
 msgctxt "pw_user_profile_fields_rev:short_profile_premium_sub:field:views:nothing:alter:text"
 msgid ""
-"[field_user_fname-revision_id] [field_user_lname-revision_id], "
-"[field_user_party-revision_id]"
+"[field_user_title-revision_id] [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
 msgstr ""
 
 #: views:pw_user_profile_fields_rev:short_profile_premium_sub:field:views:nothing_1:alter:text
@@ -10834,7 +10843,7 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:short_profile_deputy_main:header:views:area_text_custom:content
 msgctxt "pw_user_profile_fields_rev:short_profile_deputy_main:header:views:area_text_custom:content"
 msgid ""
-"<div id=\"\" class=\"add-sharethis\" "
+"<div id=\"\" class=\"add-sharethis\" vid=\"[vid]\" "
 "title=\"[field_user_fname-revision_id] [field_user_lname-revision_id] "
 ", [field_user_party-revision_id]\"></div>"
 msgstr ""
@@ -10854,8 +10863,8 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:short_profile_deputy_main:field:views:nothing_4:alter:text
 msgctxt "pw_user_profile_fields_rev:short_profile_deputy_main:field:views:nothing_4:alter:text"
 msgid ""
-"[field_user_fname-revision_id] [field_user_lname-revision_id], "
-"[field_user_party-revision_id]"
+"[field_user_title-revision_id] [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
 msgstr ""
 
 #: views:pw_user_profile_fields_rev:short_profile_deputy_main:field:views:nothing_3:alter:text
@@ -10935,7 +10944,7 @@ msgstr ""
 
 #: views:pw_user_profile_fields_rev:short_profile_deputy_sub:field:views:nothing:alter:text
 msgctxt "pw_user_profile_fields_rev:short_profile_deputy_sub:field:views:nothing:alter:text"
-msgid "[name]"
+msgid "Member of [name]"
 msgstr ""
 
 #: views:pw_user_profile_fields_rev:short_profile_deputy_sub:field:views:nothing_3:alter:text
@@ -10959,8 +10968,8 @@ msgstr ""
 #: views:pw_user_profile_fields_rev:short_profile_deputy_sub:field:views:nothing_2:alter:text
 msgctxt "pw_user_profile_fields_rev:short_profile_deputy_sub:field:views:nothing_2:alter:text"
 msgid ""
-"[field_user_fname-revision_id] [field_user_lname-revision_id], "
-"[field_user_party-revision_id]"
+"[field_user_title-revision_id] [field_user_fname-revision_id] "
+"[field_user_lname-revision_id], [field_user_party-revision_id]"
 msgstr ""
 
 #: views:pw_api_profile:default:field:views:php_1:label
@@ -11783,7 +11792,7 @@ msgstr ""
 
 #: views:profile_list_rev:default:title
 msgctxt "profile_list_rev:default:title"
-msgid "Übersicht der Abgeordneten"
+msgid "Kandidierende %1 2014"
 msgstr ""
 
 #: views:profile_list_rev:default:use_more_text
@@ -11972,7 +11981,7 @@ msgstr ""
 
 #: views:profile_list_rev:default:argument:field_revision_field_user_parliament:field_user_parliament_tid:title
 msgctxt "profile_list_rev:default:argument:field_revision_field_user_parliament:field_user_parliament_tid:title"
-msgid "%1"
+msgid "%1 %2"
 msgstr ""
 
 #: views:profile_list_rev:default:argument:field_revision_field_user_roles_for_view_mode_s:field_user_roles_for_view_mode_s_tid:exception:title
@@ -11992,7 +12001,7 @@ msgstr ""
 
 #: views:profile_list_rev:default:filter:field_revision_field_user_first_letter_lname:field_user_first_letter_lname_value:group_info:label
 msgctxt "profile_list_rev:default:filter:field_revision_field_user_first_letter_lname:field_user_first_letter_lname_value:group_info:label"
-msgid "Abgeordnete nach Namen filtern"
+msgid "Nach Namen filtern"
 msgstr ""
 
 #: views:profile_list_rev:default:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label
@@ -12002,7 +12011,7 @@ msgstr ""
 
 #: views:profile_list_rev:default:filter:field_revision_field_user_party:field_user_party_tid:expose:label
 msgctxt "profile_list_rev:default:filter:field_revision_field_user_party:field_user_party_tid:expose:label"
-msgid "Abgeordnete nach Partei filtern"
+msgid "Nach Partei filtern"
 msgstr ""
 
 #: views:profile_list_rev:default:filter:field_revision_field_user_qanda_ratio:field_user_qanda_ratio_value:expose:label
@@ -12027,7 +12036,7 @@ msgstr ""
 
 #: views:profile_list_rev:default:filter:user_revision:between_date_filter:expose:label
 msgctxt "profile_list_rev:default:filter:user_revision:between_date_filter:expose:label"
-msgid "Abgeordneten Status"
+msgid "Status"
 msgstr ""
 
 #: views:profile_list_rev:grid:use_more_text
@@ -12145,8 +12154,8 @@ msgstr ""
 #: views:profile_list_rev:grid:field:views:nothing_2:alter:text
 msgctxt "profile_list_rev:grid:field:views:nothing_2:alter:text"
 msgid ""
-"[field_user_questions_get-revision_id], "
-"[field_user_answers_give-revision_id]"
+"[field_user_questions_get-revision_id_1], "
+"[field_user_answers_give-revision_id_1]"
 msgstr ""
 
 #: views:profile_list_rev:grid:field:views:fieldset_1:label
@@ -12176,12 +12185,12 @@ msgstr ""
 
 #: views:profile_list_rev:grid:field:views:nothing:alter:text
 msgctxt "profile_list_rev:grid:field:views:nothing:alter:text"
-msgid "[field_user_questions_get-revision_id]"
+msgid "[field_user_questions_get-revision_id_1]"
 msgstr ""
 
 #: views:profile_list_rev:grid:field:views:nothing_1:alter:text
 msgctxt "profile_list_rev:grid:field:views:nothing_1:alter:text"
-msgid "[field_user_answers_give-revision_id]"
+msgid "[field_user_answers_give-revision_id_1]"
 msgstr ""
 
 #: views:profile_list_rev:grid:field:field_revision_field_user_qanda_ratio:field_user_qanda_ratio-revision_id:alter:text
@@ -12206,17 +12215,17 @@ msgstr ""
 
 #: views:profile_list_rev:grid:filter:field_revision_field_user_first_letter_lname:field_user_first_letter_lname_value:group_info:label
 msgctxt "profile_list_rev:grid:filter:field_revision_field_user_first_letter_lname:field_user_first_letter_lname_value:group_info:label"
-msgid "Abgeordnete nach Namen filtern"
+msgid "Nach Namen filtern"
 msgstr ""
 
 #: views:profile_list_rev:grid:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label
 msgctxt "profile_list_rev:grid:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label"
-msgid "Bundesland wählen"
+msgid "Wahlkreis"
 msgstr ""
 
 #: views:profile_list_rev:grid:filter:field_revision_field_user_party:field_user_party_tid:expose:label
 msgctxt "profile_list_rev:grid:filter:field_revision_field_user_party:field_user_party_tid:expose:label"
-msgid "Abgeordnete nach Partei filtern"
+msgid "Nach Partei filtern"
 msgstr ""
 
 #: views:profile_list_rev:grid:filter:field_revision_field_user_qanda_ratio:field_user_qanda_ratio_value:expose:label
@@ -12380,7 +12389,7 @@ msgstr ""
 
 #: views:profile_list_rev:attachment_1:filter:field_revision_field_user_first_letter_lname:field_user_first_letter_lname_value:group_info:label
 msgctxt "profile_list_rev:attachment_1:filter:field_revision_field_user_first_letter_lname:field_user_first_letter_lname_value:group_info:label"
-msgid "Abgeordnete nach Namen filtern"
+msgid "Nach Namen filtern"
 msgstr ""
 
 #: views:profile_list_rev:attachment_1:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label
@@ -12390,7 +12399,7 @@ msgstr ""
 
 #: views:profile_list_rev:attachment_1:filter:field_revision_field_user_party:field_user_party_tid:expose:label
 msgctxt "profile_list_rev:attachment_1:filter:field_revision_field_user_party:field_user_party_tid:expose:label"
-msgid "Abgeordnete nach Partei filtern"
+msgid "Nach Partei filtern"
 msgstr ""
 
 #: views:profile_list_rev:attachment_1:filter:field_revision_field_user_qanda_ratio:field_user_qanda_ratio_value:expose:label
@@ -12415,7 +12424,7 @@ msgstr ""
 
 #: views:profile_list_rev:attachment_1:filter:user_revision:between_date_filter:expose:label
 msgctxt "profile_list_rev:attachment_1:filter:user_revision:between_date_filter:expose:label"
-msgid "Abgeordneten Status"
+msgid "Status"
 msgstr ""
 
 #: views:profile_questions_answers:default:title
@@ -13181,7 +13190,7 @@ msgstr ""
 
 #: views:pw_announcement:default:use_more_text
 msgctxt "pw_announcement:default:use_more_text"
-msgid "to the archive"
+msgid "Zum Archiv"
 msgstr ""
 
 #: views:pw_announcement:default:exposed_form:submit_button
@@ -13246,7 +13255,7 @@ msgstr ""
 
 #: views:pw_announcement:page_1:use_more_text
 msgctxt "pw_announcement:page_1:use_more_text"
-msgid "to the archive"
+msgid "Zum Archiv"
 msgstr ""
 
 #: views:pw_announcement:page_1:exposed_form:submit_button
@@ -15306,12 +15315,12 @@ msgstr ""
 
 #: views:pw_dialogue_answers:default:field:users:view_user:text
 msgctxt "pw_dialogue_answers:default:field:users:view_user:text"
-msgid "go to full profile"
+msgid "Profil besuchen"
 msgstr ""
 
 #: views:pw_dialogue_answers:default:field:views_entity_node:view_node:text
 msgctxt "pw_dialogue_answers:default:field:views_entity_node:view_node:text"
-msgid "read complete question and answer"
+msgid "Frage und ganze Antwort lesen"
 msgstr ""
 
 #: views:pw_dialogue_answers:default:field:comment:edit_comment:text
@@ -15683,7 +15692,7 @@ msgstr ""
 
 #: views:pw_petitions:default:field:views:fieldset_1:label
 msgctxt "pw_petitions:default:field:views:fieldset_1:label"
-msgid "Progress"
+msgid "Fortschritt"
 msgstr ""
 
 #: views:pw_petitions:default:field:field_data_field_petition_required:field_petition_required:label
@@ -16013,7 +16022,7 @@ msgstr ""
 
 #: views:user_tweets:default:use_more_text
 msgctxt "user_tweets:default:use_more_text"
-msgid "weiterlesen"
+msgid "zum Twitterkanal"
 msgstr ""
 
 #: views:user_tweets:default:exposed_form:submit_button
@@ -16290,19 +16299,2531 @@ msgstr ""
 msgctxt "user_tweets:block_1:header:views:area:content"
 msgid ""
 "<a href=\"https://twitter.com/[screen_name]\"><span class=\"float-left "
-"push-right-s push-bottom-s\">[profile_image_url]</span><span "
+"push-right-s push-bottom-s\"><img "
+"src=\"/sites/abgeordnetenwatch.de/files/Twitter_logo_blue.png\" "
+"width=\"48\" height=\"48\" alt=\"\" /></span><span "
 "class=\"pw-twitter-name\">[name]</span>\n"
 "<span class=\"pw-twitter-screenname\">[screen_name]</span></a>"
 msgstr ""
 
 #: views:user_tweets:block_1:field:twitter:web_intents:alter:text
 msgctxt "user_tweets:block_1:field:twitter:web_intents:alter:text"
-msgid "[created] [web_intents]"
+msgid "[created_time] [web_intents]"
 msgstr ""
 
 #: views:user_tweets:block_1:argument:users:uid:exception:title
 msgctxt "user_tweets:block_1:argument:users:uid:exception:title"
 msgid "Alle"
+msgstr ""
+
+#: views:user_profile_fields:basic_info:field:field_data_field_user_job_skills:field_user_job_skills:label
+msgctxt "user_profile_fields:basic_info:field:field_data_field_user_job_skills:field_user_job_skills:label"
+msgid "Professional Qualification"
+msgstr ""
+
+#: views:user_profile_fields:basic_info:field:field_data_field_user_job_skills:field_user_job_skills:empty
+msgctxt "user_profile_fields:basic_info:field:field_data_field_user_job_skills:field_user_job_skills:empty"
+msgid "-"
+msgstr ""
+
+#: views:pw_user_revision_switch:default:display_title
+msgctxt "pw_user_revision_switch:default:display_title"
+msgid "Master"
+msgstr ""
+
+#: views:pw_user_revision_switch:block:display_title
+msgctxt "pw_user_revision_switch:block:display_title"
+msgid "Wählergedächtnis"
+msgstr ""
+
+#: views:pw_user_revision_switch:block:header:views:area:content
+msgctxt "pw_user_revision_switch:block:header:views:area:content"
+msgid ""
+"<div class=\"ic-info\"><div class=\"info-title\"></div><div "
+"class=\"info-content element-hidden\">Im Wählergedächtnis finden Sie "
+"alle dokumentierten Legislaturperioden und Wahlen</div></div>"
+msgstr ""
+
+#: views:profile_list_rev:default:display_title
+msgctxt "profile_list_rev:default:display_title"
+msgid "Master"
+msgstr ""
+
+#: views:profile_list_rev:default:empty:views:area:content
+msgctxt "profile_list_rev:default:empty:views:area:content"
+msgid ""
+"<div class=\"pw-messages warning\">\n"
+"Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte "
+"treffen Sie eine neue Auswahl über einen der angebotenen Filter.\n"
+"</div>"
+msgstr ""
+
+#: views:profile_list_rev:grid:display_title
+msgctxt "profile_list_rev:grid:display_title"
+msgid "Übersicht der Abgeordneten"
+msgstr ""
+
+#: views:profile_list_rev:attachment_1:display_title
+msgctxt "profile_list_rev:attachment_1:display_title"
+msgid "Listenansicht"
+msgstr ""
+
+#: views:profile_list_rev:default:argument:field_revision_field_user_roles_for_view_mode_s:field_user_roles_for_view_mode_s_tid:title
+msgctxt "profile_list_rev:default:argument:field_revision_field_user_roles_for_view_mode_s:field_user_roles_for_view_mode_s_tid:title"
+msgid "%1 %2"
+msgstr ""
+
+#: views:election_programme:page_with_page_title_1:display_title
+msgctxt "election_programme:page_with_page_title_1:display_title"
+msgid "Page (with Page Title)"
+msgstr ""
+
+#: views:election_programme:page_with_page_title_1:use_more_text
+msgctxt "election_programme:page_with_page_title_1:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:election_programme:page_with_page_title_1:exposed_form:submit_button
+msgctxt "election_programme:page_with_page_title_1:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:election_programme:page_with_page_title_1:exposed_form:reset_button_label
+msgctxt "election_programme:page_with_page_title_1:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:election_programme:page_with_page_title_1:exposed_form:exposed_sorts_label
+msgctxt "election_programme:page_with_page_title_1:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:election_programme:page_with_page_title_1:exposed_form:sort_asc_label
+msgctxt "election_programme:page_with_page_title_1:exposed_form:sort_asc_label"
+msgid "Aufsteigend"
+msgstr ""
+
+#: views:election_programme:page_with_page_title_1:exposed_form:sort_desc_label
+msgctxt "election_programme:page_with_page_title_1:exposed_form:sort_desc_label"
+msgid "Absteigend"
+msgstr ""
+
+#: views:pw_user_profile_fields_rev:basic_info:field:field_revision_field_user_job_skills:field_user_job_skills-revision_id:label
+msgctxt "pw_user_profile_fields_rev:basic_info:field:field_revision_field_user_job_skills:field_user_job_skills-revision_id:label"
+msgid "Ausgeübte Tätigkeit"
+msgstr ""
+
+#: views:pw_user_profile_fields_rev:basic_info:field:field_revision_field_user_job_skills:field_user_job_skills-revision_id:empty
+msgctxt "pw_user_profile_fields_rev:basic_info:field:field_revision_field_user_job_skills:field_user_job_skills-revision_id:empty"
+msgid "-"
+msgstr ""
+
+#: views:pw_user_profile_fields_rev:short_profile_premium_main:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:alter:text
+msgctxt "pw_user_profile_fields_rev:short_profile_premium_main:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:alter:text"
+msgid ""
+"<div class=\"pw-dialogues-link\">[nothing]</div>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: views:pw_user_profile_fields_rev:short_profile_premium_main:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:empty
+msgctxt "pw_user_profile_fields_rev:short_profile_premium_main:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:empty"
+msgid ""
+"<div class=\"pw-dialogues-link\">An [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]  wurden bisher noch keine Fragen "
+"gestellt</div>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: views:pw_user_profile_fields_rev:short_profile_premium_sub:field:views:nothing_2:alter:text
+msgctxt "pw_user_profile_fields_rev:short_profile_premium_sub:field:views:nothing_2:alter:text"
+msgid "Frage stellen"
+msgstr ""
+
+#: views:pw_user_profile_fields_rev:short_profile_premium_sub:argument:user_revision:vid:exception:title
+msgctxt "pw_user_profile_fields_rev:short_profile_premium_sub:argument:user_revision:vid:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:pw_user_profile_fields_rev:short_profile_deputy_main:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:alter:text
+msgctxt "pw_user_profile_fields_rev:short_profile_deputy_main:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:alter:text"
+msgid ""
+"<div class=\"pw-dialogues-link\">[nothing]</div>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: views:pw_user_profile_fields_rev:short_profile_deputy_main:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:empty
+msgctxt "pw_user_profile_fields_rev:short_profile_deputy_main:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:empty"
+msgid ""
+"<div class=\"pw-dialogues-link\">An [field_user_fname-revision_id] "
+"[field_user_lname-revision_id]  wurden bisher noch keine Fragen "
+"gestellt</div>\n"
+"[field_user_questions_get-revision_id] / "
+"[field_user_answers_give-revision_id]"
+msgstr ""
+
+#: views:profile_list_rev:grid:filter:field_revision_field_user_address:field_user_address_administrative_area:expose:label
+msgctxt "profile_list_rev:grid:filter:field_revision_field_user_address:field_user_address_administrative_area:expose:label"
+msgid "Bundesland"
+msgstr ""
+
+#: views:profile_list_rev:grid:filter:field_revision_field_user_address:field_user_address_administrative_area:group_info:label
+msgctxt "profile_list_rev:grid:filter:field_revision_field_user_address:field_user_address_administrative_area:group_info:label"
+msgid "Bundesland auswählen"
+msgstr ""
+
+#: views:profile_questions_answers:default:display_title
+msgctxt "profile_questions_answers:default:display_title"
+msgid "Master"
+msgstr ""
+
+#: views:profile_questions_answers:default:empty:views:area:content
+msgctxt "profile_questions_answers:default:empty:views:area:content"
+msgid ""
+"<div class=\"pw-messages warning\">\n"
+"Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte "
+"treffen Sie eine neue Auswahl über einen der angebotenen Filter.\n"
+"</div>"
+msgstr ""
+
+#: views:profile_questions_answers:profile:display_title
+msgctxt "profile_questions_answers:profile:display_title"
+msgid "Profile"
+msgstr ""
+
+#: views:profile_questions_answers:profile_teasered:display_title
+msgctxt "profile_questions_answers:profile_teasered:display_title"
+msgid "Profile teasered"
+msgstr ""
+
+#: views:profile_questions_answers:full_content:display_title
+msgctxt "profile_questions_answers:full_content:display_title"
+msgid "Full content"
+msgstr ""
+
+#: views:profile_questions_answers:landing_page:display_title
+msgctxt "profile_questions_answers:landing_page:display_title"
+msgid "Landingpage Parliament"
+msgstr ""
+
+#: views:profile_questions_answers:landing_page:argument:field_data_field_pw_parmliament:field_pw_parmliament_tid:exception:title
+msgctxt "profile_questions_answers:landing_page:argument:field_data_field_pw_parmliament:field_pw_parmliament_tid:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:profile_list_rev:grid:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:alter:text
+msgctxt "profile_list_rev:grid:field:field_revision_field_user_questions_get:field_user_questions_get-revision_id_1:alter:text"
+msgid "[field_user_questions_get-revision_id_1]"
+msgstr ""
+
+#: views:profile_list_rev:default:relationship:field_revision_field_user_picture:field_user_picture_fid:label
+msgctxt "profile_list_rev:default:relationship:field_revision_field_user_picture:field_user_picture_fid:label"
+msgid "image from field_user_picture"
+msgstr ""
+
+#: views:profile_list_rev:grid:field:views:fieldset_2:label
+msgctxt "profile_list_rev:grid:field:views:fieldset_2:label"
+msgid "Fieldset"
+msgstr ""
+
+#: views:profile_list_rev:grid:field:field_data_field_image_copyright:field_image_copyright:label
+msgctxt "profile_list_rev:grid:field:field_data_field_image_copyright:field_image_copyright:label"
+msgid "copyright"
+msgstr ""
+
+#: views:pw_kandidatencheck:default:display_title
+msgctxt "pw_kandidatencheck:default:display_title"
+msgid "Master"
+msgstr ""
+
+#: views:pw_kandidatencheck:profile_slideshow:display_title
+msgctxt "pw_kandidatencheck:profile_slideshow:display_title"
+msgid "Slideshow"
+msgstr ""
+
+#: views:pw_kandidatencheck:profile_slideshow:argument:user_revision:vid:exception:title
+msgctxt "pw_kandidatencheck:profile_slideshow:argument:user_revision:vid:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:profile_questions_answers:default:field:field_data_field_dialogue_annotation:field_dialogue_annotation_1:label
+msgctxt "profile_questions_answers:default:field:field_data_field_dialogue_annotation:field_dialogue_annotation_1:label"
+msgid "Anmerkung der Redaktion"
+msgstr ""
+
+#: views:profile_questions_answers:default:field:comment:created_1:alter:text
+msgctxt "profile_questions_answers:default:field:comment:created_1:alter:text"
+msgid ""
+"<h3>\n"
+"    Antwort von [field_user_fname] [field_user_lname]<br/>\n"
+"    <span class=\"subline\">[created_1]</span>\n"
+"</h3>"
+msgstr ""
+
+#: views:profile_questions_answers:default:field:field_data_field_dialogue_is_standard_reply:field_dialogue_is_standard_reply:alter:text
+msgctxt "profile_questions_answers:default:field:field_data_field_dialogue_is_standard_reply:field_dialogue_is_standard_reply:alter:text"
+msgid ""
+"Standard-Antwort <span class=\"ic-info ic-right\"><span "
+"class=\"info-title\"></span><span class=\"info-content "
+"element-hidden\">\"Standard-Antworten\" sind Antworten, in denen "
+"Politiker mitteilen, dass sie über abgeordnetenwatch.de "
+"grundsätzlich nicht auf Fragen eingehen wollen. Diese werden in der "
+"Statistik als \"keine Antwort\" gewertet.</span></span>"
+msgstr ""
+
+#: views:profile_questions_answers:default:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:alter:text
+msgctxt "profile_questions_answers:default:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:alter:text"
+msgid "<div class=\"content clear\">[field_dialogue_comment_body]</div>"
+msgstr ""
+
+#: views:profile_questions_answers:default:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:empty
+msgctxt "profile_questions_answers:default:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:empty"
+msgid "<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
+msgstr ""
+
+#: views:profile_questions_answers:default:field:field_data_field_dialogue_annotation:field_dialogue_annotation:label
+msgctxt "profile_questions_answers:default:field:field_data_field_dialogue_annotation:field_dialogue_annotation:label"
+msgid "Anmerkung der Redaktion"
+msgstr ""
+
+#: views:profile_questions_answers:default:field:field_data_field_dialogue_tags:field_dialogue_tags_1:label
+msgctxt "profile_questions_answers:default:field:field_data_field_dialogue_tags:field_dialogue_tags_1:label"
+msgid "Schlagworte"
+msgstr ""
+
+#: views:profile_questions_answers:profile_teasered:field:field_data_field_dialogue_annotation:field_dialogue_annotation:label
+msgctxt "profile_questions_answers:profile_teasered:field:field_data_field_dialogue_annotation:field_dialogue_annotation:label"
+msgid "Anmerkung der Redaktion"
+msgstr ""
+
+#: views:profile_questions_answers:profile_teasered:field:comment:created_1:alter:text
+msgctxt "profile_questions_answers:profile_teasered:field:comment:created_1:alter:text"
+msgid ""
+"<h3>\n"
+"    Antwort von [field_user_fname] [field_user_lname]<br/>\n"
+"    <span class=\"subline\">[created_1]</span>\n"
+"</h3>"
+msgstr ""
+
+#: views:profile_questions_answers:profile_teasered:field:field_data_field_dialogue_is_standard_reply:field_dialogue_is_standard_reply:alter:text
+msgctxt "profile_questions_answers:profile_teasered:field:field_data_field_dialogue_is_standard_reply:field_dialogue_is_standard_reply:alter:text"
+msgid ""
+"Standard-Antwort <span class=\"ic-info ic-right\"><span "
+"class=\"info-title\"></span><span class=\"info-content "
+"element-hidden\">\"Standard-Antworten\" sind Antworten, in denen "
+"Politiker mitteilen, dass sie über abgeordnetenwatch.de "
+"grundsätzlich nicht auf Fragen eingehen wollen. Diese werden in der "
+"Statistik als \"keine Antwort\" gewertet.</span></span>"
+msgstr ""
+
+#: views:profile_questions_answers:profile_teasered:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:alter:text
+msgctxt "profile_questions_answers:profile_teasered:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:alter:text"
+msgid "<div class=\"content clear\">[field_dialogue_comment_body]</div>"
+msgstr ""
+
+#: views:profile_questions_answers:profile_teasered:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:empty
+msgctxt "profile_questions_answers:profile_teasered:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:empty"
+msgid "<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
+msgstr ""
+
+#: views:profile_questions_answers:profile_teasered:field:field_data_field_dialogue_annotation:field_dialogue_annotation_1:label
+msgctxt "profile_questions_answers:profile_teasered:field:field_data_field_dialogue_annotation:field_dialogue_annotation_1:label"
+msgid "Anmerkung der Redaktion"
+msgstr ""
+
+#: views:profile_questions_answers:profile_teasered:field:field_data_field_dialogue_tags:field_dialogue_tags_1:label
+msgctxt "profile_questions_answers:profile_teasered:field:field_data_field_dialogue_tags:field_dialogue_tags_1:label"
+msgid "Schlagworte"
+msgstr ""
+
+#: views:profile_questions_answers:full_content:field:field_data_field_dialogue_annotation:field_dialogue_annotation_1:label
+msgctxt "profile_questions_answers:full_content:field:field_data_field_dialogue_annotation:field_dialogue_annotation_1:label"
+msgid "Anmerkung der Redaktion"
+msgstr ""
+
+#: views:profile_questions_answers:full_content:field:comment:created_1:alter:text
+msgctxt "profile_questions_answers:full_content:field:comment:created_1:alter:text"
+msgid ""
+"<h3>\n"
+"    Antwort von [field_user_fname] [field_user_lname]<br/>\n"
+"    <span class=\"subline\">[created_1]</span>\n"
+"</h3>"
+msgstr ""
+
+#: views:profile_questions_answers:full_content:field:field_data_field_dialogue_is_standard_reply:field_dialogue_is_standard_reply:alter:text
+msgctxt "profile_questions_answers:full_content:field:field_data_field_dialogue_is_standard_reply:field_dialogue_is_standard_reply:alter:text"
+msgid ""
+"Standard-Antwort <span class=\"ic-info ic-right\"><span "
+"class=\"info-title\"></span><span class=\"info-content "
+"element-hidden\">\"Standard-Antworten\" sind Antworten, in denen "
+"Politiker mitteilen, dass sie über abgeordnetenwatch.de "
+"grundsätzlich nicht auf Fragen eingehen wollen. Diese werden in der "
+"Statistik als \"keine Antwort\" gewertet.</span></span>"
+msgstr ""
+
+#: views:profile_questions_answers:full_content:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:alter:text
+msgctxt "profile_questions_answers:full_content:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:alter:text"
+msgid "<div class=\"content clear\">[field_dialogue_comment_body]</div>"
+msgstr ""
+
+#: views:profile_questions_answers:full_content:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:empty
+msgctxt "profile_questions_answers:full_content:field:field_data_field_dialogue_comment_body:field_dialogue_comment_body:empty"
+msgid "<strong>Bisher ist noch keine Antwort eingetroffen</strong>"
+msgstr ""
+
+#: views:profile_questions_answers:full_content:field:field_data_field_dialogue_annotation:field_dialogue_annotation:label
+msgctxt "profile_questions_answers:full_content:field:field_data_field_dialogue_annotation:field_dialogue_annotation:label"
+msgid "Anmerkung der Redaktion"
+msgstr ""
+
+#: views:profile_questions_answers:full_content:field:field_data_field_dialogue_tags:field_dialogue_tags:label
+msgctxt "profile_questions_answers:full_content:field:field_data_field_dialogue_tags:field_dialogue_tags:label"
+msgid "Schlagworte"
+msgstr ""
+
+#: views:profile_questions_answers:landing_page:relationship:node:uid_1:label
+msgctxt "profile_questions_answers:landing_page:relationship:node:uid_1:label"
+msgid "content author"
+msgstr ""
+
+#: views:profile_questions_answers:landing_page:relationship:field_data_field_dialogue_recipient:field_dialogue_recipient_target_id:label
+msgctxt "profile_questions_answers:landing_page:relationship:field_data_field_dialogue_recipient:field_dialogue_recipient_target_id:label"
+msgid "Benutzer entity referenced from field_dialogue_recipient"
+msgstr ""
+
+#: views:profile_questions_answers:landing_page:field:views:nothing:alter:text
+msgctxt "profile_questions_answers:landing_page:field:views:nothing:alter:text"
+msgid "Ganze Frage und Antwort lesen"
+msgstr ""
+
+#: views:pw_donations_recent:default:display_title
+msgctxt "pw_donations_recent:default:display_title"
+msgid "Master"
+msgstr ""
+
+#: views:pw_donations_recent:default:title
+msgctxt "pw_donations_recent:default:title"
+msgid "Letzte Spender"
+msgstr ""
+
+#: views:pw_donations_recent:default:use_more_text
+msgctxt "pw_donations_recent:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:pw_donations_recent:default:exposed_form:submit_button
+msgctxt "pw_donations_recent:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:pw_donations_recent:default:exposed_form:reset_button_label
+msgctxt "pw_donations_recent:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:pw_donations_recent:default:exposed_form:exposed_sorts_label
+msgctxt "pw_donations_recent:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:pw_donations_recent:default:exposed_form:sort_asc_label
+msgctxt "pw_donations_recent:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:pw_donations_recent:default:exposed_form:sort_desc_label
+msgctxt "pw_donations_recent:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:pw_donations_recent:default:relationship:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:label
+msgctxt "pw_donations_recent:default:relationship:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:label"
+msgid ""
+"webform_views_untersttzen_sie_abgeordnetenwatchde.sid -> "
+"webform_submissions.sid"
+msgstr ""
+
+#: views:pw_donations_recent:default:field:views:php_1:label
+msgctxt "pw_donations_recent:default:field:views:php_1:label"
+msgid "Zeitpunkt"
+msgstr ""
+
+#: views:pw_donations_recent:default:field:webform_submissions:submitted_1:label
+msgctxt "pw_donations_recent:default:field:webform_submissions:submitted_1:label"
+msgid "Submitted"
+msgstr ""
+
+#: views:pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_firstname:label
+msgctxt "pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_firstname:label"
+msgid "Personal firstname"
+msgstr ""
+
+#: views:pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_lastname:label
+msgctxt "pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_lastname:label"
+msgid "Personal lastname"
+msgstr ""
+
+#: views:pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_amount:label
+msgctxt "pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_amount:label"
+msgid "Civicrm amount"
+msgstr ""
+
+#: views:pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_contribution_type:label
+msgctxt "pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_contribution_type:label"
+msgid "Civicrm contribution type"
+msgstr ""
+
+#: views:pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:option_not_anonymous:label
+msgctxt "pw_donations_recent:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:option_not_anonymous:label"
+msgid "Option not anonymous"
+msgstr ""
+
+#: views:pw_donations_recent:default:field:views:php:label
+msgctxt "pw_donations_recent:default:field:views:php:label"
+msgid "Spende"
+msgstr ""
+
+#: views:pw_donations_recent:block_1:display_title
+msgctxt "pw_donations_recent:block_1:display_title"
+msgid "Block"
+msgstr ""
+
+#: views:pw_donations_recent:block_1:use_more_text
+msgctxt "pw_donations_recent:block_1:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:pw_donations_recent:block_1:exposed_form:submit_button
+msgctxt "pw_donations_recent:block_1:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:pw_donations_recent:block_1:exposed_form:reset_button_label
+msgctxt "pw_donations_recent:block_1:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:pw_donations_recent:block_1:exposed_form:exposed_sorts_label
+msgctxt "pw_donations_recent:block_1:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:pw_donations_recent:block_1:exposed_form:sort_asc_label
+msgctxt "pw_donations_recent:block_1:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:pw_donations_recent:block_1:exposed_form:sort_desc_label
+msgctxt "pw_donations_recent:block_1:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:pw_donations_state:default:display_title
+msgctxt "pw_donations_state:default:display_title"
+msgid "Master"
+msgstr ""
+
+#: views:pw_donations_state:default:title
+msgctxt "pw_donations_state:default:title"
+msgid "Spenden nach Bundesland"
+msgstr ""
+
+#: views:pw_donations_state:default:use_more_text
+msgctxt "pw_donations_state:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:pw_donations_state:default:exposed_form:submit_button
+msgctxt "pw_donations_state:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:pw_donations_state:default:exposed_form:reset_button_label
+msgctxt "pw_donations_state:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:pw_donations_state:default:exposed_form:exposed_sorts_label
+msgctxt "pw_donations_state:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:pw_donations_state:default:exposed_form:sort_asc_label
+msgctxt "pw_donations_state:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:pw_donations_state:default:exposed_form:sort_desc_label
+msgctxt "pw_donations_state:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:pw_donations_state:default:field:xml:text_1:label
+msgctxt "pw_donations_state:default:field:xml:text_1:label"
+msgid "sum"
+msgstr ""
+
+#: views:pw_donations_state:default:field:xml:text_2:label
+msgctxt "pw_donations_state:default:field:xml:text_2:label"
+msgid "recurring donors"
+msgstr ""
+
+#: views:pw_donations_state:block:display_title
+msgctxt "pw_donations_state:block:display_title"
+msgid "Block"
+msgstr ""
+
+#: views:pw_donations_state:block:use_more_text
+msgctxt "pw_donations_state:block:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:pw_donations_state:block:exposed_form:submit_button
+msgctxt "pw_donations_state:block:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:pw_donations_state:block:exposed_form:reset_button_label
+msgctxt "pw_donations_state:block:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:pw_donations_state:block:exposed_form:exposed_sorts_label
+msgctxt "pw_donations_state:block:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:pw_donations_state:block:exposed_form:sort_asc_label
+msgctxt "pw_donations_state:block:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:pw_donations_state:block:exposed_form:sort_desc_label
+msgctxt "pw_donations_state:block:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:pw_donations_recent:block_1:block_description
+msgctxt "pw_donations_recent:block_1:block_description"
+msgid "PW Donations Recent"
+msgstr ""
+
+#: views:pw_donations_recent:recent:display_title
+msgctxt "pw_donations_recent:recent:display_title"
+msgid "Block"
+msgstr ""
+
+#: views:pw_donations_recent:recent:use_more_text
+msgctxt "pw_donations_recent:recent:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:pw_donations_recent:recent:exposed_form:submit_button
+msgctxt "pw_donations_recent:recent:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:pw_donations_recent:recent:exposed_form:reset_button_label
+msgctxt "pw_donations_recent:recent:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:pw_donations_recent:recent:exposed_form:exposed_sorts_label
+msgctxt "pw_donations_recent:recent:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:pw_donations_recent:recent:exposed_form:sort_asc_label
+msgctxt "pw_donations_recent:recent:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:pw_donations_recent:recent:exposed_form:sort_desc_label
+msgctxt "pw_donations_recent:recent:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:pw_donation_state:default:display_title
+msgctxt "pw_donation_state:default:display_title"
+msgid "Master"
+msgstr ""
+
+#: views:pw_donation_state:default:title
+msgctxt "pw_donation_state:default:title"
+msgid "Spenden nach Bundesland"
+msgstr ""
+
+#: views:pw_donation_state:default:use_more_text
+msgctxt "pw_donation_state:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:pw_donation_state:default:exposed_form:submit_button
+msgctxt "pw_donation_state:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:pw_donation_state:default:exposed_form:reset_button_label
+msgctxt "pw_donation_state:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:pw_donation_state:default:exposed_form:exposed_sorts_label
+msgctxt "pw_donation_state:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:pw_donation_state:default:exposed_form:sort_asc_label
+msgctxt "pw_donation_state:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:pw_donation_state:default:exposed_form:sort_desc_label
+msgctxt "pw_donation_state:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:pw_donation_state:default:field:views:nothing:alter:text
+msgctxt "pw_donation_state:default:field:views:nothing:alter:text"
+msgid "[text]"
+msgstr ""
+
+#: views:pw_donation_state:block:display_title
+msgctxt "pw_donation_state:block:display_title"
+msgid "Block"
+msgstr ""
+
+#: views:pw_donation_state:block:use_more_text
+msgctxt "pw_donation_state:block:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:pw_donation_state:block:exposed_form:submit_button
+msgctxt "pw_donation_state:block:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:pw_donation_state:block:exposed_form:reset_button_label
+msgctxt "pw_donation_state:block:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:pw_donation_state:block:exposed_form:exposed_sorts_label
+msgctxt "pw_donation_state:block:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:pw_donation_state:block:exposed_form:sort_asc_label
+msgctxt "pw_donation_state:block:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:pw_donation_state:block:exposed_form:sort_desc_label
+msgctxt "pw_donation_state:block:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:pw_donation_state:default:field:views:php:label
+msgctxt "pw_donation_state:default:field:views:php:label"
+msgid "PHP"
+msgstr ""
+
+#: views:pw_donation_state:default:field:views:fieldset:label
+msgctxt "pw_donation_state:default:field:views:fieldset:label"
+msgid "Fieldset"
+msgstr ""
+
+#: views:pw_donations_recent:default:header:views:area:content
+msgctxt "pw_donations_recent:default:header:views:area:content"
+msgid ""
+"Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 "
+"€ erreicht sind,\n"
+"geht es los!"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:title
+msgctxt "spenden_nach_bundesland:default:title"
+msgid "Spenden nach Bundesland"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:use_more_text
+msgctxt "spenden_nach_bundesland:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:exposed_form:submit_button
+msgctxt "spenden_nach_bundesland:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:exposed_form:reset_button_label
+msgctxt "spenden_nach_bundesland:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:exposed_form:exposed_sorts_label
+msgctxt "spenden_nach_bundesland:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:exposed_form:sort_asc_label
+msgctxt "spenden_nach_bundesland:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:exposed_form:sort_desc_label
+msgctxt "spenden_nach_bundesland:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:field:xml:text_1:label
+msgctxt "spenden_nach_bundesland:default:field:xml:text_1:label"
+msgid "sum"
+msgstr ""
+
+#: views:spenden_nach_bundesland:default:field:xml:text_2:label
+msgctxt "spenden_nach_bundesland:default:field:xml:text_2:label"
+msgid "recurring donors"
+msgstr ""
+
+#: views:spenden_nach_bundesland:block:use_more_text
+msgctxt "spenden_nach_bundesland:block:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:spenden_nach_bundesland:block:exposed_form:submit_button
+msgctxt "spenden_nach_bundesland:block:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:spenden_nach_bundesland:block:exposed_form:reset_button_label
+msgctxt "spenden_nach_bundesland:block:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:spenden_nach_bundesland:block:exposed_form:exposed_sorts_label
+msgctxt "spenden_nach_bundesland:block:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:spenden_nach_bundesland:block:exposed_form:sort_asc_label
+msgctxt "spenden_nach_bundesland:block:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:spenden_nach_bundesland:block:exposed_form:sort_desc_label
+msgctxt "spenden_nach_bundesland:block:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:election_programme:default:field:views:fieldset_1:label
+msgctxt "election_programme:default:field:views:fieldset_1:label"
+msgid "Fieldset"
+msgstr ""
+
+#: views:election_programme:default:field:views:fieldset:label
+msgctxt "election_programme:default:field:views:fieldset:label"
+msgid "Fieldset"
+msgstr ""
+
+#: views:politicians:default:title
+msgctxt "politicians:default:title"
+msgid "Politicians Overview"
+msgstr ""
+
+#: views:politicians:default:use_more_text
+msgctxt "politicians:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:politicians:default:exposed_form:submit_button
+msgctxt "politicians:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:politicians:default:exposed_form:reset_button_label
+msgctxt "politicians:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:politicians:default:exposed_form:exposed_sorts_label
+msgctxt "politicians:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:politicians:default:exposed_form:sort_asc_label
+msgctxt "politicians:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:politicians:default:exposed_form:sort_desc_label
+msgctxt "politicians:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:politicians:default:pager:expose:items_per_page_label
+msgctxt "politicians:default:pager:expose:items_per_page_label"
+msgid "Politiker pro Seite"
+msgstr ""
+
+#: views:politicians:default:pager:expose:items_per_page_options_all_label
+msgctxt "politicians:default:pager:expose:items_per_page_options_all_label"
+msgid "- Alle anzeigen -"
+msgstr ""
+
+#: views:politicians:default:pager:expose:offset_label
+msgctxt "politicians:default:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:politicians:default:pager:tags:first
+msgctxt "politicians:default:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:politicians:default:pager:tags:previous
+msgctxt "politicians:default:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:politicians:default:pager:tags:next
+msgctxt "politicians:default:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:politicians:default:pager:tags:last
+msgctxt "politicians:default:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:politicians:default:field:users:name:label
+msgctxt "politicians:default:field:users:name:label"
+msgid "Name"
+msgstr ""
+
+#: views:politicians:default:field:users:mail:label
+msgctxt "politicians:default:field:users:mail:label"
+msgid "E-Mail"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_party:field_user_party:label
+msgctxt "politicians:default:field:field_data_field_user_party:field_user_party:label"
+msgid "Party"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_parliament:field_user_parliament:label
+msgctxt "politicians:default:field:field_data_field_user_parliament:field_user_parliament:label"
+msgid "Parliament"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_constituency:field_user_constituency:label
+msgctxt "politicians:default:field:field_data_field_user_constituency:field_user_constituency:label"
+msgid "Constituency"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_commitee:field_user_commitee:label
+msgctxt "politicians:default:field:field_data_field_user_commitee:field_user_commitee:label"
+msgid "Committee"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_questions_get:field_user_questions_get:label
+msgctxt "politicians:default:field:field_data_field_user_questions_get:field_user_questions_get:label"
+msgid "Fragen"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_answers_give:field_user_answers_give:label
+msgctxt "politicians:default:field:field_data_field_user_answers_give:field_user_answers_give:label"
+msgid "Antworten"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_address:field_user_address_locality:label
+msgctxt "politicians:default:field:field_data_field_user_address:field_user_address_locality:label"
+msgid "Ort"
+msgstr ""
+
+#: views:politicians:default:field:users_roles:rid:label
+msgctxt "politicians:default:field:users_roles:rid:label"
+msgid "Rollen"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_list_position:field_user_list_position:label
+msgctxt "politicians:default:field:field_data_field_user_list_position:field_user_list_position:label"
+msgid "Listenplatz"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_fname:field_user_fname:label
+msgctxt "politicians:default:field:field_data_field_user_fname:field_user_fname:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:default:field:field_data_field_user_lname:field_user_lname:label
+msgctxt "politicians:default:field:field_data_field_user_lname:field_user_lname:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_fname:field_user_fname_value:expose:label
+msgctxt "politicians:default:filter:field_data_field_user_fname:field_user_fname_value:expose:label"
+msgid "Vorname"
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_fname:field_user_fname_value:expose:description
+msgctxt "politicians:default:filter:field_data_field_user_fname:field_user_fname_value:expose:description"
+msgid "Suche nach Vornamen."
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_lname:field_user_lname_value:expose:label
+msgctxt "politicians:default:filter:field_data_field_user_lname:field_user_lname_value:expose:label"
+msgid "Nachname"
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_lname:field_user_lname_value:expose:description
+msgctxt "politicians:default:filter:field_data_field_user_lname:field_user_lname_value:expose:description"
+msgid "Suche nach Nachnamen."
+msgstr ""
+
+#: views:politicians:default:filter:users:mail:expose:label
+msgctxt "politicians:default:filter:users:mail:expose:label"
+msgid "E-Mail"
+msgstr ""
+
+#: views:politicians:default:filter:users:mail:expose:description
+msgctxt "politicians:default:filter:users:mail:expose:description"
+msgid "Suche nach E-Mail-Adressen."
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_party:field_user_party_tid:expose:label
+msgctxt "politicians:default:filter:field_data_field_user_party:field_user_party_tid:expose:label"
+msgid "Partei"
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_party:field_user_party_tid:expose:description
+msgctxt "politicians:default:filter:field_data_field_user_party:field_user_party_tid:expose:description"
+msgid "Suche nach Parteien."
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:label
+msgctxt "politicians:default:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:label"
+msgid "Parlament"
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:description
+msgctxt "politicians:default:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:description"
+msgid "Suche nach Parlamenten."
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label
+msgctxt "politicians:default:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label"
+msgid "Wahlkreis"
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:description
+msgctxt "politicians:default:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:description"
+msgid "Suche nach Wahlkreisen."
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:label
+msgctxt "politicians:default:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:label"
+msgid "Ausschuss"
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:description
+msgctxt "politicians:default:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:description"
+msgid "Suche nach Ausschüssen."
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_address:field_user_address_locality:expose:label
+msgctxt "politicians:default:filter:field_data_field_user_address:field_user_address_locality:expose:label"
+msgid "Wohnort"
+msgstr ""
+
+#: views:politicians:default:filter:field_data_field_user_address:field_user_address_locality:expose:description
+msgctxt "politicians:default:filter:field_data_field_user_address:field_user_address_locality:expose:description"
+msgid "Suche nach Wohnorten."
+msgstr ""
+
+#: views:politicians:default:filter:users:dynamic-field:expose:label
+msgctxt "politicians:default:filter:users:dynamic-field:expose:label"
+msgid "Dynamic Fields"
+msgstr ""
+
+#: views:politicians:default:filter:users:dynamic-field_1:expose:label
+msgctxt "politicians:default:filter:users:dynamic-field_1:expose:label"
+msgid "Dynamic Fields"
+msgstr ""
+
+#: views:politicians:page:use_more_text
+msgctxt "politicians:page:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:politicians:page:exposed_form:submit_button
+msgctxt "politicians:page:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:politicians:page:exposed_form:reset_button_label
+msgctxt "politicians:page:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:politicians:page:exposed_form:exposed_sorts_label
+msgctxt "politicians:page:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:politicians:page:exposed_form:sort_asc_label
+msgctxt "politicians:page:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:politicians:page:exposed_form:sort_desc_label
+msgctxt "politicians:page:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:politicians:page:pager:expose:items_per_page_label
+msgctxt "politicians:page:pager:expose:items_per_page_label"
+msgid "Politiker pro Seite"
+msgstr ""
+
+#: views:politicians:page:pager:expose:items_per_page_options_all_label
+msgctxt "politicians:page:pager:expose:items_per_page_options_all_label"
+msgid "- Alle anzeigen -"
+msgstr ""
+
+#: views:politicians:page:pager:expose:offset_label
+msgctxt "politicians:page:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:politicians:page:pager:tags:first
+msgctxt "politicians:page:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:politicians:page:pager:tags:previous
+msgctxt "politicians:page:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:politicians:page:pager:tags:next
+msgctxt "politicians:page:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:politicians:page:pager:tags:last
+msgctxt "politicians:page:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:politicians:page:field:users:name:label
+msgctxt "politicians:page:field:users:name:label"
+msgid "Politiker"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_fname:field_user_fname:label
+msgctxt "politicians:page:field:field_data_field_user_fname:field_user_fname:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_lname:field_user_lname:label
+msgctxt "politicians:page:field:field_data_field_user_lname:field_user_lname:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page:field:users:mail:label
+msgctxt "politicians:page:field:users:mail:label"
+msgid "E-Mail"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_party:field_user_party:label
+msgctxt "politicians:page:field:field_data_field_user_party:field_user_party:label"
+msgid "Partei"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_parliament:field_user_parliament:label
+msgctxt "politicians:page:field:field_data_field_user_parliament:field_user_parliament:label"
+msgid "Parlament"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_constituency:field_user_constituency:label
+msgctxt "politicians:page:field:field_data_field_user_constituency:field_user_constituency:label"
+msgid "Wahlkreis"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_commitee:field_user_commitee:label
+msgctxt "politicians:page:field:field_data_field_user_commitee:field_user_commitee:label"
+msgid "Ausschuss"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_questions_get:field_user_questions_get:label
+msgctxt "politicians:page:field:field_data_field_user_questions_get:field_user_questions_get:label"
+msgid "Fragen"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_answers_give:field_user_answers_give:label
+msgctxt "politicians:page:field:field_data_field_user_answers_give:field_user_answers_give:label"
+msgid "Antworten"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_address:field_user_address_locality:label
+msgctxt "politicians:page:field:field_data_field_user_address:field_user_address_locality:label"
+msgid "Ort"
+msgstr ""
+
+#: views:politicians:page:field:users_roles:rid:label
+msgctxt "politicians:page:field:users_roles:rid:label"
+msgid "Rollen"
+msgstr ""
+
+#: views:politicians:page:field:field_data_field_user_list_position:field_user_list_position:label
+msgctxt "politicians:page:field:field_data_field_user_list_position:field_user_list_position:label"
+msgid "Listenplatz"
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_fname:field_user_fname_value:expose:label
+msgctxt "politicians:page:filter:field_data_field_user_fname:field_user_fname_value:expose:label"
+msgid "Vorname"
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_fname:field_user_fname_value:expose:description
+msgctxt "politicians:page:filter:field_data_field_user_fname:field_user_fname_value:expose:description"
+msgid "Suche nach Vornamen."
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_lname:field_user_lname_value:expose:label
+msgctxt "politicians:page:filter:field_data_field_user_lname:field_user_lname_value:expose:label"
+msgid "Nachname"
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_lname:field_user_lname_value:expose:description
+msgctxt "politicians:page:filter:field_data_field_user_lname:field_user_lname_value:expose:description"
+msgid "Suche nach Nachnamen."
+msgstr ""
+
+#: views:politicians:page:filter:users:mail:expose:label
+msgctxt "politicians:page:filter:users:mail:expose:label"
+msgid "E-Mail"
+msgstr ""
+
+#: views:politicians:page:filter:users:mail:expose:description
+msgctxt "politicians:page:filter:users:mail:expose:description"
+msgid "Suche nach E-Mail-Adressen."
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_party:field_user_party_tid:expose:label
+msgctxt "politicians:page:filter:field_data_field_user_party:field_user_party_tid:expose:label"
+msgid "Partei"
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_party:field_user_party_tid:expose:description
+msgctxt "politicians:page:filter:field_data_field_user_party:field_user_party_tid:expose:description"
+msgid "Suche nach Parteien."
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:label
+msgctxt "politicians:page:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:label"
+msgid "Parlament"
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:description
+msgctxt "politicians:page:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:description"
+msgid "Suche nach Parlamenten."
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label
+msgctxt "politicians:page:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label"
+msgid "Wahlkreis"
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:description
+msgctxt "politicians:page:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:description"
+msgid "Suche nach Wahlkreisen."
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:label
+msgctxt "politicians:page:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:label"
+msgid "Ausschuss"
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:description
+msgctxt "politicians:page:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:description"
+msgid "Suche nach Ausschüssen."
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_address:field_user_address_locality:expose:label
+msgctxt "politicians:page:filter:field_data_field_user_address:field_user_address_locality:expose:label"
+msgid "Wohnort"
+msgstr ""
+
+#: views:politicians:page:filter:field_data_field_user_address:field_user_address_locality:expose:description
+msgctxt "politicians:page:filter:field_data_field_user_address:field_user_address_locality:expose:description"
+msgid "Suche nach Wohnorten."
+msgstr ""
+
+#: views:politicians:page:filter:users:dynamic-field:expose:label
+msgctxt "politicians:page:filter:users:dynamic-field:expose:label"
+msgid "Felder auswählen"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:title
+msgctxt "politicians:page_with_page_title_1:title"
+msgid "Politicians Bulk Edit"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:use_more_text
+msgctxt "politicians:page_with_page_title_1:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:exposed_form:submit_button
+msgctxt "politicians:page_with_page_title_1:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:exposed_form:reset_button_label
+msgctxt "politicians:page_with_page_title_1:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:exposed_form:exposed_sorts_label
+msgctxt "politicians:page_with_page_title_1:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:exposed_form:sort_asc_label
+msgctxt "politicians:page_with_page_title_1:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:exposed_form:sort_desc_label
+msgctxt "politicians:page_with_page_title_1:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:pager:expose:items_per_page_label
+msgctxt "politicians:page_with_page_title_1:pager:expose:items_per_page_label"
+msgid "Politiker pro Seite"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:pager:expose:items_per_page_options_all_label
+msgctxt "politicians:page_with_page_title_1:pager:expose:items_per_page_options_all_label"
+msgid "- Alle anzeigen -"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:pager:expose:offset_label
+msgctxt "politicians:page_with_page_title_1:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:pager:tags:first
+msgctxt "politicians:page_with_page_title_1:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:pager:tags:previous
+msgctxt "politicians:page_with_page_title_1:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:pager:tags:next
+msgctxt "politicians:page_with_page_title_1:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:pager:tags:last
+msgctxt "politicians:page_with_page_title_1:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:users:name:label
+msgctxt "politicians:page_with_page_title_1:field:users:name:label"
+msgid "Politiker"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_fname:field_user_fname:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_fname:field_user_fname:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_lname:field_user_lname:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_lname:field_user_lname:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:users:mail:label
+msgctxt "politicians:page_with_page_title_1:field:users:mail:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_party:field_user_party_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_party:field_user_party_editable:label"
+msgid "Partei"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_party:field_user_party:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_party:field_user_party:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_parliament:field_user_parliament_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_parliament:field_user_parliament_editable:label"
+msgid "Parlament"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_parliament:field_user_parliament:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_parliament:field_user_parliament:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_constituency:field_user_constituency_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_constituency:field_user_constituency_editable:label"
+msgid "Wahlkreis"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_constituency:field_user_constituency:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_constituency:field_user_constituency:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_commitee:field_user_commitee_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_commitee:field_user_commitee_editable:label"
+msgid "Ausschuss"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_commitee:field_user_commitee:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_commitee:field_user_commitee:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_questions_get:field_user_questions_get:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_questions_get:field_user_questions_get:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_answers_give:field_user_answers_give:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_answers_give:field_user_answers_give:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_political_roles:field_user_political_roles_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_political_roles:field_user_political_roles_editable:label"
+msgid "Politische Rollen"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_election_result:field_user_election_result_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_election_result:field_user_election_result_editable:label"
+msgid "Wahlergebnis"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_address:field_user_address_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_address:field_user_address_editable:label"
+msgid "Addresse"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_address:field_user_address_locality:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_address:field_user_address_locality:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_education:field_user_education_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_education:field_user_education_editable:label"
+msgid "Qualifikation"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_job_skills:field_user_job_skills_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_job_skills:field_user_job_skills_editable:label"
+msgid "Tätigkeit"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:users_roles:rid:label
+msgctxt "politicians:page_with_page_title_1:field:users_roles:rid:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_list_position:field_user_list_position_editable:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_list_position:field_user_list_position_editable:label"
+msgid "Listenplatz"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:field:field_data_field_user_list_position:field_user_list_position:label
+msgctxt "politicians:page_with_page_title_1:field:field_data_field_user_list_position:field_user_list_position:label"
+msgid "hidden"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_fname:field_user_fname_value:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_fname:field_user_fname_value:expose:label"
+msgid "Vorname"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_fname:field_user_fname_value:expose:description
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_fname:field_user_fname_value:expose:description"
+msgid "Suche nach Vornamen."
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_lname:field_user_lname_value:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_lname:field_user_lname_value:expose:label"
+msgid "Nachname"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_lname:field_user_lname_value:expose:description
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_lname:field_user_lname_value:expose:description"
+msgid "Suche nach Nachnamen."
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:users:mail:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:users:mail:expose:label"
+msgid "E-Mail"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:users:mail:expose:description
+msgctxt "politicians:page_with_page_title_1:filter:users:mail:expose:description"
+msgid "Suche nach E-Mail-Adressen."
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_party:field_user_party_tid:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_party:field_user_party_tid:expose:label"
+msgid "Partei"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_party:field_user_party_tid:expose:description
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_party:field_user_party_tid:expose:description"
+msgid "Suche nach Parteien."
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:label"
+msgid "Parlament"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:description
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_parliament:field_user_parliament_tid:expose:description"
+msgid "Suche nach Parlamenten."
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:label"
+msgid "Wahlkreis"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:description
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_constituency:field_user_constituency_tid:expose:description"
+msgid "Suche nach Wahlkreisen."
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:label"
+msgid "Ausschuss"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:description
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_commitee:field_user_commitee_tid:expose:description"
+msgid "Suche nach Ausschüssen."
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_address:field_user_address_locality:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_address:field_user_address_locality:expose:label"
+msgid "Wohnort"
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:field_data_field_user_address:field_user_address_locality:expose:description
+msgctxt "politicians:page_with_page_title_1:filter:field_data_field_user_address:field_user_address_locality:expose:description"
+msgid "Suche nach Wohnorten."
+msgstr ""
+
+#: views:politicians:page_with_page_title_1:filter:users:dynamic-field_1:expose:label
+msgctxt "politicians:page_with_page_title_1:filter:users:dynamic-field_1:expose:label"
+msgid "Felder auswählen"
+msgstr ""
+
+#: views:pw_commitee_terms:default:argument:field_data_field_parliament:field_parliament_tid:exception:title
+msgctxt "pw_commitee_terms:default:argument:field_data_field_parliament:field_parliament_tid:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:pw_donation_state:default:header:views:area:content
+msgctxt "pw_donation_state:default:header:views:area:content"
+msgid ""
+"<p>Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 "
+"€ erreicht sind,\n"
+"geht es los!<br/><br/></p>"
+msgstr ""
+
+#: views:pw_dialogue_answers:default:argument:field_data_field_pw_parmliament:field_pw_parmliament_tid_i18n:exception:title
+msgctxt "pw_dialogue_answers:default:argument:field_data_field_pw_parmliament:field_pw_parmliament_tid_i18n:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:pw_kandidatencheck:profile_slideshow:argument:field_data_field_parliament:field_parliament_tid:exception:title
+msgctxt "pw_kandidatencheck:profile_slideshow:argument:field_data_field_parliament:field_parliament_tid:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:rss:default:title
+msgctxt "rss:default:title"
+msgid "Drupal Planet"
+msgstr ""
+
+#: views:rss:default:use_more_text
+msgctxt "rss:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:rss:default:exposed_form:submit_button
+msgctxt "rss:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:rss:default:exposed_form:reset_button_label
+msgctxt "rss:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:rss:default:exposed_form:exposed_sorts_label
+msgctxt "rss:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:rss:default:exposed_form:sort_asc_label
+msgctxt "rss:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:rss:default:exposed_form:sort_desc_label
+msgctxt "rss:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:rss:default:pager:expose:items_per_page_label
+msgctxt "rss:default:pager:expose:items_per_page_label"
+msgid "Items per page"
+msgstr ""
+
+#: views:rss:default:pager:expose:items_per_page_options_all_label
+msgctxt "rss:default:pager:expose:items_per_page_options_all_label"
+msgid "- All -"
+msgstr ""
+
+#: views:rss:default:pager:expose:offset_label
+msgctxt "rss:default:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:rss:default:pager:tags:first
+msgctxt "rss:default:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:rss:default:pager:tags:previous
+msgctxt "rss:default:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:rss:default:pager:tags:next
+msgctxt "rss:default:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:rss:default:pager:tags:last
+msgctxt "rss:default:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:rss:default:filter:xml:text:expose:label
+msgctxt "rss:default:filter:xml:text:expose:label"
+msgid "Suche"
+msgstr ""
+
+#: views:rss:page:use_more_text
+msgctxt "rss:page:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:rss:page:exposed_form:submit_button
+msgctxt "rss:page:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:rss:page:exposed_form:reset_button_label
+msgctxt "rss:page:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:rss:page:exposed_form:exposed_sorts_label
+msgctxt "rss:page:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:rss:page:exposed_form:sort_asc_label
+msgctxt "rss:page:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:rss:page:exposed_form:sort_desc_label
+msgctxt "rss:page:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:rss:page:pager:expose:items_per_page_label
+msgctxt "rss:page:pager:expose:items_per_page_label"
+msgid "Items per page"
+msgstr ""
+
+#: views:rss:page:pager:expose:items_per_page_options_all_label
+msgctxt "rss:page:pager:expose:items_per_page_options_all_label"
+msgid "- All -"
+msgstr ""
+
+#: views:rss:page:pager:expose:offset_label
+msgctxt "rss:page:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:rss:page:pager:tags:first
+msgctxt "rss:page:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:rss:page:pager:tags:previous
+msgctxt "rss:page:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:rss:page:pager:tags:next
+msgctxt "rss:page:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:rss:page:pager:tags:last
+msgctxt "rss:page:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:user_archive_cache:default:title
+msgctxt "user_archive_cache:default:title"
+msgid "User archive cache"
+msgstr ""
+
+#: views:user_archive_cache:default:use_more_text
+msgctxt "user_archive_cache:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:user_archive_cache:default:exposed_form:submit_button
+msgctxt "user_archive_cache:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:user_archive_cache:default:exposed_form:reset_button_label
+msgctxt "user_archive_cache:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:user_archive_cache:default:exposed_form:exposed_sorts_label
+msgctxt "user_archive_cache:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:user_archive_cache:default:exposed_form:sort_asc_label
+msgctxt "user_archive_cache:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:user_archive_cache:default:exposed_form:sort_desc_label
+msgctxt "user_archive_cache:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:user_archive_cache:default:pager:expose:items_per_page_label
+msgctxt "user_archive_cache:default:pager:expose:items_per_page_label"
+msgid "Items per page"
+msgstr ""
+
+#: views:user_archive_cache:default:pager:expose:items_per_page_options_all_label
+msgctxt "user_archive_cache:default:pager:expose:items_per_page_options_all_label"
+msgid "- All -"
+msgstr ""
+
+#: views:user_archive_cache:default:pager:expose:offset_label
+msgctxt "user_archive_cache:default:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:user_archive_cache:default:pager:tags:first
+msgctxt "user_archive_cache:default:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:user_archive_cache:default:pager:tags:previous
+msgctxt "user_archive_cache:default:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:user_archive_cache:default:pager:tags:next
+msgctxt "user_archive_cache:default:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:user_archive_cache:default:pager:tags:last
+msgctxt "user_archive_cache:default:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:user_archive_cache:default:empty:views:area:content
+msgctxt "user_archive_cache:default:empty:views:area:content"
+msgid "There is no data in this table."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:id:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:id:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:id:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:id:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:uid:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:uid:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:uid:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:uid:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:vid:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:vid:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:vid:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:vid:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_questions:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_questions:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_questions:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_questions:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_answers:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_answers:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_answers:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_answers:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_sideline_jobs:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_sideline_jobs:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_sideline_jobs:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_sideline_jobs:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_speeches:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_speeches:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_speeches:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_speeches:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_missed_votings:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_missed_votings:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:number_of_missed_votings:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:number_of_missed_votings:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:timestamp:decimal
+msgctxt "user_archive_cache:default:field:user_archive_cache:timestamp:decimal"
+msgid "."
+msgstr ""
+
+#: views:user_archive_cache:default:field:user_archive_cache:timestamp:separator
+msgctxt "user_archive_cache:default:field:user_archive_cache:timestamp:separator"
+msgid ","
+msgstr ""
+
+#: views:user_archive_cache:default:argument:user_archive_cache:id:exception:title
+msgctxt "user_archive_cache:default:argument:user_archive_cache:id:exception:title"
+msgid "All"
+msgstr ""
+
+#: views:user_archive_cache:default:argument:user_archive_cache:id:title
+msgctxt "user_archive_cache:default:argument:user_archive_cache:id:title"
+msgid "User archive cache %1"
+msgstr ""
+
+#: views:user_archive_cache:page_1:use_more_text
+msgctxt "user_archive_cache:page_1:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:user_archive_cache:page_1:exposed_form:submit_button
+msgctxt "user_archive_cache:page_1:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:user_archive_cache:page_1:exposed_form:reset_button_label
+msgctxt "user_archive_cache:page_1:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:user_archive_cache:page_1:exposed_form:exposed_sorts_label
+msgctxt "user_archive_cache:page_1:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:user_archive_cache:page_1:exposed_form:sort_asc_label
+msgctxt "user_archive_cache:page_1:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:user_archive_cache:page_1:exposed_form:sort_desc_label
+msgctxt "user_archive_cache:page_1:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:user_archive_cache:page_1:pager:expose:items_per_page_label
+msgctxt "user_archive_cache:page_1:pager:expose:items_per_page_label"
+msgid "Items per page"
+msgstr ""
+
+#: views:user_archive_cache:page_1:pager:expose:items_per_page_options_all_label
+msgctxt "user_archive_cache:page_1:pager:expose:items_per_page_options_all_label"
+msgid "- All -"
+msgstr ""
+
+#: views:user_archive_cache:page_1:pager:expose:offset_label
+msgctxt "user_archive_cache:page_1:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:user_archive_cache:page_1:pager:tags:first
+msgctxt "user_archive_cache:page_1:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:user_archive_cache:page_1:pager:tags:previous
+msgctxt "user_archive_cache:page_1:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:user_archive_cache:page_1:pager:tags:next
+msgctxt "user_archive_cache:page_1:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:user_archive_cache:page_1:pager:tags:last
+msgctxt "user_archive_cache:page_1:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:user_tweets:a_watch:title
+msgctxt "user_tweets:a_watch:title"
+msgid "Twitter Ticker"
+msgstr ""
+
+#: views:user_tweets:a_watch:use_more_text
+msgctxt "user_tweets:a_watch:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:user_tweets:a_watch:exposed_form:submit_button
+msgctxt "user_tweets:a_watch:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:user_tweets:a_watch:exposed_form:reset_button_label
+msgctxt "user_tweets:a_watch:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:user_tweets:a_watch:exposed_form:exposed_sorts_label
+msgctxt "user_tweets:a_watch:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:user_tweets:a_watch:exposed_form:sort_asc_label
+msgctxt "user_tweets:a_watch:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:user_tweets:a_watch:exposed_form:sort_desc_label
+msgctxt "user_tweets:a_watch:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:user_tweets:a_watch:block_description
+msgctxt "user_tweets:a_watch:block_description"
+msgid "Tweets"
+msgstr ""
+
+#: views:views_project_releases:default:title
+msgctxt "views_project_releases:default:title"
+msgid "Views project releases"
+msgstr ""
+
+#: views:views_project_releases:default:use_more_text
+msgctxt "views_project_releases:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:views_project_releases:default:exposed_form:submit_button
+msgctxt "views_project_releases:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:views_project_releases:default:exposed_form:reset_button_label
+msgctxt "views_project_releases:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:views_project_releases:default:exposed_form:exposed_sorts_label
+msgctxt "views_project_releases:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:views_project_releases:default:exposed_form:sort_asc_label
+msgctxt "views_project_releases:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:views_project_releases:default:exposed_form:sort_desc_label
+msgctxt "views_project_releases:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:views_project_releases:default:pager:expose:items_per_page_label
+msgctxt "views_project_releases:default:pager:expose:items_per_page_label"
+msgid "Items per page"
+msgstr ""
+
+#: views:views_project_releases:default:pager:expose:items_per_page_options_all_label
+msgctxt "views_project_releases:default:pager:expose:items_per_page_options_all_label"
+msgid "- All -"
+msgstr ""
+
+#: views:views_project_releases:default:pager:expose:offset_label
+msgctxt "views_project_releases:default:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:views_project_releases:default:pager:tags:first
+msgctxt "views_project_releases:default:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:views_project_releases:default:pager:tags:previous
+msgctxt "views_project_releases:default:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:views_project_releases:default:pager:tags:next
+msgctxt "views_project_releases:default:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:views_project_releases:default:pager:tags:last
+msgctxt "views_project_releases:default:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:views_project_releases:default:field:xml:text_1:label
+msgctxt "views_project_releases:default:field:xml:text_1:label"
+msgid "Download URL"
+msgstr ""
+
+#: views:views_project_releases:default:field:xml:text:label
+msgctxt "views_project_releases:default:field:xml:text:label"
+msgid "Text"
+msgstr ""
+
+#: views:views_project_releases:default:field:xml:text_2:label
+msgctxt "views_project_releases:default:field:xml:text_2:label"
+msgid "MD5 Hash"
+msgstr ""
+
+#: views:views_project_releases:default:field:xml:text_4:label
+msgctxt "views_project_releases:default:field:xml:text_4:label"
+msgid "Version major"
+msgstr ""
+
+#: views:views_project_releases:default:field:xml:text_3:label
+msgctxt "views_project_releases:default:field:xml:text_3:label"
+msgid "Release type"
+msgstr ""
+
+#: views:views_project_releases:default:field:xml:date:label
+msgctxt "views_project_releases:default:field:xml:date:label"
+msgid "Datum"
+msgstr ""
+
+#: views:views_project_releases:default:filter:xml:numeric:expose:label
+msgctxt "views_project_releases:default:filter:xml:numeric:expose:label"
+msgid "Major Version"
+msgstr ""
+
+#: views:views_project_releases:page:use_more_text
+msgctxt "views_project_releases:page:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:views_project_releases:page:exposed_form:submit_button
+msgctxt "views_project_releases:page:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:views_project_releases:page:exposed_form:reset_button_label
+msgctxt "views_project_releases:page:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:views_project_releases:page:exposed_form:exposed_sorts_label
+msgctxt "views_project_releases:page:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:views_project_releases:page:exposed_form:sort_asc_label
+msgctxt "views_project_releases:page:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:views_project_releases:page:exposed_form:sort_desc_label
+msgctxt "views_project_releases:page:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:views_project_releases:page:pager:expose:items_per_page_label
+msgctxt "views_project_releases:page:pager:expose:items_per_page_label"
+msgid "Items per page"
+msgstr ""
+
+#: views:views_project_releases:page:pager:expose:items_per_page_options_all_label
+msgctxt "views_project_releases:page:pager:expose:items_per_page_options_all_label"
+msgid "- All -"
+msgstr ""
+
+#: views:views_project_releases:page:pager:expose:offset_label
+msgctxt "views_project_releases:page:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:views_project_releases:page:pager:tags:first
+msgctxt "views_project_releases:page:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:views_project_releases:page:pager:tags:previous
+msgctxt "views_project_releases:page:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:views_project_releases:page:pager:tags:next
+msgctxt "views_project_releases:page:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:views_project_releases:page:pager:tags:last
+msgctxt "views_project_releases:page:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:title
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:title"
+msgid "Webform views untersttzen sie abgeordnetenwatchde"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:use_more_text
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:submit_button
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:reset_button_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:exposed_sorts_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:sort_asc_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:sort_desc_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:expose:items_per_page_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:expose:items_per_page_label"
+msgid "Items per page"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:expose:items_per_page_options_all_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:expose:items_per_page_options_all_label"
+msgid "- All -"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:expose:offset_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:tags:first
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:tags:previous
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:tags:next
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:tags:last
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:pager:tags:last"
+msgid "letzte Seite »"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:empty:views:area:content
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:empty:views:area:content"
+msgid "There is no data in this table."
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:label"
+msgid "sid"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:decimal
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:decimal"
+msgid "."
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:separator
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:separator"
+msgid ","
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:uid:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:uid:label"
+msgid "uid"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:uid:decimal
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:uid:decimal"
+msgid "."
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:uid:separator
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:uid:separator"
+msgid ","
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_frequency:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_frequency:label"
+msgid "donation_frequency"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_amount:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_amount:label"
+msgid "donation_amount"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_free_amount:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_free_amount:label"
+msgid "donation_free_amount"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_target:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_target:label"
+msgid "donation_target"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:message:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:message:label"
+msgid "message"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_target_council:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:donation_target_council:label"
+msgid "donation_target_council"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:node_path:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:node_path:label"
+msgid "node_path"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:status:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:status:label"
+msgid "Status"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_payment_instrument:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_payment_instrument:label"
+msgid "civicrm_payment_instrument"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:option_receipt:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:option_receipt:label"
+msgid "option_receipt"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_contribution_status:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_contribution_status:label"
+msgid "civicrm_contribution_status"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_accordion:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_accordion:label"
+msgid "payment_accordion"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_amount:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_amount:label"
+msgid "civicrm_amount"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_prefix:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_prefix:label"
+msgid "personal_prefix"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_direct_debit_authority:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_direct_debit_authority:label"
+msgid "civicrm_direct_debit_authority"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_groups:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_groups:label"
+msgid "civicrm_groups"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_firstname:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_firstname:label"
+msgid "personal_firstname"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_description:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_description:label"
+msgid "civicrm_description"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_contribution_type:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_contribution_type:label"
+msgid "civicrm_contribution_type"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_date_start:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:civicrm_date_start:label"
+msgid "civicrm_date_start"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_lastname:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_lastname:label"
+msgid "personal_lastname"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_email:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_email:label"
+msgid "personal_email"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_phone:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:personal_phone:label"
+msgid "personal_phone"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:address_street:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:address_street:label"
+msgid "address_street"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:address_zipcode:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:address_zipcode:label"
+msgid "address_zipcode"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_sepa_holder:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_sepa_holder:label"
+msgid "payment_sepa_holder"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_direct_debit_holder:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_direct_debit_holder:label"
+msgid "payment_direct_debit_holder"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:address_city:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:address_city:label"
+msgid "address_city"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_sepa_iban:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_sepa_iban:label"
+msgid "payment_sepa_iban"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_direct_debit_account:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_direct_debit_account:label"
+msgid "payment_direct_debit_account"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:address_country:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:address_country:label"
+msgid "address_country"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_sepa_bic:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_sepa_bic:label"
+msgid "payment_sepa_bic"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_direct_debit_bank:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_direct_debit_bank:label"
+msgid "payment_direct_debit_bank"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:option_newsletter:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:option_newsletter:label"
+msgid "option_newsletter"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:option_not_anonymous:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:option_not_anonymous:label"
+msgid "option_not_anonymous"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_tab_direct_debit:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_tab_direct_debit:label"
+msgid "payment_tab_direct_debit"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_tab_sepa:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:payment_tab_sepa:label"
+msgid "payment_tab_sepa"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:submitted:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:submitted:label"
+msgid "submitted"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:remote_addr:label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:field:webform_views_untersttzen_sie_abgeordnetenwatchde:remote_addr:label"
+msgid "remote_addr"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:argument:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:exception:title
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:argument:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:exception:title"
+msgid "All"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:default:argument:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:title
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:default:argument:webform_views_untersttzen_sie_abgeordnetenwatchde:sid:title"
+msgid "Webform views untersttzen sie abgeordnetenwatchde %1"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:use_more_text
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:use_more_text"
+msgid "more"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:submit_button
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:submit_button"
+msgid "Apply"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:reset_button_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:reset_button_label"
+msgid "Zurücksetzen"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:exposed_sorts_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:exposed_sorts_label"
+msgid "Sortieren nach"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:sort_asc_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:sort_asc_label"
+msgid "Asc"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:sort_desc_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:exposed_form:sort_desc_label"
+msgid "Desc"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:expose:items_per_page_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:expose:items_per_page_label"
+msgid "Items per page"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:expose:items_per_page_options_all_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:expose:items_per_page_options_all_label"
+msgid "- All -"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:expose:offset_label
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:expose:offset_label"
+msgid "Offset"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:tags:first
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:tags:first"
+msgid "« erste Seite"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:tags:previous
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:tags:previous"
+msgid "‹ vorherige Seite"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:tags:next
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:tags:next"
+msgid "weiter"
+msgstr ""
+
+#: views:webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:tags:last
+msgctxt "webform_views_untersttzen_sie_abgeordnetenwatchde:page_1:pager:tags:last"
+msgid "letzte Seite »"
 msgstr ""
 
 #: views:press_articles:default:title
@@ -16461,7 +18982,7 @@ msgstr "weiter"
 
 #: views:media_default:media_browser_my_files:title
 msgctxt "media_default:media_browser_my_files:title"
-msgid "My files"
+msgid "Meine Dateien"
 msgstr "Meine Dateien"
 
 #: views:media_default:media_browser_my_files:pager:tags:next
@@ -16962,4 +19483,14 @@ msgstr "Position von"
 msgctxt "pw_kandidatencheck:default:field:field_data_field_user_lname:field_user_lname:label"
 msgid "Position von"
 msgstr "Position von"
+
+#: views:pw_donation_state:default:field:xml:text_1:label
+msgctxt "pw_donation_state:default:field:xml:text_1:label"
+msgid "Sum"
+msgstr "Fördersumme"
+
+#: views:pw_donation_state:default:field:xml:text_2:label
+msgctxt "pw_donation_state:default:field:xml:text_2:label"
+msgid "Recurring donors"
+msgstr "Fördermitglieder"
 

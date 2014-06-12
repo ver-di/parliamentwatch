@@ -12,11 +12,11 @@ function pw_donation_form_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['views-letzte_spender-block_1'] = array(
+  $export['views-pw_donations_recent-block_1'] = array(
     'cache' => -1,
     'css_class' => '',
     'custom' => '0',
-    'delta' => 'letzte_spender-block_1',
+    'delta' => 'pw_donations_recent-block_1',
     'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'views',
@@ -47,11 +47,11 @@ function pw_donation_form_default_fe_block_settings() {
     'visibility' => '1',
   );
 
-  $export['views-spenden_nach_bundesland-block'] = array(
+  $export['views-pw_donation_state-block'] = array(
     'cache' => -1,
     'css_class' => '',
     'custom' => '0',
-    'delta' => 'spenden_nach_bundesland-block',
+    'delta' => 'pw_donation_state-block',
     'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'views',
