@@ -22,7 +22,28 @@ function pw_dialogues_importer_menu() {
     'access arguments' => array('import dialogue_importer feeds'),
   );
 
+  $menu['api/import/dialogue/%'] = array(
+    'title' => 'imports dialogue',
+    'access arguments' => array('access content'),
+    'delivery callback' => 'pw_dialogues_triggered_import',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
   return $menu;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function pw_dialogues_triggered_import() {
+  drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
+  $status = false;
+  if(is_numeric(arg(3))){
+    $source = variable_get('pw_dialogues_importer_source');
+    $source .= arg(3);
+    $status = pw_dialogues_do_import($source);
+  }
+  print $status?'OK':'FAILED';
 }
 
 /**
@@ -113,6 +134,8 @@ function pw_dialogues_do_import($source) {
     ),
   ));
   while (FEEDS_BATCH_COMPLETE != $message_feed->import());
+
+  return TRUE;
 }
 
 /**
