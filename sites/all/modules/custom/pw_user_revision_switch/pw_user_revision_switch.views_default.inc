@@ -1546,6 +1546,7 @@ if(_pw_is_premium_user($profile_user)){
   $politician_name = $profile_user->field_user_fname[\'und\'][0][\'value\']." ".$profile_user->field_user_lname[\'und\'][0][\'value\'];
   print "Durch die Verwendung einer Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de einmalig mit 179 Euro (149 Euro als Frühbucherrabatt).";
 }
+
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
@@ -1905,6 +1906,18 @@ return $result;
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | PHP: Parliament is valid */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP: Parliament is valid';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_value'] = 'return _check_parliament_active()?\'parliament_is_valid\':\'parliament_is_not_valid\';';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Excluded | User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
