@@ -1395,6 +1395,18 @@ return $result;
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | PHP: Parliament is valid */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP: Parliament is valid';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_value'] = 'return _check_parliament_active()?\'\':\'ui-state-disabled\';';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Excluded | User: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
@@ -1560,7 +1572,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '#pw_block_user_questionform';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
-  $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question [php]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-l';
@@ -1826,6 +1838,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
+  $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '#pw_block_user_questionform';
@@ -1915,7 +1928,7 @@ return $result;
   $handler->display->display_options['fields']['php']['exclude'] = TRUE;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_value'] = 'return _check_parliament_active()?\'parliament_is_valid\':\'parliament_is_not_valid\';';
+  $handler->display->display_options['fields']['php']['php_value'] = 'return _check_parliament_active()?\'\':\'ui-state-disabled\';';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Excluded | User: Uid */
@@ -2060,7 +2073,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '#pw_block_user_questionform';
   $handler->display->display_options['fields']['nothing_2']['element_type'] = 'span';
-  $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
+  $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question [php]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-l';
@@ -2293,6 +2306,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['path'] = '#pw_block_user_questionform';
@@ -2478,6 +2492,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_2']['ui_name'] = 'Global: Custom text: Ask a Question';
   $handler->display->display_options['fields']['nothing_2']['label'] = '';
+  $handler->display->display_options['fields']['nothing_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = 'Frage stellen';
   $handler->display->display_options['fields']['nothing_2']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing_2']['alter']['path'] = '#pw_block_user_questionform';
