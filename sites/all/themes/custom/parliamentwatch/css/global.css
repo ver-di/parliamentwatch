@@ -1960,6 +1960,7 @@ input[type="week"],
     margin-bottom: 0.8rem 0;
     line-height: auto;
     background-position: -120px -2539px;
+    background-color: transparent;
 }
 .ctools-use-ajax.ctools-auto-submit-click {
     position: absolute;
