@@ -13,7 +13,7 @@ function pw_subsite_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['block-pw_donation_mail'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -83,7 +83,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-pw_flattr'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -188,7 +188,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-social_media_footer'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -223,7 +223,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['delta_blocks-breadcrumb'] = array(
-    'cache' => 4,
+    'cache' => '5',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'breadcrumb',
@@ -328,7 +328,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['menu-menu-about-us-de'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-about-us-de',
@@ -363,7 +363,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['menu-menu-elections-de'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-elections-de',
@@ -468,7 +468,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['menu-menu-support-us-de'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-support-us-de',
@@ -538,7 +538,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['views--exp-profile_list_rev-grid'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => '-exp-profile_list_rev-grid',
@@ -546,7 +546,9 @@ function pw_subsite_default_fe_block_settings() {
     'i18n_mode' => '1',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'profile/*',
+    'pages' => '<?php
+return arg(0) == \'profile\';
+?>',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
@@ -569,7 +571,7 @@ function pw_subsite_default_fe_block_settings() {
       ),
     ),
     'title' => 'Filter list',
-    'visibility' => '1',
+    'visibility' => '2',
   );
 
   $export['views-pw_user_revision_switch-block'] = array(
@@ -608,7 +610,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['views-slider-block'] = array(
-    'cache' => -1,
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'slider-block',

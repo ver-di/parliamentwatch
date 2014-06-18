@@ -18,8 +18,9 @@ function pw_subsite_default_fe_block_boxes() {
 	Alternativ zu einer Online-Spende können Sie auch einen Antrag herunterladen (PDF), ausdrucken und uns per Post oder Fax senden.
 </p>
 <p class="rteright">
-	<a class="link-download" href="/sites/abgeordnetenwatch.de/files/spendenformular_print_sepa.pdf" target="_blank" download="spendenformular_print_sepa.pdf">Spendenantrag herunterladen</a>
-</p>';
+	<a class="link-download" download="spendenformular_print_sepa.pdf" href="/sites/abgeordnetenwatch.de/files/spendenformular_print_sepa.pdf" target="_blank">Spendenantrag herunterladen</a>
+</p>
+';
 
   $export['pw_donation_mail'] = $fe_block_boxes;
 

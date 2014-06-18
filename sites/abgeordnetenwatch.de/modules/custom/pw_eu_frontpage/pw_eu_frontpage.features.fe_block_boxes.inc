@@ -71,7 +71,8 @@ function pw_eu_frontpage_default_fe_block_boxes() {
 </p>
 <p class="rteright clear">
 	<a class="link-download" href="/sites/abgeordnetenwatch.de/files/pressemappe_europawahl2014.pdf">Download Pressemappe (PDF)</a>
-</p>';
+</p>
+';
 
   $export['aw_eu_pressemappe'] = $fe_block_boxes;
 

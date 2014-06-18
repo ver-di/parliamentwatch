@@ -13,7 +13,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['block-aw_eu_intro'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => 'grid-5 push-bottom-m omega',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -48,7 +48,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   );
 
   $export['block-aw_eu_map'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => 'grid-3 push-bottom-m alpha',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -83,7 +83,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   );
 
   $export['block-aw_eu_parliament_archive'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -153,7 +153,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   );
 
   $export['quicktabs-politicians_answer'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'politicians_answer',
@@ -188,7 +188,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   );
 
   $export['views-pw_announcement-slideshow'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => 'clear',
     'custom' => '0',
     'delta' => 'pw_announcement-slideshow',
@@ -223,7 +223,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   );
 
   $export['views-user_tweets-a_watch'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'user_tweets-a_watch',
