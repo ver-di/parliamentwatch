@@ -2140,9 +2140,8 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Link kopieren';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]?width=800&height=1600';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing']['element_type'] = 'span';
   $handler->display->display_options['fields']['nothing']['element_class'] = 'read-more';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -2497,7 +2496,6 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'bg-white clear';
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_node']['text'] = 'Frage und ganze Antwort lesen';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox'] = TRUE;
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '800';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '1600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
