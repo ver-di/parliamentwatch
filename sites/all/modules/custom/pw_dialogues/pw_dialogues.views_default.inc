@@ -1764,13 +1764,20 @@ else {
   $handler->display->display_options['fields']['fieldset']['label'] = 'Weitere Informationen zur Antwort';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'field_dialogue_tags',
-    1 => 'path_1',
-    2 => 'fieldset_4',
+    0 => 'field_dialogue_response_time',
+    1 => 'field_dialogue_tags',
+    2 => 'path_1',
+    3 => 'fieldset_4',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'more-info content-inner clearfix clear relative';
   $handler->display->display_options['fields']['fieldset']['fieldset']['id'] = 'pw-question-[nid]';
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
+  /* Feld: Kommentar: Response time */
+  $handler->display->display_options['fields']['field_dialogue_response_time']['id'] = 'field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['table'] = 'field_data_field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['field'] = 'field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['relationship'] = 'cid';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['exclude'] = TRUE;
   /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags']['id'] = 'field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['table'] = 'field_data_field_dialogue_tags';
@@ -1803,10 +1810,9 @@ else {
   $handler->display->display_options['fields']['fieldset_4']['label'] = 'permalink-wrapper';
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
-    1 => 'path',
-    2 => 'php_1',
-    3 => 'php',
-    4 => 'php_2',
+    1 => 'php_1',
+    2 => 'php',
+    3 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';

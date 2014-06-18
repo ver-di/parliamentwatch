@@ -584,12 +584,24 @@ function pw_dialogues_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_dialogue_response_time',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
       'module' => 'computed_field',
       'settings' => array(
-        'code' => '$entity_field[0][\'value\'] = "";',
+        'code' => '// load dialogue node
+$node = node_load($entity->nid);
+
+// time difference from node creation to comment creation
+$tiff_diff = $entity->created - $node->created;
+
+// store time diff in field
+$entity_field[0][\'value\'] = $tiff_diff;
+
+',
         'database' => array(
           'data_default' => '',
           'data_index' => 0,
@@ -600,7 +612,40 @@ function pw_dialogues_field_default_fields() {
           'data_size' => 'normal',
           'data_type' => 'varchar',
         ),
-        'display_format' => '$display_output = $entity_field_item[\'value\'];',
+        'display_format' => '$tiff_diff = $entity_field_item[\'value\'];
+$string_output = \'\';
+$vars_output = array();
+
+// add days
+if($tiff_diff >= 86400){
+  $days = floor($tiff_diff/86400);
+  if($days > 0){
+    $string_output .= $days > 1?\'@days days \':\'@days day \';
+    $vars_output[\'@days\'] = $days;
+  }
+}
+
+// add hours
+if($tiff_diff >= 3600){
+  $hours = floor(($tiff_diff%86400)/3600);
+  if($hours > 0){
+    $string_output .= $hours > 1?\'@hours hours \':\'@hours hour \';
+    $vars_output[\'@hours\'] = $hours;
+  }
+}
+
+// add minutes
+if($tiff_diff >= 60){
+  $minutes = round(($tiff_diff%3600)/60);
+  if($minutes > 0){
+    $string_output .= $minutes > 1?\'@minutes minutes \':\'@minutes minute \';
+    $vars_output[\'@minutes\'] = $minutes;
+  }
+}
+
+// trim output
+$string_output = rtrim($string_output);
+$display_output = t($string_output, $vars_output);',
         'store' => 1,
       ),
       'translatable' => '0',
@@ -619,16 +664,20 @@ function pw_dialogues_field_default_fields() {
           'weight' => 16,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'comment',
       'field_name' => 'field_dialogue_response_time',
       'label' => 'Response time',
-      'required' => FALSE,
+      'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 0,
         'module' => 'computed_field',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'computed',
         'weight' => '29',
       ),
