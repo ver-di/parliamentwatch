@@ -48,6 +48,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:17' => 'status=1',
           'xpathparser:18' => 'context',
           'xpathparser:19' => 'keyworded_text',
+          'xpathparser:20' => 'context',
         ),
         'rawXML' => array(
           'xpathparser:12' => 0,
@@ -67,6 +68,7 @@ function dialogues_feeds_importer_default() {
           'xpathparser:17' => 0,
           'xpathparser:18' => 0,
           'xpathparser:19' => 0,
+          'xpathparser:20' => 0,
         ),
         'context' => '//message[type=\'question\']',
         'exp' => array(
@@ -92,6 +94,7 @@ function dialogues_feeds_importer_default() {
             'xpathparser:17' => 0,
             'xpathparser:18' => 0,
             'xpathparser:19' => 0,
+            'xpathparser:20' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -111,8 +114,8 @@ function dialogues_feeds_importer_default() {
           1 => array(
             'source' => 'xpathparser:14',
             'target' => 'field_dialogue_topic',
-            'term_search' => '1',
-            'autocreate' => 0,
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
           2 => array(
             'source' => 'xpathparser:15',
@@ -189,6 +192,12 @@ function dialogues_feeds_importer_default() {
             'source' => 'xpathparser:19',
             'target' => 'body:summary',
             'unique' => FALSE,
+          ),
+          17 => array(
+            'source' => 'xpathparser:20',
+            'target' => 'field_parliament',
+            'term_search' => '0',
+            'autocreate' => 0,
           ),
         ),
         'update_existing' => '1',

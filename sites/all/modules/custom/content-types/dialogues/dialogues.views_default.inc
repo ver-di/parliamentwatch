@@ -2199,7 +2199,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date Question';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Parliament (field_pw_parmliament) */
+  /* Contextual filter: Inhalt: Parmliament (field_pw_parmliament) */
   $handler->display->display_options['arguments']['field_pw_parmliament_tid']['id'] = 'field_pw_parmliament_tid';
   $handler->display->display_options['arguments']['field_pw_parmliament_tid']['table'] = 'field_data_field_pw_parmliament';
   $handler->display->display_options['arguments']['field_pw_parmliament_tid']['field'] = 'field_pw_parmliament_tid';
@@ -2550,7 +2550,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Inhalt: Parliament (field_pw_parmliament) (translated) */
+  /* Contextual filter: Inhalt: Parmliament (field_pw_parmliament) (translated) */
   $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['id'] = 'field_pw_parmliament_tid_i18n';
   $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['table'] = 'field_data_field_pw_parmliament';
   $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['field'] = 'field_pw_parmliament_tid_i18n';
