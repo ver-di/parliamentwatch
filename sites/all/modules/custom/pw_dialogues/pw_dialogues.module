@@ -27,7 +27,7 @@ function pw_dialogues_menu() {
   $menu['api/import/dialogue/%'] = array(
     'title' => 'imports dialogue',
     'access arguments' => array('access content'),
-    'delivery callback' => 'pw_dialogues_triggered_import',
+    'page callback' => 'pw_dialogues_triggered_import',
     'type' => MENU_SUGGESTED_ITEM,
   );
 
@@ -41,9 +41,26 @@ function pw_dialogues_triggered_import() {
   drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
   $status = false;
   if(is_numeric(arg(3))){
+    $dialogue_id = arg(3);
     $source = variable_get('pw_dialogues_importer_source');
-    $source .= arg(3);
-    $status = pw_dialogues_do_import($source);
+    $source .= $dialogue_id;
+    pw_dialogues_do_import($source);
+
+    // get dialogue entity to clear cache
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'dialogue')
+          ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
+    $result = $query->execute();
+    if (isset($result['node'])) {
+      $dialogue_nid = key($result['node']);
+      $node = node_load($dialogue_nid);
+      $recipient_id = $node->field_dialogue_recipient['und'][0]['target_id'];
+      if($user = user_load($recipient_id)){
+        cache_clear_all($GLOBALS['base_url'].'/profile/'.$user->name, 'cache_page', TRUE);
+        $status = TRUE;
+      }
+    }
   }
   print $status?'OK':'FAILED';
 }
