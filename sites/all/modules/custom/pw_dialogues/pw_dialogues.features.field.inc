@@ -613,15 +613,14 @@ $entity_field[0][\'value\'] = $tiff_diff;
           'data_type' => 'varchar',
         ),
         'display_format' => '$tiff_diff = $entity_field_item[\'value\'];
-$string_output = \'\';
-$vars_output = array();
+$display_output = \'\';
 
 // add days
 if($tiff_diff >= 86400){
   $days = floor($tiff_diff/86400);
   if($days > 0){
-    $string_output .= $days > 1?\'@days days \':\'@days day \';
-    $vars_output[\'@days\'] = $days;
+    $date_string = $days > 1?\'@days days\':\'@days day\';
+    $display_output .= t($date_string, array(\'@days\' => $days)).\' \';
   }
 }
 
@@ -629,8 +628,8 @@ if($tiff_diff >= 86400){
 if($tiff_diff >= 3600){
   $hours = floor(($tiff_diff%86400)/3600);
   if($hours > 0){
-    $string_output .= $hours > 1?\'@hours hours \':\'@hours hour \';
-    $vars_output[\'@hours\'] = $hours;
+    $date_string = $hours > 1?\'@hours hours\':\'@hours hour\';
+    $display_output .= t($date_string, array(\'@hours\' => $hours)).\' \';
   }
 }
 
@@ -638,14 +637,13 @@ if($tiff_diff >= 3600){
 if($tiff_diff >= 60){
   $minutes = round(($tiff_diff%3600)/60);
   if($minutes > 0){
-    $string_output .= $minutes > 1?\'@minutes minutes \':\'@minutes minute \';
-    $vars_output[\'@minutes\'] = $minutes;
+    $date_string = $minutes > 1?\'@minutes minutes\':\'@minutes minute\';
+    $display_output .= t($date_string, array(\'@minutes\' => $minutes)).\' \';
   }
 }
 
 // trim output
-$string_output = rtrim($string_output);
-$display_output = t($string_output, $vars_output);',
+$display_output = rtrim($display_output);',
         'store' => 1,
       ),
       'translatable' => '0',
