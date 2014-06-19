@@ -1021,10 +1021,7 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
