@@ -555,7 +555,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-76',
+        'weight' => '-79',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -625,7 +625,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-79',
+        'weight' => '-82',
       ),
       'blank' => array(
         'region' => '',
