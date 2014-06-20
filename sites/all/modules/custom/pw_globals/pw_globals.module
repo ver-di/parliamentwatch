@@ -122,23 +122,24 @@ function _check_parliament_active($parliament=false){
  * Custom: Retrieve user depending on user or archived user is viewed. 
  */
 function _pw_get_current_user(){
+  $user = &drupal_static(__FUNCTION__);
+  if(!isset($user)){
+    switch(arg(0)){
+      // load by archived user profile
+      case 'profile': 
+        $user = user_load_by_name(arg(1));
+        $user_id = $user->uid;
+        $vid = arg(3);
+        $user = user_revision_load($user_id, $vid);
+        break;
 
-  switch(arg(0)){
-
-    // load by archived user profile
-    case 'profile': 
-      $user = user_load_by_name(arg(1));
-      $user_id = $user->uid;
-      $vid = arg(3);
-      $user = user_revision_load($user_id, $vid);
-      return $user;
-      break;
-
-    // load by user profile
-    case 'user':
-      $user = menu_get_object('user');
-      return $user;
-      break;
+      // load by user profile
+      case 'user':
+        $user = menu_get_object('user');
+        break;
+      default:
+        $user = FALSE;
+    }
   }
-  return FALSE;
+  return $user;
 }
