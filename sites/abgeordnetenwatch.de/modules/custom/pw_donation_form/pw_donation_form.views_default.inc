@@ -11,6 +11,62 @@ function pw_donation_form_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'pw_donation_drive';
+  $view->description = 'Zeigt den Stand der aktuell laufenden Spendenkampagne an';
+  $view->tag = 'default';
+  $view->base_table = 'xml';
+  $view->human_name = 'PW Donation Drive';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Stand der Spendenkampagne';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['xml_file'] = 'sites/abgeordnetenwatch.de/files/private/import/civicrm/donations-total.xml';
+  $handler->display->display_options['query']['options']['row_xpath'] = '/donations';
+  $handler->display->display_options['query']['options']['show_errors'] = 0;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Feld: Global: Fieldset */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'text',
+    1 => 'text_1',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'float-left';
+  /* Feld: amount: Text */
+  $handler->display->display_options['fields']['text']['id'] = 'text';
+  $handler->display->display_options['fields']['text']['table'] = 'xml';
+  $handler->display->display_options['fields']['text']['field'] = 'text';
+  $handler->display->display_options['fields']['text']['label'] = 'amount';
+  $handler->display->display_options['fields']['text']['xpath_selector'] = 'amount';
+  $handler->display->display_options['fields']['text']['multiple'] = 0;
+  /* Feld: count: Text */
+  $handler->display->display_options['fields']['text_1']['id'] = 'text_1';
+  $handler->display->display_options['fields']['text_1']['table'] = 'xml';
+  $handler->display->display_options['fields']['text_1']['field'] = 'text';
+  $handler->display->display_options['fields']['text_1']['label'] = 'count';
+  $handler->display->display_options['fields']['text_1']['xpath_selector'] = 'count';
+  $handler->display->display_options['fields']['text_1']['multiple'] = 0;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $export['pw_donation_drive'] = $view;
+
+  $view = new view();
   $view->name = 'pw_donation_state';
   $view->description = '';
   $view->tag = 'mysql';

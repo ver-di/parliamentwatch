@@ -1,111 +1,111 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <donations>
 	<state>
-		<name>Gesamtes Projekt</name>
-		<amount>34.305,20 €</amount>
-		<donors>1165</donors>
-		<machine_name>deutschland</machine_name>
+		<name>gesamtes Projekt</name>
+		<machine_name>gesamtes-projekt</machine_name>
+		<amount>34.749,20€</amount>
+		<donors>1177</donors>
 	</state>
 	<state>
 		<name>Baden-Württemberg</name>
-		<amount>1.714,00 €</amount>
-		<donors>54</donors>
-		<machine_name>baden-wuerttenberg</machine_name>
+		<machine_name>baden-wuerttemberg</machine_name>
+		<amount>1.594,00€</amount>
+		<donors>52</donors>
 	</state>
 	<state>
 		<name>Bayern</name>
-		<amount>1.571,00 €</amount>
-		<donors>66</donors>
 		<machine_name>bayern</machine_name>
+		<amount>1.571,00€</amount>
+		<donors>65</donors>
 	</state>
 	<state>
 		<name>Berlin</name>
-		<amount>1.219,00 €</amount>
-		<donors>44</donors>
 		<machine_name>berlin</machine_name>
+		<amount>1.179,00€</amount>
+		<donors>43</donors>
 	</state>
 	<state>
 		<name>Brandenburg</name>
-		<amount>312,00 €</amount>
-		<donors>18</donors>
 		<machine_name>brandenburg</machine_name>
+		<amount>312,00€</amount>
+		<donors>18</donors>
 	</state>
 	<state>
 		<name>Bremen</name>
-		<amount>315,00 €</amount>
-		<donors>10</donors>
 		<machine_name>bremen</machine_name>
+		<amount>315,00€</amount>
+		<donors>10</donors>
 	</state>
 	<state>
 		<name>Hamburg</name>
-		<amount>2.174,00 €</amount>
-		<donors>39</donors>
 		<machine_name>hamburg</machine_name>
+		<amount>2.109,00€</amount>
+		<donors>37</donors>
 	</state>
 	<state>
 		<name>Hessen</name>
-		<amount>1.022,00 €</amount>
-		<donors>38</donors>
 		<machine_name>hessen</machine_name>
+		<amount>1.022,00€</amount>
+		<donors>38</donors>
 	</state>
 	<state>
 		<name>Mecklenburg-Vorpommern</name>
-		<amount>165,00 €</amount>
-		<donors>8</donors>
 		<machine_name>mecklenburg-vorpommern</machine_name>
+		<amount>165,00€</amount>
+		<donors>8</donors>
 	</state>
 	<state>
 		<name>Niedersachsen</name>
-		<amount>1.415,00 €</amount>
-		<donors>52</donors>
 		<machine_name>niedersachsen</machine_name>
+		<amount>1.215,00€</amount>
+		<donors>51</donors>
 	</state>
 	<state>
 		<name>Nordrhein-Westfalen</name>
-		<amount>1.624,00 €</amount>
-		<donors>70</donors>
 		<machine_name>nordrhein-westfalen</machine_name>
+		<amount>1.444,00€</amount>
+		<donors>67</donors>
 	</state>
 	<state>
 		<name>Rheinland-Pfalz</name>
-		<amount>807,00 €</amount>
+		<machine_name>rheinland-pfalz</machine_name>
+		<amount>807,00€</amount>
 		<donors>26</donors>
-		<machine_name>rheinland-pflaz</machine_name>
 	</state>
 	<state>
 		<name>Saarland</name>
-		<amount>380,00 €</amount>
-		<donors>13</donors>
 		<machine_name>saarland</machine_name>
+		<amount>370,00€</amount>
+		<donors>12</donors>
 	</state>
 	<state>
 		<name>Sachsen</name>
-		<amount>527,00 €</amount>
-		<donors>24</donors>
 		<machine_name>sachsen</machine_name>
+		<amount>537,00€</amount>
+		<donors>24</donors>
 	</state>
 	<state>
 		<name>Sachsen-Anhalt</name>
-		<amount>153,00 €</amount>
-		<donors>6</donors>
 		<machine_name>sachsen-anhalt</machine_name>
+		<amount>153,00€</amount>
+		<donors>6</donors>
 	</state>
 	<state>
 		<name>Schleswig-Holstein</name>
-		<amount>1.120,00 €</amount>
-		<donors>43</donors>
 		<machine_name>schleswig-holstein</machine_name>
+		<amount>1.120,00€</amount>
+		<donors>43</donors>
 	</state>
 	<state>
 		<name>Thüringen</name>
-		<amount>255,00 €</amount>
-		<donors>6</donors>
 		<machine_name>thueringen</machine_name>
+		<amount>255,00€</amount>
+		<donors>6</donors>
 	</state>
 	<state>
 		<name>Gesamt</name>
-		<amount>49.078,20 €</amount>
-		<donors>1682</donors>
-		<machine_name>abgeordnetenwatch</machine_name>
+		<machine_name>gesamt</machine_name>
+		<amount>48.917,20€</amount>
+		<donors>1683</donors>
 	</state>
 </donations>
