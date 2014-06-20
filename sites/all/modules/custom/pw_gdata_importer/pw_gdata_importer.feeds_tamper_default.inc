@@ -76,9 +76,9 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->source = 'xpathparser:6';
   $feeds_tamper->plugin_id = 'explode';
   $feeds_tamper->settings = array(
-    'separator' => '|',
+    'separator' => ',',
     'limit' => '',
-    'real_separator' => '|',
+    'real_separator' => ',',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Explode';
