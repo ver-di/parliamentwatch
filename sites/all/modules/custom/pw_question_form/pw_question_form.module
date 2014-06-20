@@ -45,7 +45,7 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
 
       // day before election - close question form
       $day_before_election = strtotime($date_election) - 6*60*60;
-      if(time() > $day_before_election && $user->name != 'dr-angelika-klein' && $user->name != 'dirk-schatz'){
+      if(time() > $day_before_election && $user->name != 'dr-angelika-klein' && $user->name != 'dirk-schatz' && $user->name != 'jakob-maria-mierscheid'){
         $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde einen Tag vor der Wahl, am :day_before_election, geschlossen.</div>';
         $body_markup = str_replace(':day_before_election', date('d.m.Y H:i', $day_before_election), $body_markup);
       }
