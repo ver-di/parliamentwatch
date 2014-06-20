@@ -17,7 +17,7 @@ function pw_dialogues_feeds_tamper_default() {
   $feeds_tamper->importer = 'dialogue_importer';
   $feeds_tamper->source = 'xpathparser:10';
   $feeds_tamper->plugin_id = 'html_entity_decode';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'HTML entity decode';
   $export['dialogue_importer-xpathparser_10-html_entity_decode'] = $feeds_tamper;
@@ -53,7 +53,7 @@ function pw_dialogues_feeds_tamper_default() {
   $feeds_tamper->importer = 'dialogue_importer';
   $feeds_tamper->source = 'xpathparser:19';
   $feeds_tamper->plugin_id = 'html_entity_decode';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'HTML entity decode';
   $export['dialogue_importer-xpathparser_19-html_entity_decode'] = $feeds_tamper;
