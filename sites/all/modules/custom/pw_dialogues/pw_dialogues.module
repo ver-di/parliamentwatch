@@ -44,6 +44,7 @@ function pw_dialogues_triggered_import() {
     $dialogue_id = arg(3);
     $source = variable_get('pw_dialogues_importer_source');
     $source .= $dialogue_id;
+    $source .= '?unreleased=1';
     pw_dialogues_do_import($source);
 
     // get dialogue entity to clear cache

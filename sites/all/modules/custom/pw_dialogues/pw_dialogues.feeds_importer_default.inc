@@ -255,7 +255,7 @@ function pw_dialogues_feeds_importer_default() {
           'xpathparser:17' => 'concat(\'Answer to \', recipient, \' (@id: \', ../@id, \')\')',
           'xpathparser:18' => 'text',
           'xpathparser:19' => 'keyworded_text',
-          'xpathparser:20' => '',
+          'xpathparser:20' => 'count(moderation_tags[moderation_tags_item=\'standard\'])',
         ),
         'rawXML' => array(
           'xpathparser:1' => 0,
