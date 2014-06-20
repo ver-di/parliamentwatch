@@ -9,6 +9,8 @@
  * Implements hook_form_alter()..
  */
 function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
+
+  // profiles overview
   if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'profile_list_rev' && $form_state['view']->current_display == 'grid') {
 
     // vars
@@ -81,10 +83,44 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
 
       // checks url and sets filter
       //if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
-      //  $form_state['input']['field_user_address_administrative_area'] = $term->tid;
+      //  $form_state['input']['field_user_  if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'profile_list_rev' && $form_state['view']->current_display == 'grid') {address_administrative_area'] = $term->tid;
       //}
     }
     $form['field_user_address_administrative_area']['#options'] = $options;
     */
   }
+
+
+
+  // question and answers in profiles
+  elseif ($form_id == 'views_exposed_form' && $form_state['view']->name == 'profile_questions_answers' && $form_state['view']->current_display == 'profile') {
+    $user = _pw_get_current_user();
+    $parliament = _pw_get_current_parliament_term();
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'dialogue')
+          ->propertyCondition('status', 1)
+          ->fieldCondition('field_dialogue_recipient', 'target_id', $user->uid)
+          ->fieldCondition('field_parliament', 'tid', $parliament->tid);
+    $result = $query->execute();
+
+    // load dialogue nodes
+    $dialogue_ids = array_keys($result['node']);
+    $dialogues = node_load_multiple($dialogue_ids);
+
+    // alter filter for topics
+    $dialogue_topic_tids = array();
+    foreach($dialogues as $dialogue){
+      if(sizeof($dialogue->field_dialogue_topic[LANGUAGE_NONE]) > 0){
+        $dialogue_topic_tids[] = $dialogue->field_dialogue_topic[LANGUAGE_NONE][0]['tid'];
+      }
+    }
+    $topic_terms = taxonomy_term_load_multiple($dialogue_topic_tids);
+    $options = array('All' => 'Alle');
+    foreach ($topic_terms as $term) {
+      $options[$term->tid] = $term->name;
+    }
+    $form['field_dialogue_topic_tid']['#options'] = $options;
+  }
+
 }
