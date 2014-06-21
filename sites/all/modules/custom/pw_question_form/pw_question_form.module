@@ -31,6 +31,9 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
       return;
     }
 
+    // need username for redirection after submit
+    $form['submitted']['recipient']['#value'] = $user->name;
+
     // load full parliament term
     $parliament = taxonomy_term_load($user->field_user_parliament['und'][0]['tid']);
 
