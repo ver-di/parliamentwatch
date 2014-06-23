@@ -102,10 +102,10 @@ function pw_dialogues_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '13',
+          'weight' => '14',
         ),
         'redirect' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
         'xmlsitemap' => array(
           'weight' => '16',

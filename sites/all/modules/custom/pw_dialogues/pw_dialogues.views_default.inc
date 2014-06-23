@@ -1777,6 +1777,7 @@ else {
   $handler->display->display_options['fields']['field_dialogue_response_time']['table'] = 'field_data_field_dialogue_response_time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['field'] = 'field_dialogue_response_time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['relationship'] = 'cid';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['exclude'] = TRUE;
   /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags']['id'] = 'field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['table'] = 'field_data_field_dialogue_tags';
