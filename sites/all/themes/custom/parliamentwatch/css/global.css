@@ -1129,6 +1129,7 @@ ul.tabs li a:active {
 }
 .item-list ul.pager.pager-load-more a span {
     background-position: right -3311px;
+    background-color: transparent;
     padding-right: 19px;
     color: #333;
     font-weight: normal;
@@ -2041,6 +2042,8 @@ form .description {
 }
 button,
 .button,
+a.button:link,
+a.button:visited,
 input[type="submit"],
 input[type="button"],
 .form-submit {
