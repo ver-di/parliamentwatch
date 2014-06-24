@@ -372,6 +372,34 @@ function pw_blog_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'tvi_vocab_blogcategories';
+  $strongarm->value = array(
+    'is_default' => TRUE,
+    'type' => 'vocab',
+    'xid' => 'blogcategories',
+    'status' => 1,
+    'view_name' => 'blog',
+    'display' => 'page_2',
+  );
+  $export['tvi_vocab_blogcategories'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'tvi_vocab_blogtags';
+  $strongarm->value = array(
+    'is_default' => FALSE,
+    'type' => 'vocab',
+    'xid' => 'blogtags',
+    'status' => 1,
+    'view_name' => 'blog',
+    'display' => 'page_2',
+  );
+  $export['tvi_vocab_blogtags'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'weight_default_blogpost';
   $strongarm->value = '0';
   $export['weight_default_blogpost'] = $strongarm;
