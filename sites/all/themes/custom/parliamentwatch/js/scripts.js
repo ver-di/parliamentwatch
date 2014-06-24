@@ -2,6 +2,11 @@ jQuery(document).ready(function() {
 
 // expand active user revision block in user revision switch
 
+    if ($('#block-views-pw-announcement-slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title').length < 2) {
+        $('#block-views-pw-announcement-slideshow .views-slideshow-controls-top').hide();
+    }
+// expand active user revision block in user revision switch
+
     if ($('#block-views-pw-user-revision-switch-block .link-profile.active').length == 0) {
         $('#block-views-pw-user-revision-switch-block .pw-list-expander:first-child .link-profile').addClass('active');
     }

@@ -188,6 +188,21 @@ function pw_announcements_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Feld: Parliament (field_user_parliament) */
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['vocabularies'] = array(
+    'parliaments' => 'parliaments',
+  );
   /* Filter criterion: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
