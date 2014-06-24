@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PW Parliaments feature.
+ */
+
+include_once 'pw_parliaments.features.inc';
