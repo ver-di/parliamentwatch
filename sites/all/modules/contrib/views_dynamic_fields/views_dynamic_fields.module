@@ -30,6 +30,14 @@ function views_dynamic_fields_views_data_alter(&$data) {
     ),
   );
 
+  // Register a dummy field to attach the filter for commerce_products #2289005
+  $data['commerce_product']['dynamic-field'] = array(
+    'title' => t('Dynamic Fields'),
+    'help' => t("List of fields displayed in a view"),
+    'filter' => array(
+      'handler' => 'views_handler_filter_dynamic_fields',
+    ),
+  );
 }
 
 /**
@@ -54,7 +62,9 @@ function theme_views_dynamic_fields_sort_filter_fields($variables) {
                        'order',
                        'self',
                        'sort');
-  $header = array('', 'Select', 'Field', 'Weight');
+
+  // Weight for sortable tables #935910
+  $header = array('Select', 'Field', 'Weight');
   $rows = array();
 
   foreach (element_children($form) as $key) {

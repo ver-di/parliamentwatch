@@ -9,8 +9,6 @@
  */
 class views_handler_filter_dynamic_fields extends views_handler_filter {
 
-  var $no_single = TRUE;
-
   /**
    * Array to store combined fields as an associative array (parent => child)
    * E.g. using table style plugin, one can set the column of one field as that
@@ -44,11 +42,7 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
     // Fields already displayed when user does no filtering #1039760
     $options['defaults_filterable_fields'] = array('default' => array());
 
-    // @TODO disabled, too unstable in 7.x #935910
-    // Disable draggable ordering of fields #935910
-    $options['sortability'] = array('default' => FALSE);
-
-    // Otherwise choose between checkboxes or select. #1039760
+    // Choose between checkboxes or select. #1039760
     $options['checkboxes'] = array('default' => TRUE);
 
     // Boolean to control display of Exclusion mode
@@ -140,26 +134,15 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
       '#size' => 40,
     );
 
-//    // @TODO sortability is causing too much trouble.
-//    // This will be disabled till it is cleanly fixed. #935910
-//    $form['sortability'] = array(
-//      '#type' => 'checkbox',
-//      '#default_value' => $this->options['sortability'],
-//      '#title' => t('Enable sortability'),
-//      '#description' => t('Allow users to sort all the fields in the view. ' .
-//                          'If selected the fields will be listed as a ' .
-//                          'draggable table with checkboxes and all the ' .
-//                          'fields will be included.'),
-//    );
-//
-//    $form['checkboxes'] = array(
-//      '#type' => 'checkbox',
-//      '#default_value' => $this->options['checkboxes'],
-//      '#title' => t('List filters in checkboxes'),
-//      '#description' => t('If selected the fields will be listed as ' .
-//                          'checkboxes, otherwise they will be listed in a ' .
-//                          'select box. Not used if sortability is enabled.'),
-//    );
+    // Switch multi select mode vs single select #1299806
+    $form['checkboxes'] = array(
+      '#type' => 'checkbox',
+      '#default_value' => $this->options['checkboxes'],
+      '#title' => t('List filters in checkboxes'),
+      '#description' => t('If selected the fields will be listed as ' .
+                          'checkboxes (multi select mode), otherwise they ' .
+                          'will be listed in a select box (single select).'),
+    );
 
     $form['filterable_fields'] = array(
       '#type' => 'checkboxes',
@@ -275,6 +258,7 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
         }
       }
     }
+
     // Also add any combined fields to the default fields to display
     // as configured
     foreach ($combined_fields as $c_parent => $c_child) {
@@ -287,6 +271,7 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
     if (!isset($_SESSION[$this->view->name]['perm_exc'])) {
       $_SESSION[$this->view->name]['perm_exc'] = array();
     }
+
     // Display all the filter fields in the plain view if no explicit
     // defaults are set in the view
     $field_names_defaults =
@@ -305,28 +290,21 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
             unserialize($exposed_input['field_names']) : $field_names;
       }
       $field_order = array();
+      $this->options['expose']['multiple'] = $this->options['checkboxes'];
 
-      // If sortability has not been enabled, display the fields in as
-      // checkboxes/select list
-      if (!$this->options['sortability']) {
+      // If checkboxes has not been enabled, display the fields in as
+      // select list / drop down
+      if (!$this->options['checkboxes']) {
 
-        // If we don't set multiple = TRUE views will change the
-        // widget to select.
-        if ($this->options['checkboxes']) {
-          $this->options['expose']['multiple'] = TRUE;
-        }
         $form['value'] = array(
-          '#type' => 'checkboxes',
+          '#type' => 'select',
           '#no_convert' => $this->options['checkboxes'],
           '#title' => $this->options['expose']['label'] ?
                         t($this->options['expose']['label']) : t('Fields'),
           '#options' => $all_fields,
-
-          // @TODO default values do not work. #1245838
-          '#default_value' => array_keys($field_names_defaults),
           '#description' => $this->options['description'] ?
             check_plain($this->options['description']) :
-              t('Select the fields to display in the view'),
+              t('Select the field to display in the view'),
         );
 
         $displayed_field_names = $field_names;
@@ -335,6 +313,7 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
 
         // For a view that has already been filtered by the user
         if (!empty($exposed_input_fields)) {
+
           $delta = count($exposed_input_fields);
           $key = 0;
 
@@ -342,6 +321,11 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
           foreach ($exposed_input_fields as $oldid => $oldvalue) {
             $def_check = (isset($oldvalue['check']) && $oldvalue['check']) ||
                           empty($all_fields[$exposed_field_names[$oldid]]);
+
+            // Sort key must be +1 to avoid out of range errors #2270095
+            if (isset($oldvalue['sort'])) {
+              $oldvalue['sort'] = $oldvalue['sort'] + 1;
+            }
             $def_sort = $oldvalue['sort'] ? $oldvalue['sort'] : $key;
             $def_disabled = empty($all_fields[$exposed_field_names[$oldid]]);
             $def_title = $all_fields[$exposed_field_names[$oldid]] ?
@@ -359,6 +343,7 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
             $form['value'][$key]['sort'] =
               array('#type' => 'weight',
                     '#delta' => $delta,
+                    '#value' =>  $def_sort,
                     '#default_value' =>  $def_sort);
             $displayed_field_names[] = $exposed_field_names[$oldid];
             ++$key;
@@ -367,6 +352,7 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
 
         // First time (or no exposed filter data)
         else {
+
           $delta = count($view_fields) - count($combined_fields);
           $key = 0;
 
@@ -486,20 +472,20 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
       $extra_exc = array();
       $combined_fields = isset($exposed_input['combined']) ?
         unserialize($exposed_input['combined']) : array();
-      if (!$this->options['sortability']) {
+      if (!$this->options['checkboxes']) {
         $this
-          ->pre_query_no_sort($exposed_input, $field_names, $combined_fields);
+          ->pre_query_single($exposed_input, $field_names, $combined_fields);
       }
       else {
-        $this->pre_query_sort($exposed_input, $field_names, $combined_fields);
+        $this->pre_query_multiple($exposed_input, $field_names, $combined_fields);
       }
     }
   }
 
   /**
-   * Handle pre_query processing when sortability is not enabled
+   * Handle pre_query processing when checkboxes are not enabled
    */
-  private function pre_query_no_sort(
+  private function pre_query_single(
     $exposed_input, $field_names, $combined_fields) {
 
     // If exclusion mode is selected
@@ -512,8 +498,12 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
       if (!is_array($selected_fields)) {
         $selected_fields = array($selected_fields);
       }
-      $flipped_selected_fields = array_flip($selected_fields);
-      $fields_to_exclude = array_diff($field_names, $flipped_selected_fields);
+      if ($selected_fields[0] == 'All') {
+        $fields_to_exclude = array();
+      }
+      else {
+        $fields_to_exclude = array_diff($field_names, $selected_fields);
+      }
     }
     $filterable_fields = array_filter($this->options['filterable_fields']);
 
@@ -553,9 +543,9 @@ class views_handler_filter_dynamic_fields extends views_handler_filter {
   }
 
   /**
-   * Handle pre_query processing when sortability is enabled
+   * Handle pre_query processing when checkboxes are enabled
    */
-  private function pre_query_sort($exposed_input,
+  private function pre_query_multiple($exposed_input,
                                   $field_names,
                                   $combined_fields) {
     $exposed_input_fields =
