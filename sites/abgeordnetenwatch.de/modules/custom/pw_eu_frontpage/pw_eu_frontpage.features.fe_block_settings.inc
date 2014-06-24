@@ -28,7 +28,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-76',
+        'weight' => '-80',
       ),
       'blank' => array(
         'region' => 'content',
@@ -56,14 +56,15 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_eu_map',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'eu',
+    'pages' => 'eu
+parliaments/eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-77',
+        'weight' => '-81',
       ),
       'blank' => array(
         'region' => 'content',
@@ -91,14 +92,15 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_eu_parliament_archive',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'eu',
+    'pages' => 'eu
+parliaments/eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-81',
+        'weight' => '-80',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -118,7 +120,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   );
 
   $export['block-aw_schirmherrin'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -168,7 +170,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-74',
+        'weight' => '-73',
       ),
       'blank' => array(
         'region' => 'content',
@@ -238,7 +240,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-78',
+        'weight' => '-77',
       ),
       'blank' => array(
         'region' => '',

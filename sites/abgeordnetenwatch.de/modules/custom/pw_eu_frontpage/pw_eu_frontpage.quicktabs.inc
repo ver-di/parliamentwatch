@@ -15,7 +15,7 @@ function pw_eu_frontpage_quicktabs_default_quicktabs() {
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'politicians_answer';
   $quicktabs->ajax = 0;
-  $quicktabs->hide_empty_tabs = FALSE;
+  $quicktabs->hide_empty_tabs = TRUE;
   $quicktabs->default_tab = 0;
   $quicktabs->title = 'Politicians answer!';
   $quicktabs->tabs = array(
