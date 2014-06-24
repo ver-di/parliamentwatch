@@ -108,6 +108,7 @@ h4 a:link,
 h4 a:visited {
     color: #333;
     text-decoration: none;
+    font-weight: normal;
 }
 h4 {
     font-size: 12px;
