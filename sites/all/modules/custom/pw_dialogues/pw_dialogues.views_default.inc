@@ -2204,25 +2204,16 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date Question';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Parmliament (field_pw_parmliament) */
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['id'] = 'field_pw_parmliament_tid';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['table'] = 'field_data_field_pw_parmliament';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['field'] = 'field_pw_parmliament_tid';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['default_argument_options']['index'] = '0';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['default_argument_options']['use_alias'] = TRUE;
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['validate_options']['vocabularies'] = array(
-    'parliaments' => 'parliaments',
-  );
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid']['validate_options']['transform'] = TRUE;
+  /* Contextual filter: Feld: Parliament (field_parliament) (translated) */
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['id'] = 'field_parliament_tid_i18n';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['table'] = 'field_data_field_parliament';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['field'] = 'field_parliament_tid_i18n';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Inhalt: Veröffentlicht */
@@ -2554,27 +2545,17 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Inhalt: Parmliament (field_pw_parmliament) (translated) */
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['id'] = 'field_pw_parmliament_tid_i18n';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['table'] = 'field_data_field_pw_parmliament';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['field'] = 'field_pw_parmliament_tid_i18n';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['relationship'] = 'nid';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['default_argument_options']['index'] = '0';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['default_argument_options']['use_alias'] = TRUE;
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate_options']['vocabularies'] = array(
-    'parliaments' => 'parliaments',
-  );
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate_options']['transform'] = TRUE;
-  $handler->display->display_options['arguments']['field_pw_parmliament_tid_i18n']['validate']['fail'] = 'empty';
+  /* Contextual filter: Feld: Parliament (field_parliament) */
+  $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
+  $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['relationship'] = 'nid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_parliament_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_argument_type'] = 'taxonomy_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Kommentar: Approved */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'comment';
