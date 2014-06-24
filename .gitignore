@@ -39,4 +39,9 @@ gdata
 /MAINTAINERS.txt
 /README.txt
 /UPGRADE.txt
+
+# Do NOT ignore contrib license
+!sites/*/*/contrib/*/LICENSE.txt
+
+# Ignore google webmaster tools
 googleb9537432b2dce52c.html
