@@ -49,6 +49,7 @@ function pw_dialogues_feeds_importer_default() {
           'xpathparser:18' => 'context',
           'xpathparser:19' => 'keyworded_text',
           'xpathparser:20' => 'context',
+          'xpathparser:21' => 'inserted_date',
         ),
         'rawXML' => array(
           'xpathparser:12' => 0,
@@ -69,6 +70,7 @@ function pw_dialogues_feeds_importer_default() {
           'xpathparser:18' => 0,
           'xpathparser:19' => 0,
           'xpathparser:20' => 0,
+          'xpathparser:21' => 0,
         ),
         'context' => '//message[type=\'question\']',
         'exp' => array(
@@ -95,6 +97,7 @@ function pw_dialogues_feeds_importer_default() {
             'xpathparser:18' => 0,
             'xpathparser:19' => 0,
             'xpathparser:20' => 0,
+            'xpathparser:21' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -198,6 +201,11 @@ function pw_dialogues_feeds_importer_default() {
             'target' => 'field_parliament',
             'term_search' => '0',
             'autocreate' => 0,
+          ),
+          18 => array(
+            'source' => 'xpathparser:21',
+            'target' => 'field_dialogue_before_election',
+            'unique' => FALSE,
           ),
         ),
         'update_existing' => '1',
