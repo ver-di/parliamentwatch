@@ -28,19 +28,19 @@ function pw_userarchives_cron($uid=null) {
     // (2) the userarchive table (for showing them in the sidebar)
 
     $res1 = $query->execute();
-    while ($row = $res1->fetchAssoc()) {      
+    while ($row = $res1->fetchAssoc()) {
+      $before_election = $row['user_role'] == 'candidate'?1:0;
       $questionQuery = db_select('node', 'n');
       $questionQuery->addExpression('IFNULL(COUNT(n.nid), 0)', 'count');
       $questionQuery->join('field_data_field_dialogue_recipient', 'r', 'r.entity_type = \'node\' AND r.entity_id = n.nid');
       $questionQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'node\' AND f.entity_id = n.nid');
-      $questionQuery->join('field_revision_field_pw_parmliament', 'p', 'p.entity_id=n.nid');
-      $questionQuery->join('field_revision_field_dialogue_recipient_role', 'rr', 'rr.entity_id=n.nid');
+      $questionQuery->join('field_data_field_dialogue_before_election', 'before_election', 'before_election.entity_type = \'node\' AND before_election.entity_id=n.nid');
+      $questionQuery->join('field_revision_field_pw_parmliament', 'p', 'p.entity_type = \'node\' AND p.entity_id=n.nid');
       $questionQuery->join('taxonomy_term_data', 'rn', 'rn.tid=p.field_pw_parmliament_tid');
-      $questionQuery->join('taxonomy_term_data', 'rrn', 'rrn.tid=rr.field_dialogue_recipient_role_tid');
       $questionQuery->condition('r.field_dialogue_recipient_target_id', $row['uid']);
       $questionQuery->condition('n.status', 1);
       $questionQuery->condition('rn.name', $row['parliament_name']);
-      $questionQuery->condition('rrn.name', $row['user_role']);
+      $questionQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
       $questionRes = $questionQuery->execute();
 
       while ($questionRow = $questionRes->fetchAssoc()) {
@@ -55,19 +55,17 @@ function pw_userarchives_cron($uid=null) {
                 ->condition('revision_id', $row['vid'])
                 ->execute();
       }
-      
       $answerQuery = db_select('comment', 'c');
       $answerQuery->addExpression('COUNT(DISTINCT c.nid)', 'count');
       $answerQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'comment\' AND f.entity_id = c.cid');
       $answerQuery->join('node', 'n', 'n.nid=c.nid');
-      $answerQuery->join('field_revision_field_pw_parmliament', 'p', 'p.entity_id=n.nid');
-      $answerQuery->join('field_revision_field_dialogue_recipient_role', 'rr', 'rr.entity_id=n.nid');
+      $answerQuery->join('field_data_field_dialogue_before_election', 'before_election', 'before_election.entity_type = \'node\' AND before_election.entity_id=n.nid');
+      $answerQuery->join('field_revision_field_pw_parmliament', 'p', 'p.entity_type = \'node\' AND p.entity_id=n.nid');
       $answerQuery->join('taxonomy_term_data', 'rn', 'rn.tid=p.field_pw_parmliament_tid');
-      $answerQuery->join('taxonomy_term_data', 'rrn', 'rrn.tid=rr.field_dialogue_recipient_role_tid');
       $answerQuery->condition('c.uid', $row['uid']);
       $answerQuery->condition('c.status', 1);
       $answerQuery->condition('rn.name', $row['parliament_name']);
-      $answerQuery->condition('rrn.name', $row['user_role']);
+      $answerQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
       $answerRes = $answerQuery->execute();
       while ($answerRow = $answerRes->fetchAssoc()) {
         db_update('user_archive_cache')
