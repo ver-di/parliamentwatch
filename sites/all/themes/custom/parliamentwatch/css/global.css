@@ -1,3 +1,11 @@
+.question-during-election{
+  background-color: #ff0;
+  display: block;
+  padding: 5px 10px;
+  margin: 0 0 20px 34px;
+  width: 370px;
+}
+
 /* This file will hold the main styles for your website. */
 @charset "utf-8";
 @import url("profiles.css");

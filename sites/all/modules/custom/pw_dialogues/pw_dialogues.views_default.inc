@@ -127,8 +127,10 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     0 => 'field_dialogue_topic',
     1 => 'created',
     2 => 'field_dialogue_sender_name',
-    3 => 'body',
-    4 => 'field_dialogue_annotation_1',
+    3 => 'field_dialogue_before_election',
+    4 => 'php_3',
+    5 => 'body',
+    6 => 'field_dialogue_annotation_1',
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'question';
@@ -164,6 +166,29 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_dialogue_sender_name']['element_wrapper_class'] = 'bubble';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_sender_name']['empty'] = 'anonymous<br/><span class="subline">[created]</span>';
+  /* Feld: Excluded | Before Election */
+  $handler->display->display_options['fields']['field_dialogue_before_election']['id'] = 'field_dialogue_before_election';
+  $handler->display->display_options['fields']['field_dialogue_before_election']['table'] = 'field_data_field_dialogue_before_election';
+  $handler->display->display_options['fields']['field_dialogue_before_election']['field'] = 'field_dialogue_before_election';
+  $handler->display->display_options['fields']['field_dialogue_before_election']['ui_name'] = 'Excluded | Before Election';
+  $handler->display->display_options['fields']['field_dialogue_before_election']['label'] = '';
+  $handler->display->display_options['fields']['field_dialogue_before_election']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_dialogue_before_election']['element_label_colon'] = FALSE;
+  /* Feld: Global: PHP */
+  $handler->display->display_options['fields']['php_3']['id'] = 'php_3';
+  $handler->display->display_options['fields']['php_3']['table'] = 'views';
+  $handler->display->display_options['fields']['php_3']['field'] = 'php';
+  $handler->display->display_options['fields']['php_3']['label'] = '';
+  $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
+$parliament = _pw_get_current_parliament_term();
+if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $parliament->field_parliament_election[\'und\'][0][\'value\'] < date(\'Y-m-d\')){
+  print t(\'This was a question during election campaign.\');
+}
+?>';
+  $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
   /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -346,10 +371,9 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['fieldset_4']['label'] = 'permalink-wrapper';
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
-    1 => 'path',
-    2 => 'php_1',
-    3 => 'php',
-    4 => 'php_2',
+    1 => 'php_1',
+    2 => 'php',
+    3 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';
