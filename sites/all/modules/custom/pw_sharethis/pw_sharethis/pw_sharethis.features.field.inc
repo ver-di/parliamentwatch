@@ -299,17 +299,23 @@ function pw_sharethis_field_default_fields() {
           'type' => 'number_integer',
           'weight' => 35,
         ),
-        'user_deputy' => array(
+        'search_result' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
         'user_premium' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_search' => array(
           'label' => 'above',

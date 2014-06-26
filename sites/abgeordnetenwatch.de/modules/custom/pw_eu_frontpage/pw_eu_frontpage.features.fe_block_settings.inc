@@ -25,20 +25,20 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => 'content',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'abgeordnetenwatch',
         'weight' => '-80',
       ),
       'blank' => array(
-        'region' => 'content',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'blank',
         'weight' => '-78',
       ),
       'pw_seven' => array(
-        'region' => 'content',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'pw_seven',
         'weight' => '-76',
       ),
@@ -56,8 +56,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
     'machine_name' => 'aw_eu_map',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'eu
-parliaments/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
@@ -92,8 +91,7 @@ parliaments/eu',
     'machine_name' => 'aw_eu_parliament_archive',
     'module' => 'block',
     'node_types' => array(),
-    'pages' => 'eu
-parliaments/eu',
+    'pages' => 'eu',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
@@ -115,7 +113,7 @@ parliaments/eu',
         'weight' => '0',
       ),
     ),
-    'title' => 'Archiv',
+    'title' => 'Archiv EU Parlament 2009-2014',
     'visibility' => '1',
   );
 
@@ -155,7 +153,7 @@ parliaments/eu',
   );
 
   $export['quicktabs-politicians_answer'] = array(
-    'cache' => '1',
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'politicians_answer',
@@ -190,7 +188,7 @@ parliaments/eu',
   );
 
   $export['views-pw_announcement-slideshow'] = array(
-    'cache' => '1',
+    'cache' => '-1',
     'css_class' => 'clear',
     'custom' => '0',
     'delta' => 'pw_announcement-slideshow',

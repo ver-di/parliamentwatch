@@ -1507,6 +1507,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'list_default',
           'weight' => 37,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_deputy' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1727,6 +1733,12 @@ function pw_profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 33,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'user_deputy' => array(
           'label' => 'above',
@@ -2836,6 +2848,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'list_default',
           'weight' => 38,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_deputy' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3370,6 +3388,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'text_default',
           'weight' => 30,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_deputy' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3625,6 +3649,12 @@ function pw_profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 32,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'user_deputy' => array(
           'label' => 'above',
@@ -4130,6 +4160,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'text_default',
           'weight' => 29,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'user_deputy' => array(
           'label' => 'above',
           'settings' => array(),
@@ -4544,6 +4580,12 @@ $entity_field[0][\'value\'] = $result;',
           'settings' => array(),
           'type' => 'text_default',
           'weight' => 31,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'user_deputy' => array(
           'label' => 'above',

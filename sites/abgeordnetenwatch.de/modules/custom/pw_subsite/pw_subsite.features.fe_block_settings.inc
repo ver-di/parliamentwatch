@@ -13,7 +13,7 @@ function pw_subsite_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['block-pw_donation_mail'] = array(
-    'cache' => '1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -83,7 +83,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-pw_flattr'] = array(
-    'cache' => '1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -223,7 +223,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['delta_blocks-breadcrumb'] = array(
-    'cache' => '5',
+    'cache' => 4,
     'css_class' => '',
     'custom' => '0',
     'delta' => 'breadcrumb',
@@ -293,7 +293,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['locale-language'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'language',
@@ -398,7 +398,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['menu-menu-main-menu-de'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'menu-main-menu-de',
@@ -538,7 +538,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['views--exp-profile_list_rev-grid'] = array(
-    'cache' => '1',
+    'cache' => '5',
     'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => '-exp-profile_list_rev-grid',
@@ -610,7 +610,7 @@ return arg(0) == \'profile\';
   );
 
   $export['views-slider-block'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'delta' => 'slider-block',
