@@ -11,6 +11,34 @@ function pw_subsite_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Extra Donations';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'extra_donations';
+  $fe_block_boxes->body = '<p>
+	Neben unserem Spendenformular gibt es weitere Möglichkeiten abgeordnetenwatch.de zu unterstützen.
+</p>
+<p class="rteright">
+	<a class="read-more" href="https://www.abgeordnetenwatch.de/spenden-statt-geschenke">Spenden statt Geschenke</a>
+</p>
+<p class="rteright">
+	<a class="read-more" href="https://www.abgeordnetenwatch.de/testamentsspende">Testamentsspende</a>
+</p>
+';
+
+  $export['extra_donations'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Online spenden';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'online_spenden';
+  $fe_block_boxes->body = '<p>
+	Um dieses Projekt zu unterstützen können Sie auch <a href="/node/10508">online spenden</a>.
+</p>
+';
+
+  $export['online_spenden'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Spenden per Post';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'pw_donation_mail';
@@ -18,8 +46,9 @@ function pw_subsite_default_fe_block_boxes() {
 	Alternativ zu einer Online-Spende können Sie auch einen Antrag herunterladen (PDF), ausdrucken und uns per Post oder Fax senden.
 </p>
 <p class="rteright">
-	<a class="link-download" href="/sites/abgeordnetenwatch.de/files/spendenformular_print_sepa.pdf" target="_blank" download="spendenformular_print_sepa.pdf">Spendenantrag herunterladen</a>
-</p>';
+	<a class="link-download" download="spendenformular_print_sepa.pdf" href="/sites/abgeordnetenwatch.de/files/spendenformular_print_sepa.pdf" target="_blank">Spendenantrag herunterladen</a>
+</p>
+';
 
   $export['pw_donation_mail'] = $fe_block_boxes;
 

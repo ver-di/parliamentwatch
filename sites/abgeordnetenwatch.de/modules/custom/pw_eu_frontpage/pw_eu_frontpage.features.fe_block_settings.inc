@@ -98,7 +98,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-81',
+        'weight' => '-79',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -238,7 +238,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-78',
+        'weight' => '-76',
       ),
       'blank' => array(
         'region' => '',

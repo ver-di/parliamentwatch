@@ -598,6 +598,10 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_dialogue_message_type</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_dialogue_recipient_role_tid' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">tid</em> of the field <em class="placeholder">field_dialogue_recipient_role</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_dialogue_recipient_target_id' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">target_id</em> of the field <em class="placeholder">field_dialogue_recipient</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -944,6 +948,10 @@ foo
     ),
     'node:field_trustee_image_width' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">width</em> of the field <em class="placeholder">field_trustee_image</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_user_parliament_tid' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">tid</em> of the field <em class="placeholder">field_user_parliament</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_webform_footer_format' => array(
@@ -2439,6 +2447,17 @@ foo
     ),
     120 => array(
       'src' => 'node:nid',
+      'dst' => 'node:field_user_parliament_tid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_user_parliament',
+        'type' => 'taxonomy_term_reference',
+        'column' => 'tid',
+        'translatable' => '0',
+      ),
+    ),
+    121 => array(
+      'src' => 'node:nid',
       'dst' => 'node:field_slider_teaserbody_value',
       'callback' => 'themekey_node_nid2field_value',
       'args' => array(
@@ -2448,7 +2467,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    121 => array(
+    122 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_teaserbody_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2459,7 +2478,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    122 => array(
+    123 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_url_url',
       'callback' => 'themekey_node_nid2field_value',
@@ -2470,7 +2489,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    123 => array(
+    124 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_url_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2481,7 +2500,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    124 => array(
+    125 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_url_attributes',
       'callback' => 'themekey_node_nid2field_value',
@@ -2492,7 +2511,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    125 => array(
+    126 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_content_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2503,7 +2522,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    126 => array(
+    127 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_content_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2514,7 +2533,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    127 => array(
+    128 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_recipient_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2525,7 +2544,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    128 => array(
+    129 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_recipient_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2536,7 +2555,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    129 => array(
+    130 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_required_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2547,7 +2566,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    130 => array(
+    131 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_signings_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2558,7 +2577,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    131 => array(
+    132 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2569,7 +2588,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    132 => array(
+    133 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_alt',
       'callback' => 'themekey_node_nid2field_value',
@@ -2580,7 +2599,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    133 => array(
+    134 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2591,7 +2610,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    134 => array(
+    135 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_width',
       'callback' => 'themekey_node_nid2field_value',
@@ -2602,7 +2621,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    135 => array(
+    136 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_height',
       'callback' => 'themekey_node_nid2field_value',
@@ -2613,7 +2632,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    136 => array(
+    137 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_body_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2624,7 +2643,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    137 => array(
+    138 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_body_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2635,7 +2654,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    138 => array(
+    139 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_link_url',
       'callback' => 'themekey_node_nid2field_value',
@@ -2646,7 +2665,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    139 => array(
+    140 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_link_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2657,7 +2676,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    140 => array(
+    141 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_link_attributes',
       'callback' => 'themekey_node_nid2field_value',
@@ -2668,7 +2687,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    141 => array(
+    142 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_tab_title_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2679,7 +2698,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    142 => array(
+    143 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_tab_title_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2690,7 +2709,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    143 => array(
+    144 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pw_kc_thesis_reference_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -2701,7 +2720,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    144 => array(
+    145 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pw_kc_user_reference_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -2712,7 +2731,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    145 => array(
+    146 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pw_kc_vote_reference_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2723,7 +2742,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    146 => array(
+    147 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_webform_footer_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2734,7 +2753,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    147 => array(
+    148 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_webform_footer_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2745,7 +2764,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    148 => array(
+    149 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_share_sum_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2756,132 +2775,143 @@ foo
         'translatable' => '0',
       ),
     ),
-    149 => array(
+    150 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_dialogue_recipient_role_tid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_dialogue_recipient_role',
+        'type' => 'taxonomy_term_reference',
+        'column' => 'tid',
+        'translatable' => '0',
+      ),
+    ),
+    151 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
     ),
-    150 => array(
+    152 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    151 => array(
+    153 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    152 => array(
+    154 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    153 => array(
+    155 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    154 => array(
+    156 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    155 => array(
+    157 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    156 => array(
+    158 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    157 => array(
+    159 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    158 => array(
+    160 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    159 => array(
+    161 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    160 => array(
+    162 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    161 => array(
+    163 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    162 => array(
+    164 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    163 => array(
+    165 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    164 => array(
+    166 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    165 => array(
+    167 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    166 => array(
+    168 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    167 => array(
+    169 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    168 => array(
+    170 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    169 => array(
+    171 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    170 => array(
+    172 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    171 => array(
+    173 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    172 => array(
+    174 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    173 => array(
+    175 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    174 => array(
+    176 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
@@ -3095,6 +3125,7 @@ foo
     'node:field_dialogue_id_value' => 'node:field_dialogue_id_value',
     'node:field_dialogue_message_id_value' => 'node:field_dialogue_message_id_value',
     'node:field_dialogue_message_type_value' => 'node:field_dialogue_message_type_value',
+    'node:field_dialogue_recipient_role_tid' => 'node:field_dialogue_recipient_role_tid',
     'node:field_dialogue_recipient_target_id' => 'node:field_dialogue_recipient_target_id',
     'node:field_dialogue_sender_name_format' => 'node:field_dialogue_sender_name_format',
     'node:field_dialogue_sender_name_value' => 'node:field_dialogue_sender_name_value',
@@ -3182,6 +3213,7 @@ foo
     'node:field_trustee_image_height' => 'node:field_trustee_image_height',
     'node:field_trustee_image_title' => 'node:field_trustee_image_title',
     'node:field_trustee_image_width' => 'node:field_trustee_image_width',
+    'node:field_user_parliament_tid' => 'node:field_user_parliament_tid',
     'node:field_webform_footer_format' => 'node:field_webform_footer_format',
     'node:field_webform_footer_value' => 'node:field_webform_footer_value',
     'node:field_youtube_video_description' => 'node:field_youtube_video_description',

@@ -828,11 +828,16 @@ function pw_globals_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_parliament_valid',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
       'module' => 'date',
       'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
         'granularity' => array(
           'day' => 'day',
           'hour' => 0,
