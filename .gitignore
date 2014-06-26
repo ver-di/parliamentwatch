@@ -11,6 +11,7 @@ salt.inc.php
 
 # Ignore paths that contain user-generated content.
 sites/*/files/*
+sites/*/files
 sites/*/private/*
 sites/sites.php
 
