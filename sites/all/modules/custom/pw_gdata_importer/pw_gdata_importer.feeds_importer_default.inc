@@ -1082,6 +1082,7 @@ function pw_gdata_importer_feeds_importer_default() {
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
         'request_timeout' => NULL,
+        'auto_scheme' => 'http',
       ),
     ),
     'parser' => array(
