@@ -12,7 +12,7 @@
  */
 function views_dynamic_fields_views_data_alter(&$data) {
 
-  // Register a dummy field to attach the filter for nodes
+  // Register a dummy field to attach the filter for nodes.
   $data['node']['dynamic-field'] = array(
     'title' => t('Dynamic Fields'),
     'help' => t("List of fields displayed in a view"),
@@ -21,7 +21,8 @@ function views_dynamic_fields_views_data_alter(&$data) {
     ),
   );
 
-  // Register a dummy field to attach the filter for users #1492166
+  // Register a dummy field to attach the filter for users.
+  // @see http://drupal.org/node/1492166
   $data['users']['dynamic-field'] = array(
     'title' => t('Dynamic Fields'),
     'help' => t("List of fields displayed in a view"),
@@ -30,7 +31,8 @@ function views_dynamic_fields_views_data_alter(&$data) {
     ),
   );
 
-  // Register a dummy field to attach the filter for commerce_products #2289005
+  // Register a dummy field to attach the filter for commerce_products.
+  // @see http://drupal.org/node/2289005
   $data['commerce_product']['dynamic-field'] = array(
     'title' => t('Dynamic Fields'),
     'help' => t("List of fields displayed in a view"),
@@ -53,8 +55,7 @@ function views_dynamic_fields_theme() {
 }
 
 /**
- * Theme a drag-sortable table of fields in the exposed filter
- * @param $variables
+ * Theme a drag-sortable table of fields in the exposed filter.
  */
 function theme_views_dynamic_fields_sort_filter_fields($variables) {
   $form = $variables['form'];
@@ -63,7 +64,8 @@ function theme_views_dynamic_fields_sort_filter_fields($variables) {
                        'self',
                        'sort');
 
-  // Weight for sortable tables #935910
+  // Weight for sortable tables.
+  // @see http://drupal.org/node/935910
   $header = array('Select', 'Field', 'Weight');
   $rows = array();
 
@@ -79,32 +81,22 @@ function theme_views_dynamic_fields_sort_filter_fields($variables) {
     $row[] = drupal_render($form[$key]['title']);
     $row[] = drupal_render($form[$key]['sort']);
 
-    // Note the difference between $row and $rows
-    $rows[] = array('data' => $row,
-                    'class' => array('draggable')
-              );
+    // Note the difference between $row and $rows.
+    $rows[] = array(
+      'data' => $row,
+      'class' => array('draggable'),
+    );
   }
   $output = theme('table',
-                  array('header' => $header,
-                        'rows' => $rows,
-                        'attributes' => array(
-                              'id' => 'views-dynamic-fields-filters-table-sort'
-                              )
-                        )
-                  );
+                  array(
+                    'header' => $header,
+                    'rows' => $rows,
+                    'attributes' => array(
+                      'id' => 'views-dynamic-fields-filters-table-sort',
+                    ),
+                  )
+                );
   $output .= drupal_render_children($form);
 
   return $output;
-}
-
-/**
- * Comparison function based on weights on fields in the exposed filter
- * @param $a
- * @param $b
- */
-function _views_handler_filter_sort_form_field_weights($a, $b) {
-  if ($a['sort']['#default_value'] == $b['sort']['#default_value']) {
-    return 0;
-  }
-  return ($a['sort']['#default_value'] < $b['sort']['#default_value']) ? -1 : 1;
 }
