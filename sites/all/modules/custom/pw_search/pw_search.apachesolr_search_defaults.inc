@@ -20,17 +20,12 @@ function pw_search_apachesolr_search_default_searchers() {
   $searcher->page_title = 'Site';
   $searcher->env_id = 'solr';
   $searcher->settings = array(
-    'fq' => array(),
-    'apachesolr_search_custom_enable' => 0,
     'apachesolr_search_search_type' => 'custom',
     'apachesolr_search_per_page' => 10,
-    'apachesolr_search_spellcheck' => 1,
-    'apachesolr_search_search_box' => 1,
-    'apachesolr_search_allow_user_input' => 0,
     'apachesolr_search_browse' => 'browse',
-    'apachesolr_multilingual_auto_language_filter' => 1,
-    'apachesolr_multilingual_auto_language_filter_detachable' => 0,
-    'apachesolr_multilingual_show_language_undefined_results' => 0,
+    'apachesolr_search_spellcheck' => TRUE,
+    'apachesolr_search_not_removable' => TRUE,
+    'apachesolr_search_search_box' => TRUE,
   );
   $export['core_search'] = $searcher;
 
@@ -60,18 +55,17 @@ function pw_search_apachesolr_search_default_searchers() {
   $searcher->description = 'User Search';
   $searcher->search_path = 'search/user_entity';
   $searcher->page_title = 'User';
-  $searcher->env_id = '';
+  $searcher->env_id = 'solr';
   $searcher->settings = array(
     'fq' => array(
       0 => 'entity_type:user',
     ),
-    'apachesolr_search_custom_enable' => 1,
+    'apachesolr_search_custom_enable' => TRUE,
     'apachesolr_search_search_type' => 'custom',
     'apachesolr_search_per_page' => 10,
-    'apachesolr_search_spellcheck' => 1,
-    'apachesolr_search_search_box' => 1,
-    'apachesolr_search_allow_user_input' => 0,
     'apachesolr_search_browse' => 'browse',
+    'apachesolr_search_spellcheck' => TRUE,
+    'apachesolr_search_search_box' => TRUE,
   );
   $export['user_search'] = $searcher;
 

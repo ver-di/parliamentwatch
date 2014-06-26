@@ -14,11 +14,14 @@ include_once 'pw_search.features.inc';
  * @return boolean
  */
 function pw_search_apachesolr_node_exclude($entity_id, $row, $env_id) {
+ if ($row->bundle == "dialogue") {
   $countArr = db_query("SELECT count(*) FROM {field_data_field_dialogue_recipient} WHERE entity_id=:entity_id GROUP BY entity_id", array(":entity_id" => $entity_id))->fetchCol();
   if (count($countArr) > 0) {
     return FALSE; // do not exclude the node. It seems to have a recipient.
   }
   return TRUE; // exclude it
+ }
+    return FALSE;
 }
 
 
@@ -149,6 +152,7 @@ function pw_search_preprocess_search_result(&$vars) {
  * @param type $env_id
  */
 function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $document, $entity, $env_id) {
+  if ($entity->type == "dialogue"){
   $contentArr = array();
   
   $contentArr[] =  $entity->body["und"][0]["value"]; // Hier kommt das <crypt>-Tag aus dem body_value des Dialogues noch mit
@@ -174,6 +178,7 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
   $receivingUser = user_load($entity->field_dialogue_recipient["und"][0]["target_id"]);
   $document->setField('im_field_user_party', $receivingUser->field_user_party["und"][0]["tid"]);
   $document->setField('im_field_user_parliament', $receivingUser->field_user_parliament["und"][0]["tid"]);
+ }
 }
 
 /**
