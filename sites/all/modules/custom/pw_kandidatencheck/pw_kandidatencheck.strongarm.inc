@@ -195,34 +195,6 @@ function pw_kandidatencheck_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_comment_filter_pw_kc_position';
-  $strongarm->value = 0;
-  $export['entity_translation_comment_filter_pw_kc_position'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_comment_filter_pw_kc_thesis';
-  $strongarm->value = 0;
-  $export['entity_translation_comment_filter_pw_kc_thesis'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_node_metadata_pw_kc_position';
-  $strongarm->value = '0';
-  $export['entity_translation_node_metadata_pw_kc_position'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_node_metadata_pw_kc_thesis';
-  $strongarm->value = '0';
-  $export['entity_translation_node_metadata_pw_kc_thesis'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__pw_kc_position';
   $strongarm->value = array(
     'view_modes' => array(),

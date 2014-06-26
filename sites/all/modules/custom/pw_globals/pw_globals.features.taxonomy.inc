@@ -63,11 +63,11 @@ function pw_globals_taxonomy_default_vocabularies() {
       'name' => 'Parliaments',
       'machine_name' => 'parliaments',
       'description' => '',
-      'hierarchy' => '1',
+      'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
       'language' => 'und',
-      'i18n_mode' => '1',
+      'i18n_mode' => '0',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

@@ -90,20 +90,6 @@ function pw_announcements_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_comment_filter_announcement';
-  $strongarm->value = 0;
-  $export['entity_translation_comment_filter_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'entity_translation_node_metadata_announcement';
-  $strongarm->value = '0';
-  $export['entity_translation_node_metadata_announcement'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__announcement';
   $strongarm->value = array(
     'view_modes' => array(
