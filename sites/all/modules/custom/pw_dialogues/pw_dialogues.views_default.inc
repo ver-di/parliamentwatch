@@ -619,7 +619,7 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
   $handler->display->display_options['header']['php']['php_output'] = '<?php
 drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\');
-drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js\');
+//drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js\');
 ?>
 ';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
