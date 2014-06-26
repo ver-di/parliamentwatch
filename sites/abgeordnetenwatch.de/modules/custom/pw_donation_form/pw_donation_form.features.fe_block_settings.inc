@@ -12,20 +12,23 @@ function pw_donation_form_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['views-pw_donations_recent-block_1'] = array(
+  $export['views-pw_donation_drive-block_1'] = array(
     'cache' => -1,
     'css_class' => '',
     'custom' => '0',
-    'delta' => 'pw_donations_recent-block_1',
+    'delta' => 'pw_donation_drive-block_1',
     'i18n_block_language' => array(),
     'i18n_mode' => '0',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'ueber-uns/spendenformular',
-    'roles' => array(),
+    'pages' => '',
+    'roles' => array(
+      'administrator' => '3',
+      'Content Manager' => '51622513',
+    ),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
+        'region' => 'branding',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
         'weight' => '0',
@@ -43,8 +46,8 @@ function pw_donation_form_default_fe_block_settings() {
         'weight' => '0',
       ),
     ),
-    'title' => '',
-    'visibility' => '1',
+    'title' => '<none>',
+    'visibility' => '0',
   );
 
   $export['views-pw_donation_state-block'] = array(
@@ -56,14 +59,14 @@ function pw_donation_form_default_fe_block_settings() {
     'i18n_mode' => '0',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'node/10508',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_second',
+        'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-66',
       ),
       'blank' => array(
         'region' => '',
@@ -79,7 +82,7 @@ function pw_donation_form_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   return $export;
