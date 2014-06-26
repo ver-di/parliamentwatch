@@ -211,7 +211,7 @@ function pw_dialogues_feeds_importer_default() {
         'update_existing' => '1',
         'input_format' => 'filtered_html',
         'authorize' => 0,
-        'skip_hash_check' => 0,
+        'skip_hash_check' => 1,
         'bundle' => 'dialogue',
       ),
     ),

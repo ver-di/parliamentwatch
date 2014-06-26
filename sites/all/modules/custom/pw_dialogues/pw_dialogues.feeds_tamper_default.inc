@@ -41,7 +41,7 @@ function pw_dialogues_feeds_tamper_default() {
   $feeds_tamper->importer = 'dialogue_importer';
   $feeds_tamper->source = 'xpathparser:21';
   $feeds_tamper->plugin_id = 'is_before_election';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Date of dialogue is before election';
   $export['dialogue_importer-xpathparser_21-is_before_election'] = $feeds_tamper;
