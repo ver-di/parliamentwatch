@@ -263,7 +263,9 @@ print $progress; ?>%;"><?php print t(\'Progress\') ?>: <?php print $progress; ?>
   $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'light';
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php print format_interval(time()-date($row->submitted_1),1); ?>';
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+print t(\'@interval ago\', array(\'@interval\' => format_interval(time()-date($row->submitted_1),1,"en-EN")));
+?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Feld: PHP: Donation */
