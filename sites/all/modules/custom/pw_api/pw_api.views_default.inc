@@ -42,7 +42,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -90,7 +90,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Parliament */
+  /* Feld: Feld (historical data): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -502,7 +502,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Contextual filter: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -548,7 +548,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Contextual filter: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -590,7 +590,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -641,7 +641,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -868,7 +868,7 @@ echo $base_url;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1075,10 +1075,14 @@ echo $base_url;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
+  /* Relationship: Taxonomie-Begriff: Taxonomie-Begriff using Area Codes */
+  $handler->display->display_options['relationships']['reverse_field_constituency_area_codes_taxonomy_term']['id'] = 'reverse_field_constituency_area_codes_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_constituency_area_codes_taxonomy_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_constituency_area_codes_taxonomy_term']['field'] = 'reverse_field_constituency_area_codes_taxonomy_term';
   /* Feld: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'taxonomy_term_data';
@@ -1099,6 +1103,27 @@ echo $base_url;
   $handler->display->display_options['fields']['field_constituency_nr']['field'] = 'field_constituency_nr';
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'number';
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
+  /* Feld: Taxonomie-Begriff: Area Codes */
+  $handler->display->display_options['fields']['field_constituency_area_codes']['id'] = 'field_constituency_area_codes';
+  $handler->display->display_options['fields']['field_constituency_area_codes']['table'] = 'field_data_field_constituency_area_codes';
+  $handler->display->display_options['fields']['field_constituency_area_codes']['field'] = 'field_constituency_area_codes';
+  $handler->display->display_options['fields']['field_constituency_area_codes']['relationship'] = 'reverse_field_constituency_area_codes_taxonomy_term';
+  $handler->display->display_options['fields']['field_constituency_area_codes']['label'] = 'areacodes';
+  $handler->display->display_options['fields']['field_constituency_area_codes']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_constituency_area_codes']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_constituency_area_codes']['settings'] = array(
+    'textformatter_type' => 'comma',
+    'textformatter_comma_and' => 0,
+    'textformatter_comma_full_stop' => 0,
+    'textformatter_comma_override' => 0,
+    'textformatter_separator_custom' => '',
+    'textformatter_separator_custom_tag' => '0',
+    'textformatter_separator_custom_class' => '',
+    'textformatter_comma_tag' => '0',
+    'textformatter_class' => '',
+    'textformatter_term_plain' => 0,
+  );
+  $handler->display->display_options['fields']['field_constituency_area_codes']['delta_offset'] = '0';
   /* Contextual filter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
@@ -1178,7 +1203,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1213,7 +1238,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1248,7 +1273,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1295,7 +1320,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1346,7 +1371,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1393,7 +1418,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1523,7 +1548,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1581,7 +1606,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Taxonomie-Begriff: Parliament (field_parliament) */
+  /* Relationship: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -1703,7 +1728,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -1777,7 +1802,7 @@ echo $base_url;
   $handler->display->display_options['sorts']['vid']['table'] = 'user_revision';
   $handler->display->display_options['sorts']['vid']['field'] = 'vid';
   $handler->display->display_options['sorts']['vid']['order'] = 'DESC';
-  /* Contextual filter: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Contextual filter: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -1820,7 +1845,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2016,7 +2041,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2087,7 +2112,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2143,7 +2168,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2267,7 +2292,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2323,7 +2348,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2447,7 +2472,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2498,7 +2523,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2617,7 +2642,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2668,7 +2693,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2866,7 +2891,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2933,7 +2958,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3000,7 +3025,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3067,7 +3092,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3264,7 +3289,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3308,7 +3333,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Parliament */
+  /* Feld: Feld (historical data): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -3650,7 +3675,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Contextual filter: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3696,7 +3721,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Contextual filter: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3738,7 +3763,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3789,7 +3814,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4023,7 +4048,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4033,7 +4058,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Feld: Inhalt: Beitrag UUID */
+  /* Feld: Inhalt: Inhalt UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'node';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
@@ -4235,7 +4260,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4296,7 +4321,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4353,7 +4378,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4414,7 +4439,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4471,7 +4496,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4519,7 +4544,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4563,7 +4588,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4611,7 +4636,7 @@ echo $base_url;
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Relationship: Benutzer: Parliament (field_user_parliament) */
+  /* Relationship: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
