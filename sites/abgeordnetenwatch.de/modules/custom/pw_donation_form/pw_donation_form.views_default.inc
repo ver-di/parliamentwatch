@@ -23,7 +23,6 @@ function pw_donation_form_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Stand der Spendenkampagne';
-  $handler->display->display_options['css_class'] = 'push-bottom-l';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -36,174 +35,35 @@ function pw_donation_form_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Feld: Excluded | targetamount_machine: Text */
-  $handler->display->display_options['fields']['text_2']['id'] = 'text_2';
-  $handler->display->display_options['fields']['text_2']['table'] = 'xml';
-  $handler->display->display_options['fields']['text_2']['field'] = 'text';
-  $handler->display->display_options['fields']['text_2']['ui_name'] = 'Excluded | targetamount_machine: Text';
-  $handler->display->display_options['fields']['text_2']['label'] = '';
-  $handler->display->display_options['fields']['text_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['text_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['text_2']['xpath_selector'] = 'targetamount_machine';
-  $handler->display->display_options['fields']['text_2']['multiple'] = 0;
-  /* Feld: Excluded | amount_machine: Text */
-  $handler->display->display_options['fields']['text_3']['id'] = 'text_3';
-  $handler->display->display_options['fields']['text_3']['table'] = 'xml';
-  $handler->display->display_options['fields']['text_3']['field'] = 'text';
-  $handler->display->display_options['fields']['text_3']['ui_name'] = 'Excluded | amount_machine: Text';
-  $handler->display->display_options['fields']['text_3']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['text_3']['xpath_selector'] = 'amount_machine';
-  $handler->display->display_options['fields']['text_3']['multiple'] = 0;
-  /* Feld: targetamount: Text */
-  $handler->display->display_options['fields']['text_4']['id'] = 'text_4';
-  $handler->display->display_options['fields']['text_4']['table'] = 'xml';
-  $handler->display->display_options['fields']['text_4']['field'] = 'text';
-  $handler->display->display_options['fields']['text_4']['label'] = 'Ziel';
-  $handler->display->display_options['fields']['text_4']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['text_4']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['text_4']['xpath_selector'] = 'targetamount';
-  $handler->display->display_options['fields']['text_4']['multiple'] = 0;
-  /* Feld: PHP: Progress bar */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'PHP: Progress bar';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'push-bottom-s';
-  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-progress-wrapper"><div class="pw-progress" style="width: <?php 
-$required = $row->text_2;
-$donations = $row->text_3;
-$progress = ($donations/$required)*100;
-if($progress > 100){
-    $progress = 100;
-}
-print $progress; ?>%;"><?php print t(\'Progress\') ?>: <?php print $progress; ?>%</div></div>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: amount: Text */
-  $handler->display->display_options['fields']['text']['id'] = 'text';
-  $handler->display->display_options['fields']['text']['table'] = 'xml';
-  $handler->display->display_options['fields']['text']['field'] = 'text';
-  $handler->display->display_options['fields']['text']['label'] = 'Gespendet bis jetzt';
-  $handler->display->display_options['fields']['text']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['text']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['text']['xpath_selector'] = 'amount';
-  $handler->display->display_options['fields']['text']['multiple'] = 0;
-  /* Feld: count: Text */
-  $handler->display->display_options['fields']['text_1']['id'] = 'text_1';
-  $handler->display->display_options['fields']['text_1']['table'] = 'xml';
-  $handler->display->display_options['fields']['text_1']['field'] = 'text';
-  $handler->display->display_options['fields']['text_1']['label'] = '';
-  $handler->display->display_options['fields']['text_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['text_1']['alter']['text'] = 'von insgesamt [text_1] Spendern';
-  $handler->display->display_options['fields']['text_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['text_1']['xpath_selector'] = 'count';
-  $handler->display->display_options['fields']['text_1']['multiple'] = 0;
-
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
-
-  /* Display: Banner */
-  $handler = $view->new_display('block', 'Banner', 'block_1');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Excluded | targetamount_machine: Text */
-  $handler->display->display_options['fields']['text_2']['id'] = 'text_2';
-  $handler->display->display_options['fields']['text_2']['table'] = 'xml';
-  $handler->display->display_options['fields']['text_2']['field'] = 'text';
-  $handler->display->display_options['fields']['text_2']['ui_name'] = 'Excluded | targetamount_machine: Text';
-  $handler->display->display_options['fields']['text_2']['label'] = '';
-  $handler->display->display_options['fields']['text_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['text_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['text_2']['xpath_selector'] = 'targetamount_machine';
-  $handler->display->display_options['fields']['text_2']['multiple'] = 0;
-  /* Feld: Excluded | amount_machine: Text */
-  $handler->display->display_options['fields']['text_3']['id'] = 'text_3';
-  $handler->display->display_options['fields']['text_3']['table'] = 'xml';
-  $handler->display->display_options['fields']['text_3']['field'] = 'text';
-  $handler->display->display_options['fields']['text_3']['ui_name'] = 'Excluded | amount_machine: Text';
-  $handler->display->display_options['fields']['text_3']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['text_3']['xpath_selector'] = 'amount_machine';
-  $handler->display->display_options['fields']['text_3']['multiple'] = 0;
   /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'fieldset_1',
+    0 => 'text',
+    1 => 'text_1',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
-  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'comment';
-  /* Feld: Global: Fieldset */
-  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
-  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
-    0 => 'text_4',
-    1 => 'php',
-    2 => 'text',
-    3 => 'text_1',
-  );
-  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
-  $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'content-inner';
-  /* Feld: targetamount: Text */
-  $handler->display->display_options['fields']['text_4']['id'] = 'text_4';
-  $handler->display->display_options['fields']['text_4']['table'] = 'xml';
-  $handler->display->display_options['fields']['text_4']['field'] = 'text';
-  $handler->display->display_options['fields']['text_4']['label'] = 'Ziel';
-  $handler->display->display_options['fields']['text_4']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['text_4']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['text_4']['xpath_selector'] = 'targetamount';
-  $handler->display->display_options['fields']['text_4']['multiple'] = 0;
-  /* Feld: PHP: Progress bar */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'PHP: Progress bar';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'push-bottom-s';
-  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-progress-wrapper-l"><div class="pw-progress-l" style="width: <?php 
-$required = $row->text_2;
-$donations = $row->text_3;
-$progress = ($donations/$required)*100;
-if($progress > 100){
-    $progress = 100;
-}
-print $progress; ?>%;"><?php print t(\'Progress\') ?>: <?php print $progress; ?>%</div></div>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'float-left';
   /* Feld: amount: Text */
   $handler->display->display_options['fields']['text']['id'] = 'text';
   $handler->display->display_options['fields']['text']['table'] = 'xml';
   $handler->display->display_options['fields']['text']['field'] = 'text';
-  $handler->display->display_options['fields']['text']['label'] = 'Gespendet bis jetzt';
-  $handler->display->display_options['fields']['text']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['text']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['text']['label'] = 'amount';
   $handler->display->display_options['fields']['text']['xpath_selector'] = 'amount';
   $handler->display->display_options['fields']['text']['multiple'] = 0;
   /* Feld: count: Text */
   $handler->display->display_options['fields']['text_1']['id'] = 'text_1';
   $handler->display->display_options['fields']['text_1']['table'] = 'xml';
   $handler->display->display_options['fields']['text_1']['field'] = 'text';
-  $handler->display->display_options['fields']['text_1']['label'] = '';
-  $handler->display->display_options['fields']['text_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['text_1']['alter']['text'] = 'von insgesamt [text_1] Spendern';
-  $handler->display->display_options['fields']['text_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['text_1']['label'] = 'count';
   $handler->display->display_options['fields']['text_1']['xpath_selector'] = 'count';
   $handler->display->display_options['fields']['text_1']['multiple'] = 0;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
   $export['pw_donation_drive'] = $view;
 
   $view = new view();
