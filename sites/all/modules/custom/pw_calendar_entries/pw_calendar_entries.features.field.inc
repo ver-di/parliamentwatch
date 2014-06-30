@@ -10,8 +10,138 @@
 function pw_calendar_entries_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-cm_calendar_entry-body'.
-  $fields['node-cm_calendar_entry-body'] = array(
+  // Exported field: 'comment-comment_node_committee_membership-comment_body'.
+  $fields['comment-comment_node_committee_membership-comment_body'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'comment',
+      ),
+      'field_name' => 'comment_body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_committee_membership',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'comment',
+      'field_name' => 'comment_body',
+      'label' => 'Comment',
+      'required' => TRUE,
+      'settings' => array(
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 5,
+        ),
+        'type' => 'text_textarea',
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  // Exported field: 'comment-comment_node_speech-comment_body'.
+  $fields['comment-comment_node_speech-comment_body'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(
+        0 => 'comment',
+      ),
+      'field_name' => 'comment_body',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'comment_node_speech',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'comment',
+      'field_name' => 'comment_body',
+      'label' => 'Comment',
+      'required' => TRUE,
+      'settings' => array(
+        'text_processing' => 1,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'module' => 'text',
+        'settings' => array(
+          'rows' => 5,
+        ),
+        'type' => 'text_textarea',
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  // Exported field: 'node-committee_membership-body'.
+  $fields['node-committee_membership-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -45,7 +175,7 @@ function pw_calendar_entries_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'cm_calendar_entry',
+      'bundle' => 'committee_membership',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -88,8 +218,8 @@ function pw_calendar_entries_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-cm_calendar_entry-field_committee'.
-  $fields['node-cm_calendar_entry-field_committee'] = array(
+  // Exported field: 'node-committee_membership-field_committee'.
+  $fields['node-committee_membership-field_committee'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -127,7 +257,7 @@ function pw_calendar_entries_field_default_fields() {
       'type' => 'taxonomy_term_reference',
     ),
     'field_instance' => array(
-      'bundle' => 'cm_calendar_entry',
+      'bundle' => 'committee_membership',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -137,7 +267,7 @@ function pw_calendar_entries_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 7,
+          'weight' => 5,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -149,7 +279,7 @@ function pw_calendar_entries_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_committee',
-      'label' => 'CM Committee',
+      'label' => 'Committee',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -168,11 +298,91 @@ function pw_calendar_entries_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-cm_calendar_entry-field_parliament'.
-  $fields['node-cm_calendar_entry-field_parliament'] = array(
+  // Exported field: 'node-committee_membership-field_job'.
+  $fields['node-committee_membership-field_job'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_job',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'sidejob_jobs',
+            'parent' => '0',
+          ),
+        ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'committee_membership',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_link',
+          'weight' => 6,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_job',
+      'label' => 'Job',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'taxonomy',
+        'settings' => array(
+          'autocomplete_path' => 'taxonomy/autocomplete',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => 60,
+        ),
+        'type' => 'taxonomy_autocomplete',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-committee_membership-field_parliament'.
+  $fields['node-committee_membership-field_parliament'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_parliament',
@@ -208,7 +418,7 @@ function pw_calendar_entries_field_default_fields() {
       'type' => 'taxonomy_term_reference',
     ),
     'field_instance' => array(
-      'bundle' => 'cm_calendar_entry',
+      'bundle' => 'committee_membership',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -218,7 +428,7 @@ function pw_calendar_entries_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 8,
+          'weight' => 1,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -227,20 +437,17 @@ function pw_calendar_entries_field_default_fields() {
           'weight' => 0,
         ),
       ),
-      'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_parliament',
-      'label' => 'CM Parliament',
-      'required' => 0,
+      'label' => 'Parliament',
+      'required' => FALSE,
       'settings' => array(
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 1,
         'module' => 'taxonomy',
         'settings' => array(
           'autocomplete_path' => 'taxonomy/autocomplete',
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
@@ -249,94 +456,14 @@ function pw_calendar_entries_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-cm_calendar_entry-field_political_role'.
-  $fields['node-cm_calendar_entry-field_political_role'] = array(
+  // Exported field: 'node-committee_membership-field_politician'.
+  $fields['node-committee_membership-field_politician'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_political_role',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'political_roles',
-            'parent' => '0',
-          ),
-        ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
-      ),
-      'translatable' => '0',
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'cm_calendar_entry',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'i18n_taxonomy',
-          'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 9,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_political_role',
-      'label' => 'CM Political Role',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'taxonomy',
-        'settings' => array(
-          'autocomplete_path' => 'taxonomy/autocomplete',
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'size' => 60,
-        ),
-        'type' => 'taxonomy_autocomplete',
-        'weight' => '2',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-cm_calendar_entry-field_user_name'.
-  $fields['node-cm_calendar_entry-field_user_name'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_user_name',
+      'field_name' => 'field_politician',
       'field_permissions' => array(
         'type' => '0',
       ),
@@ -374,7 +501,7 @@ function pw_calendar_entries_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'cm_calendar_entry',
+      'bundle' => 'committee_membership',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -386,7 +513,7 @@ function pw_calendar_entries_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 10,
+          'weight' => 3,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -397,8 +524,8 @@ function pw_calendar_entries_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_user_name',
-      'label' => 'CM User Name',
+      'field_name' => 'field_politician',
+      'label' => 'Politician',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -418,8 +545,8 @@ function pw_calendar_entries_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-cm_calendar_entry-field_valid'.
-  $fields['node-cm_calendar_entry-field_valid'] = array(
+  // Exported field: 'node-committee_membership-field_valid'.
+  $fields['node-committee_membership-field_valid'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -452,7 +579,7 @@ function pw_calendar_entries_field_default_fields() {
       'type' => 'datetime',
     ),
     'field_instance' => array(
-      'bundle' => 'cm_calendar_entry',
+      'bundle' => 'committee_membership',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -467,7 +594,7 @@ function pw_calendar_entries_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => 2,
+          'weight' => 4,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -476,11 +603,10 @@ function pw_calendar_entries_field_default_fields() {
           'weight' => 0,
         ),
       ),
-      'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_valid',
-      'label' => 'CM Valid',
-      'required' => 0,
+      'label' => 'Valid',
+      'required' => FALSE,
       'settings' => array(
         'default_value' => 'now',
         'default_value2' => 'same',
@@ -489,15 +615,13 @@ function pw_calendar_entries_field_default_fields() {
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 1,
         'module' => 'date',
         'settings' => array(
           'display_all_day' => 0,
-          'increment' => '15',
+          'increment' => 15,
           'input_format' => 'd.m.Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'text_parts' => array(),
           'year_range' => '-3:+3',
         ),
@@ -552,7 +676,7 @@ function pw_calendar_entries_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -580,7 +704,71 @@ function pw_calendar_entries_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '31',
+        'weight' => '4',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-speech-field_duration'.
+  $fields['node-speech-field_duration'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_duration',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'hms_field',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'hms_field',
+    ),
+    'field_instance' => array(
+      'bundle' => 'speech',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'hms_field',
+          'settings' => array(
+            'format' => 'h:mm:ss',
+            'leading_zero' => 1,
+          ),
+          'type' => 'hms_default_formatter',
+          'weight' => '6',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_duration',
+      'label' => 'Duration',
+      'required' => 0,
+      'settings' => array(
+        'default_description' => 1,
+        'format' => 'h:mm:ss',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'hms_field',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'hms_default_widget',
+        'weight' => '7',
       ),
     ),
   );
@@ -589,7 +777,7 @@ function pw_calendar_entries_field_default_fields() {
   $fields['node-speech-field_parliament'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_parliament',
@@ -635,7 +823,7 @@ function pw_calendar_entries_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 1,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -658,19 +846,19 @@ function pw_calendar_entries_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '33',
+        'weight' => '0',
       ),
     ),
   );
 
-  // Exported field: 'node-speech-field_user_name'.
-  $fields['node-speech-field_user_name'] = array(
+  // Exported field: 'node-speech-field_politician'.
+  $fields['node-speech-field_politician'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_user_name',
+      'field_name' => 'field_politician',
       'field_permissions' => array(
         'type' => '0',
       ),
@@ -720,7 +908,7 @@ function pw_calendar_entries_field_default_fields() {
             'link' => FALSE,
           ),
           'type' => 'entityreference_label',
-          'weight' => 2,
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -731,8 +919,8 @@ function pw_calendar_entries_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_user_name',
-      'label' => 'User Name',
+      'field_name' => 'field_politician',
+      'label' => 'Politician',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -746,8 +934,8 @@ function pw_calendar_entries_field_default_fields() {
           'path' => '',
           'size' => '60',
         ),
-        'type' => 'entityreference_autocomplete_tags',
-        'weight' => '35',
+        'type' => 'entityreference_autocomplete',
+        'weight' => '1',
       ),
     ),
   );
@@ -801,7 +989,7 @@ function pw_calendar_entries_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => 4,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -833,7 +1021,7 @@ function pw_calendar_entries_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '38',
+        'weight' => '2',
       ),
     ),
   );
@@ -841,14 +1029,14 @@ function pw_calendar_entries_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
-  t('CM Committee');
-  t('CM Parliament');
-  t('CM Political Role');
-  t('CM User Name');
-  t('CM Valid');
+  t('Comment');
+  t('Committee');
   t('Date');
+  t('Duration');
+  t('Job');
   t('Parliament');
-  t('User Name');
+  t('Politician');
+  t('Valid');
 
   return $fields;
 }

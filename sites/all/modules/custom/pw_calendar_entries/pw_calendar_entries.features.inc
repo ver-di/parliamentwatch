@@ -30,8 +30,8 @@ function pw_calendar_entries_views_api() {
  */
 function pw_calendar_entries_node_info() {
   $items = array(
-    'cm_calendar_entry' => array(
-      'name' => t('CM Calendar Entry'),
+    'committee_membership' => array(
+      'name' => t('Committee Membership'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
