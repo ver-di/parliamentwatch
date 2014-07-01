@@ -5,12 +5,6 @@
 @import url("mainmenu.css");
 @import url("pw_kandidatencheck.css");
 
-.question-during-election {
-  background-color: #fffd38;
-  display: inline-block;
-  padding: 10px;
-}
-
 html {
     font-size: 12px;
 }
@@ -2246,7 +2240,7 @@ form .webform-component-checkboxes .description {
     padding: 0.6em;
 }
 
-/* /////////////////////////// question and answers ///////////// */
+/* /////////////////////////// dialogues ///////////// */
 
 .field-name-questions-and-answers {
     margin-bottom: 42px;
@@ -2309,6 +2303,14 @@ form .webform-component-checkboxes .description {
     margin-top: 0.5em;
     border-top: 1px dotted #ccc;
     padding-top: 0.5em;
+}
+.dialogue-election {
+  background: #fffd38 url(../images/sprite.png) -40px -3442px no-repeat;
+  display: inline-block;
+  padding: 10px 10px 10px 35px;
+}
+.question .dialogue-election {
+  margin-left: 34px;
 }
 
 
