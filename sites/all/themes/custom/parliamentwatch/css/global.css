@@ -1,17 +1,16 @@
-.question-during-election{
-  background-color: #ff0;
-  display: block;
-  padding: 5px 10px;
-  margin: 0 0 20px 34px;
-  width: 370px;
-}
-
 /* This file will hold the main styles for your website. */
 @charset "utf-8";
 @import url("profiles.css");
 @import url("jquery.ui.slider.css");
 @import url("mainmenu.css");
 @import url("pw_kandidatencheck.css");
+
+.question-during-election {
+  background-color: #fffd38;
+  display: inline-block;
+  padding: 10px;
+}
+
 html {
     font-size: 12px;
 }
@@ -111,9 +110,7 @@ h3 {
 h2 a:link,
 h2 a:visited,
 h3 a:link,
-h3 a:visited,
-h4 a:link,
-h4 a:visited {
+h3 a:visited {
     color: #333;
     text-decoration: none;
     font-weight: normal;
@@ -122,6 +119,11 @@ h4 {
     font-size: 12px;
     font-size: 1.2rem;
     margin-bottom: 0;
+}
+h4 a:link,
+h4 a:visited {
+    color: #333;
+    text-decoration: none;
 }
 .subtitle,
 .small,
@@ -348,7 +350,7 @@ a.external:hover {
 }
 .normal-weight,
 .normal-weight > a {
-    font-weight: normal;
+    font-weight: normal !important;
 }
 .label-inline {
     display: inline;
