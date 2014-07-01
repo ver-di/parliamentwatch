@@ -10,136 +10,164 @@ include_once 'pw_globals.features.inc';
  * Implements hook_query_alter().
  */
 function pw_globals_query_alter($query) {
-  if ($query->hasTag('node_export_features')) {
-    $query->condition('type', array('announcement', 'page', 'trustee', 'webform', 'pw_slider'), 'IN');
-  }
+    if ($query->hasTag('node_export_features')) {
+        $query->condition('type', array('announcement', 'page', 'trustee', 'webform', 'pw_slider'), 'IN');
+    }
 }
 
 /**
  * Custom: Checks if User (Revision) is Premium User
  */
-function _pw_is_premium_user($user){
-  $term_premium_user = taxonomy_get_term_by_name('Premium User', 'pw_profile_roles_for_view_mode_switch');
-  $tid_premium_user = key($term_premium_user);
-  foreach($user->field_user_roles_for_view_mode_s['und'] as $role){
-    if($tid_premium_user == $role['tid']){
-      return true;
+function _pw_is_premium_user($user) {
+    $term_premium_user = taxonomy_get_term_by_name('Premium User', 'pw_profile_roles_for_view_mode_switch');
+    $tid_premium_user = key($term_premium_user);
+    foreach ($user->field_user_roles_for_view_mode_s['und'] as $role) {
+        if ($tid_premium_user == $role['tid']) {
+            return TRUE;
+        }
     }
-  }
-  return false;
+    return FALSE;
 }
 
 /**
  * Custom: Checks if User (Revision) has specific role
  */
-function _pw_user_has_role($user, $role){
-  $term_role = taxonomy_get_term_by_name($role, 'pw_profile_roles_for_view_mode_switch');
-  $tid_role = key($term_role);
-  foreach($user->field_user_roles_for_view_mode_s['und'] as $user_role){
-    if($tid_role == $user_role['tid']){
-      return true;
+function _pw_user_has_role($user, $role) {
+    $term_role = taxonomy_get_term_by_name($role, 'pw_profile_roles_for_view_mode_switch');
+    $tid_role = key($term_role);
+    foreach ($user->field_user_roles_for_view_mode_s['und'] as $user_role) {
+        if ($tid_role == $user_role['tid']) {
+            return TRUE;
+        }
     }
-  }
-  return false;
+    return FALSE;
 }
 
 /**
- * Custom: Retrieve parliament term depending on currently viewed node or user. 
+ * Custom: Retrieve parliament term depending on currently viewed node or user.
  */
-function _pw_get_current_parliament_term(){
+function _pw_get_current_parliament_term() {
 
-  $parliament_term = &drupal_static(__FUNCTION__);
-  if(!isset($parliament_term)){
-    switch(arg(0)){
+    $parliament_term = &drupal_static(__FUNCTION__);
+    if (!isset($parliament_term)) {
+        switch (arg(0)) {
 
-      // load by archived user profile
-      case 'profile': 
-        $user = user_load_by_name(arg(1));
-        $user_id = $user->uid;
-        $vid = arg(3);
-        $user = user_revision_load($user_id, $vid);
-        $term_parliament_id = $user->field_user_parliament['und'][0]['tid'];
-        $term_parliament = taxonomy_term_load($term_parliament_id);
-        break;
+            // load by archived user profile
+            case 'profile':
+                $user = user_load_by_name(arg(1));
+                $user_id = $user->uid;
+                $vid = arg(3);
+                $user = user_revision_load($user_id, $vid);
+                $term_parliament_id = $user->field_user_parliament['und'][0]['tid'];
+                $term_parliament = taxonomy_term_load($term_parliament_id);
+                break;
 
-      // load by user profile
-      case 'user':
-        $user = menu_get_object('user');
+            // load by user profile
+            case 'user':
+                $user = menu_get_object('user');
 
-        if(isset($user->field_user_parliament)){
-          $term_parliament_id = $user->field_user_parliament['und'][0]['tid'];
-          $term_parliament = taxonomy_term_load($term_parliament_id);
+                if (isset($user->field_user_parliament)) {
+                    $term_parliament_id = $user->field_user_parliament['und'][0]['tid'];
+                    $term_parliament = taxonomy_term_load($term_parliament_id);
+                }
+                break;
+
+            // load by node
+            case 'node':
+                $node = menu_get_object();
+                if (isset($node->field_parliament)) {
+                    $term_parliament_id = $node->field_parliament['und'][0]['tid'];
+                    $term_parliament = taxonomy_term_load($term_parliament_id);
+                }
+                break;
         }
-        break;
-
-      // load by node
-      case 'node':
-        $node = menu_get_object();
-        if(isset($node->field_parliament)){
-          $term_parliament_id = $node->field_parliament['und'][0]['tid'];
-          $term_parliament = taxonomy_term_load($term_parliament_id);
-        }
-        break;
     }
-  }
-  return $term_parliament;
+    return $term_parliament;
 }
 
 /**
  * Custom: check if parliament is active or not.
  */
-function _check_parliament_active($parliament=false){
+function _check_parliament_active($parliament=FALSE) {
 
-  // if parliament was not set, try to retrieve it from current context
-  if(!$parliament){
-    $parliament = _pw_get_current_parliament_term();
-  }
-  // if parliament was given as string, try to load full term
-  elseif(is_string($parliament)){
-    $parliament = taxonomy_get_term_by_name($parliament, 'parliaments');
-  }
-
-  // something went wrong
-  if(!$parliament){
-    return FALSE;
-  }
-
-  // run against all dates stored in parliament term
-  $parliament_is_valid = false;
-  foreach($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid){
-    $has_no_end_date = $date_parliament_valid['value'] == $date_parliament_valid['value2'];
-    $parliament_is_valid = strtotime($date_parliament_valid['value']) < time() && 
-                             (strtotime($date_parliament_valid['value2']) > time() ||
-                             $has_no_end_date);
-    if($parliament_is_valid){
-      return TRUE;
+    // if parliament was not set, try to retrieve it from current context
+    if (!$parliament) {
+        $parliament = _pw_get_current_parliament_term();
     }
-  }
-  return FALSE;
+    // if parliament was given as string, try to load full term
+    elseif (is_string($parliament)) {
+        $parliament = taxonomy_get_term_by_name($parliament, 'parliaments');
+    }
+
+    // something went wrong
+    if (!$parliament) {
+        return FALSE;
+    }
+
+    // run against all dates stored in parliament term
+    $parliament_is_valid = FALSE;
+    foreach ($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid) {
+        $has_no_end_date = $date_parliament_valid['value'] == $date_parliament_valid['value2'];
+        $parliament_is_valid = strtotime($date_parliament_valid['value']) < time() &&
+            (strtotime($date_parliament_valid['value2']) > time() ||
+                $has_no_end_date);
+        if ($parliament_is_valid) {
+            return TRUE;
+        }
+    }
+    return FALSE;
 }
 
 /**
- * Custom: Retrieve user depending on user or archived user is viewed. 
+ * Custom: Retrieve user depending on user or archived user is viewed.
  */
-function _pw_get_current_user(){
-  $user = &drupal_static(__FUNCTION__);
-  if(!isset($user)){
-    switch(arg(0)){
-      // load by archived user profile
-      case 'profile': 
-        $user = user_load_by_name(arg(1));
-        $user_id = $user->uid;
-        $vid = arg(3);
-        $user = user_revision_load($user_id, $vid);
-        break;
+function _pw_get_current_user() {
+    $user = &drupal_static(__FUNCTION__);
+    if (!isset($user)) {
+        switch (arg(0)) {
+            // load by archived user profile
+            case 'profile':
+                $user = user_load_by_name(arg(1));
+                $user_id = $user->uid;
+                $vid = arg(3);
+                $user = user_revision_load($user_id, $vid);
+                break;
 
-      // load by user profile
-      case 'user':
-        $user = menu_get_object('user');
-        break;
-      default:
-        $user = FALSE;
+            // load by user profile
+            case 'user':
+                $user = menu_get_object('user');
+                break;
+            default:
+                $user = FALSE;
+        }
     }
-  }
-  return $user;
+    return $user;
+}
+
+/**
+ * Custom: Retrieve parliament tag from node by nid.
+ */
+function _pw_get_parliament_term_tid_by_nid($nid) {
+
+    $selected_node = node_load($nid);
+    $node_type = $selected_node->type;
+
+    switch ($node_type) {
+
+        case 'sidejob':
+            $tid = $selected_node->field_parliament['und'][0]['tid'];
+            return $tid;
+            break;
+
+        case 'committee_membership':
+            $tid = $selected_node->field_parliament['und'][0]['tid'];
+            return $tid;
+            break;
+
+        case 'speech':
+            $tid = $selected_node->field_parliament['und'][0]['tid'];
+            return $tid;
+            break;
+    }
+    return FALSE;
 }

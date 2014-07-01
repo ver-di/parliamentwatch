@@ -690,7 +690,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '66',
+          'weight' => '72',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -822,7 +822,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '64',
+          'weight' => '70',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -928,7 +928,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '40',
+          'weight' => '45',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1012,7 +1012,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '58',
+          'weight' => '64',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1115,7 +1115,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '62',
+          'weight' => '68',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1213,7 +1213,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '62',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1323,7 +1323,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '61',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1431,7 +1431,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '54',
+          'weight' => '60',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1523,7 +1523,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '35',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1619,7 +1619,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '51',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1750,7 +1750,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '42',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -1893,7 +1893,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '49',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2009,7 +2009,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '57',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2153,7 +2153,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '52',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2293,7 +2293,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '59',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2388,7 +2388,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '67',
+          'weight' => '73',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2518,7 +2518,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '61',
+          'weight' => '67',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2650,7 +2650,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '39',
+          'weight' => '44',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2773,7 +2773,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '63',
+          'weight' => '69',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2864,7 +2864,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '36',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -2968,7 +2968,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '53',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3101,7 +3101,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '60',
+          'weight' => '66',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3207,7 +3207,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '59',
+          'weight' => '65',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3316,7 +3316,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '18',
+          'weight' => '21',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3404,7 +3404,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '33',
+          'weight' => '38',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3544,7 +3544,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '50',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3666,7 +3666,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '34',
+          'weight' => '39',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3806,7 +3806,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '65',
+          'weight' => '71',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3948,7 +3948,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '57',
+          'weight' => '63',
         ),
         'user_search' => array(
           'label' => 'hidden',
@@ -4051,7 +4051,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '50',
+          'weight' => '56',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4176,7 +4176,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '40',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4324,7 +4324,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '41',
+          'weight' => '46',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4408,7 +4408,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '55',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4507,7 +4507,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '38',
+          'weight' => '43',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4597,7 +4597,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '41',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4733,7 +4733,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '54',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -4869,7 +4869,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '48',
         ),
         'user_search' => array(
           'label' => 'above',

@@ -280,8 +280,23 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_premium';
   $ds_fieldsetting->settings = array(
+    'calendar_entries_political_roles' => array(
+      'weight' => '7',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'calendar_entries_sidejobs' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'calendar_entries_speeches' => array(
+      'weight' => '6',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'pw_kandidatencheck' => array(
-      'weight' => '9',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -301,7 +316,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'additional_links' => array(
-      'weight' => '7',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -317,7 +332,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_filter' => array(
-      'weight' => '16',
+      'weight' => '19',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -333,7 +348,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_switcher' => array(
-      'weight' => '17',
+      'weight' => '20',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -349,7 +364,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_form' => array(
-      'weight' => '15',
+      'weight' => '18',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -413,7 +428,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_calendar' => array(
-      'weight' => '8',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -466,7 +481,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_profile_api_link' => array(
-      'weight' => '13',
+      'weight' => '16',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -482,7 +497,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '14',
+      'weight' => '17',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -502,7 +517,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_tweets' => array(
-      'weight' => '6',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -518,7 +533,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '12',
+      'weight' => '15',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -534,7 +549,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '10',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -550,7 +565,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_revision_switch' => array(
-      'weight' => '11',
+      'weight' => '14',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -1226,27 +1241,30 @@ function pw_profiles_ds_layout_settings_info() {
         3 => 'user_about',
         4 => 'user_image_gallery',
         5 => 'user_political_goals',
-        6 => 'user_tweets',
-        7 => 'additional_links',
-        8 => 'user_calendar',
-        9 => 'pw_kandidatencheck',
+        6 => 'calendar_entries_speeches',
+        7 => 'calendar_entries_political_roles',
+        8 => 'calendar_entries_sidejobs',
+        9 => 'user_tweets',
+        10 => 'additional_links',
+        11 => 'user_calendar',
+        12 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        10 => 'pw_slider',
-        11 => 'user_revision_switch',
-        12 => 'user_wrong_data',
-        13 => 'user_profile_api_link',
+        13 => 'pw_slider',
+        14 => 'user_revision_switch',
+        15 => 'user_wrong_data',
+        16 => 'user_profile_api_link',
       ),
       'left_2' => array(
-        14 => 'user_questions_and_answers',
-        15 => 'question_form',
+        17 => 'user_questions_and_answers',
+        18 => 'question_form',
       ),
       'right_2' => array(
-        16 => 'question_and_answers_filter',
-        17 => 'question_and_answers_switcher',
+        19 => 'question_and_answers_filter',
+        20 => 'question_and_answers_switcher',
       ),
       'ds_hidden' => array(
-        18 => 'field_user_party',
+        21 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1256,6 +1274,9 @@ function pw_profiles_ds_layout_settings_info() {
       'user_about' => 'left_1',
       'user_image_gallery' => 'left_1',
       'user_political_goals' => 'left_1',
+      'calendar_entries_speeches' => 'left_1',
+      'calendar_entries_political_roles' => 'left_1',
+      'calendar_entries_sidejobs' => 'left_1',
       'user_tweets' => 'left_1',
       'additional_links' => 'left_1',
       'user_calendar' => 'left_1',
