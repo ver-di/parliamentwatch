@@ -179,9 +179,10 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['php_3']['table'] = 'views';
   $handler->display->display_options['fields']['php_3']['field'] = 'php';
   $handler->display->display_options['fields']['php_3']['label'] = '';
-  $handler->display->display_options['fields']['php_3']['element_type'] = 'span';
-  $handler->display->display_options['fields']['php_3']['element_class'] = 'question-during-election';
+  $handler->display->display_options['fields']['php_3']['element_type'] = 'div';
+  $handler->display->display_options['fields']['php_3']['element_class'] = 'dialogue-election push-bottom-s';
   $handler->display->display_options['fields']['php_3']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_3']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_3']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_3']['php_output'] = '<?php
 $parliament = _pw_get_current_parliament_term();

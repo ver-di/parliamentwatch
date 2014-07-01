@@ -1,17 +1,10 @@
-.question-during-election{
-  background-color: #ff0;
-  display: block;
-  padding: 5px 10px;
-  margin: 0 0 20px 34px;
-  width: 370px;
-}
-
 /* This file will hold the main styles for your website. */
 @charset "utf-8";
 @import url("profiles.css");
 @import url("jquery.ui.slider.css");
 @import url("mainmenu.css");
 @import url("pw_kandidatencheck.css");
+
 html {
     font-size: 12px;
 }
@@ -111,9 +104,7 @@ h3 {
 h2 a:link,
 h2 a:visited,
 h3 a:link,
-h3 a:visited,
-h4 a:link,
-h4 a:visited {
+h3 a:visited {
     color: #333;
     text-decoration: none;
     font-weight: normal;
@@ -122,6 +113,11 @@ h4 {
     font-size: 12px;
     font-size: 1.2rem;
     margin-bottom: 0;
+}
+h4 a:link,
+h4 a:visited {
+    color: #333;
+    text-decoration: none;
 }
 .subtitle,
 .small,
@@ -348,7 +344,7 @@ a.external:hover {
 }
 .normal-weight,
 .normal-weight > a {
-    font-weight: normal;
+    font-weight: normal !important;
 }
 .label-inline {
     display: inline;
@@ -2244,7 +2240,7 @@ form .webform-component-checkboxes .description {
     padding: 0.6em;
 }
 
-/* /////////////////////////// question and answers ///////////// */
+/* /////////////////////////// dialogues ///////////// */
 
 .field-name-questions-and-answers {
     margin-bottom: 42px;
@@ -2307,6 +2303,14 @@ form .webform-component-checkboxes .description {
     margin-top: 0.5em;
     border-top: 1px dotted #ccc;
     padding-top: 0.5em;
+}
+.dialogue-election {
+  background: #fffd38 url(../images/sprite.png) -40px -3442px no-repeat;
+  display: inline-block;
+  padding: 10px 10px 10px 35px;
+}
+.question .dialogue-election {
+  margin-left: 34px;
 }
 
 
