@@ -358,7 +358,7 @@ function pw_globals_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'print' => array(
         'custom_settings' => FALSE,
@@ -386,6 +386,10 @@ function pw_globals_strongarm() {
           ),
           'colorbox' => array(
             'weight' => '13',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '31',
             'visible' => FALSE,
           ),
         ),
