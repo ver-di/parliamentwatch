@@ -733,7 +733,8 @@ h1#page-title {
 .block-submenutree .node-teaser,
 .node-results li,
 .group-result .panel-flexible,
-.pw-list-item {
+.pw-list-item,
+.view-mode-search_result {
     background-color: transparent;
     border-bottom: 1px dotted #f63;
     padding-bottom: 15px !important;
@@ -832,34 +833,37 @@ h1#page-title {
 
 /* //////////////////////////// search ///////////////////// */
 
-#search-api-page-search-form,
-#search-api-page-search-form-content-search {
-    position: relative;
-    margin-bottom: 12px !important;
-    margin-bottom: 1.2rem !important;
+#search-form {
+  padding: 15px 10px;
+  margin-bottom: 3em !important;
 }
-#search-api-page-search-form .form-text,
-#search-api-page-search-form-content-search .form-text {
-    width: 100%;
-    padding: 6px 10px;   
+#search-form .compact-form-label {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 14px;
+    line-height: 1.4rem;
+    padding-left: 10px;
+}
+#search-form .form-text {
+    width: 60%;
+    padding: 12px 10px;   
     font-size: 14px;  
     font-size: 1.4rem;
-    line-height: 1em;
+    line-height: 1.2em;
     height: auto;
     margin: 0;
 }
-#search-api-page-search-form-content-search .form-text {
-    margin-bottom: 10px;
+#search-form #edit-submit {
+  text-indent: -5000em;
+  background-image: url(../images/sprite.png);
+  background-position: -644px -3909px;
+  height: 41px;
+  height: 4.1rem;
+  width: 41px;
+  width: 4.1rem;
+  
 }
-*+html #search-api-page-search-form .form-text,
-*+html #search-api-page-search-form-content-search .form-text { /* IE7 */
-    width: 92%;
-}
-#search-api-page-search-form .form-submit,
-#search-api-page-search-form-content-search .form-submit {
-    position: absolute;
-    right: 20px; /* LTR */
-    top: 18px;
+.custom-search-button form-submit {
     border: 0;
     background: url(../images/ic_search.png) no-repeat center;
     text-indent: -50000px;    
@@ -869,20 +873,46 @@ h1#page-title {
     width: 18px;
     height: 18px;
 }
-.search-performance {
-    font-size: inherit;
-    color: #999;
+.spelling-suggestions {
+  margin-bottom: 2em;
 }
-ol.search-results li,
-.search-results article {
-    border-bottom: 1px dotted #f63;
-    padding-bottom: 15px !important;
-    margin-bottom: 26px !important;
-    position: relative;
+.ds-search-highlight {
+  background: #ff9;
 }
-.form-item-pw-search-type {
-    float: left;
-    padding-right: 15px;
+.view-mode-search_result h4 {
+  margin-bottom: 1em;
+}
+.view-mode-search_result img {
+    outline: 1px solid #ccc;
+}
+.view-mode-search_result .file img {
+    outline: 0;
+}
+.view-mode-search_result .view-mode-user_dialogue_search_snippet {
+  display: inline;
+}
+.view-mode-search_result .view-mode-user_dialogue_search_snippet strong:after,
+.view-mode-search_result .view-mode-user_dialogue_search_snippet span:after,
+#user_user_search_result_group_grid_6 .field-title:after,
+#user_user_search_result_group_grid_6 .field-fname:after,
+#node_dialogue_search_result_group_grid_6 span:after,
+#node_dialogue_search_result_group_grid_6 .label-inline:after {
+  content: "\00a0";
+}
+.view-mode-search_result .view-mode-user_dialogue_search_snippet .field-lname:after,
+#user_user_search_result_group_grid_6 .field-lname:after {
+  content: ",\00a0";
+}
+#user_user_search_result_group_grid_6 .field-questionsget:after {
+  content: "\00a0 \002F \00a0";
+}
+.user-profile.view-mode-search_result {
+  position: relative;
+}
+.user-profile.view-mode-search_result .link-profile {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
 }
 
 #section-content #custom-search-blocks-form-1 {
@@ -906,7 +936,6 @@ ol.search-results li,
     -moz-box-shadow: none;
     box-shadow: none;
 }
-
 
 /* //////////////////////////// taxonomy /////////////////// */
 
@@ -1635,9 +1664,6 @@ a#text_resize_increase:active {
 
 /* blog */
 
-.node-blogpost.view-mode-search_result .read-more {
-    margin-left: 1ex;
-}
 .view-blog .view-filters {
     float: right;
 }
@@ -2578,6 +2604,7 @@ form .webform-component-checkboxes .description {
 
 .comment,
 #comment-form,
+#search-form,
 #section-content form.compact-form,
 #views-exposed-form-user-constituency-page {
     background: #f4f4f4; 
