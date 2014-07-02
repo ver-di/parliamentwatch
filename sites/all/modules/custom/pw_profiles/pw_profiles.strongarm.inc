@@ -150,6 +150,9 @@ function pw_profiles_strongarm() {
       'search_result' => array(
         'custom_settings' => TRUE,
       ),
+      'user_dialogue_search_snippet' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -200,6 +203,14 @@ function pw_profiles_strongarm() {
             'weight' => '0',
             'visible' => TRUE,
           ),
+          'search_result' => array(
+            'weight' => '33',
+            'visible' => FALSE,
+          ),
+          'user_dialogue_search_snippet' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
         ),
         'mimemail' => array(
           'user_premium' => array(
@@ -208,6 +219,18 @@ function pw_profiles_strongarm() {
           ),
           'user_deputy' => array(
             'weight' => '34',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '32',
+            'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'user_dialogue_search_snippet' => array(
+            'weight' => '3',
             'visible' => FALSE,
           ),
         ),

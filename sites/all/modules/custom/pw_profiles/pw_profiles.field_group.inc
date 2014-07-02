@@ -44,6 +44,43 @@ function pw_profiles_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_grid_6|user|user|search_result';
+  $field_group->group_name = 'group_grid_6';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'search_result';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Grid 6 Wrapper',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_user_answers_give',
+      1 => 'field_user_fname',
+      2 => 'field_user_lname',
+      3 => 'field_user_questions_get',
+      4 => 'field_user_parliament',
+      5 => 'field_user_party',
+      6 => 'field_user_title',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Grid 6 Wrapper',
+      'instance_settings' => array(
+        'classes' => 'grid-6 omega',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_grid_6|user|user|search_result'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_managed_content|user|user|form';
   $field_group->group_name = 'group_managed_content';
   $field_group->entity_type = 'user';
