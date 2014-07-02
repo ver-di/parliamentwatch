@@ -116,7 +116,7 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Body',
-    'weight' => '14',
+    'weight' => '33',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(

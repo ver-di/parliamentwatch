@@ -272,48 +272,65 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'search_result';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '7',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'link' => '1',
-        'wrapper' => 'h3',
+        'wrapper' => 'h4',
         'class' => '',
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
       ),
     ),
     'node_link' => array(
-      'weight' => '10',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Read more',
+        'link text' => 'Read complete blog article',
         'wrapper' => 'span',
         'class' => 'read-more',
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'text-right',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
     'post_date' => array(
-      'weight' => '8',
+      'weight' => '0',
       'label' => 'hidden',
-      'format' => 'ds_post_date_date_and_time',
+      'format' => 'ds_post_date_date_only_short',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
-          'ow-el' => 'p',
-          'ow-cl' => 'light',
+          'ow-el' => 'div',
+          'ow-cl' => 'grid-2 alpha',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'arrow-item',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
         ),
       ),
     ),
     'search_snippet' => array(
-      'weight' => '9',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),
@@ -559,25 +576,35 @@ function pw_blog_ds_layout_settings_info() {
   $ds_layout->view_mode = 'search_result';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'hide_empty_regions' => 0,
-    'hide_sidebars' => 0,
     'regions' => array(
       'ds_content' => array(
-        0 => 'group_blog_searchitem',
-        1 => 'title',
-        2 => 'post_date',
+        0 => 'post_date',
+        1 => 'group_grid_6',
+        2 => 'title',
         3 => 'search_snippet',
         4 => 'node_link',
       ),
     ),
     'fields' => array(
-      'group_blog_searchitem' => 'ds_content',
-      'title' => 'ds_content',
       'post_date' => 'ds_content',
+      'group_grid_6' => 'ds_content',
+      'title' => 'ds_content',
       'search_snippet' => 'ds_content',
       'node_link' => 'ds_content',
     ),
     'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
   );
   $export['node|blogpost|search_result'] = $ds_layout;
 
