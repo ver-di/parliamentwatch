@@ -108,6 +108,35 @@ function pw_blog_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_grid_6|node|blogpost|search_result';
+  $field_group->group_name = 'group_grid_6';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'blogpost';
+  $field_group->mode = 'search_result';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Grid 6 Wrapper',
+    'weight' => '1',
+    'children' => array(
+      0 => 'title',
+      1 => 'node_link',
+      2 => 'search_snippet',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Grid 6 Wrapper',
+      'instance_settings' => array(
+        'classes' => 'grid-6 omega',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_grid_6|node|blogpost|search_result'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_search_blog_body|node|blogpost|search_result';
   $field_group->group_name = 'group_search_blog_body';
   $field_group->entity_type = 'node';
