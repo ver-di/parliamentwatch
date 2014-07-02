@@ -106,6 +106,30 @@ function pw_content_authoring_layout_image_default_styles() {
     'label' => 'pw_landscape_l__normal',
   );
 
+  // Exported image style: pw_landscape_m.
+  $styles['pw_landscape_m'] = array(
+    'name' => 'pw_landscape_m',
+    'label' => 'pw_landscape_m',
+    'effects' => array(
+      1 => array(
+        'label' => 'Skalierung',
+        'help' => 'Eine Skalierung behält das Seitenverhältnis des Originalbildes bei. Sofern nur eine Seitenlänge angegeben ist, wird die andere berechnet.',
+        'effect callback' => 'image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'image_scale_form',
+        'summary theme' => 'image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => '125',
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Exported image style: pw_portrait_l__mobile.
   $styles['pw_portrait_l__mobile'] = array(
     'name' => 'pw_portrait_l__mobile',
