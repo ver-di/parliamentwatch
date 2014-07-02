@@ -128,6 +128,12 @@ function pw_trustees_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '31',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -204,9 +210,19 @@ function pw_trustees_field_default_fields() {
           'label' => 'hidden',
           'module' => 'file_entity',
           'settings' => array(
-            'file_view_mode' => 'default',
+            'file_view_mode' => 'pw_file_portrait_l',
           ),
           'type' => 'file_rendered',
+          'weight' => '0',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => 'pw_portrait_m',
+          ),
+          'type' => 'image',
           'weight' => '0',
         ),
         'teaser' => array(
