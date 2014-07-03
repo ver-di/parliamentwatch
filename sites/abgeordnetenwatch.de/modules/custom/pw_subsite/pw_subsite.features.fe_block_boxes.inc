@@ -11,34 +11,6 @@ function pw_subsite_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Extra Donations';
-  $fe_block_boxes->format = 'managed_content';
-  $fe_block_boxes->machine_name = 'extra_donations';
-  $fe_block_boxes->body = '<p>
-	Neben unserem Spendenformular gibt es weitere Möglichkeiten abgeordnetenwatch.de zu unterstützen.
-</p>
-<p class="rteright">
-	<a class="read-more" href="https://www.abgeordnetenwatch.de/spenden-statt-geschenke">Spenden statt Geschenke</a>
-</p>
-<p class="rteright">
-	<a class="read-more" href="https://www.abgeordnetenwatch.de/testamentsspende">Testamentsspende</a>
-</p>
-';
-
-  $export['extra_donations'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'Online spenden';
-  $fe_block_boxes->format = 'managed_content';
-  $fe_block_boxes->machine_name = 'online_spenden';
-  $fe_block_boxes->body = '<p>
-	Um dieses Projekt zu unterstützen können Sie auch <a href="/node/10508">online spenden</a>.
-</p>
-';
-
-  $export['online_spenden'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Spenden per Post';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'pw_donation_mail';

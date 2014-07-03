@@ -58,7 +58,13 @@ function rules_comment_event_info() {
         'comment' => array('type' => 'comment', 'label' => t('deleted comment')),
       ),
     ),
-  );
+   'comment_approve' => $defaults + array(
+     'label' => t('After approving a new comment'),
+     'variables' => array(
+       'comment' => array('type' => 'comment', 'label' => t('approve comment')),
+     ),
+   ),
+ );
 }
 
 /**
