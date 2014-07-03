@@ -1,0 +1,66 @@
+diff --git a/modules/rules_core.rules.inc b/modules/rules_core.rules.inc
+index d4215fa..33d55a2 100644
+--- a/modules/rules_core.rules.inc
++++ b/modules/rules_core.rules.inc
+@@ -306,7 +306,7 @@ function rules_element_invoke_component_validate(RulesPlugin $element) {
+ }
+ 
+ /**
+- * Implements the features export callback of the RulesPluginFeaturesIntegrationInterace.
++ * Implements the features export callback of the RulesPluginFeaturesIntegrationInterface.
+  */
+ function rules_element_invoke_component_features_export(&$export, &$pipe, $module_name = '', $element) {
+   // Add the used component to the pipe.
+diff --git a/rules.features.inc b/rules.features.inc
+index d34c8d6..72d03f7 100644
+--- a/rules.features.inc
++++ b/rules.features.inc
+@@ -34,7 +34,7 @@ class RulesFeaturesController extends EntityDefaultFeaturesController {
+       // Add in plugin / element specific additions.
+       $iterator = new RecursiveIteratorIterator($rules_config, RecursiveIteratorIterator::SELF_FIRST);
+       foreach ($iterator as $element) {
+-        if ($element->facesAs('RulesPluginFeaturesIntegrationInterace')) {
++        if ($element->facesAs('RulesPluginFeaturesIntegrationInterface')) {
+           // Directly use __call() so we cann pass $export by reference.
+           $element->__call('features_export', array(&$export, &$pipe, $module_name));
+         }
+@@ -49,7 +49,7 @@ class RulesFeaturesController extends EntityDefaultFeaturesController {
+  * Actions / conditions may override this with their own implementation, which
+  * actually does something.
+  *
+- * @see RulesPluginFeaturesIntegrationInterace
++ * @see RulesPluginFeaturesIntegrationInterface
+  */
+ function rules_features_abstract_default_features_export(&$export, &$pipe, $module_name = '', $element) {
+ 
+@@ -63,7 +63,7 @@ function rules_features_abstract_default_features_export(&$export, &$pipe, $modu
+  * @see hook_rules_plugin_info()
+  * @see hook_rules_action_info()
+  */
+-interface RulesPluginFeaturesIntegrationInterace {
++interface RulesPluginFeaturesIntegrationInterface {
+ 
+   /**
+    * Allows customizing the features export for a given rule element.
+diff --git a/rules.module b/rules.module
+index 16e2ee3..e107ebc 100644
+--- a/rules.module
++++ b/rules.module
+@@ -648,7 +648,7 @@ function rules_rules_plugin_info() {
+         'RulesPluginImplInterface' => array(
+           'class' => 'RulesAbstractPluginDefaults',
+         ),
+-        'RulesPluginFeaturesIntegrationInterace' => array(
++        'RulesPluginFeaturesIntegrationInterface' => array(
+           'methods' => array(
+             'features_export' => 'rules_features_abstract_default_features_export',
+           ),
+@@ -665,7 +665,7 @@ function rules_rules_plugin_info() {
+         'RulesPluginImplInterface' => array(
+           'class' => 'RulesAbstractPluginDefaults',
+         ),
+-        'RulesPluginFeaturesIntegrationInterace' => array(
++        'RulesPluginFeaturesIntegrationInterface' => array(
+           'methods' => array(
+             'features_export' => 'rules_features_abstract_default_features_export',
+           ),
