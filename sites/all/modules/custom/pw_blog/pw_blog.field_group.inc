@@ -82,13 +82,8 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'PW list item',
-    'weight' => '0',
-    'children' => array(
-      0 => 'title',
-      1 => 'node_link',
-      2 => 'post_date',
-      3 => 'search_snippet',
-    ),
+    'weight' => '11',
+    'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(
       'label' => 'PW list item',
@@ -145,7 +140,7 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Body',
-    'weight' => '33',
+    'weight' => '31',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(

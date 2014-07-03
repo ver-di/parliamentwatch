@@ -161,7 +161,7 @@ function pw_blog_strongarm() {
             'visible' => FALSE,
           ),
           'search_result' => array(
-            'weight' => '31',
+            'weight' => '29',
             'visible' => FALSE,
           ),
         ),
