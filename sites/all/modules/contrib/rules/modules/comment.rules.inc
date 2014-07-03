@@ -8,13 +8,6 @@
  */
 
 /**
-  * Implements hook_rules_file_info() on behalf of the comment module.
-  */
-function rules_comment_file_info() {
-  return array('modules/comment.eval');
-}
-
-/**
  * Implementation of hook_rules_event_info().
  */
 function rules_comment_event_info() {
@@ -22,6 +15,7 @@ function rules_comment_event_info() {
     'group' => t('comment'),
     'module' => 'comment',
     'access callback' => 'rules_comment_integration_access',
+    'class' => 'RulesCommentEventHandler',
   );
   return array(
     'comment_insert' => $defaults + array(
@@ -57,58 +51,7 @@ function rules_comment_event_info() {
         'comment' => array('type' => 'comment', 'label' => t('deleted comment')),
       ),
     ),
-    'comment_approve' => $defaults + array(
-      'label' => t('After approving a new comment'),
-      'variables' => array(
-        'comment' => array('type' => 'comment', 'label' => t('approve comment')),
-      ),
-    ),
   );
-}
-
-/**
- * Implements hook_rules_condition_info() on behalf of the comment module.
- */
-function rules_comment_condition_info() {
-  $defaults = array(
-    'parameter' => array(
-      'node' => array('type' => 'comment', 'label' => t('Comment')),
-    ),
-    'group' => t('Comment'),
-    'access callback' => 'rules_comment_integration_access',
-  );
-  $items['comment_is_published'] = $defaults + array(
-    'label' => t('Comment is published'),
-    'base' => 'rules_condition_comment_is_published',
-  );
-  return $items;
-}
-
-/**
- * Implements hook_rules_action_info() on behalf of the comment module.
- */
-function rules_comment_action_info() {
-  $defaults = array(
-    'parameter' => array(
-      'node' => array('type' => 'comment', 'label' => t('Comment'), 'save' => TRUE),
-    ),
-    'group' => t('Comment'),
-    'access callback' => 'rules_comment_admin_access',
-  );
-  // Add support for hand-picked core actions.
-  $core_actions = comment_action_info();
-  $actions = array(
-    'comment_publish_action',
-    'comment_unpublish_action',
-  );
-  foreach ($actions as $base) {
-    $action_name = str_replace('_action', '', $base);
-    $items[$action_name] = $defaults + array(
-      'label' => $core_actions[$base]['label'],
-      'base' => $base,
-    );
-  }
-  return $items;
 }
 
 /**
@@ -121,10 +64,18 @@ function rules_comment_integration_access($type, $name) {
 }
 
 /**
- * Comment integration admin access callback.
+ * Event handler support comment bundle event settings.
  */
-function rules_comment_admin_access() {
-  return user_access('administer comments');
+class RulesCommentEventHandler extends RulesEventHandlerEntityBundle {
+
+  /**
+   * Returns the label to use for the bundle property.
+   *
+   * @return string
+   */
+  protected function getBundlePropertyLabel() {
+    return t('type');
+  }
 }
 
 /**
