@@ -287,9 +287,33 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
   $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'light';
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 1;
+  $handler->display->display_options['fields']['php_1']['php_setup'] = 'Function custom_translate($str){
+$dict = array(
+"seconds"=>"Sekunden",
+"minutes"=>"Minuten",
+"hours"=>"Stunden",
+"days"=>"Tagen",
+"weeks"=>"Wochen",
+"months"=>"Monaten",
+"years"=>"Jahren",
+"second"=>"Sekunde",
+"minute"=>"Minute",
+"hour"=>"Stunde",
+"day"=>"Tag",
+"week"=>"Woche",
+"month"=>"Monat",
+"year"=>"Jahr"
+);
+  foreach ($dict AS $key => $value)
+  {
+    $str = str_replace($key, $value, $str);
+  }
+
+  return $str;
+}';
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-print t(\'@interval ago\', array(\'@interval\' => format_interval(time()-date($row->submitted_1),1,"en-EN")));
+print "Vor ".custom_translate(format_interval(time()-date($row->submitted_1),1,"en-EN"));
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
@@ -304,8 +328,8 @@ print t(\'@interval ago\', array(\'@interval\' => format_interval(time()-date($r
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_value'] = '$o = $row->civicrm_amount." € ";
-$o .= $row->civicrm_contribution_type==="Fördermitglied" ? t("recurring donation from")." " : t("donation from")." ";
-$o .= $row->option_not_anonymous==="yes" ? $row->personal_firstname." ".$row->personal_lastname : t("anonymous");
+$o .= $row->civicrm_contribution_type==="Fördermitglied" ? t("Förderbeitrag von")." " : t("Spende von")." ";
+$o .= $row->option_not_anonymous==="yes" ? $row->personal_firstname." ".$row->personal_lastname : "Anonym";
 return $o;';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
