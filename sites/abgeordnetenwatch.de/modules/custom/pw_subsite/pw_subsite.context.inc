@@ -94,12 +94,6 @@ function pw_subsite_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '1',
         ),
-        'views-pw_donation_state-block' => array(
-          'module' => 'views',
-          'delta' => 'pw_donation_state-block',
-          'region' => 'sidebar_second',
-          'weight' => '5',
-        ),
         'block-29' => array(
           'module' => 'block',
           'delta' => '29',
@@ -111,12 +105,6 @@ function pw_subsite_context_default_contexts() {
           'delta' => '14',
           'region' => 'sidebar_second',
           'weight' => '4',
-        ),
-        'views-pw_donations_recent-recent' => array(
-          'module' => 'views',
-          'delta' => 'pw_donations_recent-recent',
-          'region' => 'sidebar_second',
-          'weight' => '2',
         ),
       ),
     ),

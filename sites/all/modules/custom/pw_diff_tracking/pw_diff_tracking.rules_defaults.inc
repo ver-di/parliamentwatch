@@ -12,8 +12,9 @@ function pw_diff_tracking_default_rules_configuration() {
   $items['rules_user_changed'] = entity_import('rules_config', '{ "rules_user_changed" : {
       "LABEL" : "Account updated",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
-      "ON" : [ "user_update" ],
+      "ON" : { "user_update" : [] },
       "IF" : [
         { "user_has_role" : {
             "account" : [ "site:current-user" ],

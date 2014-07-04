@@ -22,6 +22,7 @@ function rules_comment_event_info() {
     'group' => t('comment'),
     'module' => 'comment',
     'access callback' => 'rules_comment_integration_access',
+    'class' => 'RulesCommentEventHandler',
   );
   return array(
     'comment_insert' => $defaults + array(
@@ -57,13 +58,13 @@ function rules_comment_event_info() {
         'comment' => array('type' => 'comment', 'label' => t('deleted comment')),
       ),
     ),
-    'comment_approve' => $defaults + array(
-      'label' => t('After approving a new comment'),
-      'variables' => array(
-        'comment' => array('type' => 'comment', 'label' => t('approve comment')),
-      ),
-    ),
-  );
+   'comment_approve' => $defaults + array(
+     'label' => t('After approving a new comment'),
+     'variables' => array(
+       'comment' => array('type' => 'comment', 'label' => t('approve comment')),
+     ),
+   ),
+ );
 }
 
 /**
@@ -117,6 +118,21 @@ function rules_comment_action_info() {
 function rules_comment_integration_access($type, $name) {
   if ($type == 'event' || $type == 'condition') {
     return entity_access('view', 'comment');
+  }
+}
+
+/**
+ * Event handler support comment bundle event settings.
+ */
+class RulesCommentEventHandler extends RulesEventHandlerEntityBundle {
+
+  /**
+   * Returns the label to use for the bundle property.
+   *
+   * @return string
+   */
+  protected function getBundlePropertyLabel() {
+    return t('type');
   }
 }
 

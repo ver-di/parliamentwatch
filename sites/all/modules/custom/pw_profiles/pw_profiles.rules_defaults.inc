@@ -13,8 +13,9 @@ function pw_profiles_default_rules_configuration() {
       "LABEL" : "Submitting Question",
       "PLUGIN" : "reaction rule",
       "ACTIVE" : false,
+      "OWNER" : "rules",
       "REQUIRES" : [ "webform_rules", "php", "rules" ],
-      "ON" : [ "webform_rules_submit" ],
+      "ON" : { "webform_rules_submit" : [] },
       "IF" : [
         { "webform_has_id" : {
             "form_id" : "webform-client-form-3",
