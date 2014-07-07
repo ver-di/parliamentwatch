@@ -1,17 +1,10 @@
-.question-during-election{
-  background-color: #ff0;
-  display: block;
-  padding: 5px 10px;
-  margin: 0 0 20px 34px;
-  width: 370px;
-}
-
 /* This file will hold the main styles for your website. */
 @charset "utf-8";
 @import url("profiles.css");
 @import url("jquery.ui.slider.css");
 @import url("mainmenu.css");
 @import url("pw_kandidatencheck.css");
+
 html {
     font-size: 12px;
 }
@@ -111,9 +104,7 @@ h3 {
 h2 a:link,
 h2 a:visited,
 h3 a:link,
-h3 a:visited,
-h4 a:link,
-h4 a:visited {
+h3 a:visited {
     color: #333;
     text-decoration: none;
     font-weight: normal;
@@ -122,6 +113,11 @@ h4 {
     font-size: 12px;
     font-size: 1.2rem;
     margin-bottom: 0;
+}
+h4 a:link,
+h4 a:visited {
+    color: #333;
+    text-decoration: none;
 }
 .subtitle,
 .small,
@@ -348,7 +344,7 @@ a.external:hover {
 }
 .normal-weight,
 .normal-weight > a {
-    font-weight: normal;
+    font-weight: normal !important;
 }
 .label-inline {
     display: inline;
@@ -737,7 +733,8 @@ h1#page-title {
 .block-submenutree .node-teaser,
 .node-results li,
 .group-result .panel-flexible,
-.pw-list-item {
+.pw-list-item,
+.view-mode-search_result {
     background-color: transparent;
     border-bottom: 1px dotted #f63;
     padding-bottom: 15px !important;
@@ -836,34 +833,37 @@ h1#page-title {
 
 /* //////////////////////////// search ///////////////////// */
 
-#search-api-page-search-form,
-#search-api-page-search-form-content-search {
-    position: relative;
-    margin-bottom: 12px !important;
-    margin-bottom: 1.2rem !important;
+#search-form {
+  padding: 15px 10px;
+  margin-bottom: 3em !important;
 }
-#search-api-page-search-form .form-text,
-#search-api-page-search-form-content-search .form-text {
-    width: 100%;
-    padding: 6px 10px;   
+#search-form .compact-form-label {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 14px;
+    line-height: 1.4rem;
+    padding-left: 10px;
+}
+#search-form .form-text {
+    width: 60%;
+    padding: 12px 10px;   
     font-size: 14px;  
     font-size: 1.4rem;
-    line-height: 1em;
+    line-height: 1.2em;
     height: auto;
     margin: 0;
 }
-#search-api-page-search-form-content-search .form-text {
-    margin-bottom: 10px;
+#search-form #edit-submit {
+  text-indent: -5000em;
+  background-image: url(../images/sprite.png);
+  background-position: -644px -3909px;
+  height: 41px;
+  height: 4.1rem;
+  width: 41px;
+  width: 4.1rem;
+  
 }
-*+html #search-api-page-search-form .form-text,
-*+html #search-api-page-search-form-content-search .form-text { /* IE7 */
-    width: 92%;
-}
-#search-api-page-search-form .form-submit,
-#search-api-page-search-form-content-search .form-submit {
-    position: absolute;
-    right: 20px; /* LTR */
-    top: 18px;
+.custom-search-button form-submit {
     border: 0;
     background: url(../images/ic_search.png) no-repeat center;
     text-indent: -50000px;    
@@ -873,20 +873,46 @@ h1#page-title {
     width: 18px;
     height: 18px;
 }
-.search-performance {
-    font-size: inherit;
-    color: #999;
+.spelling-suggestions {
+  margin-bottom: 2em;
 }
-ol.search-results li,
-.search-results article {
-    border-bottom: 1px dotted #f63;
-    padding-bottom: 15px !important;
-    margin-bottom: 26px !important;
-    position: relative;
+.ds-search-highlight {
+  background: #ff9;
 }
-.form-item-pw-search-type {
-    float: left;
-    padding-right: 15px;
+.view-mode-search_result h4 {
+  margin-bottom: 1em;
+}
+.view-mode-search_result img {
+    outline: 1px solid #ccc;
+}
+.view-mode-search_result .file img {
+    outline: 0;
+}
+.view-mode-search_result .view-mode-user_dialogue_search_snippet {
+  display: inline;
+}
+.view-mode-search_result .view-mode-user_dialogue_search_snippet strong:after,
+.view-mode-search_result .view-mode-user_dialogue_search_snippet span:after,
+#user_user_search_result_group_grid_6 .field-title:after,
+#user_user_search_result_group_grid_6 .field-fname:after,
+#node_dialogue_search_result_group_grid_6 span:after,
+#node_dialogue_search_result_group_grid_6 .label-inline:after {
+  content: "\00a0";
+}
+.view-mode-search_result .view-mode-user_dialogue_search_snippet .field-lname:after,
+#user_user_search_result_group_grid_6 .field-lname:after {
+  content: ",\00a0";
+}
+#user_user_search_result_group_grid_6 .field-questionsget:after {
+  content: "\00a0 \002F \00a0";
+}
+.user-profile.view-mode-search_result {
+  position: relative;
+}
+.user-profile.view-mode-search_result .link-profile {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
 }
 
 #section-content #custom-search-blocks-form-1 {
@@ -910,7 +936,6 @@ ol.search-results li,
     -moz-box-shadow: none;
     box-shadow: none;
 }
-
 
 /* //////////////////////////// taxonomy /////////////////// */
 
@@ -1639,9 +1664,6 @@ a#text_resize_increase:active {
 
 /* blog */
 
-.node-blogpost.view-mode-search_result .read-more {
-    margin-left: 1ex;
-}
 .view-blog .view-filters {
     float: right;
 }
@@ -1886,6 +1908,7 @@ html.js fieldset.collapsed {
     width: 199px;
 }
 .pw-progress-wrapper,
+.pw-progress-wrapper-l,
 .pw-petition-progress-wrapper {
     margin-bottom: 2px; 
     border: 1px solid #d3d3d3;
@@ -1893,6 +1916,7 @@ html.js fieldset.collapsed {
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
     box-shadow: inset 0px 0px 2px 2px #ececec;
     text-indent: -5000em;
+    background: #fff;
 }
 .pw-progress {
     background: #78b70c; /* Old browsers */
@@ -1910,11 +1934,14 @@ html.js fieldset.collapsed {
 /* petitions */
 
 .pw-petition-progress-wrapper,
-.pw-petition-progress {
+.pw-petition-progress,
+.pw-progress-wrapper-l,
+.pw-progress-l {
     height: 32px;
     width: 314px;
 }
-.pw-petition-progress {
+.pw-petition-progress,
+.pw-progress-l {
     background: #ff6633;
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNjYzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmVlMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
     background: -moz-linear-gradient(left,  #ff6633 0%, #ffee33 314px);
@@ -2244,7 +2271,7 @@ form .webform-component-checkboxes .description {
     padding: 0.6em;
 }
 
-/* /////////////////////////// question and answers ///////////// */
+/* /////////////////////////// dialogues ///////////// */
 
 .field-name-questions-and-answers {
     margin-bottom: 42px;
@@ -2307,6 +2334,14 @@ form .webform-component-checkboxes .description {
     margin-top: 0.5em;
     border-top: 1px dotted #ccc;
     padding-top: 0.5em;
+}
+.dialogue-election {
+  background: #fffd38 url(../images/sprite.png) -40px -3442px no-repeat;
+  display: inline-block;
+  padding: 10px 10px 10px 35px;
+}
+.question .dialogue-election {
+  margin-left: 34px;
 }
 
 
@@ -2574,6 +2609,7 @@ form .webform-component-checkboxes .description {
 
 .comment,
 #comment-form,
+#search-form,
 #section-content form.compact-form,
 #views-exposed-form-user-constituency-page {
     background: #f4f4f4; 

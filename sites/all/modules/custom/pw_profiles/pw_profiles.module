@@ -184,9 +184,7 @@ function pw_profiles_user_presave(&$edit, $account, $category) {
  */
 
 function pw_profiles_views_query_alter(&$view, &$query) {
-
-  switch($view->name) {
-    case 'profile_list_rev':
+  if($view->name == 'profile_list_rev' || $view->name == 'pw_user_profile_fields_rev' && $view->current_display == 'block_1') {
      // add the group by on the user id field to prevent duplicates caused by user revisions
      // $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
      // $query->add_groupby('users_uid');
@@ -199,7 +197,6 @@ function pw_profiles_views_query_alter(&$view, &$query) {
      $join->left_field = 'vid';
      $join->type = 'INNER';
      $query->add_relationship('user_archive_cache', $join, 'user_revision');
-     break;
   }
 }
 

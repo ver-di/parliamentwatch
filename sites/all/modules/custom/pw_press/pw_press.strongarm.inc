@@ -148,7 +148,7 @@ function pw_press_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'colorbox' => array(
         'custom_settings' => FALSE,
@@ -162,6 +162,9 @@ function pw_press_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -172,7 +175,18 @@ function pw_press_strongarm() {
           'weight' => '7',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'webform' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'search_result' => array(
+            'weight' => '36',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__press_article'] = $strongarm;
@@ -199,7 +213,7 @@ function pw_press_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'print' => array(
         'custom_settings' => FALSE,
@@ -208,6 +222,9 @@ function pw_press_strongarm() {
         'custom_settings' => FALSE,
       ),
       'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
         'custom_settings' => FALSE,
       ),
     ),
@@ -231,6 +248,10 @@ function pw_press_strongarm() {
           ),
           'full' => array(
             'weight' => '19',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '32',
             'visible' => FALSE,
           ),
         ),

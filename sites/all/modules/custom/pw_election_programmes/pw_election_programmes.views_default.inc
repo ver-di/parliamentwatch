@@ -29,6 +29,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
@@ -39,7 +40,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: Inhalt: PDF download (field_pdf_download:fid) */
+  /* Beziehung: Inhalt: PDF download (field_pdf_download:fid) */
   $handler->display->display_options['relationships']['field_pdf_download_fid']['id'] = 'field_pdf_download_fid';
   $handler->display->display_options['relationships']['field_pdf_download_fid']['table'] = 'field_data_field_pdf_download';
   $handler->display->display_options['relationships']['field_pdf_download_fid']['field'] = 'field_pdf_download_fid';
@@ -66,7 +67,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -102,7 +103,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -139,14 +140,14 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['uri']['element_wrapper_class'] = 'link-download';
   $handler->display->display_options['fields']['uri']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
-  /* Feld: Inhalt: Edit link */
+  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  /* Feld: Inhalt: Delete link */
+  /* Feld: Inhalt: Link löschen */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
@@ -169,15 +170,15 @@ function pw_election_programmes_views_default_views() {
     'field_election_programme_open' => 0,
     'field_pdf_download' => 0,
   );
-  /* Sort criterion: Gewichtung: Gewichtung */
+  /* Sortierkriterien: Gewichtung: Gewichtung */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  /* Sort criterion: Inhalt: Titel */
+  /* Sortierkriterien: Inhalt: Titel */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Contextual filter: Inhalt: Has taxonomy term ID (translated) */
+  /* Kontextfilter: Inhalt: Has taxonomy term ID (translated) */
   $handler->display->display_options['arguments']['tid_i18n']['id'] = 'tid_i18n';
   $handler->display->display_options['arguments']['tid_i18n']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid_i18n']['field'] = 'tid_i18n';
@@ -196,14 +197,14 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['arguments']['tid_i18n']['validate_options']['type'] = 'i18n_convert';
   $handler->display->display_options['arguments']['tid_i18n']['validate_options']['transform'] = TRUE;
   $handler->display->display_options['arguments']['tid_i18n']['validate']['fail'] = 'access denied';
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';

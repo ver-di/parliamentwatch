@@ -129,14 +129,24 @@ geht es los!<br/><br/></p>';
   $handler->display->display_options['fields']['text_3']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['text_3']['xpath_selector'] = 'machine_name';
   $handler->display->display_options['fields']['text_3']['multiple'] = 0;
+  /* Feld: amount_machine: Text */
+  $handler->display->display_options['fields']['text_4']['id'] = 'text_4';
+  $handler->display->display_options['fields']['text_4']['table'] = 'xml';
+  $handler->display->display_options['fields']['text_4']['field'] = 'text';
+  $handler->display->display_options['fields']['text_4']['label'] = '';
+  $handler->display->display_options['fields']['text_4']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['text_4']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['text_4']['xpath_selector'] = 'amount_machine';
+  $handler->display->display_options['fields']['text_4']['multiple'] = 0;
   /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'php',
-    1 => 'text_1',
-    2 => 'text_2',
+    1 => 'php_1',
+    2 => 'text_1',
+    3 => 'text_2',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'float-left';
@@ -152,19 +162,34 @@ geht es los!<br/><br/></p>';
   $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-progress-wrapper"><div class="pw-progress" style="width: <?php 
 $required = 10000;
 $donations = str_replace(array(\'.\', \',\'), \'\' , $row->text_1);
-$progress = $donations/$required;
+$progress = ($row->text_4/$required)*100;
 if($progress > 100){
-    $progress = 100;
+    $progress = $row->text_2;
 }
 print $progress; ?>%;"><?php print t(\'Progress\') ?>: <?php print $progress; ?>%</div></div>
 ';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: Global: PHP */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_type'] = 'div';
+  $handler->display->display_options['fields']['php_1']['element_class'] = 'light';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Feld: amount: Text */
   $handler->display->display_options['fields']['text_1']['id'] = 'text_1';
   $handler->display->display_options['fields']['text_1']['table'] = 'xml';
   $handler->display->display_options['fields']['text_1']['field'] = 'text';
   $handler->display->display_options['fields']['text_1']['label'] = 'Fördersumme';
+  $handler->display->display_options['fields']['text_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['text_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['text_1']['element_wrapper_class'] = 'light';
   $handler->display->display_options['fields']['text_1']['element_default_classes'] = FALSE;
@@ -262,9 +287,33 @@ print $progress; ?>%;"><?php print t(\'Progress\') ?>: <?php print $progress; ?>
   $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'light';
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 1;
+  $handler->display->display_options['fields']['php_1']['php_setup'] = 'Function custom_translate($str){
+$dict = array(
+"seconds"=>"Sekunden",
+"minutes"=>"Minuten",
+"hours"=>"Stunden",
+"days"=>"Tagen",
+"weeks"=>"Wochen",
+"months"=>"Monaten",
+"years"=>"Jahren",
+"second"=>"Sekunde",
+"minute"=>"Minute",
+"hour"=>"Stunde",
+"day"=>"Tag",
+"week"=>"Woche",
+"month"=>"Monat",
+"year"=>"Jahr"
+);
+  foreach ($dict AS $key => $value)
+  {
+    $str = str_replace($key, $value, $str);
+  }
+
+  return $str;
+}';
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-print t(\'@interval ago\', array(\'@interval\' => format_interval(time()-date($row->submitted_1),1,"en-EN")));
+print "Vor ".custom_translate(format_interval(time()-date($row->submitted_1),1,"en-EN"));
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
@@ -279,8 +328,8 @@ print t(\'@interval ago\', array(\'@interval\' => format_interval(time()-date($r
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_value'] = '$o = $row->civicrm_amount." € ";
-$o .= $row->civicrm_contribution_type==="Fördermitglied" ? t("recurring donation from")." " : t("donation from")." ";
-$o .= $row->option_not_anonymous==="yes" ? $row->personal_firstname." ".$row->personal_lastname : t("anonymous");
+$o .= $row->civicrm_contribution_type==="Fördermitglied" ? t("Förderbeitrag von")." " : t("Spende von")." ";
+$o .= $row->option_not_anonymous==="yes" ? $row->personal_firstname." ".$row->personal_lastname : "Anonym";
 return $o;';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';

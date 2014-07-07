@@ -52,10 +52,15 @@ function pw_election_programmes_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'text',
           'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '1',
+          'type' => 'hidden',
+          'weight' => '32',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '32',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -132,7 +137,14 @@ function pw_election_programmes_field_default_fields() {
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
-          'weight' => '2',
+          'weight' => '3',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'module' => 'link',
+          'settings' => array(),
+          'type' => 'link_default',
+          'weight' => '1',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -217,6 +229,15 @@ function pw_election_programmes_field_default_fields() {
           ),
           'type' => 'media',
           'weight' => '4',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'module' => 'mediafield',
+          'settings' => array(
+            'file_view_mode' => 'default',
+          ),
+          'type' => 'media',
+          'weight' => '2',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -304,12 +325,15 @@ function pw_election_programmes_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'shs',
-          'settings' => array(
-            'linked' => FALSE,
-          ),
-          'type' => 'shs_default',
-          'weight' => '5',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '34',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '34',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -373,12 +397,15 @@ function pw_election_programmes_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'shs',
-          'settings' => array(
-            'linked' => FALSE,
-          ),
-          'type' => 'shs_default',
-          'weight' => '3',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '33',
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '33',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -439,11 +466,22 @@ function pw_election_programmes_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'file_entity',
+          'module' => 'image',
           'settings' => array(
-            'file_view_mode' => 'pw_file_landscape_l',
+            'image_link' => '',
+            'image_style' => 'pw_landscape_l__normal',
           ),
-          'type' => 'file_rendered',
+          'type' => 'image',
+          'weight' => '0',
+        ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'pw_landscape_m',
+          ),
+          'type' => 'image',
           'weight' => '0',
         ),
       ),

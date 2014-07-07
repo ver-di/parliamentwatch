@@ -78,10 +78,10 @@ function pw_dialogues_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_index' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'print' => array(
         'custom_settings' => TRUE,
@@ -127,6 +127,10 @@ function pw_dialogues_strongarm() {
           ),
           'colorbox' => array(
             'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '42',
             'visible' => FALSE,
           ),
         ),

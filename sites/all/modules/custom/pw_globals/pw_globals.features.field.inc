@@ -194,6 +194,12 @@ function pw_globals_field_default_fields() {
           'type' => 'text_default',
           'weight' => '0',
         ),
+        'search_result' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '30',
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',

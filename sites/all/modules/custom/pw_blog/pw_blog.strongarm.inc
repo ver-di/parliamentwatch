@@ -160,6 +160,10 @@ function pw_blog_strongarm() {
             'weight' => '10',
             'visible' => FALSE,
           ),
+          'search_result' => array(
+            'weight' => '29',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),

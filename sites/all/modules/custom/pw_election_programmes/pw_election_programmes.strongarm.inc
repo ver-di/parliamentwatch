@@ -113,7 +113,7 @@ function pw_election_programmes_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'colorbox' => array(
         'custom_settings' => FALSE,

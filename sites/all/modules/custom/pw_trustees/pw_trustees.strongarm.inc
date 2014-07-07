@@ -120,7 +120,7 @@ function pw_trustees_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'colorbox' => array(
         'custom_settings' => FALSE,
@@ -134,13 +134,20 @@ function pw_trustees_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
       'display' => array(
         'webform' => array(
           'default' => array(
-            'weight' => '2',
+            'weight' => '30',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '32',
             'visible' => FALSE,
           ),
         ),
