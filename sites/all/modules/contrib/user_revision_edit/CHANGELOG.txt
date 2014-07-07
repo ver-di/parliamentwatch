@@ -1,4 +1,4 @@
-Journal 7.x-1.x-dev, 2014-07-01
+Journal 7.x-1.x-dev, 2014-07-07
 -------------------------------
 Current Development Tree for 7.x branch
 
