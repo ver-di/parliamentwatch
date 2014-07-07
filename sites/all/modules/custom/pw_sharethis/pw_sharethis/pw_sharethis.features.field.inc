@@ -157,6 +157,12 @@ function pw_sharethis_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -226,6 +232,12 @@ function pw_sharethis_field_default_fields() {
           'weight' => 10,
         ),
         'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'search_result' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -310,6 +322,12 @@ function pw_sharethis_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '0',
+        ),
+        'user_dialogue_search_snippet' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'user_premium' => array(
           'label' => 'above',

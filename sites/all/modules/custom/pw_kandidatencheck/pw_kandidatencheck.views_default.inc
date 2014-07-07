@@ -31,8 +31,11 @@ function pw_kandidatencheck_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'slideshow';
@@ -107,17 +110,17 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
 }
 ?>
 ';
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['id'] = 'field_pw_kc_thesis_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['table'] = 'field_data_field_pw_kc_thesis_reference';
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['field'] = 'field_pw_kc_thesis_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['required'] = TRUE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_pw_kc_user_reference_target_id']['id'] = 'field_pw_kc_user_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_user_reference_target_id']['table'] = 'field_data_field_pw_kc_user_reference';
   $handler->display->display_options['relationships']['field_pw_kc_user_reference_target_id']['field'] = 'field_pw_kc_user_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_user_reference_target_id']['required'] = TRUE;
-  /* Relationship: Inhalt: Vote (field_pw_kc_vote_reference) */
+  /* Beziehung: Inhalt: Vote (field_pw_kc_vote_reference) */
   $handler->display->display_options['relationships']['field_pw_kc_vote_reference_tid']['id'] = 'field_pw_kc_vote_reference_tid';
   $handler->display->display_options['relationships']['field_pw_kc_vote_reference_tid']['table'] = 'field_data_field_pw_kc_vote_reference';
   $handler->display->display_options['relationships']['field_pw_kc_vote_reference_tid']['field'] = 'field_pw_kc_vote_reference_tid';
@@ -150,7 +153,7 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler->display->display_options['fields']['body_1']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['body_1']['element_wrapper_class'] = 'push-bottom-xs';
   $handler->display->display_options['fields']['body_1']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -239,19 +242,19 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
     'field_user_picture' => 0,
     'body' => 0,
   );
-  /* Sort criterion: Gewichtung: Gewichtung */
+  /* Sortierkriterien: Gewichtung: Gewichtung */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
   $handler->display->display_options['sorts']['weight']['relationship'] = 'field_pw_kc_thesis_reference_target_id';
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -263,7 +266,7 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler = $view->new_display('panel_pane', 'Slideshow', 'profile_slideshow');
   $handler->display->display_options['display_description'] = 'Slideshow for profiles';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -283,7 +286,7 @@ return $user->uid; ';
   $handler->display->display_options['arguments']['uid']['validate_options']['roles'] = array(
     181527986 => '181527986',
   );
-  /* Contextual filter: Feld: Parliament (field_parliament) (translated) */
+  /* Kontextfilter: Feld: Parliament (field_parliament) (translated) */
   $handler->display->display_options['arguments']['field_parliament_tid_i18n']['id'] = 'field_parliament_tid_i18n';
   $handler->display->display_options['arguments']['field_parliament_tid_i18n']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['arguments']['field_parliament_tid_i18n']['field'] = 'field_parliament_tid_i18n';

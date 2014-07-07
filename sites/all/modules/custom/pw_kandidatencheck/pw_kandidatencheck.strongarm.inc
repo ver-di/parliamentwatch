@@ -14,14 +14,14 @@ function pw_kandidatencheck_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_pw_kc_position';
-  $strongarm->value = 'edit-workflow';
+  $strongarm->value = 'edit-search-restrict';
   $export['additional_settings__active_tab_pw_kc_position'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_pw_kc_thesis';
-  $strongarm->value = 'edit-workflow';
+  $strongarm->value = 'edit-search-restrict';
   $export['additional_settings__active_tab_pw_kc_thesis'] = $strongarm;
 
   $strongarm = new stdClass();
