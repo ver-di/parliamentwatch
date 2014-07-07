@@ -6,6 +6,7 @@ In progress:
 - #2287545 User Revision Edit module peer review
 
 Fixed:
+- #2298841 PDOException on field_attach_update() using emtpy integer values
 - #2295699 Saving revision also modifies latest version of FAPI fields
 - #2290861 Check if temporary dir is properly configured
 - #2287535 Object of class stdClass could not be converted to int
