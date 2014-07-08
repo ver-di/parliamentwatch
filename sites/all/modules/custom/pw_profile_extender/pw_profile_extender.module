@@ -5,13 +5,14 @@
  */
 function pw_profile_extender_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_profile_form') {
-    $form['calendar admin'] = array(
+    $form['calendar_admin'] = array(
       '#title' => 'My Calendar',
       '#type' => 'markup',
       '#markup' => views_embed_view('calendar', 'calendar_admin_block'),
       '#weight' => 8,
     );
-    unset($form["locale"]);
+  } elseif ($form_id == "user_revision_edit_form") {
+    unset($form["calendar_admin"]);
   }
 }
 
@@ -53,5 +54,5 @@ function pw_profile_extender_theme($existing, $type, $theme, $path) {
 function pw_profile_extender_menu_alter(&$items) {
   $items['profile/%user/archive/%'] = $items['user/%user/revisions/%/view']; // arrays are copied here
   $items['profile/%user/archive/%']['access callback'] = TRUE; // grant anonymous access
-  unset($items['profile/%user/archive/%']['access arguments']); // remove conflicting access 
+  unset($items['profile/%user/archive/%']['access arguments']); // remove conflicting access
 }
