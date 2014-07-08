@@ -167,7 +167,7 @@ div.description,
     text-shadow: 0 0 0;
     vertical-align: top;
     margin-top: 1px;
-    
+
     -webkit-box-shadow: 0 0 2px 2px #DEDEDE;
     -moz-box-shadow: 0 0 2px 2px #DEDEDE;
     box-shadow: 0 0 2px 2px #DEDEDE;
@@ -216,4 +216,13 @@ div.description,
 
 .view-politicians .form-text {
     width: 150px;
+}
+
+
+/* view admin comments */
+
+.view-admin-views-comment .comment-view-body {
+    font-size: 0.8em;
+    margin-left:2.0em;
+    margin-top: 0.5em;
 }
