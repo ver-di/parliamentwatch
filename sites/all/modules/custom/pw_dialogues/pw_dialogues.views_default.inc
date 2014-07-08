@@ -339,14 +339,26 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['fields']['fieldset']['label'] = 'Weitere Informationen zur Antwort';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'field_dialogue_tags_1',
-    1 => 'path_1',
-    2 => 'fieldset_4',
+    0 => 'field_dialogue_response_time',
+    1 => 'field_dialogue_tags_1',
+    2 => 'path_1',
+    3 => 'fieldset_4',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'more-info content-inner clearfix';
   $handler->display->display_options['fields']['fieldset']['fieldset']['id'] = 'pw-question-[nid]';
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
+  /* Feld: Kommentar: Response time */
+  $handler->display->display_options['fields']['field_dialogue_response_time']['id'] = 'field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['table'] = 'field_data_field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['field'] = 'field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['relationship'] = 'cid';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['label'] = 'Dauer zur eingetroffenen Antwort';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_type'] = 'strong';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_wrapper_class'] = 'pw-response-time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_dialogue_response_time']['hide_empty'] = TRUE;
   /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags_1']['id'] = 'field_dialogue_tags_1';
   $handler->display->display_options['fields']['field_dialogue_tags_1']['table'] = 'field_data_field_dialogue_tags';
@@ -1193,14 +1205,26 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset']['label'] = 'Weitere Informationen zur Antwort';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'field_dialogue_tags_1',
-    1 => 'path_1',
-    2 => 'fieldset_4',
+    0 => 'field_dialogue_response_time',
+    1 => 'field_dialogue_tags_1',
+    2 => 'path_1',
+    3 => 'fieldset_4',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'more-info content-inner clearfix';
   $handler->display->display_options['fields']['fieldset']['fieldset']['id'] = 'pw-question-[nid]';
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
+  /* Feld: Kommentar: Response time */
+  $handler->display->display_options['fields']['field_dialogue_response_time']['id'] = 'field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['table'] = 'field_data_field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['field'] = 'field_dialogue_response_time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['relationship'] = 'cid';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['label'] = 'Dauer zur eingetroffenen Antwort';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_type'] = 'strong';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_wrapper_class'] = 'pw-response-time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_dialogue_response_time']['hide_empty'] = TRUE;
   /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags_1']['id'] = 'field_dialogue_tags_1';
   $handler->display->display_options['fields']['field_dialogue_tags_1']['table'] = 'field_data_field_dialogue_tags';
@@ -1234,9 +1258,8 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
     1 => 'php_1',
-    2 => 'path',
-    3 => 'php',
-    4 => 'php_2',
+    2 => 'php',
+    3 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';
@@ -1818,7 +1841,12 @@ else {
   $handler->display->display_options['fields']['field_dialogue_response_time']['table'] = 'field_data_field_dialogue_response_time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['field'] = 'field_dialogue_response_time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['relationship'] = 'cid';
-  $handler->display->display_options['fields']['field_dialogue_response_time']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_dialogue_response_time']['label'] = 'Dauer zur eingetroffenen Antwort';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_type'] = 'strong';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_wrapper_class'] = 'pw-response-time';
+  $handler->display->display_options['fields']['field_dialogue_response_time']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_dialogue_response_time']['hide_empty'] = TRUE;
   /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags']['id'] = 'field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['table'] = 'field_data_field_dialogue_tags';
@@ -2190,7 +2218,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Ganze Fragen und Antwort lesen';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Link kopieren';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
