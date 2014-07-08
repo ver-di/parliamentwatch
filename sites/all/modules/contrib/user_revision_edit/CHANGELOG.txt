@@ -1,9 +1,10 @@
-Journal 7.x-1.x-dev, 2014-07-07
+Journal 7.x-1.x-dev, 2014-07-08
 -------------------------------
 Current Development Tree for 7.x branch
 
 In progress:
 - #2287545 User Revision Edit module peer review
+- #2299445 PHP Fatal error on comparing arrays
 
 Fixed:
 - #2298841 PDOException on field_attach_update() using emtpy integer values
