@@ -2336,9 +2336,9 @@ function pw_profiles_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          'm' => 'Male',
-          'f' => 'Female',
-          't' => 'Transgender',
+          'm' => 'männlich',
+          'f' => 'weiblich',
+          't' => 'transgender',
         ),
         'allowed_values_function' => '',
       ),
