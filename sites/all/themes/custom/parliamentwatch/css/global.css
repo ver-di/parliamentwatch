@@ -579,6 +579,11 @@ a.ic-print {
     vertical-align: middle;
     margin: 0 5px;
 }
+.pw-response-time {
+    padding-left: 26px;
+    background-position: -321px -2340px;
+    margin-bottom: 1.5em;
+}
 #views-exposed-form-profile-questions-answers-profile,
 #views-exposed-form-profile-list-rev-grid,
 .views-exposed-widget,
@@ -2301,7 +2306,7 @@ form .webform-component-checkboxes .description {
     width: 100%;
 }
 .answer .more-info.content-inner .fieldset-wrapper {
-    margin-top: 1.5em;
+    margin-top: 2em;
 }
 .answer .more-info a {
     font-weight: normal;
@@ -2833,6 +2838,7 @@ a.link-video,
 a.link-sound,
 a.external,
 .ic-info .info-title,
+.pw-response-time,
 blockquote:before,
 .zero-clipboard,
 .shorten span.processed,
@@ -2888,6 +2894,7 @@ blockquote:before,
     padding-left: 26px;
     position: absolute;
     top: 1em;
+    left: 3px;
 }
 .more-info.collapse-processed a.fieldset-title {
     background-position: -480px -2180px;
