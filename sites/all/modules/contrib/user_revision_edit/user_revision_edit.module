@@ -122,7 +122,7 @@ function user_revision_edit_save(&$revision, $edits) {
     if (isset($revision->$type) && $revision->$type != $value) {
 
       // Resets empty strings to NULL to avoid database exceptions
-      if ($value[LANGUAGE_NONE][0]['value'] === '') {
+      if ((array)$value === $value && $value[LANGUAGE_NONE][0]['value'] === '') {
         $value[LANGUAGE_NONE][0]['value'] = NULL;
       }
       $revision->$type = $value;
