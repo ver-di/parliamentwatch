@@ -41,11 +41,11 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  /* Relationship: Inhalt: Autor */
+  /* Beziehung: Inhalt: Autor */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -69,19 +69,19 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Inhalt: Datum */
+  /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -122,12 +122,12 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['content'] = '<a href="/profile/[name]/calendar" class="link-calendar float-right">Alle Termine anzeigen</a>';
   $handler->display->display_options['footer']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Inhalt: Autor */
+  /* Beziehung: Inhalt: Autor */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -169,7 +169,7 @@ function pw_profiles_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -272,7 +272,7 @@ function pw_profiles_views_default_views() {
     ),
     'separator' => ', ',
   );
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
   $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
@@ -291,7 +291,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Author uid */
+  /* Kontextfilter: Inhalt: Benutzer-ID des Autors */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -320,14 +320,14 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  /* Kopfbereich: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['empty'] = TRUE;
   $handler->display->display_options['header']['view']['view_to_insert'] = 'user_profile_fields:short_profile_premium_sub';
   $handler->display->display_options['header']['view']['inherit_arguments'] = TRUE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
@@ -335,7 +335,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['area_1']['format'] = 'php_code';
   $handler->display->display_options['header']['area_1']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -349,7 +349,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['label'] = '';
   $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -389,7 +389,7 @@ function pw_profiles_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
   $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
@@ -463,7 +463,7 @@ function pw_profiles_views_default_views() {
       'address' => 'address',
     ),
   );
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -538,7 +538,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Author uid */
+  /* Kontextfilter: Inhalt: Benutzer-ID des Autors */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -582,7 +582,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Inhalt: Author uid */
+  /* Feld: Inhalt: Benutzer-ID des Autors */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'node';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -596,7 +596,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['uid']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Inhalt: Author uid */
+  /* Feld: Inhalt: Benutzer-ID des Autors */
   $handler->display->display_options['fields']['uid_1']['id'] = 'uid_1';
   $handler->display->display_options['fields']['uid_1']['table'] = 'node';
   $handler->display->display_options['fields']['uid_1']['field'] = 'uid';
@@ -608,7 +608,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['uid_1']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['uid_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Author uid */
+  /* Kontextfilter: Inhalt: Benutzer-ID des Autors */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -761,7 +761,7 @@ print_r($link);
   $handler->display->display_options['fields']['nothing_2']['alter']['link_class'] = 'colorbox-node init-colorbox-processed-processed';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Author uid */
+  /* Kontextfilter: Inhalt: Benutzer-ID des Autors */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -777,14 +777,14 @@ print_r($link);
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -830,11 +830,11 @@ print_r($link);
   $handler->display->display_options['style_options']['easing'] = '';
   $handler->display->display_options['style_options']['vertical'] = 0;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* No results behavior: Global: Text area */
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
-  /* Relationship: Benutzer: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -917,12 +917,12 @@ print_r($link);
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_s',
   );
-  /* Sort criterion: Benutzer: Created date */
+  /* Sortierkriterien: Benutzer: Erstellungsdatum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -989,7 +989,7 @@ print_r($link);
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_xs',
   );
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -1001,7 +1001,7 @@ print_r($link);
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'small';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -1039,7 +1039,7 @@ print_r($link);
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
   $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
@@ -1090,22 +1090,22 @@ $user = menu_get_object(\'user\');
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Benutzer: Answers Give (field_user_answers_give) */
+  /* Sortierkriterien: Benutzer: Answers Give (field_user_answers_give) */
   $handler->display->display_options['sorts']['field_user_answers_give_value']['id'] = 'field_user_answers_give_value';
   $handler->display->display_options['sorts']['field_user_answers_give_value']['table'] = 'field_data_field_user_answers_give';
   $handler->display->display_options['sorts']['field_user_answers_give_value']['field'] = 'field_user_answers_give_value';
   $handler->display->display_options['sorts']['field_user_answers_give_value']['order'] = 'DESC';
-  /* Sort criterion: Benutzer: Questions Get (field_user_questions_get) */
+  /* Sortierkriterien: Benutzer: Questions Get (field_user_questions_get) */
   $handler->display->display_options['sorts']['field_user_questions_get_value']['id'] = 'field_user_questions_get_value';
   $handler->display->display_options['sorts']['field_user_questions_get_value']['table'] = 'field_data_field_user_questions_get';
   $handler->display->display_options['sorts']['field_user_questions_get_value']['field'] = 'field_user_questions_get_value';
   $handler->display->display_options['sorts']['field_user_questions_get_value']['order'] = 'DESC';
-  /* Sort criterion: Global: Random */
+  /* Sortierkriterien: Global: Zufall */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Taxonomie-Begriff: Begriff-ID */
+  /* Kontextfilter: Taxonomie-Begriff: Begriff-ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -1131,7 +1131,7 @@ else
   $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'constituency' => 'constituency',
   );
-  /* Contextual filter: Benutzer: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -1145,7 +1145,7 @@ else
   $handler->display->display_options['arguments']['uid']['not'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1305,7 +1305,7 @@ else
       'empty_column' => 1,
     ),
   );
-  /* Feld: Bulk operations: Benutzer */
+  /* Feld: Stapelverarbeitungen: Benutzer */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
@@ -1441,7 +1441,7 @@ else
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Feld: Benutzer: Address - Locality (i.e. City) */
+  /* Feld: Benutzer: Address - Ort (z.B. Stadt) */
   $handler->display->display_options['fields']['field_user_address_locality']['id'] = 'field_user_address_locality';
   $handler->display->display_options['fields']['field_user_address_locality']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['fields']['field_user_address_locality']['field'] = 'field_user_address_locality';
@@ -1455,7 +1455,7 @@ else
   $handler->display->display_options['fields']['field_user_list_position']['table'] = 'field_data_field_user_list_position';
   $handler->display->display_options['fields']['field_user_list_position']['field'] = 'field_user_list_position';
   $handler->display->display_options['fields']['field_user_list_position']['label'] = 'Listenplatz';
-  /* Feld: Benutzer: Edit link */
+  /* Feld: Benutzer: ‚Bearbeiten‘-Link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -1475,19 +1475,19 @@ else
   $handler->display->display_options['fields']['field_user_lname']['label'] = 'hidden';
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Sort criterion: Benutzer: Created date */
+  /* Sortierkriterien: Benutzer: Erstellungsdatum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Benutzer: First Name (field_user_fname) */
+  /* Filterkriterium: Benutzer: First Name (field_user_fname) */
   $handler->display->display_options['filters']['field_user_fname_value']['id'] = 'field_user_fname_value';
   $handler->display->display_options['filters']['field_user_fname_value']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['filters']['field_user_fname_value']['field'] = 'field_user_fname_value';
@@ -1515,7 +1515,7 @@ else
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Last name (field_user_lname) */
+  /* Filterkriterium: Benutzer: Last name (field_user_lname) */
   $handler->display->display_options['filters']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['filters']['field_user_lname_value']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['filters']['field_user_lname_value']['field'] = 'field_user_lname_value';
@@ -1543,7 +1543,7 @@ else
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Rollen */
+  /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -1551,7 +1551,7 @@ else
     181527986 => '181527986',
   );
   $handler->display->display_options['filters']['rid']['reduce_duplicates'] = TRUE;
-  /* Filter criterion: Benutzer: E-Mail */
+  /* Filterkriterium: Benutzer: E-Mail */
   $handler->display->display_options['filters']['mail']['id'] = 'mail';
   $handler->display->display_options['filters']['mail']['table'] = 'users';
   $handler->display->display_options['filters']['mail']['field'] = 'mail';
@@ -1579,7 +1579,7 @@ else
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Party (field_user_party) */
+  /* Filterkriterium: Benutzer: Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['filters']['field_user_party_tid']['field'] = 'field_user_party_tid';
@@ -1603,7 +1603,7 @@ else
   $handler->display->display_options['filters']['field_user_party_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filter criterion: Feld: Parliament (field_user_parliament) */
+  /* Filterkriterium: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -1627,7 +1627,7 @@ else
   $handler->display->display_options['filters']['field_user_parliament_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_parliament_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_parliament_tid']['vocabulary'] = 'parliaments';
-  /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
+  /* Filterkriterium: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['filters']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -1651,7 +1651,7 @@ else
   $handler->display->display_options['filters']['field_user_constituency_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
-  /* Filter criterion: Benutzer: Committee (field_user_commitee) */
+  /* Filterkriterium: Benutzer: Committee (field_user_commitee) */
   $handler->display->display_options['filters']['field_user_commitee_tid']['id'] = 'field_user_commitee_tid';
   $handler->display->display_options['filters']['field_user_commitee_tid']['table'] = 'field_data_field_user_commitee';
   $handler->display->display_options['filters']['field_user_commitee_tid']['field'] = 'field_user_commitee_tid';
@@ -1675,7 +1675,7 @@ else
   $handler->display->display_options['filters']['field_user_commitee_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_commitee_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_commitee_tid']['vocabulary'] = 'committee';
-  /* Filter criterion: Benutzer: Address - Locality (i.e. City) */
+  /* Filterkriterium: Benutzer: Address - Ort (z.B. Stadt) */
   $handler->display->display_options['filters']['field_user_address_locality']['id'] = 'field_user_address_locality';
   $handler->display->display_options['filters']['field_user_address_locality']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['filters']['field_user_address_locality']['field'] = 'field_user_address_locality';
@@ -1702,7 +1702,7 @@ else
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Dynamic Field Politicians View */
+  /* Filterkriterium: Benutzer: Dynamic Field Politicians View */
   $handler->display->display_options['filters']['dynamic-field']['id'] = 'dynamic-field';
   $handler->display->display_options['filters']['dynamic-field']['table'] = 'users';
   $handler->display->display_options['filters']['dynamic-field']['field'] = 'dynamic-field';
@@ -1741,7 +1741,7 @@ else
     'rid' => 0,
     'field_user_list_position' => 0,
   );
-  /* Filter criterion: Benutzer: Dynamic Field Politicians Edit */
+  /* Filterkriterium: Benutzer: Dynamic Field Politicians Edit */
   $handler->display->display_options['filters']['dynamic-field_1']['id'] = 'dynamic-field_1';
   $handler->display->display_options['filters']['dynamic-field_1']['table'] = 'users';
   $handler->display->display_options['filters']['dynamic-field_1']['field'] = 'dynamic-field';
@@ -1900,7 +1900,7 @@ else
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Bulk operations: Benutzer */
+  /* Feld: Stapelverarbeitungen: Benutzer */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
@@ -2055,7 +2055,7 @@ else
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Feld: Benutzer: Address - Locality (i.e. City) */
+  /* Feld: Benutzer: Address - Ort (z.B. Stadt) */
   $handler->display->display_options['fields']['field_user_address_locality']['id'] = 'field_user_address_locality';
   $handler->display->display_options['fields']['field_user_address_locality']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['fields']['field_user_address_locality']['field'] = 'field_user_address_locality';
@@ -2069,7 +2069,7 @@ else
   $handler->display->display_options['fields']['field_user_list_position']['table'] = 'field_data_field_user_list_position';
   $handler->display->display_options['fields']['field_user_list_position']['field'] = 'field_user_list_position';
   $handler->display->display_options['fields']['field_user_list_position']['label'] = 'Listenplatz';
-  /* Feld: Benutzer: Edit link */
+  /* Feld: Benutzer: ‚Bearbeiten‘-Link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -2077,14 +2077,14 @@ else
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Benutzer: First Name (field_user_fname) */
+  /* Filterkriterium: Benutzer: First Name (field_user_fname) */
   $handler->display->display_options['filters']['field_user_fname_value']['id'] = 'field_user_fname_value';
   $handler->display->display_options['filters']['field_user_fname_value']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['filters']['field_user_fname_value']['field'] = 'field_user_fname_value';
@@ -2112,7 +2112,7 @@ else
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Last name (field_user_lname) */
+  /* Filterkriterium: Benutzer: Last name (field_user_lname) */
   $handler->display->display_options['filters']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['filters']['field_user_lname_value']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['filters']['field_user_lname_value']['field'] = 'field_user_lname_value';
@@ -2140,7 +2140,7 @@ else
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Rollen */
+  /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -2148,7 +2148,7 @@ else
     181527986 => '181527986',
   );
   $handler->display->display_options['filters']['rid']['reduce_duplicates'] = TRUE;
-  /* Filter criterion: Benutzer: E-Mail */
+  /* Filterkriterium: Benutzer: E-Mail */
   $handler->display->display_options['filters']['mail']['id'] = 'mail';
   $handler->display->display_options['filters']['mail']['table'] = 'users';
   $handler->display->display_options['filters']['mail']['field'] = 'mail';
@@ -2176,7 +2176,7 @@ else
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Party (field_user_party) */
+  /* Filterkriterium: Benutzer: Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['filters']['field_user_party_tid']['field'] = 'field_user_party_tid';
@@ -2200,7 +2200,7 @@ else
   $handler->display->display_options['filters']['field_user_party_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filter criterion: Feld: Parliament (field_user_parliament) */
+  /* Filterkriterium: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2224,7 +2224,7 @@ else
   $handler->display->display_options['filters']['field_user_parliament_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_parliament_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_parliament_tid']['vocabulary'] = 'parliaments';
-  /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
+  /* Filterkriterium: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['filters']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -2248,7 +2248,7 @@ else
   $handler->display->display_options['filters']['field_user_constituency_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
-  /* Filter criterion: Benutzer: Committee (field_user_commitee) */
+  /* Filterkriterium: Benutzer: Committee (field_user_commitee) */
   $handler->display->display_options['filters']['field_user_commitee_tid']['id'] = 'field_user_commitee_tid';
   $handler->display->display_options['filters']['field_user_commitee_tid']['table'] = 'field_data_field_user_commitee';
   $handler->display->display_options['filters']['field_user_commitee_tid']['field'] = 'field_user_commitee_tid';
@@ -2272,7 +2272,7 @@ else
   $handler->display->display_options['filters']['field_user_commitee_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_commitee_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_commitee_tid']['vocabulary'] = 'committee';
-  /* Filter criterion: Benutzer: Address - Locality (i.e. City) */
+  /* Filterkriterium: Benutzer: Address - Ort (z.B. Stadt) */
   $handler->display->display_options['filters']['field_user_address_locality']['id'] = 'field_user_address_locality';
   $handler->display->display_options['filters']['field_user_address_locality']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['filters']['field_user_address_locality']['field'] = 'field_user_address_locality';
@@ -2299,7 +2299,7 @@ else
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Dynamic Field Politicians View */
+  /* Filterkriterium: Benutzer: Dynamic Field Politicians View */
   $handler->display->display_options['filters']['dynamic-field']['id'] = 'dynamic-field';
   $handler->display->display_options['filters']['dynamic-field']['table'] = 'users';
   $handler->display->display_options['filters']['dynamic-field']['field'] = 'dynamic-field';
@@ -2674,7 +2674,7 @@ else
   $handler->display->display_options['fields']['field_user_address_editable']['widget_type'] = 'addressfield_standard';
   $handler->display->display_options['fields']['field_user_address_editable']['suppress_label'] = 1;
   $handler->display->display_options['fields']['field_user_address_editable']['suppress_description'] = 1;
-  /* Feld: Benutzer: Address - Locality (i.e. City) */
+  /* Feld: Benutzer: Address - Ort (z.B. Stadt) */
   $handler->display->display_options['fields']['field_user_address_locality']['id'] = 'field_user_address_locality';
   $handler->display->display_options['fields']['field_user_address_locality']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['fields']['field_user_address_locality']['field'] = 'field_user_address_locality';
@@ -2718,14 +2718,14 @@ else
   $handler->display->display_options['fields']['field_user_list_position']['exclude'] = TRUE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Benutzer: First Name (field_user_fname) */
+  /* Filterkriterium: Benutzer: First Name (field_user_fname) */
   $handler->display->display_options['filters']['field_user_fname_value']['id'] = 'field_user_fname_value';
   $handler->display->display_options['filters']['field_user_fname_value']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['filters']['field_user_fname_value']['field'] = 'field_user_fname_value';
@@ -2753,7 +2753,7 @@ else
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Last name (field_user_lname) */
+  /* Filterkriterium: Benutzer: Last name (field_user_lname) */
   $handler->display->display_options['filters']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['filters']['field_user_lname_value']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['filters']['field_user_lname_value']['field'] = 'field_user_lname_value';
@@ -2781,7 +2781,7 @@ else
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Rollen */
+  /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -2789,7 +2789,7 @@ else
     181527986 => '181527986',
   );
   $handler->display->display_options['filters']['rid']['reduce_duplicates'] = TRUE;
-  /* Filter criterion: Benutzer: E-Mail */
+  /* Filterkriterium: Benutzer: E-Mail */
   $handler->display->display_options['filters']['mail']['id'] = 'mail';
   $handler->display->display_options['filters']['mail']['table'] = 'users';
   $handler->display->display_options['filters']['mail']['field'] = 'mail';
@@ -2817,7 +2817,7 @@ else
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['mail']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Party (field_user_party) */
+  /* Filterkriterium: Benutzer: Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['filters']['field_user_party_tid']['field'] = 'field_user_party_tid';
@@ -2841,7 +2841,7 @@ else
   $handler->display->display_options['filters']['field_user_party_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filter criterion: Feld: Parliament (field_user_parliament) */
+  /* Filterkriterium: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2865,7 +2865,7 @@ else
   $handler->display->display_options['filters']['field_user_parliament_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_parliament_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_parliament_tid']['vocabulary'] = 'parliaments';
-  /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
+  /* Filterkriterium: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['filters']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -2889,7 +2889,7 @@ else
   $handler->display->display_options['filters']['field_user_constituency_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
-  /* Filter criterion: Benutzer: Committee (field_user_commitee) */
+  /* Filterkriterium: Benutzer: Committee (field_user_commitee) */
   $handler->display->display_options['filters']['field_user_commitee_tid']['id'] = 'field_user_commitee_tid';
   $handler->display->display_options['filters']['field_user_commitee_tid']['table'] = 'field_data_field_user_commitee';
   $handler->display->display_options['filters']['field_user_commitee_tid']['field'] = 'field_user_commitee_tid';
@@ -2913,7 +2913,7 @@ else
   $handler->display->display_options['filters']['field_user_commitee_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_commitee_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_commitee_tid']['vocabulary'] = 'committee';
-  /* Filter criterion: Benutzer: Address - Locality (i.e. City) */
+  /* Filterkriterium: Benutzer: Address - Ort (z.B. Stadt) */
   $handler->display->display_options['filters']['field_user_address_locality']['id'] = 'field_user_address_locality';
   $handler->display->display_options['filters']['field_user_address_locality']['table'] = 'field_data_field_user_address';
   $handler->display->display_options['filters']['field_user_address_locality']['field'] = 'field_user_address_locality';
@@ -2940,7 +2940,7 @@ else
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_dependent'] = 0;
-  /* Filter criterion: Benutzer: Dynamic Field Politicians Edit */
+  /* Filterkriterium: Benutzer: Dynamic Field Politicians Edit */
   $handler->display->display_options['filters']['dynamic-field_1']['id'] = 'dynamic-field_1';
   $handler->display->display_options['filters']['dynamic-field_1']['table'] = 'users';
   $handler->display->display_options['filters']['dynamic-field_1']['field'] = 'dynamic-field';
@@ -3050,11 +3050,11 @@ else
     ),
   );
   $handler->display->display_options['style_options']['override'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  /* Relationship: Inhalt: Votes */
+  /* Beziehung: Inhalt: Votes */
   $handler->display->display_options['relationships']['votingapi_vote']['id'] = 'votingapi_vote';
   $handler->display->display_options['relationships']['votingapi_vote']['table'] = 'node';
   $handler->display->display_options['relationships']['votingapi_vote']['field'] = 'votingapi_vote';
@@ -3064,7 +3064,7 @@ else
     'tag' => '',
   );
   $handler->display->display_options['relationships']['votingapi_vote']['current_user'] = 0;
-  /* Relationship: Stimmen: Benutzer */
+  /* Beziehung: Stimmen: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'votingapi_vote';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -3148,7 +3148,7 @@ if($record->value == 0){
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -3157,12 +3157,12 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Sort criterion: Inhalt: Date (field_pw_poll_date) */
+  /* Sortierkriterien: Inhalt: Date (field_pw_poll_date) */
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
-  /* Contextual filter: Stimmen: Benutzer */
+  /* Kontextfilter: Stimmen: Benutzer */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'votingapi_vote';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -3174,14 +3174,14 @@ if($record->value == 0){
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -3236,7 +3236,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -3245,7 +3245,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -3254,7 +3254,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
   $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
@@ -3394,7 +3394,7 @@ if($record->value == 0){
   $handler = $view->new_display('block', 'Archive', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -3492,7 +3492,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Inhalt: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -3586,7 +3586,7 @@ if($record->value == 0){
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -3788,7 +3788,7 @@ if($record->value == 0){
   $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* No results behavior: Global: Text area */
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -3797,16 +3797,16 @@ if($record->value == 0){
 Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie eine neue Auswahl über einen der angebotenen Filter.
 </div>';
   $handler->display->display_options['empty']['area']['format'] = 'managed_content';
-  /* Relationship: Feld (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['required'] = TRUE;
-  /* Relationship: User revision: Benutzer */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Profile picture (field_user_picture:fid) */
+  /* Beziehung: Benutzer (Historische Daten): Profile picture (field_user_picture:fid) */
   $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
   $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
@@ -3852,7 +3852,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['vid_1']['label'] = '';
   $handler->display->display_options['fields']['vid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['vid_1']['element_label_colon'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -3868,7 +3868,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'profiles-list-compact-wrapper';
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['id'] = 'field_user_picture-revision_id_1';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['field'] = 'field_user_picture-revision_id';
@@ -3904,7 +3904,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['empty'] = '[field_user_lname]';
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -3957,7 +3957,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '[field_user_questions_get-revision_id], [field_user_answers_give-revision_id]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -3975,7 +3975,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'element-hidden profile-list-compact-info';
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
@@ -3993,7 +3993,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     'image_style' => 'pw_portrait_l__normal',
     'image_link' => '',
   );
-  /* Feld: Benutzer (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
@@ -4004,7 +4004,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname-revision_id']['empty'] = '<h3>[field_user_fname]';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
@@ -4015,7 +4015,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname-revision_id']['empty'] = '[field_user_lname]</h3>';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['id'] = 'field_user_party-revision_id_1';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['field'] = 'field_user_party-revision_id';
@@ -4026,7 +4026,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
-  /* Feld: Feld (historical data): Parliament */
+  /* Feld: Feld (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -4038,7 +4038,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -4102,26 +4102,26 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['vid']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
   $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
-  /* Sort criterion: Benutzer (historical data): Answers Give (field_user_answers_give) */
+  /* Sortierkriterien: Benutzer (Historische Daten): Answers Give (field_user_answers_give) */
   $handler->display->display_options['sorts']['field_user_answers_give_value_1']['id'] = 'field_user_answers_give_value_1';
   $handler->display->display_options['sorts']['field_user_answers_give_value_1']['table'] = 'field_revision_field_user_answers_give';
   $handler->display->display_options['sorts']['field_user_answers_give_value_1']['field'] = 'field_user_answers_give_value';
   $handler->display->display_options['sorts']['field_user_answers_give_value_1']['order'] = 'DESC';
-  /* Sort criterion: Benutzer (historical data): Questions Get (field_user_questions_get) */
+  /* Sortierkriterien: Benutzer (Historische Daten): Questions Get (field_user_questions_get) */
   $handler->display->display_options['sorts']['field_user_questions_get_value']['id'] = 'field_user_questions_get_value';
   $handler->display->display_options['sorts']['field_user_questions_get_value']['table'] = 'field_revision_field_user_questions_get';
   $handler->display->display_options['sorts']['field_user_questions_get_value']['field'] = 'field_user_questions_get_value';
   $handler->display->display_options['sorts']['field_user_questions_get_value']['order'] = 'DESC';
-  /* Sort criterion: Benutzer: Profile picture (field_user_picture:fid:null sort) */
+  /* Sortierkriterien: Benutzer: Profile picture (field_user_picture:fid:null sort) */
   $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['id'] = 'field_user_picture_fid_nullsort';
   $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['field'] = 'field_user_picture_fid_nullsort';
   $handler->display->display_options['sorts']['field_user_picture_fid_nullsort']['relationship'] = 'uid';
-  /* Sort criterion: Benutzer (historical data): Last name (field_user_lname) */
+  /* Sortierkriterien: Benutzer (Historische Daten): Last name (field_user_lname) */
   $handler->display->display_options['sorts']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['sorts']['field_user_lname_value']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['sorts']['field_user_lname_value']['field'] = 'field_user_lname_value';
-  /* Contextual filter: Feld (historical data): Parliament (field_user_parliament) */
+  /* Kontextfilter: Feld (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4137,7 +4137,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     'parliaments' => 'parliaments',
   );
   $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['type'] = 'convert';
-  /* Contextual filter: Benutzer (historical data): user_roles_for_view_mode_switch (field_user_roles_for_view_mode_s) */
+  /* Kontextfilter: Benutzer (Historische Daten): user_roles_for_view_mode_switch (field_user_roles_for_view_mode_s) */
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['id'] = 'field_user_roles_for_view_mode_s_tid';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['field'] = 'field_user_roles_for_view_mode_s_tid';
@@ -4164,7 +4164,7 @@ if($term_role){
   return TRUE;
 }
 return FALSE;';
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -4175,7 +4175,7 @@ return FALSE;';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
-  /* Filter criterion: Benutzer (historical data): user_first_letter_lname (field_user_first_letter_lname) */
+  /* Filterkriterium: Benutzer (Historische Daten): user_first_letter_lname (field_user_first_letter_lname) */
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['id'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['table'] = 'field_revision_field_user_first_letter_lname';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['field'] = 'field_user_first_letter_lname_value';
@@ -4328,7 +4328,7 @@ return FALSE;';
       'value' => 'Z',
     ),
   );
-  /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
+  /* Filterkriterium: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['filters']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -4350,7 +4350,7 @@ return FALSE;';
     237793809 => 0,
   );
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
-  /* Filter criterion: Benutzer (historical data): Party (field_user_party) */
+  /* Filterkriterium: Benutzer (Historische Daten): Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['filters']['field_user_party_tid']['field'] = 'field_user_party_tid';
@@ -4373,7 +4373,7 @@ return FALSE;';
   );
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filter criterion: Benutzer (historical data): QuestionAnswerRatio (field_user_qanda_ratio) */
+  /* Filterkriterium: Benutzer (Historische Daten): QuestionAnswerRatio (field_user_qanda_ratio) */
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['id'] = 'field_user_qanda_ratio_value';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['table'] = 'field_revision_field_user_qanda_ratio';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['field'] = 'field_user_qanda_ratio_value';
@@ -4395,7 +4395,7 @@ return FALSE;';
     185431326 => 0,
     178386088 => 0,
   );
-  /* Filter criterion: Benutzer (historical data): Age (field_user_age) */
+  /* Filterkriterium: Benutzer (Historische Daten): Age (field_user_age) */
   $handler->display->display_options['filters']['field_user_age_value']['id'] = 'field_user_age_value';
   $handler->display->display_options['filters']['field_user_age_value']['table'] = 'field_revision_field_user_age';
   $handler->display->display_options['filters']['field_user_age_value']['field'] = 'field_user_age_value';
@@ -4426,7 +4426,7 @@ return FALSE;';
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Benutzer (historical data): Gender (field_user_gender) */
+  /* Filterkriterium: Benutzer (Historische Daten): Gender (field_user_gender) */
   $handler->display->display_options['filters']['field_user_gender_value']['id'] = 'field_user_gender_value';
   $handler->display->display_options['filters']['field_user_gender_value']['table'] = 'field_revision_field_user_gender';
   $handler->display->display_options['filters']['field_user_gender_value']['field'] = 'field_user_gender_value';
@@ -4447,7 +4447,7 @@ return FALSE;';
     140336230 => 0,
     237793809 => 0,
   );
-  /* Filter criterion: Datum: Between Dates (user_revision) */
+  /* Filterkriterium: Datum: Between Dates (user_revision) */
   $handler->display->display_options['filters']['between_date_filter']['id'] = 'between_date_filter';
   $handler->display->display_options['filters']['between_date_filter']['table'] = 'user_revision';
   $handler->display->display_options['filters']['between_date_filter']['field'] = 'between_date_filter';
@@ -4531,7 +4531,7 @@ return FALSE;';
   $handler->display->display_options['fields']['vid_1']['label'] = '';
   $handler->display->display_options['fields']['vid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['vid_1']['element_label_colon'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -4547,7 +4547,7 @@ return FALSE;';
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'profiles-list-compact-wrapper clearfix';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
   $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
@@ -4558,7 +4558,7 @@ return FALSE;';
   );
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['classes'] = 'profile-picture push-bottom-xs';
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['id'] = 'field_user_picture-revision_id_1';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['field'] = 'field_user_picture-revision_id';
@@ -4607,7 +4607,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['empty'] = '[field_user_lname]';
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -4619,7 +4619,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Questions Get */
+  /* Feld: Benutzer (Historische Daten): Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['id'] = 'field_user_questions_get-revision_id_1';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['table'] = 'field_revision_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['field'] = 'field_user_questions_get-revision_id';
@@ -4632,7 +4632,7 @@ return FALSE;';
     'thousand_separator' => ' ',
     'prefix_suffix' => 1,
   );
-  /* Feld: Benutzer (historical data): Answers Give */
+  /* Feld: Benutzer (Historische Daten): Answers Give */
   $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['id'] = 'field_user_answers_give-revision_id_1';
   $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['table'] = 'field_revision_field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give-revision_id_1']['field'] = 'field_user_answers_give-revision_id';
@@ -4652,7 +4652,7 @@ return FALSE;';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '[field_user_questions_get-revision_id_1], [field_user_answers_give-revision_id_1]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -4670,7 +4670,7 @@ return FALSE;';
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'element-hidden profile-list-compact-info';
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
@@ -4688,7 +4688,7 @@ return FALSE;';
     'image_style' => 'pw_portrait_l__normal',
     'image_link' => '',
   );
-  /* Feld: Benutzer (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
@@ -4699,7 +4699,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname-revision_id']['empty'] = '<h3>[field_user_fname]';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
@@ -4710,7 +4710,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname-revision_id']['empty'] = '[field_user_lname]</h3>';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['id'] = 'field_user_party-revision_id_1';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['field'] = 'field_user_party-revision_id';
@@ -4721,7 +4721,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
-  /* Feld: Feld (historical data): Parliament */
+  /* Feld: Feld (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -4733,7 +4733,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -4796,7 +4796,7 @@ return FALSE;';
   $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -4807,7 +4807,7 @@ return FALSE;';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
-  /* Filter criterion: Benutzer (historical data): user_first_letter_lname (field_user_first_letter_lname) */
+  /* Filterkriterium: Benutzer (Historische Daten): user_first_letter_lname (field_user_first_letter_lname) */
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['id'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['table'] = 'field_revision_field_user_first_letter_lname';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['field'] = 'field_user_first_letter_lname_value';
@@ -4954,7 +4954,7 @@ return FALSE;';
       'value' => 'Z',
     ),
   );
-  /* Filter criterion: Benutzer (historical data): Address (field_user_address:administrative_area) */
+  /* Filterkriterium: Benutzer (Historische Daten): Address (field_user_address:administrative_area) */
   $handler->display->display_options['filters']['field_user_address_administrative_area']['id'] = 'field_user_address_administrative_area';
   $handler->display->display_options['filters']['field_user_address_administrative_area']['table'] = 'field_revision_field_user_address';
   $handler->display->display_options['filters']['field_user_address_administrative_area']['field'] = 'field_user_address_administrative_area';
@@ -5059,7 +5059,7 @@ return FALSE;';
       'value' => 'TH',
     ),
   );
-  /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
+  /* Filterkriterium: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['filters']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -5082,7 +5082,7 @@ return FALSE;';
   );
   $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
-  /* Filter criterion: Benutzer (historical data): Party (field_user_party) */
+  /* Filterkriterium: Benutzer (Historische Daten): Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['filters']['field_user_party_tid']['field'] = 'field_user_party_tid';
@@ -5105,7 +5105,7 @@ return FALSE;';
   );
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filter criterion: Benutzer (historical data): QuestionAnswerRatio (field_user_qanda_ratio) */
+  /* Filterkriterium: Benutzer (Historische Daten): QuestionAnswerRatio (field_user_qanda_ratio) */
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['id'] = 'field_user_qanda_ratio_value';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['table'] = 'field_revision_field_user_qanda_ratio';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['field'] = 'field_user_qanda_ratio_value';
@@ -5127,7 +5127,7 @@ return FALSE;';
     185431326 => 0,
     178386088 => 0,
   );
-  /* Filter criterion: Benutzer (historical data): Age (field_user_age) */
+  /* Filterkriterium: Benutzer (Historische Daten): Age (field_user_age) */
   $handler->display->display_options['filters']['field_user_age_value']['id'] = 'field_user_age_value';
   $handler->display->display_options['filters']['field_user_age_value']['table'] = 'field_revision_field_user_age';
   $handler->display->display_options['filters']['field_user_age_value']['field'] = 'field_user_age_value';
@@ -5158,7 +5158,7 @@ return FALSE;';
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Benutzer (historical data): Gender (field_user_gender) */
+  /* Filterkriterium: Benutzer (Historische Daten): Gender (field_user_gender) */
   $handler->display->display_options['filters']['field_user_gender_value']['id'] = 'field_user_gender_value';
   $handler->display->display_options['filters']['field_user_gender_value']['table'] = 'field_revision_field_user_gender';
   $handler->display->display_options['filters']['field_user_gender_value']['field'] = 'field_user_gender_value';
@@ -5236,7 +5236,7 @@ return FALSE;';
   $handler->display->display_options['fields']['vid_1']['label'] = '';
   $handler->display->display_options['fields']['vid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['vid_1']['element_label_colon'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -5252,7 +5252,7 @@ return FALSE;';
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'profiles-list-compact-wrapper';
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['id'] = 'field_user_picture-revision_id_1';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['field'] = 'field_user_picture-revision_id';
@@ -5286,7 +5286,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['empty'] = '[field_user_lname]';
   $handler->display->display_options['fields']['field_user_lname-revision_id_1']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -5339,7 +5339,7 @@ return FALSE;';
   $handler->display->display_options['fields']['nothing_2']['alter']['text'] = '[field_user_questions_get-revision_id], [field_user_answers_give-revision_id]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -5357,7 +5357,7 @@ return FALSE;';
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'element-hidden profile-list-compact-info';
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
@@ -5375,7 +5375,7 @@ return FALSE;';
     'image_style' => 'pw_portrait_l__normal',
     'image_link' => '',
   );
-  /* Feld: Benutzer (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
@@ -5386,7 +5386,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname-revision_id']['empty'] = '<h3>[field_user_fname]';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
@@ -5397,7 +5397,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname-revision_id']['empty'] = '[field_user_lname]</h3>';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['hide_alter_empty'] = FALSE;
-  /* Feld: Benutzer (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['id'] = 'field_user_party-revision_id_1';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['field'] = 'field_user_party-revision_id';
@@ -5408,7 +5408,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
-  /* Feld: Feld (historical data): Parliament */
+  /* Feld: Feld (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -5420,7 +5420,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -5486,7 +5486,7 @@ return FALSE;';
   $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -5497,7 +5497,7 @@ return FALSE;';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
-  /* Filter criterion: Benutzer (historical data): user_first_letter_lname (field_user_first_letter_lname) */
+  /* Filterkriterium: Benutzer (Historische Daten): user_first_letter_lname (field_user_first_letter_lname) */
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['id'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['table'] = 'field_revision_field_user_first_letter_lname';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['field'] = 'field_user_first_letter_lname_value';
@@ -5645,7 +5645,7 @@ return FALSE;';
       'value' => 'Z',
     ),
   );
-  /* Filter criterion: Benutzer: Constituency (field_user_constituency) */
+  /* Filterkriterium: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['filters']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -5667,7 +5667,7 @@ return FALSE;';
     237793809 => 0,
   );
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
-  /* Filter criterion: Benutzer (historical data): Party (field_user_party) */
+  /* Filterkriterium: Benutzer (Historische Daten): Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['filters']['field_user_party_tid']['field'] = 'field_user_party_tid';
@@ -5690,7 +5690,7 @@ return FALSE;';
   );
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filter criterion: Benutzer (historical data): QuestionAnswerRatio (field_user_qanda_ratio) */
+  /* Filterkriterium: Benutzer (Historische Daten): QuestionAnswerRatio (field_user_qanda_ratio) */
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['id'] = 'field_user_qanda_ratio_value';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['table'] = 'field_revision_field_user_qanda_ratio';
   $handler->display->display_options['filters']['field_user_qanda_ratio_value']['field'] = 'field_user_qanda_ratio_value';
@@ -5713,7 +5713,7 @@ return FALSE;';
     185431326 => 0,
     178386088 => 0,
   );
-  /* Filter criterion: Benutzer (historical data): Age (field_user_age) */
+  /* Filterkriterium: Benutzer (Historische Daten): Age (field_user_age) */
   $handler->display->display_options['filters']['field_user_age_value']['id'] = 'field_user_age_value';
   $handler->display->display_options['filters']['field_user_age_value']['table'] = 'field_revision_field_user_age';
   $handler->display->display_options['filters']['field_user_age_value']['field'] = 'field_user_age_value';
@@ -5744,7 +5744,7 @@ return FALSE;';
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Benutzer (historical data): Gender (field_user_gender) */
+  /* Filterkriterium: Benutzer (Historische Daten): Gender (field_user_gender) */
   $handler->display->display_options['filters']['field_user_gender_value']['id'] = 'field_user_gender_value';
   $handler->display->display_options['filters']['field_user_gender_value']['table'] = 'field_revision_field_user_gender';
   $handler->display->display_options['filters']['field_user_gender_value']['field'] = 'field_user_gender_value';
@@ -5765,7 +5765,7 @@ return FALSE;';
     140336230 => 0,
     237793809 => 0,
   );
-  /* Filter criterion: Datum: Between Dates (user_revision) */
+  /* Filterkriterium: Datum: Between Dates (user_revision) */
   $handler->display->display_options['filters']['between_date_filter']['id'] = 'between_date_filter';
   $handler->display->display_options['filters']['between_date_filter']['table'] = 'user_revision';
   $handler->display->display_options['filters']['between_date_filter']['field'] = 'between_date_filter';
@@ -5848,7 +5848,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_lname']['label'] = '';
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -5862,7 +5862,7 @@ return FALSE;';
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  /* Filter criterion: Benutzer: Aktiv */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -5902,7 +5902,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -5961,7 +5961,7 @@ return FALSE;';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -6056,12 +6056,12 @@ return FALSE;';
   $handler->display->display_options['fields']['created_time']['field'] = 'created_time';
   $handler->display->display_options['fields']['created_time']['label'] = '';
   $handler->display->display_options['fields']['created_time']['date_format'] = 'time ago';
-  /* Sort criterion: Twitter: Erstellungszeit */
+  /* Sortierkriterien: Twitter: Erstellungszeit */
   $handler->display->display_options['sorts']['created_time']['id'] = 'created_time';
   $handler->display->display_options['sorts']['created_time']['table'] = 'twitter';
   $handler->display->display_options['sorts']['created_time']['field'] = 'created_time';
   $handler->display->display_options['sorts']['created_time']['order'] = 'DESC';
-  /* Filter criterion: Twitter: Geschützter Status */
+  /* Filterkriterium: Twitter: Geschützter Status */
   $handler->display->display_options['filters']['protected']['id'] = 'protected';
   $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['protected']['field'] = 'protected';
@@ -6122,14 +6122,14 @@ return FALSE;';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Twitter: Geschützter Status */
+  /* Filterkriterium: Twitter: Geschützter Status */
   $handler->display->display_options['filters']['protected']['id'] = 'protected';
   $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['protected']['field'] = 'protected';
   $handler->display->display_options['filters']['protected']['value'] = 0;
   $handler->display->display_options['filters']['protected']['group'] = '0';
   $handler->display->display_options['filters']['protected']['expose']['operator'] = FALSE;
-  /* Filter criterion: Twitter: Login-name */
+  /* Filterkriterium: Twitter: Login-name */
   $handler->display->display_options['filters']['screen_name']['id'] = 'screen_name';
   $handler->display->display_options['filters']['screen_name']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['screen_name']['field'] = 'screen_name';
@@ -6159,7 +6159,7 @@ return FALSE;';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -6168,7 +6168,7 @@ return FALSE;';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -6236,7 +6236,7 @@ return FALSE;';
   $handler->display->display_options['fields']['web_intents']['element_wrapper_class'] = 'footer small';
   $handler->display->display_options['fields']['web_intents']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';

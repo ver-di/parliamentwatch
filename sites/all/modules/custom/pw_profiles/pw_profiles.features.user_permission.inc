@@ -712,7 +712,10 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: edit field_user_picture_copyright.
   $permissions['edit field_user_picture_copyright'] = array(
     'name' => 'edit field_user_picture_copyright',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -1103,7 +1106,10 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: edit own field_user_picture_copyright.
   $permissions['edit own field_user_picture_copyright'] = array(
     'name' => 'edit own field_user_picture_copyright',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -1587,7 +1593,10 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: view field_user_picture_copyright.
   $permissions['view field_user_picture_copyright'] = array(
     'name' => 'view field_user_picture_copyright',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -2033,7 +2042,10 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: view own field_user_picture_copyright.
   $permissions['view own field_user_picture_copyright'] = array(
     'name' => 'view own field_user_picture_copyright',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
     'module' => 'field_permissions',
   );
 
