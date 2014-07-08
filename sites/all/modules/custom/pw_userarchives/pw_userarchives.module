@@ -84,8 +84,8 @@ function pw_userarchives_cron($uid=null) {
       
     }
 
-    // delete old revisions
-    pw_delete_old_user_revisions();
+    // delete old revisions - buggy
+    // pw_delete_old_user_revisions();
 
     return "Done";
 }
