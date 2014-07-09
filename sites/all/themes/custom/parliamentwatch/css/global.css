@@ -2461,6 +2461,15 @@ form .webform-component-checkboxes .description {
 }
 
 
+/* /////////////////////////// Flattr //////////////// */
+
+.FlattrButton {
+    display: inline-block;
+    position: relative;
+    top: 6px;
+}
+
+
 /* /////////////////////////// Announcement ///////////////// */
 
 .announcement.slideshow {

@@ -145,11 +145,14 @@ function pw_blog_strongarm() {
         'redirect' => array(
           'weight' => '5',
         ),
+        'xmlsitemap' => array(
+          'weight' => '30',
+        ),
       ),
       'display' => array(
         'webform' => array(
           'full' => array(
-            'weight' => '10',
+            'weight' => '31',
             'visible' => FALSE,
           ),
           'rss' => array(
@@ -162,6 +165,12 @@ function pw_blog_strongarm() {
           ),
           'search_result' => array(
             'weight' => '29',
+            'visible' => FALSE,
+          ),
+        ),
+        'sharethis' => array(
+          'full' => array(
+            'weight' => '0',
             'visible' => FALSE,
           ),
         ),
