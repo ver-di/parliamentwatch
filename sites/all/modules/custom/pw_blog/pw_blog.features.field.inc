@@ -643,7 +643,7 @@ function pw_blog_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'flattr_checkbox',
-        'weight' => '31',
+        'weight' => '10',
       ),
     ),
   );
@@ -684,7 +684,7 @@ function pw_blog_field_default_fields() {
       'bundle' => 'blogpost',
       'default_value' => array(
         0 => array(
-          'value' => 'a_watch',
+          'value' => 'abgeordnetenwatch.de',
         ),
       ),
       'deleted' => '0',
@@ -778,7 +778,7 @@ function pw_blog_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '32',
+        'weight' => '9',
       ),
     ),
   );
