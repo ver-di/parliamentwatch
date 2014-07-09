@@ -258,3 +258,18 @@ function pw_dialogues_feeds_set_target($source, $entity, $target, $value, $mappi
 
   $entity->{$target} = $field;
 }
+
+/**
+ * Force URL Alias for dialogue nodes.
+ * 
+ */
+function pw_dialogues_node_presave($node) {
+  if ($node->nid && $node->type == 'dialogue') {
+    module_load_include('inc', 'pathauto');
+    $node->path['pathauto'] = TRUE;
+    $alias_action = variable_get('pathauto_update_action', 0);
+    variable_set('pathauto_update_action', PATHAUTO_UPDATE_ACTION_DELETE);
+    $node->path = pathauto_node_update_alias($node, 'update');
+    variable_set('pathauto_update_action', $alias_action);
+  }
+}
