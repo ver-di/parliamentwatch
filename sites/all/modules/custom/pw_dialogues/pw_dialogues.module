@@ -59,8 +59,8 @@ function pw_dialogues_triggered_import() {
       $recipient_id = $node->field_dialogue_recipient['und'][0]['target_id'];
       if($user = user_load($recipient_id)){
         cache_clear_all($GLOBALS['base_url'].'/profile/'.$user->name, 'cache_page', TRUE);
-        $status = TRUE;
       }
+      $status = TRUE;
     }
   }
   print $status?'OK':'FAILED';
