@@ -146,7 +146,7 @@ function pw_blog_strongarm() {
           'weight' => '5',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '8',
         ),
       ),
       'display' => array(
