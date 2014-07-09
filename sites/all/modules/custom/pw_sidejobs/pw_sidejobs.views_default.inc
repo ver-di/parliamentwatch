@@ -23,13 +23,17 @@ function pw_sidejobs_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'administer users';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -95,15 +99,15 @@ print $data->field_field_user_lname[0][\'raw\'][\'value\'].\', \'.$data->field_f
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Sort criterion: Feld: Parliament (field_user_parliament) */
+  /* Sortierkriterien: Feld: Parliament (field_user_parliament) */
   $handler->display->display_options['sorts']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['sorts']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['sorts']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Sort criterion: Benutzer: Last name (field_user_lname) */
+  /* Sortierkriterien: Benutzer: Last name (field_user_lname) */
   $handler->display->display_options['sorts']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['sorts']['field_user_lname_value']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['sorts']['field_user_lname_value']['field'] = 'field_user_lname_value';
-  /* Filter criterion: Benutzer: Rollen */
+  /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
