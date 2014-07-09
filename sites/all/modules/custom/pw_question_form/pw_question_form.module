@@ -35,25 +35,29 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     $form['submitted']['recipient']['#value'] = $user->name;
 
     // load full parliament term
-    $parliament = taxonomy_term_load($user->field_user_parliament['und'][0]['tid']);
+    $parliament = taxonomy_term_load($user->field_user_parliament[LANGUAGE_NONE][0]['tid']);
 
     // election date
-    $date_election = $parliament->field_parliament_election['und'][0]['value'];
+    $date_election = $parliament->field_parliament_election[LANGUAGE_NONE][0]['value'];
 
     // check parliament is within valid dates
     $parliament_is_valid = _check_parliament_active($parliament);
 
     $body_markup = '';
-    if(_pw_user_has_role($user, 'Candidate')){
+
+    // check if candidate and election date was reached
+    if(_pw_user_has_role($user, 'Candidate') && !empty($date_election)){
 
       // day before election - close question form
       $day_before_election = strtotime($date_election) - 6*60*60;
-      if(time() > $day_before_election && $user->name != 'dr-angelika-klein' && $user->name != 'dirk-schatz' && $user->name != 'jakob-maria-mierscheid'){
+      if(time() > $day_before_election && $user->name != 'jakob-maria-mierscheid'){
         $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde einen Tag vor der Wahl, am :day_before_election, geschlossen.</div>';
         $body_markup = str_replace(':day_before_election', date('d.m.Y H:i', $day_before_election), $body_markup);
       }
     }
-    elseif(_pw_user_has_role($user, 'Deputy') && !$parliament_is_valid){
+
+    // check valid dates if there was no message set before
+    if(!$parliament_is_valid && empty($body_markup)){
       $parliament_end_date = '';
       foreach($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid){
 
@@ -74,7 +78,7 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
         $body_markup = str_replace(':date_start', date('d.m.Y H:i', strtotime($parliament_date_start)), $body_markup);
       }
 
-      // no start date was found - publish latest end date
+      // no start date was found - publish last end date
       elseif(!empty($parliament_end_date)){
         $body_markup = '<div class="pw-messages warning">Die Fragefunktion ist diesem Profil wurde am :date_end geschlossen.</div>';
         $body_markup = str_replace(':date_end', date('d.m.Y H:i', strtotime($parliament_end_date)), $body_markup);
