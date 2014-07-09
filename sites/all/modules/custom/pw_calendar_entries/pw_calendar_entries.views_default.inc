@@ -25,12 +25,16 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['title'] = 'Politische Funktionen von ';
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -60,12 +64,12 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Sort criterion: Inhalt: Datum */
+  /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Inhalt: Politician (field_politician) */
+  /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['arguments']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['arguments']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -79,7 +83,7 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['arguments']['field_politician_target_id']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_politician_target_id']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['field_politician_target_id']['validate_options']['type'] = 'either';
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -161,7 +165,7 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -171,7 +175,7 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['relationships']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['relationships']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -289,7 +293,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_committee] [field_sidejob_organization] [field_job] [field_sidejob_address] ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Politician (field_politician) */
+  /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['arguments']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['arguments']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -310,14 +314,14 @@ echo $fname." ".$lname;
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -325,7 +329,7 @@ echo $fname." ".$lname;
     'committee_membership' => 'committee_membership',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Global: PHP */
+  /* Filterkriterium: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
@@ -343,13 +347,13 @@ if($node_parliament_tid == $user_parliament_tid)
 }
 else return TRUE;
 ';
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
   $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['filters']['status_1']['group'] = 2;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
@@ -357,7 +361,7 @@ else return TRUE;
     'sidejob' => 'sidejob',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Global: PHP */
+  /* Filterkriterium: Global: PHP */
   $handler->display->display_options['filters']['php_1']['id'] = 'php_1';
   $handler->display->display_options['filters']['php_1']['table'] = 'views';
   $handler->display->display_options['filters']['php_1']['field'] = 'php';
@@ -375,12 +379,12 @@ if($node_parliament_tid == $user_parliament_tid)
 }
 else return TRUE;
 ';
-  /* Filter criterion: Inhalt: Sectors (field_sectors) */
+  /* Filterkriterium: Inhalt: Sectors (field_sectors) */
   $handler->display->display_options['filters']['field_sectors_tid']['id'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['table'] = 'field_data_field_sectors';
   $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17077 => '17077',
+    17345 => '17345',
   );
   $handler->display->display_options['filters']['field_sectors_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
@@ -447,7 +451,7 @@ else return TRUE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
@@ -457,7 +461,7 @@ else return TRUE;
   $handler->display->display_options['header']['area_1']['format'] = 'managed_content';
   $handler->display->display_options['header']['area_1']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['relationships']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['relationships']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -554,7 +558,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Politician (field_politician) */
+  /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['arguments']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['arguments']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -569,7 +573,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['arguments']['field_politician_target_id']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['field_politician_target_id']['validate_options']['type'] = 'either';
   $handler->display->display_options['arguments']['field_politician_target_id']['validate']['fail'] = 'empty';
-  /* Contextual filter: Feld: Parliament (field_parliament) */
+  /* Kontextfilter: Feld: Parliament (field_parliament) */
   $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -589,14 +593,14 @@ return $tid;';
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -604,7 +608,7 @@ return $tid;';
     'sidejob' => 'sidejob',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Inhalt: Job (field_job) */
+  /* Filterkriterium: Inhalt: Job (field_job) */
   $handler->display->display_options['filters']['field_job_tid']['id'] = 'field_job_tid';
   $handler->display->display_options['filters']['field_job_tid']['table'] = 'field_data_field_job';
   $handler->display->display_options['filters']['field_job_tid']['field'] = 'field_job_tid';
@@ -612,13 +616,13 @@ return $tid;';
   $handler->display->display_options['filters']['field_job_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_job_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_job_tid']['vocabulary'] = 'sidejob_jobs';
-  /* Filter criterion: Inhalt: Sectors (field_sectors) */
+  /* Filterkriterium: Inhalt: Sectors (field_sectors) */
   $handler->display->display_options['filters']['field_sectors_tid']['id'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['table'] = 'field_data_field_sectors';
   $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['operator'] = 'not';
   $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17077 => '17077',
+    17345 => '17345',
   );
   $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_sectors_tid']['vocabulary'] = 'sidejob_sectors';
@@ -670,7 +674,7 @@ return $tid;';
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -680,7 +684,7 @@ return $tid;';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['relationships']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['relationships']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -738,7 +742,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Politician (field_politician) */
+  /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['arguments']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['arguments']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -752,7 +756,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['arguments']['field_politician_target_id']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_politician_target_id']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['field_politician_target_id']['validate_options']['type'] = 'either';
-  /* Contextual filter: Feld: Parliament (field_parliament) */
+  /* Kontextfilter: Feld: Parliament (field_parliament) */
   $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -767,21 +771,21 @@ return $tid;';
   $handler->display->display_options['arguments']['field_parliament_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'speech' => 'speech',
   );
-  /* Filter criterion: Inhalt: Titel */
+  /* Filterkriterium: Inhalt: Titel */
   $handler->display->display_options['filters']['title']['id'] = 'title';
   $handler->display->display_options['filters']['title']['table'] = 'node';
   $handler->display->display_options['filters']['title']['field'] = 'title';
@@ -887,19 +891,19 @@ return $tid;';
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Political Roles of\'); ?> [field_user_fname-revision_id]  [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
-  /* Kopfbereich: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -907,7 +911,7 @@ return $tid;';
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['relationships']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['relationships']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -1065,7 +1069,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Politician (field_politician) */
+  /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['arguments']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['arguments']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -1086,14 +1090,14 @@ echo $fname." ".$lname;
     2 => 'AND',
   );
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1101,7 +1105,7 @@ echo $fname." ".$lname;
     'committee_membership' => 'committee_membership',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Global: PHP */
+  /* Filterkriterium: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
@@ -1119,13 +1123,13 @@ if($node_parliament_tid == $user_parliament_tid)
 }
 else return TRUE;
 ';
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
   $handler->display->display_options['filters']['status_1']['value'] = '1';
   $handler->display->display_options['filters']['status_1']['group'] = 2;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
   $handler->display->display_options['filters']['type_1']['field'] = 'type';
@@ -1133,17 +1137,17 @@ else return TRUE;
     'sidejob' => 'sidejob',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Inhalt: Sectors (field_sectors) */
+  /* Filterkriterium: Inhalt: Sectors (field_sectors) */
   $handler->display->display_options['filters']['field_sectors_tid']['id'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['table'] = 'field_data_field_sectors';
   $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17077 => '17077',
+    17345 => '17345',
   );
   $handler->display->display_options['filters']['field_sectors_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_sectors_tid']['vocabulary'] = 'sidejob_sectors';
-  /* Filter criterion: Global: PHP */
+  /* Filterkriterium: Global: PHP */
   $handler->display->display_options['filters']['php_1']['id'] = 'php_1';
   $handler->display->display_options['filters']['php_1']['table'] = 'views';
   $handler->display->display_options['filters']['php_1']['field'] = 'php';
@@ -1170,12 +1174,12 @@ else return TRUE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1183,7 +1187,7 @@ else return TRUE;
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1191,7 +1195,7 @@ else return TRUE;
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['relationships']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['relationships']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -1348,7 +1352,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_job] [field_sidejob_organization] Verdienst: [field_sidejob_income_amount] [field_sidejob_income_amount_max][field_sidejob_income_interval]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Politician (field_politician) */
+  /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['arguments']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['arguments']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -1364,14 +1368,14 @@ echo $fname." ".$lname;
   $handler->display->display_options['arguments']['field_politician_target_id']['validate_options']['type'] = 'either';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1379,7 +1383,7 @@ echo $fname." ".$lname;
     'sidejob' => 'sidejob',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Global: PHP */
+  /* Filterkriterium: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
@@ -1396,13 +1400,13 @@ if($node_parliament_tid == $user_parliament_tid)
   return FALSE;
 }
 else return TRUE;';
-  /* Filter criterion: Inhalt: Sectors (field_sectors) */
+  /* Filterkriterium: Inhalt: Sectors (field_sectors) */
   $handler->display->display_options['filters']['field_sectors_tid']['id'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['table'] = 'field_data_field_sectors';
   $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['operator'] = 'not';
   $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17077 => '17077',
+    17345 => '17345',
   );
   $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_sectors_tid']['vocabulary'] = 'sidejob_sectors';
@@ -1447,12 +1451,12 @@ else return TRUE;';
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1462,7 +1466,7 @@ else return TRUE;';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1470,7 +1474,7 @@ else return TRUE;';
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['relationships']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['relationships']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -1579,7 +1583,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Inhalt: Politician (field_politician) */
+  /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
   $handler->display->display_options['arguments']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['arguments']['field_politician_target_id']['field'] = 'field_politician_target_id';
@@ -1595,21 +1599,21 @@ echo $fname." ".$lname;
   $handler->display->display_options['arguments']['field_politician_target_id']['validate_options']['type'] = 'either';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Inhalt: Typ */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'speech' => 'speech',
   );
-  /* Filter criterion: Global: PHP */
+  /* Filterkriterium: Global: PHP */
   $handler->display->display_options['filters']['php']['id'] = 'php';
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
