@@ -260,16 +260,23 @@ function pw_dialogues_feeds_set_target($source, $entity, $target, $value, $mappi
 }
 
 /**
- * Force URL Alias for dialogue nodes.
+ * modifies data on dialogue save (or import via api).
  * 
  */
-function pw_dialogues_node_presave($node) {
-  if ($node->nid && $node->type == 'dialogue') {
+function pw_dialogues_entity_presave($entity, $type) {
+
+  // Force URL alias for dialogues
+  if ($type == 'node' && $entity->nid && $entity->type == 'dialogue') {
     module_load_include('inc', 'pathauto');
-    $node->path['pathauto'] = TRUE;
+    $entity->path['pathauto'] = TRUE;
     $alias_action = variable_get('pathauto_update_action', 0);
     variable_set('pathauto_update_action', PATHAUTO_UPDATE_ACTION_DELETE);
-    $node->path = pathauto_node_update_alias($node, 'update');
+    $entity->path = pathauto_node_update_alias($entity, 'update');
     variable_set('pathauto_update_action', $alias_action);
+  }
+
+  // delete dialogue answer if its status is 0
+  elseif ($type == 'comment' && $entity->status == 0) {
+    entity_delete($type, $entity->cid);
   }
 }
