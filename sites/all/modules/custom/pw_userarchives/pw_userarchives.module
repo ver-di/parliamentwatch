@@ -99,7 +99,7 @@ function pw_userarchives_cron($uid=null) {
  */
 function check_user_archives_database($uid=null) {
     
-    $a_day_ago = time() - (2000 * 60 * 60);
+    $a_day_ago = time() - (20000000000 * 60 * 60);
     
     $query = db_select('user_revision', 'ur');
     $query->addField('ur', 'uid');
