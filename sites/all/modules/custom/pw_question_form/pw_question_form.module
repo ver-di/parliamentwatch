@@ -112,6 +112,10 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     // set uuid as recipient external id
     $form['submitted']['recipient_external_id']['#value'] = $user->uuid;
 
+    // set ip of user. in case of a reverse proxy take the X-Forwarded-For
+    $request_header = getallheaders();
+    $form['submitted']['user_ip']['#value'] = isset($request_header['X-Forwarded-For'])?$request_header['X-Forwarded-For']:$_SERVER['REMOTE_ADDR'];
+
     // set recipient parliament
     $form['submitted']['recipient_parliament']['#value'] = $parliament->name;
 
