@@ -21,7 +21,7 @@ function pw_globals_query_alter($query) {
 function _pw_is_premium_user($user) {
   $term_premium_user = taxonomy_get_term_by_name('Premium User', 'pw_profile_roles_for_view_mode_switch');
   $tid_premium_user = key($term_premium_user);
-  foreach ($user->field_user_roles_for_view_mode_s['und'] as $role) {
+  foreach ($user->field_user_roles_for_view_mode_s[LANGUAGE_NONE] as $role) {
     if ($tid_premium_user == $role['tid']) {
       return TRUE;
     }
@@ -30,12 +30,48 @@ function _pw_is_premium_user($user) {
 }
 
 /**
- * Custom: Checks if User (Revision) has specific role
+ * Custom: Checks if profile is open for questions.
+ */
+function _pw_is_profile_consultable($user=FALSE) {
+  if(!$user){
+    $user = _pw_get_current_user();
+    if(!$user){
+      return FALSE;
+    }
+  }
+  $profile_consultable = &drupal_static(__FUNCTION__.(isset($user->vid)?$user->vid:''));
+  if (!isset($profile_consultable)) {
+    $profile_consultable = FALSE;
+    if(!isset($user->field_user_question_form_closed) || empty($user->field_user_question_form_closed)){
+      if(_pw_is_parliament_active()){
+        if(_pw_user_has_role($user, 'Candidate')){
+          $parliament = _pw_get_current_parliament_term();
+          if(!$parliament){
+            return $profile_consultable;
+          }
+          $date_election = $parliament->field_parliament_election[LANGUAGE_NONE][0]['value'];
+          if(empty($date_election)){
+            return $profile_consultable;
+          }
+          $day_before_election = strtotime($date_election) - 6*60*60;
+          if(time() > $day_before_election){
+            return $profile_consultable;
+          }
+        }
+        $profile_consultable = TRUE;
+      }
+    }
+  }
+  return $profile_consultable;
+}
+
+/**
+ * Custom: Checks if User (Revision) has specific role.
  */
 function _pw_user_has_role($user, $role) {
   $term_role = taxonomy_get_term_by_name($role, 'pw_profile_roles_for_view_mode_switch');
   $tid_role = key($term_role);
-  foreach ($user->field_user_roles_for_view_mode_s['und'] as $user_role) {
+  foreach ($user->field_user_roles_for_view_mode_s[LANGUAGE_NONE] as $user_role) {
     if ($tid_role == $user_role['tid']) {
       return TRUE;
     }
@@ -58,7 +94,7 @@ function _pw_get_current_parliament_term() {
         $user_id = $user->uid;
         $vid = arg(3);
         $user = user_revision_load($user_id, $vid);
-        $term_parliament_id = $user->field_user_parliament['und'][0]['tid'];
+        $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
         $term_parliament = taxonomy_term_load($term_parliament_id);
         break;
 
@@ -67,7 +103,7 @@ function _pw_get_current_parliament_term() {
         $user = menu_get_object('user');
 
         if (isset($user->field_user_parliament)) {
-          $term_parliament_id = $user->field_user_parliament['und'][0]['tid'];
+          $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
           $term_parliament = taxonomy_term_load($term_parliament_id);
         }
         break;
@@ -76,7 +112,7 @@ function _pw_get_current_parliament_term() {
       case 'node':
         $node = menu_get_object();
         if (isset($node->field_parliament)) {
-          $term_parliament_id = $node->field_parliament['und'][0]['tid'];
+          $term_parliament_id = $node->field_parliament[LANGUAGE_NONE][0]['tid'];
           $term_parliament = taxonomy_term_load($term_parliament_id);
         }
         break;
@@ -88,7 +124,7 @@ function _pw_get_current_parliament_term() {
 /**
  * Custom: check if parliament is active or not.
  */
-function _check_parliament_active($parliament=FALSE) {
+function _pw_is_parliament_active($parliament=FALSE) {
 
   // if parliament was not set, try to retrieve it from current context
   if (!$parliament) {
@@ -155,17 +191,17 @@ function _pw_get_parliament_term_tid_by_nid($nid) {
   switch ($node_type) {
 
     case 'sidejob':
-      $tid = $selected_node->field_parliament['und'][0]['tid'];
+      $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
       return $tid;
       break;
 
     case 'committee_membership':
-      $tid = $selected_node->field_parliament['und'][0]['tid'];
+      $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
       return $tid;
       break;
 
     case 'speech':
-      $tid = $selected_node->field_parliament['und'][0]['tid'];
+      $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
       return $tid;
       break;
   }

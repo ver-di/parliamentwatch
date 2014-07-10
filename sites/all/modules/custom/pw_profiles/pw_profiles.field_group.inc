@@ -92,7 +92,7 @@ function pw_profiles_field_group_info() {
     'weight' => '10',
     'children' => array(
       0 => 'field_user_gender',
-      1 => 'field_user_first_letter_lname',
+      1 => 'field_user_question_form_closed',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -239,12 +239,16 @@ function pw_profiles_field_group_info() {
     'label' => 'Admin Settings',
     'weight' => '12',
     'children' => array(
-      0 => 'field_user_external_url',
-      1 => 'ckeditor',
-      2 => 'piwik',
-      3 => 'redirect',
-      4 => 'timezone',
-      5 => 'locale',
+      0 => 'field_user_first_letter_lname',
+      1 => 'field_user_external_url',
+      2 => 'field_user_roles_for_view_mode_s',
+      3 => 'field_share_sum',
+      4 => 'ckeditor',
+      5 => 'piwik',
+      6 => 'redirect',
+      7 => 'timezone',
+      8 => 'xmlsitemap',
+      9 => 'locale',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

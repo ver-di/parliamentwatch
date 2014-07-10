@@ -4137,7 +4137,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     'parliaments' => 'parliaments',
   );
   $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['type'] = 'convert';
-  /* Kontextfilter: Benutzer (Historische Daten): user_roles_for_view_mode_switch (field_user_roles_for_view_mode_s) */
+  /* Kontextfilter: Benutzer (Historische Daten): Roles (revisionable) (field_user_roles_for_view_mode_s) */
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['id'] = 'field_user_roles_for_view_mode_s_tid';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['field'] = 'field_user_roles_for_view_mode_s_tid';
@@ -4175,7 +4175,7 @@ return FALSE;';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
-  /* Filterkriterium: Benutzer (Historische Daten): user_first_letter_lname (field_user_first_letter_lname) */
+  /* Filterkriterium: Benutzer (Historische Daten): First Letter of Lastname (field_user_first_letter_lname) */
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['id'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['table'] = 'field_revision_field_user_first_letter_lname';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['field'] = 'field_user_first_letter_lname_value';
@@ -4807,7 +4807,7 @@ return FALSE;';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
-  /* Filterkriterium: Benutzer (Historische Daten): user_first_letter_lname (field_user_first_letter_lname) */
+  /* Filterkriterium: Benutzer (Historische Daten): First Letter of Lastname (field_user_first_letter_lname) */
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['id'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['table'] = 'field_revision_field_user_first_letter_lname';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['field'] = 'field_user_first_letter_lname_value';
@@ -5497,7 +5497,7 @@ return FALSE;';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status']['expose']['required'] = TRUE;
-  /* Filterkriterium: Benutzer (Historische Daten): user_first_letter_lname (field_user_first_letter_lname) */
+  /* Filterkriterium: Benutzer (Historische Daten): First Letter of Lastname (field_user_first_letter_lname) */
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['id'] = 'field_user_first_letter_lname_value';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['table'] = 'field_revision_field_user_first_letter_lname';
   $handler->display->display_options['filters']['field_user_first_letter_lname_value']['field'] = 'field_user_first_letter_lname_value';

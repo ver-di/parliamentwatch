@@ -157,28 +157,31 @@ function pw_profiles_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'ckeditor' => array(
-          'weight' => '13',
+          'weight' => '12',
         ),
         'piwik' => array(
-          'weight' => '17',
+          'weight' => '16',
         ),
         'redirect' => array(
-          'weight' => '16',
+          'weight' => '15',
         ),
         'account' => array(
           'weight' => '4',
         ),
         'timezone' => array(
-          'weight' => '15',
+          'weight' => '14',
         ),
         'locale' => array(
-          'weight' => '14',
+          'weight' => '13',
         ),
         'overlay_control' => array(
           'weight' => '0',
         ),
         'mimemail' => array(
           'weight' => '5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '20',
         ),
       ),
       'display' => array(

@@ -210,7 +210,6 @@ function pw_profiles_views_query_alter(&$view, &$query) {
  * Implements hook_ds_pre_render_alter().
  * Trys to find string "[field_user_fname]" in question and answers view in profiles.
  * If found don't render the fields user_questions_and_answers and question_and_answers_filter.
- * This is hacky code...
  */
 function pw_profiles_ds_pre_render_alter(&$layout_render_array, $context) {
   if(isset($layout_render_array['left_2'])){

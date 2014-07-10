@@ -24,12 +24,16 @@ function pw_user_revision_switch_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['css_class'] = 'relative';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -64,7 +68,7 @@ function pw_user_revision_switch_views_default_views() {
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
@@ -74,7 +78,7 @@ function pw_user_revision_switch_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Contextual filter: User revision: Vid */
+  /* Kontextfilter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
   $handler->display->display_options['arguments']['vid']['field'] = 'vid';
@@ -121,26 +125,26 @@ return $result;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: User revision: Benutzer */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Benutzer (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Relationship: Benutzer (historical data): List Position (field_user_list_position) */
+  /* Beziehung: Benutzer (Historische Daten): List Position (field_user_list_position) */
   $handler->display->display_options['relationships']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
   $handler->display->display_options['relationships']['field_user_list_position_tid']['table'] = 'field_revision_field_user_list_position';
   $handler->display->display_options['relationships']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
@@ -170,7 +174,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: Benutzer (historical data): Birthday */
+  /* Feld: Benutzer (Historische Daten): Birthday */
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['id'] = 'field_user_birthday-revision_id';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['table'] = 'field_revision_field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['field'] = 'field_user_birthday-revision_id';
@@ -185,7 +189,7 @@ return $result;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Benutzer (historical data): Education */
+  /* Feld: Benutzer (Historische Daten): Education */
   $handler->display->display_options['fields']['field_user_education-revision_id']['id'] = 'field_user_education-revision_id';
   $handler->display->display_options['fields']['field_user_education-revision_id']['table'] = 'field_revision_field_user_education';
   $handler->display->display_options['fields']['field_user_education-revision_id']['field'] = 'field_user_education-revision_id';
@@ -195,7 +199,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_education-revision_id']['element_wrapper_class'] = 'views-row-odd clear clearfix';
   $handler->display->display_options['fields']['field_user_education-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_education-revision_id']['empty'] = '-';
-  /* Feld: Benutzer (historical data): Professional Qualification */
+  /* Feld: Benutzer (Historische Daten): Professional Qualification */
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['id'] = 'field_user_job_skills-revision_id';
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['table'] = 'field_revision_field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['field'] = 'field_user_job_skills-revision_id';
@@ -203,7 +207,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['empty'] = '-';
-  /* Feld: Benutzer (historical data): Address */
+  /* Feld: Benutzer (Historische Daten): Address */
   $handler->display->display_options['fields']['field_user_address-revision_id']['id'] = 'field_user_address-revision_id';
   $handler->display->display_options['fields']['field_user_address-revision_id']['table'] = 'field_revision_field_user_address';
   $handler->display->display_options['fields']['field_user_address-revision_id']['field'] = 'field_user_address-revision_id';
@@ -244,7 +248,7 @@ return $result;
   $handler->display->display_options['fields']['name_1']['empty'] = '-';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User revision: Vid */
+  /* Kontextfilter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
   $handler->display->display_options['arguments']['vid']['field'] = 'vid';
@@ -290,7 +294,7 @@ return $result;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -334,7 +338,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): About */
+  /* Feld: Benutzer (Historische Daten): About */
   $handler->display->display_options['fields']['field_user_about-revision_id']['id'] = 'field_user_about-revision_id';
   $handler->display->display_options['fields']['field_user_about-revision_id']['table'] = 'field_revision_field_user_about';
   $handler->display->display_options['fields']['field_user_about-revision_id']['field'] = 'field_user_about-revision_id';
@@ -345,7 +349,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_about-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer (historical data): About (field_user_about) */
+  /* Filterkriterium: Benutzer (Historische Daten): About (field_user_about) */
   $handler->display->display_options['filters']['field_user_about_value']['id'] = 'field_user_about_value';
   $handler->display->display_options['filters']['field_user_about_value']['table'] = 'field_revision_field_user_about';
   $handler->display->display_options['filters']['field_user_about_value']['field'] = 'field_user_about_value';
@@ -374,21 +378,21 @@ return $result;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id] <?php print t(\'about\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  /* Kopfbereich: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['empty'] = TRUE;
   $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -463,7 +467,7 @@ return $result;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'clear clearfix';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Feld: Benutzer (historical data): About */
+  /* Feld: Benutzer (Historische Daten): About */
   $handler->display->display_options['fields']['field_user_about-revision_id']['id'] = 'field_user_about-revision_id';
   $handler->display->display_options['fields']['field_user_about-revision_id']['table'] = 'field_revision_field_user_about';
   $handler->display->display_options['fields']['field_user_about-revision_id']['field'] = 'field_user_about-revision_id';
@@ -482,7 +486,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'profile/[name]/archive/[vid]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -496,7 +500,7 @@ return $result;
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  /* Contextual filter: User revision: Vid */
+  /* Kontextfilter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
   $handler->display->display_options['arguments']['vid']['field'] = 'vid';
@@ -549,7 +553,7 @@ return $result;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -557,7 +561,7 @@ return $result;
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -606,7 +610,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Image Gallery */
+  /* Feld: Benutzer (Historische Daten): Image Gallery */
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['id'] = 'field_user_image_gallery-revision_id';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['table'] = 'field_revision_field_user_image_gallery';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['field'] = 'field_user_image_gallery-revision_id';
@@ -629,7 +633,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer (historical data): Image Gallery (field_user_image_gallery:fid) */
+  /* Filterkriterium: Benutzer (Historische Daten): Image Gallery (field_user_image_gallery:fid) */
   $handler->display->display_options['filters']['field_user_image_gallery_fid']['id'] = 'field_user_image_gallery_fid';
   $handler->display->display_options['filters']['field_user_image_gallery_fid']['table'] = 'field_revision_field_user_image_gallery';
   $handler->display->display_options['filters']['field_user_image_gallery_fid']['field'] = 'field_user_image_gallery_fid';
@@ -656,27 +660,27 @@ return $result;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Image Gallery of\'); ?> [field_user_fname-revision_id]  [[field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  /* Kopfbereich: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['empty'] = TRUE;
   $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
   $handler->display->display_options['header']['area_1']['content'] = '<h3>Bildergalerie</h3>';
   $handler->display->display_options['header']['area_1']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -684,7 +688,7 @@ return $result;
   $handler->display->display_options['footer']['area']['format'] = 'managed_content';
   $handler->display->display_options['footer']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Image Gallery (field_user_image_gallery:fid) */
+  /* Beziehung: Benutzer (Historische Daten): Image Gallery (field_user_image_gallery:fid) */
   $handler->display->display_options['relationships']['field_user_image_gallery_fid']['id'] = 'field_user_image_gallery_fid';
   $handler->display->display_options['relationships']['field_user_image_gallery_fid']['table'] = 'field_revision_field_user_image_gallery';
   $handler->display->display_options['relationships']['field_user_image_gallery_fid']['field'] = 'field_user_image_gallery_fid';
@@ -743,7 +747,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -753,7 +757,7 @@ return $result;
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'user-image-gallery-wrapper';
-  /* Feld: Benutzer (historical data): Image Gallery */
+  /* Feld: Benutzer (Historische Daten): Image Gallery */
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['id'] = 'field_user_image_gallery-revision_id';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['table'] = 'field_revision_field_user_image_gallery';
   $handler->display->display_options['fields']['field_user_image_gallery-revision_id']['field'] = 'field_user_image_gallery-revision_id';
@@ -797,12 +801,12 @@ return $result;
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Benutzer: Created date */
+  /* Sortierkriterien: Benutzer: Erstellungsdatum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -816,7 +820,7 @@ return $result;
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  /* Contextual filter: User revision: Vid */
+  /* Kontextfilter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
   $handler->display->display_options['arguments']['vid']['field'] = 'vid';
@@ -861,7 +865,7 @@ return $result;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -869,7 +873,7 @@ return $result;
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -918,7 +922,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: Benutzer (historical data): Political Goals */
+  /* Feld: Benutzer (Historische Daten): Political Goals */
   $handler->display->display_options['fields']['field_user_political_goals-revision_id']['id'] = 'field_user_political_goals-revision_id';
   $handler->display->display_options['fields']['field_user_political_goals-revision_id']['table'] = 'field_revision_field_user_political_goals';
   $handler->display->display_options['fields']['field_user_political_goals-revision_id']['field'] = 'field_user_political_goals-revision_id';
@@ -929,7 +933,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_political_goals-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer (historical data): Political Goals (field_user_political_goals) */
+  /* Filterkriterium: Benutzer (Historische Daten): Political Goals (field_user_political_goals) */
   $handler->display->display_options['filters']['field_user_political_goals_value']['id'] = 'field_user_political_goals_value';
   $handler->display->display_options['filters']['field_user_political_goals_value']['table'] = 'field_revision_field_user_political_goals';
   $handler->display->display_options['filters']['field_user_political_goals_value']['field'] = 'field_user_political_goals_value';
@@ -958,20 +962,20 @@ return $result;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  /* Kopfbereich: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1044,7 +1048,7 @@ return $result;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'h3';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'clear clearfix';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Feld: Benutzer (historical data): Political Goals */
+  /* Feld: Benutzer (Historische Daten): Political Goals */
   $handler->display->display_options['fields']['field_user_political_goals-revision_id']['id'] = 'field_user_political_goals-revision_id';
   $handler->display->display_options['fields']['field_user_political_goals-revision_id']['table'] = 'field_revision_field_user_political_goals';
   $handler->display->display_options['fields']['field_user_political_goals-revision_id']['field'] = 'field_user_political_goals-revision_id';
@@ -1068,7 +1072,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -1082,7 +1086,7 @@ return $result;
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  /* Contextual filter: User revision: Vid */
+  /* Kontextfilter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
   $handler->display->display_options['arguments']['vid']['field'] = 'vid';
@@ -1126,7 +1130,7 @@ return $result;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -1170,7 +1174,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): External Links */
+  /* Feld: Benutzer (Historische Daten): External Links */
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['id'] = 'field_user_links_more-revision_id';
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['table'] = 'field_revision_field_user_links_more';
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['field'] = 'field_user_links_more-revision_id';
@@ -1184,7 +1188,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Benutzer (historical data): External Links (field_user_links_more:url) */
+  /* Filterkriterium: Benutzer (Historische Daten): External Links (field_user_links_more:url) */
   $handler->display->display_options['filters']['field_user_links_more_url']['id'] = 'field_user_links_more_url';
   $handler->display->display_options['filters']['field_user_links_more_url']['table'] = 'field_revision_field_user_links_more';
   $handler->display->display_options['filters']['field_user_links_more_url']['field'] = 'field_user_links_more_url';
@@ -1213,27 +1217,27 @@ return $result;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Additional Links of\'); ?> [field_user_fname-revision_id]  [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  /* Kopfbereich: Global: View area */
+  /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
   $handler->display->display_options['header']['view']['table'] = 'views';
   $handler->display->display_options['header']['view']['field'] = 'view';
   $handler->display->display_options['header']['view']['empty'] = TRUE;
   $handler->display->display_options['header']['view']['view_to_insert'] = 'pw_user_profile_fields_rev:short_profile_premium_sub';
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
   $handler->display->display_options['header']['area_1']['content'] = '<h3>Additional information</h3>';
   $handler->display->display_options['header']['area_1']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Fußbereich: Global: Text area */
+  /* Fußbereich: Global: Textbereich */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
@@ -1295,7 +1299,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): External Links */
+  /* Feld: Benutzer (Historische Daten): External Links */
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['id'] = 'field_user_links_more-revision_id';
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['table'] = 'field_revision_field_user_links_more';
   $handler->display->display_options['fields']['field_user_links_more-revision_id']['field'] = 'field_user_links_more-revision_id';
@@ -1322,7 +1326,7 @@ return $result;
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'link-profile';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Benutzer: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -1336,7 +1340,7 @@ return $result;
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
-  /* Contextual filter: User revision: Vid */
+  /* Kontextfilter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
   $handler->display->display_options['arguments']['vid']['field'] = 'vid';
@@ -1390,21 +1394,21 @@ return $result;
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Excluded | PHP: Parliament is valid */
+  /* Feld: Excluded | PHP: CSS ui-state-disabled */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP: Parliament is valid';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP: CSS ui-state-disabled';
   $handler->display->display_options['fields']['php']['label'] = '';
   $handler->display->display_options['fields']['php']['exclude'] = TRUE;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_value'] = 'return _check_parliament_active()?\'\':\'ui-state-disabled\';';
+  $handler->display->display_options['fields']['php']['php_value'] = 'return _pw_is_profile_consultable()?\'\':\'ui-state-disabled\';';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Excluded | User: Uid */
@@ -1507,7 +1511,7 @@ return $result;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
@@ -1615,7 +1619,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Feld: Benutzer (historical data): Questions Get */
+  /* Feld: Benutzer (Historische Daten): Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['id'] = 'field_user_questions_get-revision_id_1';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['table'] = 'field_revision_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['field'] = 'field_user_questions_get-revision_id';
@@ -1635,7 +1639,7 @@ if(_pw_is_premium_user($profile_user)){
     'prefix_suffix' => 0,
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User revision: Vid */
+  /* Kontextfilter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
   $handler->display->display_options['arguments']['vid']['field'] = 'vid';
@@ -1677,7 +1681,7 @@ return $result;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -1775,7 +1779,7 @@ return $result;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['id'] = 'field_user_picture-revision_id_1';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['field'] = 'field_user_picture-revision_id';
@@ -1860,7 +1864,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User revision: Vid */
+  /* Kontextfilter: User revision: Vid */
   $handler->display->display_options['arguments']['vid']['id'] = 'vid';
   $handler->display->display_options['arguments']['vid']['table'] = 'user_revision';
   $handler->display->display_options['arguments']['vid']['field'] = 'vid';
@@ -1914,21 +1918,21 @@ return $result;
   $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Excluded | PHP: Parliament is valid */
+  /* Feld: Excluded | PHP: CSS ui-state-disabled */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP: Parliament is valid';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP: CSS ui-state-disabled';
   $handler->display->display_options['fields']['php']['label'] = '';
   $handler->display->display_options['fields']['php']['exclude'] = TRUE;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_value'] = 'return _check_parliament_active()?\'\':\'ui-state-disabled\';';
+  $handler->display->display_options['fields']['php']['php_value'] = 'return _pw_is_profile_consultable()?\'\':\'ui-state-disabled\';';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Excluded | User: Uid */
@@ -2027,7 +2031,7 @@ return $result;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
@@ -2114,7 +2118,7 @@ return $result;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = '#pw-block-questions-and-answers';
   $handler->display->display_options['fields']['nothing']['alter']['link_class'] = 'link-qa';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Feld: Benutzer (historical data): Questions Get */
+  /* Feld: Benutzer (Historische Daten): Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['id'] = 'field_user_questions_get-revision_id_1';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['table'] = 'field_revision_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['field'] = 'field_user_questions_get-revision_id';
@@ -2147,7 +2151,7 @@ return $result;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2268,7 +2272,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing_2']['id'] = 'nothing_2';
   $handler->display->display_options['fields']['nothing_2']['table'] = 'views';
   $handler->display->display_options['fields']['nothing_2']['field'] = 'nothing';
@@ -2342,11 +2346,11 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entity Reference: Referencing entity */
+  /* Beziehung: Entity Reference: Entität, die verweist */
   $handler->display->display_options['relationships']['reverse_field_dialogue_recipient_node']['id'] = 'reverse_field_dialogue_recipient_node';
   $handler->display->display_options['relationships']['reverse_field_dialogue_recipient_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_dialogue_recipient_node']['field'] = 'reverse_field_dialogue_recipient_node';
-  /* Relationship: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2420,7 +2424,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Parliament */
+  /* Feld: Feld (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -2429,7 +2433,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['id'] = 'field_user_picture-revision_id_1';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['field'] = 'field_user_picture-revision_id';
@@ -2514,7 +2518,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'zum vollständigen Profil';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Feld: Recipient (field_dialogue_recipient) */
+  /* Kontextfilter: Feld: Recipient (field_dialogue_recipient) */
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
@@ -2530,7 +2534,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['validate_options']['type'] = 'either';
-  /* Contextual filter: Benutzer (historical data): Parliament (field_user_parliament) */
+  /* Kontextfilter: Feld (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2564,12 +2568,16 @@ return $term->tid;';
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Wählergedächtnis';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -2577,7 +2585,7 @@ return $term->tid;';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -2641,7 +2649,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -2730,7 +2738,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['number_of_missed_votings']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['number_of_missed_votings']['format_plural_singular'] = '1 missed voting';
   $handler->display->display_options['fields']['number_of_missed_votings']['format_plural_plural'] = '@count missed votings';
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -2779,12 +2787,12 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['php_2']['php_output'] = '$static = \'xxx\';';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
-  /* Sort criterion: User archive cache: Timestamp */
+  /* Sortierkriterien: User archive cache: Timestamp */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'user_archive_cache';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
-  /* Contextual filter: User archive cache: Uid */
+  /* Kontextfilter: User archive cache: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'user_archive_cache';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -2802,7 +2810,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   /* Display: Wählergedächtnis */
   $handler = $view->new_display('block', 'Wählergedächtnis', 'block');
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -2867,7 +2875,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -2980,7 +2988,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: User archive cache: User name */
+  /* Kontextfilter: User archive cache: User name */
   $handler->display->display_options['arguments']['user_name']['id'] = 'user_name';
   $handler->display->display_options['arguments']['user_name']['table'] = 'user_archive_cache';
   $handler->display->display_options['arguments']['user_name']['field'] = 'user_name';
