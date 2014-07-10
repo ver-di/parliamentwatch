@@ -44,7 +44,7 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
 
     // question form closed by reason
     $field_closed_by_reason = field_get_items('user', $user, 'field_user_question_form_closed');
-    if(isset($field_closed_by_reason)){
+    if(!empty($field_closed_by_reason)){
       $body_markup = '<div class="pw-messages warning">'.$field_closed_by_reason[0]['value'].'</div>';
     }
 
