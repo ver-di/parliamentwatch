@@ -91,74 +91,16 @@ function pw_calendar_entries_views_default_views() {
   $handler = $view->new_display('block', 'Political Roles', 'political_roles');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Politische Funktionen von [php] ';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'clearfix zebra';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'field_valid',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_valid' => 'field_valid',
-    'fieldset' => 'fieldset',
-    'field_political_role' => 'field_political_role',
-    'field_committee' => 'field_committee',
-    'field_parliament' => 'field_parliament',
-    'nid' => 'nid',
-    'php' => 'php',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_valid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'fieldset' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_political_role' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_committee' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_parliament' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'php' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -176,11 +118,11 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['relationships']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['relationships']['field_politician_target_id']['field'] = 'field_politician_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Exluded | Date */
+  /* Feld: Excluded | Date */
   $handler->display->display_options['fields']['field_valid']['id'] = 'field_valid';
   $handler->display->display_options['fields']['field_valid']['table'] = 'field_data_field_valid';
   $handler->display->display_options['fields']['field_valid']['field'] = 'field_valid';
-  $handler->display->display_options['fields']['field_valid']['ui_name'] = 'Exluded | Date';
+  $handler->display->display_options['fields']['field_valid']['ui_name'] = 'Excluded | Date';
   $handler->display->display_options['fields']['field_valid']['label'] = '';
   $handler->display->display_options['fields']['field_valid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_valid']['element_label_colon'] = FALSE;
@@ -198,7 +140,6 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['fields']['field_committee']['ui_name'] = 'Excluded | Committee';
   $handler->display->display_options['fields']['field_committee']['label'] = '';
   $handler->display->display_options['fields']['field_committee']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_committee']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_committee']['alter']['text'] = '[field_committee],';
   $handler->display->display_options['fields']['field_committee']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_committee']['type'] = 'i18n_taxonomy_term_reference_plain';
@@ -209,9 +150,9 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['fields']['field_sidejob_organization']['ui_name'] = 'Excluded | Organization';
   $handler->display->display_options['fields']['field_sidejob_organization']['label'] = '';
   $handler->display->display_options['fields']['field_sidejob_organization']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_organization']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_organization']['alter']['text'] = '[field_sidejob_organization], ';
+  $handler->display->display_options['fields']['field_sidejob_organization']['alter']['text'] = '[field_sidejob_organization]';
   $handler->display->display_options['fields']['field_sidejob_organization']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_organization']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_organization']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Excluded | Job */
   $handler->display->display_options['fields']['field_job']['id'] = 'field_job';
@@ -221,8 +162,9 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['fields']['field_job']['label'] = '';
   $handler->display->display_options['fields']['field_job']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_job']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_job']['alter']['text'] = '[field_job],  ';
+  $handler->display->display_options['fields']['field_job']['alter']['text'] = ', [field_job]';
   $handler->display->display_options['fields']['field_job']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_job']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_job']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_job']['settings'] = array(
     'linked' => 0,
@@ -234,24 +176,18 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['fields']['field_sidejob_address']['ui_name'] = 'Excluded | Address';
   $handler->display->display_options['fields']['field_sidejob_address']['label'] = '';
   $handler->display->display_options['fields']['field_sidejob_address']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sidejob_address']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_sidejob_address']['alter']['text'] = ', [field_sidejob_address]';
   $handler->display->display_options['fields']['field_sidejob_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_address']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_address']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_sidejob_address']['type'] = 'addressfield_state';
+  $handler->display->display_options['fields']['field_sidejob_address']['type'] = 'addressfield_components';
   $handler->display->display_options['fields']['field_sidejob_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
+    'components' => array(
+      'locality' => 'locality',
     ),
+    'separator' => ', ',
   );
-  /* Feld: Excluded | Parliament */
-  $handler->display->display_options['fields']['field_parliament']['id'] = 'field_parliament';
-  $handler->display->display_options['fields']['field_parliament']['table'] = 'field_data_field_parliament';
-  $handler->display->display_options['fields']['field_parliament']['field'] = 'field_parliament';
-  $handler->display->display_options['fields']['field_parliament']['ui_name'] = 'Excluded | Parliament';
-  $handler->display->display_options['fields']['field_parliament']['label'] = '';
-  $handler->display->display_options['fields']['field_parliament']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_parliament']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_parliament']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Excluded | NID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -286,7 +222,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Rewritten Output';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_committee] [field_sidejob_organization] [field_job] [field_sidejob_address] ';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_valid][field_committee][field_sidejob_organization][field_job][field_sidejob_address]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Inhalt: Politician (field_politician) */
@@ -331,12 +267,10 @@ echo $fname." ".$lname;
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = '$parliament_tag = $row->field_parliament;
-$user_parliament_tag = _pw_get_current_parliament_term();
+  $handler->display->display_options['filters']['php']['php_filter'] = '$user_parliament_tag = _pw_get_current_parliament_term();
 $user_parliament_tid = $user_parliament_tag->tid;
 $nid = $row->nid;
 $node_parliament_tid = _pw_get_parliament_term_tid_by_nid($nid);
-
 if($node_parliament_tid == $user_parliament_tid)
 {
   return FALSE;
@@ -357,94 +291,43 @@ else return TRUE;
     'sidejob' => 'sidejob',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
+  /* Filter criterion: Inhalt: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    0 => '17077',
+  );
+  $handler->display->display_options['filters']['tid']['group'] = 2;
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'sidejob_sectors';
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php_1']['id'] = 'php_1';
   $handler->display->display_options['filters']['php_1']['table'] = 'views';
   $handler->display->display_options['filters']['php_1']['field'] = 'php';
   $handler->display->display_options['filters']['php_1']['group'] = 2;
   $handler->display->display_options['filters']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php_1']['php_filter'] = '$parliament_tag = $row->field_parliament;
-$user_parliament_tag = _pw_get_current_parliament_term();
+  $handler->display->display_options['filters']['php_1']['php_filter'] = '$user_parliament_tag = _pw_get_current_parliament_term();
 $nid = $row->nid;
 $node_parliament_tid = _pw_get_parliament_term_tid_by_nid($nid);
 $user_parliament_tid = $user_parliament_tag->tid;
-
 if($node_parliament_tid == $user_parliament_tid)
 {
   return FALSE;
 }
 else return TRUE;
 ';
-  /* Filter criterion: Inhalt: Sectors (field_sectors) */
-  $handler->display->display_options['filters']['field_sectors_tid']['id'] = 'field_sectors_tid';
-  $handler->display->display_options['filters']['field_sectors_tid']['table'] = 'field_data_field_sectors';
-  $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
-  $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17077 => '17077',
-  );
-  $handler->display->display_options['filters']['field_sectors_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sectors_tid']['vocabulary'] = 'sidejob_sectors';
 
   /* Display: Sidejobs */
   $handler = $view->new_display('block', 'Sidejobs', 'sidejobs');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Nebentätigkeiten und Ehrenamtliche Tätigkeiten von [php]';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'clearfix zebra';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_valid' => 'field_valid',
-    'field_political_role' => 'field_political_role',
-    'field_sidejob_sector' => 'field_sidejob_sector',
-    'field_sidejob_classification' => 'field_sidejob_classification',
-    'field_sidejob_income_interval' => 'field_sidejob_income_interval',
-    'php' => 'php',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_valid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_political_role' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_sidejob_sector' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_sidejob_classification' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_sidejob_income_interval' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'php' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -470,7 +353,7 @@ else return TRUE;
   $handler->display->display_options['fields']['field_job']['label'] = '';
   $handler->display->display_options['fields']['field_job']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_job']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_job']['alter']['text'] = '[field_job], ';
+  $handler->display->display_options['fields']['field_job']['alter']['text'] = '[field_job]';
   $handler->display->display_options['fields']['field_job']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_job']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Excluded | Organisation */
@@ -481,8 +364,9 @@ else return TRUE;
   $handler->display->display_options['fields']['field_sidejob_organization']['label'] = '';
   $handler->display->display_options['fields']['field_sidejob_organization']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_organization']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_organization']['alter']['text'] = '[field_sidejob_organization],';
+  $handler->display->display_options['fields']['field_sidejob_organization']['alter']['text'] = ', [field_sidejob_organization]';
   $handler->display->display_options['fields']['field_sidejob_organization']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_organization']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_organization']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Excluded | Income Amount */
   $handler->display->display_options['fields']['field_sidejob_income_amount']['id'] = 'field_sidejob_income_amount';
@@ -492,12 +376,13 @@ else return TRUE;
   $handler->display->display_options['fields']['field_sidejob_income_amount']['label'] = '';
   $handler->display->display_options['fields']['field_sidejob_income_amount']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_income_amount']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['alter']['text'] = '[field_sidejob_income_amount] €';
+  $handler->display->display_options['fields']['field_sidejob_income_amount']['alter']['text'] = ', Verdienst: [field_sidejob_income_amount] €';
   $handler->display->display_options['fields']['field_sidejob_income_amount']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_income_amount']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_income_amount']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => '.',
     'decimal_separator' => '.',
-    'scale' => '2',
+    'scale' => '0',
     'prefix_suffix' => 1,
   );
   /* Feld: Excluded | Income Amount Max */
@@ -508,33 +393,33 @@ else return TRUE;
   $handler->display->display_options['fields']['field_sidejob_income_amount_max']['label'] = '';
   $handler->display->display_options['fields']['field_sidejob_income_amount_max']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_income_amount_max']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['alter']['text'] = ' - [field_sidejob_income_amount_max] €,';
+  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['alter']['text'] = ' - [field_sidejob_income_amount_max] €';
   $handler->display->display_options['fields']['field_sidejob_income_amount_max']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidejob_income_amount_max']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => '.',
     'decimal_separator' => '.',
-    'scale' => '2',
+    'scale' => '0',
     'prefix_suffix' => 1,
   );
   /* Feld: Excluded | Income Interval */
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['id'] = 'field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['table'] = 'field_data_field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['field'] = 'field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['ui_name'] = 'Excluded | Income Interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['label'] = '';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['settings'] = array(
-    'thousand_separator' => ' ',
-    'prefix_suffix' => 1,
-  );
+  $handler->display->display_options['fields']['field_income_interval']['id'] = 'field_income_interval';
+  $handler->display->display_options['fields']['field_income_interval']['table'] = 'field_data_field_income_interval';
+  $handler->display->display_options['fields']['field_income_interval']['field'] = 'field_income_interval';
+  $handler->display->display_options['fields']['field_income_interval']['ui_name'] = 'Excluded | Income Interval';
+  $handler->display->display_options['fields']['field_income_interval']['label'] = '';
+  $handler->display->display_options['fields']['field_income_interval']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_income_interval']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_income_interval']['alter']['text'] = ', [field_income_interval]';
+  $handler->display->display_options['fields']['field_income_interval']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_income_interval']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_income_interval']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Rewritten Output */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Rewritten Output';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_job] [field_sidejob_organization] Verdienst: [field_sidejob_income_amount][field_sidejob_income_amount_max] [field_sidejob_income_interval] ';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_job][field_sidejob_organization][field_sidejob_income_amount][field_sidejob_income_amount_max][field_income_interval] ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Feld: Excluded | PHP | FName + LName */
   $handler->display->display_options['fields']['php']['id'] = 'php';
@@ -612,62 +497,27 @@ return $tid;';
   $handler->display->display_options['filters']['field_job_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_job_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_job_tid']['vocabulary'] = 'sidejob_jobs';
-  /* Filter criterion: Inhalt: Sectors (field_sectors) */
-  $handler->display->display_options['filters']['field_sectors_tid']['id'] = 'field_sectors_tid';
-  $handler->display->display_options['filters']['field_sectors_tid']['table'] = 'field_data_field_sectors';
-  $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
-  $handler->display->display_options['filters']['field_sectors_tid']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17077 => '17077',
+  /* Filter criterion: Inhalt: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    0 => '17077',
   );
-  $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sectors_tid']['vocabulary'] = 'sidejob_sectors';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'sidejob_sectors';
 
   /* Display: Speeches */
   $handler = $view->new_display('block', 'Speeches', 'speeches');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Gehaltene Reden von [php]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'zebra clearfix';
+  $handler->display->display_options['css_class'] = 'clearfix zebra';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_valid' => 'field_valid',
-    'title' => 'title',
-    'field_duration' => 'field_duration',
-    'php' => 'php',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_valid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_duration' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'php' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -685,11 +535,13 @@ return $tid;';
   $handler->display->display_options['relationships']['field_politician_target_id']['table'] = 'field_data_field_politician';
   $handler->display->display_options['relationships']['field_politician_target_id']['field'] = 'field_politician_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Date */
+  /* Feld: Excluded | Date */
   $handler->display->display_options['fields']['field_valid']['id'] = 'field_valid';
   $handler->display->display_options['fields']['field_valid']['table'] = 'field_data_field_valid';
   $handler->display->display_options['fields']['field_valid']['field'] = 'field_valid';
+  $handler->display->display_options['fields']['field_valid']['ui_name'] = 'Excluded | Date';
   $handler->display->display_options['fields']['field_valid']['label'] = '';
+  $handler->display->display_options['fields']['field_valid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_valid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_valid']['settings'] = array(
     'format_type' => 'date_only_short',
@@ -698,11 +550,13 @@ return $tid;';
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Inhalt: Titel */
+  /* Feld: Excluded | Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Excluded | Titel';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -710,16 +564,32 @@ return $tid;';
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Feld: Inhalt: Duration */
+  /* Feld: Excluded | Duration */
   $handler->display->display_options['fields']['field_duration']['id'] = 'field_duration';
   $handler->display->display_options['fields']['field_duration']['table'] = 'field_data_field_duration';
   $handler->display->display_options['fields']['field_duration']['field'] = 'field_duration';
+  $handler->display->display_options['fields']['field_duration']['ui_name'] = 'Excluded | Duration';
   $handler->display->display_options['fields']['field_duration']['label'] = '';
+  $handler->display->display_options['fields']['field_duration']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_duration']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_duration']['settings'] = array(
     'format' => 'h:mm:ss',
     'leading_zero' => 1,
   );
+  /* Feld: Excluded | Link */
+  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
+  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['ui_name'] = 'Excluded | Link';
+  $handler->display->display_options['fields']['field_link']['label'] = '';
+  $handler->display->display_options['fields']['field_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link']['alter']['text'] = 'mehr anzeigen';
+  $handler->display->display_options['fields']['field_link']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_link']['alter']['path'] = '[field_link-url] ';
+  $handler->display->display_options['fields']['field_link']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['field_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
   /* Feld: Excluded | PHP | FName + LName */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -737,6 +607,13 @@ echo $fname." ".$lname;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_valid][title][field_duration][field_link] ';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
@@ -793,98 +670,14 @@ return $tid;';
   $handler->display->display_options['title'] = 'Politische Funktionen von [php]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix zebra';
+  $handler->display->display_options['defaults']['query'] = FALSE;
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => 'field_valid',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['columns'] = array(
-    'name' => 'name',
-    'field_valid' => 'field_valid',
-    'field_committee' => 'field_committee',
-    'field_sidejob_organization' => 'field_sidejob_organization',
-    'field_job' => 'field_job',
-    'field_sidejob_address' => 'field_sidejob_address',
-    'nid' => 'nid',
-    'field_parliament' => 'field_parliament',
-    'php' => 'php',
-    'nothing' => 'nothing',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'name' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_valid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_committee' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_sidejob_organization' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_job' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_sidejob_address' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_parliament' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'php' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nothing' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: Text area */
@@ -947,7 +740,7 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['field_valid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_valid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_valid']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'date_only_short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -961,8 +754,9 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['field_committee']['label'] = '';
   $handler->display->display_options['fields']['field_committee']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_committee']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_committee']['alter']['text'] = '[field_committee], ';
+  $handler->display->display_options['fields']['field_committee']['alter']['text'] = '[field_committee]';
   $handler->display->display_options['fields']['field_committee']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_committee']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_committee']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Excluded | Organization */
   $handler->display->display_options['fields']['field_sidejob_organization']['id'] = 'field_sidejob_organization';
@@ -972,8 +766,9 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['field_sidejob_organization']['label'] = '';
   $handler->display->display_options['fields']['field_sidejob_organization']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_organization']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_organization']['alter']['text'] = '[field_sidejob_organization], ';
+  $handler->display->display_options['fields']['field_sidejob_organization']['alter']['text'] = '[field_sidejob_organization]';
   $handler->display->display_options['fields']['field_sidejob_organization']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_organization']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_organization']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Excluded | Job */
   $handler->display->display_options['fields']['field_job']['id'] = 'field_job';
@@ -983,8 +778,9 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['field_job']['label'] = '';
   $handler->display->display_options['fields']['field_job']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_job']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_job']['alter']['text'] = '[field_job], ';
+  $handler->display->display_options['fields']['field_job']['alter']['text'] = ', [field_job]';
   $handler->display->display_options['fields']['field_job']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_job']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_job']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Excluded | Address */
   $handler->display->display_options['fields']['field_sidejob_address']['id'] = 'field_sidejob_address';
@@ -993,14 +789,16 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['field_sidejob_address']['ui_name'] = 'Excluded | Address';
   $handler->display->display_options['fields']['field_sidejob_address']['label'] = '';
   $handler->display->display_options['fields']['field_sidejob_address']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_sidejob_address']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_sidejob_address']['alter']['text'] = ', [field_sidejob_address]';
   $handler->display->display_options['fields']['field_sidejob_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidejob_address']['click_sort_column'] = 'country';
-  $handler->display->display_options['fields']['field_sidejob_address']['type'] = 'addressfield_state';
+  $handler->display->display_options['fields']['field_sidejob_address']['type'] = 'addressfield_components';
   $handler->display->display_options['fields']['field_sidejob_address']['settings'] = array(
-    'use_widget_handlers' => 1,
-    'format_handlers' => array(
-      'address' => 'address',
+    'components' => array(
+      'locality' => 'locality',
     ),
+    'separator' => ', ',
   );
   /* Feld: Rewritten Output */
   $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
@@ -1008,7 +806,7 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Rewritten Output';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_committee] [field_sidejob_organization] [field_job] [field_sidejob_address]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_valid][field_committee][field_sidejob_organization][field_job][field_sidejob_address]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   /* Feld: Excluded | NID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -1107,14 +905,11 @@ echo $fname." ".$lname;
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = '$parliament_tag = $row->field_parliament;
-$user_parliament_tag = _pw_get_current_parliament_term();
+  $handler->display->display_options['filters']['php']['php_filter'] = '$user_parliament_tag = _pw_get_current_parliament_term();
 $nid = $row->nid;
 $node_parliament_tid = _pw_get_parliament_term_tid_by_nid($nid);
 $user_parliament_tid = $user_parliament_tag->tid;
-
-if($node_parliament_tid == $user_parliament_tid)
-{
+if($node_parliament_tid == $user_parliament_tid) {
   return FALSE;
 }
 else return TRUE;
@@ -1133,29 +928,28 @@ else return TRUE;
     'sidejob' => 'sidejob',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 2;
-  /* Filter criterion: Inhalt: Sectors (field_sectors) */
-  $handler->display->display_options['filters']['field_sectors_tid']['id'] = 'field_sectors_tid';
-  $handler->display->display_options['filters']['field_sectors_tid']['table'] = 'field_data_field_sectors';
-  $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
-  $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17077 => '17077',
+  /* Filter criterion: Inhalt: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    0 => '17077',
   );
-  $handler->display->display_options['filters']['field_sectors_tid']['group'] = 2;
-  $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sectors_tid']['vocabulary'] = 'sidejob_sectors';
+  $handler->display->display_options['filters']['tid']['group'] = 2;
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'sidejob_sectors';
   /* Filter criterion: Global: PHP */
   $handler->display->display_options['filters']['php_1']['id'] = 'php_1';
   $handler->display->display_options['filters']['php_1']['table'] = 'views';
   $handler->display->display_options['filters']['php_1']['field'] = 'php';
   $handler->display->display_options['filters']['php_1']['group'] = 2;
   $handler->display->display_options['filters']['php_1']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php_1']['php_filter'] = '$parliament_tag = $row->field_parliament;
-$user_parliament_tag = _pw_get_current_parliament_term();
+  $handler->display->display_options['filters']['php_1']['php_filter'] = '$user_parliament_tag = _pw_get_current_parliament_term();
 $nid = $row->nid;
 $node_parliament_tid = _pw_get_parliament_term_tid_by_nid($nid);
 $user_parliament_tid = $user_parliament_tag->tid;
-
-if ($node_parliament_tid == $user_parliament_tid) return FALSE;
+if ($node_parliament_tid == $user_parliament_tid) {
+ return FALSE;
+}
 else return TRUE;
 ';
   $handler->display->display_options['path'] = 'profile/%/archive/%/political-roles';
@@ -1164,10 +958,13 @@ else return TRUE;
   $handler = $view->new_display('page_with_page_title', 'Sidejobs Page', 'sidejobs_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Nebentätigkeiten und Ehrenamtliche Tätigkeiten von [php]';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'clearfix zebra';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: View area */
@@ -1253,12 +1050,13 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['field_sidejob_income_amount']['label'] = '';
   $handler->display->display_options['fields']['field_sidejob_income_amount']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_income_amount']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['alter']['text'] = '[field_sidejob_income_amount] €';
+  $handler->display->display_options['fields']['field_sidejob_income_amount']['alter']['text'] = 'Verdienst: [field_sidejob_income_amount] €';
   $handler->display->display_options['fields']['field_sidejob_income_amount']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_income_amount']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_sidejob_income_amount']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => '.',
     'decimal_separator' => '.',
-    'scale' => '2',
+    'scale' => '0',
     'prefix_suffix' => 1,
   );
   /* Feld: Excluded | Income Amount Max */
@@ -1272,26 +1070,23 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['field_sidejob_income_amount_max']['alter']['text'] = '- [field_sidejob_income_amount_max] €';
   $handler->display->display_options['fields']['field_sidejob_income_amount_max']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sidejob_income_amount_max']['settings'] = array(
-    'thousand_separator' => ' ',
+    'thousand_separator' => '.',
     'decimal_separator' => '.',
-    'scale' => '2',
+    'scale' => '0',
     'prefix_suffix' => 1,
   );
-  /* Feld: Excluded | Interval */
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['id'] = 'field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['table'] = 'field_data_field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['field'] = 'field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['ui_name'] = 'Excluded | Interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['label'] = '';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['alter']['text'] = ', [field_sidejob_income_interval]';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['settings'] = array(
-    'thousand_separator' => ' ',
-    'prefix_suffix' => 1,
-  );
+  /* Feld: Excluded | Income Interval */
+  $handler->display->display_options['fields']['field_income_interval']['id'] = 'field_income_interval';
+  $handler->display->display_options['fields']['field_income_interval']['table'] = 'field_data_field_income_interval';
+  $handler->display->display_options['fields']['field_income_interval']['field'] = 'field_income_interval';
+  $handler->display->display_options['fields']['field_income_interval']['ui_name'] = 'Excluded | Income Interval';
+  $handler->display->display_options['fields']['field_income_interval']['label'] = '';
+  $handler->display->display_options['fields']['field_income_interval']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_income_interval']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_income_interval']['alter']['text'] = ', [field_income_interval]';
+  $handler->display->display_options['fields']['field_income_interval']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_income_interval']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_income_interval']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Excluded | NID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -1345,7 +1140,7 @@ echo $fname." ".$lname;
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Rewritten Output';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_job] [field_sidejob_organization] Verdienst: [field_sidejob_income_amount] [field_sidejob_income_amount_max][field_sidejob_income_interval]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_job][field_sidejob_organization][field_sidejob_income_amount] [field_sidejob_income_amount_max][field_income_interval]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Inhalt: Politician (field_politician) */
@@ -1385,27 +1180,23 @@ echo $fname." ".$lname;
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['group'] = 1;
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = '$parliament_tag = $row->field_parliament;
-$user_parliament_tag = _pw_get_current_parliament_term();
+  $handler->display->display_options['filters']['php']['php_filter'] = '$user_parliament_tag = _pw_get_current_parliament_term();
 $nid = $row->nid;
 $node_parliament_tid = _pw_get_parliament_term_tid_by_nid($nid);
 $user_parliament_tid = $user_parliament_tag->tid;
-
-if($node_parliament_tid == $user_parliament_tid)
-{
+if($node_parliament_tid == $user_parliament_tid) {
   return FALSE;
 }
 else return TRUE;';
-  /* Filter criterion: Inhalt: Sectors (field_sectors) */
-  $handler->display->display_options['filters']['field_sectors_tid']['id'] = 'field_sectors_tid';
-  $handler->display->display_options['filters']['field_sectors_tid']['table'] = 'field_data_field_sectors';
-  $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
-  $handler->display->display_options['filters']['field_sectors_tid']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17077 => '17077',
+  /* Filter criterion: Inhalt: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['operator'] = 'not';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    0 => '17077',
   );
-  $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_sectors_tid']['vocabulary'] = 'sidejob_sectors';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'sidejob_sectors';
   $handler->display->display_options['path'] = 'profile/%/archive/%/sidejobs';
 
   /* Display: Speeches Page */
@@ -1413,38 +1204,12 @@ else return TRUE;';
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Gehaltene Reden von [php]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'clearfix';
+  $handler->display->display_options['css_class'] = 'clearfix zebra';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'table';
-  $handler->display->display_options['style_options']['columns'] = array(
-    'field_valid' => 'field_valid',
-    'title' => 'title',
-    'php' => 'php',
-  );
-  $handler->display->display_options['style_options']['default'] = '-1';
-  $handler->display->display_options['style_options']['info'] = array(
-    'field_valid' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'title' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'php' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-  );
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Kopfbereich: Global: View area */
@@ -1511,11 +1276,13 @@ if(isset($vid))echo $vid;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
-  /* Feld: Inhalt: Date */
+  /* Feld: Excluded | Date */
   $handler->display->display_options['fields']['field_valid']['id'] = 'field_valid';
   $handler->display->display_options['fields']['field_valid']['table'] = 'field_data_field_valid';
   $handler->display->display_options['fields']['field_valid']['field'] = 'field_valid';
+  $handler->display->display_options['fields']['field_valid']['ui_name'] = 'Excluded | Date';
   $handler->display->display_options['fields']['field_valid']['label'] = '';
+  $handler->display->display_options['fields']['field_valid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_valid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_valid']['settings'] = array(
     'format_type' => 'date_only_short',
@@ -1524,29 +1291,54 @@ if(isset($vid))echo $vid;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Inhalt: Titel */
+  /* Feld: Excluded | Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['ui_name'] = 'Excluded | Titel';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Feld: Inhalt: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Feld: Feld: Parliament */
-  $handler->display->display_options['fields']['field_parliament']['id'] = 'field_parliament';
-  $handler->display->display_options['fields']['field_parliament']['table'] = 'field_data_field_parliament';
-  $handler->display->display_options['fields']['field_parliament']['field'] = 'field_parliament';
-  $handler->display->display_options['fields']['field_parliament']['label'] = '';
-  $handler->display->display_options['fields']['field_parliament']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Duration */
+  $handler->display->display_options['fields']['field_duration']['id'] = 'field_duration';
+  $handler->display->display_options['fields']['field_duration']['table'] = 'field_data_field_duration';
+  $handler->display->display_options['fields']['field_duration']['field'] = 'field_duration';
+  $handler->display->display_options['fields']['field_duration']['ui_name'] = 'Excluded | Duration';
+  $handler->display->display_options['fields']['field_duration']['label'] = '';
+  $handler->display->display_options['fields']['field_duration']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_duration']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_duration']['settings'] = array(
+    'format' => 'h:mm:ss',
+    'leading_zero' => 1,
+  );
+  /* Feld: Excluded | Link */
+  $handler->display->display_options['fields']['field_link']['id'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['table'] = 'field_data_field_link';
+  $handler->display->display_options['fields']['field_link']['field'] = 'field_link';
+  $handler->display->display_options['fields']['field_link']['ui_name'] = 'Excluded | Link';
+  $handler->display->display_options['fields']['field_link']['label'] = '';
+  $handler->display->display_options['fields']['field_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link']['alter']['text'] = 'mehr anzeigen';
+  $handler->display->display_options['fields']['field_link']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_link']['alter']['path'] = '[field_link-url]';
+  $handler->display->display_options['fields']['field_link']['alter']['external'] = TRUE;
+  $handler->display->display_options['fields']['field_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link']['click_sort_column'] = 'url';
+  /* Feld: Rewritten Output */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Rewritten Output';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_valid][title][field_duration][field_link] ';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   /* Feld: Excluded | PHP | FName + LName */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
@@ -1614,14 +1406,10 @@ echo $fname." ".$lname;
   $handler->display->display_options['filters']['php']['table'] = 'views';
   $handler->display->display_options['filters']['php']['field'] = 'php';
   $handler->display->display_options['filters']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['filters']['php']['php_filter'] = '$parliament_tag = $row->field_parliament;
-$user_parliament_tag = _pw_get_current_parliament_term();
-
+  $handler->display->display_options['filters']['php']['php_filter'] = '$user_parliament_tag = _pw_get_current_parliament_term();
 $nid = $row->nid;
 $node_parliament_tid = _pw_get_parliament_term_tid_by_nid($nid);
-firep($node_parliament_tid, "Node TID");
 $user_parliament_tid = $user_parliament_tag->tid;
-firep($user_parliament_tid,"User TID");
 if($node_parliament_tid == $user_parliament_tid) {
   return FALSE;
 }
