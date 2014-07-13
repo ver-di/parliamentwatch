@@ -271,15 +271,20 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_address-revision_id']['id'] = 'field_user_address-revision_id';
   $handler->display->display_options['fields']['field_user_address-revision_id']['table'] = 'field_revision_field_user_address';
   $handler->display->display_options['fields']['field_user_address-revision_id']['field'] = 'field_user_address-revision_id';
-  $handler->display->display_options['fields']['field_user_address-revision_id']['label'] = 'address';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['label'] = 'location';
   $handler->display->display_options['fields']['field_user_address-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_address-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_address-revision_id']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_user_address-revision_id']['type'] = 'addressfield_components';
   $handler->display->display_options['fields']['field_user_address-revision_id']['settings'] = array(
-    'use_widget_handlers' => 0,
-    'format_handlers' => array(
-      'address' => 'address',
+    'components' => array(
+      'thoroughfare' => 'thoroughfare',
+      'locality' => 'locality',
+      'administrative_area' => 'administrative_area',
+      'postal_code' => 'postal_code',
+      'country' => 'country',
     ),
+    'separator' => ', ',
   );
   /* Feld: Benutzer (Historische Daten): List Position */
   $handler->display->display_options['fields']['field_user_list_position-revision_id']['id'] = 'field_user_list_position-revision_id';
@@ -321,7 +326,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
   $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
   $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
-  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = 'Titel';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = 'title';
   $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Benutzer (Historische Daten): Birthday */
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['id'] = 'field_user_birthday-revision_id';
@@ -361,6 +366,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['id'] = 'field_user_twitter_account-revision_id';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['table'] = 'field_revision_field_user_twitter_account';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['field'] = 'field_user_twitter_account-revision_id';
+  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['label'] = 'twitter';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['element_label_colon'] = FALSE;
   /* Sortierkriterien: User revision: Vid */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
