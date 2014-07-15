@@ -26,16 +26,8 @@ function pw_set_empty_birthday_validate(&$settings) {
 }
 
 function pw_set_empty_birthday($source, $item_key, $element_key, &$field, $settings) {
-
-  if(date('YYYY-mm-dd', $field) > date('YYYY-mm-dd', time() - 86400)) {
-
-    // create a new user with constructed uname
+  if(date('YYYY-mm-dd', strtotime($field)) > date('YYYY-mm-dd', time() - 86400)) {
     $field = '';
-    return;
-
+    watchdog("TEST", strtotime(""));
   } 
-
-  // unreachable code, dont do anything
-  return;
-
 }
