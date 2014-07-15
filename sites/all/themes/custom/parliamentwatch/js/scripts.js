@@ -1,25 +1,5 @@
 jQuery(document).ready(function() {
 
-    
-// slick kandidatencheck KC
-
-    // init slick on KC
-    $('.view-id-pw_kandidatencheck .view-content').slick({
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 12000
-    });
-    // unslick KC    
-    $('.view-id-pw_kandidatencheck .unslick').on('click', function() { // execute on slider change by sliding or cklicking
-        $('.view-id-pw_kandidatencheck .view-content').unslick(          
-            goToByScroll("pw-block-user-kc"),
-            $(this).text(Drupal.t('Show all positions as slideshow')),
-            $(this).removeClass('unslick'),
-            $(this).addClass('reslick')            
-        );
-    });
-
-
 // expand active user revision block in user revision switch
 
     if ($('#block-views-pw-announcement-slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title').length < 2) {
@@ -36,6 +16,11 @@ jQuery(document).ready(function() {
 // automatically adjust textarea heigh  with jQuery Autosize
 
     $('textarea').autosize();
+
+// change slideshow controls links in pw_kandidatencheck
+
+    $(".view-pw-kandidatencheck .views_slideshow_controls_text_next a").text(Drupal.t('next thesis'));
+    $(".view-pw-kandidatencheck .views_slideshow_controls_text_previous a").text(Drupal.t('previous thesis'));
      
 // attach values of bef slider to handles
 
@@ -75,8 +60,7 @@ jQuery(document).ready(function() {
 ////// Make blocks expandable only for responsive mobile version
         
     $(window).load(function () { //https://drupal.org/node/1478648
-        $('.responsive-layout-mobile #pw-block-user-basics').addClass('pw-mobile-expanded');
-        $('.responsive-layout-mobile .pw-expandable-mobile:not(.pw-mobile-expanded) .view').css('display','none');
+        $('.responsive-layout-mobile #pw-block-user-basics h2').addClass('pw-mobile-expanded');
         $('.responsive-layout-mobile .pw-expandable-mobile h2').click(function(){
         //alert();
             $(this).next('.view').slideToggle('slow');
