@@ -76820,10 +76820,6 @@ msgstr ""
 msgid "Schlagworte"
 msgstr ""
 
-#: /admin/structure/features/dialogues/status
-msgid "Link kopieren"
-msgstr ""
-
 #: /admin/structure/features/pw_user_revision_switch/status
 msgid "[field_user_parliament-revision_id]"
 msgstr ""

@@ -17337,11 +17337,6 @@ msgctxt "profile_questions_answers:default:field:views:nothing_1:alter:text"
 msgid "Permanent-Link zu obenstehender Frage und Antwort"
 msgstr "Permanent-Link zu obenstehender Frage und Antwort"
 
-#: views:profile_questions_answers:default:field:views:nothing:alter:text
-msgctxt "profile_questions_answers:default:field:views:nothing:alter:text"
-msgid "copy the link"
-msgstr "Link kopieren"
-
 #: views:profile_questions_answers:profile:title
 msgctxt "profile_questions_answers:profile:title"
 msgid "Fragen an [field_user_fname] [field_user_lname]"
