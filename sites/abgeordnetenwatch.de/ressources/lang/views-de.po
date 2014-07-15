@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-07-08 12:59+0200\n"
-"PO-Revision-Date: 2014-07-08 12:59+0200\n"
+"POT-Creation-Date: 2014-07-15 13:14+0200\n"
+"PO-Revision-Date: 2014-07-15 13:14+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -15430,7 +15430,7 @@ msgstr ""
 
 #: views:pw_kandidatencheck:default:exposed_form:submit_button
 msgctxt "pw_kandidatencheck:default:exposed_form:submit_button"
-msgid "Apply"
+msgid "Anwenden"
 msgstr ""
 
 #: views:pw_kandidatencheck:default:exposed_form:reset_button_label
@@ -15445,12 +15445,12 @@ msgstr ""
 
 #: views:pw_kandidatencheck:default:exposed_form:sort_asc_label
 msgctxt "pw_kandidatencheck:default:exposed_form:sort_asc_label"
-msgid "Asc"
+msgid "Aufsteigend"
 msgstr ""
 
 #: views:pw_kandidatencheck:default:exposed_form:sort_desc_label
 msgctxt "pw_kandidatencheck:default:exposed_form:sort_desc_label"
-msgid "Desc"
+msgid "Absteigend"
 msgstr ""
 
 #: views:pw_kandidatencheck:default:pager:expose:items_per_page_label
@@ -15507,7 +15507,7 @@ msgstr ""
 
 #: views:pw_kandidatencheck:default:relationship:field_data_field_pw_kc_vote_reference:field_pw_kc_vote_reference_tid:label
 msgctxt "pw_kandidatencheck:default:relationship:field_data_field_pw_kc_vote_reference:field_pw_kc_vote_reference_tid:label"
-msgid "term from field_pw_kc_vote_reference"
+msgid "Begriff aus field_pw_kc_vote_reference"
 msgstr ""
 
 #: views:pw_kandidatencheck:default:field:views_entity_node:edit_node:text
@@ -15517,7 +15517,7 @@ msgstr ""
 
 #: views:pw_kandidatencheck:default:field:views:fieldset:label
 msgctxt "pw_kandidatencheck:default:field:views:fieldset:label"
-msgid "Fieldset"
+msgid "Feldgruppe"
 msgstr ""
 
 #: views:pw_kandidatencheck:default:field:field_data_field_user_lname:field_user_lname:alter:text
@@ -15537,12 +15537,12 @@ msgstr ""
 
 #: views:pw_kandidatencheck:profile_slideshow:use_more_text
 msgctxt "pw_kandidatencheck:profile_slideshow:use_more_text"
-msgid "more"
+msgid "mehr"
 msgstr ""
 
 #: views:pw_kandidatencheck:profile_slideshow:exposed_form:submit_button
 msgctxt "pw_kandidatencheck:profile_slideshow:exposed_form:submit_button"
-msgid "Apply"
+msgid "Anwenden"
 msgstr ""
 
 #: views:pw_kandidatencheck:profile_slideshow:exposed_form:reset_button_label
@@ -15557,12 +15557,12 @@ msgstr ""
 
 #: views:pw_kandidatencheck:profile_slideshow:exposed_form:sort_asc_label
 msgctxt "pw_kandidatencheck:profile_slideshow:exposed_form:sort_asc_label"
-msgid "Asc"
+msgid "Aufsteigend"
 msgstr ""
 
 #: views:pw_kandidatencheck:profile_slideshow:exposed_form:sort_desc_label
 msgctxt "pw_kandidatencheck:profile_slideshow:exposed_form:sort_desc_label"
-msgid "Desc"
+msgid "Absteigend"
 msgstr ""
 
 #: views:pw_kandidatencheck:profile_slideshow:pager:expose:items_per_page_label
@@ -16977,6 +16977,11 @@ msgctxt "pw_dialogue_answers:panel_pane_1:display_title"
 msgid "Content pane"
 msgstr ""
 
+#: views:pw_kandidatencheck:profile_slideshow:argument:field_data_field_parliament:field_parliament_tid_i18n:exception:title
+msgctxt "pw_kandidatencheck:profile_slideshow:argument:field_data_field_parliament:field_parliament_tid_i18n:exception:title"
+msgid "Alle"
+msgstr ""
+
 #: views:press_articles:default:title
 msgctxt "press_articles:default:title"
 msgid "Presseartikel"
@@ -17644,4 +17649,9 @@ msgstr "Dauer zur eingetroffenen Antwort"
 msgctxt "profile_questions_answers:default:field:field_data_field_dialogue_response_time:field_dialogue_response_time:label"
 msgid "Response time"
 msgstr "Dauer zur eingetroffenen Antwort"
+
+#: views:pw_kandidatencheck:default:footer:views:result:content
+msgctxt "pw_kandidatencheck:default:footer:views:result:content"
+msgid "<a href=\"#\" class=\"unslick\">Show all positions as list</a>"
+msgstr "<a href=\"#\" class=\"unslick\">Alle Positionen als Liste anzeigen</a>"
 

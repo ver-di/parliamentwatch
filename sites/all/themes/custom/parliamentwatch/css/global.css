@@ -4,6 +4,7 @@
 @import url("jquery.ui.slider.css");
 @import url("mainmenu.css");
 @import url("pw_kandidatencheck.css");
+@import url("/sites/all/libraries/slick/slick.css");
 
 html {
     font-size: 12px;
@@ -787,8 +788,102 @@ h1#page-title {
     float: right;
 }
 
-/* colorbox */
 
+/* slick slider */
+
+.slick-slide {
+  opacity: 0.5;
+  cursor: move;
+}
+.slick-slide.slick-active {
+  opacity: 1;
+}
+.slick-dots li {
+    margin: 0 5px;
+    width: 15px;
+}
+.slick-dots li button {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background: #c3c3c3;
+    color: #fff;
+    font-size: 11px;
+    height: 20px;
+    line-height: 1em;
+    padding: 5px;
+    width: 20px;
+}
+.slick-dots li button:before {
+    content: "";
+}
+.slick-dots li button {
+    opacity: 0.5;
+    -khtml-opacity: 0.5;
+    -moz-opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.slick-dots li.slick-active button,
+.slick-dots li button:hover {
+    opacity: 1;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+}
+.slick-prev,
+.slick-prev:hover {
+    left: 0;
+    background-position: -962px -3617px;
+}
+.slick-prev:before {
+    content: "";
+}
+.slick-next,
+.slick-next:hover {
+    right: 0;
+    background-position: -99978px -3817px;
+}
+.slick-next:before {
+    content: "";
+}
+.slick-prev,
+.slick-next {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    opacity: 0.5;
+    -khtml-opacity: 0.5;
+    -moz-opacity: 0.5;
+    filter: alpha(opacity=50);
+    top: auto;
+    bottom: 0;
+    width: 20px;
+    background-color: #E1E1E1;
+    background-image: url(../images/sprite.png);
+}
+.slick-prev:hover,
+.slick-next:hover {
+    opacity: 1;
+    -khtml-opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=100);
+    background-image: url(../images/sprite.png);
+}
+
+/* KC slick slider */
+
+#pw-block-user-kc .slick-slider {
+    margin-bottom: 1em;
+    padding-bottom: 20px;
+}
+#pw-block-user-kc .slick-dots {
+    bottom: -3px;
+    margin: 0 70px;
+    width: auto;
+}
+
+
+/* colorbox */
 
 #colorbox #pw_block_user_questionform,
 #colorbox #node-webform-6313,
@@ -2042,7 +2137,6 @@ input[type="week"],
 .views-exposed-widget.views-reset-button input[type="submit"]:active {
     background-position: -160px -2499px;
     color: #ccc;
-
 }
 textarea {
     min-height: 7em;
@@ -2926,7 +3020,6 @@ blockquote:before,
 .responsive-layout-mobile .field-name-pw-slider,
 .responsive-layout-mobile #block-block-33,
 .responsive-layout-mobile #block-views-exp-profile-list-rev-grid,
-.js .responsive-layout-mobile .pw-expandable-mobile .view,
 .js .responsive-layout-normal #pw_block_user_questionform,
 .desktop-only {
     display: none;
@@ -2936,7 +3029,7 @@ blockquote:before,
     background-position: -280px -195px;
     cursor: pointer;
 }
-.js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded {
+.js .responsive-layout-mobile .pw-expandable-mobile.pw-mobile-expanded h2 {
     background-position: -360px -115px;
 }
 .js .responsive-layout-normal #colorbox #pw_block_user_questionform,
