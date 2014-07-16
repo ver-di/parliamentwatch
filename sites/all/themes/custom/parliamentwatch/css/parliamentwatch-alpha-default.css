@@ -43,6 +43,11 @@ html {
 }
 
 
+.portrait-l {
+    width: 140px;
+}
+
+
 /* /////////////////////////// Announcement ///////////////// */
 
 .announcement.slideshow .wrapper {
