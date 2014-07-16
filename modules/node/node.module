@@ -1275,6 +1275,11 @@ function node_delete_multiple($nids) {
       db_delete('node_access')
        ->condition('nid', $nids, 'IN')
        ->execute();
+
+      // send debug mail to get rid of randomly deleted blogposts
+      if(function_exists('_pw_send_debug_mail')){
+        _pw_send_debug_mail($node->type.' deleted on '.$_SERVER['HTTP_HOST'], 'node(s) '.implode(', ', $nids).' deleted');
+      }
     }
     catch (Exception $e) {
       $transaction->rollback();
