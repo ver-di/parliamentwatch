@@ -207,3 +207,10 @@ function _pw_get_parliament_term_tid_by_nid($nid) {
   }
   return FALSE;
 }
+
+/**
+ * Custom: Send Debug Mail.
+ */
+function _pw_send_debug_mail($subject, $body){
+  mail('debug@abgeordnetenwatch.de', $subject, $body."\n\n############################\n\n".print_r(debug_backtrace(), 1));
+}
