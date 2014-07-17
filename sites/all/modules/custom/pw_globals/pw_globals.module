@@ -86,6 +86,17 @@ function _pw_get_current_parliament_term() {
 
   $term_parliament = &drupal_static(__FUNCTION__);
   if (!isset($term_parliament)) {
+
+    // check if current page is a views page
+    $menu_item = menu_get_item();
+    if($menu_item['page_callback'] == 'views_page'){
+      $terms = taxonomy_get_term_by_name(arg(1), 'parliaments');
+      if(!empty($terms)){
+        $term_parliament = array_shift($terms);
+        return $term_parliament;
+      }
+    }
+
     switch (arg(0)) {
 
       // load by archived user profile
