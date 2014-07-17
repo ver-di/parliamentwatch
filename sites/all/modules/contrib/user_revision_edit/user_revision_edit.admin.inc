@@ -125,12 +125,20 @@ function user_revision_edit_overview($viewed_user) {
  * Form to edit a revision.
  */
 function user_revision_edit_form($form, &$form_state, $user_revision) {
+
+  // Prepare loading the user profile form.
   form_load_include($form_state, 'inc', 'user', 'user.pages');
 
+  // Populate form state.
   $form_state += form_state_defaults();
+
+  // Rebuild the entire user profile form for our needs;
+  // we can not use drupal_get_form() here, we need drupal_build_form()
+  // without the final processing from drupal_process_form().
   $form = drupal_retrieve_form('user_profile_form', $form_state);
   drupal_prepare_form('user_profile_form', $form, $form_state);
 
+  // Save the revision to the form.
   $form['#user_revision'] = $user_revision;
 
   $form['revision_information'] = array(
@@ -163,6 +171,7 @@ function user_revision_edit_form($form, &$form_state, $user_revision) {
     '#value' => ip_address(),
   );
 
+  // Add a cancel button.
   $form['actions']['cancel'] = array(
     '#type'   => 'submit',
     '#value'  => t('Cancel'),
@@ -194,10 +203,11 @@ function user_revision_edit_form_submit($form, &$form_state) {
   form_state_values_clean($form_state);
 
   // Updates user_revision schema.
-  user_revision_edit_save($user_revision, $form_state['values']);
+  _user_revision_edit_save($user_revision, $form_state['values']);
 
   $form_state['redirect'] = 'user/' . $user_revision->uid . '/revisions';
 
+  // Clear the cache because pages can contain revision information.
   cache_clear_all();
 
   watchdog(

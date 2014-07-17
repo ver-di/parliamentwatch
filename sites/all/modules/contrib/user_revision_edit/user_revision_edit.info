@@ -10,3 +10,10 @@ simplytest_dependencies[] = coder_review
 
 ; Views Handler
 files[] = views/UserRevisionEditLink.inc
+
+; Information added by Drupal.org packaging script on 2014-07-16
+version = "7.x-1.0-alpha3"
+core = "7.x"
+project = "user_revision_edit"
+datestamp = "1405511933"
+

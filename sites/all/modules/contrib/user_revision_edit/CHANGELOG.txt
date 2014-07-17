@@ -1,20 +1,26 @@
-Journal 7.x-1.x-dev, 2014-07-08
--------------------------------
-Current Development Tree for 7.x branch
+Journal 7.x-1.0-alpha3, 2014-07-16
+----------------------------------
+Creating new release to fix the module's short name. No changes to code.
 
-In progress:
-- #2287545 User Revision Edit module peer review
-- #2299445 PHP Fatal error on comparing arrays
+Related:
+- #2302715 Disallow numbers-only on full project's short name
+
+
+Journal 7.x-1.0-alpha2, 2014-07-14
+----------------------------------
+Fixed a couple of bugs and applied suggested peer review improvements.
 
 Fixed:
+- #2287545 User Revision Edit module peer review
+- #2299445 PHP Fatal error on comparing arrays
 - #2298841 PDOException on field_attach_update() using emtpy integer values
 - #2295699 Saving revision also modifies latest version of FAPI fields
 - #2290861 Check if temporary dir is properly configured
 - #2287535 Object of class stdClass could not be converted to int
 
 
-Journal 7.x-1.x-alpha1, 2014-06-17
--------------------------------
+Journal 7.x-1.0-alpha1, 2014-06-17
+----------------------------------
 First feature-complete version of this module.
 
 Fixed:
@@ -27,3 +33,8 @@ Fixed:
 - #2270837 PHP Fatal Error on saving user revisions
 - #2270829 Conflict with User Revision while editing
 - #2270833 User revision view does not show edit button
+
+
+Journal 7.x-1.x-dev, 2014-05-20
+-------------------------------
+Initial Development Tree for 7.x branch.

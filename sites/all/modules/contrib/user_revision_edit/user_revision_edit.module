@@ -27,14 +27,8 @@ function user_revision_edit_menu() {
     'load arguments' => array(3),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('user_revision_edit_form', 1),
-    'access callback' => 'user_revision_edit_link_access',
-    'access arguments' => array(
-      1,
-      array(
-        'edit user revisions',
-        'edit own user revisions',
-      ),
-    ),
+    'access callback' => '_user_revision_edit_link_access',
+    'access arguments' => array(1),
     'file' => 'user_revision_edit.admin.inc',
   );
   return $items;
@@ -91,7 +85,7 @@ function user_revision_edit_admin_paths() {
 /**
  * Access callback.
  */
-function user_revision_edit_link_access($account, $permissions) {
+function _user_revision_edit_link_access($account) {
   global $user;
 
   // Checks if user has permissions.
@@ -100,11 +94,14 @@ function user_revision_edit_link_access($account, $permissions) {
     && $account->uid == $user->uid;
 
   // Checks if at least 2 revisions exist.
-  $count = db_select('user_revision', 'ur')
-    ->condition('ur.uid', $account->uid)
-    ->countQuery()
-    ->execute()
-    ->fetchField();
+  $count = db_query("
+    SELECT COUNT(*) AS expression
+    FROM (
+      SELECT 1 AS expression
+      FROM user_revision ur
+      WHERE (ur.uid = {$account->uid})
+    ) subquery
+  ")->fetchField();
 
   // Displays revisions tab only if both are true.
   return $access && ($count > 1);
@@ -114,15 +111,15 @@ function user_revision_edit_link_access($account, $permissions) {
 /**
  * Save record to the database.
  */
-function user_revision_edit_save(&$revision, $edits) {
+function _user_revision_edit_save(&$revision, $edits) {
   global $user;
 
   // Applies edits to revision.
   foreach ($edits as $type => $value) {
     if (isset($revision->$type) && $revision->$type != $value) {
 
-      // Resets empty strings to NULL to avoid database exceptions
-      if ((array)$value === $value && $value[LANGUAGE_NONE][0]['value'] === '') {
+      // Resets empty strings to NULL to avoid database exceptions.
+      if ((array) $value === $value && $value[LANGUAGE_NONE][0]['value'] === '') {
         $value[LANGUAGE_NONE][0]['value'] = NULL;
       }
       $revision->$type = $value;
