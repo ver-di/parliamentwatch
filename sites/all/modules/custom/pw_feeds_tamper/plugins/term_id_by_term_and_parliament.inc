@@ -31,7 +31,7 @@ function term_id_by_term_and_parliament($source, $item_key, $element_key, &$fiel
     $constituency_terms = taxonomy_get_term_by_name($field, 'constituency');
     $term_found = FALSE;
     foreach($constituency_terms as $constituency_term){
-      if($constituency_term->field_parliament['und'][0]['tid'] == $parliament_term_id){
+      if(!empty($constituency_term->field_parliament['und']) && $constituency_term->field_parliament['und'][0]['tid'] == $parliament_term_id){
         $field = $constituency_term->tid;
         $term_found = TRUE;
         break;
@@ -39,6 +39,7 @@ function term_id_by_term_and_parliament($source, $item_key, $element_key, &$fiel
     }
   }
   if(!$term_found){
+    $field = '';
     drupal_set_message('constituency term not found for '.$field, 'error');
   }
 }
