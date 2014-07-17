@@ -328,6 +328,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
   $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = 'title';
   $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['type'] = 'text_plain';
   /* Feld: Benutzer (Historische Daten): Birthday */
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['id'] = 'field_user_birthday-revision_id';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['table'] = 'field_revision_field_user_birthday';
@@ -368,6 +369,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['field'] = 'field_user_twitter_account-revision_id';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['label'] = 'twitter';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['type'] = 'text_plain';
   /* Sortierkriterien: User revision: Vid */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
   $handler->display->display_options['sorts']['vid']['table'] = 'user_revision';
