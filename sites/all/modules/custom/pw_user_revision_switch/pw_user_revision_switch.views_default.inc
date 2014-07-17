@@ -2792,6 +2792,11 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['sorts']['timestamp']['table'] = 'user_archive_cache';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Sortierkriterien: User archive cache: Vid */
+  $handler->display->display_options['sorts']['vid']['id'] = 'vid';
+  $handler->display->display_options['sorts']['vid']['table'] = 'user_archive_cache';
+  $handler->display->display_options['sorts']['vid']['field'] = 'vid';
+  $handler->display->display_options['sorts']['vid']['order'] = 'DESC';
   /* Kontextfilter: User archive cache: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'user_archive_cache';
