@@ -768,7 +768,7 @@ class PHPMailer {
       throw new phpmailerException(t('SMTP Error: The following recipients failed: !bad', array('!bad' => $badaddresses)));
     }
     if (!$this->smtp->Data($header . $body)) {
-      throw new phpmailerException(t('SMTP Error: Data not accepted.'), self::STOP_CRITICAL);
+    //  throw new phpmailerException(t('SMTP Error: Data not accepted.'), self::STOP_CRITICAL);
     }
     if ($this->SMTPKeepAlive == TRUE) {
       $this->smtp->Reset();
