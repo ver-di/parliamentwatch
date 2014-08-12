@@ -211,9 +211,9 @@ function antispam_permission() {
 * Implements hook_cron().
 */
 function antispam_cron() {
-  module_load_include('inc', 'antispam', 'antispam.cron');
-  module_load_include('inc', 'comment', 'comment.admin'); 
-  antispam_cron_shutdown();
+  //module_load_include('inc', 'antispam', 'antispam.cron');
+  //module_load_include('inc', 'comment', 'comment.admin'); 
+  //antispam_cron_shutdown();
 }
 
 /**
