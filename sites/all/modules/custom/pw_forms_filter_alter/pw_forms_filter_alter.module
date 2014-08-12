@@ -41,6 +41,7 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
         $form_state['input']['field_user_party_tid'][] = $term->tid;
       }
     }
+    asort($options);
     $form['field_user_party_tid']['#options'] = $options;
 
     // constituencies - query database
@@ -53,12 +54,12 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
     $options = array('All' => 'Alle');
     foreach ($terms as $term) {
       $options[$term->tid] = $term->name;
-
       // checks url and sets filter
       if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
         $form_state['input']['field_user_constituency_tid'] = $term->tid;
       }
     }
+    asort($options);
     $form['field_user_constituency_tid']['#options'] = $options;
 
     // address (field_user_address:administrative_area) - checks url and sets filter
