@@ -920,21 +920,21 @@ h1#page-title {
   right: 0;
 }
 
-#section-content #custom-search-blocks-form-1 {
+#section-content .pw-custom-search {
     margin-bottom: 0 !important;
 }
-#section-content #custom-search-blocks-form-1 .form-actions {
+#section-content .pw-custom-search .form-actions {
     position: absolute;
     top: 13px;
     bottom: 0;
     right: 7px;
 }
-#section-content #custom-search-blocks-form-1 input.form-text {
+#section-content .pw-custom-search input.form-text {
     width: 100%;
     font-size: 14px;
     font-size: 1.4rem;
 }
-#section-content #custom-search-blocks-form-1 input.form-submit {
+#section-content .pw-custom-search input.form-submit {
     background: transparent;
     height: auto;
     -webkit-box-shadow: none;
@@ -2193,6 +2193,15 @@ form .webform-component-checkboxes .description {
     padding: 12px 10px 10px 10px;
     color: #666;
 }
+#custom-search-blocks-form-3 label {
+  display: none;
+}
+.pw-custom-search form {
+    position: relative;
+    margin-bottom: 2em;
+    padding: 12px 10px 10px 10px;
+    color: #666;
+}
 #section-content #comment-form {
     padding: 12px 10px 40px 10px;
 }
@@ -2201,6 +2210,11 @@ form .webform-component-checkboxes .description {
     position: absolute;
     bottom: -69px;
     right: 0;
+}
+#section-content .pw-custom-search .form-actions {
+    position: absolute;
+    bottom: -69px;
+    right: 8px;
 }
 
 #user-register-form .description,
@@ -2625,7 +2639,8 @@ form .webform-component-checkboxes .description {
 #comment-form,
 #search-form,
 #section-content form.compact-form,
-#views-exposed-form-user-constituency-page {
+#views-exposed-form-user-constituency-page,
+.pw-custom-search form {
     background: #f4f4f4; 
     border: 1px solid #dedede;
     -webkit-border-radius: 3px;
