@@ -112,6 +112,11 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'search_result';
   $ds_fieldsetting->settings = array(
+    'go_to_profile' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'name' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -1559,19 +1564,21 @@ function pw_profiles_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_user_picture',
-        1 => 'group_grid_6',
-        2 => 'name',
-        3 => 'field_user_title',
-        4 => 'field_user_fname',
-        5 => 'field_user_lname',
-        6 => 'field_user_party',
-        7 => 'field_user_parliament',
-        8 => 'field_user_questions_get',
-        9 => 'field_user_answers_give',
+        1 => 'go_to_profile',
+        2 => 'group_grid_6',
+        3 => 'name',
+        4 => 'field_user_title',
+        5 => 'field_user_fname',
+        6 => 'field_user_lname',
+        7 => 'field_user_party',
+        8 => 'field_user_parliament',
+        9 => 'field_user_questions_get',
+        10 => 'field_user_answers_give',
       ),
     ),
     'fields' => array(
       'field_user_picture' => 'ds_content',
+      'go_to_profile' => 'ds_content',
       'group_grid_6' => 'ds_content',
       'name' => 'ds_content',
       'field_user_title' => 'ds_content',
