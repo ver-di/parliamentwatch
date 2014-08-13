@@ -826,6 +826,72 @@ function pw_globals_field_default_fields() {
     ),
   );
 
+  // Exported field: 'taxonomy_term-parliaments-field_parliament_filter_disabled'.
+  $fields['taxonomy_term-parliaments-field_parliament_filter_disabled'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_parliament_filter_disabled',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'field_user_address_administrative_area' => 'administrative area',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'parliaments',
+      'default_value' => array(
+        0 => array(
+          'value' => 'field_user_address_administrative_area',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 4,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_parliament_filter_disabled',
+      'label' => 'Filter Disabled',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_select',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'taxonomy_term-parliaments-field_parliament_valid'.
   $fields['taxonomy_term-parliaments-field_parliament_valid'] = array(
     'field_config' => array(
@@ -1204,6 +1270,7 @@ function pw_globals_field_default_fields() {
   t('Color');
   t('Comment');
   t('Election');
+  t('Filter Disabled');
   t('Footer');
   t('Number');
   t('Parliament');
