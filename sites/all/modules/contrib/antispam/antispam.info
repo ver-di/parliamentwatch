@@ -6,11 +6,10 @@ files[] = antispam.module
 files[] = antispam.admin.inc
 files[] = antispam.cron.inc
 files[] = antispam.install
-files[] = tests/antispam.test
 
-; Information added by drupal.org packaging script on 2012-12-01
-version = "7.x-1.5+9-dev"
+; Information added by drupal.org packaging script on 2012-07-09
+version = "7.x-1.5"
 core = "7.x"
 project = "antispam"
-datestamp = "1354321968"
+datestamp = "1341813076"
 
