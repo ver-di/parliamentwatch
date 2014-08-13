@@ -29,7 +29,7 @@ function pw_diff_tracking_default_rules_configuration() {
       ],
       "DO" : [
         { "mail" : {
-            "to" : "service@abgeordnetenwatch.de",
+            "to" : "notifications@abgeordnetenwatch.de",
             "subject" : "Account [account:field-user-fname] [account:field-user-lname] updated       ",
             "message" : "UUID: [account:uuid]\\r\\nUID: [account:uid]\\r\\nName: [account:field-user-fname] [account:field-user-lname]\\r\\nE-Mail: [account:mail]\\r\\nURL: [account:url]\\r\\nEdit: [account:edit-url]\\r\\n\\r\\nDIFFs\\r\\n+++++++++++++++++++++++++++++++++++\\r\\n[account:pw_diff]\\r\\n+++++++++++++++++++++++++++++++++++\\u0022,",
             "language" : [ "" ]
