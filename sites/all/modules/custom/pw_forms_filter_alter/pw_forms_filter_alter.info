@@ -1,6 +1,5 @@
 name = PW Forms Filter Alter
-description = Alters Filter in Profiles List
+description = alters views filter
 core = 7.x
-version = 7.x-1.0-20140812
+version = 7.x-1.0-20140813
 package = Parliamentwatch
-files[] = tests/pw_forms_filter_alter.test

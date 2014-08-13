@@ -13,63 +13,98 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
   // profiles overview
   if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'profile_list_rev' && $form_state['view']->current_display == 'grid') {
 
-    // vars
+    // parameters from url
     $url_parameters = array_keys(drupal_get_query_parameters());
     if(!empty($url_parameters)){
       $url_parameters = explode(',', $url_parameters[0]);
     }
+
+    // either form was already submitted by user or not
     $form_was_submitted = sizeof($form_state['view']->exposed_input) > 1;
+
+    // user with role to show
     $role_name = arg(2) == 'deputies' ? 'Deputy' : 'Candidate';
+
+    // parliament from path
     $parliament_name = arg(1);
+
+    // load parliament term
+    $parliament = taxonomy_get_term_by_name($parliament_name, 'parliaments');
+
+    // something is wrong here
+    if(empty($parliament)){
+      return FALSE;
+    }
+   
+    // disable filters
+    foreach(field_get_items('taxonomy_term', array_pop($parliament), 'field_parliament_filter_disabled') as $filter_name){
+      $filter_name = $filter_name['value'];
+      unset($form[$filter_name]);
+      unset($form['#info']['filter-'.$filter_name]);
+      unset($form_state['view']->display_handler->options['filters'][$filter_name]);
+      unset($form_state['view']->display_handler->handlers['filter'][$filter_name]);
+      unset($form_state['view']->filter[$filter_name]);
+    }
+
+    // constituency name transfered via url
     $constituency_name = key($url_parameters);
+
+    // parameter for sql replacement
     $a_parameter = array(':role_name' => $role_name, ':parliament_name' => $parliament_name);
 
     // parties - query database
-    $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache} 
-          WHERE input_output_type='party' 
-          AND input_role_name=:role_name 
-          AND input_parliament_name=:parliament_name";
-    $result = db_query($sql, $a_parameter);
-    $terms = $result->fetchAll();
-    $options = array();
-    foreach ($terms as $term) {
-      $options[$term->tid] = $term->name;
+    if(isset($form['field_user_party_tid'])){
+      $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache} 
+              WHERE input_output_type='party' 
+              AND input_role_name=:role_name 
+              AND input_parliament_name=:parliament_name";
+      $result = db_query($sql, $a_parameter);
+      $terms = $result->fetchAll();
+      $options = array();
+      foreach ($terms as $term) {
+        $options[$term->tid] = $term->name;
 
-      // checks url and sets filter
-      $term_encoded = str_replace(' ', '_', $term->name);
-      if(!$form_was_submitted && in_array($term_encoded, $url_parameters)){
-        $form_state['input']['field_user_party_tid'][] = $term->tid;
+        // checks url and sets filter
+        $term_encoded = str_replace(' ', '_', $term->name);
+        if(!$form_was_submitted && in_array($term_encoded, $url_parameters)){
+          $form_state['input']['field_user_party_tid'][] = $term->tid;
+        }
       }
+      asort($options);
+      $form['field_user_party_tid']['#options'] = $options;
     }
-    asort($options);
-    $form['field_user_party_tid']['#options'] = $options;
 
     // constituencies - query database
-    $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache} 
-          WHERE input_output_type='constituency' 
-          AND input_role_name=:role_name 
-          AND input_parliament_name=:parliament_name";
-    $result = db_query($sql, $a_parameter);
-    $terms = $result->fetchAll();
-    $options = array('All' => 'Alle');
-    foreach ($terms as $term) {
-      $options[$term->tid] = $term->name;
-      // checks url and sets filter
-      if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
-        $form_state['input']['field_user_constituency_tid'] = $term->tid;
+    if(isset($form['field_user_constituency_tid'])){
+      $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache} 
+              WHERE input_output_type='constituency' 
+              AND input_role_name=:role_name 
+              AND input_parliament_name=:parliament_name";
+      $result = db_query($sql, $a_parameter);
+      $terms = $result->fetchAll();
+      $options = array('All' => 'Alle');
+      foreach ($terms as $term) {
+        $options[$term->tid] = $term->name;
+        // checks url and sets filter
+        if(!$form_was_submitted && in_array(strtolower($term->name), $url_parameters)){
+          $form_state['input']['field_user_constituency_tid'] = $term->tid;
+        }
       }
+      asort($options);
+      $form['field_user_constituency_tid']['#options'] = $options;
     }
-    asort($options);
-    $form['field_user_constituency_tid']['#options'] = $options;
 
     // address (field_user_address:administrative_area) - checks url and sets filter
-    if(!$form_was_submitted){
-      foreach ($form['field_user_address_administrative_area']['#options'] as $index => $area) {
-        if(in_array($area, $url_parameters)){
-          $form_state['input']['field_user_address_administrative_area'] = $index;
+    if(isset($form['field_user_address_administrative_area'])){
+      if(!$form_was_submitted){
+        foreach ($form['field_user_address_administrative_area']['#options'] as $index => $area) {
+          if(in_array($area, $url_parameters)){
+            $form_state['input']['field_user_address_administrative_area'] = $index;
+          }
         }
       }
     }
+
     /*
     $sql = "SELECT DISTINCT address.field_user_address_administrative_area
             FROM field_data_field_user_address AS address
@@ -106,22 +141,24 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
     $result = $query->execute();
 
     // load dialogue nodes
-    $dialogue_ids = array_keys($result['node']);
-    $dialogues = node_load_multiple($dialogue_ids);
+    if(!empty($result['node'])){
+      $dialogue_ids = array_keys($result['node']);
+      $dialogues = node_load_multiple($dialogue_ids);
 
-    // alter filter for topics
-    $dialogue_topic_tids = array();
-    foreach($dialogues as $dialogue){
-      if(sizeof($dialogue->field_dialogue_topic[LANGUAGE_NONE]) > 0){
-        $dialogue_topic_tids[] = $dialogue->field_dialogue_topic[LANGUAGE_NONE][0]['tid'];
+      // alter filter for topics
+      $dialogue_topic_tids = array();
+      foreach($dialogues as $dialogue){
+        if(sizeof($dialogue->field_dialogue_topic[LANGUAGE_NONE]) > 0){
+          $dialogue_topic_tids[] = $dialogue->field_dialogue_topic[LANGUAGE_NONE][0]['tid'];
+        }
       }
+      $topic_terms = taxonomy_term_load_multiple($dialogue_topic_tids);
+      $options = array('All' => 'Alle');
+      foreach ($topic_terms as $term) {
+        $options[$term->tid] = $term->name;
+      }
+      $form['field_dialogue_topic_tid']['#options'] = $options;
     }
-    $topic_terms = taxonomy_term_load_multiple($dialogue_topic_tids);
-    $options = array('All' => 'Alle');
-    foreach ($topic_terms as $term) {
-      $options[$term->tid] = $term->name;
-    }
-    $form['field_dialogue_topic_tid']['#options'] = $options;
   }
 
 }
