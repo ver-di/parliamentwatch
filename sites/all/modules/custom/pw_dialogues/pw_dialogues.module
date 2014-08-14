@@ -39,6 +39,7 @@ function pw_dialogues_menu() {
  */
 function pw_dialogues_triggered_import() {
   drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
+
   $status = FALSE;
   if(is_numeric(arg(3))){
     $dialogue_id = arg(3);
@@ -115,15 +116,20 @@ function pw_dialogues_validate_url(&$element, &$form_state) {
 function pw_dialogues_cron() {
 
   // look for empty answers and delete them
-  $efq_comments = new EntityFieldQuery();
-  $efq_comments->entityCondition('entity_type', 'comment')
-               ->entityCondition('bundle', 'comment_node_dialogue')
-               ->fieldCondition('field_dialogue_comment_body', 'value', NULL);
-  $result = $efq_comments->execute();
-  if (isset($result['comment'])) {
-    $cids_to_delete = array_keys($result['comment']);
+  $cids_to_delete = db_query("SELECT c.cid
+                     FROM comment c
+                     INNER JOIN field_data_comment_body body ON c.cid = body.entity_id AND body.bundle = 'comment_node_dialogue'
+                     LEFT OUTER JOIN field_data_field_dialogue_comment_body c_body ON c_body.entity_type = 'comment' AND c.cid = c_body.entity_id
+                     WHERE c_body.field_dialogue_comment_body_value IS NULL")->fetchCol();
+  if (!empty($cids_to_delete)) {
     comment_delete_multiple($cids_to_delete);
     watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
+  }
+
+  if (!empty($result)) {
+    //$cids_to_delete = array_keys($result['comment']);
+    //comment_delete_multiple($cids_to_delete);
+    //watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
   }
 
   // import only at night
