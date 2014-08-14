@@ -11,6 +11,44 @@ function pw_subsite_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Navi Meta DE';
+  $fe_block_boxes->format = 'php_code';
+  $fe_block_boxes->machine_name = 'menu_meta_de';
+  $fe_block_boxes->body = '<ul class="menu">
+	<li class="first leaf">
+		<a class="colorbox-load" href="https://secured.abgeordnetenwatch.de/tools/newsletter.php?width=800&amp;height=350&amp;iframe=true">Newsletter</a>
+	</li>
+	<li class="leaf">
+		<a href="https://www.abgeordnetenwatch.de/ueber-uns/faq">FAQ</a>
+	</li>
+	<li class="leaf">
+		<a href="https://www.abgeordnetenwatch.de/ueber-uns/mehr/international">English</a>
+	</li>
+	<li class="last leaf">
+		<a class="header_login" href="<?php
+global $user;
+ if($user->uid ==0 ){
+   print(\'/user\');
+ }
+ else {
+  print(\'/user/logout\');
+ }
+?>"><?php
+global $user;
+ if($user->uid ==0 ){
+   print(\'Login-Bereich\');
+ }
+ else {
+  print(\'Abmelden\');
+ }
+?></a>
+	</li>
+
+</ul>';
+
+  $export['menu_meta_de'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Spenden per Post';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'pw_donation_mail';
