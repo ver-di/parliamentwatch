@@ -690,7 +690,7 @@ function pw_profiles_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-cl' => 'clear clearfix push-bottom-l',
           'ow-def-cl' => FALSE,
           'ow-at' => 'id="pw-block-user-kc"',
           'ow-def-at' => FALSE,

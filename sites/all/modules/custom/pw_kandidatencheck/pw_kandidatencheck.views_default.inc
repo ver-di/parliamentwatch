@@ -38,63 +38,9 @@ function pw_kandidatencheck_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['style_plugin'] = 'slideshow';
+  $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['type'] = 'ol';
-  $handler->display->display_options['style_options']['wrapper_class'] = '';
-  $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
-  $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
-  $handler->display->display_options['style_options']['skin_info'] = array(
-    'class' => 'default',
-    'name' => 'Standard',
-    'module' => 'views_slideshow',
-    'path' => '',
-    'stylesheets' => array(),
-  );
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'body_1' => 0,
-    'fieldset' => 0,
-    'field_user_fname' => 0,
-    'field_user_lname' => 0,
-    'field_pw_kc_vote_reference' => 0,
-    'field_user_picture' => 0,
-    'body' => 0,
-  );
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['enable'] = 1;
-  $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
-    'body_1' => 0,
-    'fieldset' => 0,
-    'field_user_fname' => 0,
-    'field_user_lname' => 0,
-    'field_pw_kc_vote_reference' => 0,
-    'field_user_picture' => 0,
-    'body' => 0,
-  );
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['enable'] = 1;
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['weight'] = '1';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_controls']['type'] = 'views_slideshow_controls_text';
-  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_slide_counter']['weight'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['effect'] = 'scrollHorz';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['transition_advanced'] = 1;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['timeout'] = '5000';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['speed'] = '700';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['delay'] = '0';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['pause'] = 0;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['action_advanced'] = 1;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['start_paused'] = 1;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['remember_slide_days'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['items_per_slide'] = '1';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['wait_for_image_load_timeout'] = '3000';
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
-  $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
@@ -104,12 +50,28 @@ function pw_kandidatencheck_views_default_views() {
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
   $handler->display->display_options['header']['php']['php_output'] = '<?php 
+drupal_add_js(\'/sites/all/libraries/slick/slick.js\');
+drupal_add_js(\'/sites/all/themes/custom/parliamentwatch/js/slick.js\');
 $uid = arg(1);
 if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $user = user_load($user->uid);
 }
 ?>
 ';
+  /* Fußbereich: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['php_output'] = '<?php
+$parliament = _pw_get_current_parliament_term();
+$parliament_name = strtolower($parliament->name);
+?>
+<div class="grid-4 alpha">
+  <a href="http://kandidatencheck.abgeordnetenwatch.de/<?=$parliament_name;?>" class="button"><?php print t(\'Kandidaten-Check starten\'); ?></a>
+</div>
+<div class="grid-4 omega">
+  <a href="#" class="unslick"><?php print t(\'Alle Thesen auf einen Blick\'); ?></a>
+</div>';
   /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['id'] = 'field_pw_kc_thesis_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['table'] = 'field_data_field_pw_kc_thesis_reference';

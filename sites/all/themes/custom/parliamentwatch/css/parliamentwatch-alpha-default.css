@@ -48,6 +48,14 @@ html {
 }
 
 
+#pw-block-user-kc .view-footer .grid-4.alpha {
+    text-align: left;
+}
+#pw-block-user-kc .view-footer .grid-4.omega {
+    text-align: right;
+}
+
+
 /* /////////////////////////// Announcement ///////////////// */
 
 .announcement.slideshow .wrapper {
