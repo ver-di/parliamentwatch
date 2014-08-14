@@ -39,7 +39,7 @@ function pw_dialogues_menu() {
  */
 function pw_dialogues_triggered_import() {
   drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
-  $status = false;
+  $status = FALSE;
   if(is_numeric(arg(3))){
     $dialogue_id = arg(3);
     $source = variable_get('pw_dialogues_importer_source');
@@ -53,10 +53,14 @@ function pw_dialogues_triggered_import() {
               ->entityCondition('bundle', 'dialogue')
               ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
     $result = $efq_nodes->execute();
+
+    // dialogue found
     if (isset($result['node'])) {
       $dialogue_nid = key($result['node']);
       $node = node_load($dialogue_nid);
       $recipient_id = $node->field_dialogue_recipient['und'][0]['target_id'];
+
+      // delete answers and re-import them
       $sql = "SELECT cid FROM {comment} WHERE nid=:nid";
       $cids_to_delete = db_query($sql, array(':nid' => $dialogue_nid))->fetchCol();
       comment_delete_multiple($cids_to_delete);
@@ -109,6 +113,18 @@ function pw_dialogues_validate_url(&$element, &$form_state) {
  * by push request to api/import/dialogue/% via the moderation backend.
  */
 function pw_dialogues_cron() {
+
+  // look for empty answers and delete them
+  $efq_comments = new EntityFieldQuery();
+  $efq_comments->entityCondition('entity_type', 'comment')
+               ->entityCondition('bundle', 'comment_node_dialogue')
+               ->fieldCondition('field_dialogue_comment_body', 'value', NULL);
+  $result = $efq_comments->execute();
+  if (isset($result['comment'])) {
+    $cids_to_delete = array_keys($result['comment']);
+    comment_delete_multiple($cids_to_delete);
+    watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
+  }
 
   // import only at night
   if(date('H') < 6){
