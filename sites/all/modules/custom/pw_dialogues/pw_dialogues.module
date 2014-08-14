@@ -45,20 +45,22 @@ function pw_dialogues_triggered_import() {
     $source = variable_get('pw_dialogues_importer_source');
     $source .= $dialogue_id;
     $source .= '?unreleased=1';
-    pw_dialogues_do_import($source);
+    pw_dialogues_do_import_questions($source);
 
     // check if dialogue was imported
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-          ->entityCondition('bundle', 'dialogue')
-          ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
-    $result = $query->execute();
+    $efq_nodes = new EntityFieldQuery();
+    $efq_nodes->entityCondition('entity_type', 'node')
+              ->entityCondition('bundle', 'dialogue')
+              ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
+    $result = $efq_nodes->execute();
     if (isset($result['node'])) {
       $dialogue_nid = key($result['node']);
       $node = node_load($dialogue_nid);
       $recipient_id = $node->field_dialogue_recipient['und'][0]['target_id'];
-
-      // TODO: check if comments were imported
+      $sql = "SELECT cid FROM {comment} WHERE nid=:nid";
+      $cids_to_delete = db_query($sql, array(':nid' => $dialogue_nid))->fetchCol();
+      comment_delete_multiple($cids_to_delete);
+      pw_dialogues_do_import_answers($source);
 
       // set status to true and clear cache
       if(is_numeric($recipient_id) && ($user = user_load($recipient_id)) || $node->status != 1){
@@ -131,7 +133,8 @@ function pw_dialogues_cron() {
           }
 
           // do the import
-          pw_dialogues_do_import($source);
+          pw_dialogues_do_import_questions($source);
+          pw_dialogues_do_import_answers($source);
 
           // trigger userarchive cron which 
           if(function_exists('pw_userarchives_cron')){
@@ -159,7 +162,7 @@ function pw_dialogues_cron() {
 /**
  * starts feeds import
  */
-function pw_dialogues_do_import($source) {
+function pw_dialogues_do_import_questions($source) {
 
   // Import dialogues (questions).
   $dialogue_feed = feeds_source('dialogue_importer');
@@ -169,6 +172,14 @@ function pw_dialogues_do_import($source) {
     ),
   ));
   while (FEEDS_BATCH_COMPLETE != $dialogue_feed->import());
+
+  // add watchdog message
+  watchdog('dialogue_importer', 'questions imported from '.$source);
+
+  return TRUE;
+}
+
+function pw_dialogues_do_import_answers($source) {
 
   // Import messages (answers).
   $message_feed = feeds_source('dialogue_message_importer');
@@ -180,7 +191,7 @@ function pw_dialogues_do_import($source) {
   while (FEEDS_BATCH_COMPLETE != $message_feed->import());
 
   // add watchdog message
-  watchdog('dialogue_importer', 'dialogues imported from '.$source);
+  watchdog('dialogue_message_importer', 'answers imported from '.$source);
 
   return TRUE;
 }
