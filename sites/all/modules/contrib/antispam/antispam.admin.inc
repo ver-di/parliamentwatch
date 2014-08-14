@@ -550,10 +550,10 @@ function antispam_callback_queue($mode = '', $submode = '') {
           $query->isNotNull('s.content_id');            
         }
         else if ($key == 'unpublished') {
-          $query->condition('n.status', COMMENT_NOT_PUBLISHED);
+          $query->condition('n.status', NODE_NOT_PUBLISHED);
         }
         else if ($key == 'published') {
-          $query->condition('n.status', COMMENT_PUBLISHED);
+          $query->condition('n.status', NODE_PUBLISHED);
         }
         $query->addTag('node_access');
         $count = $query->countQuery()->execute()->fetchField();
@@ -717,7 +717,7 @@ function antispam_moderation_form($form, &$form_state, $mode = '', $submode = ''
 
     $query = db_select('node', 'n');
     $query->join('users', 'u', 'u.uid = n.uid');
-    $query->join('field_data_body', 'e', 'e.entity_id = n.nid');
+    $query->leftJoin('field_data_body', 'e', 'e.entity_id = n.nid');
     $query->leftJoin('antispam_spam_marks', 's', 's.content_id = n.nid AND s.content_type = :type', array(':type' => 'node'));
     $query->fields('n');
     $query->addField('u', 'name', 'registered_name');
@@ -818,7 +818,7 @@ function antispam_moderation_form($form, &$form_state, $mode = '', $submode = ''
         )
       ) .' '. theme('mark', array('type' => node_mark($content->nid, $content->changed))));
       $form['type'][$content->nid] = array('#value' => node_type_get_name($content));
-      $form['author'][$content->nid] = array('#value' => theme('username', array('name' => $content->name)));
+      $form['author'][$content->nid] = array('#value' => theme('username', array('account' => user_load($content->uid))));
       $form['status'][$content->nid] = array('#value' => ($content->status ? t('published') : t('not published')));
       if(empty($content->spam_mark)) $content->spam_mark = 0;
       if ($content->spam_mark) {
@@ -839,7 +839,7 @@ function antispam_moderation_form($form, &$form_state, $mode = '', $submode = ''
           ), 
           'fragment' => 'comment-' . $content->cid,
          )) .' '. theme('mark', array('type' => node_mark($content->cid, $content->created))));
-      $form['author'][$content->cid] = array('#value' => theme('username', array('name' => $content->name)));
+      $form['author'][$content->cid] = array('#value' => theme('username', array('account' => user_load($content->uid))));
       $form['status'][$content->cid] = array('#value' => ($content->status == COMMENT_PUBLISHED ? t('published') : t('not published')));
       if ($content->spam_mark) {
         $form['status'][$content->cid]['#value'] .= '/' . t('spam');
@@ -956,7 +956,7 @@ function antispam_confirm_multiple_operation($form, &$form_state, $mode = '', $s
   // array_filter() returns only elements with actual values
   foreach (array_filter($edit['items']) as $content_id => $value) {
     if ($content = antispam_content_load($content_type, $content_id)) {
-      $title = '&quot;'. check_plain($content_type == 'node' ? $content->title : $content->subject) .'&quot;, '. t('by') .' '. theme('username', array('name' => $content->name));
+      $title = '&quot;'. check_plain($content_type == 'node' ? $content->title : $content->subject) .'&quot;, '. t('by') .' '. theme('username', array('account' => user_load($content->uid)));
       $form['items'][$content_id] = array('#type' => 'hidden', '#value' => $content_id, '#prefix' => '<li>', '#suffix' => $title .'</li>');
     }
   }
