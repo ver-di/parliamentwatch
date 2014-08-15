@@ -303,7 +303,7 @@ function pw_dialogues_feeds_set_target($source, $entity, $target, $value, $mappi
 function pw_dialogues_entity_presave($entity, $type) {
 
   // Force URL alias for dialogues
-  if ($type == 'node' && $entity->nid && $entity->type == 'dialogue') {
+  if ($type == 'node' && $entity->type == 'dialogue' && $entity->nid) {
     module_load_include('inc', 'pathauto');
     $entity->path['pathauto'] = TRUE;
     $alias_action = variable_get('pathauto_update_action', 0);
