@@ -1,5 +1,29 @@
 jQuery(document).ready(function() {
 
+// reset jquery ui slider on profile list AW-1965 https://www.drupal.org/node/1264316
+
+    $("#views-exposed-form-profile-list-rev-grid #edit-reset" ).on( "click", function() {
+        history.go(0);
+    });
+    
+// slick kandidatencheck KC
+
+    // init slick on KC
+    $('.view-id-pw_kandidatencheck .view-content').slick({
+        autoplay: true,
+        autoplaySpeed: 12000,
+        nextArrow: '<button type="button" class="slick-next">'+Drupal.t('Zur nächsten These')+'<span></span></button>',
+        prevArrow: '<button type="button" class="slick-prev"><span></span>'+Drupal.t('Zur vorherigen These')+'</button>'
+    });
+    // unslick KC    
+    $('.view-id-pw_kandidatencheck .unslick').on('click', function() { // execute on slider change by sliding or cklicking
+        $('.view-id-pw_kandidatencheck .view-content').unslick(          
+            goToByScroll("pw-block-user-kc"),
+            $('.view-id-pw_kandidatencheck .unslick').hide()        
+        );
+    });
+
+
 // expand active user revision block in user revision switch
 
     if ($('#block-views-pw-announcement-slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title').length < 2) {
