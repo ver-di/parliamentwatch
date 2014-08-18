@@ -242,11 +242,10 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
     'field_user_picture' => 0,
     'body' => 0,
   );
-  /* Sortierkriterien: Gewichtung: Gewichtung */
-  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
-  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  $handler->display->display_options['sorts']['weight']['relationship'] = 'field_pw_kc_thesis_reference_target_id';
+  /* Sortierkriterien: Inhalt: Beitrags-ID */
+  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
+  $handler->display->display_options['sorts']['nid']['table'] = 'node';
+  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
