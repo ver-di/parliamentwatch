@@ -381,7 +381,7 @@ function pw_globals_strongarm() {
       'display' => array(
         'webform' => array(
           'default' => array(
-            'weight' => '14',
+            'weight' => '30',
             'visible' => FALSE,
           ),
           'colorbox' => array(
@@ -390,6 +390,12 @@ function pw_globals_strongarm() {
           ),
           'search_result' => array(
             'weight' => '31',
+            'visible' => FALSE,
+          ),
+        ),
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '20',
             'visible' => FALSE,
           ),
         ),

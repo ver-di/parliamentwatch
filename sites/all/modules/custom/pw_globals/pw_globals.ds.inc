@@ -32,6 +32,11 @@ function pw_globals_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'page';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'sharethis_horizontal' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'body' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -204,10 +209,12 @@ function pw_globals_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'body',
+        1 => 'sharethis_horizontal',
       ),
     ),
     'fields' => array(
       'body' => 'ds_content',
+      'sharethis_horizontal' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
