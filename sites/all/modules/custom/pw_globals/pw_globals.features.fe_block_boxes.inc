@@ -29,11 +29,9 @@ if(!empty($get_vars[\'sid\'])){
 }
 ?>
 
-<span st_url="<?=$share_this_url?>">
-  <span class="st_twitter_hcount" displayText="Twitter"></span>
-  <span class="st_fbrec_hcount" displayText="Facebook Recommend"></span>
-  <span class="st_plusone_hcount" displayText="Google +1"></span>
-</span>';
+<span class="st_twitter_hcount" displayText="Twitter" st_url="<?=$share_this_url?>"></span>
+<span class="st_fbrec_hcount" displayText="Facebook Recommend" st_url="<?=$share_this_url?>"></span>
+<span class="st_plusone_hcount" displayText="Google +1" st_url="<?=$share_this_url?>"></span>';
 
   $export['sharethis_buttons'] = $fe_block_boxes;
 
