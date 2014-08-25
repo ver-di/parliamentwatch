@@ -145,19 +145,6 @@ function pw_blog_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_teaser_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'file-image float-left push-bottom-s',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'field_blogpost_blogtags' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -177,13 +164,6 @@ function pw_blog_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'lb' => ' in ',
           'lb-col' => TRUE,
-        ),
-      ),
-    ),
-    'field_flattr' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -516,14 +496,12 @@ function pw_blog_ds_layout_settings_info() {
         4 => 'custom_comment_counter',
         5 => 'group_blog_metainformation',
         6 => 'post_date',
-        7 => 'field_teaser_image',
-        8 => 'author_linked_to_contact_form',
-        9 => 'body',
+        7 => 'author_linked_to_contact_form',
+        8 => 'body',
+        9 => 'field_blogpost_categories',
         10 => 'group_blog_social_media',
-        11 => 'field_blogpost_categories',
-        12 => 'sharethis_horizontal',
-        13 => 'comments',
-        14 => 'field_flattr',
+        11 => 'sharethis_horizontal',
+        12 => 'comments',
       ),
     ),
     'fields' => array(
@@ -534,14 +512,12 @@ function pw_blog_ds_layout_settings_info() {
       'custom_comment_counter' => 'ds_content',
       'group_blog_metainformation' => 'ds_content',
       'post_date' => 'ds_content',
-      'field_teaser_image' => 'ds_content',
       'author_linked_to_contact_form' => 'ds_content',
       'body' => 'ds_content',
-      'group_blog_social_media' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
+      'group_blog_social_media' => 'ds_content',
       'sharethis_horizontal' => 'ds_content',
       'comments' => 'ds_content',
-      'field_flattr' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

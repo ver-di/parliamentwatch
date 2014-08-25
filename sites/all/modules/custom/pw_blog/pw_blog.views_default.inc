@@ -22,7 +22,7 @@ function pw_blog_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Beiträge mit dem Schlagwort "%1"';
+  $handler->display->display_options['title'] = 'Blogartikel mit dem Schlagwort "%1"';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['link_display'] = 'feed';
@@ -530,6 +530,17 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['view_node']['text'] = 'weiterlesen';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  /* Feld: Global: Feldgruppe */
+  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
+  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_1']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
+    0 => 'field_blogpost_blogtags',
+    1 => 'comment_count',
+  );
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'clear clearfix';
   /* Feld: Inhalt: Tags */
   $handler->display->display_options['fields']['field_blogpost_blogtags']['id'] = 'field_blogpost_blogtags';
   $handler->display->display_options['fields']['field_blogpost_blogtags']['table'] = 'field_data_field_blogpost_blogtags';

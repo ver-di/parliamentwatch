@@ -610,11 +610,8 @@ function pw_blog_field_default_fields() {
         ),
         'full' => array(
           'label' => 'hidden',
-          'module' => 'file_entity',
-          'settings' => array(
-            'file_view_mode' => 'pw_file_landscape_l',
-          ),
-          'type' => 'file_rendered',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '4',
         ),
         'rss' => array(

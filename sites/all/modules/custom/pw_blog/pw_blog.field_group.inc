@@ -113,8 +113,7 @@ function pw_blog_field_group_info() {
     'label' => 'Social Media',
     'weight' => '6',
     'children' => array(
-      0 => 'field_flattr',
-      1 => 'sharethis_horizontal',
+      0 => 'sharethis_horizontal',
     ),
     'format_type' => 'div',
     'format_settings' => array(
