@@ -1541,6 +1541,18 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
 
   /* Display: Answers pane full content */
   $handler = $view->new_display('panel_pane', 'Answers pane full content', 'panel_pane_2');
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<div class="comment">  	
+    <div class="content-inner">
+        <strong><?php print t(\'Bisher ist noch keine Antwort eingetroffen\'); ?></strong>
+    </div>
+</div>';
+  $handler->display->display_options['empty']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
