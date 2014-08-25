@@ -4126,6 +4126,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['summary']['number_of_records'] = '0';
@@ -4142,6 +4143,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['field'] = 'field_user_roles_for_view_mode_s_tid';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_user_roles_for_view_mode_s_tid']['default_argument_options']['argument'] = 'Candidate';
