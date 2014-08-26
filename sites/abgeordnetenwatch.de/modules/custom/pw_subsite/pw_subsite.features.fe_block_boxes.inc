@@ -11,6 +11,92 @@ function pw_subsite_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'AW Brandenburg Intro';
+  $fe_block_boxes->format = 'php_code';
+  $fe_block_boxes->machine_name = 'aw_brandenburg_intro';
+  $fe_block_boxes->body = '<h3>
+	Landtagswahl Brandenburg 2014
+</h3>
+<p>
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41475 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_brandenburg.png" style="float: left; width: 154px; height: 136px; margin: 1px 15px;" title="" typeof="foaf:Image" />Am 14.09.2014 finden die Landtagswahlen in Brandenburg statt. Nutzen Sie die Postleitzahlen-Suche um die Kandidierenden aus Ihrem Wahlkreis zu finden und zu befragen.
+</p>
+<?php
+    $blockObject = block_load(\'custom_search_blocks\', \'3\');
+    $block = _block_get_renderable_array(_block_render_blocks(array($blockObject)));
+    $output = drupal_render($block);
+    print $output;
+  ?>';
+
+  $export['aw_brandenburg_intro'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'AW Sachsen Intro';
+  $fe_block_boxes->format = 'php_code';
+  $fe_block_boxes->machine_name = 'aw_sachsen_intro';
+  $fe_block_boxes->body = '<h3>
+	Landtagswahl Sachsen 2014
+</h3>
+<p>
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41473 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_sachsen.png" style="margin: 2px 15px; float: left; width: 154px; height: 115px;" title="" typeof="foaf:Image" />Am 31.08.2014 finden die Landtagswahlen in Sachsen statt. Geben Sie hier Ihre Postleitzahl ein und stellen Sie Ihre Frage direkt an die Kandidierenden aus Ihrem Wahlkreis.
+</p>
+<?php
+    $blockObject = block_load(\'custom_search_blocks\', \'3\');
+    $block = _block_get_renderable_array(_block_render_blocks(array($blockObject)));
+    $output = drupal_render($block);
+    print $output;
+  ?>';
+
+  $export['aw_sachsen_intro'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'AW Thüringen Intro';
+  $fe_block_boxes->format = 'php_code';
+  $fe_block_boxes->machine_name = 'aw_thueringen_intro';
+  $fe_block_boxes->body = '<h3>
+	Landtagswahl Thüringen 2014
+</h3>
+<p>
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41474 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_thueringen.png" style="float: left; width: 154px; height: 126px; margin: 2px 15px;" title="" typeof="foaf:Image" />
+</p>
+<p>
+	Am 14.09.2014 finden die Landtagswahlen in Thüringen statt. Nutzen Sie die Postleitzahlen-Suche um die Kandidierenden aus Ihrem Wahlkreis zu finden
+</p>
+<?php
+    $blockObject = block_load(\'custom_search_blocks\', \'3\');
+    $block = _block_get_renderable_array(_block_render_blocks(array($blockObject)));
+    $output = drupal_render($block);
+    print $output;
+  ?>';
+
+  $export['aw_thueringen_intro'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'AW Wuppertal Intro';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'aw_wuppertal_intro';
+  $fe_block_boxes->body = '<div class="file-image float-left">
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__35444 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" height="223" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/wuppertal.png" title="" typeof="foaf:Image" width="300" /><br />
+	<div class="copyright">
+		&nbsp;
+	</div>
+</div>
+<p>
+	Haushaltssperre, B7, Döppersberg, IKEA, ... die Liste der Themen ist lang. Welche Position die Kandidierenden vertreten können Sie über abgeordnetenwatch.de herausfinden. Stellen Sie den Rats-Kandidaten Fragen zu allen Themen, die Sie für Wuppertals Zukunft interessieren.
+</p>
+<p>
+	&nbsp;
+</p>
+<p>
+	&nbsp;
+</p>
+<p>
+	<a class="link-committees" href="wuppertal/profile">Alle Kandidierenden in der Übersicht</a>
+</p>
+';
+
+  $export['aw_wuppertal_intro'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Spenden per Post';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'pw_donation_mail';

@@ -12,6 +12,111 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-aw_brandenburg_intro'] = array(
+    'cache' => '-1',
+    'css_class' => 'clearfix push-bottom-l',
+    'custom' => '0',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'machine_name' => 'aw_brandenburg_intro',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'brandenburg',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '-77',
+      ),
+      'blank' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'blank',
+        'weight' => '-78',
+      ),
+      'pw_seven' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '1',
+  );
+
+  $export['block-aw_sachsen_intro'] = array(
+    'cache' => '-1',
+    'css_class' => 'clearfix push-bottom-l',
+    'custom' => '0',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'machine_name' => 'aw_sachsen_intro',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'sachsen',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '-75',
+      ),
+      'blank' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'blank',
+        'weight' => '-75',
+      ),
+      'pw_seven' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '1',
+  );
+
+  $export['block-aw_thueringen_intro'] = array(
+    'cache' => '-1',
+    'css_class' => 'clearfix push-bottom-l',
+    'custom' => '0',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'machine_name' => 'aw_thueringen_intro',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => 'thueringen',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '-74',
+      ),
+      'blank' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'blank',
+        'weight' => '-74',
+      ),
+      'pw_seven' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '1',
+  );
+
   $export['block-pw_donation_mail'] = array(
     'cache' => '-1',
     'css_class' => '',
@@ -223,6 +328,41 @@ ueber-uns/spendenuebersicht',
     ),
     'title' => 'Social Media',
     'visibility' => '0',
+  );
+
+  $export['custom_search_blocks-3'] = array(
+    'cache' => '1',
+    'css_class' => 'grid-5 alpha omega',
+    'custom' => '0',
+    'delta' => '3',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'module' => 'custom_search_blocks',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '-73',
+      ),
+      'blank' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'blank',
+        'weight' => '-80',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => '1',
   );
 
   $export['delta_blocks-breadcrumb'] = array(
@@ -613,7 +753,7 @@ return arg(0) == \'profile\';
   );
 
   $export['views-pw_donation_state-all_countries'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => 'grid-4 alpha',
     'custom' => '0',
     'delta' => 'pw_donation_state-all_countries',
@@ -683,7 +823,7 @@ return arg(0) == \'profile\';
   );
 
   $export['views-pw_donation_state-block_1'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => 'grid-4 omega',
     'custom' => '0',
     'delta' => 'pw_donation_state-block_1',
