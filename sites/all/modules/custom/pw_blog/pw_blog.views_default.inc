@@ -480,7 +480,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['field_teaser_image']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_teaser_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_class'] = 'float-left push-bottom-s push-right-m';
+  $handler->display->display_options['fields']['field_teaser_image']['element_wrapper_class'] = 'float-left push-bottom-s push-right-m pw-landscape-l';
   $handler->display->display_options['fields']['field_teaser_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_teaser_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_teaser_image']['type'] = 'file_rendered';

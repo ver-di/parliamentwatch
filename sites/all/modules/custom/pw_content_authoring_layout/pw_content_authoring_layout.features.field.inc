@@ -18,6 +18,9 @@ function pw_content_authoring_layout_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_image_copyright',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -37,11 +40,16 @@ function pw_content_authoring_layout_field_default_fields() {
         'max_length' => '255',
       ),
       'translatable' => '0',
-      'type' => 'text',
+      'type' => 'text_long',
     ),
     'field_instance' => array(
       'bundle' => 'image',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '',
+          'format' => 'copyright',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -155,16 +163,63 @@ function pw_content_authoring_layout_field_default_fields() {
       'label' => 'copyright',
       'required' => 0,
       'settings' => array(
-        'text_processing' => '0',
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 'copyright',
+            'filtered_html' => 0,
+            'full_html' => 0,
+            'html_mail' => 0,
+            'managed_content' => 0,
+            'php_code' => 0,
+            'plain_text' => 0,
+          ),
+          'allowed_formats_toggle' => 1,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => 'raw_url',
+        ),
+        'text_processing' => '1',
         'user_register_form' => FALSE,
+        'wysiwyg_override' => 0,
       ),
       'widget' => array(
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'size' => '60',
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '1',
         ),
-        'type' => 'text_textfield',
+        'type' => 'text_textarea',
         'weight' => '1',
       ),
     ),

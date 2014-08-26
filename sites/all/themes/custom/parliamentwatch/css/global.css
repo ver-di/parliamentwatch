@@ -294,6 +294,9 @@ blockquote p:last-child {
 .pw_portrait_m {
     max-width: 100px;
 }
+.pw-landscape-l {
+    max-width: 140px;
+}
 
 
 /* text/links */
@@ -338,8 +341,12 @@ a.external:hover {
     background-position: -532px -1623px;
 }
 .copyright,
-.field-name-field-image-copyright {
-    color: #666;
+.copyright a,
+.field-name-field-image-copyright,
+.field-name-field-image-copyright a {
+    background: transparent !important;
+    padding-left: 0 !important;
+    color: #666 !important;
     font-weight: normal;
     font-size: 11px;
     font-size: 1.1rem;

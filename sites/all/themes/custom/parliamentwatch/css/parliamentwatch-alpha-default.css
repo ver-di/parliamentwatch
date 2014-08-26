@@ -46,6 +46,9 @@ html {
 .portrait-l {
     width: 140px;
 }
+.pw-landscape-l {
+    max-width: 280px;
+}
 
 
 #pw-block-user-kc .view-footer .grid-4.alpha {
