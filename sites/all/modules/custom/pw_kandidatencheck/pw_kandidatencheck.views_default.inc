@@ -49,9 +49,11 @@ function pw_kandidatencheck_views_default_views() {
   $handler->display->display_options['header']['php']['table'] = 'views';
   $handler->display->display_options['header']['php']['field'] = 'php';
   $handler->display->display_options['header']['php']['empty'] = TRUE;
-  $handler->display->display_options['header']['php']['php_output'] = '<?php 
-drupal_add_js(\'/sites/all/libraries/slick/slick.js\');
-drupal_add_js(\'/sites/all/themes/custom/parliamentwatch/js/slick.js\');
+  $handler->display->display_options['header']['php']['php_output'] = '<script type="text/javascript" src="/sites/all/libraries/slick/slick.js"></script>
+<script type="text/javascript" src="/sites/all/themes/custom/parliamentwatch/js/slick.js"></script>
+<?php 
+// drupal_add_js(\'/sites/all/libraries/slick/slick.js\');
+// drupal_add_js(\'/sites/all/themes/custom/parliamentwatch/js/slick.js\');
 $uid = arg(1);
 if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $user = user_load($user->uid);
