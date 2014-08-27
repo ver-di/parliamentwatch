@@ -21,8 +21,10 @@ jQuery(document).ready(function() {
         );
     });
 
+/*
     $(window).load(function () { //https://drupal.org/node/1478648
         $('.responsive-layout-mobile #pw-block-user-kc').addClass('pw-expandable-mobile');
     });
+*/
 
 });

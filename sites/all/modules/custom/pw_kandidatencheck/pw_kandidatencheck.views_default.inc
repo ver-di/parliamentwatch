@@ -67,13 +67,17 @@ if ( arg(0) == \'user\' && is_numeric($uid) ) {
   $handler->display->display_options['footer']['php']['php_output'] = '<?php
 $parliament = _pw_get_current_parliament_term();
 $parliament_name = strtolower($parliament->name);
+if($parliament_name != \'eu\'){
 ?>
 <div class="grid-4 alpha">
-  <a href="http://kandidatencheck.abgeordnetenwatch.de/<?=$parliament_name;?>" class="button"><?php print t(\'Kandidaten-Check starten\'); ?></a>
+  <a href="http://kandidatencheck.abgeordnetenwatch.de/<?=$parliament_name;?>" class="button" target="_blank"><?php print t(\'Kandidaten-Check starten\'); ?></a>
 </div>
 <div class="grid-4 omega">
   <a href="#" class="unslick"><?php print t(\'Alle Thesen auf einen Blick\'); ?></a>
-</div>';
+</div>
+<?php
+}
+?>';
   /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['id'] = 'field_pw_kc_thesis_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['table'] = 'field_data_field_pw_kc_thesis_reference';
