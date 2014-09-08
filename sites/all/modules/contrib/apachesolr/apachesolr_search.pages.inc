@@ -25,8 +25,7 @@ function apachesolr_search_custom_page($page_id, $keys = '', $path_replacer = NU
   // Process our keys so they are clean
   $keys = rawurldecode($keys);
   // Retrieve the results of the search
-  // $results = apachesolr_search_search_results($keys, $conditions, $search_page);
-  $results = apachesolr_search_search_results(ltrim($keys, '0'), $conditions, $search_page); //Extremely quick + dirty fix for PLZ search
+  $results = apachesolr_search_search_results($keys, $conditions, $search_page);
   // Initiate our build array
   $build = array();
   // Add a custom search form if required
@@ -35,49 +34,7 @@ function apachesolr_search_custom_page($page_id, $keys = '', $path_replacer = NU
     $build['search_form'] = drupal_get_form('apachesolr_search_custom_page_search_form', $search_page, $keys);
   }
   // Build our page and allow modification.
-  //  var_dump($results);
   $build_results = apachesolr_search_search_page_custom($results, $search_page, $build);
-  //  $foo = taxonomy_get_vocabularies();
-  //  $bar = featured_content_get_vocadbulary_terms($foo["14"]);
-  //  var_dump($bar);
-if (isset($keys) && preg_match("@^\d{4,5}$@",$keys)) {
-    $tid_array = array();
-    foreach ($build_results["search_results"]["search_results"] as $ccid){
-        $tid = $ccid["#account"]->field_user_constituency["und"]["0"]["tid"];
-        if (!in_array($tid,$tid_array)) $tid_array[] = $tid;
-    }
-    $tid_array = array_filter($tid_array);
-}
-
-    if ( sizeof($tid_array) > 1 &&
-         isset($keys) && preg_match("@^\d{4,5}$@",$keys)){ //RegEx-Bedingung für PLZ
-        $const_names = taxonomy_term_load_multiple($tid_array);
-
-        $style="background: #f4f4f4;
-border: 1px solid #dedede;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
--webkit-box-shadow: 0px 0px 4px 1px #ebebeb;
--moz-box-shadow: 0px 0px 4px 1px #ebebeb;
-box-shadow: 0px 0px 4px 1px #ebebeb;
-padding: 10px;
-margin-top:-25px;
-margin-bottom:20px";
-
-        $box = "<div class='search-form compact-form' style='".$style."'> <b>Diese Postleitzahl fällt in mehrere Wahlkreise, bitte wählen Sie aus den folgenden Möglichkeiten:</b>\n";
-        foreach($const_names as $const){
-            $parliament_term = taxonomy_term_load($const->field_parliament["und"]["0"]["tid"]);
-            $parliament_name = strtolower($parliament_term->name);
-            if ($parliament_name == "thüringen") $parliament_name = "thueringen";
-
-            if ($parliament_name == "sachsen" || $parliament_name == "thueringen" || $parliament_name == "brandenburg")
-            $box .= "<li> <a href='/".$parliament_name."/profile?field_user_constituency_tid=".$const->tid."'>".$const->name."</a>\n";
-        }
-        $box .= "</div>\n";
-    }
-    $build_results["search_results"]["search_title"]["#markup"] = $box.$build_results["search_results"]["search_title"]["#markup"];
-
   return $build_results;
 }
 
@@ -128,6 +85,7 @@ function apachesolr_search_custom_page_search_form($form, &$form_state, $search_
       '#default_value' => (int) !empty($_GET['retain-filters']),
     );
   }
+
   return $form;
 }
 

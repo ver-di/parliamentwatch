@@ -115,6 +115,7 @@ function pw_gdata_importer_feeds_importer_default() {
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
         'request_timeout' => NULL,
+        'auto_scheme' => 'http',
       ),
     ),
     'parser' => array(
@@ -128,6 +129,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:5' => 'systemuuid',
           'xpathparser:6' => 'areacodes',
           'xpathparser:7' => 'concat(parliament,\'-\',state)',
+          'xpathparser:8' => 'areacodesdescription',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -137,12 +139,11 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:5' => 0,
           'xpathparser:6' => 0,
           'xpathparser:7' => 0,
+          'xpathparser:8' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 1,
-          'tidy' => 0,
-          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -152,6 +153,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:5' => 0,
             'xpathparser:6' => 0,
             'xpathparser:7' => 0,
+            'xpathparser:8' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -196,6 +198,11 @@ function pw_gdata_importer_feeds_importer_default() {
             'source' => 'xpathparser:7',
             'target' => 'parentguid',
             'unique' => 0,
+          ),
+          7 => array(
+            'source' => 'xpathparser:8',
+            'target' => 'field_constituency_ac_descriptor',
+            'unique' => FALSE,
           ),
         ),
         'update_existing' => '2',
