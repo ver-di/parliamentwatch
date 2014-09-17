@@ -248,6 +248,8 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:3' => 'listwon',
           'xpathparser:4' => 'electionresult',
           'xpathparser:5' => 'externalurl',
+          'xpathparser:6' => 'systemroles',
+          'xpathparser:7' => 'systemroles',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -256,6 +258,8 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:3' => 0,
           'xpathparser:4' => 0,
           'xpathparser:5' => 0,
+          'xpathparser:6' => 0,
+          'xpathparser:7' => 0,
         ),
         'context' => '//row',
         'exp' => array(
@@ -270,6 +274,8 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:3' => 0,
             'xpathparser:4' => 0,
             'xpathparser:5' => 0,
+            'xpathparser:6' => 0,
+            'xpathparser:7' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -317,6 +323,16 @@ function pw_gdata_importer_feeds_importer_default() {
           5 => array(
             'source' => 'xpathparser:5',
             'target' => 'field_user_external_url:url',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'xpathparser:6',
+            'target' => 'roles',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'xpathparser:7',
+            'target' => 'field_user_roles_for_view_mode_s',
             'unique' => FALSE,
           ),
         ),
