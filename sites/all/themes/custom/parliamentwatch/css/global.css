@@ -1794,7 +1794,7 @@ a#text_resize_increase:active {
 .views-exposed-form .bef-checkboxes label:hover {
     cursor: pointer; 
 }
-.views-exposed-widget > label {
+.views-exposed-widget label {
     display: block;
     padding-bottom: 4px;
 }
@@ -1802,8 +1802,18 @@ a#text_resize_increase:active {
 
 /* blog */
 
+#edit-field-blogpost-categories-tid-i18n-wrapper {
+    margin-right: 20px;
+}
 .view-blog .view-filters {
     float: right;
+}
+.view-blog .views-exposed-widgets {
+    padding-top: 0;
+    padding-bottom: 1em;
+}
+.view-blog .views-exposed-widget {
+    float: left;
 }
 .view-blog .view-content {
     clear: both;
