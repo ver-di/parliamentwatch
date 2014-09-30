@@ -52,6 +52,18 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blogpost';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
+    'blog_petition_teaser' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 1,
+        'title_wrapper' => 'h3',
+        'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:24:"pw_petitions-blog_teaser";}',
+        'load_terms' => 1,
+        'ft' => array(),
+      ),
+    ),
     'sharethis' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -63,7 +75,7 @@ function pw_blog_ds_field_settings_info() {
       ),
     ),
     'sharethis_horizontal' => array(
-      'weight' => '7',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -111,7 +123,7 @@ function pw_blog_ds_field_settings_info() {
       ),
     ),
     'comments' => array(
-      'weight' => '8',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -430,6 +442,41 @@ function pw_blog_ds_field_settings_info() {
 }
 
 /**
+ * Implements hook_ds_custom_fields_info().
+ */
+function pw_blog_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'blog_petition_teaser';
+  $ds_field->label = 'Blog Petition Teaser';
+  $ds_field->field_type = 7;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'default' => array(),
+    'settings' => array(
+      'show_title' => array(
+        'type' => 'checkbox',
+      ),
+      'title_wrapper' => array(
+        'type' => 'textfield',
+        'description' => 'Eg: h1, h2, p',
+      ),
+      'ctools' => array(
+        'type' => 'ctools',
+      ),
+    ),
+  );
+  $export['blog_petition_teaser'] = $ds_field;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function pw_blog_ds_layout_settings_info() {
@@ -490,33 +537,35 @@ function pw_blog_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'sharethis',
-        1 => 'field_blogpost_blogtags',
-        2 => 'title',
-        3 => 'group_blog_author',
+        1 => 'title',
+        2 => 'field_blogpost_blogtags',
+        3 => 'sharethis_horizontal',
         4 => 'custom_comment_counter',
-        5 => 'group_blog_metainformation',
-        6 => 'post_date',
-        7 => 'author_linked_to_contact_form',
-        8 => 'body',
-        9 => 'field_blogpost_categories',
-        10 => 'group_blog_social_media',
-        11 => 'sharethis_horizontal',
-        12 => 'comments',
+        5 => 'group_blog_author',
+        6 => 'group_blog_metainformation',
+        7 => 'post_date',
+        8 => 'author_linked_to_contact_form',
+        9 => 'body',
+        10 => 'blog_petition_teaser',
+        11 => 'field_blogpost_categories',
+        12 => 'group_blog_social_media',
+        13 => 'comments',
       ),
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
-      'field_blogpost_blogtags' => 'ds_content',
       'title' => 'ds_content',
-      'group_blog_author' => 'ds_content',
+      'field_blogpost_blogtags' => 'ds_content',
+      'sharethis_horizontal' => 'ds_content',
       'custom_comment_counter' => 'ds_content',
+      'group_blog_author' => 'ds_content',
       'group_blog_metainformation' => 'ds_content',
       'post_date' => 'ds_content',
       'author_linked_to_contact_form' => 'ds_content',
       'body' => 'ds_content',
+      'blog_petition_teaser' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
       'group_blog_social_media' => 'ds_content',
-      'sharethis_horizontal' => 'ds_content',
       'comments' => 'ds_content',
     ),
     'classes' => array(),
