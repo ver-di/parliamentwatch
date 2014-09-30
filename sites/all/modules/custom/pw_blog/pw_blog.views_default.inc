@@ -96,7 +96,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'contact?url=[nid]&width=600&height=400';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'kontakt?url=[nid]&width=600&height=400';
   $handler->display->display_options['fields']['name']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
@@ -429,7 +429,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'contact?url=[nid]&width=600&height=400';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'kontakt?url=[nid]&width=600&height=400';
   $handler->display->display_options['fields']['name']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
