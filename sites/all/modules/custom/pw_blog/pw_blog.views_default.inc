@@ -680,7 +680,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['operator_id'] = 'field_blogpost_categories_tid_i18n_op';
   $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['label'] = 'Blog Kategorie';
   $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['operator'] = 'field_blogpost_categories_tid_i18n_op';
-  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['identifier'] = 'field_blogpost_categories_tid_i18n';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['identifier'] = 'field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
