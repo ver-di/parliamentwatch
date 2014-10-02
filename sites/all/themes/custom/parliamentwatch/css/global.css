@@ -150,6 +150,16 @@ table.table td {
 p {
     margin-bottom: 1em;
 }
+sub {
+    font-size: smaller;
+    line-height: normal;
+    vertical-align: sub;
+}
+sup {
+    font-size: smaller;
+    line-height: normal;
+    vertical-align: super;
+}
 td {
     vertical-align: top;
 }
@@ -689,6 +699,7 @@ span.ic-info {
 }
 .arrow-item-list {
     margin-left: 0 !important;
+    margin-bottom: 1em;
 }
 .arrow-item-list li {
     list-style: none;
