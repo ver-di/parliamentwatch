@@ -682,9 +682,17 @@ span.ic-info {
     margin: 3px 0 5px;
     background-position: -930px -1733px;
 }
-.arrow-item {
+.arrow-item,
+.arrow-item-list li {
     padding-left: 15px;
     background-position: -770px -1896px;
+}
+.arrow-item-list {
+    margin-left: 0 !important;
+}
+.arrow-item-list li {
+    list-style: none;
+    margin-bottom: 0.5em;
 }
 .pw-list-expander {
     margin: 5px 0;
@@ -2988,6 +2996,7 @@ a.print-pdf,
 #block-system-user-menu .last a,
 #region-user-second .block h2,
 .arrow-item,
+.arrow-item-list li,
 .pw-list-expander fieldset.collapse-processed.collapsed a.fieldset-title,
 .twitter-item,
 .back,
