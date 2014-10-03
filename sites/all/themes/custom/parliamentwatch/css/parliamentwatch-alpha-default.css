@@ -1,5 +1,5 @@
 /* This file will hold styles that are loaded using the same media query as the normal grid. */
-@import url("mainmenu-default-normal.css");
+/* @import url("mainmenu-default-normal.css"); */
 
 html {
     font-size: 10px;

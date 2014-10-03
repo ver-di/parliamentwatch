@@ -2,9 +2,10 @@
 @charset "utf-8";
 @import url("profiles.css");
 @import url("jquery.ui.slider.css");
-@import url("mainmenu.css");
+/* @import url("mainmenu.css"); */
 @import url("pw_kandidatencheck.css");
 @import url("slick.css");
+@import url("/sites/all/themes/custom/parliamentwatch/css/icons/css/awfont.css");
 
 html {
     font-size: 12px;
@@ -398,7 +399,7 @@ a.external:hover {
 .shorten .processed:active {
     background-position: -406px -2260px;
 }
-.icon-link {
+#zone-content .icon-link {
     padding-left: 26px;
     background-position: -282px -2382px;
 }
@@ -1118,6 +1119,8 @@ a.tagadelic,
     padding-left: 0;
     background: transparent;
     line-height: 18px;
+    display: inline-block;
+    padding: 0.25em 0;
 }
 a.tagadelic.level1,
 a.tagadelic.level2,
@@ -3078,7 +3081,7 @@ blockquote:before,
 .zero-clipboard,
 .shorten span.processed,
 .shorten span,
-.icon-link,
+#zone-content .icon-link,
 .collapse-processed .fieldset-title,
 .js .pw-collapsible .fieldset-legend,
 .js .responsive-layout-mobile .pw-expandable-mobile h2,
