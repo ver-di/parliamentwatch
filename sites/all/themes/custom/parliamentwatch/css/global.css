@@ -1096,6 +1096,13 @@ h1#page-title {
 
 /* //////////////////////////// taxonomy /////////////////// */
 
+.view-pw-tag-clouds .view-content {
+    font-size: 0.8em;
+}
+.view-pw-tag-clouds li {
+    display: inline;
+    line-height: 1.5em;
+}
 a.tagadelic,
 .tagadelic a {
     text-decoration: none;
