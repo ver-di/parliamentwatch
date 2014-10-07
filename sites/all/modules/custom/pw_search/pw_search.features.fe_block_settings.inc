@@ -25,10 +25,10 @@ function pw_search_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-92',
       ),
       'blank' => array(
         'region' => '',
@@ -43,7 +43,7 @@ function pw_search_default_fe_block_settings() {
         'weight' => '0',
       ),
     ),
-    'title' => 'Wahlkreis',
+    'title' => 'Wahlkreise',
     'visibility' => '0',
   );
 

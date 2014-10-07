@@ -23,6 +23,8 @@ function pw_search_facetapi_default_facet_settings() {
     'hard_limit' => '50',
     'dependencies' => array(
       'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => 0,
@@ -65,14 +67,14 @@ function pw_search_facetapi_default_facet_settings() {
     'sort_weight' => array(
       'active' => '-50',
       'count' => '-49',
-      'display' => '-47',
       'indexed' => '-48',
+      'display' => '-47',
     ),
     'sort_order' => array(
       'active' => '3',
       'count' => '3',
-      'display' => '4',
       'indexed' => '4',
+      'display' => '4',
     ),
     'empty_behavior' => 'none',
     'soft_limit' => '20',
