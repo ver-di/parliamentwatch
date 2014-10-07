@@ -56,6 +56,8 @@ if(typeof(CKEDITOR) !== 'undefined') {
             { name : 'Event', element : 'a', attributes : { 'class' : 'link-calendar' } },
             { name : 'Video', element : 'a', attributes : { 'class' : 'link-video' } },
             { name : 'Audio-File', element : 'a', attributes : { 'class' : 'link-sound' } },
+            { name : 'Aufzählungsliste', element : 'ul', attributes : { 'class' : 'arrow-item-list' } },
+            { name : 'Nummerierte Liste', element : 'ol', attributes : { 'class' : 'numbered-list' } },
 
             /* Object Styles */
 

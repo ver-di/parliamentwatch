@@ -96,12 +96,12 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'contact?url=[nid]&width=600&height=400';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'kontakt?url=[nid]&width=600&height=400';
   $handler->display->display_options['fields']['name']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Inhalt: Categories */
+  /* Feld: Inhalt: Blog Kategorie */
   $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
@@ -429,12 +429,12 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['path'] = 'contact?url=[nid]&width=600&height=400';
+  $handler->display->display_options['fields']['name']['alter']['path'] = 'kontakt?url=[nid]&width=600&height=400';
   $handler->display->display_options['fields']['name']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Inhalt: Categories */
+  /* Feld: Inhalt: Blog Kategorie */
   $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
@@ -623,6 +623,13 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<div class="messages warning clear">Mit Ihrer Auswahl wurden keine passenden Blogartikel gefunden.</div>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Beziehung: Inhalt: Autor */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
@@ -665,6 +672,29 @@ function pw_blog_views_default_views() {
     'und' => 'und',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) (translated) */
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['id'] = 'field_blogpost_categories_tid_i18n';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['table'] = 'field_data_field_blogpost_categories';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['field'] = 'field_blogpost_categories_tid_i18n';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['operator_id'] = 'field_blogpost_categories_tid_i18n_op';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['label'] = 'Blog Kategorie';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['operator'] = 'field_blogpost_categories_tid_i18n_op';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['identifier'] = 'field_blogpost_categories';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    40118511 => 0,
+  );
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['type'] = 'select';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid_i18n']['vocabulary'] = 'blogcategories';
   $handler->display->display_options['path'] = 'taxonomy/term/%';
   $export['blog'] = $view;
 

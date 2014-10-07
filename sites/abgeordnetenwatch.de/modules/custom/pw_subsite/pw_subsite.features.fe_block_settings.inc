@@ -118,7 +118,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-pw_donation_mail'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -189,7 +189,7 @@ ueber-uns/spendenuebersicht',
   );
 
   $export['block-pw_flattr'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -225,7 +225,7 @@ ueber-uns/spendenuebersicht',
   );
 
   $export['block-pw_paypal'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -718,7 +718,7 @@ return arg(0) == \'profile\';
   );
 
   $export['views-pw_donation_drive-block'] = array(
-    'cache' => -1,
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'pw_donation_drive-block',
@@ -876,6 +876,111 @@ node/21655',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
         'weight' => '-75',
+      ),
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '1',
+  );
+
+  $export['views-pw_tag_clouds-block'] = array(
+    'cache' => '-1',
+    'css_class' => '',
+    'custom' => '0',
+    'delta' => 'pw_tag_clouds-block',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'petitionen',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '1',
+  );
+
+  $export['views-pw_tag_clouds-block_2'] = array(
+    'cache' => '-1',
+    'css_class' => '',
+    'custom' => '0',
+    'delta' => 'pw_tag_clouds-block_2',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'petitionen',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
+      ),
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '1',
+  );
+
+  $export['views-pw_tag_clouds-block_3'] = array(
+    'cache' => '-1',
+    'css_class' => '',
+    'custom' => '0',
+    'delta' => 'pw_tag_clouds-block_3',
+    'i18n_block_language' => array(),
+    'i18n_mode' => '0',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => 'petitionen',
+    'roles' => array(),
+    'themes' => array(
+      'abgeordnetenwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'abgeordnetenwatch',
+        'weight' => '0',
       ),
       'blank' => array(
         'region' => '',

@@ -182,7 +182,7 @@ function pw_blog_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -453,10 +453,13 @@ function pw_blog_field_default_fields() {
   $fields['node-blogpost-field_blogpost_categories'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_blogpost_categories',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'tid' => array(
           'columns' => array(
@@ -612,7 +615,7 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '4',
+          'weight' => '30',
         ),
         'rss' => array(
           'label' => 'above',

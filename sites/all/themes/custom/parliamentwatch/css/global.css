@@ -150,6 +150,16 @@ table.table td {
 p {
     margin-bottom: 1em;
 }
+sub {
+    font-size: smaller;
+    line-height: normal;
+    vertical-align: sub;
+}
+sup {
+    font-size: smaller;
+    line-height: normal;
+    vertical-align: super;
+}
 td {
     vertical-align: top;
 }
@@ -682,9 +692,18 @@ span.ic-info {
     margin: 3px 0 5px;
     background-position: -930px -1733px;
 }
-.arrow-item {
+.arrow-item,
+.arrow-item-list li {
     padding-left: 15px;
     background-position: -770px -1896px;
+}
+.arrow-item-list {
+    margin-left: 0 !important;
+    margin-bottom: 1em;
+}
+.arrow-item-list li {
+    list-style: none;
+    margin-bottom: 0.5em;
 }
 .pw-list-expander {
     margin: 5px 0;
@@ -1077,6 +1096,13 @@ h1#page-title {
 
 /* //////////////////////////// taxonomy /////////////////// */
 
+.view-pw-tag-clouds .view-content {
+    font-size: 0.8em;
+}
+.view-pw-tag-clouds li {
+    display: inline;
+    line-height: 1.5em;
+}
 a.tagadelic,
 .tagadelic a {
     text-decoration: none;
@@ -1794,7 +1820,7 @@ a#text_resize_increase:active {
 .views-exposed-form .bef-checkboxes label:hover {
     cursor: pointer; 
 }
-.views-exposed-widget > label {
+.views-exposed-widget label {
     display: block;
     padding-bottom: 4px;
 }
@@ -1802,8 +1828,18 @@ a#text_resize_increase:active {
 
 /* blog */
 
+#edit-field-blogpost-categories-wrapper {
+    margin-right: 20px;
+}
 .view-blog .view-filters {
     float: right;
+}
+.view-blog .views-exposed-widgets {
+    padding-top: 0;
+    padding-bottom: 1em;
+}
+.view-blog .views-exposed-widget {
+    float: left;
 }
 .view-blog .view-content {
     clear: both;
@@ -2978,6 +3014,7 @@ a.print-pdf,
 #block-system-user-menu .last a,
 #region-user-second .block h2,
 .arrow-item,
+.arrow-item-list li,
 .pw-list-expander fieldset.collapse-processed.collapsed a.fieldset-title,
 .twitter-item,
 .back,

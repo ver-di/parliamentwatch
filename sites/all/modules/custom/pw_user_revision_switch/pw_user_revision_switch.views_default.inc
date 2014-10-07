@@ -3006,6 +3006,115 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['arguments']['user_name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['user_name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['user_name']['limit'] = '0';
+
+  /* Display: Wählergedächtnis Dummy */
+  $handler = $view->new_display('block', 'Wählergedächtnis Dummy', 'block_1');
+  $handler->display->display_options['display_description'] = 'until more data is available';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: Textbereich */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Im Wählergedächtnis finden Sie alle dokumentierten Legislaturperioden und Wahlen</div></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: Excluded | VID */
+  $handler->display->display_options['fields']['vid']['id'] = 'vid';
+  $handler->display->display_options['fields']['vid']['table'] = 'user_archive_cache';
+  $handler->display->display_options['fields']['vid']['field'] = 'vid';
+  $handler->display->display_options['fields']['vid']['ui_name'] = 'Excluded | VID';
+  $handler->display->display_options['fields']['vid']['label'] = '';
+  $handler->display->display_options['fields']['vid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['vid']['separator'] = '';
+  /* Feld: Exlcuded | User Name */
+  $handler->display->display_options['fields']['user_name']['id'] = 'user_name';
+  $handler->display->display_options['fields']['user_name']['table'] = 'user_archive_cache';
+  $handler->display->display_options['fields']['user_name']['field'] = 'user_name';
+  $handler->display->display_options['fields']['user_name']['ui_name'] = 'Exlcuded | User Name';
+  $handler->display->display_options['fields']['user_name']['label'] = '';
+  $handler->display->display_options['fields']['user_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['user_name']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | UID */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'user_archive_cache';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['ui_name'] = 'Excluded | UID';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['separator'] = '';
+  /* Feld: Excluded | Parliament */
+  $handler->display->display_options['fields']['parliament_name_1']['id'] = 'parliament_name_1';
+  $handler->display->display_options['fields']['parliament_name_1']['table'] = 'user_archive_cache';
+  $handler->display->display_options['fields']['parliament_name_1']['field'] = 'parliament_name';
+  $handler->display->display_options['fields']['parliament_name_1']['ui_name'] = 'Excluded | Parliament';
+  $handler->display->display_options['fields']['parliament_name_1']['label'] = '';
+  $handler->display->display_options['fields']['parliament_name_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['parliament_name_1']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | User Role */
+  $handler->display->display_options['fields']['user_role']['id'] = 'user_role';
+  $handler->display->display_options['fields']['user_role']['table'] = 'user_archive_cache';
+  $handler->display->display_options['fields']['user_role']['field'] = 'user_role';
+  $handler->display->display_options['fields']['user_role']['ui_name'] = 'Excluded | User Role';
+  $handler->display->display_options['fields']['user_role']['label'] = '';
+  $handler->display->display_options['fields']['user_role']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['user_role']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+$urole = $row->user_role;
+if ( !empty($urole) && $urole ==  "candidate") print t("Profil zur Wahl");
+else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: PHP | Profile link */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['ui_name'] = 'PHP | Profile link';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+$urole = $row->user_role;
+if ( !empty($urole) && $urole ==  "candidate") {$linktitle = t("Profil zur Wahl");}
+else if ( !empty($urole) && $urole ==  "deputy") {$linktitle = t("Profil");}
+$linktitle .= \' \'.$row->parliament_name_1;
+    if(!isset($static) || $static != \'set\') {
+        print l(t($linktitle), \'profile/\'.$row->user_name, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+        $static = \'set\';
+    }
+    else {
+    print l(t($linktitle), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+    }
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Kontextfilter: User archive cache: User name */
+  $handler->display->display_options['arguments']['user_name']['id'] = 'user_name';
+  $handler->display->display_options['arguments']['user_name']['table'] = 'user_archive_cache';
+  $handler->display->display_options['arguments']['user_name']['field'] = 'user_name';
+  $handler->display->display_options['arguments']['user_name']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['user_name']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['user_name']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['user_name']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['user_name']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['user_name']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['user_name']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['user_name']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['user_name']['limit'] = '0';
   $export['pw_user_revision_switch'] = $view;
 
   return $export;
