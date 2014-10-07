@@ -74,6 +74,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_gender-revision_id']['field'] = 'field_user_gender-revision_id';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['label'] = 'gender';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_gender-revision_id']['type'] = 'i18n_list_default';
   /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
