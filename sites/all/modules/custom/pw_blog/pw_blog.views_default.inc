@@ -101,7 +101,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Inhalt: Categories */
+  /* Feld: Inhalt: Blog Kategorie */
   $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
@@ -434,7 +434,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
-  /* Feld: Inhalt: Categories */
+  /* Feld: Inhalt: Blog Kategorie */
   $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
