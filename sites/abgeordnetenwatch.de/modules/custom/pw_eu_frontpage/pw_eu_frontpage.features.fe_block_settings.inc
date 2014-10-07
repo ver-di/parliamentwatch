@@ -63,7 +63,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-87',
+        'weight' => '-93',
       ),
       'blank' => array(
         'region' => 'content',
@@ -98,7 +98,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-82',
+        'weight' => '-91',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -168,7 +168,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-80',
+        'weight' => '-83',
       ),
       'blank' => array(
         'region' => 'content',
@@ -203,7 +203,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-83',
+        'weight' => '-88',
       ),
       'blank' => array(
         'region' => 'content',
@@ -238,7 +238,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-79',
+        'weight' => '-88',
       ),
       'blank' => array(
         'region' => '',
