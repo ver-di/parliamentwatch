@@ -115,6 +115,7 @@ function pw_gdata_importer_feeds_importer_default() {
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
         'request_timeout' => NULL,
+        'auto_scheme' => 'http',
       ),
     ),
     'parser' => array(
@@ -128,6 +129,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:5' => 'systemuuid',
           'xpathparser:6' => 'areacodes',
           'xpathparser:7' => 'concat(parliament,\'-\',state)',
+          'xpathparser:8' => 'areacodesdescription',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -137,12 +139,11 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:5' => 0,
           'xpathparser:6' => 0,
           'xpathparser:7' => 0,
+          'xpathparser:8' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 1,
-          'tidy' => 0,
-          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -152,6 +153,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:5' => 0,
             'xpathparser:6' => 0,
             'xpathparser:7' => 0,
+            'xpathparser:8' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -197,6 +199,11 @@ function pw_gdata_importer_feeds_importer_default() {
             'target' => 'parentguid',
             'unique' => 0,
           ),
+          7 => array(
+            'source' => 'xpathparser:8',
+            'target' => 'field_constituency_ac_descriptor',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
@@ -241,6 +248,8 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:3' => 'listwon',
           'xpathparser:4' => 'electionresult',
           'xpathparser:5' => 'externalurl',
+          'xpathparser:6' => 'systemroles',
+          'xpathparser:7' => 'systemroles',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -249,6 +258,8 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:3' => 0,
           'xpathparser:4' => 0,
           'xpathparser:5' => 0,
+          'xpathparser:6' => 0,
+          'xpathparser:7' => 0,
         ),
         'context' => '//row',
         'exp' => array(
@@ -263,6 +274,8 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:3' => 0,
             'xpathparser:4' => 0,
             'xpathparser:5' => 0,
+            'xpathparser:6' => 0,
+            'xpathparser:7' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -310,6 +323,16 @@ function pw_gdata_importer_feeds_importer_default() {
           5 => array(
             'source' => 'xpathparser:5',
             'target' => 'field_user_external_url:url',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'xpathparser:6',
+            'target' => 'roles',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'xpathparser:7',
+            'target' => 'field_user_roles_for_view_mode_s',
             'unique' => FALSE,
           ),
         ),

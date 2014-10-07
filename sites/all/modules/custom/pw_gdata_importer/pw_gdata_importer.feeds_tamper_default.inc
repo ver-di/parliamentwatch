@@ -87,14 +87,114 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_constituency_importer-xpathparser_6-find_replace_regex';
+  $feeds_tamper->importer = 'gdata_constituency_importer';
+  $feeds_tamper->source = 'xpathparser:6';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/0([1-9][0-9]{3})/',
+    'replace' => '$1',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_constituency_importer-xpathparser_6-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_constituency_importer-xpathparser_8-find_replace_regex';
+  $feeds_tamper->importer = 'gdata_constituency_importer';
+  $feeds_tamper->source = 'xpathparser:8';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/[0-9]+\\((.+)\\)/U',
+    'replace' => '$1',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_constituency_importer-xpathparser_8-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_elected_profiles-xpathparser_1-find_username_by_uuid';
   $feeds_tamper->importer = 'gdata_elected_profiles';
   $feeds_tamper->source = 'xpathparser:1';
   $feeds_tamper->plugin_id = 'find_username_by_uuid';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Finds username by UUID';
   $export['gdata_elected_profiles-xpathparser_1-find_username_by_uuid'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_elected_profiles-xpathparser_6-explode';
+  $feeds_tamper->importer = 'gdata_elected_profiles';
+  $feeds_tamper->source = 'xpathparser:6';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Explode';
+  $export['gdata_elected_profiles-xpathparser_6-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_elected_profiles-xpathparser_6-find_replace_regex';
+  $feeds_tamper->importer = 'gdata_elected_profiles';
+  $feeds_tamper->source = 'xpathparser:6';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/\\s+/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Delete whitespaces';
+  $export['gdata_elected_profiles-xpathparser_6-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_elected_profiles-xpathparser_7-explode';
+  $feeds_tamper->importer = 'gdata_elected_profiles';
+  $feeds_tamper->source = 'xpathparser:7';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 2;
+  $feeds_tamper->description = 'Explode';
+  $export['gdata_elected_profiles-xpathparser_7-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_elected_profiles-xpathparser_7-find_replace_regex';
+  $feeds_tamper->importer = 'gdata_elected_profiles';
+  $feeds_tamper->source = 'xpathparser:7';
+  $feeds_tamper->plugin_id = 'find_replace_regex';
+  $feeds_tamper->settings = array(
+    'find' => '/\\s+/',
+    'replace' => '',
+    'limit' => '',
+    'real_limit' => -1,
+  );
+  $feeds_tamper->weight = 1;
+  $feeds_tamper->description = 'Find replace REGEX';
+  $export['gdata_elected_profiles-xpathparser_7-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
