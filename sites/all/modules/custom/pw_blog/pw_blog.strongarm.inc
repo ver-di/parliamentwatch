@@ -152,7 +152,7 @@ function pw_blog_strongarm() {
       'display' => array(
         'webform' => array(
           'full' => array(
-            'weight' => '32',
+            'weight' => '31',
             'visible' => FALSE,
           ),
           'rss' => array(
