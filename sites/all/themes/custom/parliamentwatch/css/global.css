@@ -1751,7 +1751,8 @@ a#text_resize_increase:active {
     margin-bottom: 2em;
 }
 .pw-promo-block .content {
-    background: url(/sites/all/themes/custom/parliamentwatch/images/bg_fff50.png);
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.5);
 }
 .pw-promo-block.pw-promo-headline .content {
     margin-right: 230px;
@@ -2699,12 +2700,14 @@ form .webform-component-checkboxes .description {
     padding: 3.8rem 0 3.2rem 0;
 }
 .announcement.slideshow .wrapper-inner {
-    background: url(../images/bg_fff50.png);
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.5);
     padding: 8px 10px 12px 20px;
     margin-top: 23px;
 }
 .announcement.slideshow .views-slideshow-controls-top {
-    background: url(../images/bg_fff50.png);
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.5);
     padding: 2px 20px;
     padding: 0.2rem 20px;
     margin-bottom: 1px;
@@ -2715,7 +2718,8 @@ form .webform-component-checkboxes .description {
 }
 .announcement.slideshow:hover .wrapper-inner,
 .announcement.slideshow:hover .views-slideshow-controls-top {
-    background: url(../images/bg_fff90.png);
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.9);
 }
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
@@ -2869,7 +2873,8 @@ form .webform-component-checkboxes .description {
     padding: 15px 20px 15px 60px;
 }
 #section-content .block.newsletter-subscribe .block-inner {
-    background: url(../images/bg_fff50.png);
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.5);
     font-size: 11px;
     font-size: 1.1rem;
     line-height: 16px;
