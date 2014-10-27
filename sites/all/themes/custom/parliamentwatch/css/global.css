@@ -913,6 +913,11 @@ h1#page-title {
 .slick-slide *:focus {
     outline: 0 !important;
 }
+.slick-track > .pw-list-item {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+	border-bottom: 0 !important;
+}
 
 /* KC slick slider */
 
