@@ -103,6 +103,21 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = 'edit KC Position';
+  /* Feld: Excluded | PHP: Get Total Rows  */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP: Get Total Rows ';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php
+  $total_items = $view->query->pager->get_total_items();
+  print $total_items; 
+?>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   /* Feld: Excluded | Taxonomy: Class name */
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['id'] = 'field_pw_kc_votes_classname';
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['table'] = 'field_data_field_pw_kc_votes_classname';
@@ -112,6 +127,17 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['label'] = '';
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['element_label_colon'] = FALSE;
+  /* Feld: Global: Ergebniszähler einer Ansicht */
+  $handler->display->display_options['fields']['counter']['id'] = 'counter';
+  $handler->display->display_options['fields']['counter']['table'] = 'views';
+  $handler->display->display_options['fields']['counter']['field'] = 'counter';
+  $handler->display->display_options['fields']['counter']['label'] = 'These';
+  $handler->display->display_options['fields']['counter']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['counter']['alter']['text'] = '[counter] von [php]';
+  $handler->display->display_options['fields']['counter']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['counter']['element_wrapper_type'] = 'strong';
+  $handler->display->display_options['fields']['counter']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['counter']['counter_start'] = '1';
   /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body_1']['id'] = 'body_1';
   $handler->display->display_options['fields']['body_1']['table'] = 'field_data_body';
