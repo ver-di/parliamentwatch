@@ -4540,13 +4540,14 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'fieldset_2',
-    1 => 'field_user_fname-revision_id_1',
-    2 => 'field_user_lname-revision_id_1',
-    3 => 'field_user_party-revision_id',
-    4 => 'field_user_questions_get-revision_id_1',
-    5 => 'field_user_answers_give-revision_id_1',
-    6 => 'nothing_2',
-    7 => 'fieldset_1',
+    1 => 'field_user_title-revision_id',
+    2 => 'field_user_fname-revision_id_1',
+    3 => 'field_user_lname-revision_id_1',
+    4 => 'field_user_party-revision_id',
+    5 => 'field_user_questions_get-revision_id_1',
+    6 => 'field_user_answers_give-revision_id_1',
+    7 => 'nothing_2',
+    8 => 'fieldset_1',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'profiles-list-compact-wrapper clearfix';
@@ -4587,6 +4588,15 @@ return FALSE;';
   $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'copyright push-bottom-xs';
   $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_image_copyright']['hide_empty'] = TRUE;
+  /* Feld: Excluded | User (historical data): Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | User (historical data): Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_default_classes'] = FALSE;
   /* Feld: Excluded | User (historical data): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id_1']['id'] = 'field_user_fname-revision_id_1';
   $handler->display->display_options['fields']['field_user_fname-revision_id_1']['table'] = 'field_revision_field_user_fname';
@@ -4616,7 +4626,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id_1] [field_user_lname-revision_id_1], [field_user_party-revision_id]';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_title-revision_id] [field_user_fname-revision_id_1] [field_user_lname-revision_id_1], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
@@ -4697,7 +4707,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['alter']['text'] = '<h3>[field_user_fname-revision_id]';
+  $handler->display->display_options['fields']['field_user_fname-revision_id']['alter']['text'] = '<h3>[field_user_title-revision_id] [field_user_fname-revision_id]';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname-revision_id']['empty'] = '<h3>[field_user_fname]';
