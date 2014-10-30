@@ -913,6 +913,11 @@ h1#page-title {
 .slick-slide *:focus {
     outline: 0 !important;
 }
+.slick-track > .pw-list-item {
+	margin-bottom: 0 !important;
+	padding-bottom: 0 !important;
+	border-bottom: 0 !important;
+}
 
 /* KC slick slider */
 
@@ -1751,7 +1756,11 @@ a#text_resize_increase:active {
     margin-bottom: 2em;
 }
 .pw-promo-block .content {
-    background: url(/sites/all/themes/custom/parliamentwatch/images/bg_fff50.png);
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.8);
+}
+.pw-promo-block .content:hover {
+    background: rgba(255,255,255,.9);
 }
 .pw-promo-block.pw-promo-headline .content {
     margin-right: 230px;
@@ -2698,13 +2707,20 @@ form .webform-component-checkboxes .description {
     padding: 38px 0 34px 0;
     padding: 3.8rem 0 3.2rem 0;
 }
+.announcement.slideshow .wrapper-inner,
+.announcement.slideshow .views-slideshow-controls-top {
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.8);
+}
+.announcement.slideshow:hover .wrapper-inner,
+.announcement.slideshow:hover .views-slideshow-controls-top {
+    background: rgba(255,255,255,.9);
+}
 .announcement.slideshow .wrapper-inner {
-    background: url(../images/bg_fff50.png);
     padding: 8px 10px 12px 20px;
     margin-top: 23px;
 }
 .announcement.slideshow .views-slideshow-controls-top {
-    background: url(../images/bg_fff50.png);
     padding: 2px 20px;
     padding: 0.2rem 20px;
     margin-bottom: 1px;
@@ -2712,10 +2728,6 @@ form .webform-component-checkboxes .description {
     width: 93%;
     top: 18px;
     z-index: 990;
-}
-.announcement.slideshow:hover .wrapper-inner,
-.announcement.slideshow:hover .views-slideshow-controls-top {
-    background: url(../images/bg_fff90.png);
 }
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
@@ -2869,11 +2881,15 @@ form .webform-component-checkboxes .description {
     padding: 15px 20px 15px 60px;
 }
 #section-content .block.newsletter-subscribe .block-inner {
-    background: url(../images/bg_fff50.png);
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,.8);
     font-size: 11px;
     font-size: 1.1rem;
     line-height: 16px;
     line-height: 1.6rem;
+}
+#section-content .block.newsletter-subscribe:hover .block-inner {
+    background: rgba(255,255,255,.9);
 }
 
 .comment .submitted {
