@@ -40,6 +40,10 @@ function find_term_id_by_parliament_validate(&$settings) {
 }
 function find_term_id_by_parliament($source, $item_key, $element_key, &$field, $settings) {
 
+  if($field == ''){
+    return $field;
+  }
+
   // load parliament term
   $parliament_parser_position = 'xpathparser:'.$settings['position_parliament'];
   $parliament = $source->current_item[$parliament_parser_position];
