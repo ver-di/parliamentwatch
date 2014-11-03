@@ -130,6 +130,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:6' => 'areacodes',
           'xpathparser:7' => 'concat(parliament,\'-\',state)',
           'xpathparser:8' => 'areacodesdescription',
+          'xpathparser:9' => 'electoralregion',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -140,10 +141,13 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:6' => 0,
           'xpathparser:7' => 0,
           'xpathparser:8' => 0,
+          'xpathparser:9' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 1,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -154,6 +158,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:6' => 0,
             'xpathparser:7' => 0,
             'xpathparser:8' => 0,
+            'xpathparser:9' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -204,10 +209,16 @@ function pw_gdata_importer_feeds_importer_default() {
             'target' => 'field_constituency_ac_descriptor',
             'unique' => FALSE,
           ),
+          8 => array(
+            'source' => 'xpathparser:9',
+            'target' => 'field_electoral_region',
+            'term_search' => '1',
+            'autocreate' => 0,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
-        'skip_hash_check' => 1,
+        'skip_hash_check' => 0,
         'bundle' => 'constituency',
         'vocabulary' => 0,
       ),
@@ -350,6 +361,201 @@ function pw_gdata_importer_feeds_importer_default() {
     'process_in_background' => 0,
   );
   $export['gdata_elected_profiles'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'gdata_electoral_region_importer';
+  $feeds_importer->config = array(
+    'name' => 'GData Electoral Region Importer',
+    'description' => 'Imports Electoral Regions from GData Spreadsheet',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsHTTPFetcher',
+      'config' => array(
+        'auto_detect_feeds' => 0,
+        'use_pubsubhubbub' => 0,
+        'designated_hub' => '',
+        'request_timeout' => '',
+        'auto_scheme' => 'http',
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsXPathParserXML',
+      'config' => array(
+        'sources' => array(
+          'xpathparser:0' => 'systemuuid',
+          'xpathparser:1' => 'parliament',
+          'xpathparser:2' => 'electoralregion',
+          'xpathparser:3' => 'notes',
+          'xpathparser:4' => 'systemuuid',
+        ),
+        'rawXML' => array(
+          'xpathparser:0' => 0,
+          'xpathparser:1' => 0,
+          'xpathparser:2' => 0,
+          'xpathparser:3' => 0,
+          'xpathparser:4' => 0,
+        ),
+        'context' => '//row',
+        'exp' => array(
+          'errors' => 0,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
+          'debug' => array(
+            'context' => 0,
+            'xpathparser:0' => 0,
+            'xpathparser:1' => 0,
+            'xpathparser:2' => 0,
+            'xpathparser:3' => 0,
+            'xpathparser:4' => 0,
+          ),
+        ),
+        'allow_override' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'vocabulary' => 0,
+        'mappings' => array(
+          0 => array(
+            'source' => 'xpathparser:0',
+            'target' => 'guid',
+            'unique' => 1,
+          ),
+          1 => array(
+            'source' => 'xpathparser:1',
+            'target' => 'field_parliament',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'xpathparser:2',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'xpathparser:3',
+            'target' => 'description',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'xpathparser:4',
+            'target' => 'uuid:uuid',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'electoral_region',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['gdata_electoral_region_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'gdata_lists_importer';
+  $feeds_importer->config = array(
+    'name' => 'GData Lists Importer',
+    'description' => 'Imports Lists from GData Spreadsheet',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsHTTPFetcher',
+      'config' => array(
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+        'request_timeout' => NULL,
+        'auto_scheme' => 'http',
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsXPathParserXML',
+      'config' => array(
+        'sources' => array(
+          'xpathparser:0' => 'systemuuid',
+          'xpathparser:1' => 'parliament',
+          'xpathparser:2' => 'electoralregion',
+          'xpathparser:3' => 'list',
+          'xpathparser:4' => 'systemuuid',
+        ),
+        'rawXML' => array(
+          'xpathparser:0' => 0,
+          'xpathparser:1' => 0,
+          'xpathparser:2' => 0,
+          'xpathparser:3' => 0,
+          'xpathparser:4' => 0,
+        ),
+        'context' => '//row',
+        'exp' => array(
+          'errors' => 0,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
+          'debug' => array(
+            'context' => 0,
+            'xpathparser:0' => 0,
+            'xpathparser:1' => 0,
+            'xpathparser:2' => 0,
+            'xpathparser:3' => 0,
+            'xpathparser:4' => 0,
+          ),
+        ),
+        'allow_override' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'vocabulary' => 0,
+        'mappings' => array(
+          0 => array(
+            'source' => 'xpathparser:0',
+            'target' => 'guid',
+            'unique' => 1,
+          ),
+          1 => array(
+            'source' => 'xpathparser:1',
+            'target' => 'field_parliament',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'xpathparser:2',
+            'target' => 'field_electoral_region',
+            'term_search' => '1',
+            'autocreate' => 0,
+          ),
+          3 => array(
+            'source' => 'xpathparser:3',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'xpathparser:4',
+            'target' => 'uuid:uuid',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'election_list',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['gdata_lists_importer'] = $feeds_importer;
 
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
@@ -885,6 +1091,12 @@ function pw_gdata_importer_feeds_importer_default() {
             'source' => 'xpathparser:35',
             'target' => 'field_user_roles_for_view_mode_s',
             'unique' => FALSE,
+          ),
+          37 => array(
+            'source' => 'xpathparser:36',
+            'target' => 'field_user_list',
+            'term_search' => '1',
+            'autocreate' => 0,
           ),
         ),
         'update_existing' => '2',

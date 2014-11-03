@@ -1324,6 +1324,13 @@ else
       'override_label' => 0,
       'label' => '',
     ),
+    'action::pathauto_user_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::1399' => array(
       'selected' => 0,
       'postpone_processing' => 0,
@@ -1331,12 +1338,14 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_delete_item' => array(
+    'action::views_bulk_operations_argument_selector_action' => array(
       'selected' => 0,
-      'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
     ),
     'action::system_send_email_action' => array(
       'selected' => 0,
@@ -1345,8 +1354,8 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1372,15 +1381,6 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
     'action::pw_login_once_send_mail_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -1388,7 +1388,7 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::pathauto_user_update_action' => array(
+    'action::views_bulk_operations_script_action' => array(
       'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
@@ -1919,6 +1919,13 @@ else
       'override_label' => 0,
       'label' => '',
     ),
+    'action::pathauto_user_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::1399' => array(
       'selected' => 0,
       'postpone_processing' => 0,
@@ -1926,12 +1933,14 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_delete_item' => array(
+    'action::views_bulk_operations_argument_selector_action' => array(
       'selected' => 0,
-      'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
     ),
     'action::system_send_email_action' => array(
       'selected' => 0,
@@ -1940,8 +1949,8 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1967,15 +1976,6 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
     'action::pw_login_once_send_mail_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -1983,7 +1983,7 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::pathauto_user_update_action' => array(
+    'action::views_bulk_operations_script_action' => array(
       'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,

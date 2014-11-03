@@ -121,6 +121,21 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_constituency_importer-xpathparser_9-find_term_id_by_parliament';
+  $feeds_tamper->importer = 'gdata_constituency_importer';
+  $feeds_tamper->source = 'xpathparser:9';
+  $feeds_tamper->plugin_id = 'find_term_id_by_parliament';
+  $feeds_tamper->settings = array(
+    'position_parliament' => '0',
+    'target_vocabulary_id' => '40',
+  );
+  $feeds_tamper->weight = 4;
+  $feeds_tamper->description = 'Find Electoral Region ID';
+  $export['gdata_constituency_importer-xpathparser_9-find_term_id_by_parliament'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_elected_profiles-xpathparser_1-find_username_by_uuid';
   $feeds_tamper->importer = 'gdata_elected_profiles';
   $feeds_tamper->source = 'xpathparser:1';
@@ -195,6 +210,21 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Find replace REGEX';
   $export['gdata_elected_profiles-xpathparser_7-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_lists_importer-xpathparser_2-find_term_id_by_parliament';
+  $feeds_tamper->importer = 'gdata_lists_importer';
+  $feeds_tamper->source = 'xpathparser:2';
+  $feeds_tamper->plugin_id = 'find_term_id_by_parliament';
+  $feeds_tamper->settings = array(
+    'position_parliament' => '1',
+    'target_vocabulary_id' => '40',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Find Electoral Region ID';
+  $export['gdata_lists_importer-xpathparser_2-find_term_id_by_parliament'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -334,26 +364,17 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_26-required';
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_26-find_term_id_by_parliament';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:26';
-  $feeds_tamper->plugin_id = 'required';
-  $feeds_tamper->settings = array();
-  $feeds_tamper->weight = 11;
-  $feeds_tamper->description = 'Pflichtfeld';
-  $export['gdata_profiles_importer_v2-xpathparser_26-required'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_26-term_id_by_term_and_parliament';
-  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
-  $feeds_tamper->source = 'xpathparser:26';
-  $feeds_tamper->plugin_id = 'term_id_by_term_and_parliament';
-  $feeds_tamper->settings = array();
-  $feeds_tamper->weight = 10;
+  $feeds_tamper->plugin_id = 'find_term_id_by_parliament';
+  $feeds_tamper->settings = array(
+    'position_parliament' => '25',
+    'target_vocabulary_id' => '17',
+  );
+  $feeds_tamper->weight = 12;
   $feeds_tamper->description = 'Find Constituency Term ID';
-  $export['gdata_profiles_importer_v2-xpathparser_26-term_id_by_term_and_parliament'] = $feeds_tamper;
+  $export['gdata_profiles_importer_v2-xpathparser_26-find_term_id_by_parliament'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -371,23 +392,6 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Find replace REGEX';
   $export['gdata_profiles_importer_v2-xpathparser_27-find_replace_regex'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_28-find_replace_regex';
-  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
-  $feeds_tamper->source = 'xpathparser:28';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\s*$/',
-    'replace' => 'k.A.',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 1;
-  $feeds_tamper->description = 'Find replace REGEX';
-  $export['gdata_profiles_importer_v2-xpathparser_28-find_replace_regex'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
@@ -445,6 +449,21 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->weight = 3;
   $feeds_tamper->description = 'Delete whitespaces';
   $export['gdata_profiles_importer_v2-xpathparser_35-find_replace_regex'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_36-find_term_id_by_parliament';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:36';
+  $feeds_tamper->plugin_id = 'find_term_id_by_parliament';
+  $feeds_tamper->settings = array(
+    'position_parliament' => '25',
+    'target_vocabulary_id' => '39',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Find List Term ID';
+  $export['gdata_profiles_importer_v2-xpathparser_36-find_term_id_by_parliament'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */

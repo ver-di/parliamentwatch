@@ -218,6 +218,16 @@ function pw_profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: create field_user_list.
+  $permissions['create field_user_list'] = array(
+    'name' => 'create field_user_list',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: create field_user_list_position.
   $permissions['create field_user_list_position'] = array(
     'name' => 'create field_user_list_position',
@@ -640,6 +650,16 @@ function pw_profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: edit field_user_list.
+  $permissions['edit field_user_list'] = array(
+    'name' => 'edit field_user_list',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: edit field_user_list_position.
   $permissions['edit field_user_list_position'] = array(
     'name' => 'edit field_user_list_position',
@@ -1028,6 +1048,16 @@ function pw_profiles_user_default_permissions() {
       0 => 'Content Manager',
       1 => 'Premium User',
       2 => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: edit own field_user_list.
+  $permissions['edit own field_user_list'] = array(
+    'name' => 'edit own field_user_list',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1508,6 +1538,17 @@ function pw_profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: view field_user_list.
+  $permissions['view field_user_list'] = array(
+    'name' => 'view field_user_list',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: view field_user_list_position.
   $permissions['view field_user_list_position'] = array(
     'name' => 'view field_user_list_position',
@@ -1973,6 +2014,17 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: view own field_user_links_more.
   $permissions['view own field_user_links_more'] = array(
     'name' => 'view own field_user_links_more',
+    'roles' => array(
+      0 => 'administrator',
+      1 => 'anonymous user',
+      2 => 'authenticated user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: view own field_user_list.
+  $permissions['view own field_user_list'] = array(
+    'name' => 'view own field_user_list',
     'roles' => array(
       0 => 'administrator',
       1 => 'anonymous user',
