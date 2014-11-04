@@ -30,7 +30,8 @@ function pw_set_default_email($source, $item_key, $element_key, &$field, $settin
   if(empty($field)) {
 
     // set generic email
-    $field = "noemail+".microtime()."@parliamentwatch.org";
+    $subaddress = md5(microtime());
+    $field = "noemail+".$subaddress."@parliamentwatch.org";
     return;
 
   } 
