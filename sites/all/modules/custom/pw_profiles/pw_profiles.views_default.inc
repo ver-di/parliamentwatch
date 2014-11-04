@@ -2652,7 +2652,7 @@ else
   $handler->display->display_options['fields']['field_user_political_roles_editable']['widget_type'] = 'options_select';
   $handler->display->display_options['fields']['field_user_political_roles_editable']['suppress_label'] = 1;
   $handler->display->display_options['fields']['field_user_political_roles_editable']['suppress_description'] = 1;
-  /* Feld: Benutzer: Election Result (editable) */
+  /* Feld: Benutzer: Constituency Result (editable) */
   $handler->display->display_options['fields']['field_user_election_result_editable']['id'] = 'field_user_election_result_editable';
   $handler->display->display_options['fields']['field_user_election_result_editable']['table'] = 'field_data_field_user_election_result';
   $handler->display->display_options['fields']['field_user_election_result_editable']['field'] = 'field_user_election_result_editable';

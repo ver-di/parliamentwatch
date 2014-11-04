@@ -1848,11 +1848,12 @@ function pw_profiles_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_election_result',
-      'label' => 'Election Result',
+      'label' => 'Constituency Result',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 'html_mail',
@@ -1864,6 +1865,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -5512,13 +5516,13 @@ $entity_field[0][\'value\'] = $result;',
   t('Children');
   t('Committee');
   t('Constituency');
+  t('Constituency Result');
   t('Constituency Won');
   t('Date');
   t('Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
   t('Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
   t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
   t('Education');
-  t('Election Result');
   t('External Links');
   t('External URL');
   t('First Letter of Lastname');

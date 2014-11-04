@@ -577,7 +577,10 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: edit field_user_election_result.
   $permissions['edit field_user_election_result'] = array(
     'name' => 'edit field_user_election_result',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
@@ -972,7 +975,10 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: edit own field_user_election_result.
   $permissions['edit own field_user_election_result'] = array(
     'name' => 'edit own field_user_election_result',
-    'roles' => array(),
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
     'module' => 'field_permissions',
   );
 
