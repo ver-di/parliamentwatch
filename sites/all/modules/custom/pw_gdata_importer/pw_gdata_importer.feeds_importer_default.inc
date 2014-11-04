@@ -237,8 +237,8 @@ function pw_gdata_importer_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'gdata_elected_profiles';
   $feeds_importer->config = array(
-    'name' => 'GData Elected Profiles',
-    'description' => 'sets result, list and constituency won after elections ',
+    'name' => 'GData Profiles After Election Updater',
+    'description' => 'Sets results after elections. Also overwrites all email addresses to reduce data.',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
@@ -254,39 +254,45 @@ function pw_gdata_importer_feeds_importer_default() {
       'config' => array(
         'sources' => array(
           'xpathparser:0' => 'systemuuid',
-          'xpathparser:1' => 'systemuuid',
           'xpathparser:2' => 'constituencywon',
           'xpathparser:3' => 'listwon',
-          'xpathparser:4' => 'electionresult',
-          'xpathparser:5' => 'externalurl',
+          'xpathparser:4' => 'constituencyresult',
           'xpathparser:6' => 'systemroles',
           'xpathparser:7' => 'systemroles',
+          'xpathparser:8' => 'list',
+          'xpathparser:9' => 'listposition',
+          'xpathparser:10' => 'parliament',
+          'xpathparser:12' => 'systemuuid',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
-          'xpathparser:1' => 0,
           'xpathparser:2' => 0,
           'xpathparser:3' => 0,
           'xpathparser:4' => 0,
-          'xpathparser:5' => 0,
           'xpathparser:6' => 0,
           'xpathparser:7' => 0,
+          'xpathparser:8' => 0,
+          'xpathparser:9' => 0,
+          'xpathparser:10' => 0,
+          'xpathparser:12' => 0,
         ),
         'context' => '//row',
         'exp' => array(
-          'errors' => 0,
+          'errors' => 1,
           'tidy' => 0,
           'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
-            'xpathparser:1' => 0,
             'xpathparser:2' => 0,
             'xpathparser:3' => 0,
             'xpathparser:4' => 0,
-            'xpathparser:5' => 0,
             'xpathparser:6' => 0,
             'xpathparser:7' => 0,
+            'xpathparser:8' => 0,
+            'xpathparser:9' => 0,
+            'xpathparser:10' => 0,
+            'xpathparser:12' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -312,38 +318,55 @@ function pw_gdata_importer_feeds_importer_default() {
             'unique' => 1,
           ),
           1 => array(
-            'source' => 'xpathparser:1',
-            'target' => 'name',
-            'unique' => 1,
-          ),
-          2 => array(
             'source' => 'xpathparser:2',
             'target' => 'field_user_constituency_won',
             'unique' => FALSE,
           ),
-          3 => array(
+          2 => array(
             'source' => 'xpathparser:3',
             'target' => 'field_user_list_won',
             'unique' => FALSE,
           ),
-          4 => array(
+          3 => array(
             'source' => 'xpathparser:4',
             'target' => 'field_user_election_result',
             'unique' => FALSE,
           ),
-          5 => array(
-            'source' => 'xpathparser:5',
-            'target' => 'field_user_external_url:url',
-            'unique' => FALSE,
-          ),
-          6 => array(
+          4 => array(
             'source' => 'xpathparser:6',
             'target' => 'roles',
             'unique' => FALSE,
           ),
-          7 => array(
+          5 => array(
             'source' => 'xpathparser:7',
             'target' => 'field_user_roles_for_view_mode_s',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'xpathparser:8',
+            'target' => 'field_user_list',
+            'term_search' => '1',
+            'autocreate' => 0,
+          ),
+          7 => array(
+            'source' => 'xpathparser:9',
+            'target' => 'field_user_list_position',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          8 => array(
+            'source' => 'xpathparser:10',
+            'target' => 'field_user_parliament',
+            'unique' => FALSE,
+          ),
+          9 => array(
+            'source' => 'xpathparser:12',
+            'target' => 'name',
+            'unique' => 1,
+          ),
+          10 => array(
+            'source' => 'Blank source 1',
+            'target' => 'mail',
             'unique' => FALSE,
           ),
         ),
@@ -798,7 +821,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:25' => 'parliament',
           'xpathparser:26' => 'constituency',
           'xpathparser:27' => 'listposition',
-          'xpathparser:28' => 'electionresult',
+          'xpathparser:28' => 'constituencyresult',
           'xpathparser:29' => 'pictureurl',
           'xpathparser:30' => 'picturecopyright',
           'xpathparser:31' => 'txtabout',
@@ -806,6 +829,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:33' => 'externalurl',
           'xpathparser:34' => 'facebookurl',
           'xpathparser:35' => 'systemroles',
+          'xpathparser:36' => 'list',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -844,10 +868,13 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:33' => 0,
           'xpathparser:34' => 0,
           'xpathparser:35' => 0,
+          'xpathparser:36' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 1,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -886,6 +913,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:33' => 0,
             'xpathparser:34' => 0,
             'xpathparser:35' => 0,
+            'xpathparser:36' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -1119,7 +1147,7 @@ function pw_gdata_importer_feeds_importer_default() {
   $feeds_importer->api_version = 1;
   $feeds_importer->id = 'gdata_profiles_updater';
   $feeds_importer->config = array(
-    'name' => 'GData Profiles Updater',
+    'name' => 'GData Profiles Role Updater',
     'description' => 'Updates Profiles primarily to assign role Deputy after elections',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
