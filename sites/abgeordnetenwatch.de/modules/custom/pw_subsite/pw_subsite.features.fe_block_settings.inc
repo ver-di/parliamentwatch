@@ -28,7 +28,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-77',
+        'weight' => '-81',
       ),
       'blank' => array(
         'region' => 'content',
@@ -63,7 +63,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-75',
+        'weight' => '-80',
       ),
       'blank' => array(
         'region' => 'content',
@@ -98,7 +98,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-74',
+        'weight' => '-82',
       ),
       'blank' => array(
         'region' => 'content',
@@ -118,7 +118,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-pw_donation_mail'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -134,7 +134,7 @@ ueber-uns/spendenuebersicht',
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-76',
       ),
       'blank' => array(
         'region' => '',
@@ -189,7 +189,7 @@ ueber-uns/spendenuebersicht',
   );
 
   $export['block-pw_flattr'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -205,7 +205,7 @@ ueber-uns/spendenuebersicht',
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-81',
       ),
       'blank' => array(
         'region' => '',
@@ -225,7 +225,7 @@ ueber-uns/spendenuebersicht',
   );
 
   $export['block-pw_paypal'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -241,7 +241,7 @@ ueber-uns/spendenuebersicht',
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-80',
       ),
       'blank' => array(
         'region' => '',
@@ -416,7 +416,7 @@ ueber-uns/spendenuebersicht',
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-84',
+        'weight' => '-89',
       ),
       'blank' => array(
         'region' => 'content',
@@ -661,7 +661,7 @@ ueber-uns/spendenuebersicht',
         'region' => 'content',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-82',
+        'weight' => '-85',
       ),
       'blank' => array(
         'region' => 'content',
@@ -698,7 +698,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-81',
+        'weight' => '-90',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -718,7 +718,7 @@ return arg(0) == \'profile\';
   );
 
   $export['views-pw_donation_drive-block'] = array(
-    'cache' => -1,
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'pw_donation_drive-block',
@@ -730,10 +730,10 @@ return arg(0) == \'profile\';
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_second',
+        'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
+        'weight' => '-82',
       ),
       'blank' => array(
         'region' => '',
@@ -748,8 +748,8 @@ return arg(0) == \'profile\';
         'weight' => '0',
       ),
     ),
-    'title' => '',
-    'visibility' => '0',
+    'title' => 'Spendenkampagne',
+    'visibility' => '1',
   );
 
   $export['views-pw_donation_state-all_countries'] = array(
@@ -803,7 +803,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-74',
+        'weight' => '-73',
       ),
       'blank' => array(
         'region' => '',
@@ -875,7 +875,7 @@ node/21655',
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-75',
+        'weight' => '-74',
       ),
       'blank' => array(
         'region' => '',
@@ -945,7 +945,7 @@ node/21655',
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-84',
+        'weight' => '-94',
       ),
       'blank' => array(
         'region' => '',

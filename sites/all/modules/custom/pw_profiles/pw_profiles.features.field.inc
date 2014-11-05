@@ -1848,11 +1848,12 @@ function pw_profiles_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_election_result',
-      'label' => 'Election Result',
+      'label' => 'Constituency Result',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 'html_mail',
@@ -1864,6 +1865,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -2350,9 +2354,9 @@ function pw_profiles_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          'm' => 'männlich',
-          'f' => 'weiblich',
-          't' => 'transgender',
+          'male' => 'männlich',
+          'female' => 'weiblich',
+          'other' => 'anderes',
         ),
         'allowed_values_function' => '',
       ),
@@ -2833,6 +2837,114 @@ function pw_profiles_field_default_fields() {
         ),
         'type' => 'link_field',
         'weight' => '58',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_user_list'.
+  $fields['user-user-field_user_list'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_list',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'election_list',
+            'parent' => '0',
+          ),
+        ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_link',
+          'weight' => 40,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_candidate' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_dialogue_search_snippet' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'field_name' => 'field_user_list',
+      'label' => 'List',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_select',
+        'weight' => '54',
       ),
     ),
   );
@@ -5404,13 +5516,13 @@ $entity_field[0][\'value\'] = $result;',
   t('Children');
   t('Committee');
   t('Constituency');
+  t('Constituency Result');
   t('Constituency Won');
   t('Date');
   t('Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
   t('Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
   t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
   t('Education');
-  t('Election Result');
   t('External Links');
   t('External URL');
   t('First Letter of Lastname');
@@ -5422,6 +5534,7 @@ $entity_field[0][\'value\'] = $result;',
   t('If this field is filled, question form will be closed and content of this field will be shown to visitor.');
   t('Image Gallery');
   t('Last name');
+  t('List');
   t('List Position');
   t('List Won');
   t('Marriage status');

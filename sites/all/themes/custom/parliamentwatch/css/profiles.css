@@ -126,7 +126,8 @@ html>/**/body .view-id-profile_list_rev .view-content li {
     display: block;
     position: absolute;
     z-index: 123;
-    background: url(../images/bg_eee95.png);
+    background: rgb(238,238,238);
+    background: rgba(238,238,238,.95);
     top: -43px;
     left: -13px;
     width: 379px;

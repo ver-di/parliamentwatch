@@ -28,6 +28,12 @@ function find_username_by_uuid_validate(&$settings) {
 function find_username_by_uuid($source, $item_key, $element_key, &$field, $settings) {
   $user_uuid = $field;
   $user = entity_uuid_load('user', array($user_uuid));
-  $user = array_pop($user);
-  $field = $user->name;
+  if(!empty($user)){
+    $user = array_pop($user);
+    $field = $user->name;
+  }
+  else{
+    drupal_set_message('User not for UUID '.$user_uuid.'.');
+    $field = '';
+  }
 }

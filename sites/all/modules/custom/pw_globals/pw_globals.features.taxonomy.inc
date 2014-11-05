@@ -59,6 +59,56 @@ function pw_globals_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'election_list' => array(
+      'name' => 'List',
+      'machine_name' => 'election_list',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'language' => 'und',
+      'i18n_mode' => '1',
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'electoral_region' => array(
+      'name' => 'Electoral Region',
+      'machine_name' => 'electoral_region',
+      'description' => '',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'language' => 'und',
+      'i18n_mode' => '1',
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
     'parliaments' => array(
       'name' => 'Parliaments',
       'machine_name' => 'parliaments',

@@ -57,14 +57,14 @@ function pw_petitions_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'body',
       1 => 'field_blogpost_blogtags',
-      2 => 'field_teaser_image',
+      2 => 'field_petition_progress',
       3 => 'field_petition_required',
       4 => 'field_petition_signings',
-      5 => 'field_petition_progress',
+      5 => 'field_teaser_image',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -89,11 +89,11 @@ function pw_petitions_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Recipients',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_petition_content',
-      1 => 'field_pw_parmliament',
-      2 => 'field_petition_recipient',
+      1 => 'field_petition_recipient',
+      2 => 'field_pw_parmliament',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

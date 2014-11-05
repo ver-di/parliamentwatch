@@ -35,7 +35,8 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '500';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -1323,6 +1324,13 @@ else
       'override_label' => 0,
       'label' => '',
     ),
+    'action::pathauto_user_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::1399' => array(
       'selected' => 0,
       'postpone_processing' => 0,
@@ -1330,12 +1338,14 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_delete_item' => array(
+    'action::views_bulk_operations_argument_selector_action' => array(
       'selected' => 0,
-      'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
     ),
     'action::system_send_email_action' => array(
       'selected' => 0,
@@ -1344,8 +1354,8 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1371,15 +1381,6 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
     'action::pw_login_once_send_mail_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -1387,7 +1388,7 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::pathauto_user_update_action' => array(
+    'action::views_bulk_operations_script_action' => array(
       'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
@@ -1918,6 +1919,13 @@ else
       'override_label' => 0,
       'label' => '',
     ),
+    'action::pathauto_user_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::1399' => array(
       'selected' => 0,
       'postpone_processing' => 0,
@@ -1925,12 +1933,14 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_delete_item' => array(
+    'action::views_bulk_operations_argument_selector_action' => array(
       'selected' => 0,
-      'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
     ),
     'action::system_send_email_action' => array(
       'selected' => 0,
@@ -1939,8 +1949,8 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -1966,15 +1976,6 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
     'action::pw_login_once_send_mail_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -1982,7 +1983,7 @@ else
       'override_label' => 0,
       'label' => '',
     ),
-    'action::pathauto_user_update_action' => array(
+    'action::views_bulk_operations_script_action' => array(
       'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
@@ -2651,7 +2652,7 @@ else
   $handler->display->display_options['fields']['field_user_political_roles_editable']['widget_type'] = 'options_select';
   $handler->display->display_options['fields']['field_user_political_roles_editable']['suppress_label'] = 1;
   $handler->display->display_options['fields']['field_user_political_roles_editable']['suppress_description'] = 1;
-  /* Feld: Benutzer: Election Result (editable) */
+  /* Feld: Benutzer: Constituency Result (editable) */
   $handler->display->display_options['fields']['field_user_election_result_editable']['id'] = 'field_user_election_result_editable';
   $handler->display->display_options['fields']['field_user_election_result_editable']['table'] = 'field_data_field_user_election_result';
   $handler->display->display_options['fields']['field_user_election_result_editable']['field'] = 'field_user_election_result_editable';
@@ -4539,13 +4540,14 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'fieldset_2',
-    1 => 'field_user_fname-revision_id_1',
-    2 => 'field_user_lname-revision_id_1',
-    3 => 'field_user_party-revision_id',
-    4 => 'field_user_questions_get-revision_id_1',
-    5 => 'field_user_answers_give-revision_id_1',
-    6 => 'nothing_2',
-    7 => 'fieldset_1',
+    1 => 'field_user_title-revision_id',
+    2 => 'field_user_fname-revision_id_1',
+    3 => 'field_user_lname-revision_id_1',
+    4 => 'field_user_party-revision_id',
+    5 => 'field_user_questions_get-revision_id_1',
+    6 => 'field_user_answers_give-revision_id_1',
+    7 => 'nothing_2',
+    8 => 'fieldset_1',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'profiles-list-compact-wrapper clearfix';
@@ -4586,6 +4588,15 @@ return FALSE;';
   $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'copyright push-bottom-xs';
   $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_image_copyright']['hide_empty'] = TRUE;
+  /* Feld: Excluded | User (historical data): Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | User (historical data): Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_default_classes'] = FALSE;
   /* Feld: Excluded | User (historical data): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id_1']['id'] = 'field_user_fname-revision_id_1';
   $handler->display->display_options['fields']['field_user_fname-revision_id_1']['table'] = 'field_revision_field_user_fname';
@@ -4615,7 +4626,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id_1] [field_user_lname-revision_id_1], [field_user_party-revision_id]';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_title-revision_id] [field_user_fname-revision_id_1] [field_user_lname-revision_id_1], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
@@ -4696,7 +4707,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['alter']['text'] = '<h3>[field_user_fname-revision_id]';
+  $handler->display->display_options['fields']['field_user_fname-revision_id']['alter']['text'] = '<h3>[field_user_title-revision_id] [field_user_fname-revision_id]';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname-revision_id']['empty'] = '<h3>[field_user_fname]';

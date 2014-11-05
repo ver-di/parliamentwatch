@@ -18,7 +18,7 @@ function pw_subsite_default_fe_block_boxes() {
 	Landtagswahl Brandenburg 2014
 </h3>
 <p>
-	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41475 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_brandenburg.png" style="float: left; width: 154px; height: 136px; margin: 1px 15px;" title="" typeof="foaf:Image" />Am 14.09.2014 finden die Landtagswahlen in Brandenburg statt. Nutzen Sie die Postleitzahlen-Suche um die Kandidierenden aus Ihrem Wahlkreis zu finden und zu befragen.
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41475 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_brandenburg.png" style="float: left; width: 154px; height: 136px; margin: 1px 15px;" title="" typeof="foaf:Image" />Am 14.09.2014 fanden die Landtagswahlen in Brandenburg statt. Nutzen Sie die Postleitzahlen-Suche um die Kandidierenden aus Ihrem Wahlkreis zu finden. Alle Wahlergebnisse finden Sie auf <a href="http://www.wahlrecht.de/news/2014/landtagswahl-brandenburg-2014.html#absolut">wahlrecht.de</a>.
 </p>
 <?php
     $blockObject = block_load(\'custom_search_blocks\', \'3\');
@@ -37,7 +37,8 @@ function pw_subsite_default_fe_block_boxes() {
 	Landtagswahl Sachsen 2014
 </h3>
 <p>
-	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41473 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_sachsen.png" style="margin: 2px 15px; float: left; width: 154px; height: 115px;" title="" typeof="foaf:Image" />Am 31.08.2014 finden die Landtagswahlen in Sachsen statt. Geben Sie hier Ihre Postleitzahl ein und stellen Sie Ihre Frage direkt an die Kandidierenden aus Ihrem Wahlkreis.
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41473 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_sachsen.png" style="margin: 2px 15px; float: left; width: 154px; height: 115px;" title="" typeof="foaf:Image" />Am 31.08.2014 fanden die Landtagswahlen in Sachsen statt. Geben Sie hier Ihre Postleitzahl ein und finden Sie heraus, welche Fragen an die Kandidierenden aus Ihrem Wahlkreis gestellt worden sind.
+Alle Wahlergebnisse finden Sie bei <a href="http://www.wahlrecht.de/news/2014/landtagswahl-sachsen-2014.html#absolut">wahlrecht.de</a>.
 </p>
 <?php
     $blockObject = block_load(\'custom_search_blocks\', \'3\');
@@ -59,7 +60,7 @@ function pw_subsite_default_fe_block_boxes() {
 	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41474 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_thueringen.png" style="float: left; width: 154px; height: 126px; margin: 2px 15px;" title="" typeof="foaf:Image" />
 </p>
 <p>
-	Am 14.09.2014 finden die Landtagswahlen in Thüringen statt. Nutzen Sie die Postleitzahlen-Suche um die Kandidierenden aus Ihrem Wahlkreis zu finden
+	Am 14.09.2014 fanden die Landtagswahlen in Thüringen statt. Nutzen Sie die Postleitzahlen-Suche um die Kandidierenden aus Ihrem Wahlkreis zu finden. Alle Wahlergebnisse finden Sie auf <a href="http://www.wahlrecht.de/news/2014/landtagswahl-thueringen-2014.html#absolut">wahlrecht.de</a>.
 </p>
 <?php
     $blockObject = block_load(\'custom_search_blocks\', \'3\');
