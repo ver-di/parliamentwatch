@@ -227,7 +227,35 @@ function pw_api_menu() {
     'delivery callback' => 'pw_api_deliver_xml',
     'type' => MENU_CALLBACK,
   );
+  $items['api/%/%/deputies.xml'] = array(
+    'page callback' => 'pw_api_profiles',
+    'page arguments' => array(1, 2),
+    'access callback' => TRUE,
+    'delivery callback' => 'pw_api_deliver_xml',
+    'type' => MENU_CALLBACK,
+  );
+  $items['api/%/%/candidates.xml'] = array(
+    'page callback' => 'pw_api_profiles',
+    'page arguments' => array(1, 2),
+    'access callback' => TRUE,
+    'delivery callback' => 'pw_api_deliver_xml',
+    'type' => MENU_CALLBACK,
+  );
   $items['api/%/%/%/%/profiles.xml'] = array(
+    'page callback' => 'pw_api_profiles',
+    'page arguments' => array(1, 2, 3, 4),
+    'access callback' => TRUE,
+    'delivery callback' => 'pw_api_deliver_xml',
+    'type' => MENU_CALLBACK,
+  );
+  $items['api/%/%/%/%/deputies.xml'] = array(
+    'page callback' => 'pw_api_profiles',
+    'page arguments' => array(1, 2, 3, 4),
+    'access callback' => TRUE,
+    'delivery callback' => 'pw_api_deliver_xml',
+    'type' => MENU_CALLBACK,
+  );
+  $items['api/%/%/%/%/candidates.xml'] = array(
     'page callback' => 'pw_api_profiles',
     'page arguments' => array(1, 2, 3, 4),
     'access callback' => TRUE,
@@ -416,7 +444,7 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
   $user_copyright_alias = $query->leftJoin('field_revision_field_image_copyright', 'frfucr', "%alias.revision_id = ur.vid AND %alias.entity_type = 'file' AND %alias.language='und'");
   $user_questions_get_alias = $query->leftJoin('field_data_field_user_questions_get', 'frfuqg', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
   $user_answers_give_alias = $query->leftJoin('field_data_field_user_answers_give', 'frfuag', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
-  
+
   $query->addField('ur', 'name');
   $query->addField('ur', 'vid');
   $query->addField('ur', 'timestamp');
@@ -439,8 +467,24 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
   $query->addField($user_questions_get_alias, 'field_user_questions_get_value', 'questions_get');
   $query->addField($user_answers_give_alias, 'field_user_answers_give_value', 'answers_give');
 
+  $feedname = current(explode(".", basename($_SERVER['REQUEST_URI'])));
 
-  $query->where("$roles_alias.rid = :rid", array('rid' => 181527986))
+  switch($feedname){
+      case 'candidates':
+        $rid = 185431326;
+        break;
+      case 'deputies':
+        $rid = 140336230;
+        break;
+      case 'politicians':
+        $rid = 181527986;
+        break;
+      case 'profiles':
+        $rid = 181527986;
+       break;
+  }
+
+  $query->where("$roles_alias.rid = :rid", array('rid' => $rid))
     ->orderBy("$users_alias.uuid", 'ASC')
     ->orderBy('ur.vid', 'DESC' );
 
