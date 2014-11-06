@@ -613,3 +613,19 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter=NULL,
 
   return $profiles;
 }
+
+
+
+function pw_api_views_query_alter(&$view, &$query) {
+  if($view->name == 'pw_api_internal_profile') {
+
+     // add join user_archive_cache table to get rid of duplicates
+     $join = new views_join();
+     $join->table = 'user_archive_cache';
+     $join->field = 'vid';
+     $join->left_table = 'user_revision';
+     $join->left_field = 'vid';
+     $join->type = 'INNER';
+     $query->add_relationship('user_archive_cache', $join, 'user_revision');
+  }
+}

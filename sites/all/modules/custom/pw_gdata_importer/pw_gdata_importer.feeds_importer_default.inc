@@ -1165,19 +1165,13 @@ function pw_gdata_importer_feeds_importer_default() {
         'sources' => array(
           'xpathparser:0' => 'systemuuid',
           'xpathparser:1' => 'systemuuid',
-          'xpathparser:2' => 'constituencywon',
-          'xpathparser:3' => 'listwon',
-          'xpathparser:4' => 'electionresult',
           'xpathparser:5' => 'systemroles',
           'xpathparser:6' => 'systemroles',
-          'xpathparser:7' => 'externalurl',
+          'xpathparser:7' => 'email',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
           'xpathparser:1' => 0,
-          'xpathparser:2' => 0,
-          'xpathparser:3' => 0,
-          'xpathparser:4' => 0,
           'xpathparser:5' => 0,
           'xpathparser:6' => 0,
           'xpathparser:7' => 0,
@@ -1185,15 +1179,10 @@ function pw_gdata_importer_feeds_importer_default() {
         'context' => '//row',
         'exp' => array(
           'errors' => 0,
-          'tidy' => 0,
-          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
             'xpathparser:1' => 0,
-            'xpathparser:2' => 0,
-            'xpathparser:3' => 0,
-            'xpathparser:4' => 0,
             'xpathparser:5' => 0,
             'xpathparser:6' => 0,
             'xpathparser:7' => 0,
@@ -1234,6 +1223,11 @@ function pw_gdata_importer_feeds_importer_default() {
           3 => array(
             'source' => 'xpathparser:6',
             'target' => 'field_user_roles_for_view_mode_s',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'xpathparser:7',
+            'target' => 'mail',
             'unique' => FALSE,
           ),
         ),
