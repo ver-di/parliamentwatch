@@ -226,12 +226,25 @@ return $result;
     ),
     'separator' => ', ',
   );
-  /* Feld: Taxonomie-Begriff: Name */
+  /* Feld: Benutzer (Historische Daten): Constituency Result */
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['id'] = 'field_user_election_result-revision_id';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['table'] = 'field_revision_field_user_election_result';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['field'] = 'field_user_election_result-revision_id';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['alter']['text'] = ', Ergebnis: [field_user_election_result-revision_id] %';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['hide_empty'] = TRUE;
+  /* Feld: Constituency */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'field_user_constituency_tid';
+  $handler->display->display_options['fields']['name']['ui_name'] = 'Constituency';
   $handler->display->display_options['fields']['name']['label'] = 'Wahlkreis';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '[name][field_user_election_result-revision_id]';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name']['empty'] = '-';
@@ -240,12 +253,25 @@ return $result;
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
   $handler->display->display_options['fields']['name_1']['relationship'] = 'field_user_list_position_tid';
-  $handler->display->display_options['fields']['name_1']['label'] = 'Listenplatz';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Liste';
+  $handler->display->display_options['fields']['name_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['name_1']['element_wrapper_class'] = 'views-row-odd clear clearfix';
   $handler->display->display_options['fields']['name_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['name_1']['empty'] = '-';
+  $handler->display->display_options['fields']['name_1']['hide_alter_empty'] = FALSE;
+  /* Feld: Benutzer (Historische Daten): List */
+  $handler->display->display_options['fields']['field_user_list-revision_id']['id'] = 'field_user_list-revision_id';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['field'] = 'field_user_list-revision_id';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['label'] = 'Liste';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list-revision_id']['alter']['text'] = '[field_user_list-revision_id], Platz [name_1]';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list-revision_id']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['element_wrapper_class'] = 'views-row-odd clear clearfix';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list-revision_id']['empty'] = '-';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: User revision: Vid */
@@ -1485,6 +1511,28 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
+  /* Feld: Benutzer (Historische Daten): Constituency Won */
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['table'] = 'field_revision_field_user_constituency_won';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['field'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['text'] = ', direkt gewählt';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['empty_zero'] = TRUE;
+  /* Feld: Benutzer (Historische Daten): List Won */
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['id'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['table'] = 'field_revision_field_user_list_won';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['field'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['text'] = ', eingezogen über Liste';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['empty_zero'] = TRUE;
   /* Feld: Excluded | Taxonomie: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
@@ -1542,7 +1590,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
-  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[name_1] ';
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[name_1][field_user_constituency_won-revision_id][field_user_list_won-revision_id]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   /* Feld: PHP | Profile extension */
   $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
@@ -1755,6 +1803,28 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
+  /* Feld: Benutzer (Historische Daten): Constituency Won */
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['table'] = 'field_revision_field_user_constituency_won';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['field'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['text'] = ', direkt gewählt';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['empty_zero'] = TRUE;
+  /* Feld: Benutzer (Historische Daten): List Won */
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['id'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['table'] = 'field_revision_field_user_list_won';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['field'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['text'] = ', eingezogen über Liste';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['empty_zero'] = TRUE;
   /* Feld: Excluded | Taxonomie: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -1810,7 +1880,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[name]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';
@@ -2005,6 +2075,28 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
+  /* Feld: Benutzer (Historische Daten): Constituency Won */
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['table'] = 'field_revision_field_user_constituency_won';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['field'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['text'] = ', direkt gewählt';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['empty_zero'] = TRUE;
+  /* Feld: Benutzer (Historische Daten): List Won */
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['id'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['table'] = 'field_revision_field_user_list_won';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['field'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['text'] = ', eingezogen über Liste';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['empty_zero'] = TRUE;
   /* Feld: Excluded | Taxonomie: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -2062,7 +2154,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
-  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[name]';
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-xs';
@@ -2210,6 +2302,28 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
+  /* Feld: Benutzer (Historische Daten): Constituency Won */
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['table'] = 'field_revision_field_user_constituency_won';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['field'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['text'] = ', direkt gewählt';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['empty_zero'] = TRUE;
+  /* Feld: Benutzer (Historische Daten): List Won */
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['id'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['table'] = 'field_revision_field_user_list_won';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['field'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['text'] = ', eingezogen über Liste';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['empty_zero'] = TRUE;
   /* Feld: Excluded | Taxonomie: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -2288,7 +2402,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Member of [name]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'push-bottom-xs';
@@ -2424,6 +2538,28 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
+  /* Feld: Benutzer (Historische Daten): Constituency Won */
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['table'] = 'field_revision_field_user_constituency_won';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['field'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['text'] = ', direkt gewählt';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['empty_zero'] = TRUE;
+  /* Feld: Benutzer (Historische Daten): List Won */
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['id'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['table'] = 'field_revision_field_user_list_won';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['field'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['text'] = ', eingezogen über Liste';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['empty_zero'] = TRUE;
   /* Feld: Feld (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
@@ -2464,7 +2600,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_user_parliament-revision_id]';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '[field_user_parliament-revision_id][field_user_constituency_won-revision_id][field_user_list_won-revision_id]';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'push-bottom-xs';

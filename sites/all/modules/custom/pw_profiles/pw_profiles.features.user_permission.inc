@@ -238,16 +238,6 @@ function pw_profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: create field_user_list_won.
-  $permissions['create field_user_list_won'] = array(
-    'name' => 'create field_user_list_won',
-    'roles' => array(
-      0 => 'administrator',
-      1 => 'anonymous user',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: create field_user_lname.
   $permissions['create field_user_lname'] = array(
     'name' => 'create field_user_lname',
@@ -673,16 +663,6 @@ function pw_profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: edit field_user_list_won.
-  $permissions['edit field_user_list_won'] = array(
-    'name' => 'edit field_user_list_won',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: edit field_user_lname.
   $permissions['edit field_user_lname'] = array(
     'name' => 'edit field_user_lname',
@@ -1075,16 +1055,6 @@ function pw_profiles_user_default_permissions() {
       0 => 'Candidate',
       1 => 'Content Manager',
       2 => 'administrator',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: edit own field_user_list_won.
-  $permissions['edit own field_user_list_won'] = array(
-    'name' => 'edit own field_user_list_won',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1571,18 +1541,6 @@ function pw_profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
-  // Exported permission: view field_user_list_won.
-  $permissions['view field_user_list_won'] = array(
-    'name' => 'view field_user_list_won',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-      2 => 'anonymous user',
-      3 => 'authenticated user',
-    ),
-    'module' => 'field_permissions',
-  );
-
   // Exported permission: view field_user_lname.
   $permissions['view field_user_lname'] = array(
     'name' => 'view field_user_lname',
@@ -2048,16 +2006,6 @@ function pw_profiles_user_default_permissions() {
       2 => 'administrator',
       3 => 'anonymous user',
       4 => 'authenticated user',
-    ),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: view own field_user_list_won.
-  $permissions['view own field_user_list_won'] = array(
-    'name' => 'view own field_user_list_won',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
