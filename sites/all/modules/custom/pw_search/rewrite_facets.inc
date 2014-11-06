@@ -9,6 +9,11 @@
 class FacetapiFilterRewriteItems extends FacetapiFilter {
   public function execute(array $build) {
 
+    // Handle only ZIP-Code searches (4 or 5 digit numbers)
+    $endpoint = current(explode("?", basename($_SERVER['REQUEST_URI'])));
+    if (!preg_match("@^\d{4,5}$@",$endpoint)){
+      return $build;
+    }
 
     $settings = $this->settings;
     if ($settings->facet == "im_field_user_constituency") {
