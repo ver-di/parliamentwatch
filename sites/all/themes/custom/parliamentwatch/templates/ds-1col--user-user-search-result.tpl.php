@@ -45,7 +45,7 @@
     <div class="small"><?php print $parliament;?></div>
     <span class="field-questionsget"><?php print $questions_get;?> <?php print ($questions_get==1)?'Frage':'Fragen';?></span><?php print $answers_give;?> <?php print ($answers_give==1)?'Antwort':'Antworten';?></div>
   <div class="text-right">
-        <span class="link-profile"><a href="<?php print $profile_link;?>"><?php print ($has_title)?$title."&nbsp;":"";?><?php print $fname;?> <?php print $lname;?></a>
+        <span class="link-profile"><a href="<?php print $profile_link;?>"><?php print ($has_title)?$title."&nbsp;":"";?><?php print $fname;?>&nbsp;<?php print $lname;?></a>
         </span>
   </div>
 </div>
