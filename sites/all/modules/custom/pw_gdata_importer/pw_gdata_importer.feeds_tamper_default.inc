@@ -127,7 +127,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->plugin_id = 'find_term_id_by_parliament';
   $feeds_tamper->settings = array(
     'position_parliament' => '0',
-    'target_vocabulary_id' => '40',
+    'target_vocabulary_id' => '39',
   );
   $feeds_tamper->weight = 4;
   $feeds_tamper->description = 'Find Electoral Region ID';
@@ -247,7 +247,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->plugin_id = 'find_term_id_by_parliament';
   $feeds_tamper->settings = array(
     'position_parliament' => '1',
-    'target_vocabulary_id' => '40',
+    'target_vocabulary_id' => '39',
   );
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find Electoral Region ID';
