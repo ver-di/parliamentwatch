@@ -1538,8 +1538,8 @@ function pw_profiles_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => '',
-          1 => '',
+          0 => '0',
+          1 => '1',
         ),
         'allowed_values_function' => '',
       ),
@@ -1554,7 +1554,7 @@ function pw_profiles_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'direkt gewählt',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -1612,7 +1612,7 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(
-          'display_label' => 0,
+          'display_label' => 1,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
@@ -2902,13 +2902,13 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_deputy' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2920,7 +2920,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -3077,8 +3077,8 @@ function pw_profiles_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
-          0 => '',
-          1 => '',
+          0 => '0',
+          1 => '1',
         ),
         'allowed_values_function' => '',
       ),
@@ -3093,7 +3093,7 @@ function pw_profiles_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'eingezogen über Liste',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -3151,7 +3151,7 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(
-          'display_label' => 0,
+          'display_label' => 1,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
@@ -5561,6 +5561,8 @@ $entity_field[0][\'value\'] = $result;',
   t('Twitter');
   t('Valid');
   t('Wählen Sie hier Ihren Listenplatz aus.');
+  t('direkt gewählt');
+  t('eingezogen über Liste');
   t('z.B. "Jurist" oder "Diplom Ingenieur"');
   t('z.B. "selbständiger IT-Berater" oder "Bürgermeister"');
 
