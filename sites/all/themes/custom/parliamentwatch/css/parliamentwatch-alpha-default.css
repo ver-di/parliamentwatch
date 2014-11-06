@@ -7,6 +7,9 @@ html {
 .desktop-only {
     display: block;
 }
+.mobile-only {
+    display: none;
+}
 #section-header {
     border-bottom: 0;
     margin-bottom: 0;

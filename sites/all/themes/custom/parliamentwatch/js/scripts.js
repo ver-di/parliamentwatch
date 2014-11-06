@@ -1,5 +1,20 @@
 jQuery(document).ready(function() {
-
+      $("#nav").mmenu({
+         classes: "mm-light",         
+         searchfield: {
+             add: true,
+             search: true,
+             placeholder: Drupal.t('Menüpunkt suchen'),
+             noResults: Drupal.t('Keine Ergebnisse gefunden.')
+         },
+         counters: {
+              add: true,
+              update: true
+            }
+      });      
+      $("#hamburger").click(function() {
+         $("#nav").trigger("open.mm");
+      });
 // reset jquery ui slider on profile list AW-1965 https://www.drupal.org/node/1264316
 
     $("#views-exposed-form-profile-list-rev-grid #edit-reset" ).on( "click", function() {

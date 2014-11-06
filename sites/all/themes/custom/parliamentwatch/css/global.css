@@ -6,6 +6,79 @@
 @import url("pw_kandidatencheck.css");
 @import url("slick.css");
 @import url("/sites/all/themes/custom/parliamentwatch/css/icons/css/awfont.css");
+@import url("jquery.mmenu.all.css");
+
+/*
+	LAYOUT
+*/
+#hamburger
+{
+	width: 40px;
+	height: 36px;
+	margin: 20px;
+	position: absolute;
+	top: 13px;
+	left: 0;
+	z-index: 2;
+}
+#hamburger:before,
+#hamburger:after,
+#hamburger span
+{
+	background: #f63;
+	content: '';
+	display: block;
+	width: 30px;
+	height: 6px;
+	position: absolute;
+	left: 5px;
+}
+#hamburger:before
+{
+	top: 5px;
+}
+#hamburger:after
+{
+	bottom: 5px;
+}
+#hamburger span
+{
+	top: 50%;
+	margin-top: -3px;
+}
+
+#hamburger:focus,
+#hamburger *:focus {
+    outline: 0 !important;
+}
+
+/* Hamburger animation */
+#hamburger:before,
+#hamburger:after,
+#hamburger span
+{
+	transition: none 0.5s ease 0.5s;
+	transition-property: transform, top, bottom, left, opacity;
+}
+html.mm-opening #hamburger span
+{
+    opacity: 0;
+}
+html.mm-opening #hamburger:before
+{
+	transform: rotate( 45deg );
+	top: 15px;
+}
+html.mm-opening #hamburger:after
+{
+	transform: rotate( -45deg );
+	bottom: 15px;
+}
+.mm-menu [class^="icon-"]:before, 
+.mm-menu [class*=" icon-"]:before {
+  margin-right: 0.5em;
+}
+
 
 html {
     font-size: 12px;
@@ -36,7 +109,7 @@ body {
     padding: 7px 0 0;
 }
 #zone-branding .logo-img {
-    margin: 1px 75px 11px 0;
+    margin: 0 0 10px 70px;
 }
 .site-name {
     margin-top: 0;
