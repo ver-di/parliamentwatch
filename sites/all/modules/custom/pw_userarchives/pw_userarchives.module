@@ -106,9 +106,10 @@ function check_user_archives_database($uid=null) {
     $query->addField('ur', 'name', 'user_name');
     $query->addExpression('MAX(ur.vid)', 'vid');
     $query->addField('td', 'name', 'parliament_name');
-    $query->addExpression('MAX(ur.timestamp)', 'timestamp');
+    $query->addExpression('UNIX_TIMESTAMP(pe.field_parliament_election_value)', 'timestamp');
     $query->addExpression('LOWER(rn.name)', 'user_role');
     $query->join('field_revision_field_user_parliament', 'up', 'ur.uid = up.entity_id AND ur.vid = up.revision_id');
+    $query->join('field_revision_field_parliament_election', 'pe', 'pe.entity_type=\'taxonomy_term\' AND pe.entity_id=up.field_user_parliament_tid');
     $query->join('taxonomy_term_data', 'td', 'td.tid=up.field_user_parliament_tid');
     $query->join('field_revision_field_user_roles_for_view_mode_s', 'ro', 'ro.entity_id=ur.uid AND ro.revision_id=ur.vid');
     $query->join('taxonomy_term_data', 'rn', 'rn.tid=ro.field_user_roles_for_view_mode_s_tid');
@@ -119,6 +120,7 @@ function check_user_archives_database($uid=null) {
     $query->condition('ur.timestamp', $a_day_ago, '>');
     $query->condition('rn.name', array('Deputy', 'Candidate'), 'IN');
     $query->groupBy('ur.uid, up.field_user_parliament_tid, ro.field_user_roles_for_view_mode_s_tid');
+dpq($query);
     
     return $query;
 }
