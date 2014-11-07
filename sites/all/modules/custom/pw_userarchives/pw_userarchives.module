@@ -106,7 +106,7 @@ function check_user_archives_database($uid=null) {
     $query->addField('ur', 'name', 'user_name');
     $query->addExpression('MAX(ur.vid)', 'vid');
     $query->addField('td', 'name', 'parliament_name');
-    $query->addField('ur', 'timestamp');
+    $query->addExpression('MAX(ur.timestamp)', 'timestamp');
     $query->addExpression('LOWER(rn.name)', 'user_role');
     $query->join('field_revision_field_user_parliament', 'up', 'ur.uid = up.entity_id AND ur.vid = up.revision_id');
     $query->join('taxonomy_term_data', 'td', 'td.tid=up.field_user_parliament_tid');
