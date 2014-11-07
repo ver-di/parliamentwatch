@@ -35,7 +35,6 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
     if(!empty($user)){
       $user = array_pop($user);
       $field = $user->name;
-dpm($user->name);
       return;
     }
 
