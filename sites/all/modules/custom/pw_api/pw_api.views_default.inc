@@ -54,6 +54,10 @@ function pw_api_views_default_views() {
   $handler->display->display_options['relationships']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
   $handler->display->display_options['relationships']['field_user_list_position_tid']['table'] = 'field_revision_field_user_list_position';
   $handler->display->display_options['relationships']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
+  /* Beziehung: Benutzer (Historische Daten): List (field_user_list) */
+  $handler->display->display_options['relationships']['field_user_list_tid']['id'] = 'field_user_list_tid';
+  $handler->display->display_options['relationships']['field_user_list_tid']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['relationships']['field_user_list_tid']['field'] = 'field_user_list_tid';
   /* Feld: User revision: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'user_revision';
@@ -119,12 +123,12 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_education-revision_id']['field'] = 'field_user_education-revision_id';
   $handler->display->display_options['fields']['field_user_education-revision_id']['label'] = 'education';
   $handler->display->display_options['fields']['field_user_education-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: excluded | constituency_uuid */
+  /* Feld: Excluded | constituency_uuid */
   $handler->display->display_options['fields']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['fields']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['uuid_1']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid_1']['relationship'] = 'field_user_constituency_tid';
-  $handler->display->display_options['fields']['uuid_1']['ui_name'] = 'excluded | constituency_uuid';
+  $handler->display->display_options['fields']['uuid_1']['ui_name'] = 'Excluded | constituency_uuid';
   $handler->display->display_options['fields']['uuid_1']['label'] = 'constituency_uuid';
   $handler->display->display_options['fields']['uuid_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uuid_1']['element_label_colon'] = FALSE;
@@ -137,17 +141,55 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | constituency_result */
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['id'] = 'field_user_election_result-revision_id';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['table'] = 'field_revision_field_user_election_result';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['field'] = 'field_user_election_result-revision_id';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['ui_name'] = 'Excluded | constituency_result';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['label'] = 'constituency_result';
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_election_result-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['label'] = 'constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_user_constituency-revision_id']['alter']['text'] = 'uuid**[uuid_1]}{name**[field_user_constituency-revision_id]}{number**[field_constituency_nr]';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['alter']['text'] = 'uuid**[uuid_1]}{name**[field_user_constituency-revision_id]}{number**[field_constituency_nr]}{result**[field_user_election_result-revision_id]';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['separator'] = '||';
+  /* Feld: Excluded | list_uuid */
+  $handler->display->display_options['fields']['uuid_2']['id'] = 'uuid_2';
+  $handler->display->display_options['fields']['uuid_2']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['uuid_2']['field'] = 'uuid';
+  $handler->display->display_options['fields']['uuid_2']['relationship'] = 'field_user_list_tid';
+  $handler->display->display_options['fields']['uuid_2']['ui_name'] = 'Excluded | list_uuid';
+  $handler->display->display_options['fields']['uuid_2']['label'] = 'list_uuid';
+  $handler->display->display_options['fields']['uuid_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uuid_2']['element_label_colon'] = FALSE;
+  /* Feld: Excluded: list_position */
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['id'] = 'field_user_list_position-revision_id';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['table'] = 'field_revision_field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['field'] = 'field_user_list_position-revision_id';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['ui_name'] = 'Excluded: list_position';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['label'] = 'list_position';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['settings'] = array(
+    'linked' => 0,
+  );
+  /* Feld: Benutzer (Historische Daten): List */
+  $handler->display->display_options['fields']['field_user_list-revision_id']['id'] = 'field_user_list-revision_id';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['field'] = 'field_user_list-revision_id';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['label'] = 'list';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list-revision_id']['alter']['text'] = 'uuid**[uuid_2]}{name**[field_user_list-revision_id]}{list_position**[field_user_list_position-revision_id]';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list-revision_id']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Benutzer (Historische Daten): Political Roles */
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['id'] = 'field_user_political_roles-revision_id';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['table'] = 'field_revision_field_user_political_roles';
@@ -287,22 +329,6 @@ echo $base_url;
     ),
     'separator' => ', ',
   );
-  /* Feld: Benutzer (Historische Daten): List Position */
-  $handler->display->display_options['fields']['field_user_list_position-revision_id']['id'] = 'field_user_list_position-revision_id';
-  $handler->display->display_options['fields']['field_user_list_position-revision_id']['table'] = 'field_revision_field_user_list_position';
-  $handler->display->display_options['fields']['field_user_list_position-revision_id']['field'] = 'field_user_list_position-revision_id';
-  $handler->display->display_options['fields']['field_user_list_position-revision_id']['label'] = 'list_position';
-  $handler->display->display_options['fields']['field_user_list_position-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_list_position-revision_id']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_user_list_position-revision_id']['settings'] = array(
-    'linked' => 0,
-  );
-  /* Feld: Benutzer (Historische Daten): Election Result */
-  $handler->display->display_options['fields']['field_user_election_result-revision_id']['id'] = 'field_user_election_result-revision_id';
-  $handler->display->display_options['fields']['field_user_election_result-revision_id']['table'] = 'field_revision_field_user_election_result';
-  $handler->display->display_options['fields']['field_user_election_result-revision_id']['field'] = 'field_user_election_result-revision_id';
-  $handler->display->display_options['fields']['field_user_election_result-revision_id']['label'] = 'election_result';
-  $handler->display->display_options['fields']['field_user_election_result-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Benutzer (Historische Daten): Roles (revisionable) */
   $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['id'] = 'field_user_roles_for_view_mode_s-revision_id';
   $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
@@ -3584,6 +3610,15 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['uuid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
+  /* Filterkriterium: Benutzer (Historische Daten): Roles (revisionable) (field_user_roles_for_view_mode_s) */
+  $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['id'] = 'field_user_roles_for_view_mode_s_tid';
+  $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
+  $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['field'] = 'field_user_roles_for_view_mode_s_tid';
+  $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['value'] = array(
+    7028 => '7028',
+  );
+  $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['vocabulary'] = 'pw_profile_roles_for_view_mode_switch';
 
   /* Display: XML-by-name */
   $handler = $view->new_display('views_data_export', 'XML-by-name', 'views_data_export_1');
