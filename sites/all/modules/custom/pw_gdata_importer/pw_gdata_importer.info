@@ -47,6 +47,7 @@ features[feeds_tamper][] = gdata_elected_profiles-xpathparser_7-explode
 features[feeds_tamper][] = gdata_elected_profiles-xpathparser_7-find_replace_regex
 features[feeds_tamper][] = gdata_elected_profiles-xpathparser_8-find_term_id_by_parliament
 features[feeds_tamper][] = gdata_lists_importer-xpathparser_2-find_term_id_by_parliament
+features[feeds_tamper][] = gdata_parliaments_importer-xpathparser_1-required
 features[feeds_tamper][] = gdata_profiles_importer_v2-blank_source_1-default_value
 features[feeds_tamper][] = gdata_profiles_importer_v2-blank_source_2-username_creator
 features[feeds_tamper][] = gdata_profiles_importer_v2-xpathparser_14-find_replace_regex
