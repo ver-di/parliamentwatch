@@ -29,6 +29,16 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
 
   if(empty($field)) {
 
+    // try to load by uuid
+    $uuid = $source->current_item['xpathparser:3'];
+    $user = entity_uuid_load('user', array($uuid));
+    if(!empty($user)){
+      $user = array_pop($user);
+      $field = $user->name;
+dpm($user->name);
+      return;
+    }
+
     // uname is empty, create one by following rule set
     $fname = $source->current_item['xpathparser:11'];
     $lname = $source->current_item['xpathparser:12'];
@@ -53,20 +63,9 @@ function username_creator($source, $item_key, $element_key, &$field, $settings) 
 
     $users = entity_load('user');
     $count = 2;
-    $uuid = $source->current_item['xpathparser:3'];
 
     foreach($users as $user) {
-      if ($user->uuid === $uuid) {
-
-        // if user exists by uuid it just updates the existing user name
-        $field = $user->name;
-
-        // only skip non-empty username fields
-        if (!empty($user->name)) {
-          return;
-        }
-
-      }
+      
       if ($user->name === $uname) {
 
         // if user does not exist by uuid, but the name exists, add a number to name
