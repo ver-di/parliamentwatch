@@ -69,7 +69,7 @@ function find_term_id_by_parliament($source, $item_key, $element_key, &$field, $
     }
   }
   if(!$term_found){
-    $field = '';
     drupal_set_message('term in '.$target_vocabulary.' not found for '.$field, 'error');
+    $field = '';
   }
 }
