@@ -120,8 +120,7 @@ function check_user_archives_database($uid=null) {
     $query->condition('ur.timestamp', $a_day_ago, '>');
     $query->condition('rn.name', array('Deputy', 'Candidate'), 'IN');
     $query->groupBy('ur.uid, up.field_user_parliament_tid, ro.field_user_roles_for_view_mode_s_tid');
-dpq($query);
-    
+
     return $query;
 }
 
