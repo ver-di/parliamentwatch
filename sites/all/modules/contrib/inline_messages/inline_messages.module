@@ -148,5 +148,5 @@ function inline_messages_form_id($form_id) {
 
 function inline_messages_submit_form($form, &$form_state) {
   // store the submitted form_id
-  $_SESSION['form_submitted'] = $form['form_id']['#value'];
+  // $_SESSION['form_submitted'] = $form['form_id']['#value'];
 }
