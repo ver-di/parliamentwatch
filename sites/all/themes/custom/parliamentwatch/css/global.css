@@ -634,6 +634,11 @@ div.ic-info {
     right: 0;
     z-index: 200;
 }
+div.ic-info.inline {
+    position: relative;
+    top: 4px;
+    display: inline-block;
+}
 span.ic-info {
     position: relative;
     display: inline;
