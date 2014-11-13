@@ -106,6 +106,22 @@
   padding: 5px 20px;
   text-shadow: none;
 }
+.tb-megamenu .dropdown-menu .nav-pw {
+  border-top: 1px dotted #333;
+
+}
+.tb-megamenu .dropdown-menu .nav-pw li > a {
+  border-bottom: 1px dotted #333 !important;
+  padding: 5px 0 !important;
+  text-shadow: none !important;
+  line-height: 20px !important;
+  width: 100%;
+  display: block;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+
+}
 .tb-megamenu .views-row-item {
   border-bottom: 1px dotted #333;
   padding-bottom: 0.5em;
@@ -176,8 +192,7 @@
 .tb-megamenu .tb-block .nav {
   margin: 0;
 }
-.tb-megamenu .tb-block ul li,
-.tb-megamenu .tb-block .nav li {
+.tb-megamenu .tb-block ul li {
   background: none;
   list-style: disc;
   display: list-item;
@@ -186,8 +201,7 @@
   padding: 0;
   border: 0;
 }
-.tb-megamenu .tb-block ul li a,
-.tb-megamenu .tb-block .nav li a {
+.tb-megamenu .tb-block ul li a {
   display: inline;
   padding: 0;
   margin: 0;
@@ -199,10 +213,7 @@
 }
 .tb-megamenu .tb-block ul li a:hover,
 .tb-megamenu .tb-block ul li a:focus,
-.tb-megamenu .tb-block ul li a:active,
-.tb-megamenu .tb-block .nav li a:hover,
-.tb-megamenu .tb-block .nav li a:focus,
-.tb-megamenu .tb-block .nav li a:active {
+.tb-megamenu .tb-block ul li a:active {
   background: none;
   font: inherit;
 }

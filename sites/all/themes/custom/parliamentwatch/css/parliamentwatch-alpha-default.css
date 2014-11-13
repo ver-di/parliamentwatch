@@ -5,10 +5,11 @@ html {
     font-size: 10px;
 }
 .desktop-only {
-    display: block;
+    display: block !important;
 }
-.mobile-only {
-    display: none;
+.mobile-only,
+#nav {
+    display: none !important;
 }
 #section-header {
     border-bottom: 0;

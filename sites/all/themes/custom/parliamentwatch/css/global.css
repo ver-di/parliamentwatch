@@ -299,31 +299,31 @@ blockquote p:last-child {
 }
 
 .push-bottom-xxs {
-    margin-bottom: 2px;
+    margin-bottom: 2px !important;
 }
 .push-bottom-xs {
-    margin-bottom: 4px;
+    margin-bottom: 4px !important;
 }
 .push-bottom-s {
-    margin-bottom: 12px;
+    margin-bottom: 12px !important;
 }
 .push-bottom-m {
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
 }
 .push-bottom-l {
-    margin-bottom: 28px;
+    margin-bottom: 28px !important;
 }
 .push-left-xl {
-    margin-left: 105px;
+    margin-left: 105px !important;
 }
 .push-left-xxl {
-    margin-left: 154px;
+    margin-left: 154px !important;
 }
 .push-right-s {
-    margin-right: 6px;
+    margin-right: 6px !important;
 }
 .push-right-m {
-    margin-right: 14px;
+    margin-right: 14px !important;
 }
 .portrait-s {
     width: 70px;
@@ -396,6 +396,14 @@ a.light,
 a.medium,
 .medium a {
     color: #666;
+}
+a.medium:hover,
+a.medium:focus,
+a.medium:active,
+.medium a:hover,
+.medium a:focus,
+.medium a:active {
+    color: #000;
 }
 a.medium,
 .medium a {
@@ -878,6 +886,11 @@ h1#page-title {
     background: url(../images/sprite.png);
     background-position: -220px -256px;
 }
+.view-pw-donation-state .donation-amount {
+	bottom: 1px;
+    position: absolute;
+    right: 7px;
+}
 .node.view-mode-full {
     border-bottom: 0;
 }
@@ -1182,8 +1195,8 @@ h1#page-title {
     font-size: 0.8em;
 }
 .view-pw-tag-clouds li {
-    display: inline;
-    line-height: 1.5em;
+    display: inline !important;
+    line-height: 2.5em;
 }
 a.tagadelic,
 .tagadelic a {
@@ -1194,6 +1207,14 @@ a.tagadelic,
     line-height: 18px;
     display: inline-block;
     padding: 0.25em 0;
+}
+a.tagadelic:hover,
+a.tagadelic:focus,
+a.tagadelic:active,
+.tagadelic a:hover,
+.tagadelic a:focus,
+.tagadelic a:active {
+    color: #000;
 }
 a.tagadelic.level1,
 a.tagadelic.level2,
@@ -3231,7 +3252,10 @@ blockquote:before,
 .js .responsive-layout-mobile .pw-expandable-mobile .view,
 .js .responsive-layout-normal #pw_block_user_questionform,
 .desktop-only {
-    display: none;
+    display: none !important;
+}
+.mobile-only {
+    display: block !important;
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2 {
     padding-left: 36px;
