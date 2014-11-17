@@ -117,6 +117,10 @@ function pw_donation_form_views_default_views() {
 geht es los!<br/><br/>
 <h4>Aktuelle Top 3</h4></p>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  /* Fußbereich: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   /* Feld: name: Text */
   $handler->display->display_options['fields']['text']['id'] = 'text';
   $handler->display->display_options['fields']['text']['table'] = 'xml';
@@ -230,7 +234,18 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Ihr Landtag';
   $handler->display->display_options['link_url'] = 'ueber-uns/spendenuebersicht';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: Textbereich */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<p>Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 € erreicht sind,
+geht es los! <a href="/ueber-uns/spendenformular">Jetzt spenden</a><br/><br/>
+<h4>Aktuelle Top 3</h4></p>';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
 
   /* Display: Countries Amount */
   $handler = $view->new_display('block', 'Countries Amount', 'all_countries');
@@ -514,6 +529,136 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
   $handler->display->display_options['sorts']['numeric']['field'] = 'numeric';
   $handler->display->display_options['sorts']['numeric']['order'] = 'DESC';
   $handler->display->display_options['sorts']['numeric']['xpath_selector'] = 'donors';
+
+  /* Display: Menu Countries Amount */
+  $handler = $view->new_display('block', 'Menu Countries Amount', 'menu_donation_amount');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Ihr Landtag';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'alle Bundesländer anzeigen';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'clearfix push-bottom-xs';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['class'] = 'push-bottom-m';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Kopfbereich: Global: Textbereich */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 € erreicht sind. <a href="http://develop_menu.silversurfer/node/10508/" class="read-more">Jetzt spenden</a>';
+  $handler->display->display_options['header']['area']['format'] = 'managed_content';
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Fußbereich: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<ul class="nav-pw">
+<li><a href="http://www.abgeordnetenwatch.de/kommunen-933-0.html">Kommunen</a></li>
+<li><a href="http://www.abgeordnetenwatch.de/archiv-391-0.html">Archiv</a></li>
+</ul>';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: amount_machine: Text */
+  $handler->display->display_options['fields']['text_4']['id'] = 'text_4';
+  $handler->display->display_options['fields']['text_4']['table'] = 'xml';
+  $handler->display->display_options['fields']['text_4']['field'] = 'text';
+  $handler->display->display_options['fields']['text_4']['label'] = '';
+  $handler->display->display_options['fields']['text_4']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['text_4']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['text_4']['xpath_selector'] = 'amount_machine';
+  $handler->display->display_options['fields']['text_4']['multiple'] = 0;
+  /* Feld: amount: Text */
+  $handler->display->display_options['fields']['text_1']['id'] = 'text_1';
+  $handler->display->display_options['fields']['text_1']['table'] = 'xml';
+  $handler->display->display_options['fields']['text_1']['field'] = 'text';
+  $handler->display->display_options['fields']['text_1']['label'] = '';
+  $handler->display->display_options['fields']['text_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['text_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['text_1']['xpath_selector'] = 'amount';
+  $handler->display->display_options['fields']['text_1']['multiple'] = 0;
+  /* Feld: Global: Feldgruppe */
+  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset']['children'] = array(
+    0 => 'text',
+    1 => 'php',
+    2 => 'php_1',
+  );
+  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'float-left relative';
+  /* Feld: name: Text */
+  $handler->display->display_options['fields']['text']['id'] = 'text';
+  $handler->display->display_options['fields']['text']['table'] = 'xml';
+  $handler->display->display_options['fields']['text']['field'] = 'text';
+  $handler->display->display_options['fields']['text']['label'] = '';
+  $handler->display->display_options['fields']['text']['element_type'] = 'h4';
+  $handler->display->display_options['fields']['text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['text']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['text']['element_wrapper_class'] = 'inline';
+  $handler->display->display_options['fields']['text']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['text']['xpath_selector'] = 'name';
+  $handler->display->display_options['fields']['text']['multiple'] = 0;
+  /* Feld: PHP: Progress bar */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['ui_name'] = 'PHP: Progress bar';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-progress-wrapper"><div class="pw-progress" style="width: <?php 
+$required = 10000;
+$donations = str_replace(array(\'.\', \',\'), \'\' , $row->text_1);
+$progress = ($row->text_4/$required)*100;
+if($progress > 100){
+    $progress = $row->text_2;
+}
+print $progress; ?>%;"><?php print t(\'Progress\') ?>: <?php print $progress; ?>%</div></div>
+';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
+  /* Feld: Global: PHP */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_type'] = 'div';
+  $handler->display->display_options['fields']['php_1']['element_class'] = 'donation-amount';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+if ($row->text_4 < 10000) print $row->text_1;
+?>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sortierkriterien: amount: Text */
+  $handler->display->display_options['sorts']['text']['id'] = 'text';
+  $handler->display->display_options['sorts']['text']['table'] = 'xml';
+  $handler->display->display_options['sorts']['text']['field'] = 'text';
+  $handler->display->display_options['sorts']['text']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['text']['xpath_selector'] = 'amount';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
   $export['pw_donation_state'] = $view;
 
   $view = new view();
