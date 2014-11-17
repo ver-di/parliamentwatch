@@ -1,0 +1,11 @@
+name = PW Menu
+core = 7.x
+package = Features
+version = 7.x-1.0-20141117
+project = pw_menu
+dependencies[] = fe_block
+features[fe_block_boxes][] = pw_menu_participate_donate
+features[fe_block_boxes][] = pw_menu_press_contact
+features[fe_block_settings][] = block-pw_menu_participate_donate
+features[fe_block_settings][] = block-pw_menu_press_contact
+features[features_api][] = api:1
