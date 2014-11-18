@@ -1,0 +1,20 @@
+<?php
+/**
+ * @file
+ */
+
+include_once 'pw_cache.features.inc';
+
+/**
+ * Implement hook_expire_cache_alter().
+ *
+ */
+function pw_cache_expire_urls_alter(&$expire, $node = NULL, $paths) {
+    $altered_urls = array();
+    foreach($expire as &$url) {
+        $altered_urls[] = 'http://srv8.pwsrv.local/cache-purge/?url=https://www.abgeordnetenwatch.de/'.$url;
+        $altered_urls[] = 'http://srv8.pwsrv.local/cache-purge/?url=https://affiliate.abgeordnetenwatch.de/'.$url;
+    }
+    $expire = $altered_urls;
+}
+
