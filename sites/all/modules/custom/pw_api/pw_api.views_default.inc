@@ -628,15 +628,6 @@ echo $base_url;
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
@@ -679,15 +670,6 @@ echo $base_url;
   $handler->display->display_options['style_options']['trim'] = 0;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
@@ -3347,6 +3329,14 @@ return FALSE; // default: output the result
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
+  /* Beziehung: Benutzer (Historische Daten): List (field_user_list) */
+  $handler->display->display_options['relationships']['field_user_list_tid']['id'] = 'field_user_list_tid';
+  $handler->display->display_options['relationships']['field_user_list_tid']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['relationships']['field_user_list_tid']['field'] = 'field_user_list_tid';
+  /* Beziehung: Benutzer (Historische Daten): List Position (field_user_list_position) */
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['table'] = 'field_revision_field_user_list_position';
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
   /* Feld: User revision: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'user_revision';
@@ -3489,6 +3479,33 @@ $query = db_select(\'user_revision\', \'ur\');
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
+  /* Feld: Excluded | list_uuid */
+  $handler->display->display_options['fields']['uuid_2']['id'] = 'uuid_2';
+  $handler->display->display_options['fields']['uuid_2']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['uuid_2']['field'] = 'uuid';
+  $handler->display->display_options['fields']['uuid_2']['relationship'] = 'field_user_list_tid';
+  $handler->display->display_options['fields']['uuid_2']['ui_name'] = 'Excluded | list_uuid';
+  $handler->display->display_options['fields']['uuid_2']['label'] = 'list_uuid';
+  $handler->display->display_options['fields']['uuid_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uuid_2']['element_label_colon'] = FALSE;
+  /* Feld: Excluded: list_position */
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['id'] = 'field_user_list_position-revision_id';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['table'] = 'field_revision_field_user_list_position';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['field'] = 'field_user_list_position-revision_id';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['ui_name'] = 'Excluded: list_position';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['label'] = 'list_position';
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list_position-revision_id']['type'] = 'taxonomy_term_reference_plain';
+  /* Feld: Benutzer (Historische Daten): List */
+  $handler->display->display_options['fields']['field_user_list-revision_id']['id'] = 'field_user_list-revision_id';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['field'] = 'field_user_list-revision_id';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['label'] = 'list';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list-revision_id']['alter']['text'] = 'uuid**[uuid_2]}{name**[field_user_list-revision_id]}{list_position**[field_user_list_position-revision_id]';
+  $handler->display->display_options['fields']['field_user_list-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_list-revision_id']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Benutzer (Historische Daten): Political Roles */
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['id'] = 'field_user_political_roles-revision_id';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['table'] = 'field_revision_field_user_political_roles';
@@ -3615,7 +3632,7 @@ echo $base_url;
   $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
   $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['field'] = 'field_user_roles_for_view_mode_s_tid';
   $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['value'] = array(
-    7028 => '7028',
+    7027 => '7027',
   );
   $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['vocabulary'] = 'pw_profile_roles_for_view_mode_switch';
@@ -3826,15 +3843,6 @@ echo $base_url;
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
@@ -3877,15 +3885,6 @@ echo $base_url;
   $handler->display->display_options['style_options']['trim'] = 0;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
-  $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
-  $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';

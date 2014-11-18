@@ -183,6 +183,7 @@ function pw_api_preprocess_views_data_export_xml_body(&$vars) {
 }
 
 function pw_api_views_pre_view(&$view, &$display_id, &$args) {
+return;
   if ($view->name == 'pw_api_internal_profile') {
     $allowed_ips = variable_get('pw_api_allowed_ips', array());
     $current_ip_is_allowed = false;
