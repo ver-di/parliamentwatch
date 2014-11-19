@@ -15,13 +15,52 @@ function pw_cache_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_comment_actions';
   $strongarm->value = array(
-    1 => 0,
-    2 => 0,
-    3 => 0,
-    4 => 0,
-    5 => 0,
+    1 => '1',
+    2 => '2',
+    3 => '3',
+    4 => '4',
+    5 => '5',
   );
   $export['expire_comment_actions'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_actions_blogpost';
+  $strongarm->value = array(
+    0 => 1,
+    1 => 2,
+    2 => 3,
+    3 => 4,
+    4 => 5,
+  );
+  $export['expire_comment_actions_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_actions_dialogue';
+  $strongarm->value = array(
+    0 => 1,
+    1 => 2,
+    2 => 3,
+    3 => 4,
+    4 => 5,
+  );
+  $export['expire_comment_actions_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_actions_pw_petition';
+  $strongarm->value = array(
+    0 => 1,
+    1 => 2,
+    2 => 3,
+    3 => 4,
+    4 => 5,
+  );
+  $export['expire_comment_actions_pw_petition'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -33,9 +72,44 @@ function pw_cache_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_comment_page_blogpost';
+  $strongarm->value = 1;
+  $export['expire_comment_comment_page_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_comment_page_dialogue';
+  $strongarm->value = 1;
+  $export['expire_comment_comment_page_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_comment_page_pw_petition';
+  $strongarm->value = 1;
+  $export['expire_comment_comment_page_pw_petition'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'expire_comment_custom';
   $strongarm->value = 0;
   $export['expire_comment_custom'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_custom_blogpost';
+  $strongarm->value = 1;
+  $export['expire_comment_custom_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_custom_dialogue';
+  $strongarm->value = 1;
+  $export['expire_comment_custom_dialogue'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -47,9 +121,53 @@ function pw_cache_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_custom_pages_blogpost';
+  $strongarm->value = 'blog';
+  $export['expire_comment_custom_pages_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_custom_pages_dialogue';
+  $strongarm->value = '[comment:node:field-parliament]
+[comment:node:field-parliament]/profile
+profile/[comment:node:field-dialogue-recipient]';
+  $export['expire_comment_custom_pages_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_custom_pages_pw_petition';
+  $strongarm->value = 'petitionen';
+  $export['expire_comment_custom_pages_pw_petition'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_custom_pw_petition';
+  $strongarm->value = 1;
+  $export['expire_comment_custom_pw_petition'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'expire_comment_front_page';
   $strongarm->value = 0;
   $export['expire_comment_front_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_front_page_blogpost';
+  $strongarm->value = 0;
+  $export['expire_comment_front_page_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_front_page_dialogue';
+  $strongarm->value = 0;
+  $export['expire_comment_front_page_dialogue'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -61,9 +179,51 @@ function pw_cache_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_page_blogpost';
+  $strongarm->value = 1;
+  $export['expire_comment_node_page_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_page_dialogue';
+  $strongarm->value = 1;
+  $export['expire_comment_node_page_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_page_pw_petition';
+  $strongarm->value = 1;
+  $export['expire_comment_node_page_pw_petition'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'expire_comment_node_reference_pages';
   $strongarm->value = 0;
   $export['expire_comment_node_reference_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_reference_pages_blogpost';
+  $strongarm->value = 0;
+  $export['expire_comment_node_reference_pages_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_reference_pages_dialogue';
+  $strongarm->value = 0;
+  $export['expire_comment_node_reference_pages_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_reference_pages_pw_petition';
+  $strongarm->value = 0;
+  $export['expire_comment_node_reference_pages_pw_petition'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -75,9 +235,72 @@ function pw_cache_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_term_pages_blogpost';
+  $strongarm->value = 0;
+  $export['expire_comment_node_term_pages_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_term_pages_dialogue';
+  $strongarm->value = 0;
+  $export['expire_comment_node_term_pages_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_node_term_pages_pw_petition';
+  $strongarm->value = 0;
+  $export['expire_comment_node_term_pages_pw_petition'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_override_defaults_blogpost';
+  $strongarm->value = 1;
+  $export['expire_comment_override_defaults_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_override_defaults_dialogue';
+  $strongarm->value = 1;
+  $export['expire_comment_override_defaults_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_override_defaults_pw_petition';
+  $strongarm->value = 1;
+  $export['expire_comment_override_defaults_pw_petition'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'expire_comment_reference_pages';
   $strongarm->value = 0;
   $export['expire_comment_reference_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_reference_pages_blogpost';
+  $strongarm->value = 0;
+  $export['expire_comment_reference_pages_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_reference_pages_dialogue';
+  $strongarm->value = 0;
+  $export['expire_comment_reference_pages_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_comment_reference_pages_pw_petition';
+  $strongarm->value = 0;
+  $export['expire_comment_reference_pages_pw_petition'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -160,11 +383,41 @@ function pw_cache_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_node_actions';
   $strongarm->value = array(
-    1 => '1',
     2 => '2',
     3 => '3',
+    1 => 0,
   );
   $export['expire_node_actions'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_node_actions_blogpost';
+  $strongarm->value = array(
+    0 => 2,
+    1 => 3,
+  );
+  $export['expire_node_actions_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_node_actions_dialogue';
+  $strongarm->value = array(
+    0 => 2,
+    1 => 3,
+  );
+  $export['expire_node_actions_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_node_actions_pw_petition';
+  $strongarm->value = array(
+    0 => 2,
+    1 => 3,
+  );
+  $export['expire_node_actions_pw_petition'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -176,9 +429,46 @@ function pw_cache_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'expire_node_custom_blogpost';
+  $strongarm->value = 1;
+  $export['expire_node_custom_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_node_custom_dialogue';
+  $strongarm->value = 1;
+  $export['expire_node_custom_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'expire_node_custom_pages';
   $strongarm->value = '';
   $export['expire_node_custom_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_node_custom_pages_blogpost';
+  $strongarm->value = 'blog';
+  $export['expire_node_custom_pages_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_node_custom_pages_dialogue';
+  $strongarm->value = '[node:field-parliament]
+[node:field-parliament]/profile
+profile/[node:field-dialogue-recipient]';
+  $export['expire_node_custom_pages_dialogue'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'expire_node_custom_pages_pw_petition';
+  $strongarm->value = 'petitionen';
+  $export['expire_node_custom_pages_pw_petition'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -220,10 +510,10 @@ function pw_cache_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_user_actions';
   $strongarm->value = array(
-    1 => 0,
-    2 => 0,
-    3 => 0,
-    4 => 0,
+    1 => '1',
+    2 => '2',
+    3 => '3',
+    4 => '4',
   );
   $export['expire_user_actions'] = $strongarm;
 
