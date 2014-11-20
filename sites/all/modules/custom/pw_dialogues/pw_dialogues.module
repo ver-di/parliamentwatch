@@ -39,7 +39,6 @@ function pw_dialogues_menu() {
  */
 function pw_dialogues_triggered_import() {
   drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
-
   $status = FALSE;
   if(is_numeric(arg(3))){
     $dialogue_id = arg(3);
@@ -67,9 +66,8 @@ function pw_dialogues_triggered_import() {
       comment_delete_multiple($cids_to_delete);
       pw_dialogues_do_import_answers($source);
 
-      // set status to true and clear cache
+      // set status to true
       if(is_numeric($recipient_id) && ($user = user_load($recipient_id)) || $node->status != 1){
-        cache_clear_all($GLOBALS['base_url'].'/profile/'.$user->name, 'cache_page', TRUE);
         $status = TRUE;
       }
     }
