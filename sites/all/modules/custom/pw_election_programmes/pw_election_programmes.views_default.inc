@@ -190,12 +190,11 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['arguments']['tid_i18n']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['tid_i18n']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['tid_i18n']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['tid_i18n']['validate']['type'] = 'i18n_taxonomy_term';
+  $handler->display->display_options['arguments']['tid_i18n']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['tid_i18n']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
   );
-  $handler->display->display_options['arguments']['tid_i18n']['validate_options']['type'] = 'i18n_convert';
-  $handler->display->display_options['arguments']['tid_i18n']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['arguments']['tid_i18n']['validate_options']['type'] = 'convert';
   $handler->display->display_options['arguments']['tid_i18n']['validate']['fail'] = 'access denied';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
