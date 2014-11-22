@@ -113,7 +113,15 @@ function pw_search_user_facetapi_facet_info($searcher_info) {
  * @param DrupalSolrQueryInterface $query
  */
 function pw_search_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
-  
+
+  //Fix for leading zeroes in postal code search queries.
+  $mypath=explode("?",$_SERVER["REQUEST_URI"]);
+  $myquery=basename($mypath[0]);
+  if (preg_match('/0[1-9][0-9]{3}/', $myquery)){
+    $myquery = ltrim($myquery, '0');
+    $query->replaceParam('q', $myquery);
+  }
+
   $query->addParam("fl", "sm_field_dialogue_recipient"); // first look field. This is a pseudo field.
   
   // We have to rewrite the "query fields" solr parameter, because it contains the label, which should not be searchable. 
