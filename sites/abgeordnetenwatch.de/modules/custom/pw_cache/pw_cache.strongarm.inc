@@ -411,8 +411,9 @@ profile/[comment:node:field-dialogue-recipient]';
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_node_actions_dialogue';
   $strongarm->value = array(
-    0 => 2,
-    1 => 3,
+    0 => 1,
+    1 => 2,
+    2 => 3,
   );
   $export['expire_node_actions_dialogue'] = $strongarm;
 

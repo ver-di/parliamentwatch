@@ -153,7 +153,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   );
 
   $export['quicktabs-politicians_answer'] = array(
-    'cache' => '-1',
+    'cache' => '5',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'politicians_answer',
@@ -188,7 +188,7 @@ function pw_eu_frontpage_default_fe_block_settings() {
   );
 
   $export['views-pw_announcement-slideshow'] = array(
-    'cache' => '-1',
+    'cache' => '5',
     'css_class' => 'clear',
     'custom' => '0',
     'delta' => 'pw_announcement-slideshow',

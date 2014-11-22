@@ -48,7 +48,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-aw_sachsen_intro'] = array(
-    'cache' => '-1',
+    'cache' => '1',
     'css_class' => 'clearfix push-bottom-l',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -366,7 +366,7 @@ ueber-uns/spendenuebersicht',
   );
 
   $export['delta_blocks-breadcrumb'] = array(
-    'cache' => 4,
+    'cache' => '5',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'breadcrumb',
