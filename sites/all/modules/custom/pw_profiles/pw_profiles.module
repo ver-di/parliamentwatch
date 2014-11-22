@@ -143,8 +143,6 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
     unset($form["mimemail"]);
     unset($form["overlay_control"]);
     unset($form["xmlsitemap"]);
-    unset($form["#groups"]["group_user_admin"]);
-    unset($form["#fieldgroups"]["group_user_admin"]);
   }
 }
 
