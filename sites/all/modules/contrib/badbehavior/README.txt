@@ -57,7 +57,7 @@ system cracker.
 ----------------------------------------------------------
 
 - Drupal 7.x (single-site installation only supported at this time)
-- BadBehavior 2.2.14
+- BadBehavior 2.2.15
 
 ----------------------------------------------------------
    INSTALLATION WITH DRUSH
@@ -77,16 +77,18 @@ and it will even install the BadBehavior PHP script automatically.
 1. Extract the tarball into the modules folder of your Drupal install.
 
 2. Download the current release of the BadBehavior PHP scripts from
-   http://downloads.wordpress.org/plugin/bad-behavior.2.2.14.zip
+   http://downloads.wordpress.org/plugin/bad-behavior.2.2.15.zip
    and unzip it. Then move the resulting "bad-behavior" directory into
    your /[path/to/site]/sites/all/libraries/ directory.
 
    Here are the recommended steps to do this from the command line:
 
    cd /[path/to/site]/sites/all/libraries/
-   wget http://downloads.wordpress.org/plugin/bad-behavior.2.2.14.zip
-   unzip bad-behavior.2.2.14.zip
-   rm bad-behavior.2.2.14.zip
+   wget http://downloads.wordpress.org/plugin/bad-behavior.2.2.15.zip
+   mv bad-behavior bad-behavior.bak
+   unzip bad-behavior.2.2.15.zip
+   rm bad-behavior.2.2.15.zip
+   rm -R bad-behavior.bak (after the new version is verified as working)
 
 3. Enable the module as usual from the Admin > Modules page.
 

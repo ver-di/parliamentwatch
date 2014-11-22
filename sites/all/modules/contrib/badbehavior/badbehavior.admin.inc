@@ -214,7 +214,7 @@ function badbehavior_settings_form() {
     '#type' => 'textfield',
     '#title' => t('Project Honey Pot QuickLink'),
     '#default_value' => variable_get('badbehavior_httpbl_quicklink', ''),
-    '#maxlength' => 99,
+    '#maxlength' => 255,
     '#description' => t("To include a hidden Project Honey Pot QuickLink to your website to help the anti-spam community trap unsuspecting spam bots, enter your QuickLink URL (with the 'http://') in this field. Create a free Project Honey Pot account and find <a href=\"@httpblquicklinks-url\">more information</a> about QuickLinks.", array('@httpblquicklinks-url' => 'http://www.projecthoneypot.org/manage_quicklink.php')),
   );
   $form['httpbl']['badbehavior_httpbl_quicklinktext'] = array(

@@ -72,7 +72,7 @@ function badbehavior_requirements($phase) {
   $requirements = array();
   if ($phase == 'runtime') {
     if (badbehavior_load_includes()) {
-      if (BB2_VERSION == '2.2.14') {
+      if (BB2_VERSION == '2.2.15') {
         $requirements['badbehavior'] = array(
           'value' => BB2_VERSION,
           'severity' => REQUIREMENT_OK,
@@ -82,7 +82,7 @@ function badbehavior_requirements($phase) {
         $requirements['badbehavior'] = array(
           'value' => BB2_VERSION,
           'severity' => REQUIREMENT_WARNING,
-          'description' => t('Bad Behavior files are installed, but are not the recommended version (2.2.14). See the <code>!readme</code> for exact installation details.', array('!readme' => l(t('README.txt'), $base_url . drupal_get_path('module', 'badbehavior') . '/README.txt'))),
+          'description' => t('Bad Behavior files are installed, but are not the recommended version (2.2.15). See the <code>!readme</code> for exact installation details.', array('!readme' => l(t('README.txt'), $base_url . drupal_get_path('module', 'badbehavior') . '/README.txt'))),
         );
       }
     }
