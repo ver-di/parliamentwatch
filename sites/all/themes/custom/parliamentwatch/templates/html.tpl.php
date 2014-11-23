@@ -13,9 +13,6 @@
 </head>
 <body<?php print $attributes;?>>
    <!--[if lt IE 8]>      <div class="messages warning">Sie benutzen einen alten Browser. Um diese Seite optimal zu benutzen aktualisieren Sie bitte Internet Explorer oder benutzen Sie einen anderen Browser.</div> <![endif]-->
- <div>
- 
-  <a href="#nav" id="hamburger" class="mobile-only mm-fixed-top"><span></span></a></div>
   <div id="skip-link">
     <a href="#nav" class="element-invisible element-focusable"><?php print t('Skip to main navigation'); ?></a>
     <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
