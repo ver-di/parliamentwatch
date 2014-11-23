@@ -11,9 +11,11 @@ html {
 #nav {
     display: none !important;
 }
-#section-header {
+#region-branding {
+    padding: 7px 0 0;
     border-bottom: 0;
-    margin-bottom: 0;
+    background: transparent;
+    margin: 0 10px;
 }
 #zone-branding .logo-img {
     display: inline-block;
@@ -21,6 +23,9 @@ html {
     left: 0;
     max-width: none;
     text-align: left;
+}
+#zone-menu-wrapper {
+	display: block;
 }
 #region-user-second {
     float: right;
