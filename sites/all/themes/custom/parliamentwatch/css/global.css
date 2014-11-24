@@ -893,7 +893,8 @@ h1#page-title {
     background-position: -220px -256px;
 }
 .view-pw-donation-state .donation-amount {
-	bottom: 1px;
+    bottom: 2px;
+    font-size: 11px;
     position: absolute;
     right: 7px;
 }
@@ -1970,6 +1971,7 @@ html.js fieldset.collapsed {
 .pw-progress {
     height: 14px;
     width: 199px;
+    display: block;
 }
 .pw-progress-wrapper,
 .pw-progress-wrapper-l,
@@ -1993,6 +1995,7 @@ html.js fieldset.collapsed {
     background: -ms-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* IE10+ */
     background: linear-gradient(to right,  #78b70c 0%,#a8e63c 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b70c', endColorstr='#a8e63c',GradientType=1 ); /* IE6-8 */
+    display: block;
 }
 
 /* petitions */
