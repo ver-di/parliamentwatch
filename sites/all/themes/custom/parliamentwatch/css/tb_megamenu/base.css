@@ -50,7 +50,6 @@
 .tb-megamenu .dropdown-menu .mega-nav .mega-group > .mega-group-title:focus,
 .tb-megamenu .dropdown-menu .active .mega-nav .mega-group > .mega-group-title:focus {
   background: inherit;
-  color: inherit;
 }
 .tb-megamenu .mega-group-ct {
   margin: 0;

@@ -269,7 +269,7 @@
 }
 .tb-megamenu .dropdown-menu li > a {
   clear: both;
-  color: #666;
+  color: #444;
   display: block;
   line-height: 20px;
   font-weight: normal;
@@ -282,12 +282,12 @@
   background-color: inherit;  
   background-image: none;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-  color: #000;
+  color: #888;
   text-decoration: none;
 }
 .tb-megamenu .dropdown-menu .active > a,
 .tb-megamenu .dropdown-menu .active > a:hover {
-  color: #000;
+  color: #888;
   text-decoration: none;
   outline: 0;
 }
