@@ -562,7 +562,7 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 € erreicht sind. <a href="http://develop_menu.silversurfer/node/10508/" class="read-more">Jetzt spenden</a>';
+  $handler->display->display_options['header']['area']['content'] = 'Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 € erreicht sind. <a href="/node/10508/" class="read-more">Jetzt spenden</a>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: Global: Unfiltered text */
@@ -574,6 +574,16 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
 <li><a href="http://www.abgeordnetenwatch.de/archiv-391-0.html">Archiv</a></li>
 </ul>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Feld: machine_name: Text */
+  $handler->display->display_options['fields']['text_2']['id'] = 'text_2';
+  $handler->display->display_options['fields']['text_2']['table'] = 'xml';
+  $handler->display->display_options['fields']['text_2']['field'] = 'text';
+  $handler->display->display_options['fields']['text_2']['label'] = '';
+  $handler->display->display_options['fields']['text_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['text_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['text_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['text_2']['xpath_selector'] = 'machine_name';
+  $handler->display->display_options['fields']['text_2']['multiple'] = 0;
   /* Feld: amount_machine: Text */
   $handler->display->display_options['fields']['text_4']['id'] = 'text_4';
   $handler->display->display_options['fields']['text_4']['table'] = 'xml';
@@ -624,14 +634,14 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-progress-wrapper"><div class="pw-progress" style="width: <?php 
+  $handler->display->display_options['fields']['php']['php_output'] = '<a href="/node/10508?donation_target=<?php print $row->text_2; ?>" title="Jetzt für <?php print $row->text; ?> spenden"><span class="pw-progress-wrapper"><span class="pw-progress" style="width: <?php 
 $required = 10000;
 $donations = str_replace(array(\'.\', \',\'), \'\' , $row->text_1);
 $progress = ($row->text_4/$required)*100;
 if($progress > 100){
     $progress = $row->text_2;
 }
-print $progress; ?>%;"><?php print t(\'Progress\') ?>: <?php print $progress; ?>%</div></div>
+print $progress; ?>%;"><?php print t(\'Progress\') ?>: <?php print $progress; ?>%</span></span></a>
 ';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
