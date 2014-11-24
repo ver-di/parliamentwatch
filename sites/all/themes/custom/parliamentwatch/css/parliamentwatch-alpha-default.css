@@ -35,6 +35,7 @@ html {
 }
 #region-user-second .block .content a {
     padding: 0 13px;
+    color: #858585 !important;
 }
 #region-header-first {
     display: block;

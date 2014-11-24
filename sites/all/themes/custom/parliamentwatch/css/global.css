@@ -700,6 +700,7 @@ a.ic-print {
 }
 #views-exposed-form-profile-questions-answers-profile,
 #views-exposed-form-profile-list-rev-grid,
+#block-views-pw-user-revision-switch-block-1,
 .views-exposed-widget,
 .views-exposed-form {
     position: relative;
@@ -1546,7 +1547,7 @@ ul.tabs li a:active {
 #region-user-second .block .content a {
     display: inline-block;
     padding: 0 10px;
-    color: #858585 !important;
+    color: #666 !important;
     font: 9px/21px Lucida Grande,Helvetica,Arial,sans-serif;
     font: 0.9rem/2.1rem Lucida Grande,Helvetica,Arial,sans-serif;
 }
@@ -3032,10 +3033,10 @@ blockquote:before,
 .js .responsive-layout-mobile .pw-expandable-mobile .view,
 .js .responsive-layout-normal #pw_block_user_questionform,
 .desktop-only {
-    display: none !important;
+    display: none;
 }
 .mobile-only {
-    display: block !important;
+    display: block;
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2 {
     padding-left: 36px;
