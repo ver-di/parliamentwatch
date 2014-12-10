@@ -816,6 +816,8 @@ h1#page-title {
 .region-sidebar-second .block {
     margin-bottom: 35px;
     margin-bottom: 3.5rem;
+    margin-top: 9px;
+    margin-top: .9rem;
 }
 .region-sidebar-second p {
     margin-bottom: 5px;
