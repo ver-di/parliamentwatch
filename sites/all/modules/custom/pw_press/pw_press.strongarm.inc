@@ -255,6 +255,12 @@ function pw_press_strongarm() {
             'visible' => FALSE,
           ),
         ),
+        'sharethis' => array(
+          'full' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
       ),
     ),
   );
