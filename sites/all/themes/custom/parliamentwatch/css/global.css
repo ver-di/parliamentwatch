@@ -2156,7 +2156,40 @@ div.pw-messages {
   margin: 6px 0;
   padding: 10px 10px 10px 50px; /* LTR */
 }
-
+.messages ul {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.messages.error.messages-inline,
+label.error {
+	background: transparent;
+	border: 0;
+	padding: 0;
+	color: #fe0002;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 1em;
+}
+textarea.error,
+select.error,
+input.error {
+	border-color: #fe0002 !important;
+}
+form .error:before {	
+    background: none repeat scroll 0 0 #fe0002;
+    border-radius: 10px;
+    color: #fff;
+    content: "!";
+    display: inline-block;
+    font-weight: bold;
+    height: 1.3em;
+    line-height: 1.1em;
+    margin-right: 3px;
+    padding-left: 0.1em;
+    text-align: center;
+    width: 1.3em;
+}
 .captcha .compact-form-label {
     display: none !important;
 }
@@ -2199,12 +2232,21 @@ input[type="week"],
     font-size: 1.2rem;
     padding-left: 6px;
     height: 2.5em;
-    margin-bottom:8px;
-    margin-bottom: 0.8rem;
     *line-height: 2.1em; /* IE6 IE7 */
     line-height: 2.1em\9; /* IE8 */
     background-color: #fff;
     max-width: 100%;
+}
+button,
+.button,
+a.button:link,
+a.button:visited,
+input[type="submit"],
+input[type="button"],
+.form-submit,
+.form-item {
+    margin-bottom:8px;
+    margin-bottom: 0.8rem;
 }
 .views-exposed-widget.views-reset-button input[type="submit"] {
     border: 0;
