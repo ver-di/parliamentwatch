@@ -39,7 +39,6 @@ dependencies[] = file_entity
 dependencies[] = globalredirect
 dependencies[] = i18n_taxonomy
 dependencies[] = image
-dependencies[] = inline_messages
 dependencies[] = jcarousel
 dependencies[] = jquery_dollar
 dependencies[] = jquery_update
