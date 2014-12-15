@@ -35,7 +35,7 @@ function pw_search_apachesolr_node_exclude($entity_id, $row, $env_id) {
  * @return boolean
  */
 function pw_search_apachesolr_user_exclude($entity_id, $row, $env_id) {
-  return !pw_search_is_politician($entity_id) || pw_search_is_candidate($entity_id);
+  return !pw_search_is_politician($entity_id);
 }
 
 /**
@@ -48,21 +48,6 @@ function pw_search_is_politician($uid) {
   static $uidArr; 
   if (!isset($uidArr)) {
     $rid = variable_get("pw_search_politician_rid", variable_get('pw_search_role_id', 181527986)); // can be changed in the variables.
-    $uidArr = db_query("SELECT uid FROM {users_roles} WHERE rid=:rid", array(":rid" => $rid))->fetchCol();
-  }
-  return in_array($uid, $uidArr);
-}
-
-/**
- * Internal helper to distinguish users by their role. 
- * @staticvar type $uidArr
- * @param type $uid
- * @return type
- */
-function pw_search_is_candidate($uid) {
-  static $uidArr; 
-  if (!isset($uidArr)) {
-    $rid = variable_get("pw_search_candidate_rid", variable_get('pw_search_cadidate_role_id', 185431326)); // can be changed in the variables.
     $uidArr = db_query("SELECT uid FROM {users_roles} WHERE rid=:rid", array(":rid" => $rid))->fetchCol();
   }
   return in_array($uid, $uidArr);
