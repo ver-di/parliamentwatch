@@ -7,7 +7,6 @@
 /**
  * Implements hook_views_api().
  */
-function pw_api_views_api()
-{
-    return array("version" => "3.0");
+function pw_api_views_api() {
+  return array("version" => "3.0");
 }
