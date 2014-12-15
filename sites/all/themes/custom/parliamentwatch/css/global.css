@@ -812,10 +812,11 @@ h1#page-title {
 .node.view-mode-full {
     border-bottom: 0;
 }
-
 .region-sidebar-second .block {
     margin-bottom: 35px;
     margin-bottom: 3.5rem;
+    margin-top: 9px;
+    margin-top: 0.9rem;
 }
 .region-sidebar-second p {
     margin-bottom: 5px;

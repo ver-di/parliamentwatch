@@ -1,5 +1,5 @@
 name = PW Mailtokens
 description = Generates awesome tokens for mails
 core = 7.x
-version = 7.x-1.0-20140401
+version = 7.x-1.0-20141126
 package = Parliamentwatch

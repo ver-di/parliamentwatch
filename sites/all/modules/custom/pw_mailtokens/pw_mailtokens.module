@@ -97,7 +97,7 @@ function pw_mailtokens_fullname($account) {
 function pw_mailtokens_greeting($account) {
   $gender = $account->field_user_gender[LANGUAGE_NONE][0]['value'];
   $greeting = '';
-  echo($gender == 'm') ?
+  echo($gender == 'male') ?
     // @TODO t(make('translatable'));
     $greeting = 'Sehr geehrter Herr' : $greeting = 'Sehr geehrte Frau';
   return $greeting;

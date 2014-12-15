@@ -103,9 +103,9 @@ function pw_press_field_default_fields() {
           'allowed_types' => array(
             'audio' => 0,
             'default' => 'default',
+            0 => 0,
             'document' => 0,
             'image' => 0,
-            0 => 0,
             'video' => 0,
           ),
           'browser_plugins' => array(

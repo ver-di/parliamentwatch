@@ -25,8 +25,8 @@ function pw_search_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_second',
+        'status' => '1',
         'theme' => 'abgeordnetenwatch',
         'weight' => '-92',
       ),
