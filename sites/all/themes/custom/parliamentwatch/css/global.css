@@ -2790,6 +2790,10 @@ form .webform-component-checkboxes .description {
     display: inline-block;
     margin-right: 1em;
 }
+.st_whatsapp_large {
+	position: relative;
+	top: 10px;
+}
 .st_fbrec_hcount {
     position: relative;
     top: 1px;
