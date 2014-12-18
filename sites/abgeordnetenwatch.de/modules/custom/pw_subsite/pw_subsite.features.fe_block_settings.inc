@@ -436,7 +436,7 @@ ueber-uns/spendenuebersicht',
   );
 
   $export['locale-language'] = array(
-    'cache' => '-1',
+    'cache' => '1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'language',
