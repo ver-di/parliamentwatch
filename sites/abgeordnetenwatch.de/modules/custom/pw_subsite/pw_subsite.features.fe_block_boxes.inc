@@ -14,11 +14,11 @@ function pw_subsite_default_fe_block_boxes() {
   $fe_block_boxes->info = 'AW Brandenburg Intro';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'aw_brandenburg_intro';
-  $fe_block_boxes->body = '<h3>
-	Landtagswahl Brandenburg 2014
-</h3>
-<p>
-	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41475 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_brandenburg.png" style="float: left; width: 154px; height: 136px; margin: 1px 15px;" title="" typeof="foaf:Image" />Am 14.09.2014 fanden die Landtagswahlen in Brandenburg statt. Nutzen Sie die Postleitzahlen-Suche um die Kandidierenden aus Ihrem Wahlkreis zu finden. Alle Wahlergebnisse finden Sie auf <a href="http://www.wahlrecht.de/news/2014/landtagswahl-brandenburg-2014.html#absolut">wahlrecht.de</a>.
+  $fe_block_boxes->body = '<p><img alt="" class="media-image attr__typeof__foaf:Image img__fid__41475 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_brandenburg.png" style="float: left; width: 154px; height: 136px; margin: 1px 15px;" title="" typeof="foaf:Image" />Ist der BER mit Nachtflugverbot sinnvoll? Wie fördern Sie den Ausbau technischer Infrastrukturen? Was haben Sie in den vergangenen Jahren für unseren Wahlkreis erreicht? Auf abgeordnetenwatch.de können Sie Ihre Fragen an alle Abgeordneten des brandenburgischen Landtags stellen.<br/>
+Nutzen Sie unsere PLZ-Suche, um die Abgeordneten aus Ihrem Wahlkreis zu finden.
+</p>
+<p class="rteright">
+	<a class="link-profile" href="brandenburg/profile">Zur Übersicht aller Abgeordneten</a>
 </p>
 <?php
     $blockObject = block_load(\'custom_search_blocks\', \'3\');
@@ -33,12 +33,11 @@ function pw_subsite_default_fe_block_boxes() {
   $fe_block_boxes->info = 'AW Sachsen Intro';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'aw_sachsen_intro';
-  $fe_block_boxes->body = '<h3>
-	Landtagswahl Sachsen 2014
-</h3>
-<p>
-	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41473 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_sachsen.png" style="margin: 2px 15px; float: left; width: 154px; height: 115px;" title="" typeof="foaf:Image" />Am 31.08.2014 fanden die Landtagswahlen in Sachsen statt. Geben Sie hier Ihre Postleitzahl ein und finden Sie heraus, welche Fragen an die Kandidierenden aus Ihrem Wahlkreis gestellt worden sind.
-Alle Wahlergebnisse finden Sie bei <a href="http://www.wahlrecht.de/news/2014/landtagswahl-sachsen-2014.html#absolut">wahlrecht.de</a>.
+  $fe_block_boxes->body = '<p>
+	<img alt="" class="media-image attr__typeof__foaf:Image img__fid__41473 img__view_mode__default attr__format__default attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__ attr__field_image_copyright[und][0][value]__" src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/illu_wahl_sachsen.png" style="margin: 2px 15px; float: left; width: 154px; height: 115px;" title="" typeof="foaf:Image" />Ob Bildung oder innere Sicherheit: Viele wichtige Themen werden auf Länderebene entschieden. Befragen Sie die 126 Abgeordneten des Sächsischen Landtags. Nutzen Sie unsere PLZ-Suche, um die Abgeordneten aus Ihrem Wahlkreis zu finden.
+</p>
+<p class="rteright">
+	<a class="link-profile" href="sachsen/profile">Zur Übersicht aller Abgeordneten</a>
 </p>
 <?php
     $blockObject = block_load(\'custom_search_blocks\', \'3\');

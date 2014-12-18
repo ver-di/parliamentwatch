@@ -866,14 +866,12 @@ return arg(0) == \'profile\';
     'i18n_mode' => '0',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'ueber-uns/spendenformular
-ueber-uns/spendenuebersicht
-node/21655',
+    'pages' => '',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'abgeordnetenwatch',
         'weight' => '-74',
       ),
@@ -891,7 +889,7 @@ node/21655',
       ),
     ),
     'title' => '',
-    'visibility' => '1',
+    'visibility' => '0',
   );
 
   $export['views-pw_user_revision_switch-block'] = array(
