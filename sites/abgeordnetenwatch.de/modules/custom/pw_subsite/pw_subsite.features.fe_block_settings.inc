@@ -436,7 +436,7 @@ ueber-uns/spendenuebersicht',
   );
 
   $export['locale-language'] = array(
-    'cache' => '1',
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'language',
@@ -448,20 +448,20 @@ ueber-uns/spendenuebersicht',
     'roles' => array(),
     'themes' => array(
       'abgeordnetenwatch' => array(
-        'region' => 'user_second',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'abgeordnetenwatch',
         'weight' => '-26',
       ),
       'blank' => array(
-        'region' => 'sidebar_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'blank',
         'weight' => '-26',
       ),
       'pw_seven' => array(
-        'region' => 'sidebar_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'pw_seven',
         'weight' => '-26',
       ),

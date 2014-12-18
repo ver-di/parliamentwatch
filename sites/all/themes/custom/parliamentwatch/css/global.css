@@ -812,10 +812,11 @@ h1#page-title {
 .node.view-mode-full {
     border-bottom: 0;
 }
-
 .region-sidebar-second .block {
     margin-bottom: 35px;
     margin-bottom: 3.5rem;
+    margin-top: 9px;
+    margin-top: 0.9rem;
 }
 .region-sidebar-second p {
     margin-bottom: 5px;
@@ -2385,6 +2386,9 @@ form .webform-component-checkboxes .description {
     padding: 12px 10px 10px 10px;
     color: #666;
 }
+#custom-search-blocks-form-1 {
+	margin-bottom: 2em !important;
+}
 #custom-search-blocks-form-3 label {
   display: none;
 }
@@ -2785,6 +2789,10 @@ form .webform-component-checkboxes .description {
 .st_fbrec_hcount {
     display: inline-block;
     margin-right: 1em;
+}
+.st_whatsapp_large {
+	position: relative;
+	top: 10px;
 }
 .st_fbrec_hcount {
     position: relative;
