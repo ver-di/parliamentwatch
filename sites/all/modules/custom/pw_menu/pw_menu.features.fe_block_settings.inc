@@ -13,7 +13,7 @@ function pw_menu_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['block-pw_menu_participate_donate'] = array(
-    'cache' => -1,
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
@@ -48,8 +48,8 @@ function pw_menu_default_fe_block_settings() {
   );
 
   $export['block-pw_menu_press_contact'] = array(
-    'cache' => -1,
-    'css_class' => 'clearfix',
+    'cache' => '-1',
+    'css_class' => '',
     'custom' => '0',
     'i18n_block_language' => array(),
     'i18n_mode' => '0',
@@ -83,7 +83,7 @@ function pw_menu_default_fe_block_settings() {
   );
 
   $export['tb_megamenu-menu-main-menu-de'] = array(
-    'cache' => '-1',
+    'cache' => 1,
     'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => 'menu-main-menu-de',

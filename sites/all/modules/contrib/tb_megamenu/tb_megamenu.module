@@ -221,24 +221,37 @@ function tb_megamenu_theme($existing, $type, $theme, $path) {
  * Implementation of hook_block_view()
  */
 function tb_megamenu_block_view($delta = 0) {
-  static $added_js_css = false;
-  if(!$added_js_css) {
-    $added_js_css = true;
-    if(module_exists('fontawesome') && file_exists(libraries_get_path('fontawesome') . '/css/font-awesome.css')) {
-      tb_megamenu_add_css(libraries_get_path('fontawesome') . '/css/font-awesome.css');
-    }
-    
-    tb_megamenu_add_css(drupal_get_path('module', 'tb_megamenu') . '/css/bootstrap.css');
-    tb_megamenu_add_css(drupal_get_path('module', 'tb_megamenu') . '/css/base.css');
-    tb_megamenu_add_css(drupal_get_path('module', 'tb_megamenu') . '/css/default.css');
-    tb_megamenu_add_css(drupal_get_path('module', 'tb_megamenu') . '/css/compatibility.css');
-    drupal_add_js(drupal_get_path('module', 'tb_megamenu') . '/js/tb-megamenu-frontend.js');
-    drupal_add_js(drupal_get_path('module', 'tb_megamenu') . '/js/tb-megamenu-touch.js');
+  $path = drupal_get_path('module', 'tb_megamenu');
+
+  // Build the block
+  $block = array();
+  $block['subject'] = NULL;
+  $block['content'] = array(
+     '#type' => 'markup',
+    '#markup' => theme('tb_megamenu', array('menu_name' => $delta)),
+    '#attached' => array(
+      'js' => array(
+        "{$path}/js/tb-megamenu-frontend.js",
+        "{$path}/js/tb-megamenu-touch.js",
+      ),
+      'css' => array(
+        "{$path}/css/bootstrap.css",
+        "{$path}/css/base.css",
+        "{$path}/css/default.css",
+        "{$path}/css/compatibility.css",
+      ),
+    ),
+  );
+
+  // Add font awesome styling
+  if (module_exists('fontawesome') && file_exists(libraries_get_path('fontawesome') . '/css/fontawesome.css')) {
+    $block['content']['#attached']['css'][] = libraries_get_path('fontawesome') . '/css/font-awesome.css';
   }
-  return array('content' => array(
-    '#type' => 'markup',
-    '#markup' =>  theme('tb_megamenu', array('menu_name' => $delta))
-  ));
+  else {
+    $block['content']['#attached']['css'][] = "{$path}/fonts/font-awesome/css/font-awesome.css";
+  }
+
+  return $block;
 }
 
 /*
@@ -249,7 +262,8 @@ function tb_megamenu_block_info() {
   $blocks = array();
   foreach($menus as $menu) {
     $blocks[$menu->menu_name] = array(
-      'info' => t('TB Mega Menu') . ': ' . $menu->title, 'cache' => DRUPAL_NO_CACHE 
+      'info' => t('TB Mega Menu') . ': ' . $menu->title,
+      'cache' => DRUPAL_CACHE_PER_ROLE,
     );
   }
   return $blocks;

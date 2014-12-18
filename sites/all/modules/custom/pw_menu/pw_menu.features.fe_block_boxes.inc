@@ -23,7 +23,7 @@ function pw_menu_default_fe_block_boxes() {
 <h3>Was kann ich sonst tun?</h3>
 <div class="nav-pw">
 <?php
-$block = module_invoke(\'menu_block\', \'block_view\', 2);
+$block = module_invoke(\'menu_block\', \'block_view\', 1);
 print render($block[\'content\']);
 ?>
 </div>';
@@ -35,7 +35,7 @@ print render($block[\'content\']);
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'pw_menu_press_contact';
   $fe_block_boxes->body = '<p>
-	<img align="left" alt="" border="2" class="media-image attr__typeof__foaf:Image img__fid__36320 img__view_mode__pw_file_portrait_ms attr__format__pw_file_portrait_ms attr__field_file_image_alt_text[und][0][value]__Gregor Hackmack attr__field_file_image_title_text[und][0][value]__ attr__field_folder[und]___none" height="75" src="http://develop_menu.silversurfer/sites/abgeordnetenwatch.de/files/styles/pw_portrait_ms/public/team_hackmack_2.jpg?itok=G0KSqlvx" style="padding:5px;margin-right:5px;" title="" typeof="foaf:Image" width="50" />
+	<img align="left" alt="" border="2" class="media-image attr__typeof__foaf:Image img__fid__36320 img__view_mode__pw_file_portrait_m attr__format__pw_file_portrait_m attr__field_file_image_alt_text[und][0][value]__ attr__field_file_image_title_text[und][0][value]__" height="150" src="https://stage.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/files/styles/pw_portrait_m/public/team_hackmack_2.jpg?itok=TCnC_E7J" style="padding:5px;margin-right:5px;" title="" typeof="foaf:Image" width="100" />
 </p>
 <p>
 	<strong>Gregor Hackmack</strong>

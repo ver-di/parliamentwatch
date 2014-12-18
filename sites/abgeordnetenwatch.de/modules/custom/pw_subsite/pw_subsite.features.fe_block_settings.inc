@@ -134,7 +134,7 @@ ueber-uns/spendenuebersicht',
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-76',
+        'weight' => '-77',
       ),
       'blank' => array(
         'region' => '',
@@ -205,7 +205,7 @@ ueber-uns/spendenuebersicht',
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-81',
+        'weight' => '-82',
       ),
       'blank' => array(
         'region' => '',
@@ -241,7 +241,7 @@ ueber-uns/spendenuebersicht',
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-80',
+        'weight' => '-81',
       ),
       'blank' => array(
         'region' => '',
@@ -646,7 +646,7 @@ ueber-uns/spendenuebersicht',
   );
 
   $export['submenutree-0'] = array(
-    'cache' => 4,
+    'cache' => '4',
     'css_class' => '',
     'custom' => '0',
     'delta' => '0',
@@ -676,7 +676,7 @@ ueber-uns/spendenuebersicht',
         'weight' => '-62',
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => '0',
   );
 
@@ -698,7 +698,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-90',
+        'weight' => '-89',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -733,7 +733,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-82',
+        'weight' => '-83',
       ),
       'blank' => array(
         'region' => '',
@@ -803,7 +803,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-73',
+        'weight' => '-76',
       ),
       'blank' => array(
         'region' => '',
@@ -943,7 +943,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-94',
+        'weight' => '-96',
       ),
       'blank' => array(
         'region' => '',
