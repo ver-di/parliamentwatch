@@ -803,6 +803,17 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['footer'] = FALSE;
+  /* Fußbereich: Global: PHP */
+  $handler->display->display_options['footer']['php']['id'] = 'php';
+  $handler->display->display_options['footer']['php']['table'] = 'views';
+  $handler->display->display_options['footer']['php']['field'] = 'php';
+  $handler->display->display_options['footer']['php']['label'] = 'Unsere wichtigsten Themen';
+  $handler->display->display_options['footer']['php']['php_output'] = '<h3><?php print t(\'Unsere wichtigsten Themen\'); ?></h3>
+<?php
+$block = module_invoke(\'tagadelic\', \'block_view\', 31);
+print render($block[\'content\']);
+?>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -924,76 +935,6 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['filters']['field_teaser_image_fid']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['filters']['field_teaser_image_fid']['field'] = 'field_teaser_image_fid';
   $handler->display->display_options['filters']['field_teaser_image_fid']['operator'] = 'not empty';
-
-  /* Display: Menu Block Tags */
-  $handler = $view->new_display('attachment', 'Menu Block Tags', 'menu_tags');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['defaults']['css_class'] = FALSE;
-  $handler->display->display_options['css_class'] = 'clear';
-  $handler->display->display_options['defaults']['use_more'] = FALSE;
-  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
-  $handler->display->display_options['use_more_always'] = TRUE;
-  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
-  $handler->display->display_options['use_more_text'] = 'alle Blogartikel';
-  $handler->display->display_options['defaults']['link_display'] = FALSE;
-  $handler->display->display_options['link_display'] = 'page_1';
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['defaults']['style_options'] = FALSE;
-  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Textbereich */
-  $handler->display->display_options['header']['area']['id'] = 'area';
-  $handler->display->display_options['header']['area']['table'] = 'views';
-  $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<h3>Unsere wichtigsten Themen</h3>';
-  $handler->display->display_options['header']['area']['format'] = 'managed_content';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Global: Ansicht */
-  $handler->display->display_options['fields']['view']['id'] = 'view';
-  $handler->display->display_options['fields']['view']['table'] = 'views';
-  $handler->display->display_options['fields']['view']['field'] = 'view';
-  $handler->display->display_options['fields']['view']['label'] = '';
-  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view']['view'] = 'pw_tag_clouds';
-  $handler->display->display_options['fields']['view']['display'] = 'blog_tags';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sortierkriterien: Inhalt: Datum */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Datum';
-  $handler->display->display_options['sorts']['created']['granularity'] = 'hour';
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Veröffentlicht */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $handler->display->display_options['displays'] = array(
-    'menu_teaser' => 'menu_teaser',
-    'default' => 0,
-    'page_1' => 0,
-    'page_2' => 0,
-    'block_1' => 0,
-    'menu_block' => 0,
-  );
-  $handler->display->display_options['attachment_position'] = 'after';
-  $handler->display->display_options['inherit_arguments'] = FALSE;
   $export['blog'] = $view;
 
   return $export;
