@@ -26,7 +26,7 @@ function pw_search_apachesolr_node_exclude($entity_id, $row, $env_id) {
 
 
 /**
- * Returns TRUE if the user is not a politician (should be excluded in the search 
+ * Returns  TRUE if the user is not a politician (should be excluded in the search
  * index) or FALSE if he is politician. The role assignment is checked via the
  * internal function is_politician().
  * @param type $entity_id
