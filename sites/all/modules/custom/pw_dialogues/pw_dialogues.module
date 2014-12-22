@@ -39,12 +39,15 @@ function pw_dialogues_menu() {
  */
 function pw_dialogues_triggered_import() {
   drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
+  $debug_message = array();
+  $debug_message['request_uri'] = request_uri();
   $status = FALSE;
   if(is_numeric(arg(3))){
     $dialogue_id = arg(3);
     $source = variable_get('pw_dialogues_importer_source');
     $source .= $dialogue_id;
     $source .= '?unreleased=1';
+    $debug_message['source'] = $source;
     pw_dialogues_do_import_questions($source);
 
     // check if dialogue was imported
@@ -53,6 +56,7 @@ function pw_dialogues_triggered_import() {
               ->entityCondition('bundle', 'dialogue')
               ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
     $result = $efq_nodes->execute();
+    $debug_message['result'] = $result;
 
     // dialogue found
     if (isset($result['node'])) {
@@ -63,6 +67,7 @@ function pw_dialogues_triggered_import() {
       // delete answers and re-import them
       $sql = "SELECT cid FROM {comment} WHERE nid=:nid";
       $cids_to_delete = db_query($sql, array(':nid' => $dialogue_nid))->fetchCol();
+      $debug_message['cids_to_delete'] = $cids_to_delete;
       comment_delete_multiple($cids_to_delete);
       pw_dialogues_do_import_answers($source);
 
@@ -72,6 +77,8 @@ function pw_dialogues_triggered_import() {
       }
     }
   }
+
+  _pw_send_debug_mail('Import '.($status?'OK':'FAILED').': '.request_uri(), $debug_message);
   print $status?'OK':'FAILED';
 }
 
@@ -112,23 +119,6 @@ function pw_dialogues_validate_url(&$element, &$form_state) {
  * by push request to api/import/dialogue/% via the moderation backend.
  */
 function pw_dialogues_cron() {
-
-  // look for empty answers and delete them
-  $cids_to_delete = db_query("SELECT c.cid
-                     FROM comment c
-                     INNER JOIN field_data_comment_body body ON c.cid = body.entity_id AND body.bundle = 'comment_node_dialogue'
-                     LEFT OUTER JOIN field_data_field_dialogue_comment_body c_body ON c_body.entity_type = 'comment' AND c.cid = c_body.entity_id
-                     WHERE c_body.field_dialogue_comment_body_value IS NULL")->fetchCol();
-  if (!empty($cids_to_delete)) {
-    comment_delete_multiple($cids_to_delete);
-    watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
-  }
-
-  if (!empty($result)) {
-    //$cids_to_delete = array_keys($result['comment']);
-    //comment_delete_multiple($cids_to_delete);
-    //watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
-  }
 
   // import only at night
   if(date('H') < 6){
@@ -312,6 +302,24 @@ function pw_dialogues_entity_presave($entity, $type) {
 
   // delete dialogue answer if its status is 0
   elseif ($type == 'comment' && $entity->status == 0) {
-    entity_delete($type, $entity->cid);
+    //entity_delete($type, $entity->cid);
+
+    // look for empty answers and delete them
+    $cids_to_delete = db_query("SELECT c.cid
+                       FROM comment c
+                       INNER JOIN field_data_comment_body body ON c.cid = body.entity_id AND body.bundle = 'comment_node_dialogue'
+                       LEFT OUTER JOIN field_data_field_dialogue_comment_body c_body ON c_body.entity_type = 'comment' AND c.cid = c_body.entity_id
+                       WHERE c_body.field_dialogue_comment_body_value IS NULL")->fetchCol();
+    if (!empty($cids_to_delete)) {
+      comment_delete_multiple($cids_to_delete);
+      watchdog('pw_dialogues_entity_presave', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
+    }
+
+    //if (!empty($result)) {
+      //$cids_to_delete = array_keys($result['comment']);
+      //comment_delete_multiple($cids_to_delete);
+      //watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
+    //}
+
   }
 }

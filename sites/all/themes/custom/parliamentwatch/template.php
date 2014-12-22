@@ -114,6 +114,19 @@ function parliamentwatch_css_alter(&$css) {
     $css['sites/all/modules/contrib/jcarousel/skins/default/jcarousel-default.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/jcarousel-default.css';
     $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['type'] = 'file';
   }
+  // change tb_megamenu layout
+  if (isset($css['sites/all/modules/contrib/tb_megamenu/css/base.css'])) {
+    $css['sites/all/modules/contrib/tb_megamenu/css/base.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/tb_megamenu/base.css';
+    $css['sites/all/modules/contrib/tb_megamenu/css/base.css']['type'] = 'file';
+  }
+  if (isset($css['sites/all/modules/contrib/tb_megamenu/css/default.css'])) {
+    $css['sites/all/modules/contrib/tb_megamenu/css/default.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/tb_megamenu/default.css';
+    $css['sites/all/modules/contrib/tb_megamenu/css/default.css']['type'] = 'file';
+  }
+  if (isset($css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css'])) {
+    $css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/tb_megamenu/bootstrap.css';
+    $css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css']['type'] = 'file';
+  }
 }
  
 /**

@@ -3329,17 +3329,17 @@ foo
   $strongarm->api_version = 1;
   $strongarm->name = 'themekey_modules';
   $strongarm->value = array(
-    0 => 'admin_menu',
-    1 => 'comment',
-    2 => 'locale',
-    3 => 'node',
-    4 => 'overlay',
-    5 => 'path',
-    6 => 'print',
-    7 => 'system',
+    0 => 'locale',
+    1 => 'node',
+    2 => 'user',
+    3 => 'print',
+    4 => 'comment',
+    5 => 'views',
+    6 => 'system',
+    7 => 'path',
     8 => 'taxonomy',
-    9 => 'user',
-    10 => 'views',
+    9 => 'overlay',
+    10 => 'admin_menu',
   );
   $export['themekey_modules'] = $strongarm;
 

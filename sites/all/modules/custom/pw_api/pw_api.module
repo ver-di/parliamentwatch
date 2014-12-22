@@ -491,7 +491,7 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
             break;
     }
 
-    $query->where("$roles_alias.rid = :rid", array('rid' => $rid))
+    $query->where("$roles_alias.rid = :rid", array(':rid' => $rid))
         ->orderBy("$users_alias.uuid", 'ASC')
         ->orderBy('ur.vid', 'DESC');
 
