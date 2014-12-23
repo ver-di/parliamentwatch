@@ -5,53 +5,111 @@
 
 include_once 'pw_cache.features.inc';
 
+
 /**
- * Implement hook_expire_cache_alter().
+ * Implements hook_menu().
  *
+ * @return array
  */
-function pw_cache_expire_urls_alter(&$expire, $node = NULL, $paths) {
-    $altered_urls = array();
-    foreach($expire as $url) {
-        $url = strtolower($url);
-        $altered_urls['https://www.abgeordnetenwatch.de/'.$url] = 'http://srv8.pwsrv.local/cache-purge/?url=https://www.abgeordnetenwatch.de/'.$url;
-        $altered_urls['https://affiliate.abgeordnetenwatch.de/'.$url] = 'http://srv8.pwsrv.local/cache-purge/?url=https://affiliate.abgeordnetenwatch.de/'.$url;
-    }
-    $expire = $altered_urls;
+function pw_cache_menu() {
+  $items = array();
+  $items['admin/config/pw/pw_cache/settings'] = array(
+    'title' => 'PW Cache settings',
+    'description' => 'List of hosts which will be used to refresh the PW nginx and WaveCDN cache.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_cache_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'pw_cache.admin.inc',
+  );
+  return $items;
 }
+
 
 /**
  * Implements hook_expire_cache().
  *
- * refreshes purged url
+ * purge and refresh urls
  */
-function pw_cache_expire_cache($expire_urls) {
+function pw_cache_expire_cache($expire_paths) {
 
-  // check if weight of purge module is lower than pw_cache
-  $weight = db_select('system', 's')
-            ->fields('s', array('name', 'weight'))
-            ->condition('name', array('purge', 'pw_cache'), 'IN')
-            ->execute()
-            ->fetchAllKeyed();
+  // load configs
+  $servers = explode("\n", variable_get('pw_cache_servers', ''));
+  $hosts = explode("\n", variable_get('pw_cache_hosts', ''));
 
-  if($weight['purge'] >= $weight['pw_cache']){
-    db_update('system')
-    ->fields(array('weight' => $weight['purge'] + 1))
-    ->condition('name', 'pw_cache', '=')
-    ->execute();
+  // clear nginx cache
+  pw_cache_clearcache_nginx($expire_paths, $servers, $hosts);
 
-    // purge should be executed first
-    return;
+  // clear wavecdn cache
+  pw_cache_clearcache_wavecdn($expire_paths, $hosts);
+
+}
+
+function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
+
+  // build request array
+  foreach ($expire_paths as $path) {
+    foreach ($servers as $server) {
+      foreach ($hosts as $host) {
+        if (check_plain($server) && check_plain($host)) {
+          $server = trim($server);
+          $host = trim($host);
+          if (!empty($server) && !empty($host)) {
+            $url_server = parse_url($server);
+            $url_host = parse_url($host);
+
+            // called url: scheme from host + host from target server + path
+            $cache_url = $url_host['scheme'] . '://' . $url_server['host'] . '/' . $path;
+
+            // send host information and X-Refresh header.
+            // blocking=FALSE means the service won't wait for any response.
+            $options = array(
+              'blocking' => FALSE,
+              'headers' => array(
+                'Host' => $url_host['host'],
+                'X-Refresh' => 1,
+              ),
+            );
+            httprl_request($cache_url, $options);
+          }
+        }
+      }
+    }
   }
 
-  foreach($expire_urls as $expire_url => $purge_url) {
-    $url = parse_url($expire_url);
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-    curl_setopt($ch, CURLOPT_URL, $url['scheme'].'://srv8.pwsrv.local'.$url['path']);
-    curl_setopt($ch, CURLOPT_HEADER, 1);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Host: '.$url['host']));
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
-    $result = curl_exec($ch);
+  // execute requests.
+  httprl_send_request();
+}
+
+function pw_cache_clearcache_wavecdn($expire_paths, $hosts) {
+
+  // check if credentials were set
+  global $conf;
+  if (!isset($conf['wavecdn_username']) || !isset($conf['wavecdn_password'])) {
+    return FALSE;
   }
+
+  // build request array
+  $expire_urls = array();
+  foreach ($expire_paths as $path) {
+    foreach ($hosts as $host) {
+      $host = trim($host);
+      if (!empty($host) && check_plain($host)) {
+        $expire_urls[] = $host . '/' . $path;
+      }
+    }
+  }
+
+  $options = array(
+    'method' => 'POST',
+    'data' => array(
+      'urls' => implode('|', $expire_urls),
+    ),
+    'headers' => array(
+      'Authorization' => 'Basic ' . base64_encode($conf['wavecdn_username'] . ':' . $conf['wavecdn_password'])
+    ),
+  );
+  httprl_request('https://api.wavecdn.com/v3/invalidation', $options);
+  httprl_send_request();
 }
 
