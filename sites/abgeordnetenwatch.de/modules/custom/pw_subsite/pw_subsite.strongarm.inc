@@ -486,10 +486,6 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">url</em> of the field <em class="placeholder">field_announce_link</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
-    'node:field_announce_parliament_tid' => array(
-      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">tid</em> of the field <em class="placeholder">field_announce_parliament</em>. The value will be converted in its string representation.',
-      'page cache' => 1,
-    ),
     'node:field_announce_tab_title_format' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_announce_tab_title</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -3176,147 +3172,136 @@ foo
       ),
     ),
     176 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_announce_parliament_tid',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_announce_parliament',
-        'type' => 'taxonomy_term_reference',
-        'column' => 'tid',
-        'translatable' => '0',
-      ),
-    ),
-    177 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    178 => array(
+    177 => array(
       'src' => 'comment:cid',
       'dst' => 'node:nid',
       'callback' => 'themekey_comment_cid2nid',
     ),
-    179 => array(
+    178 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    180 => array(
+    179 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    181 => array(
+    180 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
     ),
-    182 => array(
+    181 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    183 => array(
+    182 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    184 => array(
+    183 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    185 => array(
+    184 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    186 => array(
+    185 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    187 => array(
+    186 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    188 => array(
+    187 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    189 => array(
+    188 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    190 => array(
+    189 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    191 => array(
+    190 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    192 => array(
+    191 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    193 => array(
+    192 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    194 => array(
+    193 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    195 => array(
+    194 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    196 => array(
+    195 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    197 => array(
+    196 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    198 => array(
+    197 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    199 => array(
+    198 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    200 => array(
+    199 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    201 => array(
+    200 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    202 => array(
+    201 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    203 => array(
+    202 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
@@ -3502,7 +3487,6 @@ foo
     'node:field_announce_link_attributes' => 'node:field_announce_link_attributes',
     'node:field_announce_link_title' => 'node:field_announce_link_title',
     'node:field_announce_link_url' => 'node:field_announce_link_url',
-    'node:field_announce_parliament_tid' => 'node:field_announce_parliament_tid',
     'node:field_announce_tab_title_format' => 'node:field_announce_tab_title_format',
     'node:field_announce_tab_title_value' => 'node:field_announce_tab_title_value',
     'node:field_blogpost_blogtags_tid' => 'node:field_blogpost_blogtags_tid',

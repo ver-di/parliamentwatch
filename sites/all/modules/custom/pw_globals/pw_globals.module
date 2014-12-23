@@ -16,6 +16,22 @@ include_once 'pw_globals.features.inc';
 // }
 
 /**
+ * Implements hook_menu().
+ *
+ * @return array
+ */
+function pw_globals_menu() {
+  $items = array();
+  $items['admin/config/pw'] = array(
+    'title' => 'Parliamentwatch',
+    'description' => 'Custom settings for Parliamentwatch.',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
  * Custom: Checks if User (Revision) is Premium User
  */
 function _pw_is_premium_user($user) {

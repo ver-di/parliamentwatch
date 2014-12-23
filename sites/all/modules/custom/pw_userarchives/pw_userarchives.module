@@ -162,7 +162,7 @@ function pw_delete_old_user_revisions(){
  * Implementation of hook_menu() for testing the cron functionality.
  */
 function pw_userarchives_menu() {
-  $items['admin/config/pw_userarchives/settings'] = array(
+  $items['admin/config/pw/pw_userarchives/settings'] = array(
       'title' => 'PW Userarchives Cron',
       'description' => 'Run daily cron manually.',
       'page callback' => 'pw_userarchives_cron',

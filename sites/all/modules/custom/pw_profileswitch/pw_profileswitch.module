@@ -142,7 +142,7 @@ function pw_profileswitch_user_view_page($account) {
  * Implementation of hook_menu().
  */
 function pw_profileswitch_menu() {
-  $items['admin/config/pw_profileswitch/settings'] = array(
+  $items['admin/config/pw/pw_profileswitch/settings'] = array(
       'title' => 'PW Profileswitch settings',
       'description' => 'Connect User Roles with Display Modes.',
       'page callback' => 'drupal_get_form',

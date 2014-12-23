@@ -217,7 +217,7 @@ function pw_api_views_pre_view(&$view, &$display_id, &$args)
 function pw_api_menu()
 {
     $items = array();
-    $items['admin/config/pw_api/settings'] = array(
+    $items['admin/config/pw/pw_api/settings'] = array(
         'title' => 'PW API settings',
         'description' => 'Allows to add allowed IP addresses for the internal API.',
         'page callback' => 'drupal_get_form',
