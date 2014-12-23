@@ -711,19 +711,19 @@ function pw_kandidatencheck_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
 
-  // Exported field: 'node-pw_kc_thesis-field_pw_parmliament'.
-  $fields['node-pw_kc_thesis-field_pw_parmliament'] = array(
+  // Exported field: 'node-pw_kc_thesis-field_parliament'.
+  $fields['node-pw_kc_thesis-field_parliament'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_pw_parmliament',
+      'field_name' => 'field_parliament',
       'field_permissions' => array(
         'type' => '0',
       ),
@@ -750,6 +750,7 @@ function pw_kandidatencheck_field_default_fields() {
           ),
         ),
         'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -765,7 +766,7 @@ function pw_kandidatencheck_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 1,
+          'weight' => 2,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -776,7 +777,7 @@ function pw_kandidatencheck_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_pw_parmliament',
+      'field_name' => 'field_parliament',
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
