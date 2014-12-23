@@ -318,90 +318,6 @@ function pw_announcements_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-announcement-field_announce_parliament'.
-  $fields['node-announcement-field_announce_parliament'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_announce_parliament',
-      'field_permissions' => array(
-        'type' => '2',
-      ),
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'parliaments',
-            'parent' => '0',
-          ),
-        ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
-      ),
-      'translatable' => '0',
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'announcement',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'The announcement will be displayed on the landingpage of these parliaments only.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'i18n_taxonomy',
-          'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 31,
-        ),
-        'full' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_announce_parliament',
-      'label' => 'Parliament',
-      'required' => 1,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'shs' => array(
-            'create_new_levels' => 0,
-            'create_new_terms' => 0,
-            'force_deepest' => 0,
-            'node_count' => 0,
-          ),
-        ),
-        'type' => 'options_buttons',
-        'weight' => '5',
-      ),
-    ),
-  );
-
   // Exported field: 'node-announcement-field_announce_tab_title'.
   $fields['node-announcement-field_announce_tab_title'] = array(
     'field_config' => array(
@@ -508,6 +424,85 @@ function pw_announcements_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-announcement-field_parliament'.
+  $fields['node-announcement-field_parliament'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_parliament',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'parliaments',
+            'parent' => '0',
+          ),
+        ),
+        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'announcement',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'i18n_taxonomy',
+          'settings' => array(),
+          'type' => 'i18n_taxonomy_term_reference_link',
+          'weight' => 32,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_parliament',
+      'label' => 'Parliament',
+      'required' => 1,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_select',
+        'weight' => '5',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Background image');
@@ -517,7 +512,6 @@ function pw_announcements_field_default_fields() {
   t('Link the article you want to announce.');
   t('Parliament');
   t('Tab title');
-  t('The announcement will be displayed on the landingpage of these parliaments only.');
   t('This field will be used as link text in the slider.');
 
   return $fields;
