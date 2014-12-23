@@ -130,13 +130,13 @@ function pw_announcements_strongarm() {
           'weight' => '2',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '8',
         ),
       ),
       'display' => array(),
