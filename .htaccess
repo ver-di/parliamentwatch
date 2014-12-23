@@ -59,18 +59,20 @@ DirectoryIndex index.php index.html index.htm
 <IfModule mod_rewrite.c>
   RewriteEngine on
 
-  # demo redirect
-  RewriteRule ^(test-redirect\.html)$ http://www.abgeordnetenwatch.de/$1 [L,R=301]
-
-  # redirect to legacy platform
+  # CUSTOM: redirect to legacy platform
   RewriteCond %{HTTP_HOST} .*\.abgeordnetenwatch.de
   RewriteRule ^([^\-\/]+-\d+-\d+.*\.html)$ http://www.abgeordnetenwatch.de/$1 [L,R=301]
 
-  # redirect from beta to www
+  # CUSTOM: redirect from beta to www
   RewriteCond %{HTTP_HOST} ^beta\.abgeordnetenwatch\.de$ [NC]
   RewriteRule ^(.*)$ https://www.abgeordnetenwatch.de/$1 [L,R=301]
 
-  # redirect frontpage
+  # CUSTOM: redirect missing www (workaround: expect connections for api imports)
+  RewriteCond %{HTTP_HOST} ^[a-z-]+\.[a-z]+$ [NC]
+  RewriteCond %{REMOTE_ADDR} !=89.238.74.203
+  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+
+  # CUSTOM: redirect frontpage
   RewriteCond %{HTTP_HOST} .*\.abgeordnetenwatch.de
   RewriteRule ^/$|^$ http://www.abgeordnetenwatch.de [L,R=301]
 
