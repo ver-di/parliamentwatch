@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the PW CDN feature.
- */
-
-include_once 'pw_cdn.features.inc';
