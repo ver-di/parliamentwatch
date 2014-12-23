@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * pw_eu_frontpage.quicktabs.inc
+ * pw_parliaments.quicktabs.inc
  */
 
 /**
  * Implements hook_quicktabs_default_quicktabs().
  */
-function pw_eu_frontpage_quicktabs_default_quicktabs() {
+function pw_parliaments_quicktabs_default_quicktabs() {
   $export = array();
 
   $quicktabs = new stdClass();
