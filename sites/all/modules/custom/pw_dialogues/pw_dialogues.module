@@ -42,7 +42,7 @@ function pw_dialogues_triggered_import() {
   $debug_message = array();
   $debug_message['request_uri'] = request_uri();
   $status = FALSE;
-  if(is_numeric(arg(3))){
+  if (is_numeric(arg(3))) {
     $dialogue_id = arg(3);
     $source = variable_get('pw_dialogues_importer_source');
     $source .= $dialogue_id;
@@ -53,8 +53,8 @@ function pw_dialogues_triggered_import() {
     // check if dialogue was imported
     $efq_nodes = new EntityFieldQuery();
     $efq_nodes->entityCondition('entity_type', 'node')
-              ->entityCondition('bundle', 'dialogue')
-              ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
+      ->entityCondition('bundle', 'dialogue')
+      ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
     $result = $efq_nodes->execute();
     $debug_message['result'] = $result;
 
@@ -72,14 +72,14 @@ function pw_dialogues_triggered_import() {
       pw_dialogues_do_import_answers($source);
 
       // set status to true
-      if(is_numeric($recipient_id) && ($user = user_load($recipient_id)) || $node->status != 1){
+      if (is_numeric($recipient_id) && ($user = user_load($recipient_id)) || $node->status != 1) {
         $status = TRUE;
       }
     }
   }
 
-  _pw_send_debug_mail('Import '.($status?'OK':'FAILED').': '.request_uri(), $debug_message);
-  print $status?'OK':'FAILED';
+  _pw_send_debug_mail('Import ' . ($status ? 'OK' : 'FAILED') . ': ' . request_uri(), $debug_message);
+  print $status ? 'OK' : 'FAILED';
 }
 
 /**
@@ -114,56 +114,52 @@ function pw_dialogues_validate_url(&$element, &$form_state) {
 
 /**
  * Implements hook_cron().
- * imports all dialugues once at night. 
- * Normally all dialogues should be already imported 
+ * imports all dialugues once at night.
+ * Normally all dialogues should be already imported
  * by push request to api/import/dialogue/% via the moderation backend.
  */
 function pw_dialogues_cron() {
 
-  // import only at night
-  if(date('H') < 6){
-  
-    // get import base url
-    if ($source = variable_get('pw_dialogues_importer_source')) {
+  // get import base url
+  if ($source = variable_get('pw_dialogues_importer_source')) {
 
-      // append the updated_since GET parameter to the source URL.
-      if ($last_import = variable_get('pw_dialogues_importer_last_import', 0)) {
- 
-        // import only every X days / hours/ etc
-        if($last_import < time() - PW_DIALOGUES_INTERVAL){
+    // append the updated_since GET parameter to the source URL.
+    if ($last_import = variable_get('pw_dialogues_importer_last_import', 0)) {
 
-          // import buffer: 1.5 of import interval
-          $updated_since_timestamp = $last_import - PW_DIALOGUES_INTERVAL * 1.5;
-          $updated_since = date('Y-m-d\\TH:i:s', $updated_since_timestamp);
-          if (strpos($source, '?') === FALSE) {
-            $source .= '?updated_since=' . $updated_since;
-          }
-          else {
-            $source .= '&updated_since=' . $updated_since;
-          }
+      // import only every X days / hours/ etc
+      if ($last_import < time() - PW_DIALOGUES_INTERVAL) {
 
-          // do the import
-          pw_dialogues_do_import_questions($source);
-          pw_dialogues_do_import_answers($source);
+        // import buffer: 1.5 of import interval
+        $updated_since_timestamp = $last_import - PW_DIALOGUES_INTERVAL * 1.5;
+        $updated_since = date('Y-m-d\\TH:i:s', $updated_since_timestamp);
+        if (strpos($source, '?') === FALSE) {
+          $source .= '?updated_since=' . $updated_since;
+        }
+        else {
+          $source .= '&updated_since=' . $updated_since;
+        }
 
-          // trigger userarchive cron which 
-          if(function_exists('pw_userarchives_cron')){
+        // do the import
+        pw_dialogues_do_import_questions($source);
+        pw_dialogues_do_import_answers($source);
 
-            // query which politicians have a changed question and answer count.
-            $users = db_query('SELECT DISTINCT f.field_dialogue_recipient_target_id
+        // trigger userarchive cron which
+        if (function_exists('pw_userarchives_cron')) {
+
+          // query which politicians have a changed question and answer count.
+          $users = db_query('SELECT DISTINCT f.field_dialogue_recipient_target_id
                                 FROM {field_data_field_dialogue_recipient} AS f 
                                 INNER JOIN {feeds_item} AS i ON f.entity_type = i.entity_type AND f.entity_id = i.entity_id
                                 WHERE i.imported >= :imported', array(':imported' => $updated_since_timestamp))->fetchCol();
-                        
-            // rewrite user archive cache table
-            foreach ($users as $uid) {
-              pw_userarchives_cron($uid);
-            }
+
+          // rewrite user archive cache table
+          foreach ($users as $uid) {
+            pw_userarchives_cron($uid);
           }
- 
-          // save last import date
-          variable_set('pw_dialogues_importer_last_import', REQUEST_TIME);
         }
+
+        // save last import date
+        variable_set('pw_dialogues_importer_last_import', REQUEST_TIME);
       }
     }
   }
@@ -178,13 +174,15 @@ function pw_dialogues_do_import_questions($source) {
   $dialogue_feed = feeds_source('dialogue_importer');
   $dialogue_feed->addConfig(array(
     'FeedsHTTPFetcher' => array(
-	  'source' => $source,
+      'source' => $source,
     ),
   ));
-  while (FEEDS_BATCH_COMPLETE != $dialogue_feed->import());
+  while (FEEDS_BATCH_COMPLETE != $dialogue_feed->import()) {
+    ;
+  }
 
   // add watchdog message
-  watchdog('dialogue_importer', 'questions imported from '.$source);
+  watchdog('dialogue_importer', 'questions imported from ' . $source);
 
   return TRUE;
 }
@@ -195,13 +193,15 @@ function pw_dialogues_do_import_answers($source) {
   $message_feed = feeds_source('dialogue_message_importer');
   $message_feed->addConfig(array(
     'FeedsHTTPFetcher' => array(
-  	'source' => $source,
+      'source' => $source,
     ),
   ));
-  while (FEEDS_BATCH_COMPLETE != $message_feed->import());
+  while (FEEDS_BATCH_COMPLETE != $message_feed->import()) {
+    ;
+  }
 
   // add watchdog message
-  watchdog('dialogue_message_importer', 'answers imported from '.$source);
+  watchdog('dialogue_message_importer', 'answers imported from ' . $source);
 
   return TRUE;
 }
@@ -286,7 +286,7 @@ function pw_dialogues_feeds_set_target($source, $entity, $target, $value, $mappi
 
 /**
  * modifies data on dialogue save (or import via api).
- * 
+ *
  */
 function pw_dialogues_entity_presave($entity, $type) {
 
@@ -312,13 +312,13 @@ function pw_dialogues_entity_presave($entity, $type) {
                        WHERE c_body.field_dialogue_comment_body_value IS NULL")->fetchCol();
     if (!empty($cids_to_delete)) {
       comment_delete_multiple($cids_to_delete);
-      watchdog('pw_dialogues_entity_presave', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
+      watchdog('pw_dialogues_entity_presave', 'empty answers deleted, cids: ' . implode(', ', $cids_to_delete));
     }
 
     //if (!empty($result)) {
-      //$cids_to_delete = array_keys($result['comment']);
-      //comment_delete_multiple($cids_to_delete);
-      //watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
+    //$cids_to_delete = array_keys($result['comment']);
+    //comment_delete_multiple($cids_to_delete);
+    //watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
     //}
 
   }
