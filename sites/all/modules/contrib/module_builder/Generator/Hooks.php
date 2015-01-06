@@ -110,8 +110,8 @@ class Hooks extends BaseGenerator {
    * (Move this back out if it needs to be used by other components in future?)
    *
    * Returns an array of hook data and templates for the requested hooks.
-   * This is handled live rather than in process.inc to allow the user to alter
-   * their custom hook templates.
+   * This is handled live rather than in the Collect task to allow the user to
+   * alter their custom hook templates.
    *
    * @return
    *   An array whose keys are destination filenames with the token '%module',
@@ -186,9 +186,6 @@ class Hooks extends BaseGenerator {
     // process, and warn if not.
     // We should probably also do something with rejected hooks list.
 
-    // Include generating component file, for parsing templates.
-    $mb_factory->environment->loadInclude('process');
-
     // Step 1:
     // Build up a list of the basic template files we want to parse.
     //  - in each $hook_function_declarations item, place an ordered list of
@@ -252,7 +249,7 @@ class Hooks extends BaseGenerator {
       $filepath = "$template_base_path_module/$filename";
       if (file_exists($filepath)) {
         $template_file = file_get_contents($filepath);
-        $template_data = module_builder_parse_template($template_file);
+        $template_data = $this->parseTemplate($template_file);
 
         // Trim the template data to the hooks we care about.
         $template_data = array_intersect_key($template_data, $requested_hooks);
@@ -314,6 +311,44 @@ class Hooks extends BaseGenerator {
     //print_r('step 3:');
     //print_r($hook_data_return);
     return $hook_data_return;
+  }
+
+  /**
+   * Parse a module_builder template file.
+   *
+   * Template files are composed of several sections in the form of:
+   *
+   * == START [title of template section] ==
+   * [the body of the template section]
+   * == END ==
+   *
+   * @param string $file
+   *   The template file to parse
+   *
+   * @return Array
+   *   Return array keyed by hook name, whose values are of the form:
+   *    array('template' => TEMPLATE BODY)
+   */
+  function parseTemplate($file) {
+    $data = array();
+
+    // Captures a template name and body from a template file.
+    $pattern = '#== START (.*?) ==(.*?)== END ==#ms';
+     preg_match_all($pattern, $file, $matches);
+    $count = count($matches[0]);
+    for ($i = 0; $i < $count; $i++) {
+      $data[$matches[1][$i]] = array(
+        #'title' => $matches[1][$i],
+        'template' => $matches[2][$i]
+      );
+      /*
+      $hook_custom_declarations[] = array(
+        'title' => $matches[1][$i],
+        'data' => $matches[2][$i]
+      );
+      */
+    }
+    return $data;
   }
 
 }

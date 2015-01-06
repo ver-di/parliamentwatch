@@ -23,9 +23,13 @@ class AdminSettingsForm extends Form {
     $components = parent::requiredComponents();
 
     // This takes care of adding hook_menu() and so on.
+    $form_name = $this->getFormName();
     $components['admin/config/%module'] = array(
       'component_type' => 'RouterItem',
-      'title' => 'Administer %module',
+      'title' => 'Administer %readable',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => "array('{$form_name}')",
+      'access arguments' => "array('administer %module')",
     );
 
     return $components;
@@ -44,12 +48,21 @@ class AdminSettingsForm extends Form {
       "  '#required' => TRUE,",
       ");",
       "",
+      "// TODO! You probably don't need validation or submit handlers if using system_settings_form().",
       "return system_settings_form(£form);",
     );
 
     $functions = parent::componentFunctions();
 
     return $functions;
+  }
+
+  /**
+   * The name of the form.
+   */
+  protected function getFormName() {
+    $base_component_name = $this->base_component->getComponentSystemName();
+    return "{$base_component_name}_settings_form";
   }
 
 }

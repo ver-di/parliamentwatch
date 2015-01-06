@@ -21,20 +21,57 @@ class Collect extends Base {
   protected $sanity_level = 'hook_directory';
 
   /**
-   * Collect hook api.php documentation files from sources and process them.
-   *
-   * (Replaces module_builder_update_data().)
+   * Collect data about Drupal components from the current site's codebase.
    */
-  function collectHooks() {
-    // Load the legacy procedural include file.
-    // TODO: move these into this class.
-    $this->environment->loadInclude('update');
+  public function collectComponentData() {
+    $this->collectHooks();
+  }
 
+  /**
+   * Collect hook api.php documentation files from sources and process them.
+   */
+  protected function collectHooks() {
     // Update the hook documentation.
-    $hook_files = module_builder_update_documentation();
+    $hook_files = $this->gatherHookDocumentationFiles();
 
     // Process the hook files.
     $this->processHookData($hook_files);
+  }
+
+  /**
+   * Gather hook documentation files.
+   *
+   * @return
+   *  Array of data about hook files suitable for passing to processHookData().
+   *  The array keys are the source filenames, and therefore must be unique. If
+   *  there is a possibility of filename clash these must be rendered safe, for
+   *  example by prefixing the module name.
+   *  Each item has the following properties:
+   *  - path: The full path to this file
+   *  - url: (internal to this handler) URL to download this file from.
+   *  - original: (probably not used; just here for interest) the full path this
+   *    file was copied from.
+   *  - destination: The module code file where the hooks from this hook data
+   *    file should be saved by code generation. This may contain placeholders,
+   *    for instance, '%module.views.inc'.
+   *  - hook_destinations: Per-hook overrides to destination.
+   *  - group: The group this file's hooks belong to. Usually this just the
+   *    name of the source file with the 'api.php' suffix removed.
+   *  - module: The module that provided this file. WARNING: this is not
+   *    entirely reliable!
+   * Example:
+   * @code
+   *  [system.core.php] => array(
+   *    [path]        => /Users/you/data/drupal_hooks/7/system.api.php
+   *    [url]         => (not used on 7)
+   *    [original]    => /Users/joachim/Sites/7-drupal/modules/system/system.api.php
+   *    [destination] => %module.module
+   *    [group]       => core
+   *    [module]      => node
+   * @endcode
+   */
+  protected function gatherHookDocumentationFiles() {
+    // Needs to be overridden by subclasses.
   }
 
   /**
@@ -76,10 +113,21 @@ class Collect extends Base {
              'body'        => $hook_data_raw['bodies'][$key],
 
    */
-  function processHookData($hook_file_data) {
+  protected function processHookData($hook_file_data) {
     //print_r($hook_file_data);
 
     // check file_exists?
+
+    /*
+    // Developer trapdoor for generating the sample hook definitions file for
+    // our tests. This limits the number of files to just a few from core.
+    $intersect = array(
+      'system.api.php',
+      'node.api.php',
+    );
+    $hook_file_data = array_intersect_key($hook_file_data, array_fill_keys($intersect, TRUE));
+    // End.
+    */
 
     // Sort the files into a better order than just random.
     // TODO: allow for some control over this, eg frequently used core,
@@ -94,13 +142,8 @@ class Collect extends Base {
       $file_name = basename($file, '.php');
       $group = $file_data['group'];
 
-      // Should probably use module_hook_info(), but I don't use undocumented code FFS.
-      // Note that the 'module' key is flaky: see module_builder_update_documentation()
-      $module = $file_data['module'];
-      $hook_info = array();
-      if (module_hook($module, 'hook_info')) {
-        $hook_info = module_invoke($module, 'hook_info');
-      }
+      // Get info about hooks from Drupal.
+      $hook_info = $this->getHookInfo($file_data);
 
       // Create an array in the form of:
       // array(
@@ -125,7 +168,7 @@ class Collect extends Base {
         // @todo: clean up!
         $short_name = substr($hook, 5);
         if (isset($hook_info[$short_name])) {
-          print_r($hook_info);
+          //print_r($hook_info);
           $destination = '%module.' . $hook_info[$short_name]['group'] . '.inc';
         }
 
@@ -207,7 +250,7 @@ class Collect extends Base {
    *    - 'names': The long names of the hooks, i.e. 'hook_foo'.
    *    - 'bodies': The function bodies of each hook.
    */
-  function processHookFile($filepath) {
+  protected function processHookFile($filepath) {
     $contents = file_get_contents("$filepath");
 
     // The pattern for extracting function data: capture first line of doc,
@@ -240,6 +283,30 @@ class Collect extends Base {
     );
 
     return $data;
+  }
+
+  /**
+   * Get info about hooks from Drupal.
+   *
+   * This invokes hook_hook_info().
+   *
+   * @param $file_data
+   *  An array of file data for a hook documentation file.
+   *
+   * @return
+   *  The data from the implementation of hook_hook_info() for the module that
+   *  provided the documentation file.
+   */
+  protected function getHookInfo($file_data) {
+    // Note that the 'module' key is flaky: some modules use a different name
+    // for their api.php file.
+    $module = $file_data['module'];
+    $hook_info = array();
+    if (module_hook($module, 'hook_info')) {
+      $hook_info = module_invoke($module, 'hook_info');
+    }
+
+    return $hook_info;
   }
 
 }

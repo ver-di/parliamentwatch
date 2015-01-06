@@ -17,7 +17,10 @@ class Plugin extends PHPFile {
    *
    * A generator's name is used as the key in the $components array.
    *
-   * A Plugin generator should use as its name ... ???
+   * A Plugin generator should use as its name the part of the plugin manager
+   * service name after 'plugin.manager.'
+   * TODO: change this so we can generate more than one plugin of a particular
+   * type at a time!
    */
   public $name;
 
@@ -39,6 +42,13 @@ class Plugin extends PHPFile {
     // Set some default properties.
     $component_data += array();
 
+    $mb_factory = module_builder_get_factory('ModuleBuilderEnvironmentDrush');
+    $mb_task_handler_report_plugins = $mb_factory->getTask('ReportPluginData');
+    $plugin_data = $mb_task_handler_report_plugins->listPluginData();
+    $plugin_data = $plugin_data[$component_name];
+
+    $component_data['plugin_type_data'] = $plugin_data;
+
     parent::__construct($component_name, $component_data);
   }
 
@@ -46,16 +56,28 @@ class Plugin extends PHPFile {
    * Build the code files.
    */
   function collectFiles(&$files) {
-    // TODO: how do we figure out the namespace below the module's?
-    // can it be deduced from the plugin type???
-    $this->path = 'lib/Drupal/%module/';
+    // TODO: can these be set up in the constructor? -- but we don't have access
+    // to the base component property yet.
+    // Create a class name.
+    // TODO: allow this to be set in the component data.
+    $this->component_data['class_name'] = $this->base_component->component_data['module_camel_case_name']
+      . ucfirst($this->name);
 
-    // TODO: token replace should happen once only and centrally!
-    $this->filename = str_replace('%module', $this->base_component->component_data['module_root_name'], $this->name);
+    $this->component_data['namespace'] = implode('\\', array(
+      'Drupal',
+      $this->base_component->component_data['module_root_name'],
+      $this->pathToNamespace($this->component_data['plugin_type_data']['subdir']),
+    ));
 
-    $files[$this->name] = array(
+    // Get the path for this plugin from the plugin type data.
+    $this->path = 'src/' . $this->component_data['plugin_type_data']['subdir'];
+
+    // Create a filename
+    $this->filename = $this->component_data['class_name'] . '.php';
+
+    $files[$this->filename] = array(
       // TODO: revisit
-      'path' => $path,
+      'path' => $this->path,
       'filename' => $this->filename,
       'body' => $this->file_contents(),
       // We join code files up on a single newline. This means that each
@@ -65,15 +87,25 @@ class Plugin extends PHPFile {
   }
 
   /**
+   * Return the summary line for the file docblock.
+   */
+  function file_doc_summary() {
+    return "Contains \\" . $this->component_data['namespace'] . '\\' . $this->component_data['class_name'];
+  }
+
+  /**
    * Return the main body of the file code.
    *
    * TODO: messier and messier arrays within arrays! file_contents() needs
    * rewriting!
    */
   function code_body() {
+    // Splice these together so they're not joined by a blank line.
+    $class_code = $this->class_annotation() . $this->class_body();
+
     return array(
       $this->code_namespace(),
-      $this->class_annotation(),
+      $class_code,
     );
   }
 
@@ -83,7 +115,7 @@ class Plugin extends PHPFile {
   function code_namespace() {
     $code = array();
 
-    $code[] = 'namespace ' . $this->pathToNamespace($this->path) . ';';
+    $code[] = 'namespace ' . $this->component_data['namespace'] . ';';
     $code[] = '';
     // TODO!!! is there any way to figure these out??
     $code[] = 'use yadayada;';
@@ -96,32 +128,68 @@ class Plugin extends PHPFile {
    * Produces the plugin class annotation.
    */
   function class_annotation() {
-    $class_variables = get_class_vars($this->component_data['class']);
-    ddpr($class_variables);
+    $annotation_variables = $this->component_data['plugin_type_data']['plugin_properties'];
+    //ddpr($class_variables);
+
+    // Drupal\Core\Block\Annotation\Block
+
+    $annotation_class_path = explode('\\', $this->component_data['plugin_type_data']['plugin_definition_annotation_name']);
+    $annotation_class = array_pop($annotation_class_path);
 
     $docblock_code = array();
-    // TODO: just the classname, not the namespace.
-    $docblock_code[] = '@' . $this->component_data['class'];
+    $docblock_code[] = '@' . $annotation_class;
 
-    $this->buildAnnotationFromVariable($class_variables, $docblock_code);
+    foreach ($annotation_variables as $annotation_variable => $annotation_variable_info) {
+      if ($annotation_variable_info['type'] == '\Drupal\Core\Annotation\Translation') {
+        // The annotation property value is translated.
+        $docblock_code[] = '  ' . $annotation_variable . ' = @Translation("TODO: replace this with a value"),';
+      }
+      else {
+        // It's a plain string.
+        $docblock_code[] = '  ' . $annotation_variable . ' = "TODO: replace this with a value",';
+      }
+    }
 
     return $this->docBlock($docblock_code);
   }
 
   /**
-   * Helper to recursively build a docblock annotation from a variables array.
+   * Produce the class.
    */
-  function buildAnnotationFromVariable($variables, &$docblock_code, $nesting = 1) {
-    foreach ($variables as $name => $value) {
-      // TODO: aarrrrrrrgh!!!!!!! no terminal commas!!! stoopid doctrine!
-      $docblock_code[] = str_repeat(' ', $nesting * 2) . $name . ' = "value",';
+  function class_body() {
+    $code = array();
 
-      if (is_array($value)) {
-        $this->buildAnnotationFromVariable($value, $docblock_code, $nesting + 1);
-      }
+    foreach ($this->component_data['plugin_type_data']['plugin_interface_methods'] as $interface_method_name => $interface_method_data) {
+      $function_doc = $this->function_doxygen('{@inheritdoc}');
+      $code = array_merge($code, $function_doc);
+
+      // Trim the semicolon from the end of the interface method.
+      $method_declaration = substr($interface_method_data['declaration'], 0, -1);
+
+      $code[] = "$method_declaration {";
+      // Add a comment with the method's first line of docblock, so the user
+      // has something more informative than '@inheritdoc' to go on!
+      $code[] = '  // ' . $interface_method_data['description'];
+      $code[] = '}';
+      $code[] = '';
     }
 
-    return $docblock_code;
+    // Indent all the class code.
+    // TODO: is there a nice way of doing indents?
+    $code = array_map(function ($line) {
+      return '  ' . $line;
+    }, $code);
+
+    // Add the top and bottom.
+    // Urgh, going backwards! Improve DX here!
+    array_unshift($code, '');
+    array_unshift($code, 'class ' . $this->component_data['class_name'] . ' {');
+
+    $code[] = '}';
+    // Newline at end of file. TODO: this should be automatic!
+    $code[] = '';
+
+    return implode("\n", $code);
   }
 
   /**
@@ -131,34 +199,4 @@ class Plugin extends PHPFile {
     return str_replace('/', '\\', $path);
   }
 
-  /**
-   * Helper to format text as docblock.
-   *
-   * @param @lines
-   *  An array of lines. Lines to be normally indented should have no leading
-   *  whitespace.
-   *
-   * @return
-   *  A string of docblock with start and end PHP comment markers.
-   */
-  function docBlock($lines) {
-    $lines = array_merge(
-      array("/**"),
-      array_map(array($this, 'docblockLine'), $lines),
-      array(" */")
-    );
-
-    return implode("\n", $lines);
-  }
-
-  /**
-   * Callback for array_map().
-   *
-   * Formats a single inner line of docblock.
-   */
-  function docblockLine($line) {
-    return " * $line";
-  }
-
 }
-
