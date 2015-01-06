@@ -1,0 +1,87 @@
+<?php
+
+/**
+ * @file pw_feeds_validate.module
+ * TODO: Enter file description here.
+ */
+
+/**
+ * Implements hook_feeds_presave().
+ */
+function pw_feeds_validate_feeds_presave(FeedsSource $source, $entity, $item) {
+  if ($source->id == 'gdata_profiles_importer_v2') {
+
+    // load mappings
+    $mappings = $source->importer->processor->getMappings();
+
+    // fields to check
+    $check = array();
+    $check['field_user_fname'] = array();
+    $check['field_user_lname'] = array();
+    $check['field_user_party'] = array();
+    $check['field_user_constituency'] = array();
+    $check['field_user_list'] = array();
+    $check['field_user_list_position'] = array();
+
+    // fill data from entity and imported item into one array
+    foreach ($check as $key => &$value) {
+
+      // entity data
+      $field = field_get_items('user', $entity, $key);
+      $value['entity_value'] = $field ? $field[0]['value'] : FALSE;
+
+      // data of imported item
+      $value['item_value'] = FALSE;
+      foreach ($mappings as $mapping) {
+        if (array_search($key, $mapping, TRUE)) {
+          $value['item_value'] = $item[$mapping['source']];
+        }
+      }
+    }
+
+    // check if first name and last name should be changed at the same time.
+    // if true, it indicates that something went wrong while editing the source sheets.
+    if ($check['field_user_fname']['entity_value'] != $check['field_user_fname']['item_value']
+      && $check['field_user_lname']['entity_value'] != $check['field_user_lname']['item_value']
+    ) {
+      // skip saving this entity
+      $entity->feeds_item->skip = TRUE;
+      // throw error message
+      drupal_set_message($entity->uuid . ' not imported: Changing firstname and lastname for at the same time is not allowed.', 'error');
+    }
+
+    // check if party exists
+    $term_party = taxonomy_get_term_by_name($check['field_user_party']['item_value'], 'party');
+    if (empty($term_party)) {
+      // skip saving this entity
+      $entity->feeds_item->skip = TRUE;
+      // throw error message
+      drupal_set_message($entity->uuid . ' not imported: Party "' . $check['field_user_party']['item_value'] . '" not exists.', 'error');
+    }
+
+    // check if constituency or list is set
+    if (empty($check['field_user_constituency']['item_value']) && empty($check['field_user_list']['item_value'])) {
+      // skip saving this entity
+      $entity->feeds_item->skip = TRUE;
+      // throw error message
+      drupal_set_message($entity->uuid . ' not imported: Either constituency or list must be set.', 'error');
+    }
+
+    // check if list position is set if politician is on a list
+    if (!empty($check['field_user_list']['item_value']) && empty($check['field_user_list_position']['item_value'])) {
+      // throw error message
+      drupal_set_message($entity->uuid . ': No list position found even though user is on a list.', 'warning');
+    }
+  }
+}
+
+/**
+ * Implements hook_feeds_after_save().
+ */
+function pw_feeds_validate_feeds_after_save(FeedsSource $source, $entity, $item, $entity_id) {
+  if ($source->id == 'gdata_profiles_importer_v2') {
+
+    // throw success message
+    drupal_set_message($entity->uuid . ', ' . l($entity->name, 'user/' . $entity->uid) . ' imported.');
+  }
+}

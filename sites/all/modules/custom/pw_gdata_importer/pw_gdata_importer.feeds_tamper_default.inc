@@ -312,7 +312,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
     'find' => '/^\\s*$/',
-    'replace' => 'k.A.',
+    'replace' => '',
     'limit' => '',
     'real_limit' => -1,
   );
@@ -329,7 +329,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
     'find' => '/^\\s*$/',
-    'replace' => 'k.A.',
+    'replace' => '',
     'limit' => '',
     'real_limit' => -1,
   );
@@ -346,7 +346,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
     'find' => '/^\\s*$/',
-    'replace' => 'k.A.',
+    'replace' => '',
     'limit' => '',
     'real_limit' => -1,
   );
@@ -375,7 +375,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
     'find' => '/^\\s*$/',
-    'replace' => 'k.A.',
+    'replace' => '',
     'limit' => '',
     'real_limit' => -1,
   );
@@ -392,7 +392,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
     'find' => '/^\\s*$/',
-    'replace' => 'k.A.',
+    'replace' => '',
     'limit' => '',
     'real_limit' => -1,
   );
@@ -448,37 +448,13 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
     'find' => '/^\\s*$/',
-    'replace' => 'k.A.',
+    'replace' => '',
     'limit' => '',
     'real_limit' => -1,
   );
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Find replace REGEX';
   $export['gdata_profiles_importer_v2-xpathparser_27-find_replace_regex'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_3-check_uuid_name';
-  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
-  $feeds_tamper->source = 'xpathparser:3';
-  $feeds_tamper->plugin_id = 'check_uuid_name';
-  $feeds_tamper->settings = array();
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'UUID fits to first_name or last_name';
-  $export['gdata_profiles_importer_v2-xpathparser_3-check_uuid_name'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_3-required';
-  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
-  $feeds_tamper->source = 'xpathparser:3';
-  $feeds_tamper->plugin_id = 'required';
-  $feeds_tamper->settings = array();
-  $feeds_tamper->weight = 1;
-  $feeds_tamper->description = 'Pflichtfeld';
-  $export['gdata_profiles_importer_v2-xpathparser_3-required'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
