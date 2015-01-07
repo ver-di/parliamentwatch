@@ -15,6 +15,14 @@ namespace ModuleBuider\Generator;
 class PHPFile extends File {
 
   /**
+   * An array of functions for this file.
+   *
+   * @see assembleContainedComponentsHelper()
+   * @see code_body()
+   */
+  protected $functions = array();
+
+  /**
    * Helper for assembleContainedComponents().
    *
    * Module code files assemble their contained components, which are functions.
@@ -109,17 +117,49 @@ EOT;
    *  The first line of text for the doxygen block.
    */
   function function_doxygen($text) {
-    return <<<EOT
-/**
- * $text
- */
-
-EOT;
+    return array(
+      '/**',
+      " * $text",
+      ' */',
+    );
   }
 
   /**
    * Return a file footer.
    */
   function code_footer() {}
+
+  /**
+   * Helper to format text as docblock.
+   *
+   * @param @lines
+   *  An array of lines, or a single line of text. Lines to be normally indented
+   *  should have no leading whitespace.
+   *
+   * @return
+   *  A string of docblock with start and end PHP comment markers.
+   */
+  function docBlock($lines) {
+    if (!is_array($lines)) {
+      $lines = array($lines);
+    }
+
+    $lines = array_merge(
+      array("/**"),
+      array_map(array($this, 'docblockLine'), $lines),
+      array(" */")
+    );
+
+    return implode("\n", $lines) . "\n";
+  }
+
+  /**
+   * Callback for array_map().
+   *
+   * Formats a single inner line of docblock.
+   */
+  function docblockLine($line) {
+    return " * $line";
+  }
 
 }

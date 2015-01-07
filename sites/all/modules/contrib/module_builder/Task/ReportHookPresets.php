@@ -9,8 +9,6 @@ namespace ModuleBuider\Task;
 
 /**
  * Task handler for reporting on hook presets and templates.
- *
- * (Replaces parts of process.inc.)
  */
 class ReportHookPresets extends Base {
 
@@ -32,18 +30,20 @@ class ReportHookPresets extends Base {
    *
    * @return
    *  The contents of the file, or NULL if the file is not found.
+   *
+   * @throws
+   *  Throws \ModuleBuilderException if the file can't be found.
    */
-  function getTemplate($filename) {
+  protected function loadPresetsFile($filename) {
     $pieces = array('templates', $this->environment->major_version, $filename);
     $path = $this->environment->getPath(implode('/', $pieces));
 
-    if (file_exists($path)) {
-      $template_file = file_get_contents($path);
-      return $template_file;
+    if (!file_exists($path)) {
+      throw new \ModuleBuilderException("Unable to find template at $path.");
     }
-    else {
-      return NULL;
-    }
+
+    $template_file = file_get_contents($path);
+    return $template_file;
   }
 
   /**
@@ -62,7 +62,7 @@ class ReportHookPresets extends Base {
    */
   function getHookPresets() {
     // TODO: read user file preferentially.
-    $presets_template = $this->getTemplate('hook_groups.template');
+    $presets_template = $this->loadPresetsFile('hook_groups.template');
     $hook_presets = json_decode(preg_replace("@//.*@", '', $presets_template), TRUE);
     if (is_null($hook_presets)) {
       // @TODO: do something here to say its gone wrong. Throw Exception?
