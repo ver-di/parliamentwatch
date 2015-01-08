@@ -11,9 +11,6 @@
 function pw_feeds_validate_feeds_presave(FeedsSource $source, $entity, $item) {
   if ($source->id == 'gdata_profiles_importer_v2') {
 
-    // load mappings
-    $mappings = $source->importer->processor->getMappings();
-
     // fields to check
     $check = array();
     $check['field_user_fname'] = array();
@@ -23,21 +20,8 @@ function pw_feeds_validate_feeds_presave(FeedsSource $source, $entity, $item) {
     $check['field_user_list'] = array();
     $check['field_user_list_position'] = array();
 
-    // fill data from entity and imported item into one array
-    foreach ($check as $key => &$value) {
-
-      // entity data
-      $field = field_get_items('user', $entity, $key);
-      $value['entity_value'] = $field ? $field[0]['value'] : FALSE;
-
-      // data of imported item
-      $value['item_value'] = FALSE;
-      foreach ($mappings as $mapping) {
-        if (array_search($key, $mapping, TRUE)) {
-          $value['item_value'] = $item[$mapping['source']];
-        }
-      }
-    }
+    // fill check array
+    pw_feeds_validate_fill_check_array($source, $entity, $item, $check);
 
     // check if first name and last name should be changed at the same time.
     // if true, it indicates that something went wrong while editing the source sheets.
@@ -69,8 +53,44 @@ function pw_feeds_validate_feeds_presave(FeedsSource $source, $entity, $item) {
 
     // check if list position is set if politician is on a list
     if (!empty($check['field_user_list']['item_value']) && empty($check['field_user_list_position']['item_value'])) {
-      // throw error message
+      // throw warning message
       drupal_set_message($entity->uuid . ': No list position found even though user is on a list.', 'warning');
+    }
+  }
+}
+
+/**
+ * Custom function to fill array with data from imported item and entity.
+ */
+function pw_feeds_validate_fill_check_array(FeedsSource $source, &$entity, $item, &$check) {
+
+  // load mappings
+  $mappings = $source->importer->processor->getMappings();
+
+  // fill data from entity and imported item into one array
+  foreach ($check as $key => &$value) {
+
+    // entity data
+    if (gettype($entity->$key) == 'array') {
+      $field = field_get_items('user', $entity, $key);
+      $value['entity_value'] = isset($field[0]['value']) ? $field[0]['value'] : FALSE;
+    }
+    elseif (gettype($entity->$key) == 'string') {
+      $value['entity_value'] = $entity->$key;
+    }
+    else {
+      // skip saving this entity
+      $entity->feeds_item->skip = TRUE;
+      // throw error message
+      drupal_set_message($entity->uuid . ' not imported: field "' . $entity->$key . '" not found.', 'error');
+    }
+
+    // data of imported item
+    $value['item_value'] = FALSE;
+    foreach ($mappings as $mapping) {
+      if (array_search($key, $mapping, TRUE)) {
+        $value['item_value'] = $item[$mapping['source']];
+      }
     }
   }
 }
