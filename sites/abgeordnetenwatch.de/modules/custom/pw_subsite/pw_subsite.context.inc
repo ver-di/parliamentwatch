@@ -138,6 +138,62 @@ function pw_subsite_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'kuratorium';
+  $context->description = '';
+  $context->tag = 'PW page';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'ueber-uns/mehr/kuratorium' => 'ueber-uns/mehr/kuratorium',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'views-Trustees-block_1' => array(
+          'module' => 'views',
+          'delta' => 'Trustees-block_1',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
+        'webform-client-block-6578' => array(
+          'module' => 'webform',
+          'delta' => 'client-block-6578',
+          'region' => 'content',
+          'weight' => '-8',
+        ),
+        'block-17' => array(
+          'module' => 'block',
+          'delta' => '17',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'block-14' => array(
+          'module' => 'block',
+          'delta' => '14',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('PW page');
+  $export['kuratorium'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'press_contact';
   $context->description = '';
   $context->tag = 'press';
@@ -152,11 +208,17 @@ function pw_subsite_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'block-9' => array(
           'module' => 'block',
           'delta' => '9',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),
