@@ -267,6 +267,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Datum';
   /* Sortierkriterien: Inhalt: Anzahl an Kommentaren */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
@@ -551,6 +552,22 @@ function pw_blog_views_default_views() {
     'field_blogpost_blogtags' => 0,
     'comment_count' => 0,
   );
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sortierkriterien: Inhalt: Datum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Datum';
+  $handler->display->display_options['sorts']['created']['granularity'] = 'hour';
+  /* Sortierkriterien: Inhalt: Anzahl an Kommentaren */
+  $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['sorts']['comment_count']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['comment_count']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Anzahl der Kommentare';
   $handler->display->display_options['path'] = 'blog';
 
   /* Display: Tags */
