@@ -1206,6 +1206,8 @@ function pw_globals_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           'field_user_address_administrative_area' => 'administrative area',
+          'field_user_list_tid' => 'list',
+          'field_user_list_position_tid' => 'list position',
         ),
         'allowed_values_function' => '',
       ),
