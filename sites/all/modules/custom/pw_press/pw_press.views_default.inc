@@ -337,9 +337,10 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['fieldset']['label'] = 'Fieldset Body';
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'field_press_release_body',
+    1 => 'view_node',
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
-  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'field-body pushfloat-2';
+  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'field-body pushfloat-2 managed-content';
   /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['field_press_release_body']['id'] = 'field_press_release_body';
   $handler->display->display_options['fields']['field_press_release_body']['table'] = 'field_data_field_press_release_body';
@@ -353,8 +354,6 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['field_press_release_body']['alter']['preserve_tags'] = '<a>';
   $handler->display->display_options['fields']['field_press_release_body']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_press_release_body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_press_release_body']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_press_release_body']['element_wrapper_class'] = 'managed-content';
   $handler->display->display_options['fields']['field_press_release_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_press_release_body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['field_press_release_body']['settings'] = array(
