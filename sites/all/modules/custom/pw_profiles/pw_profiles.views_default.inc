@@ -5095,6 +5095,52 @@ return FALSE;';
   );
   $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
+  /* Filterkriterium: Benutzer (Historische Daten): List (field_user_list) */
+  $handler->display->display_options['filters']['field_user_list_tid']['id'] = 'field_user_list_tid';
+  $handler->display->display_options['filters']['field_user_list_tid']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['filters']['field_user_list_tid']['field'] = 'field_user_list_tid';
+  $handler->display->display_options['filters']['field_user_list_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_user_list_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['operator_id'] = 'field_user_list_tid_op';
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['label'] = 'Liste';
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['operator'] = 'field_user_list_tid_op';
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['identifier'] = 'field_user_list_tid';
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    40118511 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_list_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_user_list_tid']['vocabulary'] = 'election_list';
+  /* Filterkriterium: Benutzer (Historische Daten): List Position (field_user_list_position) */
+  $handler->display->display_options['filters']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['table'] = 'field_revision_field_user_list_position';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_user_list_position_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['operator_id'] = 'field_user_list_position_tid_op';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['label'] = 'Listenplatz';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['operator'] = 'field_user_list_position_tid_op';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['identifier'] = 'field_user_list_position_tid';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    40118511 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_list_position_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['vocabulary'] = 'list_position';
   /* Filterkriterium: Benutzer (Historische Daten): Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_revision_field_user_party';
