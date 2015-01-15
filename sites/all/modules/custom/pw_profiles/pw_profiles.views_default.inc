@@ -5979,7 +5979,7 @@ return FALSE;';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Benachrichtigen Sie uns';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'contact?width=600&height=400';
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'feedback?width=600&height=400';
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
