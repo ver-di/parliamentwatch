@@ -49,6 +49,7 @@ function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
 
   // build request array
   foreach ($expire_paths as $path) {
+    $path = strtolower($path);
     foreach ($servers as $server) {
       foreach ($hosts as $host) {
         if (check_plain($server) && check_plain($host)) {
@@ -92,6 +93,7 @@ function pw_cache_clearcache_wavecdn($expire_paths, $hosts) {
   // build request array
   $expire_urls = array();
   foreach ($expire_paths as $path) {
+    $path = strtolower($path);
     foreach ($hosts as $host) {
       $host = trim($host);
       if (!empty($host) && check_plain($host)) {
