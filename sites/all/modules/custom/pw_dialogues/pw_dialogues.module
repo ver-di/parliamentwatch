@@ -38,7 +38,7 @@ function pw_dialogues_menu() {
  * Implements hook_menu().
  */
 function pw_dialogues_triggered_import() {
-  drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
+  //drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
   $debug_message = array();
   $debug_message['request_uri'] = request_uri();
   $status = FALSE;
@@ -74,6 +74,9 @@ function pw_dialogues_triggered_import() {
       // set status to true
       if (is_numeric($recipient_id) && ($user = user_load($recipient_id)) || $node->status != 1) {
         $status = TRUE;
+        if (function_exists('pw_userarchives_cron')) {
+          pw_userarchives_cron($recipient_id);
+        }
       }
     }
   }
