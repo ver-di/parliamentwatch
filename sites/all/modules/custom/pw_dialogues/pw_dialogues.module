@@ -38,7 +38,7 @@ function pw_dialogues_menu() {
  * Implements hook_menu().
  */
 function pw_dialogues_triggered_import() {
-  drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
+  //drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
   $debug_message = array();
   $debug_message['request_uri'] = request_uri();
   $status = FALSE;
