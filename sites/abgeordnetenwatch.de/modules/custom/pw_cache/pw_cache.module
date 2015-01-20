@@ -29,20 +29,46 @@ function pw_cache_menu() {
 /**
  * Implements hook_expire_cache().
  *
- * purge and refresh urls
  */
 function pw_cache_expire_cache($expire_paths) {
+  foreach ($expire_paths as $expire_path) {
+    $expire_path = strtolower($expire_path);
+    db_insert('pw_cache_expire')
+      ->fields(array(
+        'path' => $expire_path,
+        'created' => time(),
+      ))
+      ->execute();
+  }
+}
+
+/**
+ * Implements hook_cron().
+ *
+ */
+
+function pw_cache_cron() {
 
   // load configs
   $servers = explode("\n", variable_get('pw_cache_servers', ''));
   $hosts = explode("\n", variable_get('pw_cache_hosts', ''));
+
+  // load paths to expire
+  $result = db_query('SELECT * FROM pw_cache_expire WHERE created < ' . (time() - 60));
+
+  $expire_paths = array();
+  foreach ($result as $record) {
+    $expire_paths[] = $record->path;
+
+    // delete from db
+    db_query('DELETE FROM pw_cache_expire WHERE id=' . $record->id);
+  }
 
   // clear nginx cache
   pw_cache_clearcache_nginx($expire_paths, $servers, $hosts);
 
   // clear wavecdn cache
   pw_cache_clearcache_wavecdn($expire_paths, $hosts);
-
 }
 
 function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
@@ -62,9 +88,7 @@ function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
             $cache_url = $url_host['scheme'] . '://' . $url_server['host'] . '/' . $path;
 
             // send host information and X-Refresh header.
-            // blocking=FALSE means the service won't wait for any response.
             $options = array(
-              'blocking' => FALSE,
               'headers' => array(
                 'Host' => $url_host['host'],
                 'X-Refresh' => 1,
@@ -92,6 +116,7 @@ function pw_cache_clearcache_wavecdn($expire_paths, $hosts) {
   // build request array
   $expire_urls = array();
   foreach ($expire_paths as $path) {
+    $path = strtolower($path);
     foreach ($hosts as $host) {
       $host = trim($host);
       if (!empty($host) && check_plain($host)) {
