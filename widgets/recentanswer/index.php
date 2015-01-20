@@ -20,7 +20,7 @@ if (isset($_GET["t"])){
      $parliament = filter_var($_GET["p"],FILTER_SANITIZE_STRING);
  }
 
-$domain = "http://$ahost.abgeordnetenwatch.de";
+$domain = "https://$ahost.abgeordnetenwatch.de";
 
  $url = "$domain/api/parliament/$parliament/answers.json";
  $data = json_decode(file_get_contents($url));
