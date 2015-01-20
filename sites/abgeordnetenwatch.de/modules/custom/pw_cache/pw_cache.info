@@ -1,9 +1,9 @@
 name = PW Cache
-description = Expires Cache
+description = Pushes paths into a separate db table feeding cron for refreshing external caches.
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-20150115
+version = 7.x-1.0-20150120
 project = pw_cache
 dependencies[] = ctools
 dependencies[] = expire
