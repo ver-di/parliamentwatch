@@ -1,5 +1,17 @@
 <?php
- $domain = "http://www.aw.dev";
+ $ahost = "www";
+if (isset($_GET["a"])){
+  $ahost = "affiliate";
+  if ($_GET["a"] != ""){
+    $ahost = filter_var($_GET["a"],FILTER_SANITIZE_STRING).".".$ahost;
+  }
+}
+
+$atarget = "_blank";
+if (isset($_GET["t"])){
+  $atarget = filter_var($_GET["t"],FILTER_SANITIZE_STRING);
+}
+
  if (!isset($_GET["p"])){
     echo "Please specify parliament (as parameter p) e.g. ?p=hamburg.";
     die;
@@ -7,6 +19,9 @@
  else {
      $parliament = filter_var($_GET["p"],FILTER_SANITIZE_STRING);
  }
+
+$domain = "http://$ahost.abgeordnetenwatch.de";
+
  $url = "$domain/api/parliament/$parliament/answers.json";
  $data = json_decode(file_get_contents($url));
  if (sizeof($data->dialogues) == 0){
@@ -70,7 +85,7 @@
         
         <section id="section-content" class="clearfix">
             <? if ($width == 300): ?>
-                <a target="_blank" href="<?echo $domain.$dialogue_link;?>" class="float-left bordered"><img src="<?echo $user_picture;?>" width="75" height="100" border="0" alt="<?echo $fullname;?>" /></a>
+                <a target="<?echo $atarget;?>" href="<?echo $domain.$dialogue_link;?>" class="float-left bordered"><img src="<?echo $user_picture;?>" width="75" height="100" border="0" alt="<?echo $fullname;?>" /></a>
             <? endif; ?>
         <h3><?echo "$fullname, $party_name";?></h3>
         <p>
@@ -78,10 +93,10 @@
         </p>
     	<br clear="all" />
           <? if ($width == 160): ?>
-            <a target="_blank" href="<?echo $domain.$dialogue_link;?>" class="float-left bordered"><img src="<?echo $user_picture;?>" width="75" height="100" border="0" alt="<?echo $fullname;?>" /></a>
+            <a target="<?echo $atarget;?>" href="<?echo $domain.$dialogue_link;?>" class="float-left bordered"><img src="<?echo $user_picture;?>" width="75" height="100" border="0" alt="<?echo $fullname;?>" /></a>
           <? endif; ?>
         <div class="link-question">
-            <a target="_blank" href="<?echo $domain.$dialogue_link;?>">Ganze Frage und Antwort lesen</a>
+            <a target="<?echo $atarget;?>" href="<?echo $domain.$dialogue_link;?>">Ganze Frage und Antwort lesen</a>
         </div>            
         </section>
     </body>
