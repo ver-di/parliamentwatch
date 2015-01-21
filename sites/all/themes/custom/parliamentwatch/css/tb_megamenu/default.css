@@ -151,8 +151,10 @@
 .tb-megamenu .nav li.level-1 > a:hover {
     background: url("../../images/sprite.png") no-repeat scroll center -1641px transparent;
 }
+/*
 .tb-megamenu .nav li.dropdown.active > .dropdown-toggle,
 .tb-megamenu .nav li.dropdown.open.active > .dropdown-toggle,
+*/
 .tb-megamenu .nav > li:hover > a,
 .tb-megamenu .nav > li > a:hover,
 .tb-megamenu .nav > li > a:focus {
