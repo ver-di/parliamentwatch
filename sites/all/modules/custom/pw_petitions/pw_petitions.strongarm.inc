@@ -102,13 +102,16 @@ function pw_petitions_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '7',
+          'weight' => '8',
+        ),
+        'feeds' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(),

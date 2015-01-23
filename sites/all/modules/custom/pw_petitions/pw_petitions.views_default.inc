@@ -175,7 +175,7 @@ if($signings > $required){
 print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Required signings */
+  /* Feld: Inhalt: Required Signings */
   $handler->display->display_options['fields']['field_petition_required']['id'] = 'field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['table'] = 'field_data_field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['field'] = 'field_petition_required';
@@ -619,7 +619,7 @@ if($signings > $required){
 print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Required signings */
+  /* Feld: Inhalt: Required Signings */
   $handler->display->display_options['fields']['field_petition_required']['id'] = 'field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['table'] = 'field_data_field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['field'] = 'field_petition_required';
@@ -891,7 +891,7 @@ if($signings > $required){
 print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Required signings */
+  /* Feld: Inhalt: Required Signings */
   $handler->display->display_options['fields']['field_petition_required']['id'] = 'field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['table'] = 'field_data_field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['field'] = 'field_petition_required';
