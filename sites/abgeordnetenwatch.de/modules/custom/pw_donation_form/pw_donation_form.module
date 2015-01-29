@@ -17,6 +17,13 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
 	// $form['submitted']['fieldset_donationform_paymentinfo']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
 
    // custom validations
+    //$form['submitted']['fieldset_donationform_yourdonation']['donation_frequency']['#default_value']
+
+    //Set default frequency value to monthly if parameter 'recurring' is set.
+    if (isset($_GET["recurring"])){
+      $form['submitted']['fieldset_donationform_yourdonation']['donation_frequency']['#default_value'] = "1";
+    }
+
     $form['#validate'][] = 'pw_donation_form_form_validate';
   }
 }
