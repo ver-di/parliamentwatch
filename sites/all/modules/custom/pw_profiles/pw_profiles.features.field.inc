@@ -2902,7 +2902,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_deputy' => array(
           'label' => 'above',
