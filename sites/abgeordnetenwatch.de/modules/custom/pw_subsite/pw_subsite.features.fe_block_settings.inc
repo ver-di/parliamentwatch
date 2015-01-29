@@ -34,7 +34,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'blank',
-        'weight' => '-80',
+        'weight' => '8',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -104,7 +104,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'blank',
-        'weight' => '-83',
+        'weight' => '6',
       ),
       'pw_seven' => array(
         'region' => 'content',
@@ -349,7 +349,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'blank',
-        'weight' => '-82',
+        'weight' => '7',
       ),
       'pw_seven' => array(
         'region' => 'content',
