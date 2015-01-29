@@ -44,6 +44,7 @@ function pw_parliaments_views_default_views() {
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
+  $handler->display->display_options['relationships']['field_parliament_tid']['required'] = TRUE;
   /* Feld: Taxonomie-Begriff: Begriffsbeschreibung */
   $handler->display->display_options['fields']['description_1']['id'] = 'description_1';
   $handler->display->display_options['fields']['description_1']['table'] = 'taxonomy_term_data';
