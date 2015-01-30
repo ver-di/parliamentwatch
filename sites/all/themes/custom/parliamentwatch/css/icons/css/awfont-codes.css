@@ -1,5 +1,5 @@
 
-.icon-hammer:before { content: '\e800'; } /* '' */
+.icon-bundestag:before { content: '\e800'; } /* '' */
 .icon-quote-right:before { content: '\e801'; } /* '' */
 .icon-quote-left:before { content: '\e802'; } /* '' */
 .icon-answer:before { content: '\e803'; } /* '' */
@@ -75,3 +75,4 @@
 .icon-chart-bar:before { content: '\e849'; } /* '' */
 .icon-group:before { content: '\e84a'; } /* '' */
 .icon-vector-pencil:before { content: '\e84b'; } /* '' */
+.icon-hammer:before { content: '\e84c'; } /* '' */
