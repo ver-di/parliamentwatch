@@ -11,12 +11,12 @@ include_once 'pw_donation_form.features.inc';
  * Implements hook_form_alter()..
  */
 function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'webform_client_form_10508') {
+  if ($form_id == 'webform_client_form_10508') { //Modify the donation form
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdonation']['donation_target']);
 	pw_donation_form_set_empty_value($form['submitted']['fieldset_donationform_yourdata']['personal_prefix']);
 	// $form['submitted']['fieldset_donationform_paymentinfo']['donation_date_start']['#process'][] = 'pw_donation_form_process_date';
 
-   // custom validations
+
     //$form['submitted']['fieldset_donationform_yourdonation']['donation_frequency']['#default_value']
 
     //Set default frequency value to monthly if parameter 'recurring' is set.
@@ -24,6 +24,13 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
       $form['submitted']['fieldset_donationform_yourdonation']['donation_frequency']['#default_value'] = "1";
     }
 
+    //Detect donation project (e.g. petitions)
+    if (isset($_GET["project"]) && is_int((int) $_GET["project"]) && $_GET["project"] > 0){
+      $project_target = filter_input(INPUT_GET, 'project', FILTER_VALIDATE_INT);
+      $form['submitted']['fieldset_donationform_civicrm']['civicrm_contribution_project_target']['#value'] = $project_target;
+    }
+
+    // custom validations
     $form['#validate'][] = 'pw_donation_form_form_validate';
   }
 }
