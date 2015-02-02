@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'awfont';
-  src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.eot');
-  src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.eot') format('embedded-opentype'),
-       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.woff') format('woff'),
-       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.ttf') format('truetype'),
-       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.svg') format('svg');
+  src: url('../font/awfont.eot?19681500');
+  src: url('../font/awfont.eot?19681500#iefix') format('embedded-opentype'),
+       url('../font/awfont.woff?19681500') format('woff'),
+       url('../font/awfont.ttf?19681500') format('truetype'),
+       url('../font/awfont.svg?19681500#awfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'awfont';
-    src: url('../font/awfont.svg?43831490#awfont') format('svg');
+    src: url('../font/awfont.svg?19681500#awfont') format('svg');
   }
 }
 */
@@ -50,7 +50,7 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
-.icon-hammer:before { content: '\e800'; } /* '' */
+.icon-bundestag:before { content: '\e800'; } /* '' */
 .icon-quote-right:before { content: '\e801'; } /* '' */
 .icon-quote-left:before { content: '\e802'; } /* '' */
 .icon-answer:before { content: '\e803'; } /* '' */
@@ -96,7 +96,7 @@
 .icon-info:before { content: '\e82b'; } /* '' */
 .icon-investigation:before { content: '\e82c'; } /* '' */
 .icon-lamp:before { content: '\e82d'; } /* '' */
-/* .icon-link:before { content: '\e82e'; } /* '' */ */
+.icon-link:before { content: '\e82e'; } /* '' */
 .icon-mail:before { content: '\e82f'; } /* '' */
 .icon-members:before { content: '\e830'; } /* '' */
 .icon-more:before { content: '\e831'; } /* '' */
@@ -126,3 +126,4 @@
 .icon-chart-bar:before { content: '\e849'; } /* '' */
 .icon-group:before { content: '\e84a'; } /* '' */
 .icon-vector-pencil:before { content: '\e84b'; } /* '' */
+.icon-hammer:before { content: '\e84c'; } /* '' */
