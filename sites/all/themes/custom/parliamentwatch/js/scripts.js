@@ -285,7 +285,7 @@ jQuery(document).ready(function() {
             goToByScroll("pw_block_user_questionform");
             return false;
         });        
-        jQuery(".responsive-layout-normal .link-question").click(function () {
+        /*jQuery(".responsive-layout-normal .link-question").click(function () {
             $(".responsive-layout-normal .link-question").colorbox({
                 inline:true,
                 href:'#pw_block_user_questionform',
@@ -296,7 +296,7 @@ jQuery(document).ready(function() {
                     $.colorbox.resize();
                 }
             });
-        });
+        });*/
     
     } );
     jQuery(".anchor-to-top a").click(function () {
