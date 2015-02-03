@@ -28,17 +28,18 @@ function pw_petitions_feeds_importer_default() {
       ),
     ),
     'parser' => array(
-      'plugin_key' => 'FeedsExJsonPath',
+      'plugin_key' => 'FeedsXPathParserXML',
       'config' => array(
         'sources' => array(),
-        'context' => array(
-          'value' => '',
+        'rawXML' => array(),
+        'context' => '',
+        'exp' => array(
+          'errors' => FALSE,
+          'tidy' => FALSE,
+          'debug' => array(),
+          'tidy_encoding' => 'UTF8',
         ),
-        'display_errors' => FALSE,
-        'source_encoding' => array(
-          0 => 'auto',
-        ),
-        'debug_mode' => FALSE,
+        'allow_override' => TRUE,
       ),
     ),
     'processor' => array(

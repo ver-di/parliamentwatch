@@ -68,9 +68,9 @@ function pw_petitions_field_group_info() {
       6 => 'field_petition_end_date',
       7 => 'field_petition_external_url',
       8 => 'field_petition_partner',
-      9 => 'field_petition_donation_progress',
-      10 => 'field_petition_donation_amount',
-      11 => 'field_petition_donation_required',
+      9 => 'field_donation_required',
+      10 => 'field_donation_amount',
+      11 => 'field_donation_progress',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
