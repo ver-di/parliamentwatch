@@ -138,7 +138,7 @@ function _pw_get_current_parliament_term() {
 
       // load by node
       case 'node':
-        $node = menu_get_object('taxonomy_term', 2);
+        $node = menu_get_object();
         if (isset($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
           $term_parliament_id = $node->field_parliament[LANGUAGE_NONE][0]['tid'];
           $term_parliament = taxonomy_term_load($term_parliament_id);
