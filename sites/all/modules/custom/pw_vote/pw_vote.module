@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PW Vote feature.
+ */
+
+include_once 'pw_vote.features.inc';
