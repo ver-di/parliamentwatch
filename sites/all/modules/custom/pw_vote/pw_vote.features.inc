@@ -19,8 +19,8 @@ function pw_vote_ctools_plugin_api() {
  */
 function pw_vote_node_info() {
   $items = array(
-    'pw_vote' => array(
-      'name' => t('PW Vote'),
+    'vote' => array(
+      'name' => t('Vote'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

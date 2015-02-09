@@ -10,8 +10,8 @@
 function pw_vote_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-pw_vote-body'.
-  $fields['node-pw_vote-body'] = array(
+  // Exported field: 'node-vote-body'.
+  $fields['node-vote-body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -45,7 +45,7 @@ function pw_vote_field_default_fields() {
       'type' => 'text_with_summary',
     ),
     'field_instance' => array(
-      'bundle' => 'pw_vote',
+      'bundle' => 'vote',
       'default_value' => array(
         0 => array(
           'summary' => '',
@@ -138,8 +138,8 @@ function pw_vote_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_vote-field_parliament'.
-  $fields['node-pw_vote-field_parliament'] = array(
+  // Exported field: 'node-vote-field_parliament'.
+  $fields['node-vote-field_parliament'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
@@ -178,7 +178,7 @@ function pw_vote_field_default_fields() {
       'type' => 'taxonomy_term_reference',
     ),
     'field_instance' => array(
-      'bundle' => 'pw_vote',
+      'bundle' => 'vote',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -217,8 +217,8 @@ function pw_vote_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_vote-field_vote'.
-  $fields['node-pw_vote-field_vote'] = array(
+  // Exported field: 'node-vote-field_vote'.
+  $fields['node-vote-field_vote'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -256,7 +256,7 @@ function pw_vote_field_default_fields() {
       'type' => 'taxonomy_term_reference',
     ),
     'field_instance' => array(
-      'bundle' => 'pw_vote',
+      'bundle' => 'vote',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -295,8 +295,8 @@ function pw_vote_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_vote-field_vote_node'.
-  $fields['node-pw_vote-field_vote_node'] = array(
+  // Exported field: 'node-vote-field_vote_node'.
+  $fields['node-vote-field_vote_node'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -342,7 +342,7 @@ function pw_vote_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'pw_vote',
+      'bundle' => 'vote',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -383,8 +383,8 @@ function pw_vote_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-pw_vote-field_vote_user'.
-  $fields['node-pw_vote-field_vote_user'] = array(
+  // Exported field: 'node-vote-field_vote_user'.
+  $fields['node-vote-field_vote_user'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -428,7 +428,7 @@ function pw_vote_field_default_fields() {
       'type' => 'entityreference',
     ),
     'field_instance' => array(
-      'bundle' => 'pw_vote',
+      'bundle' => 'vote',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',

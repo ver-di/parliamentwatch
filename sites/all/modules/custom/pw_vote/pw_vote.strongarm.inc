@@ -13,56 +13,56 @@ function pw_vote_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_anonymous_pw_vote';
+  $strongarm->name = 'comment_anonymous_vote';
   $strongarm->value = '0';
-  $export['comment_anonymous_pw_vote'] = $strongarm;
+  $export['comment_anonymous_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_mode_pw_vote';
+  $strongarm->name = 'comment_default_mode_vote';
   $strongarm->value = 1;
-  $export['comment_default_mode_pw_vote'] = $strongarm;
+  $export['comment_default_mode_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_default_per_page_pw_vote';
+  $strongarm->name = 'comment_default_per_page_vote';
   $strongarm->value = '50';
-  $export['comment_default_per_page_pw_vote'] = $strongarm;
+  $export['comment_default_per_page_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_form_location_pw_vote';
+  $strongarm->name = 'comment_form_location_vote';
   $strongarm->value = 1;
-  $export['comment_form_location_pw_vote'] = $strongarm;
+  $export['comment_form_location_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_preview_pw_vote';
+  $strongarm->name = 'comment_preview_vote';
   $strongarm->value = '1';
-  $export['comment_preview_pw_vote'] = $strongarm;
+  $export['comment_preview_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'comment_pw_vote';
-  $strongarm->value = '1';
-  $export['comment_pw_vote'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'comment_subject_field_pw_vote';
+  $strongarm->name = 'comment_subject_field_vote';
   $strongarm->value = 1;
-  $export['comment_subject_field_pw_vote'] = $strongarm;
+  $export['comment_subject_field_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__pw_vote';
+  $strongarm->name = 'comment_vote';
+  $strongarm->value = '1';
+  $export['comment_vote'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__vote';
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
@@ -83,51 +83,51 @@ function pw_vote_strongarm() {
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_node__pw_vote'] = $strongarm;
+  $export['field_bundle_settings_node__vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'language_content_type_pw_vote';
+  $strongarm->name = 'language_content_type_vote';
   $strongarm->value = '0';
-  $export['language_content_type_pw_vote'] = $strongarm;
+  $export['language_content_type_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_pw_vote';
+  $strongarm->name = 'menu_options_vote';
   $strongarm->value = array();
-  $export['menu_options_pw_vote'] = $strongarm;
+  $export['menu_options_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_pw_vote';
+  $strongarm->name = 'menu_parent_vote';
   $strongarm->value = 'main-menu:0';
-  $export['menu_parent_pw_vote'] = $strongarm;
+  $export['menu_parent_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_options_pw_vote';
+  $strongarm->name = 'node_options_vote';
   $strongarm->value = array(
     0 => 'status',
   );
-  $export['node_options_pw_vote'] = $strongarm;
+  $export['node_options_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_preview_pw_vote';
+  $strongarm->name = 'node_preview_vote';
   $strongarm->value = '0';
-  $export['node_preview_pw_vote'] = $strongarm;
+  $export['node_preview_vote'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'node_submitted_pw_vote';
+  $strongarm->name = 'node_submitted_vote';
   $strongarm->value = 0;
-  $export['node_submitted_pw_vote'] = $strongarm;
+  $export['node_submitted_vote'] = $strongarm;
 
   return $export;
 }
