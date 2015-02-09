@@ -12,7 +12,7 @@ function pw_vote_taxonomy_default_vocabularies() {
     'votes' => array(
       'name' => 'Votes',
       'machine_name' => 'votes',
-      'description' => '',
+      'description' => 'part of content type vote',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
