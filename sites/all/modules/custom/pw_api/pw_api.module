@@ -449,8 +449,8 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
     $user_picture_alias = $query->leftJoin('field_revision_field_user_picture', 'frfupic', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
     $user_file_alias = $query->leftJoin('file_managed', 'frfufile', "%alias.fid = frfupic.field_user_picture_fid");
     $user_copyright_alias = $query->leftJoin('field_revision_field_image_copyright', 'frfucr', "%alias.revision_id = ur.vid AND %alias.entity_type = 'file' AND %alias.language='und'");
-    $user_questions_get_alias = $query->leftJoin('field_data_field_user_questions_get', 'frfuqg', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
-    $user_answers_give_alias = $query->leftJoin('field_data_field_user_answers_give', 'frfuag', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
+    $user_questions_get_alias = $query->leftJoin('field_revision_field_user_questions_get', 'frfuqg', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
+    $user_answers_give_alias = $query->leftJoin('field_revision_field_user_answers_give', 'frfuag', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'");
 
     $query->addField('ur', 'name');
     $query->addField('ur', 'vid');
