@@ -96,7 +96,7 @@ function pw_petitions_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '25',
+        'weight' => '4',
       ),
     ),
   );
@@ -200,7 +200,7 @@ function pw_petitions_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '26',
+        'weight' => '6',
       ),
     ),
   );
@@ -290,7 +290,7 @@ function pw_petitions_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '3',
+        'weight' => '5',
       ),
     ),
   );
@@ -370,7 +370,7 @@ function pw_petitions_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'number',
-        'weight' => '34',
+        'weight' => '15',
       ),
     ),
   );
@@ -462,7 +462,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'computed',
-        'weight' => '35',
+        'weight' => '16',
       ),
     ),
   );
@@ -542,7 +542,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'number',
-        'weight' => '33',
+        'weight' => '14',
       ),
     ),
   );
@@ -633,7 +633,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '2',
       ),
     ),
   );
@@ -710,7 +710,7 @@ $entity_field[0][\'value\'] = $result;',
       'entity_type' => 'node',
       'field_name' => 'field_petition_content',
       'label' => 'Petition Content',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
@@ -768,7 +768,7 @@ $entity_field[0][\'value\'] = $result;',
           'rows' => '10',
         ),
         'type' => 'text_textarea',
-        'weight' => '5',
+        'weight' => '3',
       ),
     ),
   );
@@ -869,7 +869,7 @@ $entity_field[0][\'value\'] = $result;',
           'year_range' => '-3:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '27',
+        'weight' => '7',
       ),
     ),
   );
@@ -975,7 +975,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'link_field',
-        'weight' => '32',
+        'weight' => '4',
       ),
     ),
   );
@@ -1108,7 +1108,7 @@ $entity_field[0][\'value\'] = $result;',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '31',
+        'weight' => '8',
       ),
     ),
   );
@@ -1200,7 +1200,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'computed',
-        'weight' => '30',
+        'weight' => '7',
       ),
     ),
   );
@@ -1275,12 +1275,14 @@ $entity_field[0][\'value\'] = $result;',
       'entity_type' => 'node',
       'field_name' => 'field_petition_recipient',
       'label' => 'Recipient',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -1289,11 +1291,17 @@ $entity_field[0][\'value\'] = $result;',
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -1318,6 +1326,8 @@ $entity_field[0][\'value\'] = $result;',
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -1398,7 +1408,7 @@ $entity_field[0][\'value\'] = $result;',
       'entity_type' => 'node',
       'field_name' => 'field_petition_required',
       'label' => 'Required Signings',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'max' => '',
         'min' => '',
@@ -1413,7 +1423,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'number',
-        'weight' => '28',
+        'weight' => '5',
       ),
     ),
   );
@@ -1507,7 +1517,7 @@ $entity_field[0][\'value\'] = $result;',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '29',
+        'weight' => '6',
       ),
     ),
   );
@@ -1590,7 +1600,273 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '2',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-pw_petition-field_petition_text_donation'.
+  $fields['node-pw_petition-field_petition_text_donation'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_petition_text_donation',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_with_summary',
+    ),
+    'field_instance' => array(
+      'bundle' => 'pw_petition',
+      'default_value' => array(
+        0 => array(
+          'summary' => '',
+          'value' => '',
+          'format' => 'managed_content',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => 'Text while collecting donations.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 24,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_petition_text_donation',
+      'label' => 'Text Donation',
+      'required' => 0,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 'copyright',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'display_summary' => 0,
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '20',
+          'summary_rows' => 5,
+        ),
+        'type' => 'text_textarea_with_summary',
+        'weight' => '13',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-pw_petition-field_petition_text_parliament'.
+  $fields['node-pw_petition-field_petition_text_parliament'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_petition_text_parliament',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_with_summary',
+    ),
+    'field_instance' => array(
+      'bundle' => 'pw_petition',
+      'default_value' => array(
+        0 => array(
+          'summary' => '',
+          'value' => '',
+          'format' => 'managed_content',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 25,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_petition_text_parliament',
+      'label' => 'Text Sent Parliament',
+      'required' => 0,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 'copyright',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'display_summary' => 0,
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '20',
+          'summary_rows' => 5,
+        ),
+        'type' => 'text_textarea_with_summary',
+        'weight' => '37',
       ),
     ),
   );
@@ -1673,7 +1949,7 @@ $entity_field[0][\'value\'] = $result;',
       'entity_type' => 'node',
       'field_name' => 'field_teaser_image',
       'label' => 'Teaser image',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
@@ -1695,6 +1971,7 @@ $entity_field[0][\'value\'] = $result;',
             'youtube' => 0,
           ),
           'allowed_types' => array(
+            'application' => 0,
             'audio' => 0,
             'document' => 0,
             'image' => 'image',
@@ -1707,10 +1984,11 @@ $entity_field[0][\'value\'] = $result;',
             'upload' => 'upload',
             'youtube' => 0,
           ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '24',
+        'weight' => '3',
       ),
     ),
   );
@@ -1734,6 +2012,9 @@ $entity_field[0][\'value\'] = $result;',
   t('Status');
   t('Tags');
   t('Teaser image');
+  t('Text Donation');
+  t('Text Sent Parliament');
+  t('Text while collecting donations.');
   t('These tags are the same tags that are used in the blog.');
   t('e.g. change.org');
 

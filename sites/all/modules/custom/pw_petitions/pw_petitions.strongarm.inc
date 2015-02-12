@@ -99,19 +99,19 @@ function pw_petitions_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '10',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
+          'weight' => '11',
         ),
         'feeds' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
       ),
       'display' => array(),
