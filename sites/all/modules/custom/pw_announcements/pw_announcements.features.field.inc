@@ -103,7 +103,7 @@ function pw_announcements_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => 0,
+        'weight' => '0',
       ),
     ),
   );
@@ -424,16 +424,16 @@ function pw_announcements_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-announcement-field_user_parliament'.
-  $fields['node-announcement-field_user_parliament'] = array(
+  // Exported field: 'node-announcement-field_parliament'.
+  $fields['node-announcement-field_parliament'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_user_parliament',
+      'field_name' => 'field_parliament',
       'field_permissions' => array(
-        'type' => '2',
+        'type' => '0',
       ),
       'foreign keys' => array(
         'tid' => array(
@@ -458,6 +458,7 @@ function pw_announcements_field_default_fields() {
           ),
         ),
         'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'profile2_private' => FALSE,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -466,14 +467,14 @@ function pw_announcements_field_default_fields() {
       'bundle' => 'announcement',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'The announcement will be displayed on the landingpage of these parliaments only.',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => 31,
+          'weight' => 32,
         ),
         'full' => array(
           'label' => 'above',
@@ -484,7 +485,7 @@ function pw_announcements_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_user_parliament',
+      'field_name' => 'field_parliament',
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
@@ -496,8 +497,8 @@ function pw_announcements_field_default_fields() {
         'settings' => array(
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
-        'type' => 'options_buttons',
-        'weight' => '32',
+        'type' => 'options_select',
+        'weight' => '5',
       ),
     ),
   );
@@ -511,7 +512,6 @@ function pw_announcements_field_default_fields() {
   t('Link the article you want to announce.');
   t('Parliament');
   t('Tab title');
-  t('The announcement will be displayed on the landingpage of these parliaments only.');
   t('This field will be used as link text in the slider.');
 
   return $fields;

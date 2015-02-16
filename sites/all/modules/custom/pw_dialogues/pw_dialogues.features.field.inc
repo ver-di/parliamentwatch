@@ -192,6 +192,9 @@ function pw_dialogues_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_dialogue_documents',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -228,6 +231,7 @@ function pw_dialogues_field_default_fields() {
           'weight' => 11,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'comment',
       'field_name' => 'field_dialogue_documents',
       'label' => 'Documents',
@@ -241,12 +245,16 @@ function pw_dialogues_field_default_fields() {
           'title' => '',
         ),
         'display' => array(
-          'url_cutoff' => '80',
+          'url_cutoff' => '',
         ),
         'enable_tokens' => 1,
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
         'rel_remove' => 'default',
         'title' => 'none',
-        'title_maxlength' => '128',
+        'title_maxlength' => '255',
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
@@ -255,7 +263,9 @@ function pw_dialogues_field_default_fields() {
       'widget' => array(
         'active' => 0,
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'link_field',
         'weight' => '22',
       ),
@@ -1200,6 +1210,9 @@ $display_output = rtrim($display_output);',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_dialogue_documents',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -2174,114 +2187,6 @@ $display_output = rtrim($display_output);',
     ),
   );
 
-  // Exported field: 'node-dialogue-field_pw_parmliament'.
-  $fields['node-dialogue-field_pw_parmliament'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_pw_parmliament',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'parliaments',
-            'parent' => '0',
-          ),
-        ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
-      ),
-      'translatable' => '0',
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'dialogue',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'colorbox' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'default' => array(
-          'label' => 'above',
-          'module' => 'i18n_taxonomy',
-          'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
-          'weight' => '10',
-        ),
-        'full' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '28',
-        ),
-        'print' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'search_index' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-        'search_result' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '41',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_pw_parmliament',
-      'label' => 'Parliament (to_delete)',
-      'required' => 0,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
-        'type' => 'options_select',
-        'weight' => '2',
-      ),
-    ),
-  );
-
   // Exported field: 'taxonomy_term-dialogue_topics-field_parliament'.
   $fields['taxonomy_term-dialogue_topics-field_parliament'] = array(
     'field_config' => array(
@@ -2366,7 +2271,6 @@ $display_output = rtrim($display_output);',
   t('Message ID');
   t('Message type');
   t('Parliament');
-  t('Parliament (to_delete)');
   t('Recipient');
   t('Response time');
   t('Sender Name');

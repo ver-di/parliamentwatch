@@ -23,23 +23,28 @@ function pw_parliaments_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Relationship: Feld: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
+  $handler->display->display_options['relationships']['field_parliament_tid']['required'] = TRUE;
   /* Feld: Taxonomie-Begriff: Begriffsbeschreibung */
   $handler->display->display_options['fields']['description_1']['id'] = 'description_1';
   $handler->display->display_options['fields']['description_1']['table'] = 'taxonomy_term_data';
@@ -47,17 +52,17 @@ function pw_parliaments_views_default_views() {
   $handler->display->display_options['fields']['description_1']['relationship'] = 'field_parliament_tid';
   $handler->display->display_options['fields']['description_1']['label'] = '';
   $handler->display->display_options['fields']['description_1']['element_label_colon'] = FALSE;
-  /* Sort criterion: Inhalt: Sticky */
+  /* Sortierkriterien: Inhalt: am Anfang von Listen */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Inhalt: Datum */
+  /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Inhalt: Has taxonomy term ID (with depth) */
+  /* Kontextfilter: Inhalt: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -77,7 +82,7 @@ function pw_parliaments_views_default_views() {
   );
   $handler->display->display_options['arguments']['term_node_tid_depth']['validate']['fail'] = 'empty';
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
-  /* Filter criterion: Inhalt: Published or admin */
+  /* Filterkriterium: Inhalt: Veröffentlicht oder Administrator */
   $handler->display->display_options['filters']['status_extra']['id'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['table'] = 'node';
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
@@ -92,6 +97,8 @@ function pw_parliaments_views_default_views() {
   $handler = $view->new_display('feed', 'Feed', 'feed');
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = 15;
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';

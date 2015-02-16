@@ -1122,7 +1122,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Ganze Frage lesen';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Link kopieren';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]';
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = TRUE;
@@ -1274,7 +1274,8 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
     3 => 'created_1',
     4 => 'field_dialogue_is_standard_reply',
     5 => 'field_dialogue_comment_body',
-    6 => 'field_dialogue_annotation',
+    6 => 'field_dialogue_documents',
+    7 => 'field_dialogue_annotation',
   );
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'content-inner clearfix';
@@ -1352,6 +1353,21 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['empty'] = '<strong>Bisher ist noch keine Antwort eingetroffen</strong>';
+  /* Feld: Feld: Documents */
+  $handler->display->display_options['fields']['field_dialogue_documents']['id'] = 'field_dialogue_documents';
+  $handler->display->display_options['fields']['field_dialogue_documents']['table'] = 'field_data_field_dialogue_documents';
+  $handler->display->display_options['fields']['field_dialogue_documents']['field'] = 'field_dialogue_documents';
+  $handler->display->display_options['fields']['field_dialogue_documents']['relationship'] = 'cid';
+  $handler->display->display_options['fields']['field_dialogue_documents']['label'] = 'Anhänge';
+  $handler->display->display_options['fields']['field_dialogue_documents']['element_label_type'] = 'h4';
+  $handler->display->display_options['fields']['field_dialogue_documents']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_dialogue_documents']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_dialogue_documents']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_dialogue_documents']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_dialogue_documents']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_dialogue_documents']['type'] = 'link_url';
+  $handler->display->display_options['fields']['field_dialogue_documents']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_dialogue_documents']['multi_type'] = 'ul';
   /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation']['id'] = 'field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['table'] = 'field_data_field_dialogue_annotation';
@@ -1596,7 +1612,8 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
     3 => 'created_1',
     4 => 'field_dialogue_is_standard_reply',
     5 => 'field_dialogue_comment_body',
-    6 => 'field_dialogue_annotation',
+    6 => 'field_dialogue_documents',
+    7 => 'field_dialogue_annotation',
   );
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'content-inner clearfix';
@@ -1674,6 +1691,20 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['empty'] = '<strong>Bisher ist noch keine Antwort eingetroffen</strong>';
+  /* Feld: Feld: Documents */
+  $handler->display->display_options['fields']['field_dialogue_documents']['id'] = 'field_dialogue_documents';
+  $handler->display->display_options['fields']['field_dialogue_documents']['table'] = 'field_data_field_dialogue_documents';
+  $handler->display->display_options['fields']['field_dialogue_documents']['field'] = 'field_dialogue_documents';
+  $handler->display->display_options['fields']['field_dialogue_documents']['relationship'] = 'cid';
+  $handler->display->display_options['fields']['field_dialogue_documents']['label'] = 'Anhänge';
+  $handler->display->display_options['fields']['field_dialogue_documents']['element_label_type'] = 'h4';
+  $handler->display->display_options['fields']['field_dialogue_documents']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_dialogue_documents']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_dialogue_documents']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_dialogue_documents']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_dialogue_documents']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_dialogue_documents']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_dialogue_documents']['multi_type'] = 'ul';
   /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation']['id'] = 'field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['table'] = 'field_data_field_dialogue_annotation';

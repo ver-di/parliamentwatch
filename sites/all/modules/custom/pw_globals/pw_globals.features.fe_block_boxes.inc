@@ -39,6 +39,7 @@ if(!empty($get_vars[\'sid\'])){
 <span class="st_facebook_hcount" displayText="Facebook" st_url="<?=$share_this_url?>"></span>
 <span class="st_plusone_hcount" displayText="Google +1" st_url="<?=$share_this_url?>"></span>
 <span class="st_email_hcount" displayText="E-Mail" st_url="<?=$share_this_url?>"></span>
+<span class="st_whatsapp_large" displayText="WhatsApp" st_url="<?=$share_this_url?>"></span>
 <br /><br />';
 
   $export['sharethis_buttons'] = $fe_block_boxes;

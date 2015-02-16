@@ -14,7 +14,7 @@ function pw_kandidatencheck_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_pw_kc_position';
-  $strongarm->value = 'edit-search-restrict';
+  $strongarm->value = 'edit-submission';
   $export['additional_settings__active_tab_pw_kc_position'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -227,10 +227,13 @@ function pw_kandidatencheck_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'redirect' => array(
-          'weight' => '3',
+          'weight' => '4',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '6',
         ),
       ),
       'display' => array(),

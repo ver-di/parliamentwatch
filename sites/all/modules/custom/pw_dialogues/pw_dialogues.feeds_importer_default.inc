@@ -187,22 +187,17 @@ function pw_dialogues_feeds_importer_default() {
             'unique' => FALSE,
           ),
           15 => array(
-            'source' => 'xpathparser:18',
-            'target' => 'field_pw_parmliament',
-            'unique' => FALSE,
-          ),
-          16 => array(
             'source' => 'xpathparser:19',
             'target' => 'body:summary',
             'unique' => FALSE,
           ),
-          17 => array(
+          16 => array(
             'source' => 'xpathparser:20',
             'target' => 'field_parliament',
             'term_search' => '0',
             'autocreate' => 0,
           ),
-          18 => array(
+          17 => array(
             'source' => 'xpathparser:21',
             'target' => 'field_dialogue_before_election',
             'unique' => FALSE,

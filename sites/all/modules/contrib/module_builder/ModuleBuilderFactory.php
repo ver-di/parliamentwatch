@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains the ModuleBuilderFactory class.
+ * Contains the ModuleBuilderFactory class and other support classes.
  *
  * This file should/could be somewhere else for autoloading, but the core issue
  * regarding PSR-4/X is still ongoing (https://drupal.org/node/1971198) and I'd
@@ -32,9 +32,6 @@ function module_builder_get_factory($environment_class = NULL) {
   static $factory;
 
   if (!isset($factory)) {
-    // Include old procedural include files.
-    include_once(dirname(__FILE__) . '/includes/common.inc');
-
     // Include the environment classes file.
     include_once(dirname(__FILE__) . '/Environment/Environment.php');
 
@@ -110,11 +107,7 @@ class ModuleBuilderFactory {
    *  the requested task, for example, if no hook data has been downloaded.
    */
   function getTask($task_type, $task_options = NULL) {
-    // TODO: this could do with namespacing and autoloading in due course.
-    include_once(dirname(__FILE__) . "/Task/Base.php");
-    include_once(dirname(__FILE__) . "/Task/$task_type.php");
-
-    $task_class = "ModuleBuider\Task\\$task_type";
+    $task_class = $this->getTaskClass($task_type);
 
     // Set the environment handler on the task handler too.
     $task_handler = new $task_class($this->environment, $task_options);
@@ -129,4 +122,49 @@ class ModuleBuilderFactory {
     return $task_handler;
   }
 
+  /**
+   * Helper function to get the desired Task class.
+   *
+   * @param $task_type
+   *  The type of the task. This is used to determine the class.
+   *
+   * @return
+   *  A fully qualified class name for the type and, if it exists, version, e.g.
+   *  'ModuleBuider\Task\Collect7'.
+   */
+  public function getTaskClass($task_type) {
+    $type     = ucfirst($task_type);
+    $version  = $this->environment->major_version;
+
+    // TODO: this could do with namespacing and autoloading in due course.
+    include_once(dirname(__FILE__) . "/Task/Base.php");
+
+    $versioned_filepath = dirname(__FILE__) . "/Task/$task_type$version.php";
+    $common_filepath    = dirname(__FILE__) . "/Task/$task_type.php";
+
+    // Always include the unversioned filepath; it is the parent class for
+    // different versions.
+    include_once($common_filepath);
+
+    if (file_exists($versioned_filepath)) {
+      include_once($versioned_filepath);
+
+      $class    = 'ModuleBuider\\Task\\' . $task_type . $version;
+    }
+    else {
+      $class    = 'ModuleBuider\\Task\\' . $task_type;
+    }
+
+    return $class;
+  }
+
+}
+
+/**
+ * Custom exception class.
+ */
+class ModuleBuilderException extends Exception {
+  // Flag set to TRUE if hook data needs downloading (and the folders are ok).
+  // This allows us to recover gracefully.
+  public $needs_hooks_download;
 }

@@ -19,14 +19,6 @@ class ModuleCodeFile extends PHPFile {
   // TODO: declare properties that are special!
 
   /**
-   * An array of functions for this file.
-   *
-   * @see assembleContainedComponentsHelper()
-   * @see code_body()
-   */
-  protected $functions = array();
-
-  /**
    * Return this component's parent in the component tree.
    */
   function containingComponent() {
@@ -103,7 +95,7 @@ EOT;
     foreach ($this->functions as $function_name => $function_data) {
       $function_code = '';
 
-      $function_code .= $this->function_doxygen($function_data['doxygen_first']);
+      $function_code .= $this->docBlock($function_data['doxygen_first']);
 
       $function_code .= $function_data['declaration'];
       $function_code .= ' {';
@@ -139,6 +131,13 @@ EOT;
       $code[$function_name] = $function_code;
     }
 
+    // If there are no functions, then this is a .module file that's been
+    // requested so the module is correctly formed. It is customary to add a
+    // comment to the file for DX.
+    if (empty($code)) {
+      $code['empty'] = "// Drupal needs this blank file.\n";
+    }
+
     return $code;
 
     // =================================== OLD CODE HERE
@@ -166,7 +165,7 @@ EOT;
       // See if function bodies exist; if so, use function bodies from template
       if (isset($hook['template'])) {
         // Strip out INFO: comments for advanced users
-        if (!variable_get('module_builder_detail', 0)) {
+        if (!module_builder_get_factory()->environment->getSetting('module_builder_detail', 0)) {
           // Used to strip INFO messages out of generated file for advanced users.
           $pattern = '#\s+/\* INFO:(.*?)\*/#ms';
           $hook['template'] = preg_replace($pattern, '', $hook['template']);
@@ -195,7 +194,7 @@ EOT;
    * Return a file footer.
    */
   function code_footer() {
-    $footer = variable_get('module_builder_footer', '');
+    $footer = module_builder_get_factory()->environment->getSetting('module_builder_footer', '');
     return $footer;
   }
 

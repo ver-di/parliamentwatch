@@ -1409,7 +1409,7 @@ else
   $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Feld: Parliament */
+  /* Feld: Benutzer: Parliament */
   $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
@@ -1604,7 +1604,7 @@ else
   $handler->display->display_options['filters']['field_user_party_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filterkriterium: Feld: Parliament (field_user_parliament) */
+  /* Filterkriterium: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2020,7 +2020,7 @@ else
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['label'] = 'Partei';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Feld: Parliament */
+  /* Feld: Benutzer: Parliament */
   $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
@@ -2201,7 +2201,7 @@ else
   $handler->display->display_options['filters']['field_user_party_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filterkriterium: Feld: Parliament (field_user_parliament) */
+  /* Filterkriterium: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2575,7 +2575,7 @@ else
   $handler->display->display_options['fields']['field_user_party']['label'] = 'hidden';
   $handler->display->display_options['fields']['field_user_party']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Feld: Parliament (editable) */
+  /* Feld: Benutzer: Parliament (editable) */
   $handler->display->display_options['fields']['field_user_parliament_editable']['id'] = 'field_user_parliament_editable';
   $handler->display->display_options['fields']['field_user_parliament_editable']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament_editable']['field'] = 'field_user_parliament_editable';
@@ -2584,7 +2584,7 @@ else
   $handler->display->display_options['fields']['field_user_parliament_editable']['widget_type'] = 'options_select';
   $handler->display->display_options['fields']['field_user_parliament_editable']['suppress_label'] = 1;
   $handler->display->display_options['fields']['field_user_parliament_editable']['suppress_description'] = 1;
-  /* Feld: Feld: Parliament */
+  /* Feld: Benutzer: Parliament */
   $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
@@ -2842,7 +2842,7 @@ else
   $handler->display->display_options['filters']['field_user_party_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'textfield';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
-  /* Filterkriterium: Feld: Parliament (field_user_parliament) */
+  /* Filterkriterium: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3611,7 +3611,7 @@ if($record->value == 0){
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '%1 2014';
+  $handler->display->display_options['title'] = '%1';
   $handler->display->display_options['css_class'] = 'pager-full';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -3798,7 +3798,7 @@ if($record->value == 0){
 Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie eine neue Auswahl über einen der angebotenen Filter.
 </div>';
   $handler->display->display_options['empty']['area']['format'] = 'managed_content';
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4027,7 +4027,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
-  /* Feld: Feld (Historische Daten): Parliament */
+  /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -4122,7 +4122,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['sorts']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['sorts']['field_user_lname_value']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['sorts']['field_user_lname_value']['field'] = 'field_user_lname_value';
-  /* Kontextfilter: Feld (Historische Daten): Parliament (field_user_parliament) */
+  /* Kontextfilter: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4734,7 +4734,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
-  /* Feld: Feld (Historische Daten): Parliament */
+  /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -5095,6 +5095,52 @@ return FALSE;';
   );
   $handler->display->display_options['filters']['field_user_constituency_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_constituency_tid']['vocabulary'] = 'constituency';
+  /* Filterkriterium: Benutzer (Historische Daten): List (field_user_list) */
+  $handler->display->display_options['filters']['field_user_list_tid']['id'] = 'field_user_list_tid';
+  $handler->display->display_options['filters']['field_user_list_tid']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['filters']['field_user_list_tid']['field'] = 'field_user_list_tid';
+  $handler->display->display_options['filters']['field_user_list_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_user_list_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['operator_id'] = 'field_user_list_tid_op';
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['label'] = 'Liste';
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['operator'] = 'field_user_list_tid_op';
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['identifier'] = 'field_user_list_tid';
+  $handler->display->display_options['filters']['field_user_list_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    40118511 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_list_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_user_list_tid']['vocabulary'] = 'election_list';
+  /* Filterkriterium: Benutzer (Historische Daten): List Position (field_user_list_position) */
+  $handler->display->display_options['filters']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['table'] = 'field_revision_field_user_list_position';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_user_list_position_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['operator_id'] = 'field_user_list_position_tid_op';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['label'] = 'Listenplatz';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['operator'] = 'field_user_list_position_tid_op';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['identifier'] = 'field_user_list_position_tid';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    40118511 => 0,
+  );
+  $handler->display->display_options['filters']['field_user_list_position_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_user_list_position_tid']['vocabulary'] = 'list_position';
   /* Filterkriterium: Benutzer (Historische Daten): Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_revision_field_user_party';
@@ -5421,7 +5467,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
-  /* Feld: Feld (Historische Daten): Parliament */
+  /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -5933,7 +5979,7 @@ return FALSE;';
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = 'Benachrichtigen Sie uns';
   $handler->display->display_options['fields']['nothing_1']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'contact?width=600&height=400';
+  $handler->display->display_options['fields']['nothing_1']['alter']['path'] = 'feedback?width=600&height=400';
   $handler->display->display_options['fields']['nothing_1']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['nothing_1']['alter']['link_class'] = 'colorbox-node';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;

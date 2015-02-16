@@ -63,7 +63,18 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
     ),
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
-      'settings' => array(),
+      'settings' => array(
+        'skin' => 'kama',
+        'ckeditor_path' => '%m/ckeditor',
+        'ckeditor_local_path' => '',
+        'ckeditor_plugins_path' => '%m/plugins',
+        'ckeditor_plugins_local_path' => '',
+        'ckfinder_path' => '%m/ckfinder',
+        'ckfinder_local_path' => '',
+        'ckeditor_aggregate' => 'f',
+        'toolbar_wizard' => 't',
+        'loadPlugins' => array(),
+      ),
       'input_formats' => array(),
     ),
     'Copyright' => array(
@@ -199,7 +210,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
           ),
           'linkit' => array(
             'name' => 'linkit',
-            'desc' => 'Support for Linkit module',
+            'desc' => 'Support für Linkit-Modul',
             'path' => '%base_path%sites/all/modules/contrib/linkit/editors/ckeditor/',
             'buttons' => array(
               'linkit' => array(
@@ -207,6 +218,18 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
                 'icon' => 'linkit.png',
               ),
             ),
+          ),
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for inserting images from Drupal media module',
+            'path' => '%plugin_dir%media/',
+            'buttons' => array(
+              'Media' => array(
+                'label' => 'Media',
+                'icon' => 'images/icon.gif',
+              ),
+            ),
+            'default' => 'f',
           ),
           'mediaembed' => array(
             'name' => 'mediaembed',

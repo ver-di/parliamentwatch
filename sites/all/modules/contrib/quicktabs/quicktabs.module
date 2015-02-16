@@ -41,6 +41,14 @@ function quicktabs_menu() {
     'type' => MENU_LOCAL_ACTION,
     'file' => 'quicktabs.admin.inc',
   );
+  $items['admin/structure/quicktabs/import'] = array(
+    'title' => 'Import',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('quicktabs_import_form'),
+    'access callback' => 'quicktabs_import_access',
+    'type' => MENU_LOCAL_ACTION,
+    'file' => 'quicktabs.admin.inc',
+  );
   $items['admin/structure/quicktabs/manage/%quicktabs'] = array(
     'title' => 'Edit quicktab',
     'page callback' => 'drupal_get_form',
@@ -86,6 +94,16 @@ function quicktabs_menu() {
   return $items;
 }
 
+/**
+ * Access callback to determine if the user can import Quicktabs.
+ *
+ * Quicktabs imports require an additional access check because they are PHP
+ * code and PHP is more locked down than administer quicktabs.
+ */
+function quicktabs_import_access() {
+  // @todo: watch for http://drupal.org/node/870938, there might be a better solution.
+  return user_access('administer quicktabs') && user_access('use PHP for settings');
+}
 
 /**
  * Implements hook_permission().

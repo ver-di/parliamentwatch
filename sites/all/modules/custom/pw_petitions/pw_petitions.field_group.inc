@@ -94,6 +94,7 @@ function pw_petitions_field_group_info() {
       0 => 'field_petition_content',
       1 => 'field_petition_recipient',
       2 => 'field_pw_parmliament',
+      3 => 'field_parliament',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

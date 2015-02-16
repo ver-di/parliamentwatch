@@ -1,3 +1,34 @@
+jQuery(window) // https://www.drupal.org/node/1478648
+	// fire mmenu adn sticky events for mobile only
+    .load( function() {
+        jQuery('body').bind('responsivelayout', function(e, d) {
+			$(".responsive-layout-mobile #nav").mmenu({
+				classes: "mm-light",         
+				searchfield: {
+					add: true,
+					search: true,
+					placeholder: Drupal.t('Menüpunkt suchen'),
+					noResults: Drupal.t('Keine Ergebnisse gefunden.')
+				},
+				counters: {
+					add: true,
+					update: true
+				}
+			})
+			.on( "opening.mm", function() {
+				var scrollTop = $(window).scrollTop();
+				$('#region-branding').css('top',scrollTop);
+			})
+			.on( "closed.mm", function() {
+				$('#region-branding').css('top',0);
+			});      
+			$("#hamburger").click(function() {
+				$("#nav").trigger("open.mm");
+			});
+			$('.responsive-layout-mobile #region-branding').stick_in_parent({parent:'#page'});
+        });
+});
+
 jQuery(document).ready(function() {
 
 // reset jquery ui slider on profile list AW-1965 https://www.drupal.org/node/1264316
@@ -75,13 +106,6 @@ jQuery(document).ready(function() {
         });
     });
     
-
-/* MAINMENU MOBILE
-http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
-*/
-    
-    $('#nav li:has(ul)').doubleTapToGo();
-
 
 ////// switch view mode in questions and answers
 
@@ -261,7 +285,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
             goToByScroll("pw_block_user_questionform");
             return false;
         });        
-        jQuery(".responsive-layout-normal .link-question").click(function () {
+        /*jQuery(".responsive-layout-normal .link-question").click(function () {
             $(".responsive-layout-normal .link-question").colorbox({
                 inline:true,
                 href:'#pw_block_user_questionform',
@@ -272,7 +296,7 @@ http://osvaldas.info/drop-down-navigation-responsive-and-touch-friendly
                     $.colorbox.resize();
                 }
             });
-        });
+        });*/
     
     } );
     jQuery(".anchor-to-top a").click(function () {

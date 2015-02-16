@@ -16,6 +16,22 @@ include_once 'pw_globals.features.inc';
 // }
 
 /**
+ * Implements hook_menu().
+ *
+ * @return array
+ */
+function pw_globals_menu() {
+  $items = array();
+  $items['admin/config/pw'] = array(
+    'title' => 'Parliamentwatch',
+    'description' => 'Custom settings for Parliamentwatch.',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
  * Custom: Checks if User (Revision) is Premium User
  */
 function _pw_is_premium_user($user) {
@@ -105,15 +121,16 @@ function _pw_get_current_parliament_term() {
         $user_id = $user->uid;
         $vid = arg(3);
         $user = user_revision_load($user_id, $vid);
-        $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
-        $term_parliament = taxonomy_term_load($term_parliament_id);
+        if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
+          $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
+          $term_parliament = taxonomy_term_load($term_parliament_id);
+        }
         break;
 
       // load by user profile
       case 'user':
         $user = menu_get_object('user');
-
-        if (isset($user->field_user_parliament)) {
+        if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
           $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
           $term_parliament = taxonomy_term_load($term_parliament_id);
         }
@@ -122,13 +139,27 @@ function _pw_get_current_parliament_term() {
       // load by node
       case 'node':
         $node = menu_get_object();
-        if (isset($node->field_parliament)) {
+        if (isset($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
           $term_parliament_id = $node->field_parliament[LANGUAGE_NONE][0]['tid'];
           $term_parliament = taxonomy_term_load($term_parliament_id);
         }
         break;
+
+      // load by taxonomy
+      case 'taxonomy':
+        $taxonomy_term = menu_get_object('taxonomy_term', 2);
+        if($taxonomy_term->vocabulary_machine_name == 'parliaments'){
+          $term_parliament = $taxonomy_term;	
+        }
+        elseif (isset($taxonomy_term->field_parliament[LANGUAGE_NONE][0]['tid'])) {
+          $term_parliament_id = $taxonomy_term->field_parliament[LANGUAGE_NONE][0]['tid'];
+          $term_parliament = taxonomy_term_load($term_parliament_id);
+        }
+
+        break;
     }
   }
+
   return $term_parliament;
 }
 
@@ -223,5 +254,5 @@ function _pw_get_parliament_term_tid_by_nid($nid) {
  * Custom: Send Debug Mail.
  */
 function _pw_send_debug_mail($subject, $body){
-  mail('debug@abgeordnetenwatch.de', $subject, $body."\n\n############################\n\n".print_r(debug_backtrace(), 1));
+  mail('debug@abgeordnetenwatch.de', $subject, print_r($body, true)."\n\n############################\n\n".print_r(debug_backtrace(), 1));
 }

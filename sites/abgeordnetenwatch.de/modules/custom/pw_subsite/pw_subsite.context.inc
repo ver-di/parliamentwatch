@@ -76,29 +76,53 @@ function pw_subsite_context_default_contexts() {
           'region' => 'content',
           'weight' => '-8',
         ),
-        'block-14' => array(
-          'module' => 'block',
-          'delta' => '14',
-          'region' => 'sidebar_second',
-          'weight' => '0',
-        ),
-        'block-29' => array(
-          'module' => 'block',
-          'delta' => '29',
-          'region' => 'sidebar_second',
-          'weight' => '1',
-        ),
         'block-32' => array(
           'module' => 'block',
           'delta' => '32',
           'region' => 'sidebar_second',
-          'weight' => '2',
+          'weight' => '76',
+        ),
+        'block-71' => array(
+          'module' => 'block',
+          'delta' => '71',
+          'region' => 'sidebar_second',
+          'weight' => '78',
+        ),
+        'block-14' => array(
+          'module' => 'block',
+          'delta' => '14',
+          'region' => 'sidebar_second',
+          'weight' => '80',
         ),
         'block-31' => array(
           'module' => 'block',
           'delta' => '31',
           'region' => 'sidebar_second',
-          'weight' => '3',
+          'weight' => '96',
+        ),
+        'block-29' => array(
+          'module' => 'block',
+          'delta' => '29',
+          'region' => 'sidebar_second',
+          'weight' => '82',
+        ),
+        'views-pw_donations_recent-recent' => array(
+          'module' => 'views',
+          'delta' => 'pw_donations_recent-recent',
+          'region' => 'sidebar_second',
+          'weight' => '86',
+        ),
+        'views-pw_donation_state-block' => array(
+          'module' => 'views',
+          'delta' => 'pw_donation_state-block',
+          'region' => 'sidebar_second',
+          'weight' => '88',
+        ),
+        'block-47' => array(
+          'module' => 'block',
+          'delta' => '47',
+          'region' => 'sidebar_second',
+          'weight' => '84',
         ),
       ),
     ),
@@ -110,6 +134,62 @@ function pw_subsite_context_default_contexts() {
   t('PW page');
   t('adds blocks');
   $export['donations'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'kuratorium';
+  $context->description = '';
+  $context->tag = 'PW page';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'ueber-uns/mehr/kuratorium' => 'ueber-uns/mehr/kuratorium',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'views-Trustees-block_1' => array(
+          'module' => 'views',
+          'delta' => 'Trustees-block_1',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
+        'webform-client-block-6578' => array(
+          'module' => 'webform',
+          'delta' => 'client-block-6578',
+          'region' => 'content',
+          'weight' => '-8',
+        ),
+        'block-17' => array(
+          'module' => 'block',
+          'delta' => '17',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'block-14' => array(
+          'module' => 'block',
+          'delta' => '14',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('PW page');
+  $export['kuratorium'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -128,11 +208,17 @@ function pw_subsite_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'system-main' => array(
+          'module' => 'system',
+          'delta' => 'main',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'block-9' => array(
           'module' => 'block',
           'delta' => '9',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),

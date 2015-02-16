@@ -33,7 +33,7 @@ function pw_login_once_menu() {
     'type' => MENU_CALLBACK,
   );
 
-  $items['admin/config/people/pw_login_once'] = array(
+  $items['admin/config/pw/pw_login_once'] = array(
     'access arguments' => array('administer site configuration'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('pw_login_once_settings'),
@@ -61,6 +61,18 @@ function pw_login_once_module_implements_alter(&$module_list, $hook){
     unset($module_list['pw_login_once']);
     // Adding the pw_login_once key value as the last member in the list
     $module_list['pw_login_once'] = $temp;
+  }
+}
+
+/**
+ * Implements hook_ctools_plugin_api().
+ */
+function pw_login_once_ctools_plugin_api($owner, $api) {
+  if ($owner == 'services' && $api == 'services') {
+    return array(
+      'version' => 3,
+      'file' => 'pw_login_once.services.inc'
+    );
   }
 }
 

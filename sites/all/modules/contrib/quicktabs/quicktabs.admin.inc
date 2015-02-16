@@ -653,3 +653,66 @@ function _quicktabs_convert_form_to_quicktabs($form_state) {
 
   return $qt;
 }
+
+/**
+ * Page callback to import a quicktabs instance.
+ */
+function quicktabs_import_form($form, &$form_state) {
+  $form['name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Quicktabs machine name'),
+    '#description' => t('Enter the machine name to use for this quicktabs instance if it is different from the source quicktabs instance. Leave blank to use the machine name of the quicktabs instance below.'),
+  );
+  $form['quicktabs'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Paste quicktabs code here'),
+    '#required' => TRUE,
+  );
+  $form['overwrite'] = array(
+    '#title' => t('Allow import to overwrite an existing record.'),
+    '#type' => 'checkbox',
+    '#default_value' => !empty($form_state['item']->export_ui_allow_overwrite) ? $form_state['item']->export_ui_allow_overwrite : FALSE,
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Import'),
+  );
+  return $form;
+}
+
+/**
+ * Validates values on the quicktab import form.
+ */
+function quicktabs_import_form_validate($form, &$form_state) {
+  if (substr($form_state['values']['quicktabs'], 0, 5) == '<?php') {
+    $form_state['values']['quicktabs'] = substr($form_state['values']['quicktabs'], 5);
+  }
+  ob_start();
+  eval($form_state['values']['quicktabs']);
+  ob_end_clean();
+  if (!is_object($quicktabs)) {
+    return form_error($form['quicktabs'], t('Unable to interpret quicktabs code.'));
+  }
+  if (!empty($form_state['values']['name']) && preg_match('/[^a-zA-Z0-9_]/', $form_state['values']['name'])) {
+    form_error($form['name'], t('Quicktabs instance name must be alphanumeric or underscores only.'));
+  }
+
+  if ($form_state['values']['name']) {
+    $quicktabs->machine_name = $form_state['values']['name'];
+  }
+
+  if (quicktabs_load($quicktabs->machine_name) && $form_state['values']['overwrite'] == FALSE) {
+    form_set_error('name', t('Quicktabs instance by that name already exists; please choose a different name, or enable the checkbox to allow the existing quicktab instance to be overwritten.'));
+  }
+  $form_state['quicktabs'] = $quicktabs;
+}
+
+/**
+ * Handles submission of the quicktab import form.
+ */
+function quicktabs_import_form_submit($form, &$form_state) {
+  $qt = $form_state['quicktabs'];
+  quicktabs_save($qt);
+  drupal_set_message(t('Quicktabs %name has been imported.', array('%name' => $qt->title)));
+  $form_state['redirect'] = 'admin/structure/quicktabs/manage/' . $qt->machine_name;
+}
