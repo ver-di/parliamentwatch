@@ -2048,7 +2048,6 @@ label.error {
 	border: 0;
 	padding: 0;
 	color: #fe0002;
-	font-weight: bold;
 	display: block;
 	margin-bottom: 1em;
 }
@@ -2057,19 +2056,13 @@ select.error,
 input.error {
 	border-color: #fe0002 !important;
 }
-form .error:before {	
-    background: none repeat scroll 0 0 #fe0002;
-    border-radius: 10px;
-    color: #fff;
-    content: "!";
-    display: inline-block;
-    font-weight: bold;
-    height: 1.3em;
-    line-height: 1.1em;
-    margin-right: 3px;
+form .error:before {
+    color: #fe0002;
+    font-family: "awfont";
+    content: "\e825";
+    font-size: 1.2em;
+    margin-right: 4px;
     padding-left: 0.1em;
-    text-align: center;
-    width: 1.3em;
 }
 .captcha .compact-form-label {
     display: none !important;
