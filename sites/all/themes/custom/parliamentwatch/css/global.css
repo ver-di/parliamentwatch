@@ -302,6 +302,18 @@ blockquote p:last-child {
 .relative {
     position: relative;
 }
+.absolute {
+	position: absolute;
+}
+.absolute.bottom {
+	bottom: 0;
+}
+.pw-list-item .absolute.bottom {
+	bottom: 15px;
+}
+.absolute.right {
+	right: 0;
+}
 
 .push-bottom-xxs {
     margin-bottom: 2px !important;
@@ -317,6 +329,10 @@ blockquote p:last-child {
 }
 .push-bottom-l {
     margin-bottom: 28px !important;
+}
+.push-bottom-xl {
+    margin-bottom: 55px !important;
+    margin-bottom: 5.5rem !important;
 }
 .push-left-xl {
     margin-left: 105px !important;
@@ -388,6 +404,50 @@ blockquote p:last-child {
     max-width: 140px;
 }
 
+/* icons */
+
+
+.aw-icon-1x {
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+.aw-icon-2x {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+.aw-icon-2x {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+.aw-icon-3x {
+	font-size: 32px;
+	font-size: 3.2rem;
+}
+.aw-icon-4x {
+	font-size: 40px;
+	font-size: 4rem;
+}
+.aw-icon-circle:before {
+	display: block;
+	text-align: center;
+	text-indent: 0;
+	font-size: 1.14em;
+	width: 2em;
+	height: 2em;
+	border-radius: 1em;
+	line-height: 2em;
+}
+.aw-brand {
+	color: #f63;
+}
+.aw-icon-circle-brand:before {
+	color: #fff;
+	background: #f63;
+}
+.aw-icon-circle-disabled:before {
+	color: #fff;
+	background: #ccc;
+}
 
 /* text/links */
 
@@ -2002,6 +2062,17 @@ html.js fieldset.collapsed {
     background: linear-gradient(to right,  #78b70c 0%,#a8e63c 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b70c', endColorstr='#a8e63c',GradientType=1 ); /* IE6-8 */
     display: block;
+}
+
+ul.progress-icons {
+	display: inline;
+}
+ul.progress-icons [class^="icon-"]:before, 
+ul.progress-icons [class*=" icon-"]:before {
+	margin: 0 8px 0 0;
+}
+ul.progress-icons li {
+	float: left;
 }
 
 /* petitions */
