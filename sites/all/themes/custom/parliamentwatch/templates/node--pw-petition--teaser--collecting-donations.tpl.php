@@ -1,4 +1,5 @@
 <hr>
+COLLECTIONGDONATIONS
 <h2>Titel: <? echo "<a href=\"".$node_url."\">".$title."</a>"; ?></h2>
 <div>
   <ul>
