@@ -20,6 +20,9 @@ $themed_image = theme_image_style(array(
   'style_name' => 'pw_landscape_l', //Configure style here!
   'path' => $field_teaser_image['und'][0]['uri']
 ));
+if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($field_teaser_image['und'][0]['field_image_copyright']['und'][0]['value'] )){
+  $field_image_copyright = true;
+}
 ?>
 <?php
        print render($title_suffix); 
@@ -41,11 +44,11 @@ $themed_image = theme_image_style(array(
     <a href="<? echo $node_url; ?>" title="zur Petition">
     	<? echo $themed_image; ?>
     </a>
-    <?php //if ($field_image_copyright): ?>    
+    <?php if ($field_image_copyright): ?>
     <div class="copyright">
 		<? echo $field_teaser_image['und'][0]['field_image_copyright']['und'][0]['value'] ?>
 	</div>
-	<?php //endif; ?>
+	<?php endif; ?>
 </div>
 <div class="pw-petition-list-contents">
     <div class="pw-petition-progress-wrapper-m push-bottom-s">
