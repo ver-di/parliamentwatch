@@ -17,7 +17,7 @@ switch ($field_petition_partner['und'][0]['value']) {
     break;
 }
 $themed_image = theme_image_style(array(
-  'style_name' => 'pw_landscape_l__normal', //Configure style here!
+  'style_name' => 'pw_landscape_l', //Configure style here!
   'path' => $field_teaser_image['und'][0]['uri']
 ));
 ?>
@@ -34,29 +34,27 @@ $themed_image = theme_image_style(array(
 	</ul>
 	<? echo "<a href=\"".$node_url."\">".$title."</a>"; ?>
 </h2>
-<div>	
-	
-    <div class="float-left push-right-m img-outline">
-	    <a href="<? echo $node_url; ?>" title="zur Petition">
-	    	<? echo $themed_image; ?>
-	    </a>
-	    <?php //if ($field_image_copyright): ?>    
-	    <div class="copyright">
-			<? echo $field_teaser_image['und'][0]['field_image_copyright']['und'][0]['value'] ?>
-		</div>
-		<?php //endif; ?>
-    </div>
-    <div class="float-left">
-	    <div class="pw-progress-wrapper push-bottom-s">
-	    	<span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-progress">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
-	    </div>
-	    <div class="medium">Benötigte Unterschriften: <? echo $field_petition_required['und'][0]['value']; ?></div>
-	    <div class="small light">Erhaltene Unterschriften: <? echo $field_petition_signings['und'][0]['value']; ?></div>
-	    <?php if ($partner_html): ?>
-	    	<div class="absolute bottom small light">
-	    		<p>Diese Petition läuft auf:</p>
-	    		<? echo $partner_html; ?>
-	    	</div>
-	    <?php endif; ?>
-	    <div class="absolute bottom right"><a href="<? echo $signing_url; ?>" class="button">Hier unterschreiben</a></div>
+<div class="petition-list-image-wrapper img-outline">
+    <a href="<? echo $node_url; ?>" title="zur Petition">
+    	<? echo $themed_image; ?>
+    </a>
+    <?php //if ($field_image_copyright): ?>    
+    <div class="copyright">
+		<? echo $field_teaser_image['und'][0]['field_image_copyright']['und'][0]['value'] ?>
 	</div>
+	<?php //endif; ?>
+</div>
+<div class="pw-petition-list-contents">
+    <div class="pw-petition-progress-wrapper-m push-bottom-s">
+    	<span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-m">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+    </div>
+    <div class="medium">Benötigte Unterschriften: <? echo $field_petition_required['und'][0]['value']; ?></div>
+    <div class="small light">Erhaltene Unterschriften: <? echo $field_petition_signings['und'][0]['value']; ?></div>
+    <?php if ($partner_html): ?>
+    	<div class="petition-list-partner-wrapper small light">
+    		<p>Diese Petition läuft auf:</p>
+    		<? echo $partner_html; ?>
+    	</div>
+    <?php endif; ?>
+    <div class="petition-list-sign-wrapper"><a href="<? echo $signing_url; ?>" class="button">Unterschreiben</a></div>
+</div>
