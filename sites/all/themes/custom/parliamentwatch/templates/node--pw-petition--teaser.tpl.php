@@ -21,6 +21,9 @@ $themed_image = theme_image_style(array(
   'path' => $field_teaser_image['und'][0]['uri']
 ));
 ?>
+<?php
+       print render($title_suffix); 
+?>
 <?php if ($sharethis): ?>
 	<div class="sharethis-wrapper">
 		<? echo $sharethis; ?>
