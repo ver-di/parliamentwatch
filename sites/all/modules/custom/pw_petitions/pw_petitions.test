@@ -28,7 +28,7 @@ class PwPetitionTestCase extends DrupalWebTestCase{
     $this->assertNoText('Petitionstest');
 
     // Logic
-    $this->drupalPost('v', array(
+    $this->drupalPost('node/add/pw-petition', array(
       'title' => $this->randomName(32),
       'name' => $this->user,
       'body' => $this->randomName(256)." Petitionstest",
