@@ -3,7 +3,7 @@ switch ($field_petition_partner['und'][0]['value']) {
   case "":
     $partner_html = "";
     $signing_url = $node_url;
-    $sharethis = '<img src="https://ws.sharethis.com/images/sharethis_counter.png">';
+    $sharethis = "<span st_url=\"https://www.abgeordnetenwatch.de$node_url\" st_title=\"$title\" st_summary=\"Petition $title auf abgeordnetenwatch.de\" class=\"st_sharethis_hcount\" displayText=\"sharethis\"></span>";
     break;
   case "change.org":
     $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-change.png" width="119" height="23" alt="Change.org">';
