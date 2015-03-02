@@ -431,7 +431,7 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
 {
     $query = db_select('user_revision', 'ur');
     $users_alias = $query->join('users', 'u', '%alias.uid = ur.uid');
-    $roles_alias = $query->join('users_roles', 'uro', '%alias.uid = ur.uid');
+    //$roles_alias = $query->join('users_roles', 'uro', '%alias.uid = ur.uid');
     $users_cache_alias = $query->join('user_archive_cache', 'uac', '%alias.vid = ur.vid');
     $user_gender_alias = $query->leftJoin('field_revision_field_user_gender', 'frfug', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'"); // choose only one language, otherwise this user will be displayed more than once
     $user_fname_alias = $query->leftJoin('field_revision_field_user_fname', 'frfuf', "%alias.revision_id = ur.vid AND %alias.entity_type = 'user' AND %alias.language='und'"); // dito
@@ -476,30 +476,31 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
 
     $feedname = current(explode(".", basename($_SERVER['REQUEST_URI'])));
 
+    // add filter by role
     switch ($feedname) {
         case 'candidates':
-            $rid = 185431326;
+            $user_roles = 'candidate';
             break;
         case 'deputies':
-            $rid = 140336230;
+            $user_roles = 'deputy';
             break;
-        case 'politicians':
-            $rid = 181527986;
-            break;
-        case 'profiles':
-            $rid = 181527986;
+        default:
+            $user_roles = array('candidate', 'deputy');
             break;
     }
+    $query->where("$users_cache_alias.user_role IN (:user_roles)", array(':user_roles' => $user_roles));
 
-    $query->where("$roles_alias.rid = :rid", array(':rid' => $rid))
-        ->orderBy("$users_alias.uuid", 'ASC')
-        ->orderBy('ur.vid', 'DESC');
+    $query->orderBy("$users_alias.uuid", 'ASC');
+    $query->orderBy('ur.vid', 'DESC');
 
+    // add filter by parliament
     if ($parliament_filter == 'parliament') {
         $query->where("$term_parliament_alias.name = :p_name", array(':p_name' => $parliament_argument));
-    } elseif ($parliament_filter == 'parliament-by-uuid') {
+    } 
+    elseif ($parliament_filter == 'parliament-by-uuid') {
         $query->where("$term_parliament_alias.uuid = :p_uuid", array(':p_uuid' => $parliament_argument));
-    } else {
+    } 
+    else {
         return MENU_NOT_FOUND;
     }
 
@@ -521,6 +522,9 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
             }
             break;
     }
+
+    // add group by uid
+    $query->groupBy('u.uid');
 
     $profiles = array();
 
