@@ -52,7 +52,12 @@ if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($fi
 </div>
 <div class="pw-petition-list-contents">
     <div class="pw-petition-progress-wrapper-m push-bottom-s">
-    	<span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-m">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+		<div class="pw-petition-progress-signings">
+	    	<span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-m">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+	    </div>
+	    <div class="pw-petition-progress-donations">
+	    	<span style="width: 0;" class="pw-petition-progress-m"></span>
+	    </div>
     </div>
     <div class="medium">Benötigte Unterschriften: <? echo $field_petition_required['und'][0]['value']; ?></div>
     <div class="small light">Erhaltene Unterschriften: <? echo $field_petition_signings['und'][0]['value']; ?></div>

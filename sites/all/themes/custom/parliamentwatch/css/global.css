@@ -2041,8 +2041,7 @@ html.js fieldset.collapsed {
 }
 .pw-progress-wrapper,
 .pw-progress-wrapper-l,
-.pw-petition-progress-wrapper,
-.pw-petition-progress-wrapper-m {
+.pw-petition-progress-wrapper {
     margin-bottom: 2px; 
     border: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
@@ -2114,6 +2113,25 @@ ul.progress-icons li {
     background: linear-gradient(to right,  #78b70c 0%,#a8e63c 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b70c', endColorstr='#a8e63c',GradientType=1 ); /* IE6-8 */
     display: block;
+}
+.pw-petition-progress-signings,
+.pw-petition-progress-donations {
+	float: left;
+    margin-bottom: 2px; 
+    border: 1px solid #d3d3d3;
+    -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
+    -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
+    box-shadow: inset 0px 0px 2px 2px #ececec;
+    text-indent: -5000em;
+    background: #fff;
+    box-sizing: border-box;
+}
+.pw-petition-progress-signings {
+	width: 80%;
+	border-right: 0;
+}
+.pw-petition-progress-donations {
+	width: 20%;
 }
 
 @media (max-width: 479px) {
