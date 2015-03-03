@@ -431,11 +431,11 @@ blockquote p:last-child {
 	display: block;
 	text-align: center;
 	text-indent: 0;
-	font-size: 1.14em;
-	width: 2em;
-	height: 2em;
-	border-radius: 1em;
-	line-height: 2em;
+	font-size: 1.18em;
+	width: 1.98em;
+	height: 1.98em;
+	border-radius: 0.99em;
+	line-height: 1.98em;
 }
 .aw-brand {
 	color: #f63;
@@ -2066,6 +2066,7 @@ html.js fieldset.collapsed {
 
 ul.progress-icons {
 	float: left;
+	margin-top: -.19em;
 }
 ul.progress-icons [class^="icon-"]:before, 
 ul.progress-icons [class*=" icon-"]:before {
@@ -2132,6 +2133,18 @@ ul.progress-icons li {
 }
 .pw-petition-progress-donations {
 	width: 20%;
+}
+#petition-block-description li {
+	width: 33.3%;
+	white-space: nowrap;
+	padding: 0 35px;
+	box-sizing: border-box;
+	position: relative;
+}
+#petition-block-description li .aw-brand span {
+	position: absolute;
+	top: 7px;
+	left: 25%;
 }
 
 @media (max-width: 479px) {
@@ -2369,6 +2382,7 @@ input[type="button"],
 }
 button:hover,
 .button:hover,
+a.button:hover,
 button.big:hover,
 .button.big:hover,
 input[type="submit"]:hover,

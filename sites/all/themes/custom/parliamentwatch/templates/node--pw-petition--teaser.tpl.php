@@ -32,14 +32,14 @@ if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($fi
 		<? echo $sharethis; ?>
 	</div>
 <?php endif; ?>
-<h2 class="push-bottom-l">
+<h3 class="push-bottom-l">
 	<ul class="progress-icons">
 		<li><i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-brand"><span class="element-invisible"><?php print t('Unterschriften werden gesammelt');?></span></i></li>
 		<li><i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition in der Meinungsumfrage');?></span></i></li>
 		<li><i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition im Parlament');?></span></i></li>
 	</ul>
 	<? echo "<a href=\"".$node_url."\">".$title."</a>"; ?>
-</h2>
+</h3>
 <div class="petition-list-image-wrapper img-outline">
     <a href="<? echo $node_url; ?>" title="zur Petition">
     	<? echo $themed_image; ?>
@@ -52,10 +52,10 @@ if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($fi
 </div>
 <div class="pw-petition-list-contents">
     <div class="pw-petition-progress-wrapper-m push-bottom-s">
-		<div class="pw-petition-progress-signings">
+		<div class="pw-petition-progress-signings" title="Unterschriften">
 	    	<span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-m">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
 	    </div>
-	    <div class="pw-petition-progress-donations">
+	    <div class="pw-petition-progress-donations" title="Spenden">
 	    	<span style="width: 0;" class="pw-petition-progress-m"></span>
 	    </div>
     </div>
@@ -63,7 +63,7 @@ if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($fi
     <div class="small light">Erhaltene Unterschriften: <? echo number_format($field_petition_signings['und'][0]['value'],0,',','.'); ?></div>
     <?php if ($partner_html): ?>
     	<div class="petition-list-partner-wrapper small light">
-    		<p>Diese Petition läuft auf:</p>
+    		<p class="push-bottom-xs">Diese Petition läuft auf:</p>
     		<? echo $partner_html; ?>
     	</div>
     <?php endif; ?>
