@@ -315,7 +315,7 @@ function changeImage(imageSRC2){
     document.getElementById('map').src=imageSRC2;
 }
 
-////// call checkurl for sharethis node update cue
+//////  call checkurl for sharethis node update cue
 
 function callCheckURL(st_url) {
     var st_url = st_url;
