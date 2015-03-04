@@ -7,7 +7,7 @@ switch ($field_petition_partner['und'][0]['value']) {
     break;
   case "change.org":
     $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-change.png" width="119" height="23" alt="Change.org">';
-    $signing_url = $field_petition_external_url['und'][0]['url'];
+    $signing_url = "https://secured.abgeordnetenwatch.de/tools/newsletter.php?width=800&height=350&iframe=true&continue=".urlencode($field_petition_external_url['und'][0]['url']);
     $node_url = $signing_url;
     break;
   case "openpetition":
@@ -24,6 +24,7 @@ if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($fi
   $field_image_copyright = true;
 }
 ?>
+<style>#cboxPrevious, #cboxNext, #cboxCurrent{visibility: hidden;}</style>
 <?php
        print render($title_suffix); 
 ?>
@@ -38,10 +39,10 @@ if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($fi
 		<li><i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition in der Meinungsumfrage');?></span></i></li>
 		<li><i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition im Parlament');?></span></i></li>
 	</ul>
-	<? echo "<a href=\"".$node_url."\">".$title."</a>"; ?>
+    <a href="<?=$node_url?>" class="<?=($partner_html)?"colorbox-load":""?>"><?=$title?></a>
 </h3>
 <div class="petition-list-image-wrapper img-outline">
-    <a href="<? echo $node_url; ?>" title="zur Petition">
+    <a href="<? echo $node_url; ?>" title="zur Petition" class="<?=($partner_html)?"colorbox-load":""?>">
     	<? echo $themed_image; ?>
     </a>
     <?php if ($field_image_copyright): ?>
@@ -67,5 +68,5 @@ if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($fi
     		<? echo $partner_html; ?>
     	</div>
     <?php endif; ?>
-    <div class="petition-list-sign-wrapper"><a href="<? echo $signing_url; ?>" class="button">Unterschreiben</a></div>
+    <div class="petition-list-sign-wrapper"><a href="<? echo $signing_url; ?>" class="<?=($partner_html)?"colorbox-load ":""?>button">Unterschreiben</a></div>
 </div>

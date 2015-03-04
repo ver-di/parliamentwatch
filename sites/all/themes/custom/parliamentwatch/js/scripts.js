@@ -151,6 +151,7 @@ jQuery(document).ready(function() {
     jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']) img,#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"']) img").parent('a').removeClass('external');
     jQuery("#zone-content h3 a[href*='http://']:not([href*='"+sndleveldomain+"']),#zone-content h3 a[href*='https://']:not([href*='"+sndleveldomain+"'])").removeClass('external');
     jQuery('.view-slider a.external').removeClass('external');
+    jQuery("h3 a").removeClass('external');
 
 ////// intelligent on:blur
 
@@ -314,7 +315,7 @@ function changeImage(imageSRC2){
     document.getElementById('map').src=imageSRC2;
 }
 
-////// call checkurl for sharethis node update cue
+//////  call checkurl for sharethis node update cue
 
 function callCheckURL(st_url) {
     var st_url = st_url;
