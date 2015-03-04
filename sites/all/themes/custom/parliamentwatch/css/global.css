@@ -2151,6 +2151,9 @@ ul.progress-icons li {
 	.petition-list-image-wrapper img {
 		width: 100%;
 	}
+	.pw-petition-list-contents {
+		padding-bottom: 4em;
+	}
 }
 @media (min-width: 480px) {
 	.petition-list-image-wrapper {
