@@ -1357,7 +1357,11 @@ $entity_field[0][\'value\'] = $result;',
     ),
     'field_instance' => array(
       'bundle' => 'pw_petition',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '100000',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
