@@ -11,7 +11,7 @@ include_once 'pw_petitions.features.inc';
  */
 function pw_petitions_menu() {
   $items = array();
-  
+
   $items['petitions/thanks-for-signing'] = array(
     'title' => 'Thanks for your signing!',
     'access arguments' => array('access content'),
@@ -21,14 +21,14 @@ function pw_petitions_menu() {
   return $items;
 }
 
-function redirect_to_petition(){
+function redirect_to_petition() {
   drupal_set_message("Vielen Dank, dass Sie die Petition unterzeichnet haben! Bitte teilen Sie die Petition in Ihren Netzwerken und unter Ihren Freunden!");
   drupal_goto('petitions');
 }
 
 /**
  * add additional handlers for petition webform
- *  
+ *
  */
 function pw_petitions_form_alter(&$form, &$form_state, $form_id) {
 
@@ -41,12 +41,13 @@ function pw_petitions_form_alter(&$form, &$form_state, $form_id) {
 
 /**
  * Validation for petition form
- * 
+ *
  * validates if user has never submitted this form under
  * this node path for this petition.
- *  
+ *
  */
-function pw_petitions_form_validate($form_id, $form_values){
+
+function pw_petitions_form_validate($form_id, $form_values) {
 
   // check if email was already used to sign this petition
   $webform_nid = $form_values['values']['details']['nid'];
@@ -57,23 +58,48 @@ function pw_petitions_form_validate($form_id, $form_values){
           INNER JOIN webform_submitted_data wf_data_email ON wf.sid = wf_data_email.sid
           INNER JOIN webform_submitted_data wf_data_nodepath ON wf.sid = wf_data_nodepath.sid
           WHERE wf.nid = :nid AND wf_data_email.data = :email AND wf_data_nodepath.data = :nodepath";
-  $submissions = db_query($sql, array(':nid' => $webform_nid, ':email' => $e_mail_value, ':nodepath' => $node_path_value))->fetchCol();
-  if(sizeof($submissions) > 0){
+  $submissions = db_query($sql, array(
+    ':nid' => $webform_nid,
+    ':email' => $e_mail_value,
+    ':nodepath' => $node_path_value
+  ))->fetchCol();
+  if (sizeof($submissions) > 0) {
     form_set_error("e_mail", t('You already have signed this petition.'));
   }
 }
 
 /**
  * Count signings
- * 
+ *
  * Set signings to +1 of form is submitted
- *  
+ *
  */
-function pw_petitions_form_submit(&$form, &$form_state){
+function pw_petitions_form_submit(&$form, &$form_state) {
   // count +1 to signings
   $node_path_value = $form_values['values']['submitted']['node_path'];
-  if($node = menu_get_object('node', 1, $node_path_value)){
+  if ($node = menu_get_object('node', 1, $node_path_value)) {
     $node->field_petition_signings['und'][0]['value']++;
     node_save($node);
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ *
+ * Selects related template.
+ *
+ */
+function pw_petitions_preprocess_node(&$variables) {
+  if ($variables['type'] == 'pw_petition') {
+    $node = $variables['node'];
+    $items = field_get_items('node', $node, 'field_petition_status');
+
+    // @TODO: items hat viele values
+    if (!empty($items)) {
+      $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'] . '__' . $items[0]['value'];
+    }
+    else {
+      $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
+    }
   }
 }

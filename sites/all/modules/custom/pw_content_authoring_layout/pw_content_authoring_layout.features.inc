@@ -60,6 +60,29 @@ function pw_content_authoring_layout_image_default_styles() {
     'label' => 'pw_grid_8_normal',
   );
 
+  // Exported image style: pw_landscape_l.
+  $styles['pw_landscape_l'] = array(
+    'name' => 'pw_landscape_l',
+    'label' => 'pw_landscape_l',
+    'effects' => array(
+      1 => array(
+        'label' => 'Skalieren und zuschneiden',
+        'help' => 'Skalieren und zuschneiden wird das Seitenverhältnis des ursprünglichen Bildes erhalten, und dann die überstehenden Ränder entfernen. Dies ist besonders nützlich für die Erstellung von perfekt quadratischen Vorschaubildern ohne Verzerrung des Bildes.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => '280',
+          'height' => '187',
+        ),
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Exported image style: pw_landscape_l__mobile.
   $styles['pw_landscape_l__mobile'] = array(
     'name' => 'pw_landscape_l__mobile',

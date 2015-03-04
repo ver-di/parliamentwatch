@@ -149,6 +149,7 @@ jQuery(document).ready(function() {
         .addClass("external");
     // remove class .external from images and slider
     jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']) img,#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"']) img").parent('a').removeClass('external');
+    jQuery("#zone-content h3 a[href*='http://']:not([href*='"+sndleveldomain+"']),#zone-content h3 a[href*='https://']:not([href*='"+sndleveldomain+"'])").removeClass('external');
     jQuery('.view-slider a.external').removeClass('external');
 
 ////// intelligent on:blur

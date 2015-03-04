@@ -302,6 +302,18 @@ blockquote p:last-child {
 .relative {
     position: relative;
 }
+.absolute {
+	position: absolute;
+}
+.absolute.bottom {
+	bottom: 0;
+}
+.pw-list-item .absolute.bottom {
+	bottom: 15px;
+}
+.absolute.right {
+	right: 0;
+}
 
 .push-bottom-xxs {
     margin-bottom: 2px !important;
@@ -317,6 +329,10 @@ blockquote p:last-child {
 }
 .push-bottom-l {
     margin-bottom: 28px !important;
+}
+.push-bottom-xl {
+    margin-bottom: 55px !important;
+    margin-bottom: 5.5rem !important;
 }
 .push-left-xl {
     margin-left: 105px !important;
@@ -388,6 +404,50 @@ blockquote p:last-child {
     max-width: 140px;
 }
 
+/* icons */
+
+
+.aw-icon-1x {
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+.aw-icon-2x {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+.aw-icon-2x {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+.aw-icon-3x {
+	font-size: 32px;
+	font-size: 3.2rem;
+}
+.aw-icon-4x {
+	font-size: 40px;
+	font-size: 4rem;
+}
+.aw-icon-circle:before {
+	display: block;
+	text-align: center;
+	text-indent: 0;
+	font-size: 1.18em;
+	width: 1.98em;
+	height: 1.98em;
+	border-radius: 0.99em;
+	line-height: 1.98em;
+}
+.aw-brand {
+	color: #f63;
+}
+.aw-icon-circle-brand:before {
+	color: #fff;
+	background: #f63;
+}
+.aw-icon-circle-disabled:before {
+	color: #fff;
+	background: #ccc;
+}
 
 /* text/links */
 
@@ -2004,6 +2064,18 @@ html.js fieldset.collapsed {
     display: block;
 }
 
+ul.progress-icons {
+	float: left;
+	margin-top: -.19em;
+}
+ul.progress-icons [class^="icon-"]:before, 
+ul.progress-icons [class*=" icon-"]:before {
+	margin: 0 8px 0 0;
+}
+ul.progress-icons li {
+	float: left;
+}
+
 /* petitions */
 
 .pw-petition-progress-wrapper,
@@ -2012,6 +2084,11 @@ html.js fieldset.collapsed {
 .pw-progress-l {
     height: 32px;
     width: 314px;
+}
+.pw-petition-progress-wrapper-m,
+.pw-petition-progress-m {
+    height: 17px;
+    width: 100%;
 }
 .pw-petition-progress,
 .pw-progress-l {
@@ -2025,7 +2102,128 @@ html.js fieldset.collapsed {
     background: linear-gradient(to right,  #ff6633 0%,#ffee33 314px);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6633', endColorstr='#ffee33',GradientType=1 ); 
 }
+.pw-petition-progress-m {
+    background: #78b70c; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc4YjcwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhOGU2M2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(left,  #78b70c 0%, #a8e63c 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#78b70c), color-stop(100%,#a8e63c)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* IE10+ */
+    background: linear-gradient(to right,  #78b70c 0%,#a8e63c 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b70c', endColorstr='#a8e63c',GradientType=1 ); /* IE6-8 */
+    display: block;
+}
+.pw-petition-progress-signings,
+.pw-petition-progress-donations {
+	float: left;
+    margin-bottom: 2px; 
+    border: 1px solid #d3d3d3;
+    -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
+    -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
+    box-shadow: inset 0px 0px 2px 2px #ececec;
+    text-indent: -5000em;
+    background: #fff;
+    box-sizing: border-box;
+}
+.pw-petition-progress-signings {
+	width: 80%;
+	border-right: 0;
+}
+.pw-petition-progress-donations {
+	width: 20%;
+}
+#petition-block-description li {
+	width: 33.3%;
+	white-space: nowrap;
+	padding: 0 35px;
+	box-sizing: border-box;
+	position: relative;
+}
+#petition-block-description li .aw-brand span {
+	position: absolute;
+	top: 7px;
+	left: 25%;
+}
 
+@media (max-width: 479px) {
+	.petition-list-image-wrapper img {
+		width: 100%;
+	}
+}
+@media (min-width: 480px) {
+	.petition-list-image-wrapper {
+		float: left;
+	}
+	.pw-petition-list-contents {
+		margin-left: 300px;
+	}
+}
+@media (max-width: 639px) {
+	.petition-list-partner-wrapper {
+		margin: 0.7em 0;
+	}
+	.petition-list-image-wrapper {
+		margin-bottom: 1em;
+	}
+	.petition-list-partner-wrapper {
+		font-size: 9px;
+		font-size: .9rem;
+		float: left;
+	}
+	.petition-list-sign-wrapper {
+		position: absolute;
+		bottom: 15px;
+		right: 0;
+	}
+	ul.progress-icons {
+		display: none;
+	}
+}
+@media (min-width: 480px) and (max-width: 639px) {
+	.petition-list-partner-wrapper {
+		margin: 0.7em 0 4em;
+	}
+}
+@media (min-width: 640px) {
+	.petition-list-partner-wrapper {
+		position: absolute;
+		bottom: 15px;
+		left: 300px;
+	}
+	.petition-list-sign-wrapper {
+		position: absolute;
+		bottom: 15px;
+		right: 0;
+	}
+	.view-pw-petitions .progress-icons + a {
+		display: block;
+		margin-left: 4.5em;
+	}
+}
+/* tribute to IE8 */
+	.petition-list-image-wrapper {
+		float: left\9;
+	}
+	.pw-petition-list-contents {
+		margin-left: 300px\9;
+	}
+	.petition-list-partner-wrapper {
+		position: absolute\9;
+		bottom: 15px\9;
+		left: 300px\9;
+	}
+	.petition-list-sign-wrapper {
+		position: absolute\9;
+		bottom: 15px\9;
+		right: 0\9;
+	}
+	.view-pw-petitions .progress-icons + a {
+		display: block\9;
+		margin-left: 4.5em\9;
+	}
+/* // tribute to IE8 */
 
 /* /////////////////////////// forms /////////////////// */
 
@@ -2184,6 +2382,7 @@ input[type="button"],
 }
 button:hover,
 .button:hover,
+a.button:hover,
 button.big:hover,
 .button.big:hover,
 input[type="submit"]:hover,

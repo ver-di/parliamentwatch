@@ -45,13 +45,8 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Beziehung: Inhalt: Teaser image (field_teaser_image:fid) */
-  $handler->display->display_options['relationships']['field_teaser_image_fid']['id'] = 'field_teaser_image_fid';
-  $handler->display->display_options['relationships']['field_teaser_image_fid']['table'] = 'field_data_field_teaser_image';
-  $handler->display->display_options['relationships']['field_teaser_image_fid']['field'] = 'field_teaser_image_fid';
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -62,14 +57,6 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Inhalt: Progress */
-  $handler->display->display_options['fields']['field_petition_progress']['id'] = 'field_petition_progress';
-  $handler->display->display_options['fields']['field_petition_progress']['table'] = 'field_data_field_petition_progress';
-  $handler->display->display_options['fields']['field_petition_progress']['field'] = 'field_petition_progress';
-  $handler->display->display_options['fields']['field_petition_progress']['label'] = '';
-  $handler->display->display_options['fields']['field_petition_progress']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_petition_progress']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_petition_progress']['type'] = 'computed_field_unsanitized';
   /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
@@ -89,192 +76,6 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Feld: Global: Feldgruppe */
-  $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset']['label'] = 'Teaser image wrapper';
-  $handler->display->display_options['fields']['fieldset']['children'] = array(
-    0 => 'field_teaser_image',
-    1 => 'field_image_copyright',
-  );
-  $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
-  $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'float-left push-bottom-s push-right-m';
-  /* Feld: Inhalt: Teaser image */
-  $handler->display->display_options['fields']['field_teaser_image']['id'] = 'field_teaser_image';
-  $handler->display->display_options['fields']['field_teaser_image']['table'] = 'field_data_field_teaser_image';
-  $handler->display->display_options['fields']['field_teaser_image']['field'] = 'field_teaser_image';
-  $handler->display->display_options['fields']['field_teaser_image']['label'] = '';
-  $handler->display->display_options['fields']['field_teaser_image']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_teaser_image']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_teaser_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_teaser_image']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_teaser_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_teaser_image']['settings'] = array(
-    'image_style' => 'pw_landscape_l__normal',
-    'image_link' => 'content',
-  );
-  /* Feld: Datei: copyright */
-  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_teaser_image_fid';
-  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
-  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'small medium';
-  $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Recipient */
-  $handler->display->display_options['fields']['field_petition_recipient']['id'] = 'field_petition_recipient';
-  $handler->display->display_options['fields']['field_petition_recipient']['table'] = 'field_data_field_petition_recipient';
-  $handler->display->display_options['fields']['field_petition_recipient']['field'] = 'field_petition_recipient';
-  $handler->display->display_options['fields']['field_petition_recipient']['label'] = '';
-  $handler->display->display_options['fields']['field_petition_recipient']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_petition_recipient']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['field_petition_recipient']['element_wrapper_class'] = 'medium';
-  $handler->display->display_options['fields']['field_petition_recipient']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
-  $handler->display->display_options['fields']['body']['settings'] = array(
-    'trim_length' => '600',
-  );
-  /* Feld: Global: Feldgruppe */
-  $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
-  $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_1']['label'] = 'Progress';
-  $handler->display->display_options['fields']['fieldset_1']['children'] = array(
-    0 => 'php',
-    1 => 'field_petition_required',
-    2 => 'field_petition_signings',
-  );
-  $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
-  $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'clear';
-  /* Feld: Global: PHP */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-petition-progress-wrapper"><div class="pw-petition-progress" style="width: <?php 
-$required = $data->_field_data[\'nid\'][\'entity\']->field_petition_required[\'und\'][0][\'value\'];
-$signings = $data->_field_data[\'nid\'][\'entity\']->field_petition_signings[\'und\'][0][\'value\'];
-$progress = $data->_field_data[\'nid\'][\'entity\']->field_petition_progress[\'und\'][0][\'value\'];
-if($signings > $required){
-    $progress = 100;
-}
-print $progress; ?>%;"></div></div>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Required signings */
-  $handler->display->display_options['fields']['field_petition_required']['id'] = 'field_petition_required';
-  $handler->display->display_options['fields']['field_petition_required']['table'] = 'field_data_field_petition_required';
-  $handler->display->display_options['fields']['field_petition_required']['field'] = 'field_petition_required';
-  $handler->display->display_options['fields']['field_petition_required']['label'] = 'Benötigte Unterschriften';
-  $handler->display->display_options['fields']['field_petition_required']['element_type'] = 'strong';
-  $handler->display->display_options['fields']['field_petition_required']['element_class'] = 'medium';
-  $handler->display->display_options['fields']['field_petition_required']['element_label_type'] = 'h4';
-  $handler->display->display_options['fields']['field_petition_required']['element_label_class'] = 'label-inline';
-  $handler->display->display_options['fields']['field_petition_required']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_petition_required']['element_wrapper_class'] = 'medium clear';
-  $handler->display->display_options['fields']['field_petition_required']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_petition_required']['settings'] = array(
-    'thousand_separator' => '.',
-    'prefix_suffix' => 0,
-  );
-  /* Feld: Inhalt: Signings */
-  $handler->display->display_options['fields']['field_petition_signings']['id'] = 'field_petition_signings';
-  $handler->display->display_options['fields']['field_petition_signings']['table'] = 'field_data_field_petition_signings';
-  $handler->display->display_options['fields']['field_petition_signings']['field'] = 'field_petition_signings';
-  $handler->display->display_options['fields']['field_petition_signings']['label'] = '';
-  $handler->display->display_options['fields']['field_petition_signings']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_petition_signings']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['field_petition_signings']['element_wrapper_class'] = 'small light';
-  $handler->display->display_options['fields']['field_petition_signings']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_petition_signings']['settings'] = array(
-    'thousand_separator' => '.',
-    'prefix_suffix' => 1,
-  );
-  /* Feld: Inhalt: Link */
-  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
-  $handler->display->display_options['fields']['view_node']['label'] = '';
-  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['view_node']['element_wrapper_class'] = 'text-right link-sign clear';
-  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['view_node']['text'] = 'zur Petition';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
-  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
-  /* Feld: Inhalt: Tags */
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['id'] = 'field_blogpost_blogtags';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['table'] = 'field_data_field_blogpost_blogtags';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['field'] = 'field_blogpost_blogtags';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['label'] = '';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['element_wrapper_class'] = 'icon-taxonomy clearfix clear-both';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['delta_offset'] = '0';
-  /* Feld: Inhalt: Anzahl an Kommentaren */
-  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
-  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['label'] = '';
-  $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]#comments';
-  $handler->display->display_options['fields']['comment_count']['alter']['absolute'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['alter']['alt'] = 'zu den Kommentaren';
-  $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['comment_count']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'comment-count clear-both';
-  $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['comment_count']['separator'] = '';
-  $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
-  $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
-  $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
-  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
-  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
-  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = '';
-  $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_node']['text'] = 'edit petition';
-  /* Feld: Global: Contextual Links */
-  $handler->display->display_options['fields']['contextual_links']['id'] = 'contextual_links';
-  $handler->display->display_options['fields']['contextual_links']['table'] = 'views';
-  $handler->display->display_options['fields']['contextual_links']['field'] = 'contextual_links';
-  $handler->display->display_options['fields']['contextual_links']['label'] = '';
-  $handler->display->display_options['fields']['contextual_links']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['contextual_links']['fields'] = array(
-    'edit_node' => 'edit_node',
-    'nid' => 0,
-    'sharethis' => 0,
-    'title' => 0,
-    'fieldset' => 0,
-    'field_teaser_image' => 0,
-    'field_image_copyright' => 0,
-    'field_petition_recipient' => 0,
-    'body' => 0,
-    'field_petition_required' => 0,
-    'field_petition_signings' => 0,
-    'view_node' => 0,
-    'field_blogpost_blogtags' => 0,
-    'comment_count' => 0,
-    'expression' => 0,
-  );
   /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -297,6 +98,45 @@ print $progress; ?>%;"></div></div>';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'list';
+  $handler->display->display_options['style_options']['row_class'] = 'pw-list-item relative clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pw_petition' => 'pw_petition',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterium: Inhalt: Status (field_petition_status) */
+  $handler->display->display_options['filters']['field_petition_status_value']['id'] = 'field_petition_status_value';
+  $handler->display->display_options['filters']['field_petition_status_value']['table'] = 'field_data_field_petition_status';
+  $handler->display->display_options['filters']['field_petition_status_value']['field'] = 'field_petition_status_value';
+  $handler->display->display_options['filters']['field_petition_status_value']['operator'] = 'not';
+  $handler->display->display_options['filters']['field_petition_status_value']['value'] = array(
+    'collecting_donations' => 'collecting_donations',
+    'survey_in_progress' => 'survey_in_progress',
+    'asking_parliament' => 'asking_parliament',
+    'archived' => 'archived',
+  );
   $handler->display->display_options['path'] = 'petitions';
 
   /* Display: Block */
@@ -619,7 +459,7 @@ if($signings > $required){
 print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Required signings */
+  /* Feld: Inhalt: Required Signings */
   $handler->display->display_options['fields']['field_petition_required']['id'] = 'field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['table'] = 'field_data_field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['field'] = 'field_petition_required';
@@ -891,7 +731,7 @@ if($signings > $required){
 print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Required signings */
+  /* Feld: Inhalt: Required Signings */
   $handler->display->display_options['fields']['field_petition_required']['id'] = 'field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['table'] = 'field_data_field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['field'] = 'field_petition_required';

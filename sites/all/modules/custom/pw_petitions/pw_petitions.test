@@ -1,0 +1,43 @@
+<?php
+/**
+ * @file
+ * Collection of tests for verifying the functionality of the
+ * Parliamentwatch Petition Module
+ */
+
+class PwPetitionTestCase extends DrupalWebTestCase{
+
+  public static function getInfo() {
+    return array(
+      'name' => 'Creation and signing',
+      'description' => t('In this test case an internal and external petition will be created. Both are then signed and the signature itself as well as the signature counter will be verified.'),
+      'group' => 'Petitions',
+    );
+  }
+
+  public function setUp() {
+    parent::setUp('pw_petitions');
+
+    $user = $this->drupalCreateUser(array('administer nodes'));
+    $this->drupalLogin($user);
+  }
+
+  public function testCreateInternalPetition(){
+
+    // Preconditions
+    $this->assertNoText('Petitionstest');
+
+    // Logic
+    $this->drupalPost('node/add/pw-petition', array(
+      'title' => $this->randomName(32),
+      'name' => $this->user,
+      'body' => $this->randomName(256)." Petitionstest",
+      'field_petition_required' => 10000,
+      'field_petition_signings' => (int) $this->randomString(4)
+      ),
+      t('Save'));
+
+    // Postconditions
+    $this->assertText('Petitionstest');
+  }
+}
