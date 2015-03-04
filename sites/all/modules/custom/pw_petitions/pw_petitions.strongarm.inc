@@ -161,5 +161,12 @@ function pw_petitions_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_pw_petition'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_pw_petition';
+  $strongarm->value = 1;
+  $export['rh_node_override_pw_petition'] = $strongarm;
+
   return $export;
 }
