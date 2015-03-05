@@ -68,40 +68,35 @@ function pw_petitions_feeds_importer_default() {
       'plugin_key' => 'FeedsSelfNodeProcessor',
       'config' => array(
         'expire' => '-1',
-        'author' => 0,
+        'author' => '1',
         'authorize' => 1,
         'mappings' => array(
           0 => array(
-            'source' => 'xpathparser:0',
-            'target' => 'title',
-            'unique' => FALSE,
-          ),
-          1 => array(
             'source' => 'xpathparser:1',
             'target' => 'field_petition_external_url:url',
             'unique' => FALSE,
           ),
-          2 => array(
+          1 => array(
             'source' => 'xpathparser:2',
             'target' => 'field_teaser_image',
             'unique' => FALSE,
           ),
-          3 => array(
+          2 => array(
             'source' => 'xpathparser:3',
             'target' => 'body',
             'unique' => FALSE,
           ),
-          4 => array(
+          3 => array(
             'source' => 'xpathparser:4',
             'target' => 'field_petition_signings',
             'unique' => FALSE,
           ),
-          5 => array(
+          4 => array(
             'source' => 'xpathparser:5',
             'target' => 'field_petition_recipient',
             'unique' => FALSE,
           ),
-          6 => array(
+          5 => array(
             'source' => 'xpathparser:6',
             'target' => 'field_petition_content',
             'unique' => FALSE,

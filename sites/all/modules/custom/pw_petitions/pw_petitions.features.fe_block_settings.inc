@@ -13,7 +13,7 @@ function pw_petitions_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['block-petitions_description'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => 'push-bottom-xl',
     'custom' => '0',
     'i18n_block_language' => array(),
