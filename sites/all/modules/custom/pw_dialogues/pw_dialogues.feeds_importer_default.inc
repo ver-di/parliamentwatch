@@ -46,7 +46,6 @@ function pw_dialogues_feeds_importer_default() {
           'xpathparser:10' => 'text',
           'xpathparser:16' => 'sender.external_id',
           'xpathparser:17' => 'status=1',
-          'xpathparser:18' => 'context',
           'xpathparser:19' => 'keyworded_text',
           'xpathparser:20' => 'context',
           'xpathparser:21' => 'inserted_date',
@@ -67,14 +66,13 @@ function pw_dialogues_feeds_importer_default() {
           'xpathparser:10' => 0,
           'xpathparser:16' => 0,
           'xpathparser:17' => 0,
-          'xpathparser:18' => 0,
           'xpathparser:19' => 0,
           'xpathparser:20' => 0,
           'xpathparser:21' => 0,
         ),
         'context' => '//message[type=\'question\']',
         'exp' => array(
-          'errors' => 1,
+          'errors' => 0,
           'tidy' => 0,
           'tidy_encoding' => 'UTF8',
           'debug' => array(
@@ -94,7 +92,6 @@ function pw_dialogues_feeds_importer_default() {
             'xpathparser:10' => 0,
             'xpathparser:16' => 0,
             'xpathparser:17' => 0,
-            'xpathparser:18' => 0,
             'xpathparser:19' => 0,
             'xpathparser:20' => 0,
             'xpathparser:21' => 0,
@@ -283,7 +280,7 @@ function pw_dialogues_feeds_importer_default() {
         ),
         'context' => '//dialogue/message[type=\'answer\']',
         'exp' => array(
-          'errors' => 1,
+          'errors' => 0,
           'tidy' => 0,
           'tidy_encoding' => 'UTF8',
           'debug' => array(

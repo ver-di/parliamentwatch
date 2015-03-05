@@ -547,31 +547,6 @@ else {
     'dialogue' => 'dialogue',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterium: Global: Feld-Filter kombinieren */
-  $handler->display->display_options['filters']['combine']['id'] = 'combine';
-  $handler->display->display_options['filters']['combine']['table'] = 'views';
-  $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
-  $handler->display->display_options['filters']['combine']['group'] = 1;
-  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Frage oder Antwort nach Stichwort anzeigen';
-  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
-  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    3 => 0,
-    51622513 => 0,
-    181527986 => 0,
-    140336230 => 0,
-    185431326 => 0,
-    178386088 => 0,
-  );
-  $handler->display->display_options['filters']['combine']['fields'] = array(
-    'body' => 'body',
-    'comment_body' => 'comment_body',
-  );
   /* Filterkriterium: Feld: Topic (field_dialogue_topic) */
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['id'] = 'field_dialogue_topic_tid';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['table'] = 'field_data_field_dialogue_topic';

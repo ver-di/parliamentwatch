@@ -57,16 +57,6 @@ function pw_dialogues_ds_field_settings_info() {
         ),
       ),
     ),
-    'short_profile_dialogue' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
     'dialogue_full_content' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -76,6 +66,16 @@ function pw_dialogues_ds_field_settings_info() {
         'title_wrapper' => '',
         'ctools' => 'a:3:{s:4:"conf";a:4:{s:12:"link_to_view";i:0;s:9:"use_pager";i:0;s:8:"pager_id";s:1:"0";s:14:"items_per_page";s:1:"1";}s:4:"type";s:11:"views_panes";s:7:"subtype";s:38:"profile_questions_answers-full_content";}',
         'load_terms' => 1,
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'short_profile_dialogue' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
         ),
@@ -299,13 +299,15 @@ function pw_dialogues_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'short_profile_dialogue',
         1 => 'dialogue_full_content',
+      ),
+      'ds_hidden' => array(
         2 => 'question_form',
       ),
     ),
     'fields' => array(
       'short_profile_dialogue' => 'ds_content',
       'dialogue_full_content' => 'ds_content',
-      'question_form' => 'ds_content',
+      'question_form' => 'ds_hidden',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -315,6 +317,8 @@ function pw_dialogues_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
     'hide_page_title' => '1',
     'page_option_title' => '',
     'hide_sidebars' => 0,
