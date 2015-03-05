@@ -60,7 +60,8 @@ function pw_cache_strongarm() {
 *.ttf
 *.woff
 *.eot
-*.svg';
+*.svg
+awfont.woff';
   $export['cdn_exception_file_path_blacklist'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -119,7 +120,7 @@ sites/*|.avi .m4v .mov .mp4 .wmv .flv|perpetual';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'cdn_status';
-  $strongarm->value = '2';
+  $strongarm->value = '0';
   $export['cdn_status'] = $strongarm;
 
   $strongarm = new stdClass();
