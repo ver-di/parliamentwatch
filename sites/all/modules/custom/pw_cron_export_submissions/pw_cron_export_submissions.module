@@ -95,9 +95,9 @@ function export_submissions($source){
       }
     }
 
-    // query db for exported submissions, older than 30 days or submissions in general older than 365 days
+    // query db for exported submissions, older than 30 days or submissions in general older than 90 days
     $timestamp_exported = time() - 30 * 86400;
-    $timestamp_other = time() - 365 * 86400;
+    $timestamp_other = time() - 90 * 86400;
     $sql = "SELECT wf_data.sid
             FROM webform_submitted_data wf_data
             INNER JOIN webform_submissions wf ON wf_data.sid = wf.sid
