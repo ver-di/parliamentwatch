@@ -37,14 +37,14 @@ function pw_subsite_menu_default_menu_custom() {
   // Exported menu: menu-support-us-de.
   $menus['menu-support-us-de'] = array(
     'menu_name' => 'menu-support-us-de',
-    'title' => 'Projekt unterstützen',
+    'title' => 'Mitmachen',
     'description' => '',
   );
   // Translatables
   // Included for use with string extractors like potx.
   t('Main menu DE');
   t('Meta DE');
-  t('Projekt unterstützen');
+  t('Mitmachen');
   t('Wahlen & Parlamente');
   t('Über das Projekt');
 

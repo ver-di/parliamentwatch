@@ -79,6 +79,12 @@ function pw_menu_views_default_views() {
   $handler->display->display_options['filters']['nid_1']['field'] = 'nid';
   $handler->display->display_options['filters']['nid_1']['value']['value'] = '37991';
   $handler->display->display_options['filters']['nid_1']['group'] = 2;
+  /* Filterkriterium: Inhaltsversion: Beitrags-ID */
+  $handler->display->display_options['filters']['nid_2']['id'] = 'nid_2';
+  $handler->display->display_options['filters']['nid_2']['table'] = 'node_revision';
+  $handler->display->display_options['filters']['nid_2']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid_2']['value']['value'] = '40266';
+  $handler->display->display_options['filters']['nid_2']['group'] = 2;
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

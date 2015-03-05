@@ -39,7 +39,7 @@ function pw_subsite_strongarm() {
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => 'tahFKFmz_Aq85FsWIU1n6vCbyNYRY5Q0lBqZEWu2x04',
+    'javascript' => 'zJ_OH4fNZkrR-kZ4YRKCblyy85SQST1NHD0hyo3wOFI',
   );
   $export['language_default'] = $strongarm;
 
@@ -642,6 +642,18 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">fid</em> of the field <em class="placeholder">field_document</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_donation_amount_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_donation_amount</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_donation_progress_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_donation_progress</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_donation_required_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_donation_required</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_duration_value' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_duration</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -718,6 +730,30 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_content</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_petition_end_date_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_end_date</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_external_url_attributes' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">attributes</em> of the field <em class="placeholder">field_petition_external_url</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_external_url_title' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">title</em> of the field <em class="placeholder">field_petition_external_url</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_external_url_url' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">url</em> of the field <em class="placeholder">field_petition_external_url</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_partner_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_petition_partner</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_partner_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_partner</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_petition_recipient_format' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_petition_recipient</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -732,6 +768,34 @@ foo
     ),
     'node:field_petition_signings_value' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_signings</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_status_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_status</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_text_donation_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_petition_text_donation</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_text_donation_summary' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">summary</em> of the field <em class="placeholder">field_petition_text_donation</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_text_donation_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_text_donation</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_text_parliament_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_petition_text_parliament</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_text_parliament_summary' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">summary</em> of the field <em class="placeholder">field_petition_text_parliament</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_text_parliament_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_text_parliament</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_politician_target_id' => array(
@@ -3176,136 +3240,312 @@ foo
       ),
     ),
     176 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_donation_amount_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_donation_amount',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    177 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_donation_progress_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_donation_progress',
+        'type' => 'computed',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    178 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_donation_required_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_donation_required',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    179 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_end_date_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_end_date',
+        'type' => 'datetime',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    180 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_external_url_url',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_external_url',
+        'type' => 'link_field',
+        'column' => 'url',
+        'translatable' => '0',
+      ),
+    ),
+    181 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_external_url_title',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_external_url',
+        'type' => 'link_field',
+        'column' => 'title',
+        'translatable' => '0',
+      ),
+    ),
+    182 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_external_url_attributes',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_external_url',
+        'type' => 'link_field',
+        'column' => 'attributes',
+        'translatable' => '0',
+      ),
+    ),
+    183 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_partner_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_partner',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    184 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_partner_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_partner',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    185 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_status_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_status',
+        'type' => 'list_text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    186 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_text_donation_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_text_donation',
+        'type' => 'text_with_summary',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    187 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_text_donation_summary',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_text_donation',
+        'type' => 'text_with_summary',
+        'column' => 'summary',
+        'translatable' => '0',
+      ),
+    ),
+    188 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_text_donation_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_text_donation',
+        'type' => 'text_with_summary',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    189 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_text_parliament_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_text_parliament',
+        'type' => 'text_with_summary',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    190 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_text_parliament_summary',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_text_parliament',
+        'type' => 'text_with_summary',
+        'column' => 'summary',
+        'translatable' => '0',
+      ),
+    ),
+    191 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_text_parliament_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_text_parliament',
+        'type' => 'text_with_summary',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    192 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    177 => array(
+    193 => array(
       'src' => 'comment:cid',
       'dst' => 'node:nid',
       'callback' => 'themekey_comment_cid2nid',
     ),
-    178 => array(
+    194 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    179 => array(
+    195 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    180 => array(
+    196 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
     ),
-    181 => array(
+    197 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    182 => array(
+    198 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    183 => array(
+    199 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    184 => array(
+    200 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    185 => array(
+    201 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    186 => array(
+    202 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    187 => array(
+    203 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    188 => array(
+    204 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    189 => array(
+    205 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    190 => array(
+    206 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    191 => array(
+    207 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    192 => array(
+    208 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    193 => array(
+    209 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    194 => array(
+    210 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    195 => array(
+    211 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    196 => array(
+    212 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    197 => array(
+    213 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    198 => array(
+    214 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    199 => array(
+    215 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    200 => array(
+    216 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    201 => array(
+    217 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    202 => array(
+    218 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
@@ -3529,6 +3769,9 @@ foo
     'node:field_document_description' => 'node:field_document_description',
     'node:field_document_display' => 'node:field_document_display',
     'node:field_document_fid' => 'node:field_document_fid',
+    'node:field_donation_amount_value' => 'node:field_donation_amount_value',
+    'node:field_donation_progress_value' => 'node:field_donation_progress_value',
+    'node:field_donation_required_value' => 'node:field_donation_required_value',
     'node:field_duration_value' => 'node:field_duration_value',
     'node:field_election_programme_open_attributes' => 'node:field_election_programme_open_attributes',
     'node:field_election_programme_open_title' => 'node:field_election_programme_open_title',
@@ -3548,10 +3791,23 @@ foo
     'node:field_pdf_download_title' => 'node:field_pdf_download_title',
     'node:field_petition_content_format' => 'node:field_petition_content_format',
     'node:field_petition_content_value' => 'node:field_petition_content_value',
+    'node:field_petition_end_date_value' => 'node:field_petition_end_date_value',
+    'node:field_petition_external_url_attributes' => 'node:field_petition_external_url_attributes',
+    'node:field_petition_external_url_title' => 'node:field_petition_external_url_title',
+    'node:field_petition_external_url_url' => 'node:field_petition_external_url_url',
+    'node:field_petition_partner_format' => 'node:field_petition_partner_format',
+    'node:field_petition_partner_value' => 'node:field_petition_partner_value',
     'node:field_petition_recipient_format' => 'node:field_petition_recipient_format',
     'node:field_petition_recipient_value' => 'node:field_petition_recipient_value',
     'node:field_petition_required_value' => 'node:field_petition_required_value',
     'node:field_petition_signings_value' => 'node:field_petition_signings_value',
+    'node:field_petition_status_value' => 'node:field_petition_status_value',
+    'node:field_petition_text_donation_format' => 'node:field_petition_text_donation_format',
+    'node:field_petition_text_donation_summary' => 'node:field_petition_text_donation_summary',
+    'node:field_petition_text_donation_value' => 'node:field_petition_text_donation_value',
+    'node:field_petition_text_parliament_format' => 'node:field_petition_text_parliament_format',
+    'node:field_petition_text_parliament_summary' => 'node:field_petition_text_parliament_summary',
+    'node:field_petition_text_parliament_value' => 'node:field_petition_text_parliament_value',
     'node:field_politician_target_id' => 'node:field_politician_target_id',
     'node:field_press_article_attachment_description' => 'node:field_press_article_attachment_description',
     'node:field_press_article_attachment_display' => 'node:field_press_article_attachment_display',
