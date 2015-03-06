@@ -192,48 +192,6 @@ function pw_dialogues_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_dialogue';
-  $strongarm->value = 'Question to [node:field-dialogue-recipient:field_user_fname] [node:field-dialogue-recipient:field_user_lname] | [site:name]';
-  $export['page_title_type_dialogue'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_dialogue_showfield';
-  $strongarm->value = 1;
-  $export['page_title_type_dialogue_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_vocab_dialogue_tags';
-  $strongarm->value = '';
-  $export['page_title_vocab_dialogue_tags'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_vocab_dialogue_tags_showfield';
-  $strongarm->value = 0;
-  $export['page_title_vocab_dialogue_tags_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_vocab_dialogue_topics';
-  $strongarm->value = '';
-  $export['page_title_vocab_dialogue_topics'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_vocab_dialogue_topics_showfield';
-  $strongarm->value = 0;
-  $export['page_title_vocab_dialogue_topics_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_dialogue_pattern';
   $strongarm->value = 'profile/[node:field-dialogue-recipient:name]/question/[node:created:custom:Y-m-d]/[node:field-dialogue-id]';
   $export['pathauto_node_dialogue_pattern'] = $strongarm;

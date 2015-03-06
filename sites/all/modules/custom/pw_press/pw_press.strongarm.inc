@@ -357,34 +357,6 @@ function pw_press_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_press_article';
-  $strongarm->value = '';
-  $export['page_title_type_press_article'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_press_article_showfield';
-  $strongarm->value = 0;
-  $export['page_title_type_press_article_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_press_release';
-  $strongarm->value = '';
-  $export['page_title_type_press_release'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_type_press_release_showfield';
-  $strongarm->value = 0;
-  $export['page_title_type_press_release_showfield'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_press_article_pattern';
   $strongarm->value = 'about/press/press-articles/[node:field-press-article-date:custom:Y-m-d]/[node:title]';
   $export['pathauto_node_press_article_pattern'] = $strongarm;
