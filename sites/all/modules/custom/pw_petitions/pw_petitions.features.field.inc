@@ -316,7 +316,11 @@ function pw_petitions_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'pw_petition',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -355,7 +359,7 @@ function pw_petitions_field_default_fields() {
       'entity_type' => 'node',
       'field_name' => 'field_donation_amount',
       'label' => 'Donation Amount',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'max' => '',
         'min' => '',
@@ -488,7 +492,11 @@ $entity_field[0][\'value\'] = $result;',
     ),
     'field_instance' => array(
       'bundle' => 'pw_petition',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -527,7 +535,7 @@ $entity_field[0][\'value\'] = $result;',
       'entity_type' => 'node',
       'field_name' => 'field_donation_required',
       'label' => 'Donation Required',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'max' => '',
         'min' => '',

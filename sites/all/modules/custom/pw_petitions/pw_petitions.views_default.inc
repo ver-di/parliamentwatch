@@ -76,11 +76,11 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Sortierkriterien: Inhalt: Datum */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sortierkriterien: Inhalt: Signings (field_petition_signings) */
+  $handler->display->display_options['sorts']['field_petition_signings_value']['id'] = 'field_petition_signings_value';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['table'] = 'field_data_field_petition_signings';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['field'] = 'field_petition_signings_value';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['order'] = 'DESC';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -310,10 +310,11 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sortierkriterien: Global: Zufall */
-  $handler->display->display_options['sorts']['random']['id'] = 'random';
-  $handler->display->display_options['sorts']['random']['table'] = 'views';
-  $handler->display->display_options['sorts']['random']['field'] = 'random';
+  /* Sortierkriterien: Inhalt: Signings (field_petition_signings) */
+  $handler->display->display_options['sorts']['field_petition_signings_value']['id'] = 'field_petition_signings_value';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['table'] = 'field_data_field_petition_signings';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['field'] = 'field_petition_signings_value';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterium: Inhalt: Typ */
@@ -331,6 +332,11 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Partner Organization (field_petition_partner) */
+  $handler->display->display_options['filters']['field_petition_partner_value']['id'] = 'field_petition_partner_value';
+  $handler->display->display_options['filters']['field_petition_partner_value']['table'] = 'field_data_field_petition_partner';
+  $handler->display->display_options['filters']['field_petition_partner_value']['field'] = 'field_petition_partner_value';
+  $handler->display->display_options['filters']['field_petition_partner_value']['operator'] = 'empty';
 
   /* Display: Petitions Sidebar */
   $handler = $view->new_display('block', 'Petitions Sidebar', 'sidebar');
@@ -595,7 +601,7 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['relationships']['field_teaser_image_fid']['id'] = 'field_teaser_image_fid';
   $handler->display->display_options['relationships']['field_teaser_image_fid']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['relationships']['field_teaser_image_fid']['field'] = 'field_teaser_image_fid';
-  /* Beziehung: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Beziehung: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -801,7 +807,7 @@ print $progress; ?>%;"></div></div>';
     'comment_count' => 0,
     'expression' => 0,
   );
-  /* Feld: Inhalt: Blog Kategorie */
+  /* Feld: Inhalt: Categories */
   $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
@@ -811,7 +817,7 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['field_blogpost_categories']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_blogpost_categories']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Kontextfilter: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1017,7 +1023,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '4';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1100,7 +1106,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '3';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1181,7 +1187,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '2';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1261,7 +1267,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '3';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
