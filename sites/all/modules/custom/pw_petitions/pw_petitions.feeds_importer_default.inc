@@ -18,9 +18,8 @@ function pw_petitions_feeds_importer_default() {
     'name' => 'Petition Updater',
     'description' => 'Updates a single petition',
     'fetcher' => array(
-      'plugin_key' => 'FeedsHTTPFetcherAppendHeaders',
+      'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
-        'append_headers' => 'Authorization: Basic cm9vdDoyMjc2NWFkcmFwcw==',
         'request_timeout' => '',
       ),
     ),
