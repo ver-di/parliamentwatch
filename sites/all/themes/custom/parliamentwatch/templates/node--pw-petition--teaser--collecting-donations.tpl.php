@@ -68,5 +68,5 @@ print render($title_suffix);
       <? echo $partner_html; ?>
     </div>
   <?php endif; ?>
-  <div class="petition-list-sign-wrapper"><a href="<? echo $node_url; ?>" class="<? echo ($partner_html)?"colorbox-load ":"";?>button">Für Umfrage spenden</a></div>
+  <div class="petition-list-sign-wrapper"><a href="<? echo $node_url; ?>" class="button">Für Umfrage spenden</a></div>
 </div>
