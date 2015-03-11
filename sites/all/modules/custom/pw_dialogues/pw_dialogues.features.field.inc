@@ -231,7 +231,6 @@ function pw_dialogues_field_default_fields() {
           'weight' => 11,
         ),
       ),
-      'ds_extras_field_template' => '',
       'entity_type' => 'comment',
       'field_name' => 'field_dialogue_documents',
       'label' => 'Documents',
@@ -245,16 +244,12 @@ function pw_dialogues_field_default_fields() {
           'title' => '',
         ),
         'display' => array(
-          'url_cutoff' => '',
+          'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
         'rel_remove' => 'default',
         'title' => 'none',
-        'title_maxlength' => '255',
+        'title_maxlength' => '128',
         'title_value' => '',
         'url' => 0,
         'user_register_form' => FALSE,
@@ -263,9 +258,7 @@ function pw_dialogues_field_default_fields() {
       'widget' => array(
         'active' => 0,
         'module' => 'link',
-        'settings' => array(
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
+        'settings' => array(),
         'type' => 'link_field',
         'weight' => '22',
       ),
