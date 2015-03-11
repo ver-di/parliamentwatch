@@ -12,3 +12,13 @@ Full view for collecting donations.
     <li>Partnerorganisation: <? echo $field_petition_partner['und'][0]['value']; ?></li>
   </ul>
 </div>
+<?
+$block = block_load('webform','client-block-10508');
+$a = _block_render_blocks(array($block));
+$a['webform_client-block-10508']->subject = "";
+print  drupal_render(_block_get_renderable_array($a));
+
+// Render content only
+//$block = module_invoke('webform', 'block_view', 'client-block-10508');
+//print render($block['content']);
+?>
