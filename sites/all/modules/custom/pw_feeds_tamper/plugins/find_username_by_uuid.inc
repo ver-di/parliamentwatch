@@ -33,7 +33,7 @@ function find_username_by_uuid($source, $item_key, $element_key, &$field, $setti
     $field = $user->name;
   }
   else{
-    drupal_set_message('User not for UUID '.$user_uuid.'.');
+    drupal_set_message('User not found for UUID '.$user_uuid.'.', 'error');
     $field = '';
   }
 }
