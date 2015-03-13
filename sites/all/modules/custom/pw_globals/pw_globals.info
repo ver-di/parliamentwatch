@@ -6,7 +6,6 @@ php = 5.2.4
 version = 7.x-1.0-20150311
 project = pw_globals
 dependencies[] = admin_menu
-dependencies[] = admin_menu_toolbar
 dependencies[] = admin_views
 dependencies[] = antispam
 dependencies[] = better_exposed_filters
