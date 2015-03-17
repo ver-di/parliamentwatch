@@ -65,10 +65,10 @@ function pw_dialogues_triggered_import() {
       $recipient_id = $node->field_dialogue_recipient['und'][0]['target_id'];
 
       // delete answers and re-import them
-      $sql = "SELECT cid FROM {comment} WHERE nid=:nid";
+      /* $sql = "SELECT cid FROM {comment} WHERE nid=:nid";
       $cids_to_delete = db_query($sql, array(':nid' => $dialogue_nid))->fetchCol();
       $debug_message['cids_to_delete'] = $cids_to_delete;
-      comment_delete_multiple($cids_to_delete);
+      comment_delete_multiple($cids_to_delete);*/
       pw_dialogues_do_import_answers($source);
 
       // set status to true
@@ -304,6 +304,7 @@ function pw_dialogues_entity_presave($entity, $type) {
   }
 
   // delete dialogue answer if its status is 0
+  /*
   elseif ($type == 'comment' && $entity->status == 0) {
     //entity_delete($type, $entity->cid);
 
@@ -325,21 +326,40 @@ function pw_dialogues_entity_presave($entity, $type) {
     //}
 
   }
+  */
 }
 
 /**
  *  Implements hook_feeds_presave().
  */
 function pw_dialogues_feeds_presave(FeedsSource $source, $entity, $item) {
+
   if ($source->id == 'dialogue_importer' || $source->id == 'dialogue_message_importer') {
 
-    // deletes empty documents
-    if (isset($entity->field_dialogue_documents['und'][0]['url']) && empty($entity->field_dialogue_documents['und'][0]['url'])) {
+    // delete and skip item instead of importing
+    if (!$entity->status) {
+
+      // skip item
+      $entity->feeds_item->skip = TRUE;
+
+      // delete dialogue node (question)
+      if ($entity->nid && !isset($entity->cid)) {
+        entity_delete("node", $entity->nid);
+      }
+
+      // delete dialogue comments (answers)
+      elseif ($entity->cid) {
+        entity_delete("comment", $entity->cid);
+      }
+    }
+
+    // remove empty attachments
+    elseif (isset($entity->field_dialogue_documents['und'][0]['url']) && empty($entity->field_dialogue_documents['und'][0]['url'])) {
       $entity->field_dialogue_documents = NULL;
     }
     else {
 
-      // adds title to link
+      // add title to link
       foreach ($entity->field_dialogue_documents['und'] as &$document) {
         $document['title'] = basename($document['url']);
       }
