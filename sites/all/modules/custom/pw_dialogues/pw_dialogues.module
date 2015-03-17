@@ -332,8 +332,17 @@ function pw_dialogues_entity_presave($entity, $type) {
  */
 function pw_dialogues_feeds_presave(FeedsSource $source, $entity, $item) {
   if ($source->id == 'dialogue_importer' || $source->id == 'dialogue_message_importer') {
+
+    // deletes empty documents
     if (isset($entity->field_dialogue_documents['und'][0]['url']) && empty($entity->field_dialogue_documents['und'][0]['url'])) {
-      unset($entity->field_dialogue_documents['und']);
+      $entity->field_dialogue_documents = NULL;
+    }
+    else {
+
+      // adds title to link
+      foreach ($entity->field_dialogue_documents['und'] as &$document) {
+        $document['title'] = basename($document['url']);
+      }
     }
   }
 }
