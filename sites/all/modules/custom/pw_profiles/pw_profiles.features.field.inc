@@ -684,7 +684,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '59',
+          'weight' => '66',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -827,7 +827,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '53',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -939,7 +939,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '65',
+          'weight' => '72',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1035,7 +1035,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '63',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1146,7 +1146,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '51',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1251,7 +1251,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '52',
+          'weight' => '59',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -1584,7 +1584,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '37',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1686,7 +1686,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '63',
+          'weight' => '70',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1829,7 +1829,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '44',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1982,7 +1982,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '62',
+          'weight' => '69',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2104,7 +2104,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '57',
+          'weight' => '64',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2255,7 +2255,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '12',
+          'weight' => '11',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -2406,7 +2406,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '58',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2507,7 +2507,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '60',
+          'weight' => '67',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2643,7 +2643,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '52',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -2791,7 +2791,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '49',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2921,7 +2921,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '23',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3028,7 +3028,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '54',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3131,7 +3131,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '21',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3242,7 +3242,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '13',
+          'weight' => '12',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -3392,7 +3392,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '60',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -3517,7 +3517,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '55',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -3646,7 +3646,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '14',
+          'weight' => '13',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -3762,7 +3762,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '42',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3916,7 +3916,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '50',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4050,7 +4050,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '32',
+          'weight' => '39',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4196,7 +4196,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '58',
+          'weight' => '65',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4453,7 +4453,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '54',
+          'weight' => '61',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4590,7 +4590,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '43',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4748,7 +4748,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '56',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4848,7 +4848,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '22',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4987,7 +4987,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '62',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5098,7 +5098,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '38',
+          'weight' => '45',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5201,7 +5201,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '33',
+          'weight' => '40',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -5348,7 +5348,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '61',
+          'weight' => '68',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5490,7 +5490,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '64',
+          'weight' => '71',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',

@@ -195,7 +195,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '50',
+            'weight' => '57',
             'visible' => FALSE,
           ),
           'user_candidate' => array(
@@ -221,7 +221,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '34',
+            'weight' => '41',
             'visible' => FALSE,
           ),
           'search_result' => array(
@@ -239,6 +239,16 @@ function pw_profiles_strongarm() {
           'user_candidate' => array(
             'weight' => '35',
             'visible' => FALSE,
+          ),
+        ),
+        'masquerade' => array(
+          'user_deputy' => array(
+            'weight' => '6',
+            'visible' => TRUE,
+          ),
+          'user_candidate' => array(
+            'weight' => '50',
+            'visible' => TRUE,
           ),
         ),
       ),
