@@ -873,7 +873,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'addressfield_standard',
-        'weight' => '45',
+        'weight' => '59',
       ),
     ),
   );
@@ -973,7 +973,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '51',
+        'weight' => '65',
       ),
     ),
   );
@@ -1193,7 +1193,7 @@ function pw_profiles_field_default_fields() {
           'year_range' => '-70:+0',
         ),
         'type' => 'date_popup',
-        'weight' => '50',
+        'weight' => '64',
       ),
     ),
   );
@@ -1289,7 +1289,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '53',
+        'weight' => '67',
       ),
     ),
   );
@@ -1517,7 +1517,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '56',
+        'weight' => '70',
       ),
     ),
   );
@@ -1763,7 +1763,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '48',
+        'weight' => '62',
       ),
     ),
   );
@@ -2724,7 +2724,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '47',
+        'weight' => '61',
       ),
     ),
   );
@@ -2957,7 +2957,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '54',
+        'weight' => '68',
       ),
     ),
   );
@@ -3064,7 +3064,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '55',
+        'weight' => '69',
       ),
     ),
   );
@@ -3426,7 +3426,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '52',
+        'weight' => '66',
       ),
     ),
   );
@@ -3843,7 +3843,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '46',
+        'weight' => '60',
       ),
     ),
   );
@@ -4074,11 +4074,12 @@ function pw_profiles_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_picture_copyright',
-      'label' => 'Picture copyright',
+      'label' => 'Profilbild copyright',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 'html_mail',
@@ -4090,6 +4091,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -4524,7 +4528,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '49',
+        'weight' => '63',
       ),
     ),
   );
@@ -4671,7 +4675,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '44',
+        'weight' => '58',
       ),
     ),
   );
@@ -5580,12 +5584,12 @@ $entity_field[0][\'value\'] = $result;',
   t('Parliament');
   t('Party');
   t('Phone');
-  t('Picture copyright');
   t('Political Goals');
   t('Political Roles');
   t('Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.');
   t('Position');
   t('Professional Qualification');
+  t('Profilbild copyright');
   t('Profile picture');
   t('Pseudonym');
   t('Public Mail');
