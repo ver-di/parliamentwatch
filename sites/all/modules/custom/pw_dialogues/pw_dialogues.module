@@ -326,3 +326,14 @@ function pw_dialogues_entity_presave($entity, $type) {
 
   }
 }
+
+/**
+ *  Implements hook_feeds_presave().
+ */
+function pw_dialogues_feeds_presave(FeedsSource $source, $entity, $item) {
+  if ($source->id == 'dialogue_importer' || $source->id == 'dialogue_message_importer') {
+    if (isset($entity->field_dialogue_documents['und'][0]['url']) && empty($entity->field_dialogue_documents['und'][0]['url'])) {
+      unset($entity->field_dialogue_documents['und']);
+    }
+  }
+}
