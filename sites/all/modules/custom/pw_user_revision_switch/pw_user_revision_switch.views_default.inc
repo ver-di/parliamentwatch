@@ -1606,10 +1606,8 @@ return $result;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
 $profile_user = user_revision_load($row->uid, $row->vid);
 if(_pw_is_premium_user($profile_user)){
-  $parliament = _pw_get_current_parliament_term();
   $politician_name = $profile_user->field_user_fname[\'und\'][0][\'value\']." ".$profile_user->field_user_lname[\'und\'][0][\'value\'];
-  $premium_price = $parliament->field_premium_profile_price[\'und\'][0][\'value\'];
-  print "Durch die Verwendung einer Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de einmalig mit ".$premium_price." Euro.";
+  print "Durch die Verwendung einer kostenpflichtigen Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de.";
 }
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
@@ -1899,10 +1897,8 @@ return $result;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $profile_user = user_revision_load($row->uid, $row->vid);
 if(_pw_is_premium_user($profile_user)){
-  $parliament = _pw_get_current_parliament_term();
   $politician_name = $profile_user->field_user_fname[\'und\'][0][\'value\']." ".$profile_user->field_user_lname[\'und\'][0][\'value\'];
-  $premium_price = $parliament->field_premium_profile_price[\'und\'][0][\'value\'];
-  print "Durch die Verwendung einer Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de einmalig mit ".$premium_price." Euro.";
+  print "Durch die Verwendung einer kostenpflichtigen Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de.";
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -2620,10 +2616,8 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
 $profile_user = user_revision_load($row->uid, $row->vid);
 if(_pw_is_premium_user($profile_user)){
-  $parliament = _pw_get_current_parliament_term();
   $politician_name = $profile_user->field_user_fname[\'und\'][0][\'value\']." ".$profile_user->field_user_lname[\'und\'][0][\'value\'];
-  $premium_price = $parliament->field_premium_profile_price[\'und\'][0][\'value\'];
-  print "Durch die Verwendung einer Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de einmalig mit ".$premium_price." Euro.";
+  print "Durch die Verwendung einer kostenpflichtigen Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de.";
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
