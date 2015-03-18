@@ -1208,6 +1208,7 @@ function pw_globals_field_default_fields() {
           'field_user_address_administrative_area' => 'administrative area',
           'field_user_list_tid' => 'list',
           'field_user_list_position_tid' => 'list position',
+          'field_user_constituency_tid' => 'constituency',
         ),
         'allowed_values_function' => '',
       ),
