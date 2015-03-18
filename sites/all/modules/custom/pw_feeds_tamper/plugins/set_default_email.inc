@@ -44,7 +44,7 @@ function pw_set_default_email($source, $item_key, $element_key, &$field, $settin
   if (empty($field)) {
     $field = $generic_email;
   }
-  elseif ($settings['force_if_candidate'] == 1) {
+  elseif (isset($settings['force_if_candidate']) && $settings['force_if_candidate'] == 1) {
     foreach ($source->current_item as $value) {
 
       // try to find string politician which indicates it's the field for roles
