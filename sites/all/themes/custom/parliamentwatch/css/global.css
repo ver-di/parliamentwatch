@@ -549,6 +549,10 @@ a.external:hover {
     padding-left: 26px;
     background-position: -282px -2382px;
 }
+#zone-content .permalink-wrapper.icon-link::before { /* overwrite awfont */
+    content: none;
+    width: auto;
+}
 .zebra .views-row-odd {
     background: #f4f4f4;
 }
