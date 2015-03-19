@@ -395,7 +395,18 @@ function pw_petitions_field_default_fields() {
       'locked' => '0',
       'module' => 'computed_field',
       'settings' => array(
-        'code' => '$entity_field[0][\'value\'] = "";',
+        'code' => '$required = $entity->field_donation_required[LANGUAGE_NONE][0][\'value\'];
+$amount = $entity->field_donation_amount[LANGUAGE_NONE][0][\'value\'];
+if($required > 0){
+  $result = ($amount / $required) * 100;
+}
+else{
+  $result = 0;
+}
+if ($result > 100){
+  $result = 100;
+}
+$entity_field[0][\'value\'] = $result;',
         'database' => array(
           'data_default' => '',
           'data_index' => 0,
@@ -413,6 +424,9 @@ if($required > 0){
 }
 else{
   $result = 0;
+}
+if ($result > 100){
+  $result = 100;
 }
 $entity_field[0][\'value\'] = $result;',
         'store' => 1,

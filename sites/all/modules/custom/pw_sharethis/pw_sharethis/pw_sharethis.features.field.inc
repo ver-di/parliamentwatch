@@ -143,7 +143,7 @@ function pw_sharethis_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'print' => array(
           'label' => 'above',
@@ -321,13 +321,13 @@ function pw_sharethis_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_deputy' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '38',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',

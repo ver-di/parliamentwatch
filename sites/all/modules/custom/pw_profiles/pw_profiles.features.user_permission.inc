@@ -410,7 +410,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'create files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
+      1 => 'Politician',
       2 => 'administrator',
     ),
     'module' => 'file_entity',
@@ -442,7 +442,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'delete own files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
+      1 => 'Politician',
       2 => 'administrator',
     ),
     'module' => 'file_entity',
@@ -1116,9 +1116,8 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_picture',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Deputy',
-      2 => 'Premium User',
-      3 => 'administrator',
+      1 => 'Politician',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1128,7 +1127,8 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_picture_copyright',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'administrator',
+      1 => 'Politician',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1241,7 +1241,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
+      1 => 'Politician',
       2 => 'administrator',
     ),
     'module' => 'file_entity',
@@ -1769,7 +1769,7 @@ function pw_profiles_user_default_permissions() {
   $permissions['view files'] = array(
     'name' => 'view files',
     'roles' => array(
-      0 => 'Premium User',
+      0 => 'Politician',
       1 => 'administrator',
       2 => 'anonymous user',
       3 => 'authenticated user',
@@ -2216,7 +2216,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
+      1 => 'Politician',
       2 => 'administrator',
     ),
     'module' => 'file_entity',
@@ -2227,7 +2227,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own private files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
+      1 => 'Politician',
       2 => 'administrator',
     ),
     'module' => 'file_entity',

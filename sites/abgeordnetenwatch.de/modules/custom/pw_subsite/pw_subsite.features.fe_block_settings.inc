@@ -380,7 +380,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-89',
+        'weight' => '8',
       ),
       'blank' => array(
         'region' => 'sidebar_second',
@@ -415,7 +415,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-83',
+        'weight' => '13',
       ),
       'blank' => array(
         'region' => '',
@@ -485,7 +485,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-76',
+        'weight' => '21',
       ),
       'blank' => array(
         'region' => '',
@@ -625,7 +625,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'abgeordnetenwatch',
-        'weight' => '-96',
+        'weight' => '-50',
       ),
       'blank' => array(
         'region' => '',

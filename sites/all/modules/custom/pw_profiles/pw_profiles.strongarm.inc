@@ -183,6 +183,12 @@ function pw_profiles_strongarm() {
         'xmlsitemap' => array(
           'weight' => '20',
         ),
+        'masquerade' => array(
+          'weight' => '50',
+        ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
       ),
       'display' => array(
         'summary' => array(
@@ -195,7 +201,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '50',
+            'weight' => '57',
             'visible' => FALSE,
           ),
           'user_candidate' => array(
@@ -221,7 +227,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '34',
+            'weight' => '41',
             'visible' => FALSE,
           ),
           'search_result' => array(
@@ -239,6 +245,16 @@ function pw_profiles_strongarm() {
           'user_candidate' => array(
             'weight' => '35',
             'visible' => FALSE,
+          ),
+        ),
+        'masquerade' => array(
+          'user_deputy' => array(
+            'weight' => '6',
+            'visible' => TRUE,
+          ),
+          'user_candidate' => array(
+            'weight' => '50',
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -289,20 +305,6 @@ function pw_profiles_strongarm() {
   $strongarm->name = 'node_submitted_calendar_entry';
   $strongarm->value = 0;
   $export['node_submitted_calendar_entry'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_user';
-  $strongarm->value = '';
-  $export['page_title_user'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'page_title_user_showfield';
-  $strongarm->value = 0;
-  $export['page_title_user_showfield'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

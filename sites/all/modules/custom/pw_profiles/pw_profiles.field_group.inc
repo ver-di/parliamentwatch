@@ -438,7 +438,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Basics',
-    'weight' => '39',
+    'weight' => '46',
     'children' => array(
       0 => 'group_user_basics_additional',
       1 => 'group_user_basics_data',
@@ -653,9 +653,12 @@ function pw_profiles_field_group_info() {
       7 => 'field_user_education',
       8 => 'field_user_list_position',
       9 => 'field_user_age',
-      10 => 'field_user_phone',
-      11 => 'field_user_public_mail',
-      12 => 'field_user_list',
+      10 => 'field_user_picture',
+      11 => 'field_user_phone',
+      12 => 'field_user_picture_copyright',
+      13 => 'field_user_public_mail',
+      14 => 'field_user_list',
+      15 => 'group_user_premium_picture',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -807,7 +810,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Polls',
-    'weight' => '40',
+    'weight' => '47',
     'children' => array(
       0 => 'group_user_polls_archive',
       1 => 'group_user_polls_current',
@@ -1031,8 +1034,7 @@ function pw_profiles_field_group_info() {
       1 => 'group_user_premium_gallery',
       2 => 'group_user_premium_goals',
       3 => 'group_user_premium_links',
-      4 => 'group_user_premium_picture',
-      5 => 'group_user_premium_twitter',
+      4 => 'group_user_premium_twitter',
     ),
     'format_type' => 'tabs',
     'format_settings' => array(
@@ -1106,7 +1108,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Roles',
-    'weight' => '41',
+    'weight' => '48',
     'children' => array(
       0 => 'group_user_roles_archive',
       1 => 'group_user_roles_current',

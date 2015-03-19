@@ -1420,7 +1420,7 @@ return $result;
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -1604,13 +1604,11 @@ return $result;
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
-
 $profile_user = user_revision_load($row->uid, $row->vid);
 if(_pw_is_premium_user($profile_user)){
   $politician_name = $profile_user->field_user_fname[\'und\'][0][\'value\']." ".$profile_user->field_user_lname[\'und\'][0][\'value\'];
-  print "Durch die Verwendung einer Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de einmalig mit 179 Euro (149 Euro als Frühbucherrabatt).";
+  print "Durch die Verwendung einer kostenpflichtigen Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de.";
 }
-
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
@@ -1729,7 +1727,7 @@ return $result;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -1897,11 +1895,10 @@ return $result;
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-
 $profile_user = user_revision_load($row->uid, $row->vid);
 if(_pw_is_premium_user($profile_user)){
   $politician_name = $profile_user->field_user_fname[\'und\'][0][\'value\']." ".$profile_user->field_user_lname[\'und\'][0][\'value\'];
-  print "Durch die Verwendung einer Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de einmalig mit 179 Euro (149 Euro als Frühbucherrabatt).";
+  print "Durch die Verwendung einer kostenpflichtigen Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de.";
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -1988,7 +1985,7 @@ return $result;
   $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2243,7 +2240,7 @@ return $result;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2464,7 +2461,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['relationships']['reverse_field_dialogue_recipient_node']['id'] = 'reverse_field_dialogue_recipient_node';
   $handler->display->display_options['relationships']['reverse_field_dialogue_recipient_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_dialogue_recipient_node']['field'] = 'reverse_field_dialogue_recipient_node';
-  /* Beziehung: Feld (Historische Daten): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -2560,7 +2557,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['empty_zero'] = TRUE;
-  /* Feld: Feld (Historische Daten): Parliament */
+  /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -2617,11 +2614,10 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-
 $profile_user = user_revision_load($row->uid, $row->vid);
 if(_pw_is_premium_user($profile_user)){
   $politician_name = $profile_user->field_user_fname[\'und\'][0][\'value\']." ".$profile_user->field_user_lname[\'und\'][0][\'value\'];
-  print "Durch die Verwendung einer Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de einmalig mit 179 Euro (149 Euro als Frühbucherrabatt).";
+  print "Durch die Verwendung einer kostenpflichtigen Profilerweiterung unterstützt ".$politician_name." abgeordnetenwatch.de.";
 }
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
@@ -2670,7 +2666,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['validate_options']['type'] = 'either';
-  /* Kontextfilter: Feld (Historische Daten): Parliament (field_user_parliament) */
+  /* Kontextfilter: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';

@@ -126,17 +126,6 @@ function pw_petitions_views_default_views() {
     'pw_petition' => 'pw_petition',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterium: Inhalt: Status (field_petition_status) */
-  $handler->display->display_options['filters']['field_petition_status_value']['id'] = 'field_petition_status_value';
-  $handler->display->display_options['filters']['field_petition_status_value']['table'] = 'field_data_field_petition_status';
-  $handler->display->display_options['filters']['field_petition_status_value']['field'] = 'field_petition_status_value';
-  $handler->display->display_options['filters']['field_petition_status_value']['operator'] = 'not';
-  $handler->display->display_options['filters']['field_petition_status_value']['value'] = array(
-    'collecting_donations' => 'collecting_donations',
-    'survey_in_progress' => 'survey_in_progress',
-    'asking_parliament' => 'asking_parliament',
-    'archived' => 'archived',
-  );
   $handler->display->display_options['path'] = 'petitions';
 
   /* Display: Block */
@@ -601,7 +590,7 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['relationships']['field_teaser_image_fid']['id'] = 'field_teaser_image_fid';
   $handler->display->display_options['relationships']['field_teaser_image_fid']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['relationships']['field_teaser_image_fid']['field'] = 'field_teaser_image_fid';
-  /* Beziehung: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Beziehung: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -807,7 +796,7 @@ print $progress; ?>%;"></div></div>';
     'comment_count' => 0,
     'expression' => 0,
   );
-  /* Feld: Inhalt: Blog Kategorie */
+  /* Feld: Inhalt: Categories */
   $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
@@ -817,7 +806,7 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['field_blogpost_categories']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_blogpost_categories']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Kontextfilter: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1023,7 +1012,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '4';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1106,7 +1095,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '3';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1187,7 +1176,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '2';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1267,7 +1256,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '3';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Inhalt: Categories (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';

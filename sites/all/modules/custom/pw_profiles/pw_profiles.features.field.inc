@@ -684,7 +684,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '59',
+          'weight' => '66',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -713,6 +713,7 @@ function pw_profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 0,
             'html_mail' => 0,
@@ -724,6 +725,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -794,6 +798,7 @@ function pw_profiles_field_default_fields() {
           'premise' => '',
           'postal_code' => '',
           'locality' => '',
+          'administrative_area' => '',
           'country' => 'DE',
         ),
       ),
@@ -822,7 +827,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '53',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -862,13 +867,13 @@ function pw_profiles_field_default_fields() {
             'address' => 'address',
             'address-hide-country' => 0,
             'organisation' => 0,
-            'name-full' => 0,
             'name-oneline' => 0,
+            'name-full' => 0,
           ),
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'addressfield_standard',
-        'weight' => '45',
+        'weight' => '59',
       ),
     ),
   );
@@ -934,7 +939,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '65',
+          'weight' => '72',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -968,7 +973,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '51',
+        'weight' => '65',
       ),
     ),
   );
@@ -1030,7 +1035,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '63',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1141,7 +1146,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '44',
+          'weight' => '51',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1183,11 +1188,12 @@ function pw_profiles_field_default_fields() {
           'input_format' => 'd.m.Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'text_parts' => array(),
           'year_range' => '-70:+0',
         ),
         'type' => 'date_popup',
-        'weight' => '50',
+        'weight' => '64',
       ),
     ),
   );
@@ -1245,7 +1251,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '52',
+          'weight' => '59',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -1283,7 +1289,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '53',
+        'weight' => '67',
       ),
     ),
   );
@@ -1508,11 +1514,10 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(
-          'autocomplete_path' => 'taxonomy/autocomplete',
-          'size' => 60,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '56',
+        'weight' => '70',
       ),
     ),
   );
@@ -1579,7 +1584,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '37',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1681,7 +1686,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '63',
+          'weight' => '70',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1758,7 +1763,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '48',
+        'weight' => '62',
       ),
     ),
   );
@@ -1824,7 +1829,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '44',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1977,7 +1982,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '62',
+          'weight' => '69',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2099,7 +2104,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '57',
+          'weight' => '64',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2250,7 +2255,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '12',
+          'weight' => '11',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -2280,6 +2285,7 @@ function pw_profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 0,
@@ -2291,6 +2297,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -2397,7 +2406,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '51',
+          'weight' => '58',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2498,7 +2507,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '60',
+          'weight' => '67',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2634,7 +2643,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '52',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -2663,6 +2672,7 @@ function pw_profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 0,
@@ -2674,6 +2684,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -2711,7 +2724,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '47',
+        'weight' => '61',
       ),
     ),
   );
@@ -2778,7 +2791,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '49',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2908,7 +2921,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '23',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2944,7 +2957,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '54',
+        'weight' => '68',
       ),
     ),
   );
@@ -3015,7 +3028,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '54',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3051,7 +3064,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '55',
+        'weight' => '69',
       ),
     ),
   );
@@ -3118,7 +3131,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '21',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3229,7 +3242,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '13',
+          'weight' => '12',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -3259,8 +3272,10 @@ function pw_profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -3269,11 +3284,17 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -3298,6 +3319,8 @@ function pw_profiles_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -3369,7 +3392,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '60',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -3403,7 +3426,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '52',
+        'weight' => '66',
       ),
     ),
   );
@@ -3494,7 +3517,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '55',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -3529,7 +3552,7 @@ function pw_profiles_field_default_fields() {
         'settings' => array(
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
-        'type' => 'options_select',
+        'type' => 'options_buttons',
         'weight' => '7',
       ),
     ),
@@ -3623,7 +3646,7 @@ function pw_profiles_field_default_fields() {
           'module' => 'i18n_taxonomy',
           'settings' => array(),
           'type' => 'i18n_taxonomy_term_reference_plain',
-          'weight' => '14',
+          'weight' => '13',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -3672,7 +3695,7 @@ function pw_profiles_field_default_fields() {
         'settings' => array(
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
-        'type' => 'options_select',
+        'type' => 'options_buttons',
         'weight' => '6',
       ),
     ),
@@ -3739,7 +3762,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '35',
+          'weight' => '42',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3768,6 +3791,7 @@ function pw_profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 0,
@@ -3779,6 +3803,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -3816,7 +3843,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '46',
+        'weight' => '60',
       ),
     ),
   );
@@ -3889,7 +3916,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '50',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4023,7 +4050,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '32',
+          'weight' => '39',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4047,11 +4074,12 @@ function pw_profiles_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_picture_copyright',
-      'label' => 'Picture copyright',
+      'label' => 'Profilbild copyright',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 'html_mail',
@@ -4063,6 +4091,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -4169,7 +4200,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '58',
+          'weight' => '65',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4426,7 +4457,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '54',
+          'weight' => '61',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4497,7 +4528,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '49',
+        'weight' => '63',
       ),
     ),
   );
@@ -4563,7 +4594,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '43',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4592,6 +4623,7 @@ function pw_profiles_field_default_fields() {
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 0,
@@ -4603,6 +4635,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -4640,7 +4675,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '44',
+        'weight' => '58',
       ),
     ),
   );
@@ -4717,7 +4752,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '49',
+          'weight' => '56',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4817,7 +4852,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '22',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4956,7 +4991,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '62',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5067,7 +5102,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '38',
+          'weight' => '45',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5170,7 +5205,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '33',
+          'weight' => '40',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -5200,6 +5235,7 @@ $entity_field[0][\'value\'] = $result;',
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 'html_mail',
@@ -5211,6 +5247,9 @@ $entity_field[0][\'value\'] = $result;',
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -5313,7 +5352,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '61',
+          'weight' => '68',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5455,7 +5494,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '64',
+          'weight' => '71',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5545,12 +5584,12 @@ $entity_field[0][\'value\'] = $result;',
   t('Parliament');
   t('Party');
   t('Phone');
-  t('Picture copyright');
   t('Political Goals');
   t('Political Roles');
   t('Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.');
   t('Position');
   t('Professional Qualification');
+  t('Profilbild copyright');
   t('Profile picture');
   t('Pseudonym');
   t('Public Mail');

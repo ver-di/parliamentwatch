@@ -327,16 +327,6 @@ function pw_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'user_og_description' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
     'user_profile_api_link' => array(
       'weight' => '7',
       'label' => 'hidden',
@@ -432,7 +422,7 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'user_deputy';
   $ds_fieldsetting->settings = array(
     'bundestagsradar' => array(
-      'weight' => '8',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -448,7 +438,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_and_answers_filter' => array(
-      'weight' => '11',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -464,7 +454,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_form' => array(
-      'weight' => '10',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -480,7 +470,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'short_profile_deputy_main' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -496,7 +486,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_basic_info' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -511,18 +501,8 @@ function pw_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'user_og_description' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
     'user_profile_api_link' => array(
-      'weight' => '7',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -538,7 +518,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '9',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -558,7 +538,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '6',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -574,7 +554,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '4',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -590,7 +570,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_revision_switch' => array(
-      'weight' => '5',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -822,16 +802,6 @@ function pw_profiles_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => 'id="pw-block-user-gallery"',
           'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'user_og_description' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -1368,40 +1338,6 @@ if($field_user_parliament == 6501){
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
-  $ds_field->field = 'user_og_description';
-  $ds_field->label = 'User OG Description';
-  $ds_field->field_type = 5;
-  $ds_field->entities = array(
-    'user' => 'user',
-  );
-  $ds_field->ui_limit = '';
-  $ds_field->properties = array(
-    'code' => array(
-      'value' => '<?php
-global $user;
-$user_fields = user_load($user->uuid);
-$firstname = $user_fields->field_user_fname[\'und\'][\'0\'][\'value\'];
-$lastname = $user_fields->field_user_lname[\'und\'][\'0\'][\'value\'];
-$sitename = token_replace(\'[site:name]\');
-
-$description = "I found something interesting on ".$sitename.". Check it out!";
-$element = array(
-  \'#tag\' => \'meta\', 
-  \'#attributes\' => array(
-    \'property\' => \'og:description\',
-    \'content\' => $description,
-  ),
-);
-drupal_add_html_head($element, \'og_description\');
-?>',
-      'format' => 'php_code',
-    ),
-    'use_token' => 1,
-  );
-  $export['user_og_description'] = $ds_field;
-
-  $ds_field = new stdClass();
-  $ds_field->api_version = 1;
   $ds_field->field = 'user_political_goals';
   $ds_field->label = 'User Political Goals';
   $ds_field->field_type = 6;
@@ -1598,30 +1534,29 @@ function pw_profiles_ds_layout_settings_info() {
     'regions' => array(
       'left_1' => array(
         0 => 'short_profile_deputy_main',
-        1 => 'user_og_description',
-        2 => 'user_basic_info',
-        3 => 'pw_kandidatencheck',
+        1 => 'user_basic_info',
+        2 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        4 => 'pw_slider',
-        5 => 'user_revision_switch',
-        6 => 'user_wrong_data',
-        7 => 'user_profile_api_link',
+        3 => 'pw_slider',
+        4 => 'user_revision_switch',
+        5 => 'user_wrong_data',
+        6 => 'user_profile_api_link',
+        11 => 'masquerade',
       ),
       'left_2' => array(
-        8 => 'user_questions_and_answers',
-        9 => 'question_form',
+        7 => 'user_questions_and_answers',
+        8 => 'question_form',
       ),
       'right_2' => array(
-        10 => 'question_and_answers_filter',
+        9 => 'question_and_answers_filter',
       ),
       'ds_hidden' => array(
-        11 => 'field_user_party',
+        10 => 'field_user_party',
       ),
     ),
     'fields' => array(
       'short_profile_deputy_main' => 'left_1',
-      'user_og_description' => 'left_1',
       'user_basic_info' => 'left_1',
       'pw_kandidatencheck' => 'left_1',
       'pw_slider' => 'right_1',
@@ -1632,6 +1567,7 @@ function pw_profiles_ds_layout_settings_info() {
       'question_form' => 'left_2',
       'question_and_answers_filter' => 'right_2',
       'field_user_party' => 'ds_hidden',
+      'masquerade' => 'right_1',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1663,15 +1599,15 @@ function pw_profiles_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left_1' => array(
-        0 => 'user_og_description',
-        1 => 'short_profile_deputy_main',
-        2 => 'user_basic_info',
+        0 => 'short_profile_deputy_main',
+        1 => 'user_basic_info',
       ),
       'right_1' => array(
-        3 => 'pw_slider',
-        4 => 'user_revision_switch',
-        5 => 'user_wrong_data',
-        6 => 'user_profile_api_link',
+        2 => 'pw_slider',
+        3 => 'user_revision_switch',
+        4 => 'user_wrong_data',
+        5 => 'user_profile_api_link',
+        6 => 'masquerade',
         7 => 'bundestagsradar',
       ),
       'left_2' => array(
@@ -1688,13 +1624,13 @@ function pw_profiles_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'user_og_description' => 'left_1',
       'short_profile_deputy_main' => 'left_1',
       'user_basic_info' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
       'user_profile_api_link' => 'right_1',
+      'masquerade' => 'right_1',
       'bundestagsradar' => 'right_1',
       'user_questions_and_answers' => 'left_2',
       'question_form' => 'left_2',
@@ -1769,36 +1705,34 @@ function pw_profiles_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left_1' => array(
-        0 => 'user_og_description',
-        1 => 'short_profile',
-        2 => 'user_basic_info',
-        3 => 'user_about',
-        4 => 'user_image_gallery',
-        5 => 'user_political_goals',
-        6 => 'user_tweets',
-        7 => 'additional_links',
-        8 => 'user_calendar',
-        9 => 'pw_kandidatencheck',
+        0 => 'short_profile',
+        1 => 'user_basic_info',
+        2 => 'user_about',
+        3 => 'user_image_gallery',
+        4 => 'user_political_goals',
+        5 => 'user_tweets',
+        6 => 'additional_links',
+        7 => 'user_calendar',
+        8 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        10 => 'pw_slider',
-        11 => 'user_revision_switch',
-        12 => 'user_wrong_data',
-        13 => 'user_profile_api_link',
+        9 => 'pw_slider',
+        10 => 'user_revision_switch',
+        11 => 'user_wrong_data',
+        12 => 'user_profile_api_link',
       ),
       'left_2' => array(
-        14 => 'user_questions_and_answers',
-        15 => 'question_form',
+        13 => 'user_questions_and_answers',
+        14 => 'question_form',
       ),
       'right_2' => array(
-        16 => 'question_and_answers_filter',
+        15 => 'question_and_answers_filter',
       ),
       'ds_hidden' => array(
-        17 => 'field_user_party',
+        16 => 'field_user_party',
       ),
     ),
     'fields' => array(
-      'user_og_description' => 'left_1',
       'short_profile' => 'left_1',
       'user_basic_info' => 'left_1',
       'user_about' => 'left_1',

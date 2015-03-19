@@ -10,20 +10,23 @@ include_once 'pw_profiles.features.inc';
  * Enlarges field output_name field in table user_filter_cache to 255 characters:
  */
 function pw_profiles_update_7104() {
-  db_change_field('user_filter_cache', 'output_name', 'output_name', array (
-        'type' => 'varchar',
-        'length' => 255,
-        'not null' => true,
-        'default' => '',
-      ));
+  db_change_field('user_filter_cache', 'output_name', 'output_name', array(
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+    'default' => '',
+  ));
 }
 
 /**
  * Add index to the table to optimize select queries from pw_forms_filter_alter:
  */
 function pw_profiles_update_7103() {
-  db_add_index('user_filter_cache', 'pw_forms_filter_alter_ix', array('input_output_type',
-      'input_role_name', 'input_parliament_name'));
+  db_add_index('user_filter_cache', 'pw_forms_filter_alter_ix', array(
+    'input_output_type',
+    'input_role_name',
+    'input_parliament_name'
+  ));
 }
 
 /**
@@ -31,59 +34,58 @@ function pw_profiles_update_7103() {
  * @return array
  */
 function pw_profiles_schema() {
-  $schema['user_filter_cache'] = array (
+  $schema['user_filter_cache'] = array(
     'fields' =>
-    array (
-      'output_tid' =>
-      array (
-        'type' => 'int',
-        'unsigned' => true,
-        'not null' => true,
-        'default' => 0,
+      array(
+        'output_tid' =>
+          array(
+            'type' => 'int',
+            'unsigned' => TRUE,
+            'not null' => TRUE,
+            'default' => 0,
+          ),
+        'output_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_output_type' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_role_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_parliament_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
       ),
-      'output_name' =>
-      array (
-        'type' => 'varchar',
-        'length' => 45,
-        'not null' => true,
-        'default' => '',
-      ),
-      'input_output_type' =>
-      array (
-        'type' => 'varchar',
-        'length' => 45,
-        'not null' => true,
-        'default' => '',
-      ),
-      'input_role_name' =>
-      array (
-        'type' => 'varchar',
-        'length' => 45,
-        'not null' => true,
-        'default' => '',
-      ),
-      'input_parliament_name' =>
-      array (
-        'type' => 'varchar',
-        'length' => 45,
-        'not null' => true,
-        'default' => '',
-      ),
-    ),
     'indexes' =>
-    array (
-    ),
+      array(),
     'unique_keys' =>
-    array (
-      'uniqueness' =>
-      array (
-        0 => 'output_tid',
-        1 => 'output_name',
-        2 => 'input_output_type',
-        3 => 'input_role_name',
-        4 => 'input_parliament_name',
+      array(
+        'uniqueness' =>
+          array(
+            0 => 'output_tid',
+            1 => 'output_name',
+            2 => 'input_output_type',
+            3 => 'input_role_name',
+            4 => 'input_parliament_name',
+          ),
       ),
-    ),
     'module' => 'pw_profiles',
     'name' => 'user_filter_cache',
   );
@@ -155,7 +157,8 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
       '#value' => views_embed_view('calendar', $display_id = 'block_2'),
       '#weight' => 0,
     );
-  } elseif ($form_id == "user_revision_edit_form") {
+  }
+  elseif ($form_id == "user_revision_edit_form") {
     unset($form["field_user_external_url"]);
     unset($form["antispam_moderator"]);
     unset($form["ckeditor"]);
@@ -176,12 +179,13 @@ function pw_profiles_user_presave(&$edit, $account, $category) {
   // $edit['roles'] is unset if user_save() is called programmatically with
   // modifications that do not include the roles. In order to reset the roles
   // anyway, we load the roles from the $account:
-  if(!isset($edit['roles'])) {
-    foreach ($account->roles as $key => $value)
+  if (!isset($edit['roles'])) {
+    foreach ($account->roles as $key => $value) {
       $edit['roles'][$key] = $key;
+    }
   }
   foreach ($edit['roles'] as $key => $value) {
-    if(!empty($value)) {
+    if (!empty($value)) {
       $roleIdArray[] = $key;
     }
   }
@@ -207,19 +211,19 @@ function pw_profiles_user_presave(&$edit, $account, $category) {
  */
 
 function pw_profiles_views_query_alter(&$view, &$query) {
-  if($view->name == 'profile_list_rev' || $view->name == 'pw_user_profile_fields_rev' && $view->current_display == 'block_1') {
-     // add the group by on the user id field to prevent duplicates caused by user revisions
-     // $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
-     // $query->add_groupby('users_uid');
+  if ($view->name == 'profile_list_rev' || $view->name == 'pw_user_profile_fields_rev' && $view->current_display == 'block_1') {
+    // add the group by on the user id field to prevent duplicates caused by user revisions
+    // $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
+    // $query->add_groupby('users_uid');
 
-     // add join user_archive_cache table to get rid of duplicates
-     $join = new views_join();
-     $join->table = 'user_archive_cache';
-     $join->field = 'vid';
-     $join->left_table = 'user_revision';
-     $join->left_field = 'vid';
-     $join->type = 'INNER';
-     $query->add_relationship('user_archive_cache', $join, 'user_revision');
+    // add join user_archive_cache table to get rid of duplicates
+    $join = new views_join();
+    $join->table = 'user_archive_cache';
+    $join->field = 'vid';
+    $join->left_table = 'user_revision';
+    $join->left_field = 'vid';
+    $join->type = 'INNER';
+    $query->add_relationship('user_archive_cache', $join, 'user_revision');
   }
 }
 
@@ -229,13 +233,13 @@ function pw_profiles_views_query_alter(&$view, &$query) {
  * If found don't render the fields user_questions_and_answers and question_and_answers_filter.
  */
 function pw_profiles_ds_pre_render_alter(&$layout_render_array, $context) {
-  if(isset($layout_render_array['left_2'])){
-    foreach($layout_render_array['left_2'] as $index => $render_array){
-      if($render_array['#field_name'] == 'user_questions_and_answers' && strpos($render_array['#items'][0]['value'], '[field_user_fname]')){
+  if (isset($layout_render_array['left_2'])) {
+    foreach ($layout_render_array['left_2'] as $index => $render_array) {
+      if ($render_array['#field_name'] == 'user_questions_and_answers' && strpos($render_array['#items'][0]['value'], '[field_user_fname]')) {
         unset($layout_render_array['left_2'][$index]);
-        if(isset($layout_render_array['right_2'])){
-          foreach($layout_render_array['right_2'] as $index => $render_array){
-            if($render_array['#field_name'] == 'question_and_answers_filter'){
+        if (isset($layout_render_array['right_2'])) {
+          foreach ($layout_render_array['right_2'] as $index => $render_array) {
+            if ($render_array['#field_name'] == 'question_and_answers_filter') {
               unset($layout_render_array['right_2'][$index]);
               break;
             }
@@ -244,5 +248,15 @@ function pw_profiles_ds_pre_render_alter(&$layout_render_array, $context) {
         }
       }
     }
+  }
+}
+
+
+/**
+ *  Implements hook_user_update().
+ */
+function pw_profiles_user_update(&$edit, $account, $category) {
+  if (function_exists('pw_userarchives_cron') && $account->uid) {
+    pw_userarchives_cron($account->uid);
   }
 }

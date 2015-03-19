@@ -263,6 +263,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:9' => 'listposition',
           'xpathparser:10' => 'parliament',
           'xpathparser:12' => 'systemuuid',
+          'xpathparser:13' => 'email',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -275,12 +276,11 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:9' => 0,
           'xpathparser:10' => 0,
           'xpathparser:12' => 0,
+          'xpathparser:13' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 1,
-          'tidy' => 0,
-          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -293,6 +293,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:9' => 0,
             'xpathparser:10' => 0,
             'xpathparser:12' => 0,
+            'xpathparser:13' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -365,7 +366,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'unique' => 1,
           ),
           10 => array(
-            'source' => 'Blank source 1',
+            'source' => 'xpathparser:13',
             'target' => 'mail',
             'unique' => FALSE,
           ),
@@ -1148,7 +1149,7 @@ function pw_gdata_importer_feeds_importer_default() {
   $feeds_importer->id = 'gdata_profiles_updater';
   $feeds_importer->config = array(
     'name' => 'GData Profiles Role Updater',
-    'description' => 'Updates Profiles primarily to assign role Deputy after elections',
+    'description' => '[deprecated, please use gdata_elected_profiles instead] Updates Profiles primarily to assign role Deputy after elections',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
