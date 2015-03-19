@@ -16,6 +16,7 @@ html {
     border-bottom: 0;
     background: transparent;
     margin: 0 10px;
+    z-index: 10;
 }
 #zone-branding .logo-img {
     display: inline-block;
