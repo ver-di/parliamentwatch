@@ -81,7 +81,7 @@ function pw_login_once_get_user_login_link($uuid, $name, $mail) {
 
   if ($uuid == $account->uuid) {
     if ($name == $account->name) {
-      if (true) {//more robust checking - was $mail == $account->mail
+      if (true) { //more robust checking - was $mail == $account->mail
 
         $login = pw_login_once_get_link($account, NULL);
         if (empty($login)) {
