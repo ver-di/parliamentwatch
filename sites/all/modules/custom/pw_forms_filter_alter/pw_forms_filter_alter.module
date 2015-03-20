@@ -25,11 +25,8 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
     // which kind of profiles
     $role_name = arg(2) == 'deputies' ? 'Deputy' : 'Candidate';
 
-    // get parliament from path
-    $parliament_name = arg(1);
-
     // load parliament term
-    $parliament = taxonomy_get_term_by_name($parliament_name, 'parliaments');
+    $parliament = _pw_get_current_parliament_term();
 
     // something went wrong
     if (empty($parliament)) {
@@ -37,7 +34,7 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
     }
 
     // disable specific filters
-    foreach (field_get_items('taxonomy_term', array_pop($parliament), 'field_parliament_filter_disabled') as $filter_name) {
+    foreach (field_get_items('taxonomy_term', $parliament, 'field_parliament_filter_disabled') as $filter_name) {
       $filter_name = $filter_name['value'];
       unset($form[$filter_name]);
       unset($form['#info']['filter-' . $filter_name]);
@@ -49,7 +46,7 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
     // parameter for sql replacement
     $a_parameter = array(
       ':role_name' => $role_name,
-      ':parliament_name' => $parliament_name
+      ':parliament_name' => $parliament->name
     );
 
     // parties - query database
@@ -93,6 +90,13 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
       natsort($options);
       $options = array('All' => 'Alle') + $options;
       $form['field_user_constituency_tid']['#options'] = $options;
+
+      // rename constituency if is configured
+      $field_rename_value = field_get_items('taxonomy_term', $parliament, 'field_parliament_constit_rename');
+      if (!empty($field_rename_value)) {
+        $form['#info']['filter-field_user_constituency_tid']['label'] = $field_rename_value[0]['value'];
+      }
+
     }
 
     // lists - query database
