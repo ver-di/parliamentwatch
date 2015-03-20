@@ -157,6 +157,8 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
       '#value' => views_embed_view('calendar', $display_id = 'block_2'),
       '#weight' => 0,
     );
+    $form['#validate'][] = 'my_user_register_validate';
+    $form['account']['name']['#description'] = t('Only lowercase letters (a-z) and dash are allowed.');
   }
   elseif ($form_id == "user_revision_edit_form") {
     unset($form["field_user_external_url"]);
@@ -165,6 +167,13 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
     unset($form["mimemail"]);
     unset($form["overlay_control"]);
     unset($form["xmlsitemap"]);
+  }
+}
+
+function my_user_register_validate($form, &$form_state) {
+  $username = $form_state['input']['name'];
+  if (!preg_match('/^[a-z\-]+$/', $username)) {
+    form_set_error('name',  t($form['account']['name']['#description']));
   }
 }
 
@@ -273,5 +282,14 @@ function pw_profiles_ds_pre_render_alter(&$layout_render_array, $context) {
 function pw_profiles_user_update(&$edit, $account, $category) {
   if (function_exists('pw_userarchives_cron') && $account->uid) {
     pw_userarchives_cron($account->uid);
+  }
+
+  // check if username was changed and update path then
+  if ($account->name != $account->original->name) {
+    $path = path_load(array('source' => 'user/' . $account->uid));
+    if($path) {
+      $path['alias'] = 'profile/' . $account->name;
+      path_save($path);
+    }
   }
 }
