@@ -109,12 +109,12 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->source = 'xpathparser:8';
   $feeds_tamper->plugin_id = 'find_replace_regex';
   $feeds_tamper->settings = array(
-    'find' => '/[0-9]+\\((.+)\\)/U',
-    'replace' => '$1',
+    'find' => '/([0-9]+)\\((.+)\\)/U',
+    'replace' => '$1:$2',
     'limit' => '',
     'real_limit' => -1,
   );
-  $feeds_tamper->weight = 1;
+  $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Find replace REGEX';
   $export['gdata_constituency_importer-xpathparser_8-find_replace_regex'] = $feeds_tamper;
 

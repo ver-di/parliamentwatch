@@ -31,14 +31,17 @@ class FacetapiFilterRewriteItems extends FacetapiFilter {
         $location_names = array_unique(explode(",", $vocterm->field_constituency_ac_descriptor["und"]["0"]["value"]));
         $i = 0;
         foreach ($location_names as $name) {
-          if ($i == 0) {
-            $build[$key]["#markup"] = $name;
+          $exname = explode(":", $name, 2);
+          if ($endpoint == $exname[0]){
+            if ($i == 0) {
+              $build[$key]["#markup"] = $exname[1];
+            }
+            else {
+              $build[$key . "-" . $i] = $build[$key];
+              $build[$key . "-" . $i]["#markup"] = $exname[1];
+            }
+            $i++;
           }
-          else {
-            $build[$key . "-" . $i] = $build[$key];
-            $build[$key . "-" . $i]["#markup"] = $name;
-          }
-          $i++;
         }
       }
     }
