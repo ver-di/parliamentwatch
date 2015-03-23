@@ -183,12 +183,6 @@ function pw_profiles_strongarm() {
         'xmlsitemap' => array(
           'weight' => '20',
         ),
-        'masquerade' => array(
-          'weight' => '50',
-        ),
-        'metatags' => array(
-          'weight' => '40',
-        ),
       ),
       'display' => array(
         'summary' => array(
