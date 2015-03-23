@@ -61,6 +61,7 @@ function pw_globals_field_default_fields() {
       'label' => 'Comment',
       'required' => TRUE,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -126,6 +127,7 @@ function pw_globals_field_default_fields() {
       'label' => 'Comment',
       'required' => TRUE,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -216,6 +218,7 @@ function pw_globals_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -300,6 +303,7 @@ function pw_globals_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -416,6 +420,7 @@ function pw_globals_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 1,
           'insert_plugin' => 'html_link',
@@ -487,6 +492,7 @@ function pw_globals_field_default_fields() {
       'label' => 'AC Descriptor',
       'required' => FALSE,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => 0,
         'user_register_form' => FALSE,
       ),
@@ -556,6 +562,7 @@ function pw_globals_field_default_fields() {
       'label' => 'Area Codes',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -654,6 +661,7 @@ function pw_globals_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -731,6 +739,7 @@ function pw_globals_field_default_fields() {
       'label' => 'Electoral Region',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -803,6 +812,7 @@ function pw_globals_field_default_fields() {
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -873,6 +883,7 @@ function pw_globals_field_default_fields() {
       'label' => 'Electoral Region',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -946,6 +957,7 @@ function pw_globals_field_default_fields() {
       'label' => 'Parliament',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1019,6 +1031,7 @@ function pw_globals_field_default_fields() {
       'label' => 'Parliament',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1619,6 +1632,7 @@ function pw_globals_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -1721,6 +1735,7 @@ function pw_globals_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
