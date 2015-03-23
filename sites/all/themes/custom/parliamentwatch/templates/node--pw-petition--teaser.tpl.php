@@ -18,9 +18,9 @@ switch ($field_petition_partner['und'][0]['value']) {
 }
 $themed_image = theme_image_style(array(
   'style_name' => 'pw_landscape_l', //Configure style here!
-  'path' => $field_teaser_image['und'][0]['uri']
+  'path' => $field_teaser_image[0]['uri']
 ));
-if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($field_teaser_image['und'][0]['field_image_copyright']['und'][0]['value'] )){
+if (!empty($field_teaser_image[0]['field_image_copyright']) || !empty($field_teaser_image[0]['field_image_copyright']['und'][0]['value'] )){
   $field_image_copyright = true;
 }
 ?>
@@ -47,7 +47,7 @@ if (!empty($field_teaser_image['und'][0]['field_image_copyright']) || !empty($fi
     </a>
     <?php if ($field_image_copyright): ?>
     <div class="copyright">
-        <? echo $field_teaser_image['und'][0]['field_image_copyright']['und'][0]['value'] ?>
+        <? echo $field_teaser_image[0]['field_image_copyright']['und'][0]['value'] ?>
     </div>
     <?php endif; ?>
 </div>
