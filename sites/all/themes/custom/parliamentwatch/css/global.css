@@ -2279,7 +2279,7 @@ input.error {
 form .error:before {
     color: #fe0002;
     font-family: "awfont";
-    content: "\e825";
+    content: "\e823";
     font-size: 1.2em;
     margin-right: 4px;
     padding-left: 0.1em;
