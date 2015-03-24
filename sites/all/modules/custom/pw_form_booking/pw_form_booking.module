@@ -67,6 +67,7 @@ function pw_form_booking_webform_submission_presave($node, &$submission) {
       $rid = array_search($role_premium, $system_roles);
       $new_role[$rid] = $role_premium;
       $new_roles = $user->roles + $new_role;
+      $user->revision = 0;
       user_save($user, array('roles' => $new_roles));
     }
   }
