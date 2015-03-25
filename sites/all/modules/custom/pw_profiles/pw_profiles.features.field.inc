@@ -129,6 +129,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Alt Text',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
@@ -180,7 +181,7 @@ function pw_profiles_field_default_fields() {
       'bundle' => 'image',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Title text attribute (for the profile formats x and xs the copyright will overwrite this field)',
+      'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -263,14 +264,17 @@ function pw_profiles_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'file',
+      'exclude_cv' => 0,
       'field_name' => 'field_file_image_title_text',
       'label' => 'Title Text',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
+            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -279,11 +283,17 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
               'full_html' => array(
                 'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -297,6 +307,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -382,6 +393,7 @@ function pw_profiles_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -451,6 +463,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Address',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -540,6 +553,7 @@ function pw_profiles_field_default_fields() {
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -604,6 +618,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Position',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '100',
         'min' => '1',
         'prefix' => '',
@@ -750,6 +765,7 @@ function pw_profiles_field_default_fields() {
           ),
         ),
         'display_summary' => 0,
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => 0,
       ),
@@ -854,6 +870,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Address',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -966,6 +983,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Age',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -1062,6 +1080,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Answers Give',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '0',
         'prefix' => '',
@@ -1177,6 +1196,7 @@ function pw_profiles_field_default_fields() {
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -1278,6 +1298,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Children',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -1394,6 +1415,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Committee',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -1508,6 +1530,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Constituency',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -1611,6 +1634,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Constituency Won',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -1747,6 +1771,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -1894,6 +1919,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -2020,6 +2046,7 @@ function pw_profiles_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -2165,6 +2192,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -2321,6 +2349,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -2433,6 +2462,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Gender',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -2536,6 +2566,7 @@ function pw_profiles_field_default_fields() {
       'settings' => array(
         'alt_field' => 1,
         'default_image' => 0,
+        'exclude_cv' => FALSE,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -2708,6 +2739,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -2830,6 +2862,7 @@ function pw_profiles_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 0,
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -2948,6 +2981,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'List',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -3055,6 +3089,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'List Position',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -3158,6 +3193,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'List Won',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -3308,6 +3344,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -3419,6 +3456,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Marriage status',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -3544,6 +3582,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Parliament',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -3687,6 +3726,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Party',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -3827,6 +3867,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -3949,6 +3990,7 @@ function pw_profiles_field_default_fields() {
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
+        'exclude_cv' => FALSE,
         'file_directory' => 'users',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '1 MB',
@@ -3984,7 +4026,7 @@ function pw_profiles_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '55',
+        'weight' => '4',
       ),
     ),
   );
@@ -4111,6 +4153,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -4127,7 +4170,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '56',
+        'weight' => '5',
       ),
     ),
   );
@@ -4258,6 +4301,7 @@ function pw_profiles_field_default_fields() {
           ),
         ),
         'display_summary' => 0,
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => 0,
       ),
@@ -4371,6 +4415,7 @@ function pw_profiles_field_default_fields() {
       'label' => 'Political Roles',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -4510,6 +4555,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -4655,6 +4701,7 @@ function pw_profiles_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -4775,6 +4822,7 @@ $entity_field[0][\'value\'] = $result;',
       'label' => 'QuestionAnswerRatio',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -4909,6 +4957,7 @@ $entity_field[0][\'value\'] = $result;',
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -5014,6 +5063,7 @@ $entity_field[0][\'value\'] = $result;',
       'label' => 'Questions Get',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '0',
         'prefix' => '',
@@ -5125,6 +5175,7 @@ $entity_field[0][\'value\'] = $result;',
       'label' => 'Roles (revisionable)',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -5267,6 +5318,7 @@ $entity_field[0][\'value\'] = $result;',
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -5409,6 +5461,7 @@ $entity_field[0][\'value\'] = $result;',
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -5521,6 +5574,7 @@ $entity_field[0][\'value\'] = $result;',
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
+        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -5595,7 +5649,6 @@ $entity_field[0][\'value\'] = $result;',
   t('Roles (revisionable)');
   t('Title');
   t('Title Text');
-  t('Title text attribute (for the profile formats x and xs the copyright will overwrite this field)');
   t('Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem Profil veröffentlicht.');
   t('Twitter');
   t('Valid');

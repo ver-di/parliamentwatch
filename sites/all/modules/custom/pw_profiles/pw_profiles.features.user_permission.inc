@@ -1247,6 +1247,18 @@ function pw_profiles_user_default_permissions() {
     'module' => 'file_entity',
   );
 
+  // Exported permission: use text format copyright.
+  $permissions['use text format copyright'] = array(
+    'name' => 'use text format copyright',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'PW Manager',
+      2 => 'Politician',
+      3 => 'administrator',
+    ),
+    'module' => 'filter',
+  );
+
   // Exported permission: use text format filtered_html.
   $permissions['use text format filtered_html'] = array(
     'name' => 'use text format filtered_html',
