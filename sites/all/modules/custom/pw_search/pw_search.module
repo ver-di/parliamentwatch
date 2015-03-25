@@ -36,7 +36,8 @@ function pw_search_apachesolr_node_exclude($entity_id, $row, $env_id) {
  */
 function pw_search_apachesolr_user_exclude($entity_id, $row, $env_id) {
   $hamburg_tid = 18030;
-  if (user_load($entity_id)->field_user_parliament['und'][0]['tid'] == $hamburg_tid){
+  $bremen_tid = 18064;
+  if (user_load($entity_id)->field_user_parliament['und'][0]['tid'] == $bremen_tid){
     return false;
   }
   return !pw_search_is_politician($entity_id) || pw_search_is_candidate($entity_id);
