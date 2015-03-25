@@ -1,3 +1,7 @@
+.tb-megamenu .nav-collapse,
+.tb-megamenu .nav-collapse.collapse {
+    z-index: 500;
+}
 .tb-megamenu .mega-inner {
   padding: 10px;
   *zoom: 1;

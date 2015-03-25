@@ -103,7 +103,7 @@ body {
     padding: 10px 0 0;
     border-bottom: 1px solid #f63;
     background: #fff;
-    z-index: 999;
+    z-index: 500;
     margin: 0;
 }
 #zone-branding .logo-img {
