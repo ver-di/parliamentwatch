@@ -33,8 +33,10 @@ jQuery(document).ready(function() {
 
 // trigger throbber on submitting forms
 
-	$('form').submit(function() {
-		$('body').append('<div class="ajax-progress"><div class="throbber">&nbsp;</div></div>');
+	$("form").submit(function() {
+		if($(this).valid() == true ){
+			$('body').append('<div class="ajax-progress"><div class="throbber">&nbsp;</div></div>');
+		}
 	});
 
 
