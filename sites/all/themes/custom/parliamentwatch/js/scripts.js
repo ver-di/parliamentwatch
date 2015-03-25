@@ -1,6 +1,6 @@
 jQuery(window) // https://www.drupal.org/node/1478648
 	// fire mmenu adn sticky events for mobile only
-    .load( function() {
+    .on( "resize load", function() {
         jQuery('body').bind('responsivelayout', function(e, d) {
 			$(".responsive-layout-mobile #nav").mmenu({
 				classes: "mm-light",         
@@ -26,8 +26,10 @@ jQuery(window) // https://www.drupal.org/node/1478648
 				$("#nav").trigger("open.mm");
 			});
 			$('.responsive-layout-mobile #region-branding').stick_in_parent({parent:'#page'});
+			$('.responsive-layout-normal #region-branding').trigger("sticky_kit:detach");;
         });
 });
+
 
 jQuery(document).ready(function() {
 
