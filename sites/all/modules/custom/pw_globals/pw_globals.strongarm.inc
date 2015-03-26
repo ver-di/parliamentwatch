@@ -511,7 +511,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ife_display';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['ife_display'] = $strongarm;
 
   $strongarm = new stdClass();
