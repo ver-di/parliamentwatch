@@ -89,7 +89,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Managed Content',
-    'weight' => '10',
+    'weight' => '13',
     'children' => array(
       0 => 'field_user_gender',
       1 => 'field_user_question_form_closed',
@@ -148,7 +148,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Premium',
-    'weight' => '8',
+    'weight' => '11',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -237,7 +237,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Admin Settings',
-    'weight' => '12',
+    'weight' => '15',
     'children' => array(
       0 => 'field_user_first_letter_lname',
       1 => 'field_user_external_url',
@@ -274,7 +274,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Political Affiliation',
-    'weight' => '7',
+    'weight' => '10',
     'children' => array(
       0 => 'field_user_commitee',
       1 => 'field_user_parliament',
@@ -517,7 +517,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dialogue Data',
-    'weight' => '11',
+    'weight' => '14',
     'children' => array(
       0 => 'field_user_answers_give',
       1 => 'field_user_questions_get',
@@ -641,7 +641,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal Data',
-    'weight' => '6',
+    'weight' => '9',
     'children' => array(
       0 => 'field_user_birthday',
       1 => 'field_user_childs',
@@ -653,12 +653,9 @@ function pw_profiles_field_group_info() {
       7 => 'field_user_education',
       8 => 'field_user_list_position',
       9 => 'field_user_age',
-      10 => 'field_user_picture',
-      11 => 'field_user_phone',
-      12 => 'field_user_picture_copyright',
-      13 => 'field_user_public_mail',
-      14 => 'field_user_list',
-      15 => 'group_user_premium_picture',
+      10 => 'field_user_phone',
+      11 => 'field_user_public_mail',
+      12 => 'field_user_list',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -864,7 +861,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Premium Fields',
-    'weight' => '9',
+    'weight' => '12',
     'children' => array(
       0 => 'group_user_premium',
     ),

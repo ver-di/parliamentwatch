@@ -171,9 +171,11 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
 }
 
 function my_user_register_validate($form, &$form_state) {
-  $username = $form_state['input']['name'];
-  if (!preg_match('/^[a-z\-]+$/', $username)) {
-    form_set_error('name',  t($form['account']['name']['#description']));
+  if(isset($form_state['input']['name'])){
+    $username = $form_state['input']['name'];
+    if (!preg_match('/^[a-z\-]+$/', $username)) {
+      form_set_error('name',  t($form['account']['name']['#description']));
+    }
   }
 }
 

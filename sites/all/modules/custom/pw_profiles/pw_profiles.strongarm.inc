@@ -166,7 +166,7 @@ function pw_profiles_strongarm() {
           'weight' => '15',
         ),
         'account' => array(
-          'weight' => '4',
+          'weight' => '6',
         ),
         'timezone' => array(
           'weight' => '14',
@@ -178,10 +178,16 @@ function pw_profiles_strongarm() {
           'weight' => '0',
         ),
         'mimemail' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'xmlsitemap' => array(
           'weight' => '20',
+        ),
+        'masquerade' => array(
+          'weight' => '17',
+        ),
+        'metatags' => array(
+          'weight' => '16',
         ),
       ),
       'display' => array(
