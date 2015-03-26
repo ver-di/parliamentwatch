@@ -1,5 +1,5 @@
 <?php
-switch ($field_petition_partner['und'][0]['value']) {
+switch ($field_petition_partner[0]['value']) {
   case "":
     $partner_html = "";
     $signing_url = $node_url;
@@ -7,12 +7,12 @@ switch ($field_petition_partner['und'][0]['value']) {
     break;
   case "change.org":
     $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-change.png" width="119" height="23" alt="Change.org">';
-    $signing_url = "https://secured.abgeordnetenwatch.de/tools/newsletter.php?width=800&height=450&iframe=true&continue=".urlencode($field_petition_external_url['und'][0]['url']);
+    $signing_url = "https://secured.abgeordnetenwatch.de/tools/newsletter.php?width=800&height=450&iframe=true&continue=".urlencode($field_petition_external_url[0]['url']);
     $node_url = $signing_url;
     break;
   case "openpetition":
     $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-openpetition.png" width="119" height="36" alt="OpenPetition">';
-    $signing_url = $field_petition_external_url['und'][0]['url'];
+    $signing_url = $field_petition_external_url[0]['url'];
     $node_url = $signing_url;
     break;
 }
@@ -60,8 +60,8 @@ if (!empty($field_teaser_image[0]['field_image_copyright']) || !empty($field_tea
             <span style="width: 0;" class="pw-petition-progress-m"></span>
         </div>
     </div>
-    <div class="medium">Benötigte Unterschriften: <? echo number_format($field_petition_required['und'][0]['value'],0,',','.'); ?></div>
-    <div class="small light">Erhaltene Unterschriften: <? echo number_format($field_petition_signings['und'][0]['value'],0,',','.'); ?></div>
+    <div class="medium">Benötigte Unterschriften: <? echo number_format($field_petition_required[0]['value'],0,',','.'); ?></div>
+    <div class="small light">Erhaltene Unterschriften: <? echo number_format($field_petition_signings[0]['value'],0,',','.'); ?></div>
     <?php if ($partner_html): ?>
         <div class="petition-list-partner-wrapper small light">
             <p class="push-bottom-xs">Diese Petition läuft auf:</p>

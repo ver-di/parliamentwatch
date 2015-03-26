@@ -27,7 +27,7 @@ $themed_image = theme_image_style(array(
   'style_name' => 'pw_landscape_l', //Configure style here!
   'path' => $field_teaser_image[0]['uri']
 ));
-$comments = render(comment_node_page_additions($node)['comments']);
+//$comments = render(comment_node_page_additions($node)['comments']);
 
 if (!empty($field_teaser_image[0]['field_image_copyright']) || !empty($field_teaser_image[0]['field_image_copyright']['und'][0]['value'] )){
   $field_image_copyright = true;

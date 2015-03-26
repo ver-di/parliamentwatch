@@ -5,7 +5,7 @@ $a = _block_render_blocks(array($block));
 $a['webform_client-block-10369']->subject = "";
 $signing_form = drupal_render(_block_get_renderable_array($a));
 
-switch ($field_petition_partner['und'][0]['value']) {
+switch ($field_petition_partner[0]['value']) {
   case "":
     $partner_html = "";
     $signing_url = $node_url;
@@ -27,13 +27,15 @@ $themed_image = theme_image_style(array(
   'style_name' => 'pw_landscape_l', //Configure style here!
   'path' => $field_teaser_image[0]['uri']
 ));
-$comments = render(comment_node_page_additions($node)['comments']);
 
 if (!empty($field_teaser_image[0]['field_image_copyright']) || !empty($field_teaser_image[0]['field_image_copyright']['und'][0]['value'] )){
   $field_image_copyright = true;
 }
-// ====================== ACTUAL THEME ===========================
+
+
+//$comments = render(comment_node_page_additions($node)['comments']);
 ?>
+
 <?php if ($sharethis): ?>
   <div class="sharethis-wrapper">
     <? echo $sharethis; ?>
