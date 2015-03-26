@@ -967,14 +967,11 @@ function pw_profiles_field_group_info() {
   $field_group->entity_type = 'user';
   $field_group->bundle = 'user';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_user_premium';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Profile picture',
     'weight' => '17',
-    'children' => array(
-      0 => 'field_user_picture',
-      1 => 'field_user_picture_copyright',
-    ),
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
