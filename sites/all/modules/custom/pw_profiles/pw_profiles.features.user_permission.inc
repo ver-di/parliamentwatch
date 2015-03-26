@@ -1127,8 +1127,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_picture_copyright',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Politician',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );

@@ -4115,12 +4115,14 @@ function pw_profiles_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
+      'exclude_cv' => 0,
       'field_name' => 'field_user_picture_copyright',
       'label' => 'Picture copyright',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
             'html_mail' => 'html_mail',
@@ -4132,6 +4134,9 @@ function pw_profiles_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
