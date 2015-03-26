@@ -33,13 +33,6 @@ jQuery(window) // https://www.drupal.org/node/1478648
 
 jQuery(document).ready(function() {
 
-// trigger throbber on submitting forms
-
-	$('form').submit(function() {
-		$('body').append('<div class="ajax-progress"><div class="throbber">&nbsp;</div></div>');
-	});
-
-
 // reset jquery ui slider on profile list AW-1965 https://www.drupal.org/node/1264316
 
     $("#views-exposed-form-profile-list-rev-grid #edit-reset" ).on( "click", function() {
