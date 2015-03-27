@@ -490,8 +490,8 @@ profile/[comment:node:field-dialogue-recipient]';
     'menu-main-menu-de' => '0',
     'management' => '0',
     'menu-meta-de' => '0',
-    'navigation' => '0',
     'menu-support-us-de' => '0',
+    'navigation' => '0',
     'user-menu' => '0',
     'menu-elections-de' => '0',
     'menu-about-us-de' => '0',
@@ -754,14 +754,15 @@ profile/[node:field-dialogue-recipient]';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_user_custom';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['expire_user_custom'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_user_custom_pages';
-  $strongarm->value = '';
+  $strongarm->value = '[user:field-user-parliament]/profile
+[user:field-user-parliament]';
   $export['expire_user_custom_pages'] = $strongarm;
 
   $strongarm = new stdClass();
