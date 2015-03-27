@@ -13,7 +13,6 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: global.
   $config['global'] = array(
     'instance' => 'global',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[current-page:title] | [site:name]',
@@ -57,7 +56,6 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: global:403.
   $config['global:403'] = array(
     'instance' => 'global:403',
-    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -89,7 +87,6 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: global:404.
   $config['global:404'] = array(
     'instance' => 'global:404',
-    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -121,7 +118,6 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [site:slogan]',
@@ -162,7 +158,6 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:title] | [site:name]',
@@ -278,7 +273,6 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: taxonomy_term.
   $config['taxonomy_term'] = array(
     'instance' => 'taxonomy_term',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[term:name] | [site:name]',
@@ -312,7 +306,7 @@ function pw_seo_metatag_export_default() {
     'instance' => 'user',
     'config' => array(
       'title' => array(
-        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] | [site:name]',
+        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament] | [site:name]',
       ),
       'robots' => array(
         'value' => array(
