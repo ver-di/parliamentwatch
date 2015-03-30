@@ -256,6 +256,10 @@ function pw_profiles_strongarm() {
             'weight' => '50',
             'visible' => TRUE,
           ),
+          'user_premium' => array(
+            'weight' => '50',
+            'visible' => TRUE,
+          ),
         ),
       ),
     ),

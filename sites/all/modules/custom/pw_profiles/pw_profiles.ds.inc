@@ -1720,6 +1720,7 @@ function pw_profiles_ds_layout_settings_info() {
         10 => 'user_revision_switch',
         11 => 'user_wrong_data',
         12 => 'user_profile_api_link',
+        17 => 'masquerade',
       ),
       'left_2' => array(
         13 => 'user_questions_and_answers',
@@ -1750,6 +1751,7 @@ function pw_profiles_ds_layout_settings_info() {
       'question_form' => 'left_2',
       'question_and_answers_filter' => 'right_2',
       'field_user_party' => 'ds_hidden',
+      'masquerade' => 'right_1',
     ),
     'classes' => array(),
     'wrappers' => array(
