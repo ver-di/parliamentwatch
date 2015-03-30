@@ -158,7 +158,7 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
       '#weight' => 0,
     );
     $form['#validate'][] = 'my_user_register_validate';
-    $form['account']['name']['#description'] = t('Only lowercase letters (a-z) and dash are allowed.');
+    $form['account']['name']['#description'] = t('Only lowercase letters (a-z), numbers and dash are allowed.');
   }
   elseif ($form_id == "user_revision_edit_form") {
     unset($form["field_user_external_url"]);
@@ -171,10 +171,10 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
 }
 
 function my_user_register_validate($form, &$form_state) {
-  if(isset($form_state['input']['name'])){
+  if (isset($form_state['input']['name'])) {
     $username = $form_state['input']['name'];
-    if (!preg_match('/^[a-z\-]+$/', $username)) {
-      form_set_error('name',  t($form['account']['name']['#description']));
+    if (!preg_match('/^[a-z0-9\-]+$/', $username)) {
+      form_set_error('name', t($form['account']['name']['#description']));
     }
   }
 }
@@ -282,16 +282,26 @@ function pw_profiles_ds_pre_render_alter(&$layout_render_array, $context) {
  *  Implements hook_user_update().
  */
 function pw_profiles_user_update(&$edit, $account, $category) {
-  if (function_exists('pw_userarchives_cron') && $account->uid) {
-    pw_userarchives_cron($account->uid);
-  }
 
   // check if username was changed and update path then
   if ($account->name != $account->original->name) {
     $path = path_load(array('source' => 'user/' . $account->uid));
-    if($path) {
+    if ($path) {
       $path['alias'] = 'profile/' . $account->name;
       path_save($path);
     }
+    $user_revisions = user_revision_list($account);
+    foreach ($user_revisions as $user_revision) {
+      if ($user_revision->name != $account->name) {
+        $revision_edit = array();
+        $revision_edit['name'] = $account->name;
+        _user_revision_edit_save($user_revision, $revision_edit);
+      }
+    }
+  }
+
+  // trigger user archive cron
+  if (function_exists('pw_userarchives_cron') && $account->uid) {
+    pw_userarchives_cron($account->uid);
   }
 }
