@@ -21,6 +21,39 @@ function piwik_reports_menu_block_page() {
 }
 
 /**
+ * Node specific reports
+ */
+function piwik_reports_node_page($node) {
+  global $user;
+
+  if (!module_exists('piwik')) {
+    return t('To use this block you need to install <a href="!url">Piwik</a> module', array('!url' => 'http://www.drupal.org/project/piwik',));
+  }
+
+  drupal_add_js(drupal_get_path('module', 'piwik_reports') . '/piwik_reports.js');
+  // Build the data URL with all params.
+
+  $piwik_auth = (variable_get('piwik_reports_token_auth', '') ? variable_get('piwik_reports_token_auth', '') : $user->data['piwik_reports_token_auth']);
+  $piwik_url = variable_get('piwik_url_http', '');
+
+  $data_params = array();
+  $data_params['idSite'] = variable_get('piwik_site_id','');
+  $data_params['date'] = 'today';
+  $data_params['period'] = 'year';
+  $data_params['module'] = 'API';
+  $data_params['method'] = 'Actions.getPageUrl';
+  $data_params['pageUrl'] = url("node/$node->nid", array('absolute' => TRUE));
+  $data_params['format'] = 'JSON';
+  if (!empty($piwik_auth)) {
+    $data_params['token_auth'] = $piwik_auth;
+  }
+
+  $data_url = $piwik_url . 'index.php?' . drupal_http_build_query($data_params) . '&jsoncallback=?';
+  drupal_add_js(array('piwik_reports' => array('url' => $data_url)), 'setting');
+  return '<div id="piwik-full-report">x</div>';
+}
+
+/**
  * Return the form where to select the report period.
  */
 function piwik_reports_dateselect_form() {
@@ -68,7 +101,7 @@ function piwik_reports_siteselect_form($form = array(), $sites = array()) {
       $options[$site['idsite']] = $site['name'];
     }
     if (isset($_SESSION['piwik_reports_site']) && $_SESSION['piwik_reports_site'] == $site['idsite']) $session_site_exists = true;
-  } 
+  }
   if (!isset($_SESSION['piwik_reports_site']) || $_SESSION['piwik_reports_site'] == '' || !$session_site_exists) $_SESSION['piwik_reports_site'] = $sites[0]['idsite'];
   if (count($options) > 1) {
     $form['basic']['inline']['site'] = array(
@@ -271,8 +304,8 @@ function piwik_reports_reports($form, &$form_state, $report) {
   }
   // Build the data URL with all params and urlencode it.
   foreach ($data_params as $key => $data) {
-    $theme_args['data_url'][] = array('url' => $piwik_url . 'index.php?' . drupal_http_build_query($data), 
-    'title' => $title[$key], 
+    $theme_args['data_url'][] = array('url' => $piwik_url . 'index.php?' . drupal_http_build_query($data),
+    'title' => $title[$key],
     'iframe_height' => ( isset($iframe_height[$key]) && $iframe_height[$key] > 0 ? $iframe_height[$key] : 350),
     'empty_text' => ( isset($empty_text) ? $empty_text : NULL),
     );
