@@ -1,10 +1,4 @@
 <?php
-
-//drupal_add_css()
-?>
-<style>#cboxPrevious, #cboxNext, #cboxCurrent, #cboxTitle{visibility: hidden;}</style>
-
-<?php
 print render($title_suffix);
 ?>
 <?php if ($sharethis): ?>
@@ -39,7 +33,7 @@ print render($title_suffix);
       <span style="width: <? echo $field_donation_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-donations-m">Fortschritt: <? echo $field_donation_progress['und'][0]['value']; ?>%</span>
     </div>
   </div>
-  <div class="medium">Kosten Meinungsumfrage: <? echo number_format($field_donation_required['und'][0]['value'],0,',','.'); ?>&nbsp;&euro;</div>
+  <div class="medium"><strong>Kosten Meinungsumfrage: <? echo number_format($field_donation_required['und'][0]['value'],0,',','.'); ?>&nbsp;&euro;</strong></div>
   <div class="small light"><? echo number_format($field_donation_amount['und'][0]['value'],0,',','.'); ?>&nbsp;&euro; wurden bereits gespendet.</div>
   <?php if ($partner_html): ?>
     <div class="petition-list-partner-wrapper small light">

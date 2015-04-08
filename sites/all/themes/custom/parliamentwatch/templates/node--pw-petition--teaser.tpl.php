@@ -1,9 +1,4 @@
 <?php
-
-
-?>
-<style>#cboxPrevious, #cboxNext, #cboxCurrent, #cboxTitle{visibility: hidden;}</style>
-<?php
        print render($title_suffix); 
 ?>
 <?php if ($sharethis): ?>
@@ -38,7 +33,7 @@
             <span style="width: 0;" class="pw-petition-progress-m"></span>
         </div>
     </div>
-    <div class="medium">Benötigte Unterschriften: <? echo number_format($field_petition_required['und'][0]['value'],0,',','.'); ?></div>
+    <div class="medium"><strong>Benötigte Unterschriften: <? echo number_format($field_petition_required['und'][0]['value'],0,',','.'); ?></strong></div>
     <div class="small light">Erhaltene Unterschriften: <? echo number_format($field_petition_signings['und'][0]['value'],0,',','.'); ?></div>
     <?php if ($partner_html): ?>
         <div class="petition-list-partner-wrapper small light">
