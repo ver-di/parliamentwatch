@@ -74,7 +74,7 @@ html.mm-opening #hamburger:after
 }
 .mm-menu [class^="icon-"]:before, 
 .mm-menu [class*=" icon-"]:before {
-  margin-right: 0.5em;
+  margin-right: 0.7em;
 }
 
 
