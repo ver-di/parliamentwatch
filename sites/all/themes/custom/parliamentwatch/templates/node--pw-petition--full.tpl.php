@@ -13,7 +13,7 @@ $comments = render(comment_node_page_additions($node)['comments']);
   <div class="push-bottom-m">
     <p class="medium"><? echo $field_petition_recipient[0]['value'] ?></p>
     <?php if (!empty($field_blogpost_blogtags)): ?>
-      <div class="icon-taxonomy push-bottom-m">
+      <p class="icon-taxonomy push-bottom-m">
         <?
         $first_term = true;
         foreach ($field_blogpost_blogtags as $key => $value){
@@ -27,7 +27,7 @@ $comments = render(comment_node_page_additions($node)['comments']);
           echo l($term->name, 'taxonomy/term/' . $value['tid']);
         }
         ?>
-      </div>
+      </p>
     <?php endif; ?>
 
     <div class="clearfix push-bottom-l managed-content">
