@@ -155,10 +155,10 @@ function pw_petitions_preprocess_node(&$variables) {
 
     $variables['themed_image'] = theme('image_style', array(
       'style_name' => 'pw_landscape_l', //Configure style here!
-      'path' => $variables['field_teaser_image'][0]['uri'],
+      'path' => $variables['field_teaser_image']['und'][0]['uri'],
     ));
 
-    if (!empty($variables['field_teaser_image'][0]['field_image_copyright']) || !empty($variables['field_teaser_image'][0]['field_image_copyright']['und'][0]['value'])) {
+    if (!empty($variables['field_teaser_image']['und'][0]['field_image_copyright']) || !empty($variables['field_teaser_image']['und'][0]['field_image_copyright']['und'][0]['value'])) {
       $variables['field_image_copyright'] = TRUE;
     }
   }
