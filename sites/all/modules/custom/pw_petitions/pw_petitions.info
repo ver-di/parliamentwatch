@@ -23,6 +23,7 @@ dependencies[] = number
 dependencies[] = options
 dependencies[] = pw_blog
 dependencies[] = pw_globals
+dependencies[] = pw_vote
 dependencies[] = rabbit_hole
 dependencies[] = strongarm
 dependencies[] = taxonomy
