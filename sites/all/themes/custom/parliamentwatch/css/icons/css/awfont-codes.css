@@ -1,4 +1,5 @@
 
+.icon-clock:before { content: '\e800'; } /* '' */
 .icon-quote-right:before { content: '\e801'; } /* '' */
 .icon-quote-left:before { content: '\e802'; } /* '' */
 .icon-answer:before { content: '\e803'; } /* '' */
@@ -71,6 +72,7 @@
 .icon-video:before { content: '\e846'; } /* '' */
 .icon-arrow-down:before { content: '\e847'; } /* '' */
 .icon-arrow-up:before { content: '\e848'; } /* '' */
+.icon-ok:before { content: '\e849'; } /* '' */
 .icon-group:before { content: '\e84a'; } /* '' */
 .icon-microphone:before { content: '\e84c'; } /* '' */
 .icon-politician:before { content: '\e84d'; } /* '' */
