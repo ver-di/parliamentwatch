@@ -25,11 +25,11 @@
     <?php endif; ?>
 </div>
 <div class="pw-petition-list-contents">
-    <div class="pw-petition-progress-wrapper-m push-bottom-s">
-        <div class="pw-petition-progress-signings" title="Unterschriften">
-            <span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-m">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+    <div>
+        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
+            <span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-progress">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
         </div>
-        <div class="pw-petition-progress-donations" title="Spenden">
+        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-donations push-bottom-s" title="Spenden">
             <span style="width: 0;" class="pw-petition-progress-m"></span>
         </div>
     </div>

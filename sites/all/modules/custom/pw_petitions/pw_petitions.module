@@ -112,7 +112,7 @@ function pw_petitions_preprocess_node(&$variables) {
 
     $variables["signing_form"] = drupal_render(_block_get_renderable_array($rendered_block));
 
-    switch ($variables['field_petition_partner'][0]['value']) {
+    switch ($variables['field_petition_partner']['und'][0]['value']) {
       case "":
         $variables['partner_html'] = "";
         $variables['signing_url'] = $variables['node_url'];
@@ -155,7 +155,7 @@ function pw_petitions_preprocess_node(&$variables) {
 
     $variables['themed_image'] = theme('image_style', array(
       'style_name' => 'pw_landscape_l', //Configure style here!
-      'path' => $variables['field_teaser_image']['und'][0]['uri'],
+      'path' => $variables['field_teaser_image'][0]['uri'],
     ));
 
     if (!empty($variables['field_teaser_image']['und'][0]['field_image_copyright']) || !empty($variables['field_teaser_image']['und'][0]['field_image_copyright']['und'][0]['value'])) {

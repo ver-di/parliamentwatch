@@ -25,14 +25,14 @@ print render($title_suffix);
   <?php endif; ?>
 </div>
 <div class="pw-petition-list-contents">
-  <div class="pw-petition-progress-wrapper-m push-bottom-s">
-    <div class="pw-petition-progress-signings" title="Unterschriften">
-      <span style="width: 100%;" class="pw-petition-progress-m">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+    <div>
+        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
+            <span style="width: 100%;" class="pw-progress">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+        </div>
+        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-donations push-bottom-s" title="Spenden">
+            <span style="width: <? echo $field_donation_progress['und'][0]['value']; ?>%;" class="pw-progress">Fortschritt: <? echo $field_donation_progress['und'][0]['value']; ?>%</span>
+        </div>
     </div>
-    <div class="pw-petition-progress-donations" title="Spenden">
-      <span style="width: <? echo $field_donation_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-donations-m">Fortschritt: <? echo $field_donation_progress['und'][0]['value']; ?>%</span>
-    </div>
-  </div>
   <div class="medium"><strong>Kosten Meinungsumfrage: <? echo number_format($field_donation_required['und'][0]['value'],0,',','.'); ?>&nbsp;&euro;</strong></div>
   <div class="small light"><? echo number_format($field_donation_amount['und'][0]['value'],0,',','.'); ?>&nbsp;&euro; wurden bereits gespendet.</div>
   <?php if ($partner_html): ?>

@@ -25,9 +25,12 @@ print render($title_suffix);
   <?php endif; ?>
 </div>
 <div class="pw-petition-list-contents">
+  <i class="icon-clock aw-icon-2x aw-success float-left push-right-s"></i>
   <div class="medium"><strong>Petition wird aktuell im Bundestag abgefragt</strong></div>
   <div class="small light">32 MdBs haben Stellung genommen</div>
   
+  
+  <i class="icon-ok aw-icon-2x aw-success float-left push-right-s"></i>
   <div class="medium">
     <strong>Petition wurde im Bundestag abgefragt</strong>
   </div>
