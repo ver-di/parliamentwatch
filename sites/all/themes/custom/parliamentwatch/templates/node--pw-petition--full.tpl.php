@@ -1,41 +1,10 @@
 <?
 //todo: field_get_items benutzen
-$block = block_load('webform','client-block-10369');
-$a = _block_render_blocks(array($block));
-$a['webform_client-block-10369']->subject = "";
-$signing_form = drupal_render(_block_get_renderable_array($a));
 
-switch ($field_petition_partner[0]['value']) {
-  case "":
-    $partner_html = "";
-    $signing_url = $node_url;
-    $sharethis = "<span st_url=\"https://www.abgeordnetenwatch.de$node_url\" st_title=\"$title\" st_summary=\"Petition $title auf abgeordnetenwatch.de\" class=\"st_sharethis_hcount\" displayText=\"sharethis\"></span>";
-    break;
-  case "change.org":
-    $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-change.png" width="119" height="23" alt="Change.org">';
-    //$signing_url = "https://secured.abgeordnetenwatch.de/tools/newsletter.php?width=800&height=450&iframe=true&continue=".urlencode($field_petition_external_url['und'][0]['url']);
-    //$node_url = $signing_url;
-    break;
-  case "openpetition":
-    $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-openpetition.png" width="119" height="36" alt="OpenPetition">';
-    //$signing_url = $field_petition_external_url['und'][0]['url'];
-    //$node_url = $signing_url;
-    break;
-}
+$comments = render(comment_node_page_additions($node)['comments']);
 
-$themed_image = theme_image_style(array(
-  'style_name' => 'pw_landscape_l', //Configure style here!
-  'path' => $field_teaser_image[0]['uri']
-));
-
-if (!empty($field_teaser_image[0]['field_image_copyright']) || !empty($field_teaser_image[0]['field_image_copyright']['und'][0]['value'] )){
-  $field_image_copyright = true;
-}
-
-
-//$comments = render(comment_node_page_additions($node)['comments']);
+// ====================== ACTUAL THEME ===========================
 ?>
-
 <?php if ($sharethis): ?>
   <div class="sharethis-wrapper">
     <? echo $sharethis; ?>
