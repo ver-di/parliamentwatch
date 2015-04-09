@@ -634,7 +634,7 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<a href="/node/10508?donation_target=<?php print $row->text_2; ?>" title="Jetzt für <?php print $row->text; ?> spenden"><span class="pw-progress-wrapper"><span class="pw-progress" style="width: <?php 
+  $handler->display->display_options['fields']['php']['php_output'] = '<a href="/node/10508?donation_target=<?php print $row->text_2; ?>" title="Jetzt für <?php print $row->text; ?> spenden"><span class="pw-progress-wrapper pw-progress-wrapper-s grid-3 alpha omega"><span class="pw-progress" style="width: <?php 
 $required = 10000;
 $donations = str_replace(array(\'.\', \',\'), \'\' , $row->text_1);
 $progress = ($row->text_4/$required)*100;
