@@ -1941,6 +1941,116 @@ img.no-outline {
 }
 
 
+/* voting */
+
+.pw-arrow-box {
+	position: relative;
+	background: rgba(244, 244, 244, .9);
+	border: 1px solid #919191;
+}
+.pw-arrow-box:after,
+.pw-arrow-box:before {
+	top: 100%;
+	left: 174px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.pw-arrow-box:after {
+	border-color: rgba(244, 244, 244, 0);
+	border-top-color: #f4f4f4;
+	border-width: 30px;
+	margin-left: -30px;
+}
+.pw-arrow-box:before {
+	border-color: rgba(145, 145, 145, 0);
+	border-top-color: #919191;
+	border-width: 31px;
+	margin-left: -31px;
+}
+
+.pw-voting .vote.block {
+  padding: 0 4px;
+}
+.pw-voting .vote.yes {
+  background: rgb(0, 204, 0);
+  border-color: #0c0;
+}
+.pw-voting .vote.no {
+  background: rgb(255, 51, 52);
+  border-color: #ff3334;
+}
+.pw-voting .vote.abstain {
+  background: rgb(0, 51, 255);
+  border-color: #03f;
+}
+.pw-voting .vote.no-show {
+  background: rgb(136, 134, 133);
+  border-color: #888685;
+}
+.pw-voting .vote.total {
+  border-width: 1px;
+  border-style: solid;
+  margin: 0 0 1em;
+  padding: 3px 10px;
+}
+.pw-voting .vote.total.yes {
+  background: rgba(0, 204, 0, 0.5);
+}
+.pw-voting .vote.total.no {
+  background: rgba(255, 51, 52, 0.5);
+}
+.pw-voting .vote.total.abstain {
+  background: rgba(0, 51, 255, 0.5);
+}
+.pw-voting .vote.total.no-show {
+  background: rgba(136, 134, 133, 0.5)
+}
+.pw-voting .item,
+.pw-voting .pw-arrow-box-trigger {
+  width: 1.1rem;
+  height: 1.1rem;
+  width: 11px;
+  height: 11px;
+  position: unset;
+  margin: 0 2px 2px 0;
+  z-index: 10;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+.pw-voting .item-politician {
+  position: absolute;
+  left: -170px;
+  bottom: 34px;
+  bottom: 3.4rem;
+  width: 600px;
+  border-radius: 3px;
+  padding: 1rem;
+  padding: 10px;
+}
+.no-js .pw-voting .item-politician {
+  visibility: hidden;
+  opacity: 0;
+  transition:         opacity .5s ease-in-out;
+  -moz-transition:    opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+}
+.no-js .pw-voting .item:hover .item-politician,
+.no-js.js .pw-voting .item .item-politician {
+  visibility: visible;
+  opacity: 1;
+}
+.no-js.js .pw-voting .item .item-politician {
+  display: none;
+}
+html.js fieldset.collapsed {
+    height: auto;
+}
+
 /* press */
 
 .view-press-articles .download {
