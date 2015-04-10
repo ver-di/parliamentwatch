@@ -74,7 +74,7 @@ html.mm-opening #hamburger:after
 }
 .mm-menu [class^="icon-"]:before, 
 .mm-menu [class*=" icon-"]:before {
-  margin-right: 0.5em;
+  margin-right: 0.7em;
 }
 
 
@@ -2999,7 +2999,7 @@ form .webform-component-checkboxes .description {
     position: absolute;
     width: 93%;
     top: 18px;
-    z-index: 990;
+    z-index: 9;
 }
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
@@ -3422,7 +3422,6 @@ blockquote:before,
 
 /* ///////////// not displayed in responsive mobile version */
 
-.responsive-layout-mobile #feedback_simple,
 .responsive-layout-mobile #block-views-slider-block,
 .responsive-layout-mobile .view-slider,
 .responsive-layout-mobile .field-name-pw-slider,

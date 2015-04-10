@@ -129,6 +129,10 @@
 .tb-megamenu .nav [class*=" icon-"] {
   margin-right: 5px;
 }
+.tb-megamenu .nav .icon-election {
+    position: relative;
+    left: -3px;
+}
 
 .tb-megamenu .nav {
 	margin-left: 0;
