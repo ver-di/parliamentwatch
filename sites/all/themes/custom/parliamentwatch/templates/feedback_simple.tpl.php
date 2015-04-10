@@ -15,16 +15,16 @@
  */
 ?>
 <?php if ($enabled): ?>
-<div id='feedback_simple'>
+<div id="feedback_simple" class="desktop-only">
   <a
-    href='<?php print $link ?>?width=600&height=500'
-    class='colorbox-node feedback_simple-<?php print $align ?> <?php print implode(' ', $class) ?>'
-    style='top: <?php print $top ?>; height: <?php print $height ?>px; width: <?php print $width ?>px;'>
+    href="<?php print $link ?>?width=600&height=500"
+    class="colorbox-node feedback_simple-<?php print $align ?> <?php print implode(" ", $class) ?>"
+    style="top: <?php print $top ?>; height: <?php print $height ?>px; width: <?php print $width ?>px;">
       <img
-        alt='<?php print $alt ?>'
-        src='<?php print $image ?>'
-        height='<?php print $height ?>'
-        width='<?php print $width ?>' />
+        alt="<?php print $alt ?>"
+        src="<?php print $image ?>"
+        height="<?php print $height ?>"
+        width="<?php print $width ?>" />
   </a>
 </div>
 <?php endif; ?>
