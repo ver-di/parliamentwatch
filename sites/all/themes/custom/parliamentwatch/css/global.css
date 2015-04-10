@@ -2870,7 +2870,7 @@ form .webform-component-checkboxes .description {
     position: absolute;
     width: 93%;
     top: 18px;
-    z-index: 990;
+    z-index: 9;
 }
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
