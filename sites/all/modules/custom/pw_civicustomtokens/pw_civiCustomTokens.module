@@ -1,0 +1,236 @@
+<?php
+
+function get_xxed($str){
+    $len = strlen($str);
+    return str_repeat('X',$len - 4) . substr($str, $len - 4 ,4);
+}
+
+function pw_civiCustomTokens_civicrm_tokens(&$tokens) {
+
+  $tokens['custom_membership'] = array(
+    'custom_membership.aktivemitgliedschaften' => 'Mitgliedschaft - Mandatsreferenz(en)',
+    'custom_membership.bank_holder' => 'Mitgliedschaft - Kontoinhaber (falls abweichend)',
+    'custom_membership.bank_dd_account' => 'Mitgliedschaft - Kontonummer',
+    'custom_membership.bank_dd_bank' => 'Mitgliedschaft - Bankleitzahl',
+    'custom_membership.bank_sepa_iban' => 'Mitgliedschaft - IBAN',
+    'custom_membership.bank_sepa_bic' => 'Mitgliedschaft - BIC',
+    'custom_membership.set_prenotification_true' => 'Mitgliedschaft - Prenotification setzen',
+    );
+
+  $tokens['custom_contribution'] = array(
+    'custom_contribution.anstehendespenden' => 'Spende - Mandatsreferenz(en)',
+    'custom_contribution.bank_holder' => 'Spende - Kontoinhaber (falls abweichend)',
+    'custom_contribution.bank_dd_account' => 'Spende - Kontonummer',
+    'custom_contribution.bank_dd_bank' => 'Spende - Bankleitzahl',
+    'custom_contribution.bank_sepa_iban' => 'Spende - IBAN',
+    'custom_contribution.bank_sepa_bic' => 'Spende - BIC',
+    'custom_contribution.set_prenotification_true' => 'Spende - Prenotification setzen',
+    'custom_contribution.invoice_number' => 'Spende/Profilerweiterung - Rechnungsnummer',
+    );
+
+  $tokens['custom_candidate'] = array(
+    'custom_candidate.uuid' => 'Kandidat - UUID',
+    'custom_candidate.constituency' => 'Kandidat - Wahlkreis',
+    'custom_candidate.party' => 'Kandidat - Partei',
+    'custom_candidate.parliament' => 'Kandidat - Parlament',
+    'custom_candidate.booking_status' => 'Kandidat - Buchungsstatus',
+    'custom_candidate.profile_link' => 'Kandidat - Profil-Link',
+    'custom_candidate.profile_update_link' => 'Kandidat - Profil-Update-Link',
+    'custom_candidate.profile_booking_link' => 'Kandidat - Premium-Profil Buchungs-Link',
+    'custom_candidate.kandidatencheck_link' => 'Kandidat - Kandidatencheck-Link',
+    );
+}
+
+function pw_civiCustomTokens_civicrm_tokenValues(&$values, $cids, $job = null, $tokens = array(), $context = null) {
+  $contacts = implode(',', $cids);
+  include 'salt.inc.php';
+
+
+
+	// Mandatsreferenz(en) - aktive Mitgliedschaften
+  if (!empty($tokens['custom_membership'])) {
+
+    $dao = &CRM_Core_DAO::executeQuery(
+      "
+      SELECT c.id,
+      m.id AS membership_id, 
+      custom.id AS custom_field_id,
+      custom.mandatsreferenz_dauerspende_21 AS mandatsreferenz,
+      custom.kontoinhaber__falls_abweichend__2 AS bank_holder,
+      custom.kontonummer_3 AS bank_dd_account,
+      custom.bankleitzahl_4 AS bank_dd_bank,
+      custom.iban_dauerspende_19 AS bank_sepa_iban,
+      custom.bic_dauerspende_20 AS bank_sepa_bic,
+      option_value.label AS zahlungsintervall,
+      custom.sepa_prenotification__ds_gesende_35 AS sepa_prenotification_sent,
+      custom.mitgliedsbeitrag_5 AS beitrag
+      FROM civicrm_contact c
+      INNER JOIN civicrm_membership m ON c.id = m.contact_id
+      INNER JOIN civicrm_value_bankverbindungsdaten_2 custom ON m.id = custom.entity_id
+      INNER JOIN civicrm_option_value option_value ON custom.zahlungsintervall_6 = option_value.value
+      WHERE c.id IN ($contacts) AND m.status_id IN (1, 2, 5, 8) AND option_value.option_group_id = 68
+      "
+      );
+    while ($dao->fetch()) {
+      $cid = $dao->id;
+      if (empty($dao->mandatsreferenz)) {
+        $mandatsreferenz = "PW".$cid."DS".$dao->membership_id;
+        CRM_Core_DAO::executeQuery(
+          "
+          UPDATE civicrm_value_bankverbindungsdaten_2 SET mandatsreferenz_dauerspende_21='".$mandatsreferenz."' WHERE id=".$dao->custom_field_id."
+          "
+          );
+      } 
+      else{
+        $mandatsreferenz = $dao->mandatsreferenz;
+      }
+
+      if (in_array('set_prenotification_true', $tokens['custom_membership'])){
+      //  error_log("Setze Prenotification (M)");
+    //    if ($dao->sepa_prenotification_sent!=1)
+          CRM_Core_DAO::executeQuery(
+          "
+          UPDATE civicrm_value_bankverbindungsdaten_2 SET sepa_prenotification__ds_gesende_35=true WHERE entity_id=".$dao->membership_id."
+          "
+          );
+      }
+
+      $values[$cid]['custom_membership.aktivemitgliedschaften'] .= 'Mandatsreferenz: ' . $mandatsreferenz . ' ' . $dao->zahlungsintervall . ' ' . $dao->beitrag . ' Euro' . "\r\n";
+      $values[$cid]['custom_membership.bank_holder'] = $dao->bank_holder;
+      $values[$cid]['custom_membership.bank_dd_account'] = $dao->bank_dd_account;
+      $values[$cid]['custom_membership.bank_dd_bank'] = $dao->bank_dd_bank;
+      $values[$cid]['custom_membership.bank_sepa_iban'] = get_xxed($dao->bank_sepa_iban);
+      $values[$cid]['custom_membership.bank_sepa_bic'] = $dao->bank_sepa_bic;
+
+    }
+  }
+
+
+
+
+	// Token für Mandatsreferenz - anstehende Zuwendung / Spende
+  if (!empty($tokens['custom_contribution'])) {
+    $dao = &CRM_Core_DAO::executeQuery(
+      "
+      SELECT c.id, 
+      cb.id AS contribution_id, 
+      custom.id AS custom_field_id, 
+      custom.mandatsreferenz_18 AS mandatsreferenz, 
+      custom.kontoinhaber__abweichend__12 AS bank_holder,
+      custom.kontonr__10 AS bank_dd_account,
+      custom.blz_11 AS bank_dd_bank,
+      custom.iban_16 AS bank_sepa_iban,
+      custom.bic_17 AS bank_sepa_bic,
+      custom.sepa_prenotification_gesendet_36 AS sepa_prenotification_sent,
+      cb.trxn_id AS transaction_id,
+      cb.total_amount AS beitrag
+      FROM civicrm_contact c
+      INNER JOIN civicrm_contribution cb ON c.id = cb.contact_id
+      INNER JOIN civicrm_value_belastetes_konto_4 custom ON cb.id = custom.entity_id
+      INNER JOIN civicrm_contribution_type AS cb_type ON cb.contribution_type_id = cb_type.id
+      INNER JOIN civicrm_option_value AS cb_status ON cb.contribution_status_id = cb_status.value
+      INNER JOIN civicrm_option_group AS cb_status_group ON cb_status.option_group_id = cb_status_group.id
+      INNER JOIN civicrm_option_value AS cb_instrument ON cb.payment_instrument_id = cb_instrument.value
+      INNER JOIN civicrm_option_group AS cb_instrument_group ON cb_instrument.option_group_id = cb_instrument_group.id
+      WHERE c.id IN ( $contacts )
+      AND cb_instrument_group.name='payment_instrument'
+      AND cb_status.name='pending'
+      AND cb_status_group.name='contribution_status'
+      "
+      );
+
+    while ($dao->fetch()) {
+      $cid = $dao->id;
+      if (empty($dao->mandatsreferenz)) {
+        $mandatsreferenz = "PW".$cid."ES".$dao->contribution_id;
+        CRM_Core_DAO::executeQuery(
+         "
+         UPDATE civicrm_value_belastetes_konto_4 SET mandatsreferenz_18='".$mandatsreferenz."' WHERE id=".$dao->custom_field_id."
+         "
+       );
+       } 
+       else{
+         $mandatsreferenz = $dao->mandatsreferenz;
+       }
+
+    if (empty($dao->transaction_id)) {
+        if (variable_get('pw_civicustomtokens_invoice_year')!=date(Y)){
+
+         variable_set('pw_civicustomtokens_invoice_year',date(Y));
+         variable_set('pw_civicustomtokens_invoice_number',1);
+         error_log("RESETTING DATE AND INVOICE NUMBER\n\n");
+        }
+        $current_year = variable_get('pw_civicustomtokens_invoice_year');
+        $current_number = variable_get('pw_civicustomtokens_invoice_number');
+
+        $transaction_id = "RG-".$current_year."-".str_pad($current_number, 4, '0', STR_PAD_LEFT);
+        CRM_Core_DAO::executeQuery(
+         "
+         UPDATE civicrm_contribution SET trxn_id='".$transaction_id."' WHERE id=".$dao->contribution_id."
+         "
+       );
+        $current_number++;
+        variable_set('pw_civicustomtokens_invoice_number',$current_number);
+    } 
+    else{
+      $transaction_id = $dao->transaction_id;
+    }
+
+    if (in_array('set_prenotification_true', $tokens['custom_contribution'])){
+    //  error_log("Setze Prenotification (C)");
+          CRM_Core_DAO::executeQuery(
+          "
+          UPDATE civicrm_value_belastetes_konto_4 SET sepa_prenotification_gesendet_36=true WHERE entity_id=".$dao->contribution_id."
+          "
+          );
+    }
+
+
+      $values[$cid]['custom_contribution.anstehendespenden'] .= 'Mandatsreferenz: ' . $mandatsreferenz . ' ' . $dao->beitrag . ' Euro' . "\r\n";
+      $values[$cid]['custom_contribution.bank_holder'] = $dao->bank_holder;
+      $values[$cid]['custom_contribution.bank_dd_account'] = $dao->bank_dd_account;
+      $values[$cid]['custom_contribution.bank_dd_bank'] = $dao->bank_dd_bank;
+      $values[$cid]['custom_contribution.bank_sepa_iban'] = get_xxed($dao->bank_sepa_iban);
+      $values[$cid]['custom_contribution.bank_sepa_bic'] = $dao->bank_sepa_bic;
+      $values[$cid]['custom_contribution.invoice_number'] = $transaction_id;
+   }
+  }
+
+
+  // Token für Kandidaten/Vertriebs-Info
+  if (!empty($tokens['custom_candidate'])) {
+   //error_log("DO YOU GET THIS 2?\n\n");
+    civicrm_initialize();
+    foreach ($cids as $cid) {
+      $params = array(
+        'version' => 3,
+        'sequential' => 1,
+        'id' => $cid,
+        'return.custom_27' => 1,
+        'return.custom_28' => 1,
+        'return.custom_29' => 1,
+        'return.custom_30' => 1,
+        'return.custom_31' => 1,
+        'return.custom_37' => 1,
+        'return.custom_38' => 1,
+        'return.custom_39' => 1,
+      );
+      $result = civicrm_api('Contact', 'get', $params);
+      if (!$result['is_error']) {
+        end($result['values']);
+        $my_key = key($result['values']);
+        //error_log("My Key: ".$my_key."\n\n");
+        $values[$cid]['custom_candidate.uuid'] = $result['values'][$my_key]['custom_27'];
+        $values[$cid]['custom_candidate.constituency'] = $result['values'][$my_key]['custom_28'];
+        $values[$cid]['custom_candidate.party'] = $result['values'][$my_key]['custom_29'];
+        $values[$cid]['custom_candidate.parliament'] = $result['values'][$my_key]['custom_30'];
+        $values[$cid]['custom_candidate.booking_status'] = $result['values'][$my_key]['custom_31'];
+        $values[$cid]['custom_candidate.profile_link'] = $result['values'][$my_key]['custom_37'];
+        $values[$cid]['custom_candidate.profile_update_link'] = $result['values'][$my_key]['custom_38'];
+        $values[$cid]['custom_candidate.profile_booking_link'] = $result['values'][$my_key]['custom_39'];
+        if (isset($result['values'][$my_key]['custom_27'])) $values[$cid]['custom_candidate.kandidatencheck_link'] = "http://kandidatencheck.abgeordnetenwatch.de/thesen/?id=".md5($salt.$result['values'][$my_key]['custom_27']);
+      }
+    }     
+  }
+
+}
