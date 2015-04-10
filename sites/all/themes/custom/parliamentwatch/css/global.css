@@ -3422,11 +3422,6 @@ blockquote:before,
 
 /* ///////////// not displayed in responsive mobile version */
 
-.responsive-layout-mobile #block-views-slider-block,
-.responsive-layout-mobile .view-slider,
-.responsive-layout-mobile .field-name-pw-slider,
-.responsive-layout-mobile #block-block-33,
-.responsive-layout-mobile #block-views-exp-profile-list-rev-grid,
 .js .responsive-layout-mobile .pw-expandable-mobile .view,
 .desktop-only {
     display: none;
