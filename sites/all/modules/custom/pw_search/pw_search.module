@@ -14,14 +14,14 @@ include_once 'pw_customfacets.inc';
  * @return boolean
  */
 function pw_search_apachesolr_node_exclude($entity_id, $row, $env_id) {
- if ($row->bundle == "dialogue") {
-  $countArr = db_query("SELECT count(*) FROM {field_data_field_dialogue_recipient} WHERE entity_id=:entity_id GROUP BY entity_id", array(":entity_id" => $entity_id))->fetchCol();
-  if (count($countArr) > 0) {
-    return FALSE; // do not exclude the node. It seems to have a recipient.
+  if ($row->bundle == "dialogue") {
+    $countArr = db_query("SELECT count(*) FROM {field_data_field_dialogue_recipient} WHERE entity_id=:entity_id GROUP BY entity_id", array(":entity_id" => $entity_id))->fetchCol();
+    if (count($countArr) > 0) {
+      return FALSE; // do not exclude the node. It seems to have a recipient.
+    }
+    return TRUE; // exclude it
   }
-  return TRUE; // exclude it
- }
-    return FALSE;
+  return FALSE;
 }
 
 
@@ -44,13 +44,13 @@ function pw_search_apachesolr_user_exclude($entity_id, $row, $env_id) {
 }
 
 /**
- * Internal helper to distinguish users by their role. 
+ * Internal helper to distinguish users by their role.
  * @staticvar type $uidArr
  * @param type $uid
  * @return type
  */
 function pw_search_is_politician($uid) {
-  static $uidArr; 
+  static $uidArr;
   if (!isset($uidArr)) {
     $rid = variable_get("pw_search_politician_rid", variable_get('pw_search_role_id', 181527986)); // can be changed in the variables.
     $uidArr = db_query("SELECT uid FROM {users_roles} WHERE rid=:rid", array(":rid" => $rid))->fetchCol();
@@ -64,13 +64,13 @@ function pw_search_is_politician($uid) {
 + * @staticvar type $uidArr
 + * @param type $uid
 + * @return type
-+ */
+ **/
 function pw_search_is_candidate($uid) {
-    static $uidArr;
+  static $uidArr;
   if (!isset($uidArr)) {
-        $rid = variable_get("pw_search_candidate_rid", variable_get('pw_search_cadidate_role_id', 185431326)); // can be changed in the variables.
-        $uidArr = db_query("SELECT uid FROM {users_roles} WHERE rid=:rid", array(":rid" => $rid))->fetchCol();
-      }
+    $rid = variable_get("pw_search_candidate_rid", variable_get('pw_search_cadidate_role_id', 185431326)); // can be changed in the variables.
+    $uidArr = db_query("SELECT uid FROM {users_roles} WHERE rid=:rid", array(":rid" => $rid))->fetchCol();
+  }
   return in_array($uid, $uidArr);
 }
 
@@ -97,13 +97,13 @@ function pw_search_apachesolr_field_mappings() {
  */
 function pw_search_entity_info_alter(&$entity_info) {
   $entity_info["user"]["view modes"]["search_result"] = array(
-      "label" => "Search Result",
-      "custom settings" => TRUE, // enables the display mode automatically
+    "label" => "Search Result",
+    "custom settings" => TRUE, // enables the display mode automatically
   );
 }
 
 /**
- * Generate new facet on the field first character of last name 
+ * Generate new facet on the field first character of last name
  * @param type $searcher_info
  * @return type
  */
@@ -120,16 +120,16 @@ function pw_search_user_facetapi_facet_info($searcher_info) {
       'dependency plugins' => array('bundle', 'role'),
     );
 
-    // Add facets for all fields attached to the user entity. 
+    // Add facets for all fields attached to the user entity.
     $facets = array_merge($facets, apachesolr_entity_field_facets('user'));
   }
   return $facets;
 }
 
 /**
- * Adds the field dialogue recipient, which is not included in the standard solr 
+ * Adds the field dialogue recipient, which is not included in the standard solr
  * query fields. It does not matter how the field is displayed
- * in the display. Currently, it is set to "Rendered Entity" with "Rendered as 
+ * in the display. Currently, it is set to "Rendered Entity" with "Rendered as
  * User search" and it works.
  * @param DrupalSolrQueryInterface $query
  */
@@ -144,8 +144,8 @@ function pw_search_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
   }
 
   $query->addParam("fl", "sm_field_dialogue_recipient"); // first look field. This is a pseudo field.
-  
-  // We have to rewrite the "query fields" solr parameter, because it contains the label, which should not be searchable. 
+
+  // We have to rewrite the "query fields" solr parameter, because it contains the label, which should not be searchable.
   // The label equals the Drupal user name.
   // The original qf parameter contained "content^40", "label^5.0", and "taxonomy_names^2.0"
   // We add content and taxonomy_names with the default weight:
@@ -153,7 +153,7 @@ function pw_search_apachesolr_query_alter(DrupalSolrQueryInterface $query) {
   $query->addParam("qf", "content"); // defined in the index generation, see pw_search_apachesolr_index_document_build_user()
   $query->addParam("qf", "taxonomy_names"); // handles party, constituency, and parliament automatically
   $query->addParam("qf", "sm_areacodes");
-  
+
 }
 
 /**
@@ -174,7 +174,7 @@ function pw_search_preprocess_search_result(&$vars) {
 
 /**
  * Compiles the content field of the Solr document for dialogues. It consists of
- * the question body, the current first and last name of the recipient and the 
+ * the question body, the current first and last name of the recipient and the
  * comment(s).
  * @param ApacheSolrDocument $document
  * @param type $entity
@@ -182,32 +182,32 @@ function pw_search_preprocess_search_result(&$vars) {
  */
 function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $document, $entity, $env_id) {
   if ($entity->type == "dialogue"){
-  $contentArr = array();
-  
-  $contentArr[] =  $entity->body["und"][0]["value"]; // Hier kommt das <crypt>-Tag aus dem body_value des Dialogues noch mit
-  $contentArr[] =  $entity->field_dialogue_recipient["und"][0]["entity"]->field_user_fname["und"][0]["value"];
-  $contentArr[] =  $entity->field_dialogue_recipient["und"][0]["entity"]->field_user_lname["und"][0]["value"];
-  
-  $comments = db_query("SELECT comment_body_value FROM field_data_comment_body where language='und' AND entity_id IN (SELECT cid FROM comment where nid=:nid)", array(":nid" => $entity->nid))->fetchAll();
-  foreach ($comments as $comment) {
-    $contentArr[] = $comment->comment_body_value;
-  }
-  
-  // Add Dialogue Tags:
-  if (array_key_exists("und", $entity->field_dialogue_tags)) {
-    foreach ($entity->field_dialogue_tags["und"] as $dialogueTmp) {
-      $contentArr[] = $dialogueTmp["taxonomy_term"]->name;
+    $contentArr = array();
+
+    $contentArr[] =  $entity->body["und"][0]["value"]; // Hier kommt das <crypt>-Tag aus dem body_value des Dialogues noch mit
+    $contentArr[] =  $entity->field_dialogue_recipient["und"][0]["entity"]->field_user_fname["und"][0]["value"];
+    $contentArr[] =  $entity->field_dialogue_recipient["und"][0]["entity"]->field_user_lname["und"][0]["value"];
+
+    $comments = db_query("SELECT comment_body_value FROM field_data_comment_body where language='und' AND entity_id IN (SELECT cid FROM comment where nid=:nid)", array(":nid" => $entity->nid))->fetchAll();
+    foreach ($comments as $comment) {
+      $contentArr[] = $comment->comment_body_value;
     }
+
+    // Add Dialogue Tags:
+    if (array_key_exists("und", $entity->field_dialogue_tags)) {
+      foreach ($entity->field_dialogue_tags["und"] as $dialogueTmp) {
+        $contentArr[] = $dialogueTmp["taxonomy_term"]->name;
+      }
+    }
+
+    // We do not add the topic here, because it is already searchable by the default query.
+    $document->setField("content", implode(" ", $contentArr));
+
+    // Add Parliament and Party of the recipient to make them facetable:
+    $receivingUser = user_load($entity->field_dialogue_recipient["und"][0]["target_id"]);
+    $document->setField('im_field_user_party', $receivingUser->field_user_party["und"][0]["tid"]);
+    $document->setField('im_field_user_parliament', $receivingUser->field_user_parliament["und"][0]["tid"]);
   }
-    
-  // We do not add the topic here, because it is already searchable by the default query.
-  $document->setField("content", implode(" ", $contentArr));
-  
-  // Add Parliament and Party of the recipient to make them facetable:
-  $receivingUser = user_load($entity->field_dialogue_recipient["und"][0]["target_id"]);
-  $document->setField('im_field_user_party', $receivingUser->field_user_party["und"][0]["tid"]);
-  $document->setField('im_field_user_parliament', $receivingUser->field_user_parliament["und"][0]["tid"]);
- }
 }
 
 /**
@@ -219,15 +219,25 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
  */
 function pw_search_apachesolr_index_document_build_user(ApacheSolrDocument $document, $entity, $env_id) {
   $contentArr = array();
-  
+  $answerCount = 0;
+  $questionCount = 0;
+
   // Add historical names to the searchable content:
   $revisions = user_revision_list($entity);
   foreach ($revisions as $revision) {
     $account_tmp = user_revision_load($revision->uid, $revision->vid);
     $contentArr[] = $account_tmp->field_user_fname["und"][0]["value"];
     $contentArr[] = $account_tmp->field_user_lname["und"][0]["value"];
+    $answerCountTmp = $account_tmp->field_user_answers_give['und'][0]['value'];
+    if ($answerCount < $answerCountTmp) {
+      $answerCount = $answerCountTmp;
+    }
+    $questionCountTmp = $account_tmp->field_user_questions_get['und'][0]['value'];
+    if ($questionCount < $questionCountTmp) {
+      $questionCount = $questionCountTmp;
+    }
   }
-  
+
   // Add Area Codes to the searchable content. There are two fields referencing area codes within constituencies; we add both:
   $constituency = taxonomy_term_load($entity->field_user_constituency["und"][0]["tid"]);
   $areacodes = $constituency->field_constituency_area_codes;
@@ -244,13 +254,44 @@ function pw_search_apachesolr_index_document_build_user(ApacheSolrDocument $docu
 //      $document->addField("sm_areacodes", $areacode->name);
 //    }
 //  }
-  
+
   // We do not need to explicitly add Party, Constituency, and Parliament to the content.
   // They are handled automatically in the query by qf.taxonomy_names
-  
+
   $document->setField("content", implode(" ", $contentArr));
   $document->setField("spell", $contentArr);
-  
+  $document->addField("is_field_user_answercount",$answerCount);
+  $document->addField("is_field_user_questioncount",$questionCount);
+
   // remove the birthday field, which has been added automatically to each user:
   unset($document->dm_field_user_birthday);
+}
+
+/**
+ * Implements hook_apachesolr_query_prepare().
+ * Extends the indexed values by revisioned field that have been populated
+ * in pw_search_apachesolr_index_document_build_user.
+ */
+function pw_search_apachesolr_query_prepare($query) {
+  return;
+  // Add Publication Date sort to the faculty-research search
+  if (preg_match("/\d{4,5}/",arg(2))) {
+    // Add the new fields as a sort option
+    $query->setAvailableSort('is_field_user_answercount', array(
+      'title' => t('Answer Count'),
+      'default' => 'desc',
+    ));
+
+    // Sort on our new field
+    $query->setSolrSort('is_field_user_answercount', 'desc');
+
+    // Add the new fields as a sort option
+    $query->setAvailableSort('is_field_user_questioncount', array(
+      'title' => t('Question Count'),
+      'default' => 'desc',
+    ));
+
+    // Sort on our new field
+    $query->setSolrSort('is_field_user_questioncount', 'desc');
+  }
 }
