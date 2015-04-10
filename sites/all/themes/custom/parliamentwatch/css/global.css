@@ -559,6 +559,79 @@ a.external:hover {
 .zebra li {
     padding: 2px 0.5%;
 }
+
+/* state icons DE */
+
+.state-de {
+    background: url(../images/sprite_states_de.png);
+    width: 50px;
+    height: 60px;
+    text-indent: -5000em;
+}
+.state-de.baden-wuerttemberg {
+    background-position: 0 0;
+}
+.state-de.bayern {
+    background-position: -60px 0;
+}
+.state-de.berlin {
+    background-position: -120px 0;
+}
+.state-de.brandenburg {
+    background-position: -180px 0;
+}
+.state-de.bremen {
+    background-position: -240px 0;
+}
+.state-de.hamburg {
+    background-position: -300px 0;
+}
+.state-de.hessen {
+    background-position: -360px 0;
+}
+.state-de.mecklenburg-vorpommern {
+    background-position: -420px 0;
+}
+.state-de.deutschland {
+    background-position: -480px 0;
+}
+.state-de.niedersachsen {
+    background-position: 0 -60px;
+}
+.state-de.nordrhein-westfalen {
+    background-position: -60px -60px;
+}
+.state-de.rheinland-pfalz {
+    background-position: -120px -60px;
+}
+.state-de.saarland {
+    background-position: -180px -60px;
+}
+.state-de.sachsen-anhalt {
+    background-position: -240px -60px;
+}
+.state-de.sachsen {
+    background-position: -300px -60px;
+}
+.state-de.schleswig-holstein {
+    background-position: -360px -60px;
+}
+.state-de.thueringen {
+    background-position: -420px -60px;
+}
+.state-de.abgeordnetenwatch {
+    background-position: -480px -60px;
+}
+
+
+/* sprite icons */
+
+a.header_login {
+    padding-left: 19px !important;
+}
+a.header_login {
+    background: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png) -566px -415px no-repeat;
+}
 .views-more-link,
 .read-more a,
 .read-less a,
@@ -985,6 +1058,49 @@ h1#page-title {
 }
 #region-sidebar-second .block .more-link {
     float: right;
+}
+
+
+/* sidebar slider */
+
+.view-id-slider .views_slideshow_slide {
+    background-image: url(../images/slider.jpg);
+}
+#views_slideshow_cycle_div_slider-block_0 {
+    background-position: 0 0;
+}
+#views_slideshow_cycle_div_slider-block_1 {
+    background-position: 0 -171px;
+}
+#views_slideshow_cycle_div_slider-block_2 {
+    background-position: 0 -342px;
+}
+#views_slideshow_cycle_div_slider-block_3 {
+    background-position: 0 -512px;
+}
+#views_slideshow_pager_field_item_bottom_slider-block_0 .item {
+    background-position: -965px -760px;
+}
+#views_slideshow_pager_field_item_bottom_slider-block_0.active .item {
+    background-position: -925px -800px;
+}
+#views_slideshow_pager_field_item_bottom_slider-block_1 .item {
+    background-position: -885px -840px;
+}
+#views_slideshow_pager_field_item_bottom_slider-block_1.active .item {
+    background-position: -845px -880px;
+}
+#views_slideshow_pager_field_item_bottom_slider-block_2 .item {
+    background-position: -805px -920px;
+}
+#views_slideshow_pager_field_item_bottom_slider-block_2.active .item {
+    background-position: -765px -960px;
+}
+#views_slideshow_pager_field_item_bottom_slider-block_3 .item {
+    background-position: -725px -1000px;
+}
+#views_slideshow_pager_field_item_bottom_slider-block_3.active .item {
+    background-position: -685px -1040px;
 }
 
 
@@ -1909,6 +2025,19 @@ img.no-outline {
     padding-right: 14px;
     background-position: -764px -1890px;
 }
+/* content of old wordpress blog */
+
+.alignright {
+    float: right;
+    margin: 0 0 7px 14px;
+    outline: 1px solid #ccc;
+}
+.alignleft {
+    float: left;
+    margin: 0 14px 7px 0;
+    outline: 1px solid #ccc;
+}
+
 
 /* forward */
 
