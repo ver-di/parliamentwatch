@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'awfont';
-  src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.eot?88835699');
-  src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.eot?88835699#iefix') format('embedded-opentype'),
-       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.woff?88835699') format('woff'),
-       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.ttf?88835699') format('truetype'),
-       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.svg?88835699#awfont') format('svg');
+  src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.eot?13202675');
+  src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.eot?13202675#iefix') format('embedded-opentype'),
+       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.woff?13202675') format('woff'),
+       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.ttf?13202675') format('truetype'),
+       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.svg?13202675#awfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'awfont';
-    src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.svg?88835699#awfont') format('svg');
+    src: url('../font/awfont.svg?13202675#awfont') format('svg');
   }
 }
 */
@@ -35,7 +35,7 @@
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-     
+ 
   /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
  
@@ -45,6 +45,10 @@
  
   /* you can be more comfortable with increased icons size */
   /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
  
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
@@ -125,6 +129,7 @@
 .icon-arrow-up:before { content: '\e848'; } /* '' */
 .icon-ok:before { content: '\e849'; } /* '' */
 .icon-group:before { content: '\e84a'; } /* '' */
+.icon-logo-aw:before { content: '\e84b'; } /* '' */
 .icon-microphone:before { content: '\e84c'; } /* '' */
 .icon-politician:before { content: '\e84d'; } /* '' */
 .icon-voting:before { content: '\e84e'; } /* '' */
