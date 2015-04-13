@@ -1,6 +1,0 @@
-name = PW CiviCRM Custom Tokens
-description = Implements Custom Parliamentwatch-Tokens for CiviCRM
-dependencies[] = civicrm
-package = CiviCRM
-core = 7.x
-version = 7.x-4.2-20140402
