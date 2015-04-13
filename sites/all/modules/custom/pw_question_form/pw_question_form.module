@@ -65,7 +65,7 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
       // check parliament is within valid dates
       $parliament_is_valid = _pw_is_parliament_active($parliament);
       if(!$parliament_is_valid){
-      
+
         $parliament_end_date = '';
         foreach($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid){
 
@@ -122,9 +122,9 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     // query for subject terms tagged with same parliament as user has
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'taxonomy_term')
-          ->entityCondition('bundle', 'dialogue_topics')
-          ->fieldCondition('field_parliament', 'tid', $parliament->tid)
-          ->propertyOrderBy('name');
+      ->entityCondition('bundle', 'dialogue_topics')
+      ->fieldCondition('field_parliament', 'tid', $parliament->tid)
+      ->propertyOrderBy('name');
     $result = $query->execute();
     $subject_terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']), 'dialogue_topics');
 
