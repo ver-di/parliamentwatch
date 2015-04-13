@@ -1,7 +1,7 @@
 <?
 //todo: field_get_items benutzen
 
-$comments = render(comment_node_page_additions($node)['comments']);
+//$comments = render(comment_node_page_additions($node)['comments']);
 
 // ====================== ACTUAL THEME ===========================
 ?>

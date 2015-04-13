@@ -78,7 +78,7 @@ function pw_petitions_form_submit(&$form, &$form_state) {
   // count +1 to signings
   $node_path_value = $form_values['values']['submitted']['node_path'];
   if ($node = menu_get_object('node', 1, $node_path_value)) {
-    $node->field_petition_signings['und'][0]['value']++;
+    $node->field_petition_signings[0]['value']++;
     node_save($node);
   }
 }
@@ -108,11 +108,10 @@ function pw_petitions_preprocess_node(&$variables) {
       $rendered_block = _block_render_blocks(array($block));
       $rendered_block['webform_client-block-10369']->subject = "";
     }
-
-
+    
     $variables["signing_form"] = drupal_render(_block_get_renderable_array($rendered_block));
 
-    switch ($variables['field_petition_partner']['und'][0]['value']) {
+    switch ($variables['field_petition_partner'][0]['value']) {
       case "":
         $variables['partner_html'] = "";
         $variables['signing_url'] = $variables['node_url'];
@@ -158,7 +157,7 @@ function pw_petitions_preprocess_node(&$variables) {
       'path' => $variables['field_teaser_image'][0]['uri'],
     ));
 
-    if (!empty($variables['field_teaser_image']['und'][0]['field_image_copyright']) || !empty($variables['field_teaser_image']['und'][0]['field_image_copyright']['und'][0]['value'])) {
+    if (!empty($variables['field_teaser_image'][0]['field_image_copyright']) || !empty($variables['field_teaser_image'][0]['field_image_copyright']['und'][0]['value'])) {
       $variables['field_image_copyright'] = TRUE;
     }
   }

@@ -20,21 +20,21 @@
     </a>
     <?php if ($field_image_copyright): ?>
     <div class="copyright">
-        <? echo $field_teaser_image[0]['field_image_copyright']['und'][0]['value'] ?>
+        <? echo $field_teaser_image[0]['field_image_copyright']['und'][0]['value']; ?>
     </div>
     <?php endif; ?>
 </div>
 <div class="pw-petition-list-contents">
     <div>
         <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
-            <span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-progress">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+            <span style="width: <? echo $field_petition_progress[0]['value']; ?>%;" class="pw-progress">Fortschritt: <? echo $field_petition_progress[0]['value']; ?>%</span>
         </div>
         <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-donations push-bottom-s" title="Spenden">
             <span style="width: 0;" class="pw-petition-progress-m"></span>
         </div>
     </div>
-    <div class="medium"><strong>Benötigte Unterschriften: <? echo number_format($field_petition_required['und'][0]['value'],0,',','.'); ?></strong></div>
-    <div class="small light">Erhaltene Unterschriften: <? echo number_format($field_petition_signings['und'][0]['value'],0,',','.'); ?></div>
+    <div class="medium"><strong>Benötigte Unterschriften: <? echo number_format($field_petition_required[0]['value'],0,',','.'); ?></strong></div>
+    <div class="small light">Erhaltene Unterschriften: <? echo number_format($field_petition_signings[0]['value'],0,',','.'); ?></div>
     <?php if ($partner_html): ?>
         <div class="petition-list-partner-wrapper small light">
             <p class="push-bottom-xs">Diese Petition läuft auf:</p>

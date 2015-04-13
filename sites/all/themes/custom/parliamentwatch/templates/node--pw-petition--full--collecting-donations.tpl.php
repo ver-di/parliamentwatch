@@ -1,10 +1,6 @@
 <?
 //todo: field_get_items benutzen
-
-
-
-$comments = render(comment_node_page_additions($node)['comments']);
-
+//$comments = render(comment_node_page_additions($node)['comments']);
 ?>
 <?php if ($sharethis): ?>
   <div class="sharethis-wrapper">
@@ -33,7 +29,7 @@ $comments = render(comment_node_page_additions($node)['comments']);
     </p>
   <?php endif; ?>
   <div class="managed_content push-bottom-l">
-    <? echo $field_petition_text_donation['und'][0]['value'] ?>
+    <? echo $field_petition_text_donation[0]['value'] ?>
   </div>
   <div class="pw-progress-wrapper pw-progress-wrapper-l grid-5 alpha">
     <div class="pw-progress" style="width: <? echo $field_donation_progress[0]['value'];?>%;"></div>
