@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+
+function pw_cache_schema() {
+  $schema['pw_cache_expire'] = array(
+    'description' => 'stores path to pages which are ready for expiration.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'primary key',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'path' => array(
+        'description' => 'path to expire',
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => TRUE,
+      ),
+      'created' => array(
+        'description' => 'creation of this record',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}
+
+function pw_cache_install() {
+  drupal_install_schema('pw_cache_expire');
+}
+
+function pw_cache_uninstall() {
+  drupal_uninstall_schema('pw_cache_expire');
+}

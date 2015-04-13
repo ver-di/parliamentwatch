@@ -11,6 +11,17 @@
  * for more information on this topic.
  */
  
+/*
+ * use custom template for login form
+ */
+function parliamentwatch_theme(&$existing, $type, $theme, $path) {
+  $hooks['user_login'] = array(
+    'template' => 'templates/user-login',
+    'render element' => 'form',
+    // other theme registration code...
+  );
+  return $hooks;
+}
 
 /*
  * Overrides hook_preprocess_mimemail_message() css settings
