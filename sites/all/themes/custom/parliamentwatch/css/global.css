@@ -745,11 +745,6 @@ a.link-pdf {
     padding-left: 22px;
     background-position: 
 }
-.link-participate a,
-a.link-participate {
-    padding-left: 22px;
-    background-position: -26px -2138px;
-}
 .link-sign a,
 a.link-sign {
     padding-left: 20px;
@@ -3336,8 +3331,6 @@ a.link-download,
 a.ic-print,
 .link-pdf a,
 a.link-pdf,
-.link-participate a,
-a.link-participate,
 .link-sign a,
 a.link-sign,
 .link-calendar a,
