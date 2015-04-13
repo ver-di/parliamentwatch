@@ -610,8 +610,8 @@ return arg(0) == \'profile\';
   );
 
   $export['views-slider-block'] = array(
-    'cache' => -1,
-    'css_class' => '',
+    'cache' => '-1',
+    'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => 'slider-block',
     'i18n_block_language' => array(),

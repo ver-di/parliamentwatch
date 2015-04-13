@@ -338,7 +338,7 @@ function pw_seo_metatag_export_default() {
         'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party]',
       ),
       'og:description' => array(
-        'value' => 'Ich habe etwas Interessantes auf abgeordnetenwatch.de gefunden.',
+        'value' => 'Das Profil von [user:field-user-fname] [user:field_user_lname], [user:field-user-party] auf abgeordnetenwatch.de',
       ),
       'og:image' => array(
         'value' => '[site:url]/sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
