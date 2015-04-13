@@ -156,29 +156,15 @@ function pw_question_form_form_validate($form_id, $form_values){
   }
 }
 
-$pw_question_form_form_title = "Frage stellen";
-/**
- * Implements hook_preprocess(). Looks up the user belonging to the current node
- * and saves his human-readable name in a global variable so it con be further
- * used by pw_question_form_preprocess_node.
- */
-function pw_question_form_preprocess(&$variables, $hook) {
-  if ($hook == "views_view_fields" && !empty($variables['row']->user_revision_uid)){
-    global $pw_question_form_form_title;
-    $currentProfile = user_load($variables['row']->user_revision_uid);
-    $pw_question_form_form_title = ($currentProfile->field_user_title['und'][0]['value'])?$currentProfile->field_user_title['und'][0]['value']." ":"";
-    $pw_question_form_form_title .= $currentProfile->field_user_fname['und'][0]['value']." ";
-    $pw_question_form_form_title .= $currentProfile->field_user_lname['und'][0]['value'];
-  }
-}
-
 /**
  * Implements hook_preprocess_node(). Modifies the form title to display the
  * name of the recipient of the question.
  */
 function pw_question_form_preprocess_node(&$variables) {
-  if ($variables['nid'] == '10446' || $variables['type'] == 'webform') {
-    global $pw_question_form_form_title;
+  if ($variables['nid'] == '10446' && $variables['type'] == 'webform') {
+    $currentUser = _pw_get_current_user();
+    $pw_question_form_form_title = ($currentUser->field_user_title['und'][0]['value'])?$currentUser->field_user_title['und'][0]['value']." ":"";
+    $pw_question_form_form_title .= $currentUser->field_user_fname['und'][0]['value']." ".$currentUser->field_user_lname['und'][0]['value'];
     $variables['title'] = "Frage an $pw_question_form_form_title stellen";
   }
 }
