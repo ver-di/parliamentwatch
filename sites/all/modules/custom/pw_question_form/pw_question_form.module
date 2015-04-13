@@ -165,6 +165,6 @@ function pw_question_form_preprocess_node(&$variables) {
     $currentUser = _pw_get_current_user();
     $pw_question_form_form_title = ($currentUser->field_user_title['und'][0]['value'])?$currentUser->field_user_title['und'][0]['value']." ":"";
     $pw_question_form_form_title .= $currentUser->field_user_fname['und'][0]['value']." ".$currentUser->field_user_lname['und'][0]['value'];
-    $variables['title'] = "Frage an $pw_question_form_form_title stellen";
+    $variables['title'] = "Ihre Frage an $pw_question_form_form_title stellen";
   }
 }
