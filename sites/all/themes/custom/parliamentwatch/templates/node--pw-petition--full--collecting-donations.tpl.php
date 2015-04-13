@@ -38,6 +38,7 @@
   <div class="light small push-bottom-m"><?echo number_format($field_donation_amount[0]['value'],0,',','.')?>&nbsp;&euro; wurden bereits gespendet</div>
 </div>
 <div class="push-bottom-l">
+  <? print theme('status_messages'); ?>
   <h3>Für Meinungsumfrage spenden</h3>
   <? echo $signing_form; ?>
 </div>
