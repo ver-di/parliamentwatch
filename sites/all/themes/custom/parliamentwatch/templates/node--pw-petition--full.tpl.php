@@ -42,6 +42,7 @@
   <div class="push-bottom-l">
     <h3>Petition unterschreiben</h3>
     <blockquote><? echo $field_petition_content[0]['value']; ?></blockquote>
+    <? print theme('status_messages'); ?>
     <? echo $signing_form; //todo: Ordentliche CSS-Klasse anstelle der Wiederverwendung von "comment"?>
   </div>
 <?php if ($comments): ?>
