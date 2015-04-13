@@ -104,7 +104,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '1',
+        'weight' => '-100',
       ),
       'pw_seven' => array(
         'region' => 'content',
