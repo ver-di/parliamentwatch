@@ -24,17 +24,17 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '-73',
-      ),
       'blank' => array(
         'region' => 'content',
         'status' => '1',
         'theme' => 'blank',
         'weight' => '8',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
+        'weight' => '-73',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -59,16 +59,16 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'header_first',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '-36',
-      ),
       'blank' => array(
         'region' => 'sidebar_first',
         'status' => '1',
         'theme' => 'blank',
+        'weight' => '-36',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'header_first',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
         'weight' => '-36',
       ),
       'pw_seven' => array(
@@ -94,17 +94,17 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'content',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
       'blank' => array(
         'region' => 'content',
         'status' => '1',
         'theme' => 'blank',
         'weight' => '6',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '1',
       ),
       'pw_seven' => array(
         'region' => 'content',
@@ -129,16 +129,16 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '-26',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
+        'weight' => '-26',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
         'weight' => '-26',
       ),
       'pw_seven' => array(
@@ -164,16 +164,16 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'postscript_second',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '-36',
-      ),
       'blank' => array(
         'region' => 'sidebar_first',
         'status' => '1',
         'theme' => 'blank',
+        'weight' => '-36',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'postscript_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
         'weight' => '-36',
       ),
       'pw_seven' => array(
@@ -199,16 +199,16 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'postscript_first',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
       'blank' => array(
         'region' => 'sidebar_first',
         'status' => '1',
         'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'postscript_first',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
         'weight' => '0',
       ),
       'pw_seven' => array(
@@ -234,16 +234,16 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'menu',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '-20',
-      ),
       'blank' => array(
         'region' => 'sidebar_first',
         'status' => '1',
         'theme' => 'blank',
+        'weight' => '-20',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'menu',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
         'weight' => '-20',
       ),
       'pw_seven' => array(
@@ -269,16 +269,16 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '-17',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
+        'weight' => '-17',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
         'weight' => '-17',
       ),
       'pw_seven' => array(
@@ -304,16 +304,16 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'postscript_third',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
       'blank' => array(
         'region' => 'sidebar_first',
         'status' => '1',
         'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'postscript_third',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
         'weight' => '0',
       ),
       'pw_seven' => array(
@@ -339,17 +339,17 @@ function pw_subsite_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'content',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '11',
-      ),
       'blank' => array(
         'region' => 'content',
         'status' => '1',
         'theme' => 'blank',
         'weight' => '7',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'content',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '12',
       ),
       'pw_seven' => array(
         'region' => 'content',
@@ -376,17 +376,17 @@ return arg(0) == \'profile\';
 ?>',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '8',
-      ),
       'blank' => array(
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'blank',
         'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '8',
       ),
       'pw_seven' => array(
         'region' => 'sidebar_second',
@@ -411,17 +411,17 @@ return arg(0) == \'profile\';
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '13',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
         'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '13',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -446,16 +446,16 @@ return arg(0) == \'profile\';
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
         'weight' => '0',
       ),
       'pw_seven' => array(
@@ -481,17 +481,17 @@ return arg(0) == \'profile\';
     'pages' => 'ueber-uns/spendenformular',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '21',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
         'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '21',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -516,16 +516,16 @@ return arg(0) == \'profile\';
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
         'weight' => '0',
       ),
       'pw_seven' => array(
@@ -551,17 +551,17 @@ return arg(0) == \'profile\';
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '-74',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
         'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
+        'weight' => '-74',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -586,16 +586,16 @@ return arg(0) == \'profile\';
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
         'weight' => '0',
       ),
       'pw_seven' => array(
@@ -610,8 +610,8 @@ return arg(0) == \'profile\';
   );
 
   $export['views-slider-block'] = array(
-    'cache' => -1,
-    'css_class' => '',
+    'cache' => '-1',
+    'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => 'slider-block',
     'i18n_block_language' => array(),
@@ -621,17 +621,17 @@ return arg(0) == \'profile\';
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '-50',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
         'weight' => '-17',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '-50',
       ),
       'pw_seven' => array(
         'region' => 'sidebar_second',

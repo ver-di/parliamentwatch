@@ -24,17 +24,17 @@ function pw_search_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '6',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
         'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '6',
       ),
       'pw_seven' => array(
         'region' => '',
