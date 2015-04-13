@@ -415,15 +415,15 @@ blockquote p:last-child {
 	font-size: 18px;
 	font-size: 1.8rem;
 }
-.aw-icon-2x {
+.aw-icon-3x {
 	font-size: 24px;
 	font-size: 2.4rem;
 }
-.aw-icon-3x {
+.aw-icon-4x {
 	font-size: 32px;
 	font-size: 3.2rem;
 }
-.aw-icon-4x {
+.aw-icon-5x {
 	font-size: 40px;
 	font-size: 4rem;
 }
@@ -439,6 +439,12 @@ blockquote p:last-child {
 }
 .aw-brand {
 	color: #f63;
+}
+.aw-brand {
+	color: #f63;
+}
+.aw-success {
+  color: #92c01f; 
 }
 .aw-icon-circle-brand:before {
 	color: #fff;
@@ -1192,7 +1198,7 @@ h1#page-title {
   width: 4.1rem;
   
 }
-.custom-search-button form-submit {
+.custom-search-button .form-submit {
     border: 0;
     background: url(../images/ic_search.png) no-repeat center;
     text-indent: -50000px;    
@@ -1935,95 +1941,114 @@ img.no-outline {
 }
 
 
-/* polls */
+/* voting */
 
-.view-pw-polls-list .view-filters form {
-    float: right;
+.pw-arrow-box {
+	position: relative;
+	background: rgba(244, 244, 244, .9);
+	border: 1px solid #919191;
 }
-.view-pw-polls-list .view-content {
-    clear: both;
+.pw-arrow-box:after,
+.pw-arrow-box:before {
+	top: 100%;
+	left: 174px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
 }
-.node-type-pw-poll .legend {
-    margin-bottom: 3em;
+.pw-arrow-box:after {
+	border-color: rgba(244, 244, 244, 0);
+	border-top-color: #f4f4f4;
+	border-width: 30px;
+	margin-left: -30px;
 }
-.legend .poll-behavior {
-    margin-right: 57px;
-    display: inline-block;
-    font-size: 11px;
-    font-size: 1.1rem;
-    line-height: 16px;
-    line-height: 1.6rem;
+.pw-arrow-box:before {
+	border-color: rgba(145, 145, 145, 0);
+	border-top-color: #919191;
+	border-width: 31px;
+	margin-left: -31px;
 }
-.poll.legend {
-    margin-bottom: 20px;
+
+.pw-voting .vote.block {
+  padding: 0 4px;
 }
-.poll-behavior .block {
-    display: inline-block;
-    padding: 0 3px;
+.pw-voting .vote.yes {
+  background: rgb(0, 204, 0);
+  border-color: #0c0;
 }
-.poll-behavior .icon.yes,
-.poll-behavior .block.yes {
-    background: #00cc00;
+.pw-voting .vote.no {
+  background: rgb(255, 51, 52);
+  border-color: #ff3334;
 }
-.poll-behavior .icon.no,
-.poll-behavior .block.no {
-    background: #ff3333;
+.pw-voting .vote.abstain {
+  background: rgb(0, 51, 255);
+  border-color: #03f;
 }
-.poll-behavior .icon.absent,
-.poll-behavior .block.absent {
-    background: #5876f1;
+.pw-voting .vote.no-show {
+  background: rgb(136, 134, 133);
+  border-color: #888685;
 }
-.poll-behavior .icon.neutral,
-.poll-behavior .block.neutral {
-    background: #999;
+.pw-voting .vote.total {
+  border-width: 1px;
+  border-style: solid;
+  margin: 0 0 1em;
+  padding: 3px 10px;
 }
-.poll-behavior .inline {
-    font-weight: bold;
+.pw-voting .vote.total.yes {
+  background: rgba(0, 204, 0, 0.5);
 }
-.poll-behavior .inline.yes {
-    color: #00cc00;
+.pw-voting .vote.total.no {
+  background: rgba(255, 51, 52, 0.5);
 }
-.poll-behavior .inline.no {
-    color: #ff3333;
+.pw-voting .vote.total.abstain {
+  background: rgba(0, 51, 255, 0.5);
 }
-.poll-behavior .inline.absent {
-    color: #5876f1;
+.pw-voting .vote.total.no-show {
+  background: rgba(136, 134, 133, 0.5)
 }
-.poll-behavior .inline.neutral {
-    color: #999;
+.pw-voting .item,
+.pw-voting .pw-arrow-box-trigger {
+  width: 1.1rem;
+  height: 1.1rem;
+  width: 11px;
+  height: 11px;
+  position: unset;
+  margin: 0 2px 2px 0;
+  z-index: 10;
+  float: left;
+  position: relative;
+  cursor: pointer;
 }
-.poll-behavior .icon {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 7px -2px;
+.pw-voting .item-politician {
+  position: absolute;
+  left: -170px;
+  bottom: 34px;
+  bottom: 3.4rem;
+  width: 600px;
+  border-radius: 3px;
+  padding: 1rem;
+  padding: 10px;
 }
-.node-type-pw-poll .field-name-field-pw-views-reference {
-    margin-bottom: 40px;
+.no-js .pw-voting .item-politician {
+  visibility: hidden;
+  opacity: 0;
+  transition:         opacity .5s ease-in-out;
+  -moz-transition:    opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
 }
-.node-type-pw-poll .field-name-poll-legend-block {
-    margin-bottom: 1em;
+.no-js .pw-voting .item:hover .item-politician,
+.no-js.js .pw-voting .item .item-politician {
+  visibility: visible;
+  opacity: 1;
 }
-.node-type-pw-poll .field-name-field-pw-views-reference .icon-taxonomy {
-    margin-left: 97px;
-}
-#node_pw_poll_full_group_polls_per_party legend {
-    padding-bottom: 1.3em;
+.no-js.js .pw-voting .item .item-politician {
+  display: none;
 }
 html.js fieldset.collapsed {
     height: auto;
-}
-.pw-poll-chart-wrapper {
-    float: left;
-    margin-bottom: 1em;
-    width: 33%;
-    position: relative;
-    padding-top: 3em;
-}
-.node-type-pw-poll span.party {
-    display: block;
-    position: absolute;
-    top: 0;
 }
 
 /* press */
@@ -2039,13 +2064,29 @@ html.js fieldset.collapsed {
 
 .pw-progress-wrapper,
 .pw-progress {
-    height: 14px;
-    width: 199px;
     display: block;
+    box-sizing: border-box;
 }
-.pw-progress-wrapper,
-.pw-progress-wrapper-l,
-.pw-petition-progress-wrapper {
+.pw-progress-wrapper-s {
+    height: 14px;
+}
+.pw-progress-wrapper-s .pw-progress {
+    height: 12px;
+}
+.pw-progress-wrapper-m {
+    height: 17px;
+}
+.pw-progress-wrapper-m .pw-progress {
+    height: 15px;
+}
+.pw-progress-wrapper-l {
+    height: 32px;
+}
+.pw-progress-wrapper-l .pw-progress {
+    height: 30px;
+}
+
+.pw-progress-wrapper {
     margin-bottom: 2px; 
     border: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
@@ -2082,69 +2123,16 @@ ul.progress-icons li {
 
 /* petitions */
 
-.pw-petition-progress-wrapper,
-.pw-petition-progress,
-.pw-progress-wrapper-l,
-.pw-progress-l {
-    height: 32px;
-    width: 314px;
-}
-.pw-petition-progress-wrapper-m,
-.pw-petition-progress-m,
-.pw-petition-progress-donations-m {
-    height: 17px;
-    width: 100%;
-}
-.pw-petition-progress,
-.pw-progress-l {
-    background: #ff6633;
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNjYzMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmVlMzMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(left,  #ff6633 0%, #ffee33 314px);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ff6633), color-stop(314px,#ffee33));
-    background: -webkit-linear-gradient(left,  #ff6633 0%,#ffee33 314px);
-    background: -o-linear-gradient(left,  #ff6633 0%,#ffee33 314px);
-    background: -ms-linear-gradient(left,  #ff6633 0%,#ffee33 314px);
-    background: linear-gradient(to right,  #ff6633 0%,#ffee33 314px);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6633', endColorstr='#ffee33',GradientType=1 ); 
-}
-.pw-petition-progress-m {
-    background: #78b70c; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc4YjcwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhOGU2M2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(left,  #78b70c 0%, #a8e63c 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#78b70c), color-stop(100%,#a8e63c)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* IE10+ */
-    background: linear-gradient(to right,  #78b70c 0%,#a8e63c 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b70c', endColorstr='#a8e63c',GradientType=1 ); /* IE6-8 */
-    display: block;
-}
-.pw-petition-progress-donations-m {
-    background: #a8e63c; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc4YjcwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhOGU2M2MiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background: -moz-linear-gradient(left,  #a8e63c 0%, #AAE340 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#a8e63c), color-stop(100%,#AAE340)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  #a8e63c 0%,#AAE340 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  #a8e63c 0%,#AAE340 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  #a8e63c 0%,#AAE340 100%); /* IE10+ */
-    background: linear-gradient(to right,  #a8e63c 0%,#AAE340 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8e63c', endColorstr='#AAE340',GradientType=1 ); /* IE6-8 */
-    display: block;
-}
-
 .pw-petition-progress-signings,
 .pw-petition-progress-donations {
-	float: left;
+    float: left;
     margin-bottom: 2px; 
-    border: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
     box-shadow: inset 0px 0px 2px 2px #ececec;
     text-indent: -5000em;
     background: #fff;
-    box-sizing: border-box;
 }
 .pw-petition-progress-signings {
 	width: 80%;
@@ -2180,6 +2168,7 @@ ul.progress-icons li {
 	}
 	.pw-petition-list-contents {
 		margin-left: 300px;
+		padding-bottom: 5em;
 	}
 }
 @media (max-width: 639px) {

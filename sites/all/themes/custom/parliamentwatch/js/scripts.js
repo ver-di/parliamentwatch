@@ -33,6 +33,13 @@ jQuery(window) // https://www.drupal.org/node/1478648
 
 jQuery(document).ready(function() {
 
+// show voting details on click
+
+    $('li .item.vote .pw-arrow-box-trigger').on('click', function(e) {
+      $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').hide();
+      $(this).next('.item-politician').fadeToggle('fast');
+    });
+
 // reset jquery ui slider on profile list AW-1965 https://www.drupal.org/node/1264316
 
     $("#views-exposed-form-profile-list-rev-grid #edit-reset" ).on( "click", function() {
