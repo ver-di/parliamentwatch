@@ -42,7 +42,6 @@ dependencies[] = field_group
 dependencies[] = file
 dependencies[] = file_entity
 dependencies[] = globalredirect
-dependencies[] = i18n_taxonomy
 dependencies[] = ife
 dependencies[] = image
 dependencies[] = jcarousel

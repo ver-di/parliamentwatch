@@ -9,7 +9,6 @@ dependencies[] = ds
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = feeds
-dependencies[] = i18n_taxonomy
 dependencies[] = options
 dependencies[] = pw_globals
 dependencies[] = shs

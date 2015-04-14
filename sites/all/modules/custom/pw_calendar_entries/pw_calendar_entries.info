@@ -10,7 +10,6 @@ dependencies[] = date
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = hms_field
-dependencies[] = i18n_taxonomy
 dependencies[] = pw_committees
 dependencies[] = pw_globals
 dependencies[] = strongarm

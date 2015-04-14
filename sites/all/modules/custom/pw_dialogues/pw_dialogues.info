@@ -16,7 +16,6 @@ dependencies[] = feeds_comment_processor
 dependencies[] = feeds_tamper
 dependencies[] = feeds_xpathparser
 dependencies[] = field_group
-dependencies[] = i18n_taxonomy
 dependencies[] = link
 dependencies[] = list
 dependencies[] = number

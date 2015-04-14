@@ -8,7 +8,6 @@ project = pw_vote
 dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features
-dependencies[] = i18n_taxonomy
 dependencies[] = options
 dependencies[] = pw_globals
 dependencies[] = strongarm
