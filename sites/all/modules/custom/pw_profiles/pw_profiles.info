@@ -44,7 +44,6 @@ dependencies[] = pw_twitter
 dependencies[] = role_export
 dependencies[] = rules
 dependencies[] = schemaorg
-dependencies[] = shorten
 dependencies[] = shs
 dependencies[] = strongarm
 dependencies[] = textformatter
