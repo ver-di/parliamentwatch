@@ -65,7 +65,7 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
       // check parliament is within valid dates
       $parliament_is_valid = _pw_is_parliament_active($parliament);
       if(!$parliament_is_valid){
-      
+
         $parliament_end_date = '';
         foreach($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid){
 
@@ -122,9 +122,9 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     // query for subject terms tagged with same parliament as user has
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'taxonomy_term')
-          ->entityCondition('bundle', 'dialogue_topics')
-          ->fieldCondition('field_parliament', 'tid', $parliament->tid)
-          ->propertyOrderBy('name');
+      ->entityCondition('bundle', 'dialogue_topics')
+      ->fieldCondition('field_parliament', 'tid', $parliament->tid)
+      ->propertyOrderBy('name');
     $result = $query->execute();
     $subject_terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']), 'dialogue_topics');
 
@@ -153,5 +153,18 @@ function pw_question_form_form_validate($form_id, $form_values){
   $user = user_load_by_name($user_name);
   if($user === FALSE){
     form_set_error('user', 'Empfänger existiert nicht.');
+  }
+}
+
+/**
+ * Implements hook_preprocess_node(). Modifies the form title to display the
+ * name of the recipient of the question.
+ */
+function pw_question_form_preprocess_node(&$variables) {
+  if ($variables['nid'] == '10446' && $variables['type'] == 'webform') {
+    $currentUser = _pw_get_current_user();
+    $pw_question_form_form_title = ($currentUser->field_user_title['und'][0]['value'])?$currentUser->field_user_title['und'][0]['value']." ":"";
+    $pw_question_form_form_title .= $currentUser->field_user_fname['und'][0]['value']." ".$currentUser->field_user_lname['und'][0]['value'];
+    $variables['title'] = "Ihre Frage an $pw_question_form_form_title stellen";
   }
 }

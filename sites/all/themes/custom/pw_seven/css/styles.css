@@ -184,7 +184,8 @@ div.description,
     margin-right: 20px;
 }
 #edit-field-user-picture,
-#edit-account {
+#edit-account,
+#edit-antispam-moderator {
     clear: both;
 }
 #user-profile-form .container-inline-date .date-padding {

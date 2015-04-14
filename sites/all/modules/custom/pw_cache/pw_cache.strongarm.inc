@@ -793,12 +793,5 @@ profile/[node:field-dialogue-recipient]';
   $strongarm->value = 1;
   $export['expire_user_user_page'] = $strongarm;
 
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'purge_proxy_urls';
-  $strongarm->value = 'http://srv8.pwsrv.local?purge_method=get';
-  $export['purge_proxy_urls'] = $strongarm;
-
   return $export;
 }

@@ -2,7 +2,8 @@
     display: block;
 }
 .view-slider,
-#edit-field-user-age-value-wrapper {
+#edit-field-user-age-value-wrapper,
+#feedback_simple {
     display: none !important;
 }
 .view-id-profile_list_rev .view-content ul {

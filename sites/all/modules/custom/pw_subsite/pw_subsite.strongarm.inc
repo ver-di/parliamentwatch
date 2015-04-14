@@ -1126,6 +1126,18 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value2</em> of the field <em class="placeholder">field_valid</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_vote_node_target_id' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">target_id</em> of the field <em class="placeholder">field_vote_node</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_vote_tid' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">tid</em> of the field <em class="placeholder">field_vote</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_vote_user_target_id' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">target_id</em> of the field <em class="placeholder">field_vote_user</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_webform_footer_format' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_webform_footer</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -3416,136 +3428,169 @@ foo
       ),
     ),
     192 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vote_tid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vote',
+        'type' => 'taxonomy_term_reference',
+        'column' => 'tid',
+        'translatable' => '0',
+      ),
+    ),
+    193 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vote_node_target_id',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vote_node',
+        'type' => 'entityreference',
+        'column' => 'target_id',
+        'translatable' => '0',
+      ),
+    ),
+    194 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_vote_user_target_id',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_vote_user',
+        'type' => 'entityreference',
+        'column' => 'target_id',
+        'translatable' => '0',
+      ),
+    ),
+    195 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    193 => array(
+    196 => array(
       'src' => 'comment:cid',
       'dst' => 'node:nid',
       'callback' => 'themekey_comment_cid2nid',
     ),
-    194 => array(
+    197 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    195 => array(
+    198 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    196 => array(
+    199 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
     ),
-    197 => array(
+    200 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    198 => array(
+    201 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    199 => array(
+    202 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    200 => array(
+    203 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    201 => array(
+    204 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    202 => array(
+    205 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    203 => array(
+    206 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    204 => array(
+    207 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    205 => array(
+    208 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    206 => array(
+    209 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    207 => array(
+    210 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    208 => array(
+    211 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    209 => array(
+    212 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    210 => array(
+    213 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    211 => array(
+    214 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    212 => array(
+    215 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    213 => array(
+    216 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    214 => array(
+    217 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    215 => array(
+    218 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    216 => array(
+    219 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    217 => array(
+    220 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    218 => array(
+    221 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
@@ -3890,6 +3935,9 @@ foo
     'node:field_trustee_image_width' => 'node:field_trustee_image_width',
     'node:field_valid_value' => 'node:field_valid_value',
     'node:field_valid_value2' => 'node:field_valid_value2',
+    'node:field_vote_node_target_id' => 'node:field_vote_node_target_id',
+    'node:field_vote_tid' => 'node:field_vote_tid',
+    'node:field_vote_user_target_id' => 'node:field_vote_user_target_id',
     'node:field_webform_footer_format' => 'node:field_webform_footer_format',
     'node:field_webform_footer_value' => 'node:field_webform_footer_value',
     'node:field_youtube_video_description' => 'node:field_youtube_video_description',
@@ -3964,7 +4012,7 @@ foo
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
-  $strongarm->value = 'abgeordnetenwatch';
+  $strongarm->value = 'parliamentwatch';
   $export['theme_default'] = $strongarm;
 
   return $export;

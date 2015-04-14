@@ -24,16 +24,16 @@ function pw_petitions_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'abgeordnetenwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'abgeordnetenwatch',
-        'weight' => '0',
-      ),
       'blank' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
         'weight' => '0',
       ),
       'pw_seven' => array(

@@ -1,31 +1,4 @@
 <?php
-switch ($field_petition_partner['und'][0]['value']) {
-  case "":
-    $partner_html = "";
-    $signing_url = $node_url;
-    $sharethis = "<span st_url=\"https://www.abgeordnetenwatch.de$node_url\" st_title=\"$title\" st_summary=\"Petition $title auf abgeordnetenwatch.de\" class=\"st_sharethis_hcount\" displayText=\"sharethis\"></span>";
-    break;
-  case "change.org":
-    $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-change.png" width="119" height="23" alt="Change.org">';
-    //$signing_url = "https://secured.abgeordnetenwatch.de/tools/newsletter.php?width=800&height=450&iframe=true&continue=".urlencode($field_petition_external_url['und'][0]['url']);
-    //$node_url = $signing_url;
-    break;
-  case "openpetition":
-    $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-openpetition.png" width="119" height="36" alt="OpenPetition">';
-    //$signing_url = $field_petition_external_url['und'][0]['url'];
-    //$node_url = $signing_url;
-    break;
-}
-$themed_image = theme_image_style(array(
-  'style_name' => 'pw_landscape_l', //Configure style here!
-  'path' => $field_teaser_image[0]['uri']
-));
-if (!empty($field_teaser_image[0]['field_image_copyright']) || !empty($field_teaser_image[0]['field_image_copyright']['und'][0]['value'] )){
-  $field_image_copyright = true;
-}
-?>
-<style>#cboxPrevious, #cboxNext, #cboxCurrent, #cboxTitle{visibility: hidden;}</style>
-<?php
 print render($title_suffix);
 ?>
 <?php if ($sharethis): ?>
@@ -39,10 +12,10 @@ print render($title_suffix);
     <li><i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-brand"><span class="element-invisible"><?php print t('Petition in der Meinungsumfrage');?></span></i></li>
     <li><i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition im Parlament');?></span></i></li>
   </ul>
-  <a href="<? echo $node_url; ?>" class="<? echo ($partner_html)?"colorbox-load":"";?>"><? echo $title;?></a>
+  <a href="<? echo $node_url; ?>" class="<? echo ($partner_html)?"":"";?>"><? echo $title;?></a>
 </h3>
 <div class="petition-list-image-wrapper img-outline">
-  <a href="<? echo $node_url; ?>" title="zur Petition" class="<? echo ($partner_html)?"colorbox-load":"";?>">
+  <a href="<? echo $node_url; ?>" title="zur Petition" class="<? echo ($partner_html)?"":"";?>">
     <? echo $themed_image; ?>
   </a>
   <?php if ($field_image_copyright): ?>
@@ -52,16 +25,16 @@ print render($title_suffix);
   <?php endif; ?>
 </div>
 <div class="pw-petition-list-contents">
-  <div class="pw-petition-progress-wrapper-m push-bottom-s">
-    <div class="pw-petition-progress-signings" title="Unterschriften">
-      <span style="width: 100%;" class="pw-petition-progress-m">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+    <div>
+        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
+            <span style="width: 100%;" class="pw-progress">Fortschritt: <? echo $field_petition_progress[0]['value']; ?>%</span>
+        </div>
+        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-donations push-bottom-s" title="Spenden">
+            <span style="width: <? echo $field_donation_progress[0]['value']; ?>%;" class="pw-progress">Fortschritt: <? echo $field_donation_progress[0]['value']; ?>%</span>
+        </div>
     </div>
-    <div class="pw-petition-progress-donations" title="Spenden">
-      <span style="width: <? echo $field_donation_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-donations-m">Fortschritt: <? echo $field_donation_progress['und'][0]['value']; ?>%</span>
-    </div>
-  </div>
-  <div class="medium">Kosten Meinungsumfrage: <? echo number_format($field_donation_required['und'][0]['value'],0,',','.'); ?>&nbsp;&euro;</div>
-  <div class="small light"><? echo number_format($field_donation_amount['und'][0]['value'],0,',','.'); ?>&nbsp;&euro; wurden bereits gespendet.</div>
+  <div class="medium"><strong>Kosten Meinungsumfrage: <? echo number_format($field_donation_required[0]['value'],0,',','.'); ?>&nbsp;&euro;</strong></div>
+  <div class="small light"><? echo number_format($field_donation_amount[0]['value'],0,',','.'); ?>&nbsp;&euro; wurden bereits gespendet.</div>
   <?php if ($partner_html): ?>
     <div class="petition-list-partner-wrapper small light">
       <p class="push-bottom-xs">Diese Petition läuft auf:</p>

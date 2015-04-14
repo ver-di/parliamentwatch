@@ -1,31 +1,4 @@
 <?php
-switch ($field_petition_partner[0]['value']) {
-  case "":
-    $partner_html = "";
-    $signing_url = $node_url;
-    $sharethis = "<span st_url=\"https://www.abgeordnetenwatch.de$node_url\" st_title=\"$title\" st_summary=\"Petition $title auf abgeordnetenwatch.de\" class=\"st_sharethis_hcount\" displayText=\"sharethis\"></span>";
-    break;
-  case "change.org":
-    $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-change.png" width="119" height="23" alt="Change.org">';
-    $signing_url = "https://secured.abgeordnetenwatch.de/tools/newsletter.php?width=800&height=450&iframe=true&continue=".urlencode($field_petition_external_url[0]['url']);
-    $node_url = $signing_url;
-    break;
-  case "openpetition":
-    $partner_html = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-openpetition.png" width="119" height="36" alt="OpenPetition">';
-    $signing_url = $field_petition_external_url[0]['url'];
-    $node_url = $signing_url;
-    break;
-}
-$themed_image = theme_image_style(array(
-  'style_name' => 'pw_landscape_l', //Configure style here!
-  'path' => $field_teaser_image[0]['uri']
-));
-if (!empty($field_teaser_image[0]['field_image_copyright']) || !empty($field_teaser_image[0]['field_image_copyright']['und'][0]['value'] )){
-  $field_image_copyright = true;
-}
-?>
-<style>#cboxPrevious, #cboxNext, #cboxCurrent, #cboxTitle{visibility: hidden;}</style>
-<?php
        print render($title_suffix); 
 ?>
 <?php if ($sharethis): ?>
@@ -47,20 +20,20 @@ if (!empty($field_teaser_image[0]['field_image_copyright']) || !empty($field_tea
     </a>
     <?php if ($field_image_copyright): ?>
     <div class="copyright">
-        <? echo $field_teaser_image[0]['field_image_copyright']['und'][0]['value'] ?>
+        <? echo $field_teaser_image[0]['field_image_copyright']['und'][0]['value']; ?>
     </div>
     <?php endif; ?>
 </div>
 <div class="pw-petition-list-contents">
-    <div class="pw-petition-progress-wrapper-m push-bottom-s">
-        <div class="pw-petition-progress-signings" title="Unterschriften">
-            <span style="width: <? echo $field_petition_progress['und'][0]['value']; ?>%;" class="pw-petition-progress-m">Fortschritt: <? echo $field_petition_progress['und'][0]['value']; ?>%</span>
+    <div>
+        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
+            <span style="width: <? echo $field_petition_progress[0]['value']; ?>%;" class="pw-progress">Fortschritt: <? echo $field_petition_progress[0]['value']; ?>%</span>
         </div>
-        <div class="pw-petition-progress-donations" title="Spenden">
+        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-donations push-bottom-s" title="Spenden">
             <span style="width: 0;" class="pw-petition-progress-m"></span>
         </div>
     </div>
-    <div class="medium">Benötigte Unterschriften: <? echo number_format($field_petition_required[0]['value'],0,',','.'); ?></div>
+    <div class="medium"><strong>Benötigte Unterschriften: <? echo number_format($field_petition_required[0]['value'],0,',','.'); ?></strong></div>
     <div class="small light">Erhaltene Unterschriften: <? echo number_format($field_petition_signings[0]['value'],0,',','.'); ?></div>
     <?php if ($partner_html): ?>
         <div class="petition-list-partner-wrapper small light">
