@@ -16,7 +16,6 @@ dependencies[] = strongarm
 dependencies[] = views
 dependencies[] = views_xml_backend
 dependencies[] = webform
-dependencies[] = webform_accordion
 dependencies[] = webform_conditional
 dependencies[] = webform_mysql_views
 features[context][] = donations_countries
