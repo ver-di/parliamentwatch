@@ -31,6 +31,4 @@ features[variable][] = webform_mysql_views_views
 features[views_view][] = pw_donation_drive
 features[views_view][] = pw_donation_state
 features[views_view][] = pw_donations_recent
-stylesheets[all][] = pw_donation_form.css
-scripts[20] = 'pw_donation_form.js'
 mtime = 1428509272
