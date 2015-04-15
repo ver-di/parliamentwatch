@@ -166,7 +166,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_dialogue_topic']['element_wrapper_class'] = 'topic float-right';
   $handler->display->display_options['fields']['field_dialogue_topic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -774,7 +774,7 @@ else {
   $handler->display->display_options['fields']['field_dialogue_topic']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_topic']['element_wrapper_class'] = 'topic float-right';
   $handler->display->display_options['fields']['field_dialogue_topic']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -1055,7 +1055,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_topic']['element_wrapper_class'] = 'topic float-right';
   $handler->display->display_options['fields']['field_dialogue_topic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
@@ -1157,7 +1157,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date Question';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Feld: Parliament (field_parliament) (translated) */
+  /* Kontextfilter: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['arguments']['field_parliament_tid_i18n']['id'] = 'field_parliament_tid_i18n';
   $handler->display->display_options['arguments']['field_parliament_tid_i18n']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['arguments']['field_parliament_tid_i18n']['field'] = 'field_parliament_tid_i18n';
@@ -1450,38 +1450,6 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
-  /* Feld: Global: PHP: tinyURL */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Global: PHP: tinyURL';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_class'] = 'text-field js-hide';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'shortlink pw-question-link';
-  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
-$path = url($path, array(\'absolute\' => true));
-print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: PHP: trim the link */
-  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
-  $handler->display->display_options['fields']['php_2']['table'] = 'views';
-  $handler->display->display_options['fields']['php_2']['field'] = 'php';
-  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Global: PHP: trim the link';
-  $handler->display->display_options['fields']['php_2']['label'] = '';
-  $handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><span id="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></span></div>';
-  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Feld: excluded | edit answer */
   $handler->display->display_options['fields']['edit_comment']['id'] = 'edit_comment';
   $handler->display->display_options['fields']['edit_comment']['table'] = 'comment';
@@ -1786,38 +1754,6 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
-  /* Feld: Global: PHP: tinyURL */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Global: PHP: tinyURL';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['element_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_class'] = 'text-field js-hide';
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'shortlink pw-question-link';
-  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$path = drupal_lookup_path(\'alias\',"node/".$data->nid); 
-$path = url($path, array(\'absolute\' => true));
-print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: PHP: trim the link */
-  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
-  $handler->display->display_options['fields']['php_2']['table'] = 'views';
-  $handler->display->display_options['fields']['php_2']['field'] = 'php';
-  $handler->display->display_options['fields']['php_2']['ui_name'] = 'Global: PHP: trim the link';
-  $handler->display->display_options['fields']['php_2']['label'] = '';
-  $handler->display->display_options['fields']['php_2']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php_2']['php_output'] = '<div class="shorten"><span id="shortlink-<?php print $row->nid; ?>"><?php print t(\'trim the link\'); ?></span></div>';
-  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Feld: excluded | edit answer */
   $handler->display->display_options['fields']['edit_comment']['id'] = 'edit_comment';
   $handler->display->display_options['fields']['edit_comment']['table'] = 'comment';
@@ -1878,6 +1814,83 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $translatables['profile_questions_answers'] = array(
+    t('Master'),
+    t('Questions & Answers'),
+    t('weiterlesen'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('first'),
+    t('zurück'),
+    t('weiter'),
+    t('last'),
+    t('<div class="pw-messages warning">
+Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie eine neue Auswahl über einen der angebotenen Filter.
+</div>'),
+    t('Kommentare'),
+    t('content author'),
+    t('Benutzer entity referenced from field_dialogue_recipient'),
+    t('Profilfoto'),
+    t('Fieldset Question'),
+    t('Thema'),
+    t('Frage von'),
+    t(' [field_dialogue_sender_name]<br/><span class="subline">[created]</span>
+'),
+    t('anonymous<br/><span class="subline">[created]</span>'),
+    t('Anmerkung der Redaktion'),
+    t('edit question'),
+    t('Alle'),
+    t('Profile'),
+    t('Fragen an [field_user_fname] [field_user_lname]'),
+    t('A content pane used on the profile pages'),
+    t('mehr'),
+    t('Älteste zuerst'),
+    t('Neueste zuerst'),
+    t('Post date Question'),
+    t('Datum der Frage'),
+    t('Datum der Antwort'),
+    t('Anzahl der Antworten'),
+    t('Nach Thema der Frage filtern'),
+    t('Anzahl an Kommentaren'),
+    t('Status der Frage'),
+    t('View panes'),
+    t('Full content'),
+    t('A content pane used on the full content of the question'),
+    t('Landingpage Parliament'),
+    t('A content pane used on the election landingpage'),
+    t('Ganze Frage lesen'),
+    t('Answers pane'),
+    t('Fieldset Answer'),
+    t('Fieldset Answer Inner'),
+    t('<h3>
+    Antwort von [field_user_fname] [field_user_lname]<br/>
+    <span class="subline">[created_1]</span>
+</h3>'),
+    t('Standard-Antwort <span class="ic-info ic-right"><span class="info-title"></span><span class="info-content element-hidden">"Standard-Antworten" sind Antworten, in denen Politiker mitteilen, dass sie über abgeordnetenwatch.de grundsätzlich nicht auf Fragen eingehen wollen. Diese werden in der Statistik als "keine Antwort" gewertet.</span></span>'),
+    t('<div class="content clear">[field_dialogue_comment_body]</div>'),
+    t('<strong>Bisher ist noch keine Antwort eingetroffen</strong>'),
+    t('Anhänge'),
+    t('Weitere Informationen zur Antwort'),
+    t('Dauer zur eingetroffenen Antwort'),
+    t('Schlagworte'),
+    t('Frage und Antwort drucken'),
+    t('permalink-wrapper'),
+    t('Permanent-Link zu obenstehender Frage und Antwort'),
+    t('edit answer'),
+    t('Answers pane full content'),
+    t('<div class="comment">  	
+    <div class="content-inner">
+        <strong><?php print t(\'Bisher ist noch keine Antwort eingetroffen\'); ?></strong>
+    </div>
+</div>'),
+  );
   $export['profile_questions_answers'] = $view;
 
   $view = new view();
@@ -2250,6 +2263,41 @@ print shorten_url($original = $path, $service = \'tinyURL\'); ?>';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $translatables['pw_dialogue_answers'] = array(
+    t('Master'),
+    t('PW Dialogue answers'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('Inhalt'),
+    t('Benutzer entity referenced from field_dialogue_recipient'),
+    t('Bild von field_user_picture'),
+    t('Feldgruppe'),
+    t('<h3>'),
+    t('[field_user_lname],'),
+    t('[field_user_fname] [field_user_lname], [field_user_party]'),
+    t('zu einer Frage von '),
+    t('</h3>'),
+    t('[field_user_questions_get],'),
+    t('Profil besuchen'),
+    t('Frage und ganze Antwort lesen'),
+    t('edit answer'),
+    t('edit recipient'),
+    t('edit question'),
+    t('Alle'),
+    t('Content pane'),
+    t('View panes'),
+  );
   $export['pw_dialogue_answers'] = $view;
 
   return $export;

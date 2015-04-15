@@ -1509,7 +1509,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Constituency Won */
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
@@ -1799,7 +1799,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Constituency Won */
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
@@ -1982,7 +1982,7 @@ return $result;
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['header']['area_text_custom']['content'] = '<div id="" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>';
+  $handler->display->display_options['header']['area_text_custom']['content'] = '<div class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area_text_custom']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
@@ -2070,7 +2070,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Constituency Won */
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
@@ -2533,7 +2533,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Constituency Won */
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
@@ -2564,7 +2564,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['id'] = 'field_user_picture-revision_id_1';
@@ -2683,6 +2683,93 @@ return $term->tid;';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['validate']['type'] = 'taxonomy_term';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
+  );
+  $translatables['pw_user_profile_fields_rev'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
+    t('Uid'),
+    t('Profilfoto'),
+    t('Alle'),
+    t('Basic Info'),
+    t('Grunddaten von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
+    t('Get all revisions from an user.'),
+    t('Begriff aus field_user_constituency'),
+    t('Begriff aus field_user_list_position'),
+    t('Jahrgang'),
+    t('-'),
+    t('Berufliche Qualifikationen'),
+    t('Ausgeübte Tätigkeit'),
+    t('Wohnort'),
+    t(', Ergebnis: [field_user_election_result-revision_id] %'),
+    t('Wahlkreis'),
+    t('[name][field_user_election_result-revision_id]'),
+    t('Liste'),
+    t('[field_user_list-revision_id], Platz [name_1]'),
+    t('About'),
+    t('[field_user_fname-revision_id] [field_user_lname-revision_id] über sich'),
+    t('<div id="about" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] <?php print t(\'about\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>
+'),
+    t('About Page'),
+    t('[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id] über sich'),
+    t('<div class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id] <?php print t(\'about\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
+    t('<p class="link-profile">[nothing_1]</p>'),
+    t('Über mich'),
+    t('zum vollständigen Profil'),
+    t('Image Gallery'),
+    t('Bildergalerie von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
+    t('weiterlesen'),
+    t('<div id="imagegallery" class="add-sharethis" vid="[vid]" title="<?php print t(\'Imagegallery of \'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
+    t('Image Gallery Page'),
+    t('Image Gallery of  [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
+    t('<div class="add-sharethis" title="<?php print t(\'Image Gallery of\'); ?> [field_user_fname-revision_id]  [[field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
+    t('<h3>Bildergalerie</h3>'),
+    t('<p class="link-profile">[nothing]</p>'),
+    t('Bild von field_user_image_gallery'),
+    t('Feldgruppe'),
+    t('Political Goals'),
+    t('Die politischen Ziele von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
+    t('<div id="political-goals" class="add-sharethis" vid="[vid]" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
+    t('Political Goals Page'),
+    t('Die politischen Ziele von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
+    t('<div class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id]"></div>'),
+    t('Politische Ziele'),
+    t('Additional Links'),
+    t('Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
+    t('<div id="additional-links" class="add-sharethis" vid="[vid]" title="<?php print t(\'Additional links of\'); ?> [field_user_party-revision_id]"></div>'),
+    t('Additional Links Page'),
+    t('Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
+    t('<div class="add-sharethis" title="<?php print t(\'Additional Links of\'); ?> [field_user_fname-revision_id]  [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
+    t('<h3>Additional information</h3>'),
+    t('Short Profile Premium Mainpage'),
+    t('used as header field on pages'),
+    t('<div id="" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
+    t('Begriff aus field_user_parliament'),
+    t(', direkt gewählt'),
+    t(', eingezogen über Liste'),
+    t('[field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
+    t('[name_1][field_user_constituency_won-revision_id][field_user_list_won-revision_id]'),
+    t('Frage stellen'),
+    t('Zu den Fragen und Antworten'),
+    t('<div class="pw-dialogues-link">[nothing]</div>
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. Ggfs. werden auf dieser Profilseite auch ältere Fragen und Antworten angezeigt.</div></div>'),
+    t('<div class="pw-dialogues-link">An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt</div>
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]'),
+    t('Short Profile Premium Subpage'),
+    t('[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id]'),
+    t('Short Profile Deputy Mainpage'),
+    t('User Profile Fields'),
+    t('<div class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>'),
+    t('Short Profile Deputy Subpage'),
+    t('Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat abgeordnetenwatch einmalig mit 179 Euro (149 Euro als Frühbucherrabatt).'),
+    t('Short Profile Dialogue'),
+    t('Inhalt referencing Benutzer from field_dialogue_recipient'),
+    t('[field_user_parliament-revision_id][field_user_constituency_won-revision_id][field_user_list_won-revision_id]'),
   );
   $export['pw_user_profile_fields_rev'] = $view;
 
@@ -3247,6 +3334,30 @@ $linktitle .= \' \'.$row->parliament_name_1;
   $handler->display->display_options['arguments']['user_name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['user_name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['user_name']['limit'] = '0';
+  $translatables['pw_user_revision_switch'] = array(
+    t('Master'),
+    t('Wählergedächtnis'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Im Wählergedächtnis finden Sie alle dokumentierten Legislaturperioden und Wahlen</div></div>'),
+    t('.'),
+    t('Feldgruppe'),
+    t('[php] [parliament_name_1] '),
+    t('[number_of_questions] Fragen /'),
+    t('[number_of_questions] / [number_of_answers]'),
+    t('[number_of_sideline_jobs] Nebentätigkeiten'),
+    t('[number_of_speeches] Gehaltene Reden'),
+    t('[number_of_missed_votings] Verpasste Abstimmungen'),
+    t(','),
+    t('Zeitraumsprofil öffnen'),
+    t('Alle'),
+    t('Wählergedächtnis Dummy'),
+    t('until more data is available'),
+  );
   $export['pw_user_revision_switch'] = $view;
 
   return $export;
