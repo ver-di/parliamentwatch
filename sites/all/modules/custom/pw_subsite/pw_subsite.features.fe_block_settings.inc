@@ -373,7 +373,7 @@ return arg(0) == \'profile\';
         'weight' => '0',
       ),
     ),
-    'title' => 'Filter list',
+    'title' => 'Liste filtern',
     'visibility' => '2',
   );
 

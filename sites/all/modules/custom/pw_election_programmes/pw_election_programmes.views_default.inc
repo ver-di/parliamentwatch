@@ -178,24 +178,23 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Kontextfilter: Beschädigte/fehlende Behandlungsroutine */
-  $handler->display->display_options['arguments']['tid_i18n']['id'] = 'tid_i18n';
-  $handler->display->display_options['arguments']['tid_i18n']['table'] = 'taxonomy_index';
-  $handler->display->display_options['arguments']['tid_i18n']['field'] = 'tid_i18n';
-  $handler->display->display_options['arguments']['tid_i18n']['default_action'] = 'access denied';
-  $handler->display->display_options['arguments']['tid_i18n']['exception']['value'] = '';
-  $handler->display->display_options['arguments']['tid_i18n']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['tid_i18n']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['tid_i18n']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['tid_i18n']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['tid_i18n']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['tid_i18n']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['tid_i18n']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['tid_i18n']['validate_options']['vocabularies'] = array(
+  /* Kontextfilter: Inhalt: Besitzt eine Taxonomiebegriff-TID. */
+  $handler->display->display_options['arguments']['tid']['id'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['arguments']['tid']['field'] = 'tid';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'access denied';
+  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['tid']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
   );
-  $handler->display->display_options['arguments']['tid_i18n']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['tid_i18n']['validate']['fail'] = 'access denied';
+  $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'access denied';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
