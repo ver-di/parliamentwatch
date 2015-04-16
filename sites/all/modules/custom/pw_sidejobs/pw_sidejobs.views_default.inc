@@ -134,6 +134,16 @@ print $data->field_field_user_lname[0][\'raw\'][\'value\'].\', \'.$data->field_f
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $translatables['pw_list_politician_entities'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Entity Reference'),
+  );
   $export['pw_list_politician_entities'] = $view;
 
   return $export;

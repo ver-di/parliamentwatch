@@ -87,6 +87,7 @@ function pw_press_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'description_field' => 0,
+        'exclude_cv' => FALSE,
         'file_directory' => 'press-articles',
         'file_extensions' => 'pdf jpg png gif',
         'max_filesize' => '',
@@ -101,12 +102,12 @@ function pw_press_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'default' => 'default',
-            0 => 0,
             'document' => 0,
             'image' => 0,
             'video' => 0,
+            0 => 0,
+            'audio' => 0,
+            'default' => 'default',
           ),
           'browser_plugins' => array(
             'media_default--media_browser_1' => 0,
@@ -218,6 +219,7 @@ function pw_press_field_default_fields() {
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -246,6 +248,9 @@ function pw_press_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_press_article_link',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
@@ -325,6 +330,7 @@ function pw_press_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -456,6 +462,7 @@ function pw_press_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -547,6 +554,7 @@ function pw_press_field_default_fields() {
       'label' => 'Soundfile',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'file_extensions' => 'mp3',
         'user_register_form' => FALSE,
       ),
@@ -659,6 +667,7 @@ function pw_press_field_default_fields() {
       'label' => 'Video',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'file_extensions' => 'm4v avi wmv',
         'user_register_form' => FALSE,
       ),
@@ -797,6 +806,7 @@ function pw_press_field_default_fields() {
           ),
         ),
         'display_summary' => 1,
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -911,6 +921,7 @@ function pw_press_field_default_fields() {
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(

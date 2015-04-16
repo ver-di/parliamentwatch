@@ -139,7 +139,7 @@ geht es los!<br/><br/>
   $handler->display->display_options['fields']['text_3']['label'] = '';
   $handler->display->display_options['fields']['text_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['text_3']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['text_3']['element_wrapper_class'] = 'state-de [text_3] float-left';
+  $handler->display->display_options['fields']['text_3']['element_wrapper_class'] = 'icon-state icon-[text_3] float-left';
   $handler->display->display_options['fields']['text_3']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['text_3']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['text_3']['empty_zero'] = TRUE;
@@ -319,7 +319,7 @@ geht es los! <a href="/ueber-uns/spendenformular">Jetzt spenden</a><br/><br/>
   $handler->display->display_options['fields']['text_2']['label'] = '';
   $handler->display->display_options['fields']['text_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['text_2']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['text_2']['element_wrapper_class'] = 'state-de [text_2] float-left';
+  $handler->display->display_options['fields']['text_2']['element_wrapper_class'] = 'icon-state icon-[text_2] float-left';
   $handler->display->display_options['fields']['text_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['text_2']['xpath_selector'] = 'machine_name';
   $handler->display->display_options['fields']['text_2']['multiple'] = 0;
@@ -463,7 +463,7 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
   $handler->display->display_options['fields']['text_1']['label'] = '';
   $handler->display->display_options['fields']['text_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['text_1']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['text_1']['element_wrapper_class'] = 'state-de [text_1] float-left';
+  $handler->display->display_options['fields']['text_1']['element_wrapper_class'] = 'icon-state icon-[text_1] float-left';
   $handler->display->display_options['fields']['text_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['text_1']['xpath_selector'] = 'machine_name';
   $handler->display->display_options['fields']['text_1']['multiple'] = 0;

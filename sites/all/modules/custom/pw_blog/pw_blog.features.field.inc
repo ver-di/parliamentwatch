@@ -101,6 +101,7 @@ function pw_blog_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -266,6 +267,7 @@ function pw_blog_field_default_fields() {
           ),
         ),
         'display_summary' => 1,
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -315,7 +317,7 @@ function pw_blog_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -434,6 +436,7 @@ function pw_blog_field_default_fields() {
       'label' => 'Tags',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -482,7 +485,7 @@ function pw_blog_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -543,6 +546,7 @@ function pw_blog_field_default_fields() {
       'label' => 'Categories',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -656,6 +660,7 @@ function pw_blog_field_default_fields() {
       'settings' => array(
         'alt_field' => 1,
         'default_image' => 0,
+        'exclude_cv' => FALSE,
         'file_directory' => 'blog',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',

@@ -260,6 +260,28 @@ return $term->tid;';
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['path'] = 'announcements';
+  $translatables['pw_announcement'] = array(
+    t('Master'),
+    t('Announcements'),
+    t('Zum Archiv'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Datei'),
+    t('Alle'),
+    t('Block'),
+    t('mehr'),
+    t('Seite'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('weiter'),
+    t('letzte Seite »'),
+  );
   $export['pw_announcement'] = $view;
 
   return $export;
