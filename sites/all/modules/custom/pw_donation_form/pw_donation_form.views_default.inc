@@ -68,6 +68,20 @@ function pw_donation_form_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['pw_donation_drive'] = array(
+    t('Master'),
+    t('Stand der Spendenkampagne'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Feldgruppe'),
+    t('amount'),
+    t('count'),
+    t('Block'),
+  );
   $export['pw_donation_drive'] = $view;
 
   $view = new view();
@@ -137,6 +151,8 @@ geht es los!<br/><br/>
   $handler->display->display_options['fields']['text_3']['table'] = 'xml';
   $handler->display->display_options['fields']['text_3']['field'] = 'text';
   $handler->display->display_options['fields']['text_3']['label'] = '';
+  $handler->display->display_options['fields']['text_3']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['text_3']['alter']['text'] = ' ';
   $handler->display->display_options['fields']['text_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['text_3']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['text_3']['element_wrapper_class'] = 'icon-state icon-[text_3] float-left';
@@ -317,6 +333,8 @@ geht es los! <a href="/ueber-uns/spendenformular">Jetzt spenden</a><br/><br/>
   $handler->display->display_options['fields']['text_2']['table'] = 'xml';
   $handler->display->display_options['fields']['text_2']['field'] = 'text';
   $handler->display->display_options['fields']['text_2']['label'] = '';
+  $handler->display->display_options['fields']['text_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['text_2']['alter']['text'] = ' ';
   $handler->display->display_options['fields']['text_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['text_2']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['text_2']['element_wrapper_class'] = 'icon-state icon-[text_2] float-left';
@@ -461,6 +479,8 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
   $handler->display->display_options['fields']['text_1']['table'] = 'xml';
   $handler->display->display_options['fields']['text_1']['field'] = 'text';
   $handler->display->display_options['fields']['text_1']['label'] = '';
+  $handler->display->display_options['fields']['text_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['text_1']['alter']['text'] = ' ';
   $handler->display->display_options['fields']['text_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['text_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['text_1']['element_wrapper_class'] = 'icon-state icon-[text_1] float-left';
@@ -669,6 +689,41 @@ if ($row->text_4 < 10000) print $row->text_1;
   $handler->display->display_options['sorts']['text']['xpath_selector'] = 'amount';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
+  $translatables['pw_donation_state'] = array(
+    t('Master'),
+    t('Ranking Förderer'),
+    t('alle Bundesländer anzeigen'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('<p>Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 € erreicht sind,
+geht es los!<br/><br/>
+<h4>Aktuelle Top 3</h4></p>'),
+    t(' '),
+    t('Feldgruppe'),
+    t('Fördersumme'),
+    t('Fördermitglieder'),
+    t('Block'),
+    t('Ihr Landtag'),
+    t('mehr'),
+    t('<p>Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 € erreicht sind,
+geht es los! <a href="/ueber-uns/spendenformular">Jetzt spenden</a><br/><br/>
+<h4>Aktuelle Top 3</h4></p>'),
+    t('Countries Amount'),
+    t('Ranking Spendensumme'),
+    t('Sobald <strong>10.000 Euro Startsumme</strong> für ein Bundesland erreicht werden, können wir dort starten.'),
+    t('Platz [counter]: [text]'),
+    t('Countries Donors'),
+    t('Für den langfristigen Betrieb sind <br/><strong>mindestens 100 Förderer</strong> pro Bundesland notwendig.'),
+    t('Menu Countries Amount'),
+    t('Starten Sie abgeordnetenwatch.de für Ihr Bundesland. Sobald 10.000 € erreicht sind. <a href="/node/10508/" class="read-more">Jetzt spenden</a>'),
+    t('<ul class="nav-pw">
+<li><a href="http://www.abgeordnetenwatch.de/kommunen-933-0.html">Kommunen</a></li>
+<li><a href="http://www.abgeordnetenwatch.de/archiv-391-0.html">Archiv</a></li>
+</ul>'),
+  );
   $export['pw_donation_state'] = $view;
 
   $view = new view();
@@ -801,6 +856,24 @@ return $o;';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'recent');
+  $translatables['pw_donations_recent'] = array(
+    t('Master'),
+    t('Letzte Spender'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('webform_views_untersttzen_sie_abgeordnetenwatchde.sid -> webform_submissions.sid'),
+    t('Gespeichert'),
+    t('Personal firstname'),
+    t('Personal lastname'),
+    t('Civicrm amount'),
+    t('Civicrm contribution type'),
+    t('Option not anonymous'),
+    t('Block'),
+  );
   $export['pw_donations_recent'] = $view;
 
   return $export;
