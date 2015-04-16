@@ -150,6 +150,7 @@ function pw_election_programmes_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_election_programme_open',
       'label' => 'Link',
       'required' => 1,
@@ -173,7 +174,7 @@ function pw_election_programmes_field_default_fields() {
         'rel_remove' => 'default',
         'title' => 'value',
         'title_maxlength' => '128',
-        'title_value' => 'open election programme',
+        'title_value' => 'Wahlprogramm durchblättern',
         'url' => 0,
         'user_register_form' => FALSE,
         'validate_url' => 1,
@@ -181,7 +182,9 @@ function pw_election_programmes_field_default_fields() {
       'widget' => array(
         'active' => 0,
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'link_field',
         'weight' => '6',
       ),

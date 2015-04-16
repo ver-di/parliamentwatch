@@ -125,8 +125,8 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['relationship'] = 'field_pw_kc_vote_reference_tid';
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['ui_name'] = 'Excluded | Taxonomy: Class name';
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['label'] = '';
-  $handler->display->display_options['fields']['field_pw_kc_votes_classname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_kc_votes_classname']['type'] = 'text_plain';
   /* Feld: Global: Ergebniszähler einer Ansicht */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
@@ -187,12 +187,12 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['field'] = 'field_pw_kc_vote_reference';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['label'] = '';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_class'] = '[field_pw_kc_votes_classname] block';
+  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_class'] = '[field_pw_kc_votes_classname] block vote';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_wrapper_class'] = 'poll-behavior';
+  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_wrapper_class'] = 'pw-voting';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
