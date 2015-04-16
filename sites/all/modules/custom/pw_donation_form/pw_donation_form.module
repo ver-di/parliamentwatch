@@ -10,8 +10,8 @@ include_once 'pw_donation_form.features.inc';
 /**
  * Add module css and js
  */
-drupal_add_css(drupal_get_path('module', 'pw_donation_form') .'/pw_donation_form.css','all');
-drupal_add_js(drupal_get_path('module', 'pw_donation_form') . '/pw_donation_form.js');
+//drupal_add_css(drupal_get_path('module', 'pw_donation_form') .'/pw_donation_form.css','all');
+//drupal_add_js(drupal_get_path('module', 'pw_donation_form') . '/pw_donation_form.js');
 
 
 /**
@@ -55,13 +55,6 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
 
     // Custom validations
     $form['#validate'][] = 'pw_donation_form_form_validate';
-    // Custom CSS and JS
-    $form['#attached']['css'] = array(
-      drupal_get_path('module', 'pw_donation_form') .'/pw_donation_form.css',
-    );
-    $form['#attached']['js'] = array(
-      drupal_get_path('module', 'pw_donation_form') .'/pw_donation_form.js',
-    );
   }
 }
 

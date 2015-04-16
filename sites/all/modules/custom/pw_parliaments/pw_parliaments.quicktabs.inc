@@ -17,13 +17,13 @@ function pw_parliaments_quicktabs_default_quicktabs() {
   $quicktabs->ajax = 0;
   $quicktabs->hide_empty_tabs = TRUE;
   $quicktabs->default_tab = 0;
-  $quicktabs->title = 'Politicians answer!';
+  $quicktabs->title = 'Politiker antworten!';
   $quicktabs->tabs = array(
     0 => array(
       'vid' => 'pw_dialogue_answers',
       'display' => 'panel_pane_1',
       'args' => '',
-      'title' => 'Answers',
+      'title' => 'Antworten',
       'weight' => '-100',
       'type' => 'view',
     ),
@@ -31,7 +31,7 @@ function pw_parliaments_quicktabs_default_quicktabs() {
       'vid' => 'profile_questions_answers',
       'display' => 'landing_page',
       'args' => '',
-      'title' => 'Questions',
+      'title' => 'Fragen',
       'weight' => '-99',
       'type' => 'view',
     ),
@@ -42,9 +42,9 @@ function pw_parliaments_quicktabs_default_quicktabs() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Answers');
-  t('Politicians answer!');
-  t('Questions');
+  t('Antworten');
+  t('Fragen');
+  t('Politiker antworten!');
 
   $export['politicians_answer'] = $quicktabs;
 
