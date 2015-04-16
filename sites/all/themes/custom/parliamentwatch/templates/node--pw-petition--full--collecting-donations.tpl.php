@@ -9,7 +9,7 @@
 <?php endif; ?>
 <div class="push-bottom-l">
 
-  <p class="medium"><? echo $field_petition_recipient[0]['value'] ?></p>
+  <p class="medium">Addressat: <? echo $field_petition_recipient[0]['value'] ?></p>
 
   <?php if (!empty($field_blogpost_blogtags)): ?>
     <p class="icon-taxonomy push-bottom-m">
