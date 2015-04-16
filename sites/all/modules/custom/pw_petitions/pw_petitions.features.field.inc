@@ -135,7 +135,7 @@ function pw_petitions_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -148,9 +148,9 @@ function pw_petitions_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => '2',
         ),
         'full' => array(
@@ -240,7 +240,7 @@ function pw_petitions_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -253,9 +253,9 @@ function pw_petitions_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => '11',
         ),
         'full' => array(
@@ -626,7 +626,7 @@ $entity_field[0][\'value\'] = $result;',
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -640,9 +640,9 @@ $entity_field[0][\'value\'] = $result;',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => '12',
         ),
         'full' => array(
@@ -1642,9 +1642,9 @@ $entity_field[0][\'value\'] = $result;',
         ),
         'full' => array(
           'label' => 'above',
-          'module' => 'i18n_field',
+          'module' => 'list',
           'settings' => array(),
-          'type' => 'i18n_list_default',
+          'type' => 'list_default',
           'weight' => '0',
         ),
         'search_result' => array(

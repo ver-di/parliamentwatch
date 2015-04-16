@@ -73,6 +73,7 @@ function pw_sidejobs_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -121,7 +122,7 @@ function pw_sidejobs_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -134,9 +135,9 @@ function pw_sidejobs_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 13,
         ),
         'teaser' => array(
@@ -152,6 +153,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Job',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -201,7 +203,7 @@ function pw_sidejobs_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -215,9 +217,9 @@ function pw_sidejobs_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 1,
         ),
         'teaser' => array(
@@ -233,6 +235,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -319,6 +322,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Politician',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -369,7 +373,7 @@ function pw_sidejobs_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -382,9 +386,9 @@ function pw_sidejobs_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 16,
         ),
         'teaser' => array(
@@ -400,6 +404,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Sectors',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -476,6 +481,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Address',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -592,6 +598,7 @@ function pw_sidejobs_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -665,6 +672,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Income Amount',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -735,6 +743,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Income Amount Max',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -803,6 +812,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Income Interval',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -854,7 +864,7 @@ function pw_sidejobs_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -867,9 +877,9 @@ function pw_sidejobs_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 2,
         ),
         'teaser' => array(
@@ -885,6 +895,7 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Organization',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -967,6 +978,7 @@ function pw_sidejobs_field_default_fields() {
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(

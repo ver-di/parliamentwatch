@@ -249,6 +249,33 @@ function pw_press_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'about/press';
+  $translatables['press_articles'] = array(
+    t('Master'),
+    t('Presseartikel'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('zurück'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('Datei'),
+    t('<h4>[field_press_article_publisher]</h4>
+<div class="medium">[title]</div>'),
+    t('Video'),
+    t('pdf-Download'),
+    t('Sound'),
+    t('[title]'),
+    t('edit press article'),
+    t('delete press article'),
+    t('Page'),
+  );
   $export['press_articles'] = $view;
 
   $view = new view();
@@ -488,6 +515,32 @@ function pw_press_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  $translatables['press_release'] = array(
+    t('Master'),
+    t('Pressemitteilungen'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('zurück'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('Fieldset Body'),
+    t('weiterlesen'),
+    t('edit press release'),
+    t('delete press release'),
+    t('Page'),
+    t('Menu Block'),
+    t('Neueste Pressemitteilungen'),
+    t('alle Pressemitteilungen'),
+    t('-'),
+  );
   $export['press_release'] = $view;
 
   return $export;

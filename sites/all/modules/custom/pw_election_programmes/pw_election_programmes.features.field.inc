@@ -78,6 +78,7 @@ function pw_election_programmes_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -164,6 +165,7 @@ function pw_election_programmes_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -219,7 +221,7 @@ function pw_election_programmes_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -233,9 +235,9 @@ function pw_election_programmes_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 35,
         ),
         'search_result' => array(
@@ -251,6 +253,7 @@ function pw_election_programmes_field_default_fields() {
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -325,6 +328,7 @@ function pw_election_programmes_field_default_fields() {
       'label' => 'PDF download',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'file_extensions' => 'pdf',
         'user_register_form' => FALSE,
       ),
@@ -388,7 +392,7 @@ function pw_election_programmes_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -418,6 +422,7 @@ function pw_election_programmes_field_default_fields() {
       'label' => 'Party',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -497,6 +502,7 @@ function pw_election_programmes_field_default_fields() {
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
+        'exclude_cv' => FALSE,
         'file_directory' => 'election_programme',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',

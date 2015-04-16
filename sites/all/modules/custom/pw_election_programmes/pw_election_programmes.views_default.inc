@@ -178,7 +178,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Kontextfilter: Inhalt: Has taxonomy term ID (translated) */
+  /* Kontextfilter: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['arguments']['tid_i18n']['id'] = 'tid_i18n';
   $handler->display->display_options['arguments']['tid_i18n']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid_i18n']['field'] = 'tid_i18n';
@@ -214,6 +214,23 @@ function pw_election_programmes_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'election-programme/%';
+  $translatables['election_programme'] = array(
+    t('Master'),
+    t('Wahlprogramme %1'),
+    t('weiterlesen'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Datei von field_pdf_download'),
+    t('Feldgruppe'),
+    t('Wahlprogramm durchblättern'),
+    t('Wahlprogramm runterladen'),
+    t('Alle'),
+    t('Page'),
+    t('mehr'),
+  );
   $export['election_programme'] = $view;
 
   return $export;
