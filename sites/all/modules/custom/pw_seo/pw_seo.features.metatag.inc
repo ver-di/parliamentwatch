@@ -306,7 +306,7 @@ function pw_seo_metatag_export_default() {
     'instance' => 'user',
     'config' => array(
       'title' => array(
-        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament] | [site:name]',
+        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament] auf [site:name]',
       ),
       'robots' => array(
         'value' => array(
@@ -323,25 +323,25 @@ function pw_seo_metatag_export_default() {
         ),
       ),
       'image_src' => array(
-        'value' => '[site:url]/sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
+        'value' => '[site:url]sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
       ),
       'itemtype' => array(
         'value' => 'Person',
       ),
       'itemprop:name' => array(
-        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party]',
+        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
       ),
       'og:type' => array(
         'value' => 'politician',
       ),
       'og:title' => array(
-        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party]',
+        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament] auf [site:name]',
       ),
       'og:description' => array(
-        'value' => 'Das Profil von [user:field-user-fname] [user:field_user_lname], [user:field-user-party] auf abgeordnetenwatch.de',
+        'value' => 'Das Profil von [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament] auf [site:name]',
       ),
       'og:image' => array(
-        'value' => '[site:url]/sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
+        'value' => '[site:url]sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
       ),
       'profile:username' => array(
         'value' => '[user:name]',
@@ -350,7 +350,7 @@ function pw_seo_metatag_export_default() {
         'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party]',
       ),
       'twitter:image:src' => array(
-        'value' => '[site:url]/sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
+        'value' => '[site:url]sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
       ),
     ),
   );
