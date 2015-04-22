@@ -386,7 +386,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '8',
+        'weight' => '9',
       ),
       'pw_seven' => array(
         'region' => 'sidebar_second',
@@ -421,7 +421,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '13',
+        'weight' => '15',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -491,7 +491,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '21',
+        'weight' => '24',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -631,7 +631,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '-50',
+        'weight' => '0',
       ),
       'pw_seven' => array(
         'region' => 'sidebar_second',

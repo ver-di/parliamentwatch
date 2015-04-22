@@ -3606,14 +3606,13 @@ foo
     0 => 'locale',
     1 => 'node',
     2 => 'user',
-    3 => 'print',
-    4 => 'comment',
-    5 => 'views',
-    6 => 'system',
-    7 => 'path',
-    8 => 'taxonomy',
-    9 => 'overlay',
-    10 => 'admin_menu',
+    3 => 'comment',
+    4 => 'views',
+    5 => 'system',
+    6 => 'path',
+    7 => 'taxonomy',
+    8 => 'overlay',
+    9 => 'admin_menu',
   );
   $export['themekey_modules'] = $strongarm;
 
@@ -3701,33 +3700,6 @@ foo
       'callbacks' => array(),
       'wildcards' => array(
         1 => 'profile:uid',
-      ),
-      'weight' => 1,
-      'fit' => 2,
-    ),
-    9 => array(
-      'path' => 'print/#',
-      'callbacks' => array(),
-      'wildcards' => array(
-        1 => 'node:nid',
-      ),
-      'weight' => 1,
-      'fit' => 2,
-    ),
-    10 => array(
-      'path' => 'printpdf/#',
-      'callbacks' => array(),
-      'wildcards' => array(
-        1 => 'node:nid',
-      ),
-      'weight' => 1,
-      'fit' => 2,
-    ),
-    11 => array(
-      'path' => 'printmail/#',
-      'callbacks' => array(),
-      'wildcards' => array(
-        1 => 'node:nid',
       ),
       'weight' => 1,
       'fit' => 2,
