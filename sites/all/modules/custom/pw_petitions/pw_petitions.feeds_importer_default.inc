@@ -21,6 +21,10 @@ function pw_petitions_feeds_importer_default() {
       'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
         'request_timeout' => '',
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+        'auto_scheme' => 'http',
       ),
     ),
     'parser' => array(
@@ -81,21 +85,16 @@ function pw_petitions_feeds_importer_default() {
             'unique' => FALSE,
           ),
           2 => array(
-            'source' => 'xpathparser:3',
-            'target' => 'body',
-            'unique' => FALSE,
-          ),
-          3 => array(
             'source' => 'xpathparser:4',
             'target' => 'field_petition_signings',
             'unique' => FALSE,
           ),
-          4 => array(
+          3 => array(
             'source' => 'xpathparser:5',
             'target' => 'field_petition_recipient',
             'unique' => FALSE,
           ),
-          5 => array(
+          4 => array(
             'source' => 'xpathparser:6',
             'target' => 'field_petition_content',
             'unique' => FALSE,
