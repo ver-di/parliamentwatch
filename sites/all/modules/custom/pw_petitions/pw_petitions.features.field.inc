@@ -419,7 +419,9 @@ else{
 if ($result > 100){
   $result = 100;
 }
-if ($result > 100) $result = 100;
+elseif ($result == 0){
+  $result = 1;
+}
 $entity_field[0][\'value\'] = $result;',
         'database' => array(
           'data_default' => '',
