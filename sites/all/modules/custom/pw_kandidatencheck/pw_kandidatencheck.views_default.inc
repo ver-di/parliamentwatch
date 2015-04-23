@@ -125,6 +125,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['relationship'] = 'field_pw_kc_vote_reference_tid';
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['ui_name'] = 'Excluded | Taxonomy: Class name';
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['label'] = '';
+  $handler->display->display_options['fields']['field_pw_kc_votes_classname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['type'] = 'text_plain';
   /* Feld: Global: Ergebniszähler einer Ansicht */
