@@ -167,6 +167,27 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'committees/%';
+  $translatables['pw_commitee_terms'] = array(
+    t('Master'),
+    t('Committees'),
+    t('mehr'),
+    t('iarratas a dhéanamh'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('first'),
+    t('zurück'),
+    t('weiter'),
+    t('last'),
+    t('.'),
+    t('committee details'),
+    t('Alle'),
+    t('Page'),
+  );
   $export['pw_commitee_terms'] = $view;
 
   return $export;

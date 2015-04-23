@@ -61,6 +61,7 @@ function pw_kandidatencheck_field_default_fields() {
       'label' => 'Comment',
       'required' => TRUE,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -126,6 +127,7 @@ function pw_kandidatencheck_field_default_fields() {
       'label' => 'Comment',
       'required' => TRUE,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -238,6 +240,7 @@ function pw_kandidatencheck_field_default_fields() {
           ),
         ),
         'display_summary' => 0,
+        'exclude_cv' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
@@ -291,7 +294,7 @@ function pw_kandidatencheck_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -305,9 +308,9 @@ function pw_kandidatencheck_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 4,
         ),
         'teaser' => array(
@@ -323,6 +326,7 @@ function pw_kandidatencheck_field_default_fields() {
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -411,6 +415,7 @@ function pw_kandidatencheck_field_default_fields() {
       'label' => 'Thesis Reference',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -497,6 +502,7 @@ function pw_kandidatencheck_field_default_fields() {
       'label' => 'User',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -547,7 +553,7 @@ function pw_kandidatencheck_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -560,9 +566,9 @@ function pw_kandidatencheck_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 2,
         ),
         'teaser' => array(
@@ -578,6 +584,7 @@ function pw_kandidatencheck_field_default_fields() {
       'label' => 'Vote',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -696,6 +703,7 @@ function pw_kandidatencheck_field_default_fields() {
           ),
         ),
         'display_summary' => 0,
+        'exclude_cv' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
@@ -749,7 +757,7 @@ function pw_kandidatencheck_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -763,9 +771,9 @@ function pw_kandidatencheck_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 2,
         ),
         'teaser' => array(
@@ -781,6 +789,7 @@ function pw_kandidatencheck_field_default_fields() {
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -881,6 +890,7 @@ function pw_kandidatencheck_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',

@@ -83,6 +83,7 @@ function pw_committees_field_default_fields() {
       'label' => 'Chairman',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -157,6 +158,7 @@ function pw_committees_field_default_fields() {
       'settings' => array(
         'alt_field' => 0,
         'default_image' => '183',
+        'exclude_cv' => FALSE,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
@@ -173,11 +175,11 @@ function pw_committees_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'default' => 0,
-            0 => 0,
             'image' => 'image',
             'video' => 0,
+            0 => 0,
+            'audio' => 0,
+            'default' => 0,
           ),
           'browser_plugins' => array(
             'library' => 0,
@@ -261,6 +263,7 @@ function pw_committees_field_default_fields() {
       'label' => 'Spokesman',
       'required' => FALSE,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -302,7 +305,7 @@ function pw_committees_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
       'type' => 'taxonomy_term_reference',
@@ -315,9 +318,9 @@ function pw_committees_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'i18n_taxonomy',
+          'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'i18n_taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => 3,
         ),
         'full' => array(
@@ -333,6 +336,7 @@ function pw_committees_field_default_fields() {
       'label' => 'Committee Type',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -418,6 +422,7 @@ function pw_committees_field_default_fields() {
       'label' => 'Vice Chairman',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -465,7 +470,7 @@ function pw_committees_field_default_fields() {
             'parent' => '0',
           ),
         ),
-        'options_list_callback' => 'i18n_taxonomy_allowed_values',
+        'options_list_callback' => NULL,
         'profile2_private' => FALSE,
       ),
       'translatable' => '0',
@@ -495,6 +500,7 @@ function pw_committees_field_default_fields() {
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(

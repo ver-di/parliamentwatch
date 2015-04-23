@@ -110,6 +110,27 @@ function pw_parliaments_views_default_views() {
     'page' => 'page',
     'default' => 0,
   );
+  $translatables['pw_taxonomy_term_parliament'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Begriff aus field_parliament'),
+    t('Alle'),
+    t('%1'),
+    t('Page'),
+    t('Feed'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('weiter'),
+    t('letzte Seite »'),
+  );
   $export['pw_taxonomy_term_parliament'] = $view;
 
   return $export;

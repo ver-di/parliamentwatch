@@ -286,7 +286,7 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-progress-wrapper"><div class="pw-progress" style="width: <?php 
+  $handler->display->display_options['fields']['php']['php_output'] = '<div class="pw-progress-wrapper pw-progress-wrapper-s"><div class="pw-progress" style="width: <?php 
 $required = $data->_field_data[\'nid\'][\'entity\']->field_petition_required[\'und\'][0][\'value\'];
 $signings = $data->_field_data[\'nid\'][\'entity\']->field_petition_signings[\'und\'][0][\'value\'];
 $progress = $data->_field_data[\'nid\'][\'entity\']->field_petition_progress[\'und\'][0][\'value\'];
@@ -834,6 +834,44 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['summary_options']['items_per_page'] = '25';
+  $translatables['pw_petitions'] = array(
+    t('Master'),
+    t('Petitionen'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('Page'),
+    t('Block'),
+    t('Block Progress'),
+    t('Alle'),
+    t('Menu Block'),
+    t('alle Petitionen'),
+    t('Zeichnen Sie die Petitionen von abgeordnetenwatch.de und bitten Sie über Ihre Netzwerke auch interessierte Freunde und Bekannte dies zu tun. Gemeinsam für mehr Transparenz und gegen Korruption!'),
+    t('Diese Petition mitzeichnen'),
+    t('Petitions Sidebar'),
+    t('Teaser image wrapper'),
+    t('Progress'),
+    t('Benötigte Unterschriften'),
+    t('zur Petition'),
+    t('zu den Kommentaren'),
+    t('.'),
+    t('edit petition'),
+    t('Blog Teaser'),
+    t('Unterschreiben Sie unsere Petition zum Thema [field_blogpost_categories]'),
+    t('Bild von field_teaser_image'),
+    t('Begriff aus field_blogpost_categories'),
+    t('View panes'),
+  );
   $export['pw_petitions'] = $view;
 
   $view = new view();
@@ -1276,6 +1314,33 @@ return $count;';
     6179 => '6179',
   );
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['vocabulary'] = 'blogcategories';
+  $translatables['pw_tag_clouds'] = array(
+    t('Master'),
+    t('Abgeordnetenbestechung'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('<div class="push-bottom-s medium">Diese Schlagworte werden in unserem Blog zu dem Thema häufig verwendet:</div>'),
+    t('<div class="text-right"><a href="/taxonomy/term/6179" class="read-more">Alle Blogartikel zum Thema</a></div>'),
+    t('Beitrag'),
+    t('.'),
+    t('Nebeneinkünfte'),
+    t('Lobbyismus'),
+    t('<div class="text-right"><a href="/taxonomy/term/6178" class="read-more">Alle Blogartikel zum Thema</a></div>'),
+    t('<div class="text-right"><a href="/taxonomy/term/6167" class="read-more">Alle Blogartikel zum Thema</a></div>'),
+    t('Menu Blog Tags'),
+    t('Unsere wichtigsten Themen'),
+  );
   $export['pw_tag_clouds'] = $view;
 
   return $export;

@@ -127,6 +127,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['label'] = '';
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_pw_kc_votes_classname']['type'] = 'text_plain';
   /* Feld: Global: Ergebniszähler einer Ansicht */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
@@ -187,12 +188,12 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['field'] = 'field_pw_kc_vote_reference';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['label'] = '';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_type'] = 'span';
-  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_class'] = '[field_pw_kc_votes_classname] block';
+  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_class'] = '[field_pw_kc_votes_classname] block vote';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_wrapper_class'] = 'poll-behavior';
+  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_wrapper_class'] = 'pw-voting';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_pw_kc_vote_reference']['type'] = 'taxonomy_term_reference_plain';
   /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
@@ -280,23 +281,30 @@ return $user->uid; ';
   $handler->display->display_options['arguments']['uid']['validate_options']['roles'] = array(
     181527986 => '181527986',
   );
-  /* Kontextfilter: Feld: Parliament (field_parliament) (translated) */
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['id'] = 'field_parliament_tid_i18n';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['table'] = 'field_data_field_parliament';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['field'] = 'field_parliament_tid_i18n';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['default_argument_options']['code'] = '// load parliament term from profile url
-$term = _pw_get_current_parliament_term();
-return $term->tid;';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['specify_validation'] = TRUE;
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['validate']['type'] = 'taxonomy_term';
-  $handler->display->display_options['arguments']['field_parliament_tid_i18n']['validate_options']['vocabularies'] = array(
-    'parliaments' => 'parliaments',
+  $translatables['pw_kandidatencheck'] = array(
+    t('Master'),
+    t('Kandidaten-Check'),
+    t('to the Kandidatencheck'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Inhalt entity referenced from field_pw_kc_thesis_reference'),
+    t('Benutzer entity referenced from field_pw_kc_user_reference'),
+    t('Begriff aus field_pw_kc_vote_reference'),
+    t('edit KC Position'),
+    t('These'),
+    t('[counter] von [php]:'),
+    t('Feldgruppe'),
+    t('Position von'),
+    t(' [field_user_fname] [field_user_lname]:'),
+    t('<blockquote>[body]</blockquote>'),
+    t('Slideshow'),
+    t('Slideshow for profiles'),
+    t('mehr'),
+    t('Alle'),
+    t('View panes'),
   );
   $export['pw_kandidatencheck'] = $view;
 

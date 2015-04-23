@@ -16,8 +16,6 @@ function pw_petitions_default_fe_block_settings() {
     'cache' => '1',
     'css_class' => 'push-bottom-xl',
     'custom' => '0',
-    'i18n_block_language' => array(),
-    'i18n_mode' => '1',
     'machine_name' => 'petitions_description',
     'module' => 'block',
     'node_types' => array(),

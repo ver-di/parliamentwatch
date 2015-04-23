@@ -792,6 +792,54 @@ print_r($link);
     'calendar_entry' => 'calendar_entry',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  $translatables['calendar'] = array(
+    t('Master'),
+    t('Calendar'),
+    t('weiterlesen'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Autor'),
+    t('Profile Calendar'),
+    t('Wahlkampftermine von [field_user_fname] [field_user_lname]'),
+    t('go to full calendar'),
+    t('<div id="calendar" class="add-sharethis" title="<?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>'),
+    t('<a href="/profile/[name]/calendar" class="link-calendar float-right">Alle Termine anzeigen</a>'),
+    t('Datum und Uhrzeit'),
+    t('[field_calendar_entry_date_1] Uhr'),
+    t('Fieldset Data'),
+    t('<div class="vcard">
+    <div class="adr">
+        <span class="street-address">[field_calendar_entry_address-thoroughfare]</span>
+        <span class="locality">[field_calendar_entry_address-dependent_locality]</span>, 
+        <span class="postal-code">[field_calendar_entry_address-postal_code]</span>, 
+        <span class="country-name">[field_calendar_entry_address]</span>
+     </div>
+</div>
+
+
+'),
+    t('Mehr Informationen zu diesen Termin'),
+    t('Alle'),
+    t('Calendar Page'),
+    t('Calendar Page for sharing'),
+    t('mehr'),
+    t('<div class="add-sharethis" title="<?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>'),
+    t('<h3><?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]</h3>'),
+    t('<div class="link-profile">[view_user]</div>'),
+    t('zum vollständigen Profil'),
+    t('Back to Calendar Block'),
+    t('Small Block for Calendar Entry Footer Section to go back to main Calendar'),
+    t('zum vollständigen Kalender'),
+    t('Calendar Admin  View'),
+    t('Calendar Admin'),
+    t('Datum'),
+    t('Titel'),
+    t('Bearbeiten'),
+    t('Löschen'),
+  );
   $export['calendar'] = $view;
 
   $view = new view();
@@ -1152,6 +1200,30 @@ else
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $translatables['constituency_for_the_profile'] = array(
+    t('Master'),
+    t('Weitere Kandidierende im Wahlkreis [field_user_constituency]'),
+    t('weiterlesen'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Begriff aus field_user_constituency'),
+    t('[field_user_fname] [field_user_lname],[field_user_party]'),
+    t('[field_user_questions_get] Fragen'),
+    t('[field_user_answers_give] Answers'),
+    t('User Constituency Block'),
+    t('Show all other candidates in the same constituency'),
+    t('mehr'),
+    t('zum vollständigen Profil'),
+    t('user data'),
+    t('name and party'),
+    t('[field_user_fname] [field_user_lname], [field_user_party]'),
+    t('dialogue'),
+    t('[field_user_questions_get] / '),
+    t('Alle'),
+  );
   $export['constituency_for_the_profile'] = $view;
 
   $view = new view();
@@ -2356,6 +2428,54 @@ else
 
   /* Display: Politicians Bulk Edit */
   $handler = $view->new_display('page_with_page_title', 'Politicians Bulk Edit', 'page_with_page_title_1');
+  $translatables['politicians'] = array(
+    t('Master'),
+    t('Politicians Overview'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Politiker pro Seite'),
+    t('- Alle anzeigen -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('Name'),
+    t('E-Mail'),
+    t('Party'),
+    t('Parliament'),
+    t('Constituency'),
+    t('Committee'),
+    t('Fragen'),
+    t('Antworten'),
+    t('Ort'),
+    t('Rollen'),
+    t('Listenplatz'),
+    t('hidden'),
+    t('Vorname'),
+    t('Suche nach Vornamen.'),
+    t('Nachname'),
+    t('Suche nach Nachnamen.'),
+    t('Suche nach E-Mail-Adressen.'),
+    t('Partei'),
+    t('Suche nach Parteien.'),
+    t('Parlament'),
+    t('Suche nach Parlamenten.'),
+    t('Wahlkreis'),
+    t('Suche nach Wahlkreisen.'),
+    t('Ausschuss'),
+    t('Suche nach Ausschüssen.'),
+    t('Wohnort'),
+    t('Suche nach Wohnorten.'),
+    t('Dynamic Fields'),
+    t('Politiker'),
+    t('Felder auswählen'),
+    t('Politicians Bulk Edit'),
+  );
   $export['politicians'] = $view;
 
   $view = new view();
@@ -2417,17 +2537,12 @@ else
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  /* Beziehung: Inhalt: Votes */
+  /* Beziehung: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['relationships']['votingapi_vote']['id'] = 'votingapi_vote';
   $handler->display->display_options['relationships']['votingapi_vote']['table'] = 'node';
   $handler->display->display_options['relationships']['votingapi_vote']['field'] = 'votingapi_vote';
   $handler->display->display_options['relationships']['votingapi_vote']['label'] = 'Stimmen';
-  $handler->display->display_options['relationships']['votingapi_vote']['votingapi'] = array(
-    'value_type' => '',
-    'tag' => '',
-  );
-  $handler->display->display_options['relationships']['votingapi_vote']['current_user'] = 0;
-  /* Beziehung: Stimmen: Benutzer */
+  /* Beziehung: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'votingapi_vote';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -2525,7 +2640,7 @@ if($record->value == 0){
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['order'] = 'DESC';
-  /* Kontextfilter: Stimmen: Benutzer */
+  /* Kontextfilter: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'votingapi_vote';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -2959,6 +3074,39 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['path'] = 'polls/archive/%';
+  $translatables['polls_profile'] = array(
+    t('Master'),
+    t('weiterlesen'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Stimmen'),
+    t('uid'),
+    t('Alle'),
+    t('Last'),
+    t('mehr'),
+    t('Voting behavior of [field_user_fname] [field_user_lname]'),
+    t('Info'),
+    t('Deputies can challenge the Ceann Comhairle and demand a recorded vote by shouting Votáil! (Vote!) The Ceann Comhairle then shouts \'Votáil\' again which starts the voting process. We select the most important votes and document them. If you think an important vote is missing, then <a href="/en-gb/about/contact">please let us know</a>.'),
+    t('[php_1]
+<div class="poll-behavior"><span class="icon yes"></span>yes</div>
+<div class="poll-behavior"><span class="icon no"></span>no</div>
+<div class="poll-behavior"><span class="icon absent"></span>absent</div>
+<div class="poll-behavior"><span class="icon blank"></span>blank</div>
+
+'),
+    t('[title_1]'),
+    t('[field_user_fname] [field_user_lname] voted with <span class="inline [php_2]">[php_2]</span>'),
+    t('Details to vote'),
+    t('Poll profile: Last poll'),
+    t('Archive'),
+    t('<h3>Voting Archive of [field_user_fname] [field_user_lname] <a href="/print/polls/archive/[uid]" class="ic-print external" title="print voting archive">print</a></h3>'),
+    t('<span class="poll-behavior"><span class="block [php]">[php]</span></span>'),
+    t('Poll profile: Archive'),
+    t('Print Page'),
+  );
   $export['polls_profile'] = $view;
 
   $view = new view();
@@ -3277,7 +3425,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Excluded | User (historical data): Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['id'] = 'field_user_questions_get-revision_id';
@@ -3387,7 +3535,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_class'] = 'row party push-bottom-xxs';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
@@ -3399,7 +3547,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
@@ -3411,7 +3559,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   /* Feld: Reused | Questions get */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -3992,7 +4140,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['id'] = 'field_user_questions_get-revision_id_1';
@@ -4094,7 +4242,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_class'] = 'row party push-bottom-xxs';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
@@ -4106,7 +4254,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
@@ -4118,7 +4266,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   /* Feld: Reused | Questions get */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -4717,7 +4865,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Excluded | User (historical data): Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['id'] = 'field_user_questions_get-revision_id';
@@ -4827,7 +4975,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_wrapper_class'] = 'row party push-bottom-xxs';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id_1']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id_1']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
@@ -4839,7 +4987,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
   /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
@@ -4851,7 +4999,7 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_wrapper_class'] = 'row';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   /* Feld: Reused | Questions get */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -5216,6 +5364,74 @@ return FALSE;';
   $handler->display->display_options['attachment_position'] = 'after';
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
   $handler->display->display_options['inherit_pager'] = TRUE;
+  $translatables['profile_list_rev'] = array(
+    t('Master'),
+    t('%1'),
+    t('weiterlesen'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('zurück'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('<div class="pw-messages warning">
+Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie eine neue Auswahl über einen der angebotenen Filter.
+</div>'),
+    t('Begriff aus field_user_parliament'),
+    t('Get all revisions from an user.'),
+    t('Bild von field_user_picture'),
+    t('Feldgruppe'),
+    t('[field_user_picture-revision_id_1]'),
+    t('<strong>[field_user_fname-revision_id_1]'),
+    t('[field_user_fname]'),
+    t('[field_user_lname]'),
+    t('[field_user_fname-revision_id_1] [field_user_lname-revision_id_1], [field_user_party-revision_id]'),
+    t('[field_user_questions_get-revision_id-value] Fragen'),
+    t('[field_user_answers_give-revision_id-value] Antworten'),
+    t('[field_user_questions_get-revision_id], [field_user_answers_give-revision_id]'),
+    t('<h3>[field_user_fname-revision_id]'),
+    t('<h3>[field_user_fname]'),
+    t('[field_user_lname-revision_id]</h3>'),
+    t('[field_user_lname]</h3>'),
+    t('[field_user_questions_get-revision_id]'),
+    t('[field_user_answers_give-revision_id]'),
+    t(','),
+    t('% Antwortquote'),
+    t('Profil besuchen'),
+    t('Alle'),
+    t('Aktiv'),
+    t('user_first_letter_lname (field_user_first_letter_lname)'),
+    t('Nach Namen filtern'),
+    t('Bundesland wählen'),
+    t('Nach Partei filtern'),
+    t('Antwortquote'),
+    t('Alter'),
+    t('Age (field_user_age)'),
+    t('Geschlecht auswählen'),
+    t('Status'),
+    t('Übersicht der Abgeordneten'),
+    t('mehr'),
+    t('[field_user_fname-revision_id_1]'),
+    t('[field_user_title-revision_id] [field_user_fname-revision_id_1] [field_user_lname-revision_id_1], [field_user_party-revision_id]'),
+    t('[field_user_questions_get-revision_id_1]'),
+    t('[field_user_questions_get-revision_id_1], [field_user_answers_give-revision_id_1]'),
+    t('<h3>[field_user_title-revision_id] [field_user_fname-revision_id]'),
+    t('[field_user_answers_give-revision_id_1]'),
+    t('[field_user_qanda_ratio-revision_id-value] % Antwortquote'),
+    t('Bundesland'),
+    t('Bundesland auswählen'),
+    t('Wahlkreis'),
+    t('Liste'),
+    t('Listenplatz'),
+    t('Listenansicht'),
+  );
   $export['profile_list_rev'] = $view;
 
   $view = new view();
@@ -5407,6 +5623,26 @@ return FALSE;';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'text-right';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
+  $translatables['pw_user_blocks'] = array(
+    t('Master'),
+    t('weiterlesen'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Alle'),
+    t('Wrong Data'),
+    t('Daten von [field_user_fname] [field_user_lname] nicht korrekt?'),
+    t('mehr'),
+    t('Wenn Ihnen ein Fehler bzgl. der Angaben zu [field_user_fname] [field_user_lname] aufgefallen ist, teilen Sie uns diesen bitte über das Formular mit:'),
+    t('Benachrichtigen Sie uns'),
+    t('Profile API'),
+    t('[field_user_fname] [field_user_lname] als XML'),
+    t('provides a link to the API'),
+    t('Daten zu [field_user_fname] [field_user_lname] stehen Ihnen auch als XML zur Verfügung.'),
+    t('Link zur API'),
+  );
   $export['pw_user_blocks'] = $view;
 
   $view = new view();
@@ -5668,6 +5904,26 @@ return FALSE;';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $translatables['user_tweets'] = array(
+    t('Tweets'),
+    t('zum Twitterkanal'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('a_watch Block'),
+    t('Twitter Ticker'),
+    t('mehr'),
+    t('User Tweets'),
+    t('[name] auf Twitter'),
+    t('User Tweets Block on Profile'),
+    t('<a href="https://twitter.com/[screen_name]"><span class="float-left push-right-s push-bottom-s"><img src="/sites/abgeordnetenwatch.de/files/Twitter_logo_blue.png" width="48" height="48" alt="" /></span><span class="pw-twitter-name">[name]</span>
+<span class="pw-twitter-screenname">[screen_name]</span></a>'),
+    t('<div class="text-right">[follow] [name] <?php print t(\'on Twitter\'); ?></div>'),
+    t('[created_time] [web_intents]'),
+    t('Alle'),
+  );
   $export['user_tweets'] = $view;
 
   return $export;
