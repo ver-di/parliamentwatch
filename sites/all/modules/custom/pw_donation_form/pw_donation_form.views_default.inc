@@ -151,16 +151,23 @@ geht es los!<br/><br/>
   $handler->display->display_options['fields']['text_3']['table'] = 'xml';
   $handler->display->display_options['fields']['text_3']['field'] = 'text';
   $handler->display->display_options['fields']['text_3']['label'] = '';
-  $handler->display->display_options['fields']['text_3']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['text_3']['alter']['text'] = ' ';
+  $handler->display->display_options['fields']['text_3']['exclude'] = TRUE;
   $handler->display->display_options['fields']['text_3']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['text_3']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['text_3']['element_wrapper_class'] = 'icon-state icon-[text_3] float-left';
   $handler->display->display_options['fields']['text_3']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['text_3']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['text_3']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['text_3']['xpath_selector'] = 'machine_name';
   $handler->display->display_options['fields']['text_3']['multiple'] = 0;
+  /* Feld: Global: Benutzerdefinierter Text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = ' ';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'icon-state icon-[text_3] float-left';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: amount_machine: Text */
   $handler->display->display_options['fields']['text_4']['id'] = 'text_4';
   $handler->display->display_options['fields']['text_4']['table'] = 'xml';
@@ -333,14 +340,23 @@ geht es los! <a href="/ueber-uns/spendenformular">Jetzt spenden</a><br/><br/>
   $handler->display->display_options['fields']['text_2']['table'] = 'xml';
   $handler->display->display_options['fields']['text_2']['field'] = 'text';
   $handler->display->display_options['fields']['text_2']['label'] = '';
-  $handler->display->display_options['fields']['text_2']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['text_2']['alter']['text'] = ' ';
+  $handler->display->display_options['fields']['text_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['text_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['text_2']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['text_2']['element_wrapper_class'] = 'icon-state icon-[text_2] float-left';
   $handler->display->display_options['fields']['text_2']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['text_2']['xpath_selector'] = 'machine_name';
   $handler->display->display_options['fields']['text_2']['multiple'] = 0;
+  /* Feld: Global: Benutzerdefinierter Text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = ' ';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'icon-state icon-[text_2] float-left';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
@@ -479,14 +495,23 @@ if ($row->text_4 < 10000) print "Fördersumme: ".$row->text_1;
   $handler->display->display_options['fields']['text_1']['table'] = 'xml';
   $handler->display->display_options['fields']['text_1']['field'] = 'text';
   $handler->display->display_options['fields']['text_1']['label'] = '';
-  $handler->display->display_options['fields']['text_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['text_1']['alter']['text'] = ' ';
+  $handler->display->display_options['fields']['text_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['text_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['text_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['text_1']['element_wrapper_class'] = 'icon-state icon-[text_1] float-left';
   $handler->display->display_options['fields']['text_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['text_1']['xpath_selector'] = 'machine_name';
   $handler->display->display_options['fields']['text_1']['multiple'] = 0;
+  /* Feld: Global: Benutzerdefinierter Text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = ' ';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'icon-state icon-[text_1] float-left';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
