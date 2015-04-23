@@ -105,3 +105,8 @@ responsive layout for mobile
     line-height: 1.1em;
     margin-top: 0.7em;
 }
+.page-node-51914 #webform-component-fieldset-donationform-yourdonation--donation-frequency,
+.page-node-51914 #webform-component-fieldset-donationform-yourdonation--donation-target,
+.page-node-51914 #webform-component-fieldset-donationform-yourdonation .fieldset-description {
+    display: none;
+}
