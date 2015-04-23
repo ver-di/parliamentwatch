@@ -595,7 +595,7 @@ return arg(0) == \'profile\';
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '0',
+        'weight' => '-100',
       ),
       'pw_seven' => array(
         'region' => 'sidebar_second',
