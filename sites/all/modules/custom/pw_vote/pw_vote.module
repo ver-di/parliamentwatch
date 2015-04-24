@@ -18,8 +18,7 @@ function pw_vote_block_info() {
   $blocks['voting_behavior'] = array(
 
     // info: The name of the block.
-    'info' => t('Displays voting behavior'),
-    'cache' => DRUPAL_CACHE_PER_ROLE,
+    'info' => t('Displays Voting Behavior'),
   );
 
   return $blocks;
@@ -35,46 +34,113 @@ function pw_vote_block_view($delta = '') {
   // The $delta parameter tells us which block is being requested.
   switch ($delta) {
     case 'voting_behavior':
-      $parliament = _pw_get_current_parliament_term();
-      if ($parliament) {
-        $block['subject'] = t('Voting behaviour');
-        $block['content'] = pw_vote_voting_behavior();
+      $node = menu_get_object();
+      if (!empty($node) && !empty($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
+        $block['subject'] = t('Voting behavior');
+        $block['content'] = pw_vote_voting_behavior($node);
       }
       break;
   }
   return $block;
 }
 
-function pw_vote_voting_behavior() {
+/**
+ * pw_vote_voting_behavior().
+ * @param $node
+ *   related node, e.g. petition on which was voted.
+ * @return string
+ *   returns all themed votes related to the node,
+ */
+function pw_vote_voting_behavior($node) {
 
-  $parliament = _pw_get_current_parliament_term();
+  // holds themed nodes
+  $all_votes = array();
 
+  // load all votes
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'vote')
-    ->fieldCondition('field_parliament', $parliament->tid)
-    ->propertyCondition('status', NODE_PUBLISHED);
-
+    ->fieldCondition('field_vote_node', 'target_id', $node->nid)
+    ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldOrderBy('field_vote', 'tid');
   $result = $query->execute();
+
   if (isset($result['node'])) {
-    $vote_nids = array_keys($result['node']);
-    $vote_nodes = entity_load('node', $vote_nids);
+
+    // load all votes as nodes
+    $nids = array_keys($result['node']);
+    $votes = node_load_multiple($nids);
+
+    // iterate through nodes
+    foreach ($votes as $vote) {
+
+      // wrap
+      $w_vote = entity_metadata_wrapper('node', $vote);
+
+      // theme a single vote
+      $party = $w_vote->field_vote_user->field_user_party->label();
+      if (empty($party)) {
+        continue;
+      }
+      elseif (!isset($all_votes[$party])) {
+        $all_votes[$party] = array();
+      }
+      $all_votes[$party][] = theme('voting_behavior_single_vote', array(
+          'firstname' => $w_vote->field_vote_user->field_user_fname->value(),
+          'lastname' => $w_vote->field_vote_user->field_user_lname->value(),
+          'party' => $party,
+          'vote' => $w_vote->field_vote->label(),
+          'statement' => $w_vote->body->value(),
+          'path_profile' => drupal_get_path_alias('user/' . $w_vote->field_vote_user->uid->value()),
+        )
+      );
+    }
   }
 
-  $content_voting_behavior = array(
-    '#markup' => theme('voting_behavior', array('numvotes' => sizeof($vote_nodes))),
-  );
+  // sort parties by num votes
+  array_multisort(array_map('count', $all_votes), SORT_DESC, $all_votes);
 
-  $content = $content_voting_behavior;
+  // build containers
+  $content = array();
+  foreach ($all_votes as $party => $votes_party) {
 
-  return $content;
+    // put 6 votes into one vertical containers
+    $buffer_vertical = '';
+    $buffer_party = '';
+    for ($i = 0; $i < sizeof($votes_party); $i++) {
+      $buffer_vertical .= $votes_party[$i];
+      if (($i > 0 && $i % 6 == 0) || sizeof($votes_party) - 1 == $i) {
+        $buffer_party .= theme('voting_behavior_container_vertical', array(
+            'list_voting_behavior' => $buffer_vertical,
+          )
+        );
+        $buffer_vertical = '';
+      }
+    }
+
+    // put vertical containers into one party container
+    $content[$party] = theme('voting_behavior_container_party', array(
+        'party' => $party,
+        'list_voting_behavior' => $buffer_party,
+      )
+    );
+  }
+
+  // return as html
+  return implode($content);
 }
 
 function pw_vote_theme() {
   return array(
-    'voting_behavior' => array(
-      'variables' => array('numvotes' => NULL),
-      'template' => 'voting-behavior',
+    'voting_behavior_container_party' => array(
+      'template' => 'voting-behavior-container-party',
+    ),
+    'voting_behavior_container_vertical' => array(
+      'template' => 'voting-behavior-container-vertical',
+    ),
+    'voting_behavior_single_vote' => array(
+      'template' => 'voting-behavior-single-vote',
     ),
   );
 }
