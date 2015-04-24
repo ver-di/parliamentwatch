@@ -5,7 +5,10 @@
  *
  */
   $profile_link = "/profile/".$elements['#account']->name;
-  $image_url = file_create_url($elements['#account']->field_user_picture['und'][0]['uri']);
+  $image_url = theme('image_style', array(
+    'style_name' => 'pw_portrait_m', //Configure style here!
+    'path' => $elements['#account']->field_user_picture['und'][0]['uri'],
+  ));
   $has_title = (bool) $elements['#account']->field_user_title['und'][0]['value'];
   $title = $elements['#account']->field_user_title['und'][0]['safe_value'];
   $fname = $elements['#account']->field_user_fname['und'][0]['safe_value'];

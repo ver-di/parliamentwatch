@@ -1343,5 +1343,266 @@ return $count;';
   );
   $export['pw_tag_clouds'] = $view;
 
+  $view = new view();
+  $view->name = 'pw_vote_search';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'apachesolr__solr';
+  $view->human_name = 'PW Vote Search';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Petitionscheck-Suche';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Erweiterte Optionen',
+    ),
+    'keyword' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'ss_vote_user_party' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Feld: Apache Solr: ss_vote_user_full_name */
+  $handler->display->display_options['fields']['ss_vote_user_full_name']['id'] = 'ss_vote_user_full_name';
+  $handler->display->display_options['fields']['ss_vote_user_full_name']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_user_full_name']['field'] = 'ss_vote_user_full_name';
+  $handler->display->display_options['fields']['ss_vote_user_full_name']['label'] = 'Name';
+  /* Feld: Apache Solr: ss_vote_user_party */
+  $handler->display->display_options['fields']['ss_vote_user_party']['id'] = 'ss_vote_user_party';
+  $handler->display->display_options['fields']['ss_vote_user_party']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_user_party']['field'] = 'ss_vote_user_party';
+  $handler->display->display_options['fields']['ss_vote_user_party']['label'] = 'Partei';
+  /* Feld: Apache Solr: ss_vote_node_title */
+  $handler->display->display_options['fields']['ss_vote_node_title']['id'] = 'ss_vote_node_title';
+  $handler->display->display_options['fields']['ss_vote_node_title']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_node_title']['field'] = 'ss_vote_node_title';
+  $handler->display->display_options['fields']['ss_vote_node_title']['label'] = 'Petition';
+  /* Feld: Apache Solr: im_field_vote */
+  $handler->display->display_options['fields']['im_field_vote']['id'] = 'im_field_vote';
+  $handler->display->display_options['fields']['im_field_vote']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['im_field_vote']['field'] = 'im_field_vote';
+  $handler->display->display_options['fields']['im_field_vote']['label'] = '';
+  $handler->display->display_options['fields']['im_field_vote']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['im_field_vote']['element_label_colon'] = FALSE;
+  /* Feld: Apache Solr: ss_vote_reason_summary */
+  $handler->display->display_options['fields']['ss_vote_reason_summary']['id'] = 'ss_vote_reason_summary';
+  $handler->display->display_options['fields']['ss_vote_reason_summary']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_reason_summary']['field'] = 'ss_vote_reason_summary';
+  $handler->display->display_options['fields']['ss_vote_reason_summary']['label'] = 'Begründung (kurz)';
+  /* Feld: Apache Solr: ss_vote_reason_full */
+  $handler->display->display_options['fields']['ss_vote_reason_full']['id'] = 'ss_vote_reason_full';
+  $handler->display->display_options['fields']['ss_vote_reason_full']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_reason_full']['field'] = 'ss_vote_reason_full';
+  $handler->display->display_options['fields']['ss_vote_reason_full']['label'] = 'Begründung';
+  /* Feld: Apache Solr: ss_vote_user_image_uri */
+  $handler->display->display_options['fields']['ss_vote_user_image_uri']['id'] = 'ss_vote_user_image_uri';
+  $handler->display->display_options['fields']['ss_vote_user_image_uri']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_user_image_uri']['field'] = 'ss_vote_user_image_uri';
+  $handler->display->display_options['fields']['ss_vote_user_image_uri']['label'] = 'User Image URI';
+  /* Feld: Apache Solr: ss_vote_user_drupal_name */
+  $handler->display->display_options['fields']['ss_vote_user_drupal_name']['id'] = 'ss_vote_user_drupal_name';
+  $handler->display->display_options['fields']['ss_vote_user_drupal_name']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_user_drupal_name']['field'] = 'ss_vote_user_drupal_name';
+  $handler->display->display_options['fields']['ss_vote_user_drupal_name']['label'] = 'Drupal-Name';
+  /* Feld: Apache Solr: ss_vote_user_vote_text */
+  $handler->display->display_options['fields']['ss_vote_user_vote_text']['id'] = 'ss_vote_user_vote_text';
+  $handler->display->display_options['fields']['ss_vote_user_vote_text']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_user_vote_text']['field'] = 'ss_vote_user_vote_text';
+  $handler->display->display_options['fields']['ss_vote_user_vote_text']['label'] = 'Stimme';
+  /* Filterkriterium: Apache Solr: bundle */
+  $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
+  $handler->display->display_options['filters']['bundle']['value'] = 'vote';
+  /* Filterkriterium: Apache Solr: Suche */
+  $handler->display->display_options['filters']['keyword']['id'] = 'keyword';
+  $handler->display->display_options['filters']['keyword']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['filters']['keyword']['field'] = 'keyword';
+  $handler->display->display_options['filters']['keyword']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['keyword']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['keyword']['expose']['label'] = 'Suche';
+  $handler->display->display_options['filters']['keyword']['expose']['operator'] = 'keyword_op';
+  $handler->display->display_options['filters']['keyword']['expose']['identifier'] = 'keyword';
+  $handler->display->display_options['filters']['keyword']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['keyword']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    40118511 => 0,
+  );
+  /* Filterkriterium: Apache Solr: ss_vote_user_party */
+  $handler->display->display_options['filters']['ss_vote_user_party']['id'] = 'ss_vote_user_party';
+  $handler->display->display_options['filters']['ss_vote_user_party']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['filters']['ss_vote_user_party']['field'] = 'ss_vote_user_party';
+  $handler->display->display_options['filters']['ss_vote_user_party']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['ss_vote_user_party']['expose']['operator_id'] = 'ss_vote_user_party_op';
+  $handler->display->display_options['filters']['ss_vote_user_party']['expose']['label'] = 'ss_vote_user_party';
+  $handler->display->display_options['filters']['ss_vote_user_party']['expose']['operator'] = 'ss_vote_user_party_op';
+  $handler->display->display_options['filters']['ss_vote_user_party']['expose']['identifier'] = 'ss_vote_user_party';
+  $handler->display->display_options['filters']['ss_vote_user_party']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['ss_vote_user_party']['group_info']['label'] = 'Partei';
+  $handler->display->display_options['filters']['ss_vote_user_party']['group_info']['identifier'] = 'ss_vote_user_party';
+  $handler->display->display_options['filters']['ss_vote_user_party']['group_info']['remember'] = 1;
+  $handler->display->display_options['filters']['ss_vote_user_party']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'CDU',
+      'operator' => '=',
+      'value' => 'CDU',
+    ),
+    2 => array(
+      'title' => 'FDP',
+      'operator' => '=',
+      'value' => 'FDP',
+    ),
+    3 => array(
+      'title' => 'SPD',
+      'operator' => '=',
+      'value' => 'SPD',
+    ),
+    4 => array(
+      'title' => 'AfD',
+      'operator' => '=',
+      'value' => 'AfD',
+    ),
+  );
+  /* Filterkriterium: Apache Solr: ss_vote_user_vote_text */
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['id'] = 'ss_vote_user_vote_text';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['field'] = 'ss_vote_user_vote_text';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['expose']['operator_id'] = 'ss_vote_user_vote_text_op';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['expose']['label'] = 'ss_vote_user_vote_text';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['expose']['operator'] = 'ss_vote_user_vote_text_op';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['expose']['identifier'] = 'ss_vote_user_vote_text';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['group_info']['label'] = 'Stimme';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['group_info']['identifier'] = 'ss_vote_user_vote_text';
+  $handler->display->display_options['filters']['ss_vote_user_vote_text']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'zugestimmt',
+      'operator' => '=',
+      'value' => 'yes',
+    ),
+    2 => array(
+      'title' => 'abgelehnt',
+      'operator' => '=',
+      'value' => 'no',
+    ),
+    3 => array(
+      'title' => 'enthalten',
+      'operator' => '=',
+      'value' => 'abstain',
+    ),
+    4 => array(
+      'title' => 'nicht teilgenommen',
+      'operator' => '=',
+      'value' => 'no-show',
+    ),
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['path'] = 'petitionen/suche';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block_1');
+  $handler->display->display_options['block_description'] = 'PW Vote Search Block';
+  $translatables['pw_vote_search'] = array(
+    t('Master'),
+    t('Petitionscheck-Suche'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('Name'),
+    t('Partei'),
+    t('Petition'),
+    t('Begründung (kurz)'),
+    t('Begründung'),
+    t('User Image URI'),
+    t('Drupal-Name'),
+    t('Stimme'),
+    t('Suche'),
+    t('ss_vote_user_party'),
+    t('ss_vote_user_vote_text'),
+    t('Page'),
+    t('Block'),
+    t('PW Vote Search Block'),
+  );
+  $export['pw_vote_search'] = $view;
+
   return $export;
 }
