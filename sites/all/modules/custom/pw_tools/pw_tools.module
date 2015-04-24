@@ -25,8 +25,8 @@ function pw_tools_menu() {
 function pw_tools_settings_form($form, &$form_state) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-        ->entityCondition('bundle', 'pw_petition')
-        ->propertyCondition('status', NODE_PUBLISHED);
+    ->entityCondition('bundle', 'pw_petition')
+    ->propertyCondition('status', NODE_PUBLISHED);
   $result = $query->execute();
 
   $options = array();
@@ -47,8 +47,24 @@ function pw_tools_settings_form($form, &$form_state) {
     '#type' => 'submit',
     '#value' => 'Generate Votes',
   );
+  $form['#validate'][] = 'pw_tools_settings_form_validate';
   $form['#submit'][] = 'pw_tools_settings_form_submit';
   return $form;
+}
+
+
+/**
+ * Form validate handler.
+ */
+function pw_tools_settings_form_validate($form, &$form_state) {
+
+  // check yes / no
+  $voc = taxonomy_vocabulary_machine_name_load('votes');
+  $terms = taxonomy_term_load_multiple(array(), array('vid' => $voc->vid));
+  $vote_tids = array_keys($terms);
+  if (sizeof($vote_tids) == 0) {
+    form_set_error('error', 'No items found in taxonomy votes.');
+  }
 }
 
 /**
@@ -76,10 +92,10 @@ function pw_tools_settings_form_submit($form, &$form_state) {
   // delete votes on this node
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-        ->entityCondition('bundle', 'vote')
-        ->fieldCondition('field_vote_node', 'target_id', $nid);
+    ->entityCondition('bundle', 'vote')
+    ->fieldCondition('field_vote_node', 'target_id', $nid);
   $result = $query->execute();
-  if($result['node']){ 
+  if ($result['node']) {
     $nids = array_keys($result['node']);
     node_delete_multiple($nids);
   }
@@ -89,18 +105,18 @@ function pw_tools_settings_form_submit($form, &$form_state) {
 
   // create vote for each deputy
   foreach ($deputies as $uid) {
-      $vote = new stdClass();
-      $vote->title = "Vote";
-      $vote->type = "vote";
-      $vote->language = LANGUAGE_NONE;
-      $vote->uid = $user->uid;
-      $vote->status = 1;
-      $vote->field_vote_node[LANGUAGE_NONE][]['target_id'] = $nid;
-      $vote->field_parliament[LANGUAGE_NONE][]['tid'] = $parliament[0]->tid;
-      $vote->field_vote_user[LANGUAGE_NONE][]['target_id'] = $uid;
-      $vote->field_vote[LANGUAGE_NONE][]['tid'] = $vote_tids[rand(0, sizeof($vote_tids) - 1)];
-      node_save($vote);
+    $vote = new stdClass();
+    $vote->title = "Vote";
+    $vote->type = "vote";
+    $vote->language = LANGUAGE_NONE;
+    $vote->uid = $user->uid;
+    $vote->status = 1;
+    $vote->field_vote_node[LANGUAGE_NONE][]['target_id'] = $nid;
+    $vote->field_parliament[LANGUAGE_NONE][]['tid'] = $parliament[0]->tid;
+    $vote->field_vote_user[LANGUAGE_NONE][]['target_id'] = $uid;
+    $vote->field_vote[LANGUAGE_NONE][]['tid'] = $vote_tids[rand(0, sizeof($vote_tids) - 1)];
+    node_save($vote);
   }
 
-  drupal_set_message(sizeof($deputies)." votes generated!");
+  drupal_set_message(sizeof($deputies) . " votes generated!");
 }
