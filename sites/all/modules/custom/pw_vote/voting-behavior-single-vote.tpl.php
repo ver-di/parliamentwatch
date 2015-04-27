@@ -8,6 +8,6 @@
 	      <?php print $statement; ?>
 	    </blockquote>
     <?php } ?>
-    <p><a href="/<?php print $path_profile; ?>">Profile öffnen</a></p>
+    <p><a href="/<?php print $path_profile; ?>" class="icon-politician">Profil öffnen</a></p>
   </div>
 </li>

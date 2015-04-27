@@ -2035,13 +2035,13 @@ img.no-outline {
 }
 .pw-arrow-box:after {
 	border-color: rgba(244, 244, 244, 0);
-	border-top-color: #f4f4f4;
+	border-top-color: rgba(255, 255, 255, 0.9);
 	border-width: 30px;
 	margin-left: -30px;
 }
 .pw-arrow-box:before {
 	border-color: rgba(145, 145, 145, 0);
-	border-top-color: #919191;
+	border-top-color: rgba(0, 0, 0, 0.4);
 	border-width: 31px;
 	margin-left: -31px;
 }
@@ -2091,13 +2091,14 @@ img.no-outline {
   height: 11px;
   position: unset;
   margin: 0 2px 2px 0;
-  z-index: 10;
-  float: left;
-  position: relative;
   cursor: pointer;
+}
+.pw-voting .item {
+  position: relative;
 }
 .pw-voting .item-politician {
   position: absolute;
+  z-index: 99;
   left: -170px;
   bottom: 34px;
   bottom: 3.4rem;
@@ -2227,6 +2228,15 @@ ul.progress-icons li {
 	position: absolute;
 	top: 7px;
 	left: 25%;
+}
+.pw-voting #pw-voting-parties .grid-6 > ul {
+  opacity: 0.99; /* helper for z-index */
+  position: relative;
+  z-index: 100;
+}
+.pw-voting #pw-voting-parties .grid-6 > ul > li {
+  float: left;
+  z-index: 1;
 }
 
 @media (max-width: 479px) {

@@ -1,5 +1,3 @@
-<?php
-?>
 <?php if ($sharethis): ?>
     <div class="sharethis-wrapper">
         <? echo $sharethis; ?>
@@ -30,14 +28,22 @@
 
 <div class="pw-voting">
 <div id="pw-voting-total"><h3>Gesamtergebnis</h3>
-<ul class="clearfix push-bottom-l">
-    <li class="total vote yes">582 zugestimmt</li>
-    <li class="total vote no">3 dagegen gestimmt</li>
-    <li class="total vote abstain">7 enthalten</li>
-    <li class="total vote no-show">39 nicht beteiligt</li>
-</ul></div>
+  <ul class="clearfix push-bottom-l">
+      <li class="total vote yes">582 zugestimmt</li>
+      <li class="total vote no">3 dagegen gestimmt</li>
+      <li class="total vote abstain">7 enthalten</li>
+      <li class="total vote no-show">39 nicht beteiligt</li>
+  </ul>
+</div>
 <div id="pw-voting-parties" class="desktop-only">
 <h3>Parteiergebnis</h3>
+
+<ul>
+<?php
+$block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
+print render($block['content']);
+?>
+</ul>
 
 <div class="clearfix push-bottom-l">
   <ul>
