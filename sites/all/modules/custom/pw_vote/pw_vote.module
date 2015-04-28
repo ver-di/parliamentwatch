@@ -26,7 +26,7 @@ function pw_vote_block_info() {
 
 /**
  *  Implements hook_block_view().
- * 
+ *
  */
 
 function pw_vote_block_view($delta = '') {
@@ -36,7 +36,6 @@ function pw_vote_block_view($delta = '') {
     case 'voting_behavior':
       $node = menu_get_object();
       if (!empty($node) && !empty($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
-      $block['subject'] = t('Voting behavior');
         $block['content'] = pw_vote_voting_behavior($node);
       }
       break;
@@ -53,8 +52,21 @@ function pw_vote_block_view($delta = '') {
  */
 function pw_vote_voting_behavior($node) {
 
-  // holds themed nodes
+  // holds themed votes
   $all_votes = array();
+
+  // counts votes for overview
+  $sum_votes_parties = array();
+  $sum_votes_overview = array();
+
+  // preload default portrait
+  $portrait_info = field_info_field('field_user_picture');
+  $image = file_load($portrait_info['settings']['default_image']);
+  $portrait_default = theme('image_style', array(
+      'path' => $image->uri,
+      'style_name' => 'pw_portrait_s',
+    )
+  );
 
   // load all votes
   $query = new EntityFieldQuery();
@@ -78,31 +90,62 @@ function pw_vote_voting_behavior($node) {
       // wrap
       $w_vote = entity_metadata_wrapper('node', $vote);
 
-      // theme a single vote
+      // skip if party is not set
       $party = $w_vote->field_vote_user->field_user_party->label();
       if (empty($party)) {
         continue;
       }
+      // add party as sub array for holding votes
       elseif (!isset($all_votes[$party])) {
         $all_votes[$party] = array();
       }
+
+      // theme & add a single vote to party array
+      if ($w_vote->field_vote_user->field_user_picture->value()) {
+        $portrait = theme('image_style', array(
+            'path' => $w_vote->field_vote_user->field_user_picture->file->value()->uri,
+            'style_name' => 'pw_portrait_s',
+          )
+        );
+      }
+      else {
+        $portrait = $portrait_default;
+      }
       $all_votes[$party][] = theme('voting_behavior_single_vote', array(
+          'class_name' => $w_vote->field_vote->label(),
           'firstname' => $w_vote->field_vote_user->field_user_fname->value(),
           'lastname' => $w_vote->field_vote_user->field_user_lname->value(),
           'party' => $party,
-          'vote' => $w_vote->field_vote->label(),
+          'voting_behavior' => $w_vote->field_vote->field_votes_label->value(),
+          'portrait' => $portrait,
           'statement' => $w_vote->body->value(),
           'path_profile' => drupal_get_path_alias('user/' . $w_vote->field_vote_user->uid->value()),
         )
       );
+
+      // sum votes for parties
+      $tid = $w_vote->field_vote->tid->value();
+      if (!isset($sum_votes_parties[$party])) {
+        $sum_votes_parties[$party] = array();
+      }
+      if (!isset($sum_votes_parties[$party][$tid])) {
+        $sum_votes_parties[$party][$tid] = 0;
+      }
+      $sum_votes_parties[$party][$tid]++;
+
+      // sum votes for overview
+      if (!isset($sum_votes_overview[$tid])) {
+        $sum_votes_overview[$tid] = 0;
+      }
+      $sum_votes_overview[$tid]++;
     }
   }
 
-  // sort parties by num votes
-  array_multisort(array_map('count', $all_votes), SORT_DESC, $all_votes);
+  // sort parties by number of votes
+  array_multisort(array_map('count', $all_votes), SORT_ASC, $all_votes);
 
   // build containers
-  $content = array();
+  $container_parties = array();
   foreach ($all_votes as $party => $votes_party) {
 
     // put 6 votes into one vertical containers
@@ -110,7 +153,7 @@ function pw_vote_voting_behavior($node) {
     $buffer_party = '';
     for ($i = 0; $i < sizeof($votes_party); $i++) {
       $buffer_vertical .= $votes_party[$i];
-      if (($i > 0 && $i % 6 == 0) || sizeof($votes_party) - 1 == $i) {
+      if ((($i + 1) % 6 == 0) || sizeof($votes_party) - 1 == $i) {
         $buffer_party .= theme('voting_behavior_container_vertical', array(
             'list_voting_behavior' => $buffer_vertical,
           )
@@ -119,21 +162,59 @@ function pw_vote_voting_behavior($node) {
       }
     }
 
-    // put vertical containers into one party container
-    $content[$party] = theme('voting_behavior_container_party', array(
+    // put vertical containers and sum votes into one party container
+    $container_parties[$party] = theme('voting_behavior_container_party', array(
+        'path_search' => '/search',
         'party' => $party,
         'party_num_members' => sizeof($votes_party),
         'list_voting_behavior' => $buffer_party,
+        'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_parties[$party]),
       )
     );
   }
 
-  // return as html
-  return implode($content);
+  // put all party container together and add overview
+  $content = theme('voting_behavior_container_overview', array(
+      'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_overview),
+      'list_voting_behavior' => implode($container_parties),
+    )
+  );
+
+  // return
+  return $content;
+}
+
+/**
+ * pw_vote_voting_behavior_sum_votes().
+ * @param $array_sum
+ *   array with tid of votes taxonomy as key and summarized votes
+ * @return string
+ *   returns themed overview
+ */
+function pw_vote_voting_behavior_sum_votes($array_sum) {
+  $content = '';
+  foreach ($array_sum as $tid => $sum) {
+    $term = taxonomy_term_load($tid);
+    $label = field_get_items('taxonomy_term', $term, 'field_votes_label');
+    $content .= theme('voting_behavior_sum', array(
+        'path_search' => '/search',
+        'sum' => $sum,
+        'class_name' => $term->name,
+        'voting_behavior' => $label[0]['value'],
+      )
+    );
+  }
+  return $content;
 }
 
 function pw_vote_theme() {
   return array(
+    'voting_behavior_container_overview' => array(
+      'template' => 'voting-behavior-container-overview',
+    ),
+    'voting_behavior_container_overview_party' => array(
+      'template' => 'voting-behavior-container-overview-party',
+    ),
     'voting_behavior_container_party' => array(
       'template' => 'voting-behavior-container-party',
     ),
@@ -142,6 +223,9 @@ function pw_vote_theme() {
     ),
     'voting_behavior_single_vote' => array(
       'template' => 'voting-behavior-single-vote',
+    ),
+    'voting_behavior_sum' => array(
+      'template' => 'voting-behavior-sum',
     ),
   );
 }

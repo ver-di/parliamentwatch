@@ -26,7 +26,7 @@
     <? echo $field_petition_text_parliament['und'][0]['value'] ?>
 </div>
 
-<div class="pw-voting">
+<!--div class="pw-voting">
 <div id="pw-voting-total"><h3>Gesamtergebnis</h3>
   <ul class="clearfix push-bottom-l">
       <li class="total vote yes">582 zugestimmt</li>
@@ -38,12 +38,12 @@
 <div id="pw-voting-parties" class="desktop-only">
 <h3>Parteiergebnis</h3>
 
-<ul>
+<ul-->
 <?php
 $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
 print render($block['content']);
 ?>
-</ul>
+<!--/ul>
 
 <div class="clearfix push-bottom-l">
   <ul>
@@ -228,7 +228,7 @@ print render($block['content']);
       </div>
     </li>
   </ul>
-</div>
+</div-->
 
 </div><h3>Wie positionieren sich Ihre Abgeordneten?</h3>
 
