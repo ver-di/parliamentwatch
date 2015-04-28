@@ -1,8 +1,8 @@
 <li class="clearfix push-bottom-m">
   <div class="grid-2 alpha">
     <h4>
-      <a title="CDU/CSU: Alle Positionen anzeigen" href="#"><?php print $party; ?><br>
-        XXX Mitglieder
+      <a title="<?php print $party; ?>: Alle Positionen anzeigen" href="#"><?php print $party; ?><br>
+        <?php print $party_num_members; ?> Mitglieder
       </a>
     </h4>
   </div>

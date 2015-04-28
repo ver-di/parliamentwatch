@@ -26,7 +26,7 @@ function pw_vote_block_info() {
 
 /**
  *  Implements hook_block_view().
- *
+ * 
  */
 
 function pw_vote_block_view($delta = '') {
@@ -36,7 +36,7 @@ function pw_vote_block_view($delta = '') {
     case 'voting_behavior':
       $node = menu_get_object();
       if (!empty($node) && !empty($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
-        $block['subject'] = t('Voting behavior');
+      $block['subject'] = t('Voting behavior');
         $block['content'] = pw_vote_voting_behavior($node);
       }
       break;
@@ -122,6 +122,7 @@ function pw_vote_voting_behavior($node) {
     // put vertical containers into one party container
     $content[$party] = theme('voting_behavior_container_party', array(
         'party' => $party,
+        'party_num_members' => sizeof($votes_party),
         'list_voting_behavior' => $buffer_party,
       )
     );
