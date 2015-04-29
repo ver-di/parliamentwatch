@@ -39,6 +39,11 @@
 <h3>Parteiergebnis</h3>
 
 <ul-->
+
+<?php
+$block = module_invoke('webform', 'block_view', 'client-block-57110');
+print render($block['content']);
+?>
 <?php
 $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
 print render($block['content']);
