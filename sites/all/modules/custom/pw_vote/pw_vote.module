@@ -38,23 +38,28 @@ function pw_vote_show_main_node($username) {
 
 function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
-  // modify vote form for deputies
-  if ($form_id == 'webform_client_form_57110') {
+  // modify vote form
+  if ($form_id == 'webform_client_form_57030') {
     $getparams = drupal_get_query_parameters();
     if (!isset($getparams['u'])) {
       return FALSE;
     }
 
+    // load politician by get parameter
     $uuid = $getparams['u'];
     $uid = entity_get_id_by_uuid('user', array($uuid));
     $user = user_load($uid[$uuid]);
 
+    // load main node (e.g. petition)
     $node = menu_get_object();
+
+    // retrieve parliament term id
     $parliament_tid = $node->field_parliament[LANGUAGE_NONE][0]['tid'];
 
     if (empty($user) || empty($parliament_tid)) {
       return FALSE;
     }
+
     // load entity vote
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
@@ -86,11 +91,13 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
         $file = file_load($portrait_info['settings']['default_image']);
         $portrait_uri = $file->uri;
       }
+
       $portrait = theme('image_style', array(
           'path' => $portrait_uri,
-          'style_name' => 'pw_portrait_l',
+          'style_name' => 'pw_portrait_l__normal',
         )
       );
+
       $form['submitted']['portrait']['#markup'] = $portrait;
 
       // replace parameters in welcome text
@@ -116,7 +123,7 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       $form['submitted']['welcome']['#markup'] = $welcome_text;
 
       // set statement if already exists
-      $form['submitted']['statement']['#default_value'] = $w_vote->body->value();
+      $form['submitted']['statement']['#default_value'] = $w_vote->body->value->value();
 
       // set hidden node id of vote node
       $form['submitted']['vote_node_id']['#value'] = $w_vote->getIdentifier();
@@ -132,7 +139,7 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
 function pw_vote_webform_submission_presave($node, &$submission) {
 
-  if ($node->nid == 57110) {
+  if ($node->nid == 57030) {
 
     // map form values
     $form_values = _pw_webform_get_keyed_fields($node, $submission);

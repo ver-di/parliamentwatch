@@ -79,6 +79,12 @@ function pw_vote_strongarm() {
         'xmlsitemap' => array(
           'weight' => '6',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(),
     ),

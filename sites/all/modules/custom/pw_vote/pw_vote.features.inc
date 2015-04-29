@@ -20,7 +20,7 @@ function pw_vote_ctools_plugin_api() {
 function pw_vote_node_info() {
   $items = array(
     'vote' => array(
-      'name' => t('jetzt abstimmen'),
+      'name' => t('Vote'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

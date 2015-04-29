@@ -50,7 +50,7 @@ function pw_vote_field_default_fields() {
         0 => array(
           'summary' => '',
           'value' => '',
-          'format' => 'managed_content',
+          'format' => 'plain_text',
         ),
       ),
       'deleted' => '0',
@@ -75,21 +75,22 @@ function pw_vote_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'body',
       'label' => 'Argumentation',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
-            'copyright' => 'copyright',
-            'filtered_html' => 'filtered_html',
-            'full_html' => 'full_html',
-            'html_mail' => 'html_mail',
-            'managed_content' => 'managed_content',
-            'php_code' => 'php_code',
+            'copyright' => 0,
+            'filtered_html' => 0,
+            'full_html' => 0,
+            'html_mail' => 0,
+            'managed_content' => 0,
+            'php_code' => 0,
             'plain_text' => 'plain_text',
           ),
-          'allowed_formats_toggle' => 0,
+          'allowed_formats_toggle' => 1,
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
