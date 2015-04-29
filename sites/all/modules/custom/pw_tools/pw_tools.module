@@ -71,7 +71,6 @@ function pw_tools_settings_form_validate($form, &$form_state) {
  * Form submit handler.
  */
 function pw_tools_settings_form_submit($form, &$form_state) {
-  global $user;
 
   // selected node
   $nid = $form['pw_tools_generate_votes_petition']['#value'];
@@ -121,6 +120,8 @@ function pw_tools_settings_form_submit($form, &$form_state) {
     $vote->field_parliament[LANGUAGE_NONE][]['tid'] = $parliament[0]->tid;
     $vote->field_vote_user[LANGUAGE_NONE][]['target_id'] = $uid;
     $vote->field_vote[LANGUAGE_NONE][]['tid'] = $vote_tids[rand(0, sizeof($vote_tids) - 1)];
+    $vote->body[LANGUAGE_NONE][]['value'] = 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ip';
+    $vote->body[LANGUAGE_NONE][]['format']= 'plain_text';
     node_save($vote);
   }
 
