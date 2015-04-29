@@ -105,8 +105,14 @@ function pw_tools_settings_form_submit($form, &$form_state) {
 
   // create vote for each deputy
   foreach ($deputies as $uid) {
+
+    // user fields
+    $user = user_load($uid);
+    $field_firstname = field_get_items('user', $user, 'field_user_fname');
+    $field_lastname = field_get_items('user', $user, 'field_user_lname');
+
     $vote = new stdClass();
-    $vote->title = "Vote";
+    $vote->title = "Vote by " . $field_firstname[0]['value'] . ' ' . $field_lastname[0]['value'] . ' (default)';
     $vote->type = "vote";
     $vote->language = LANGUAGE_NONE;
     $vote->uid = $user->uid;
