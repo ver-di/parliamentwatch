@@ -52,8 +52,7 @@ function pw_petitions_default_fe_block_settings() {
     'delta' => '-exp-pw_vote_search-page',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'petitionen/fracking-gesetzlich-verbieten
-petitionen/suche
+    'pages' => 'petitionen/suche
 petitionen/suche/*',
     'roles' => array(),
     'themes' => array(

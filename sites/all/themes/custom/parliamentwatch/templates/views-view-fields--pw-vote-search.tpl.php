@@ -1,6 +1,6 @@
 <?php
 $image = theme('image_style', array(
-  'style_name' => 'pw_portrait_m', //Configure style here!
+  'style_name' => 'pw_portrait_xs', //Configure style here!
   'path' => $row->ss_vote_user_image_uri[0],
 ));
 ?>
@@ -21,8 +21,11 @@ $image = theme('image_style', array(
 </small>
 <br/>
 <? echo $image ?>
+<?php if (strlen($row->ss_vote_reason_full[0]) > 0): ?>
 <div>
-  <blockquote><? echo $row->ss_vote_reason_full[0]; ?></blockquote> <a href>Ganzen Text laden</a>
+  <blockquote><? echo $row->ss_vote_reason_full[0]; ?></blockquote>
 </div>
+<?php endif; ?>
+
 <!--<blockquote><? echo $row->ss_vote_reason_summary[0]; ?></blockquote>-->
 <hr/>

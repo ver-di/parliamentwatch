@@ -144,6 +144,11 @@ function pw_petitions_preprocess_node(&$variables) {
         else {
           $variables['signing_url'] = $variables['node_url'];
         }
+        $variables['sharethis'] = theme('sharethis', array(
+          'url' => url("node/$node->nid", array('absolute' => TRUE)),
+          'title' => $variables["title"],
+          'summary' => "Petition " . $variables["title"] . " auf abgeordnetenwatch.de",
+        ));
         break;
       case "openpetition":
         $variables['partner_html'] = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-openpetition.png" width="119" height="36" alt="OpenPetition">';
