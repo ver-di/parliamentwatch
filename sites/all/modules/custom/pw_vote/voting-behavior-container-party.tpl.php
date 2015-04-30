@@ -8,12 +8,10 @@
     </h4>
   </div>
   <div class="grid-6 omega">
-    <ul>
+    <ul class="push-bottom-xs">
     	<?php print $list_voting_behavior; ?>
     </ul>
-  </div>
-  <div>
-    <ul>
+    <ul class="clear">
       <?php print $list_voting_behavior_sum; ?>
     </ul>
   </div>

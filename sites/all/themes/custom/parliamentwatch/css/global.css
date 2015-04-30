@@ -2052,6 +2052,10 @@ img.no-outline {
 .pw-voting .vote.block {
   padding: 0 4px;
 }
+.pw-voting .total.vote a {
+  color: inherit;
+  font-weight: inherit;
+}
 .pw-voting .vote.yes {
   background: rgb(0, 204, 0);
   border-color: #0c0;
@@ -2985,18 +2989,18 @@ form .webform-component-checkboxes .description {
 
 /* petition form */
 
-#webform-component-portrait {
+#webform-client-form-57030 #webform-component-portrait {
   float: left;
   margin-right: 20px;
 }
 
-#webform-component-portrait img {
+#webform-client-form-57030 #webform-component-portrait img {
   outline: 1px solid #ccc;
 }
-#webform-component-welcome {
+#webform-client-form-57030 #webform-component-welcome {
   font-weight: bold;
 }
-#webform-component-statement {
+#webform-client-form-57030 #webform-component-statement {
   clear: both;
   position: relative;
   top: 2em;
@@ -3005,7 +3009,7 @@ form .webform-component-checkboxes .description {
     position: absolute;
     left: -5000em;
 }
-#webform-component-vote > label {
+#webform-client-form-57030 #webform-component-vote > label {
   display: none;
 }
 #webform-client-form-57030 .form-radios label {
@@ -3027,7 +3031,7 @@ form .webform-component-checkboxes .description {
 #webform-client-form-57030 .form-radios input[type="radio"]:checked + label {
     color: #f63;
 }
-#webform-component-statement .form-textarea-wrapper {
+#webform-client-form-57030 #webform-component-statement .form-textarea-wrapper {
   padding: 10px;
   background: #f4f4f4; 
   border: 1px solid #dedede;

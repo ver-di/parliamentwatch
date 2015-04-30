@@ -4,6 +4,17 @@
   </div>
 <?php endif; ?>
 
+<?php
+  // render webform block for politicians if parameter "u" is in url
+  $getparams = drupal_get_query_parameters();
+  if (isset($getparams['u'])): ?>
+  <?php
+    $block = module_invoke('webform', 'block_view', 'client-block-57030');
+    print render($block['content']);
+  ?>
+  <hr>
+  <?php endif; ?>
+
 <p class="medium">
   Adressat: <? print $field_petition_recipient[0]['value'] ?>
 </p>
@@ -25,24 +36,17 @@
     ?>
   </p>
 <?php endif; ?>
-<div class="floatbox floatbox-right">
+<div class="managed_content clearfix push-bottom-l">
+  <div class="floatbox floatbox-right">
     <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
     <p class="pushfloat-0">Die Petition hat <?echo number_format($field_petition_signings[0]['value'],0,',','.')?> von <? echo number_format($field_petition_required[0]['value'],0,',','.'); ?> benötigten Unterschriften erreicht.</p>
     <i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition in der Meinungsumfrage</span></i>
     <p class="pushfloat-0">Laut repräsentativer Meinungsumfrage genießt das Anliegen eine Mehrheit in der Bevölkerung.</p>
     <i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition im Parlament</span></i>
     <p class="pushfloat-0">Die Petition wird aktuell im Parlament abgefragt.</p>
+  </div>
+  <? print check_markup($field_petition_text_parliament[0]['value']); ?>
 </div>
-<strong><? print check_markup($body[0]['summary']); ?></strong>
-
-<?php
-  // render webform block for politicians if parameter "u" is in url
-  $getparams = drupal_get_query_parameters();
-  if (isset($getparams['u'])) {
-    $block = module_invoke('webform', 'block_view', 'client-block-57030');
-    print render($block['content']);
-  }
-?>
 
 <h3 class="clear">Aktuelle Positionen</h3>
 
@@ -54,8 +58,8 @@
 ?>
 
 <h3>Hintergrund</h3>
-<div class="managed_content push-bottom-l">
-  <? print check_markup($field_petition_text_parliament[0]['value']); ?>
+<div class="clearfix push-bottom-l managed-content">
+  <? echo $body[0]['value']; ?>
 </div>
 <h3>Inhalt der Petition</h3>
 <div class="managed_content push-bottom-l">
