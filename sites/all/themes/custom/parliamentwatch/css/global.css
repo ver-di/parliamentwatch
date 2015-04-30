@@ -355,6 +355,9 @@ blockquote p:last-child {
 
 /* grid extension */
 
+.pushfloat-0 {
+    margin-left: 40px;
+}
 .pushfloat-1 {
     margin-left: 60px;
 }
@@ -2061,8 +2064,11 @@ img.no-outline {
   background: rgb(0, 51, 255);
   border-color: #03f;
 }
+.pw-voting .vote.block.abstain {
+  color: #efefef;
+}
 .pw-voting .vote.no-show {
-  background: rgb(136, 134, 133);
+  background: rgb(169, 167, 166);
   border-color: #888685;
 }
 .pw-voting .vote.total {
@@ -2081,7 +2087,7 @@ img.no-outline {
   background: rgba(0, 51, 255, 0.5);
 }
 .pw-voting .vote.total.no-show {
-  background: rgba(136, 134, 133, 0.5)
+  background: rgba(169, 167, 166, 0.5)
 }
 .pw-voting .item,
 .pw-voting .pw-arrow-box-trigger {
