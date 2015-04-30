@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'awfont';
-  src: url('../font/awfont.eot?88835699');
-  src: url('../font/awfont.eot?88835699#iefix') format('embedded-opentype'),
-       url('../font/awfont.woff?88835699') format('woff'),
-       url('../font/awfont.ttf?88835699') format('truetype'),
-       url('../font/awfont.svg?88835699#awfont') format('svg');
+  src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.eot?88835690');
+  src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.eot?88835690#iefix') format('embedded-opentype'),
+       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.woff?88835690') format('woff'),
+       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.ttf?88835690') format('truetype'),
+       url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.svg?88835690#awfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'awfont';
-    src: url('../font/awfont.svg?88835699#awfont') format('svg');
+    src: url('https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/css/icons/font/awfont.svg?88835690#awfont') format('svg');
   }
 }
 */
