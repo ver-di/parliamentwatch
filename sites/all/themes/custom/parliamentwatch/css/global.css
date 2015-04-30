@@ -2983,6 +2983,64 @@ form .webform-component-checkboxes .description {
     color: #999;
 }
 
+/* petition form */
+
+#webform-component-portrait {
+  float: left;
+  margin-right: 20px;
+}
+
+#webform-component-portrait img {
+  outline: 1px solid #ccc;
+}
+#webform-component-welcome {
+  font-weight: bold;
+}
+#webform-component-statement {
+  clear: both;
+  position: relative;
+  top: 2em;
+}
+#webform-client-form-57030 .form-radios input {
+    position: absolute;
+    left: -5000em;
+}
+#webform-component-vote > label {
+  display: none;
+}
+#webform-client-form-57030 .form-radios label {
+    font-size: 1.3em;
+    cursor: pointer;
+}
+#webform-client-form-57030 .form-radios label::before {
+    content: "\e807";
+    font-family: "awfont";
+}
+#webform-client-form-57030 .form-radios label,
+#webform-client-form-57030 .form-radios input[type="radio"]:checked + label:focus,
+#webform-client-form-57030 .form-radios input[type="radio"]:checked + label:active {
+    color: #ccc;
+}
+#webform-client-form-57030 .form-radios label:hover,
+#webform-client-form-57030 .form-radios label:focus,
+#webform-client-form-57030 .form-radios label:active,
+#webform-client-form-57030 .form-radios input[type="radio"]:checked + label {
+    color: #f63;
+}
+#webform-component-statement .form-textarea-wrapper {
+  padding: 10px;
+  background: #f4f4f4; 
+  border: 1px solid #dedede;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 4px 1px #ebebeb;
+  -moz-box-shadow: 0px 0px 4px 1px #ebebeb;
+  box-shadow: 0px 0px 4px 1px #ebebeb;
+}
+#webform-client-form-57030 .form-actions {
+  text-align: right;
+}
 
 /* /////////////////////////// Share this /////////////////// */
 
