@@ -13,6 +13,11 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
   // profiles overview
   if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'profile_list_rev' && $form_state['view']->current_display == 'grid') {
 
+    $form['reset'] = array(
+      '#type' => 'markup',
+      '#markup' => '<input type="reset" onclick="location.href=\'' . $form['#action'] . '\'; return false;" value="Zurücksetzen" class="form-submit">',
+    );
+
     // parameters from url
     $url_parameters = array_keys(drupal_get_query_parameters());
     if (!empty($url_parameters)) {
@@ -176,6 +181,12 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
 
   // question and answers in profiles
   elseif ($form_id == 'views_exposed_form' && $form_state['view']->name == 'profile_questions_answers' && $form_state['view']->current_display == 'profile') {
+    $form['#action'] = '/' . request_path();
+    $form['reset'] = array(
+      '#type' => 'markup',
+      '#markup' => '<input type="reset" onclick="location.href=\'/' . $form['#action'] . '\'; return false;" value="Zurücksetzen" class="form-submit">',
+    );
+
     $user = _pw_get_current_user();
     $parliament = _pw_get_current_parliament_term();
     $query = new EntityFieldQuery();
