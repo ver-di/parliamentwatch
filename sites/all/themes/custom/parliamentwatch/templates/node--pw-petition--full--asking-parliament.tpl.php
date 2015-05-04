@@ -54,7 +54,7 @@
 <p class="medium">Hier werden die aktuellsten fünf Positionen angezeigt. Sobald eine ausreichende Anzahl Abgeordneter Stellung bezogen haben, werden wir hier eine ausführliche Auswertung anzeigen.</p>
 <?php
 // render block of latest positions
-  $block = module_invoke('views', 'block_view', 'pw_vote_search-block_1');
+  $block = module_invoke('views', 'block_view', 'pw_vote_positions-block');
   print render($block['content']);
 ?>
 <h3>Inhalt der Petition</h3>
