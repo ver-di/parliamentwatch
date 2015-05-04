@@ -50,13 +50,17 @@
   <? print check_markup($field_petition_text_parliament[0]['value']); ?>
 </div>
 
-<h3 class="clear">Aktuelle Positionen</h3>
-
-<p class="medium">Hier werden die aktuellsten fünf Positionen angezeigt. Sobald eine ausreichende Anzahl Abgeordneter Stellung bezogen haben, werden wir hier eine ausführliche Auswertung anzeigen.</p>
 <?php
-// render block of latest positions
+  // render block of latest positions
   $block = module_invoke('views', 'block_view', 'pw_vote_positions-block');
-  print render($block['content']);
+  if(!empty($block['content'])):
+?>
+    <h3 class="clear">Aktuelle Positionen</h3>
+
+    <p class="medium">Hier werden die aktuellsten Positionen angezeigt. Sobald eine ausreichende Anzahl Abgeordneter Stellung bezogen haben, werden wir hier eine ausführliche Auswertung anzeigen.</p>
+<?php
+    print render($block['content']);
+  endif;
 ?>
 <h3>Inhalt der Petition</h3>
 <div class="managed_content push-bottom-l">
