@@ -33,10 +33,17 @@ function pw_vote_uninstall() {
 
 function pw_vote_menu() {
   $items = array();
-  $items['admin/config/pw/generate_votes'] = array(
-    'title' => 'PW Vote - Generate Votes',
+  $items['admin/config/pw/vote'] = array(
+    'title' => 'PW Vote',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('pw_vote_settings_form'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'pw_vote.admin.inc',
+  );
+  $items['admin/config/pw/vote/generate_votes'] = array(
+    'title' => 'Generate Votes',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_vote_generate_votes_form'),
     'access arguments' => array('administer site configuration'),
     'file' => 'pw_vote.admin.inc',
   );
