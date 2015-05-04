@@ -27,7 +27,7 @@ print render($title_suffix);
 <div class="pw-petition-list-contents">
   <i class="icon-clock aw-icon-2x aw-success float-left push-right-s"></i>
   <div class="medium"><strong>Petition wird aktuell im Bundestag abgefragt</strong></div>
-  <div class="small light">32 MdBs haben Stellung genommen</div>
+  <div class="small light"><?php print $count_votes; ?> MdBs haben bisher Stellung genommen</div>
 
   <?php if ($partner_html): ?>
     <div class="petition-list-partner-wrapper small light">
@@ -35,5 +35,5 @@ print render($title_suffix);
       <? echo $partner_html; ?>
     </div>
   <?php endif; ?>
-  <div class="petition-list-sign-wrapper"><a href="<? echo $node_url; ?>" class="button">Positionen der MdBs</a></div>
+  <div class="petition-list-sign-wrapper"><a href="<? echo $node_url; ?>" class="button">Zum Zwischenstand</a></div>
 </div>
