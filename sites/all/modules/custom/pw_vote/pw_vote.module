@@ -6,32 +6,6 @@
 
 include_once 'pw_vote.features.inc';
 
-
-/**
- *  Implements hook_menu().
- */
-
-function pw_vote_menu() {
-  $items ['petitionen/%/%'] = array(
-    'page callback' => 'pw_vote_show_main_node',
-    'page arguments' => array(2),
-    'title' => 'My Custom admin menu',
-    'access arguments' => array('access content'),
-
-  );
-
-  return $items;
-}
-
-// test
-function pw_vote_show_main_node($username) {
-  $vote_node_path = dirname(current_path());
-  $node_path = drupal_get_normal_path($vote_node_path);
-  $node = menu_get_object('node', 1, $node_path);
-  #dpm($node);
-  return node_page_view($node);
-}
-
 /**
  * Implements hook_form_alter()..
  */
@@ -45,10 +19,19 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       return FALSE;
     }
 
+    // var salt
+    $salt = variable_get("pw_salt");
+
+    // load politician by salted get parameter
+    $uid = db_query("SELECT uid FROM {users} WHERE MD5(CONCAT(:salt, uuid))=:key", array(':salt' => $salt, ':key' => $getparams['u']))->fetchField();
+    $user = user_load($uid);
+
     // load politician by get parameter
+    /*
     $uuid = $getparams['u'];
     $uid = entity_get_id_by_uuid('user', array($uuid));
     $user = user_load($uid[$uuid]);
+    */
 
     // load main node (e.g. petition)
     $node = menu_get_object();
