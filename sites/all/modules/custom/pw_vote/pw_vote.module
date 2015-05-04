@@ -77,6 +77,13 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       $vote = node_load($nid);
       $w_vote = entity_metadata_wrapper('node', $vote);
 
+      // voting only allowed within time span
+      $vote_tolerance = variable_get('pw_vote_vote_tolerance', 24 * 3600);
+      if($vote->uid == $user->uid && $vote->changed + $vote_tolerance < time()){
+        pw_vote_set_message($node);
+        $form['submitted']['voted']['#value'] = 1;
+      }
+
       // set value for voting behavor
       $form['submitted']['vote']['#default_value'] = $w_vote->field_vote->name->value();
 
@@ -125,8 +132,39 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
       // set hidden node id of vote node
       $form['submitted']['vote_node_id']['#value'] = $w_vote->getIdentifier();
+
+      // add custom validation
+      $form['#validate'][] = 'pw_vote_form_validate';
     }
   }
+}
+
+function pw_vote_form_validate(&$form, &$form_state, $form_id) {
+  if($form['submitted']['voted']['#value'] == 1){
+    form_set_error('error', 'Sie haben bereits abgestimmt.');
+  }
+}
+
+/**
+ *  set message to deputies if they have already voted.
+ */
+
+function pw_vote_set_message($node) {
+
+  // show message to deputy
+  $link_form = l('Kontakt-Formular', 'feedback', array(
+    'attributes' => array(
+      'class' => array('cboxElement', 'colorbox-node'),
+      ),
+    'query' => array(
+      'url' => $node->nid,
+      'width' => 600,
+      'height' => 400,
+      ),
+    )
+  );
+  $link_email = l('E-Mail', 'mailto:'.variable_get('site_mail').'?subject=Mein Stimmverhalten bei '.$node->title, array('absolute' => TRUE));
+  drupal_set_message('Sie haben bereits abgestimmt. Bitte setzen Sie sich bei Änderungswünschen mit der Redaktion von '.variable_get('site_name').' über unser '.$link_form.' oder per '.$link_email.' in Verbindung.', 'warning');
 }
 
 /**
@@ -149,6 +187,9 @@ function pw_vote_webform_submission_presave($node, &$submission) {
     // revision settings
     $vote->revision = 1;
     $vote->log = 'This node was programmatically updated on ' . date('c');
+
+    // set author
+    $vote->uid = $w_vote->field_vote_user->uid->value();
 
     // set title
     $user_fullname = $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
