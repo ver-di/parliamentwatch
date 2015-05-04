@@ -36,6 +36,7 @@
     ?>
   </p>
 <?php endif; ?>
+<h3>Hintergrund</h3>
 <div class="managed_content clearfix push-bottom-l">
   <div class="floatbox floatbox-right">
     <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
@@ -56,11 +57,6 @@
   $block = module_invoke('views', 'block_view', 'pw_vote_search-block_1');
   print render($block['content']);
 ?>
-
-<h3>Hintergrund</h3>
-<div class="clearfix push-bottom-l managed-content">
-  <? echo $body[0]['value']; ?>
-</div>
 <h3>Inhalt der Petition</h3>
 <div class="managed_content push-bottom-l">
   <? print check_markup($field_petition_content[0]['value']); ?>
