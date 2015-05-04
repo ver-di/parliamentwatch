@@ -3045,6 +3045,7 @@ form .webform-component-checkboxes .description {
   -webkit-box-shadow: 0px 0px 4px 1px #ebebeb;
   -moz-box-shadow: 0px 0px 4px 1px #ebebeb;
   box-shadow: 0px 0px 4px 1px #ebebeb;
+  margin-bottom: 2em;
 }
 #webform-client-form-57030 .form-actions {
   text-align: right;
