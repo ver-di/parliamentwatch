@@ -2993,7 +2993,6 @@ form .webform-component-checkboxes .description {
   float: left;
   margin-right: 20px;
 }
-
 #webform-client-form-57030 #webform-component-portrait img {
   outline: 1px solid #ccc;
 }
@@ -3030,6 +3029,11 @@ form .webform-component-checkboxes .description {
 #webform-client-form-57030 .form-radios label:active,
 #webform-client-form-57030 .form-radios input[type="radio"]:checked + label {
     color: #f63;
+}
+#webform-client-form-57030 #webform-component-fieldset-statement {
+  clear: both;
+  position: relative;
+  top: 1em;
 }
 #webform-client-form-57030 #webform-component-statement .form-textarea-wrapper {
   padding: 10px;
