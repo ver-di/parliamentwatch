@@ -128,7 +128,7 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       $form['submitted']['welcome']['#markup'] = $welcome_text;
 
       // set statement if already exists
-      $form['submitted']['statement']['#default_value'] = $w_vote->body->value->value();
+      $form['submitted']['fieldset_statement']['statement']['#default_value'] = $w_vote->body->value->value();
 
       // set hidden node id of vote node
       $form['submitted']['vote_node_id']['#value'] = $w_vote->getIdentifier();
@@ -442,18 +442,16 @@ function pw_vote_theme() {
 function pw_vote_preprocess_node(&$variables) {
   if ($variables['type'] == 'vote' && $variables['view_mode'] = 'teaser') {
 
-
     // wrap node
-    $node = $variables['node'];
-    $w_vote = entity_metadata_wrapper('node', $node);
+    $w_vote = entity_metadata_wrapper('node', $variables['node']);
 
-    // set variables for template
+    // set variables
     $variables['fullname'] = trim($w_vote->field_vote_user->field_user_title->value().' '.$w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value());
     $variables['party'] = $w_vote->field_vote_user->field_user_party->label();
     $variables['node_title'] = $w_vote->field_vote_node->label();
     $variables['voting_behavior'] = $w_vote->field_vote->field_votes_label->value();
     $variables['class_name'] = $w_vote->field_vote->label();
-    $variables['statement'] = $w_vote->body->value->value();
+    $variables['statement'] = check_markup($w_vote->body->value->value());
     $variables['path_profile'] = drupal_get_path_alias('user/' . $w_vote->field_vote_user->uid->value());
     
     // theme and set portrait
@@ -473,7 +471,7 @@ function pw_vote_preprocess_node(&$variables) {
     );
 
     // set template name
-    $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
+    $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '__' . $variables['view_mode'];
 
   }
 }

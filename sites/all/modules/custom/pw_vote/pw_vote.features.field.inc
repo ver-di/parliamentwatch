@@ -46,13 +46,7 @@ function pw_vote_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'vote',
-      'default_value' => array(
-        0 => array(
-          'summary' => '',
-          'value' => '',
-          'format' => 'plain_text',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -118,9 +112,9 @@ function pw_vote_field_default_fields() {
             ),
           ),
         ),
-        'display_summary' => 1,
+        'display_summary' => 0,
         'exclude_cv' => FALSE,
-        'text_processing' => '1',
+        'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -128,9 +122,9 @@ function pw_vote_field_default_fields() {
         'module' => 'text',
         'settings' => array(
           'maxlength_js' => '',
-          'maxlength_js_enforce' => 0,
+          'maxlength_js_enforce' => 1,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'maxlength_js_truncate_html' => 0,
+          'maxlength_js_truncate_html' => 1,
           'rows' => '20',
           'summary_rows' => 5,
         ),
