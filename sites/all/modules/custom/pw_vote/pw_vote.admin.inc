@@ -53,7 +53,7 @@ function pw_vote_generate_votes_form($form, &$form_state) {
   $options = array('random' => t('By random'));
   $default_tid = 'random';
   foreach ($terms as $tid => $term) {
-    $options[$tid] = $term->field_votes_label[LANGUAGE_NONE][0]['value'];
+    $options[$tid] = $term->name;
     if($term->name == 'no-show') {
       $default_tid = $tid;
     }
@@ -78,10 +78,10 @@ function pw_vote_generate_votes_form($form, &$form_state) {
   );
 
   // add custom validation
-  $form['#validate'][] = 'pw_vote_settings_form_validate';
+  $form['#validate'][] = 'pw_vote_admin_validate';
 
   // add custom submit handler
-  $form['#submit'][] = 'pw_vote_settings_form_submit';
+  $form['#submit'][] = 'pw_vote_admin_submit';
   return $form;
 }
 
@@ -89,7 +89,7 @@ function pw_vote_generate_votes_form($form, &$form_state) {
 /**
  * Form validate handler.
  */
-function pw_vote_settings_form_validate($form, &$form_state) {
+function pw_vote_admin_validate($form, &$form_state) {
 
   // check if yes / no in vocabulary votes exists
   $voc = taxonomy_vocabulary_machine_name_load('votes');
@@ -103,7 +103,7 @@ function pw_vote_settings_form_validate($form, &$form_state) {
 /**
  * Form submit handler.
  */
-function pw_vote_settings_form_submit($form, &$form_state) {
+function pw_vote_admin_submit($form, &$form_state) {
 
   global $user;
 

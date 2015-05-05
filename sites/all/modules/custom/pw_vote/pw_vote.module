@@ -57,8 +57,8 @@ function pw_vote_menu() {
 
 function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
-  // modify vote form
-  if ($form_id == 'webform_client_form_57030') {
+    // modify vote form
+  if ($form_id == 'webform_client_form_57233') {
 
     // parameter u indicates the voting deputy
     $getparams = drupal_get_query_parameters();
@@ -215,7 +215,7 @@ function pw_vote_set_message($node) {
 
 function pw_vote_webform_submission_presave($node, &$submission) {
 
-  if ($node->nid == 57030) {
+  if ($node->nid == 57233) {
 
     // map form values
     $form_values = _pw_webform_get_keyed_fields($node, $submission);

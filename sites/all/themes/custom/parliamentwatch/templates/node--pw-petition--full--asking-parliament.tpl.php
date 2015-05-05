@@ -9,7 +9,7 @@
   $getparams = drupal_get_query_parameters();
   if (isset($getparams['u'])): ?>
   <?php
-    $block = module_invoke('webform', 'block_view', 'client-block-57030');
+    $block = module_invoke('webform', 'block_view', 'client-block-57233');
     print theme('status_messages');
     print render($block['content']);
   ?>

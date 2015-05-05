@@ -46,7 +46,7 @@ function pw_petitions_default_fe_block_settings() {
   );
 
   $export['views--exp-pw_vote_search-page'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'delta' => '-exp-pw_vote_search-page',

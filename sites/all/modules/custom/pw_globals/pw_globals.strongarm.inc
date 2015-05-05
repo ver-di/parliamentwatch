@@ -1148,7 +1148,7 @@ function pw_globals_strongarm() {
       'display' => 'form',
       'pages_block' => 1,
     ),
-    'client-block-57030' => array(
+    'client-block-57233' => array(
       'display' => 'full',
       'pages_block' => 1,
     ),
