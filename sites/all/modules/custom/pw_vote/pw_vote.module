@@ -74,14 +74,6 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
     // load politician by salted get parameter
     $uid = db_query("SELECT uid FROM {users} WHERE MD5(CONCAT(:salt, uuid))=:key", array(':salt' => $salt, ':key' => $getparams['u']))->fetchField();
-    $user = user_load($uid);
-
-    // load politician by get parameter
-    /*
-    $uuid = $getparams['u'];
-    $uid = entity_get_id_by_uuid('user', array($uuid));
-    $user = user_load($uid[$uuid]);
-    */
 
     // load main node (e.g. petition)
     $node = menu_get_object();
@@ -89,7 +81,7 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
     // retrieve parliament term id
     $parliament_tid = $node->field_parliament[LANGUAGE_NONE][0]['tid'];
 
-    if (empty($user) || empty($parliament_tid)) {
+    if (empty($uid) || empty($parliament_tid)) {
       return FALSE;
     }
 
@@ -98,7 +90,7 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'vote')
       ->fieldCondition('field_vote_node', 'target_id', $node->nid)
-      ->fieldCondition('field_vote_user', 'target_id', $user->uid)
+      ->fieldCondition('field_vote_user', 'target_id', $uid)
       ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
       ->propertyCondition('status', NODE_PUBLISHED)
       ->fieldOrderBy('field_vote', 'tid');
@@ -112,15 +104,19 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       $vote = node_load($nid);
       $w_vote = entity_metadata_wrapper('node', $vote);
 
-      // voting only allowed within time span
-      $vote_tolerance = variable_get('pw_vote_vote_tolerance');
-      if($vote->uid == $user->uid && $vote->changed + $vote_tolerance < time()){
-        pw_vote_set_message($node);
-        $form['submitted']['voted']['#value'] = 1;
-      }
+      // check if author of vote is politian him/herself. if not vote was generated.
+      if($vote->uid == $uid){
 
-      // set value for voting behavor
-      $form['submitted']['vote']['#default_value'] = $w_vote->field_vote->name->value();
+        // set value for voting behavior
+        $form['submitted']['vote']['#default_value'] = $w_vote->field_vote->name->value();
+
+        // voting only allowed within time span
+        $vote_tolerance = variable_get('pw_vote_vote_tolerance');
+        if($vote->changed + $vote_tolerance < time()){
+          pw_vote_set_message($node);
+          $form['submitted']['voted']['#value'] = 1;
+        }
+      }
 
       // theme and set portrait
       if ($w_vote->field_vote_user->field_user_picture->value()) {
@@ -141,22 +137,18 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       $form['submitted']['portrait']['#markup'] = $portrait;
 
       // replace parameters in welcome text
-      $welcome_text = $form['submitted']['welcome']['#markup'];
-      $field_gender = field_get_items('user', $user, 'field_user_gender');
-      $field_lastname = field_get_items('user', $user, 'field_user_lname');
-      switch ($field_gender[0]['value']) {
+      switch ($w_vote->field_vote_user->field_user_gender->value()) {
         case 'female':
-          $salutation = 'Sehr geehrte Frau ' . $field_lastname[0]['value'];
+          $salutation = 'Sehr geehrte Frau ' . $w_vote->field_vote_user->field_user_lname->value();
           break;
         case 'male':
-          $salutation = 'Sehr geehrter Herr ' . $field_lastname[0]['value'];
+          $salutation = 'Sehr geehrter Herr ' . $w_vote->field_vote_user->field_user_lname->value();
           break;
         default:
-          $field_firstname = field_get_items('user', $user, 'field_user_fname');
-          $salutation = 'Guten Tag ' . $field_firstname[0]['value'] . ' ' . $field_lastname[0]['value'];
+          $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
           break;
       }
-      $welcome_text = format_string($welcome_text, array(
+      $welcome_text = format_string($form['submitted']['welcome']['#markup'], array(
         '@salutation' => $salutation,
         '@node_title' => $node->title,
       ));
@@ -165,8 +157,10 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       // set statement if already exists
       $form['submitted']['fieldset_statement']['statement']['#default_value'] = $w_vote->body->value->value();
 
-      // set hidden node id of vote node
+      // set hidden fields
       $form['submitted']['vote_node_id']['#value'] = $w_vote->getIdentifier();
+      #$form['submitted']['politician_fullname']['#value'] = $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
+      #$form['submitted']['politician_email']['#value'] = $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->mail->value();
 
       // add custom validation
       $form['#validate'][] = 'pw_vote_form_validate';
@@ -263,6 +257,60 @@ function pw_vote_block_info() {
   );
 
   return $blocks;
+}
+
+/**
+ *  Implements hook_mail_alter().
+ *
+ *  updates e-mail before delivering.
+ */
+
+function pw_vote_mail_alter(&$message) {
+  if($message['id'] == 'webform_submission' && $message['params']['node']->nid == 57233){
+
+    // message
+    $message_body = $message['body'][0];
+
+    if(!empty($message_body)) {
+
+      // get keyed array
+      $form_values = _pw_webform_get_keyed_fields($message['params']['node'], $message['params']['submission']);
+      if(array_key_exists('vote_node_id', $form_values)) {
+        $vote = node_load($form_values['vote_node_id']);
+        if(!empty($vote)) {
+          $w_vote = entity_metadata_wrapper('node', $vote);
+          
+          // replace parameters
+          switch ($w_vote->field_vote_user->field_user_gender->value()) {
+            case 'female':
+              $salutation = 'Sehr geehrte Frau ' . $w_vote->field_vote_user->field_user_lname->value();
+              break;
+            case 'male':
+              $salutation = 'Sehr geehrter Herr ' . $w_vote->field_vote_user->field_user_lname->value();
+              break;
+            default:
+              $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
+              break;
+          }
+
+          $message_body = format_string($message_body, array(
+            '@salutation' => $salutation,
+            '@node_url' => url('node/' . $w_vote->field_vote_node->nid->value(), array('absolute' => TRUE)),
+            '@petition_signings' => number_format($w_vote->field_vote_node->field_petition_signings->value(), 0, ',', '.'),
+            '@petition_end_date' => date('d.m.Y', $w_vote->field_vote_node->field_petition_end_date->value()),
+          ));
+
+          $message['body'][0] = $message_body;
+
+          // temp filter recipients
+          $allowed = array();
+          if(in_array($w_vote->field_vote_user->mail->value(), $allowed)) {
+            $message['to'] = $w_vote->field_vote_user->mail->value();
+          }
+        }
+      }
+    }
+  }
 }
 
 /**
