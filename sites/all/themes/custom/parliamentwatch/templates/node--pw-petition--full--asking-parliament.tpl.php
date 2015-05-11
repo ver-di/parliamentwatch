@@ -6,19 +6,13 @@
 
 <?php
   // render webform block for politicians if parameter "u" is in url
-  $getparams = drupal_get_query_parameters();
-  if (isset($getparams['u'])): ?>
+  if (pw_vote_check_user_allowed()): ?>
   <?php
     $block = module_invoke('webform', 'block_view', 'client-block-57233');
     print theme('status_messages');
     print render($block['content']);
   ?>
-  <hr>
   <?php endif; ?>
-
-<p class="medium">
-  Adressat: <? print $field_petition_recipient[0]['value'] ?>
-</p>
 
 <?php if (!empty($field_blogpost_blogtags)): ?>
   <p class="icon-taxonomy push-bottom-m">
@@ -55,14 +49,21 @@
   $block = module_invoke('views', 'block_view', 'pw_vote_positions-block');
   if(!empty($block['content'])):
 ?>
-    <h3 class="clear">Aktuelle Positionen</h3>
+    <a name="positions"></a>
+    <h3 class="clear">Aktuelle Positionen (<? print $field_petition_recipient[0]['value']; ?>)</h3>
 
-    <p class="medium">Hier werden die aktuellsten Positionen angezeigt. Sobald eine ausreichende Anzahl Abgeordneter Stellung bezogen haben, werden wir hier eine ausführliche Auswertung anzeigen.</p>
+    <p class="medium">Die neuesten Positionen der Abgeordneten in der Übersicht.</p>
 <?php
     print render($block['content']);
   endif;
 ?>
-<h3>Inhalt der Petition</h3>
+<h3>Inhalt der Bürger-Petition (gestartet von <? print $field_petition_starter[0]['value']; ?>)</h3>
+<p class="managed_content">
+  Original auf: <? print l($field_petition_external_url[0]['url']); ?>
+</p>
+<p class="medium">
+  Adressat: <? print $field_petition_recipient[0]['value']; ?>
+</p>
 <div class="managed_content push-bottom-l">
   <? print check_markup($field_petition_content[0]['value']); ?>
 </div>

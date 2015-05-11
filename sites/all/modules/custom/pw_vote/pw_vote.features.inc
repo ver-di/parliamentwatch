@@ -27,7 +27,7 @@ function pw_vote_views_api() {
 function pw_vote_node_info() {
   $items = array(
     'vote' => array(
-      'name' => t('Vote'),
+      'name' => t('jetzt abstimmen'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

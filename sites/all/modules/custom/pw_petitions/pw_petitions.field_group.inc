@@ -61,11 +61,10 @@ function pw_petitions_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_blogpost_blogtags',
-      2 => 'field_petition_recipient',
-      3 => 'field_teaser_image',
-      4 => 'field_blogpost_categories',
-      5 => 'field_petition_end_date',
-      6 => 'field_petition_partner',
+      2 => 'field_teaser_image',
+      3 => 'field_blogpost_categories',
+      4 => 'field_petition_end_date',
+      5 => 'field_petition_partner',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -151,9 +150,8 @@ function pw_petitions_field_group_info() {
     'label' => 'Recipients',
     'weight' => '5',
     'children' => array(
-      0 => 'field_petition_content',
-      1 => 'field_petition_recipient',
-      2 => 'field_parliament',
+      0 => 'field_petition_recipient',
+      1 => 'field_parliament',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -185,6 +183,7 @@ function pw_petitions_field_group_info() {
       2 => 'field_petition_required',
       3 => 'field_petition_signings',
       4 => 'field_petition_external_url',
+      5 => 'field_petition_starter',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

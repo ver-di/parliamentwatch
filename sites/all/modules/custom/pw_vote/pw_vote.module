@@ -50,15 +50,16 @@ function pw_vote_menu() {
   return $items;
 }
 
-
 /**
- * Implements hook_form_alter().
+ * pw_vote_user_allowed().
+ * checks if user is allowed to enter form
+ * 
+ * @return int
+ *   returns uid or false otherwise
  */
 
-function pw_vote_form_alter(&$form, &$form_state, $form_id) {
+function pw_vote_check_user_allowed() {
 
-    // modify vote form
-  if ($form_id == 'webform_client_form_57233') {
 
     // parameter u indicates the voting deputy
     $getparams = drupal_get_query_parameters();
@@ -74,6 +75,25 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
     // load politician by salted get parameter
     $uid = db_query("SELECT uid FROM {users} WHERE MD5(CONCAT(:salt, uuid))=:key", array(':salt' => $salt, ':key' => $getparams['u']))->fetchField();
+
+    return $uid;
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+
+function pw_vote_form_alter(&$form, &$form_state, $form_id) {
+
+    // modify vote form
+  if ($form_id == 'webform_client_form_57233') {
+
+    // retrieve uid from url parameter u
+    $uid = pw_vote_check_user_allowed();
+    if(!$uid){
+      return FALSE;
+    }
 
     // load main node (e.g. petition)
     $node = menu_get_object();
@@ -111,8 +131,11 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
         $form['submitted']['vote']['#default_value'] = $w_vote->field_vote->name->value();
 
         // voting only allowed within time span
-        $vote_tolerance = variable_get('pw_vote_vote_tolerance');
-        if($vote->changed + $vote_tolerance < time()){
+        //$vote_tolerance = variable_get('pw_vote_vote_tolerance');
+        //if($vote->changed + $vote_tolerance < time()){
+
+        // voting only allowed till petition end date
+        if(time() > $w_vote->field_vote_node->field_petition_end_date->value()) {
           pw_vote_set_message($node);
           $form['submitted']['voted']['#value'] = 1;
         }
@@ -159,8 +182,6 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
       // set hidden fields
       $form['submitted']['vote_node_id']['#value'] = $w_vote->getIdentifier();
-      #$form['submitted']['politician_fullname']['#value'] = $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
-      #$form['submitted']['politician_email']['#value'] = $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->mail->value();
 
       // add custom validation
       $form['#validate'][] = 'pw_vote_form_validate';
@@ -198,7 +219,7 @@ function pw_vote_set_message($node) {
     )
   );
   $link_email = l('E-Mail', 'mailto:'.variable_get('site_mail').'?subject=Mein Stimmverhalten bei '.$node->title, array('absolute' => TRUE));
-  drupal_set_message('Sie haben bereits abgestimmt. Bitte setzen Sie sich bei Änderungswünschen mit der Redaktion von '.variable_get('site_name').' über unser '.$link_form.' oder per '.$link_email.' in Verbindung.', 'warning');
+  drupal_set_message('Sie haben bereits abgestimmt. Bitte setzen Sie sich bei Änderungswünschen mit der Redaktion von '.variable_get('site_name').' unter 040 / 317 69 10 26 oder per '.$link_email.' in Verbindung.', 'warning');
 }
 
 /**
@@ -207,8 +228,9 @@ function pw_vote_set_message($node) {
  *  save vote on webform submission.
  */
 
-function pw_vote_webform_submission_presave($node, &$submission) {
+function pw_vote_webform_submission_insert($node, $submission) {
 
+  // node id of webform "Ihr Standpunkt"
   if ($node->nid == 57233) {
 
     // map form values
@@ -238,9 +260,79 @@ function pw_vote_webform_submission_presave($node, &$submission) {
 
     // save node
     node_save($vote);
+
+    // send mail to politician
+    if(in_array($w_vote->field_vote_user->mail->value(), variable_get('pw_testuser'))) {
+
+      // politican wants a copy
+      if($form_values['copy_email'] == 'send_copy') {
+        drupal_mail('pw_vote', microtime(), $w_vote->field_vote_user->mail->value(), language_default(), array('w_vote' => $w_vote), $from = NULL, $send = TRUE);
+      }
+
+      // send copy to editors
+      drupal_mail('pw_vote', microtime(), variable_get('site_mail'), language_default(), array('w_vote' => $w_vote), $from = NULL, $send = TRUE);
+    }
   }
 
 }
+
+
+/**
+ * Implements hook_mail().
+ *
+ * create mail
+ */
+function pw_vote_mail($key, &$message, $params) {
+
+  // entity wrapper
+  $w_vote = $params['w_vote'];
+
+  // set subject
+  $message['subject'] = 'Vielen Dank für Ihre Teilnahme am Petitions-Check!';
+
+  // recipient name
+  $recipient_name = $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
+
+  // salutation
+  switch ($w_vote->field_vote_user->field_user_gender->value()) {
+    case 'female':
+    $salutation = 'Sehr geehrte Frau ' . $w_vote->field_vote_user->field_user_lname->value();
+    break;
+    case 'male':
+    $salutation = 'Sehr geehrter Herr ' . $w_vote->field_vote_user->field_user_lname->value();
+    break;
+    default:
+    $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
+    break;
+  }
+
+  // url to node e.g. petition
+  $node_url = url('node/' . $w_vote->field_vote_node->nid->value(), array('absolute' => TRUE));
+
+  // petition number of signings
+  $petition_signings = number_format($w_vote->field_vote_node->field_petition_signings->value(), 0, ',', '.');
+
+  // date when we'll show the results
+  $petition_end_date = date('d.m.Y H:i', $w_vote->field_vote_node->field_petition_end_date->value());
+
+  // politicians vote
+  $your_vote = $w_vote->field_vote->field_votes_label->value();
+
+  // politicians statement
+  $your_statement = $w_vote->body->value->value();
+
+  // theme & set body
+  $message['body'][] = theme('mail_thank_you', array(
+    'salutation' => $salutation,
+    'node_url' => $node_url,
+    'petition_signings' => $petition_signings,
+    'petition_end_date' => $petition_end_date,
+    'your_vote' => $your_vote,
+    'your_statement' => $your_statement,
+    )
+  );
+}
+
 
 /**
  *  Implements hook_block_info().
@@ -251,66 +343,10 @@ function pw_vote_webform_submission_presave($node, &$submission) {
 function pw_vote_block_info() {
 
   $blocks['voting_behavior'] = array(
-
-    // info: The name of the block.
     'info' => t('Displays Voting Behavior'),
   );
 
   return $blocks;
-}
-
-/**
- *  Implements hook_mail_alter().
- *
- *  updates e-mail before delivering.
- */
-
-function pw_vote_mail_alter(&$message) {
-  if($message['id'] == 'webform_submission' && $message['params']['node']->nid == 57233){
-
-    // message
-    $message_body = $message['body'][0];
-
-    if(!empty($message_body)) {
-
-      // get keyed array
-      $form_values = _pw_webform_get_keyed_fields($message['params']['node'], $message['params']['submission']);
-      if(array_key_exists('vote_node_id', $form_values)) {
-        $vote = node_load($form_values['vote_node_id']);
-        if(!empty($vote)) {
-          $w_vote = entity_metadata_wrapper('node', $vote);
-          
-          // replace parameters
-          switch ($w_vote->field_vote_user->field_user_gender->value()) {
-            case 'female':
-              $salutation = 'Sehr geehrte Frau ' . $w_vote->field_vote_user->field_user_lname->value();
-              break;
-            case 'male':
-              $salutation = 'Sehr geehrter Herr ' . $w_vote->field_vote_user->field_user_lname->value();
-              break;
-            default:
-              $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
-              break;
-          }
-
-          $message_body = format_string($message_body, array(
-            '@salutation' => $salutation,
-            '@node_url' => url('node/' . $w_vote->field_vote_node->nid->value(), array('absolute' => TRUE)),
-            '@petition_signings' => number_format($w_vote->field_vote_node->field_petition_signings->value(), 0, ',', '.'),
-            '@petition_end_date' => date('d.m.Y', $w_vote->field_vote_node->field_petition_end_date->value()),
-          ));
-
-          $message['body'][0] = $message_body;
-
-          // temp filter recipients
-          $allowed = array();
-          if(in_array($w_vote->field_vote_user->mail->value(), $allowed)) {
-            $message['to'] = $w_vote->field_vote_user->mail->value();
-          }
-        }
-      }
-    }
-  }
 }
 
 /**
@@ -407,7 +443,7 @@ function pw_vote_voting_behavior($node) {
           'party' => $party,
           'voting_behavior' => $w_vote->field_vote->field_votes_label->value(),
           'portrait' => $portrait,
-          'statement' => $w_vote->body->value(),
+          'statement' => $w_vote->body->value->value(),
           'path_profile' => drupal_get_path_alias('user/' . $w_vote->field_vote_user->uid->value()),
         )
       );
@@ -500,23 +536,26 @@ function pw_vote_theme() {
   return array(
     'voting_behavior_container_overview' => array(
       'template' => 'voting-behavior-container-overview',
-    ),
+      ),
     'voting_behavior_container_overview_party' => array(
       'template' => 'voting-behavior-container-overview-party',
-    ),
+      ),
     'voting_behavior_container_party' => array(
       'template' => 'voting-behavior-container-party',
-    ),
+      ),
     'voting_behavior_container_vertical' => array(
       'template' => 'voting-behavior-container-vertical',
-    ),
+      ),
     'voting_behavior_single_vote' => array(
       'template' => 'voting-behavior-single-vote',
-    ),
+      ),
     'voting_behavior_sum' => array(
       'template' => 'voting-behavior-sum',
-    ),
-  );
+      ),
+    'mail_thank_you' => array(
+      'template' => 'mail-thank-you',
+      ),
+    );
 }
 
 
