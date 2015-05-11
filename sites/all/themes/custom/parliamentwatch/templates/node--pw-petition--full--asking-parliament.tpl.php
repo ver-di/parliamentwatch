@@ -59,7 +59,7 @@
 ?>
 <h3>Inhalt der Bürger-Petition (gestartet von <? print $field_petition_starter[0]['value']; ?>)</h3>
 <p class="managed_content">
-  Original auf: <? print l($field_petition_external_url[0]['url']); ?>
+  Original auf: <? print l($field_petition_external_url[0]['url'], $field_petition_external_url[0]['url']); ?>
 </p>
 <p class="medium">
   Adressat: <? print $field_petition_recipient[0]['value']; ?>
