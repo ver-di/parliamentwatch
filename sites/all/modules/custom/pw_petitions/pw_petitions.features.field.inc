@@ -821,7 +821,7 @@ $entity_field[0][\'value\'] = $result;',
           'rows' => '10',
         ),
         'type' => 'text_textarea',
-        'weight' => '3',
+        'weight' => '42',
       ),
     ),
   );
@@ -846,8 +846,8 @@ $entity_field[0][\'value\'] = $result;',
         'cache_enabled' => 0,
         'granularity' => array(
           'day' => 'day',
-          'hour' => 0,
-          'minute' => 0,
+          'hour' => 'hour',
+          'minute' => 'minute',
           'month' => 'month',
           'second' => 0,
           'year' => 'year',
@@ -905,6 +905,7 @@ $entity_field[0][\'value\'] = $result;',
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_petition_end_date',
       'label' => 'End Date',
       'required' => 0,
@@ -1038,7 +1039,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'link_field',
-        'weight' => '4',
+        'weight' => '43',
       ),
     ),
   );
@@ -1269,7 +1270,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'computed',
-        'weight' => '7',
+        'weight' => '46',
       ),
     ),
   );
@@ -1498,7 +1499,7 @@ $entity_field[0][\'value\'] = $result;',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'number',
-        'weight' => '5',
+        'weight' => '44',
       ),
     ),
   );
@@ -1593,7 +1594,120 @@ $entity_field[0][\'value\'] = $result;',
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '6',
+        'weight' => '45',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-pw_petition-field_petition_starter'.
+  $fields['node-pw_petition-field_petition_starter'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_petition_starter',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'pw_petition',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 26,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_petition_starter',
+      'label' => 'Petition Starter',
+      'required' => 1,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 'copyright',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'exclude_cv' => FALSE,
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '41',
       ),
     ),
   );
@@ -1622,6 +1736,7 @@ $entity_field[0][\'value\'] = $result;',
           'collecting_donations' => 'Petition is open for donations',
           'survey_in_progress' => 'Petition is part of survey',
           'asking_parliament' => 'Petition is sent to parliament',
+          'passed_parliament' => 'Petition has passed parliament',
           'archived' => 'Petition is archived',
         ),
         'allowed_values_function' => '',
@@ -1664,6 +1779,7 @@ $entity_field[0][\'value\'] = $result;',
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_petition_status',
       'label' => 'Status',
       'required' => 0,
@@ -2088,6 +2204,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Parliament');
   t('Partner Organization');
   t('Petition Content');
+  t('Petition Starter');
   t('Progress');
   t('Recipient');
   t('Required Signings');

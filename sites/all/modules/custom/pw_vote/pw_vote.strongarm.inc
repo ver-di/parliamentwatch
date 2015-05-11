@@ -79,8 +79,21 @@ function pw_vote_strongarm() {
         'xmlsitemap' => array(
           'weight' => '6',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
+        ),
       ),
-      'display' => array(),
+      'display' => array(
+        'sharethis' => array(
+          'teaser' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__vote'] = $strongarm;

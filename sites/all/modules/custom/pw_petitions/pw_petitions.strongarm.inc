@@ -113,6 +113,12 @@ function pw_petitions_strongarm() {
         'feeds' => array(
           'weight' => '0',
         ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
+        ),
       ),
       'display' => array(
         'sharethis' => array(

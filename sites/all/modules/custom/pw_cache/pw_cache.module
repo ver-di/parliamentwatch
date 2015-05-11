@@ -58,7 +58,11 @@ function pw_cache_cron() {
 
   $expire_paths = array();
   foreach ($result as $record) {
-    $expire_paths[] = $record->path;
+
+    // expire each url only once
+    if(!in_array($record->path, $expire_paths)) {
+      $expire_paths[] = $record->path;
+    }
 
     // delete from db
     db_query('DELETE FROM pw_cache_expire WHERE id=' . $record->id);

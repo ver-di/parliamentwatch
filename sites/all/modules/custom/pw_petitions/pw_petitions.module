@@ -101,6 +101,16 @@ function pw_petitions_preprocess_node(&$variables) {
       $block = block_load('webform', 'client-block-10508');
       $rendered_block = _block_render_blocks(array($block));
       $rendered_block['webform_client-block-10508']->subject = "";
+      
+      // count votes from politicians
+      if ($variables['view_mode'] == 'teaser' && in_array($items[0]['value'], array('asking_parliament', 'passed_parliament'))) {
+        $variables["count_votes"] = db_query("SELECT * FROM {node} n
+          INNER JOIN {field_data_field_vote_node} f ON n.nid = f.entity_id AND f.entity_type = 'node'
+          INNER JOIN {users_roles} ur ON n.uid = ur.uid
+          INNER JOIN {role} r ON ur.rid = r.rid
+          WHERE f.field_vote_node_target_id=".$node->nid." AND r.machine_name='politician'
+          GROUP BY n.uid")->rowCount();
+      }
     }
     else {
       $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
@@ -144,6 +154,11 @@ function pw_petitions_preprocess_node(&$variables) {
         else {
           $variables['signing_url'] = $variables['node_url'];
         }
+        $variables['sharethis'] = theme('sharethis', array(
+          'url' => url("node/$node->nid", array('absolute' => TRUE)),
+          'title' => $variables["title"],
+          'summary' => "Petition " . $variables["title"] . " auf abgeordnetenwatch.de",
+        ));
         break;
       case "openpetition":
         $variables['partner_html'] = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-openpetition.png" width="119" height="36" alt="OpenPetition">';

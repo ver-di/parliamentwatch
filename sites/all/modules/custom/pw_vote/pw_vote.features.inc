@@ -15,6 +15,13 @@ function pw_vote_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function pw_vote_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function pw_vote_node_info() {

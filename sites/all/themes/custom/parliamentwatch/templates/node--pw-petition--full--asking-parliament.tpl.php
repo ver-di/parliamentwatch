@@ -1,343 +1,79 @@
-<?php
-?>
 <?php if ($sharethis): ?>
-    <div class="sharethis-wrapper">
-        <? echo $sharethis; ?>
-    </div>
+  <div class="sharethis-wrapper">
+    <? print $sharethis; ?>
+  </div>
 <?php endif; ?>
-<p class="medium"><? echo $field_petition_recipient[0]['value'] ?></p>
+
+<?php
+  // render webform block for politicians if parameter "u" is in url
+  if (pw_vote_check_user_allowed()): ?>
+  <?php
+    $block = module_invoke('webform', 'block_view', 'client-block-57286');
+    print theme('status_messages');
+    print render($block['content']);
+  ?>
+  <?php endif; ?>
 
 <?php if (!empty($field_blogpost_blogtags)): ?>
-    <p class="icon-taxonomy push-bottom-m">
-        <?
-        $first_term = true;
-        foreach ($field_blogpost_blogtags as $key => $value){
-            if ($first_term) {
-                $first_term = false;
-            }
-            else{
-                echo ", ";
-            }
-            $term = taxonomy_term_load($value['tid']);
-            echo l($term->name, 'taxonomy/term/' . $value['tid']);
-        }
-        ?>
-    </p>
+  <p class="icon-taxonomy push-bottom-m">
+    <?
+    $first_term = true;
+    foreach ($field_blogpost_blogtags as $key => $value){
+      if ($first_term) {
+        $first_term = false;
+      }
+      else{
+        print ", ";
+      }
+      $term = taxonomy_term_load($value['tid']);
+      print l($term->name, 'taxonomy/term/' . $value['tid']);
+    }
+    ?>
+  </p>
 <?php endif; ?>
+<h3>Hintergrund</h3>
+<div class="managed_content clearfix push-bottom-l">
+  <div class="floatbox floatbox-right">
+    <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
+    <p class="pushfloat-0">Die Petition hat <?echo number_format($field_petition_signings[0]['value'],0,',','.')?> von <? echo number_format($field_petition_required[0]['value'],0,',','.'); ?> benötigten Unterschriften erreicht.</p>
+    <i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition in der Meinungsumfrage</span></i>
+    <p class="pushfloat-0">Laut repräsentativer Meinungsumfrage genießt das Anliegen eine Mehrheit in der Bevölkerung.</p>
+    <i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition im Parlament</span></i>
+    <p class="pushfloat-0">Die Petition wird aktuell im Parlament abgefragt.</p>
+  </div>
+  <? print check_markup($field_petition_text_parliament[0]['value']); ?>
+</div>
+
+<?php
+  // render block of latest positions
+  $block = module_invoke('views', 'block_view', 'pw_vote_positions-block');
+  if(!empty($block['content'])):
+?>
+    <a name="positions"></a>
+    <h3 class="clear">Aktuelle Positionen (<? print $field_petition_recipient[0]['value']; ?>)</h3>
+
+    <p class="medium">Die neuesten Positionen der Abgeordneten in der Übersicht.</p>
+<?php
+    print render($block['content']);
+  endif;
+?>
+<h3>Inhalt der Bürger-Petition (gestartet von <? print $field_petition_starter[0]['value']; ?>)</h3>
+<p class="managed_content">
+  Original auf: <? print l($field_petition_external_url[0]['url']); ?>
+</p>
+<p class="medium">
+  Adressat: <? print $field_petition_recipient[0]['value']; ?>
+</p>
 <div class="managed_content push-bottom-l">
-    <? echo $field_petition_text_parliament['und'][0]['value'] ?>
+  <? print check_markup($field_petition_content[0]['value']); ?>
 </div>
 
-<div class="pw-voting">
-<div id="pw-voting-total"><h3>Gesamtergebnis</h3>
-<ul class="clearfix push-bottom-l">
-    <li class="total vote yes">582 zugestimmt</li>
-    <li class="total vote no">3 dagegen gestimmt</li>
-    <li class="total vote abstain">7 enthalten</li>
-    <li class="total vote no-show">39 nicht beteiligt</li>
-</ul></div>
-<div id="pw-voting-parties" class="desktop-only">
-<h3>Parteiergebnis</h3>
-
-<div class="clearfix push-bottom-l">
-  <ul>
-    <li class="clearfix">
-      <div class="grid-2 alpha">
-        <h4><a href="#" title="CDU/CSU: Alle Positionen anzeigen">CDU/CSU<br>311 Mitglieder</a></h4>
-      </div>
-      <div class="grid-6 omega">
-        <ul>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
-              </blockquote>
-              
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote yes">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote no">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote abstain">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-          <li class="item vote no-show">
-            <div class="pw-arrow-box-trigger"></div>
-            <div class="item-politician pw-arrow-box">
-              <h3>Klaus Mindrup (SPD)</h3>
-              <p><span class="medium">Position von Klaus Buchner: </span><span class="vote yes block">Lehne ab</span></p>
-              <blockquote>
-                Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-              </blockquote>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </li>
-  </ul>
-</div>
-
-</div><h3>Wie positionieren sich Ihre Abgeordneten?</h3>
-
-<form action="#" class="search-form compact-form" target="_self">
-    <div class="compact-form-wrapper">
-      Die Positionen Ihrer Wahlkreisabgeordneten erfahren Sie durch Eingabe Ihrer Postleitzahl 
-        <label for="FILLID" class="element-invisible">PLZ</label>
-        <input type="text" maxlength="128" size="15" value="" id="FILLID" placeholder="PLZ"
-               title="Geben Sie hier Ihre PLZ ein.">
-    </div>
-    <div class="form-actions form-wrapper">
-        <input type="image"
-               src="http://develop_petitions.silversurfer/sites/abgeordnetenwatch.de/files/custom_search/ic_search.png"
-               class="custom-search-button form-submit" alt="Search">
-    </div>
-</form>
-
-<h3>Positionen aus dem Wahlkreis Berlin-Pankow (76)</h3>
-
-<ul>
-    <li class="pw-list-item">
-        <h4 class="push-bottom-xs">Steafan Lieblich (DIE LINKE) zu “Abgeordnetenbestechung: bestrafen! #korrupt”</h4>
-        <div class="push-bottom-s">
-            <span class="medium">Position von Klaus Buchner:</span> <span class="poll-behavior"><span class="vote yes block">Lehne ab</span></span>
-        </div>
-        <div class="float-left pw-kc-profile-picture push-bottom-s">
-            <img title="" alt="" src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_ms/public/users/klausbuchner14.jpeg?itok=hMLULTPx" typeof="foaf:Image">
-        </div>
-        <div class="pw-kc-argumentation pushfloat-1">
-            <blockquote>Arbeitsverbote bedeuten, dass diese Menschen von unseren Sozialeinrichtungen unterhalten werden müssen. Das ist für motivierte, z.T. gut ausgebildete und dringend benötigte Arbeitskräfte unsinnig und demotivierend.</blockquote>
-        </div>
-    </li>
-    <li class="pw-list-item">
-        <h4 class="push-bottom-xs">Steafan Lieblich (DIE LINKE) zu “Abgeordnetenbestechung: bestrafen! #korrupt”</h4>
-        <div class="push-bottom-s">
-            <span class="medium">Position von Klaus Buchner:</span> <span class="poll-behavior"><span class="no block">Lehne ab</span></span>
-        </div>
-        <div class="float-left pw-kc-profile-picture push-bottom-s">
-            <img title="" alt="" src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_ms/public/users/klausbuchner14.jpeg?itok=hMLULTPx" typeof="foaf:Image">
-        </div>
-        <div class="pw-kc-argumentation pushfloat-1">
-            <blockquote>Arbeitsverbote bedeuten, dass diese Menschen von unseren Sozialeinrichtungen unterhalten werden müssen. Das ist für motivierte, z.T. gut ausgebildete und dringend benötigte Arbeitskräfte unsinnig und demotivierend.</blockquote>
-        </div>
-    </li>
-    <li class="pw-list-item">
-        <h4 class="push-bottom-xs">Steafan Lieblich (DIE LINKE) zu “Abgeordnetenbestechung: bestrafen! #korrupt”</h4>
-        <div class="push-bottom-s">
-            <span class="medium">Position von Klaus Buchner:</span> <span class="poll-behavior"><span class="neutral block">Lehne ab</span></span>
-        </div>
-        <div class="float-left pw-kc-profile-picture push-bottom-s">
-            <img title="" alt="" src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_ms/public/users/klausbuchner14.jpeg?itok=hMLULTPx" typeof="foaf:Image">
-        </div>
-        <div class="pw-kc-argumentation pushfloat-1">
-            <blockquote>Arbeitsverbote bedeuten, dass diese Menschen von unseren Sozialeinrichtungen unterhalten werden müssen. Das ist für motivierte, z.T. gut ausgebildete und dringend benötigte Arbeitskräfte unsinnig und demotivierend.</blockquote>
-        </div>
-    </li>
-    <li class="pw-list-item">
-        <h4 class="push-bottom-xs">Steafan Lieblich (DIE LINKE) zu “Abgeordnetenbestechung: bestrafen! #korrupt”</h4>
-        <div class="push-bottom-s">
-            <span class="medium">Position von Klaus Buchner:</span> <span class="poll-behavior"><span class="no block">Lehne ab</span></span>
-        </div>
-        <div class="float-left pw-kc-profile-picture push-bottom-s">
-            <img title="" alt="" src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_ms/public/users/klausbuchner14.jpeg?itok=hMLULTPx" typeof="foaf:Image">
-        </div>
-        <div class="pw-kc-argumentation pushfloat-1">
-            <blockquote>Arbeitsverbote bedeuten, dass diese Menschen von unseren Sozialeinrichtungen unterhalten werden müssen. Das ist für motivierte, z.T. gut ausgebildete und dringend benötigte Arbeitskräfte unsinnig und demotivierend.</blockquote>
-        </div>
-    </li>
-    <li class="pw-list-item">
-        <h4 class="push-bottom-xs">Steafan Lieblich (DIE LINKE) zu “Abgeordnetenbestechung: bestrafen! #korrupt”</h4>
-        <div class="push-bottom-s">
-            <span class="medium">Position von Klaus Buchner:</span> <span class="poll-behavior"><span class="no block">Lehne ab</span></span>
-        </div>
-        <div class="float-left pw-kc-profile-picture push-bottom-s">
-            <img title="" alt="" src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_ms/public/users/klausbuchner14.jpeg?itok=hMLULTPx" typeof="foaf:Image">
-        </div>
-        <div class="pw-kc-argumentation pushfloat-1">
-            <blockquote>Arbeitsverbote bedeuten, dass diese Menschen von unseren Sozialeinrichtungen unterhalten werden müssen. Das ist für motivierte, z.T. gut ausgebildete und dringend benötigte Arbeitskräfte unsinnig und demotivierend.</blockquote>
-        </div>
-    </li>
-</ul>
-<div class="item-list">
-  <ul class="pager pager-load-more"><li class="pager-next first last"><a href="/bremen?page=0%2C1"><span>Mehr laden</span></a></li>
-  </ul>
-</div>
-</div>
-<div class="clearfix push-bottom-l managed-content">
-    <? echo $body[0]['value']; ?>
-</div>
-
-<h3>Ich habe die Petition unterschrieben, weil...</h3>
-
-<div typeof="sioc:Post sioct:Comment" about="/comment/212190#comment-212190" class="comment comment-by-anonymous clearfix">
-
-    <h3 class="element-invisible element-focusable" datatype="" property="schema:name"><a rel="bookmark" class="permalink" href="/comment/212190#comment-212190">Sehr geehrter Herr Hanneforth</a></h3>
-
-    <div class="submitted clearfix">
-        <h2 class="author dark"><span rel="sioc:has_creator"><span datatype="" property="schema:name" typeof="schema:Person sioc:UserAccount" xml:lang="" class="username">Prof. Dr. Maria...</span></span></h2>
-        <div class="created"><a class="medium" href="#comment-212190">02.04.2015 um 12:20</a></div>
-    </div>
-
-    <div class="content">
-        <span class="rdf-meta element-hidden" resource="/blog/2015-04-01/abgeordnete-und-ihre-merkwurdigen-facebookfreunde-aus-dem-irak" rel="sioc:reply_of"></span><div class="field field-name-comment-body field-type-text-long field-label-hidden"><div class="field-items"><div property="schema:comment content:encoded" class="field-item even"><p>Sehr geehrter Herr Hanneforth,</p>
-                    <p>Ihre Bemühungen um Transparenz in der Politik erkenne ich an.<br>
-                        Ihre Behauptung, ich hätte auf Ihre Anfrage nicht reagiert, ist aber schlicht falsch.<br>
-                        Auf Ihre Anfrage habe ich mit E-Mail vom 18. März 2015, 13:18 Uhr, wie folgt geantwortet:</p>
-                    <p>„Sehr geehrter Herr Hanneforth,<br>
-                        herzlichen Dank für Ihre E-Mails vom 12.03. und 17.03.2015.<br>
-                        Der starke Anstieg der Likes war mir und meinem Team in der Tat nicht aufgefallen und ich habe keine Erklärung für diese Entwicklung.<br>
-                        Ich werde Ihren Hinweis aber gerne zum Anlass nehmen, die Statistik meiner Facebook-Seite in Zukunft genauer zu beobachten.<br>
-                        Mit freundlichen Grüßen<br>
-                        Maria Böhmer“</p>
-                    <p>Zur nochmaligen Klarstellung betone ich, dass ich keine Likes gekauft habe.</p>
-                    <p>Mit freundlichen Grüßen</p>
-                    <p>Maria Böhmer</p>
-                </div></div></div><span class="rdf-meta element-hidden" resource="/comment/212190#comment-212190" rel="schema:url"></span>      </div>
-
-    </div>
+<?php 
+// render comments if there are any
+if ($comments): 
+?>
+  <div id="comments" class="comment-wrapper">
+    <h3>Ich habe die Petition unterschrieben, weil...</h3>
+    <? echo $comments; ?>
+  </div>
+<?php endif; ?>

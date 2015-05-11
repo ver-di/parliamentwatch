@@ -251,6 +251,30 @@ function _pw_get_parliament_term_tid_by_nid($nid) {
 }
 
 /**
+ * Custom: Map items of a webform submission to their components..
+ */
+
+function _pw_webform_get_keyed_fields($webform_node, $submission) {
+
+  // query db to retrieve webform components
+  $sql = "SELECT wf_comp.cid, wf_comp.form_key
+            FROM webform_component wf_comp
+            WHERE wf_comp.nid = :nid";
+  $form_fields = db_query($sql, array(':nid' => $webform_node->nid))->fetchAllAssoc('cid');
+
+  // map ids to relevant components
+  $form_values = array();
+  foreach ($form_fields as $cid => $component) {
+
+    // set reference to submission
+    $form_values[$component->form_key] = &$submission->data[$cid]['value'][0];
+  }
+
+  // return as keyed array
+  return $form_values;
+}
+
+/**
  * Custom: Send Debug Mail.
  */
 function _pw_send_debug_mail($subject, $body){

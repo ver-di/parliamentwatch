@@ -1148,6 +1148,10 @@ function pw_globals_strongarm() {
       'display' => 'form',
       'pages_block' => 1,
     ),
+    'client-block-57286' => array(
+      'display' => 'full',
+      'pages_block' => 1,
+    ),
   );
   $export['webform_blocks'] = $strongarm;
 
