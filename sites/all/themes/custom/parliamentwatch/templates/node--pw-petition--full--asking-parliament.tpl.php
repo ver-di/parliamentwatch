@@ -8,7 +8,7 @@
   // render webform block for politicians if parameter "u" is in url
   if (pw_vote_check_user_allowed()): ?>
   <?php
-    $block = module_invoke('webform', 'block_view', 'client-block-57233');
+    $block = module_invoke('webform', 'block_view', 'client-block-57286');
     print theme('status_messages');
     print render($block['content']);
   ?>

@@ -87,7 +87,7 @@ function pw_vote_check_user_allowed() {
 function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
     // modify vote form
-  if ($form_id == 'webform_client_form_57233') {
+  if ($form_id == 'webform_client_form_57286') {
 
     // retrieve uid from url parameter u
     $uid = pw_vote_check_user_allowed();
@@ -231,7 +231,7 @@ function pw_vote_set_message($node) {
 function pw_vote_webform_submission_insert($node, $submission) {
 
   // node id of webform "Ihr Standpunkt"
-  if ($node->nid == 57233) {
+  if ($node->nid == 57286) {
 
     // map form values
     $form_values = _pw_webform_get_keyed_fields($node, $submission);
