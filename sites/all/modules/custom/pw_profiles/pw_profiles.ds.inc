@@ -263,22 +263,6 @@ function pw_profiles_ds_field_settings_info() {
         ),
       ),
     ),
-    'question_and_answers_filter' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'desktop-only',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
     'question_form' => array(
       'weight' => '9',
       'label' => 'hidden',
@@ -434,22 +418,6 @@ function pw_profiles_ds_field_settings_info() {
           'ow-def-cl' => TRUE,
           'ow-at' => '',
           'ow-def-at' => TRUE,
-        ),
-      ),
-    ),
-    'question_and_answers_filter' => array(
-      'weight' => '10',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'desktop-only',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -689,22 +657,6 @@ function pw_profiles_ds_field_settings_info() {
           'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l relative',
           'ow-def-cl' => FALSE,
           'ow-at' => 'id="pw-block-user-links"',
-          'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'question_and_answers_filter' => array(
-      'weight' => '19',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'desktop-only',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
           'ow-def-at' => FALSE,
         ),
       ),
@@ -1542,17 +1494,14 @@ function pw_profiles_ds_layout_settings_info() {
         4 => 'user_revision_switch',
         5 => 'user_wrong_data',
         6 => 'user_profile_api_link',
-        11 => 'masquerade',
+        10 => 'masquerade',
       ),
       'left_2' => array(
         7 => 'user_questions_and_answers',
         8 => 'question_form',
       ),
-      'right_2' => array(
-        9 => 'question_and_answers_filter',
-      ),
       'ds_hidden' => array(
-        10 => 'field_user_party',
+        9 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1565,7 +1514,6 @@ function pw_profiles_ds_layout_settings_info() {
       'user_profile_api_link' => 'right_1',
       'user_questions_and_answers' => 'left_2',
       'question_form' => 'left_2',
-      'question_and_answers_filter' => 'right_2',
       'field_user_party' => 'ds_hidden',
       'masquerade' => 'right_1',
     ),
@@ -1614,13 +1562,10 @@ function pw_profiles_ds_layout_settings_info() {
         8 => 'user_questions_and_answers',
         9 => 'question_form',
       ),
-      'right_2' => array(
-        10 => 'question_and_answers_filter',
-      ),
       'ds_hidden' => array(
-        11 => 'field_user_fname',
-        12 => 'field_user_lname',
-        13 => 'field_user_party',
+        10 => 'field_user_fname',
+        11 => 'field_user_lname',
+        12 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1634,7 +1579,6 @@ function pw_profiles_ds_layout_settings_info() {
       'bundestagsradar' => 'right_1',
       'user_questions_and_answers' => 'left_2',
       'question_form' => 'left_2',
-      'question_and_answers_filter' => 'right_2',
       'field_user_fname' => 'ds_hidden',
       'field_user_lname' => 'ds_hidden',
       'field_user_party' => 'ds_hidden',
@@ -1720,17 +1664,14 @@ function pw_profiles_ds_layout_settings_info() {
         10 => 'user_revision_switch',
         11 => 'user_wrong_data',
         12 => 'user_profile_api_link',
-        17 => 'masquerade',
+        16 => 'masquerade',
       ),
       'left_2' => array(
         13 => 'user_questions_and_answers',
         14 => 'question_form',
       ),
-      'right_2' => array(
-        15 => 'question_and_answers_filter',
-      ),
       'ds_hidden' => array(
-        16 => 'field_user_party',
+        15 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1749,7 +1690,6 @@ function pw_profiles_ds_layout_settings_info() {
       'user_profile_api_link' => 'right_1',
       'user_questions_and_answers' => 'left_2',
       'question_form' => 'left_2',
-      'question_and_answers_filter' => 'right_2',
       'field_user_party' => 'ds_hidden',
       'masquerade' => 'right_1',
     ),
