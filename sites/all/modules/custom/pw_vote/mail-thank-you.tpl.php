@@ -8,7 +8,7 @@
 
 <p>Begründung: <?php print $your_statement; ?></p>
 
-<p>Ihre Angaben können Sie bis zum <?php print $petition_end_date; ?> überarbeiten, nutzen Sie dafür bitte den Link in gesonderten Begrüßungsmail.</p>
+<p>Ihre Angaben können Sie bis zum <?php print $petition_end_date; ?> überarbeiten, nutzen Sie dafür bitte den Link in der gesonderten Begrüßungsmail.</p>
 
 <p><a href="<?php print $node_url; ?>#positions">Die Positionen aller Bundestagsabgeordneten</a> zu dieser Petition werden am <?php print $petition_end_date; ?> unter <a href="<?php print $node_url; ?>"><?php print $node_url; ?></a> für die Öffentlichkeit freigeschaltet. Zudem werden alle <?php print $petition_signings; ?> Petitionszeichner per E-Mail informiert. Damit erreichen Sie sehr viele Menschen in Ihrem Wahlkreis und können für sich und Ihre Position werben.</p>
 
