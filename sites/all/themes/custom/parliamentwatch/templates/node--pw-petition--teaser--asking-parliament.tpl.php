@@ -12,10 +12,10 @@ print render($title_suffix);
     <li><i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition in der Meinungsumfrage');?></span></i></li>
     <li><i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-brand"><span class="element-invisible"><?php print t('Petition im Parlament');?></span></i></li>
   </ul>
-  <a href="<? echo $node_url; ?>" class="<? echo ($partner_html)?"colorbox-load":"";?>"><? echo $title;?></a>
+  <a href="<? echo $node_url; ?>"><? echo $title;?></a>
 </h3>
 <div class="petition-list-image-wrapper img-outline">
-  <a href="<? echo $node_url; ?>" title="zur Petition" class="<? echo ($partner_html)?"colorbox-load":"";?>">
+  <a href="<? echo $node_url; ?>" title="zur Petition">
     <? echo $themed_image; ?>
   </a>
   <?php if ($field_image_copyright): ?>

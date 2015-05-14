@@ -80,6 +80,9 @@ html {
   float: left;
   margin: 0 30px 0 0;
 }
+#webform-client-form-57286 #edit-submitted-vote {
+  clear: none;
+}
 
 /* /////////////////////////// Announcement ///////////////// */
 
