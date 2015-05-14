@@ -33,7 +33,7 @@
   <body id="mimemail-body" <?php if ($module && $key): print 'class="'. $module .'-'. $key .'"'; endif; ?>>
     <div id="center" style="max-width: 600px; margin: auto;">
         <div style="padding: 20px 0; border-bottom: 1px solid #f63; margin-bottom: 20px;">
-            <img src="https://www.abgeordnetenwatch.de/sites/abgeordnetenwatch.de/themes/abgeordnetenwatch/logo.png" width="385" height="42" alt="" />
+            <img src="https://www.abgeordnetenwatch.de/sites/all/themes/abgeordnetenwatch/logo.png" width="385" height="42" alt="" />
         </div>
         
       <div id="main">

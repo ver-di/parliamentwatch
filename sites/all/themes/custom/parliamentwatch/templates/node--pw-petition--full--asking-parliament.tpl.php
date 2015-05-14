@@ -7,11 +7,13 @@
 <?php
   // render webform block for politicians if parameter "u" is in url
   if (pw_vote_check_user_allowed()): ?>
+  <div class="clearfix push-bottom-l">
   <?php
     $block = module_invoke('webform', 'block_view', 'client-block-57286');
     print theme('status_messages');
     print render($block['content']);
   ?>
+  </div>
   <?php endif; ?>
 
 <?php if (!empty($field_blogpost_blogtags)): ?>
@@ -32,7 +34,7 @@
   </p>
 <?php endif; ?>
 <h3>Hintergrund</h3>
-<div class="managed_content clearfix push-bottom-l">
+<div class="managed-content clearfix push-bottom-l">
   <div class="floatbox floatbox-right">
     <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
     <p class="pushfloat-0">Die Petition hat <?echo number_format($field_petition_signings[0]['value'],0,',','.')?> von <? echo number_format($field_petition_required[0]['value'],0,',','.'); ?> benötigten Unterschriften erreicht.</p>
@@ -58,8 +60,8 @@
   endif;
 ?>
 <h3>Inhalt der Bürger-Petition (gestartet von <? print $field_petition_starter[0]['value']; ?>)</h3>
-<p class="managed_content">
-  Lesen Sie die Original-Petition auf: <? print l($field_petition_external_url[0]['url'], $field_petition_external_url[0]['url']); ?>
+<p class="managed-content">
+  Lesen Sie die Original-Petition auf <? print l($field_petition_external_url[0]['url'], $field_petition_external_url[0]['url']); ?>
 </p>
 
 <?php 
