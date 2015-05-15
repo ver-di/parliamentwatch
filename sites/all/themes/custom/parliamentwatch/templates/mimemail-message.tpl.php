@@ -62,7 +62,7 @@ a.facebook,
 a.twitter,
 a.google,
 a.rss {
-  background-image: url("https://stage.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/images/sprite.png");
+  background-image: url("https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/images/sprite.png");
   background-repeat: no-repeat;
   display: block;
   margin: 6px 0;
@@ -107,7 +107,7 @@ a:active {
 }
 a.read-more:link,
 a.read-more:visited {
-  background-image: url("https://stage.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/images/sprite.png");
+  background-image: url("https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/images/sprite.png");
   background-repeat: no-repeat;
   padding-left: 18px;
   background-position: -723px -1942px;
@@ -237,7 +237,7 @@ blockquote p:last-child {
 .arrow-item-list li {
     padding-left: 15px;
     background-position: -770px -1896px;
-    background-image: url("https://stage.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/images/sprite.png");
+    background-image: url("https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/images/sprite.png");
     background-repeat: no-repeat;
     list-style: none;
     margin-bottom: 0.5em;
@@ -248,13 +248,13 @@ blockquote p:last-child {
   <body id="mimemail-body" <?php if ($module && $key): print 'class="'. $module .'-'. $key .'"'; endif; ?>>
     <div class="center">
       <div id="metalinks">
-        <a href="https://www.abgeordnetenwatch.de/node/7760">Über uns</a>
-        <a href="https://www.abgeordnetenwatch.de/node/7757">Finanzierung</a>
-        <a href="https://www.abgeordnetenwatch.de/node/6578">Kontakt</a>
+        <a href="https://www.abgeordnetenwatch.de/ueber-uns">Über uns</a>
+        <a href="https://www.abgeordnetenwatch.de/ueber-uns/mehr/finanzierung">Finanzierung</a>
+        <a href="https://www.abgeordnetenwatch.de/kontakt">Kontakt</a>
       </div>
       
       <div style="padding: 3px 0 28px;">
-        <img src="https://stage.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/logo-email.png" width="491" height="57" alt="abgeordnetenwatch.de - Weil Transparenz Vertrauen schafft" />
+        <img src="https://www.abgeordnetenwatch.de/sites/all/themes/custom/parliamentwatch/logo-email.png" alt="abgeordnetenwatch.de - Weil Transparenz Vertrauen schafft" />
       </div>
     </div>
     
