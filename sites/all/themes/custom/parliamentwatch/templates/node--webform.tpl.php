@@ -3,7 +3,7 @@
   <?php print render($title_prefix); ?>
   <?php if (!$page && $title): ?>
   <header>
-    <h2<?php print $title_attributes; ?>><?php print $title ?></h2>
+    <h3<?php print $title_attributes; ?>><?php print $title ?></h3>
   </header>
   <?php endif; ?>
   <?php print render($title_suffix); ?>

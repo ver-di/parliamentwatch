@@ -3082,10 +3082,9 @@ form .webform-component-checkboxes .description {
 }
 #webform-client-form-57286 #webform-component-fieldset-statement {
   clear: both;
-  position: relative;
-  top: 1em;
+  padding-top: 1em;
 }
-#webform-client-form-57286 #webform-component-fieldset-statement--stement-wrapper {
+#webform-client-form-57286 #webform-component-fieldset-statement--statement-wrapper {
   padding: 10px;
   background: #f4f4f4; 
   border: 1px solid #dedede;
