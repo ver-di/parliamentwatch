@@ -4,8 +4,8 @@
 @import url("jquery.ui.slider.css");
 @import url("pw_kandidatencheck.css");
 @import url("slick.css");
-@import url("icons/css/awfont.css");
 @import url("jquery.mmenu.all.css");
+@import url("icons/css/awfont20150517.css");
 
 /*
 	LAYOUT
@@ -3051,10 +3051,6 @@ form .webform-component-checkboxes .description {
 #webform-client-form-57286 #edit-submitted-vote {
   clear: both;
 }
-#webform-client-form-57286 .form-radios input {
-    position: absolute;
-    left: -5000em;
-}
 #webform-client-form-57286 #webform-component-vote > label {
   display: none;
 }
@@ -3062,9 +3058,10 @@ form .webform-component-checkboxes .description {
     font-size: 1.5em;
     cursor: pointer;
 }
-#webform-client-form-57286 .form-radios label::before {
-    content: "\e850  ";
-    font-family: "awfont";
+#webform-client-form-57286 .form-radio {
+  margin: 0 1ex 0 0;
+  position: relative;
+  top: -0.2em;
 }
 #webform-client-form-57286 .form-radios label,
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label:focus,
@@ -3076,9 +3073,6 @@ form .webform-component-checkboxes .description {
 #webform-client-form-57286 .form-radios label:active,
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label {
     color: #f63;
-}
-#webform-client-form-57286 .form-radios input[type="radio"]:checked + label::before {
-    content: "\e807  ";
 }
 #webform-client-form-57286 #webform-component-fieldset-statement {
   clear: both;
