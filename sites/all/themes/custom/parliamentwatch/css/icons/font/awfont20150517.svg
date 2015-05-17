@@ -3,8 +3,8 @@
 <svg xmlns="http://www.w3.org/2000/svg">
 <metadata>Copyright (C) 2015 by original authors @ fontello.com</metadata>
 <defs>
-<font id="awfont" horiz-adv-x="1000" >
-<font-face font-family="awfont" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<font id="awfont20150517" horiz-adv-x="1000" >
+<font-face font-family="awfont20150517" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
 <missing-glyph horiz-adv-x="1000" />
 <glyph glyph-name="clock" unicode="&#xe800;" d="m757 587l-261-195-227 145-37-59 204-131-12-9 41-56 34 25 34-21 38 58-12 8 240 179-42 56z m-257-262c-14 0-25 11-25 25 0 14 11 25 25 25 14 0 25-11 25-25 0-14-11-25-25-25z m0 525c-276 0-500-224-500-500 0-276 224-500 500-500s500 224 500 500c0 276-224 500-500 500z m35-927v33h-70v-33c-209 17-375 183-392 392h39v70h-39c17 209 183 375 392 392v-38h70v38c208-17 375-183 392-392h-36v-70h36c-17-209-184-375-392-392z" horiz-adv-x="1000" />
 <glyph glyph-name="quote-right" unicode="&#xe801;" d="m429 671v-392q0-58-23-111t-61-91-91-62-111-22h-36q-14 0-25 10t-11 26v71q0 15 11 25t25 11h36q59 0 101 42t42 101v17q0 23-16 38t-38 16h-125q-44 0-76 31t-31 76v214q0 45 31 76t76 32h214q45 0 76-32t32-76z m500 0v-392q0-58-23-111t-61-91-91-62-111-22h-36q-14 0-25 10t-11 26v71q0 15 11 25t25 11h36q59 0 101 42t42 101v17q0 23-16 38t-38 16h-125q-44 0-76 31t-31 76v214q0 45 31 76t76 32h214q45 0 76-32t32-76z" horiz-adv-x="928.6" />
