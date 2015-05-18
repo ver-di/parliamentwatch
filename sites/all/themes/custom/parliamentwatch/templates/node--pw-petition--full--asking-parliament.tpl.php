@@ -54,7 +54,7 @@
     <a name="positions"></a>
     <h3 class="clear">Aktuelle Positionen (<? print $field_petition_recipient[0]['value']; ?>)</h3>
 
-    <p class="medium">Die neuesten Positionen der Abgeordneten in der Übersicht.</p>
+    <p class="medium">Die fünf aktuellsten Positionen der Abgeordneten in der Übersicht.</p>
 <?php
     print render($block['content']);
   endif;
