@@ -40,7 +40,7 @@
   <div class="grid-2 alpha">
     <div class="arrow-item">
       <a href="<?php print $profile_link;?>">
-        <?php print $image_url;?>
+         <?php print $image_url;?>
       </a>
     </div>
   </div>
