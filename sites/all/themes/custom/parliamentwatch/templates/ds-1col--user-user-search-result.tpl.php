@@ -40,7 +40,7 @@
   <div class="grid-2 alpha">
     <div class="arrow-item">
       <a href="<?php print $profile_link;?>">
-        <img typeof="foaf:Image" src="<?php print $image_url;?>" alt="">
+        <?php print $image_url;?>
       </a>
     </div>
   </div>
