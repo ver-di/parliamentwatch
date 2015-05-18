@@ -27,8 +27,9 @@ print render($title_suffix);
 <div class="pw-petition-list-contents">
   <i class="icon-clock aw-icon-2x aw-success float-left push-right-s"></i>
   <div class="medium"><strong>Petition wird aktuell im Bundestag abgefragt</strong></div>
-  <div class="small light"><?php print $count_votes; ?> MdBs haben bisher Stellung genommen</div>
-
+  <?php if ($count_votes > 1): ?>  
+    <div class="small light"><?php print $count_votes; ?> MdBs haben bisher Stellung genommen</div>
+  <?php endif; ?>
   <?php if ($partner_html): ?>
     <div class="petition-list-partner-wrapper small light">
       <p class="push-bottom-xs">Diese Petition läuft auf:</p>
