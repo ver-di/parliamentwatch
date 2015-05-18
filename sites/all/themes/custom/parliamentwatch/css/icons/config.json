@@ -1,5 +1,5 @@
 {
-  "name": "awfont",
+  "name": "awfont20150517",
   "css_prefix_text": "icon-",
   "css_use_suffix": false,
   "hinting": true,
@@ -1082,6 +1082,20 @@
       },
       "search": [
         "logo-aw"
+      ]
+    },
+    {
+      "uid": "f9398bee241246317faa289c1528f534",
+      "css": "checkbox-unchecked",
+      "code": 59472,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M754.6 175.3H117C52.4 175.3 0 227.7 0 292.3V292.3 883 883C0 947.6 52.4 1000 117 1000H754.6C819.2 1000 871.6 947.6 871.6 883V736.6 438.7 292.3C871.6 227.7 819.2 175.3 754.6 175.3ZM754.6 597.5V883.1H650.7L650.7 883H117V736.8 714.3 461 438.5 292.3H650.7L650.7 292.3H754.6V577.8 597.5Z",
+        "width": 1077
+      },
+      "search": [
+        "checkbox-unchecked"
       ]
     },
     {

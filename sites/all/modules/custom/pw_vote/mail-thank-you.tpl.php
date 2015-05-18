@@ -1,12 +1,12 @@
-<p><?php print $salutation; ?>,</p>
+<h2><?php print $salutation; ?>,</h2>
 
 <p>vielen Dank, dass Sie Ihren Standpunkt beim Petitions-Check mitgeteilt haben! </p>
 
-<p>Ihre Angaben im Petitions-Check</p>
+<h3>Ihre Angaben im Petitions-Check</h3>
 
-<p>Stimmverhalten: <?php print $your_vote; ?></p>
+<p><strong>Stimmverhalten:</strong> <?php print $your_vote; ?></p>
 
-<p>Begründung: <?php print $your_statement; ?></p>
+<p><strong>Begründung:</strong> <?php print $your_statement; ?></p>
 
 <p>Ihre Angaben können Sie bis zum <?php print $petition_end_date; ?> überarbeiten, nutzen Sie dafür bitte den Link in der gesonderten Begrüßungsmail.</p>
 
@@ -14,11 +14,3 @@
 
 <p>Mit freundlichen Grüßen<br />
 Gregor Hackmack und Boris Hekele</p>
-
-<p>Parlamentwatch e.V.<br />
-Mittelweg 11-12<br />
-20148 Hamburg<br />
-Tel: 040 - 317 69 10 - 26<br />
-Fax: 040 - 317 69 10 - 28<br />
-email: <a href="mailto:info@abgeordnetenwatch.de">info@abgeordnetenwatch.de<br />
-<a href="https://www.abgeordnetenwatch.de">www.abgeordnetenwatch.de</p>

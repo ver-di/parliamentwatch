@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'awfont';
-  src: url('../font/awfont.eot?88835699');
-  src: url('../font/awfont.eot?88835699#iefix') format('embedded-opentype'),
-       url('../font/awfont.woff?88835699') format('woff'),
-       url('../font/awfont.ttf?88835699') format('truetype'),
-       url('../font/awfont.svg?88835699#awfont') format('svg');
+  font-family: 'awfont20150517';
+  src: url('../font/awfont20150517.eot?97020046');
+  src: url('../font/awfont20150517.eot?97020046#iefix') format('embedded-opentype'),
+       url('../font/awfont20150517.woff?97020046') format('woff'),
+       url('../font/awfont20150517.ttf?97020046') format('truetype'),
+       url('../font/awfont20150517.svg?97020046#awfont20150517') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,14 +13,14 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: 'awfont';
-    src: url('../font/awfont.svg?88835699#awfont') format('svg');
+    font-family: 'awfont20150517';
+    src: url('../font/awfont20150517.svg?97020046#awfont20150517') format('svg');
   }
 }
 */
  
  [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "awfont";
+  font-family: "awfont20150517";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -134,3 +134,4 @@
 .icon-politician:before { content: '\e84d'; } /* '' */
 .icon-voting:before { content: '\e84e'; } /* '' */
 .icon-bundestag:before { content: '\e84f'; } /* '' */
+.icon-checkbox-unchecked:before { content: '\e850'; } /* '' */

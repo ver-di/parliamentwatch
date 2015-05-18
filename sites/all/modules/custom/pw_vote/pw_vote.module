@@ -178,7 +178,7 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       $form['submitted']['welcome']['#markup'] = $welcome_text;
 
       // set statement if already exists
-      $form['submitted']['fieldset_statement']['statement']['#default_value'] = $w_vote->body->value->value();
+      $form['submitted']['fieldset_statement']['statement_wrapper']['statement']['#default_value'] = $w_vote->body->value->value();
 
       // set hidden fields
       $form['submitted']['vote_node_id']['#value'] = $w_vote->getIdentifier();
@@ -261,8 +261,13 @@ function pw_vote_webform_submission_insert($node, $submission) {
     // save node
     node_save($vote);
 
+    // clear page cache
+    $nodeurl = url(request_uri(),  array('absolute' => TRUE));
+    $nodeurl = urldecode($nodeurl);
+    cache_clear_all($nodeurl, 'cache_page');
+
     // send mail to politician
-    if(in_array($w_vote->field_vote_user->mail->value(), variable_get('pw_testuser'))) {
+    // if(in_array($w_vote->field_vote_user->mail->value(), variable_get('pw_testuser'))) {
 
       // politican wants a copy
       $service_account = 'service@abgeordnetenwatch.de';
@@ -272,7 +277,7 @@ function pw_vote_webform_submission_insert($node, $submission) {
 
       // send copy to editors
       drupal_mail('pw_vote', microtime(), $service_account, language_default(), array('w_vote' => $w_vote), $service_account, $send = TRUE);
-    }
+    // }
   }
 
 }

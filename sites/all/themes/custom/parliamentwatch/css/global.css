@@ -4,8 +4,8 @@
 @import url("jquery.ui.slider.css");
 @import url("pw_kandidatencheck.css");
 @import url("slick.css");
-@import url("icons/css/awfont.css");
 @import url("jquery.mmenu.all.css");
+@import url("icons/css/awfont20150517.css");
 
 /*
 	LAYOUT
@@ -357,39 +357,51 @@ blockquote p:last-child {
 
 .pushfloat-0 {
     margin-left: 40px;
+    margin-left: 4rem;
 }
 .pushfloat-1 {
     margin-left: 60px;
+    margin-left: 6rem;
 }
 .pushfloat-2 {
     margin-left: 140px;
+    margin-left: 14rem;
 }
 .pushfloat-3 {
     margin-left: 220px;
+    margin-left: 22rem;
 }
 .pushfloat-4 {
     margin-left: 300px;
+    margin-left: 30rem;
 }
 .pushfloat-5 {
     margin-left: 380px;
+    margin-left: 38rem;
 }
 .pushfloat-6 {
     margin-left: 460px;
+    margin-left: 46rem;
 }
 .pushfloat-7 {
     margin-left: 540px;
+    margin-left: 54rem;
 }
 .pushfloat-8 {
     margin-left: 620px;
+    margin-left: 62rem;
 }
 .pushfloat-9 {
     margin-left: 700px;
+    margin-left: 70rem;
 }
 .pushfloat-10 {
     margin-left: 780px;
+    margin-left: 78rem;
 }
 .pushfloat-11 {
     margin-left: 860px;
+    margin-left: 86rem;
 }
 
 /* image styles */
@@ -1698,10 +1710,24 @@ ul.tabs li a:active {
 .floatbox {
     background: #f4f4f4;
     border: 1px solid #dedede;
-    width: 270px;
     padding: 10px 15px 10px 12px;
     -webkit-box-shadow: 0 0 3px 2px #ebebeb;
     box-shadow: 0 0 3px 2px #ebebeb;        
+}
+@media (max-width: 479px) {
+  .floatbox {
+    width: 100%;   
+  }
+}
+@media (min-width: 480px) {
+  .floatbox {
+    width: 220px;
+  }
+}
+@media (min-width: 620px) {
+  .floatbox {
+    width: 270px;
+  }
 }
 .floatbox h3 {
     background-position: -810px -2688px;
@@ -1753,13 +1779,23 @@ ul.tabs li a:active {
 .floatbox ul li:active {
     background-color: #d5d5d5;
 }
-.floatbox.floatbox-right {
-    float: right;
-    margin: 4px 0 15px 20px;
+@media (max-width: 479px) {
+  .floatbox.floatbox-right {
+      margin: 4px 0 15px;
+  }
+  .floatbox.floatbox-left {
+      margin: 4px 0 15px;
+  }
 }
-.floatbox.floatbox-left {
-    float: left;
-    margin: 4px 20px 15px 0;
+@media (min-width: 480px) {
+  .floatbox.floatbox-right {
+      float: right;
+      margin: 4px 0 15px 20px;
+  }
+  .floatbox.floatbox-left {
+      float: left;
+      margin: 4px 20px 15px 0;
+  }
 }
 
 
@@ -2333,13 +2369,19 @@ ul.progress-icons li {
 
 /* /////////////////////////// forms /////////////////// */
 
+div.messages,
 div.pw-messages {
-  background-position: 8px 8px; /* LTR */
+  background-position: 20px 18px; /* LTR */
   background-repeat: no-repeat;
   border-width: 1px;
   border-style: solid;
-  margin: 6px 0;
-  padding: 10px 10px 10px 50px; /* LTR */
+  margin: 2em 0;
+  padding: 20px 20px 20px 50px; /* LTR */
+  font-size: 1.2em;
+}
+div.messages p:last-child,
+div.pw-messages p:last-child {
+  margin-bottom: 0;
 }
 .messages ul {
 	list-style: none !important;
@@ -2353,7 +2395,8 @@ label.error {
 	padding: 0;
 	color: #fe0002;
 	display: block;
-	margin-bottom: 1em;
+	margin: 0 0 1em;
+	font-size: 1em;
 }
 textarea.error,
 select.error,
@@ -2455,7 +2498,8 @@ textarea {
     min-height: 7em;
     height: auto;
     text-indent: 0;
-    padding: 6px;
+    padding: 10px;
+    line-height: 1.4em;
 }
 *+html .form-textarea-wrapper textarea { /* IE7 */
     width: 97%;
@@ -3004,25 +3048,25 @@ form .webform-component-checkboxes .description {
   position: relative;
   top: 2em;
 }
-#webform-client-form-57286 .form-radios input {
-    position: absolute;
-    left: -5000em;
+#webform-client-form-57286 #edit-submitted-vote {
+  clear: both;
 }
 #webform-client-form-57286 #webform-component-vote > label {
   display: none;
 }
 #webform-client-form-57286 .form-radios label {
-    font-size: 1.3em;
+    font-size: 1.5em;
     cursor: pointer;
 }
-#webform-client-form-57286 .form-radios label::before {
-    content: "\e807";
-    font-family: "awfont";
+#webform-client-form-57286 .form-radio {
+  margin: 0 1ex 0 0;
+  position: relative;
+  top: -0.2em;
 }
 #webform-client-form-57286 .form-radios label,
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label:focus,
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label:active {
-    color: #ccc;
+    color: #999;
 }
 #webform-client-form-57286 .form-radios label:hover,
 #webform-client-form-57286 .form-radios label:focus,
@@ -3032,10 +3076,9 @@ form .webform-component-checkboxes .description {
 }
 #webform-client-form-57286 #webform-component-fieldset-statement {
   clear: both;
-  position: relative;
-  top: 1em;
+  padding-top: 1em;
 }
-#webform-client-form-57286 #webform-component-fieldset-statement .form-textarea-wrapper {
+#webform-client-form-57286 #webform-component-fieldset-statement--statement-wrapper {
   padding: 10px;
   background: #f4f4f4; 
   border: 1px solid #dedede;
@@ -3046,6 +3089,10 @@ form .webform-component-checkboxes .description {
   -moz-box-shadow: 0px 0px 4px 1px #ebebeb;
   box-shadow: 0px 0px 4px 1px #ebebeb;
   margin-bottom: 2em;
+}
+#webform-client-form-57286 #webform-component-fieldset-statement--stement-wrapper--copy-email,
+#webform-client-form-57286 #webform-component-fieldset-statement--stement-wrapper--copy-email * {
+  margin-bottom: 0;
 }
 #webform-client-form-57286 .form-actions {
   text-align: right;
