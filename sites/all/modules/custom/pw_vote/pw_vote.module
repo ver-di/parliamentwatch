@@ -404,6 +404,7 @@ function pw_vote_voting_behavior($node) {
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'vote')
     ->fieldCondition('field_vote_node', 'target_id', $node->nid)
+    ->fieldCondition('field_vote_user', 'target_id', 0, '>')
     ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
     ->propertyCondition('status', NODE_PUBLISHED)
     ->fieldOrderBy('field_vote', 'tid');
@@ -420,6 +421,15 @@ function pw_vote_voting_behavior($node) {
 
       // wrap
       $w_vote = entity_metadata_wrapper('node', $vote);
+
+      // skip if user not exists
+      $query_user = new EntityFieldQuery();
+      $query_user->entityCondition('entity_type', 'user')
+        ->propertyCondition('uid', $w_vote->field_vote_user->getIdentifier());
+      $result = $query_user->execute();
+      if(!$result['user']){
+        continue;
+      }
 
       // skip if party is not set
       $party = $w_vote->field_vote_user->field_user_party->label();

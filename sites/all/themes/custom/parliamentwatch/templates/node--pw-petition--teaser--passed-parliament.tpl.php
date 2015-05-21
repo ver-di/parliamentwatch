@@ -12,10 +12,10 @@ print render($title_suffix);
     <li><i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition in der Meinungsumfrage');?></span></i></li>
     <li><i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-brand"><span class="element-invisible"><?php print t('Petition im Parlament');?></span></i></li>
   </ul>
-  <a href="<? echo $node_url; ?>" class="<? echo ($partner_html)?"colorbox-load":"";?>"><? echo $title;?></a>
+  <a href="<? echo $node_url; ?>"><? echo $title;?></a>
 </h3>
 <div class="petition-list-image-wrapper img-outline">
-  <a href="<? echo $node_url; ?>" title="zur Petition" class="<? echo ($partner_html)?"colorbox-load":"";?>">
+  <a href="<? echo $node_url; ?>" title="zur Petition">
     <? echo $themed_image; ?>
   </a>
   <?php if ($field_image_copyright): ?>
@@ -26,13 +26,10 @@ print render($title_suffix);
 </div>
 <div class="pw-petition-list-contents">
   <i class="icon-ok aw-icon-2x aw-success float-left push-right-s"></i>
-  <div class="medium">
-    <strong>Petition wurde im Bundestag abgefragt</strong>
-  </div>
-  <div class="small light">
-	  431 MdBs haben Stellung genommen
-  </div>
-
+  <div class="medium"><strong>Petition wurde im Bundestag abgefragt</strong></div>
+  <?php if ($count_votes > 1): ?>  
+    <div class="small light"><?php print $count_votes; ?> MdBs haben Stellung genommen</div>
+  <?php endif; ?>
   <?php if ($partner_html): ?>
     <div class="petition-list-partner-wrapper small light">
       <p class="push-bottom-xs">Diese Petition läuft auf:</p>

@@ -1,3 +1,6 @@
+<?php
+  print theme('status_messages');
+?>
 <?php if ($sharethis): ?>
   <div class="sharethis-wrapper">
       <? echo $sharethis; ?>
@@ -27,25 +30,12 @@
   <? print check_markup($field_petition_text_parliament[0]['value']); ?>
 </div>
 
-<div class="pw-voting">
-  <div id="pw-voting-total"><h3>Gesamtergebnis</h3>
-    <ul class="clearfix push-bottom-l">
-        <li class="total vote yes">582 zugestimmt</li>
-        <li class="total vote no">3 dagegen gestimmt</li>
-        <li class="total vote abstain">7 enthalten</li>
-        <li class="total vote no-show">39 nicht beteiligt</li>
-    </ul>
-  </div>
+<?php
+  $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
+  print render($block['content']);
+?>
 
-  <div id="pw-voting-parties" class="desktop-only">
-    <?php
-    $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
-    print render($block['content']);
-    ?>
-  </div>
-</div>
-
-<div class="push-bottom-l">SUCHFORMULAR</div>
+<div class="push-bottom-l">SUCHFORMULARE</div>
 
 <div class="push-bottom-l">SUCHERGEBNISSE</div>
 
