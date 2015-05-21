@@ -99,25 +99,25 @@ function pw_petitions_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
         'path' => array(
-          'weight' => '9',
-        ),
-        'redirect' => array(
           'weight' => '10',
         ),
-        'xmlsitemap' => array(
+        'redirect' => array(
           'weight' => '11',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '12',
         ),
         'feeds' => array(
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '14',
         ),
         'rabbit_hole' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
       ),
       'display' => array(
