@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file pw_maintenance.module
+ */
+/**
+ * Implements hook_menu().
+ */
+
+function pw_maintenance_menu() {
+  $items = array();
+  $items['admin/config/pw/maintenance'] = array(
+    'title' => 'PW Maintenance',
+    'description' => 'Tools for maintenance.',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/config/pw/maintenance/clear_constituencies'] = array(
+    'title' => 'Clear Constituencies',
+    'description' => 'deletes constituencies which have no users in relation and are not a parent of other constituencies.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_maintenance_clear_constituencies'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'file' => 'pw_maintenance.admin.inc',
+    );
+
+  $items['admin/config/pw/maintenance/clear_user_revisions'] = array(
+    'title' => 'Clear User Revisions',
+    'description' => 'deletes all user revisions which are not in relation to any profile.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_maintenance_clear_constituencies'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'pw_maintenance.admin.inc',
+    );
+
+  return $items;
+}
