@@ -31,9 +31,9 @@
   
 <div class="managed_content clearfix push-bottom-l">
   <div class="floatbox floatbox-right">
-    <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
+    <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
     <p class="pushfloat-0">Die Petition hat <?echo number_format($field_petition_signings[0]['value'],0,',','.')?> von <? echo number_format($field_petition_required[0]['value'],0,',','.'); ?> benötigten Unterschriften erreicht.</p>
-    <i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition in der Meinungsumfrage</span></i>
+    <i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition in der Meinungsumfrage</span></i>
     <p class="pushfloat-0">Für die Finanzierung der Umfrage bitten wir Sie um eine Spende.</p>
     <i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition im Parlament</span></i>
     <p class="pushfloat-0">Abfrage der Petition im Parlament.</p>
