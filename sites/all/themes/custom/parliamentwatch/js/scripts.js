@@ -40,6 +40,10 @@ jQuery(document).ready(function() {
       $(this).next('.item-politician').fadeToggle('fast');
     });
 
+    $('li .item-politician .icon-close').on('click', function(e) {
+      $(this).parents('.item-politician').hide();
+    });
+
 // reset jquery ui slider on profile list AW-1965 https://www.drupal.org/node/1264316
 
     $("#views-exposed-form-profile-list-rev-grid #edit-reset" ).on( "click", function() {

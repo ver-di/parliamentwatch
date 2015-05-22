@@ -46,7 +46,12 @@ function pw_vote_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'vote',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '',
+          'summary' => '',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -77,12 +82,12 @@ function pw_vote_field_default_fields() {
         'better_formats' => array(
           'allowed_formats' => array(
             'copyright' => 0,
-            'filtered_html' => 0,
+            'filtered_html' => 'filtered_html',
             'full_html' => 0,
             'html_mail' => 0,
             'managed_content' => 0,
             'php_code' => 0,
-            'plain_text' => 'plain_text',
+            'plain_text' => 0,
           ),
           'allowed_formats_toggle' => 1,
           'default_order_toggle' => 0,
@@ -114,7 +119,7 @@ function pw_vote_field_default_fields() {
         ),
         'display_summary' => 0,
         'exclude_cv' => FALSE,
-        'text_processing' => '0',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(

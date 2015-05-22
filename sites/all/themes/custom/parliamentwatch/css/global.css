@@ -254,29 +254,43 @@ img {
     max-width: 100%;
 }
 blockquote {
-    padding: 12px 0 20px 24px;
+    padding: 12px 0 20px;
     quotes:"\201C" "\201D";
-    position: relative;
-    font: italic normal 18px/20px Times New Roman, Times, serif;
-}
-blockquote:before {
-    background-position: -890px -2616px;
-    content: "";
-    height: 15px;
-    left: 0;
-    position: absolute;
-    top: 8px;
-    width: 19px;
+    font: italic normal 18px/22px Times New Roman, Times, serif;
 }
 blockquote:after {
-    content: url("../images/ic_quote-close.png");
-    margin-left: 3px;
+    content: close-quote;
+    bottom: -22px;
+}
+blockquote:before {
+    content: open-quote;
+    bottom: -21px;
+    padding: 0 5px 0 0;
+}
+blockquote:after,
+blockquote:before {
+    color: #999;
+    font-family: Georgia,Times New Roman,Times,serif;
+    font-size: 45px;
+    line-height: 1px;
     position: relative;
-    bottom: -11px;
 }
 
+blockquote p:first-child {
+    display:inline;
+}
+blockquote p:first-child:after {
+    content: "";
+    margin-bottom: 1em;
+    display: block;
+}
 blockquote p:last-child {
     display:inline;
+}
+blockquote p:last-child:after {
+    content: "";
+    margin-bottom: 0;
+    display: inline;
 }
 *+html blockquote p {
     display:inline;
@@ -1937,6 +1951,10 @@ ul.tabs li a:active {
     margin-left: 14px;
     margin-bottom: 7px;
 }
+.portrait-s.file-image.float-left + blockquote {
+    margin-left: 84px;
+    margin-top: -8px;
+}
 .media-image-left {
     margin-bottom: 7px;
 }
@@ -2108,7 +2126,7 @@ img.no-outline {
   color: #efefef;
 }
 .pw-voting .vote.no-show {
-  background: rgb(169, 167, 166);
+  background: rgb(186, 184, 182);
   border-color: #888685;
 }
 .pw-voting .vote.total {
@@ -2116,6 +2134,9 @@ img.no-outline {
   border-style: solid;
   margin: 0 0 1em;
   padding: 3px 10px;
+}
+.pw-voting .vote.total:hover {
+  opacity: .8;
 }
 .pw-voting .vote.total.yes {
   background: rgba(0, 204, 0, 0.5);
@@ -2127,7 +2148,7 @@ img.no-outline {
   background: rgba(0, 51, 255, 0.5);
 }
 .pw-voting .vote.total.no-show {
-  background: rgba(169, 167, 166, 0.5)
+  background: rgba(186, 184, 182, 0.5)
 }
 .pw-voting .item,
 .pw-voting .pw-arrow-box-trigger {
@@ -2151,7 +2172,22 @@ img.no-outline {
   width: 600px;
   border-radius: 3px;
   padding: 1rem;
-  padding: 10px;
+  padding: 10px 15px 10px 10px;
+}
+.pw-voting .item-politician .icon-close {
+  position: absolute;
+  right: 10px;
+}
+.pw-voting .item-politician h3 {
+  padding-right: 25px;
+}
+.pw-voting .item-politician .path-profile {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+}
+.pw-voting .item-politician blockquote {
+  margin-bottom: 1em;
 }
 .no-js .pw-voting .item-politician {
   visibility: hidden;
@@ -2280,7 +2316,7 @@ ul.progress-icons li {
   position: relative;
   z-index: 100;
 }
-.pw-voting #pw-voting-parties .grid-6 > ul > li {
+.pw-voting #pw-voting-parties .list_voting_behavior > li {
   float: left;
   z-index: 1;
 }
@@ -3413,7 +3449,6 @@ a.link-sound,
 a.external,
 .ic-info .info-title,
 .pw-response-time,
-blockquote:before,
 .zero-clipboard,
 .shorten span.processed,
 .shorten span,
