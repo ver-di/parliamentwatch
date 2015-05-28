@@ -483,7 +483,7 @@ function pw_vote_voting_behavior($node) {
   }
 
   // sort parties by number of votes
-  array_multisort(array_map('count', $all_votes), SORT_ASC, $all_votes);
+  array_multisort(array_map('count', $all_votes), SORT_DESC, $all_votes);
 
   // build containers
   $container_parties = array();
