@@ -6,6 +6,77 @@
 include_once('pw_api.features.inc');
 
 /**
+ * Implements hook_menu().
+ *
+ * @return array
+ */
+function pw_api_menu() {
+    $items = array();
+    $items['admin/config/pw/pw_api/settings'] = array(
+        'title' => 'PW API settings',
+        'description' => 'Allows to add allowed IP addresses for the internal API.',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('pw_api_admin_settings'),
+        'access arguments' => array('administer site configuration'),
+        'type' => MENU_NORMAL_ITEM,
+        'file' => 'pw_api.admin.inc',
+        );
+
+    foreach (array('profile', 'profiles') as $call) {
+
+        foreach (array('xml', 'json') as $type) {
+            $key = 'api/parliament/%/'.$call.'.'.$type;
+            $item = array(
+                'page callback' => 'pw_api_'.$call,
+                'page arguments' => array(2),
+                'access callback' => TRUE,
+                'delivery callback' => 'pw_api_deliver_'.$type,
+                'type' => MENU_CALLBACK,
+                'file' => 'pw_api.profiles.inc',
+                );
+            $items[$key] = $item;
+            if($call == 'profile'){
+                $key = 'api/parliament/%/profile/%/'.$call.'.'.$type;
+                $item['page arguments'] = array(4, 2);
+                $items[$key] = $item;
+            }
+            elseif($call == 'profiles'){
+               $items['api/parliament/%/deputies.'.$type] = $items['api/parliament/%/profiles.'.$type];
+               $items['api/parliament/%/candidates.'.$type] = $items['api/parliament/%/profiles.'.$type];
+           }
+       }
+
+   }
+
+   // add items for authorized api
+   foreach ($items as $key => $item) {
+    if(preg_match('/(api\/.*)(\.\w{3,4})$/', $key, $m)){
+        $key_authorizied = $m[1].'-authorized'.$m[2];
+        $items[$key_authorizied] = $item;
+        $items[$key_authorizied]['access arguments'] = array('access authorized api');
+        unset($items[$key_authorizied]['access callback']);
+    }
+}
+
+return $items;
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * @return array
+ */
+function pw_api_permission() {
+  return array(
+    'access authorized api' => array(
+      'title' => t('Access authorized API'),
+      'description' => t('Read from hidden API to access private data.'),
+    ),
+  );
+}
+
+
+/**
  * Helper function used by hooks below for translating XML root elements.
  *
  * Translates the root elements of the following API parts:
@@ -22,8 +93,7 @@ include_once('pw_api.features.inc');
  * @param String $input
  * @return String
  */
-function tag_replace($input)
-{
+function tag_replace($input) {
     // Get the current request path:
     $tmparr = explode("/", request_path());
     $count = count($tmparr);
@@ -63,21 +133,18 @@ function tag_replace($input)
     return $input;
 }
 
-function pw_api_preprocess_views_data_export_xml_header(&$vars)
-{
+function pw_api_preprocess_views_data_export_xml_header(&$vars) {
     $vars['root_node'] = tag_replace($vars['root_node']);
 }
 
-function pw_api_preprocess_views_data_export_xml_footer(&$vars)
-{
+function pw_api_preprocess_views_data_export_xml_footer(&$vars) {
     $vars['root_node'] = tag_replace($vars['root_node']);
 }
 
 /**
  * Preprocess xml output template.
  */
-function pw_api_preprocess_views_data_export_xml_body(&$vars)
-{
+function pw_api_preprocess_views_data_export_xml_body(&$vars) {
     _views_data_export_header_shared_preprocess($vars);
     _views_data_export_body_shared_preprocess($vars);
 
@@ -186,8 +253,7 @@ function pw_api_preprocess_views_data_export_xml_body(&$vars)
     }
 }
 
-function pw_api_views_pre_view(&$view, &$display_id, &$args)
-{
+function pw_api_views_pre_view(&$view, &$display_id, &$args) {
     if ($view->name == 'pw_api_internal_profile') {
         $allowed_ips = variable_get('pw_api_allowed_ips', array());
         $current_ip_is_allowed = false;
@@ -210,150 +276,50 @@ function pw_api_views_pre_view(&$view, &$display_id, &$args)
 }
 
 /**
- * Implements hook_menu().
- *
- * @return array
- */
-function pw_api_menu()
-{
-    $items = array();
-    $items['admin/config/pw/pw_api/settings'] = array(
-        'title' => 'PW API settings',
-        'description' => 'Allows to add allowed IP addresses for the internal API.',
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('pw_api_admin_settings'),
-        'access arguments' => array('administer site configuration'),
-        'type' => MENU_NORMAL_ITEM,
-        'file' => 'pw_api.admin.inc',
-    );
-    $items['api/%/%/profiles.xml'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_xml',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/deputies.xml'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_xml',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/candidates.xml'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_xml',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/%/%/profiles.xml'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2, 3, 4),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_xml',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/%/%/deputies.xml'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2, 3, 4),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_xml',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/%/%/candidates.xml'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2, 3, 4),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_xml',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/profiles.json'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_json',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/%/%/profiles.json'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2, 3, 4),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_json',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/profiles.csv'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_csv',
-        'type' => MENU_CALLBACK,
-    );
-    $items['api/%/%/%/%/profiles.csv'] = array(
-        'page callback' => 'pw_api_profiles',
-        'page arguments' => array(1, 2, 3, 4),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_csv',
-        'type' => MENU_CALLBACK,
-    );
-    return $items;
-}
-
-/**
  * Delivery callback; returns XML.
  *
- * @param array $page_result
+ * @param array $items
  */
-function pw_api_deliver_xml($page_result)
-{
+function pw_api_deliver_xml($page_result) {
     drupal_add_http_header('Content-type', 'text/xml; charset=utf8');
 
-    if (is_int($page_result)) {
-        switch ($page_result) {
-            case MENU_NOT_FOUND:
-                drupal_add_http_header('Status', '404 Not Found');
-                break;
-        }
-    } else {
+    if ($page_result === MENU_NOT_FOUND) {
+        drupal_add_http_header('Status', '404 Not Found');
+    }
+    else {
+        $pathinfo = pathinfo(current_path());
         $writer = new XmlWriter();
         $writer->openUri('php://output');
         $writer->setIndent(TRUE);
-        $writer->setIndentString('    ');
+        $writer->setIndentString('  ');
         $writer->startDocument('1.0', 'UTF-8');
-        $writer->startElement('profiles');
-        foreach ($page_result as $item) {
-            $writer->startElement('profile');
-            $writer->writeAttribute('edited', $item['edited']);
-            $writer->writeElement('name', $item['name']);
-            $writer->writeElement('uuid', $item['uuid']);
-            $writer->writeElement('gender', $item['gender']);
-            $writer->writeElement('first_name', $item['first_name']);
-            $writer->writeElement('last_name', $item['last_name']);
-            $writer->writeElement('party', $item['party']);
-            $writer->writeElement('parliament', $item['parliament']);
-            $writer->startElement('constituency');
-            $writer->writeElement('uuid', $item['constituency']['uuid']);
-            $writer->writeElement('name', $item['constituency']['name']);
-            $writer->writeElement('number', $item['constituency']['number']);
-            $writer->endElement();
-            $writer->writeElement('education', $item['education']);
-            $writer->startElement('location');
-            $writer->writeElement('country', $item['location']['country']);
-            $writer->writeElement('county', $item['location']['county']);
-            $writer->writeElement('city', $item['location']['city']);
-            $writer->writeElement('postal_code', $item['location']['postal_code']);
-            $writer->endElement();
-            $writer->startElement('picture');
-            $writer->writeElement('url', $item['picture']['url_picture']);
-            $writer->writeElement('copyright', $item['picture']['copyright_picture']);
-            $writer->endElement();
-            $writer->writeElement('questions_get', $item['questions_get']);
-            $writer->writeElement('answers_give', $item['answers_give']);
-            $writer->writeElement('url_profile', $item['url_profile']);
+        pw_api_items_to_xml($writer, $page_result);
+        $writer->flush();
+    }
+}
+
+
+/**
+ * converts an array to xml via an referenced XmlWriter object.
+ *
+ * @param XmlWriter &$writer
+ *
+ * @param array $items
+ */
+function pw_api_items_to_xml(&$writer, $items) {
+    foreach($items as $key => $value) {
+
+        // clear node name from iterators
+        $key = preg_replace('/_\d+$/', '', $key);
+
+        if(is_array($value)) {
+            $writer->startElement($key);
+            pw_api_items_to_xml($writer, $value);
             $writer->endElement();
         }
-        $writer->endElement();
-        $writer->flush();
+        else {
+            $writer->writeElement($key, $value);
+        }
     }
 }
 
@@ -362,18 +328,14 @@ function pw_api_deliver_xml($page_result)
  *
  * @param array $page_result
  */
-function pw_api_deliver_json($page_result)
-{
+function pw_api_deliver_json($page_result) {
     drupal_add_http_header('Content-Type', 'application/json');
 
-    if (is_int($page_result)) {
-        switch ($page_result) {
-            case MENU_NOT_FOUND:
-                drupal_add_http_header('Status', '404 Not Found');
-                break;
-        }
-    } else {
-        print drupal_json_encode($page_result);
+    if ($page_result === MENU_NOT_FOUND) {
+        drupal_add_http_header('Status', '404 Not Found');
+    }
+    else {
+        print drupal_json_encode(array_values($page_result));
     }
 }
 
@@ -382,8 +344,7 @@ function pw_api_deliver_json($page_result)
  *
  * @param array $page_result
  */
-function pw_api_deliver_csv($page_result)
-{
+function pw_api_deliver_csv($page_result) {
     drupal_add_http_header('Content-type', 'text/csv; charset=utf8');
 
     if (is_int($page_result)) {
@@ -427,8 +388,7 @@ function pw_api_deliver_csv($page_result)
  * @return array
  *   The profiles as an associative array
  */
-function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NULL, $argument = NULL)
-{
+function pw_api_profiles_old($parliament_filter, $parliament_argument, $filter = NULL, $argument = NULL) {
     $query = db_select('user_revision', 'ur');
     $users_alias = $query->join('users', 'u', '%alias.uid = ur.uid');
     //$roles_alias = $query->join('users_roles', 'uro', '%alias.uid = ur.uid');
@@ -460,7 +420,8 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
     $query->addField($user_fname_alias, 'field_user_fname_value', 'first_name');
     $query->addField($user_lname_alias, 'field_user_lname_value', 'last_name');
     $query->addField($term_party_alias, 'name', 'party');
-    $query->addField($term_parliament_alias, 'name', 'parliament');
+    $query->addField($term_parliament_alias, 'name', 'parliament_name');
+    $query->addField($term_parliament_alias, 'uuid', 'parliament_uuid');
     $query->addField($term_constituency_alias, 'name', 'constituency_name');
     $query->addField($term_constituency_alias, 'uuid', 'constituency_uuid');
     $query->addField($constituency_number_alias, 'field_constituency_nr_value', 'constituency_number');
@@ -496,10 +457,10 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
     // add filter by parliament
     if ($parliament_filter == 'parliament') {
         $query->where("$term_parliament_alias.name = :p_name", array(':p_name' => $parliament_argument));
-    } 
+    }
     elseif ($parliament_filter == 'parliament-by-uuid') {
         $query->where("$term_parliament_alias.uuid = :p_uuid", array(':p_uuid' => $parliament_argument));
-    } 
+    }
     else {
         return MENU_NOT_FOUND;
     }
@@ -526,9 +487,14 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
     // add group by uid
     $query->groupBy('u.uid');
 
-    $profiles = array();
+    $profiles = array(
+        'root_node' => 'profiles',
+        'list_node' => 'profile',
+        'items' => array(),
+        );
 
     foreach ($query->execute() as $row) {
+
         // set picture url
         $url_picture = !empty($row->picture_uri) ? file_create_url($row->picture_uri) : '';
 
@@ -589,21 +555,24 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
         // set url to profile # .'/archive/'.$row->vid
         $url_profile = url('profile/' . $row->name, array('absolute' => TRUE));
 
-        $profiles[] = array(
+        $profiles['items'][] = array(
             'edited' => date('Y-m-d H:i', $row->timestamp),
             'name' => $row->name,
+            'uuid' => $row->uuid,
             'gender' => $row->gender,
             'first_name' => $row->first_name,
             'last_name' => $row->last_name,
-            'uuid' => $row->uuid,
             'party' => $row->party,
-            'parliament' => $row->parliament,
+            'education' => $row->education,
+            'parliament' => array(
+                'uuid' => $row->parliament_uuid,
+                'name' => $row->parliament_name,
+            ),
             'constituency' => array(
                 'uuid' => $row->constituency_uuid,
                 'name' => $row->constituency_name,
                 'number' => $row->constituency_number,
             ),
-            'education' => $row->education,
             'location' => array(
                 'country' => $row->location_country,
                 'county' => t($county),
@@ -611,12 +580,12 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
                 'postal_code' => $row->location_postal_code,
             ),
             'picture' => array(
-                'url_picture' => $url_picture,
-                'copyright_picture' => $row->copyright,
+                'url' => $url_picture,
+                'copyright' => $row->copyright,
             ),
             'questions_get' => $row->questions_get,
             'answers_give' => $row->answers_give,
-            'url_profile' => $url_profile,
+            'url' => $url_profile,
         );
     }
 
@@ -626,8 +595,7 @@ function pw_api_profiles($parliament_filter, $parliament_argument, $filter = NUL
 }
 
 
-function pw_api_views_query_alter(&$view, &$query)
-{
+function pw_api_views_query_alter(&$view, &$query) {
     if ($view->name == 'pw_api_internal_profile') {
 
         // add join user_archive_cache table to get rid of duplicates

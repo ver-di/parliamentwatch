@@ -353,7 +353,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
   $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
   $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
-  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = 'title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = 'Titel';
   $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_title-revision_id']['type'] = 'text_plain';
   /* Feld: Benutzer (Historische Daten): Birthday */
@@ -394,7 +394,6 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['id'] = 'field_user_twitter_account-revision_id';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['table'] = 'field_revision_field_user_twitter_account';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['field'] = 'field_user_twitter_account-revision_id';
-  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['label'] = 'twitter';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['type'] = 'text_plain';
   /* Sortierkriterien: User revision: Vid */
@@ -863,6 +862,71 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid_1']['limit'] = '0';
   $handler->display->display_options['path'] = 'api/parliament-by-uuid/%/profile-by-uuid/%/profile-authorized.json';
+  $translatables['pw_api_internal_profile'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Bild von field_user_picture'),
+    t('Begriff aus field_user_constituency'),
+    t('Begriff aus field_user_parliament'),
+    t('Begriff aus field_user_list_position'),
+    t('Begriff aus field_user_list'),
+    t('name'),
+    t('uuid'),
+    t('gender'),
+    t('first_name'),
+    t('last_name'),
+    t('party'),
+    t('parliament'),
+    t('committee'),
+    t('education'),
+    t('constituency_uuid'),
+    t('constituency_number'),
+    t('constituency_result'),
+    t('constituency'),
+    t('uuid**[uuid_1]}{name**[field_user_constituency-revision_id]}{number**[field_constituency_nr]}{result**[field_user_election_result-revision_id]'),
+    t('list_uuid'),
+    t('list_position'),
+    t('list'),
+    t('uuid**[uuid_2]}{name**[field_user_list-revision_id]}{list_position**[field_user_list_position-revision_id]'),
+    t('political_roles'),
+    t('Picture copyright'),
+    t('profile_picture'),
+    t('copyright##[field_user_picture_copyright-revision_id]##[field_user_picture-revision_id]'),
+    t('questions_get'),
+    t('answers_given'),
+    t('http://dailwatch.ie/en-gb/user/[uid]/revisions/[vid]/view'),
+    t('base_url'),
+    t('url_profile'),
+    t('[php]/user/[uid]/revisions/[vid]/view'),
+    t('email'),
+    t('marriage_status'),
+    t('children'),
+    t('location'),
+    t('roles'),
+    t('Titel'),
+    t('birthday'),
+    t('profession'),
+    t('valid'),
+    t('Twitter'),
+    t('Alle'),
+    t('XML-by-name'),
+    t('CSV-by-name'),
+    t('CSV-by-uuid'),
+    t('XML-by-uuid'),
+    t('XML-Parliament-by-name'),
+    t('CSV-Parliament-by-name'),
+    t('XML-Parliament-by-uuid'),
+    t('CSV-Parliament-by-uuid'),
+    t('JSON-by-name'),
+    t('JSON-by-uuid'),
+    t('JSON-Parliament-by-name'),
+    t('JSON-Parliament-by-uuid'),
+  );
   $export['pw_api_internal_profile'] = $view;
 
   $view = new view();
@@ -1075,6 +1139,26 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
   $handler->display->display_options['path'] = 'api/parliament-by-uuid/%/areacodes.json';
+  $translatables['pw_api_parliament_areacodes'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Begriff aus field_parliament'),
+    t('Begriff aus field_constituency_area_codes'),
+    t('uuid'),
+    t('name'),
+    t('Alle'),
+    t('CSV-by-name'),
+    t('XML-by-name'),
+    t('CSV-by-uuid'),
+    t('XML-by-uuid'),
+    t('JSON-by-name'),
+    t('JSON-by-uuid'),
+  );
   $export['pw_api_parliament_areacodes'] = $view;
 
   $view = new view();
@@ -1666,6 +1750,35 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid_1']['limit'] = '0';
   $handler->display->display_options['path'] = 'api/parliament-by-uuid/%/areacode-by-uuid/%/constituencies.json';
+  $translatables['pw_api_parliament_constituencies'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Begriff aus field_parliament'),
+    t('uuid'),
+    t('name'),
+    t('number'),
+    t('areacodes'),
+    t('Alle'),
+    t('CSV-by-name'),
+    t('XML-by-name'),
+    t('XML-by-uuid'),
+    t('term_from_field_parliament'),
+    t('CSV-by-uuid'),
+    t('CSV-Areacode-by-name'),
+    t('Begriff aus field_constituency_area_codes'),
+    t('XML-Areacode-by-name'),
+    t('CSV-Areacode-by-uuid'),
+    t('XML-Areacode-by-uuid'),
+    t('JSON-by-name'),
+    t('JSON-by-uuid'),
+    t('JSON-Areacode-by-name'),
+    t('JSON-Areacode-by-uuid'),
+  );
   $export['pw_api_parliament_constituencies'] = $view;
 
   $view = new view();
@@ -3161,6 +3274,47 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['uuid_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid_1']['limit'] = '0';
   $handler->display->display_options['path'] = 'api/parliament-by-uuid/%/constituency-by-uuid/%/profiles.json';
+  $translatables['pw_api_parliament_profiles_revision'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Get all revisions from an user.'),
+    t('Begriff aus field_user_parliament'),
+    t('Begriff aus field_user_constituency'),
+    t('name'),
+    t('uuid'),
+    t('first_name'),
+    t('last_name'),
+    t('party'),
+    t('constituency_uuid'),
+    t('constituency_number'),
+    t('constituency'),
+    t('Alle'),
+    t('XML-by-name'),
+    t('uuid**[uuid_1]}{name**[field_user_constituency-revision_id]}{number**[field_constituency_nr]'),
+    t('XML-by-uuid'),
+    t('CSV-by-name'),
+    t('CSV-by-uuid'),
+    t('CSV-Areacode-by-name'),
+    t('Begriff aus field_constituency_area_codes'),
+    t('XML-Areacode-by-name'),
+    t('CSV-Areacode-by-uuid'),
+    t('XML-Areacode-by-uuid'),
+    t('CSV-Constituency-by-name'),
+    t('XML-Constituency-by-name'),
+    t('CSV-Constituency-by-uuid'),
+    t('XML-Constituency-by-uuid'),
+    t('JSON-by-name'),
+    t('JSON-by-uuid'),
+    t('JSON-Areacode-by-uuid'),
+    t('JSON-Areacode-by-name'),
+    t('JSON-Constituency-by-name'),
+    t('JSON-Constituency-by-uuid'),
+  );
   $export['pw_api_parliament_profiles_revision'] = $view;
 
   $view = new view();
@@ -3288,6 +3442,22 @@ return FALSE; // default: output the result
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['path'] = 'api/parliaments.json';
+  $translatables['pw_api_parliaments'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('uuid'),
+    t('name'),
+    t('valid_date_start'),
+    t('valid_date_end'),
+    t('XML'),
+    t('CSV'),
+    t('JSON'),
+  );
   $export['pw_api_parliaments'] = $view;
 
   $view = new view();
@@ -4078,6 +4248,61 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid_1']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid_1']['limit'] = '0';
   $handler->display->display_options['path'] = 'api/parliament-by-uuid/%/profile-by-uuid/%/profile.json';
+  $translatables['pw_api_profile'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Bild von field_user_picture'),
+    t('Begriff aus field_user_constituency'),
+    t('Begriff aus field_user_parliament'),
+    t('Begriff aus field_user_list'),
+    t('Begriff aus field_user_list_position'),
+    t('name'),
+    t('uuid'),
+    t('gender'),
+    t('first_name'),
+    t('last_name'),
+    t('party'),
+    t('parliament'),
+    t('committee'),
+    t('education'),
+    t('location'),
+    t('constituency_uuid'),
+    t('constituency_number'),
+    t('constituency'),
+    t('uuid**[uuid_1]}{name**[field_user_constituency-revision_id]}{number**[field_constituency_nr]'),
+    t('list_uuid'),
+    t('list_position'),
+    t('list'),
+    t('uuid**[uuid_2]}{name**[field_user_list-revision_id]}{list_position**[field_user_list_position-revision_id]'),
+    t('political_roles'),
+    t('Picture copyright'),
+    t('profile_picture'),
+    t('copyright##[field_user_picture_copyright-revision_id]##[field_user_picture-revision_id]'),
+    t('questions_get'),
+    t('answers_given'),
+    t('http://dailwatch.ie/en-gb/user/[uid]/revisions/[vid]/view'),
+    t('base_url'),
+    t('url_profile'),
+    t('[php]/profile/[name]'),
+    t('Alle'),
+    t('XML-by-name'),
+    t('CSV-by-name'),
+    t('CSV-by-uuid'),
+    t('XML-by-uuid'),
+    t('XML-Parliament-by-name'),
+    t('CSV-Parliament-by-name'),
+    t('XML-Parliament-by-uuid'),
+    t('CSV-Parliament-by-uuid'),
+    t('JSON-by-name'),
+    t('JSON-by-uuid'),
+    t('JSON-Parliament-by-name'),
+    t('JSON-Parliament-by-uuid'),
+  );
   $export['pw_api_profile'] = $view;
 
   $view = new view();
@@ -4185,7 +4410,7 @@ echo $base_url;
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
   $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['relationship'] = 'cid';
-  $handler->display->display_options['fields']['comment_body']['label'] = 'answer';
+  $handler->display->display_options['fields']['comment_body']['label'] = ' Antwort';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['type'] = 'text_plain';
   /* Feld: Feld: Annotation */
@@ -5108,7 +5333,7 @@ echo $base_url;
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
   $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['relationship'] = 'cid';
-  $handler->display->display_options['fields']['comment_body']['label'] = 'answer';
+  $handler->display->display_options['fields']['comment_body']['label'] = ' Antwort';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['type'] = 'text_plain';
   /* Feld: Kommentar: Comment Body */
@@ -5202,6 +5427,58 @@ echo $base_url;
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['relationship'] = 'cid';
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['operator'] = 'not empty';
   $handler->display->display_options['path'] = 'api/parliament/%/answers.json';
+  $translatables['pw_api_profile_dialogues'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Kommentare'),
+    t('Benutzer entity referenced from field_dialogue_recipient'),
+    t('Begriff aus field_user_parliament'),
+    t('Begriff aus field_user_constituency'),
+    t('Inhalt'),
+    t('uuid'),
+    t('recipient_user_uuid'),
+    t('tags'),
+    t('post_date'),
+    t('topic'),
+    t(' Frage'),
+    t('answer_post_date'),
+    t(' Antwort'),
+    t('answer_annotation'),
+    t('answer_summary'),
+    t('dialogue_link'),
+    t('Alle'),
+    t('XML-by-name'),
+    t('XML-by-uuid'),
+    t('CSV-by-uuid'),
+    t('CSV-by-name'),
+    t('XML-Constituency-by-name'),
+    t('CSV-Constituency-by-name'),
+    t('XML-Constituency-by-uuid'),
+    t('CSV-Constituency-by-uuid'),
+    t('XML-Parliament-by-name'),
+    t('CSV-Parliament-by-name'),
+    t('XML-Parliament-by-uuid'),
+    t('CSV-Parliament-by-uuid'),
+    t('JSON-by-uuid'),
+    t('JSON-by-name'),
+    t('JSON-Constituency-by-name'),
+    t('JSON-Constituency-by-uuid'),
+    t('JSON-Parliament-by-name'),
+    t('JSON-Parliament-by-uuid'),
+    t('JSON-Parliament-by-name-Answers'),
+    t('dialogue_node_id'),
+    t('recipient_user_first_name'),
+    t('recipient_user_last_name'),
+    t('dialogue_path'),
+    t('recipient_user_title'),
+    t('recipient_user_party'),
+    t('recipient_user_picture'),
+  );
   $export['pw_api_profile_dialogues'] = $view;
 
   return $export;
