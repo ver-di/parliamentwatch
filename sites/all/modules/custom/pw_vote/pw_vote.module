@@ -53,7 +53,7 @@ function pw_vote_menu() {
 /**
  * pw_vote_user_allowed().
  * checks if user is allowed to enter form
- * 
+ *
  * @return int
  *   returns uid or false otherwise
  */
@@ -509,14 +509,14 @@ function pw_vote_voting_behavior($node) {
         'party' => $party,
         'party_num_members' => sizeof($votes_party),
         'list_voting_behavior' => $buffer_party,
-        'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_parties[$party]),
+        'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_parties[$party], 'voting_behavior_sum_party'),
       )
     );
   }
 
   // put all party container together and add overview
   $content = theme('voting_behavior_container_overview', array(
-      'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_overview),
+      'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_overview, 'voting_behavior_sum_overview'),
       'list_voting_behavior' => implode($container_parties),
     )
   );
@@ -532,12 +532,12 @@ function pw_vote_voting_behavior($node) {
  * @return string
  *   returns themed overview
  */
-function pw_vote_voting_behavior_sum_votes($array_sum) {
+function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function) {
   $content = '';
   foreach ($array_sum as $tid => $sum) {
     $term = taxonomy_term_load($tid);
     $label = field_get_items('taxonomy_term', $term, 'field_votes_label');
-    $content .= theme('voting_behavior_sum', array(
+    $content .= theme($theme_function, array(
         'path_search' => '/search',
         'sum' => $sum,
         'class_name' => $term->name,
@@ -565,8 +565,11 @@ function pw_vote_theme() {
     'voting_behavior_single_vote' => array(
       'template' => 'voting-behavior-single-vote',
       ),
-    'voting_behavior_sum' => array(
-      'template' => 'voting-behavior-sum',
+    'voting_behavior_sum_overview' => array(
+      'template' => 'voting-behavior-sum-overview',
+      ),
+    'voting_behavior_sum_party' => array(
+      'template' => 'voting-behavior-sum-party',
       ),
     'mail_thank_you' => array(
       'template' => 'mail-thank-you',
@@ -596,7 +599,7 @@ function pw_vote_preprocess_node(&$variables) {
     $variables['class_name'] = $w_vote->field_vote->label();
     $variables['statement'] = check_markup($w_vote->body->value->value());
     $variables['path_profile'] = drupal_get_path_alias('user/' . $w_vote->field_vote_user->uid->value());
-    
+
     // theme and set portrait
     if ($w_vote->field_vote_user->field_user_picture->value()) {
       $portrait_uri = $w_vote->field_vote_user->field_user_picture->file->value()->uri;
