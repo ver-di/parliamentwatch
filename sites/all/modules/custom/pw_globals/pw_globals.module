@@ -149,7 +149,7 @@ function _pw_get_current_parliament_term() {
       case 'taxonomy':
         $taxonomy_term = menu_get_object('taxonomy_term', 2);
         if($taxonomy_term->vocabulary_machine_name == 'parliaments'){
-          $term_parliament = $taxonomy_term;	
+          $term_parliament = $taxonomy_term;
         }
         elseif (isset($taxonomy_term->field_parliament[LANGUAGE_NONE][0]['tid'])) {
           $term_parliament_id = $taxonomy_term->field_parliament[LANGUAGE_NONE][0]['tid'];
@@ -279,4 +279,15 @@ function _pw_webform_get_keyed_fields($webform_node, $submission) {
  */
 function _pw_send_debug_mail($subject, $body){
   mail('debug@abgeordnetenwatch.de', $subject, print_r($body, true)."\n\n############################\n\n".print_r(debug_backtrace(), 1));
+}
+
+/**
+ * for debugging entity metadata wrapper object
+ */
+function pw_wrapper_debug($w) {
+  $values = array();
+  foreach ($w->getPropertyInfo() as $key => $val) {
+    $values[$key] = $w->$key->value();
+  }
+  return $values;
 }
