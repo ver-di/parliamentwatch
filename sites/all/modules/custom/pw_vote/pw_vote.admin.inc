@@ -2,7 +2,7 @@
 
 /**
  * @file pw_vote.admin.inc
- * 
+ *
  */
 
 /**
@@ -112,7 +112,7 @@ function pw_vote_admin_submit($form, &$form_state) {
   $node = node_load($nid);
   variable_set('pw_vote_generate_votes_petition', $nid);
 
-  // wrap node 
+  // wrap node
   $petition = entity_metadata_wrapper('node', $node);
 
   // parliament
@@ -147,42 +147,48 @@ function pw_vote_admin_submit($form, &$form_state) {
 
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'vote')
-      ->fieldCondition('field_vote_node', 'target_id', $nid)
-      ->fieldCondition('field_vote_user', 'target_id', $uid);
+    ->entityCondition('bundle', 'vote')
+    ->fieldCondition('field_vote_node', 'target_id', $nid)
+    ->fieldCondition('field_vote_user', 'target_id', $uid);
     $result = $query->count()->execute();
     if($result == 0) {
 
       // user fields
       $deputy = user_load($uid);
-      $field_firstname = field_get_items('user', $deputy, 'field_user_fname');
-      $field_lastname = field_get_items('user', $deputy, 'field_user_lname');
+
+      if($deputy){
+        $field_firstname = field_get_items('user', $deputy, 'field_user_fname');
+        $field_lastname = field_get_items('user', $deputy, 'field_user_lname');
+        if(trim($field_firstname[0]['value']) == ''){
+          dd($uid);
+        }
 
       // create new vote
-      $vote = new stdClass();
-      $vote->title = "Vote by " . $field_firstname[0]['value'] . ' ' . $field_lastname[0]['value'] . ' (default)';
-      $vote->type = "vote";
-      $vote->language = LANGUAGE_NONE;
-      $vote->status = 1;
-      $vote->uid = $user->uid;
-      $vote->field_vote_node[LANGUAGE_NONE][]['target_id'] = $nid;
-      $vote->field_parliament[LANGUAGE_NONE][]['tid'] = $parliament[0]->tid;
-      $vote->field_vote_user[LANGUAGE_NONE][]['target_id'] = $uid;
-      $vote->body[LANGUAGE_NONE][]['format']= 'plain_text';
+        $vote = new stdClass();
+        $vote->title = "Vote by " . $field_firstname[0]['value'] . ' ' . $field_lastname[0]['value'] . ' (default)';
+        $vote->type = "vote";
+        $vote->language = LANGUAGE_NONE;
+        $vote->status = 1;
+        $vote->uid = $user->uid;
+        $vote->field_vote_node[$vote->language][]['target_id'] = $nid;
+        $vote->field_parliament[$vote->language][]['tid'] = $parliament[0]->tid;
+        $vote->field_vote_user[$vote->language][]['target_id'] = $uid;
+        $vote->body[$vote->language][]['format']= 'plain_text';
 
       // voting behavior
-      if($form['pw_vote_admin_default_vote']['#value'] == 'random') {
-        $vote->field_vote[LANGUAGE_NONE][]['tid'] = $vote_tids[rand(0, sizeof($vote_tids) - 1)];
-      }
-      else {
-        $vote->field_vote[LANGUAGE_NONE][]['tid'] = $form['pw_vote_admin_default_vote']['#value'];
-      }
+        if($form['pw_vote_admin_default_vote']['#value'] == 'random') {
+          $vote->field_vote[$vote->language][]['tid'] = $vote_tids[rand(0, sizeof($vote_tids) - 1)];
+        }
+        else {
+          $vote->field_vote[$vote->language][]['tid'] = $form['pw_vote_admin_default_vote']['#value'];
+        }
 
       // save vote
-      node_save($vote);
+        node_save($vote);
 
       // count for user output
-      $count_generated++;
+        $count_generated++;
+      }
     }
   }
 
