@@ -98,7 +98,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '-100',
+        'weight' => '-20',
       ),
       'pw_seven' => array(
         'region' => 'content',
@@ -329,7 +329,7 @@ function pw_subsite_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '12',
+        'weight' => '17',
       ),
       'pw_seven' => array(
         'region' => 'content',
