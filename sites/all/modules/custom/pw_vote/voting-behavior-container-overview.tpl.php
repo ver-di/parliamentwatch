@@ -1,7 +1,7 @@
 <div class="pw-voting">
 	<div id="pw-voting-total">
 		<h3>Gesamtergebnis</h3>
-		<ul class="clearfix push-bottom-l">
+		<ul class="clearfix push-bottom-s">
 			<?php print $list_voting_behavior_sum; ?>
 		</ul>
 	</div>

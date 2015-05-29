@@ -33,9 +33,13 @@
   print render($block['content']);
 ?>
 
-<div class="push-bottom-l">SUCHFORMULARE</div>
-
-<div class="push-bottom-l">SUCHERGEBNISSE</div>
+<h3>Wie positionieren sich Ihre Abgeordneten?</h3>
+<div class="compact-form push-bottom-l">
+<?php
+  $my_block = module_invoke('views', 'block_view', 'pw_vote_search-block_1');
+  print render($my_block['content']); 
+?>
+</div>
 
 <h3>Hintergrund</h3>
 <div class="managed-content clearfix push-bottom-l">

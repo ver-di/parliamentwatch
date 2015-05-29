@@ -7,7 +7,7 @@
   <ul class="push-bottom-xs list_voting_behavior">
   	<?php print $list_voting_behavior; ?>
   </ul>
-  <ul class="clear">
+  <ul class="clear list-inline">
     <?php print $list_voting_behavior_sum; ?>
   </ul>
 </li>

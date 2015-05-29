@@ -90,6 +90,23 @@ body {
     font: 1.2em/1.5 Lucida Grande, Helvetica, Arial, sans-serif;
     color: #333;
 }
+body::-webkit-scrollbar,
+div::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+body::-webkit-scrollbar-track,
+div::-webkit-scrollbar-track {
+    background: #efefef;
+}
+ 
+body::-webkit-scrollbar-thumb,
+div::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+}
+.scrollbars-inner {
+  padding-right: 5px;
+}
 .report_message {
 	cursor: pointer;
 }
@@ -431,6 +448,19 @@ blockquote p:last-child:after {
 }
 .pw-landscape-l {
     max-width: 140px;
+}
+
+/* list styles */
+
+.list-inline {
+  list-style: outside none none;
+  margin-left: -5px;
+  padding-left: 0;
+}
+.list-inline > li {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /* icons */
@@ -1572,6 +1602,10 @@ ul.tabs li a:active {
 
 /* pager views load more */
 
+.pager.pager-load-more {
+  margin-top: 1em;
+}
+
 .item-list ul.pager-load-more li.pager-next {
     position: relative;
     display: block;
@@ -1951,7 +1985,8 @@ ul.tabs li a:active {
     margin-left: 14px;
     margin-bottom: 7px;
 }
-.portrait-s.file-image.float-left + blockquote {
+.portrait-s.file-image.float-left + blockquote
+.portrait-s.file-image.float-left + .statement {
     margin-left: 84px;
     margin-top: -8px;
 }
@@ -2082,7 +2117,7 @@ img.no-outline {
 .pw-arrow-box:after,
 .pw-arrow-box:before {
 	top: 100%;
-	left: 174px;
+	left: 74px;
 	border: solid transparent;
 	content: " ";
 	height: 0;
@@ -2103,53 +2138,63 @@ img.no-outline {
 	margin-left: -31px;
 }
 
+.pw-voting .vote {
+  border-width: 1px;
+  border-style: solid;
+}
+
 .pw-voting .vote.block {
   padding: 0 4px;
+  white-space: nowrap;
 }
-.pw-voting .total.vote a {
+.pw-voting .total.vote > a {
   color: inherit;
   font-weight: inherit;
 }
 .pw-voting .vote.yes {
-  background: rgb(0, 204, 0);
-  border-color: #0c0;
+  background: rgba(26, 200, 42, 0.5);
+  border-color: rgb(26, 200, 42);
 }
 .pw-voting .vote.no {
-  background: rgb(255, 51, 52);
-  border-color: #ff3334;
+  background: rgba(241, 43, 44, 0.5);
+  border-color: rgb(241, 43, 44);
 }
 .pw-voting .vote.abstain {
-  background: rgb(0, 51, 255);
-  border-color: #03f;
-}
-.pw-voting .vote.block.abstain {
-  color: #efefef;
+  background: rgba(34, 95, 219, 0.5);
+  border-color: rgb(34, 95, 219);
 }
 .pw-voting .vote.no-show {
-  background: rgb(186, 184, 182);
-  border-color: #888685;
+  border: 1px solid #cacaca;
+  background: #fff;
+  -webkit-box-shadow: 0 0 1px 1px #f6f6f6 inset;
+  box-shadow: 0 0 1px 1px #f6f6f6 inset;
 }
 .pw-voting .vote.total {
-  border-width: 1px;
-  border-style: solid;
   margin: 0 0 1em;
   padding: 3px 10px;
 }
 .pw-voting .vote.total:hover {
   opacity: .8;
 }
-.pw-voting .vote.total.yes {
-  background: rgba(0, 204, 0, 0.5);
+
+
+.pw-voting .item.vote {
+  border-width: 0;
 }
-.pw-voting .vote.total.no {
-  background: rgba(255, 51, 52, 0.5);
+.pw-voting .item.vote.yes {
+  background: rgb(26, 200, 42);
+  border-color: rgb(26, 200, 42);
 }
-.pw-voting .vote.total.abstain {
-  background: rgba(0, 51, 255, 0.5);
+.pw-voting .item.vote.no {
+  background: rgb(241, 43, 44);
+  border-color: rgb(241, 43, 44);
 }
-.pw-voting .vote.total.no-show {
-  background: rgba(186, 184, 182, 0.5)
+.pw-voting .item.vote.abstain {
+  background: rgb(34, 95, 219);
+  border-color: rgb(34, 95, 219);
 }
+
+
 .pw-voting .item,
 .pw-voting .pw-arrow-box-trigger {
   width: 1.1rem;
@@ -2160,16 +2205,24 @@ img.no-outline {
   margin: 0 2px 2px 0;
   cursor: pointer;
 }
+.pw-voting .list_voting_behavior .vote.no-show {
+  width: 0.9rem;
+  height: 0.9rem;
+  width: 9px;
+  height: 9px;
+  border-width: 1px;
+}
 .pw-voting .item {
   position: relative;
 }
 .pw-voting .item-politician {
   position: absolute;
-  z-index: 99;
-  left: -170px;
+  z-index: 500;
+  left: -70px;
   bottom: 34px;
   bottom: 3.4rem;
-  width: 600px;
+  min-width: 300px;
+  max-width: 600px;
   border-radius: 3px;
   padding: 1rem;
   padding: 10px 15px 10px 10px;
@@ -2180,6 +2233,21 @@ img.no-outline {
 }
 .pw-voting .item-politician h3 {
   padding-right: 25px;
+}
+.pw-voting .item-politician .statement,
+.view-pw-vote-search .statement {
+    max-height: 196px;
+    overflow-y: auto;
+}
+.pw-voting .item-politician .statement {
+    margin-bottom: 3.5em;
+    margin-left: 84px;
+    width: 516px;
+}
+.view-pw-vote-search .statement {
+  min-height: 38px;
+  margin-bottom: 1em;
+  margin-left: 50px;
 }
 .pw-voting .item-politician .path-profile {
   position: absolute;
@@ -2206,6 +2274,27 @@ img.no-outline {
 }
 html.js fieldset.collapsed {
     height: auto;
+}
+@media (max-width: 1120px) {
+
+.pw-voting .item-politician {
+  left: -10px;
+  bottom: 14px;
+  bottom: 1.4rem;
+}
+
+.pw-arrow-box:after,
+.pw-arrow-box:before {
+	left: 14px;
+}
+.pw-arrow-box:after {
+	border-width: 10px;
+	margin-left: -10px;
+}
+.pw-arrow-box:before {
+	border-width: 11px;
+	margin-left: -11px;
+}
 }
 
 /* press */
@@ -2714,8 +2803,7 @@ form .webform-component-checkboxes .description {
 #section-content #comment-form {
     padding: 12px 10px 40px 10px;
 }
-#section-content .compact-form .form-actions,
-#section-content #comment-form .form-actions {
+#section-content .compact-form .form-actions {
     position: absolute;
     bottom: -69px;
     right: 0;
@@ -3221,6 +3309,7 @@ form .webform-component-checkboxes .description {
 #comment-form,
 #search-form,
 #section-content form.compact-form,
+#section-content .compact-form form,
 #views-exposed-form-user-constituency-page,
 .pw-custom-search form {
     background: #f4f4f4; 

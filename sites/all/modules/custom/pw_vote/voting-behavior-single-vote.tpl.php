@@ -13,9 +13,11 @@
       <a href="/<?php print $path_profile; ?>"><?php print $portrait; ?></a>
     </div>
     <?php if (strlen($statement) > 0): ?>
-      <blockquote>
-        <?php print $statement; ?>
-      </blockquote>
+      <div class="statement">
+        <div class="scrollbars-inner">
+          <?php print $statement; ?>
+        </div>
+      </div>
     <?php endif ?>
     <p class="path-profile">
       <a href="/<?php print $path_profile; ?>" class="icon-politician">Profil öffnen</a>
