@@ -284,7 +284,7 @@ function _pw_send_debug_mail($subject, $body){
 /**
  * for debugging entity metadata wrapper object
  */
-function pw_wrapper_debug($w) {
+function _pw_wrapper_debug($w) {
   $values = array();
   foreach ($w->getPropertyInfo() as $key => $val) {
     $values[$key] = $w->$key->value();
