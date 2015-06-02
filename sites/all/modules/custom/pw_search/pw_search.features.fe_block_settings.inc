@@ -17,8 +17,6 @@ function pw_search_default_fe_block_settings() {
     'css_class' => '',
     'custom' => '0',
     'delta' => 'uvvZihgul8RzqD5UR2aL4hhqKCdte2JP',
-    'i18n_block_language' => array(),
-    'i18n_mode' => '0',
     'module' => 'facetapi',
     'node_types' => array(),
     'pages' => '',

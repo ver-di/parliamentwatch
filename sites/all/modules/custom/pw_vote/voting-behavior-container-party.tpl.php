@@ -1,6 +1,6 @@
 <li class="clearfix push-bottom-m">
-  <h4>
-    <a title="<?php print $party; ?>: Alle Positionen anzeigen" href="<?php print $path_search; ?>?<?php print $party; ?>">
+  <h4 class="push-bottom-xs">
+    <a title="<?php print $party; ?>: Alle Positionen anzeigen" href="<?php print $path_search; ?>" onclick="<? echo $onclick; ?>">
       <?php print $party; ?>, <?php print $party_num_members; ?> Mitglieder
     </a>
   </h4>

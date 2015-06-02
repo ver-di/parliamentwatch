@@ -218,6 +218,7 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
        $document->addField("sm_areacodes", $areacode->name);
      }
    }
+
    $user_title = $entity->field_vote_user['und'][0]['entity']->field_user_title['und'][0]['value'];
    $user_fname = $entity->field_vote_user['und'][0]['entity']->field_user_fname['und'][0]['value'];
    $user_lname = $entity->field_vote_user['und'][0]['entity']->field_user_lname['und'][0]['value'];
@@ -231,8 +232,8 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
    $document->addField("ss_vote_user_full_name",$user_name);
    $document->addField("ss_vote_user_drupal_name",$entity->field_vote_user['und'][0]['entity']->name);
    $document->addField("ss_vote_user_image_uri",$entity->field_vote_user['und'][0]['entity']->field_user_picture['und'][0]['uri']);
-   $document->addField("ss_vote_reason_full",$entity->body['de'][0]['value']);
-   $document->addField("ss_vote_reason_summary",$entity->body['de'][0]['summary']);
+   $document->addField("ss_vote_reason_full",$entity->body['und'][0]['value']);
+   $document->addField("ss_vote_reason_summary",$entity->body['und'][0]['summary']);
    $document->addField("ss_vote_node_title",$entity->field_vote_node['und'][0]['entity']->title);
 
  }

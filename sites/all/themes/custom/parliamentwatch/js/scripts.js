@@ -35,7 +35,8 @@ jQuery(document).ready(function() {
 
 // show voting details on click
 
-    $('li .item.vote .pw-arrow-box-trigger').on('click', function(e) {
+    $('li .item.vote .pw-arrow-box-trigger').on('click focus', function(e) {
+      e.preventDefault();
       $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').hide();
       $(this).next('.item-politician').fadeToggle('fast');
     });

@@ -30,8 +30,8 @@
     </div>
   </div>
   <div class="statement">
-    <div class="scrollbars-inner">      
-      <? echo $row->ss_vote_reason_full[0]; ?>
+    <div class="scrollbars-inner">
+      <? echo check_markup($row->ss_vote_reason_full[0]); ?>
     </div>
   </div>
   <div class="text-right">

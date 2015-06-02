@@ -503,10 +503,19 @@ function pw_vote_voting_behavior($node) {
       }
     }
 
+    $partymap = array(
+      'CDU' => 1,
+      'SPD' => 2,
+      'DIE LINKE' => 3,
+      'DIE GRÜNEN' => 4,
+      'CSU' => 5
+     );
+
     // put vertical containers and sum votes into one party container
     $container_parties[$party] = theme('voting_behavior_container_party', array(
-        'path_search' => '/search',
+        'path_search' => '#views-exposed-form-pw-vote-search-block-1',
         'party' => $party,
+        'onclick' => "document.getElementById('edit-ss-vote-user-vote-text').value='All';document.getElementById('edit-ss-vote-user-party').value=".$partymap[$party].";$('#edit-submit-pw-vote-search').click();",
         'party_num_members' => sizeof($votes_party),
         'list_voting_behavior' => $buffer_party,
         'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_parties[$party], 'voting_behavior_sum_party'),
@@ -534,12 +543,19 @@ function pw_vote_voting_behavior($node) {
  */
 function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function) {
   $content = '';
+  $votemap = array(
+        "yes" => 1,
+        "no" => 2,
+        "abstain" => 3,
+        "no-show" => 4
+    );
   foreach ($array_sum as $tid => $sum) {
     $term = taxonomy_term_load($tid);
     $label = field_get_items('taxonomy_term', $term, 'field_votes_label');
     $content .= theme($theme_function, array(
-        'path_search' => '/search',
+        'path_search' => '#views-exposed-form-pw-vote-search-block-1',
         'sum' => $sum,
+        'onclick' => "document.getElementById('edit-ss-vote-user-party').value='All';document.getElementById('edit-ss-vote-user-vote-text').value=".$votemap[$term->name].";$('#edit-submit-pw-vote-search').click();",
         'class_name' => $term->name,
         'voting_behavior' => $label[0]['value'],
       )

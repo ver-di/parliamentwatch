@@ -1,5 +1,5 @@
 <li class="item vote <?php print $class_name; ?>">
-  <div class="pw-arrow-box-trigger"></div>
+  <a class="pw-arrow-box-trigger inline-block" href="#"></a>
   <div class="item-politician pw-arrow-box">
     <span class="icon-close light"></span>
     <h3>
