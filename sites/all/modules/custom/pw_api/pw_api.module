@@ -22,7 +22,7 @@ function pw_api_menu() {
     'file' => 'pw_api.admin.inc',
   );
 
-  // add parliaments hook
+  // add parliaments hooks
   foreach (array('xml', 'json') as $type) {
     $key = 'api/parliaments.'.$type;
     $items[$key] = array(
@@ -31,6 +31,19 @@ function pw_api_menu() {
       'delivery callback' => 'pw_api_deliver_'.$type,
       'type' => MENU_CALLBACK,
       'file' => 'pw_api.parliaments.inc',
+    );
+  }
+
+  // add constituency hooks
+  foreach (array('xml', 'json') as $type) {
+    $key = 'api/parliament/%/constituencies.'.$type;
+    $items[$key] = array(
+      'page callback' => 'pw_api_constituencies',
+      'page arguments' => array(2),
+      'access callback' => TRUE,
+      'delivery callback' => 'pw_api_deliver_'.$type,
+      'type' => MENU_CALLBACK,
+      'file' => 'pw_api.constituencies.inc',
     );
   }
 
@@ -347,7 +360,7 @@ function pw_api_deliver_json($page_result) {
     drupal_add_http_header('Status', '404 Not Found');
   }
   else {
-    print drupal_json_encode(array_values($page_result));
+    print drupal_json_encode($page_result);
   }
 }
 

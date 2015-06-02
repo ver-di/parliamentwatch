@@ -8,7 +8,7 @@
 
 /**
  *
- * @return array
+ * @return array $parliaments
  *   All parliaments as array.
  */
 
