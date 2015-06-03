@@ -14,7 +14,8 @@ function pw_api_user_default_permissions() {
   $permissions['access authorized api'] = array(
     'name' => 'access authorized api',
     'roles' => array(
-      0 => 'administrator',
+      0 => 'API User',
+      1 => 'administrator',
     ),
     'module' => 'pw_api',
   );

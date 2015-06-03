@@ -1251,9 +1251,8 @@ function pw_profiles_user_default_permissions() {
     'name' => 'use text format copyright',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'PW Manager',
-      2 => 'Politician',
-      3 => 'administrator',
+      1 => 'Politician',
+      2 => 'administrator',
     ),
     'module' => 'filter',
   );
