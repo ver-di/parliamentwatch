@@ -320,6 +320,7 @@ function pw_api_deliver_xml($page_result) {
     $writer->startDocument('1.0', 'UTF-8');
     pw_api_items_to_xml($writer, $page_result);
     $writer->flush();
+    drupal_add_http_header('Cache-Control', 'public, max-age=86400');
   }
 }
 
@@ -360,6 +361,7 @@ function pw_api_deliver_json($page_result) {
     drupal_add_http_header('Status', '404 Not Found');
   }
   else {
+    drupal_add_http_header('Cache-Control', 'public, max-age=86400');
     print drupal_json_encode($page_result);
   }
 }
