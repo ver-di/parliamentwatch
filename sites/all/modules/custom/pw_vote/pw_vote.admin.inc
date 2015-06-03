@@ -108,9 +108,9 @@ function pw_vote_admin_submit($form, &$form_state) {
   global $user;
 
   // selected node
-  $nid = $form['pw_vote_admin_petition']['#value'];
-  $node = node_load($nid);
-  variable_set('pw_vote_generate_votes_petition', $nid);
+  $petition_nid = $form['pw_vote_admin_petition']['#value'];
+  $node = node_load($petition_nid);
+  variable_set('pw_vote_generate_votes_petition', $petition_nid);
 
   // wrap node
   $petition = entity_metadata_wrapper('node', $node);
@@ -130,7 +130,7 @@ function pw_vote_admin_submit($form, &$form_state) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'vote')
-    ->fieldCondition('field_vote_node', 'target_id', $nid);
+    ->fieldCondition('field_vote_node', 'target_id', $petition_nid);
     $result = $query->execute();
     if ($result['node']) {
       $nids = array_keys($result['node']);
@@ -145,7 +145,7 @@ function pw_vote_admin_submit($form, &$form_state) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'vote')
-    ->fieldCondition('field_vote_node', 'target_id', $nid);
+    ->fieldCondition('field_vote_node', 'target_id', $petition_nid);
     $result = $query->execute();
 
     if (isset($result['node'])) {
@@ -156,11 +156,11 @@ function pw_vote_admin_submit($form, &$form_state) {
       $nodes_cleared = 0;
 
       // iterate through votes
-      foreach($nodes as $nid => $node){
+      foreach($nodes as $vote_nid => $node){
         $field_user = field_get_items('node', $node, 'field_vote_user');
 
         if(!array_key_exists($field_user[0]['target_id'], $users)){
-          $users[$field_user[0]['target_id']] = $nid;
+          $users[$field_user[0]['target_id']] = $vote_nid;
         }
 
         // duplicate exists and user voted on current item by him/herself
@@ -195,9 +195,10 @@ function pw_vote_admin_submit($form, &$form_state) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
   ->entityCondition('bundle', 'vote')
-  ->fieldCondition('field_vote_node', 'target_id', $nid)
+  ->fieldCondition('field_vote_node', 'target_id', $petition_nid)
   ->fieldCondition('field_vote_user', 'target_id', $uid);
   $result = $query->count()->execute();
+
   if($result == 0) {
 
       // user fields
@@ -217,7 +218,7 @@ function pw_vote_admin_submit($form, &$form_state) {
       $vote->language = LANGUAGE_NONE;
       $vote->status = 1;
       $vote->uid = $user->uid;
-      $vote->field_vote_node[$vote->language][]['target_id'] = $nid;
+      $vote->field_vote_node[$vote->language][]['target_id'] = $petition_nid;
       $vote->field_parliament[$vote->language][]['tid'] = $parliament[0]->tid;
       $vote->field_vote_user[$vote->language][]['target_id'] = $uid;
       $vote->body[$vote->language][]['format']= 'plain_text';
