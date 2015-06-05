@@ -510,12 +510,6 @@ function pw_vote_voting_behavior($node) {
  */
 function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function, $party='Alle') {
   $content = '';
-  $votemap = array(
-    "yes" => 1,
-    "no" => 2,
-    "abstain" => 3,
-    "no-show" => 4
-    );
   foreach ($array_sum as $tid => $sum) {
     $term = taxonomy_term_load($tid);
     $label = field_get_items('taxonomy_term', $term, 'field_votes_label');
