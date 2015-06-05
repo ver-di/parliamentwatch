@@ -238,76 +238,76 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['empty']['area_text_custom']['content'] = '<div class="messages warning">Zu Ihrer Auswahl wurden keine Ergebnisse gefunden.</div>';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_full_name */
   $handler->display->display_options['fields']['ss_vote_user_full_name']['id'] = 'ss_vote_user_full_name';
   $handler->display->display_options['fields']['ss_vote_user_full_name']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_full_name']['field'] = 'ss_vote_user_full_name';
   $handler->display->display_options['fields']['ss_vote_user_full_name']['label'] = 'Name';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_party */
   $handler->display->display_options['fields']['ss_vote_user_party']['id'] = 'ss_vote_user_party';
   $handler->display->display_options['fields']['ss_vote_user_party']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_party']['field'] = 'ss_vote_user_party';
   $handler->display->display_options['fields']['ss_vote_user_party']['label'] = 'Partei';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_node_title */
   $handler->display->display_options['fields']['ss_vote_node_title']['id'] = 'ss_vote_node_title';
   $handler->display->display_options['fields']['ss_vote_node_title']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_node_title']['field'] = 'ss_vote_node_title';
   $handler->display->display_options['fields']['ss_vote_node_title']['label'] = 'Petition';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: im_field_vote */
   $handler->display->display_options['fields']['im_field_vote']['id'] = 'im_field_vote';
   $handler->display->display_options['fields']['im_field_vote']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['im_field_vote']['field'] = 'im_field_vote';
   $handler->display->display_options['fields']['im_field_vote']['label'] = '';
   $handler->display->display_options['fields']['im_field_vote']['exclude'] = TRUE;
   $handler->display->display_options['fields']['im_field_vote']['element_label_colon'] = FALSE;
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_reason_summary */
   $handler->display->display_options['fields']['ss_vote_reason_summary']['id'] = 'ss_vote_reason_summary';
   $handler->display->display_options['fields']['ss_vote_reason_summary']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_reason_summary']['field'] = 'ss_vote_reason_summary';
   $handler->display->display_options['fields']['ss_vote_reason_summary']['label'] = 'Begründung (kurz)';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_reason_full */
   $handler->display->display_options['fields']['ss_vote_reason_full']['id'] = 'ss_vote_reason_full';
   $handler->display->display_options['fields']['ss_vote_reason_full']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_reason_full']['field'] = 'ss_vote_reason_full';
   $handler->display->display_options['fields']['ss_vote_reason_full']['label'] = 'Begründung';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_image_uri */
   $handler->display->display_options['fields']['ss_vote_user_image_uri']['id'] = 'ss_vote_user_image_uri';
   $handler->display->display_options['fields']['ss_vote_user_image_uri']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_image_uri']['field'] = 'ss_vote_user_image_uri';
   $handler->display->display_options['fields']['ss_vote_user_image_uri']['label'] = 'User Image URI';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_drupal_name */
   $handler->display->display_options['fields']['ss_vote_user_drupal_name']['id'] = 'ss_vote_user_drupal_name';
   $handler->display->display_options['fields']['ss_vote_user_drupal_name']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_drupal_name']['field'] = 'ss_vote_user_drupal_name';
   $handler->display->display_options['fields']['ss_vote_user_drupal_name']['label'] = 'Drupal-Name';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_vote_text */
   $handler->display->display_options['fields']['ss_vote_user_vote_text']['id'] = 'ss_vote_user_vote_text';
   $handler->display->display_options['fields']['ss_vote_user_vote_text']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_vote_text']['field'] = 'ss_vote_user_vote_text';
   $handler->display->display_options['fields']['ss_vote_user_vote_text']['label'] = 'Stimme';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: sm_field_vote_node */
   $handler->display->display_options['fields']['sm_field_vote_node']['id'] = 'sm_field_vote_node';
   $handler->display->display_options['fields']['sm_field_vote_node']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['sm_field_vote_node']['field'] = 'sm_field_vote_node';
-  /* Sortierkriterien: Beschädigte/fehlende Behandlungsroutine */
+  /* Sortierkriterien: Apache Solr: ds_created */
   $handler->display->display_options['sorts']['ds_created']['id'] = 'ds_created';
   $handler->display->display_options['sorts']['ds_created']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['ds_created']['field'] = 'ds_created';
   $handler->display->display_options['sorts']['ds_created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['ds_created']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['ds_created']['expose']['label'] = 'ds_created';
-  /* Sortierkriterien: Beschädigte/fehlende Behandlungsroutine */
+  /* Sortierkriterien: Apache Solr: ss_vote_user_full_name */
   $handler->display->display_options['sorts']['ss_vote_user_full_name']['id'] = 'ss_vote_user_full_name';
   $handler->display->display_options['sorts']['ss_vote_user_full_name']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['ss_vote_user_full_name']['field'] = 'ss_vote_user_full_name';
   $handler->display->display_options['sorts']['ss_vote_user_full_name']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['ss_vote_user_full_name']['expose']['label'] = 'ss_vote_user_full_name';
-  /* Filterkriterium: Beschädigte/fehlende Behandlungsroutine */
+  /* Filterkriterium: Apache Solr: bundle */
   $handler->display->display_options['filters']['bundle']['id'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['bundle']['field'] = 'bundle';
   $handler->display->display_options['filters']['bundle']['value'] = 'vote';
-  /* Filterkriterium: Beschädigte/fehlende Behandlungsroutine */
+  /* Filterkriterium: Apache Solr: Suche */
   $handler->display->display_options['filters']['keyword']['id'] = 'keyword';
   $handler->display->display_options['filters']['keyword']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['keyword']['field'] = 'keyword';
@@ -328,7 +328,7 @@ function pw_vote_views_default_views() {
     178386088 => 0,
     40118511 => 0,
   );
-  /* Filterkriterium: Beschädigte/fehlende Behandlungsroutine */
+  /* Filterkriterium: Apache Solr: ss_vote_user_party */
   $handler->display->display_options['filters']['ss_vote_user_party']['id'] = 'ss_vote_user_party';
   $handler->display->display_options['filters']['ss_vote_user_party']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['ss_vote_user_party']['field'] = 'ss_vote_user_party';
@@ -367,7 +367,7 @@ function pw_vote_views_default_views() {
       'value' => 'CSU',
     ),
   );
-  /* Filterkriterium: Beschädigte/fehlende Behandlungsroutine */
+  /* Filterkriterium: Apache Solr: ss_vote_user_vote_text */
   $handler->display->display_options['filters']['ss_vote_user_vote_text']['id'] = 'ss_vote_user_vote_text';
   $handler->display->display_options['filters']['ss_vote_user_vote_text']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['ss_vote_user_vote_text']['field'] = 'ss_vote_user_vote_text';
@@ -381,12 +381,12 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['filters']['ss_vote_user_vote_text']['group_info']['identifier'] = 'ss_vote_user_vote_text';
   $handler->display->display_options['filters']['ss_vote_user_vote_text']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'zugestimmt',
+      'title' => 'dafür gestimmt',
       'operator' => '=',
       'value' => 'yes',
     ),
     2 => array(
-      'title' => 'abgelehnt',
+      'title' => 'dagegen gestimmt',
       'operator' => '=',
       'value' => 'no',
     ),
@@ -396,12 +396,12 @@ function pw_vote_views_default_views() {
       'value' => 'abstain',
     ),
     4 => array(
-      'title' => 'nicht teilgenommen',
+      'title' => 'nicht beteiligt',
       'operator' => '=',
       'value' => 'no-show',
     ),
   );
-  /* Filterkriterium: Beschädigte/fehlende Behandlungsroutine */
+  /* Filterkriterium: Apache Solr: sm_field_vote_node */
   $handler->display->display_options['filters']['sm_field_vote_node']['id'] = 'sm_field_vote_node';
   $handler->display->display_options['filters']['sm_field_vote_node']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['sm_field_vote_node']['field'] = 'sm_field_vote_node';
@@ -442,7 +442,7 @@ function pw_vote_views_default_views() {
     t('User Image URI'),
     t('Drupal-Name'),
     t('Stimme'),
-    t('Beschädigte Behandlungsroutine apachesolr__solr.sm_field_vote_node'),
+    t('sm_field_vote_node'),
     t('ds_created'),
     t('ss_vote_user_full_name'),
     t('Suche'),

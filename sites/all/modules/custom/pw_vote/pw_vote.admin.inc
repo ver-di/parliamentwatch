@@ -207,9 +207,6 @@ function pw_vote_admin_submit($form, &$form_state) {
     if($deputy){
       $field_firstname = field_get_items('user', $deputy, 'field_user_fname');
       $field_lastname = field_get_items('user', $deputy, 'field_user_lname');
-      if(trim($field_firstname[0]['value']) == ''){
-        dd($uid);
-      }
 
       // create new vote
       $vote = new stdClass();
