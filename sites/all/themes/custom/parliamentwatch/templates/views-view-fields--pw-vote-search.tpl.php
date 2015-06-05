@@ -11,16 +11,16 @@
     <span class="pw-voting">
       Position von <? echo $row->ss_vote_user_full_name[0]; ?>:
       <?php if ($row->ss_vote_user_vote_text[0] == "yes"): ?>
-        <span class="yes block vote">stimme zu</span>
+        <span class="yes block vote">dafür gestimmt</span>
       <?php endif; ?>
       <?php if ($row->ss_vote_user_vote_text[0] == "no"): ?>
-        <span class="no block vote">lehne ab</span>
+        <span class="no block vote">dagegen gestimmt</span>
       <?php endif; ?>
       <?php if ($row->ss_vote_user_vote_text[0] == "abstain"): ?>
         <span class="abstain block vote">enthalten</span>
       <?php endif; ?>
       <?php if ($row->ss_vote_user_vote_text[0] == "no-show"): ?>
-        <span class="no-show block vote">nicht teilgenommen</span>
+        <span class="no-show block vote">nicht beteiligt</span>
       <?php endif; ?>
     </span>
   </div>

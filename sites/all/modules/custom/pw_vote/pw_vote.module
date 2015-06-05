@@ -383,6 +383,9 @@ function pw_vote_block_view($delta = '') {
  */
 function pw_vote_voting_behavior($node) {
 
+  // add javascript file
+  drupal_add_js(drupal_get_path('module', 'pw_vote') . '/pw_vote.js');
+
   // holds themed votes
   $all_votes = array();
 
@@ -513,12 +516,10 @@ function pw_vote_voting_behavior($node) {
 
     // put vertical containers and sum votes into one party container
     $container_parties[$party] = theme('voting_behavior_container_party', array(
-        'path_search' => '#views-exposed-form-pw-vote-search-block-1',
         'party' => $party,
-        'onclick' => "document.getElementById('edit-ss-vote-user-vote-text').value='All';document.getElementById('edit-ss-vote-user-party').value=".$partymap[$party].";$('#edit-submit-pw-vote-search').click();",
         'party_num_members' => sizeof($votes_party),
         'list_voting_behavior' => $buffer_party,
-        'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_parties[$party], 'voting_behavior_sum_party'),
+        'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_parties[$party], 'voting_behavior_sum_party', $party),
       )
     );
   }
@@ -541,7 +542,7 @@ function pw_vote_voting_behavior($node) {
  * @return string
  *   returns themed overview
  */
-function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function) {
+function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function, $party='Alle') {
   $content = '';
   $votemap = array(
         "yes" => 1,
@@ -553,9 +554,8 @@ function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function) {
     $term = taxonomy_term_load($tid);
     $label = field_get_items('taxonomy_term', $term, 'field_votes_label');
     $content .= theme($theme_function, array(
-        'path_search' => '#views-exposed-form-pw-vote-search-block-1',
         'sum' => $sum,
-        'onclick' => "document.getElementById('edit-ss-vote-user-party').value='All';document.getElementById('edit-ss-vote-user-vote-text').value=".$votemap[$term->name].";$('#edit-submit-pw-vote-search').click();",
+        'party' => $party,
         'class_name' => $term->name,
         'voting_behavior' => $label[0]['value'],
       )

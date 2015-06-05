@@ -32,12 +32,11 @@
   $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
   print render($block['content']);
 ?>
-
-<h3>Wie positionieren sich Ihre Abgeordneten?</h3>
+<h3 id="pw_vote_positions">Wie positionieren sich Ihre Abgeordneten?</h3>
 <div class="compact-form push-bottom-l">
 <?php
   $my_block = module_invoke('views', 'block_view', 'pw_vote_search-block_1');
-  print render($my_block['content']); 
+  print render($my_block['content']);
 ?>
 </div>
 
@@ -51,9 +50,9 @@
   Lesen Sie die Original-Petition auf <? print l($field_petition_external_url[0]['url'], $field_petition_external_url[0]['url']); ?>
 </p>
 
-<?php 
+<?php
 // render comments if there are any
-if ($comments): 
+if ($comments):
 ?>
   <div id="comments" class="comment-wrapper">
     <h3>Ich habe die Petition unterschrieben, weil...</h3>
