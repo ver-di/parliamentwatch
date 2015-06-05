@@ -149,7 +149,7 @@ function pw_api_user_to_array($user) {
       $portrait_info = field_info_field('field_user_picture');
       $file = file_load($portrait_info['settings']['default_image']);
       $profile['personal']['picture']['url'] = file_create_url($file->uri);
-      $profile['picture']['copyright'] = '';
+      $profile['personal']['picture']['copyright'] = '';
     }
 
     // add parliament
@@ -219,8 +219,8 @@ function pw_api_user_to_array($user) {
     // add data from user_archive_cache meta table
     $result = db_query("SELECT number_of_questions, number_of_answers FROM user_archive_cache WHERE vid = :vid", array(':vid' => $w_user->vid->value()))->fetchAssoc();
     $profile['questions'] = array();
-    $profile['questions']['got'] = $result['number_of_questions'];
-    $profile['questions']['answered'] = $result['number_of_answers'];
+    //$profile['questions']['got'] = $result['number_of_questions'];
+    //$profile['questions']['answered'] = $result['number_of_answers'];
 
     // add dialogues
     $query = new EntityFieldQuery();
