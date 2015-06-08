@@ -9,18 +9,19 @@
       <span class="medium">Position von <?php print $firstname; ?> <?php print $lastname; ?>: </span>
       <span class="vote <?php print $class_name; ?> block"><?php print $voting_behavior; ?></span>
     </p>
-    <div class="file-image float-left portrait-s">
+    <div class="float-left portrait-s">
       <a href="/<?php print $path_profile; ?>"><?php print $portrait; ?></a>
     </div>
     <?php if (strlen($statement) > 0): ?>
       <div class="statement">
         <div class="scrollbars-inner">
-          <?php print $statement; ?>
-        </div>
+          <blockquote>
+            <?php print check_markup($statement); ?>
+          </blockquote></div>
       </div>
     <?php endif ?>
     <p class="path-profile">
-      <a href="/<?php print $path_profile; ?>" class="icon-politician">Profil öffnen</a>
+      <a href="/<?php print $path_profile; ?>?question_form" class="icon-politician">jetzt zur Position befragen</a>
     </p>
   </div>
 </li>

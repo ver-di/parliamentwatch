@@ -35,10 +35,13 @@ jQuery(document).ready(function() {
 
 // show voting details on click
 
-    $('li .item.vote .pw-arrow-box-trigger').on('click focus', function(e) {
+    $('li .item.vote .pw-arrow-box-trigger').on('mousedown focus', function(e) {
       e.preventDefault();
       $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').hide();
       $(this).next('.item-politician').fadeToggle('fast');
+    });
+    $('li .item.vote .pw-arrow-box-trigger').on('click', function(e) {
+      e.preventDefault();
     });
 
     $('li .item-politician .icon-close').on('click', function(e) {
@@ -98,13 +101,20 @@ jQuery(document).ready(function() {
 // slice text and add expander link (http://plugins.learningjquery.com/expander/)
         
     $(window).load(function () { //https://drupal.org/node/1478648
-        var t_readmore = Drupal.t('read more');
-        var t_readless = Drupal.t('read less');
-        $('.responsive-layout-normal div.pw-expander').expander({
-            slicePoint:       400,  // default is 100
-            expandPrefix:     '', // default is '... '
-            expandText:       t_readmore, // default is 'read more'
-            userCollapseText: t_readless  // default is 'read less'
+        var t_readmore = 'weiterlesen';
+        var t_readless = '';
+        function pw_expand() {
+          $('.responsive-layout-normal .pw-expander').expander({
+              moreClass: 'expander-expand',
+              lessClass: 'expander-shorten',
+              slicePoint:       400,  // default is 100
+              expandText:       t_readmore, // default is 'read more'
+              userCollapseText: t_readless  // default is 'read less'
+          });
+        }
+        pw_expand();
+        $(document).ajaxComplete(function() {
+          pw_expand();
         });
     });
 

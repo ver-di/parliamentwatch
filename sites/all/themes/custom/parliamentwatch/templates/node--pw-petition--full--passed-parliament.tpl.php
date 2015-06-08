@@ -6,6 +6,9 @@
       <? print $sharethis; ?>
   </div>
 <?php endif; ?>
+<div class="element-invisible">
+  <img src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_s/public/default_images/img_fotodummy_210x140.jpg" alt="">
+</div>
 <p class="medium">Adressat: <? print $field_petition_recipient[0]['value'] ?></p>
 
 <? print check_markup($field_petition_text_passed[0]['summary']); ?>

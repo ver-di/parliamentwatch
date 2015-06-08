@@ -107,6 +107,9 @@ div::-webkit-scrollbar-thumb {
 .scrollbars-inner {
   padding-right: 5px;
 }
+.scrollbars-inner p:last-child {
+  margin-bottom: 0;
+}
 .report_message {
 	cursor: pointer;
 }
@@ -271,7 +274,7 @@ img {
     max-width: 100%;
 }
 blockquote {
-    padding: 12px 0 20px;
+    padding: 12px 0 20px 1px;
     quotes:"\201C" "\201D";
     font: italic normal 18px/22px Times New Roman, Times, serif;
 }
@@ -308,6 +311,10 @@ blockquote p:last-child:after {
     content: "";
     margin-bottom: 0;
     display: inline;
+}
+blockquote .pw-expander,
+blockquote .pw-expander div {
+  display: inline;
 }
 *+html blockquote p {
     display:inline;
@@ -2151,9 +2158,15 @@ img.no-outline {
   border-width: 1px;
   border-style: solid;
 }
+.pw-voting .vote .portrait-s {
+    width: 70px;
+    height: 105px;
+    background: url(/sites/abgeordnetenwatch.de/files/styles/pw_portrait_s/public/default_images/img_fotodummy_210x140.jpg) no-repeat;
+    outline: 1px solid #ccc;
+}
 
 .pw-voting .vote.block {
-  padding: 0 4px;
+  padding: 1px 5px;
   white-space: nowrap;
 }
 .pw-voting .total.vote > a {
@@ -2243,9 +2256,8 @@ img.no-outline {
 .pw-voting .item-politician h3 {
   padding-right: 25px;
 }
-.pw-voting .item-politician .statement,
-.view-pw-vote-search .statement {
-    max-height: 196px;
+.pw-voting .item-politician .statement {
+    max-height: 200px;
     overflow-y: auto;
 }
 .pw-voting .item-politician .statement {
@@ -2258,13 +2270,15 @@ img.no-outline {
   margin-bottom: 1em;
   margin-left: 50px;
 }
+.node-type-pw-petition .statement blockquote {
+  padding: 0 0 0 1px;
+  margin-bottom: 0;
+  overflow: hidden;
+}
 .pw-voting .item-politician .path-profile {
   position: absolute;
   right: 15px;
   bottom: 10px;
-}
-.pw-voting .item-politician blockquote {
-  margin-bottom: 1em;
 }
 .no-js .pw-voting .item-politician {
   visibility: hidden;

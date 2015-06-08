@@ -30,10 +30,12 @@
     </div>
   </div>
   <div class="statement">
-    <div class="scrollbars-inner">
-      <? echo check_markup($row->ss_vote_reason_full[0]); ?>
-    </div>
+    <?php if (strlen($row->ss_vote_reason_full[0]) > 0): ?>
+    <blockquote>
+      <div class="pw-expander"><div><? echo check_markup($row->ss_vote_reason_full[0]); ?></div></div>
+    </blockquote>
+    <?php endif ?>
   </div>
   <div class="text-right">
-    <a href="/profile/<? echo $row->ss_vote_user_drupal_name[0];?>" class="icon-politician">Profil öffnen</a>
+    <a href="/profile/<? echo $row->ss_vote_user_drupal_name[0];?>?question_form" class="icon-politician">jetzt zur Position befragen</a>
   </div>
