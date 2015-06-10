@@ -243,6 +243,11 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_candidate';
   $ds_fieldsetting->settings = array(
+    'user_vote_petition' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'pw_kandidatencheck' => array(
       'weight' => '3',
       'label' => 'hidden',
@@ -264,7 +269,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_form' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -296,7 +301,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_basic_info' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -328,7 +333,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -405,8 +410,13 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_deputy';
   $ds_fieldsetting->settings = array(
+    'user_vote_petition' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'bundestagsradar' => array(
-      'weight' => '7',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -422,7 +432,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_form' => array(
-      'weight' => '9',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -470,7 +480,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_profile_api_link' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -486,7 +496,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -506,7 +516,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '4',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -522,7 +532,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '2',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -538,7 +548,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_revision_switch' => array(
-      'weight' => '3',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -625,8 +635,13 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_premium';
   $ds_fieldsetting->settings = array(
+    'user_vote_petition' => array(
+      'weight' => '9',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'pw_kandidatencheck' => array(
-      'weight' => '12',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -646,7 +661,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'additional_links' => array(
-      'weight' => '10',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -662,7 +677,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_form' => array(
-      'weight' => '18',
+      'weight' => '16',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -678,7 +693,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'short_profile' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -694,7 +709,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_about' => array(
-      'weight' => '3',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -710,7 +725,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_basic_info' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -726,7 +741,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_calendar' => array(
-      'weight' => '11',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -742,7 +757,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_image_gallery' => array(
-      'weight' => '4',
+      'weight' => '3',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -758,7 +773,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_political_goals' => array(
-      'weight' => '5',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -774,7 +789,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_profile_api_link' => array(
-      'weight' => '16',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -790,7 +805,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_questions_and_answers' => array(
-      'weight' => '17',
+      'weight' => '15',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -810,7 +825,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_tweets' => array(
-      'weight' => '9',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -826,7 +841,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_wrong_data' => array(
-      'weight' => '15',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -842,7 +857,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'pw_slider' => array(
-      'weight' => '13',
+      'weight' => '10',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -858,7 +873,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_revision_switch' => array(
-      'weight' => '14',
+      'weight' => '11',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1487,35 +1502,37 @@ function pw_profiles_ds_layout_settings_info() {
       'left_1' => array(
         0 => 'short_profile_deputy_main',
         1 => 'user_basic_info',
-        2 => 'pw_kandidatencheck',
+        2 => 'user_vote_petition',
+        3 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
-        3 => 'pw_slider',
-        4 => 'user_revision_switch',
-        5 => 'user_wrong_data',
-        6 => 'user_profile_api_link',
-        10 => 'masquerade',
+        4 => 'pw_slider',
+        5 => 'user_revision_switch',
+        6 => 'user_wrong_data',
+        7 => 'user_profile_api_link',
+        8 => 'masquerade',
       ),
       'left_2' => array(
-        7 => 'user_questions_and_answers',
-        8 => 'question_form',
+        9 => 'user_questions_and_answers',
+        10 => 'question_form',
       ),
       'ds_hidden' => array(
-        9 => 'field_user_party',
+        11 => 'field_user_party',
       ),
     ),
     'fields' => array(
       'short_profile_deputy_main' => 'left_1',
       'user_basic_info' => 'left_1',
+      'user_vote_petition' => 'left_1',
       'pw_kandidatencheck' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
       'user_profile_api_link' => 'right_1',
+      'masquerade' => 'right_1',
       'user_questions_and_answers' => 'left_2',
       'question_form' => 'left_2',
       'field_user_party' => 'ds_hidden',
-      'masquerade' => 'right_1',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -1549,28 +1566,30 @@ function pw_profiles_ds_layout_settings_info() {
       'left_1' => array(
         0 => 'short_profile_deputy_main',
         1 => 'user_basic_info',
+        2 => 'user_vote_petition',
       ),
       'right_1' => array(
-        2 => 'pw_slider',
-        3 => 'user_revision_switch',
-        4 => 'user_wrong_data',
-        5 => 'user_profile_api_link',
-        6 => 'masquerade',
-        7 => 'bundestagsradar',
+        3 => 'pw_slider',
+        4 => 'user_revision_switch',
+        5 => 'user_wrong_data',
+        6 => 'user_profile_api_link',
+        7 => 'masquerade',
+        8 => 'bundestagsradar',
       ),
       'left_2' => array(
-        8 => 'user_questions_and_answers',
-        9 => 'question_form',
+        9 => 'user_questions_and_answers',
+        10 => 'question_form',
       ),
       'ds_hidden' => array(
-        10 => 'field_user_fname',
-        11 => 'field_user_lname',
-        12 => 'field_user_party',
+        11 => 'field_user_fname',
+        12 => 'field_user_lname',
+        13 => 'field_user_party',
       ),
     ),
     'fields' => array(
       'short_profile_deputy_main' => 'left_1',
       'user_basic_info' => 'left_1',
+      'user_vote_petition' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
@@ -1658,20 +1677,21 @@ function pw_profiles_ds_layout_settings_info() {
         6 => 'additional_links',
         7 => 'user_calendar',
         8 => 'pw_kandidatencheck',
+        9 => 'user_vote_petition',
       ),
       'right_1' => array(
-        9 => 'pw_slider',
-        10 => 'user_revision_switch',
-        11 => 'user_wrong_data',
-        12 => 'user_profile_api_link',
-        16 => 'masquerade',
+        10 => 'pw_slider',
+        11 => 'user_revision_switch',
+        12 => 'user_wrong_data',
+        13 => 'user_profile_api_link',
+        14 => 'masquerade',
       ),
       'left_2' => array(
-        13 => 'user_questions_and_answers',
-        14 => 'question_form',
+        15 => 'user_questions_and_answers',
+        16 => 'question_form',
       ),
       'ds_hidden' => array(
-        15 => 'field_user_party',
+        17 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1684,14 +1704,15 @@ function pw_profiles_ds_layout_settings_info() {
       'additional_links' => 'left_1',
       'user_calendar' => 'left_1',
       'pw_kandidatencheck' => 'left_1',
+      'user_vote_petition' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
       'user_profile_api_link' => 'right_1',
+      'masquerade' => 'right_1',
       'user_questions_and_answers' => 'left_2',
       'question_form' => 'left_2',
       'field_user_party' => 'ds_hidden',
-      'masquerade' => 'right_1',
     ),
     'classes' => array(),
     'wrappers' => array(

@@ -284,6 +284,7 @@ function pw_profiles_field_group_info() {
       5 => 'field_user_election_result',
       6 => 'field_user_constituency_won',
       7 => 'field_user_list_won',
+      8 => 'field_user_fraction',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -438,7 +439,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Basics',
-    'weight' => '46',
+    'weight' => '47',
     'children' => array(
       0 => 'group_user_basics_additional',
       1 => 'group_user_basics_data',
@@ -807,7 +808,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Polls',
-    'weight' => '47',
+    'weight' => '48',
     'children' => array(
       0 => 'group_user_polls_archive',
       1 => 'group_user_polls_current',
@@ -1102,7 +1103,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Roles',
-    'weight' => '48',
+    'weight' => '49',
     'children' => array(
       0 => 'group_user_roles_archive',
       1 => 'group_user_roles_current',
