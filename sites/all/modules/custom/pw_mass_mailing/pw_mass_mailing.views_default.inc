@@ -141,7 +141,7 @@ function pw_mass_mailing_views_default_views() {
   $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Feld: Parliament */
+  /* Feld: Benutzer: Parliament */
   $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
@@ -167,7 +167,7 @@ function pw_mass_mailing_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Feld: Parliament (field_user_parliament) */
+  /* Filterkriterium: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -253,6 +253,29 @@ function pw_mass_mailing_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'admin/pw-mass-mail';
+  $translatables['pw_mass_mail'] = array(
+    t('Master'),
+    t('PW Mass Mail'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('E-Mail senden'),
+    t('Uid'),
+    t('Name'),
+    t('E-Mail'),
+    t('Nachname'),
+    t('First Name'),
+    t('Party'),
+    t('Parliament'),
+    t('Rollen'),
+    t('Erstellungsdatum'),
+    t('Filter this view by parliament.'),
+    t('Filter this view by party.'),
+    t('Page'),
+  );
   $export['pw_mass_mail'] = $view;
 
   return $export;

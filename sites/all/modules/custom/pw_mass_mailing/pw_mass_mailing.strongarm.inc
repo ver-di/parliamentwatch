@@ -207,7 +207,7 @@ function pw_mass_mailing_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_host';
-  $strongarm->value = 'mx1.pwsrv.org';
+  $strongarm->value = 'mx1.pwsrv.local';
   $export['smtp_host'] = $strongarm;
 
   $strongarm = new stdClass();
