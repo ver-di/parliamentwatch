@@ -10,18 +10,23 @@
  * Implements the switch between standard and premium profile display modes
  * dependant on user role. The assignment can be configured in the admin part of
  * this module.
- * 
+ *
  * @param type $account
  * @param type $view_mode
  * @param type $langcode
- * @return type 
+ * @return type
  */
 function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langcode = NULL) {
 
   // redirect profile to legacy platform if anonymous user
   global $user;
   if($user->uid == 0 && !empty($account->field_user_external_url['und'][0]['url'])){
-    drupal_goto($account->field_user_external_url['und'][0]['url'], array(), 307);
+    $request_uri = parse_url(request_uri());
+    $redirect_url = $account->field_user_external_url['und'][0]['url'];
+    if($request_uri['query'] == 'question_form'){
+      $redirect_url .= '#question_form';
+    }
+    drupal_goto($redirect_url, array(), 307);
   }
 
   // set custom page title
@@ -32,7 +37,7 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
   foreach ($account->field_user_roles_for_view_mode_s['und'] as $role) {
     $assignedRoles[$role['tid']] = $role['tid'];
   }
-  
+
   $assignment = variable_get('pw_profileswitch_assignment', array()); // array(roleId => displayModeId)
   foreach ($assignment as $rid => $did) {
     if (array_key_exists($rid, $assignedRoles)) { // old: $account->roles
@@ -108,10 +113,10 @@ function pw_user_revision_show($user, $vid) {
 }
 
 /**
- * Modify the default page callbacks from user.and user revisions modules to a custom one. 
+ * Modify the default page callbacks from user.and user revisions modules to a custom one.
  * This is needed for the display mode switch between standard profiles and premium profiles.
- * 
- * @param array $items 
+ *
+ * @param array $items
  */
 function pw_profileswitch_menu_alter(&$items) {
   $items['user/%user']['page callback'] = 'pw_profileswitch_user_view_page';
@@ -130,9 +135,9 @@ function pw_profileswitch_menu_alter(&$items) {
 
 /**
  * Function overtaken from user.module and customized to call pw_profileswitch_user_custom_view()
- * 
+ *
  * @param type $account
- * @return type 
+ * @return type
  */
 function pw_profileswitch_user_view_page($account) {
   // An administrator may try to view a non-existent account,
