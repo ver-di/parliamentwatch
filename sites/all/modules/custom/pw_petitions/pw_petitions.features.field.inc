@@ -1716,7 +1716,7 @@ $entity_field[0][\'value\'] = $result;',
   $fields['node-pw_petition-field_petition_status'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '-1',
+      'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_petition_status',
@@ -1793,7 +1793,7 @@ $entity_field[0][\'value\'] = $result;',
         'settings' => array(
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
-        'type' => 'options_buttons',
+        'type' => 'options_select',
         'weight' => '3',
       ),
     ),
