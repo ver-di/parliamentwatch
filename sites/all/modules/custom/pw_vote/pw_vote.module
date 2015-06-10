@@ -364,7 +364,7 @@ function pw_vote_voting_behavior($node) {
   $all_votes = array();
 
   // counts votes for overview
-  $sum_votes_parties = array();
+  $sum_votes_fractions = array();
   $sum_votes_overview = array();
 
   // preload default portrait
@@ -377,6 +377,7 @@ function pw_vote_voting_behavior($node) {
   );
 
   // load all votes
+  $starttime = time();
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
   ->entityCondition('bundle', 'vote')
@@ -386,6 +387,9 @@ function pw_vote_voting_behavior($node) {
   ->propertyCondition('status', NODE_PUBLISHED)
   ->fieldOrderBy('field_vote', 'tid');
   $result = $query->execute();
+  dd('votes loaded: '.(time()-$starttime));
+
+  $timetest = 0;
 
   if (isset($result['node'])) {
 
@@ -400,6 +404,7 @@ function pw_vote_voting_behavior($node) {
       $w_vote = entity_metadata_wrapper('node', $vote);
 
       // skip if user not exists
+      $timetemp = microtime(true);
       $query_user = new EntityFieldQuery();
       $query_user->entityCondition('entity_type', 'user')
       ->propertyCondition('uid', $w_vote->field_vote_user->getIdentifier());
@@ -408,17 +413,25 @@ function pw_vote_voting_behavior($node) {
         continue;
       }
 
-      // skip if party is not set
-      $party = $w_vote->field_vote_user->field_user_party->label();
-      if (empty($party)) {
-        continue;
-      }
-      // add party as sub array for holding votes
-      elseif (!isset($all_votes[$party])) {
-        $all_votes[$party] = array();
+      // get fraction
+      $fraction = $w_vote->field_vote_user->field_user_party->label();
+      $party = $fraction;
+
+      // temp: set CDU and CSU as fraction
+      if($fraction == 'CDU' || $fraction == 'CSU'){
+        $fraction = 'CDU/CSU';
       }
 
-      // theme & add a single vote to party array
+      // skip if fraction is not set
+      if (empty($fraction)) {
+        continue;
+      }
+      // add fraction as sub array for holding votes
+      elseif (!isset($all_votes[$fraction])) {
+        $all_votes[$fraction] = array();
+      }
+
+      // theme & add a single vote to fraction array
       if ($w_vote->field_vote_user->field_user_picture->value()) {
         $portrait = theme('image_style', array(
           'path' => $w_vote->field_vote_user->field_user_picture->file->value()->uri,
@@ -429,7 +442,7 @@ function pw_vote_voting_behavior($node) {
       else {
         $portrait = $portrait_default;
       }
-      $all_votes[$party][] = theme('voting_behavior_single_vote', array(
+      $all_votes[$fraction][] = theme('voting_behavior_single_vote', array(
         'class_name' => $w_vote->field_vote->label(),
         'firstname' => $w_vote->field_vote_user->field_user_fname->value(),
         'lastname' => $w_vote->field_vote_user->field_user_lname->value(),
@@ -441,15 +454,15 @@ function pw_vote_voting_behavior($node) {
         )
       );
 
-      // sum votes for parties
+      // sum votes for fractions
       $tid = $w_vote->field_vote->tid->value();
-      if (!isset($sum_votes_parties[$party])) {
-        $sum_votes_parties[$party] = array();
+      if (!isset($sum_votes_fractions[$fraction])) {
+        $sum_votes_fractions[$fraction] = array();
       }
-      if (!isset($sum_votes_parties[$party][$tid])) {
-        $sum_votes_parties[$party][$tid] = 0;
+      if (!isset($sum_votes_fractions[$fraction][$tid])) {
+        $sum_votes_fractions[$fraction][$tid] = 0;
       }
-      $sum_votes_parties[$party][$tid]++;
+      $sum_votes_fractions[$fraction][$tid]++;
 
       // sum votes for overview
       if (!isset($sum_votes_overview[$tid])) {
@@ -459,20 +472,26 @@ function pw_vote_voting_behavior($node) {
     }
   }
 
+  dd('test: '.$timetest);
+
+  dd('array filled: '.(time()-$starttime));
+
   // sort parties by number of votes
   array_multisort(array_map('count', $all_votes), SORT_DESC, $all_votes);
 
+  dd('arrays sorted: '.(time()-$starttime));
+
   // build containers
   $container_parties = array();
-  foreach ($all_votes as $party => $votes_party) {
+  foreach ($all_votes as $fraction => $votes_fraction) {
 
     // put 6 votes into one vertical containers
     $buffer_vertical = '';
-    $buffer_party = '';
-    for ($i = 0; $i < sizeof($votes_party); $i++) {
-      $buffer_vertical .= $votes_party[$i];
-      if (($i + 1) % 6 == 0 || sizeof($votes_party) - 1 == $i) {
-        $buffer_party .= theme('voting_behavior_container_vertical', array(
+    $buffer_fraction = '';
+    for ($i = 0; $i < sizeof($votes_fraction); $i++) {
+      $buffer_vertical .= $votes_fraction[$i];
+      if (($i + 1) % 7 == 0 || sizeof($votes_fraction) - 1 == $i) {
+        $buffer_fraction .= theme('voting_behavior_container_vertical', array(
           'list_voting_behavior' => $buffer_vertical,
           )
         );
@@ -480,22 +499,24 @@ function pw_vote_voting_behavior($node) {
       }
     }
 
-    // put vertical containers and sum votes into one party container
-    $container_parties[$party] = theme('voting_behavior_container_party', array(
-      'party' => $party,
-      'party_num_members' => sizeof($votes_party),
-      'list_voting_behavior' => $buffer_party,
-      'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_parties[$party], 'voting_behavior_sum_party', $party),
+    // put vertical containers and sum votes into one fraction container
+    $container_parties[$fraction] = theme('voting_behavior_container_fraction', array(
+      'fraction' => $fraction,
+      'fraction_num_members' => sizeof($votes_fraction),
+      'list_voting_behavior' => $buffer_fraction,
+      'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_fractions[$fraction], 'voting_behavior_sum_fraction', $fraction),
       )
     );
   }
 
-  // put all party container together and add overview
+  // put all fraction container together and add overview
   $content = theme('voting_behavior_container_overview', array(
     'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_overview, 'voting_behavior_sum_overview'),
     'list_voting_behavior' => implode($container_parties),
     )
   );
+
+  dd('all themed: '.(time()-$starttime));
 
   // return
   return $content;
@@ -508,14 +529,14 @@ function pw_vote_voting_behavior($node) {
  * @return string
  *   returns themed overview
  */
-function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function, $party='Alle') {
+function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function, $fraction='Alle') {
   $content = '';
   foreach ($array_sum as $tid => $sum) {
     $term = taxonomy_term_load($tid);
     $label = field_get_items('taxonomy_term', $term, 'field_votes_label');
     $content .= theme($theme_function, array(
       'sum' => $sum,
-      'party' => $party,
+      'fraction' => $fraction,
       'class_name' => $term->name,
       'voting_behavior' => $label[0]['value'],
       )
@@ -529,11 +550,11 @@ function pw_vote_theme() {
     'voting_behavior_container_overview' => array(
       'template' => 'voting-behavior-container-overview',
       ),
-    'voting_behavior_container_overview_party' => array(
-      'template' => 'voting-behavior-container-overview-party',
+    'voting_behavior_container_overview_fraction' => array(
+      'template' => 'voting-behavior-container-overview-fraction',
       ),
-    'voting_behavior_container_party' => array(
-      'template' => 'voting-behavior-container-party',
+    'voting_behavior_container_fraction' => array(
+      'template' => 'voting-behavior-container-fraction',
       ),
     'voting_behavior_container_vertical' => array(
       'template' => 'voting-behavior-container-vertical',
@@ -544,8 +565,8 @@ function pw_vote_theme() {
     'voting_behavior_sum_overview' => array(
       'template' => 'voting-behavior-sum-overview',
       ),
-    'voting_behavior_sum_party' => array(
-      'template' => 'voting-behavior-sum-party',
+    'voting_behavior_sum_fraction' => array(
+      'template' => 'voting-behavior-sum-fraction',
       ),
     'mail_thank_you' => array(
       'template' => 'mail-thank-you',
