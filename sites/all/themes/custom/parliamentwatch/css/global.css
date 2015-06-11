@@ -316,6 +316,9 @@ blockquote .pw-expander,
 blockquote .pw-expander div {
   display: inline;
 }
+blockquote .pw-expander div.summary {
+  display: inline !important;
+}
 *+html blockquote p {
     display:inline;
 }
@@ -2792,8 +2795,8 @@ form .webform-component-checkboxes .description {
     padding: 2px 10px;
 }
 #views-exposed-form-user-constituency-page,
-#section-content form.compact-form,
-#section-content #comment-form {
+#region-content form.compact-form,
+#region-content #comment-form {
     position: relative;
     margin-bottom: 7em;
     padding: 12px 10px 10px 10px;

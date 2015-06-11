@@ -39,6 +39,11 @@ jQuery(document).ready(function() {
       e.preventDefault();
       $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').hide();
       $(this).next('.item-politician').fadeToggle('fast');
+      if($(this).next('.item-politician').visible() == false){
+        $('html, body').animate({
+              scrollTop: $(this).next('.item-politician').offset().top
+        }, 1000);
+      }
     });
     $('li .item.vote .pw-arrow-box-trigger').on('click', function(e) {
       e.preventDefault();
@@ -109,7 +114,9 @@ jQuery(document).ready(function() {
               lessClass: 'expander-shorten',
               slicePoint:       400,  // default is 100
               expandText:       t_readmore, // default is 'read more'
-              userCollapseText: t_readless  // default is 'read less'
+              userCollapseText: t_readless,  // default is 'read less'
+              expandEffect:     'fadeIn',  // default is 'read less'
+              collapseEffect:   'hide'
           });
         }
         pw_expand();
@@ -167,13 +174,13 @@ jQuery(document).ready(function() {
     var domainparts = location.hostname.split('.');
     var sndleveldomain = domainparts.slice(-2).join('.');
 
-    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']),#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"'])")
+    jQuery("#region-content a[href*='http://']:not([href*='"+sndleveldomain+"']),#region-content a[href*='https://']:not([href*='"+sndleveldomain+"'])")
         .attr("rel","external")
         .attr("target","_blank")
         .addClass("external");
     // remove class .external from images and slider
-    jQuery("#zone-content a[href*='http://']:not([href*='"+sndleveldomain+"']) img,#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"']) img").parent('a').removeClass('external');
-    jQuery("#zone-content h3 a[href*='http://']:not([href*='"+sndleveldomain+"']),#zone-content h3 a[href*='https://']:not([href*='"+sndleveldomain+"'])").removeClass('external');
+    jQuery("#region-content a[href*='http://']:not([href*='"+sndleveldomain+"']) img,#zone-content a[href*='https://']:not([href*='"+sndleveldomain+"']) img").parent('a').removeClass('external');
+    jQuery("#region-content h3 a[href*='http://']:not([href*='"+sndleveldomain+"']),#zone-content h3 a[href*='https://']:not([href*='"+sndleveldomain+"'])").removeClass('external');
     jQuery('.view-slider a.external').removeClass('external');
     jQuery("h3 a").removeClass('external');
 
