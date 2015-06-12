@@ -2371,6 +2371,115 @@ function pw_profiles_field_default_fields() {
     ),
   );
 
+  // Exported field: 'user-user-field_user_fraction'.
+  $fields['user-user-field_user_fraction'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_fraction',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'fraction',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 41,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_candidate' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_dialogue_search_snippet' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'exclude_cv' => 0,
+      'field_name' => 'field_user_fraction',
+      'label' => 'Fraction',
+      'required' => 0,
+      'settings' => array(
+        'exclude_cv' => FALSE,
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_select',
+        'weight' => '7',
+      ),
+    ),
+  );
+
   // Exported field: 'user-user-field_user_gender'.
   $fields['user-user-field_user_gender'] = array(
     'field_config' => array(
@@ -5625,6 +5734,7 @@ $entity_field[0][\'value\'] = $result;',
   t('External URL');
   t('First Letter of Lastname');
   t('First Name');
+  t('Fraction');
   t('Gender');
   t('Hier können Sie beliebige Links ergänzen, die in Ihrem Profil öffentlich angezeigt werden sollen.');
   t('Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu auf "Auswählen", suchen Sie dann eine Bilddatei von Ihrem Computer aus und klicken Sie auf "Abschicken".');
