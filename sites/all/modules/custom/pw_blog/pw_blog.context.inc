@@ -46,21 +46,21 @@ function pw_blog_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
+        'block-89' => array(
+          'module' => 'block',
+          'delta' => '89',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
         'tagadelic-24' => array(
           'module' => 'tagadelic',
           'delta' => '24',
           'region' => 'sidebar_second',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'tagadelic-31' => array(
           'module' => 'tagadelic',
           'delta' => '31',
-          'region' => 'sidebar_second',
-          'weight' => '-8',
-        ),
-        'views-blog_comments-block' => array(
-          'module' => 'views',
-          'delta' => 'blog_comments-block',
           'region' => 'sidebar_second',
           'weight' => '-7',
         ),
