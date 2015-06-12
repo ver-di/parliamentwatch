@@ -11,8 +11,10 @@
         $.each(parties, function(index, party){
           $('#edit-ss-vote-user-party option:contains(' + party + ')').attr('selected', 'selected');
         });
-        $('#edit-ss-vote-user-vote-text input').attr('checked', false);
-        $('#edit-ss-vote-user-vote-text label:contains(' + vote + ')').parent().children('input').attr('checked', 'checked');
+        // $('#edit-ss-vote-user-vote-text input').attr('checked', false);
+        // $('#edit-ss-vote-user-vote-text label:contains(' + vote + ')').parent().children('input').attr('checked', 'checked');
+        $('#edit-ss-vote-user-vote-text option').attr('selected', false);
+        $('#edit-ss-vote-user-vote-text option:contains(' + vote + ')').attr('selected', 'selected');
         $('#edit-submit-pw-vote-search').click();
         $("#pw_vote_positions")[0].scrollIntoView({behavior: 'smooth'});
       });

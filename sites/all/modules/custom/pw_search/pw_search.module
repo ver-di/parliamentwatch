@@ -228,7 +228,25 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
    $user_party = taxonomy_term_load($entity->field_vote_user['und'][0]['entity']->field_user_party['und'][0]['tid'])->name;
 
    $document->addField("ss_vote_user_vote_text",$entity->field_vote['und'][0]['taxonomy_term']->name);
+
+   switch ($entity->field_vote['und'][0]['taxonomy_term']->name) {
+    case "yes":
+        $document->addField("ss_vote_user_vote_sortable","1");
+        break;
+    case "no":
+        $document->addField("ss_vote_user_vote_sortable","2");
+        break;
+    case "abstain":
+        $document->addField("ss_vote_user_vote_sortable","3");
+        break;
+    case "no-show":
+        $document->addField("ss_vote_user_vote_sortable","4");
+        break;
+    }
+
    $document->addField("ss_vote_user_party",$user_party);
+   $document->addField("ss_vote_user_first_name",$user_fname);
+   $document->addField("ss_vote_user_last_name",$user_lname);   
    $document->addField("ss_vote_user_full_name",$user_name);
    $document->addField("ss_vote_user_drupal_name",$entity->field_vote_user['und'][0]['entity']->name);
    $document->addField("ss_vote_user_image_uri",$entity->field_vote_user['und'][0]['entity']->field_user_picture['und'][0]['uri']);

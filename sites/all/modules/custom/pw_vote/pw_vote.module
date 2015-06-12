@@ -124,18 +124,18 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       $vote = node_load($nid);
       $w_vote = entity_metadata_wrapper('node', $vote);
 
-      // check if author of vote is politian him/herself. if not vote was generated.
+      // voting only allowed till petition end date
+      if(time() > $w_vote->field_vote_node->field_petition_end_date->value()) {
+        $petition_end_date = date('d.m.Y H:i', $w_vote->field_vote_node->field_petition_end_date->value());
+        $link_email = l('E-Mail', 'mailto:service@abgeordnetenwatch.de?subject=Mein Stimmverhalten bei '.$node->title, array('absolute' => TRUE));
+        drupal_set_message('Die Frist zur Eintragung Ihres Stimmverhaltens ist bereits am ' . $petition_end_date . ' abgelaufen. Bitte setzen Sie sich bei Änderungswünschen mit der Redaktion von '.variable_get('site_name').' unter 040 / 317 69 10 26 oder per '.$link_email.' in Verbindung.', 'warning');
+      }
+
+      // check if author of vote is politian him/herself, than vote was not generated.
       if($vote->uid == $uid){
 
         // set value for voting behavior
         $form['submitted']['vote']['#default_value'] = $w_vote->field_vote->name->value();
-
-        // voting only allowed till petition end date
-        if(time() > $w_vote->field_vote_node->field_petition_end_date->value()) {
-          $petition_end_date = date('d.m.Y H:i', $w_vote->field_vote_node->field_petition_end_date->value());
-          $link_email = l('E-Mail', 'mailto:service@abgeordnetenwatch.de?subject=Mein Stimmverhalten bei '.$node->title, array('absolute' => TRUE));
-          drupal_set_message('Die Frist zur Eintragung Ihres Stimmverhaltens ist bereits am ' . $petition_end_date . ' abgelaufen. Bitte setzen Sie sich bei Änderungswünschen mit der Redaktion von '.variable_get('site_name').' unter 040 / 317 69 10 26 oder per '.$link_email.' in Verbindung.', 'warning');
-        }
       }
 
       // theme and set portrait
@@ -419,7 +419,7 @@ function pw_vote_voting_behavior($node) {
 
       // temp: set CDU and CSU as fraction
       if($fraction == 'CDU' || $fraction == 'CSU'){
-        $fraction = 'CDU/CSU';
+        //$fraction = 'CDU/CSU';
       }
 
       // skip if fraction is not set
