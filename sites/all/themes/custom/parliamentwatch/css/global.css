@@ -2265,7 +2265,8 @@ img.no-outline {
     margin-left: 84px;
     width: 516px;
 }
-.view-pw-vote-search .statement {
+.view-pw-vote-search .statement,
+.view-pw-vote-positions .statement {
   min-height: 38px;
   margin-bottom: 1em;
   margin-left: 50px;
