@@ -316,9 +316,6 @@ blockquote .pw-expander,
 blockquote .pw-expander div {
   display: inline;
 }
-blockquote .pw-expander div.summary {
-  display: inline !important;
-}
 *+html blockquote p {
     display:inline;
 }
