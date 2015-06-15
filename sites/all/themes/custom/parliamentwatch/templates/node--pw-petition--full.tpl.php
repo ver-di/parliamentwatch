@@ -6,7 +6,7 @@
 // ====================== ACTUAL THEME ===========================
 ?>
 <div class="sharethis-wrapper">
-  <span class="st_sharethis_hcount" st_url="<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+  <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
 <div class="push-bottom-m">
   <p class="medium">Adressat: <? echo $field_petition_recipient[0]['value'] ?></p>

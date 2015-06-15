@@ -2,7 +2,7 @@
 print render($title_suffix);
 ?>
 <div class="sharethis-wrapper">
-  <span class="st_sharethis_hcount" st_url="<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+  <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
 <h3 class="push-bottom-m">
   <ul class="progress-icons">

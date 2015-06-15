@@ -105,7 +105,7 @@ function pw_petitions_preprocess_node(&$variables) {
       $block = block_load('webform', 'client-block-10508');
       $rendered_block = _block_render_blocks(array($block));
       $rendered_block['webform_client-block-10508']->subject = "";
-      
+
       // count votes from politicians
       if ($variables['view_mode'] == 'teaser' && in_array($items[0]['value'], array('asking_parliament', 'passed_parliament'))) {
         $variables["count_votes"] = db_query("SELECT * FROM {node} n
@@ -122,19 +122,13 @@ function pw_petitions_preprocess_node(&$variables) {
       $rendered_block = _block_render_blocks(array($block));
       $rendered_block['webform_client-block-10369']->subject = "";
     }
-    
+
     $variables["signing_form"] = drupal_render(_block_get_renderable_array($rendered_block));
 
     switch ($variables['field_petition_partner'][0]['value']) {
       case "":
         $variables['partner_html'] = "";
         $variables['signing_url'] = $variables['node_url'];
-        //$variables['sharethis'] = "<span st_url=\"https://www.abgeordnetenwatch.de$node_url\" st_title=\"$title\" st_summary=\"Petition $title auf abgeordnetenwatch.de\" class=\"st_sharethis_hcount\" displayText=\"sharethis\"></span>";
-        $variables['sharethis'] = theme('sharethis', array(
-          'url' => url("node/$node->nid", array('absolute' => TRUE)),
-          'title' => $variables["title"],
-          'summary' => "Petition " . $variables["title"] . " auf abgeordnetenwatch.de",
-        ));
         break;
       case "change.org":
         $variables['partner_html'] = theme('image', array(
@@ -158,11 +152,6 @@ function pw_petitions_preprocess_node(&$variables) {
         else {
           $variables['signing_url'] = $variables['node_url'];
         }
-        $variables['sharethis'] = theme('sharethis', array(
-          'url' => url("node/$node->nid", array('absolute' => TRUE)),
-          'title' => $variables["title"],
-          'summary' => "Petition " . $variables["title"] . " auf abgeordnetenwatch.de",
-        ));
         break;
       case "openpetition":
         $variables['partner_html'] = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-openpetition.png" width="119" height="36" alt="OpenPetition">';

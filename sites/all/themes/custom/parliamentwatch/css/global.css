@@ -72,7 +72,7 @@ html.mm-opening #hamburger:after
 	transform: rotate( -45deg );
 	bottom: 15px;
 }
-.mm-menu [class^="icon-"]:before, 
+.mm-menu [class^="icon-"]:before,
 .mm-menu [class*=" icon-"]:before {
   margin-right: 0.7em;
 }
@@ -94,12 +94,12 @@ body::-webkit-scrollbar,
 div::-webkit-scrollbar {
     width: 12px;
 }
- 
+
 body::-webkit-scrollbar-track,
 div::-webkit-scrollbar-track {
     background: #efefef;
 }
- 
+
 body::-webkit-scrollbar-thumb,
 div::-webkit-scrollbar-thumb {
   background-color: #ddd;
@@ -280,11 +280,12 @@ blockquote {
 }
 blockquote:after {
     content: close-quote;
-    bottom: -20px;
+
+    bottom: -19px;
 }
 blockquote:before {
     content: open-quote;
-    bottom: -26px;
+    bottom: -25px;
     padding: 0 5px 0 0;
 }
 blockquote:after,
@@ -513,7 +514,7 @@ blockquote .pw-expander div {
 	color: #f63;
 }
 .aw-success {
-  color: #92c01f; 
+  color: #92c01f;
 }
 .aw-icon-circle-brand:before {
 	color: #fff;
@@ -768,7 +769,7 @@ a.link-sound:active {
 .link-pdf a,
 a.link-pdf {
     padding-left: 22px;
-    background-position: 
+    background-position:
 }
 .link-sign a,
 a.link-sign {
@@ -987,7 +988,7 @@ span.ic-info {
 }
 .twitter-item {
     background-position: -930px -3164px;
-    padding: 6px 0 6px 26px;    
+    padding: 6px 0 6px 26px;
 }
 
 h1.site-name a,
@@ -1317,8 +1318,8 @@ h1#page-title {
 }
 #search-form .form-text {
     width: 60%;
-    padding: 12px 10px;   
-    font-size: 14px;  
+    padding: 12px 10px;
+    font-size: 14px;
     font-size: 1.4rem;
     line-height: 1.2em;
     height: auto;
@@ -1332,12 +1333,12 @@ h1#page-title {
   height: 4.1rem;
   width: 41px;
   width: 4.1rem;
-  
+
 }
 .custom-search-button .form-submit {
     border: 0;
     background: url(../images/ic_search.png) no-repeat center;
-    text-indent: -50000px;    
+    text-indent: -50000px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -1481,7 +1482,7 @@ ul.tabs li a {
     background: linear-gradient(to bottom,  #f9f9f9 0%,#ececec 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
     -webkit-border-radius: 3px 3px 0px 0px;
-    border-radius: 3px 3px 0px 0px;   
+    border-radius: 3px 3px 0px 0px;
 
 }
 ul.tabs li.active a,
@@ -1641,7 +1642,7 @@ ul.tabs li a:active {
     background-image: linear-gradient(to bottom,  #f4f4f4 0%,#ececec 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
     -webkit-border-radius: 0px 0px 3px 3px;
-    border-radius: 0px 0px 3px 3px;    
+    border-radius: 0px 0px 3px 3px;
     display: block;
     float: none;
     line-height: 2.6rem;
@@ -1720,7 +1721,7 @@ ul.tabs li a:active {
     background: linear-gradient(to bottom,  #f9f9f9 0%,#ececec 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
     -webkit-border-radius: 3px 3px 0px 0px;
-    border-radius: 3px 3px 0px 0px;   
+    border-radius: 3px 3px 0px 0px;
 
 }
 .quicktabs-style-nostyle .quicktabs-tabs li.active a {
@@ -1776,11 +1777,11 @@ ul.tabs li a:active {
     border: 1px solid #dedede;
     padding: 10px 15px 10px 12px;
     -webkit-box-shadow: 0 0 3px 2px #ebebeb;
-    box-shadow: 0 0 3px 2px #ebebeb;        
+    box-shadow: 0 0 3px 2px #ebebeb;
 }
 @media (max-width: 479px) {
   .floatbox {
-    width: 100%;   
+    width: 100%;
   }
 }
 @media (min-width: 480px) {
@@ -1949,7 +1950,7 @@ ul.tabs li a:active {
 .views-exposed-form .form-radios label:hover,
 .views-exposed-form .form-checkboxes label:hover,
 .views-exposed-form .bef-checkboxes label:hover {
-    cursor: pointer; 
+    cursor: pointer;
 }
 .views-exposed-widget label {
     display: block;
@@ -1979,7 +1980,7 @@ ul.tabs li a:active {
     margin-bottom: 1em;
 }
 #view-display-id-block_1 a {
-    color: 
+    color:
 }
 .group_blog_metainformation {
     margin-bottom: 18px;
@@ -2358,7 +2359,7 @@ html.js fieldset.collapsed {
 }
 
 .pw-progress-wrapper {
-    margin-bottom: 2px; 
+    margin-bottom: 2px;
     border: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
@@ -2384,7 +2385,7 @@ ul.progress-icons {
 	float: left;
 	margin-top: -.19em;
 }
-ul.progress-icons [class^="icon-"]:before, 
+ul.progress-icons [class^="icon-"]:before,
 ul.progress-icons [class*=" icon-"]:before {
 	margin: 0 8px 0 0;
 }
@@ -2397,7 +2398,7 @@ ul.progress-icons li {
 .pw-petition-progress-signings,
 .pw-petition-progress-donations {
     float: left;
-    margin-bottom: 2px; 
+    margin-bottom: 2px;
     border-right: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
@@ -2707,7 +2708,7 @@ input[type="button"],
     text-shadow: 0 0 0;
     vertical-align: top;
     margin-top: 1px;
-    
+
     -webkit-box-shadow: 0 0 2px 2px #DEDEDE;
     -moz-box-shadow: 0 0 2px 2px #DEDEDE;
     box-shadow: 0 0 2px 2px #DEDEDE;
@@ -3228,7 +3229,7 @@ form .webform-component-checkboxes .description {
 }
 #webform-client-form-57286 #webform-component-fieldset-statement--statement-wrapper {
   padding: 10px;
-  background: #f4f4f4; 
+  background: #f4f4f4;
   border: 1px solid #dedede;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -3258,7 +3259,7 @@ form .webform-component-checkboxes .description {
     top: 0;
     right: 5px;
     width: 70px;
-    text-align: right;    
+    text-align: right;
 }
 .st_plusone_hcount,
 .st_twitter_hcount,
@@ -3336,7 +3337,7 @@ form .webform-component-checkboxes .description {
 #section-content .compact-form form,
 #views-exposed-form-user-constituency-page,
 .pw-custom-search form {
-    background: #f4f4f4; 
+    background: #f4f4f4;
     border: 1px solid #dedede;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -3358,7 +3359,7 @@ form .webform-component-checkboxes .description {
     margin-bottom: 0.2rem;
 }
 #section-content .block.newsletter-subscribe form.compact-form { /* newsletter order */
-    background: transparent; 
+    background: transparent;
     border: 0;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -3404,7 +3405,7 @@ form .webform-component-checkboxes .description {
 }
 .comment-reply {
     background-position: -610px -2896px;
-    padding-left: 20px;    
+    padding-left: 20px;
 }
 .comment .submitted .created {
     float: right;
@@ -3590,7 +3591,7 @@ a.external,
 .collapse-processed a.fieldset-title,
 .js .pw-collapsible .fieldset-legend {
     padding-left: 15px;
-    background-position: -647px -2020px; 
+    background-position: -647px -2020px;
 }
 .collapse-processed a.fieldset-title:hover,
 .collapse-processed a.fieldset-title:focus,
@@ -3598,11 +3599,11 @@ a.external,
 .js .pw-collapsible .fieldset-legend:hover,
 .js .pw-collapsible .fieldset-legend:focus,
 .js .pw-collapsible .fieldset-legend:active {
-    background-position: -608px -2061px; 
+    background-position: -608px -2061px;
 }
 .collapse-processed.collapsed a.fieldset-title,
 .js .pw-collapsible .fieldset-legend {
-    background-position: -810px -1858px; 
+    background-position: -810px -1858px;
 }
 .collapse-processed.collapsed a.fieldset-title:hover,
 .collapse-processed.collapsed a.fieldset-title:focus,
