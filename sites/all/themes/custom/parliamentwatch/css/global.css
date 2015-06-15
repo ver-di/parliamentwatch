@@ -275,16 +275,16 @@ img {
 }
 blockquote {
     padding: 12px 0 20px 1px;
-    quotes:"\201C" "\201D";
+    quotes:"\201D" "\201C";
     font: italic normal 18px/22px Times New Roman, Times, serif;
 }
 blockquote:after {
     content: close-quote;
-    bottom: -22px;
+    bottom: -20px;
 }
 blockquote:before {
     content: open-quote;
-    bottom: -21px;
+    bottom: -26px;
     padding: 0 5px 0 0;
 }
 blockquote:after,
