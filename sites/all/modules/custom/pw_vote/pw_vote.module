@@ -387,7 +387,6 @@ function pw_vote_voting_behavior($node) {
   ->propertyCondition('status', NODE_PUBLISHED)
   ->fieldOrderBy('field_vote', 'tid');
   $result = $query->execute();
-  dd('votes loaded: '.(time()-$starttime));
 
   $timetest = 0;
 
@@ -472,14 +471,8 @@ function pw_vote_voting_behavior($node) {
     }
   }
 
-  dd('test: '.$timetest);
-
-  dd('array filled: '.(time()-$starttime));
-
   // sort parties by number of votes
   array_multisort(array_map('count', $all_votes), SORT_DESC, $all_votes);
-
-  dd('arrays sorted: '.(time()-$starttime));
 
   // build containers
   $container_parties = array();
@@ -515,9 +508,6 @@ function pw_vote_voting_behavior($node) {
     'list_voting_behavior' => implode($container_parties),
     )
   );
-
-  dd('all themed: '.(time()-$starttime));
-
   // return
   return $content;
 }

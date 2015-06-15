@@ -74,7 +74,7 @@ function pw_mass_mailing_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'mimemail_name';
-  $strongarm->value = 'Abgeordnetenwatch.de';
+  $strongarm->value = 'abgeordnetenwatch.de';
   $export['mimemail_name'] = $strongarm;
 
   $strongarm = new stdClass();
