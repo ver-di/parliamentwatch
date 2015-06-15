@@ -1,11 +1,9 @@
 <?php
 print render($title_suffix);
 ?>
-<?php if ($sharethis): ?>
-  <div class="sharethis-wrapper">
-    <? echo $sharethis; ?>
-  </div>
-<?php endif; ?>
+<div class="sharethis-wrapper">
+  <span class="st_sharethis_hcount" st_url="<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+</div>
 <h3 class="push-bottom-m">
   <ul class="progress-icons">
     <li><i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Unterschriften werden gesammelt');?></span></i></li>
@@ -27,7 +25,7 @@ print render($title_suffix);
 <div class="pw-petition-list-contents">
   <i class="icon-clock aw-icon-2x aw-success float-left push-right-s"></i>
   <div class="medium"><strong>Petition wird aktuell im Bundestag abgefragt</strong></div>
-  <?php if ($count_votes > 1): ?>  
+  <?php if ($count_votes > 1): ?>
     <div class="small light"><?php print $count_votes; ?> MdBs haben bisher Stellung genommen</div>
   <?php endif; ?>
   <?php if ($partner_html): ?>

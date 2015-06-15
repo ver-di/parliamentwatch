@@ -1,11 +1,9 @@
 <?php
-       print render($title_suffix); 
+       print render($title_suffix);
 ?>
-<?php if ($sharethis): ?>
-    <div class="sharethis-wrapper">
-        <? echo $sharethis; ?>
-    </div>
-<?php endif; ?>
+<div class="sharethis-wrapper">
+  <span class="st_sharethis_hcount" st_url="<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+</div>
 <h3 class="push-bottom-m">
     <ul class="progress-icons">
         <li><i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-brand"><span class="element-invisible"><?php print t('Unterschriften werden gesammelt');?></span></i></li>

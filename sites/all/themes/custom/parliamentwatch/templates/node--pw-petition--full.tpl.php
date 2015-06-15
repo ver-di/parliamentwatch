@@ -5,11 +5,9 @@
 
 // ====================== ACTUAL THEME ===========================
 ?>
-<?php if ($sharethis): ?>
-  <div class="sharethis-wrapper">
-    <? echo $sharethis; ?>
-  </div>
-<?php endif; ?>
+<div class="sharethis-wrapper">
+  <span class="st_sharethis_hcount" st_url="<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+</div>
 <div class="push-bottom-m">
   <p class="medium">Adressat: <? echo $field_petition_recipient[0]['value'] ?></p>
   <?php if (!empty($field_blogpost_blogtags)): ?>
@@ -45,10 +43,10 @@
   <? print theme('status_messages'); ?>
   <? echo $signing_form; //todo: Ordentliche CSS-Klasse anstelle der Wiederverwendung von "comment"?>
 </div>
-  
-<?php 
+
+<?php
 // render comments if there are any
-if ($comments): 
+if ($comments):
 ?>
   <div id="comments" class="comment-wrapper">
     <h3>Ich habe die Petition unterschrieben, weil...</h3>
