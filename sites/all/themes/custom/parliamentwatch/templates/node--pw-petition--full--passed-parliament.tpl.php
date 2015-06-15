@@ -2,7 +2,7 @@
   print theme('status_messages');
 ?>
 <div class="sharethis-wrapper">
-  <span class="st_sharethis_hcount" st_url="<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+  <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
 <div class="element-invisible">
   <img src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_s/public/default_images/img_fotodummy_210x140.jpg" alt="">
