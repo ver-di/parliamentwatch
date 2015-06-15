@@ -51,6 +51,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'clearfix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['class'] = 'pw-list-seperated';
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   /* Beziehung: Inhalt: Autor */

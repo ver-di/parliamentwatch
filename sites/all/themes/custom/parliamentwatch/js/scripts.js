@@ -115,13 +115,17 @@ jQuery(document).ready(function() {
               slicePoint:       400,  // default is 100
               expandText:       t_readmore, // default is 'read more'
               userCollapseText: t_readless,  // default is 'read less'
-              expandEffect:     'fadeIn',  // default is 'read less'
-              collapseEffect:   'hide'
+              expandEffect:     'fadeIn',
+              beforeExpand: function() {
+                $(this).find('.details').css({display: 'inline'});
+              }
           });
         }
         pw_expand();
+          $('.summary p:last').css({display: 'inline'});
         $(document).ajaxComplete(function() {
           pw_expand();
+          $('.summary p:last').css({display: 'inline'});
         });
     });
 

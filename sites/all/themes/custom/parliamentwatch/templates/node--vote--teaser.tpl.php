@@ -13,7 +13,7 @@
   </div>
 </div>
 <?php if (strlen($statement) > 0): ?>
-<div class="pw-kc-argumentation pushfloat-1">
+<div class="statement">
   <blockquote><div class="pw-expander"><div><?php print $statement; ?></div></div></blockquote>
 </div>
 <?php endif; ?>
