@@ -122,10 +122,8 @@ jQuery(document).ready(function() {
           });
         }
         pw_expand();
-          $('.summary p:last').css({display: 'inline'});
         $(document).ajaxComplete(function() {
           pw_expand();
-          $('.summary p:last').css({display: 'inline'});
         });
     });
 
