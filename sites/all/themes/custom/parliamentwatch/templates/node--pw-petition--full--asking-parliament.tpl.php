@@ -1,8 +1,6 @@
-<?php if ($sharethis): ?>
-  <div class="sharethis-wrapper">
-    <? print $sharethis; ?>
-  </div>
-<?php endif; ?>
+<div class="sharethis-wrapper">
+  <span class="st_sharethis_hcount" st_url="<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+</div>
 
 <?php
   // render webform block for politicians if parameter "u" is in url
@@ -64,9 +62,9 @@
   Lesen Sie die Original-Petition auf <? print l($field_petition_external_url[0]['url'], $field_petition_external_url[0]['url']); ?>
 </p>
 
-<?php 
+<?php
 // render comments if there are any
-if ($comments): 
+if ($comments):
 ?>
   <div id="comments" class="comment-wrapper">
     <h3>Ich habe die Petition unterschrieben, weil...</h3>

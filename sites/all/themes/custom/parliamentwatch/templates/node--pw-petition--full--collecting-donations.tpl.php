@@ -2,11 +2,9 @@
 //todo: field_get_items benutzen
 //$comments = render(comment_node_page_additions($node)['comments']);
 ?>
-<?php if ($sharethis): ?>
-  <div class="sharethis-wrapper">
-    <? echo $sharethis; ?>
-  </div>
-<?php endif; ?>
+<div class="sharethis-wrapper">
+  <span class="st_sharethis_hcount" st_url="<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+</div>
 <div class="push-bottom-l">
 
   <p class="medium">Adressat: <? echo $field_petition_recipient[0]['value'] ?></p>
@@ -28,7 +26,7 @@
       ?>
     </p>
   <?php endif; ?>
-  
+
 <div class="managed_content clearfix push-bottom-l">
   <div class="floatbox floatbox-right">
     <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
@@ -60,9 +58,9 @@
 <div class="managed_content push-bottom-l">
   <? print check_markup($field_petition_content[0]['value']); ?>
 </div>
-<?php 
+<?php
 // render comments if there are any
-if ($comments): 
+if ($comments):
 ?>
   <div id="comments" class="comment-wrapper">
     <h3>Ich habe die Petition unterschrieben, weil...</h3>
