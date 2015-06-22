@@ -299,10 +299,20 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['ss_vote_user_vote_sortable']['id'] = 'ss_vote_user_vote_sortable';
   $handler->display->display_options['fields']['ss_vote_user_vote_sortable']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_vote_sortable']['field'] = 'ss_vote_user_vote_sortable';
+  /* Feld: Apache Solr: ds_created */
+  $handler->display->display_options['fields']['ds_created']['id'] = 'ds_created';
+  $handler->display->display_options['fields']['ds_created']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ds_created']['field'] = 'ds_created';
+  /* Sortierkriterien: Apache Solr: ds_changed */
+  $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
+  $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['sorts']['ds_changed']['field'] = 'ds_changed';
+  $handler->display->display_options['sorts']['ds_changed']['order'] = 'DESC';
   /* Sortierkriterien: Apache Solr: ss_vote_user_vote_sortable */
   $handler->display->display_options['sorts']['ss_vote_user_vote_sortable']['id'] = 'ss_vote_user_vote_sortable';
   $handler->display->display_options['sorts']['ss_vote_user_vote_sortable']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['ss_vote_user_vote_sortable']['field'] = 'ss_vote_user_vote_sortable';
+  $handler->display->display_options['sorts']['ss_vote_user_vote_sortable']['expose']['label'] = 'ss_vote_user_vote_sortable';
   /* Sortierkriterien: Apache Solr: ss_field_user_lname */
   $handler->display->display_options['sorts']['ss_field_user_lname']['id'] = 'ss_field_user_lname';
   $handler->display->display_options['sorts']['ss_field_user_lname']['table'] = 'apachesolr__solr';
@@ -467,6 +477,7 @@ function pw_vote_views_default_views() {
     t('sm_field_vote_node'),
     t('Nachname'),
     t('ss_vote_user_vote_sortable'),
+    t('ds_created'),
     t('Suche'),
     t('ss_vote_user_party'),
     t('ss_vote_user_vote_text'),

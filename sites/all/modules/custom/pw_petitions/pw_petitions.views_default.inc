@@ -226,7 +226,7 @@ print $progress; ?>%;"></div></div>';
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = 'Zeichnen Sie die Petitionen von abgeordnetenwatch.de und bitten Sie über Ihre Netzwerke auch interessierte Freunde und Bekannte dies zu tun. Gemeinsam für mehr Transparenz und gegen Korruption!';
+  $handler->display->display_options['header']['area']['content'] = 'Zeichnen Sie die Petitionen von abgeordnetenwatch.de und bitten Sie über Ihre Netzwerke auch interessierte Freunde und Bekannte dies zu tun. Gemeinsam für mehr Transparenz und gegen Korruption! <a href="/petitionen" class="read-more">alle Petitionen</a>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Inhalt: Beitrags-ID */
@@ -856,7 +856,7 @@ print $progress; ?>%;"></div></div>';
     t('Alle'),
     t('Menu Block'),
     t('alle Petitionen'),
-    t('Zeichnen Sie die Petitionen von abgeordnetenwatch.de und bitten Sie über Ihre Netzwerke auch interessierte Freunde und Bekannte dies zu tun. Gemeinsam für mehr Transparenz und gegen Korruption!'),
+    t('Zeichnen Sie die Petitionen von abgeordnetenwatch.de und bitten Sie über Ihre Netzwerke auch interessierte Freunde und Bekannte dies zu tun. Gemeinsam für mehr Transparenz und gegen Korruption! <a href="/petitionen" class="read-more">alle Petitionen</a>'),
     t('Diese Petition mitzeichnen'),
     t('Petitions Sidebar'),
     t('Teaser image wrapper'),
