@@ -51,7 +51,7 @@ function pw_api_menu() {
   foreach (array('profile', 'profiles') as $call) {
 
     foreach (array('xml', 'json') as $type) {
-      $key = 'api/parliament/%/'.$call.'.'.$type;
+      $key = 'api/profile/%/'.$call.'.'.$type;
       $item = array(
         'page callback' => 'pw_api_'.$call,
         'page arguments' => array(2),
