@@ -462,6 +462,7 @@ function pw_vote_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_vote_user',
       'label' => 'Politician Reference',
       'required' => 1,
