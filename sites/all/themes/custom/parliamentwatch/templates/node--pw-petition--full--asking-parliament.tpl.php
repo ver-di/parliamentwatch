@@ -3,16 +3,17 @@
 </div>
 
 <?php
-  // render webform block for politicians if parameter "u" is in url
-  if (pw_vote_check_user_allowed()): ?>
-  <div class="clearfix push-bottom-l">
-  <?php
-    $block = module_invoke('webform', 'block_view', 'client-block-57286');
-    print theme('status_messages');
-    print render($block['content']);
-  ?>
-  </div>
-  <?php endif; ?>
+// render webform block for politicians if parameter "u" is in url
+if (pw_vote_check_user_allowed()):
+?>
+<div class="clearfix push-bottom-l">
+<?php
+  $block = module_invoke('webform', 'block_view', 'client-block-57286');
+  print theme('status_messages');
+  print render($block['content']);
+?>
+</div>
+<?php endif; ?>
 
 <?php if (!empty($field_blogpost_blogtags)): ?>
   <p class="icon-taxonomy push-bottom-m">

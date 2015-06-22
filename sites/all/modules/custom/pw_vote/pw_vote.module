@@ -124,8 +124,8 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       $vote = node_load($nid);
       $w_vote = entity_metadata_wrapper('node', $vote);
 
-      // voting only allowed till petition end date
-      if(time() > $w_vote->field_vote_node->field_petition_end_date->value()) {
+      // changing vote is only allowed till end date or within 24 hours of last change; creating a new one is always allowed.
+      if(time() > $w_vote->field_vote_node->field_petition_end_date->value() && $vote->uid == $uid && time() - $vote->changed > 86400) {
         $petition_end_date = date('d.m.Y H:i', $w_vote->field_vote_node->field_petition_end_date->value());
         $link_email = l('E-Mail', 'mailto:service@abgeordnetenwatch.de?subject=Mein Stimmverhalten bei '.$node->title, array('absolute' => TRUE));
         drupal_set_message('Die Frist zur Eintragung Ihres Stimmverhaltens ist bereits am ' . $petition_end_date . ' abgelaufen. Bitte setzen Sie sich bei Änderungswünschen mit der Redaktion von '.variable_get('site_name').' unter 040 / 317 69 10 26 oder per '.$link_email.' in Verbindung.', 'warning');
@@ -192,9 +192,10 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 function pw_vote_form_validate(&$form, &$form_state, $form_id) {
 
   // petition end date reached
+  $uid = pw_vote_check_user_allowed();
   $node = node_load($form['submitted']['vote_node_id']['#value']);
   $w_node = entity_metadata_wrapper('node', $node);
-  if(time() > $w_node->field_vote_node->field_petition_end_date->value()) {
+  if(!$uid || time() > $w_node->field_vote_node->field_petition_end_date->value() && $node->uid == $uid && time() - $vote->changed > 86400) {
     form_set_error('error', 'Die Frist zur Eintragung ist bereits abgelaufen.');
   }
 }

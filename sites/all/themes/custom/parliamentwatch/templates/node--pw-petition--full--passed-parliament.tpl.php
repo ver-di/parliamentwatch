@@ -1,9 +1,19 @@
 <?php
-  print theme('status_messages');
+// render webform block for politicians if parameter "u" is in url
+if (pw_vote_check_user_allowed()):
 ?>
+<div class="clearfix push-bottom-l">
+<?php
+  $block = module_invoke('webform', 'block_view', 'client-block-57286');
+  print theme('status_messages');
+  print render($block['content']);
+?>
+</div>
+<?php else: ?>
 <div class="sharethis-wrapper">
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
+<?php endif; ?>
 <div class="element-invisible">
   <img src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_s/public/default_images/img_fotodummy_210x140.jpg" alt="">
 </div>
