@@ -280,9 +280,10 @@ function pw_vote_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_vote',
       'label' => 'Vote',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
