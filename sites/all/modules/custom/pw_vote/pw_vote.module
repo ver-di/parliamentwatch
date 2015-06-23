@@ -13,7 +13,7 @@ include_once 'pw_vote.features.inc';
 function pw_vote_menu() {
   $items = array();
   $items['admin/config/pw/vote'] = array(
-    'title' => 'Generate Votes',
+    'title' => 'PW Vote',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('pw_vote_generate_votes_form'),
     'access arguments' => array('administer site configuration'),
