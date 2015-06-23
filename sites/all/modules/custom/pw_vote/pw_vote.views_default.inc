@@ -120,6 +120,263 @@ function pw_vote_views_default_views() {
   $export['pw_vote_positions'] = $view;
 
   $view = new view();
+  $view->name = 'pw_vote_profile';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'PW Vote Profile';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Abstimmungsverhalten in Petitions-Check';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = array(
+    'field_vote' => 'field_vote',
+    'field_petition_end_date' => 'field_petition_end_date',
+    'title' => 'title',
+    'field_votes_label' => 'field_votes_label',
+    'body' => 'body',
+    'view_node' => 'view_node',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_petition_end_date';
+  $handler->display->display_options['style_options']['info'] = array(
+    'field_vote' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_petition_end_date' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_votes_label' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'body' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'view_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
+  $handler->display->display_options['relationships']['field_vote_user_target_id']['id'] = 'field_vote_user_target_id';
+  $handler->display->display_options['relationships']['field_vote_user_target_id']['table'] = 'field_data_field_vote_user';
+  $handler->display->display_options['relationships']['field_vote_user_target_id']['field'] = 'field_vote_user_target_id';
+  $handler->display->display_options['relationships']['field_vote_user_target_id']['required'] = TRUE;
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
+  $handler->display->display_options['relationships']['field_vote_node_target_id']['id'] = 'field_vote_node_target_id';
+  $handler->display->display_options['relationships']['field_vote_node_target_id']['table'] = 'field_data_field_vote_node';
+  $handler->display->display_options['relationships']['field_vote_node_target_id']['field'] = 'field_vote_node_target_id';
+  $handler->display->display_options['relationships']['field_vote_node_target_id']['required'] = TRUE;
+  /* Beziehung: Inhalt: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'votes' => 'votes',
+    'area_codex' => 0,
+    'blogcategories' => 0,
+    'blogtags' => 0,
+    'committee' => 0,
+    'committee_types' => 0,
+    'constituency' => 0,
+    'dialogue_tags' => 0,
+    'dialogue_topics' => 0,
+    'electoral_region' => 0,
+    'fraction' => 0,
+    'pw_kc_votes' => 0,
+    'election_list' => 0,
+    'list_position' => 0,
+    'parliaments' => 0,
+    'party' => 0,
+    'political_roles' => 0,
+    'pw_profile_roles_for_view_mode_switch' => 0,
+    'pw_widget_values' => 0,
+    'sidejob_jobs' => 0,
+    'sidejob_organizations' => 0,
+    'sidejob_sectors' => 0,
+    'tags' => 0,
+  );
+  /* Feld: Excluded | Vote */
+  $handler->display->display_options['fields']['field_vote']['id'] = 'field_vote';
+  $handler->display->display_options['fields']['field_vote']['table'] = 'field_data_field_vote';
+  $handler->display->display_options['fields']['field_vote']['field'] = 'field_vote';
+  $handler->display->display_options['fields']['field_vote']['ui_name'] = 'Excluded | Vote';
+  $handler->display->display_options['fields']['field_vote']['label'] = '';
+  $handler->display->display_options['fields']['field_vote']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_vote']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_vote']['element_label_class'] = '[field_vote] block vote';
+  $handler->display->display_options['fields']['field_vote']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_vote']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_vote']['type'] = 'taxonomy_term_reference_plain';
+  /* Feld: Inhalt: End Date */
+  $handler->display->display_options['fields']['field_petition_end_date']['id'] = 'field_petition_end_date';
+  $handler->display->display_options['fields']['field_petition_end_date']['table'] = 'field_data_field_petition_end_date';
+  $handler->display->display_options['fields']['field_petition_end_date']['field'] = 'field_petition_end_date';
+  $handler->display->display_options['fields']['field_petition_end_date']['relationship'] = 'field_vote_node_target_id';
+  $handler->display->display_options['fields']['field_petition_end_date']['label'] = 'Datum';
+  $handler->display->display_options['fields']['field_petition_end_date']['settings'] = array(
+    'format_type' => 'date_only_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Feld: Inhalt: Titel */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'field_vote_node_target_id';
+  $handler->display->display_options['fields']['title']['label'] = 'Petition';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Feld: Taxonomie-Begriff: Label */
+  $handler->display->display_options['fields']['field_votes_label']['id'] = 'field_votes_label';
+  $handler->display->display_options['fields']['field_votes_label']['table'] = 'field_data_field_votes_label';
+  $handler->display->display_options['fields']['field_votes_label']['field'] = 'field_votes_label';
+  $handler->display->display_options['fields']['field_votes_label']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['field_votes_label']['label'] = 'Stimmverhalten';
+  $handler->display->display_options['fields']['field_votes_label']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_votes_label']['alter']['text'] = '<div class="[field_vote] vote block">[field_votes_label]</div>';
+  $handler->display->display_options['fields']['field_votes_label']['element_type'] = 'div';
+  $handler->display->display_options['fields']['field_votes_label']['element_class'] = 'pw-voting';
+  $handler->display->display_options['fields']['field_votes_label']['element_default_classes'] = FALSE;
+  /* Feld: Inhalt: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = 'Argumentation';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'pw-expander';
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  /* Feld: Inhalt: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['relationship'] = 'field_vote_node_target_id';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['link_class'] = 'icon-poll';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'zum Petitions-Check';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
+  $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
+  /* Sortierkriterien: Inhalt: Datum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Kontextfilter: Inhalt: Politician Reference (field_vote_user) */
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['id'] = 'field_vote_user_target_id';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['table'] = 'field_data_field_vote_user';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['field'] = 'field_vote_user_target_id';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['validate_options']['type'] = 'either';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['validate_options']['restrict_roles'] = TRUE;
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['validate_options']['roles'] = array(
+    181527986 => '181527986',
+  );
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'vote' => 'vote',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['pw_vote_profile'] = array(
+    t('Master'),
+    t('Abstimmungsverhalten in Petitions-Check'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Sortieren nach'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('Benutzer entity referenced from field_vote_user'),
+    t('Inhalt entity referenced from field_vote_node'),
+    t('Begriff'),
+    t('Datum'),
+    t('Petition'),
+    t('Stimmverhalten'),
+    t('<div class="[field_vote] vote block">[field_votes_label]</div>'),
+    t('Argumentation'),
+    t('zum Petitions-Check'),
+    t('Alle'),
+    t('Block'),
+  );
+  $export['pw_vote_profile'] = $view;
+
+  $view = new view();
   $view->name = 'pw_vote_search';
   $view->description = '';
   $view->tag = 'default';
