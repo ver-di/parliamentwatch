@@ -472,11 +472,14 @@ function pw_vote_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
+        'module' => 'entityreference',
         'settings' => array(
+          'match_operator' => 'CONTAINS',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'path' => '',
+          'size' => 60,
         ),
-        'type' => 'options_select',
+        'type' => 'entityreference_autocomplete',
         'weight' => '3',
       ),
     ),
