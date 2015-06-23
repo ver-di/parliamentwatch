@@ -338,6 +338,7 @@ function pw_vote_field_default_fields() {
             'type' => 'none',
           ),
           'target_bundles' => array(
+            'poll' => 'poll',
             'pw_petition' => 'pw_petition',
           ),
         ),
@@ -373,6 +374,7 @@ function pw_vote_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_vote_node',
       'label' => 'Node Reference',
       'required' => 1,

@@ -7,40 +7,12 @@ include_once 'pw_vote.features.inc';
 
 
 /**
- * Implements hook_install()
- */
-
-function pw_vote_install() {
-
-  // sets default value to vote tolerance timespan
-  variable_set('pw_vote_vote_tolerance', 24 * 3600);
-}
-
-/**
- * Implements hook_uninstall()
- */
-
-function pw_vote_uninstall() {
-
-  // unset variable vote tolerance timespan
-  variable_del('pw_vote_vote_tolerance');
-}
-
-
-/**
  * Implements hook_menu().
  */
 
 function pw_vote_menu() {
   $items = array();
   $items['admin/config/pw/vote'] = array(
-    'title' => 'PW Vote',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('pw_vote_settings_form'),
-    'access arguments' => array('administer site configuration'),
-    'file' => 'pw_vote.admin.inc',
-    );
-  $items['admin/config/pw/vote/generate_votes'] = array(
     'title' => 'Generate Votes',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('pw_vote_generate_votes_form'),

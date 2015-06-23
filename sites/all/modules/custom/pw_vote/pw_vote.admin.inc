@@ -5,45 +5,30 @@
  *
  */
 
-/**
- * Form builder.
- */
-function pw_vote_settings_form($form, &$form_state) {
-
-  $form['pw_vote_vote_tolerance'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Set tolerance for voting in seconds'),
-    '#default_value' => variable_get('pw_vote_vote_tolerance'),
-    '#required' => TRUE,
-    );
-
-  return system_settings_form($form);
-}
-
 
 /**
  * Form builder.
  */
 function pw_vote_generate_votes_form($form, &$form_state) {
 
-  // select all petitions and build select box
+  // build select box
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-  ->entityCondition('bundle', 'pw_petition')
+  ->entityCondition('bundle', array('pw_petition', 'poll'))
   ->propertyCondition('status', NODE_PUBLISHED);
   $result = $query->execute();
   $options = array();
   if (isset($result['node'])) {
     $nodes = node_load_multiple(array_keys($result['node']));
     foreach ($nodes as $nid => $node) {
-      $options[$nid] = $node->title;
+      $options[$nid] = $node->title . ' (' . $node->type . ')';
     }
   }
-  $form['pw_vote_admin_petition'] = array(
+  $form['pw_vote_admin'] = array(
     '#type' => 'select',
-    '#title' => t('Petition, to generate votes for'),
+    '#title' => t('Content, to generate votes for'),
     '#options' => $options,
-    '#default_value' => variable_get('pw_vote_generate_votes_petition'),
+    '#default_value' => variable_get('pw_vote_generate_votes_nid'),
     '#required' => TRUE,
     );
 
@@ -68,7 +53,7 @@ function pw_vote_generate_votes_form($form, &$form_state) {
 
   $form['pw_vote_admin_delete_existing'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Delete all votes for this petition before generate new ones'),
+    '#title' => t('Delete all votes for this content before generate new ones'),
     );
 
   // add submit button
@@ -108,15 +93,15 @@ function pw_vote_admin_submit($form, &$form_state) {
   global $user;
 
   // selected node
-  $petition_nid = $form['pw_vote_admin_petition']['#value'];
-  $node = node_load($petition_nid);
-  variable_set('pw_vote_generate_votes_petition', $petition_nid);
+  $content_nid = $form['pw_vote_admin']['#value'];
+  $node = node_load($content_nid);
+  variable_set('pw_vote_generate_votes_nid', $content_nid);
 
   // wrap node
-  $petition = entity_metadata_wrapper('node', $node);
+  $w_node = entity_metadata_wrapper('node', $node);
 
   // parliament
-  $parliament = $petition->field_parliament->value();
+  $parliament = $w_node->field_parliament->value();
 
   // load yes/no etc
   if($form['pw_vote_admin_default_vote']['#value'] == 'random') {
@@ -130,7 +115,7 @@ function pw_vote_admin_submit($form, &$form_state) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'vote')
-    ->fieldCondition('field_vote_node', 'target_id', $petition_nid);
+    ->fieldCondition('field_vote_node', 'target_id', $content_nid);
     $result = $query->execute();
     if ($result['node']) {
       $nids = array_keys($result['node']);
@@ -145,7 +130,7 @@ function pw_vote_admin_submit($form, &$form_state) {
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'vote')
-    ->fieldCondition('field_vote_node', 'target_id', $petition_nid);
+    ->fieldCondition('field_vote_node', 'target_id', $content_nid);
     $result = $query->execute();
 
     if (isset($result['node'])) {
@@ -186,7 +171,7 @@ function pw_vote_admin_submit($form, &$form_state) {
  }
 
   // retrieve all deputies of related parliament
- $deputies = db_query("SELECT uac.uid FROM user_archive_cache uac WHERE uac.user_role = 'deputy' AND uac.parliament_name = :name", array(':name' => $petition->field_parliament->label()))->fetchCol();
+ $deputies = db_query("SELECT uac.uid FROM user_archive_cache uac WHERE uac.user_role = 'deputy' AND uac.parliament_name = :name", array(':name' => $w_node->field_parliament->label()))->fetchCol();
 
   // create vote for each deputy
  $count_generated = 0;
@@ -195,7 +180,7 @@ function pw_vote_admin_submit($form, &$form_state) {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
   ->entityCondition('bundle', 'vote')
-  ->fieldCondition('field_vote_node', 'target_id', $petition_nid)
+  ->fieldCondition('field_vote_node', 'target_id', $content_nid)
   ->fieldCondition('field_vote_user', 'target_id', $uid);
   $result = $query->count()->execute();
 
@@ -215,7 +200,7 @@ function pw_vote_admin_submit($form, &$form_state) {
       $vote->language = LANGUAGE_NONE;
       $vote->status = 1;
       $vote->uid = $user->uid;
-      $vote->field_vote_node[$vote->language][]['target_id'] = $petition_nid;
+      $vote->field_vote_node[$vote->language][]['target_id'] = $content_nid;
       $vote->field_parliament[$vote->language][]['tid'] = $parliament[0]->tid;
       $vote->field_vote_user[$vote->language][]['target_id'] = $uid;
       $vote->body[$vote->language][]['format']= 'plain_text';
