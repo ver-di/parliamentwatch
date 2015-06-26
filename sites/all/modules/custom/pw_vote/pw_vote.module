@@ -120,7 +120,7 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
     if (isset($result['node'])) {
 
       // load vote and wrap it
-      $nid = array_keys($result['node']);
+      $nid = key($result['node']);
       $vote = node_load($nid);
       $w_vote = entity_metadata_wrapper('node', $vote);
 
