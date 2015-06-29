@@ -2444,6 +2444,7 @@ else
     t('‹ vorherige Seite'),
     t('weiter'),
     t('letzte Seite »'),
+    t('- Wählen Sie eine Aufgabe -'),
     t('Name'),
     t('E-Mail'),
     t('Party'),

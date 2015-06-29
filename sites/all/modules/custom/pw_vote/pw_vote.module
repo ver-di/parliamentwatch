@@ -93,7 +93,8 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
       // load vote and wrap it
       $nid = array_keys($result['node']);
-      $vote = node_load($nid);
+      $vote = node_load($nid[0]);
+
       $w_vote = entity_metadata_wrapper('node', $vote);
 
       // changing vote is only allowed till end date or within 24 hours of last change; creating a new one is always allowed.

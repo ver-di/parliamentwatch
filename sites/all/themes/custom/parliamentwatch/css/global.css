@@ -245,7 +245,15 @@ small {
 table.table th,
 table.table td {
     border: 1px solid #999;
+}
+table th,
+table td {
     padding: 3px 5px;
+    text-align: left;
+}
+table.table-sorted th a img {
+  vertical-align: text-top;
+  margin-left: 3px;
 }
 p {
     margin-bottom: 1em;
@@ -2155,6 +2163,35 @@ img.no-outline {
 	margin-left: -31px;
 }
 
+table.pw-voting {
+  width: 100%;
+}
+table.pw-voting th {
+  white-space: nowrap;
+}
+table.pw-voting td {
+  vertical-align: middle;
+}
+table.pw-voting.zebra .views-row-odd {
+    background: #fff;
+}
+table.pw-voting.zebra .odd {
+    background: #f4f4f4 !important;
+}
+.views-field-field-petition-end-date {
+  width: 10%;
+}
+.views-field-title {
+  width: 70%;
+}
+.pw-voting {
+  width: 10%;
+}
+.views-field-nothing {
+  width: 10%;
+  white-space: nowrap;
+}
+
 .pw-voting .vote {
   border-width: 1px;
   border-style: solid;
@@ -2169,6 +2206,11 @@ img.no-outline {
 .pw-voting .vote.block {
   padding: 1px 5px;
   white-space: nowrap;
+  text-align: center;
+}
+.pw-voting span.vote.block {
+  display: inline-block;
+  margin-bottom: 3px;
 }
 .pw-voting .total.vote > a {
   color: inherit;
@@ -3570,6 +3612,7 @@ a.external,
 .collapse-processed .fieldset-title,
 .js .pw-collapsible .fieldset-legend,
 .js .responsive-layout-mobile .pw-expandable-mobile h2,
+.js .responsive-layout-mobile .pw-expandable-mobile h3,
 .item-list ul.pager.pager-load-more a span,
 #quicktabs-politicians_answer .quicktabs-tabs a span,
 #quicktabs-homepage_tabs a span,
@@ -3641,12 +3684,14 @@ a.external,
 .mobile-only {
     display: block;
 }
-.js .responsive-layout-mobile .pw-expandable-mobile h2 {
+.js .responsive-layout-mobile .pw-expandable-mobile h2,
+.js .responsive-layout-mobile .pw-expandable-mobile h3 {
     padding-left: 36px;
     background-position: -280px -195px;
     cursor: pointer;
 }
-.js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded {
+.js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded,
+.js .responsive-layout-mobile .pw-expandable-mobile h3.pw-mobile-expanded {
     background-position: -360px -115px;
 }
 .js .responsive-layout-normal #colorbox #pw_block_user_questionform,

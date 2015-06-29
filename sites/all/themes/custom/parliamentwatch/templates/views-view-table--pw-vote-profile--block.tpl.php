@@ -19,7 +19,7 @@
  * @ingroup views_templates
  */
 ?>
-<table <?php if ($classes) { print 'class="'. $classes . '" '; } ?><?php print $attributes; ?>>
+<table <?php if ($classes) { print 'class="pw-voting zebra table-sorted '. $classes . '" '; } ?><?php print $attributes; ?>>
    <?php if (!empty($title) || !empty($caption)) : ?>
      <caption><?php print $caption . $title; ?></caption>
   <?php endif; ?>
@@ -43,13 +43,21 @@
           </td>
         <?php endforeach; ?>
       </tr>
-      <?php if(sizeof($result[$row_count]->field_body) > 0) : ?>
-        <tr>
-          <td colspan="<?php print sizeof($rows); ?>">
-            <?php print $result[$row_count]->field_body[0]['rendered']['#markup']; ?>
-          </td>
-        </tr>
-      <?php endif; ?>
+      <tr <?php if ($row_classes[$row_count]) { print 'class="js-hide toggle-details-content ' . implode(' ', $row_classes[$row_count]) .'"';  } ?> >
+        <td colspan="4">
+          <h4 class="push-bottom-s">Gesamtergebnis</h4>
+          <p>
+            <span class="yes vote block">155 dafür gestimmt</span>
+            <span class="no vote block">162 dagegen gestimmt</span>
+            <span class="abstain vote block">161 enthalten</span>
+            <span class="no-show vote block">155 nicht beteiligt</span>
+          </p>
+          <?php if(sizeof($result[$row_count]->field_body) > 0) : ?>
+            <h4>Begründung</h4>
+            <blockquote><?php print $result[$row_count]->field_body[0]['rendered']['#markup']; ?></blockquote>
+          <?php endif; ?>
+        </td>
+      </tr>
     <?php endforeach; ?>
   </tbody>
 </table>

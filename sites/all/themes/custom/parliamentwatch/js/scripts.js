@@ -32,6 +32,19 @@ jQuery(window) // https://www.drupal.org/node/1478648
 
 
 jQuery(document).ready(function() {
+  
+  function toggle_details() {
+    $('.toggle-details').on('click', function(e) {
+      e.preventDefault();
+      $(this).find('.icon-arrow-right').toggleClass('icon-arrow-down');
+      $(this).closest('tr').next('.toggle-details-content').fadeToggle();
+    });
+  }
+  toggle_details();
+  $(document).ajaxComplete(function() {
+    $('.toggle-details').unbind('click');
+    toggle_details();
+  });
 
 // show voting details on click
 
@@ -132,9 +145,10 @@ jQuery(document).ready(function() {
         
     $(window).load(function () { //https://drupal.org/node/1478648
         $('.responsive-layout-mobile #pw-block-user-basics h2').addClass('pw-mobile-expanded');
-        $('.responsive-layout-mobile .pw-expandable-mobile h2').click(function(){
+        $('.responsive-layout-mobile #pw-block-user-basics h3').addClass('pw-mobile-expanded');
+        $('.responsive-layout-mobile .pw-expandable-mobile h2,.responsive-layout-mobile .pw-expandable-mobile h3').click(function(){
         //alert();
-            $(this).next('.view').slideToggle('slow');
+            $(this).parent('div').find('.view').slideToggle('slow');
             $(this).toggleClass('pw-mobile-expanded');
         });
     });

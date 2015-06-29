@@ -247,6 +247,17 @@ function pw_profiles_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-pc"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
     'pw_kandidatencheck' => array(
       'weight' => '3',
@@ -414,6 +425,17 @@ function pw_profiles_ds_field_settings_info() {
       'weight' => '2',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-pc"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
     'bundestagsradar' => array(
       'weight' => '8',
@@ -636,12 +658,23 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'user_premium';
   $ds_fieldsetting->settings = array(
     'user_vote_petition' => array(
-      'weight' => '9',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-pc"',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
     'pw_kandidatencheck' => array(
-      'weight' => '8',
+      'weight' => '9',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1676,8 +1709,8 @@ function pw_profiles_ds_layout_settings_info() {
         5 => 'user_tweets',
         6 => 'additional_links',
         7 => 'user_calendar',
-        8 => 'pw_kandidatencheck',
-        9 => 'user_vote_petition',
+        8 => 'user_vote_petition',
+        9 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
         10 => 'pw_slider',
@@ -1703,8 +1736,8 @@ function pw_profiles_ds_layout_settings_info() {
       'user_tweets' => 'left_1',
       'additional_links' => 'left_1',
       'user_calendar' => 'left_1',
-      'pw_kandidatencheck' => 'left_1',
       'user_vote_petition' => 'left_1',
+      'pw_kandidatencheck' => 'left_1',
       'pw_slider' => 'right_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
