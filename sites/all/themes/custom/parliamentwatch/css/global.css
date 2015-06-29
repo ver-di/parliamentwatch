@@ -2178,16 +2178,16 @@ table.pw-voting.zebra .views-row-odd {
 table.pw-voting.zebra .odd {
     background: #f4f4f4 !important;
 }
-.views-field-field-petition-end-date {
+table.pw-voting .views-field-field-petition-end-date {
   width: 10%;
 }
-.views-field-title {
+table.pw-voting .views-field-title {
   width: 70%;
 }
-.pw-voting {
+table.pw-voting .pw-voting {
   width: 10%;
 }
-.views-field-nothing {
+table.pw-voting .views-field-nothing {
   width: 10%;
   white-space: nowrap;
 }
@@ -2270,7 +2270,7 @@ table.pw-voting.zebra .odd {
   margin: 0 2px 2px 0;
   cursor: pointer;
 }
-.pw-voting .list_voting_behavior .vote.no-show {
+.pw-voting .list_voting_behavior li.vote.no-show {
   width: 0.9rem;
   height: 0.9rem;
   width: 9px;
