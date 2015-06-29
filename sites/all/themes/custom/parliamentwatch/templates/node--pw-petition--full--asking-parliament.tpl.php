@@ -17,18 +17,8 @@ if (pw_vote_check_user_allowed()):
 
 <?php if (!empty($field_blogpost_blogtags)): ?>
   <p class="icon-taxonomy push-bottom-m">
-    <?
-    $first_term = true;
-    foreach ($field_blogpost_blogtags as $key => $value){
-      if ($first_term) {
-        $first_term = false;
-      }
-      else{
-        print ", ";
-      }
-      $term = taxonomy_term_load($value['tid']);
-      print l($term->name, 'taxonomy/term/' . $value['tid']);
-    }
+    <?php
+    print _pw_get_linked_terms($field_blogpost_blogtags);
     ?>
   </p>
 <?php endif; ?>

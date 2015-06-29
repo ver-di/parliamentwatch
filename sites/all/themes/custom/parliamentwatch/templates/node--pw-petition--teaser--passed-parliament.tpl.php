@@ -31,7 +31,7 @@ print render($title_suffix);
   <?php if ($partner_html): ?>
     <div class="petition-list-partner-wrapper small light">
       <p class="push-bottom-xs">Diese Petition läuft auf:</p>
-      <? echo $partner_html; ?>
+      <a href="<? echo $signing_url; ?>" class="<? echo ($partner_html)?"colorbox-load ":"";?>"><? echo $partner_html; ?></a>
     </div>
   <?php endif; ?>
   <div class="petition-list-sign-wrapper"><a href="<? echo $node_url; ?>" class="button">Positionen der MdBs</a></div>

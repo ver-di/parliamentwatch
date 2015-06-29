@@ -10,21 +10,11 @@
   <p class="medium">Adressat: <? echo $field_petition_recipient[0]['value'] ?></p>
 
   <?php if (!empty($field_blogpost_blogtags)): ?>
-    <p class="icon-taxonomy push-bottom-m">
-      <?
-      $first_term = true;
-      foreach ($field_blogpost_blogtags as $key => $value){
-        if ($first_term) {
-          $first_term = false;
-        }
-        else{
-          echo ", ";
-        }
-        $term = taxonomy_term_load($value['tid']);
-        echo l($term->name, 'taxonomy/term/' . $value['tid']);
-      }
-      ?>
-    </p>
+  <p class="icon-taxonomy push-bottom-m">
+    <?php
+    print _pw_get_linked_terms($field_blogpost_blogtags);
+    ?>
+  </p>
   <?php endif; ?>
 
 <div class="managed_content clearfix push-bottom-l">

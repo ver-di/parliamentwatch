@@ -14,29 +14,16 @@ if (pw_vote_check_user_allowed()):
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
 <?php endif; ?>
-<div class="element-invisible">
-  <img src="/sites/abgeordnetenwatch.de/files/styles/pw_portrait_s/public/default_images/img_fotodummy_210x140.jpg" alt="">
-</div>
 <p class="medium">Adressat: <? print $field_petition_recipient[0]['value'] ?></p>
 
 <? print check_markup($field_petition_text_passed[0]['summary']); ?>
 
 <?php if (!empty($field_blogpost_blogtags)): ?>
-    <p class="icon-taxonomy push-bottom-m">
-        <?
-        $first_term = true;
-        foreach ($field_blogpost_blogtags as $key => $value){
-            if ($first_term) {
-                $first_term = false;
-            }
-            else{
-                print ", ";
-            }
-            $term = taxonomy_term_load($value['tid']);
-            print l($term->name, 'taxonomy/term/' . $value['tid']);
-        }
-        ?>
-    </p>
+  <p class="icon-taxonomy push-bottom-m">
+    <?php
+    print _pw_get_linked_terms($field_blogpost_blogtags);
+    ?>
+  </p>
 <?php endif; ?>
 
 <?php
