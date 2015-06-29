@@ -96,40 +96,48 @@ function pw_petitions_form_submit(&$form, &$form_state) {
 function pw_petitions_preprocess_node(&$variables) {
   if ($variables['type'] == 'pw_petition') {
     $node = $variables['node'];
-    $items = field_get_items('node', $node, 'field_petition_status');
+    $petition_status = field_get_items('node', $node, 'field_petition_status');
 
-    // @TODO: items hat viele values
-    if (!empty($items)) {
-      $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'] . '__' . $items[0]['value'];
+    if (!empty($petition_status)) {
+      $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'] . '__' . $petition_status[0]['value'];
 
-      $block = block_load('webform', 'client-block-10508');
-      $rendered_block = _block_render_blocks(array($block));
-      $rendered_block['webform_client-block-10508']->subject = "";
 
+      if ($petition_status == "collecting_donations"){
+        // Load donation form
+        /* This rather complicated way was chosen because the normal module_invoke/
+        render method produces only the pure block content (form in this case) and
+        not the required div wrappers. Suggestions are welcome: ruh@abgeordnetenwatch.de
+        */
+        $block = block_load('webform', 'client-block-10508');
+        $rendered_block = _block_render_blocks(array($block));
+        $rendered_block['webform_client-block-10508']->subject = "";
+      }
       // count votes from politicians
-      if ($variables['view_mode'] == 'teaser' && in_array($items[0]['value'], array('asking_parliament', 'passed_parliament'))) {
+      if ($variables['view_mode'] == 'teaser' && in_array($petition_status[0]['value'], array('asking_parliament', 'passed_parliament'))) {
         $variables["count_votes"] = db_query("SELECT * FROM {node} n
           INNER JOIN {field_data_field_vote_node} f ON n.nid = f.entity_id AND f.entity_type = 'node'
           INNER JOIN {users_roles} ur ON n.uid = ur.uid
           INNER JOIN {role} r ON ur.rid = r.rid
-          WHERE f.field_vote_node_target_id=".$node->nid." AND r.machine_name='politician'
-          GROUP BY n.uid")->rowCount();
+          WHERE f.field_vote_node_target_id = :nid AND r.machine_name='politician'
+          GROUP BY n.uid", array(':nid' => $node->nid))->rowCount();
       }
     }
     else {
       $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
+      // Load signing form
+      /* This rather complicated way was chosen because the normal module_invoke/
+      render method produces only the pure block content (form in this case) and
+      not the required div wrappers. Suggestions are welcome: ruh@abgeordnetenwatch.de
+      */
       $block = block_load('webform', 'client-block-10369');
       $rendered_block = _block_render_blocks(array($block));
       $rendered_block['webform_client-block-10369']->subject = "";
     }
 
-    $variables["signing_form"] = drupal_render(_block_get_renderable_array($rendered_block));
+    // Due to our complicated block modification above, we need to re-render the block.
+    $variables["main_node_form"] = drupal_render(_block_get_renderable_array($rendered_block));
 
     switch ($variables['field_petition_partner'][0]['value']) {
-      case "":
-        $variables['partner_html'] = "";
-        $variables['signing_url'] = $variables['node_url'];
-        break;
       case "change.org":
         $variables['partner_html'] = theme('image', array(
           'path' => drupal_get_path('theme', 'parliamentwatch') . '/images/logo-change.png',
@@ -137,7 +145,7 @@ function pw_petitions_preprocess_node(&$variables) {
           'height' => 23,
           'alt' => 'Change.org',
         ));
-        if (empty($items)) {
+        if (empty($petition_status)) {
           $variables['signing_url'] = url("https://secured.abgeordnetenwatch.de/tools/newsletter.php", array(
             'external' => TRUE,
             'query' => array(
@@ -147,16 +155,19 @@ function pw_petitions_preprocess_node(&$variables) {
               'continue' => $variables['field_petition_external_url'][0]['url'],
             )
           ));
+          // If the petition is run by an external service, all links from
+          // the node need to point to that URL. To avoid having to access
+          // the nitty-gritty of all elements in use, we simply override
+          // the node url in
           $variables['node_url'] = $variables['signing_url'];
         }
         else {
           $variables['signing_url'] = $variables['node_url'];
         }
         break;
-      case "openpetition":
-        $variables['partner_html'] = '<img src="/sites/all/themes/custom/parliamentwatch/images/logo-openpetition.png" width="119" height="36" alt="OpenPetition">';
-        //$variables['signing_url'] = $field_petition_external_url['und'][0]['url'];//todo
-        $variables['node_url'] = $variables['signing_url'];
+      default:
+        $variables['partner_html'] = "";
+        $variables['signing_url'] = $variables['node_url'];
         break;
     }
 
@@ -166,7 +177,7 @@ function pw_petitions_preprocess_node(&$variables) {
     ));
 
     if (!empty($variables['field_teaser_image'][0]['field_image_copyright']) || !empty($variables['field_teaser_image'][0]['field_image_copyright']['und'][0]['value'])) {
-      $variables['field_image_copyright'] = TRUE;
+      $variables['has_image_copyright'] = TRUE;
     }
   }
 }
