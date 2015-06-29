@@ -13,14 +13,14 @@ include_once 'pw_poll.features.inc';
  */
 function pw_poll_preprocess_node(&$variables) {
   if ($variables['type'] == 'poll') {
-    $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '__' . $variables['view_mode'];
-    $variables['themed_image'] = theme('image_style', array(
-      'style_name' => 'pw_landscape_l',
-      'path' => $variables['field_teaser_image']['und'][0]['uri'],
-      ));
 
-    if (!empty($variables['field_teaser_image'][0]['field_image_copyright']) || !empty($variables['field_teaser_image'][0]['field_image_copyright']['und'][0]['value'])) {
-      $variables['field_image_copyright'] = TRUE;
+    // add themed image if any
+    $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '__' . $variables['view_mode'];
+    if (!empty($variables['field_teaser_image'][0]['uri'])){
+      $variables['themed_image'] = theme('image_style', array(
+        'style_name' => 'pw_landscape_l',
+        'path' => $variables['field_teaser_image'][0]['uri'],
+        ));
     }
   }
 }

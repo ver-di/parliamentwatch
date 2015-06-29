@@ -44,7 +44,12 @@ function pw_poll_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'comment_node_poll',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '',
+          'format' => 'plain_text',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -56,19 +61,68 @@ function pw_poll_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'comment',
+      'exclude_cv' => 0,
       'field_name' => 'comment_body',
       'label' => 'Comment',
-      'required' => TRUE,
+      'required' => 1,
       'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 0,
+            'filtered_html' => 0,
+            'full_html' => 0,
+            'html_mail' => 0,
+            'managed_content' => 0,
+            'php_code' => 0,
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 1,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
         'exclude_cv' => FALSE,
-        'text_processing' => 1,
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 5,
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '10',
         ),
         'type' => 'text_textarea',
         'weight' => 0,
@@ -127,13 +181,7 @@ function pw_poll_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '1',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -198,7 +246,7 @@ function pw_poll_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '6',
+        'weight' => '7',
       ),
     ),
   );
@@ -252,13 +300,7 @@ function pw_poll_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 3,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '3',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -334,13 +376,7 @@ function pw_poll_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 2,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '2',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -415,13 +451,7 @@ function pw_poll_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 5,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '5',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -495,13 +525,7 @@ function pw_poll_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => 4,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '4',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -583,13 +607,7 @@ function pw_poll_field_default_fields() {
             'image_style' => '',
           ),
           'type' => 'image',
-          'weight' => 0,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -642,6 +660,76 @@ function pw_poll_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-poll-field_voted'.
+  $fields['node-poll-field_voted'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_voted',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'poll',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(),
+          'type' => 'list_default',
+          'weight' => 6,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_voted',
+      'label' => 'Voted',
+      'required' => 0,
+      'settings' => array(
+        'exclude_cv' => FALSE,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_onoff',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Blog Kategorie');
@@ -652,6 +740,7 @@ function pw_poll_field_default_fields() {
   t('Tags');
   t('Teaser image');
   t('These tags are the same tags that are used in the blog.');
+  t('Voted');
 
   return $fields;
 }
