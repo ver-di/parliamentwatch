@@ -48,29 +48,38 @@ function pw_api_menu() {
   }
 
   // add profile hooks
-  foreach (array('profile', 'profiles') as $call) {
+  foreach (array('xml', 'json') as $type) {
+    $key = 'api/profile/%/profile.'.$type;
+    $item = array(
+      'page callback' => 'pw_api_profile',
+      'page arguments' => array(2),
+      'access callback' => TRUE,
+      'delivery callback' => 'pw_api_deliver_'.$type,
+      'type' => MENU_CALLBACK,
+      'file' => 'pw_api.profiles.inc',
+      );
+    $items[$key] = $item;
 
-    foreach (array('xml', 'json') as $type) {
-      $key = 'api/profile/%/'.$call.'.'.$type;
-      $item = array(
-        'page callback' => 'pw_api_'.$call,
-        'page arguments' => array(2),
-        'access callback' => TRUE,
-        'delivery callback' => 'pw_api_deliver_'.$type,
-        'type' => MENU_CALLBACK,
-        'file' => 'pw_api.profiles.inc',
-        );
-      $items[$key] = $item;
-      if($call == 'profile'){
-        $key = 'api/parliament/%/profile/%/'.$call.'.'.$type;
-        $item['page arguments'] = array(4, 2);
-        $items[$key] = $item;
-      }
-      elseif($call == 'profiles'){
-        $items['api/parliament/%/deputies.'.$type] = $items['api/parliament/%/profiles.'.$type];
-        $items['api/parliament/%/candidates.'.$type] = $items['api/parliament/%/profiles.'.$type];
-      }
-    }
+    // add another path for this call
+    $key = 'api/parliament/%/profile/%/profile.'.$type;
+    $item['page arguments'] = array(4, 2);
+    $items[$key] = $item;
+  }
+
+  // add profiles hooks
+  foreach (array('xml', 'json') as $type) {
+    $key = 'api/parliament/%/profiles.'.$type;
+    $item = array(
+      'page callback' => 'pw_api_profiles',
+      'page arguments' => array(2),
+      'access callback' => TRUE,
+      'delivery callback' => 'pw_api_deliver_'.$type,
+      'type' => MENU_CALLBACK,
+      'file' => 'pw_api.profiles.inc',
+      );
+    $items[$key] = $item;
+    $items['api/parliament/%/deputies.'.$type] = $items['api/parliament/%/profiles.'.$type];
+    $items['api/parliament/%/candidates.'.$type] = $items['api/parliament/%/profiles.'.$type];
   }
 
   // add hooks for authorized api based on public api
