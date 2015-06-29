@@ -217,7 +217,7 @@ function pw_api_user_to_array($user) {
                 $profile['votes'][$type.'_'.$nid]['category_'.$key] = $category;
               }
             }
-            $profile['votes'][$type.'_'.$nid]['vote'] = $w_vote->field_vote->label();
+            $profile['votes'][$type.'_'.$nid]['vote'] = $w_vote->field_vote->field_votes_label->value();
             $profile['votes'][$type.'_'.$nid]['url'] = url('node/'.$w_vote->field_vote_node->nid->value(), array('absolute' => TRUE));
           }
         }
