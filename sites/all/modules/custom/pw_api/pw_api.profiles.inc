@@ -123,7 +123,15 @@ function pw_api_user_to_array($user) {
     $profile['personal']['birthyear'] = date('Y', $w_user->field_user_birthday->value());
     $profile['personal']['education'] = $w_user->field_user_education->value();
     $profile['personal']['profession'] = $w_user->field_user_job_skills->value();
-    $profile['personal']['email'] = $w_user->field_user_public_mail->value();
+
+    // publish private email for authorized users
+    if(user_access('access authorized api')){
+      $profile['personal']['email'] = $w_user->mail->value();
+    }
+    else{
+      $profile['personal']['email'] = $w_user->field_user_public_mail->value();
+    }
+
     $profile['personal']['twitter'] = $w_user->field_user_twitter_account->value();
     $profile['party'] = $w_user->field_user_party->label();
 
