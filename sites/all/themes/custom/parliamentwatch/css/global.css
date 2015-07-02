@@ -280,6 +280,7 @@ hr {
 }
 img {
     max-width: 100%;
+    height: auto;
 }
 blockquote {
     padding: 12px 0 20px 1px;
@@ -2024,8 +2025,9 @@ img.file-image,
     outline: 1px solid #ccc;
 }
 .no-outline img,
-img.no-outline {
-    outline: 0;
+img.no-outline,
+.lazyloader-icon {
+    outline: 0 !important;
 }
 .comment-count,
 .icon-taxonomy {
@@ -2199,7 +2201,7 @@ table.pw-voting .views-field-nothing {
 .pw-voting .vote .portrait-s {
     width: 70px;
     height: 105px;
-    background: url(/sites/abgeordnetenwatch.de/files/styles/pw_portrait_s/public/default_images/img_fotodummy_210x140.jpg) no-repeat;
+    background: #fff;
     outline: 1px solid #ccc;
 }
 
@@ -2324,7 +2326,7 @@ table.pw-voting .views-field-nothing {
   right: 15px;
   bottom: 10px;
 }
-.no-js .pw-voting .item-politician {
+.pw-voting .item-politician {
   visibility: hidden;
   opacity: 0;
   transition:         opacity .5s ease-in-out;
@@ -2336,32 +2338,28 @@ table.pw-voting .views-field-nothing {
   visibility: visible;
   opacity: 1;
 }
-.no-js.js .pw-voting .item .item-politician {
-  display: none;
-}
 html.js fieldset.collapsed {
     height: auto;
 }
 @media (max-width: 1120px) {
-
-.pw-voting .item-politician {
-  left: -10px;
-  bottom: 14px;
-  bottom: 1.4rem;
-}
-
-.pw-arrow-box:after,
-.pw-arrow-box:before {
-	left: 14px;
-}
-.pw-arrow-box:after {
-	border-width: 10px;
-	margin-left: -10px;
-}
-.pw-arrow-box:before {
-	border-width: 11px;
-	margin-left: -11px;
-}
+  .pw-voting .item-politician {
+    left: -10px;
+    bottom: 14px;
+    bottom: 1.4rem;
+  }
+  
+  .pw-arrow-box:after,
+  .pw-arrow-box:before {
+  	left: 14px;
+  }
+  .pw-arrow-box:after {
+  	border-width: 10px;
+  	margin-left: -10px;
+  }
+  .pw-arrow-box:before {
+  	border-width: 11px;
+  	margin-left: -11px;
+  }
 }
 
 /* press */
@@ -2517,7 +2515,7 @@ ul.progress-icons li {
 }
 @media (min-width: 480px) and (max-width: 639px) {
 	.petition-list-partner-wrapper {
-		margin: 0.7em 0 4em;
+		margin: 0.7em 0 5em;
 	}
 }
 @media (min-width: 640px) {
@@ -3683,6 +3681,14 @@ a.external,
 }
 .mobile-only {
     display: block;
+}
+@media (max-width: 619px) {  
+  .visually-hidden-mobile {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+  }
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2,
 .js .responsive-layout-mobile .pw-expandable-mobile h3 {

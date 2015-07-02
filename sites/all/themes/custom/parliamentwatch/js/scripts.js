@@ -50,20 +50,37 @@ jQuery(document).ready(function() {
 
     $('li .item.vote .pw-arrow-box-trigger').on('mousedown focus', function(e) {
       e.preventDefault();
-      $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').hide();
-      $(this).next('.item-politician').fadeToggle('fast');
+      var opacity = $(this).next('.item-politician').css('opacity');
+      var initial = $(this).next('.item-politician').css('left');
+      
+      // move container into viewport to load image
+      $(this).next('.item-politician').css('left','');
+      
+      // hide all other items
+      $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').css({opacity: 0, visibility: 'hidden'});
+      
+      // show/hide actual container
+      if(opacity == '1' && initial != '-90000px'){
+        $(this).next('.item-politician').css({opacity: 0, visibility: 'hidden'});
+      } else if (opacity == '0' || initial == '-90000px'){
+        $(this).next('.item-politician').css({opacity: 0, visibility: 'visible'}).animate({opacity:1},2500);
+      }
+      
+      // scroll page to see full container
       if($(this).next('.item-politician').visible() == false){
         $('html, body').animate({
               scrollTop: $(this).next('.item-politician').offset().top
         }, 1000);
       }
     });
+    
     $('li .item.vote .pw-arrow-box-trigger').on('click', function(e) {
       e.preventDefault();
     });
-
+    
+    // close container
     $('li .item-politician .icon-close').on('click', function(e) {
-      $(this).parents('.item-politician').hide();
+      $(this).parents('.item-politician').css({opacity: 0, visibility: 'hidden'});
     });
 
 // reset jquery ui slider on profile list AW-1965 https://www.drupal.org/node/1264316
