@@ -47,6 +47,7 @@ dependencies[] = image
 dependencies[] = jcarousel
 dependencies[] = jquery_dollar
 dependencies[] = jquery_update
+dependencies[] = lazyloader
 dependencies[] = libraries
 dependencies[] = list
 dependencies[] = menu
