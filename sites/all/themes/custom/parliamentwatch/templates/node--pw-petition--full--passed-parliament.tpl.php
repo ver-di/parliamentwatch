@@ -27,8 +27,10 @@ if (pw_vote_check_user_allowed()):
 <?php endif; ?>
 
 <?php
-  $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
-  print render($block['content']);
+  if (!pw_vote_check_user_allowed()){
+    $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
+    print render($block['content']);
+  }
 ?>
 <h3 id="pw_vote_positions">Wie positionieren sich Ihre Abgeordneten?</h3>
 <div class="compact-form push-bottom-l">

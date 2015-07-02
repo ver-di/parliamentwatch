@@ -195,7 +195,7 @@ function pw_vote_admin_submit($form, &$form_state) {
 
       // create new vote
       $vote = new stdClass();
-      $vote->title = "Vote by " . $field_firstname[0]['value'] . ' ' . $field_lastname[0]['value'] . ' (default)';
+      $vote->title = "Vote by " . $field_firstname[0]['value'] . ' ' . $field_lastname[0]['value'];
       $vote->type = "vote";
       $vote->language = LANGUAGE_NONE;
       $vote->status = 1;
