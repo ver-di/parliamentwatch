@@ -4093,6 +4093,7 @@ function pw_profiles_field_default_fields() {
       ),
       'ds_extras_field_template' => 'theme_ds_field_reset',
       'entity_type' => 'user',
+      'exclude_cv' => 0,
       'field_name' => 'field_user_picture',
       'label' => 'Profile picture',
       'required' => 0,
