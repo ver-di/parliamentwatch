@@ -11,7 +11,7 @@
 
 define("LAZYLOADER_ENABLED", TRUE);
 define("LAZYLOADER_DISTANCE", 0);
-define("LAZYLOADER_ICON", 7);
+define("LAZYLOADER_ICON", 'loader-7.gif');
 define("LAZYLOADER_PLACEHOLDER", '');
 define("LAZYLOADER_PATHS", "media/*/format-form\nadmin/*\nnode/add/*\nnode/*/edit");
 define("LAZYLOADER_EXCLUDE_OPTION", 'exclude');
@@ -215,7 +215,7 @@ function _lazyloader_icon_path() {
   if (!empty($icon)) {
     $base = base_path();
     $path = drupal_get_path('module', 'lazyloader');
-    return "{$base}{$path}/loader/loader-{$icon}.gif";
+    return "{$base}{$path}/loader/{$icon}";
   }
 
   return '';

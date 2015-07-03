@@ -38,10 +38,11 @@ function lazyloader_admin() {
     '#description' => t('Path to your placeholder image, ex. sites/default/files/placeholder_image.gif. Leave it blank to use the default image.'),
   );
 
-  $loader_dir = base_path() . drupal_get_path('module', 'lazyloader') . '/loader/';
+  $loader_dir = drupal_get_path('module', 'lazyloader') . '/loader/';
+  $files = file_scan_directory($loader_dir, '/.*.(gif|png)/');
   $loader = array(0 => t('None'));
-  for ($i = 1; $i <= 8; $i++) {
-    $loader[$i] = '<img alt="Lazyloader Icon" src="' . $loader_dir . 'loader-' . $i . '.gif" />';
+  foreach($files as $file) {
+    $loader[$file->filename] = '<img alt="Lazyloader Icon" src="' . base_path() . $loader_dir . $file->filename . '" />';
   }
 
   $form['lazyloader_icon'] = array(

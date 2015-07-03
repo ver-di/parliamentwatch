@@ -62,3 +62,14 @@ function lazyloader_update_7001(){
 
   variable_del('lazyloader');
 }
+
+/**
+ * Store full filename instead of number only.
+ *
+ */
+
+function lazyloader_update_7100() {
+  if(is_numeric(variable_get('lazyloader_icon'))) {
+    variable_set('lazyloader_icon', 'loader-' . variable_get('lazyloader_icon') . '.gif');
+  }
+}
