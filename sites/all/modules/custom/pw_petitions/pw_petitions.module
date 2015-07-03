@@ -17,7 +17,7 @@ function pw_petitions_menu() {
     'access arguments' => array('access content'),
     'page callback' => 'redirect_to_petition',
     'type' => MENU_SUGGESTED_ITEM,
-  );
+    );
   return $items;
 }
 
@@ -34,8 +34,8 @@ function pw_petitions_form_alter(&$form, &$form_state, $form_id) {
 
   switch ($form_id) {
     case 'webform_client_form_10369':
-      $form['#validate'][] = 'pw_petitions_form_validate';
-      $form['#submit'][] = 'pw_petitions_form_submit';
+    $form['#validate'][] = 'pw_petitions_form_validate';
+    $form['#submit'][] = 'pw_petitions_form_submit';
   }
 }
 
@@ -54,15 +54,15 @@ function pw_petitions_form_validate($form_id, $form_values) {
   $e_mail_value = $form_values['values']['submitted']['e_mail'];
   $node_path_value = $form_values['values']['submitted']['node_path'];
   $sql = "SELECT wf.sid
-          FROM webform_submissions wf
-          INNER JOIN webform_submitted_data wf_data_email ON wf.sid = wf_data_email.sid
-          INNER JOIN webform_submitted_data wf_data_nodepath ON wf.sid = wf_data_nodepath.sid
-          WHERE wf.nid = :nid AND wf_data_email.data = :email AND wf_data_nodepath.data = :nodepath";
+  FROM webform_submissions wf
+  INNER JOIN webform_submitted_data wf_data_email ON wf.sid = wf_data_email.sid
+  INNER JOIN webform_submitted_data wf_data_nodepath ON wf.sid = wf_data_nodepath.sid
+  WHERE wf.nid = :nid AND wf_data_email.data = :email AND wf_data_nodepath.data = :nodepath";
   $submissions = db_query($sql, array(
     ':nid' => $webform_nid,
     ':email' => $e_mail_value,
     ':nodepath' => $node_path_value
-  ))->fetchCol();
+    ))->fetchCol();
   if (sizeof($submissions) > 0) {
     form_set_error("e_mail", t('You already have signed this petition.'));
   }
@@ -141,42 +141,42 @@ function pw_petitions_preprocess_node(&$variables) {
 
     switch ($variables['field_petition_partner'][0]['value']) {
       case "change.org":
-        $variables['partner_html'] = theme('image', array(
-          'path' => drupal_get_path('theme', 'parliamentwatch') . '/images/logo-change.png',
-          'width' => 119,
-          'height' => 23,
-          'alt' => 'Change.org',
+      $variables['partner_html'] = theme('image', array(
+        'path' => drupal_get_path('theme', 'parliamentwatch') . '/images/logo-change.png',
+        'width' => 119,
+        'height' => 23,
+        'alt' => 'Change.org',
         ));
-        if (empty($petition_status)) {
-          $variables['signing_url'] = url("https://secured.abgeordnetenwatch.de/tools/newsletter.php", array(
-            'external' => TRUE,
-            'query' => array(
-              'width' => 800,
-              'height' => 450,
-              'iframe' => TRUE,
-              'continue' => $variables['field_petition_external_url'][0]['url'],
+      if (empty($petition_status)) {
+        $variables['signing_url'] = url("https://secured.abgeordnetenwatch.de/tools/newsletter.php", array(
+          'external' => TRUE,
+          'query' => array(
+            'width' => 800,
+            'height' => 450,
+            'iframe' => TRUE,
+            'continue' => $variables['field_petition_external_url'][0]['url'],
             )
           ));
           // If the petition is run by an external service, all links from
           // the node need to point to that URL. To avoid having to access
           // the nitty-gritty of all elements in use, we simply override
           // the node url in
-          $variables['node_url'] = $variables['signing_url'];
-        }
-        else {
-          $variables['signing_url'] = $variables['node_url'];
-        }
-        break;
-      default:
-        $variables['partner_html'] = "";
+        $variables['node_url'] = $variables['signing_url'];
+      }
+      else {
         $variables['signing_url'] = $variables['node_url'];
-        break;
+      }
+      break;
+      default:
+      $variables['partner_html'] = "";
+      $variables['signing_url'] = $variables['node_url'];
+      break;
     }
 
     $variables['themed_image'] = theme('image_style', array(
       'style_name' => 'pw_landscape_l', //Configure style here!
       'path' => $variables['field_teaser_image'][0]['uri'],
-    ));
+      ));
 
     if (!empty($variables['field_teaser_image'][0]['field_image_copyright']) || !empty($variables['field_teaser_image'][0]['field_image_copyright']['und'][0]['value'])) {
       $variables['has_image_copyright'] = TRUE;
@@ -191,51 +191,61 @@ function pw_petitions_preprocess_node(&$variables) {
  */
 function pw_petitions_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
   if ($source->id == 'petition_updater' && !empty($source->feed_nid)) {
-
     // load target node
     $n = node_load($source->feed_nid);
 
     // set reference to processor
     $processor = $source->importer->processor;
 
-    // copy mappings of protected config
-    $new_mappings = array();
-    $new_mappings['mappings'] = $processor->config['mappings'];
-    $mappings_changed = FALSE;
+    // array with items to unset
+    $keys_to_unset = array();
 
     // run through all mappings
     foreach ($processor->config['mappings'] as $key => $a_field) {
+
       $target_mapping = $a_field['target'];
       $target_field = field_get_items('node', $n, $target_mapping);
 
       // check if target field is of type image
       if (isset($target_field[0]['type']) && $target_field[0]['type'] == 'image') {
+
         $source_mapping = $a_field['source'];
         $source_url = $result->items[0][$source_mapping];
 
         // check if source is a valid url
         if (check_url($source_url)) {
-          $source_headers = get_headers($source_url, TRUE);
 
-          // check if header is set
-          if (isset($source_headers['Content-Length'])) {
+          $source_headers = get_headers($source_url, TRUE);
+          if(!empty($source_headers['Content-Length'])){
             $source_filesize = intval($source_headers['Content-Length']);
             $target_filesize = $target_field[0]['filesize'];
 
-            // compare filesizes
+            // don't import same file again
             if ($target_filesize == $source_filesize) {
-
-              // finally unset mapping if filesizes are equal
-              unset($new_mappings['mappings'][$key]);
-              $mappings_changed = TRUE;
+              $keys_to_unset[] = $key;
             }
           }
+          else{
+            // prevent from overwriting with file of zero length
+            $keys_to_unset[] = $key;
+          }
+        }
+        else{
+          // prevent from overwriting with empty url
+          $keys_to_unset[] = $key;
         }
       }
     }
 
     // set changed mappings
-    if ($mappings_changed) {
+    if (sizeof($keys_to_unset) > 0) {
+
+      // copy protected mappings
+      $new_mappings = array();
+      $new_mappings['mappings'] = $processor->config['mappings'];
+      foreach ($keys_to_unset as $key) {
+        unset($new_mappings['mappings'][$key]);
+      }
       $processor->addConfig($new_mappings);
     }
   }
