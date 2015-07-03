@@ -121,7 +121,7 @@ function pw_petitions_preprocess_node(&$variables) {
         ->fieldCondition('field_voted', 'value', 1)
         ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
         ->propertyCondition('status', NODE_PUBLISHED);
-        $variables["count_votes"] = $result = $query->count()->execute();
+        $variables["count_votes"] = $query->count()->execute();
       }
     }
     else {
