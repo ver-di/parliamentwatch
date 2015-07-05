@@ -235,7 +235,7 @@ jQuery(document).ready(function() {
 
 ////// slide to comments
 
-    jQuery(".node-blogpost.view-mode-full .comment-count")
+    jQuery(".view-mode-full .comment-count")
         .css( "cursor", "pointer" )
         .click(function () {
             goToByScroll("comments");
