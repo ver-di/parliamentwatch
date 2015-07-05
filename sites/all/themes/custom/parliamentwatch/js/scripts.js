@@ -71,6 +71,9 @@ jQuery(document).ready(function() {
         $('html, body').animate({
               scrollTop: $(this).next('.item-politician').offset().top
         }, 1000);
+      }else{
+        // trigger scroll to make lazyloader do the job
+        $(window).scroll();
       }
     });
     

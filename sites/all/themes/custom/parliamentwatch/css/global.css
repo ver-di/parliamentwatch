@@ -2476,7 +2476,7 @@ ul.progress-icons li {
 }
 
 @media (max-width: 479px) {
-	.petition-list-image-wrapper img {
+	.petition-list-image-wrapper img:not(.lazyloader-icon) {
 		width: 100%;
 	}
 	.pw-petition-list-contents {
