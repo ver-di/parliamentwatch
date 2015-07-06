@@ -320,7 +320,7 @@ function pw_vote_block_view($delta, $arguments = array()) {
   switch ($delta) {
     case 'voting_behavior':
     $node = menu_get_object();
-    if (!empty($node) && !empty($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
+    if (!empty($node) && !empty($node->field_parliament[$node->language][0]['tid'])) {
       $block['content'] = pw_vote_voting_behavior($node);
     }
     break;
@@ -370,8 +370,9 @@ function pw_vote_final_result($nid, $result_short=FALSE){
       $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'vote')
       ->fieldCondition('field_vote_node', 'target_id', $nid)
-      ->fieldCondition('field_vote', 'tid', $term->tid)
+      ->fieldCondition('field_vote', 'tid', array($term->tid))
       ->propertyCondition('status', NODE_PUBLISHED);
+      //dd($nid);
 
       // store summarized votes
       $sum_votes[$term->tid] = $query->count()->execute();
@@ -560,7 +561,7 @@ function pw_vote_voting_behavior($node) {
 /**
  * pw_vote_voting_behavior_sum_votes().
  * @param $array_sum
- *   array with tid of votes taxonomy as key and summarized votes
+ *   array with tid of votes as key and summarized votes
  * @return string
  *   returns themed overview
  */

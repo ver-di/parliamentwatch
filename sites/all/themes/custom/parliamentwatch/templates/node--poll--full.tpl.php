@@ -28,23 +28,23 @@
   <?php print check_markup($body[0]['summary']); ?>
   <?php if($field_voted): ?>
   <?php
-      $block_voting_behavior = module_invoke('pw_vote', 'block_view', 'voting_behavior');
-      print render($block_voting_behavior['content']);
+    $block_voting_behavior = module_invoke('pw_vote', 'block_view', 'voting_behavior');
+    print render($block_voting_behavior['content']);
   ?>
   <h3 id="pw_vote_positions">Wie haben Ihre Abgeordneten abgestimmt?</h3>
   <div class="compact-form push-bottom-l">
     <?php
-      $block_search = module_invoke('views', 'block_view', 'pw_vote_search-block_1');
+      $block_search = module_invoke('views', 'block_view', 'pw_vote_search-block_2');
       print render($block_search['content']);
     ?>
   </div>
   <?php endif; ?>
-  
+
   <h3>Hintergrund</h3>
   <div class="managed-content clearfix push-bottom-l">
     <?php print check_markup($body[0]['value'], $format='managed_content');?>
   </div>
-  
+
   <?php
   // render comments if there are any
   $comments = render(comment_node_page_additions($node));

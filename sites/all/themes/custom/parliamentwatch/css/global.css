@@ -2036,6 +2036,9 @@ ul.tabs li a:active {
     margin-right: 14px;
     float: left;
 }
+.media-image-left {
+    margin-bottom: 7px;
+}
 .file-image.float-right {
     margin-left: 14px;
     margin-bottom: 7px;
@@ -2044,9 +2047,6 @@ ul.tabs li a:active {
 .portrait-s.file-image.float-left + .statement {
     margin-left: 84px;
     margin-top: -8px;
-}
-.media-image-left {
-    margin-bottom: 7px;
 }
 .file-image img,
 img.file-image,
