@@ -25,7 +25,7 @@
   </div>
   <?php endif; ?>
   <div class="clearfix push-bottom-m">
-    <div class="petition-list-image-wrapper file-image float-left img-outline">
+    <div class="media-image-left img-outline">
       <a href="<?php print $node_url; ?>" title="zur Abstimmung">
         <?php print $themed_image; ?>
       </a>
