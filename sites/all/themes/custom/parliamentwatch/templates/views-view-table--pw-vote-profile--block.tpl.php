@@ -52,14 +52,12 @@
             <span class="abstain vote block">161 enthalten</span>
             <span class="no-show vote block">155 nicht beteiligt</span>
           </p-->
-          <div class="pw-voting">
-            <ul class="clearfix push-bottom-s">
-              <?php
-              $block_result = module_invoke('pw_vote', 'block_view', 'final_result_full', array('nid' => $result[$row_count]->field_field_vote_node[0]['raw']['target_id']));
-              print render($block_result['content']);
-              ?>
-            </ul>
-          </div>
+          <ul class="clearfix push-bottom-s">
+            <?php
+            $block_result = module_invoke('pw_vote', 'block_view', 'final_result_full', array('nid' => $result[$row_count]->field_field_vote_node[0]['raw']['target_id']));
+            print render($block_result['content']);
+            ?>
+          </ul>
           <?php if(sizeof($result[$row_count]->field_body) > 0 && strlen($result[$row_count]->field_body[0]['rendered']['#markup']) > 0) : ?>
             <h4>Begründung</h4>
             <blockquote><?php print $result[$row_count]->field_body[0]['rendered']['#markup']; ?></blockquote>
