@@ -42,7 +42,7 @@
   
   <h3>Hintergrund</h3>
   <div class="managed-content clearfix push-bottom-l">
-    <?php print check_markup($body[0]['value']);?>
+    <?php print check_markup($body[0]['value'], $format='managed_content');?>
   </div>
   
   <?php
