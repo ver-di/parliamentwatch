@@ -1873,7 +1873,9 @@ ul.tabs li a:active {
 }
 
 
-/* /////////////////////////// pw-promo-block /////////// */
+/* /////////////////////////// pw blocks /////////// */
+
+/* pw-promo-block */
 
 .pw-promo-block {
     background: #ccc;
@@ -1906,6 +1908,32 @@ ul.tabs li a:active {
     background: url(/sites/abgeordnetenwatch.de/files/promo_spenden.jpg) center;
 }
 
+/* pw-block-eyecatcher-1 */
+
+.pw-block-eyecatcher-1 {
+  padding: 20px 10px;
+  color: #444;
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 4px 1px #ebebeb;
+  -moz-box-shadow: 0px 0px 4px 1px #ebebeb;
+  box-shadow: 0px 0px 4px 1px #ebebeb;
+    
+  background: #a8cc68;
+  background: -moz-linear-gradient(-45deg, #a8cc68 0%, #ccea97 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#a8cc68), color-stop(100%,#ccea97));
+  background: -webkit-linear-gradient(-45deg, #a8cc68 0%,#ccea97 100%);
+  background: -o-linear-gradient(-45deg, #a8cc68 0%,#ccea97 100%);
+  background: -ms-linear-gradient(-45deg, #a8cc68 0%,#ccea97 100%);
+  background: linear-gradient(135deg, #a8cc68 0%,#ccea97 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8cc68', endColorstr='#ccea97',GradientType=1 );
+
+}
+.pw-block-eyecatcher-1 .media-image-left {
+  margin-right: 10px;
+}
 
 /* /////////////////////////// views /////////////////// */
 
@@ -2006,6 +2034,7 @@ ul.tabs li a:active {
 .file-image.float-left,
 .media-image-left {
     margin-right: 14px;
+    float: left;
 }
 .file-image.float-right {
     margin-left: 14px;
@@ -2316,7 +2345,7 @@ table.pw-voting .views-field-nothing {
   margin-bottom: 1em;
   margin-left: 50px;
 }
-.node-type-pw-petition .statement blockquote {
+.statement blockquote {
   padding: 0 0 0 1px;
   margin-bottom: 0;
   overflow: hidden;
