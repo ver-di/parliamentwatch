@@ -1,5 +1,5 @@
 <div class="pw-list-item clearfix">
-  <h3><?php print $title; ?></h3>
+  <h3><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
   <div class="sharethis-wrapper">
     <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
   </div>
