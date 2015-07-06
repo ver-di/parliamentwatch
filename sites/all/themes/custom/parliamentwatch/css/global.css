@@ -641,7 +641,7 @@ a.external:hover {
 .zebra .views-row-odd {
     background: #f4f4f4;
 }
-.zebra li {
+.zebra > li {
     padding: 2px 0.5%;
 }
 
