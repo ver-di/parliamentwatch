@@ -27,6 +27,7 @@ if (pw_vote_check_user_allowed()):
 <?php endif; ?>
 
 <?php
+  // dont render block when politicians trys to vote
   if (!pw_vote_check_user_allowed()){
     $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
     print render($block['content']);

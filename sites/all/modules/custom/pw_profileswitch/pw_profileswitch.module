@@ -93,8 +93,9 @@ function pw_user_set_custom_title($account){
 /**
  * Show a revision.
  */
-function pw_user_revision_show($user, $vid) {
-  global $pwAccountRev; // this variable is needed in sub views such as Q&A to show the correct names and pictures according to revision
+function pw_user_revision_show($username, $vid) {
+
+  $user = user_load_by_name($username);
   if ($user->uid == "0") {
 
     // Load user by vid:
@@ -108,7 +109,6 @@ function pw_user_revision_show($user, $vid) {
   } else {
     $account = user_revision_load($user->uid, $vid);
   }
-  $pwAccountRev = $account;
   return pw_profileswitch_user_custom_view($account);
 }
 
@@ -125,7 +125,7 @@ function pw_profileswitch_menu_alter(&$items) {
 //    'page arguments' => array(1, 3),
 //    'access callback' => true,
 //  );
-  $items['user/%user/revisions/%/view'] = array(
+  $items['user/%/revisions/%/view'] = array(
     'page callback' => 'pw_user_revision_show',
     'page arguments' => array(1, 3),
     'access callback' => 'user_view_access', // default access callback for users
