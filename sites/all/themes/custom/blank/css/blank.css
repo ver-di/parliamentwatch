@@ -10,12 +10,16 @@
     background: transparent !important;
 }
 #edit-field-user-address-administrative-area-wrapper,
-#edit-field-user-constituency-tid-wrapper {
-    width: 50%;
+#edit-field-user-constituency-tid-wrapper,
+#edit-field-user-list-position-tid-wrapper,
+#edit-field-user-list-tid-wrapper {
+    width: 33%;
     float: left;
 }
 #edit-field-user-address-administrative-area-wrapper select,
-#edit-field-user-constituency-tid-wrapper select {
+#edit-field-user-constituency-tid-wrapper select,
+#edit-field-user-list-position-tid-wrapper select,
+#edit-field-user-list-tid-wrapper select {
     width: 90%;
 }
 #edit-field-user-party-tid-wrapper {
