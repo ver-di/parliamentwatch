@@ -64,11 +64,12 @@ function pw_blog_field_default_fields() {
       'ds_extras_field_template' => '',
       'entity_type' => 'comment',
       'field_name' => 'comment_body',
-      'label' => 'Comment',
+      'label' => 'Kommentar',
       'required' => 1,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 0,
             'full_html' => 0,
             'html_mail' => 0,
@@ -80,6 +81,9 @@ function pw_blog_field_default_fields() {
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
@@ -101,7 +105,6 @@ function pw_blog_field_default_fields() {
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -709,7 +712,7 @@ function pw_blog_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Categories');
-  t('Comment');
+  t('Kommentar');
   t('Tags');
   t('Teaser image');
 

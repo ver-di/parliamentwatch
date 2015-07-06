@@ -65,7 +65,7 @@ function pw_poll_field_default_fields() {
       'entity_type' => 'comment',
       'exclude_cv' => 0,
       'field_name' => 'comment_body',
-      'label' => 'Comment',
+      'label' => 'Kommentar',
       'required' => 1,
       'settings' => array(
         'better_formats' => array(
@@ -106,7 +106,6 @@ function pw_poll_field_default_fields() {
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -810,7 +809,7 @@ function pw_poll_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Blog Kategorie');
   t('Body');
-  t('Comment');
+  t('Kommentar');
   t('Parliament');
   t('Poll Date');
   t('Tags');
