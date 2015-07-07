@@ -280,6 +280,10 @@ hr {
 }
 img {
     max-width: 100%;
+}
+.no-js img,
+.responsive-layout-mobile .portrait-l img,
+.responsive-layout-mobile .pw-landscape-l img {
     height: auto;
 }
 blockquote {
@@ -2363,7 +2367,7 @@ table.pw-voting .views-field-nothing {
   -webkit-transition: opacity .5s ease-in-out;
 }
 .no-js .pw-voting .item:hover .item-politician,
-.no-js.js .pw-voting .item .item-politician {
+.js .pw-voting .item .item-politician {
   visibility: visible;
   opacity: 1;
 }
