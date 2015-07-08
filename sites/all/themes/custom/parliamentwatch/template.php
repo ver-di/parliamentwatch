@@ -5,12 +5,12 @@
  * This file is empty by default because the base theme chain (Alpha & Omega) provides
  * all the basic functionality. However, in case you wish to customize the output that Drupal
  * generates through Alpha & Omega this file is a good place to do so.
- * 
+ *
  * Alpha comes with a neat solution for keeping this file as clean as possible while the code
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
- 
+
 /*
  * use custom template for login form
  */
@@ -19,7 +19,7 @@ function parliamentwatch_theme(&$existing, $type, $theme, $path) {
     'template' => 'templates/user-login',
     'render element' => 'form',
     // other theme registration code...
-  );
+    );
   return $hooks;
 }
 
@@ -56,7 +56,7 @@ function parliamentwatch_alpha_process_region(&$vars) {
  */
 function parliamentwatch_addressfield_formatter__linear($vars) {
   $loc = $vars['address'];
-  
+
   // Determine which location components to render
   $out = array();
   if (!empty($loc['name_line']) && $vars['name_line']) {
@@ -83,10 +83,10 @@ function parliamentwatch_addressfield_formatter__linear($vars) {
   if ($loc['country'] != addressfield_tokens_default_country() && $country_name = _addressfield_tokens_country($loc['country'])) {
     $out[] = $country_name;
   }
-  
+
   // Render the location components
   $output = implode(', ', $out);
-  
+
   return $output;
 }
 
@@ -123,14 +123,14 @@ function parliamentwatch_css_alter(&$css) {
     $css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css']['type'] = 'file';
   }
 }
- 
+
 /**
  * Implements hook_js_alter().
  */
 function parliamentwatch_js_alter(&$javascript) {
   $javascript[drupal_get_path('module', 'scroll_to_top') . '/scroll_to_top.js']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/js/scroll_to_top.js';
 }
- 
+
 /**
  * changing the path to the file icons.
  */
@@ -178,7 +178,7 @@ function abgeordnetenwatch_pager_link($variables) {
         t('‹ previous') => t('Go to previous page'),
         t('next ›') => t('Go to next page'),
         t('last »') => t('Go to last page'),
-      );
+        );
     }
     if (isset($titles[$text])) {
       $attributes['title'] = $titles[$text];
@@ -206,22 +206,22 @@ function parliamentwatch_qt_quicktabs_tabset($vars) {
   $variables = array(
     'attributes' => array(
       'class' => 'quicktabs-tabs quicktabs-style-' . $vars['tabset']['#options']['style'],
-    ),
+      ),
     'items' => array(),
-  );
+    );
   foreach (element_children($vars['tabset']['tablinks']) as $key) {
     $item = array();
     if (is_array($vars['tabset']['tablinks'][$key])) {
       $tab = $vars['tabset']['tablinks'][$key];
-      
-      
+
+
       if ($key == $vars['tabset']['#options']['active']) {
         $item['class'] = array('active');
       }
       $tab['#title'] = "<span>".$tab['#title']."</span>";
       $tab['#options']['html'] = TRUE;
       $item['data'] = drupal_render($tab);
-  
+
       $variables['items'][] = $item;
     }
   }
@@ -229,7 +229,7 @@ function parliamentwatch_qt_quicktabs_tabset($vars) {
 }
 
 /////////////////////////// add sharethis js (ruth)
-////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////
 
 drupal_add_js('var switchTo5x=false;', 'inline');
 drupal_add_js('https://ws.sharethis.com/button/buttons.js', 'external');
@@ -264,16 +264,65 @@ function parliamentwatch_addthis_element($variables) {
 
 function parliamentwatch_delta_blocks_breadcrumb($variables) {
   $output = '';
+  if (!empty($variables['breadcrumb'])) {
 
-  if (!empty($variables['breadcrumb'])) {  
-    if ($variables['breadcrumb_current']) {
-      $variables['breadcrumb'][] = l(drupal_get_title(), current_path(), array('html' => TRUE));
+    $menu_item = menu_get_item();
+    if($menu_item['page_callback'] != 'views_page'){
+
+      // add parliament
+      $parliament = _pw_get_current_parliament_term();
+      if($parliament){
+        $variables['breadcrumb'][] = l('Parlamente', 'http://www.abgeordnetenwatch.de/parlamente-210-0.html');
+        $variables['breadcrumb'][] = l($parliament->name, 'taxonomy/term/' . $parliament->tid);
+      }
+
+      // add parent path
+      switch(arg(0)){
+        case 'user':
+        case 'profile':
+        $user = _pw_get_current_user();
+        if(_pw_user_has_role($user, 'Candidate')) {
+          $variables['breadcrumb'][] = l('Kandidierende', 'profile/' . strtolower($parliament->name) . '/candidates');
+        }
+        else{
+          $variables['breadcrumb'][] = l('Abgeordnete', 'profile/' . strtolower($parliament->name) . '/deputies');
+        }
+        $user_title = field_get_items('user', $user, 'field_user_title');
+        $user_first_name = field_get_items('user', $user, 'field_user_fname');
+        $user_last_name = field_get_items('user', $user, 'field_user_lname');
+        $user_full_name = trim($user_title[0]['value'] . ' ' . $user_first_name[0]['value'] . ' ' . $user_last_name[0]['value']);
+        $variables['breadcrumb'][] = l($user_full_name, current_path());
+
+        break;
+        case 'node':
+        $path_alias = drupal_get_path_alias();
+        $path_alias_parts = explode('/', $path_alias);
+        if(sizeof($path_alias_parts) > 2){
+          $parent_alias = dirname($path_alias);
+          $parent_path = drupal_get_normal_path($parent_alias);
+          $variables['breadcrumb'][] = l(ucfirst($path_alias_parts[1]), $parent_path);
+        }
+        break;
+      }
+    }
+
+    // add current item
+    $active_trail = menu_get_active_trail();
+    $last_item = end($active_trail);
+    if ($variables['breadcrumb_current'] && current_path() != $last_item['href']) {
+      $title = drupal_get_title();
+      if(!empty($title)) {
+        $variables['breadcrumb'][] = l($title, current_path(), array('html' => TRUE));
+      }
+      else {
+        $variables['breadcrumb'][] = l($last_item['link_title'], current_path(), array('html' => TRUE));
+      }
     }
 
     $output = '<div id="breadcrumb" class="clearfix"><ul class="breadcrumb">';
     $switch = array('odd' => 'even', 'even' => 'odd');
     $zebra = 'even';
-    $last = count($variables['breadcrumb']) - 1;    
+    $last = count($variables['breadcrumb']) - 1;
 
     foreach ($variables['breadcrumb'] as $key => $item) {
       $zebra = $switch[$zebra];
@@ -289,9 +338,9 @@ function parliamentwatch_delta_blocks_breadcrumb($variables) {
 
       if ($key != $last) {
         $output .= '<li' . drupal_attributes($attributes) . '>' . $item . ' / </li>';
-        }else{
+      }else{
         $output .= '<li' . drupal_attributes($attributes) . '>' . $item . '</li>';
-        }
+      }
     }
 
     $output .= '</ul></div>';
@@ -304,12 +353,12 @@ function parliamentwatch_delta_blocks_breadcrumb($variables) {
 //////////////////////////////////////////////////////
 
 function parliamentwatch_form_comment_form_alter(&$form, &$form_state) {
-    global $user;
-    if ($user->uid) {
-        $form['author']['_author']['#title'] = t('You are logged in as');
-    }
-    $form['actions']['submit']['#value'] = t('Add comment');
-    $form['author']['homepage']['#access'] = FALSE;
+  global $user;
+  if ($user->uid) {
+    $form['author']['_author']['#title'] = t('You are logged in as');
+  }
+  $form['actions']['submit']['#value'] = t('Add comment');
+  $form['author']['homepage']['#access'] = FALSE;
 }
 
 /////////////////////////// customize RSS block (ruth)
@@ -383,48 +432,48 @@ function parliamentwatch_pager($variables) {
   }
   // End of generation loop preparation.
 
-    $li_first = theme('pager_first', array('text' => ('1'), 'element' => $element, 'parameters' => $parameters));
-    $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('‹ prev')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-    $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-    $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters));
+  $li_first = theme('pager_first', array('text' => ('1'), 'element' => $element, 'parameters' => $parameters));
+  $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('‹ prev')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters));
 
-    global $base_path;
-    
+  global $base_path;
+
     //set first page link
-    $first = $li_first;
-    
+  $first = $li_first;
+
     //set last page link
-    $last = $li_last;
-    
-    
+  $last = $li_last;
+
+
     //add left side arrow and text
-    if ($li_previous == ""){
-        $new_li_first = '<span>'.t('‹ prev').'</span>';
-    }else {
-        $new_li_previous = $li_previous;
-        $new_li_first = str_replace(t('‹ prev'),''.t('‹ prev'),	$new_li_previous);
-    }
-    
+  if ($li_previous == ""){
+    $new_li_first = '<span>'.t('‹ prev').'</span>';
+  }else {
+    $new_li_previous = $li_previous;
+    $new_li_first = str_replace(t('‹ prev'),''.t('‹ prev'),	$new_li_previous);
+  }
+
     //add rigth side arrow and text
-    if ($li_next == ""){
-        $new_li_last = '<span>'.t('next ›').'</span>';
-    }else {
-        $new_li_next = $li_next;
-        $new_li_last = str_replace(t('next ›'),	t('next ›'),	$new_li_next);
+  if ($li_next == ""){
+    $new_li_last = '<span>'.t('next ›').'</span>';
+  }else {
+    $new_li_next = $li_next;
+    $new_li_last = str_replace(t('next ›'),	t('next ›'),	$new_li_next);
         //$new_li_last = t('next ›').' '.$new_li_last;
-    }
+  }
 
   if ($pager_total[$element] > 1) {
 //    if ($li_first) {
-      $items[] = array(
-        'class' => array('pager-first'),
-        'data' => $new_li_first,
+    $items[] = array(
+      'class' => array('pager-first'),
+      'data' => $new_li_first,
       );
 //    }
 //    if ($li_previous) {
-      $items[] = array(
-        'class' => '',
-        'data' => t('Page'),
+    $items[] = array(
+      'class' => '',
+      'data' => t('Page'),
       );
 //    }
 
@@ -434,7 +483,7 @@ function parliamentwatch_pager($variables) {
         $items[] = array(
           'class' => array('pager-ellipsis'),
           'data' => $first.' …',
-        );
+          );
       }
       // Now generate the actual pager piece.
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
@@ -442,26 +491,26 @@ function parliamentwatch_pager($variables) {
           $items[] = array(
             'class' => array('pager-item'),
             'data' => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
-          );
+            );
         }
         if ($i == $pager_current) {
           $items[] = array(
             'class' => array('pager-current'),
             'data' => $i,
-          );
+            );
         }
         if ($i > $pager_current) {
           $items[] = array(
             'class' => array('pager-item'),
             'data' => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
-          );
+            );
         }
       }
       if ($i < $pager_max+1) {
         $items[] = array(
           'class' => array('pager-ellipsis'),
           'data' => '… '.$last,
-        );
+          );
       }
     }
     // End generation.
@@ -469,18 +518,18 @@ function parliamentwatch_pager($variables) {
       $items[] = array(
         'class' => array('pager-next'),
         'data' => '',
-      );
+        );
     }
 //    if ($li_last) {
-      $items[] = array(
-        'class' => array('pager-last'),
-        'data' => $new_li_last,
+    $items[] = array(
+      'class' => array('pager-last'),
+      'data' => $new_li_last,
       );
 //    }
     return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
       'items' => $items,
       'attributes' => array('class' => array('pager')),
-    ));
+      ));
   }
 }
 
