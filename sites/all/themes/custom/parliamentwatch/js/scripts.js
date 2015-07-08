@@ -59,6 +59,7 @@ jQuery(document).ready(function() {
 
     $('li .item.vote .pw-arrow-box-trigger').on('mousedown focus', function(e) {
       e.preventDefault();
+      $(this).addClass('visited');
       var opacity = $(this).next('.item-politician').css('opacity');
       var initial = $(this).next('.item-politician').css('left');
       

@@ -2,7 +2,8 @@
 (function ($) {
   Drupal.behaviors.pwVoteFilter = {
     attach: function (context, settings) {
-      $('a[rel^=filter-]').click(function(){
+      $('a[rel^=filter-]').click(function(e){
+        e.preventDefault();
         var filter = $(this).attr('rel').split('-');
         var parties = filter[1].split('/');
         var vote = filter[2];
@@ -16,7 +17,7 @@
         $('#edit-ss-vote-user-vote-text option').attr('selected', false);
         $('#edit-ss-vote-user-vote-text option:contains(' + vote + ')').attr('selected', 'selected');
         $('#edit-submit-pw-vote-search').click();
-        $("#pw_vote_positions")[0].scrollIntoView({behavior: 'smooth'});
+        //$("#pw_vote_positions")[0].scrollIntoView({behavior: 'smooth'});
       });
     }
   };
