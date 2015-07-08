@@ -2360,7 +2360,8 @@ table.pw-voting .views-field-nothing {
   margin-bottom: 1em;
   margin-left: 50px;
 }
-.statement blockquote {
+.statement blockquote,
+.pw-kc-argumentation blockquote {
   padding: 0 0 0 1px;
   margin-bottom: 0;
   overflow: hidden;
