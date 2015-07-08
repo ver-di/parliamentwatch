@@ -287,6 +287,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['alt'] = 'zur Petition';
   $handler->display->display_options['fields']['view_node']['alter']['link_class'] = 'icon-poll';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
@@ -313,6 +314,8 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'field_vote_node_target_id';
   $handler->display->display_options['fields']['title']['label'] = 'Petition';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['alt'] = 'zur Petition';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -335,7 +338,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Details';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="#" class="toggle-details" title="Gesamtergebnis und Begründung anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="#" class="toggle-details" title="Begründung und Gesamtergebnis anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
@@ -516,6 +519,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['view_node']['label'] = '';
   $handler->display->display_options['fields']['view_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['view_node']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['view_node']['alter']['alt'] = 'zur Abstimmung';
   $handler->display->display_options['fields']['view_node']['alter']['link_class'] = 'icon-poll';
   $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_node']['element_default_classes'] = FALSE;
@@ -556,6 +560,8 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'field_vote_node_target_id';
   $handler->display->display_options['fields']['title']['label'] = 'Petition';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['alt'] = 'zur Abstimmung';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
@@ -578,7 +584,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['ui_name'] = 'Global: Details';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="#" class="toggle-details" title="Gesamtergebnis und Begründung anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href="#" class="toggle-details" title="Zusammenfassung und Gesamtergebnis anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Feld: Excluded | Node Reference, Entity ID */
   $handler->display->display_options['fields']['field_vote_node']['id'] = 'field_vote_node';
@@ -638,17 +644,20 @@ function pw_vote_views_default_views() {
     t('Benutzer entity referenced from field_vote_user'),
     t('Inhalt entity referenced from field_vote_node'),
     t('Begriff'),
+    t('zur Petition'),
     t('zum Petitions-Check'),
     t('Datum'),
     t('Petition'),
     t('Stimmverhalten'),
     t('<div class="[field_vote] vote block">[field_votes_label]</div>'),
-    t('<a href="#" class="toggle-details" title="Gesamtergebnis und Begründung anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>'),
+    t('<a href="#" class="toggle-details" title="Begründung und Gesamtergebnis anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>'),
     t('Argumentation'),
     t('Alle'),
     t('Petitions'),
     t('Abstimmungsverhalten im Petitions-Check'),
     t('Polls'),
+    t('zur Abstimmung'),
+    t('<a href="#" class="toggle-details" title="Zusammenfassung und Gesamtergebnis anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>'),
   );
   $export['pw_vote_profile'] = $view;
 
