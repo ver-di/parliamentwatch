@@ -78,6 +78,7 @@ function pw_sharethis_field_default_fields() {
       'label' => 'Share Sum',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -176,6 +177,7 @@ function pw_sharethis_field_default_fields() {
       'label' => 'Share Sum',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -256,6 +258,7 @@ function pw_sharethis_field_default_fields() {
       'label' => 'Share Sum',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -339,7 +342,7 @@ function pw_sharethis_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => '23',
         ),
         'user_search' => array(
           'label' => 'above',
@@ -354,6 +357,7 @@ function pw_sharethis_field_default_fields() {
       'label' => 'Share Sum',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
