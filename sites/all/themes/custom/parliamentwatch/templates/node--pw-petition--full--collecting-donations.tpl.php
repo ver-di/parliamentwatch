@@ -38,7 +38,7 @@
 <div class="push-bottom-l">
   <?php print theme('status_messages'); ?>
   <h3>Für Meinungsumfrage spenden</h3>
-  <?php print $signing_form; ?>
+  <?php print $main_node_form; ?>
 </div>
 <h3>Hintergrund</h3>
 <div class="clearfix push-bottom-l managed-content">

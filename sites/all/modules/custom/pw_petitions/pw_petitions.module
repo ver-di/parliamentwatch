@@ -137,8 +137,9 @@ function pw_petitions_preprocess_node(&$variables) {
     }
 
     // Due to our complicated block modification above, we need to re-render the block.
-    $variables["main_node_form"] = drupal_render(_block_get_renderable_array($rendered_block));
-
+    if (empty($petition_status) || $petition_status == "collecting_donations"){
+        $variables["main_node_form"] = drupal_render(_block_get_renderable_array($rendered_block));
+    }
     switch ($variables['field_petition_partner'][0]['value']) {
       case "change.org":
       $variables['partner_html'] = theme('image', array(

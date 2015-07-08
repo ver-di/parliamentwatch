@@ -31,7 +31,7 @@
   <h3>Petition unterschreiben</h3>
   <blockquote><?php print $field_petition_content[0]['value']; ?></blockquote>
   <?php print theme('status_messages'); ?>
-  <?php print $signing_form; //todo: Ordentliche CSS-Klasse anstelle der Wiederverwendung von "comment"?>
+  <?php print $main_node_form; //todo: Ordentliche CSS-Klasse anstelle der Wiederverwendung von "comment"?>
 </div>
 <?php
   $block = module_invoke('block', 'block_view', '12');
