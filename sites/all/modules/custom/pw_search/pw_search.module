@@ -225,6 +225,11 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
    $user_name  = ($user_title)?$user_title." ":"";
    $user_name .= $user_fname." ".$user_lname;
 
+   $user_gender = $entity->field_vote_user['und'][0]['entity']->field_user_gender['und'][0]['value'];
+   $user_answers = $entity->field_vote_user['und'][0]['entity']->field_user_answers_give['und'][0]['value'];
+   $user_questions = $entity->field_vote_user['und'][0]['entity']->field_user_questions_get['und'][0]['value'];
+   
+
    $user_party = taxonomy_term_load($entity->field_vote_user['und'][0]['entity']->field_user_party['und'][0]['tid'])->name;
 
    $document->addField("ss_vote_user_vote_text",$entity->field_vote['und'][0]['taxonomy_term']->name);
@@ -245,6 +250,9 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
     }
 
    $document->addField("ss_vote_user_party",$user_party);
+   $document->addField("ss_vote_user_gender",$user_gender);
+   $document->addField("ss_vote_user_answers",$user_answers);
+   $document->addField("ss_vote_user_questions",$user_questions);
    $document->addField("ss_vote_user_first_name",$user_fname);
    $document->addField("ss_vote_user_last_name",$user_lname);   
    $document->addField("ss_vote_user_full_name",$user_name);
