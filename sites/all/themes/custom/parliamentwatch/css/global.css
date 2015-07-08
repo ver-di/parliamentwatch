@@ -2213,14 +2213,15 @@ table.pw-voting.zebra .views-row-odd {
 table.pw-voting.zebra .odd {
     background: #f4f4f4 !important;
 }
-table.pw-voting .views-field-field-petition-end-date {
+table.pw-voting .views-field-field-petition-end-date,
+table.pw-voting .views-field-field-poll-date {
   width: 10%;
 }
 table.pw-voting .views-field-title {
-  width: 70%;
+  width: 58%;
 }
 table.pw-voting .pw-voting {
-  width: 10%;
+  width: 22%;
 }
 table.pw-voting .views-field-nothing {
   width: 10%;
