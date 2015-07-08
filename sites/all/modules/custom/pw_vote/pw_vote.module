@@ -372,10 +372,14 @@ function pw_vote_final_result($nid, $result_short=FALSE){
       ->fieldCondition('field_vote_node', 'target_id', $nid)
       ->fieldCondition('field_vote', 'tid', array($term->tid))
       ->propertyCondition('status', NODE_PUBLISHED);
-      //dd($nid);
 
       // store summarized votes
       $sum_votes[$term->tid] = $query->count()->execute();
+    }
+
+    // no result
+    if(array_sum($sum_votes) == 0) {
+      return '';
     }
 
     if($result_short){
@@ -653,5 +657,17 @@ function pw_vote_preprocess_node(&$variables) {
     // set template name
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '__' . $variables['view_mode'];
 
+  }
+}
+
+/**
+ * Temporary hook to alter behavior of the poll search blocks since the current Solr module
+ * does not respect view filters correctly. Should be obsolote with the introduction of Search
+ * API modules.
+ */
+function pw_vote_views_query_alter(&$view, &$query) {
+  if ($view->name == 'pw_vote_search' && $view->current_display == 'block_2') {
+    $node_id = "*".arg(1)."*";
+    $query->add_where(1,'sm_field_vote_node', $node_id, 'LIKE');
   }
 }
