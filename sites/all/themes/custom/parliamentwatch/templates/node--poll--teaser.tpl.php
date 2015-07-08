@@ -14,7 +14,7 @@
     ?>
   </p>
 
-  <?php if($field_voted): ?>
+  <?php if(!empty($field_voted[0]['value'])): ?>
   <div class="clearfix">
     <ul class="pw-voting clearfix push-bottom-s">
       <?php
