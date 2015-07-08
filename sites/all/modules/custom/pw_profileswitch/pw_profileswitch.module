@@ -47,7 +47,7 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
   }
 
   // set custom breadcrumb
-  pw_user_set_custom_breadcrumb($account);
+  // pw_user_set_custom_breadcrumb($account);
 
   return user_view($account, $view_mode, $langcode);
 }
@@ -56,6 +56,7 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
  * Set custom breadcrumb for user revision.
  */
 function pw_user_set_custom_breadcrumb($account){
+  return;
   // custom breadcrumb
   $breadcrumb = array();
   $breadcrumb[] = l(t('Home'), '<front>');
