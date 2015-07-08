@@ -17,7 +17,7 @@
         $('#edit-ss-vote-user-vote-text option').attr('selected', false);
         $('#edit-ss-vote-user-vote-text option:contains(' + vote + ')').attr('selected', 'selected');
         $('#edit-submit-pw-vote-search').click();
-        //$("#pw_vote_positions")[0].scrollIntoView({behavior: 'smooth'});
+        $("#pw_vote_positions")[0].scrollIntoView({behavior: 'smooth'});
       });
     }
   };
