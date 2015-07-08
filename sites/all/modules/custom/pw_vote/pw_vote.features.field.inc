@@ -129,7 +129,7 @@ function pw_vote_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );
@@ -212,7 +212,7 @@ function pw_vote_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -295,7 +295,7 @@ function pw_vote_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -335,7 +335,9 @@ function pw_vote_field_default_fields() {
             ),
           ),
           'sort' => array(
-            'type' => 'none',
+            'direction' => 'ASC',
+            'property' => 'title',
+            'type' => 'property',
           ),
           'target_bundles' => array(
             'poll' => 'poll',
@@ -389,7 +391,7 @@ function pw_vote_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -483,7 +485,7 @@ function pw_vote_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
