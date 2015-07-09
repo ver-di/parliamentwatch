@@ -861,6 +861,15 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
   $handler->display->display_options['fields']['entity_id']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
+  /* Feld: Apache Solr: is_uid */
+  $handler->display->display_options['fields']['is_uid']['id'] = 'is_uid';
+  $handler->display->display_options['fields']['is_uid']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['is_uid']['field'] = 'is_uid';
+  /* Feld: Apache Solr: ss_vote_user_id */
+  $handler->display->display_options['fields']['ss_vote_user_id']['id'] = 'ss_vote_user_id';
+  $handler->display->display_options['fields']['ss_vote_user_id']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['fields']['ss_vote_user_id']['field'] = 'ss_vote_user_id';
+  $handler->display->display_options['fields']['ss_vote_user_id']['exclude'] = TRUE;
   /* Sortierkriterien: Apache Solr: ds_changed */
   $handler->display->display_options['sorts']['ds_changed']['id'] = 'ds_changed';
   $handler->display->display_options['sorts']['ds_changed']['table'] = 'apachesolr__solr';
@@ -990,6 +999,28 @@ function pw_vote_views_default_views() {
       'operator' => '=',
       'value' => 'no-show',
     ),
+  );
+  /* Filterkriterium: Apache Solr: ss_vote_user_id */
+  $handler->display->display_options['filters']['ss_vote_user_id']['id'] = 'ss_vote_user_id';
+  $handler->display->display_options['filters']['ss_vote_user_id']['table'] = 'apachesolr__solr';
+  $handler->display->display_options['filters']['ss_vote_user_id']['field'] = 'ss_vote_user_id';
+  $handler->display->display_options['filters']['ss_vote_user_id']['operator'] = 'word';
+  $handler->display->display_options['filters']['ss_vote_user_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['ss_vote_user_id']['expose']['operator_id'] = 'ss_vote_user_id_op';
+  $handler->display->display_options['filters']['ss_vote_user_id']['expose']['label'] = 'user_id_filter';
+  $handler->display->display_options['filters']['ss_vote_user_id']['expose']['operator'] = 'ss_vote_user_id_op';
+  $handler->display->display_options['filters']['ss_vote_user_id']['expose']['identifier'] = 'user_id_filter';
+  $handler->display->display_options['filters']['ss_vote_user_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    40118511 => 0,
+    29859578 => 0,
   );
 
   /* Display: Page */
@@ -1163,9 +1194,12 @@ function pw_vote_views_default_views() {
     t('ss_vote_user_gender'),
     t('ss_vote_user_questions'),
     t('entity_id'),
+    t('is_uid'),
+    t('ss_vote_user_id'),
     t('Suche'),
     t('ss_vote_user_party'),
     t('ss_vote_user_vote_text'),
+    t('user_id_filter'),
     t('Page'),
     t('Block'),
     t('PW Vote Search Block'),
