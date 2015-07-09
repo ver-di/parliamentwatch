@@ -411,9 +411,6 @@ function pw_vote_final_result($nid, $result_short=FALSE){
  */
 function pw_vote_voting_behavior($node) {
 
-  $t = array();
-  $time = microtime(TRUE);
-
   // add javascript file
   drupal_add_js(drupal_get_path('module', 'pw_vote') . '/pw_vote.js');
 
@@ -433,8 +430,14 @@ function pw_vote_voting_behavior($node) {
     )
   );
 
+  // pre-fetch parties for performance reasons
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+  ->entityCondition('bundle', 'party');
+  $result = $query->execute();
+  $terms_party = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']));
+
   // load all votes
-  $st = microtime(TRUE);
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
   ->entityCondition('bundle', 'vote')
@@ -444,20 +447,15 @@ function pw_vote_voting_behavior($node) {
   ->propertyCondition('status', NODE_PUBLISHED)
   ->fieldOrderBy('field_vote', 'tid');
   $result = $query->execute();
-  $t['efq'] += microtime(TRUE)-$st;
 
   if (isset($result['node'])) {
 
     // load all votes as nodes
-    $st = microtime(TRUE);
     $nids = array_keys($result['node']);
     $votes = node_load_multiple($nids);
-    $t['nodeload'] += microtime(TRUE)-$st;
 
     // iterate through nodes
-    $st = microtime(TRUE);
     foreach ($votes as $vote) {
-      $st_inner = microtime(TRUE);
 
       // wrap
       $w_vote = entity_metadata_wrapper('node', $vote);
@@ -472,10 +470,9 @@ function pw_vote_voting_behavior($node) {
       }
 
       // get fraction
-      $fraction = $w_vote->field_vote_user->field_user_party->label();
+      $fraction_raw = $w_vote->field_vote_user->field_user_party->raw();
+      $fraction = $terms_party[$fraction_raw[0]]->name;
       $party = $fraction;
-
-
 
       // temp: set CDU and CSU as fraction
       if($fraction == 'CDU' || $fraction == 'CSU'){
@@ -486,6 +483,7 @@ function pw_vote_voting_behavior($node) {
       if (empty($fraction)) {
         continue;
       }
+
       // add fraction as sub array for holding votes
       elseif (!isset($all_votes[$fraction])) {
         $all_votes[$fraction] = array();
@@ -502,7 +500,6 @@ function pw_vote_voting_behavior($node) {
       else {
         $portrait = $portrait_default;
       }
-
 
       $all_votes[$fraction][] = theme('voting_behavior_single_vote', array(
         'class_name' => $w_vote->field_vote->label(),
@@ -531,18 +528,13 @@ function pw_vote_voting_behavior($node) {
         $sum_votes_overview[$tid] = 0;
       }
       $sum_votes_overview[$tid]++;
-    $t['foreach1_inner'] += microtime(TRUE)-$st_inner;
     }
   }
-  $t['foreach1_outer'] += microtime(TRUE)-$st;
 
   // sort parties by number of votes
-  $st = microtime(TRUE);
   array_multisort(array_map('count', $all_votes), SORT_DESC, $all_votes);
-  $t['multisort'] += microtime(TRUE)-$st;
 
   // build containers
-  $st = microtime(TRUE);
   $container_parties = array();
   foreach ($all_votes as $fraction => $votes_fraction) {
 
@@ -570,20 +562,14 @@ function pw_vote_voting_behavior($node) {
     );
   }
 
-  $t['foreach2'] += microtime(TRUE)-$st;
-
   // put all fraction container together and add overview
-  $st = microtime(TRUE);
   $content = theme('voting_behavior_container_overview', array(
     'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_overview, 'voting_behavior_sum_overview'),
     'list_voting_behavior' => implode($container_parties),
     )
   );
-  $t['sumcontent'] += microtime(TRUE)-$st;
 
   // return
-  $t['all'] += microtime(TRUE)-$time;
-  dd($t);
   return $content;
 }
 
