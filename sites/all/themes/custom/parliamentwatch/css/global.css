@@ -2274,8 +2274,13 @@ table.pw-voting .views-field-nothing {
   margin: 0 0 1em;
   padding: 3px 10px;
 }
+
+/* polls */
 .node-type-poll .view-mode-full .pw-voting .vote.total:hover {
   opacity: .8;
+}
+#views-exposed-form-pw-vote-search-block-2 #edit-user-id-filter-wrapper {
+  display: none;
 }
 
 
