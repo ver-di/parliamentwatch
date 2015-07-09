@@ -27,6 +27,44 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ajax_comments_node_types';
+  $strongarm->value = array(
+    'blogpost' => 'blogpost',
+    'pw_petition' => 'pw_petition',
+    'poll' => 'poll',
+    'announcement' => 0,
+    'article' => 0,
+    'calendar_entry' => 0,
+    'committee_membership' => 0,
+    'dialogue' => 0,
+    'page' => 0,
+    'pw_kc_position' => 0,
+    'pw_kc_thesis' => 0,
+    'migrate_extras_media_example' => 0,
+    'migrate_example_pathauto' => 0,
+    'pw_poll' => 0,
+    'press_release' => 0,
+    'press_article' => 0,
+    'sidejob' => 0,
+    'pw_slider' => 0,
+    'speech' => 0,
+    'trustee' => 0,
+    'vote' => 0,
+    'election_programme' => 0,
+    'webform' => 0,
+  );
+  $export['ajax_comments_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ajax_comments_notify';
+  $strongarm->value = 1;
+  $export['ajax_comments_notify'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'clientside_validation_default_settings';
   $strongarm->value = array(
     'validate_options' => array(
@@ -545,9 +583,44 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_migrate_cdn';
+  $strongarm->value = 'none';
+  $export['jquery_update_jquery_migrate_cdn'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_migrate_enable';
+  $strongarm->value = 0;
+  $export['jquery_update_jquery_migrate_enable'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_migrate_trace';
+  $strongarm->value = 0;
+  $export['jquery_update_jquery_migrate_trace'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update_jquery_migrate_warnings';
+  $strongarm->value = 0;
+  $export['jquery_update_jquery_migrate_warnings'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'jquery_update_jquery_version';
   $strongarm->value = '1.7';
   $export['jquery_update_jquery_version'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'jquery_update__active_tab';
+  $strongarm->value = 'edit-themes';
+  $export['jquery_update__active_tab'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -562,6 +635,51 @@ function pw_globals_strongarm() {
   $strongarm->name = 'language_content_type_webform';
   $strongarm->value = '2';
   $export['language_content_type_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'lazyloader_distance';
+  $strongarm->value = '0';
+  $export['lazyloader_distance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'lazyloader_enabled';
+  $strongarm->value = 1;
+  $export['lazyloader_enabled'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'lazyloader_exclude_option';
+  $strongarm->value = 'exclude';
+  $export['lazyloader_exclude_option'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'lazyloader_icon';
+  $strongarm->value = 'loader-9.png';
+  $export['lazyloader_icon'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'lazyloader_paths';
+  $strongarm->value = 'media/*/format-form
+admin/*
+node/add/*
+node/*/edit';
+  $export['lazyloader_paths'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'lazyloader_placeholder';
+  $strongarm->value = 'sites/all/themes/custom/parliamentwatch/images/transparent.png';
+  $export['lazyloader_placeholder'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1229,7 +1347,6 @@ function pw_globals_strongarm() {
     3 => 'dialogue',
     4 => 'migrate_extras_media_example',
     5 => 'migrate_example_pathauto',
-    6 => 'pw_poll',
     7 => 'press_release',
     8 => 'press_article',
     9 => 'pw_slider',

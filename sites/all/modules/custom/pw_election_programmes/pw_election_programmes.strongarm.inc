@@ -199,7 +199,7 @@ function pw_election_programmes_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_election_programme_pattern';
-  $strongarm->value = '[node:field-taxonomy-party:i18n-name]/election-programme';
+  $strongarm->value = '[node:field-taxonomy-party]/election-programme';
   $export['pathauto_node_election_programme_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

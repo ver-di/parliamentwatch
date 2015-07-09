@@ -410,8 +410,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'create files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Politician',
-      2 => 'administrator',
+      1 => 'Deputy',
+      2 => 'Premium User',
+      3 => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -1116,8 +1117,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_picture',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Politician',
-      2 => 'administrator',
+      1 => 'Deputy',
+      2 => 'Premium User',
+      3 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1240,8 +1242,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Politician',
-      2 => 'administrator',
+      1 => 'Deputy',
+      2 => 'Premium User',
+      3 => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -2226,8 +2229,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Politician',
-      2 => 'administrator',
+      1 => 'Deputy',
+      2 => 'Premium User',
+      3 => 'administrator',
     ),
     'module' => 'file_entity',
   );

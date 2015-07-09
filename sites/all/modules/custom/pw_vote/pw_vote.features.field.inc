@@ -129,7 +129,7 @@ function pw_vote_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );
@@ -212,7 +212,7 @@ function pw_vote_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -280,9 +280,10 @@ function pw_vote_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_vote',
       'label' => 'Vote',
-      'required' => 0,
+      'required' => 1,
       'settings' => array(
         'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
@@ -294,7 +295,7 @@ function pw_vote_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -334,9 +335,12 @@ function pw_vote_field_default_fields() {
             ),
           ),
           'sort' => array(
-            'type' => 'none',
+            'direction' => 'ASC',
+            'property' => 'title',
+            'type' => 'property',
           ),
           'target_bundles' => array(
+            'poll' => 'poll',
             'pw_petition' => 'pw_petition',
           ),
         ),
@@ -372,6 +376,7 @@ function pw_vote_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_vote_node',
       'label' => 'Node Reference',
       'required' => 1,
@@ -386,7 +391,7 @@ function pw_vote_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -472,12 +477,15 @@ function pw_vote_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
+        'module' => 'entityreference',
         'settings' => array(
+          'match_operator' => 'CONTAINS',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'path' => '',
+          'size' => 60,
         ),
-        'type' => 'options_select',
-        'weight' => '3',
+        'type' => 'entityreference_autocomplete',
+        'weight' => '4',
       ),
     ),
   );

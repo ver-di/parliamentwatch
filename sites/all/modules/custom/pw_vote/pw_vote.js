@@ -2,7 +2,8 @@
 (function ($) {
   Drupal.behaviors.pwVoteFilter = {
     attach: function (context, settings) {
-      $('a[rel^=filter-]').click(function(){
+      $('a[rel^=filter-]').click(function(e){
+        e.preventDefault();
         var filter = $(this).attr('rel').split('-');
         var parties = filter[1].split('/');
         var vote = filter[2];

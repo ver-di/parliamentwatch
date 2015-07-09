@@ -72,7 +72,7 @@ html.mm-opening #hamburger:after
 	transform: rotate( -45deg );
 	bottom: 15px;
 }
-.mm-menu [class^="icon-"]:before, 
+.mm-menu [class^="icon-"]:before,
 .mm-menu [class*=" icon-"]:before {
   margin-right: 0.7em;
 }
@@ -94,12 +94,12 @@ body::-webkit-scrollbar,
 div::-webkit-scrollbar {
     width: 12px;
 }
- 
+
 body::-webkit-scrollbar-track,
 div::-webkit-scrollbar-track {
     background: #efefef;
 }
- 
+
 body::-webkit-scrollbar-thumb,
 div::-webkit-scrollbar-thumb {
   background-color: #ddd;
@@ -245,7 +245,15 @@ small {
 table.table th,
 table.table td {
     border: 1px solid #999;
+}
+table th,
+table td {
     padding: 3px 5px;
+    text-align: left;
+}
+table.table-sorted th a img {
+  vertical-align: text-top;
+  margin-left: 3px;
 }
 p {
     margin-bottom: 1em;
@@ -273,6 +281,11 @@ hr {
 img {
     max-width: 100%;
 }
+.no-js img,
+.responsive-layout-mobile .portrait-l img,
+.responsive-layout-mobile .pw-landscape-l img {
+    height: auto;
+}
 blockquote {
     padding: 12px 0 20px 1px;
     quotes:"\201D" "\201C";
@@ -280,6 +293,7 @@ blockquote {
 }
 blockquote:after {
     content: close-quote;
+
     bottom: -19px;
 }
 blockquote:before {
@@ -513,7 +527,7 @@ blockquote .pw-expander div {
 	color: #f63;
 }
 .aw-success {
-  color: #92c01f; 
+  color: #92c01f;
 }
 .aw-icon-circle-brand:before {
 	color: #fff;
@@ -631,7 +645,7 @@ a.external:hover {
 .zebra .views-row-odd {
     background: #f4f4f4;
 }
-.zebra li {
+.zebra > li {
     padding: 2px 0.5%;
 }
 
@@ -768,7 +782,7 @@ a.link-sound:active {
 .link-pdf a,
 a.link-pdf {
     padding-left: 22px;
-    background-position: 
+    background-position:
 }
 .link-sign a,
 a.link-sign {
@@ -987,7 +1001,7 @@ span.ic-info {
 }
 .twitter-item {
     background-position: -930px -3164px;
-    padding: 6px 0 6px 26px;    
+    padding: 6px 0 6px 26px;
 }
 
 h1.site-name a,
@@ -1317,8 +1331,8 @@ h1#page-title {
 }
 #search-form .form-text {
     width: 60%;
-    padding: 12px 10px;   
-    font-size: 14px;  
+    padding: 12px 10px;
+    font-size: 14px;
     font-size: 1.4rem;
     line-height: 1.2em;
     height: auto;
@@ -1332,12 +1346,12 @@ h1#page-title {
   height: 4.1rem;
   width: 41px;
   width: 4.1rem;
-  
+
 }
 .custom-search-button .form-submit {
     border: 0;
     background: url(../images/ic_search.png) no-repeat center;
-    text-indent: -50000px;    
+    text-indent: -50000px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
@@ -1481,7 +1495,7 @@ ul.tabs li a {
     background: linear-gradient(to bottom,  #f9f9f9 0%,#ececec 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
     -webkit-border-radius: 3px 3px 0px 0px;
-    border-radius: 3px 3px 0px 0px;   
+    border-radius: 3px 3px 0px 0px;
 
 }
 ul.tabs li.active a,
@@ -1641,7 +1655,7 @@ ul.tabs li a:active {
     background-image: linear-gradient(to bottom,  #f4f4f4 0%,#ececec 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
     -webkit-border-radius: 0px 0px 3px 3px;
-    border-radius: 0px 0px 3px 3px;    
+    border-radius: 0px 0px 3px 3px;
     display: block;
     float: none;
     line-height: 2.6rem;
@@ -1720,7 +1734,7 @@ ul.tabs li a:active {
     background: linear-gradient(to bottom,  #f9f9f9 0%,#ececec 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
     -webkit-border-radius: 3px 3px 0px 0px;
-    border-radius: 3px 3px 0px 0px;   
+    border-radius: 3px 3px 0px 0px;
 
 }
 .quicktabs-style-nostyle .quicktabs-tabs li.active a {
@@ -1776,11 +1790,11 @@ ul.tabs li a:active {
     border: 1px solid #dedede;
     padding: 10px 15px 10px 12px;
     -webkit-box-shadow: 0 0 3px 2px #ebebeb;
-    box-shadow: 0 0 3px 2px #ebebeb;        
+    box-shadow: 0 0 3px 2px #ebebeb;
 }
 @media (max-width: 479px) {
   .floatbox {
-    width: 100%;   
+    width: 100%;
   }
 }
 @media (min-width: 480px) {
@@ -1863,7 +1877,9 @@ ul.tabs li a:active {
 }
 
 
-/* /////////////////////////// pw-promo-block /////////// */
+/* /////////////////////////// pw blocks /////////// */
+
+/* pw-promo-block */
 
 .pw-promo-block {
     background: #ccc;
@@ -1896,6 +1912,32 @@ ul.tabs li a:active {
     background: url(/sites/abgeordnetenwatch.de/files/promo_spenden.jpg) center;
 }
 
+/* pw-block-eyecatcher-1 */
+
+.pw-block-eyecatcher-1 {
+  padding: 20px 10px;
+  color: #444;
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 4px 1px #ebebeb;
+  -moz-box-shadow: 0px 0px 4px 1px #ebebeb;
+  box-shadow: 0px 0px 4px 1px #ebebeb;
+    
+  background: #a8cc68;
+  background: -moz-linear-gradient(-45deg, #a8cc68 0%, #ccea97 100%);
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#a8cc68), color-stop(100%,#ccea97));
+  background: -webkit-linear-gradient(-45deg, #a8cc68 0%,#ccea97 100%);
+  background: -o-linear-gradient(-45deg, #a8cc68 0%,#ccea97 100%);
+  background: -ms-linear-gradient(-45deg, #a8cc68 0%,#ccea97 100%);
+  background: linear-gradient(135deg, #a8cc68 0%,#ccea97 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8cc68', endColorstr='#ccea97',GradientType=1 );
+
+}
+.pw-block-eyecatcher-1 .media-image-left {
+  margin-right: 10px;
+}
 
 /* /////////////////////////// views /////////////////// */
 
@@ -1949,7 +1991,7 @@ ul.tabs li a:active {
 .views-exposed-form .form-radios label:hover,
 .views-exposed-form .form-checkboxes label:hover,
 .views-exposed-form .bef-checkboxes label:hover {
-    cursor: pointer; 
+    cursor: pointer;
 }
 .views-exposed-widget label {
     display: block;
@@ -1979,7 +2021,7 @@ ul.tabs li a:active {
     margin-bottom: 1em;
 }
 #view-display-id-block_1 a {
-    color: 
+    color:
 }
 .group_blog_metainformation {
     margin-bottom: 18px;
@@ -1996,6 +2038,10 @@ ul.tabs li a:active {
 .file-image.float-left,
 .media-image-left {
     margin-right: 14px;
+    float: left;
+}
+.media-image-left {
+    margin-bottom: 7px;
 }
 .file-image.float-right {
     margin-left: 14px;
@@ -2006,17 +2052,15 @@ ul.tabs li a:active {
     margin-left: 84px;
     margin-top: -8px;
 }
-.media-image-left {
-    margin-bottom: 7px;
-}
 .file-image img,
 img.file-image,
 .img-outline img {
     outline: 1px solid #ccc;
 }
 .no-outline img,
-img.no-outline {
-    outline: 0;
+img.no-outline,
+.lazyloader-icon {
+    outline: 0 !important;
 }
 .comment-count,
 .icon-taxonomy {
@@ -2154,6 +2198,36 @@ img.no-outline {
 	margin-left: -31px;
 }
 
+table.pw-voting {
+  width: 100%;
+}
+table.pw-voting th {
+  white-space: nowrap;
+}
+table.pw-voting td {
+  vertical-align: middle;
+}
+table.pw-voting.zebra .views-row-odd {
+    background: #fff;
+}
+table.pw-voting.zebra .odd {
+    background: #f4f4f4 !important;
+}
+table.pw-voting .views-field-field-petition-end-date,
+table.pw-voting .views-field-field-poll-date {
+  width: 10%;
+}
+table.pw-voting .views-field-title {
+  width: 58%;
+}
+table.pw-voting .pw-voting {
+  width: 22%;
+}
+table.pw-voting .views-field-nothing {
+  width: 10%;
+  white-space: nowrap;
+}
+
 .pw-voting .vote {
   border-width: 1px;
   border-style: solid;
@@ -2161,13 +2235,18 @@ img.no-outline {
 .pw-voting .vote .portrait-s {
     width: 70px;
     height: 105px;
-    background: url(/sites/abgeordnetenwatch.de/files/styles/pw_portrait_s/public/default_images/img_fotodummy_210x140.jpg) no-repeat;
+    background: #fff;
     outline: 1px solid #ccc;
 }
 
 .pw-voting .vote.block {
   padding: 1px 5px;
   white-space: nowrap;
+  text-align: center;
+}
+.pw-voting span.vote.block {
+  display: inline-block;
+  margin-bottom: 3px;
 }
 .pw-voting .total.vote > a {
   color: inherit;
@@ -2195,25 +2274,34 @@ img.no-outline {
   margin: 0 0 1em;
   padding: 3px 10px;
 }
-.pw-voting .vote.total:hover {
+.node-type-poll .view-mode-full .pw-voting .vote.total:hover {
   opacity: .8;
 }
 
 
 .pw-voting .item.vote {
   border-width: 0;
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-.pw-voting .item.vote.yes {
+.pw-voting .item.vote.yes > a:link {
   background: rgb(26, 200, 42);
   border-color: rgb(26, 200, 42);
 }
-.pw-voting .item.vote.no {
+.pw-voting .item.vote.no > a:link {
   background: rgb(241, 43, 44);
   border-color: rgb(241, 43, 44);
 }
-.pw-voting .item.vote.abstain {
+.pw-voting .item.vote.abstain > a:link {
   background: rgb(34, 95, 219);
   border-color: rgb(34, 95, 219);
+}
+.pw-voting .item.vote > a:hover,
+.pw-voting .item.vote > a:active,
+.pw-voting .item.vote > a:visited,
+.pw-voting .item.vote > a.visited {
+  opacity: .5;
 }
 
 
@@ -2227,12 +2315,14 @@ img.no-outline {
   margin: 0 2px 2px 0;
   cursor: pointer;
 }
-.pw-voting .list_voting_behavior .vote.no-show {
+.pw-voting .list_voting_behavior li.vote.no-show > a {
   width: 0.9rem;
   height: 0.9rem;
   width: 9px;
   height: 9px;
-  border-width: 1px;
+  border: 1px solid #cacaca;
+  -webkit-box-shadow: 0 0 1px 1px #f6f6f6 inset;
+  box-shadow: 0 0 1px 1px #f6f6f6 inset;
 }
 .pw-voting .item {
   position: relative;
@@ -2271,7 +2361,8 @@ img.no-outline {
   margin-bottom: 1em;
   margin-left: 50px;
 }
-.node-type-pw-petition .statement blockquote {
+.statement blockquote,
+.pw-kc-argumentation blockquote {
   padding: 0 0 0 1px;
   margin-bottom: 0;
   overflow: hidden;
@@ -2281,7 +2372,7 @@ img.no-outline {
   right: 15px;
   bottom: 10px;
 }
-.no-js .pw-voting .item-politician {
+.pw-voting .item-politician {
   visibility: hidden;
   opacity: 0;
   transition:         opacity .5s ease-in-out;
@@ -2289,36 +2380,32 @@ img.no-outline {
   -webkit-transition: opacity .5s ease-in-out;
 }
 .no-js .pw-voting .item:hover .item-politician,
-.no-js.js .pw-voting .item .item-politician {
+.js .pw-voting .item .item-politician {
   visibility: visible;
   opacity: 1;
-}
-.no-js.js .pw-voting .item .item-politician {
-  display: none;
 }
 html.js fieldset.collapsed {
     height: auto;
 }
 @media (max-width: 1120px) {
-
-.pw-voting .item-politician {
-  left: -10px;
-  bottom: 14px;
-  bottom: 1.4rem;
-}
-
-.pw-arrow-box:after,
-.pw-arrow-box:before {
-	left: 14px;
-}
-.pw-arrow-box:after {
-	border-width: 10px;
-	margin-left: -10px;
-}
-.pw-arrow-box:before {
-	border-width: 11px;
-	margin-left: -11px;
-}
+  .pw-voting .item-politician {
+    left: -10px;
+    bottom: 14px;
+    bottom: 1.4rem;
+  }
+  
+  .pw-arrow-box:after,
+  .pw-arrow-box:before {
+  	left: 14px;
+  }
+  .pw-arrow-box:after {
+  	border-width: 10px;
+  	margin-left: -10px;
+  }
+  .pw-arrow-box:before {
+  	border-width: 11px;
+  	margin-left: -11px;
+  }
 }
 
 /* press */
@@ -2358,7 +2445,7 @@ html.js fieldset.collapsed {
 }
 
 .pw-progress-wrapper {
-    margin-bottom: 2px; 
+    margin-bottom: 2px;
     border: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
@@ -2384,7 +2471,7 @@ ul.progress-icons {
 	float: left;
 	margin-top: -.19em;
 }
-ul.progress-icons [class^="icon-"]:before, 
+ul.progress-icons [class^="icon-"]:before,
 ul.progress-icons [class*=" icon-"]:before {
 	margin: 0 8px 0 0;
 }
@@ -2397,7 +2484,7 @@ ul.progress-icons li {
 .pw-petition-progress-signings,
 .pw-petition-progress-donations {
     float: left;
-    margin-bottom: 2px; 
+    margin-bottom: 2px;
     border-right: 1px solid #d3d3d3;
     -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
@@ -2435,7 +2522,7 @@ ul.progress-icons li {
 }
 
 @media (max-width: 479px) {
-	.petition-list-image-wrapper img {
+	.petition-list-image-wrapper img:not(.lazyloader-icon) {
 		width: 100%;
 	}
 	.pw-petition-list-contents {
@@ -2474,7 +2561,7 @@ ul.progress-icons li {
 }
 @media (min-width: 480px) and (max-width: 639px) {
 	.petition-list-partner-wrapper {
-		margin: 0.7em 0 4em;
+		margin: 0.7em 0 5em;
 	}
 }
 @media (min-width: 640px) {
@@ -2707,7 +2794,7 @@ input[type="button"],
     text-shadow: 0 0 0;
     vertical-align: top;
     margin-top: 1px;
-    
+
     -webkit-box-shadow: 0 0 2px 2px #DEDEDE;
     -moz-box-shadow: 0 0 2px 2px #DEDEDE;
     box-shadow: 0 0 2px 2px #DEDEDE;
@@ -3228,7 +3315,7 @@ form .webform-component-checkboxes .description {
 }
 #webform-client-form-57286 #webform-component-fieldset-statement--statement-wrapper {
   padding: 10px;
-  background: #f4f4f4; 
+  background: #f4f4f4;
   border: 1px solid #dedede;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -3258,7 +3345,7 @@ form .webform-component-checkboxes .description {
     top: 0;
     right: 5px;
     width: 70px;
-    text-align: right;    
+    text-align: right;
 }
 .st_plusone_hcount,
 .st_twitter_hcount,
@@ -3336,7 +3423,7 @@ form .webform-component-checkboxes .description {
 #section-content .compact-form form,
 #views-exposed-form-user-constituency-page,
 .pw-custom-search form {
-    background: #f4f4f4; 
+    background: #f4f4f4;
     border: 1px solid #dedede;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -3358,7 +3445,7 @@ form .webform-component-checkboxes .description {
     margin-bottom: 0.2rem;
 }
 #section-content .block.newsletter-subscribe form.compact-form { /* newsletter order */
-    background: transparent; 
+    background: transparent;
     border: 0;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -3404,7 +3491,7 @@ form .webform-component-checkboxes .description {
 }
 .comment-reply {
     background-position: -610px -2896px;
-    padding-left: 20px;    
+    padding-left: 20px;
 }
 .comment .submitted .created {
     float: right;
@@ -3569,6 +3656,7 @@ a.external,
 .collapse-processed .fieldset-title,
 .js .pw-collapsible .fieldset-legend,
 .js .responsive-layout-mobile .pw-expandable-mobile h2,
+.js .responsive-layout-mobile .pw-expandable-mobile h3,
 .item-list ul.pager.pager-load-more a span,
 #quicktabs-politicians_answer .quicktabs-tabs a span,
 #quicktabs-homepage_tabs a span,
@@ -3590,7 +3678,7 @@ a.external,
 .collapse-processed a.fieldset-title,
 .js .pw-collapsible .fieldset-legend {
     padding-left: 15px;
-    background-position: -647px -2020px; 
+    background-position: -647px -2020px;
 }
 .collapse-processed a.fieldset-title:hover,
 .collapse-processed a.fieldset-title:focus,
@@ -3598,11 +3686,11 @@ a.external,
 .js .pw-collapsible .fieldset-legend:hover,
 .js .pw-collapsible .fieldset-legend:focus,
 .js .pw-collapsible .fieldset-legend:active {
-    background-position: -608px -2061px; 
+    background-position: -608px -2061px;
 }
 .collapse-processed.collapsed a.fieldset-title,
 .js .pw-collapsible .fieldset-legend {
-    background-position: -810px -1858px; 
+    background-position: -810px -1858px;
 }
 .collapse-processed.collapsed a.fieldset-title:hover,
 .collapse-processed.collapsed a.fieldset-title:focus,
@@ -3640,12 +3728,22 @@ a.external,
 .mobile-only {
     display: block;
 }
-.js .responsive-layout-mobile .pw-expandable-mobile h2 {
+@media (max-width: 619px) {  
+  .visually-hidden-mobile {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+  }
+}
+.js .responsive-layout-mobile .pw-expandable-mobile h2,
+.js .responsive-layout-mobile .pw-expandable-mobile h3 {
     padding-left: 36px;
     background-position: -280px -195px;
     cursor: pointer;
 }
-.js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded {
+.js .responsive-layout-mobile .pw-expandable-mobile h2.pw-mobile-expanded,
+.js .responsive-layout-mobile .pw-expandable-mobile h3.pw-mobile-expanded {
     background-position: -360px -115px;
 }
 .js .responsive-layout-normal #colorbox #pw_block_user_questionform,

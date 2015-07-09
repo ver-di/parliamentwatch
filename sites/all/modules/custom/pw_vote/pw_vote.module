@@ -7,27 +7,6 @@ include_once 'pw_vote.features.inc';
 
 
 /**
- * Implements hook_install()
- */
-
-function pw_vote_install() {
-
-  // sets default value to vote tolerance timespan
-  variable_set('pw_vote_vote_tolerance', 24 * 3600);
-}
-
-/**
- * Implements hook_uninstall()
- */
-
-function pw_vote_uninstall() {
-
-  // unset variable vote tolerance timespan
-  variable_del('pw_vote_vote_tolerance');
-}
-
-
-/**
  * Implements hook_menu().
  */
 
@@ -35,13 +14,6 @@ function pw_vote_menu() {
   $items = array();
   $items['admin/config/pw/vote'] = array(
     'title' => 'PW Vote',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('pw_vote_settings_form'),
-    'access arguments' => array('administer site configuration'),
-    'file' => 'pw_vote.admin.inc',
-    );
-  $items['admin/config/pw/vote/generate_votes'] = array(
-    'title' => 'Generate Votes',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('pw_vote_generate_votes_form'),
     'access arguments' => array('administer site configuration'),
@@ -59,7 +31,6 @@ function pw_vote_menu() {
  */
 
 function pw_vote_check_user_allowed() {
-
 
   // parameter u indicates the voting deputy
   $getparams = drupal_get_query_parameters();
@@ -120,19 +91,20 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
     if (isset($result['node'])) {
 
       // load vote and wrap it
-      $nid = array_keys($result['node']);
+      $nid = key($result['node']);
       $vote = node_load($nid);
+
       $w_vote = entity_metadata_wrapper('node', $vote);
 
       // changing vote is only allowed till end date or within 24 hours of last change; creating a new one is always allowed.
-      if(time() > $w_vote->field_vote_node->field_petition_end_date->value() && $vote->uid == $uid && time() - $vote->changed > 86400) {
+      if(time() > $w_vote->field_vote_node->field_petition_end_date->value() && $w_vote->field_voted->value() === TRUE && time() - $vote->changed > 86400) {
         $petition_end_date = date('d.m.Y H:i', $w_vote->field_vote_node->field_petition_end_date->value());
         $link_email = l('E-Mail', 'mailto:service@abgeordnetenwatch.de?subject=Mein Stimmverhalten bei '.$node->title, array('absolute' => TRUE));
         drupal_set_message('Die Frist zur Eintragung Ihres Stimmverhaltens ist bereits am ' . $petition_end_date . ' abgelaufen. Bitte setzen Sie sich bei Änderungswünschen mit der Redaktion von '.variable_get('site_name').' unter 040 / 317 69 10 26 oder per '.$link_email.' in Verbindung.', 'warning');
       }
 
-      // check if author of vote is politian him/herself, than vote was not generated.
-      if($vote->uid == $uid){
+      // check if already voted
+      if($w_vote->field_voted->value() === TRUE){
 
         // set value for voting behavior
         $form['submitted']['vote']['#default_value'] = $w_vote->field_vote->name->value();
@@ -194,8 +166,8 @@ function pw_vote_form_validate(&$form, &$form_state, $form_id) {
   // petition end date reached
   $uid = pw_vote_check_user_allowed();
   $node = node_load($form['submitted']['vote_node_id']['#value']);
-  $w_node = entity_metadata_wrapper('node', $node);
-  if(!$uid || time() > $w_node->field_vote_node->field_petition_end_date->value() && $node->uid == $uid && time() - $vote->changed > 86400) {
+  $w_vote = entity_metadata_wrapper('node', $node);
+  if(!$uid || time() > $w_vote->field_vote_node->field_petition_end_date->value() && $w_vote->field_voted->value() === TRUE && time() - $node->changed > 86400) {
     form_set_error('error', 'Die Frist zur Eintragung ist bereits abgelaufen.');
   }
 }
@@ -228,11 +200,14 @@ function pw_vote_webform_submission_insert($node, $submission) {
 
     // set title
     $user_fullname = $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
-    $vote->title = 'Vote by ' . $user_fullname . ' (voted)';
+    $vote->title = 'Vote by ' . $user_fullname;
 
     // voting behavior
     $terms = taxonomy_get_term_by_name($form_values['vote'], 'votes');
     $vote->field_vote[$vote->language][0]['tid'] = key($terms);
+
+    // set vote as voted
+    $vote->field_voted[$vote->language][0]['value'] = 1;
 
     // statement
     $vote->body[$vote->language][0]['value'] = $form_values['statement'];
@@ -326,6 +301,10 @@ function pw_vote_block_info() {
   $blocks['voting_behavior'] = array(
     'info' => t('Displays Voting Behavior'),
     );
+  $blocks['final_result'] = array(
+    'info' => t('Displays Final Result'),
+    );
+
 
   return $blocks;
 }
@@ -335,18 +314,92 @@ function pw_vote_block_info() {
  *
  */
 
-function pw_vote_block_view($delta = '') {
+function pw_vote_block_view($delta, $arguments = array()) {
 
   // The $delta parameter tells us which block is being requested.
   switch ($delta) {
     case 'voting_behavior':
     $node = menu_get_object();
-    if (!empty($node) && !empty($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
+    if (!empty($node) && !empty($node->field_parliament[$node->language][0]['tid'])) {
       $block['content'] = pw_vote_voting_behavior($node);
     }
     break;
+    case 'final_result_short':
+    $block['content'] = pw_vote_final_result($arguments['nid'], TRUE);
+    break;
+    case 'final_result_full':
+    $block['content'] = pw_vote_final_result($arguments['nid']);
+    break;
   }
   return $block;
+}
+
+/**
+ * pw_vote_final_result().
+ * @param $nid int
+ *   related nid to show result for.
+ * @param $result_short boolean
+ *   either show only yes/no or a full result.
+ * @return string
+ *   returns themed final result for the related node.
+ */
+function pw_vote_final_result($nid, $result_short=FALSE){
+
+  // return value
+  $content = '';
+
+  // retrieve vocabulary id
+  $voc = taxonomy_vocabulary_machine_name_load('votes');
+
+  // load vote terms (yes/no/...) from vocabulary
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+  ->propertyCondition('vid', $voc->vid, '=');
+  if($result_short){
+    $query->propertyCondition('name', array('yes', 'no'));
+  }
+  $result = $query->execute();
+
+  if($result['taxonomy_term']){
+    $terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']));
+
+    // iterate through votes
+    $sum_votes = array();
+    foreach($terms as $term){
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'vote')
+      ->fieldCondition('field_vote_node', 'target_id', $nid)
+      ->fieldCondition('field_vote', 'tid', array($term->tid))
+      ->propertyCondition('status', NODE_PUBLISHED);
+
+      // store summarized votes
+      $sum_votes[$term->tid] = $query->count()->execute();
+    }
+
+    // no result
+    if(array_sum($sum_votes) == 0) {
+      return '';
+    }
+
+    if($result_short){
+
+      // filter for votes have won
+      $max_vote = max($sum_votes);
+      $sum_votes = array_fill_keys(array_keys($sum_votes, $max_vote), '');
+    }
+    else{
+
+      // sort votes descending
+      arsort($sum_votes);
+    }
+
+    // call subroutine for theming
+    $content = pw_vote_voting_behavior_sum_votes($sum_votes, 'voting_behavior_sum_overview', '', FALSE);
+  }
+
+  // return
+  return $content;
 }
 
 /**
@@ -377,8 +430,14 @@ function pw_vote_voting_behavior($node) {
     )
   );
 
+  // pre-fetch parties for performance reasons
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+  ->entityCondition('bundle', 'party');
+  $result = $query->execute();
+  $terms_party = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']));
+
   // load all votes
-  $starttime = time();
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
   ->entityCondition('bundle', 'vote')
@@ -388,8 +447,6 @@ function pw_vote_voting_behavior($node) {
   ->propertyCondition('status', NODE_PUBLISHED)
   ->fieldOrderBy('field_vote', 'tid');
   $result = $query->execute();
-
-  $timetest = 0;
 
   if (isset($result['node'])) {
 
@@ -404,7 +461,6 @@ function pw_vote_voting_behavior($node) {
       $w_vote = entity_metadata_wrapper('node', $vote);
 
       // skip if user not exists
-      $timetemp = microtime(true);
       $query_user = new EntityFieldQuery();
       $query_user->entityCondition('entity_type', 'user')
       ->propertyCondition('uid', $w_vote->field_vote_user->getIdentifier());
@@ -414,7 +470,8 @@ function pw_vote_voting_behavior($node) {
       }
 
       // get fraction
-      $fraction = $w_vote->field_vote_user->field_user_party->label();
+      $fraction_raw = $w_vote->field_vote_user->field_user_party->raw();
+      $fraction = $terms_party[$fraction_raw[0]]->name;
       $party = $fraction;
 
       // temp: set CDU and CSU as fraction
@@ -426,6 +483,7 @@ function pw_vote_voting_behavior($node) {
       if (empty($fraction)) {
         continue;
       }
+
       // add fraction as sub array for holding votes
       elseif (!isset($all_votes[$fraction])) {
         $all_votes[$fraction] = array();
@@ -442,6 +500,7 @@ function pw_vote_voting_behavior($node) {
       else {
         $portrait = $portrait_default;
       }
+
       $all_votes[$fraction][] = theme('voting_behavior_single_vote', array(
         'class_name' => $w_vote->field_vote->label(),
         'firstname' => $w_vote->field_vote_user->field_user_fname->value(),
@@ -509,6 +568,7 @@ function pw_vote_voting_behavior($node) {
     'list_voting_behavior' => implode($container_parties),
     )
   );
+
   // return
   return $content;
 }
@@ -516,11 +576,11 @@ function pw_vote_voting_behavior($node) {
 /**
  * pw_vote_voting_behavior_sum_votes().
  * @param $array_sum
- *   array with tid of votes taxonomy as key and summarized votes
+ *   array with tid of votes as key and summarized votes
  * @return string
  *   returns themed overview
  */
-function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function, $fraction='Alle') {
+function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function, $fraction='Alle', $do_link=TRUE) {
   $content = '';
   foreach ($array_sum as $tid => $sum) {
     $term = taxonomy_term_load($tid);
@@ -530,6 +590,7 @@ function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function, $fractio
       'fraction' => $fraction,
       'class_name' => $term->name,
       'voting_behavior' => $label[0]['value'],
+      'do_link' => $do_link,
       )
     );
   }
@@ -607,5 +668,17 @@ function pw_vote_preprocess_node(&$variables) {
     // set template name
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '__' . $variables['view_mode'];
 
+  }
+}
+
+/**
+ * Temporary hook to alter behavior of the poll search blocks since the current Solr module
+ * does not respect view filters correctly. Should be obsolote with the introduction of Search
+ * API modules.
+ */
+function pw_vote_views_query_alter(&$view, &$query) {
+  if ($view->name == 'pw_vote_search' && $view->current_display == 'block_2') {
+    $node_id = "*".arg(1)."*";
+    $query->add_where(1,'sm_field_vote_node', $node_id, 'LIKE');
   }
 }

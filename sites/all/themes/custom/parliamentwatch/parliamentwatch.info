@@ -50,6 +50,7 @@ scripts[12] = 'js/jquery.autosize.min.js'
 scripts[13] = 'js/jquery.sticky-kit.js'
 scripts[14] = 'js/jquery.mmenu.min.all.js'
 scripts[15] = 'js/jquery.visible.min.js'
+scripts[16] = 'js/jquery.naturalWidth.js'
 scripts[200] = 'js/scripts.js'
 
 css[global.css][name] = 'Your custom global styles'

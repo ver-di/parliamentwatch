@@ -57,7 +57,6 @@ function pw_dialogues_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'display_summary' => 0,
-        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -165,7 +164,6 @@ function pw_dialogues_field_default_fields() {
           ),
         ),
         'display_summary' => 1,
-        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -249,7 +247,6 @@ function pw_dialogues_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
-        'exclude_cv' => FALSE,
         'rel_remove' => 'default',
         'title' => 'none',
         'title_maxlength' => '128',
@@ -308,7 +305,6 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Dialogue ID',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -378,7 +374,6 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Standard reply',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -434,7 +429,6 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Message ID',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -496,7 +490,6 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Message type',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -570,7 +563,6 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Recipient',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -679,7 +671,6 @@ $display_output = rtrim($display_output);',
       'label' => 'Response time',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -742,7 +733,6 @@ $display_output = rtrim($display_output);',
       'label' => 'Sender fullname',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
@@ -989,7 +979,6 @@ $display_output = rtrim($display_output);',
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
-        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -1088,7 +1077,6 @@ $display_output = rtrim($display_output);',
       'required' => 0,
       'settings' => array(
         'display_summary' => 0,
-        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -1194,7 +1182,6 @@ $display_output = rtrim($display_output);',
       'label' => 'Before Election Date',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1309,7 +1296,6 @@ $display_output = rtrim($display_output);',
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
-        'exclude_cv' => FALSE,
         'rel_remove' => 'default',
         'title' => 'none',
         'title_maxlength' => '128',
@@ -1404,7 +1390,6 @@ $display_output = rtrim($display_output);',
       'label' => 'Dialogue ID',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -1497,7 +1482,6 @@ $display_output = rtrim($display_output);',
       'label' => 'Message ID',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -1599,7 +1583,6 @@ $display_output = rtrim($display_output);',
       'label' => 'Message type',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1713,7 +1696,6 @@ $display_output = rtrim($display_output);',
       'label' => 'Recipient',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1850,7 +1832,6 @@ $display_output = rtrim($display_output);',
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',

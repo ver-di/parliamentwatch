@@ -1,56 +1,99 @@
 jQuery(window) // https://www.drupal.org/node/1478648
-	// fire mmenu adn sticky events for mobile only
-    .on( "resize load", function() {
-        jQuery('body').bind('responsivelayout', function(e, d) {
-			$(".responsive-layout-mobile #nav").mmenu({
-				classes: "mm-light",         
-				searchfield: {
-					add: true,
-					search: true,
-					placeholder: Drupal.t('Menüpunkt suchen'),
-					noResults: Drupal.t('Keine Ergebnisse gefunden.')
-				},
-				counters: {
-					add: true,
-					update: true
-				}
-			})
-			.on( "opening.mm", function() {
-				var scrollTop = $(window).scrollTop();
-				$('#region-branding').css('top',scrollTop);
-			})
-			.on( "closed.mm", function() {
-				$('#region-branding').css('top',0);
-			});      
-			$("#hamburger").click(function() {
-				$("#nav").trigger("open.mm");
-			});
-			$('.responsive-layout-mobile #region-branding').stick_in_parent({parent:'#page'});
-			$('.responsive-layout-normal #region-branding').trigger("sticky_kit:detach");;
-        });
+	// fire mmenu and sticky events for mobile only
+  .on( "resize load", function() {
+    jQuery('body').bind('responsivelayout', function(e, d) {
+		$(".responsive-layout-mobile #nav").mmenu({
+			classes: "mm-light",         
+			searchfield: {
+				add: true,
+				search: true,
+				placeholder: Drupal.t('Menüpunkt suchen'),
+				noResults: Drupal.t('Keine Ergebnisse gefunden.')
+			},
+			counters: {
+				add: true,
+				update: true
+			}
+		})
+		.on( "opening.mm", function() {
+			var scrollTop = $(window).scrollTop();
+			$('#region-branding').css('top',scrollTop);
+		})
+		.on( "closed.mm", function() {
+			$('#region-branding').css('top',0);
+		});      
+		$("#hamburger").click(function() {
+			$("#nav").trigger("open.mm");
+		});
+		$('.responsive-layout-mobile #region-branding').stick_in_parent({parent:'#page'});
+		$('.responsive-layout-normal #region-branding').trigger("sticky_kit:detach");  
+		
+		// remove height for scaled images, leave in place for native images sizes to lazyload nicely
+    $('img').each(function() {
+      if($(this).width() < $(this).naturalWidth()) {
+        $(this).removeAttr('height').css('height','auto');
+      }
+    });
+  });
 });
 
 
 jQuery(document).ready(function() {
 
+  $('html').removeClass('no-js');  
+  
+  function toggle_details() {
+    $('.toggle-details').on('click', function(e) {
+      e.preventDefault();
+      $(this).find('.icon-arrow-right').toggleClass('icon-arrow-down');
+      $(this).closest('tr').next('.toggle-details-content').fadeToggle();
+    });
+  }
+  toggle_details();
+  $(document).ajaxComplete(function() {
+    $('.toggle-details').unbind('click');
+    toggle_details();
+  });
+
 // show voting details on click
 
     $('li .item.vote .pw-arrow-box-trigger').on('mousedown focus', function(e) {
       e.preventDefault();
-      $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').hide();
-      $(this).next('.item-politician').fadeToggle('fast');
+      $(this).addClass('visited');
+      var opacity = $(this).next('.item-politician').css('opacity');
+      var initial = $(this).next('.item-politician').css('left');
+      
+      // move container into viewport to load image
+      $(this).next('.item-politician').css('left','');
+      
+      // hide all other items
+      $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').css({opacity: 0, visibility: 'hidden'});
+      
+      // show/hide actual container
+      if(opacity == '1' && initial != '-90000px'){
+        $(this).next('.item-politician').css({opacity: 0, visibility: 'hidden'});
+      } else if (opacity == '0' || initial == '-90000px'){
+        $(this).next('.item-politician').css({opacity: 0, visibility: 'visible'}).animate({opacity:1},2500);
+      }
+      
+      // scroll page to see full container
       if($(this).next('.item-politician').visible() == false){
         $('html, body').animate({
               scrollTop: $(this).next('.item-politician').offset().top
         }, 1000);
+      }else{
+        // trigger scroll to make lazyloader do the job
+        $(window).scroll();
       }
     });
+    
     $('li .item.vote .pw-arrow-box-trigger').on('click', function(e) {
       e.preventDefault();
     });
-
+    
+    // close container
     $('li .item-politician .icon-close').on('click', function(e) {
-      $(this).parents('.item-politician').hide();
+      $(this).parents('.item-politician').css({opacity: 0, visibility: 'hidden'});
     });
 
 // reset jquery ui slider on profile list AW-1965 https://www.drupal.org/node/1264316
@@ -122,10 +165,8 @@ jQuery(document).ready(function() {
           });
         }
         pw_expand();
-          $('.summary p:last').css({display: 'inline'});
         $(document).ajaxComplete(function() {
           pw_expand();
-          $('.summary p:last').css({display: 'inline'});
         });
     });
 
@@ -134,9 +175,10 @@ jQuery(document).ready(function() {
         
     $(window).load(function () { //https://drupal.org/node/1478648
         $('.responsive-layout-mobile #pw-block-user-basics h2').addClass('pw-mobile-expanded');
-        $('.responsive-layout-mobile .pw-expandable-mobile h2').click(function(){
+        $('.responsive-layout-mobile #pw-block-user-basics h3').addClass('pw-mobile-expanded');
+        $('.responsive-layout-mobile .pw-expandable-mobile h2,.responsive-layout-mobile .pw-expandable-mobile h3').click(function(){
         //alert();
-            $(this).next('.view').slideToggle('slow');
+            $(this).parent('div').find('.view').slideToggle('slow');
             $(this).toggleClass('pw-mobile-expanded');
         });
     });
@@ -206,7 +248,7 @@ jQuery(document).ready(function() {
 
 ////// slide to comments
 
-    jQuery(".node-blogpost.view-mode-full .comment-count")
+    jQuery(".view-mode-full .comment-count")
         .css( "cursor", "pointer" )
         .click(function () {
             goToByScroll("comments");

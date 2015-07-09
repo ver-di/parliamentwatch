@@ -1,6 +1,6 @@
 <li class="item vote <?php print $class_name; ?>">
-  <a class="pw-arrow-box-trigger inline-block" href="#"></a>
-  <div class="item-politician pw-arrow-box">
+  <a class="pw-arrow-box-trigger inline-block" href="/<?php print $path_profile; ?>" title="<?php print $firstname; ?> <?php print $lastname; ?> (<?php print $party; ?>)"></a>
+  <div class="item-politician pw-arrow-box" style="left: -90000px;">
     <span class="icon-close light"></span>
     <h3>
       <?php print $firstname; ?> <?php print $lastname; ?> (<?php print $party; ?>)

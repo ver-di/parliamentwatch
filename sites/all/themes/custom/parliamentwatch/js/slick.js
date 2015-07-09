@@ -20,6 +20,11 @@ jQuery(document).ready(function() {
             $('.view-id-pw_kandidatencheck .unslick').hide()        
         );
     });
+    
+    $('.slick-slider').on('afterChange', function(e) {
+        // trigger scroll to make lazyloader do the job
+        $(window).scroll();
+    });
 
 /*
     $(window).load(function () { //https://drupal.org/node/1478648
