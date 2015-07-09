@@ -219,6 +219,8 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
      }
    }
 
+   $user_id = $entity->field_dialogue_recipient["und"][0]["target_id"];
+
    $user_title = $entity->field_vote_user['und'][0]['entity']->field_user_title['und'][0]['value'];
    $user_fname = $entity->field_vote_user['und'][0]['entity']->field_user_fname['und'][0]['value'];
    $user_lname = $entity->field_vote_user['und'][0]['entity']->field_user_lname['und'][0]['value'];
@@ -249,6 +251,7 @@ function pw_search_apachesolr_index_document_build_node(ApacheSolrDocument $docu
         break;
     }
 
+   $document->addField("ss_vote_user_id",$user_id);
    $document->addField("ss_vote_user_party",$user_party);
    $document->addField("ss_vote_user_gender",$user_gender);
    $document->addField("ss_vote_user_answers",$user_answers);
