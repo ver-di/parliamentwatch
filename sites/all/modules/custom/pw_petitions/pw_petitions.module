@@ -148,8 +148,7 @@ function pw_petitions_preprocess_node(&$variables) {
         'height' => 23,
         'alt' => 'Change.org',
         ));
-      if (empty($petition_status)) {
-        $variables['signing_url'] = url("https://secured.abgeordnetenwatch.de/tools/newsletter.php", array(
+      $variables['signing_url'] = url("https://secured.abgeordnetenwatch.de/tools/newsletter.php", array(
           'external' => TRUE,
           'query' => array(
             'width' => 800,
@@ -158,20 +157,21 @@ function pw_petitions_preprocess_node(&$variables) {
             'continue' => $variables['field_petition_external_url'][0]['url'],
             )
           ));
+      if (empty($petition_status)) {        
           // If the petition is run by an external service, all links from
           // the node need to point to that URL. To avoid having to access
           // the nitty-gritty of all elements in use, we simply override
           // the node url in
         $variables['node_url'] = $variables['signing_url'];
       }
-      else {
-        $variables['signing_url'] = $variables['node_url'];
-      }
+      #elseif ($petition_status != "passed_parliament") {
+      #  $variables['signing_url'] = $variables['node_url'];
+      #}
       break;
-      default:
-      $variables['partner_html'] = "";
-      $variables['signing_url'] = $variables['node_url'];
-      break;
+    default:
+     $variables['partner_html'] = "";
+     $variables['signing_url'] = $variables['node_url'];
+     break;
     }
 
     $variables['themed_image'] = theme('image_style', array(
