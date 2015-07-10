@@ -17,13 +17,13 @@
  *   The profile as an associative array
  */
 
-function pw_api_profile($username, $parliament=false) {
+function pw_api_profile($username, $parliament=FALSE) {
 
   // translate uuid into user and username
   if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $username, $uuid)){
-    $user = entity_uuid_load('user', $uuid);
-    $user = array_pop($user);
-    $username = $user->name;
+    $user_entity = entity_uuid_load('user', $uuid);
+    $user_entity = array_pop($user_entity);
+    $username = $user_entity->name;
   }
 
   // filter by parliament
@@ -41,7 +41,7 @@ function pw_api_profile($username, $parliament=false) {
   }
 
   // select user by name
-  elseif(!isset($user)){
+  else{
     $user = user_load_by_name($username);
   }
 
