@@ -730,7 +730,7 @@ function pw_poll_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
-        'default_image' => '63626',
+        'default_image' => '69596',
         'exclude_cv' => FALSE,
         'file_directory' => 'polls',
         'file_extensions' => 'png gif jpg jpeg',
