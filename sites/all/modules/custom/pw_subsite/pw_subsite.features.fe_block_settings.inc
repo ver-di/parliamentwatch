@@ -46,7 +46,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['delta_blocks-breadcrumb'] = array(
-    'cache' => '-1',
+    'cache' => '5',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'breadcrumb',

@@ -3272,17 +3272,6 @@ foo
     ),
     182 => array(
       'src' => 'node:nid',
-      'dst' => 'node:field_voted_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_voted',
-        'type' => 'list_boolean',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    183 => array(
-      'src' => 'node:nid',
       'dst' => 'node:field_poll_external_url_value',
       'callback' => 'themekey_node_nid2field_value',
       'args' => array(
@@ -3292,7 +3281,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    184 => array(
+    183 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_poll_external_url_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3300,6 +3289,17 @@ foo
         'field_name' => 'field_poll_external_url',
         'type' => 'text',
         'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    184 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_voted_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_voted',
+        'type' => 'list_boolean',
+        'column' => 'value',
         'translatable' => '0',
       ),
     ),
