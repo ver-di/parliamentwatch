@@ -78,6 +78,7 @@ function pw_election_programmes_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -330,6 +331,7 @@ function pw_election_programmes_field_default_fields() {
       'label' => 'PDF download',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'file_extensions' => 'pdf',
         'user_register_form' => FALSE,
       ),
@@ -423,6 +425,7 @@ function pw_election_programmes_field_default_fields() {
       'label' => 'Party',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -502,6 +505,7 @@ function pw_election_programmes_field_default_fields() {
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
+        'exclude_cv' => FALSE,
         'file_directory' => 'election_programme',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',
