@@ -533,6 +533,14 @@ blockquote .pw-expander div {
 	color: #fff;
 	background: #f63;
 }
+.aw-icon-circle-pending:before {
+	color: #fff;
+	background: #FFC954;
+}
+.aw-icon-circle-success:before {
+	color: #fff;
+	background: #72B546;
+}
 .aw-icon-circle-disabled:before {
 	color: #fff;
 	background: #ccc;

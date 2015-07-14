@@ -8,7 +8,7 @@
 <?php endif; ?>
 <h3 class="push-bottom-m">
     <ul class="progress-icons">
-        <li><i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-brand"><span class="element-invisible"><?php print t('Unterschriften werden gesammelt');?></span></i></li>
+        <li><i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-pending"><span class="element-invisible"><?php print t('Unterschriften werden gesammelt');?></span></i></li>
         <li><i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition in der Meinungsumfrage');?></span></i></li>
         <li><i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-disabled"><span class="element-invisible"><?php print t('Petition im Parlament');?></span></i></li>
     </ul>
