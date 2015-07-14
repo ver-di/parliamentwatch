@@ -12,7 +12,7 @@ print render($title_suffix);
   </ul>
   <a href="<?php print $node_url; ?>" class="<?php print ($partner_html)?"":"";?>"><?php print $title;?></a>
 </h3>
-<div class="petition-list-image-wrapper img-outline">
+<div class="responsive-list-image-wrapper img-outline">
   <a href="<?php print $node_url; ?>" title="zur Petition" class="<?php print ($partner_html)?"":"";?>">
     <?php print $themed_image; ?>
   </a>
@@ -22,7 +22,7 @@ print render($title_suffix);
     </div>
   <?php endif; ?>
 </div>
-<div class="pw-petition-list-contents">
+<div class="pw-responsive-list-contents">
     <div>
         <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
             <span style="width: 100%;" class="pw-progress">Fortschritt: <?php print $field_petition_progress[0]['value']; ?>%</span>
@@ -34,10 +34,10 @@ print render($title_suffix);
   <div class="medium"><strong>Kosten Meinungsumfrage: <?php print number_format($field_donation_required[0]['value'],0,',','.'); ?>&nbsp;&euro;</strong></div>
   <div class="small light"><?php print number_format($field_donation_amount[0]['value'],0,',','.'); ?>&nbsp;&euro; wurden bereits gespendet.</div>
   <?php if ($partner_html): ?>
-    <div class="petition-list-partner-wrapper small light">
+    <div class="responsive-list-partner-wrapper small light">
       <p class="push-bottom-xs">Diese Petition läuft auf:</p>
       <a href="<?php print $signing_url; ?>" class="<?php print ($partner_html)?"colorbox-load ":"";?>" title="zur Petition auf <?php print $field_petition_partner[0]['value']; ?>"><?php print $partner_html; ?></a>
     </div>
   <?php endif; ?>
-  <div class="petition-list-sign-wrapper"><a href="<?php print $node_url; ?>" class="button">Für Umfrage spenden</a></div>
+  <div class="responsive-list-sign-wrapper"><a href="<?php print $node_url; ?>" class="button">Für Umfrage spenden</a></div>
 </div>

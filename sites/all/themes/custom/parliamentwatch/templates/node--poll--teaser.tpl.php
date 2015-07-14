@@ -25,7 +25,7 @@
   </div>
   <?php endif; ?>
   <div class="clearfix push-bottom-m">
-    <div class="media-image-left img-outline">
+    <div class="responsive-list-image-wrapper img-outline">
       <a href="<?php print $node_url; ?>" title="zur Abstimmung">
         <?php print $themed_image; ?>
       </a>
@@ -35,10 +35,12 @@
       </div>
       <?php endif; ?>
     </div>
-    <?php print check_markup($body[0]['summary']); ?>
-    <p class="text-right">
-      <a class="icon-poll" href="<?php print $node_url; ?>" title="zur Abstimmung"> Details zur Abstimmung</a>
-    </p>
+    <div class="pw-responsive-list-contents">
+      <?php print check_markup($body[0]['summary']); ?>
+      <p class="text-right">
+        <a class="icon-poll" href="<?php print $node_url; ?>" title="zur Abstimmung"> Details zur Abstimmung</a>
+      </p>
+    </div>
   </div>
   <div class="clear clearfix">
     <?php if (!empty($field_blogpost_blogtags)): ?>
