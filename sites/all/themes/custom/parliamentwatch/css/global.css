@@ -535,11 +535,15 @@ blockquote .pw-expander div {
 }
 .aw-icon-circle-pending:before {
 	color: #fff;
-	background: #FFC954;
+	background: #fc3;
 }
 .aw-icon-circle-success:before {
 	color: #fff;
-	background: #72B546;
+	background: #77B62A;
+}
+.aw-icon-circle-error:before {
+	color: #fff;
+	background: #f33;
 }
 .aw-icon-circle-disabled:before {
 	color: #fff;
