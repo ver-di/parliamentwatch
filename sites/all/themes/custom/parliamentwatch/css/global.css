@@ -2213,14 +2213,15 @@ table.pw-voting.zebra .views-row-odd {
 table.pw-voting.zebra .odd {
     background: #f4f4f4 !important;
 }
-table.pw-voting .views-field-field-petition-end-date {
+table.pw-voting .views-field-field-petition-end-date,
+table.pw-voting .views-field-field-poll-date {
   width: 10%;
 }
 table.pw-voting .views-field-title {
-  width: 70%;
+  width: 58%;
 }
 table.pw-voting .pw-voting {
-  width: 10%;
+  width: 22%;
 }
 table.pw-voting .views-field-nothing {
   width: 10%;
@@ -2273,25 +2274,39 @@ table.pw-voting .views-field-nothing {
   margin: 0 0 1em;
   padding: 3px 10px;
 }
-.pw-voting .vote.total:hover {
+
+/* polls */
+.node-type-poll .view-mode-full .pw-voting .vote.total:hover {
   opacity: .8;
+}
+#views-exposed-form-pw-vote-search-block-2 #edit-user-id-filter-wrapper {
+  display: none;
 }
 
 
 .pw-voting .item.vote {
   border-width: 0;
+  background: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-.pw-voting .item.vote.yes {
+.pw-voting .item.vote.yes > a:link {
   background: rgb(26, 200, 42);
   border-color: rgb(26, 200, 42);
 }
-.pw-voting .item.vote.no {
+.pw-voting .item.vote.no > a:link {
   background: rgb(241, 43, 44);
   border-color: rgb(241, 43, 44);
 }
-.pw-voting .item.vote.abstain {
+.pw-voting .item.vote.abstain > a:link {
   background: rgb(34, 95, 219);
   border-color: rgb(34, 95, 219);
+}
+.pw-voting .item.vote > a:hover,
+.pw-voting .item.vote > a:active,
+.pw-voting .item.vote > a:visited,
+.pw-voting .item.vote > a.visited {
+  opacity: .5;
 }
 
 
@@ -2305,12 +2320,14 @@ table.pw-voting .views-field-nothing {
   margin: 0 2px 2px 0;
   cursor: pointer;
 }
-.pw-voting .list_voting_behavior li.vote.no-show {
+.pw-voting .list_voting_behavior li.vote.no-show > a {
   width: 0.9rem;
   height: 0.9rem;
   width: 9px;
   height: 9px;
-  border-width: 1px;
+  border: 1px solid #cacaca;
+  -webkit-box-shadow: 0 0 1px 1px #f6f6f6 inset;
+  box-shadow: 0 0 1px 1px #f6f6f6 inset;
 }
 .pw-voting .item {
   position: relative;
@@ -2349,7 +2366,8 @@ table.pw-voting .views-field-nothing {
   margin-bottom: 1em;
   margin-left: 50px;
 }
-.statement blockquote {
+.statement blockquote,
+.pw-kc-argumentation blockquote {
   padding: 0 0 0 1px;
   margin-bottom: 0;
   overflow: hidden;

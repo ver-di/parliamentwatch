@@ -25,7 +25,7 @@
       <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
     </div>
   </div>
-  <?php print check_markup($body[0]['summary']); dd($field_voted); ?>
+  <?php print check_markup($body[0]['summary']); ?>
   <?php if(!empty($field_voted[0]['value'])): ?>
   <?php
     $block_voting_behavior = module_invoke('pw_vote', 'block_view', 'voting_behavior');

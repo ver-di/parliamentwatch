@@ -27,6 +27,41 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ajax_comments_node_types';
+  $strongarm->value = array(
+    'poll' => 0,
+    'announcement' => 0,
+    'article' => 0,
+    'blogpost' => 0,
+    'calendar_entry' => 0,
+    'committee_membership' => 0,
+    'dialogue' => 0,
+    'page' => 0,
+    'pw_kc_position' => 0,
+    'pw_kc_thesis' => 0,
+    'pw_petition' => 0,
+    'press_release' => 0,
+    'press_article' => 0,
+    'sidejob' => 0,
+    'pw_slider' => 0,
+    'speech' => 0,
+    'trustee' => 0,
+    'vote' => 0,
+    'election_programme' => 0,
+    'webform' => 0,
+  );
+  $export['ajax_comments_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ajax_comments_notify';
+  $strongarm->value = 1;
+  $export['ajax_comments_notify'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'clientside_validation_default_settings';
   $strongarm->value = array(
     'validate_options' => array(
@@ -1309,7 +1344,6 @@ node/*/edit';
     3 => 'dialogue',
     4 => 'migrate_extras_media_example',
     5 => 'migrate_example_pathauto',
-    6 => 'pw_poll',
     7 => 'press_release',
     8 => 'press_article',
     9 => 'pw_slider',

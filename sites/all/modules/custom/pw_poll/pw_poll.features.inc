@@ -35,7 +35,7 @@ function pw_poll_views_api() {
 function pw_poll_node_info() {
   $items = array(
     'poll' => array(
-      'name' => t('Poll'),
+      'name' => t('Abstimmung'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

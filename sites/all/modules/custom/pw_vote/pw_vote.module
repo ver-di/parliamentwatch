@@ -430,6 +430,13 @@ function pw_vote_voting_behavior($node) {
     )
   );
 
+  // pre-fetch parties for performance reasons
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'taxonomy_term')
+  ->entityCondition('bundle', 'party');
+  $result = $query->execute();
+  $terms_party = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']));
+
   // load all votes
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
@@ -463,7 +470,8 @@ function pw_vote_voting_behavior($node) {
       }
 
       // get fraction
-      $fraction = $w_vote->field_vote_user->field_user_party->label();
+      $fraction_raw = $w_vote->field_vote_user->field_user_party->raw();
+      $fraction = $terms_party[$fraction_raw[0]]->name;
       $party = $fraction;
 
       // temp: set CDU and CSU as fraction
@@ -475,6 +483,7 @@ function pw_vote_voting_behavior($node) {
       if (empty($fraction)) {
         continue;
       }
+
       // add fraction as sub array for holding votes
       elseif (!isset($all_votes[$fraction])) {
         $all_votes[$fraction] = array();
@@ -491,6 +500,7 @@ function pw_vote_voting_behavior($node) {
       else {
         $portrait = $portrait_default;
       }
+
       $all_votes[$fraction][] = theme('voting_behavior_single_vote', array(
         'class_name' => $w_vote->field_vote->label(),
         'firstname' => $w_vote->field_vote_user->field_user_fname->value(),
@@ -558,6 +568,7 @@ function pw_vote_voting_behavior($node) {
     'list_voting_behavior' => implode($container_parties),
     )
   );
+
   // return
   return $content;
 }

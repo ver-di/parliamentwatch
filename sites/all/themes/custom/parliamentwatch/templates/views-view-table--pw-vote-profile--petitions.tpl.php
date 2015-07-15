@@ -45,6 +45,10 @@
     </tr>
     <tr <?php if ($row_classes[$row_count]) { print 'class="js-hide toggle-details-content ' . implode(' ', $row_classes[$row_count]) .'"';  } ?> >
       <td colspan="4">
+          <?php if(sizeof($result[$row_count]->field_body) > 0 && strlen($result[$row_count]->field_body[0]['rendered']['#markup']) > 0) : ?>
+            <h4>Begründung</h4>
+            <blockquote><?php print $result[$row_count]->field_body[0]['rendered']['#markup']; ?></blockquote>
+          <?php endif; ?>
         <h4 class="push-bottom-s">Gesamtergebnis</h4>
           <!--p>
             <span class="yes vote block">155 dafür gestimmt</span>
@@ -58,10 +62,6 @@
             print render($block_result['content']);
             ?>
           </ul>
-          <?php if(sizeof($result[$row_count]->field_body) > 0 && strlen($result[$row_count]->field_body[0]['rendered']['#markup']) > 0) : ?>
-            <h4>Begründung</h4>
-            <blockquote><?php print $result[$row_count]->field_body[0]['rendered']['#markup']; ?></blockquote>
-          <?php endif; ?>
         </td>
       </tr>
     <?php endforeach; ?>
