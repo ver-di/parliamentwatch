@@ -22,14 +22,14 @@ function pw_dialogues_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('pw_dialogues_settings_form'),
     'access arguments' => array('import dialogue_importer feeds'),
-  );
+    );
 
   $menu['api/import/dialogue/%'] = array(
     'title' => 'imports dialogue',
     'access arguments' => array('access content'),
     'page callback' => 'pw_dialogues_triggered_import',
     'type' => MENU_SUGGESTED_ITEM,
-  );
+    );
 
   return $menu;
 }
@@ -41,20 +41,32 @@ function pw_dialogues_triggered_import() {
   drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
   $debug_message = array();
   $debug_message['request_uri'] = request_uri();
-  $status = FALSE;
+  $return_value = 'FAILED';
   if (is_numeric(arg(3))) {
+
+    // prepare for import
     $dialogue_id = arg(3);
     $source = variable_get('pw_dialogues_importer_source');
     $source .= $dialogue_id;
     $source .= '?unreleased=1';
     $debug_message['source'] = $source;
+
+    // retrieve what to do (delete, create, ...)
+    $doc = new DOMDocument();
+    $doc->preserveWhiteSpace = false;
+    $doc->load($source);
+    $xpath = new DOMXpath($doc);
+    $xlist_status = $xpath->query("//message[type='question']/status");
+    $xnode_status = $xlist_status->item(0)->nodeValue;
+
+    // do import
     pw_dialogues_do_import_questions($source);
 
     // check if dialogue was imported
     $efq_nodes = new EntityFieldQuery();
     $efq_nodes->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'dialogue')
-      ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
+    ->entityCondition('bundle', 'dialogue')
+    ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
     $result = $efq_nodes->execute();
     $debug_message['result'] = $result;
 
@@ -71,18 +83,23 @@ function pw_dialogues_triggered_import() {
       comment_delete_multiple($cids_to_delete);*/
       pw_dialogues_do_import_answers($source);
 
-      // set status to true
+      // set return_value to OK
       if (is_numeric($recipient_id) && ($user = user_load($recipient_id)) || $node->status != 1) {
-        $status = TRUE;
+        $return_value = 'OK';
         if (function_exists('pw_userarchives_cron')) {
           pw_userarchives_cron($recipient_id);
         }
       }
     }
+
+    // node deleted
+    elseif($xnode_status != 1 && !isset($result['node'])){
+      $return_value = 'OK';
+    }
   }
 
-  _pw_send_debug_mail('Import ' . ($status ? 'OK' : 'FAILED') . ': ' . request_uri(), $debug_message);
-  print $status ? 'OK' : 'FAILED';
+  _pw_send_debug_mail('Import ' . $return_value . ': ' . request_uri(), $debug_message);
+  print $return_value;
 }
 
 /**
@@ -98,7 +115,7 @@ function pw_dialogues_settings_form($form, &$form_state) {
     '#description' => t('If set, dialogues will be imported from this URL during cron runs.'),
     '#element_validate' => array('pw_dialogues_validate_url'),
     '#size' => 100,
-  );
+    );
 
   return system_settings_form($form);
 }
@@ -151,9 +168,9 @@ function pw_dialogues_cron() {
 
           // query which politicians have a changed question and answer count.
           $users = db_query('SELECT DISTINCT f.field_dialogue_recipient_target_id
-                                FROM {field_data_field_dialogue_recipient} AS f 
-                                INNER JOIN {feeds_item} AS i ON f.entity_type = i.entity_type AND f.entity_id = i.entity_id
-                                WHERE i.imported >= :imported', array(':imported' => $updated_since_timestamp))->fetchCol();
+            FROM {field_data_field_dialogue_recipient} AS f
+            INNER JOIN {feeds_item} AS i ON f.entity_type = i.entity_type AND f.entity_id = i.entity_id
+            WHERE i.imported >= :imported', array(':imported' => $updated_since_timestamp))->fetchCol();
 
           // rewrite user archive cache table
           foreach ($users as $uid) {
@@ -178,8 +195,8 @@ function pw_dialogues_do_import_questions($source) {
   $dialogue_feed->addConfig(array(
     'FeedsHTTPFetcher' => array(
       'source' => $source,
-    ),
-  ));
+      ),
+    ));
   while (FEEDS_BATCH_COMPLETE != $dialogue_feed->import()) {
     ;
   }
@@ -197,8 +214,8 @@ function pw_dialogues_do_import_answers($source) {
   $message_feed->addConfig(array(
     'FeedsHTTPFetcher' => array(
       'source' => $source,
-    ),
-  ));
+      ),
+    ));
   while (FEEDS_BATCH_COMPLETE != $message_feed->import()) {
     ;
   }
@@ -223,7 +240,7 @@ function pw_dialogues_feeds_processor_targets_alter(&$targets, $entity_type, $bu
       $targets[$name . ':uuid'] = array(
         'name' => t('@label (by UUID)', array('@label' => $instance['label'])),
         'callback' => 'pw_dialogues_feeds_set_target',
-      );
+        );
     }
   }
 
@@ -231,7 +248,7 @@ function pw_dialogues_feeds_processor_targets_alter(&$targets, $entity_type, $bu
     $targets['uid:uuid'] = array(
       'name' => t('uid (by UUID)', array('@label' => $instance['label'])),
       'callback' => 'pw_dialogues_feeds_set_target',
-    );
+      );
   }
 }
 
@@ -258,10 +275,10 @@ function pw_dialogues_feeds_set_target($source, $entity, $target, $value, $mappi
   $language = isset($mapping['language']) ? $mapping['language'] : LANGUAGE_NONE;
 
   $entity_ids = db_select('users', 'u')
-    ->fields('u', array('uuid', 'uid'))
-    ->condition('uuid', array_values($values), 'IN')
-    ->execute()
-    ->fetchAllKeyed();
+  ->fields('u', array('uuid', 'uid'))
+  ->condition('uuid', array_values($values), 'IN')
+  ->execute()
+  ->fetchAllKeyed();
 
   $iterator = 0;
   $field = isset($entity->target) ? $entity->target : array();
