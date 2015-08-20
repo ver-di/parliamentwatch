@@ -52,11 +52,11 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sortierkriterien: Inhalt: Datum */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sortierkriterien: Inhalt: Poll Date (field_poll_date) */
+  $handler->display->display_options['sorts']['field_poll_date_value']['id'] = 'field_poll_date_value';
+  $handler->display->display_options['sorts']['field_poll_date_value']['table'] = 'field_data_field_poll_date';
+  $handler->display->display_options['sorts']['field_poll_date_value']['field'] = 'field_poll_date_value';
+  $handler->display->display_options['sorts']['field_poll_date_value']['order'] = 'DESC';
   /* Kontextfilter: Inhalt: Besitzt eine Taxonomiebegriff-TID. */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
@@ -89,6 +89,13 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'poll' => 'poll',
   );
+  /* Filterkriterium: Inhalt: Poll Date (field_poll_date) */
+  $handler->display->display_options['filters']['field_poll_date_value']['id'] = 'field_poll_date_value';
+  $handler->display->display_options['filters']['field_poll_date_value']['table'] = 'field_data_field_poll_date';
+  $handler->display->display_options['filters']['field_poll_date_value']['field'] = 'field_poll_date_value';
+  $handler->display->display_options['filters']['field_poll_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_poll_date_value']['granularity'] = 'minute';
+  $handler->display->display_options['filters']['field_poll_date_value']['form_type'] = 'date_text';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
