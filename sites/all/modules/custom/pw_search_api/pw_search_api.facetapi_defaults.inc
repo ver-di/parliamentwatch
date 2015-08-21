@@ -47,7 +47,7 @@ function pw_search_api_facetapi_default_facet_settings() {
   $facet->enabled = FALSE;
   $facet->settings = array(
     'operator' => 'or',
-    'hard_limit' => '5',
+    'hard_limit' => '3',
     'dependencies' => array(
       'roles' => array(),
       'facets' => array(),
@@ -58,7 +58,7 @@ function pw_search_api_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => '1',
     'query_type' => 'term',
-    'default_true' => '1',
+    'default_true' => TRUE,
     'facet_search_ids' => array(),
     'exclude' => 0,
     'pretty_paths_alias' => 'parlament',

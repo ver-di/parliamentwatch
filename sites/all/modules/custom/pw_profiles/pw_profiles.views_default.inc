@@ -70,10 +70,10 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sortierkriterien: Inhalt: Datum */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  /* Sortierkriterien: Inhalt: Date (field_calendar_entry_date) */
+  $handler->display->display_options['sorts']['field_calendar_entry_date_value']['id'] = 'field_calendar_entry_date_value';
+  $handler->display->display_options['sorts']['field_calendar_entry_date_value']['table'] = 'field_data_field_calendar_entry_date';
+  $handler->display->display_options['sorts']['field_calendar_entry_date_value']['field'] = 'field_calendar_entry_date_value';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -88,6 +88,14 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'calendar_entry' => 'calendar_entry',
   );
+  /* Filterkriterium: Inhalt: Date (field_calendar_entry_date) */
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['id'] = 'field_calendar_entry_date_value';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['table'] = 'field_data_field_calendar_entry_date';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['field'] = 'field_calendar_entry_date_value';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['granularity'] = 'second';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['default_date'] = 'now';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['year_range'] = '-0:+3';
 
   /* Display: Profile Calendar */
   $handler = $view->new_display('block', 'Profile Calendar', 'profile_block');
@@ -551,6 +559,22 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'calendar_entry' => 'calendar_entry',
+  );
   $handler->display->display_options['path'] = 'profile/%/calendar';
 
   /* Display: Back to Calendar Block */
@@ -619,6 +643,22 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'calendar_entry' => 'calendar_entry',
+  );
 
   /* Display: Calendar Admin  View */
   $handler = $view->new_display('block', 'Calendar Admin  View', 'calendar_admin_block');
@@ -2566,7 +2606,7 @@ else
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Date */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
@@ -2575,13 +2615,6 @@ else
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -2636,7 +2669,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Sortierkriterien: Inhalt: Date (field_pw_poll_date) */
+  /* Sortierkriterien: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
@@ -2787,7 +2820,7 @@ print pw_blocks_get_chart($row->nid,\'total\', NULL, 105,128);
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Feld: Inhalt: Date */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
@@ -2796,13 +2829,6 @@ print pw_blocks_get_chart($row->nid,\'total\', NULL, 105,128);
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'push-bottom-s';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Feld: Global PHP: User Vote */
   $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
   $handler->display->display_options['fields']['php_2']['table'] = 'views';
@@ -2899,7 +2925,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Date */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
@@ -2908,13 +2934,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -3004,7 +3023,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Date */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
@@ -3013,13 +3032,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';

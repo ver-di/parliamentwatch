@@ -19,7 +19,7 @@ function pw_search_api_default_fe_block_settings() {
     'delta' => '6LIkVo9hGpY0QNENsoc1rFvBAY2vvl91',
     'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => 'sav/suche/*',
+    'pages' => 'suche/*',
     'roles' => array(),
     'themes' => array(
       'blank' => array(
@@ -32,7 +32,7 @@ function pw_search_api_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '-1',
+        'weight' => '0',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -52,7 +52,7 @@ function pw_search_api_default_fe_block_settings() {
     'delta' => 'JMJyfWVTjAJO2jr2Biylawo43Py0MS4c',
     'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'suche/*',
     'roles' => array(),
     'themes' => array(
       'blank' => array(
@@ -65,7 +65,7 @@ function pw_search_api_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '0',
+        'weight' => '1',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -75,7 +75,7 @@ function pw_search_api_default_fe_block_settings() {
       ),
     ),
     'title' => 'Partei',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   $export['facetapi-QHQ9XNFUW6pTfzSfjKuWjYVJkxgIt1Hi'] = array(
@@ -85,7 +85,7 @@ function pw_search_api_default_fe_block_settings() {
     'delta' => 'QHQ9XNFUW6pTfzSfjKuWjYVJkxgIt1Hi',
     'module' => 'facetapi',
     'node_types' => array(),
-    'pages' => 'sav/suche/*',
+    'pages' => 'suche/*',
     'roles' => array(),
     'themes' => array(
       'blank' => array(
@@ -145,18 +145,18 @@ function pw_search_api_default_fe_block_settings() {
   );
 
   $export['views-dd2cb179c08ae616789999b01178b193'] = array(
-    'cache' => -1,
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'dd2cb179c08ae616789999b01178b193',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'sav/suche/*',
+    'pages' => 'suche/*',
     'roles' => array(),
     'themes' => array(
       'blank' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content',
+        'status' => '1',
         'theme' => 'blank',
         'weight' => '0',
       ),
@@ -167,8 +167,8 @@ function pw_search_api_default_fe_block_settings() {
         'weight' => '12',
       ),
       'pw_seven' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'content',
+        'status' => '1',
         'theme' => 'pw_seven',
         'weight' => '0',
       ),
