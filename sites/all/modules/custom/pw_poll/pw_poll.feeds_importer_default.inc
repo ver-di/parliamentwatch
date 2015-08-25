@@ -13,6 +13,126 @@ function pw_poll_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'gdata_poll_comments_importer';
+  $feeds_importer->config = array(
+    'name' => 'GData Poll Comments Importer',
+    'description' => '',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsHTTPFetcher',
+      'config' => array(
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+        'request_timeout' => NULL,
+        'auto_scheme' => 'http',
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsXPathParserXML',
+      'config' => array(
+        'sources' => array(
+          'xpathparser:0' => 'systemuuid',
+          'xpathparser:1' => 'systemuuid',
+          'xpathparser:3' => 'txt',
+          'xpathparser:4' => 'commentdate',
+          'xpathparser:6' => 'voteuuid',
+          'xpathparser:7' => 'author',
+          'xpathparser:8' => 'author',
+        ),
+        'rawXML' => array(
+          'xpathparser:0' => 0,
+          'xpathparser:1' => 0,
+          'xpathparser:3' => 0,
+          'xpathparser:4' => 0,
+          'xpathparser:6' => 0,
+          'xpathparser:7' => 0,
+          'xpathparser:8' => 0,
+        ),
+        'context' => '//row',
+        'exp' => array(
+          'errors' => 0,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
+          'debug' => array(
+            'context' => 0,
+            'xpathparser:0' => 0,
+            'xpathparser:1' => 0,
+            'xpathparser:3' => 0,
+            'xpathparser:4' => 0,
+            'xpathparser:6' => 0,
+            'xpathparser:7' => 0,
+            'xpathparser:8' => 0,
+          ),
+        ),
+        'allow_override' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsCommentProcessor',
+      'config' => array(
+        'node_type' => 'poll',
+        'input_format' => 'filtered_html',
+        'update_existing' => '1',
+        'expire' => '-1',
+        'mappings' => array(
+          0 => array(
+            'source' => 'xpathparser:0',
+            'target' => 'guid',
+            'unique' => 1,
+          ),
+          1 => array(
+            'source' => 'xpathparser:1',
+            'target' => 'uuid:uuid',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'xpathparser:3',
+            'target' => 'comment_body',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'xpathparser:4',
+            'target' => 'created',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'xpathparser:6',
+            'target' => 'nid_by_guid',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'Blank source 1',
+            'target' => 'status',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'xpathparser:7',
+            'target' => 'uid',
+            'unique' => FALSE,
+          ),
+          7 => array(
+            'source' => 'xpathparser:8',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
+        ),
+        'author' => '1',
+        'skip_hash_check' => FALSE,
+        'bundle' => NULL,
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['gdata_poll_comments_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
   $feeds_importer->id = 'gdata_poll_importer';
   $feeds_importer->config = array(
     'name' => 'GData Poll Importer',
@@ -123,6 +243,11 @@ function pw_poll_feeds_importer_default() {
           8 => array(
             'source' => 'xpathparser:8',
             'target' => 'field_poll_external_url',
+            'unique' => FALSE,
+          ),
+          9 => array(
+            'source' => 'Blank source 1',
+            'target' => 'status',
             'unique' => FALSE,
           ),
         ),
