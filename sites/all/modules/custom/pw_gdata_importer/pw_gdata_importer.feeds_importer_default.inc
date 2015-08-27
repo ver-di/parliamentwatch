@@ -795,7 +795,6 @@ function pw_gdata_importer_feeds_importer_default() {
       'config' => array(
         'sources' => array(
           'xpathparser:0' => 'systemuuid',
-          'xpathparser:1' => 'systemusername',
           'xpathparser:2' => 'email',
           'xpathparser:3' => 'systemuuid',
           'xpathparser:4' => 'systemroles',
@@ -831,10 +830,10 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:34' => 'facebookurl',
           'xpathparser:35' => 'systemroles',
           'xpathparser:36' => 'list',
+          'xpathparser:37' => 'fraction',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
-          'xpathparser:1' => 0,
           'xpathparser:2' => 0,
           'xpathparser:3' => 0,
           'xpathparser:4' => 0,
@@ -870,6 +869,7 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:34' => 0,
           'xpathparser:35' => 0,
           'xpathparser:36' => 0,
+          'xpathparser:37' => 0,
         ),
         'context' => '//row',
         'exp' => array(
@@ -879,7 +879,6 @@ function pw_gdata_importer_feeds_importer_default() {
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
-            'xpathparser:1' => 0,
             'xpathparser:2' => 0,
             'xpathparser:3' => 0,
             'xpathparser:4' => 0,
@@ -915,6 +914,7 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:34' => 0,
             'xpathparser:35' => 0,
             'xpathparser:36' => 0,
+            'xpathparser:37' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -1057,7 +1057,8 @@ function pw_gdata_importer_feeds_importer_default() {
           24 => array(
             'source' => 'xpathparser:24',
             'target' => 'field_user_party',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 0,
           ),
           25 => array(
             'source' => 'xpathparser:25',
@@ -1126,6 +1127,12 @@ function pw_gdata_importer_feeds_importer_default() {
             'source' => 'Blank source 2',
             'target' => 'name',
             'unique' => 1,
+          ),
+          38 => array(
+            'source' => 'xpathparser:37',
+            'target' => 'field_user_fraction',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
         ),
         'update_existing' => '2',
