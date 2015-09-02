@@ -241,6 +241,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
   $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['label'] = 'Votes Term';
   $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
     'votes' => 'votes',
     'area_codex' => 0,
@@ -260,7 +261,6 @@ function pw_vote_views_default_views() {
     'party' => 0,
     'political_roles' => 0,
     'pw_profile_roles_for_view_mode_switch' => 0,
-    'pw_widget_values' => 0,
     'sidejob_jobs' => 0,
     'sidejob_organizations' => 0,
     'sidejob_sectors' => 0,
@@ -372,9 +372,11 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['arguments']['field_vote_user_target_id']['table'] = 'field_data_field_vote_user';
   $handler->display->display_options['arguments']['field_vote_user_target_id']['field'] = 'field_vote_user_target_id';
   $handler->display->display_options['arguments']['field_vote_user_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['exception']['value'] = '';
   $handler->display->display_options['arguments']['field_vote_user_target_id']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['field_vote_user_target_id']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['field_vote_user_target_id']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_vote_user_target_id']['default_argument_options']['code'] = '$user = _pw_get_current_user();
+return $user->uid;';
   $handler->display->display_options['arguments']['field_vote_user_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_vote_user_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_vote_user_target_id']['summary_options']['items_per_page'] = '25';
@@ -384,6 +386,25 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['arguments']['field_vote_user_target_id']['validate_options']['restrict_roles'] = TRUE;
   $handler->display->display_options['arguments']['field_vote_user_target_id']['validate_options']['roles'] = array(
     181527986 => '181527986',
+  );
+  /* Kontextfilter: Feld: Parliament (field_parliament) */
+  $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
+  $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
+  $handler->display->display_options['arguments']['field_parliament_tid']['relationship'] = 'field_vote_node_target_id';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_parliament_tid']['exception']['value'] = '';
+  $handler->display->display_options['arguments']['field_parliament_tid']['exception']['title'] = 'Alle';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['field_parliament_tid']['default_argument_options']['code'] = '$term = _pw_get_current_parliament_term();
+return $term->tid;';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_parliament_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_parliament_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['vocabularies'] = array(
+    'parliaments' => 'parliaments',
   );
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -559,7 +580,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'field_vote_node_target_id';
-  $handler->display->display_options['fields']['title']['label'] = 'Petition';
+  $handler->display->display_options['fields']['title']['label'] = 'Abstimmung';
   $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['alt'] = 'zur Abstimmung';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
@@ -643,7 +664,7 @@ function pw_vote_views_default_views() {
     t('Mehr laden'),
     t('Benutzer entity referenced from field_vote_user'),
     t('Inhalt entity referenced from field_vote_node'),
-    t('Begriff'),
+    t('Votes Term'),
     t('zur Petition'),
     t('zum Petitions-Check'),
     t('Datum'),
@@ -657,6 +678,7 @@ function pw_vote_views_default_views() {
     t('Abstimmungsverhalten im Petitions-Check'),
     t('Polls'),
     t('zur Abstimmung'),
+    t('Abstimmung'),
     t('<a href="#" class="toggle-details" title="Zusammenfassung und Gesamtergebnis anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>'),
   );
   $export['pw_vote_profile'] = $view;
@@ -832,7 +854,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['sm_field_vote_node']['id'] = 'sm_field_vote_node';
   $handler->display->display_options['fields']['sm_field_vote_node']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['sm_field_vote_node']['field'] = 'sm_field_vote_node';
-  /* Feld: Apache Solr: ss_field_user_lname */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['ss_field_user_lname']['id'] = 'ss_field_user_lname';
   $handler->display->display_options['fields']['ss_field_user_lname']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_field_user_lname']['field'] = 'ss_field_user_lname';
@@ -845,15 +867,15 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['ds_created']['id'] = 'ds_created';
   $handler->display->display_options['fields']['ds_created']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ds_created']['field'] = 'ds_created';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_answers */
   $handler->display->display_options['fields']['ss_vote_user_answers']['id'] = 'ss_vote_user_answers';
   $handler->display->display_options['fields']['ss_vote_user_answers']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_answers']['field'] = 'ss_vote_user_answers';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_gender */
   $handler->display->display_options['fields']['ss_vote_user_gender']['id'] = 'ss_vote_user_gender';
   $handler->display->display_options['fields']['ss_vote_user_gender']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_gender']['field'] = 'ss_vote_user_gender';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_questions */
   $handler->display->display_options['fields']['ss_vote_user_questions']['id'] = 'ss_vote_user_questions';
   $handler->display->display_options['fields']['ss_vote_user_questions']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_questions']['field'] = 'ss_vote_user_questions';
@@ -865,7 +887,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['is_uid']['id'] = 'is_uid';
   $handler->display->display_options['fields']['is_uid']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['is_uid']['field'] = 'is_uid';
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Apache Solr: ss_vote_user_id */
   $handler->display->display_options['fields']['ss_vote_user_id']['id'] = 'ss_vote_user_id';
   $handler->display->display_options['fields']['ss_vote_user_id']['table'] = 'apachesolr__solr';
   $handler->display->display_options['fields']['ss_vote_user_id']['field'] = 'ss_vote_user_id';
@@ -880,7 +902,7 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['sorts']['ss_vote_user_vote_sortable']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['ss_vote_user_vote_sortable']['field'] = 'ss_vote_user_vote_sortable';
   $handler->display->display_options['sorts']['ss_vote_user_vote_sortable']['expose']['label'] = 'ss_vote_user_vote_sortable';
-  /* Sortierkriterien: Apache Solr: ss_field_user_lname */
+  /* Sortierkriterien: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['sorts']['ss_field_user_lname']['id'] = 'ss_field_user_lname';
   $handler->display->display_options['sorts']['ss_field_user_lname']['table'] = 'apachesolr__solr';
   $handler->display->display_options['sorts']['ss_field_user_lname']['field'] = 'ss_field_user_lname';
@@ -1000,7 +1022,7 @@ function pw_vote_views_default_views() {
       'value' => 'no-show',
     ),
   );
-  /* Filterkriterium: Beschädigte/fehlende Behandlungsroutine */
+  /* Filterkriterium: Apache Solr: ss_vote_user_id */
   $handler->display->display_options['filters']['ss_vote_user_id']['id'] = 'ss_vote_user_id';
   $handler->display->display_options['filters']['ss_vote_user_id']['table'] = 'apachesolr__solr';
   $handler->display->display_options['filters']['ss_vote_user_id']['field'] = 'ss_vote_user_id';
@@ -1190,12 +1212,12 @@ function pw_vote_views_default_views() {
     t('Nachname'),
     t('ss_vote_user_vote_sortable'),
     t('ds_created'),
-    t('Beschädigte Behandlungsroutine apachesolr__solr.ss_vote_user_answers'),
-    t('Beschädigte Behandlungsroutine apachesolr__solr.ss_vote_user_gender'),
-    t('Beschädigte Behandlungsroutine apachesolr__solr.ss_vote_user_questions'),
+    t('ss_vote_user_answers'),
+    t('ss_vote_user_gender'),
+    t('ss_vote_user_questions'),
     t('entity_id'),
     t('is_uid'),
-    t('Beschädigte Behandlungsroutine apachesolr__solr.ss_vote_user_id'),
+    t('ss_vote_user_id'),
     t('Suche'),
     t('ss_vote_user_party'),
     t('ss_vote_user_vote_text'),
