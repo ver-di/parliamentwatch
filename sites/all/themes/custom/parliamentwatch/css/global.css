@@ -2657,6 +2657,10 @@ form .error:before {
     margin-right: 4px;
     padding-left: 0.1em;
 }
+form .messages.error:before {
+    content: none;
+    padding-left: 0;
+}
 .captcha .compact-form-label {
     display: none !important;
 }
@@ -3088,6 +3092,10 @@ form .webform-component-checkboxes .description {
 
 #comments {
     margin-top: 28px;
+}
+#comments .messages,
+#comments .pw-messages {
+    margin: 0 0 1em;
 }
 #comments .comment {
     margin-bottom: 3em;
