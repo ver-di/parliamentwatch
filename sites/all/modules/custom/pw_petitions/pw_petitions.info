@@ -26,7 +26,6 @@ dependencies[] = number
 dependencies[] = options
 dependencies[] = pw_blog
 dependencies[] = pw_globals
-dependencies[] = pw_sharethis
 dependencies[] = pw_vote
 dependencies[] = rabbit_hole
 dependencies[] = shs
