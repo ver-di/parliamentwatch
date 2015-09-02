@@ -5706,7 +5706,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
       'separator' => '',
     ),
   );
-  /* Feld: Twitter: Profil-Bild */
+  /* Feld: Twitter Account: Profil-Bild */
   $handler->display->display_options['fields']['profile_image_url']['id'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['table'] = 'twitter_account';
   $handler->display->display_options['fields']['profile_image_url']['field'] = 'profile_image_url';
@@ -5731,7 +5731,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['sorts']['created_time']['table'] = 'twitter';
   $handler->display->display_options['sorts']['created_time']['field'] = 'created_time';
   $handler->display->display_options['sorts']['created_time']['order'] = 'DESC';
-  /* Filterkriterium: Twitter: Geschützter Status */
+  /* Filterkriterium: Twitter Account: Geschützter Status */
   $handler->display->display_options['filters']['protected']['id'] = 'protected';
   $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['protected']['field'] = 'protected';
@@ -5792,14 +5792,14 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Twitter: Geschützter Status */
+  /* Filterkriterium: Twitter Account: Geschützter Status */
   $handler->display->display_options['filters']['protected']['id'] = 'protected';
   $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['protected']['field'] = 'protected';
   $handler->display->display_options['filters']['protected']['value'] = 0;
   $handler->display->display_options['filters']['protected']['group'] = '0';
   $handler->display->display_options['filters']['protected']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Twitter: Login-name */
+  /* Filterkriterium: Twitter Account: Login-name */
   $handler->display->display_options['filters']['screen_name']['id'] = 'screen_name';
   $handler->display->display_options['filters']['screen_name']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['screen_name']['field'] = 'screen_name';
@@ -5912,11 +5912,18 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['code'] = '$user = _pw_get_current_user();
+return $user->uid;';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['validate_options']['restrict_roles'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate_options']['roles'] = array(
+    181527986 => '181527986',
+  );
   $translatables['user_tweets'] = array(
     t('Tweets'),
     t('zum Twitterkanal'),
