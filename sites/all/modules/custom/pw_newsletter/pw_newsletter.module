@@ -5,12 +5,14 @@
  * + helper module to subscribe users via webform to newsletter
  */
 
+include_once 'pw_newsletter.features.inc';
+
 /**
  * Implements hook_menu().
  */
 function pw_newsletter_menu() {
   $items = array();
-  
+
   $items['newsletter/subscribe'] = array(
     'title' => 'Newsletter Subscription',
     'access arguments' => array('access content'),
@@ -28,7 +30,7 @@ function subscribe_to_newsletter(){
 	if(isset($_GET['email'])){
 		$email = $_GET['email'];
 	}
-	
+
 	// validate email address
 	if(valid_email_address($email)){
 
@@ -59,7 +61,7 @@ function subscribe_to_newsletter(){
 					$cid_node_path_field = $cid;
 				}
 			}
-		
+
 			// load webform submissions
 			$webform_submissions = webform_get_submissions($node->nid);
 
