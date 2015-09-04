@@ -252,7 +252,7 @@ function pw_poll_feeds_importer_default() {
           ),
         ),
         'update_existing' => '1',
-        'input_format' => 'plain_text',
+        'input_format' => 'managed_content',
         'skip_hash_check' => 1,
         'bundle' => 'poll',
       ),
