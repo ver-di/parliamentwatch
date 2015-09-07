@@ -20,8 +20,9 @@ function set_fraction_to_party_form($importer, $element_key, $settings) {
 
 function set_fraction_to_party($source, $item_key, $element_key, &$field, $settings) {
 
-  $party_import = trim($source->current_item['xpathparser:24']);
-  if(empty($field)){
-    $field = $party_import;
+  $party = trim($source->current_item['xpathparser:24']);
+  $roles = $source->current_item['xpathparser:4'];
+  if(ereg('Deputy', $roles) && empty($field)){
+    $field = $party;
   }
 }
