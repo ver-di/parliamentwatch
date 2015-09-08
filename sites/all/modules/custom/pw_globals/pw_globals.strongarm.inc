@@ -637,7 +637,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lazyloader_distance';
-  $strongarm->value = '0';
+  $strongarm->value = '480';
   $export['lazyloader_distance'] = $strongarm;
 
   $strongarm = new stdClass();
