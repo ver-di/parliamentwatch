@@ -6,7 +6,7 @@
 		</ul>
 	</div>
 	<div id="pw-voting-parties" class="visually-hidden-mobile push-bottom-l">
-		<h3>Parteien</h3>
+		<h3>Fraktionen</h3>
 		<ul>
 			<?php print $list_voting_behavior; ?>
 		</ul>
