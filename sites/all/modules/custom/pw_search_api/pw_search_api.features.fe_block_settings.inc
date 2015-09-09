@@ -144,6 +144,39 @@ function pw_search_api_default_fe_block_settings() {
     'visibility' => '0',
   );
 
+  $export['views--exp-pw_search_api_main-page'] = array(
+    'cache' => '-1',
+    'css_class' => '',
+    'custom' => '0',
+    'delta' => '-exp-pw_search_api_main-page',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
   $export['views-dd2cb179c08ae616789999b01178b193'] = array(
     'cache' => '-1',
     'css_class' => '',
