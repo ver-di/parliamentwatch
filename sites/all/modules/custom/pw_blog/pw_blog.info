@@ -18,7 +18,6 @@ dependencies[] = file_entity
 dependencies[] = image
 dependencies[] = media
 dependencies[] = options
-dependencies[] = pw_sharethis
 dependencies[] = schemaorg
 dependencies[] = strongarm
 dependencies[] = tagadelic
