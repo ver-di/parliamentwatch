@@ -1338,7 +1338,6 @@ node/*/edit';
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_types';
   $strongarm->value = array(
-    0 => 'article',
     1 => 'page',
     2 => 'blogpost',
     3 => 'dialogue',
