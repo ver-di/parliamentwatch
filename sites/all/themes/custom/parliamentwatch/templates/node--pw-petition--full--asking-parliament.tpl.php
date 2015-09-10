@@ -15,10 +15,10 @@ if (pw_vote_check_user_allowed()):
 </div>
 <?php endif; ?>
 
-<?php if (!empty($field_blogpost_blogtags)): ?>
+<?php if (!empty($field_blogpost_categories)): ?>
   <p class="icon-taxonomy push-bottom-m">
     <?php
-    print _pw_get_linked_terms($field_blogpost_blogtags);
+    print _pw_get_linked_terms($field_blogpost_categories);
     ?>
   </p>
 <?php endif; ?>

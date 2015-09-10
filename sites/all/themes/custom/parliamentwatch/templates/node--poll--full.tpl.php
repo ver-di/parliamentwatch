@@ -1,8 +1,6 @@
-<div class="clearfix push-bottom-l">
-  <?php
-  print theme('status_messages');
-  ?>
-</div>
+<?php
+print theme('status_messages');
+?>
 <div class="sharethis-wrapper">
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
@@ -16,14 +14,16 @@
     print ' im '.$field_parliament[0]['taxonomy_term']->name;
   ?>
 </p>
-<?php if (!empty($field_blogpost_blogtags)): ?>
-  <p class="icon-taxonomy push-bottom-m">
-    <?php print _pw_get_linked_terms($field_blogpost_blogtags); ?>
+<div class=" push-bottom-m">
+  <?php if (!empty($field_blogpost_categories)): ?>
+  <p class="icon-taxonomy">
+    <?php print _pw_get_linked_terms($field_blogpost_categories); ?>
   </p>
-<?php endif; ?>
-<p class="comment-count push-bottom-m">
-  <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
-</p>
+  <?php endif; ?>
+  <p class="comment-count">
+    <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
+  </p>
+</div>
 <?php print check_markup($body[0]['summary']); ?>
 <?php if($field_voted): ?>
 <?php

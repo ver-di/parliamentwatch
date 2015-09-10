@@ -43,9 +43,9 @@
     </div>
   </div>
   <div class="clear clearfix">
-    <?php if (!empty($field_blogpost_blogtags)): ?>
+    <?php if (!empty($field_blogpost_categories)): ?>
       <div class="icon-taxonomy">
-        <?php print _pw_get_linked_terms($field_blogpost_blogtags); ?>
+        <?php print _pw_get_linked_terms($field_blogpost_categories); ?>
       </div>
     <?php endif; ?>
     <div class="comment-count">

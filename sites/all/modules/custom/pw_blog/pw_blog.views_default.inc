@@ -217,7 +217,7 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['alter']['alt'] = 'zu den Kommentaren';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'comment-count clear-both';
+  $handler->display->display_options['fields']['comment_count']['element_wrapper_class'] = 'comment-count clear clear-both';
   $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['comment_count']['empty'] = '0 comments';
   $handler->display->display_options['fields']['comment_count']['separator'] = '';

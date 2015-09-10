@@ -404,16 +404,6 @@ print $progress; ?>%;"></div></div>';
     'image_style' => 'pw_landscape_l__normal',
     'image_link' => 'content',
   );
-  /* Feld: Datei: copyright */
-  $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
-  $handler->display->display_options['fields']['field_image_copyright']['relationship'] = 'field_teaser_image_fid';
-  $handler->display->display_options['fields']['field_image_copyright']['label'] = '';
-  $handler->display->display_options['fields']['field_image_copyright']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'small medium';
-  $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
   /* Feld: Inhalt: Recipient */
   $handler->display->display_options['fields']['field_petition_recipient']['id'] = 'field_petition_recipient';
   $handler->display->display_options['fields']['field_petition_recipient']['table'] = 'field_data_field_petition_recipient';
@@ -766,16 +756,16 @@ print $progress; ?>%;"></div></div>';
     'thousand_separator' => '.',
     'prefix_suffix' => 1,
   );
-  /* Feld: Inhalt: Tags */
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['id'] = 'field_blogpost_blogtags';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['table'] = 'field_data_field_blogpost_blogtags';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['field'] = 'field_blogpost_blogtags';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['label'] = '';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['element_wrapper_class'] = 'icon-taxonomy clearfix clear-both';
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_blogpost_blogtags']['delta_offset'] = '0';
+  /* Feld: Inhalt: Blog Kategorie */
+  $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
+  $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
+  $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
+  $handler->display->display_options['fields']['field_blogpost_categories']['label'] = '';
+  $handler->display->display_options['fields']['field_blogpost_categories']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_blogpost_categories']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_blogpost_categories']['element_wrapper_class'] = 'icon-taxonomy clearfix clear-both';
+  $handler->display->display_options['fields']['field_blogpost_categories']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_blogpost_categories']['delta_offset'] = '0';
   /* Feld: Inhalt: ‚Bearbeiten‘-Link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -807,15 +797,6 @@ print $progress; ?>%;"></div></div>';
     'comment_count' => 0,
     'expression' => 0,
   );
-  /* Feld: Inhalt: Blog Kategorie */
-  $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
-  $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
-  $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
-  $handler->display->display_options['fields']['field_blogpost_categories']['label'] = '';
-  $handler->display->display_options['fields']['field_blogpost_categories']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_blogpost_categories']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_blogpost_categories']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_blogpost_categories']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Inhalt: Blog Kategorie (field_blogpost_categories) */
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';

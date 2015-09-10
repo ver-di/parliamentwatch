@@ -10,10 +10,10 @@
 </div>
 <div class="push-bottom-m">
   <p class="medium">Adressat: <?php print $field_petition_recipient[0]['value'] ?></p>
-  <?php if (!empty($field_blogpost_blogtags)): ?>
+  <?php if (!empty($field_blogpost_categories)): ?>
     <p class="icon-taxonomy push-bottom-m">
       <?php
-      print _pw_get_linked_terms($field_blogpost_blogtags);
+      print _pw_get_linked_terms($field_blogpost_categories);
       ?>
       </p>
   <?php endif; ?>
