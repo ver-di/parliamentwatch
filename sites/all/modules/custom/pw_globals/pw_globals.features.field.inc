@@ -229,7 +229,124 @@ function pw_globals_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => -4,
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-page-field_teaser_image'.
+  $fields['node-page-field_teaser_image'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_teaser_image',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'image',
+      'settings' => array(
+        'default_image' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'image',
+    ),
+    'field_instance' => array(
+      'bundle' => 'page',
+      'deleted' => '0',
+      'description' => 'Wird im Megamenü und auf Übersichtsseiten angezeigt.',
+      'display' => array(
+        'colorbox' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => '',
+          ),
+          'type' => 'image',
+          'weight' => 1,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_teaser_image',
+      'label' => 'Teaser image',
+      'required' => 0,
+      'settings' => array(
+        'alt_field' => 0,
+        'default_image' => 0,
+        'exclude_cv' => FALSE,
+        'file_directory' => 'teaserimage',
+        'file_extensions' => 'png gif jpg jpeg',
+        'max_filesize' => '2 MB',
+        'max_resolution' => '',
+        'min_resolution' => '',
+        'title_field' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'media',
+        'settings' => array(
+          'allowed_schemes' => array(
+            'private' => 0,
+            'public' => 'public',
+            'youtube' => 0,
+          ),
+          'allowed_types' => array(
+            'application' => 0,
+            'audio' => 0,
+            'document' => 0,
+            'image' => 'image',
+            'video' => 0,
+          ),
+          'browser_plugins' => array(
+            'media_default--media_browser_1' => 'media_default--media_browser_1',
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+            'media_internet' => 0,
+            'upload' => 'upload',
+            'youtube' => 0,
+          ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'media_generic',
+        'weight' => '1',
       ),
     ),
   );
@@ -1564,7 +1681,9 @@ function pw_globals_field_default_fields() {
   t('Number');
   t('Parliament');
   t('Premium Profile Price');
+  t('Teaser image');
   t('Valid Date');
+  t('Wird im Megamenü und auf Übersichtsseiten angezeigt.');
   t('constituency number or similar identifier ');
   t('rename constituency like from Wahlkreis to Stimmkreis.');
 

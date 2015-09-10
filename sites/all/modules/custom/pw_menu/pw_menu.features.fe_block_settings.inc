@@ -17,8 +17,6 @@ function pw_menu_default_fe_block_settings() {
     'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => 'menu-main-menu-de',
-    'i18n_block_language' => array(),
-    'i18n_mode' => '0',
     'module' => 'tb_megamenu',
     'node_types' => array(),
     'pages' => '',
