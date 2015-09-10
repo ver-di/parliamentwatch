@@ -216,11 +216,17 @@ function pw_seo_metatag_export_default() {
           'notranslate' => 0,
         ),
       ),
+      'image_src' => array(
+        'value' => '[node:field-teaser-image:file:url]',
+      ),
       'itemtype' => array(
         'value' => 'Blog',
       ),
       'itemprop:name' => array(
         'value' => 'abgeordnetenwatch.de: [node:title]',
+      ),
+      'itemprop:image' => array(
+        'value' => '[node:field-teaser-image:file:url]',
       ),
       'og:type' => array(
         'value' => 'blog',
@@ -228,8 +234,29 @@ function pw_seo_metatag_export_default() {
       'og:title' => array(
         'value' => 'abgeordnetenwatch.de: [node:title]',
       ),
+      'og:image' => array(
+        'value' => '[node:field-teaser-image:file:url]',
+      ),
+      'og:image:type' => array(
+        'value' => 'image/gif,image/jpeg,image/png',
+      ),
+      'og:image:width' => array(
+        'value' => '280',
+      ),
+      'og:image:height' => array(
+        'value' => '187',
+      ),
       'twitter:title' => array(
         'value' => 'abgeordnetenwatch.de: [node:title]',
+      ),
+      'twitter:image:src' => array(
+        'value' => '[node:field-teaser-image:file:url]',
+      ),
+      'twitter:image:width' => array(
+        'value' => '280',
+      ),
+      'twitter:image:height' => array(
+        'value' => '187',
       ),
     ),
   );
@@ -273,6 +300,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: taxonomy_term.
   $config['taxonomy_term'] = array(
     'instance' => 'taxonomy_term',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[term:name] | [site:name]',

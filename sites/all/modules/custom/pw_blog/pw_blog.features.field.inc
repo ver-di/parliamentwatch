@@ -105,6 +105,7 @@ function pw_blog_field_default_fields() {
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -459,7 +460,7 @@ function pw_blog_field_default_fields() {
   $fields['node-blogpost-field_blogpost_categories'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_blogpost_categories',

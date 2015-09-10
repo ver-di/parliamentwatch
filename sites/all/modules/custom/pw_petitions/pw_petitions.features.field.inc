@@ -211,7 +211,7 @@ function pw_petitions_field_default_fields() {
   $fields['node-pw_petition-field_blogpost_categories'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_blogpost_categories',
@@ -282,6 +282,7 @@ function pw_petitions_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'field_blogpost_categories',
       'label' => 'Blog Kategorie',
       'required' => 0,
@@ -295,7 +296,7 @@ function pw_petitions_field_default_fields() {
         'settings' => array(
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
-        'type' => 'options_select',
+        'type' => 'options_buttons',
         'weight' => '5',
       ),
     ),
