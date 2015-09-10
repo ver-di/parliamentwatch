@@ -154,7 +154,7 @@ function pw_newsletter_field_default_fields() {
       'label' => 'Newsletter Date',
       'required' => 1,
       'settings' => array(
-        'default_value' => 'now',
+        'default_value' => 'blank',
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
@@ -172,7 +172,7 @@ function pw_newsletter_field_default_fields() {
           'label_position' => 'above',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'text_parts' => array(),
-          'year_range' => '-3:+3',
+          'year_range' => '-10:+10',
         ),
         'type' => 'date_popup',
         'weight' => '2',
