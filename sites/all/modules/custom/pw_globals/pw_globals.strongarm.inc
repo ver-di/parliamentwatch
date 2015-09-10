@@ -29,9 +29,8 @@ function pw_globals_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'ajax_comments_node_types';
   $strongarm->value = array(
-    'poll' => 0,
+    'poll' => 'poll',
     'announcement' => 0,
-    'article' => 0,
     'blogpost' => 0,
     'calendar_entry' => 0,
     'committee_membership' => 0,
