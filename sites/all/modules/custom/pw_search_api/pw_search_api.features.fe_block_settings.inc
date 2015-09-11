@@ -152,7 +152,10 @@ function pw_search_api_default_fe_block_settings() {
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => '3',
+      'Content Manager' => '51622513',
+    ),
     'themes' => array(
       'blank' => array(
         'region' => '',
