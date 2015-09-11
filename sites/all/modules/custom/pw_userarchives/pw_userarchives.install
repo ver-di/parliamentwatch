@@ -92,3 +92,10 @@ function pw_userarchives_update_7101() {
   db_add_index('user_archive_cache', 'parliament_name', array('parliament_name'));
 }
 
+/**
+ * Adds further column fraction_name
+ */
+function pw_userarchives_update_7102() {
+  db_add_field('user_archive_cache', 'fraction_name', array('type' => 'varchar', 'length' => '100', 'description' => 'Fracion of user.'));
+  db_add_index('user_archive_cache', 'fraction_name', array('fraction_name'));
+}
