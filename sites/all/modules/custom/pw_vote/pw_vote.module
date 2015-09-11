@@ -496,7 +496,7 @@ function pw_vote_voting_behavior($node) {
     $fraction = $terms[$record['fraction_tid']]->name;
     $party = $terms[$record['party_tid']]->name;
     $vote_tid = $record['vote_tid'];
-    $vote = $terms[$vote_tid]->name;
+    $vote = $terms[$vote_tid]->field_votes_label[LANGUAGE_NONE][0]['value'];
 
     // skip if not all data is available
     if (empty($fraction) || empty($vote) || empty($party)) {

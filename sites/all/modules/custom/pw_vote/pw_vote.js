@@ -5,12 +5,12 @@
       $('a[rel^=filter-]').click(function(e){
         e.preventDefault();
         var filter = $(this).attr('rel').split('-');
-        var parties = filter[1].split('/');
+        var fractions = filter[1].split('/');
         var vote = filter[2];
         $('#edit-search-api-views-fulltext').val('');
-        $('#edit-field-vote-user-field-user-party option').attr('selected', false);
-        $.each(parties, function(index, party){
-          $('#edit-field-vote-user-field-user-party option:contains(' + party + ')').attr('selected', 'selected');
+        $('#edit-field-vote-user-field-user-fraction option').attr('selected', false);
+        $.each(fractions, function(index, fraction){
+          $('#edit-field-vote-user-field-user-fraction option:contains(' + fraction + ')').attr('selected', 'selected');
         });
         // $('#edit-ss-vote-user-vote-text input').attr('checked', false);
         // $('#edit-ss-vote-user-vote-text label:contains(' + vote + ')').parent().children('input').attr('checked', 'checked');
