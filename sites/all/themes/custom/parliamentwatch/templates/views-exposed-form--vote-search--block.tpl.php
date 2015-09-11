@@ -50,6 +50,7 @@
     width: 41%;
   }
   #edit-field-vote-user-field-user-party-wrapper,
+  #edit-field-vote-user-field-user-fraction-wrapper,
   #edit-field-vote-wrapper {
     float: left;
     width: 25%;
@@ -59,6 +60,7 @@
 
   #edit-search-api-views-fulltext-wrapper input,
   #edit-field-vote-user-field-user-party-wrapper select,
+  #edit-field-vote-user-field-user-fraction-wrapper select,
   #edit-field-vote-wrapper select {
     width: 100%;
     height: 40px;
@@ -82,11 +84,13 @@
     padding-right: 0;
   }
   #edit-ss-vote-user-party-wrapper,
+  #edit-ss-vote-user-fraction-wrapper,
   #edit-ss-vote-user-vote-text-wrapper {
     float: left;
     width: 50%;
   }
-  #edit-ss-vote-user-party-wrapper {
+  #edit-ss-vote-user-party-wrapper,
+  #edit-ss-vote-user-fraction-wrapper {
     padding-right: 5px;
   }
   #edit-ss-vote-user-vote-text-wrapper {
