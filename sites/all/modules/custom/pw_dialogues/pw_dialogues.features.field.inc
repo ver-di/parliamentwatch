@@ -57,6 +57,7 @@ function pw_dialogues_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'display_summary' => 0,
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -164,6 +165,7 @@ function pw_dialogues_field_default_fields() {
           ),
         ),
         'display_summary' => 1,
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -247,6 +249,7 @@ function pw_dialogues_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'exclude_cv' => FALSE,
         'rel_remove' => 'default',
         'title' => 'none',
         'title_maxlength' => '128',
@@ -305,6 +308,7 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Dialogue ID',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -374,6 +378,7 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Standard reply',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -429,6 +434,7 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Message ID',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -490,6 +496,7 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Message type',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -563,6 +570,7 @@ function pw_dialogues_field_default_fields() {
       'label' => 'Recipient',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -671,6 +679,7 @@ $display_output = rtrim($display_output);',
       'label' => 'Response time',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -733,6 +742,7 @@ $display_output = rtrim($display_output);',
       'label' => 'Sender fullname',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => '0',
         'user_register_form' => FALSE,
       ),
@@ -979,6 +989,7 @@ $display_output = rtrim($display_output);',
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -1077,6 +1088,7 @@ $display_output = rtrim($display_output);',
       'required' => 0,
       'settings' => array(
         'display_summary' => 0,
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -1182,6 +1194,7 @@ $display_output = rtrim($display_output);',
       'label' => 'Before Election Date',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1296,6 +1309,7 @@ $display_output = rtrim($display_output);',
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'exclude_cv' => FALSE,
         'rel_remove' => 'default',
         'title' => 'none',
         'title_maxlength' => '128',
@@ -1390,6 +1404,7 @@ $display_output = rtrim($display_output);',
       'label' => 'Dialogue ID',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -1482,6 +1497,7 @@ $display_output = rtrim($display_output);',
       'label' => 'Message ID',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
@@ -1583,6 +1599,7 @@ $display_output = rtrim($display_output);',
       'label' => 'Message type',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1696,6 +1713,7 @@ $display_output = rtrim($display_output);',
       'label' => 'Recipient',
       'required' => 0,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -1832,6 +1850,7 @@ $display_output = rtrim($display_output);',
             ),
           ),
         ),
+        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -2185,6 +2204,105 @@ $display_output = rtrim($display_output);',
     ),
   );
 
+  // Exported field: 'node-dialogue-field_share_sum'.
+  $fields['node-dialogue-field_share_sum'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_share_sum',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'dialogue',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'colorbox' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 12,
+        ),
+        'full' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
+        ),
+        'print' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'search_index' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_share_sum',
+      'label' => 'Share Sum',
+      'required' => 0,
+      'settings' => array(
+        'exclude_cv' => FALSE,
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'number',
+        'weight' => '17',
+      ),
+    ),
+  );
+
   // Exported field: 'taxonomy_term-dialogue_topics-field_parliament'.
   $fields['taxonomy_term-dialogue_topics-field_parliament'] = array(
     'field_config' => array(
@@ -2274,6 +2392,7 @@ $display_output = rtrim($display_output);',
   t('Response time');
   t('Sender Name');
   t('Sender fullname');
+  t('Share Sum');
   t('Standard reply');
   t('Tags');
   t('Topic');
