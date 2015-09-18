@@ -251,82 +251,6 @@ function pw_poll_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-poll-field_blogpost_blogtags'.
-  $fields['node-poll-field_blogpost_blogtags'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '-1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_blogpost_blogtags',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(
-        'tid' => array(
-          'columns' => array(
-            'tid' => 'tid',
-          ),
-          'table' => 'taxonomy_term_data',
-        ),
-      ),
-      'indexes' => array(
-        'tid' => array(
-          0 => 'tid',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'taxonomy',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => array(
-            'vocabulary' => 'blogtags',
-            'parent' => '0',
-          ),
-        ),
-        'options_list_callback' => NULL,
-      ),
-      'translatable' => '0',
-      'type' => 'taxonomy_term_reference',
-    ),
-    'field_instance' => array(
-      'bundle' => 'poll',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => 'These tags are the same tags that are used in the blog.',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'taxonomy',
-          'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => '3',
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'exclude_cv' => 0,
-      'field_name' => 'field_blogpost_blogtags',
-      'label' => 'Tags',
-      'required' => 0,
-      'settings' => array(
-        'exclude_cv' => FALSE,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 0,
-        'module' => 'taxonomy',
-        'settings' => array(
-          'autocomplete_path' => 'taxonomy/autocomplete',
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'size' => 60,
-        ),
-        'type' => 'taxonomy_autocomplete',
-        'weight' => '3',
-      ),
-    ),
-  );
-
   // Exported field: 'node-poll-field_blogpost_categories'.
   $fields['node-poll-field_blogpost_categories'] = array(
     'field_config' => array(
@@ -926,9 +850,7 @@ function pw_poll_field_default_fields() {
   t('Kommentar');
   t('Parliament');
   t('Poll Date');
-  t('Tags');
   t('Teaser image');
-  t('These tags are the same tags that are used in the blog.');
   t('Voted');
 
   return $fields;
