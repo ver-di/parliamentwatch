@@ -15,7 +15,7 @@ function pw_profiles_update_7104() {
     'length' => 255,
     'not null' => TRUE,
     'default' => '',
-  ));
+    ));
 }
 
 /**
@@ -26,7 +26,7 @@ function pw_profiles_update_7103() {
     'input_output_type',
     'input_role_name',
     'input_parliament_name'
-  ));
+    ));
 }
 
 /**
@@ -36,60 +36,60 @@ function pw_profiles_update_7103() {
 function pw_profiles_schema() {
   $schema['user_filter_cache'] = array(
     'fields' =>
+    array(
+      'output_tid' =>
       array(
-        'output_tid' =>
-          array(
-            'type' => 'int',
-            'unsigned' => TRUE,
-            'not null' => TRUE,
-            'default' => 0,
-          ),
-        'output_name' =>
-          array(
-            'type' => 'varchar',
-            'length' => 45,
-            'not null' => TRUE,
-            'default' => '',
-          ),
-        'input_output_type' =>
-          array(
-            'type' => 'varchar',
-            'length' => 45,
-            'not null' => TRUE,
-            'default' => '',
-          ),
-        'input_role_name' =>
-          array(
-            'type' => 'varchar',
-            'length' => 45,
-            'not null' => TRUE,
-            'default' => '',
-          ),
-        'input_parliament_name' =>
-          array(
-            'type' => 'varchar',
-            'length' => 45,
-            'not null' => TRUE,
-            'default' => '',
-          ),
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+        ),
+      'output_name' =>
+      array(
+        'type' => 'varchar',
+        'length' => 45,
+        'not null' => TRUE,
+        'default' => '',
+        ),
+      'input_output_type' =>
+      array(
+        'type' => 'varchar',
+        'length' => 45,
+        'not null' => TRUE,
+        'default' => '',
+        ),
+      'input_role_name' =>
+      array(
+        'type' => 'varchar',
+        'length' => 45,
+        'not null' => TRUE,
+        'default' => '',
+        ),
+      'input_parliament_name' =>
+      array(
+        'type' => 'varchar',
+        'length' => 45,
+        'not null' => TRUE,
+        'default' => '',
+        ),
       ),
     'indexes' =>
-      array(),
+    array(),
     'unique_keys' =>
+    array(
+      'uniqueness' =>
       array(
-        'uniqueness' =>
-          array(
-            0 => 'output_tid',
-            1 => 'output_name',
-            2 => 'input_output_type',
-            3 => 'input_role_name',
-            4 => 'input_parliament_name',
-          ),
+        0 => 'output_tid',
+        1 => 'output_name',
+        2 => 'input_output_type',
+        3 => 'input_role_name',
+        4 => 'input_parliament_name',
+        ),
       ),
     'module' => 'pw_profiles',
     'name' => 'user_filter_cache',
-  );
-  return $schema;
+    );
+return $schema;
 }
 
 /**
@@ -101,51 +101,51 @@ function pw_profiles_cron() {
 
   // PARTIES - recreate the items
   db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tparty.tid as output_tid, tparty.name as output_name, 'party' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
-		FROM users AS u
-		INNER JOIN user_revision AS urev ON u.uid = urev.uid
-		INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
-		INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
-		INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
-		INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
-		INNER JOIN field_revision_field_user_party AS uparty ON uparty.entity_type = 'user' AND u.uid = uparty.entity_id AND urev.vid = uparty.revision_id
-		INNER JOIN taxonomy_term_data AS tparty ON uparty.field_user_party_tid = tparty.tid
-		WHERE u.status<>0");
+    FROM users AS u
+    INNER JOIN user_revision AS urev ON u.uid = urev.uid
+    INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
+    INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
+    INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
+    INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
+    INNER JOIN field_revision_field_user_party AS uparty ON uparty.entity_type = 'user' AND u.uid = uparty.entity_id AND urev.vid = uparty.revision_id
+    INNER JOIN taxonomy_term_data AS tparty ON uparty.field_user_party_tid = tparty.tid
+    WHERE u.status<>0");
 
 // CONSTITUENCIES - recreate the items
-  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tconstituency.tid as output_tid, tconstituency.name as output_name, 'constituency' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
-		FROM users AS u
-		INNER JOIN user_revision AS urev ON u.uid = urev.uid
-		INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
-		INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
-		INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
-		INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
-		INNER JOIN field_revision_field_user_constituency AS uconstituency ON uconstituency.entity_type = 'user' AND u.uid = uconstituency.entity_id AND urev.vid = uconstituency.revision_id
-		INNER JOIN taxonomy_term_data AS tconstituency ON uconstituency.field_user_constituency_tid = tconstituency.tid
-		WHERE u.status<>0");
+db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tconstituency.tid as output_tid, tconstituency.name as output_name, 'constituency' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  FROM users AS u
+  INNER JOIN user_revision AS urev ON u.uid = urev.uid
+  INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
+  INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
+  INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
+  INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
+  INNER JOIN field_revision_field_user_constituency AS uconstituency ON uconstituency.entity_type = 'user' AND u.uid = uconstituency.entity_id AND urev.vid = uconstituency.revision_id
+  INNER JOIN taxonomy_term_data AS tconstituency ON uconstituency.field_user_constituency_tid = tconstituency.tid
+  WHERE u.status<>0");
 
 // LISTS - recreate the items
-  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tlist.tid as output_tid, tlist.name as output_name, 'list' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
-		FROM users AS u
-		INNER JOIN user_revision AS urev ON u.uid = urev.uid
-		INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
-		INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
-		INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
-		INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
-		INNER JOIN field_revision_field_user_list AS ulist ON ulist.entity_type = 'user' AND u.uid = ulist.entity_id AND urev.vid = ulist.revision_id
-		INNER JOIN taxonomy_term_data AS tlist ON ulist.field_user_list_tid = tlist.tid
-		WHERE u.status<>0");
+db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tlist.tid as output_tid, tlist.name as output_name, 'list' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  FROM users AS u
+  INNER JOIN user_revision AS urev ON u.uid = urev.uid
+  INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
+  INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
+  INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
+  INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
+  INNER JOIN field_revision_field_user_list AS ulist ON ulist.entity_type = 'user' AND u.uid = ulist.entity_id AND urev.vid = ulist.revision_id
+  INNER JOIN taxonomy_term_data AS tlist ON ulist.field_user_list_tid = tlist.tid
+  WHERE u.status<>0");
 
   // LIST POSITIONS - recreate the items
-  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tlistposition.tid as output_tid, tlistposition.name as output_name, 'listposition' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
-		FROM users AS u
-		INNER JOIN user_revision AS urev ON u.uid = urev.uid
-		INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
-		INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
-		INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
-		INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
-		INNER JOIN field_revision_field_user_list_position AS ulistposition ON ulistposition.entity_type = 'user' AND u.uid = ulistposition.entity_id AND urev.vid = ulistposition.revision_id
-		INNER JOIN taxonomy_term_data AS tlistposition ON ulistposition.field_user_list_position_tid = tlistposition.tid
-		WHERE u.status<>0");
+db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tlistposition.tid as output_tid, tlistposition.name as output_name, 'listposition' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  FROM users AS u
+  INNER JOIN user_revision AS urev ON u.uid = urev.uid
+  INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
+  INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
+  INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
+  INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
+  INNER JOIN field_revision_field_user_list_position AS ulistposition ON ulistposition.entity_type = 'user' AND u.uid = ulistposition.entity_id AND urev.vid = ulistposition.revision_id
+  INNER JOIN taxonomy_term_data AS tlistposition ON ulistposition.field_user_list_position_tid = tlistposition.tid
+  WHERE u.status<>0");
 }
 
 function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
@@ -156,7 +156,7 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
     $form['views_embedder'] = array(
       '#value' => views_embed_view('calendar', $display_id = 'block_2'),
       '#weight' => 0,
-    );
+      );
     $form['#validate'][] = 'my_user_register_validate';
     $form['account']['name']['#description'] = t('Only lowercase letters (a-z), numbers and dash are allowed.');
   }
@@ -222,10 +222,7 @@ function pw_profiles_user_presave(&$edit, $account, $category) {
  */
 
 function pw_profiles_views_query_alter(&$view, &$query) {
-  if ($view->name == 'profile_list_rev' || $view->name == 'pw_user_profile_fields_rev' && $view->current_display == 'block_1') {
-    // add the group by on the user id field to prevent duplicates caused by user revisions
-    // $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
-    // $query->add_groupby('users_uid');
+  if ($view->name == 'profile_list_rev' && $view->current_display == 'grid' || $view->name == 'pw_user_profile_fields_rev' && $view->current_display == 'block_1') {
 
     // add join user_archive_cache table to get rid of duplicates
     $join = new views_join();
@@ -235,6 +232,22 @@ function pw_profiles_views_query_alter(&$view, &$query) {
     $join->left_field = 'vid';
     $join->type = 'INNER';
     $query->add_relationship('user_archive_cache', $join, 'user_revision');
+
+    // set custom title for overview page
+    if($view->name == 'profile_list_rev' && $view->current_display == 'grid'){
+      $parliament = $view->args[0];
+      $role = $view->args[1];
+      if(strpos($parliament, 'bundestag') > -1){
+        $text = $role == 'Candidate'?'@role für den @parliament':'@role aus dem @parliament';
+      }
+      elseif(strpos($parliament, 'saarland') > -1){
+        $text = '@role für das @parliament';
+      }
+      else{
+        $text = '@role für @parliament';
+      }
+      $view->build_info['title'] = format_string($text, array('@role' => t(ucfirst($role)), '@parliament' => ucfirst($parliament)));
+    }
   }
 }
 

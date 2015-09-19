@@ -264,89 +264,102 @@ function parliamentwatch_addthis_element($variables) {
 
 function parliamentwatch_delta_blocks_breadcrumb($variables) {
   $output = '';
+
   $variables['breadcrumb'] = array(l('Startseite', '/'));
   //if (!empty($variables['breadcrumb'])) {
 
-    $menu_item = menu_get_item();
-
-    // load active trail
-    $active_trail = menu_get_active_trail();
-    $last_item = end($active_trail);
+  $menu_item = menu_get_item();
 
     // add parliament
-    $parliament = _pw_get_current_parliament_term();
-    if($parliament){
-      $variables['breadcrumb'][] = l('Parlamente', 'http://www.abgeordnetenwatch.de/parlamente-210-0.html');
-      $variables['breadcrumb'][] = l($parliament->name, 'taxonomy/term/'.$parliament->tid);
-    }
+  $parliament = _pw_get_current_parliament_term();
+  if($parliament){
+    $variables['breadcrumb'][] = l('Parlamente', 'http://www.abgeordnetenwatch.de/parlamente-210-0.html');
+    $variables['breadcrumb'][] = l($parliament->name, 'taxonomy/term/'.$parliament->tid);
+  }
 
-    if($menu_item['page_callback'] != 'views_page'){
+  if($menu_item['page_callback'] != 'views_page'){
 
-      // add parent path
-      switch(arg(0)){
-        case 'user':
-        case 'profile':
-        $user = _pw_get_current_user();
-        if(_pw_user_has_role($user, 'Candidate')) {
-          $variables['breadcrumb'][] = l('Kandidierende', 'profile/'.strtolower($parliament->name).'/candidates');
-        }
-        else{
-          $variables['breadcrumb'][] = l('Abgeordnete', 'profile/'.strtolower($parliament->name).'/deputies');
-        }
+      // add parent path to profiles
+    if(arg(0) == 'user' || arg(0) == 'profile'){
+      $user = _pw_get_current_user();
+      if(_pw_user_has_role($user, 'Candidate')) {
+        $variables['breadcrumb'][] = l(t('Candidates'), 'profile/'.strtolower($parliament->name).'/candidates');
+      }
+      else{
+        $variables['breadcrumb'][] = l(t('Deputies'), 'profile/'.strtolower($parliament->name).'/deputies');
+      }
+      if(arg(0) == 'profile'){
         $user_title = field_get_items('user', $user, 'field_user_title');
         $user_first_name = field_get_items('user', $user, 'field_user_fname');
         $user_last_name = field_get_items('user', $user, 'field_user_lname');
         $user_full_name = trim($user_title[0]['value'].' '.$user_first_name[0]['value'].' '.$user_last_name[0]['value']);
         $variables['breadcrumb'][] = l($user_full_name, current_path());
-
-        break;
-        case 'node':
-        switch($menu_item['page_arguments'][0]->type){
-          case 'pw_petition':
-          $variables['breadcrumb'][] = l(t('Petitions'), 'petitions/'.($parliament?strtolower($parliament->name):'all'));
-          break;
-        }
-        break;
       }
     }
 
-    // add current item
+    // add parent path to nodes
+    elseif (arg(0) == 'node') {
+      switch($menu_item['page_arguments'][0]->type){
+        case 'pw_petition':
+        $variables['breadcrumb'][] = l(t('Petitions'), 'petitions/'.$parliament->name);
+        break;
+        case 'poll':
+        $variables['breadcrumb'][] = l(t('Polls'), 'polls/'.$parliament->name);
+        break;
+        case 'blogpost':
+        $variables['breadcrumb'][] = l(t('Blog'), 'blog');
+        break;
+        case 'dialogue':
+        // Todo
+        // dd($menu_item['page_arguments'][0]);
+        break;
+      }
+    }
+  }
+
+  // views pages under about us
+  elseif(in_array($menu_item['page_arguments'][0], array('press_articles', 'press_release'))){
+    $variables['breadcrumb'][] = l(t('About us'), 'ueber-uns');
+  }
+
+  // load active trail
+  $active_trail = menu_get_active_trail();
+  $last_item = end($active_trail);
+
+  // add current item
     //if ($variables['breadcrumb_current'] && current_path() != $last_item['href']) {
-    $title = drupal_get_title();
-    if(!empty($title)) {
-      $variables['breadcrumb'][] = l($title, current_path(), array('html' => TRUE));
-    }
-    else {
-      $variables['breadcrumb'][] = l($last_item['link_title'], current_path(), array('html' => TRUE));
-    }
+  $title = drupal_get_title();
+  if(!empty($title)) {
+    $variables['breadcrumb'][] = l($title, current_path(), array('html' => TRUE));
+  }
+  else {
+    $variables['breadcrumb'][] = l($last_item['link_title'], current_path(), array('html' => TRUE));
+  }
     //}
+  // create output
+  $output = '<div id="breadcrumb" class="clearfix"><ul class="breadcrumb">';
+  $switch = array('odd' => 'even', 'even' => 'odd');
+  $zebra = 'even';
+  $last = count($variables['breadcrumb']) - 1;
 
-    // create output
-    $output = '<div id="breadcrumb" class="clearfix"><ul class="breadcrumb">';
-    $switch = array('odd' => 'even', 'even' => 'odd');
-    $zebra = 'even';
-    $last = count($variables['breadcrumb']) - 1;
-
-    foreach ($variables['breadcrumb'] as $key => $item) {
-      $zebra = $switch[$zebra];
-      $attributes['class'] = array('depth-'.($key + 1), $zebra);
-
-      if ($key == 0) {
-        $attributes['class'][] = 'first';
-      }
-
-      if ($key == $last) {
-        $attributes['class'][] = 'last';
-      }
-
-      if ($key != $last) {
-        $output .= '<li'.drupal_attributes($attributes).'>'.$item.' / </li>';
-      }else{
-        $output .= '<li'.drupal_attributes($attributes).'>'.$item.'</li>';
-      }
+  foreach ($variables['breadcrumb'] as $key => $item) {
+    $zebra = $switch[$zebra];
+    $attributes['class'] = array('depth-'.($key + 1), $zebra);
+    if ($key == 0) {
+      $attributes['class'][] = 'first';
     }
+    if ($key == $last) {
+      $attributes['class'][] = 'last';
+    }
+    if ($key != $last) {
+      $output .= '<li'.drupal_attributes($attributes).'>'.$item.' / </li>';
+    }
+    else{
+      $output .= '<li'.drupal_attributes($attributes).'>'.$item.'</li>';
+    }
+  }
 
-    $output .= '</ul></div>';
+  $output .= '</ul></div>';
   //}
 
   return $output;

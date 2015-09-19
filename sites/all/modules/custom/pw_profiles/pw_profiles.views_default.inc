@@ -3134,6 +3134,7 @@ if($record->value == 0){
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Profile';
   $handler->display->display_options['css_class'] = 'pager-full';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -5732,6 +5733,7 @@ return FALSE;';
   $handler->display->display_options['inherit_pager'] = TRUE;
   $translatables['profile_list_rev'] = array(
     t('Master'),
+    t('Profile'),
     t('weiterlesen'),
     t('Anwenden'),
     t('Zurücksetzen'),
