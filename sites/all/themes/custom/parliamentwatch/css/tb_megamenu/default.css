@@ -173,6 +173,10 @@
 .tb-megamenu .dropdown-menu .mega-nav > li a {
   padding: 5px 0;
 }
+.tb-megamenu .mega-nav > .mobile-only + li > a,
+.tb-megamenu .dropdown-menu .mega-nav > .mobile-only + li > a {
+  padding-top: 0;
+}
 .tb-megamenu .mega-nav .dropdown-submenu > a::after {
   margin-right: 0;
 }
@@ -189,6 +193,9 @@
     margin-bottom: 8px;
     margin-bottom: 0.8rem;
     font-weight: normal;
+}
+.tb-megamenu .view-id-pw_about_menu_block h3 {
+    min-height: 2.2em;
 }
 .tb-megamenu .tb-block ul,
 .tb-megamenu .tb-block .nav {

@@ -533,6 +533,10 @@ blockquote .pw-expander div {
 	color: #fff;
 	background: #f63;
 }
+.aw-icon-circle-error:before {
+	color: #fff;
+	background: #f33;
+}
 .aw-icon-circle-disabled:before {
 	color: #fff;
 	background: #ccc;
@@ -2527,35 +2531,36 @@ ul.progress-icons li {
 }
 
 @media (max-width: 479px) {
-	.petition-list-image-wrapper img:not(.lazyloader-icon) {
+	.responsive-list-image-wrapper img:not(.lazyloader-icon) {
 		width: 100%;
+		height: auto;
 	}
-	.pw-petition-list-contents {
+	.pw-responsive-list-contents {
 		padding-bottom: 4em;
 	}
 }
 @media (min-width: 480px) {
-	.petition-list-image-wrapper {
+	.responsive-list-image-wrapper {
 		float: left;
 	}
-	.pw-petition-list-contents {
+	.pw-responsive-list-contents {
 		margin-left: 300px;
 		padding-bottom: 5em;
 	}
 }
 @media (max-width: 639px) {
-	.petition-list-partner-wrapper {
+	.responsive-list-partner-wrapper {
 		margin: 0.7em 0;
 	}
-	.petition-list-image-wrapper {
+	.responsive-list-image-wrapper {
 		margin-bottom: 1em;
 	}
-	.petition-list-partner-wrapper {
+	.responsive-list-partner-wrapper {
 		font-size: 9px;
 		font-size: .9rem;
 		float: left;
 	}
-	.petition-list-sign-wrapper {
+	.responsive-list-sign-wrapper {
 		position: absolute;
 		bottom: 15px;
 		right: 0;
@@ -2565,17 +2570,17 @@ ul.progress-icons li {
 	}
 }
 @media (min-width: 480px) and (max-width: 639px) {
-	.petition-list-partner-wrapper {
+	.responsive-list-partner-wrapper {
 		margin: 0.7em 0 5em;
 	}
 }
 @media (min-width: 640px) {
-	.petition-list-partner-wrapper {
+	.responsive-list-partner-wrapper {
 		position: absolute;
 		bottom: 15px;
 		left: 300px;
 	}
-	.petition-list-sign-wrapper {
+	.responsive-list-sign-wrapper {
 		position: absolute;
 		bottom: 15px;
 		right: 0;
@@ -2586,18 +2591,18 @@ ul.progress-icons li {
 	}
 }
 /* tribute to IE8 */
-	.petition-list-image-wrapper {
+	.responsive-list-image-wrapper {
 		float: left\9;
 	}
-	.pw-petition-list-contents {
+	.pw-responsive-list-contents {
 		margin-left: 300px\9;
 	}
-	.petition-list-partner-wrapper {
+	.responsive-list-partner-wrapper {
 		position: absolute\9;
 		bottom: 15px\9;
 		left: 300px\9;
 	}
-	.petition-list-sign-wrapper {
+	.responsive-list-sign-wrapper {
 		position: absolute\9;
 		bottom: 15px\9;
 		right: 0\9;
@@ -2651,6 +2656,10 @@ form .error:before {
     font-size: 1.2em;
     margin-right: 4px;
     padding-left: 0.1em;
+}
+form .messages.error:before {
+    content: none;
+    padding-left: 0;
 }
 .captcha .compact-form-label {
     display: none !important;
@@ -2886,6 +2895,7 @@ form .webform-component-checkboxes .description {
 }
 #views-exposed-form-user-constituency-page,
 #region-content form.compact-form,
+#region-content form.comment-form,
 #region-content #comment-form {
     position: relative;
     margin-bottom: 7em;
@@ -2919,7 +2929,8 @@ form .webform-component-checkboxes .description {
 #section-content #comment-form {
     padding: 12px 10px 40px 10px;
 }
-#section-content .compact-form .form-actions {
+#section-content .compact-form .form-actions,
+#section-content .comment-form .form-actions {
     position: absolute;
     bottom: -69px;
     right: 0;
@@ -3081,6 +3092,10 @@ form .webform-component-checkboxes .description {
 
 #comments {
     margin-top: 28px;
+}
+#comments .messages,
+#comments .pw-messages {
+    margin: 0 0 1em;
 }
 #comments .comment {
     margin-bottom: 3em;
@@ -3425,6 +3440,7 @@ form .webform-component-checkboxes .description {
 #comment-form,
 #search-form,
 #section-content form.compact-form,
+#section-content form.comment-form,
 #section-content .compact-form form,
 #views-exposed-form-user-constituency-page,
 .pw-custom-search form {

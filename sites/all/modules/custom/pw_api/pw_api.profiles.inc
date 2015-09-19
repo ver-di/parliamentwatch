@@ -199,7 +199,7 @@ function pw_api_user_to_array($user) {
 
     $profile['votes'] = array();
     if($result['node']){
-      $votes = node_load_multiple(array_keys($result['node']));
+      $votes = node_load_multiple(array_keys($result['node']), array(), TRUE);
       foreach ($votes as $nid => $vote) {
 
         // wrap vote
@@ -241,7 +241,7 @@ function pw_api_user_to_array($user) {
     $result = $query->execute();
 
     if($result['node']){
-      $dialogues = node_load_multiple(array_keys($result['node']));
+      $dialogues = node_load_multiple(array_keys($result['node']), array(), TRUE);
       foreach ($dialogues as $nid => $dialogue) {
 
         // wrap dialogue

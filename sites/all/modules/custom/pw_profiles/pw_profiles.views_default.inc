@@ -70,10 +70,10 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Sortierkriterien: Inhalt: Datum */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  /* Sortierkriterien: Inhalt: Date (field_calendar_entry_date) */
+  $handler->display->display_options['sorts']['field_calendar_entry_date_value']['id'] = 'field_calendar_entry_date_value';
+  $handler->display->display_options['sorts']['field_calendar_entry_date_value']['table'] = 'field_data_field_calendar_entry_date';
+  $handler->display->display_options['sorts']['field_calendar_entry_date_value']['field'] = 'field_calendar_entry_date_value';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -88,6 +88,14 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'calendar_entry' => 'calendar_entry',
   );
+  /* Filterkriterium: Inhalt: Date (field_calendar_entry_date) */
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['id'] = 'field_calendar_entry_date_value';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['table'] = 'field_data_field_calendar_entry_date';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['field'] = 'field_calendar_entry_date_value';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['operator'] = '>';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['granularity'] = 'second';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['default_date'] = 'now';
+  $handler->display->display_options['filters']['field_calendar_entry_date_value']['year_range'] = '-0:+3';
 
   /* Display: Profile Calendar */
   $handler = $view->new_display('block', 'Profile Calendar', 'profile_block');
@@ -551,6 +559,22 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['uid']['validate_options']['type'] = 'either';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'calendar_entry' => 'calendar_entry',
+  );
   $handler->display->display_options['path'] = 'profile/%/calendar';
 
   /* Display: Back to Calendar Block */
@@ -619,6 +643,22 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'calendar_entry' => 'calendar_entry',
+  );
 
   /* Display: Calendar Admin  View */
   $handler = $view->new_display('block', 'Calendar Admin  View', 'calendar_admin_block');
@@ -2566,7 +2606,7 @@ else
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Date */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
@@ -2575,13 +2615,6 @@ else
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -2636,7 +2669,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Sortierkriterien: Inhalt: Date (field_pw_poll_date) */
+  /* Sortierkriterien: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['id'] = 'field_pw_poll_date_value';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['sorts']['field_pw_poll_date_value']['field'] = 'field_pw_poll_date_value';
@@ -2787,7 +2820,7 @@ print pw_blocks_get_chart($row->nid,\'total\', NULL, 105,128);
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Feld: Inhalt: Date */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
@@ -2796,13 +2829,6 @@ print pw_blocks_get_chart($row->nid,\'total\', NULL, 105,128);
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'push-bottom-s';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Feld: Global PHP: User Vote */
   $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
   $handler->display->display_options['fields']['php_2']['table'] = 'views';
@@ -2899,7 +2925,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Date */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
@@ -2908,13 +2934,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -3004,7 +3023,7 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Date */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['field_pw_poll_date']['id'] = 'field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['table'] = 'field_data_field_pw_poll_date';
   $handler->display->display_options['fields']['field_pw_poll_date']['field'] = 'field_pw_poll_date';
@@ -3013,13 +3032,6 @@ if($record->value == 0){
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_wrapper_class'] = 'date';
   $handler->display->display_options['fields']['field_pw_poll_date']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_pw_poll_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -3983,6 +3995,360 @@ return FALSE;';
   $handler->display->display_options['filters']['between_date_filter']['default_date'] = 'now';
   $handler->display->display_options['filters']['between_date_filter']['start_date_field'] = 'field_revision_field_user_valid.field_user_valid_value';
   $handler->display->display_options['filters']['between_date_filter']['end_date_field'] = 'field_revision_field_user_valid.field_user_valid_value2';
+  $handler->display->display_options['metatags'] = array(
+    'und' => array(
+      'title' => array(
+        'value' => '[view:title] | Politiker-Übersicht',
+        'default' => '[view:title] | [site:name]',
+      ),
+      'description' => array(
+        'value' => 'Befragen Sie Ihre Politiker über abgeordnetenwatch.de',
+        'default' => '[view:description]',
+      ),
+      'abstract' => array(
+        'value' => '',
+      ),
+      'keywords' => array(
+        'value' => '',
+      ),
+      'robots' => array(
+        'value' => array(
+          'index' => 0,
+          'follow' => 0,
+          'noindex' => 0,
+          'nofollow' => 0,
+          'noarchive' => 0,
+          'nosnippet' => 0,
+          'noodp' => 0,
+          'noydir' => 0,
+          'noimageindex' => 0,
+          'notranslate' => 0,
+        ),
+      ),
+      'news_keywords' => array(
+        'value' => '',
+      ),
+      'standout' => array(
+        'value' => '',
+      ),
+      'rights' => array(
+        'value' => '',
+      ),
+      'image_src' => array(
+        'value' => '',
+      ),
+      'canonical' => array(
+        'value' => '[view:url]',
+        'default' => '[view:url]',
+      ),
+      'shortlink' => array(
+        'value' => '[current-page:url:unaliased]',
+        'default' => '[current-page:url:unaliased]',
+      ),
+      'publisher' => array(
+        'value' => '',
+      ),
+      'author' => array(
+        'value' => '',
+      ),
+      'original-source' => array(
+        'value' => '',
+      ),
+      'revisit-after' => array(
+        'value' => '',
+        'period' => '',
+      ),
+      'content-language' => array(
+        'value' => '',
+      ),
+      'fb:admins' => array(
+        'value' => '',
+      ),
+      'fb:app_id' => array(
+        'value' => '',
+      ),
+      'itemtype' => array(
+        'value' => '',
+      ),
+      'itemprop:name' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'itemprop:description' => array(
+        'value' => '',
+      ),
+      'itemprop:image' => array(
+        'value' => '',
+      ),
+      'og:type' => array(
+        'value' => 'website',
+        'default' => 'article',
+      ),
+      'og:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'og:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'og:determiner' => array(
+        'value' => '',
+      ),
+      'og:description' => array(
+        'value' => 'Übersichtsseite: [view:title]',
+      ),
+      'og:updated_time' => array(
+        'value' => '',
+      ),
+      'og:see_also' => array(
+        'value' => '',
+      ),
+      'og:image' => array(
+        'value' => '',
+      ),
+      'og:image:secure_url' => array(
+        'value' => '',
+      ),
+      'og:image:type' => array(
+        'value' => '',
+      ),
+      'og:image:width' => array(
+        'value' => '',
+      ),
+      'og:image:height' => array(
+        'value' => '',
+      ),
+      'og:latitude' => array(
+        'value' => '',
+      ),
+      'og:longitude' => array(
+        'value' => '',
+      ),
+      'og:street-address' => array(
+        'value' => '',
+      ),
+      'og:locality' => array(
+        'value' => '',
+      ),
+      'og:region' => array(
+        'value' => '',
+      ),
+      'og:postal-code' => array(
+        'value' => '',
+      ),
+      'og:country-name' => array(
+        'value' => '',
+      ),
+      'og:email' => array(
+        'value' => '',
+      ),
+      'og:phone_number' => array(
+        'value' => '',
+      ),
+      'og:fax_number' => array(
+        'value' => '',
+      ),
+      'og:locale' => array(
+        'value' => '',
+      ),
+      'og:locale:alternate' => array(
+        'value' => '',
+      ),
+      'article:author' => array(
+        'value' => '',
+      ),
+      'article:publisher' => array(
+        'value' => '',
+      ),
+      'article:section' => array(
+        'value' => '',
+      ),
+      'article:tag' => array(
+        'value' => '',
+      ),
+      'article:published_time' => array(
+        'value' => '',
+      ),
+      'article:modified_time' => array(
+        'value' => '',
+      ),
+      'article:expiration_time' => array(
+        'value' => '',
+      ),
+      'profile:first_name' => array(
+        'value' => '',
+      ),
+      'profile:last_name' => array(
+        'value' => '',
+      ),
+      'profile:username' => array(
+        'value' => '',
+      ),
+      'profile:gender' => array(
+        'value' => '',
+      ),
+      'og:audio' => array(
+        'value' => '',
+      ),
+      'og:audio:secure_url' => array(
+        'value' => '',
+      ),
+      'og:audio:type' => array(
+        'value' => '',
+      ),
+      'book:author' => array(
+        'value' => '',
+      ),
+      'book:isbn' => array(
+        'value' => '',
+      ),
+      'book:release_date' => array(
+        'value' => '',
+      ),
+      'book:tag' => array(
+        'value' => '',
+      ),
+      'og:video' => array(
+        'value' => '',
+      ),
+      'og:video:secure_url' => array(
+        'value' => '',
+      ),
+      'og:video:width' => array(
+        'value' => '',
+      ),
+      'og:video:height' => array(
+        'value' => '',
+      ),
+      'og:video:type' => array(
+        'value' => '',
+      ),
+      'video:actor' => array(
+        'value' => '',
+      ),
+      'video:actor:role' => array(
+        'value' => '',
+      ),
+      'video:director' => array(
+        'value' => '',
+      ),
+      'video:writer' => array(
+        'value' => '',
+      ),
+      'video:duration' => array(
+        'value' => '',
+      ),
+      'video:release_date' => array(
+        'value' => '',
+      ),
+      'video:tag' => array(
+        'value' => '',
+      ),
+      'video:series' => array(
+        'value' => '',
+      ),
+      'twitter:card' => array(
+        'value' => 'summary',
+        'default' => 'summary',
+      ),
+      'twitter:creator' => array(
+        'value' => '',
+      ),
+      'twitter:creator:id' => array(
+        'value' => '',
+      ),
+      'twitter:url' => array(
+        'value' => '[current-page:url:absolute]',
+        'default' => '[current-page:url:absolute]',
+      ),
+      'twitter:title' => array(
+        'value' => '[current-page:title]',
+        'default' => '[current-page:title]',
+      ),
+      'twitter:description' => array(
+        'value' => '',
+      ),
+      'twitter:image:src' => array(
+        'value' => '',
+      ),
+      'twitter:image:width' => array(
+        'value' => '',
+      ),
+      'twitter:image:height' => array(
+        'value' => '',
+      ),
+      'twitter:image0' => array(
+        'value' => '',
+      ),
+      'twitter:image1' => array(
+        'value' => '',
+      ),
+      'twitter:image2' => array(
+        'value' => '',
+      ),
+      'twitter:image3' => array(
+        'value' => '',
+      ),
+      'twitter:player' => array(
+        'value' => '',
+      ),
+      'twitter:player:width' => array(
+        'value' => '',
+      ),
+      'twitter:player:height' => array(
+        'value' => '',
+      ),
+      'twitter:player:stream' => array(
+        'value' => '',
+      ),
+      'twitter:player:stream:content_type' => array(
+        'value' => '',
+      ),
+      'twitter:app:country' => array(
+        'value' => '',
+      ),
+      'twitter:app:name:iphone' => array(
+        'value' => '',
+      ),
+      'twitter:app:id:iphone' => array(
+        'value' => '',
+      ),
+      'twitter:app:url:iphone' => array(
+        'value' => '',
+      ),
+      'twitter:app:name:ipad' => array(
+        'value' => '',
+      ),
+      'twitter:app:id:ipad' => array(
+        'value' => '',
+      ),
+      'twitter:app:url:ipad' => array(
+        'value' => '',
+      ),
+      'twitter:app:name:googleplay' => array(
+        'value' => '',
+      ),
+      'twitter:app:id:googleplay' => array(
+        'value' => '',
+      ),
+      'twitter:app:url:googleplay' => array(
+        'value' => '',
+      ),
+      'twitter:label1' => array(
+        'value' => '',
+      ),
+      'twitter:data1' => array(
+        'value' => '',
+      ),
+      'twitter:label2' => array(
+        'value' => '',
+      ),
+      'twitter:data2' => array(
+        'value' => '',
+      ),
+    ),
+  );
 
   /* Display: Übersicht der Abgeordneten */
   $handler = $view->new_display('page', 'Übersicht der Abgeordneten', 'grid');
@@ -5692,7 +6058,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
       'separator' => '',
     ),
   );
-  /* Feld: Twitter: Profil-Bild */
+  /* Feld: Twitter Account: Profil-Bild */
   $handler->display->display_options['fields']['profile_image_url']['id'] = 'profile_image_url';
   $handler->display->display_options['fields']['profile_image_url']['table'] = 'twitter_account';
   $handler->display->display_options['fields']['profile_image_url']['field'] = 'profile_image_url';
@@ -5717,7 +6083,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['sorts']['created_time']['table'] = 'twitter';
   $handler->display->display_options['sorts']['created_time']['field'] = 'created_time';
   $handler->display->display_options['sorts']['created_time']['order'] = 'DESC';
-  /* Filterkriterium: Twitter: Geschützter Status */
+  /* Filterkriterium: Twitter Account: Geschützter Status */
   $handler->display->display_options['filters']['protected']['id'] = 'protected';
   $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['protected']['field'] = 'protected';
@@ -5778,14 +6144,14 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Twitter: Geschützter Status */
+  /* Filterkriterium: Twitter Account: Geschützter Status */
   $handler->display->display_options['filters']['protected']['id'] = 'protected';
   $handler->display->display_options['filters']['protected']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['protected']['field'] = 'protected';
   $handler->display->display_options['filters']['protected']['value'] = 0;
   $handler->display->display_options['filters']['protected']['group'] = '0';
   $handler->display->display_options['filters']['protected']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Twitter: Login-name */
+  /* Filterkriterium: Twitter Account: Login-name */
   $handler->display->display_options['filters']['screen_name']['id'] = 'screen_name';
   $handler->display->display_options['filters']['screen_name']['table'] = 'twitter_account';
   $handler->display->display_options['filters']['screen_name']['field'] = 'screen_name';
@@ -5898,11 +6264,18 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['uid']['exception']['title'] = 'Alle';
-  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'user';
-  $handler->display->display_options['arguments']['uid']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'php';
+  $handler->display->display_options['arguments']['uid']['default_argument_options']['code'] = '$user = _pw_get_current_user();
+return $user->uid;';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['uid']['validate_options']['restrict_roles'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate_options']['roles'] = array(
+    181527986 => '181527986',
+  );
   $translatables['user_tweets'] = array(
     t('Tweets'),
     t('zum Twitterkanal'),

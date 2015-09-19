@@ -101,27 +101,41 @@ function pw_userarchives_cron($uid = NULL) {
  */
 function check_user_archives_database($uid = NULL) {
 
-  $a_day_ago = time() - (20000000000 * 60 * 60);
+  $request_timespan = time() - (20000000000 * 60 * 60);
 
+  // db_select: user revision
   $query = db_select('user_revision', 'ur');
   $query->addField('ur', 'uid');
   $query->addField('ur', 'name', 'user_name');
   $query->addExpression('MAX(ur.vid)', 'vid');
+
+  // join taxonomy terms to get parliament name
+  $query->join('field_revision_field_user_parliament', 'u_parl', 'ur.uid = u_parl.entity_id AND ur.vid = u_parl.revision_id');
+  $query->join('taxonomy_term_data', 'td', 'td.tid = u_parl.field_user_parliament_tid');
   $query->addField('td', 'name', 'parliament_name');
+
+  // join parliament election to get timestamp for elections
+  $query->join('field_revision_field_parliament_election', 'pe', 'pe.entity_type=\'taxonomy_term\' AND pe.entity_id = u_parl.field_user_parliament_tid');
   $query->addExpression('UNIX_TIMESTAMP(pe.field_parliament_election_value)', 'timestamp');
-  $query->addExpression('LOWER(rn.name)', 'user_role');
-  $query->join('field_revision_field_user_parliament', 'up', 'ur.uid = up.entity_id AND ur.vid = up.revision_id');
-  $query->join('field_revision_field_parliament_election', 'pe', 'pe.entity_type=\'taxonomy_term\' AND pe.entity_id=up.field_user_parliament_tid');
-  $query->join('taxonomy_term_data', 'td', 'td.tid=up.field_user_parliament_tid');
-  $query->join('field_revision_field_user_roles_for_view_mode_s', 'ro', 'ro.entity_id=ur.uid AND ro.revision_id=ur.vid');
-  $query->join('taxonomy_term_data', 'rn', 'rn.tid=ro.field_user_roles_for_view_mode_s_tid');
+
+  // join revisionable roles to get user_role
+  $query->join('field_revision_field_user_roles_for_view_mode_s', 'role_tid', 'role_tid.entity_id = ur.uid AND role_tid.revision_id = ur.vid');
+  $query->join('taxonomy_term_data', 'role_name', 'role_name.tid = role_tid.field_user_roles_for_view_mode_s_tid');
+  $query->addExpression('LOWER(role_name.name)', 'user_role');
+
+  // join fractions to get fraction tid
+  $query->leftJoin('field_revision_field_user_fraction', 'fraction_tid', 'fraction_tid.entity_id = ur.uid AND fraction_tid.revision_id = ur.vid');
+  $query->leftJoin('taxonomy_term_data', 'fraction_name', 'fraction_name.tid = fraction_tid.field_user_fraction_tid');
+  $query->addField('fraction_name', 'name', 'fraction_name');
+
+  // query conditions
   $query->condition('ur.status', '1');
   if ($uid != NULL) {
     $query->condition('ur.uid', $uid);
   }
-  $query->condition('ur.timestamp', $a_day_ago, '>');
-  $query->condition('rn.name', array('Deputy', 'Candidate'), 'IN');
-  $query->groupBy('ur.uid, up.field_user_parliament_tid, ro.field_user_roles_for_view_mode_s_tid');
+  $query->condition('ur.timestamp', $request_timespan, '>');
+  $query->condition('role_name.name', array('Deputy', 'Candidate'), 'IN');
+  $query->groupBy('ur.uid, u_parl.field_user_parliament_tid, role_tid.field_user_roles_for_view_mode_s_tid, fraction_tid.field_user_fraction_tid');
 
   return $query;
 }

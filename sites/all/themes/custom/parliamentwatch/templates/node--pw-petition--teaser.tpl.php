@@ -14,7 +14,7 @@
     </ul>
     <a href="<?php print $node_url; ?>" class="<?php print ($partner_html)?"colorbox-load":"";?>"><?php print $title;?></a>
 </h3>
-<div class="petition-list-image-wrapper img-outline">
+<div class="responsive-list-image-wrapper img-outline">
     <a href="<?php print $node_url; ?>" title="zur Petition" class="<?php print ($partner_html)?"colorbox-load":"";?>">
         <?php print $themed_image; ?>
     </a>
@@ -24,7 +24,7 @@
     </div>
     <?php endif; ?>
 </div>
-<div class="pw-petition-list-contents">
+<div class="pw-responsive-list-contents">
     <div>
         <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
             <span style="width: <?php print $field_petition_progress[0]['value']; ?>%;" class="pw-progress">Fortschritt: <?php print $field_petition_progress[0]['value']; ?>%</span>
@@ -36,10 +36,10 @@
     <div class="medium"><strong>Benötigte Unterschriften: <?php print number_format($field_petition_required[0]['value'],0,',','.'); ?></strong></div>
     <div class="small light">Erhaltene Unterschriften: <?php print number_format($field_petition_signings[0]['value'],0,',','.'); ?></div>
     <?php if ($partner_html): ?>
-        <div class="petition-list-partner-wrapper small light">
+        <div class="responsive-list-partner-wrapper small light">
             <p class="push-bottom-xs">Diese Petition läuft auf:</p>
             <a href="<?php print $signing_url; ?>" class="<?php print ($partner_html)?"colorbox-load ":"";?>" title="zur Petition auf <?php print $field_petition_partner[0]['value']; ?>"><?php print $partner_html; ?></a>
         </div>
     <?php endif; ?>
-    <div class="petition-list-sign-wrapper"><a href="<?php print $signing_url; ?>" class="<?php print ($partner_html)?"colorbox-load ":"";?>button">Unterschreiben</a></div>
+    <div class="responsive-list-sign-wrapper"><a href="<?php print $signing_url; ?>" class="<?php print ($partner_html)?"colorbox-load ":"";?>button">Unterschreiben</a></div>
 </div>

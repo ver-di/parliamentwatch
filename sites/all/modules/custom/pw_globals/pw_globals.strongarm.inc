@@ -29,9 +29,8 @@ function pw_globals_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'ajax_comments_node_types';
   $strongarm->value = array(
-    'poll' => 0,
+    'poll' => 'poll',
     'announcement' => 0,
-    'article' => 0,
     'blogpost' => 0,
     'calendar_entry' => 0,
     'committee_membership' => 0,
@@ -454,7 +453,26 @@ function pw_globals_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '7',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '6',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '3',
+        ),
+        'redirect' => array(
+          'weight' => '4',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '5',
+        ),
+      ),
       'display' => array(
         'webform' => array(
           'default' => array(
@@ -637,7 +655,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lazyloader_distance';
-  $strongarm->value = '0';
+  $strongarm->value = '480';
   $export['lazyloader_distance'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1338,7 +1356,6 @@ node/*/edit';
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_node_types';
   $strongarm->value = array(
-    0 => 'article',
     1 => 'page',
     2 => 'blogpost',
     3 => 'dialogue',
