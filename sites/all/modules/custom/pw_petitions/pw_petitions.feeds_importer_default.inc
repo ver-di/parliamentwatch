@@ -101,7 +101,7 @@ function pw_petitions_feeds_importer_default() {
           ),
         ),
         'update_existing' => '2',
-        'input_format' => 'plain_text',
+        'input_format' => 'managed_content',
         'skip_hash_check' => 0,
         'bundle' => 'pw_petition',
         'import_on_create' => 1,

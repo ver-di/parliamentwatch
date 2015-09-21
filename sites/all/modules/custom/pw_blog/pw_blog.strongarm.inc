@@ -259,6 +259,41 @@ function pw_blog_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_blogpost';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_blogpost';
+  $strongarm->value = '0';
+  $export['rh_node_action_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_blogpost';
+  $strongarm->value = 0;
+  $export['rh_node_override_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_blogpost';
+  $strongarm->value = '';
+  $export['rh_node_redirect_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_blogpost';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_blogpost'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'siblingmenutree_display_blogpost';
   $strongarm->value = '0';
   $export['siblingmenutree_display_blogpost'] = $strongarm;

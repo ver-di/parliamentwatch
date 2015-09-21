@@ -191,5 +191,40 @@ function pw_poll_strongarm() {
   $strongarm->value = '[node:field-parliament]/abstimmungen/[node:title] ';
   $export['pathauto_node_poll_pattern'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_poll';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_poll'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_poll';
+  $strongarm->value = '0';
+  $export['rh_node_action_poll'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_poll';
+  $strongarm->value = 0;
+  $export['rh_node_override_poll'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_poll';
+  $strongarm->value = '';
+  $export['rh_node_redirect_poll'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_poll';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_poll'] = $strongarm;
+
   return $export;
 }

@@ -46,7 +46,7 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
         "100"
       ))) { // Check for default form values
         $form['submitted']['fieldset_donationform_yourdonation']['donation_amount']['#default_value'] = $getparams["amount"];
-      }
+    }
       else { // If amount is not in default values, use the free_amount field.
         $form['submitted']['fieldset_donationform_yourdonation']['donation_amount']['#default_value'] = "free";
         $form['submitted']['fieldset_donationform_yourdonation']['donation_free_amount']['#default_value'] = $getparams["amount"];
@@ -109,8 +109,8 @@ function pw_donation_form_webform_csv_data_alter(&$data, $component) {
     switch ($component['form_key']) {
       case 'option_newsletter':
       case 'option_not_anonymous':
-        $data = $data[0] == 'X' ? 'yes' : 'no';
-        break;
+      $data = $data[0] == 'X' ? 'yes' : 'no';
+      break;
     }
   }
 }
@@ -125,8 +125,8 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
 
     // query db to retrieve webform components
     $sql = "SELECT wf_comp.cid, wf_comp.form_key
-            FROM webform_component wf_comp
-            WHERE wf_comp.nid = :nid";
+    FROM webform_component wf_comp
+    WHERE wf_comp.nid = :nid";
     $form_fields = db_query($sql, array(':nid' => $node->nid))->fetchAllAssoc('cid');
 
     // map ids to relevant components
@@ -153,11 +153,13 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
       $form_values['civicrm_amount'] = $form_values['donation_frequency'] * $form_values['donation_amount'];
     }
 
-    // update donation amount when node has related field
-    $donation_node = menu_get_object("node", 1, $form_values['node_path']);
-    if ($donation_node && !empty($donation_node->field_donation_amount)) {
-      $donation_node->field_donation_amount['und'][0]['value'] += $form_values['civicrm_amount'];
-      node_save($donation_node);
+    // update donation amount when node has related field and submission is new (sid not set)
+    if(!isset($submission->sid)){
+      $donation_node = menu_get_object("node", 1, $form_values['node_path']);
+      if ($donation_node && !empty($donation_node->field_donation_amount)) {
+        $donation_node->field_donation_amount['und'][0]['value'] += $form_values['civicrm_amount'];
+        node_save($donation_node);
+      }
     }
 
     // set direct debit or sepa

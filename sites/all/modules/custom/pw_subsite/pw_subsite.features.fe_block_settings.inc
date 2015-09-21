@@ -510,7 +510,7 @@ return arg(0) == \'profile\';
   );
 
   $export['views-pw_donations_recent-recent'] = array(
-    'cache' => '1',
+    'cache' => '-1',
     'css_class' => '',
     'custom' => '0',
     'delta' => 'pw_donations_recent-recent',

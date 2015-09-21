@@ -583,6 +583,11 @@ no-show|nicht beteiligt',
   $handler->display->display_options['fields']['field_vote_node_title']['table'] = 'search_api_index_node_index';
   $handler->display->display_options['fields']['field_vote_node_title']['field'] = 'field_vote_node_title';
   $handler->display->display_options['fields']['field_vote_node_title']['link_to_entity'] = 0;
+  /* Feld: Politician Reference » Fraction: Name (indexed) */
+  $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['id'] = 'field_vote_user_field_user_fraction_name';
+  $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['field'] = 'field_vote_user_field_user_fraction_name';
+  $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['link_to_entity'] = 0;
   /* Filterkriterium: Indexed Inhalt: Inhaltstyp */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_node_index';
@@ -590,10 +595,12 @@ no-show|nicht beteiligt',
   $handler->display->display_options['filters']['type']['value'] = array(
     'vote' => 'vote',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filterkriterium: Suche: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_node_index';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['group'] = 1;
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Suche nach Begriff oder PLZ';
@@ -615,23 +622,23 @@ no-show|nicht beteiligt',
     'field_vote_user:field_user_fname' => 'field_vote_user:field_user_fname',
     'field_vote_user:field_user_lname' => 'field_vote_user:field_user_lname',
   );
-  /* Filterkriterium: Politician Reference: Party (indexed) */
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['id'] = 'field_vote_user_field_user_party';
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['table'] = 'search_api_index_node_index';
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['field'] = 'field_vote_user_field_user_party';
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['value'] = array(
-    16119 => '16119',
-    16120 => '16120',
-    16122 => '16122',
-    16125 => '16125',
-    16118 => '16118',
+  /* Filterkriterium: Politician Reference: Fraction (indexed) */
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['id'] = 'field_vote_user_field_user_fraction';
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['field'] = 'field_vote_user_field_user_fraction';
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['value'] = array(
+    19744 => '19744',
+    19729 => '19729',
+    19727 => '19727',
+    19726 => '19726',
   );
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['expose']['operator_id'] = 'field_vote_user_field_user_party_op';
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['expose']['label'] = 'Partei';
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['expose']['operator'] = 'field_vote_user_field_user_party_op';
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['expose']['identifier'] = 'field_vote_user_field_user_party';
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['group'] = 1;
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['expose']['operator_id'] = 'field_vote_user_field_user_fraction_op';
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['expose']['label'] = 'Fraktion';
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['expose']['operator'] = 'field_vote_user_field_user_fraction_op';
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['expose']['identifier'] = 'field_vote_user_field_user_fraction';
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     3 => 0,
@@ -642,7 +649,7 @@ no-show|nicht beteiligt',
     178386088 => 0,
     29859578 => 0,
   );
-  $handler->display->display_options['filters']['field_vote_user_field_user_party']['expose']['reduce'] = 1;
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['expose']['reduce'] = 1;
   /* Filterkriterium: Indexed Inhalt: Vote */
   $handler->display->display_options['filters']['field_vote']['id'] = 'field_vote';
   $handler->display->display_options['filters']['field_vote']['table'] = 'search_api_index_node_index';
@@ -653,6 +660,7 @@ no-show|nicht beteiligt',
     19670 => '19670',
     19667 => '19667',
   );
+  $handler->display->display_options['filters']['field_vote']['group'] = 1;
   $handler->display->display_options['filters']['field_vote']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_vote']['expose']['operator_id'] = 'field_vote_op';
   $handler->display->display_options['filters']['field_vote']['expose']['label'] = 'Stimme';
@@ -712,7 +720,7 @@ no-show|nicht beteiligt',
     t('Vote'),
     t('Titel (indexed)'),
     t('Suche nach Begriff oder PLZ'),
-    t('Partei'),
+    t('Fraktion'),
     t('Stimme'),
     t('Block'),
   );

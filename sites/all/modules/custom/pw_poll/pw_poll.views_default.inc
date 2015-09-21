@@ -61,7 +61,7 @@ function pw_poll_views_default_views() {
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['default_action'] = 'access denied';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['tid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['tid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'fixed';
@@ -74,7 +74,6 @@ function pw_poll_views_default_views() {
     'parliaments' => 'parliaments',
   );
   $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
-  $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'access denied';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
