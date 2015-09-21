@@ -14,7 +14,7 @@ function pw_trustees_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_trustee';
-  $strongarm->value = 'edit-custom-breadcrumbs';
+  $strongarm->value = 'edit-rabbit-hole';
   $export['additional_settings__active_tab_trustee'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -230,6 +230,41 @@ function pw_trustees_strongarm() {
   $strongarm->name = 'pathauto_node_trustee_und_pattern';
   $strongarm->value = 'ueber-uns/mehr/kuratorium/[node:title]';
   $export['pathauto_node_trustee_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_trustee';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_trustee';
+  $strongarm->value = '3';
+  $export['rh_node_action_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_trustee';
+  $strongarm->value = 0;
+  $export['rh_node_override_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_trustee';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_trustee'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_trustee';
+  $strongarm->value = 'node/7735';
+  $export['rh_node_redirect_trustee'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

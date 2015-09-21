@@ -132,6 +132,17 @@ function pw_trustees_views_default_views() {
   $handler = $view->new_display('block', 'Block', 'block_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['block_description'] = 'Board of Trustees';
+  $translatables['Trustees'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Artikel sortieren nach'),
+    t('aufsteigend'),
+    t('absteigend'),
+    t('Block'),
+    t('Board of Trustees'),
+  );
   $export['Trustees'] = $view;
 
   return $export;
