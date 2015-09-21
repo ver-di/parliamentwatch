@@ -15,15 +15,23 @@ function pw_userarchives_cron($uid = NULL) {
   $res = $query->execute();
   while ($row = $res->fetchAssoc()) {
     db_delete('user_archive_cache')
-      ->condition('uid', $row['uid'])
-      ->execute();
-
-    #         ->condition('user_name', $row["user_name"])
+    ->condition('uid', $row['uid'])
+    ->execute();
   }
 
   // Insert new archive entries:
   $dbconnection = db_insert('user_archive_cache');
   $dbconnection->from($query)->execute(); // INSERT INTO ... FROM SELECT ...
+
+  // set actual / newest profile
+  // fetch keys to reduce result to uids only
+  $result_uids = array_keys($query->execute()->fetchAllKeyed());
+  foreach ($result_uids as $uid) {
+    db_query('UPDATE user_archive_cache uac
+      INNER JOIN users u ON uac.vid = u.vid
+      SET actual_profile = 1
+      WHERE uac.uid = :uid', array(':uid' => $uid));
+  }
 
   // Calculate number of questions and answers and insert them into:
   // (1) the revision table (for showing them in the profile view)
@@ -31,7 +39,11 @@ function pw_userarchives_cron($uid = NULL) {
 
   $res1 = $query->execute();
   while ($row = $res1->fetchAssoc()) {
+
+    // flag to look for questions and answers during elections or not
     $before_election = $row['user_role'] == 'candidate' ? 1 : 0;
+
+    // go for number of questions
     $questionQuery = db_select('node', 'n');
     $questionQuery->addExpression('IFNULL(COUNT(n.nid), 0)', 'count');
     $questionQuery->join('field_data_field_dialogue_recipient', 'r', 'r.entity_type = \'node\' AND r.entity_id = n.nid');
@@ -43,20 +55,9 @@ function pw_userarchives_cron($uid = NULL) {
     $questionQuery->condition('n.status', 1);
     $questionQuery->condition('rn.name', $row['parliament_name']);
     $questionQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
-    $questionRes = $questionQuery->execute();
+    $questionResult = $questionQuery->execute()->fetchAssoc();
 
-    while ($questionRow = $questionRes->fetchAssoc()) {
-      db_update('user_archive_cache')
-        ->fields(array('number_of_questions' => $questionRow['count']))
-        ->condition('uid', $row['uid'])
-        ->condition('vid', $row['vid'])
-        ->execute();
-      db_update('field_revision_field_user_questions_get')
-        ->fields(array('field_user_questions_get_value' => $questionRow['count']))
-        ->condition('entity_id', $row['uid'])
-        ->condition('revision_id', $row['vid'])
-        ->execute();
-    }
+    // go for number of answers
     $answerQuery = db_select('comment', 'c');
     $answerQuery->addExpression('COUNT(DISTINCT c.nid)', 'count');
     $answerQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'comment\' AND f.entity_id = c.cid');
@@ -70,20 +71,27 @@ function pw_userarchives_cron($uid = NULL) {
     $answerQuery->condition('rn.name', $row['parliament_name']);
     $answerQuery->condition('standard_reply.field_dialogue_is_standard_reply_value', 0);
     $answerQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
-    $answerRes = $answerQuery->execute();
-    while ($answerRow = $answerRes->fetchAssoc()) {
-      db_update('user_archive_cache')
-        ->fields(array('number_of_answers' => $answerRow['count']))
-        ->condition('uid', $row['uid'])
-        ->condition('vid', $row['vid'])
-        ->execute();
-      db_update('field_revision_field_user_answers_give')
-        ->fields(array('field_user_answers_give_value' => $answerRow['count']))
-        ->condition('entity_id', $row['uid'])
-        ->condition('revision_id', $row['vid'])
-        ->execute();
-    }
+    $answerResult = $answerQuery->execute()->fetchAssoc();
 
+    // update all tables
+    db_update('user_archive_cache')
+    ->fields(array(
+      'number_of_questions' => $questionResult['count'],
+      'number_of_answers' => $answerResult['count']
+      ))
+    ->condition('uid', $row['uid'])
+    ->condition('vid', $row['vid'])
+    ->execute();
+    db_update('field_revision_field_user_answers_give')
+    ->fields(array('field_user_answers_give_value' => $answerResult['count']))
+    ->condition('entity_id', $row['uid'])
+    ->condition('revision_id', $row['vid'])
+    ->execute();
+    db_update('field_revision_field_user_questions_get')
+    ->fields(array('field_user_questions_get_value' => $questionResult['count']))
+    ->condition('entity_id', $row['uid'])
+    ->condition('revision_id', $row['vid'])
+    ->execute();
   }
 
   // delete old revisions - buggy
@@ -171,8 +179,8 @@ function pw_delete_old_user_revisions() {
 
     // leave a message
     watchdog('pw_userarchives', ':number_of_revisions user revisions deleted which were older than :days_buffer days and were not associated with user_archive_cache', array(
-        ':number_of_revisions' => $number_of_revisions,
-        ':days_buffer' => $days_buffer
+      ':number_of_revisions' => $number_of_revisions,
+      ':days_buffer' => $days_buffer
       ));
   }
 }
