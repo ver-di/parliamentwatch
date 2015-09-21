@@ -262,6 +262,27 @@ function parliamentwatch_addthis_element($variables) {
 /////////////////////////// customize breadcrumb seperator (ruth)
 //////////////////////////////////////////////////////
 
+function parliamentwatch_breadcrumb_user(&$variables, $parliament, $user, $role, $set_archive_path = TRUE){
+  if($role == 'Candidate') {
+    $variables['breadcrumb'][] = l(t('Candidates'), 'profile/'.$parliament.'/candidates');
+  }
+  else{
+    $variables['breadcrumb'][] = l(t('Deputies'), 'profile/'.$parliament.'/deputies');
+  }
+  if(arg(0) != 'user'){
+    $user_title = field_get_items('user', $user, 'field_user_title');
+    $user_first_name = field_get_items('user', $user, 'field_user_fname');
+    $user_last_name = field_get_items('user', $user, 'field_user_lname');
+    $user_full_name = trim($user_title[0]['value'].' '.$user_first_name[0]['value'].' '.$user_last_name[0]['value']);
+    if($set_archive_path){
+      $variables['breadcrumb'][] = l($user_full_name, 'profile/'.$user->name.'/archive/'.$user->vid);
+    }
+    else{
+      $variables['breadcrumb'][] = l($user_full_name, 'user/'.$user->uid);
+    }
+  }
+}
+
 function parliamentwatch_delta_blocks_breadcrumb($variables) {
   $output = '';
 
@@ -275,6 +296,7 @@ function parliamentwatch_delta_blocks_breadcrumb($variables) {
   if($parliament){
     $variables['breadcrumb'][] = l('Parlamente', 'http://www.abgeordnetenwatch.de/parlamente-210-0.html');
     $variables['breadcrumb'][] = l($parliament->name, 'taxonomy/term/'.$parliament->tid);
+    $parliament_name = strtolower($parliament->name);
   }
 
   if($menu_item['page_callback'] != 'views_page'){
@@ -282,37 +304,45 @@ function parliamentwatch_delta_blocks_breadcrumb($variables) {
       // add parent path to profiles
     if(arg(0) == 'user' || arg(0) == 'profile'){
       $user = _pw_get_current_user();
-      if(_pw_user_has_role($user, 'Candidate')) {
-        $variables['breadcrumb'][] = l(t('Candidates'), 'profile/'.strtolower($parliament->name).'/candidates');
-      }
-      else{
-        $variables['breadcrumb'][] = l(t('Deputies'), 'profile/'.strtolower($parliament->name).'/deputies');
-      }
-      if(arg(0) == 'profile'){
-        $user_title = field_get_items('user', $user, 'field_user_title');
-        $user_first_name = field_get_items('user', $user, 'field_user_fname');
-        $user_last_name = field_get_items('user', $user, 'field_user_lname');
-        $user_full_name = trim($user_title[0]['value'].' '.$user_first_name[0]['value'].' '.$user_last_name[0]['value']);
-        $variables['breadcrumb'][] = l($user_full_name, current_path());
-      }
+      $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
+      parliamentwatch_breadcrumb_user($variables, $parliament_name, $user, $role);
     }
 
     // add parent path to nodes
     elseif (arg(0) == 'node') {
       switch($menu_item['page_arguments'][0]->type){
         case 'pw_petition':
-        $variables['breadcrumb'][] = l(t('Petitions'), 'petitions/'.$parliament->name);
+        $variables['breadcrumb'][] = l(t('Petitions'), 'petitions/'.$parliament_name);
         break;
         case 'poll':
-        $variables['breadcrumb'][] = l(t('Polls'), 'polls/'.$parliament->name);
+        $variables['breadcrumb'][] = l(t('Polls'), 'polls/'.$parliament_name);
         break;
         case 'blogpost':
-        $variables['breadcrumb'][] = l(t('Blog'), 'blog');
+        $variables['breadcrumb'][] = l('Blog', 'blog');
+        break;
+        case 'newsletter':
+        $variables['breadcrumb'][] = l('Newsletter', 'newsletter');
         break;
         case 'dialogue':
-        // Todo
-        // dd($menu_item['page_arguments'][0]);
+        $recipient_uid = $menu_item['page_arguments'][0]->field_dialogue_recipient[LANGUAGE_NONE][0]['target_id'];
+        if(isset($parliament_name) && !empty($recipient_uid)){
+          // find revision by uid and parliament
+          $query = db_select('user_archive_cache', 'uac');
+          $query->fields('uac', array('uid', 'vid', 'user_role', 'actual_profile'));
+          $query->condition("parliament_name", $parliament_name);
+          $query->condition("uid", $recipient_uid);
+          $result = $query->execute();
+          if($result->rowCount() > 0){
+            $uac_obj = $result->fetchObject();
+            $user = user_revision_load($recipient_uid, $uac_obj->vid);
+            $role = ucfirst($uac_obj->user_role);
+            $is_actual_profile = $uac_obj->actual_profile == 1;
+            parliamentwatch_breadcrumb_user($variables, $parliament_name, $user, $role, !$is_actual_profile);
+          }
+        }
         break;
+
+        // TODO: calendar_entry, pressemitteilungen
       }
     }
   }
