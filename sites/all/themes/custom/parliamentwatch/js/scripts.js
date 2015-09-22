@@ -38,7 +38,7 @@ jQuery(window) // https://www.drupal.org/node/1478648
 });
 
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function() {		
 
   $('html').removeClass('no-js');  
   
@@ -54,6 +54,22 @@ jQuery(document).ready(function() {
     $('.toggle-details').unbind('click');
     toggle_details();
   });
+  
+// toggle newsletter layer 
+  
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 450){
+      $("#newsletter-wrapper.hide-auto").addClass("hide-slide");
+    }else{
+      $("#newsletter-wrapper.hide-auto").removeClass("hide-slide");  
+    }
+  });
+
+  $("#newsletter-trigger").on('click', function(){
+    console.log('newsletter-trigger');
+    $("#newsletter-wrapper").removeClass("hide-auto");
+    $("#newsletter-wrapper").toggleClass("hide-slide");
+  });	
 
 // show voting details on click
 

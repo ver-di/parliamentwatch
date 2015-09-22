@@ -16,4 +16,25 @@
     <?php print $content; ?>
     <?php if ($feed_icons): ?><div class="feed-icon clearfix"><?php print $feed_icons; ?></div><?php endif; ?>
   </div>
+  
+  
 </div>
+
+  <div id="newsletter-wrapper" class="hide-auto clear">
+
+    <div class="container-12">
+      <div id="newsletter-wrapper-inner" class="grid-12">
+        <div id="newsletter-trigger">
+        	aufmachen
+        </div>
+        <img src="/sites/all/themes/custom/parliamentwatch/images/bg_newsletter.png" alt="bg_newsletter" class="float-left" />
+        <a href="/newsletter">Archiv</a>
+        <div class="float-right">
+        <?php
+          $block = module_invoke('webform', 'block_view', 'client-block-10380');
+          print render($block['content']);
+        ?>
+        </div>
+      </div>
+    </div>
+  </div>
