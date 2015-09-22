@@ -122,16 +122,20 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     // query for subject terms tagged with same parliament as user has
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'taxonomy_term')
-      ->entityCondition('bundle', 'dialogue_topics')
-      ->fieldCondition('field_parliament', 'tid', $parliament->tid)
-      ->propertyOrderBy('name');
+    ->entityCondition('bundle', 'dialogue_topics')
+    ->fieldCondition('field_parliament', 'tid', $parliament->tid)
+    ->propertyOrderBy('name');
     $result = $query->execute();
-    $subject_terms = taxonomy_term_load_multiple(array_keys($result['taxonomy_term']), 'dialogue_topics');
+    $topic_tids = array_keys($result['taxonomy_term']);
 
-    // add subject to form element
     $a_options = array();
-    foreach($subject_terms as $subject_key => $subject_term){
-      $a_options[$subject_term->name] = $subject_term->name;
+    if(!empty($topic_tids)){
+
+      // add subjects to form element
+      $subject_terms = taxonomy_term_load_multiple($topic_tids, 'dialogue_topics');
+      foreach($subject_terms as $subject_key => $subject_term){
+        $a_options[$subject_term->name] = $subject_term->name;
+      }
     }
     $form['submitted']['subject']['#options'] = $a_options;
   }
