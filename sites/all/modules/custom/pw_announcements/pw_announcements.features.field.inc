@@ -153,14 +153,38 @@ function pw_announcements_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '3',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '2',
         ),
@@ -267,14 +291,38 @@ function pw_announcements_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '4',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '3',
         ),
@@ -476,7 +524,19 @@ function pw_announcements_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 32,
         ),

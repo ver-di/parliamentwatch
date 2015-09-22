@@ -56,7 +56,19 @@ function pw_poll_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),
@@ -179,7 +191,19 @@ function pw_poll_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
@@ -298,7 +322,19 @@ function pw_poll_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '2',
         ),
@@ -373,7 +409,19 @@ function pw_poll_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '5',
         ),
@@ -444,6 +492,17 @@ function pw_poll_field_default_fields() {
           'settings' => array(
             'format_type' => 'long',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
@@ -526,7 +585,19 @@ function pw_poll_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 7,
         ),
@@ -641,6 +712,17 @@ function pw_poll_field_default_fields() {
           'settings' => array(
             'image_link' => '',
             'image_style' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '0',
@@ -738,7 +820,19 @@ function pw_poll_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'list',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'list_default',
           'weight' => 6,
         ),
@@ -808,7 +902,19 @@ function pw_poll_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'list',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'list_default',
           'weight' => 5,
         ),

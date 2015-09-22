@@ -66,6 +66,17 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -136,14 +147,38 @@ function pw_election_programmes_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'hidden',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '1',
         ),
@@ -239,7 +274,19 @@ function pw_election_programmes_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 35,
         ),
@@ -311,6 +358,17 @@ function pw_election_programmes_field_default_fields() {
           'module' => 'mediafield',
           'settings' => array(
             'file_view_mode' => 'default',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'media',
           'weight' => '4',
@@ -320,6 +378,17 @@ function pw_election_programmes_field_default_fields() {
           'module' => 'mediafield',
           'settings' => array(
             'file_view_mode' => 'default',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'media',
           'weight' => '2',
@@ -482,6 +551,17 @@ function pw_election_programmes_field_default_fields() {
           'settings' => array(
             'image_link' => '',
             'image_style' => 'pw_landscape_l__normal',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '0',
@@ -492,6 +572,17 @@ function pw_election_programmes_field_default_fields() {
           'settings' => array(
             'image_link' => '',
             'image_style' => 'pw_landscape_m',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '0',

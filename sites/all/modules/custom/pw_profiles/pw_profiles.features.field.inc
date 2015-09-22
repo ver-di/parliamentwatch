@@ -373,7 +373,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '6',
         ),
@@ -381,6 +393,17 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -446,7 +469,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'addressfield_tokens',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'addressfield_linear',
           'weight' => '5',
         ),
@@ -529,6 +564,17 @@ function pw_profiles_field_default_fields() {
           'settings' => array(
             'format_type' => 'long',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
@@ -604,6 +650,17 @@ function pw_profiles_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'prefix_suffix' => TRUE,
             'scale' => 0,
             'thousand_separator' => ' ',
@@ -1036,6 +1093,17 @@ function pw_profiles_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'prefix_suffix' => 1,
             'scale' => 0,
             'thousand_separator' => ' ',
@@ -1368,7 +1436,19 @@ function pw_profiles_field_default_fields() {
         'full' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '6',
         ),
@@ -1483,7 +1563,19 @@ function pw_profiles_field_default_fields() {
         'full' => array(
           'label' => 'inline',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '15',
         ),
@@ -1587,7 +1679,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'list',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'list_default',
           'weight' => '37',
         ),
@@ -1834,7 +1938,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '33',
         ),
@@ -2261,14 +2377,38 @@ function pw_profiles_field_default_fields() {
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_plain',
           'weight' => '2',
         ),
         'search_result' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '54',
         ),
@@ -2281,14 +2421,38 @@ function pw_profiles_field_default_fields() {
         'user_deputy' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '12',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
@@ -2417,7 +2581,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 41,
         ),
@@ -2763,7 +2939,19 @@ function pw_profiles_field_default_fields() {
         'full' => array(
           'label' => 'inline',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '14',
         ),
@@ -2912,7 +3100,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '6',
         ),
@@ -2949,7 +3149,19 @@ function pw_profiles_field_default_fields() {
         'user_search' => array(
           'label' => 'above',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '6',
         ),
@@ -3043,7 +3255,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 40,
         ),
@@ -3255,7 +3479,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'list',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'list_default',
           'weight' => '38',
         ),
@@ -3365,14 +3601,38 @@ function pw_profiles_field_default_fields() {
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_plain',
           'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '55',
         ),
@@ -3385,14 +3645,38 @@ function pw_profiles_field_default_fields() {
         'user_deputy' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '13',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '2',
         ),
@@ -3631,7 +3915,19 @@ function pw_profiles_field_default_fields() {
         'full' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '3',
         ),
@@ -3639,6 +3935,17 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'module' => 'textformatter',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'textformatter_class' => '',
             'textformatter_comma_and' => 1,
             'textformatter_comma_full_stop' => 0,
@@ -3759,7 +4066,19 @@ function pw_profiles_field_default_fields() {
         'full' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '4',
         ),
@@ -3767,6 +4086,17 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'module' => 'textformatter',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'textformatter_class' => '',
             'textformatter_comma_and' => 1,
             'textformatter_comma_full_stop' => 0,
@@ -3785,14 +4115,38 @@ function pw_profiles_field_default_fields() {
         'user_candidate' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '12',
         ),
         'user_deputy' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '14',
         ),
@@ -3800,6 +4154,17 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'module' => 'textformatter',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'textformatter_class' => '',
             'textformatter_comma_and' => 1,
             'textformatter_comma_full_stop' => 0,
@@ -3818,7 +4183,19 @@ function pw_profiles_field_default_fields() {
         'user_premium' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '18',
         ),
@@ -3891,7 +4268,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '30',
         ),
@@ -4042,6 +4431,17 @@ function pw_profiles_field_default_fields() {
           'settings' => array(
             'image_link' => '',
             'image_style' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '5',
@@ -4052,6 +4452,17 @@ function pw_profiles_field_default_fields() {
           'settings' => array(
             'image_link' => 'content',
             'image_style' => 'pw_portrait_m',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '0',
@@ -4086,6 +4497,17 @@ function pw_profiles_field_default_fields() {
           'settings' => array(
             'image_link' => '',
             'image_style' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '5',
@@ -4182,7 +4604,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '32',
         ),
@@ -4731,7 +5165,19 @@ function pw_profiles_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '29',
         ),
@@ -4991,7 +5437,19 @@ $entity_field[0][\'value\'] = $result;',
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 39,
         ),
@@ -5134,6 +5592,17 @@ $entity_field[0][\'value\'] = $result;',
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'prefix_suffix' => 1,
             'scale' => 0,
             'thousand_separator' => ' ',
@@ -5346,14 +5815,38 @@ $entity_field[0][\'value\'] = $result;',
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '31',
         ),
         'search_result' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '53',
         ),
@@ -5372,7 +5865,19 @@ $entity_field[0][\'value\'] = $result;',
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '0',
         ),

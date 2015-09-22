@@ -56,14 +56,38 @@ function pw_content_authoring_layout_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '0',
         ),
         'full' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
@@ -76,56 +100,152 @@ function pw_content_authoring_layout_field_default_fields() {
         'media_original' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'media_responsive' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'preview' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'profile' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'pw_file_landscape_l' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'pw_file_portrait_l' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'pw_file_portrait_m' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'pw_file_portrait_ms' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '0',
         ),
@@ -138,21 +258,57 @@ function pw_content_authoring_layout_field_default_fields() {
         'pw_file_portrait_xs' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'token' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '0',
         ),

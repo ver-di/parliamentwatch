@@ -51,7 +51,19 @@ function pw_kandidatencheck_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),
@@ -117,7 +129,19 @@ function pw_kandidatencheck_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),
@@ -185,7 +209,19 @@ function pw_kandidatencheck_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),
@@ -193,6 +229,17 @@ function pw_kandidatencheck_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -309,7 +356,19 @@ function pw_kandidatencheck_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 4,
         ),
@@ -398,6 +457,17 @@ function pw_kandidatencheck_field_default_fields() {
           'module' => 'entityreference',
           'settings' => array(
             'link' => FALSE,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'entityreference_label',
           'weight' => 1,
@@ -485,6 +555,17 @@ function pw_kandidatencheck_field_default_fields() {
           'module' => 'entityreference',
           'settings' => array(
             'link' => FALSE,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'entityreference_label',
           'weight' => 3,
@@ -567,7 +648,19 @@ function pw_kandidatencheck_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 2,
         ),
@@ -648,7 +741,19 @@ function pw_kandidatencheck_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),
@@ -656,6 +761,17 @@ function pw_kandidatencheck_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -772,7 +888,19 @@ function pw_kandidatencheck_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 2,
         ),
@@ -845,7 +973,19 @@ function pw_kandidatencheck_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),

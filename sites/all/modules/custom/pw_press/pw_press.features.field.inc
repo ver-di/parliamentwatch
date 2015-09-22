@@ -55,21 +55,57 @@ function pw_press_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'file',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'file_default',
           'weight' => '1',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'file',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'file_default',
           'weight' => '5',
         ),
         'search_result' => array(
           'label' => 'hidden',
           'module' => 'file',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'file_default',
           'weight' => '4',
         ),
@@ -169,6 +205,17 @@ function pw_press_field_default_fields() {
           'settings' => array(
             'format_type' => 'long',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
@@ -182,6 +229,17 @@ function pw_press_field_default_fields() {
           'settings' => array(
             'format_type' => 'date_only_short',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
@@ -195,6 +253,17 @@ function pw_press_field_default_fields() {
           'settings' => array(
             'format_type' => 'date_only_short',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
@@ -288,21 +357,57 @@ function pw_press_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '3',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '7',
         ),
         'search_result' => array(
           'label' => 'hidden',
           'module' => 'link',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'link_default',
           'weight' => '6',
         ),
@@ -397,21 +502,57 @@ function pw_press_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '4',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '2',
         ),
@@ -519,6 +660,17 @@ function pw_press_field_default_fields() {
           'module' => 'mediafield',
           'settings' => array(
             'file_view_mode' => 'default',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'media',
           'weight' => '6',
@@ -528,6 +680,17 @@ function pw_press_field_default_fields() {
           'module' => 'mediafield',
           'settings' => array(
             'file_view_mode' => 'default',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'media',
           'weight' => '4',
@@ -537,6 +700,17 @@ function pw_press_field_default_fields() {
           'module' => 'mediafield',
           'settings' => array(
             'file_view_mode' => 'default',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'media',
           'weight' => '7',
@@ -632,6 +806,17 @@ function pw_press_field_default_fields() {
           'module' => 'mediafield',
           'settings' => array(
             'file_view_mode' => 'default',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'media',
           'weight' => '2',
@@ -641,6 +826,17 @@ function pw_press_field_default_fields() {
           'module' => 'mediafield',
           'settings' => array(
             'file_view_mode' => 'default',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'media',
           'weight' => '6',
@@ -650,6 +846,17 @@ function pw_press_field_default_fields() {
           'module' => 'mediafield',
           'settings' => array(
             'file_view_mode' => 'default',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'media',
           'weight' => '5',
@@ -738,14 +945,38 @@ function pw_press_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '3',
         ),
@@ -759,6 +990,17 @@ function pw_press_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -864,6 +1106,17 @@ function pw_press_field_default_fields() {
           'settings' => array(
             'format_type' => 'long',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
@@ -877,6 +1130,17 @@ function pw_press_field_default_fields() {
           'settings' => array(
             'format_type' => 'long',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
@@ -890,6 +1154,17 @@ function pw_press_field_default_fields() {
           'settings' => array(
             'format_type' => 'date_only_short',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
@@ -903,6 +1178,17 @@ function pw_press_field_default_fields() {
           'settings' => array(
             'format_type' => 'long',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',

@@ -53,7 +53,19 @@ function pw_sidejobs_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),
@@ -61,6 +73,17 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -136,7 +159,19 @@ function pw_sidejobs_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 13,
         ),
@@ -218,7 +253,19 @@ function pw_sidejobs_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 1,
         ),
@@ -254,7 +301,7 @@ function pw_sidejobs_field_default_fields() {
   $fields['node-sidejob-field_politician'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_politician',
@@ -305,6 +352,17 @@ function pw_sidejobs_field_default_fields() {
           'module' => 'entityreference',
           'settings' => array(
             'link' => FALSE,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'entityreference_label',
           'weight' => 11,
@@ -387,7 +445,19 @@ function pw_sidejobs_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 16,
         ),
@@ -462,6 +532,17 @@ function pw_sidejobs_field_default_fields() {
           'settings' => array(
             'format_handlers' => array(
               0 => 'address',
+            ),
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
             ),
             'use_widget_handlers' => 1,
           ),
@@ -547,7 +628,19 @@ function pw_sidejobs_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 5,
         ),
@@ -652,6 +745,17 @@ function pw_sidejobs_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'prefix_suffix' => TRUE,
             'scale' => 2,
             'thousand_separator' => ' ',
@@ -723,6 +827,17 @@ function pw_sidejobs_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'prefix_suffix' => TRUE,
             'scale' => 2,
             'thousand_separator' => ' ',
@@ -792,6 +907,17 @@ function pw_sidejobs_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'prefix_suffix' => TRUE,
             'scale' => 0,
             'thousand_separator' => ' ',
@@ -878,7 +1004,19 @@ function pw_sidejobs_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 2,
         ),
@@ -954,6 +1092,17 @@ function pw_sidejobs_field_default_fields() {
           'settings' => array(
             'format_type' => 'long',
             'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
