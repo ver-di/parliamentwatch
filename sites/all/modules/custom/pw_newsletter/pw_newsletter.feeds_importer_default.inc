@@ -32,30 +32,28 @@ function pw_newsletter_feeds_importer_default() {
       'config' => array(
         'sources' => array(
           'xpathparser:0' => 'concat(\'openemm-mailing_id-\',mailing_id)',
-          'xpathparser:1' => 'change_date',
           'xpathparser:2' => 'dyn_content',
           'xpathparser:3' => 'description',
           'xpathparser:4' => 'subject',
+          'xpathparser:5' => 'change_date',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
-          'xpathparser:1' => 0,
           'xpathparser:2' => 0,
           'xpathparser:3' => 0,
           'xpathparser:4' => 0,
+          'xpathparser:5' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 0,
-          'tidy' => 0,
-          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
-            'xpathparser:1' => 0,
             'xpathparser:2' => 0,
             'xpathparser:3' => 0,
             'xpathparser:4' => 0,
+            'xpathparser:5' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -74,28 +72,28 @@ function pw_newsletter_feeds_importer_default() {
             'unique' => 1,
           ),
           1 => array(
-            'source' => 'xpathparser:1',
-            'target' => 'field_newsletter_date:start',
-            'unique' => FALSE,
-          ),
-          2 => array(
             'source' => 'xpathparser:2',
             'target' => 'body',
             'unique' => FALSE,
           ),
-          3 => array(
+          2 => array(
             'source' => 'xpathparser:3',
             'target' => 'body:summary',
             'unique' => FALSE,
           ),
-          4 => array(
+          3 => array(
             'source' => 'xpathparser:4',
             'target' => 'title',
             'unique' => FALSE,
           ),
+          4 => array(
+            'source' => 'xpathparser:5',
+            'target' => 'created',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
-        'input_format' => 'full_html',
+        'input_format' => 'managed_content',
         'skip_hash_check' => 1,
         'bundle' => 'newsletter',
       ),

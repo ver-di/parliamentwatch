@@ -46,41 +46,115 @@ function pw_newsletter_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'newsletter',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'summary' => '',
+          'value' => '',
+          'format' => 'managed_content',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
-            'trim_length' => 600,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'trim_length' => '600',
           ),
           'type' => 'text_summary_or_trimmed',
-          'weight' => 0,
+          'weight' => '4',
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'node',
+      'exclude_cv' => 0,
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => FALSE,
+      'required' => 1,
       'settings' => array(
-        'display_summary' => TRUE,
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 0,
+            'filtered_html' => 0,
+            'full_html' => 0,
+            'html_mail' => 0,
+            'managed_content' => 'managed_content',
+            'php_code' => 0,
+            'plain_text' => 0,
+          ),
+          'allowed_formats_toggle' => 1,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'display_summary' => 1,
         'exclude_cv' => FALSE,
-        'text_processing' => 1,
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
+        'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => 20,
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '50',
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
@@ -89,93 +163,251 @@ function pw_newsletter_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-newsletter-field_newsletter_date'.
-  $fields['node-newsletter-field_newsletter_date'] = array(
+  // Exported field: 'node-newsletter-field_blogpost_categories'.
+  $fields['node-newsletter-field_blogpost_categories'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_newsletter_date',
+      'field_name' => 'field_blogpost_categories',
       'field_permissions' => array(
         'type' => '0',
       ),
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'date',
-      'settings' => array(
-        'cache_count' => '4',
-        'cache_enabled' => 0,
-        'granularity' => array(
-          'day' => 'day',
-          'hour' => 0,
-          'minute' => 0,
-          'month' => 'month',
-          'second' => 0,
-          'year' => 'year',
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
         ),
-        'timezone_db' => '',
-        'todate' => '',
-        'tz_handling' => 'none',
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'blogcategories',
+            'parent' => '0',
+          ),
+        ),
+        'options_list_callback' => NULL,
       ),
       'translatable' => '0',
-      'type' => 'datetime',
+      'type' => 'taxonomy_term_reference',
     ),
     'field_instance' => array(
       'bundle' => 'newsletter',
+      'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Bitte wählen Sie die Kategorien, welche die Themen im Newsletter bestmöglich beschreiben. Zur Verfügung stehen die selben Kategorien, die z.B. auch Blogartikeln, Abstimmungen und Petitionen zugeordnet werden.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'date',
+          'label' => 'inline',
+          'module' => 'ds',
           'settings' => array(
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'taxonomy_term_link' => 1,
+            'taxonomy_term_separator' => ', ',
           ),
-          'type' => 'date_default',
-          'weight' => 2,
+          'type' => 'ds_taxonomy_separator',
+          'weight' => '2',
         ),
         'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'label' => 'inline',
+          'module' => 'ds',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'taxonomy_term_link' => 1,
+            'taxonomy_term_separator' => ', ',
+          ),
+          'type' => 'ds_taxonomy_separator',
+          'weight' => '4',
         ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'exclude_cv' => 0,
-      'field_name' => 'field_newsletter_date',
-      'label' => 'Newsletter Date',
-      'required' => 1,
+      'field_name' => 'field_blogpost_categories',
+      'label' => 'Themen',
+      'required' => 0,
       'settings' => array(
-        'default_value' => 'blank',
-        'default_value2' => 'same',
-        'default_value_code' => '',
-        'default_value_code2' => '',
         'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'date',
+        'module' => 'options',
         'settings' => array(
-          'display_all_day' => 0,
-          'increment' => '15',
-          'input_format' => 'd.m.Y - H:i:s',
-          'input_format_custom' => '',
-          'label_position' => 'above',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'text_parts' => array(),
-          'year_range' => '-10:+10',
         ),
-        'type' => 'date_popup',
-        'weight' => '2',
+        'type' => 'options_buttons',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-newsletter-field_politician'.
+  $fields['node-newsletter-field_politician'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_politician',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'users' => array(
+          'columns' => array(
+            'target_id' => 'uid',
+          ),
+          'table' => 'users',
+        ),
+      ),
+      'indexes' => array(
+        'target_id' => array(
+          0 => 'target_id',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'entityreference',
+      'settings' => array(
+        'handler' => 'base',
+        'handler_settings' => array(
+          'behaviors' => array(
+            'views-select-list' => array(
+              'status' => 0,
+            ),
+          ),
+          'sort' => array(
+            'type' => 'none',
+          ),
+          'target_bundles' => array(),
+        ),
+        'target_type' => 'user',
+      ),
+      'translatable' => '0',
+      'type' => 'entityreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'newsletter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Welche Politiker werden in dem Newsletter explizit genannt?',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'textformatter',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'textformatter_class' => '',
+            'textformatter_comma_and' => 0,
+            'textformatter_comma_full_stop' => 0,
+            'textformatter_comma_override' => 0,
+            'textformatter_comma_tag' => '0',
+            'textformatter_contrib' => array(
+              'entityreference_link' => 1,
+            ),
+            'textformatter_separator_custom' => '',
+            'textformatter_separator_custom_class' => 'textformatter-separator',
+            'textformatter_separator_custom_tag' => 'span',
+            'textformatter_term_plain' => 0,
+            'textformatter_type' => 'comma',
+          ),
+          'type' => 'textformatter_list',
+          'weight' => '3',
+        ),
+        'teaser' => array(
+          'label' => 'inline',
+          'module' => 'textformatter',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'textformatter_class' => 'textformatter-list',
+            'textformatter_comma_and' => 0,
+            'textformatter_comma_full_stop' => 0,
+            'textformatter_comma_override' => 0,
+            'textformatter_comma_tag' => '0',
+            'textformatter_contrib' => array(
+              'entityreference_link' => 1,
+            ),
+            'textformatter_separator_custom' => '',
+            'textformatter_separator_custom_class' => 'textformatter-separator',
+            'textformatter_separator_custom_tag' => 'span',
+            'textformatter_term_plain' => 0,
+            'textformatter_type' => 'comma',
+          ),
+          'type' => 'textformatter_list',
+          'weight' => '5',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_politician',
+      'label' => 'Vorkommende Politiker',
+      'required' => 0,
+      'settings' => array(
+        'exclude_cv' => FALSE,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'entityreference',
+        'settings' => array(
+          'match_operator' => 'CONTAINS',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'path' => '',
+          'size' => '150',
+        ),
+        'type' => 'entityreference_autocomplete_tags',
+        'weight' => '4',
       ),
     ),
   );
@@ -216,23 +448,33 @@ function pw_newsletter_field_default_fields() {
     'field_instance' => array(
       'bundle' => 'newsletter',
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Dieses Bild wird nur für die Darstellung auf der Webseite benutzt.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-          ),
-          'type' => 'image',
-          'weight' => 1,
-        ),
-        'teaser' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '31',
+        ),
+        'teaser' => array(
+          'label' => 'hidden',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'pw_file_landscape_l',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '[node:url]',
+              'linked' => 1,
+            ),
+          ),
+          'type' => 'file_rendered',
+          'weight' => '3',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -258,7 +500,7 @@ function pw_newsletter_field_default_fields() {
         'module' => 'media',
         'settings' => array(
           'allowed_schemes' => array(
-            'private' => 'private',
+            'private' => 0,
             'public' => 'public',
             'youtube' => 0,
           ),
@@ -287,9 +529,13 @@ function pw_newsletter_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Bitte wählen Sie die Kategorien, welche die Themen im Newsletter bestmöglich beschreiben. Zur Verfügung stehen die selben Kategorien, die z.B. auch Blogartikeln, Abstimmungen und Petitionen zugeordnet werden.');
   t('Body');
-  t('Newsletter Date');
+  t('Dieses Bild wird nur für die Darstellung auf der Webseite benutzt.');
   t('Teaser image');
+  t('Themen');
+  t('Vorkommende Politiker');
+  t('Welche Politiker werden in dem Newsletter explizit genannt?');
 
   return $fields;
 }
