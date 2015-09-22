@@ -104,7 +104,7 @@ function pw_blog_strongarm() {
         'custom_settings' => TRUE,
       ),
       'teaser' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'colorbox' => array(
         'custom_settings' => FALSE,
@@ -161,15 +161,27 @@ function pw_blog_strongarm() {
           ),
           'default' => array(
             'weight' => '10',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
           'search_result' => array(
             'weight' => '29',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '2',
+            'visible' => FALSE,
+          ),
         ),
         'sharethis' => array(
           'full' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'default' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),

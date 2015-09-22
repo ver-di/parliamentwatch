@@ -343,95 +343,26 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blogpost';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'sharethis' => array(
+    'blog_teaser' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
-    'title' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link' => '1',
-        'wrapper' => 'h3',
-        'class' => '',
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
-      ),
-    ),
-    'comments' => array(
-      'weight' => '8',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'author' => array(
-      'weight' => '4',
-      'label' => 'inline',
-      'format' => 'author',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => ' by ',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'author',
-        ),
-      ),
-    ),
-    'post_date' => array(
-      'weight' => '3',
-      'label' => 'inline',
-      'format' => 'ds_post_date_medium',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'Posted on ',
-          'lb-col' => TRUE,
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'date',
-        ),
-      ),
-    ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
-      ),
-    ),
-    'field_blogpost_blogtags' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'icon-taxonomy clearfix clear-both',
-        ),
-      ),
-    ),
-    'field_teaser_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'float-left file-image push-bottom-s clear-both',
-        ),
-      ),
-    ),
-    'group_blogtags_author' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:17:"blog-panel_pane_1";}',
+        'load_terms' => 1,
+        'ft' => array(),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
         ),
       ),
     ),
