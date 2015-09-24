@@ -408,7 +408,7 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id] <?php print t(\'about\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Kopfbereich: Global: Ansichtsbereich */
@@ -480,7 +480,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Subline */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -668,7 +668,7 @@ return $result;
   /* Display: Image Gallery Page */
   $handler = $view->new_display('page', 'Image Gallery Page', 'image_gallery_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Image Gallery of  [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
+  $handler->display->display_options['title'] = 'Bildergalerie von  [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix field-name-user-image-gallery';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -678,7 +678,7 @@ return $result;
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['columns'] = '6';
+  $handler->display->display_options['style_options']['columns'] = '5';
   $handler->display->display_options['style_options']['fill_single_line'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
@@ -690,8 +690,8 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Image Gallery of\'); ?> [field_user_fname-revision_id]  [[field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
-  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="Bildergalerie von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Kopfbereich: Global: Ansichtsbereich */
   $handler->display->display_options['header']['view']['id'] = 'view';
@@ -771,7 +771,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'i18n_taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
@@ -992,7 +992,7 @@ return $result;
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
-  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id]"></div>';
+  $handler->display->display_options['header']['area']['content'] = '<div class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
   /* Kopfbereich: Global: Ansichtsbereich */
@@ -1062,6 +1062,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
   /* Feld: Subline */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -1260,7 +1261,7 @@ return $result;
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
-  $handler->display->display_options['header']['area_1']['content'] = '<h3>Additional information</h3>';
+  $handler->display->display_options['header']['area_1']['content'] = '<h3>Weiterführende Links</h3>';
   $handler->display->display_options['header']['area_1']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['footer'] = FALSE;
   /* Fußbereich: Global: Textbereich */
@@ -2717,7 +2718,7 @@ return $term->tid;';
 '),
     t('About Page'),
     t('[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id] über sich'),
-    t('<div class="add-sharethis" title="[field_user_fname-revision_id] [field_user_lname-revision_id] <?php print t(\'about\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
+    t('<div class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
     t('<p class="link-profile">[nothing_1]</p>'),
     t('Über mich'),
     t('zum vollständigen Profil'),
@@ -2726,8 +2727,8 @@ return $term->tid;';
     t('weiterlesen'),
     t('<div id="imagegallery" class="add-sharethis" vid="[vid]" title="<?php print t(\'Imagegallery of \'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
     t('Image Gallery Page'),
-    t('Image Gallery of  [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
-    t('<div class="add-sharethis" title="<?php print t(\'Image Gallery of\'); ?> [field_user_fname-revision_id]  [[field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
+    t('Bildergalerie von  [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
+    t('<div class="add-sharethis" title="Bildergalerie von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
     t('<h3>Bildergalerie</h3>'),
     t('<p class="link-profile">[nothing]</p>'),
     t('Bild von field_user_image_gallery'),
@@ -2737,7 +2738,6 @@ return $term->tid;';
     t('<div id="political-goals" class="add-sharethis" vid="[vid]" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
     t('Political Goals Page'),
     t('Die politischen Ziele von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
-    t('<div class="add-sharethis" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id]"></div>'),
     t('Politische Ziele'),
     t('Additional Links'),
     t('Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
@@ -2745,7 +2745,7 @@ return $term->tid;';
     t('Additional Links Page'),
     t('Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
     t('<div class="add-sharethis" title="<?php print t(\'Additional Links of\'); ?> [field_user_fname-revision_id]  [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
-    t('<h3>Additional information</h3>'),
+    t('<h3>Weiterführende Links</h3>'),
     t('Short Profile Premium Mainpage'),
     t('used as header field on pages'),
     t('<div id="" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
