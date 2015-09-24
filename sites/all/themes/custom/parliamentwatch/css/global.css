@@ -1274,11 +1274,9 @@ h1#page-title {
 /* colorbox */
 
 
-#colorbox #pw_block_user_questionform,
-#colorbox #node-webform-6313,
-#colorbox #node-webform-6578 {
+#colorbox .compact-form form {
     padding-top: 62px;
-    background: url('/sites/abgeordnetenwatch.de/themes/abgeordnetenwatch/logo.png') no-repeat;
+    background: url('/sites/all/themes/custom/parliamentwatch/logo.png') no-repeat;
 }
 
 #cboxOverlay {
@@ -1325,13 +1323,6 @@ h1#page-title {
 #search-form {
   padding: 15px 10px;
   margin-bottom: 3em !important;
-}
-#search-form .compact-form-label {
-    font-size: 14px;
-    font-size: 1.4rem;
-    line-height: 14px;
-    line-height: 1.4rem;
-    padding-left: 10px;
 }
 #search-form .form-text {
     width: 60%;
@@ -2644,10 +2635,18 @@ label.error {
 	margin: 0 0 1em;
 	font-size: 1em;
 }
+.messages.error.messages-inline {
+  margin-top: -6px;
+	margin-top: -0.6rem;
+}
 textarea.error,
 select.error,
 input.error {
 	border-color: #fe0002 !important;
+}
+form .messages.error:not(.messages-inline):before {
+    content: none;
+    padding-left: 0;
 }
 form .error:before {
     color: #fe0002;
@@ -2656,13 +2655,6 @@ form .error:before {
     font-size: 1.2em;
     margin-right: 4px;
     padding-left: 0.1em;
-}
-form .messages.error:before {
-    content: none;
-    padding-left: 0;
-}
-.captcha .compact-form-label {
-    display: none !important;
 }
 form:after {
     clear: both;
@@ -2676,6 +2668,18 @@ form:after {
 }
 :first-child + html form {
     min-height: 1%;
+}
+::-webkit-input-placeholder {
+  color: #000;
+}
+::-moz-placeholder { /* firefox 19+ */
+  color: #000;
+}
+:-ms-input-placeholder { /* ie */
+  color: #000;
+}
+input:-moz-placeholder {
+  color: #000;
 }
 textarea,
 select,
@@ -2772,14 +2776,6 @@ form .description {
 }
 .resizable-textarea .grippie {
     display: none;
-}
-.compact-form-label {
-    color: #666;
-    font-size: 12px;
-    font-size: 1.2rem;
-    line-height: 28px;
-    line-height: 2.8rem;
-    padding-left: 3px;
 }
 button,
 .button,
@@ -2894,7 +2890,7 @@ form .webform-component-checkboxes .description {
     padding: 2px 10px;
 }
 #views-exposed-form-user-constituency-page,
-#region-content form.compact-form,
+#region-content .compact-form form,
 #region-content form.comment-form,
 #region-content #comment-form {
     position: relative;
@@ -2963,52 +2959,52 @@ form .webform-component-checkboxes .description {
 
 /* /////////////////////////// question form //////////////////// */
 
-#node-webform-10446 #webform-component-firstname,
-#node-webform-10446 #webform-component-lastname {
+#node-webform-10446 .webform-component--firstname,
+#node-webform-10446 .webform-component--lastname {
     float: left;
     width: 48%;
     margin-bottom: 0.5em;
 }
-#node-webform-10446 #webform-component-firstname {
+#node-webform-10446 .webform-component--firstname {
     margin-right: 2%;
 }
-#node-webform-10446 #webform-component-lastname {
+#node-webform-10446 .webform-component--lastname {
     margin-left: 2%;
 }
-#node-webform-10446 #webform-component-email {
+#node-webform-10446 .webform-component--email {
     clear: both;
     float: left;
     width: 48%;
     margin-right: 2%;
     margin-bottom: 0.5em;
 }
-#node-webform-10446 #webform-component-option-newsletter {
+#node-webform-10446 .webform-component--option-newsletter {
     float: left;
     width: 48%;
     margin-left: 2%;
     margin-top: 1em;
     margin-bottom: 0.5em;
 }
-#node-webform-10446 #webform-component-option-newsletter input {
+#node-webform-10446 .webform-component--option-newsletter input {
     float: left;
     display: block;
     margin-top: 3px;
 }
-#node-webform-10446 #webform-component-option-newsletter input + label {
+#node-webform-10446 .webform-component--option-newsletter input + label {
     display: block;
     margin-left: 23px;
 }
-#node-webform-10446 #webform-component-residence {
+#node-webform-10446 .webform-component--residence {
     clear: both;
     width: 48%;
     margin-bottom: 1em;
 }
-#node-webform-10446 #webform-component-subject {
+#node-webform-10446 .webform-component--subject {
     clear: both;
     width: 48%;
     margin-bottom: 0.5em;
 }
-#node-webform-10446 #webform-component-subject select {
+#node-webform-10446 .webform-component--subject select {
     width: 100%;
     height: 2.5em;
     padding: 0.6em;
@@ -3288,25 +3284,20 @@ form .webform-component-checkboxes .description {
 
 /* petition form */
 
-#webform-client-form-57286 #webform-component-portrait {
+#webform-client-form-57286 .webform-component--portrait {
   float: left;
   margin-right: 20px;
 }
-#webform-client-form-57286 #webform-component-portrait img {
+#webform-client-form-57286 .webform-component--portrait img {
   outline: 1px solid #ccc;
 }
-#webform-client-form-57286 #webform-component-welcome {
+#webform-client-form-57286 .webform-component--welcome {
   font-weight: bold;
-}
-#webform-client-form-57286 #webform-component-statement {
-  clear: both;
-  position: relative;
-  top: 2em;
 }
 #webform-client-form-57286 #edit-submitted-vote {
   clear: both;
 }
-#webform-client-form-57286 #webform-component-vote > label {
+#webform-client-form-57286 .webform-component--vote > label {
   display: none;
 }
 #webform-client-form-57286 .form-radios label {
@@ -3329,12 +3320,12 @@ form .webform-component-checkboxes .description {
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label {
     color: #f63;
 }
-#webform-client-form-57286 #webform-component-fieldset-statement {
+#webform-client-form-57286 .webform-component--fieldset-statement {
   clear: both;
   padding-top: 1em;
 }
-#webform-client-form-57286 #webform-component-fieldset-statement--statement-wrapper {
-  padding: 10px;
+#webform-client-form-57286 .webform-component--fieldset-statement .form-textarea-wrapper {
+  padding: 10px 10px 4em;
   background: #f4f4f4;
   border: 1px solid #dedede;
   -webkit-border-radius: 3px;
@@ -3345,9 +3336,8 @@ form .webform-component-checkboxes .description {
   box-shadow: 0px 0px 4px 1px #ebebeb;
   margin-bottom: 2em;
 }
-#webform-client-form-57286 #webform-component-fieldset-statement--stement-wrapper--copy-email,
-#webform-client-form-57286 #webform-component-fieldset-statement--stement-wrapper--copy-email * {
-  margin-bottom: 0;
+#webform-client-form-57286 .webform-component--fieldset-statement--statement-wrapper--copy-email {
+  margin: -4.4em 0 0 10px;
 }
 #webform-client-form-57286 .form-actions {
   text-align: right;
@@ -3439,7 +3429,7 @@ form .webform-component-checkboxes .description {
 .comment,
 #comment-form,
 #search-form,
-#section-content form.compact-form,
+#section-content .compact-form form,
 #section-content form.comment-form,
 #section-content .compact-form form,
 #views-exposed-form-user-constituency-page,
@@ -3465,7 +3455,7 @@ form .webform-component-checkboxes .description {
     margin-bottom: 2px;
     margin-bottom: 0.2rem;
 }
-#section-content .block.newsletter-subscribe form.compact-form { /* newsletter order */
+#section-content .block.newsletter-subscribe .compact-form form { /* newsletter order */
     background: transparent;
     border: 0;
     -webkit-box-shadow: none;
