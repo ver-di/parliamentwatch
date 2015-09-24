@@ -453,26 +453,7 @@ function pw_globals_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(
-        'metatags' => array(
-          'weight' => '7',
-        ),
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '6',
-        ),
-        'rabbit_hole' => array(
-          'weight' => '3',
-        ),
-        'redirect' => array(
-          'weight' => '4',
-        ),
-        'xmlsitemap' => array(
-          'weight' => '5',
-        ),
-      ),
+      'form' => array(),
       'display' => array(
         'webform' => array(
           'default' => array(
@@ -1320,7 +1301,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'webform_default_subject';
-  $strongarm->value = 'Form submission from: %title';
+  $strongarm->value = 'Form submission from: [node:title]';
   $export['webform_default_subject'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1354,41 +1335,9 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'webform_node_types';
-  $strongarm->value = array(
-    1 => 'page',
-    2 => 'blogpost',
-    3 => 'dialogue',
-    4 => 'migrate_extras_media_example',
-    5 => 'migrate_example_pathauto',
-    7 => 'press_release',
-    8 => 'press_article',
-    9 => 'pw_slider',
-    10 => 'trustee',
-    11 => 'webform',
-  );
-  $export['webform_node_types'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'webform_search_index';
-  $strongarm->value = 0;
-  $export['webform_search_index'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'webform_submission_access_control';
   $strongarm->value = '1';
   $export['webform_submission_access_control'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'webform_use_cookies';
-  $strongarm->value = 0;
-  $export['webform_use_cookies'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
