@@ -1274,11 +1274,11 @@ h1#page-title {
 /* colorbox */
 
 
-#colorbox .compact-form form {
+#colorbox #cboxLoadedContent {
     padding-top: 62px;
-    background: url('/sites/all/themes/custom/parliamentwatch/logo.png') no-repeat;
+    background-image: url('/sites/all/themes/custom/parliamentwatch/logo.png');
+    background-repeat: no-repeat;
 }
-
 #cboxOverlay {
     background: #666;
 }
