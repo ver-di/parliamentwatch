@@ -40,14 +40,10 @@
   <h3>Für Meinungsumfrage spenden</h3>
   <?php print $main_node_form; ?>
 </div>
-<h3>Hintergrund</h3>
-<div class="clearfix push-bottom-l managed-content">
-  <?php print $body[0]['value']; ?>
-</div>
-<h3>Inhalt der Petition</h3>
-<div class="managed_content push-bottom-l">
-  <?php print check_markup($field_petition_content[0]['value']); ?>
-</div>
+<h3>Inhalt der Bürger-Petition (gestartet von <?php print $field_petition_starter[0]['value']; ?>)</h3>
+<p class="managed-content">
+  Lesen Sie die Original-Petition auf <?php print l($field_petition_external_url[0]['url'], $field_petition_external_url[0]['url']); ?>
+</p>
 <?php
 // render comments if there are any
 if ($comments):
