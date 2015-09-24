@@ -35,7 +35,6 @@ function pw_form_booking_form_alter(&$form, &$form_state, $form_id) {
       $party_term = entity_uuid_load('taxonomy_term', array($party_uuid), array(), TRUE);
       $party = array_pop($party_term);
       $form['submitted']['user_party']['#value'] = $party->name;
-
     }
     if (isset($user->field_user_gender['und'][0]['value'])) {
       $form['submitted']['user_prefix']['#default_value'] = $user->field_user_gender['und'][0]['value'] == 'f' ? 'mrs' : 'mr';
@@ -54,7 +53,8 @@ function pw_form_booking_form_alter(&$form, &$form_state, $form_id) {
  * Implements hook_form_alter()..
  */
 function pw_form_booking_webform_submission_presave($node, &$submission) {
-  if ($node->nid == 10482 && $submission->data[23]['value'][0] == 'sepa_direct_debit') {
+  $form_values = _pw_webform_get_keyed_fields($node, $submission);
+  if ($node->nid == 10482 && $form_values['payment_option'] == 'sepa_direct_debit') {
 
     // give user role Premium User if profile extension was booked via direct debit
     global $user;
@@ -82,8 +82,8 @@ function pw_form_booking_menu() {
       'access callback' => 'pw_form_booking_access',
       'access arguments' => array(1),
       'type' => MENU_LOCAL_TASK,
-    ),
-  );
+      ),
+    );
 }
 
 // Show the page
@@ -92,8 +92,8 @@ function pw_form_booking_page($uid) {
   return array(
     'content' => array(
       'node' => $node,
-    ),
-  );
+      ),
+    );
 }
 
 // Check if user has permission, or views its own page
@@ -111,6 +111,6 @@ function pw_form_booking_perm() {
     'view user tabs' => array(
       'title' => t('View user tabs'),
       'description' => t('View user tabs'),
-    ),
-  );
+      ),
+    );
 }
