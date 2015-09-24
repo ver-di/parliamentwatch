@@ -18,7 +18,6 @@ dependencies[] = ckeditor
 dependencies[] = colorbox
 dependencies[] = colorbox_node
 dependencies[] = comment
-dependencies[] = compact_forms
 dependencies[] = context
 dependencies[] = contextual
 dependencies[] = ctools
