@@ -368,13 +368,6 @@ blockquote .pw-expander div {
 .absolute.right {
 	right: 0;
 }
-.hide-slide {
-  height: 10px !important;
-	-webkit-transition: height 500ms;
-    -moz-transition: 	height 500ms;
-    -o-transition: 		height 500ms;
-    transition: 		  height 500ms;
-}
 
 .push-bottom-xxs {
     margin-bottom: 2px !important;
@@ -496,8 +489,13 @@ blockquote .pw-expander div {
   display: inline-block;
 }
 
-/* icons */
+/* scroll_to_top */
 
+#back-top {
+  bottom: 55px;
+}
+
+/* icons */
 
 .aw-icon-1x {
 	font-size: 12px;
@@ -3442,32 +3440,13 @@ form .webform-component-checkboxes .description {
 
 /* /////////////////////////// Newsletter Layer ////// */
 
-#newsletter-wrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  background: #fff;
-  border-top: 1px solid #f63;
+.responsive-layout-mobile #newsletter-wrapper-inner > img,
+.responsive-layout-mobile #webform-client-form-10380 .webform-component,
+.responsive-layout-mobile #webform-client-form-10380 .form-actions {
+  margin-bottom: 1em;
+}
+.responsive-layout-mobile #webform-client-form-10380 input {
   width: 100%;
-  height: 100px;
-  z-index: 999;
-  
-  -webkit-box-shadow: 0 -2px 3px 1px #dfdfdf #dfdfdf;
-  box-shadow: 0 -2px 3px 1px #dfdfdf #dfdfdf;
-  
-  -webkit-transition: height 500ms;
-  -moz-transition: 	height 500ms;
-  -o-transition: 		height 500ms;
-  transition: 		  height 500ms;
-}
-#newsletter-wrapper-inner {
-  padding: 7px 0;
-}
-#newsletter-trigger {
-  background: #fff none repeat scroll 0 0;
-  position: relative;
-  top: -20px;
 }
 
 /* /////////////////////////// node footer /////////////////// */

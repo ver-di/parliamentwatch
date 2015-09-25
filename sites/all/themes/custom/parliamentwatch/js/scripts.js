@@ -57,19 +57,20 @@ jQuery(document).ready(function() {
   
 // toggle newsletter layer 
   
-  $(window).scroll(function() {
+  $(window).on("scroll",function() {
     if ($(this).scrollTop() > 450){
-      $("#newsletter-wrapper.hide-auto").addClass("hide-slide");
+      $("#newsletter-wrapper.hide-auto").addClass("closed").removeClass("open");
     }else{
-      $("#newsletter-wrapper.hide-auto").removeClass("hide-slide");  
+      $("#newsletter-wrapper.hide-auto").addClass("open").removeClass("closed");
     }
   });
 
-  $("#newsletter-trigger").on('click', function(){
-    console.log('newsletter-trigger');
+  $("#newsletter-trigger").on('click', function(e){
+    e.preventDefault();
     $("#newsletter-wrapper").removeClass("hide-auto");
-    $("#newsletter-wrapper").toggleClass("hide-slide");
-  });	
+    $("#newsletter-wrapper").toggleClass("open").toggleClass("closed");
+    $("#newsletter-trigger").toggleClass("icon-arrow-up icon-arrow-down");
+  });
 
 // show voting details on click
 

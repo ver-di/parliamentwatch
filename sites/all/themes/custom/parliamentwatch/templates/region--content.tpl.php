@@ -19,21 +19,18 @@
   
   
 </div>
+<hr class="mobile-only">
+<div id="newsletter-wrapper" class="hide-auto clear open">
 
-  <div id="newsletter-wrapper" class="hide-auto clear">
-
-    <div class="container-12">
-      <div id="newsletter-wrapper-inner" class="grid-12">
-        <div id="newsletter-trigger">
-        	<a href="#" title="schließen">schließen</a>
-        </div>
-        <img src="/sites/all/themes/custom/parliamentwatch/images/bg_newsletter.png" alt="bg_newsletter" class="float-left" />
-        <div class="float-right">
-        <?php
-          $block = module_invoke('webform', 'block_view', 'client-block-10380');
-          print render($block['content']);
-        ?>
-        </div>
-      </div>
+  <div class="container-12">
+    <div id="newsletter-wrapper-inner" class="grid-12">
+      <img src="/sites/all/themes/custom/parliamentwatch/images/bg_newsletter.png" alt="bg_newsletter" />
+      <?php
+        $block = module_invoke('webform', 'block_view', 'client-block-10380');
+        print render($block['content']);
+      ?>
+      <a id="newsletter-trigger" class="icon-arrow-down desktop-only" href="#">Newsletter</a>
     </div>
   </div>
+</div>
+<hr class="mobile-only">
