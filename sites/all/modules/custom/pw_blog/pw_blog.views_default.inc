@@ -668,7 +668,7 @@ function pw_blog_views_default_views() {
   /* Display: Themen */
   $handler = $view->new_display('page', 'Themen', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Beträge zum Thema "%1"';
+  $handler->display->display_options['title'] = 'Beiträge zum Thema "%1"';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
@@ -1150,7 +1150,7 @@ print render($block[\'content\']);
     t('Feldgruppe'),
     t('Thema'),
     t('Themen'),
-    t('Beträge zum Thema "%1"'),
+    t('Beiträge zum Thema "%1"'),
     t('<div class="messages warning">Mit Ihrer Auswahl wurden keine passenden Beiträge gefunden</div>'),
     t('Alle'),
     t('Typ'),
