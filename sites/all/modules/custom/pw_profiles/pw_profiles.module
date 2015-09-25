@@ -235,18 +235,21 @@ function pw_profiles_views_query_alter(&$view, &$query) {
 
     // set custom title for overview page
     if($view->name == 'profile_list_rev' && $view->current_display == 'grid'){
-      $parliament = $view->args[0];
-      $role = $view->args[1];
-      if(strpos($parliament, 'bundestag') > -1){
+      $parliament = array_pop(taxonomy_get_term_by_name($view->args[0], 'parliaments'));
+      $role_name = $role == 'Candidate'?'Kandidierende':'Abgeordnete';
+      if(stripos($parliament->name, 'Bundestag') > -1){
         $text = $role == 'Candidate'?'@role für den @parliament':'@role aus dem @parliament';
       }
-      elseif(strpos($parliament, 'saarland') > -1){
+      elseif(stripos($parliament->name, 'Saarland') > -1){
         $text = '@role für das @parliament';
+      }
+      elseif(stripos($parliament->name, 'EU') == 0){
+        $text = '@role für die @parliament';
       }
       else{
         $text = '@role für @parliament';
       }
-      $view->build_info['title'] = format_string($text, array('@role' => t(ucfirst($role)), '@parliament' => ucfirst($parliament)));
+      $view->build_info['title'] = format_string($text, array('@role' => $role_name, '@parliament' => $parliament->name));
     }
   }
 }
