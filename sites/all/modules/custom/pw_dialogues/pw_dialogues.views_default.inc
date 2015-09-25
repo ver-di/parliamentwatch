@@ -328,7 +328,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   /* Display: Profile */
   $handler = $view->new_display('panel_pane', 'Profile', 'profile');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Fragen an [field_user_fname] [field_user_lname]';
+  $handler->display->display_options['title'] = 'Fragen an [field_user_title] [field_user_fname] [field_user_lname]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['display_description'] = 'A content pane used on the profile pages';
   $handler->display->display_options['defaults']['hide_attachment_summary'] = FALSE;
@@ -457,6 +457,14 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Benutzer: Title */
+  $handler->display->display_options['fields']['field_user_title']['id'] = 'field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['table'] = 'field_data_field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['relationship'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['fields']['field_user_title']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title']['element_label_colon'] = FALSE;
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -500,13 +508,12 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
     0 => 'field_dialogue_topic',
     1 => 'created',
     2 => 'field_dialogue_sender_name',
-    3 => 'field_dialogue_sender_name_1',
-    4 => 'field_dialogue_before_election',
-    5 => 'php_3',
-    6 => 'body',
-    7 => 'body_1',
-    8 => 'field_dialogue_annotation_1',
-    9 => 'field_dialogue_annotation',
+    3 => 'field_dialogue_before_election',
+    4 => 'php_3',
+    5 => 'body',
+    6 => 'body_1',
+    7 => 'field_dialogue_annotation_1',
+    8 => 'field_dialogue_annotation',
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'question';
@@ -1503,13 +1510,14 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset_3']['label'] = 'Fieldset Answer Inner';
   $handler->display->display_options['fields']['fieldset_3']['children'] = array(
     0 => 'field_user_picture',
-    1 => 'field_user_fname',
-    2 => 'field_user_lname',
-    3 => 'created_1',
-    4 => 'field_dialogue_is_standard_reply',
-    5 => 'field_dialogue_comment_body',
-    6 => 'field_dialogue_documents',
-    7 => 'field_dialogue_annotation',
+    1 => 'field_user_title',
+    2 => 'field_user_fname',
+    3 => 'field_user_lname',
+    4 => 'created_1',
+    5 => 'field_dialogue_is_standard_reply',
+    6 => 'field_dialogue_comment_body',
+    7 => 'field_dialogue_documents',
+    8 => 'field_dialogue_annotation',
   );
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'content-inner clearfix';
@@ -1530,6 +1538,14 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_s',
   );
+  /* Feld: Benutzer: Title */
+  $handler->display->display_options['fields']['field_user_title']['id'] = 'field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['table'] = 'field_data_field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['relationship'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['fields']['field_user_title']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title']['element_label_colon'] = FALSE;
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -1556,12 +1572,13 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['created_1']['label'] = '';
   $handler->display->display_options['fields']['created_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['created_1']['alter']['text'] = '<h3>
-    Antwort von [field_user_fname] [field_user_lname]<br/>
+    Antwort von [field_user_title] [field_user_fname] [field_user_lname]<br/>
     <span class="subline">[created_1]</span>
 </h3>';
   $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'date_only_short';
+  $handler->display->display_options['fields']['created_1']['second_date_format'] = 'long';
   /* Feld: Kommentar: Standard reply */
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['id'] = 'field_dialogue_is_standard_reply';
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['table'] = 'field_data_field_dialogue_is_standard_reply';
@@ -1674,8 +1691,6 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
     1 => 'php_1',
-    2 => 'php',
-    3 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';
@@ -1809,13 +1824,14 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['fieldset_3']['label'] = 'Fieldset Answer Inner';
   $handler->display->display_options['fields']['fieldset_3']['children'] = array(
     0 => 'field_user_picture',
-    1 => 'field_user_fname',
-    2 => 'field_user_lname',
-    3 => 'created_1',
-    4 => 'field_dialogue_is_standard_reply',
-    5 => 'field_dialogue_comment_body',
-    6 => 'field_dialogue_documents',
-    7 => 'field_dialogue_annotation',
+    1 => 'field_user_title',
+    2 => 'field_user_fname',
+    3 => 'field_user_lname',
+    4 => 'created_1',
+    5 => 'field_dialogue_is_standard_reply',
+    6 => 'field_dialogue_comment_body',
+    7 => 'field_dialogue_documents',
+    8 => 'field_dialogue_annotation',
   );
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'content-inner clearfix';
@@ -1836,6 +1852,14 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_s',
   );
+  /* Feld: Benutzer: Title */
+  $handler->display->display_options['fields']['field_user_title']['id'] = 'field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['table'] = 'field_data_field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
+  $handler->display->display_options['fields']['field_user_title']['relationship'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['fields']['field_user_title']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title']['element_label_colon'] = FALSE;
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -1862,12 +1886,13 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['created_1']['label'] = '';
   $handler->display->display_options['fields']['created_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['created_1']['alter']['text'] = '<h3>
-    Antwort von [field_user_fname] [field_user_lname]<br/>
+    Antwort von [field_user_title] [field_user_fname] [field_user_lname]<br/>
     <span class="subline">[created_1]</span>
 </h3>';
   $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'date_only_short';
+  $handler->display->display_options['fields']['created_1']['second_date_format'] = 'long';
   /* Feld: Kommentar: Standard reply */
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['id'] = 'field_dialogue_is_standard_reply';
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['table'] = 'field_data_field_dialogue_is_standard_reply';
@@ -1978,8 +2003,6 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['fieldset_4']['children'] = array(
     0 => 'nothing_1',
     1 => 'php_1',
-    2 => 'php',
-    3 => 'php_2',
   );
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_4']['fieldset']['classes'] = 'icon-link';
@@ -2107,7 +2130,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('edit question'),
     t('Alle'),
     t('Profile'),
-    t('Fragen an [field_user_fname] [field_user_lname]'),
+    t('Fragen an [field_user_title] [field_user_fname] [field_user_lname]'),
     t('A content pane used on the profile pages'),
     t('mehr'),
     t('Älteste zuerst'),
@@ -2122,6 +2145,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('Status der Frage'),
     t('View panes'),
     t('Full content'),
+    t('Fragen an [field_user_fname] [field_user_lname]'),
     t('A content pane used on the full content of the question'),
     t('Landingpage Parliament'),
     t('A content pane used on the election landingpage'),
@@ -2134,7 +2158,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('Fieldset Answer'),
     t('Fieldset Answer Inner'),
     t('<h3>
-    Antwort von [field_user_fname] [field_user_lname]<br/>
+    Antwort von [field_user_title] [field_user_fname] [field_user_lname]<br/>
     <span class="subline">[created_1]</span>
 </h3>'),
     t('Standard-Antwort <span class="ic-info ic-right"><span class="info-title"></span><span class="info-content element-hidden">"Standard-Antworten" sind Antworten, in denen Politiker mitteilen, dass sie über abgeordnetenwatch.de grundsätzlich nicht auf Fragen eingehen wollen. Diese werden in der Statistik als "keine Antwort" gewertet.</span></span>'),
