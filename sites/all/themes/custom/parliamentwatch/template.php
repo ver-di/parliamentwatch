@@ -5,12 +5,22 @@
  * This file is empty by default because the base theme chain (Alpha & Omega) provides
  * all the basic functionality. However, in case you wish to customize the output that Drupal
  * generates through Alpha & Omega this file is a good place to do so.
- * 
+ *
  * Alpha comes with a neat solution for keeping this file as clean as possible while the code
  * for your subtheme grows. Please read the README.txt in the /preprocess and /process subfolders
  * for more information on this topic.
  */
- 
+
+/*
+ * use custom template for login form
+ */
+function parliamentwatch_preprocess_node(&$vars) {
+  if($vars['view_mode'] == 'teaser') {
+    $vars['theme_hook_suggestions'][] = 'node__'.$vars['node']->type.'__teaser';
+    $vars['theme_hook_suggestions'][] = 'node__'.$vars['node']->nid.'__teaser';
+  }
+}
+
 /*
  * use custom template for login form
  */
@@ -56,7 +66,7 @@ function parliamentwatch_alpha_process_region(&$vars) {
  */
 function parliamentwatch_addressfield_formatter__linear($vars) {
   $loc = $vars['address'];
-  
+
   // Determine which location components to render
   $out = array();
   if (!empty($loc['name_line']) && $vars['name_line']) {
@@ -83,10 +93,10 @@ function parliamentwatch_addressfield_formatter__linear($vars) {
   if ($loc['country'] != addressfield_tokens_default_country() && $country_name = _addressfield_tokens_country($loc['country'])) {
     $out[] = $country_name;
   }
-  
+
   // Render the location components
   $output = implode(', ', $out);
-  
+
   return $output;
 }
 
@@ -123,14 +133,14 @@ function parliamentwatch_css_alter(&$css) {
     $css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css']['type'] = 'file';
   }
 }
- 
+
 /**
  * Implements hook_js_alter().
  */
 function parliamentwatch_js_alter(&$javascript) {
   $javascript[drupal_get_path('module', 'scroll_to_top') . '/scroll_to_top.js']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/js/scroll_to_top.js';
 }
- 
+
 /**
  * changing the path to the file icons.
  */
@@ -213,15 +223,15 @@ function parliamentwatch_qt_quicktabs_tabset($vars) {
     $item = array();
     if (is_array($vars['tabset']['tablinks'][$key])) {
       $tab = $vars['tabset']['tablinks'][$key];
-      
-      
+
+
       if ($key == $vars['tabset']['#options']['active']) {
         $item['class'] = array('active');
       }
       $tab['#title'] = "<span>".$tab['#title']."</span>";
       $tab['#options']['html'] = TRUE;
       $item['data'] = drupal_render($tab);
-  
+
       $variables['items'][] = $item;
     }
   }
@@ -229,7 +239,7 @@ function parliamentwatch_qt_quicktabs_tabset($vars) {
 }
 
 /////////////////////////// add sharethis js (ruth)
-////////////////////////////////////////////////////// 
+//////////////////////////////////////////////////////
 
 drupal_add_js('var switchTo5x=false;', 'inline');
 drupal_add_js('https://ws.sharethis.com/button/buttons.js', 'external');
@@ -265,7 +275,7 @@ function parliamentwatch_addthis_element($variables) {
 function parliamentwatch_delta_blocks_breadcrumb($variables) {
   $output = '';
 
-  if (!empty($variables['breadcrumb'])) {  
+  if (!empty($variables['breadcrumb'])) {
     if ($variables['breadcrumb_current']) {
       $variables['breadcrumb'][] = l(drupal_get_title(), current_path(), array('html' => TRUE));
     }
@@ -273,7 +283,7 @@ function parliamentwatch_delta_blocks_breadcrumb($variables) {
     $output = '<div id="breadcrumb" class="clearfix"><ul class="breadcrumb">';
     $switch = array('odd' => 'even', 'even' => 'odd');
     $zebra = 'even';
-    $last = count($variables['breadcrumb']) - 1;    
+    $last = count($variables['breadcrumb']) - 1;
 
     foreach ($variables['breadcrumb'] as $key => $item) {
       $zebra = $switch[$zebra];
@@ -389,14 +399,14 @@ function parliamentwatch_pager($variables) {
     $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters));
 
     global $base_path;
-    
+
     //set first page link
     $first = $li_first;
-    
+
     //set last page link
     $last = $li_last;
-    
-    
+
+
     //add left side arrow and text
     if ($li_previous == ""){
         $new_li_first = '<span>'.t('‹ prev').'</span>';
@@ -404,7 +414,7 @@ function parliamentwatch_pager($variables) {
         $new_li_previous = $li_previous;
         $new_li_first = str_replace(t('‹ prev'),''.t('‹ prev'),	$new_li_previous);
     }
-    
+
     //add rigth side arrow and text
     if ($li_next == ""){
         $new_li_last = '<span>'.t('next ›').'</span>';
