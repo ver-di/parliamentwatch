@@ -138,12 +138,12 @@ function pw_press_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'default' => 'default',
-            0 => 0,
             'document' => 0,
             'image' => 0,
             'video' => 0,
+            0 => 0,
+            'audio' => 0,
+            'default' => 'default',
           ),
           'browser_plugins' => array(
             'media_default--media_browser_1' => 0,

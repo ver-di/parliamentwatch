@@ -97,6 +97,8 @@ html {
   border-radius: 3px 3px 0 0;
   padding: 0 5px;
   font-weight: normal;
+  -webkit-box-shadow: 0 -4px 3px -2px #dfdfdf;
+  box-shadow: 0 -4px 3px -2px #dfdfdf;
   
 }
 #newsletter-wrapper form {

@@ -52,13 +52,15 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blogpost';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'sharethis' => array(
-      'weight' => '0',
-      'label' => 'hidden',
+    'author_linked_to_contact_form' => array(
+      'weight' => '4',
+      'label' => 'inline',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_expert',
+          'lb' => ' by ',
+          'lb-col' => TRUE,
         ),
       ),
     ),
@@ -82,18 +84,6 @@ function pw_blog_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:24:"pw_petitions-blog_teaser";}',
         'load_terms' => 0,
         'ft' => array(),
-      ),
-    ),
-    'author_linked_to_contact_form' => array(
-      'weight' => '4',
-      'label' => 'inline',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => ' by ',
-          'lb-col' => TRUE,
-        ),
       ),
     ),
     'custom_comment_counter' => array(
@@ -470,34 +460,34 @@ function pw_blog_ds_layout_settings_info() {
         0 => 'sharethis',
         1 => 'field_blogpost_blogtags',
         2 => 'title',
-        3 => 'custom_comment_counter',
-        4 => 'group_blog_author',
+        3 => 'group_blog_author',
+        4 => 'custom_comment_counter',
         5 => 'post_date',
         6 => 'group_blog_metainformation',
-        7 => 'author_linked_to_contact_form',
-        8 => 'body',
+        7 => 'body',
+        8 => 'author_linked_to_contact_form',
         9 => 'blog_petition_teaser',
         10 => 'group_blog_social_media',
         11 => 'field_blogpost_categories',
-        12 => 'comments',
-        13 => 'sharethis_horizontal',
+        12 => 'sharethis_horizontal',
+        13 => 'comments',
       ),
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
       'field_blogpost_blogtags' => 'ds_content',
       'title' => 'ds_content',
-      'custom_comment_counter' => 'ds_content',
       'group_blog_author' => 'ds_content',
+      'custom_comment_counter' => 'ds_content',
       'post_date' => 'ds_content',
       'group_blog_metainformation' => 'ds_content',
-      'author_linked_to_contact_form' => 'ds_content',
       'body' => 'ds_content',
+      'author_linked_to_contact_form' => 'ds_content',
       'blog_petition_teaser' => 'ds_content',
       'group_blog_social_media' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
-      'comments' => 'ds_content',
       'sharethis_horizontal' => 'ds_content',
+      'comments' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

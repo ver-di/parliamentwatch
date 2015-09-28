@@ -43,7 +43,10 @@ print theme('status_messages');
 <div class="managed-content clearfix push-bottom-l">
   <?php print check_markup($body[0]['value']);?>
 </div>
-
+<?php
+  $block = module_invoke('block', 'block_view', '12');
+  print render($block["content"]);
+?>
 <?php
 // render comments if there are any
 $comments = render(comment_node_page_additions($node));

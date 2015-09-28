@@ -2603,6 +2603,17 @@ $display_output = rtrim($display_output);',
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'prefix_suffix' => TRUE,
             'scale' => 0,
             'thousand_separator' => ' ',

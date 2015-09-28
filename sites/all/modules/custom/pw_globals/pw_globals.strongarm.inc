@@ -491,7 +491,7 @@ function pw_globals_strongarm() {
         'sharethis' => array(
           'default' => array(
             'weight' => '0',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
         ),
       ),

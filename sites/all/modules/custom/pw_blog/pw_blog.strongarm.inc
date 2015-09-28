@@ -175,7 +175,7 @@ function pw_blog_strongarm() {
         'sharethis' => array(
           'full' => array(
             'weight' => '0',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
           'teaser' => array(
             'weight' => '0',

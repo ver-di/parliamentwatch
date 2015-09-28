@@ -73,7 +73,7 @@ function pw_newsletter_field_default_fields() {
             ),
           ),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -324,8 +324,9 @@ function pw_newsletter_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'textformatter',
+          'module' => 'entityreference',
           'settings' => array(
+            'link' => 1,
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -337,27 +338,15 @@ function pw_newsletter_field_default_fields() {
               'destination' => '',
               'linked' => 0,
             ),
-            'textformatter_class' => '',
-            'textformatter_comma_and' => 0,
-            'textformatter_comma_full_stop' => 0,
-            'textformatter_comma_override' => 0,
-            'textformatter_comma_tag' => '0',
-            'textformatter_contrib' => array(
-              'entityreference_link' => 1,
-            ),
-            'textformatter_separator_custom' => '',
-            'textformatter_separator_custom_class' => 'textformatter-separator',
-            'textformatter_separator_custom_tag' => 'span',
-            'textformatter_term_plain' => 0,
-            'textformatter_type' => 'comma',
           ),
-          'type' => 'textformatter_list',
+          'type' => 'entityreference_label',
           'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'inline',
-          'module' => 'textformatter',
+          'module' => 'entityreference',
           'settings' => array(
+            'link' => 1,
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -369,21 +358,8 @@ function pw_newsletter_field_default_fields() {
               'destination' => '',
               'linked' => 0,
             ),
-            'textformatter_class' => 'textformatter-list',
-            'textformatter_comma_and' => 0,
-            'textformatter_comma_full_stop' => 0,
-            'textformatter_comma_override' => 0,
-            'textformatter_comma_tag' => '0',
-            'textformatter_contrib' => array(
-              'entityreference_link' => 1,
-            ),
-            'textformatter_separator_custom' => '',
-            'textformatter_separator_custom_class' => 'textformatter-separator',
-            'textformatter_separator_custom_tag' => 'span',
-            'textformatter_term_plain' => 0,
-            'textformatter_type' => 'comma',
           ),
-          'type' => 'textformatter_list',
+          'type' => 'entityreference_label',
           'weight' => '5',
         ),
       ),

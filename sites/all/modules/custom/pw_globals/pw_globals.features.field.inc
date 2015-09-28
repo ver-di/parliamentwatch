@@ -339,24 +339,9 @@ function pw_globals_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'image',
-          'weight' => 1,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
         ),
         'search_result' => array(
           'label' => 'above',
