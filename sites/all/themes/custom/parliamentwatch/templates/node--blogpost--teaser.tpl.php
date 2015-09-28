@@ -6,7 +6,7 @@
   Veröffentlicht am <?php print format_date($node->created, 'custom', 'd.m.Y'); ?>
   um <?php print format_date($node->created, 'custom', 'H:i'); ?>
   von <a href="/feedback?url=<?php print $nid; ?>&amp;width=600&amp;height=400" class="colorbox-node"><?php print $node->name; ?></a> in
-  <?php print _pw_get_linked_terms($field_blogpost_categories); ?>
+  <?php print render($content['field_blogpost_categories']); ?>
 </p>
 <div class="clearfix push-bottom-s">
   <?php if (!empty($field_teaser_image)): ?>
@@ -22,13 +22,12 @@
   </div>
   <?php endif; ?>
   <div class="field-body">
-    <?php print check_markup($body[0]['summary']); ?>
-    <a class="icon-more" href="<?php print $node_url; ?>" title="zum Blogartikel"> weiterlesen</a>
+    <?php print render($content['body']); ?>
   </div>
 </div>
 <?php if (!empty($field_blogpost_blogtags)): ?>
   <div class="icon-taxonomy">
-    <?php print _pw_get_linked_terms($field_blogpost_blogtags); ?>
+    <?php print render($content['field_blogpost_blogtags']); ?>
   </div>
 <?php endif; ?>
 <div class="clear clearfix">

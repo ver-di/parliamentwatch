@@ -542,7 +542,7 @@ function pw_blog_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'taxonomy',
+          'module' => 'ds',
           'settings' => array(
             'linked_field' => array(
               'advanced' => array(
@@ -555,8 +555,10 @@ function pw_blog_field_default_fields() {
               'destination' => '',
               'linked' => 0,
             ),
+            'taxonomy_term_link' => 1,
+            'taxonomy_term_separator' => ', ',
           ),
-          'type' => 'taxonomy_term_reference_plain',
+          'type' => 'ds_taxonomy_separator',
           'weight' => '4',
         ),
       ),
@@ -689,8 +691,8 @@ function pw_blog_field_default_fields() {
           'weight' => '34',
         ),
         'teaser' => array(
-          'label' => 'above',
-          'module' => 'taxonomy',
+          'label' => 'hidden',
+          'module' => 'ds',
           'settings' => array(
             'linked_field' => array(
               'advanced' => array(
@@ -703,8 +705,10 @@ function pw_blog_field_default_fields() {
               'destination' => '',
               'linked' => 0,
             ),
+            'taxonomy_term_link' => TRUE,
+            'taxonomy_term_separator' => ', ',
           ),
-          'type' => 'taxonomy_term_reference_plain',
+          'type' => 'ds_taxonomy_separator',
           'weight' => '2',
         ),
       ),
