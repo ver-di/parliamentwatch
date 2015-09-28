@@ -190,7 +190,19 @@ function pw_blog_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '6',
         ),
@@ -282,6 +294,17 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -400,6 +423,17 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'textformatter',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'textformatter_class' => '',
             'textformatter_comma_and' => 0,
             'textformatter_comma_full_stop' => 0,
@@ -509,7 +543,19 @@ function pw_blog_field_default_fields() {
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_plain',
           'weight' => '4',
         ),
@@ -585,6 +631,17 @@ function pw_blog_field_default_fields() {
           'module' => 'shs',
           'settings' => array(
             'linked' => FALSE,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'shs_default',
           'weight' => '1',
@@ -634,7 +691,19 @@ function pw_blog_field_default_fields() {
         'teaser' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_plain',
           'weight' => '2',
         ),
@@ -710,6 +779,17 @@ function pw_blog_field_default_fields() {
           'module' => 'file_entity',
           'settings' => array(
             'file_view_mode' => 'pw_file_landscape_l',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'file_rendered',
           'weight' => '5',
@@ -758,6 +838,17 @@ function pw_blog_field_default_fields() {
           'settings' => array(
             'image_link' => 'content',
             'image_style' => 'pw_landscape_l',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '1',

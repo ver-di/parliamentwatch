@@ -199,7 +199,7 @@ function pw_newsletter_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'float-left push-bottom-s push-right-m pw-landscape-l',
+          'ow-cl' => 'float-left push-right-m pw-landscape-l',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,

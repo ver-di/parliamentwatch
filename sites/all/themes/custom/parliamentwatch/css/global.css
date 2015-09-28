@@ -2024,8 +2024,8 @@ ul.tabs li a:active {
 #edit-field-blogpost-categories-wrapper {
     margin-right: 20px;
 }
-.view-blog .field-body {
-    margin-bottom: 1em;
+.view-blog .field-body p {
+    margin-bottom: 0 !important;
 }
 #view-display-id-block_1 a {
     color:
