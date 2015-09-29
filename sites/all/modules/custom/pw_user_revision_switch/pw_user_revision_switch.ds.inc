@@ -5,6 +5,115 @@
  */
 
 /**
+ * Implements hook_ds_field_settings_info().
+ */
+function pw_user_revision_switch_ds_field_settings_info() {
+  $export = array();
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'ds_views|pw_user_profile_fields_rev-about_page|default';
+  $ds_fieldsetting->entity_type = 'ds_views';
+  $ds_fieldsetting->bundle = 'pw_user_profile_fields_rev-about_page';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'header' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'rows' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'footer' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['ds_views|pw_user_profile_fields_rev-about_page|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'ds_views|pw_user_profile_fields_rev-additional_links_page|default';
+  $ds_fieldsetting->entity_type = 'ds_views';
+  $ds_fieldsetting->bundle = 'pw_user_profile_fields_rev-additional_links_page';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'header' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'rows' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'footer' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['ds_views|pw_user_profile_fields_rev-additional_links_page|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'ds_views|pw_user_profile_fields_rev-image_gallery_page|default';
+  $ds_fieldsetting->entity_type = 'ds_views';
+  $ds_fieldsetting->bundle = 'pw_user_profile_fields_rev-image_gallery_page';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'header' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'rows' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'footer' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['ds_views|pw_user_profile_fields_rev-image_gallery_page|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'ds_views|pw_user_profile_fields_rev-political_goals_page|default';
+  $ds_fieldsetting->entity_type = 'ds_views';
+  $ds_fieldsetting->bundle = 'pw_user_profile_fields_rev-political_goals_page';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'header' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'rows' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'footer' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['ds_views|pw_user_profile_fields_rev-political_goals_page|default'] = $ds_fieldsetting;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_custom_fields_info().
  */
 function pw_user_revision_switch_ds_custom_fields_info() {
