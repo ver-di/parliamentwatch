@@ -47,7 +47,7 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
   }
 
   // set custom breadcrumb
-  pw_user_set_custom_breadcrumb($account);
+  // pw_user_set_custom_breadcrumb($account);
 
   return user_view($account, $view_mode, $langcode);
 }
@@ -56,6 +56,7 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
  * Set custom breadcrumb for user revision.
  */
 function pw_user_set_custom_breadcrumb($account){
+  return;
   // custom breadcrumb
   $breadcrumb = array();
   $breadcrumb[] = l(t('Home'), '<front>');
@@ -80,13 +81,14 @@ function pw_user_set_custom_breadcrumb($account){
 }
 
 /**
- * Set custom page title for user revision.
+ * Set custom page title for user and user revision.
  */
 function pw_user_set_custom_title($account){
-  // custom title
-  if(!strpos(request_uri(), 'archive')){
-    $account_full_name = $account->field_user_fname['und'][0]['value'].' '.$account->field_user_lname['und'][0]['value'];
-    drupal_set_title($account_full_name);
+  if(arg(0) == 'profile' || arg(0) == 'user'){
+    $title = field_get_items('user', $account, 'field_user_title');
+    $first_name = field_get_items('user', $account, 'field_user_fname');
+    $last_name = field_get_items('user', $account, 'field_user_lname');
+    drupal_set_title(trim($title[0]['value'].' '.$first_name[0]['value'].' '.$last_name[0]['value']));
   }
 }
 

@@ -38,6 +38,14 @@ function pw_user_revision_switch_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -104,7 +112,7 @@ return $result;
   /* Display: Basic Info */
   $handler = $view->new_display('block', 'Basic Info', 'basic_info');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Grunddaten von [field_user_fname-revision_id] [field_user_lname-revision_id]';
+  $handler->display->display_options['title'] = 'Grunddaten von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'zebra clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -158,6 +166,14 @@ return $result;
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -300,7 +316,7 @@ return $result;
   /* Display: About */
   $handler = $view->new_display('block', 'About', 'about');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '[field_user_fname-revision_id] [field_user_lname-revision_id] über sich';
+  $handler->display->display_options['title'] = '[field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id] über sich';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -328,51 +344,6 @@ return $result;
 ';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   $handler->display->display_options['header']['area']['tokenize'] = TRUE;
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Excluded | VID */
-  $handler->display->display_options['fields']['vid']['id'] = 'vid';
-  $handler->display->display_options['fields']['vid']['table'] = 'user_revision';
-  $handler->display->display_options['fields']['vid']['field'] = 'vid';
-  $handler->display->display_options['fields']['vid']['ui_name'] = 'Excluded | VID';
-  $handler->display->display_options['fields']['vid']['label'] = '';
-  $handler->display->display_options['fields']['vid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | First Name */
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['ui_name'] = 'Excluded | First Name';
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Last Name */
-  $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
-  $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
-  $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
-  $handler->display->display_options['fields']['field_user_lname-revision_id']['ui_name'] = 'Excluded | Last Name';
-  $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_lname-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | Party */
-  $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
-  $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
-  $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
-  $handler->display->display_options['fields']['field_user_party-revision_id']['ui_name'] = 'Excluded | Party';
-  $handler->display->display_options['fields']['field_user_party-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_party-revision_id']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['alter']['text'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
-  $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (Historische Daten): About */
-  $handler->display->display_options['fields']['field_user_about-revision_id']['id'] = 'field_user_about-revision_id';
-  $handler->display->display_options['fields']['field_user_about-revision_id']['table'] = 'field_revision_field_user_about';
-  $handler->display->display_options['fields']['field_user_about-revision_id']['field'] = 'field_user_about-revision_id';
-  $handler->display->display_options['fields']['field_user_about-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_about-revision_id']['element_type'] = 'div';
-  $handler->display->display_options['fields']['field_user_about-revision_id']['element_class'] = 'pw-expander';
-  $handler->display->display_options['fields']['field_user_about-revision_id']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_user_about-revision_id']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterium: Benutzer (Historische Daten): About (field_user_about) */
@@ -384,7 +355,7 @@ return $result;
   /* Display: About Page */
   $handler = $view->new_display('page', 'About Page', 'about_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = '[field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id] über sich';
+  $handler->display->display_options['title'] = '[field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id] über sich';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -454,6 +425,14 @@ return $result;
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -553,7 +532,7 @@ return $result;
   /* Display: Image Gallery */
   $handler = $view->new_display('block', 'Image Gallery', 'image_gallery');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Bildergalerie von [field_user_fname-revision_id] [field_user_lname-revision_id]';
+  $handler->display->display_options['title'] = 'Bildergalerie von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
@@ -610,6 +589,14 @@ return $result;
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -668,7 +655,7 @@ return $result;
   /* Display: Image Gallery Page */
   $handler = $view->new_display('page', 'Image Gallery Page', 'image_gallery_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Bildergalerie von  [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
+  $handler->display->display_options['title'] = 'Bildergalerie von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix field-name-user-image-gallery';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -746,6 +733,14 @@ return $result;
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -873,7 +868,7 @@ return $result;
   /* Display: Political Goals */
   $handler = $view->new_display('block', 'Political Goals', 'political_goals');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Die politischen Ziele von [field_user_fname-revision_id] [field_user_lname-revision_id]';
+  $handler->display->display_options['title'] = 'Die politischen Ziele von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -932,6 +927,14 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -968,7 +971,7 @@ return $result;
   /* Display: Political Goals Page */
   $handler = $view->new_display('page', 'Political Goals Page', 'political_goals_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Die politischen Ziele von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
+  $handler->display->display_options['title'] = 'Die politischen Ziele von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -1036,6 +1039,14 @@ return $result;
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -1140,7 +1151,7 @@ return $result;
   /* Display: Additional Links */
   $handler = $view->new_display('block', 'Additional Links', 'additional_links');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id]';
+  $handler->display->display_options['title'] = 'Weiterführende Links von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1173,6 +1184,13 @@ return $result;
   $handler->display->display_options['fields']['vid']['label'] = '';
   $handler->display->display_options['fields']['vid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -1224,7 +1242,7 @@ return $result;
   /* Display: Additional Links Page */
   $handler = $view->new_display('page', 'Additional Links Page', 'additional_links_page');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]';
+  $handler->display->display_options['title'] = 'Weiterführende Links von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'clearfix';
   $handler->display->display_options['defaults']['access'] = FALSE;
@@ -1299,6 +1317,14 @@ return $result;
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Feld: Excluded | Title */
+  $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['ui_name'] = 'Excluded | Title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   /* Feld: Excluded | First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -2698,7 +2724,7 @@ return $term->tid;';
     t('Profilfoto'),
     t('Alle'),
     t('Basic Info'),
-    t('Grunddaten von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
+    t('Grunddaten von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]'),
     t('Get all revisions from an user.'),
     t('Begriff aus field_user_constituency'),
     t('Begriff aus field_user_list_position'),
@@ -2713,7 +2739,7 @@ return $term->tid;';
     t('Liste'),
     t('[field_user_list-revision_id], Platz [name_1]'),
     t('About'),
-    t('[field_user_fname-revision_id] [field_user_lname-revision_id] über sich'),
+    t('[field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id] über sich'),
     t('<div id="about" class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] <?php print t(\'about\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>
 '),
     t('About Page'),
@@ -2723,7 +2749,7 @@ return $term->tid;';
     t('Über mich'),
     t('zum vollständigen Profil'),
     t('Image Gallery'),
-    t('Bildergalerie von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
+    t('Bildergalerie von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]'),
     t('weiterlesen'),
     t('<div id="imagegallery" class="add-sharethis" vid="[vid]" title="<?php print t(\'Imagegallery of \'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
     t('Image Gallery Page'),
@@ -2734,16 +2760,15 @@ return $term->tid;';
     t('Bild von field_user_image_gallery'),
     t('Feldgruppe'),
     t('Political Goals'),
-    t('Die politischen Ziele von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
+    t('Die politischen Ziele von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]'),
     t('<div id="political-goals" class="add-sharethis" vid="[vid]" title="<?php print t(\'Political Goals of\'); ?> [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
     t('Political Goals Page'),
     t('Die politischen Ziele von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
     t('Politische Ziele'),
     t('Additional Links'),
-    t('Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id]'),
+    t('Weiterführende Links von [field_user_title-revision_id] [field_user_fname-revision_id] [field_user_lname-revision_id]'),
     t('<div id="additional-links" class="add-sharethis" vid="[vid]" title="<?php print t(\'Additional links of\'); ?> [field_user_party-revision_id]"></div>'),
     t('Additional Links Page'),
-    t('Weiterführende Links von [field_user_fname-revision_id] [field_user_lname-revision_id], [field_user_party-revision_id]'),
     t('<div class="add-sharethis" title="<?php print t(\'Additional Links of\'); ?> [field_user_fname-revision_id]  [field_user_lname-revision_id], [field_user_party-revision_id]"></div>'),
     t('<h3>Weiterführende Links</h3>'),
     t('Short Profile Premium Mainpage'),

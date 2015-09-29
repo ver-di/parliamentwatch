@@ -199,6 +199,9 @@ function pw_seo_metatag_export_default() {
   $config['node:blogpost'] = array(
     'instance' => 'node:blogpost',
     'config' => array(
+      'title' => array(
+        'value' => '[site:name] | [node:title]',
+      ),
       'abstract' => array(
         'value' => '[node:summary]',
       ),
@@ -223,7 +226,7 @@ function pw_seo_metatag_export_default() {
         'value' => 'Blog',
       ),
       'itemprop:name' => array(
-        'value' => 'abgeordnetenwatch.de: [node:title]',
+        'value' => '[site:name] | [node:title]',
       ),
       'itemprop:image' => array(
         'value' => '[node:field-teaser-image:file:url]',
@@ -232,7 +235,7 @@ function pw_seo_metatag_export_default() {
         'value' => 'blog',
       ),
       'og:title' => array(
-        'value' => 'abgeordnetenwatch.de: [node:title]',
+        'value' => '[site:name] | [node:title]',
       ),
       'og:image' => array(
         'value' => '[node:field-teaser-image:file:url]',
@@ -247,7 +250,7 @@ function pw_seo_metatag_export_default() {
         'value' => '187',
       ),
       'twitter:title' => array(
-        'value' => 'abgeordnetenwatch.de: [node:title]',
+        'value' => '[site:name] | [node:title]',
       ),
       'twitter:image:src' => array(
         'value' => '[node:field-teaser-image:file:url]',
@@ -265,6 +268,9 @@ function pw_seo_metatag_export_default() {
   $config['node:press_release'] = array(
     'instance' => 'node:press_release',
     'config' => array(
+      'title' => array(
+        'value' => '[site:name] | [node:title]',
+      ),
       'abstract' => array(
         'value' => '[node:summary]',
       ),
@@ -286,13 +292,13 @@ function pw_seo_metatag_export_default() {
         'value' => 'Article',
       ),
       'itemprop:name' => array(
-        'value' => 'PM abgeordnetenwatch.de: [node:title]',
+        'value' => '[site:name] | [node:title]',
       ),
       'og:title' => array(
-        'value' => 'PM abgeordnetenwatch.de: [node:title]',
+        'value' => '[site:name] | [node:title]',
       ),
       'twitter:title' => array(
-        'value' => 'PM abgeordnetenwatch.de: [node:title]',
+        'value' => '[site:name] | [node:title]',
       ),
     ),
   );
@@ -300,7 +306,6 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: taxonomy_term.
   $config['taxonomy_term'] = array(
     'instance' => 'taxonomy_term',
-    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[term:name] | [site:name]',
@@ -334,7 +339,7 @@ function pw_seo_metatag_export_default() {
     'instance' => 'user',
     'config' => array(
       'title' => array(
-        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament] auf [site:name]',
+        'value' => '[site:name] | Profil von [user:field-user-title] [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
       ),
       'robots' => array(
         'value' => array(
@@ -357,16 +362,16 @@ function pw_seo_metatag_export_default() {
         'value' => 'Person',
       ),
       'itemprop:name' => array(
-        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
+        'value' => '[site:name] | Profil von [user:field-user-title] [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
       ),
       'og:type' => array(
         'value' => 'politician',
       ),
       'og:title' => array(
-        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament] auf [site:name]',
+        'value' => '[site:name] | Profil von [user:field-user-title] [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
       ),
       'og:description' => array(
-        'value' => 'Das Profil von [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament] auf [site:name]',
+        'value' => '[site:name] | Profil von [user:field-user-title] [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
       ),
       'og:image' => array(
         'value' => '[site:url]sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
@@ -375,7 +380,7 @@ function pw_seo_metatag_export_default() {
         'value' => '[user:name]',
       ),
       'twitter:title' => array(
-        'value' => '[user:field-user-fname] [user:field_user_lname], [user:field-user-party]',
+        'value' => '[site:name] | Profil von [user:field-user-title] [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
       ),
       'twitter:image:src' => array(
         'value' => '[site:url]sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',

@@ -14,14 +14,14 @@ function pw_kandidatencheck_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_pw_kc_position';
-  $strongarm->value = 'edit-submission';
+  $strongarm->value = 'edit-rabbit-hole';
   $export['additional_settings__active_tab_pw_kc_position'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_pw_kc_thesis';
-  $strongarm->value = 'edit-search-restrict';
+  $strongarm->value = 'edit-rabbit-hole';
   $export['additional_settings__active_tab_pw_kc_thesis'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -403,6 +403,76 @@ function pw_kandidatencheck_strongarm() {
   $strongarm->name = 'resp_img_taxonomy_term_pw_kc_votes_field_pw_kc_votes_classname';
   $strongarm->value = 0;
   $export['resp_img_taxonomy_term_pw_kc_votes_field_pw_kc_votes_classname'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_pw_kc_position';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_pw_kc_position'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_pw_kc_thesis';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_pw_kc_thesis'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_pw_kc_position';
+  $strongarm->value = '3';
+  $export['rh_node_action_pw_kc_position'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_pw_kc_thesis';
+  $strongarm->value = '3';
+  $export['rh_node_action_pw_kc_thesis'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_pw_kc_position';
+  $strongarm->value = 0;
+  $export['rh_node_override_pw_kc_position'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_pw_kc_thesis';
+  $strongarm->value = 0;
+  $export['rh_node_override_pw_kc_thesis'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_pw_kc_position';
+  $strongarm->value = 'profile/[node:field_pw_kc_user_reference]';
+  $export['rh_node_redirect_pw_kc_position'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_pw_kc_thesis';
+  $strongarm->value = '[node:field_parliament]';
+  $export['rh_node_redirect_pw_kc_thesis'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_pw_kc_position';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_pw_kc_position'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_pw_kc_thesis';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_pw_kc_thesis'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

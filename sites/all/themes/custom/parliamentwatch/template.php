@@ -11,15 +11,6 @@
  * for more information on this topic.
  */
 
-/*
- * use custom template for login form
- */
-function parliamentwatch_preprocess_node(&$vars) {
-  if($vars['view_mode'] == 'teaser') {
-    $vars['theme_hook_suggestions'][] = 'node__'.$vars['node']->type.'__teaser';
-    $vars['theme_hook_suggestions'][] = 'node__'.$vars['node']->nid.'__teaser';
-  }
-}
 
 /*
  * use custom template for login form
@@ -29,7 +20,7 @@ function parliamentwatch_theme(&$existing, $type, $theme, $path) {
     'template' => 'templates/user-login',
     'render element' => 'form',
     // other theme registration code...
-  );
+    );
   return $hooks;
 }
 
@@ -106,30 +97,30 @@ function parliamentwatch_addressfield_formatter__linear($vars) {
 function parliamentwatch_css_alter(&$css) {
   // Use parliamentwatch horizontal-tabs.css instead of the default one.
   if (isset($css['sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.css'])) {
-    $css['sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/horizontal-tabs.css';
+    $css['sites/all/modules/contrib/field_group/horizontal-tabs/horizontal-tabs.css']['data'] = drupal_get_path('theme', 'parliamentwatch').'/css/horizontal-tabs.css';
     $css['sites/all/modules/contrib/scroll_to_top/horizontal-tabs.css']['type'] = 'file';
   }
   // Use parliamentwatch scroll_to_top.css instead of the default one.
   if (isset($css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css'])) {
-    $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/scroll_to_top.css';
+    $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['data'] = drupal_get_path('theme', 'parliamentwatch').'/css/scroll_to_top.css';
     $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['type'] = 'file';
   }
   // Use parliamentwatch jcarousel-default.css instead of the default one.
   if (isset($css['sites/all/modules/contrib/jcarousel/skins/default/jcarousel-default.css'])) {
-    $css['sites/all/modules/contrib/jcarousel/skins/default/jcarousel-default.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/jcarousel-default.css';
+    $css['sites/all/modules/contrib/jcarousel/skins/default/jcarousel-default.css']['data'] = drupal_get_path('theme', 'parliamentwatch').'/css/jcarousel-default.css';
     $css['sites/all/modules/contrib/scroll_to_top/scroll_to_top.css']['type'] = 'file';
   }
   // change tb_megamenu layout
   if (isset($css['sites/all/modules/contrib/tb_megamenu/css/base.css'])) {
-    $css['sites/all/modules/contrib/tb_megamenu/css/base.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/tb_megamenu/base.css';
+    $css['sites/all/modules/contrib/tb_megamenu/css/base.css']['data'] = drupal_get_path('theme', 'parliamentwatch').'/css/tb_megamenu/base.css';
     $css['sites/all/modules/contrib/tb_megamenu/css/base.css']['type'] = 'file';
   }
   if (isset($css['sites/all/modules/contrib/tb_megamenu/css/default.css'])) {
-    $css['sites/all/modules/contrib/tb_megamenu/css/default.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/tb_megamenu/default.css';
+    $css['sites/all/modules/contrib/tb_megamenu/css/default.css']['data'] = drupal_get_path('theme', 'parliamentwatch').'/css/tb_megamenu/default.css';
     $css['sites/all/modules/contrib/tb_megamenu/css/default.css']['type'] = 'file';
   }
   if (isset($css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css'])) {
-    $css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/css/tb_megamenu/bootstrap.css';
+    $css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css']['data'] = drupal_get_path('theme', 'parliamentwatch').'/css/tb_megamenu/bootstrap.css';
     $css['sites/all/modules/contrib/tb_megamenu/css/bootstrap.css']['type'] = 'file';
   }
 }
@@ -138,7 +129,7 @@ function parliamentwatch_css_alter(&$css) {
  * Implements hook_js_alter().
  */
 function parliamentwatch_js_alter(&$javascript) {
-  $javascript[drupal_get_path('module', 'scroll_to_top') . '/scroll_to_top.js']['data'] = drupal_get_path('theme', 'parliamentwatch') . '/js/scroll_to_top.js';
+  $javascript[drupal_get_path('module', 'scroll_to_top').'/scroll_to_top.js']['data'] = drupal_get_path('theme', 'parliamentwatch').'/js/scroll_to_top.js';
 }
 
 /**
@@ -147,11 +138,11 @@ function parliamentwatch_js_alter(&$javascript) {
 
 function parliamentwatch_file_icon($variables) {
   $file = $variables['file'];
-  $icon_directory = drupal_get_path('theme', 'parliamentwatch') . '/images/fileicons';
+  $icon_directory = drupal_get_path('theme', 'parliamentwatch').'/images/fileicons';
 
   $mime = check_plain($file->filemime);
   $icon_url = file_icon_url($file, $icon_directory);
-  return '<img alt="" class="file-icon" src="' . $icon_url . '" title="' . $mime . '" />';
+  return '<img alt="" class="file-icon" src="'.$icon_url.'" title="'.$mime.'" />';
 }
 
 
@@ -188,7 +179,7 @@ function abgeordnetenwatch_pager_link($variables) {
         t('‹ previous') => t('Go to previous page'),
         t('next ›') => t('Go to next page'),
         t('last »') => t('Go to last page'),
-      );
+        );
     }
     if (isset($titles[$text])) {
       $attributes['title'] = $titles[$text];
@@ -204,7 +195,7 @@ function abgeordnetenwatch_pager_link($variables) {
   //   possible to use l() here.
   // @see http://drupal.org/node/1410574
   $attributes['href'] = url($_GET['q'], array('query' => $query));
-  return '<a' . drupal_attributes($attributes) . '><span>' . check_plain($text) . '</span></a>';
+  return '<a'.drupal_attributes($attributes).'><span>'.check_plain($text).'</span></a>';
 }
 
 
@@ -215,10 +206,10 @@ function abgeordnetenwatch_pager_link($variables) {
 function parliamentwatch_qt_quicktabs_tabset($vars) {
   $variables = array(
     'attributes' => array(
-      'class' => 'quicktabs-tabs quicktabs-style-' . $vars['tabset']['#options']['style'],
-    ),
+      'class' => 'quicktabs-tabs quicktabs-style-'.$vars['tabset']['#options']['style'],
+      ),
     'items' => array(),
-  );
+    );
   foreach (element_children($vars['tabset']['tablinks']) as $key) {
     $item = array();
     if (is_array($vars['tabset']['tablinks'][$key])) {
@@ -253,10 +244,10 @@ function parliamentwatch_addthis_element($variables) {
   $element = $variables['addthis_element'];
   $element['#attributes']['src'] = '/sites/all/themes/custom/abgeordnetenwatch/images/ic_share.png';
   if (!isset($element['#value'])) {
-    return '<' . $element['#tag'] . drupal_attributes($element['#attributes']) . " />\n";
+    return '<'.$element['#tag'].drupal_attributes($element['#attributes'])." />\n";
   }
 
-  $output = '<' . $element['#tag'] . drupal_attributes($element['#attributes']) . '>';
+  $output = '<'.$element['#tag'].drupal_attributes($element['#attributes']).'>';
   if (isset($element['#value_prefix'])) {
     $output .= $element['#value_prefix'];
   }
@@ -264,7 +255,7 @@ function parliamentwatch_addthis_element($variables) {
   if (isset($element['#value_suffix'])) {
     $output .= $element['#value_suffix'];
   }
-  $output .= '</' . $element['#tag'] . ">\n";
+  $output .= '</'.$element['#tag'].">\n";
   return $output;
 }
 
@@ -275,51 +266,204 @@ function parliamentwatch_addthis_element($variables) {
 function parliamentwatch_delta_blocks_breadcrumb($variables) {
   $output = '';
 
-  if (!empty($variables['breadcrumb'])) {
-    if ($variables['breadcrumb_current']) {
-      $variables['breadcrumb'][] = l(drupal_get_title(), current_path(), array('html' => TRUE));
+  $menu_item = menu_get_item();
+
+  // only rewrite non basic pages
+  if(!isset($menu_item['page_arguments'][0]->type) || $menu_item['page_arguments'][0]->type != 'page'){
+
+    $variables['breadcrumb'] = array(l('Startseite', '/'));
+
+    // add parliament
+    $parliament = _pw_get_current_parliament_term();
+    if($parliament){
+      $parliament_name = strtolower($parliament->name);
+      $variables['breadcrumb'][] = l('Parlamente', 'http://www.abgeordnetenwatch.de/parlamente-210-0.html');
+
+      // breadcrumb only if not on parliament page
+      if(!isset($menu_item['page_arguments'][0]->tid) || $menu_item['page_arguments'][0]->tid != $parliament->tid){
+        $variables['breadcrumb'][] = l($parliament->name, 'taxonomy/term/'.$parliament->tid);
+      }
     }
 
-    $output = '<div id="breadcrumb" class="clearfix"><ul class="breadcrumb">';
-    $switch = array('odd' => 'even', 'even' => 'odd');
-    $zebra = 'even';
-    $last = count($variables['breadcrumb']) - 1;
+    // taxonomy term views integrator
+    if($menu_item['page_callback'] == 'tvi_render_view'){
 
-    foreach ($variables['breadcrumb'] as $key => $item) {
-      $zebra = $switch[$zebra];
-      $attributes['class'] = array('depth-' . ($key + 1), $zebra);
+      // blog tags and categories
+      if(in_array($menu_item['page_arguments'][0]->vocabulary_machine_name, array('blogtags', 'blogcategories'))){
+        $variables['breadcrumb'][] = l('Blog', 'blog');
+      }
+    }
 
-      if ($key == 0) {
-        $attributes['class'][] = 'first';
+    // views
+    elseif($menu_item['page_callback'] == 'views_page'){
+
+      // views pages under about us
+      if(in_array($menu_item['page_arguments'][0], array('press_articles', 'press_release'))){
+        $variables['breadcrumb'][] = l('Über uns', 'ueber-uns');
       }
 
-      if ($key == $last) {
-        $attributes['class'][] = 'last';
+      // view page calendar
+      elseif($menu_item['page_arguments'][0] == 'calendar'){
+        $user = user_load_by_name($menu_item['page_arguments'][2]);
+        parliamentwatch_breadcrumb_user($variables, $user);
       }
 
-      if ($key != $last) {
-        $output .= '<li' . drupal_attributes($attributes) . '>' . $item . ' / </li>';
-        }else{
-        $output .= '<li' . drupal_attributes($attributes) . '>' . $item . '</li>';
+      // view profile fields
+      elseif($menu_item['page_arguments'][0] == 'pw_user_profile_fields_rev'){
+       $user = user_load_by_name($menu_item['page_arguments'][2]);
+       $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
+       parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role);
+     }
+
+      // view profile fields
+     elseif($menu_item['page_arguments'][0] == 'pw_user_profile_fields_rev'){
+       $user = user_load_by_name($menu_item['page_arguments'][2]);
+       $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
+       parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role);
+     }
+   }
+
+   // nodes and user profiles
+   else{
+
+      // add profiles overview to profile
+    if(arg(0) == 'user' || arg(0) == 'profile'){
+      $user = _pw_get_current_user();
+      $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
+      parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role, FALSE);
+    }
+
+      // add parent path to nodes
+    elseif (arg(0) == 'node') {
+      switch($menu_item['page_arguments'][0]->type){
+        case 'pw_petition':
+        $variables['breadcrumb'][] = l('Petitionen', 'petitions/'.$parliament_name);
+        break;
+        case 'poll':
+        $variables['breadcrumb'][] = l('Abstimmungen', 'polls/'.$parliament_name);
+        break;
+        case 'blogpost':
+        $variables['breadcrumb'][] = l('Blog', 'blog');
+        break;
+        case 'newsletter':
+        $variables['breadcrumb'][] = l('Newsletter', 'newsletter');
+        break;
+        case 'press_release':
+        $variables['breadcrumb'][] = l('Über uns', 'ueber-uns');
+        $variables['breadcrumb'][] = l('Pressemitteilungen', 'about/press/press-releases');
+        break;
+        case 'dialogue':
+        $recipient_uid = $menu_item['page_arguments'][0]->field_dialogue_recipient[LANGUAGE_NONE][0]['target_id'];
+        if(isset($parliament_name) && !empty($recipient_uid)){
+
+            // find revision by uid and parliament
+          $query = db_select('user_archive_cache', 'uac');
+          $query->fields('uac', array('uid', 'vid', 'user_role', 'actual_profile'));
+          $query->condition("parliament_name", $parliament_name);
+          $query->condition("uid", $recipient_uid);
+          $result = $query->execute();
+          if($result->rowCount() > 0){
+            $uac_obj = $result->fetchObject();
+            $user = user_revision_load($recipient_uid, $uac_obj->vid);
+            $role = ucfirst($uac_obj->user_role);
+            $is_actual_profile = $uac_obj->actual_profile == 1;
+
+              // add parliament and profile to breadcrumb
+            parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role, !$is_actual_profile);
+          }
         }
+        break;
+        case 'calendar_entry':
+        $author_uid = $menu_item['page_arguments'][0]->uid;
+        $user = user_load($author_uid);
+
+          // add only profile to breadcrumb
+        parliamentwatch_breadcrumb_user($variables, $user);
+
+          // add calendar overview
+        $variables['breadcrumb'][] = l('Wahlkampftermine', 'profile/'.$user->name.'/calendar');
+        break;
+      }
     }
-
-    $output .= '</ul></div>';
   }
+}
 
-  return $output;
+  // load active trail
+$active_trail = menu_get_active_trail();
+$last_item = end($active_trail);
+
+  // add current item
+    //if ($variables['breadcrumb_current'] && current_path() != $last_item['href']) {
+$title = drupal_get_title();
+if(!empty($title)) {
+  $variables['breadcrumb'][] = l($title, current_path(), array('html' => TRUE));
+}
+else {
+  $variables['breadcrumb'][] = l($last_item['link_title'], current_path(), array('html' => TRUE));
+}
+    //}
+  // create output
+$output = '<div id="breadcrumb" class="clearfix"><ul class="breadcrumb">';
+$switch = array('odd' => 'even', 'even' => 'odd');
+$zebra = 'even';
+$last = count($variables['breadcrumb']) - 1;
+
+foreach ($variables['breadcrumb'] as $key => $item) {
+  $zebra = $switch[$zebra];
+  $attributes['class'] = array('depth-'.($key + 1), $zebra);
+  if ($key == 0) {
+    $attributes['class'][] = 'first';
+  }
+  if ($key == $last) {
+    $attributes['class'][] = 'last';
+  }
+  if ($key != $last) {
+    $output .= '<li'.drupal_attributes($attributes).'>'.$item.' / </li>';
+  }
+  else{
+    $output .= '<li'.drupal_attributes($attributes).'>'.$item.'</li>';
+  }
+}
+
+$output .= '</ul></div>';
+  //}
+
+return $output;
+}
+
+function parliamentwatch_breadcrumb_user(&$variables, $user, $parliament_name = FALSE, $role = FALSE, $set_profile = TRUE){
+  if($role){
+    if($role == 'Candidate') {
+      $variables['breadcrumb'][] = l('Kandidierende', 'profile/'.$parliament_name.'/candidates');
+    }
+    else{
+      $variables['breadcrumb'][] = l('Abgeordnete', 'profile/'.$parliament_name.'/deputies');
+    }
+  }
+  if($set_profile){
+    $user_title = field_get_items('user', $user, 'field_user_title');
+    $user_first_name = field_get_items('user', $user, 'field_user_fname');
+    $user_last_name = field_get_items('user', $user, 'field_user_lname');
+    $user_full_name = trim($user_title[0]['value'].' '.$user_first_name[0]['value'].' '.$user_last_name[0]['value']);
+    if($set_archive_path){
+      $variables['breadcrumb'][] = l($user_full_name, 'profile/'.$user->name.'/archive/'.$user->vid);
+    }
+    else{
+      $variables['breadcrumb'][] = l($user_full_name, 'user/'.$user->uid);
+    }
+  }
 }
 
 /////////////////////////// customize comment form (ruth)
 //////////////////////////////////////////////////////
 
 function parliamentwatch_form_comment_form_alter(&$form, &$form_state) {
-    global $user;
-    if ($user->uid) {
-        $form['author']['_author']['#title'] = t('You are logged in as');
-    }
-    $form['actions']['submit']['#value'] = t('Add comment');
-    $form['author']['homepage']['#access'] = FALSE;
+  global $user;
+  if ($user->uid) {
+    $form['author']['_author']['#title'] = t('You are logged in as');
+  }
+  $form['actions']['submit']['#value'] = t('Add comment');
+  $form['author']['homepage']['#access'] = FALSE;
 }
 
 /////////////////////////// customize RSS block (ruth)
@@ -340,16 +484,16 @@ function parliamentwatch_tagadelic_weighted(array $vars) {
   $output = '';
 
   foreach ($terms as $term) {
-    $output .= l($term->name, 'taxonomy/term/' . $term->tid, array(
+    $output .= l($term->name, 'taxonomy/term/'.$term->tid, array(
       'attributes' => array(
-        'class' => array("tagadelic", "level" . $term->weight),
+        'class' => array("tagadelic", "level".$term->weight),
         'rel' => 'tag',
         'title'  => $term->description,
         )
       )
-    ) . " \n";
+    )." \n";
   }
-  //if (count($terms) >= variable_get('tagadelic_block_tags_' . $vars['voc']->vid, 12)) {
+  //if (count($terms) >= variable_get('tagadelic_block_tags_'.$vars['voc']->vid, 12)) {
   //  $output .= theme('more_link', array('title' => t('more tags'), 'url' => "tagadelic/chunk/{$vars['voc']->vid}"));
   //}
   return $output;
@@ -393,48 +537,48 @@ function parliamentwatch_pager($variables) {
   }
   // End of generation loop preparation.
 
-    $li_first = theme('pager_first', array('text' => ('1'), 'element' => $element, 'parameters' => $parameters));
-    $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('‹ prev')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-    $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
-    $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters));
+  $li_first = theme('pager_first', array('text' => ('1'), 'element' => $element, 'parameters' => $parameters));
+  $li_previous = theme('pager_previous', array('text' => (isset($tags[1]) ? $tags[1] : t('‹ prev')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_next = theme('pager_next', array('text' => (isset($tags[3]) ? $tags[3] : t('next ›')), 'element' => $element, 'interval' => 1, 'parameters' => $parameters));
+  $li_last = theme('pager_last', array('text' => ($pager_max), 'element' => $element, 'parameters' => $parameters));
 
-    global $base_path;
+  global $base_path;
 
-    //set first page link
-    $first = $li_first;
+  //set first page link
+  $first = $li_first;
 
-    //set last page link
-    $last = $li_last;
+  //set last page link
+  $last = $li_last;
 
 
-    //add left side arrow and text
-    if ($li_previous == ""){
-        $new_li_first = '<span>'.t('‹ prev').'</span>';
-    }else {
-        $new_li_previous = $li_previous;
-        $new_li_first = str_replace(t('‹ prev'),''.t('‹ prev'),	$new_li_previous);
-    }
+  //add left side arrow and text
+  if ($li_previous == ""){
+    $new_li_first = '<span>'.t('‹ prev').'</span>';
+  }else {
+    $new_li_previous = $li_previous;
+    $new_li_first = str_replace(t('‹ prev'),''.t('‹ prev'),	$new_li_previous);
+  }
 
-    //add rigth side arrow and text
-    if ($li_next == ""){
-        $new_li_last = '<span>'.t('next ›').'</span>';
-    }else {
-        $new_li_next = $li_next;
-        $new_li_last = str_replace(t('next ›'),	t('next ›'),	$new_li_next);
+  //add rigth side arrow and text
+  if ($li_next == ""){
+    $new_li_last = '<span>'.t('next ›').'</span>';
+  }else {
+    $new_li_next = $li_next;
+    $new_li_last = str_replace(t('next ›'),	t('next ›'),	$new_li_next);
         //$new_li_last = t('next ›').' '.$new_li_last;
-    }
+  }
 
   if ($pager_total[$element] > 1) {
 //    if ($li_first) {
-      $items[] = array(
-        'class' => array('pager-first'),
-        'data' => $new_li_first,
+    $items[] = array(
+      'class' => array('pager-first'),
+      'data' => $new_li_first,
       );
 //    }
 //    if ($li_previous) {
-      $items[] = array(
-        'class' => '',
-        'data' => t('Page'),
+    $items[] = array(
+      'class' => '',
+      'data' => t('Page'),
       );
 //    }
 
@@ -444,7 +588,7 @@ function parliamentwatch_pager($variables) {
         $items[] = array(
           'class' => array('pager-ellipsis'),
           'data' => $first.' …',
-        );
+          );
       }
       // Now generate the actual pager piece.
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
@@ -452,26 +596,26 @@ function parliamentwatch_pager($variables) {
           $items[] = array(
             'class' => array('pager-item'),
             'data' => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
-          );
+            );
         }
         if ($i == $pager_current) {
           $items[] = array(
             'class' => array('pager-current'),
             'data' => $i,
-          );
+            );
         }
         if ($i > $pager_current) {
           $items[] = array(
             'class' => array('pager-item'),
             'data' => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
-          );
+            );
         }
       }
       if ($i < $pager_max+1) {
         $items[] = array(
           'class' => array('pager-ellipsis'),
           'data' => '… '.$last,
-        );
+          );
       }
     }
     // End generation.
@@ -479,18 +623,18 @@ function parliamentwatch_pager($variables) {
       $items[] = array(
         'class' => array('pager-next'),
         'data' => '',
-      );
+        );
     }
 //    if ($li_last) {
-      $items[] = array(
-        'class' => array('pager-last'),
-        'data' => $new_li_last,
+    $items[] = array(
+      'class' => array('pager-last'),
+      'data' => $new_li_last,
       );
 //    }
-    return '<h2 class="element-invisible">' . t('Pages') . '</h2>' . theme('item_list', array(
+    return '<h2 class="element-invisible">'.t('Pages').'</h2>'.theme('item_list', array(
       'items' => $items,
       'attributes' => array('class' => array('pager')),
-    ));
+      ));
   }
 }
 

@@ -99,3 +99,11 @@ function pw_userarchives_update_7102() {
   db_add_field('user_archive_cache', 'fraction_name', array('type' => 'varchar', 'length' => '100', 'description' => 'Fracion of user.'));
   db_add_index('user_archive_cache', 'fraction_name', array('fraction_name'));
 }
+
+/**
+ * Adds further column actual_profile
+ */
+function pw_userarchives_update_7103() {
+  db_add_field('user_archive_cache', 'actual_profile', array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'size' => 'tiny', 'description' => 'Boolean if profile is newest.'));
+  db_add_index('user_archive_cache', 'actual_profile', array('actual_profile'));
+}

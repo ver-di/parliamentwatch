@@ -221,15 +221,16 @@ function pw_profiles_user_presave(&$edit, $account, $category) {
  * reduces views result to one user (politician) instead of many caused by user revisions
  */
 function pw_profiles_views_query_alter(&$view, &$query) {
+
   if ($view->name == 'profile_list_rev' || $view->name == 'pw_user_profile_fields_rev' && $view->current_display == 'block_1') {
 
     // query for all vids of this parliament / role and reduce result to MAX(vid) per uid
     $parliament = _pw_get_current_parliament_term();
-    $role_name = arg(2) == 'candidates'?'candidate':'deputy';
+    $user_role = arg(2) == 'candidates'?'candidate':'deputy';
     $subquery = db_select('user_archive_cache');
     $subquery->addExpression('MAX(vid)', 'vid');
     $subquery->condition('parliament_name', $parliament->name);
-    $subquery->condition('user_role', $role_name);
+    $subquery->condition('user_role', $user_role);
     $subquery->groupBy('uid');
     $result_vids = $subquery->execute()->fetchCol();
 
@@ -252,6 +253,25 @@ function pw_profiles_views_query_alter(&$view, &$query) {
     $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
     $query->add_groupby('users_uid');
     */
+
+    // set custom title for overview page
+    if($view->name == 'profile_list_rev' && $view->current_display == 'grid'){
+      $role_name = $user_role == 'candidate'?'Kandidierende':'Abgeordnete';
+      if(stripos($parliament->name, 'Bundestag') > -1){
+        $text = $user_role == 'candidate'?'@role für den @parliament':'@role aus dem @parliament';
+      }
+      elseif(stripos($parliament->name, 'Saarland') > -1){
+        $text = '@role für das @parliament';
+      }
+      elseif(stripos($parliament->name, 'EU') == 0){
+        $text = '@role für die @parliament';
+      }
+      else{
+        $text = '@role für @parliament';
+      }
+      $view->build_info['title'] = format_string($text, array('@role' => $role_name, '@parliament' => $parliament->name));
+    }
+
   }
 }
 

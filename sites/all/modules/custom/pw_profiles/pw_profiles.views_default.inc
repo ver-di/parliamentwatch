@@ -314,6 +314,7 @@ function pw_profiles_views_default_views() {
   /* Display: Calendar Page */
   $handler = $view->new_display('page', 'Calendar Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Wahlkampftermine';
   $handler->display->display_options['display_description'] = 'Calendar Page for sharing';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -339,7 +340,7 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['header']['area_1']['id'] = 'area_1';
   $handler->display->display_options['header']['area_1']['table'] = 'views';
   $handler->display->display_options['header']['area_1']['field'] = 'area';
-  $handler->display->display_options['header']['area_1']['content'] = '<h3><?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]</h3>';
+  $handler->display->display_options['header']['area_1']['content'] = '<h3>Termine von [field_user_fname] [field_user_lname], [field_user_party]</h3>';
   $handler->display->display_options['header']['area_1']['format'] = 'php_code';
   $handler->display->display_options['header']['area_1']['tokenize'] = TRUE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
@@ -864,10 +865,11 @@ print_r($link);
     t('Mehr Informationen zu diesen Termin'),
     t('Alle'),
     t('Calendar Page'),
+    t('Wahlkampftermine'),
     t('Calendar Page for sharing'),
     t('mehr'),
     t('<div class="add-sharethis" title="<?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]"></div>'),
-    t('<h3><?php print t(\'Calendar of\'); ?> [field_user_fname] [field_user_lname], [field_user_party]</h3>'),
+    t('<h3>Termine von [field_user_fname] [field_user_lname], [field_user_party]</h3>'),
     t('<div class="link-profile">[view_user]</div>'),
     t('zum vollständigen Profil'),
     t('Back to Calendar Block'),
@@ -3134,7 +3136,7 @@ if($record->value == 0){
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = '%1';
+  $handler->display->display_options['title'] = 'Profil';
   $handler->display->display_options['css_class'] = 'pager-full';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -5733,7 +5735,7 @@ return FALSE;';
   $handler->display->display_options['inherit_pager'] = TRUE;
   $translatables['profile_list_rev'] = array(
     t('Master'),
-    t('%1'),
+    t('Profil'),
     t('weiterlesen'),
     t('Anwenden'),
     t('Zurücksetzen'),
