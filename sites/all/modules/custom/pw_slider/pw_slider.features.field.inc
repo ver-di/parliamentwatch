@@ -59,14 +59,38 @@ function pw_slider_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
@@ -74,6 +98,17 @@ function pw_slider_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -86,6 +121,7 @@ function pw_slider_field_default_fields() {
       'required' => 0,
       'settings' => array(
         'display_summary' => 1,
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -150,14 +186,38 @@ function pw_slider_field_default_fields() {
         'full' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '14',
         ),
         'teaser' => array(
           'label' => 'above',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '14',
         ),
@@ -167,6 +227,7 @@ function pw_slider_field_default_fields() {
       'label' => 'Teaser Body',
       'required' => 1,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -254,6 +315,7 @@ function pw_slider_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
+        'exclude_cv' => FALSE,
         'title' => 'required',
         'title_maxlength' => '128',
         'title_value' => '',

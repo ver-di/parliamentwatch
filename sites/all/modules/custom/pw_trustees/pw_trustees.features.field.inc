@@ -51,7 +51,19 @@ function pw_trustees_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),
@@ -61,6 +73,7 @@ function pw_trustees_field_default_fields() {
       'label' => 'Comment',
       'required' => TRUE,
       'settings' => array(
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -124,7 +137,19 @@ function pw_trustees_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '1',
         ),
@@ -138,6 +163,17 @@ function pw_trustees_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -150,6 +186,7 @@ function pw_trustees_field_default_fields() {
       'required' => FALSE,
       'settings' => array(
         'display_summary' => TRUE,
+        'exclude_cv' => FALSE,
         'text_processing' => 1,
         'user_register_form' => FALSE,
       ),
@@ -211,6 +248,17 @@ function pw_trustees_field_default_fields() {
           'module' => 'file_entity',
           'settings' => array(
             'file_view_mode' => 'pw_file_portrait_l',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'file_rendered',
           'weight' => '0',
@@ -221,6 +269,17 @@ function pw_trustees_field_default_fields() {
           'settings' => array(
             'image_link' => 'content',
             'image_style' => 'pw_portrait_m',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '0',
@@ -240,6 +299,7 @@ function pw_trustees_field_default_fields() {
       'settings' => array(
         'alt_field' => 0,
         'default_image' => 0,
+        'exclude_cv' => FALSE,
         'file_directory' => 'trustees',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',

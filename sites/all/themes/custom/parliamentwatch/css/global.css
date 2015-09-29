@@ -73,7 +73,9 @@ html.mm-opening #hamburger:after
 	bottom: 15px;
 }
 .mm-menu [class^="icon-"]:before,
-.mm-menu [class*=" icon-"]:before {
+.mm-menu [class*=" icon-"]:before,
+.icon-offset-right[class^="icon-"]:before,
+.icon-offset-right[class*=" icon-"]:before {
   margin-right: 0.7em;
 }
 
@@ -487,8 +489,13 @@ blockquote .pw-expander div {
   display: inline-block;
 }
 
-/* icons */
+/* scroll_to_top */
 
+#back-top {
+  bottom: 55px;
+}
+
+/* icons */
 
 .aw-icon-1x {
 	font-size: 12px;
@@ -880,13 +887,13 @@ a.ic-print {
 .views-exposed-form {
     position: relative;
 }
-.views-exposed-widgets {
-    padding-top: 3em;
-}
 .views-exposed-widget.views-reset-button {
     position: absolute;
     top: 0;
     margin: 0 0 0.8em 0 !important;
+}
+#views-exposed-form-profile-list-rev-grid .views-exposed-widgets {
+  padding-top: 3em;
 }
 #views-exposed-form-profile-list-rev-grid .ic-info {
     top: 0;
@@ -1037,14 +1044,10 @@ h1#page-title {
     padding-left: 0;
     background: none;
 }
-.node-blogpost.node-teaser,
 .block-submenutree .view-mode-teaser,
 .block-submenutree .node-teaser,
-.node-results li,
-.group-result .panel-flexible,
 .pw-list-item,
-.pw-list-seperated li,
-.view-mode-search_result {
+.pw-list-seperated li {
     background-color: transparent;
     border-bottom: 1px dotted #f63;
     padding-bottom: 15px !important;
@@ -1052,7 +1055,8 @@ h1#page-title {
     position: relative;
 }
 .pw-list-item.views-row-last,
-.pw-list-seperated li:last-child {
+.pw-list-seperated li:last-child,
+li.pw-list-item:last-child {
     border-bottom: 0;
     margin-bottom: 0;
 }
@@ -1945,10 +1949,22 @@ ul.tabs li a:active {
 
 /* /////////////////////////// views /////////////////// */
 
-.views-exposed-form .views-exposed-widget {
+
+#region-content .view-filters {
+    float: right;
+    clear: both;
+}
+#region-content .view-filters + .view-content {
+    clear: both;
+}
+#region-content .views-exposed-form .views-exposed-widget {
     margin: 0.8em 0 0;
     padding: 0 0 0.8em;
     color: #333;
+    display: inline-block;
+}
+#region-content .views-exposed-form .views-exposed-widget:not(.views-submit-button) {
+    margin-left: 10px;
 }
 .views-exposed-form .views-exposed-widget label.option {
     color: #666;
@@ -2008,21 +2024,8 @@ ul.tabs li a:active {
 #edit-field-blogpost-categories-wrapper {
     margin-right: 20px;
 }
-.view-blog .view-filters {
-    float: right;
-}
-.view-blog .views-exposed-widgets {
-    padding-top: 0;
-    padding-bottom: 1em;
-}
-.view-blog .views-exposed-widget {
-    float: left;
-}
-.view-blog .view-content {
-    clear: both;
-}
-.view-blog .field-body {
-    margin-bottom: 1em;
+.view-blog .field-body p {
+    margin-bottom: 0 !important;
 }
 #view-display-id-block_1 a {
     color:
@@ -2624,6 +2627,7 @@ div.pw-messages {
   margin: 2em 0;
   padding: 20px 20px 20px 50px; /* LTR */
   font-size: 1.2em;
+  clear: both;
 }
 div.messages p:last-child,
 div.pw-messages p:last-child {
@@ -2926,16 +2930,16 @@ form .webform-component-checkboxes .description {
     padding: 12px 10px 10px 10px;
     color: #666;
 }
-#section-content #comment-form {
+#region-content #comment-form {
     padding: 12px 10px 40px 10px;
 }
-#section-content .compact-form .form-actions,
-#section-content .comment-form .form-actions {
+#region-content .compact-form .form-actions,
+#region-content .comment-form .form-actions {
     position: absolute;
     bottom: -69px;
     right: 0;
 }
-#section-content .pw-custom-search .form-actions {
+#region-content .pw-custom-search .form-actions {
     position: absolute;
     bottom: -69px;
     right: 8px;
@@ -3434,14 +3438,25 @@ form .webform-component-checkboxes .description {
     text-decoration: none;
 }
 
+/* /////////////////////////// Newsletter Layer ////// */
+
+.responsive-layout-mobile #newsletter-wrapper-inner > img,
+.responsive-layout-mobile #webform-client-form-10380 .webform-component,
+.responsive-layout-mobile #webform-client-form-10380 .form-actions {
+  margin-bottom: 1em;
+}
+.responsive-layout-mobile #webform-client-form-10380 input {
+  width: 100%;
+}
+
 /* /////////////////////////// node footer /////////////////// */
 
 .comment,
 #comment-form,
 #search-form,
-#section-content form.compact-form,
-#section-content form.comment-form,
-#section-content .compact-form form,
+#region-content form.compact-form,
+#region-content form.comment-form,
+#region-content .compact-form form,
 #views-exposed-form-user-constituency-page,
 .pw-custom-search form {
     background: #f4f4f4;

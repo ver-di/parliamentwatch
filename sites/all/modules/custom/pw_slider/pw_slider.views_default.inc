@@ -182,6 +182,22 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $translatables['slider'] = array(
+    t('Master'),
+    t('mehr'),
+    t('Anwenden'),
+    t('Zurücksetzen'),
+    t('Artikel sortieren nach'),
+    t('aufsteigend'),
+    t('absteigend'),
+    t('<?php
+drupal_add_css(\'sites/all/themes/custom/parliamentwatch/css/slider.css\', array(\'group\' => CSS_DEFAULT, \'every_page\' => TRUE));
+drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
+?>'),
+    t('[field_slider_teaserbody]<div class="item"></div>'),
+    t('<span class="close">close</span>'),
+    t('Block'),
+  );
   $export['slider'] = $view;
 
   return $export;

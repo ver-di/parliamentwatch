@@ -56,7 +56,19 @@ function pw_blog_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => 0,
         ),
@@ -178,21 +190,57 @@ function pw_blog_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '6',
         ),
         'full' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '4',
         ),
         'print' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'text_default',
           'weight' => '5',
         ),
@@ -200,6 +248,17 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -209,6 +268,17 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
@@ -224,10 +294,21 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'trim_length' => 600,
           ),
           'type' => 'text_summary_or_trimmed',
-          'weight' => '6',
+          'weight' => '3',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -342,6 +423,17 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'textformatter',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'textformatter_class' => '',
             'textformatter_comma_and' => 0,
             'textformatter_comma_full_stop' => 0,
@@ -361,6 +453,17 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'textformatter',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'textformatter_class' => '',
             'textformatter_comma_and' => 0,
             'textformatter_comma_full_stop' => 0,
@@ -379,7 +482,19 @@ function pw_blog_field_default_fields() {
         'print' => array(
           'label' => 'hidden',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => '3',
         ),
@@ -393,6 +508,17 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'module' => 'textformatter',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'textformatter_class' => '',
             'textformatter_comma_and' => 0,
             'textformatter_comma_full_stop' => 0,
@@ -416,22 +542,24 @@ function pw_blog_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'textformatter',
+          'module' => 'ds',
           'settings' => array(
-            'textformatter_class' => '',
-            'textformatter_comma_and' => 0,
-            'textformatter_comma_full_stop' => 0,
-            'textformatter_comma_override' => 0,
-            'textformatter_comma_tag' => '0',
-            'textformatter_contrib' => array(),
-            'textformatter_separator_custom' => '',
-            'textformatter_separator_custom_class' => '',
-            'textformatter_separator_custom_tag' => '0',
-            'textformatter_term_plain' => 0,
-            'textformatter_type' => 'comma',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'taxonomy_term_link' => 1,
+            'taxonomy_term_separator' => ', ',
           ),
-          'type' => 'textformatter_list',
-          'weight' => '7',
+          'type' => 'ds_taxonomy_separator',
+          'weight' => '4',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -502,14 +630,39 @@ function pw_blog_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
+          'module' => 'shs',
+          'settings' => array(
+            'linked' => FALSE,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'shs_default',
           'weight' => '1',
         ),
         'full' => array(
           'label' => 'inline',
           'module' => 'textformatter',
           'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
             'textformatter_class' => '',
             'textformatter_comma_and' => 0,
             'textformatter_comma_full_stop' => 0,
@@ -538,10 +691,25 @@ function pw_blog_field_default_fields() {
           'weight' => '34',
         ),
         'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
+          'label' => 'hidden',
+          'module' => 'ds',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'taxonomy_term_link' => TRUE,
+            'taxonomy_term_separator' => ', ',
+          ),
+          'type' => 'ds_taxonomy_separator',
+          'weight' => '2',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -615,6 +783,17 @@ function pw_blog_field_default_fields() {
           'module' => 'file_entity',
           'settings' => array(
             'file_view_mode' => 'pw_file_landscape_l',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'file_rendered',
           'weight' => '5',
@@ -636,6 +815,17 @@ function pw_blog_field_default_fields() {
           'module' => 'file_entity',
           'settings' => array(
             'file_view_mode' => 'pw_file_landscape_l',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'file_rendered',
           'weight' => '5',
@@ -648,12 +838,24 @@ function pw_blog_field_default_fields() {
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'file_entity',
+          'module' => 'image',
           'settings' => array(
-            'file_view_mode' => 'pw_file_landscape_l',
+            'image_link' => 'content',
+            'image_style' => 'pw_landscape_l',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
-          'type' => 'file_rendered',
-          'weight' => '5',
+          'type' => 'image',
+          'weight' => '1',
         ),
       ),
       'ds_extras_field_template' => '',

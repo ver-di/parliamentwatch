@@ -66,6 +66,17 @@ function pw_committees_field_default_fields() {
           'module' => 'entityreference',
           'settings' => array(
             'link' => FALSE,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'entityreference_label',
           'weight' => 4,
@@ -139,6 +150,17 @@ function pw_committees_field_default_fields() {
           'settings' => array(
             'image_link' => 'content',
             'image_style' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'image',
           'weight' => '0',
@@ -175,11 +197,11 @@ function pw_committees_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'image' => 'image',
-            'video' => 0,
-            0 => 0,
             'audio' => 0,
             'default' => 0,
+            0 => 0,
+            'image' => 'image',
+            'video' => 0,
           ),
           'browser_plugins' => array(
             'library' => 0,
@@ -247,6 +269,17 @@ function pw_committees_field_default_fields() {
           'module' => 'entityreference',
           'settings' => array(
             'link' => FALSE,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'entityreference_label',
           'weight' => 6,
@@ -319,7 +352,19 @@ function pw_committees_field_default_fields() {
         'default' => array(
           'label' => 'above',
           'module' => 'taxonomy',
-          'settings' => array(),
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
           'type' => 'taxonomy_term_reference_link',
           'weight' => 3,
         ),
@@ -405,6 +450,17 @@ function pw_committees_field_default_fields() {
           'module' => 'entityreference',
           'settings' => array(
             'link' => FALSE,
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
           ),
           'type' => 'entityreference_label',
           'weight' => 5,

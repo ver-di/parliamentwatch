@@ -204,10 +204,12 @@ function pw_globals_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'body',
+        1 => 'sharethis',
       ),
     ),
     'fields' => array(
       'body' => 'ds_content',
+      'sharethis' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

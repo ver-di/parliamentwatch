@@ -206,16 +206,6 @@ function pw_press_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'press_release';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'sharethis' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
     'title' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -232,7 +222,7 @@ function pw_press_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'managed-content',
+          'ow-cl' => 'managed-content push-bottom-l',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,

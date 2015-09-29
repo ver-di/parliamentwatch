@@ -161,15 +161,27 @@ function pw_blog_strongarm() {
           ),
           'default' => array(
             'weight' => '10',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
           'search_result' => array(
             'weight' => '29',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
         ),
         'sharethis' => array(
           'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'default' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),

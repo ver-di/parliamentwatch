@@ -325,15 +325,60 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Blog';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Erweiterte Optionen',
+    ),
+    'sort' => array(
+      'bef_format' => 'default',
+      'advanced' => array(
+        'collapsible' => 0,
+        'collapsible_label' => 'Sortieroptionen',
+        'combine' => 1,
+        'combine_rewrite' => '',
+        'reset' => 0,
+        'reset_label' => '',
+        'is_secondary' => 0,
+      ),
+    ),
+    'field_blogpost_categories_tid' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Feld: Inhalt: Beitrags-ID */
@@ -568,20 +613,116 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['sorts']['comment_count']['order'] = 'DESC';
   $handler->display->display_options['sorts']['comment_count']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Anzahl der Kommentare';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'blogpost' => 'blogpost',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterium: Inhalt: Sprache */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+    'und' => 'und',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['expose']['operator_id'] = 'field_blogpost_categories_tid_op';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['expose']['label'] = 'Thema';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['expose']['operator'] = 'field_blogpost_categories_tid_op';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['expose']['identifier'] = 'topic';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    29859578 => 0,
+  );
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['reduce_duplicates'] = TRUE;
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['vocabulary'] = 'blogcategories';
   $handler->display->display_options['path'] = 'blog';
 
-  /* Display: Tags */
-  $handler = $view->new_display('page', 'Tags', 'page_2');
+  /* Display: Themen */
+  $handler = $view->new_display('page', 'Themen', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Beiträge zum Thema "%1"';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Erweiterte Optionen',
+    ),
+    'sort' => array(
+      'bef_format' => 'default',
+      'advanced' => array(
+        'collapsible' => 0,
+        'collapsible_label' => 'Sortieroptionen',
+        'combine' => 1,
+        'combine_rewrite' => '',
+        'reset' => 0,
+        'reset_label' => '',
+        'is_secondary' => 0,
+      ),
+    ),
+    'type' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
-  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Unfiltered text */
@@ -589,12 +730,13 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area_text_custom']['content'] = '<div class="messages warning">Mit Ihrer Auswahl wurden keine passenden Blogartikel gefunden</div>';
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<div class="messages warning">Mit Ihrer Auswahl wurden keine passenden Beiträge gefunden</div>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Beziehung: Inhalt: Autor */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['required'] = TRUE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Inhalt: Besitzt eine Taxonomiebegriff-TID. */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
@@ -628,9 +770,29 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'poll' => 'poll',
     'blogpost' => 'blogpost',
+    'newsletter' => 'newsletter',
+    'pw_petition' => 'pw_petition',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Typ';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    29859578 => 0,
+  );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
   /* Display: Last entries */
@@ -984,10 +1146,14 @@ print render($block[\'content\']);
     t('Feed'),
     t('Blog'),
     t('Page'),
+    t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
     t('Feldgruppe'),
-    t('Tags'),
-    t('<div class="messages warning">Mit Ihrer Auswahl wurden keine passenden Blogartikel gefunden</div>'),
+    t('Thema'),
+    t('Themen'),
+    t('Beiträge zum Thema "%1"'),
+    t('<div class="messages warning">Mit Ihrer Auswahl wurden keine passenden Beiträge gefunden</div>'),
     t('Alle'),
+    t('Typ'),
     t('Last entries'),
     t('Letzte Blogbeiträge'),
     t('Menu Block'),
