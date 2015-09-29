@@ -1095,35 +1095,3 @@ function pw_search_api_default_search_api_index() {
   }');
   return $items;
 }
-
-/**
- * Implements hook_default_search_api_server().
- */
-function pw_search_api_default_search_api_server() {
-  $items = array();
-  $items['solr'] = entity_import('search_api_server', '{
-    "name" : "Solr",
-    "machine_name" : "solr",
-    "description" : "Our Solr server",
-    "class" : "search_api_solr_service",
-    "options" : {
-      "clean_ids" : true,
-      "site_hash" : true,
-      "scheme" : "https",
-      "host" : "192.168.93.217",
-      "port" : "8983",
-      "path" : "\\/solr\\/awlive",
-      "http_user" : "drupal",
-      "http_pass" : "jhTd4EOQ",
-      "excerpt" : 0,
-      "retrieve_data" : 1,
-      "highlight_data" : 0,
-      "skip_schema_check" : 0,
-      "solr_version" : "",
-      "http_method" : "AUTO"
-    },
-    "enabled" : "1",
-    "rdf_mapping" : []
-  }');
-  return $items;
-}
