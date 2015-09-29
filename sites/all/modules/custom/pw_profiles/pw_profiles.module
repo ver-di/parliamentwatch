@@ -269,7 +269,6 @@ function pw_profiles_views_query_alter(&$view, &$query) {
       else{
         $text = '@role für @parliament';
       }
-      dd(stripos($parliament->name, 'EU'));
       $view->build_info['title'] = format_string($text, array('@role' => $role_name, '@parliament' => $parliament->name));
     }
 
