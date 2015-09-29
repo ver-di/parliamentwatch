@@ -5,3 +5,110 @@
  */
 
 include_once 'pw_gdata_importer.features.inc';
+
+/**
+ *  Implements hook_feeds_after_parse().
+ *
+ *  Checks if filesize of source file differs to target filesize.
+ */
+function pw_gdata_importer_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
+
+  // check for importer
+  if ($source->id == 'gdata_profiles_importer_v2' || $source->id == 'petition_updater' && !empty($source->feed_nid)) {
+
+    // set reference to processor
+    $processor = $source->importer->processor;
+
+    // figure out which entity type we have
+    if($source->importer->config['processor']['config']['bundle'] == 'user'){
+      $entity_type = 'user';
+    }
+    elseif(!empty($source->importer->config['content_type'])){
+      $entity_type = 'node';
+    }
+    else{
+      // somethings wrong
+      return;
+    }
+
+    // load by nid if processor is of type feedselfnodeprocessor
+    if(!empty($source->feed_nid)){
+      $target_entity = node_load($source->feed_nid);
+    }
+
+    // identify entity by guid and load it by its uuid
+    else{
+      foreach ($processor->config['mappings'] as $a_field) {
+        if($a_field['target'] == 'guid'){
+          $source_mapping = $a_field['source'];
+          $source_value_guid = $result->items[0][$source_mapping];
+          if(!empty($source_value_guid) && preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/', $source_value_guid)){
+            $entities = entity_uuid_load($entity_type, array($source_value_guid));
+            if(sizeof($entities) > 0){
+              $target_entity = array_pop($entities);
+            }
+          }
+        }
+      }
+    }
+
+    // exit if no entity was found (and go on with import)
+    if(!isset($target_entity) || empty($target_entity)){
+      return;
+    }
+
+    // array with items to unset
+    $keys_to_unset = array();
+
+    // run through all mappings
+    foreach ($processor->config['mappings'] as $key => $a_field) {
+
+      $target_mapping = $a_field['target'];
+      $target_field = field_get_items($entity_type, $target_entity, $target_mapping);
+
+      // check if target field is of type image
+      if (isset($target_field[0]['type']) && $target_field[0]['type'] == 'image') {
+
+        $source_mapping = $a_field['source'];
+        $source_value_url = $result->items[0][$source_mapping];
+
+        // check if source is a valid url
+        if (check_url($source_value_url)) {
+
+          $source_headers = get_headers($source_value_url, TRUE);
+          if(!empty($source_headers['Content-Length'])){
+            $source_filesize = intval($source_headers['Content-Length']);
+            $target_filesize = $target_field[0]['filesize'];
+            dd($source_filesize);
+            dd($target_filesize);
+
+            // don't import same file again
+            if ($target_filesize == $source_filesize) {
+              $keys_to_unset[] = $key;
+            }
+          }
+          else{
+            // prevent from overwriting with file of zero length
+            $keys_to_unset[] = $key;
+          }
+        }
+        else{
+          // prevent from overwriting with empty url
+          $keys_to_unset[] = $key;
+        }
+      }
+    }
+
+    // set changed mappings
+    if (sizeof($keys_to_unset) > 0) {
+
+      // copy protected mappings
+      $new_mappings = array();
+      $new_mappings['mappings'] = $processor->config['mappings'];
+      foreach ($keys_to_unset as $key) {
+        unset($new_mappings['mappings'][$key]);
+      }
+      $processor->addConfig($new_mappings);
+    }
+  }
+}
