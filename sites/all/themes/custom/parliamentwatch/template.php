@@ -11,6 +11,15 @@
  * for more information on this topic.
  */
 
+/*
+ * use custom template for login form
+ */
+function parliamentwatch_preprocess_node(&$vars) {
+  if($vars['view_mode'] == 'teaser') {
+    $vars['theme_hook_suggestions'][] = 'node__'.$vars['node']->type.'__teaser';
+    $vars['theme_hook_suggestions'][] = 'node__'.$vars['node']->nid.'__teaser';
+  }
+}
 
 /*
  * use custom template for login form
