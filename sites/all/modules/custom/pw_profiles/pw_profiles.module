@@ -263,12 +263,13 @@ function pw_profiles_views_query_alter(&$view, &$query) {
       elseif(stripos($parliament->name, 'Saarland') > -1){
         $text = '@role für das @parliament';
       }
-      elseif(stripos($parliament->name, 'EU') == 0){
+      elseif(substr($parliament->name, 0, 2) == "EU"){
         $text = '@role für die @parliament';
       }
       else{
         $text = '@role für @parliament';
       }
+      dd(stripos($parliament->name, 'EU'));
       $view->build_info['title'] = format_string($text, array('@role' => $role_name, '@parliament' => $parliament->name));
     }
 
