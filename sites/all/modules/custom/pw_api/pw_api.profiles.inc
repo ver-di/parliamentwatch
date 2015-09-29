@@ -63,19 +63,14 @@ function pw_api_profiles($parliament, $filename) {
   }
 
   // query for users
+  $pathinfo = pathinfo(current_path());
+  $user_role =  $pathinfo['filename'] == 'deputies'?'deputy':'candidate';
   $query = db_select('user_archive_cache', 'ua')
     ->fields('ua', array('uid', 'vid'))
-    ->condition("parliament_name", $parliament)
-    ->having("MAX(vid)")
+    ->condition('parliament_name', $parliament)
+    ->condition('user_role', $user_role)
+    ->having('MAX(vid)')
     ->groupBy('uid');
-  switch($filename){
-    case 'deputies.xml':
-      $query->condition("user_role", 'deputy');
-      break;
-    case 'candidates.xml':
-      $query->condition("user_role", 'candidate');
-      break;
-  }
   $result = $query->execute()->fetchAll();
 
   $profiles = array();
