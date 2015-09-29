@@ -23,6 +23,7 @@
   <?php endif; ?>
   <div class="field-body">
     <?php print render($content['body']); ?>
+    <a class="icon-more" href="<?php print $node_url; ?>" title="zum Blogartikel"> weiterlesen</a>
   </div>
 </div>
 <?php if (!empty($field_blogpost_blogtags)): ?>
