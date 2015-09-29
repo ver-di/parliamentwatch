@@ -18,92 +18,79 @@ function pw_newsletter_menu() {
     'access arguments' => array('access content'),
     'delivery callback' => 'subscribe_to_newsletter',
     'type' => MENU_SUGGESTED_ITEM,
-  );
+    );
   return $items;
 }
 
 function subscribe_to_newsletter(){
-	drupal_add_http_header('Content-type', 'text/html; charset=utf8');
+  drupal_add_http_header('Content-type', 'text/html; charset=utf8');
 
-	// check if email address is submitted via get parameter
-	$email = false;
-	if(isset($_GET['email'])){
-		$email = $_GET['email'];
-	}
+  // check if email address is submitted via get parameter
+  $email = false;
+  if(isset($_GET['email'])){
+    $email = $_GET['email'];
+  }
 
-	// validate email address
-	if(valid_email_address($email)){
+  // validate email address
+  if(valid_email_address($email)){
 
-		// retrieve webform node
-		$internal_path = drupal_lookup_path('source', 'newsletter-subscription');
+    // retrieve webform node
+    $internal_path = drupal_lookup_path('source', 'newsletter-subscription');
 
-		if($internal_path && $node = menu_get_object('node', 1, $internal_path)){
+    // check and load node
+    if($internal_path && $node = menu_get_object('node', 1, $internal_path)){
 
-			// load webform module
-			module_load_include('inc', 'webform', 'includes/webform.submissions');
+      // load webform module
+      module_load_include('inc', 'webform', 'webform.module');
+      module_load_include('inc', 'webform', 'includes/webform.submissions');
 
-			// query db to retrieve webform components
-			$sql = "SELECT wf_comp.cid, wf_comp.form_key
-					FROM webform_component wf_comp
-					WHERE wf_comp.nid = :nid";
-			$form_fields = db_query($sql, array(':nid' => $node->nid))->fetchAllAssoc('cid');
-			$cid_email_field = false;
-			$cid_status_field = false;
-			$cid_node_path_field = false;
-			foreach($form_fields as $cid => $component){
-				if($component->form_key == 'e_mail'){
-					$cid_email_field = $cid;
-				}
-				elseif($component->form_key == 'status'){
-					$cid_status_field = $cid;
-				}
-				elseif($component->form_key == 'node_path'){
-					$cid_node_path_field = $cid;
-				}
-			}
+      // load webform submissions
+      $submissions = webform_get_submissions($node->nid);
 
-			// load webform submissions
-			$webform_submissions = webform_get_submissions($node->nid);
+      // check if address is on list
+      foreach($submissions as $submission){
+        $form_values = _pw_webform_get_keyed_fields($node, $submission);
+        if($form_values['e_mail'] == $email){
+          if($form_values['status'] == 'exported'){
+            print 'already_in_list';
+          }
+          else{
+            print 'please_confirm';
+          }
+          return;
+        }
+      }
 
-			// check if address is on list
-			foreach($webform_submissions as $webform_submission){
-				if($webform_submission->data[$cid_email_field]['value'][0] == $email){
-					$status = $webform_submission->data[$cid_status_field]['value'][0];
-					if($status == 'exported'){
-						print 'already_in_list';
-					}
-					else{
-						print 'please_confirm';
-					}
-					return;
-				}
-			}
+      // submit webform
+      $data = array(
+        'e_mail' => $email,
+        'status' => 'subscribed',
+        'node_path' => $internal_path
+        );
 
-			// submit as webform
-			$data = array(
-				$cid_email_field => array('value' => array($email)),
-				$cid_status_field => array('value' => array('subscribed')),
-				$cid_node_path_field => array('value' => array($internal_path)),
-			);
-			$submission = (object) array(
-				'nid' => $node->nid,
-				'submitted' => REQUEST_TIME,
-				'remote_addr' => ip_address(),
-				'is_draft' => FALSE,
-				'data' => $data,
-			);
+      // get indexed data array
+      $data = _webform_client_form_submit_flatten($node, $data);
+      $data = webform_submission_data($node, $data);
 
-			webform_submission_insert($node, $submission);
-			webform_submission_send_mail($node, $submission);
-			print 'success';
-		}
-		else{
-			print 'unknown_error';
-			watchdog('pw_newsletter', 'Could not load node from path "newsletter-subscription"', NULL, WATCHDOG_ALERT);
-		}
-	}
-	else{
-		print 'email_error';
-	}
+      $submission = (object) array(
+        'nid' => $node->nid,
+        'submitted' => REQUEST_TIME,
+        'remote_addr' => ip_address(),
+        'is_draft' => FALSE,
+        'data' => $data,
+        );
+
+      webform_submission_insert($node, $submission);
+      webform_submission_send_mail($node, $submission);
+      print 'success';
+    }
+    else{
+     print 'unknown_error';
+     watchdog('pw_newsletter', 'Could not load node from path "newsletter-subscription"', NULL, WATCHDOG_ALERT);
+   }
+ }
+ else{
+  print 'email_error';
+}
 }
 

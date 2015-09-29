@@ -4,12 +4,12 @@
     float: left;
     margin-right: 20px;
 }
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdonation--donation-date-start {
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-date-start {
     clear: both;
 }
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdonation--donation-amount,
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdonation--donation-target,
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdata--option-newsletter {
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-amount,
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-target,
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdata--option-newsletter {
     clear: both;
     padding-top: 1em;
 }
@@ -26,24 +26,24 @@
     margin-bottom: 8px;
     margin-bottom: 0.8rem;
 }
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdonation--donation-free-amount,
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdonation--donation-amount {
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-free-amount,
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-amount {
     float: left;
 }
 #webform-client-form-10508 #edit-submitted-fieldset-donationform-yourdonation-donation-free-amount {
     width: 8em;
 }
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdonation--donation-free-amount {
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-free-amount {
     position: relative;
     top: 2em;
     left: -10px;
 }
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdata--address-zipcode {
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdata--address-zipcode {
     width: 60px;
     float: left;
     margin-right: 10px;
 }
-#webform-client-form-10508 #webform-component-fieldset-donationform-yourdata--address-city {
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdata--address-city {
     width: 278px;
     float: left;
 }
@@ -55,7 +55,7 @@
     padding-bottom: 1em;
     border-bottom: 1px solid #fff;
 }
-#webform-client-form-10508 #webform-component-fieldset-donationform-message.webform-component-fieldset.form-wrapper {
+#webform-client-form-10508 .webform-component--fieldset-donationform-message.webform-component--fieldset.form-wrapper {
     padding-bottom: 0;
     border-bottom: 0;
 }
@@ -78,8 +78,8 @@ responsive layout for mobile
 .responsive-layout-mobile #webform-client-form-10508 .form-text {
     width: 100%;
 }
-.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-yourdata--address-zipcode,
-.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-yourdata--address-city,
+.responsive-layout-mobile #webform-client-form-10508 .webform-component--fieldset-donationform-yourdata--address-zipcode,
+.responsive-layout-mobile #webform-client-form-10508 .webform-component--fieldset-donationform-yourdata--address-city,
 .responsive-layout-mobile #webform-client-form-10508 #edit-submitted-fieldset-donationform-yourdata-address-country {
     float: none;
     margin-right: 0;
@@ -91,7 +91,7 @@ responsive layout for mobile
 .responsive-layout-mobile #webform-client-form-10508 #edit-submitted-fieldset-donationform-yourdonation-donation-free-amount.form-text {
     width: 8em;
 }
-.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-yourdonation--donation-free-amount {
+.responsive-layout-mobile #webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-free-amount {
     top: 7.2em;
 }
 .responsive-layout-mobile #webform-client-form-10508 .ui-accordion .ui-accordion-content {
@@ -100,13 +100,13 @@ responsive layout for mobile
 .responsive-layout-mobile #webform-client-form-10508 .ui-accordion .ui-accordion-content label {
     font-size: 0.8em;
 }
-.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-paymentinfo--payment-accordion--payment-tab-direct-debit--payment-direct-debit-holder label,
-.responsive-layout-mobile #webform-client-form-10508 #webform-component-fieldset-donationform-paymentinfo--payment-accordion--payment-tab-sepa--payment-sepa-holder label {
+.responsive-layout-mobile #webform-client-form-10508 .webform-component--fieldset-donationform-paymentinfo--payment-accordion--payment-tab-direct-debit--payment-direct-debit-holder label,
+.responsive-layout-mobile #webform-client-form-10508 .webform-component--fieldset-donationform-paymentinfo--payment-accordion--payment-tab-sepa--payment-sepa-holder label {
     line-height: 1.1em;
     margin-top: 0.7em;
 }
-.page-node-51914 #webform-component-fieldset-donationform-yourdonation--donation-frequency,
-.page-node-51914 #webform-component-fieldset-donationform-yourdonation--donation-target,
-.page-node-51914 #webform-component-fieldset-donationform-yourdonation .fieldset-description {
+.page-node-51914 .webform-component--fieldset-donationform-yourdonation--donation-frequency,
+.page-node-51914 .webform-component--fieldset-donationform-yourdonation--donation-target,
+.page-node-51914 .webform-component--fieldset-donationform-yourdonation .fieldset-description {
     display: none;
 }

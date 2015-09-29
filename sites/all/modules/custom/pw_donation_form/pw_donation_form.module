@@ -123,19 +123,8 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
 
   if ($node->nid == 10508) {
 
-    // query db to retrieve webform components
-    $sql = "SELECT wf_comp.cid, wf_comp.form_key
-    FROM webform_component wf_comp
-    WHERE wf_comp.nid = :nid";
-    $form_fields = db_query($sql, array(':nid' => $node->nid))->fetchAllAssoc('cid');
-
     // map ids to relevant components
-    $form_values = array();
-    foreach ($form_fields as $cid => $component) {
-
-      // set reference to submission
-      $form_values[$component->form_key] = &$submission->data[$cid]['value'][0];
-    }
+    $form_values = _pw_webform_get_keyed_fields($node, $submission);
 
     // set newsletter group for civicrm
     if (!empty($form_values['option_newsletter'])) {

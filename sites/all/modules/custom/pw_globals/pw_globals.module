@@ -267,7 +267,7 @@ function _pw_webform_get_keyed_fields($webform_node, $submission) {
   foreach ($form_fields as $cid => $component) {
 
     // set reference to submission
-    $form_values[$component->form_key] = &$submission->data[$cid]['value'][0];
+    $form_values[$component->form_key] = &$submission->data[$cid][0];
   }
 
   // return as keyed array
