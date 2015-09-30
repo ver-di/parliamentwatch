@@ -349,9 +349,7 @@ function pw_subsite_default_fe_block_settings() {
     'delta' => '-exp-profile_list_rev-grid',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '<?php
-return arg(0) == \'profile\';
-?>',
+    'pages' => '*/profile',
     'roles' => array(),
     'themes' => array(
       'blank' => array(
@@ -374,7 +372,7 @@ return arg(0) == \'profile\';
       ),
     ),
     'title' => 'Liste filtern',
-    'visibility' => '2',
+    'visibility' => '1',
   );
 
   $export['views-pw_donation_drive-block'] = array(
