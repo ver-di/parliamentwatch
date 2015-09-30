@@ -5,6 +5,7 @@
 
 // ====================== ACTUAL THEME ===========================
 ?>
+<article<?php print $attributes; ?>>
 <div class="sharethis-wrapper">
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
@@ -15,7 +16,7 @@
       <?php
       print _pw_get_linked_terms($field_blogpost_categories);
       ?>
-      </p>
+    </p>
   <?php endif; ?>
 
   <div class="clearfix push-bottom-l managed-content">
@@ -34,11 +35,11 @@
   <?php print $main_node_form; //todo: Ordentliche CSS-Klasse anstelle der Wiederverwendung von "comment"?>
 </div>
 <?php
-  $block = module_invoke('block', 'block_view', '12');
-  print render($block["content"]);
+$block = module_invoke('block', 'block_view', '12');
+print render($block["content"]);
 ?>
 <?php
-// render comments if there are any
+  // render comments if there are any
 if ($comments):
   ?>
 <div id="comments" class="comment-wrapper">
@@ -46,3 +47,4 @@ if ($comments):
   <?php print $comments; ?>
 </div>
 <?php endif; ?>
+</article>

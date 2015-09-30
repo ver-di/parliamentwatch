@@ -1,18 +1,19 @@
+<article<?php print $attributes; ?>>
 <?php
-// render webform block for politicians if parameter "u" is in url
+  // render webform block for politicians if parameter "u" is in url
 if (pw_vote_check_user_allowed()):
-?>
+  ?>
 <div class="clearfix push-bottom-l">
-<?php
+  <?php
   $block = module_invoke('webform', 'block_view', 'client-block-57286');
   print theme('status_messages');
   print render($block['content']);
-?>
+  ?>
 </div>
 <?php else: ?>
-<div class="sharethis-wrapper">
-  <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
-</div>
+  <div class="sharethis-wrapper">
+    <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
+  </div>
 <?php endif; ?>
 <p class="medium">Adressat: <? print $field_petition_recipient[0]['value'] ?></p>
 
@@ -27,15 +28,15 @@ if (pw_vote_check_user_allowed()):
 <?php endif; ?>
 
 <?php
-  $block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
-  print render($block['content']);
+$block = module_invoke('pw_vote', 'block_view', 'voting_behavior');
+print render($block['content']);
 ?>
 <h3 id="pw_vote_positions">Wie positionieren sich Ihre Abgeordneten?</h3>
 <div class="compact-form push-bottom-l">
-<?php
+  <?php
   $my_block = module_invoke('views', 'block_view', 'vote_search-block');
   print render($my_block['content']);
-?>
+  ?>
 </div>
 
 <h3>Hintergrund</h3>
@@ -49,11 +50,12 @@ if (pw_vote_check_user_allowed()):
 </p>
 
 <?php
-// render comments if there are any
+  // render comments if there are any
 if ($comments):
-?>
-  <div id="comments" class="comment-wrapper">
-    <h3>Ich habe die Petition unterschrieben, weil...</h3>
-    <? print $comments; ?>
-  </div>
+  ?>
+<div id="comments" class="comment-wrapper">
+  <h3>Ich habe die Petition unterschrieben, weil...</h3>
+  <? print $comments; ?>
+</div>
 <?php endif; ?>
+</article>

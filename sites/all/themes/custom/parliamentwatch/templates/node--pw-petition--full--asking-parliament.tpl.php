@@ -1,17 +1,18 @@
+<article<?php print $attributes; ?>>
 <div class="sharethis-wrapper">
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
 
 <?php
-// render webform block for politicians if parameter "u" is in url
+  // render webform block for politicians if parameter "u" is in url
 if (pw_vote_check_user_allowed()):
-?>
+  ?>
 <div class="clearfix push-bottom-l">
-<?php
+  <?php
   $block = module_invoke('webform', 'block_view', 'client-block-57286');
   print theme('status_messages');
   print render($block['content']);
-?>
+  ?>
 </div>
 <?php endif; ?>
 
@@ -36,17 +37,17 @@ if (pw_vote_check_user_allowed()):
 </div>
 
 <?php
-  // render block of latest positions
-  $block = module_invoke('views', 'block_view', 'pw_vote_positions-block');
-  if(!empty($block['content'])):
-?>
-    <a name="positions"></a>
-    <h3 class="clear">Aktuelle Positionen (<?php print $field_petition_recipient[0]['value']; ?>)</h3>
+    // render block of latest positions
+$block = module_invoke('views', 'block_view', 'pw_vote_positions-block');
+if(!empty($block['content'])):
+  ?>
+<a name="positions"></a>
+<h3 class="clear">Aktuelle Positionen (<?php print $field_petition_recipient[0]['value']; ?>)</h3>
 
-    <p class="medium">Die aktuellsten Positionen der Abgeordneten in der Übersicht.</p>
+<p class="medium">Die aktuellsten Positionen der Abgeordneten in der Übersicht.</p>
 <?php
-    print render($block['content']);
-  endif;
+print render($block['content']);
+endif;
 ?>
 <h3>Inhalt der Bürger-Petition (gestartet von <?php print $field_petition_starter[0]['value']; ?>)</h3>
 <p class="managed-content">
@@ -54,11 +55,12 @@ if (pw_vote_check_user_allowed()):
 </p>
 
 <?php
-// render comments if there are any
+  // render comments if there are any
 if ($comments):
-?>
-  <div id="comments" class="comment-wrapper">
-    <h3>Ich habe die Petition unterschrieben, weil...</h3>
-    <?php print $comments; ?>
-  </div>
+  ?>
+<div id="comments" class="comment-wrapper">
+  <h3>Ich habe die Petition unterschrieben, weil...</h3>
+  <?php print $comments; ?>
+</div>
 <?php endif; ?>
+</article>
