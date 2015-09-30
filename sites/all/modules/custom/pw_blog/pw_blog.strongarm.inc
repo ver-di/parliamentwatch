@@ -397,7 +397,7 @@ function pw_blog_strongarm() {
     'xid' => 'blogtags',
     'status' => 1,
     'view_name' => 'blog',
-    'display' => 'page_2',
+    'display' => 'page_3',
   );
   $export['tvi_vocab_blogtags'] = $strongarm;
 
