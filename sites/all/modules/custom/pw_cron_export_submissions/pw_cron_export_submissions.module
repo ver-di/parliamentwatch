@@ -74,7 +74,7 @@ function export_submissions($source){
 
       // write submissions to json file
       foreach($submissions as $submission){
-        //$submission->data[$cid_status_field]['value'][0] = 'exported';
+        $submission->data[$cid_status_field][0] = 'exported';
         $url_alias = drupal_get_path_alias($submission->data[$cid_node_path_field][0]);
         $submission->export_url_alias = $url_alias;
         foreach($form_fields as $cid => $component){
