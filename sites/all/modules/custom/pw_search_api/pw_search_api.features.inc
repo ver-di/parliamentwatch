@@ -38,6 +38,7 @@ function pw_search_api_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
+        "body:value" : { "type" : "text" },
         "changed" : { "type" : "date" },
         "comment" : { "type" : "integer" },
         "comment_count" : { "type" : "integer" },
@@ -48,7 +49,7 @@ function pw_search_api_default_search_api_index() {
         "feed_nid" : { "type" : "integer" },
         "field_announce_tab_title" : { "type" : "text" },
         "field_blogpost_blogtags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_blogpost_categories" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_blogpost_categories" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_calendar_entry_date" : { "type" : "date" },
         "field_committee" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_dialogue_before_election" : { "type" : "boolean" },
@@ -76,7 +77,7 @@ function pw_search_api_default_search_api_index() {
         "field_petition_signings" : { "type" : "integer" },
         "field_petition_starter" : { "type" : "text" },
         "field_petition_status" : { "type" : "string" },
-        "field_politician" : { "type" : "integer", "entity_type" : "user" },
+        "field_politician" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "user" },
         "field_poll_date" : { "type" : "date" },
         "field_poll_external_url" : { "type" : "text" },
         "field_press_article_date" : { "type" : "date" },
@@ -104,7 +105,6 @@ function pw_search_api_default_search_api_index() {
         "promote" : { "type" : "boolean" },
         "revision" : { "type" : "boolean" },
         "search_api_language" : { "type" : "string" },
-        "search_api_viewed" : { "type" : "text" },
         "source" : { "type" : "integer", "entity_type" : "node" },
         "status" : { "type" : "integer" },
         "sticky" : { "type" : "boolean" },
@@ -124,7 +124,7 @@ function pw_search_api_default_search_api_index() {
         "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
-        "search_api_alter_add_viewed_entity" : { "status" : 1, "weight" : "0", "settings" : { "mode" : "teaser" } },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "teaser" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] }
       },
@@ -150,7 +150,7 @@ function pw_search_api_default_search_api_index() {
           }
         },
         "search_api_html_filter" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "10",
           "settings" : {
             "fields" : {
@@ -166,7 +166,8 @@ function pw_search_api_default_search_api_index() {
               "field_sidejob_classification" : true,
               "field_poll_external_url" : true,
               "field_press_article_publisher" : true,
-              "field_announce_tab_title" : true
+              "field_announce_tab_title" : true,
+              "body:value" : true
             },
             "title" : 0,
             "alt" : 1,
@@ -274,7 +275,7 @@ function pw_search_api_default_search_api_index() {
     "name" : "Node Index",
     "machine_name" : "node_index",
     "description" : "Index for nodes",
-    "server" : "solr",
+    "server" : null,
     "item_type" : "node",
     "options" : {
       "datasource" : { "bundles" : [
@@ -306,7 +307,7 @@ function pw_search_api_default_search_api_index() {
         "feed_nid" : { "type" : "integer" },
         "field_announce_tab_title" : { "type" : "text" },
         "field_blogpost_blogtags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_blogpost_categories" : { "type" : "integer", "entity_type" : "taxonomy_term" },
+        "field_blogpost_categories" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_calendar_entry_date" : { "type" : "date" },
         "field_committee" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_dialogue_before_election" : { "type" : "boolean" },
@@ -331,147 +332,176 @@ function pw_search_api_default_search_api_index() {
         "field_petition_signings" : { "type" : "integer" },
         "field_petition_starter" : { "type" : "text" },
         "field_petition_status" : { "type" : "string" },
-        "field_politician" : { "type" : "integer", "entity_type" : "user" },
-        "field_politician:created" : { "type" : "date" },
-        "field_politician:field_share_sum" : { "type" : "integer" },
-        "field_politician:field_user_age" : { "type" : "integer" },
-        "field_politician:field_user_answers_give" : { "type" : "integer" },
-        "field_politician:field_user_birthday" : { "type" : "date" },
-        "field_politician:field_user_childs" : { "type" : "integer" },
-        "field_politician:field_user_commitee" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_constituency" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_constituency:description" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_politician:field_user_constituency:feed_nid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_politician:field_user_constituency:field_candidate_check_activated" : { "type" : "list\\u003Cboolean\\u003E" },
-        "field_politician:field_user_constituency:field_committee_chairman" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "user" },
-        "field_politician:field_user_constituency:field_committee_spokesman" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "user" },
-        "field_politician:field_user_constituency:field_committee_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_constituency:field_committee_vice_chairman" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "user" },
-        "field_politician:field_user_constituency:field_constituency_ac_descriptor" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes" : {
+        "field_politician" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "user" },
+        "field_politician:created" : { "type" : "list\\u003Cdate\\u003E" },
+        "field_politician:field_user_age" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_politician:field_user_answers_give" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_politician:field_user_birthday" : { "type" : "list\\u003Cdate\\u003E" },
+        "field_politician:field_user_childs" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_politician:field_user_commitee" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
-        "field_politician:field_user_constituency:field_constituency_area_codes:description" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:feed_nid" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_candidate_check_activated" : { "type" : "list\\u003Clist\\u003Cboolean\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_committee_chairman" : {
+        "field_politician:field_user_constituency" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_politician:field_user_constituency:description" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:feed_nid" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_candidate_check_activated" : { "type" : "list\\u003Clist\\u003Cboolean\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_committee_chairman" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "user"
+        },
+        "field_politician:field_user_constituency:field_committee_spokesman" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "user"
+        },
+        "field_politician:field_user_constituency:field_committee_type" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_politician:field_user_constituency:field_committee_vice_chairman" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "user"
+        },
+        "field_politician:field_user_constituency:field_constituency_ac_descriptor" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes" : {
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_politician:field_user_constituency:field_constituency_area_codes:description" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:feed_nid" : { "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_candidate_check_activated" : { "type" : "list\\u003Clist\\u003Clist\\u003Cboolean\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_committee_chairman" : {
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "user"
         },
         "field_politician:field_user_constituency:field_constituency_area_codes:field_committee_spokesman" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "user"
         },
         "field_politician:field_user_constituency:field_constituency_area_codes:field_committee_type" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
         "field_politician:field_user_constituency:field_constituency_area_codes:field_committee_vice_chairman" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "user"
         },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_constituency_ac_descriptor" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_constituency_ac_descriptor" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_constituency_area_codes:field_constituency_area_codes" : {
-          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
+          "type" : "list\\u003Clist\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_constituency_nr" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_constituency_nr" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_constituency_area_codes:field_electoral_region" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_int_list_postiion" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_int_list_postiion" : { "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_constituency_area_codes:field_parliament" : {
-          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
+          "type" : "list\\u003Clist\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_parliament_constit_rename" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_parliament_election" : { "type" : "list\\u003Clist\\u003Cdate\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_parliament_filter_disabled" : { "type" : "list\\u003Clist\\u003Clist\\u003Cstring\\u003E\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_premium_profile_price" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_pw_kc_votes_classname" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_votes_label" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:name" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:node_count" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_parliament_constit_rename" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_parliament_election" : { "type" : "list\\u003Clist\\u003Clist\\u003Cdate\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_parliament_filter_disabled" : { "type" : "list\\u003Clist\\u003Clist\\u003Clist\\u003Cstring\\u003E\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_premium_profile_price" : { "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_pw_kc_votes_classname" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:field_votes_label" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:name" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:node_count" : { "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_constituency_area_codes:parent" : {
-          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
+          "type" : "list\\u003Clist\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
         "field_politician:field_user_constituency:field_constituency_area_codes:parents_all" : {
+          "type" : "list\\u003Clist\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_politician:field_user_constituency:field_constituency_area_codes:tid" : { "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:url" : { "type" : "list\\u003Clist\\u003Clist\\u003Curi\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:uuid" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_area_codes:vocabulary" : {
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
+          "entity_type" : "taxonomy_vocabulary"
+        },
+        "field_politician:field_user_constituency:field_constituency_area_codes:weight" : { "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_constituency_nr" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_electoral_region" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_politician:field_user_constituency:field_int_list_postiion" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_parliament" : {
           "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
-        "field_politician:field_user_constituency:field_constituency_area_codes:tid" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:url" : { "type" : "list\\u003Clist\\u003Curi\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:uuid" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:vocabulary" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "taxonomy_vocabulary"
-        },
-        "field_politician:field_user_constituency:field_constituency_area_codes:weight" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_nr" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_politician:field_user_constituency:field_electoral_region" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_constituency:field_int_list_postiion" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_politician:field_user_constituency:field_parliament" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
-          "entity_type" : "taxonomy_term"
-        },
-        "field_politician:field_user_constituency:field_parliament_constit_rename" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_politician:field_user_constituency:field_parliament_election" : { "type" : "list\\u003Cdate\\u003E" },
-        "field_politician:field_user_constituency:field_parliament_filter_disabled" : { "type" : "list\\u003Clist\\u003Cstring\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_premium_profile_price" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_politician:field_user_constituency:field_pw_kc_votes_classname" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_politician:field_user_constituency:field_votes_label" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_politician:field_user_constituency:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_politician:field_user_constituency:node_count" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_politician:field_user_constituency:field_parliament_constit_rename" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_parliament_election" : { "type" : "list\\u003Clist\\u003Cdate\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_parliament_filter_disabled" : { "type" : "list\\u003Clist\\u003Clist\\u003Cstring\\u003E\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_premium_profile_price" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_pw_kc_votes_classname" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:field_votes_label" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:name" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:node_count" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
         "field_politician:field_user_constituency:parent" : {
-          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
         "field_politician:field_user_constituency:parents_all" : {
+          "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_politician:field_user_constituency:tid" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
+        "field_politician:field_user_constituency:url" : { "type" : "list\\u003Clist\\u003Curi\\u003E\\u003E" },
+        "field_politician:field_user_constituency:uuid" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
+        "field_politician:field_user_constituency:vocabulary" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_vocabulary"
+        },
+        "field_politician:field_user_constituency:weight" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
+        "field_politician:field_user_constituency_won" : { "type" : "list\\u003Cboolean\\u003E" },
+        "field_politician:field_user_education" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_election_result" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_first_letter_lname" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_fname" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_fraction" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_politician:field_user_gender" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_politician:field_user_job_skills" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_list" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_politician:field_user_list_position" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_politician:field_user_list_won" : { "type" : "list\\u003Cboolean\\u003E" },
+        "field_politician:field_user_lname" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_marriage_status" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_politician:field_user_parliament" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_politician:field_user_party" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
           "entity_type" : "taxonomy_term"
         },
-        "field_politician:field_user_constituency:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_politician:field_user_constituency:url" : { "type" : "list\\u003Curi\\u003E" },
-        "field_politician:field_user_constituency:uuid" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_politician:field_user_constituency:vocabulary" : {
-          "type" : "list\\u003Cinteger\\u003E",
-          "entity_type" : "taxonomy_vocabulary"
+        "field_politician:field_user_phone" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_picture_copyright" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_political_roles" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
         },
-        "field_politician:field_user_constituency:weight" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_politician:field_user_constituency_won" : { "type" : "boolean" },
-        "field_politician:field_user_education" : { "type" : "text" },
-        "field_politician:field_user_election_result" : { "type" : "text" },
-        "field_politician:field_user_first_letter_lname" : { "type" : "text" },
-        "field_politician:field_user_fname" : { "type" : "text" },
-        "field_politician:field_user_fraction" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_gender" : { "type" : "string" },
-        "field_politician:field_user_job_skills" : { "type" : "text" },
-        "field_politician:field_user_list" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_list_position" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_list_won" : { "type" : "boolean" },
-        "field_politician:field_user_lname" : { "type" : "text" },
-        "field_politician:field_user_marriage_status" : { "type" : "string" },
-        "field_politician:field_user_parliament" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_party" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_phone" : { "type" : "text" },
-        "field_politician:field_user_picture_copyright" : { "type" : "text" },
-        "field_politician:field_user_political_roles" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_pseudonym" : { "type" : "text" },
-        "field_politician:field_user_public_mail" : { "type" : "text" },
-        "field_politician:field_user_qanda_ratio" : { "type" : "integer" },
-        "field_politician:field_user_questions_get" : { "type" : "integer" },
-        "field_politician:field_user_roles_for_view_mode_s" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_politician:field_user_title" : { "type" : "text" },
-        "field_politician:field_user_twitter_account" : { "type" : "text" },
-        "field_politician:name" : { "type" : "text" },
-        "field_politician:roles" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_politician:status" : { "type" : "integer" },
-        "field_politician:theme" : { "type" : "text" },
-        "field_politician:url" : { "type" : "uri" },
-        "field_politician:uuid" : { "type" : "text" },
+        "field_politician:field_user_pseudonym" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_public_mail" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_qanda_ratio" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_politician:field_user_questions_get" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_politician:field_user_roles_for_view_mode_s" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_politician:field_user_title" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:field_user_twitter_account" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:roles" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
+        "field_politician:status" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_politician:theme" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_politician:url" : { "type" : "list\\u003Curi\\u003E" },
+        "field_politician:uuid" : { "type" : "list\\u003Ctext\\u003E" },
         "field_press_article_date" : { "type" : "date" },
         "field_press_article_publisher" : { "type" : "text" },
         "field_press_release_date" : { "type" : "date" },
@@ -512,7 +542,6 @@ function pw_search_api_default_search_api_index() {
         "field_vote_user:created" : { "type" : "date" },
         "field_vote_user:edit_url" : { "type" : "uri" },
         "field_vote_user:feed_nid" : { "type" : "integer" },
-        "field_vote_user:field_share_sum" : { "type" : "integer" },
         "field_vote_user:field_user_age" : { "type" : "integer" },
         "field_vote_user:field_user_answers_give" : { "type" : "integer" },
         "field_vote_user:field_user_birthday" : { "type" : "date" },
@@ -920,7 +949,7 @@ function pw_search_api_default_search_api_index() {
         }
       }
     },
-    "enabled" : "1",
+    "enabled" : "0",
     "read_only" : "0",
     "rdf_mapping" : []
   }');

@@ -259,10 +259,10 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'clearfix';
   $handler->display->display_options['row_plugin'] = 'search_api_multi';
   $handler->display->display_options['row_options']['view_mode'] = array(
-    'node' => 'teaser',
+    'node' => 'search_result',
     'user' => 'search_result',
   );
-  /* Feld: Suche: Node Index results */
+  /* Feld: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['fields']['node_index']['id'] = 'node_index';
   $handler->display->display_options['fields']['node_index']['table'] = 'search_api_multi';
   $handler->display->display_options['fields']['node_index']['field'] = 'node_index';
@@ -361,7 +361,7 @@ function pw_search_api_views_default_views() {
     t('‹ vorherige Seite'),
     t('weiter'),
     t('letzte Seite »'),
-    t('Node Index results'),
+    t('Beschädigte Behandlungsroutine search_api_multi.node_index'),
     t('Suchbegriff'),
     t('Inhaltstyp (indexed)'),
     t('Page'),
