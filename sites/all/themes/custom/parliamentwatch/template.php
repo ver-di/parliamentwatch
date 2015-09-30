@@ -12,7 +12,7 @@
  */
 
 /*
- * use custom template for login form
+ * preprocess nodes
  */
 function parliamentwatch_preprocess_node(&$variables) {
   if ($variables['type'] == 'pw_petition') {
