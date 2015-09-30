@@ -14,10 +14,99 @@
 /*
  * use custom template for login form
  */
-function parliamentwatch_preprocess_node(&$vars) {
-  if($vars['view_mode'] == 'teaser') {
-    $vars['theme_hook_suggestions'][] = 'node__'.$vars['node']->type.'__teaser';
-    $vars['theme_hook_suggestions'][] = 'node__'.$vars['node']->nid.'__teaser';
+function parliamentwatch_preprocess_node(&$variables) {
+  if ($variables['type'] == 'pw_petition') {
+    $node = $variables['node'];
+    $petition_status = field_get_items('node', $node, 'field_petition_status');
+
+    if (!empty($petition_status)) {
+      $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'] . '__' . $petition_status[0]['value'];
+
+
+      if ($petition_status[0]['value'] == "collecting_donations"){
+        // Load donation form
+        /* This rather complicated way was chosen because the normal module_invoke/
+        render method produces only the pure block content (form in this case) and
+        not the required div wrappers. Suggestions are welcome: ruh@abgeordnetenwatch.de
+        */
+        $block = block_load('webform', 'client-block-10508');
+        $rendered_block = _block_render_blocks(array($block));
+        $rendered_block['webform_client-block-10508']->subject = "";
+      }
+      // count votes from politicians
+      if ($variables['view_mode'] == 'teaser' && in_array($petition_status[0]['value'], array('asking_parliament', 'passed_parliament'))) {
+        $query = new EntityFieldQuery();
+        $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'vote')
+        ->fieldCondition('field_vote_node', 'target_id', $node->nid)
+        ->fieldCondition('field_voted', 'value', 1)
+        ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
+        ->propertyCondition('status', NODE_PUBLISHED);
+        $variables["count_votes"] = $query->count()->execute();
+      }
+    }
+    else {
+      $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
+      // Load signing form
+      /* This rather complicated way was chosen because the normal module_invoke/
+      render method produces only the pure block content (form in this case) and
+      not the required div wrappers. Suggestions are welcome: ruh@abgeordnetenwatch.de
+      */
+      $block = block_load('webform', 'client-block-10369');
+      $rendered_block = _block_render_blocks(array($block));
+      $rendered_block['webform_client-block-10369']->subject = "";
+    }
+
+    // Due to our complicated block modification above, we need to re-render the block.
+    if (empty($petition_status) || $petition_status[0]['value'] == "collecting_donations"){
+      $variables["main_node_form"] = drupal_render(_block_get_renderable_array($rendered_block));
+    }
+    switch ($variables['field_petition_partner'][0]['value']) {
+      case "change.org":
+      $variables['partner_html'] = theme('image', array(
+        'path' => drupal_get_path('theme', 'parliamentwatch') . '/images/logo-change.png',
+        'width' => 119,
+        'height' => 23,
+        'alt' => 'Change.org',
+        ));
+      $variables['signing_url'] = url("https://secured.abgeordnetenwatch.de/tools/newsletter.php", array(
+        'external' => TRUE,
+        'query' => array(
+          'width' => 800,
+          'height' => 450,
+          'iframe' => TRUE,
+          'continue' => $variables['field_petition_external_url'][0]['url'],
+          )
+        ));
+      if (empty($petition_status)) {
+          // If the petition is run by an external service, all links from
+          // the node need to point to that URL. To avoid having to access
+          // the nitty-gritty of all elements in use, we simply override
+          // the node url in
+        $variables['node_url'] = $variables['signing_url'];
+      }
+      #elseif ($petition_status != "passed_parliament") {
+      #  $variables['signing_url'] = $variables['node_url'];
+      #}
+      break;
+      default:
+      $variables['partner_html'] = "";
+      $variables['signing_url'] = $variables['node_url'];
+      break;
+    }
+
+    $variables['themed_image'] = theme('image_style', array(
+      'style_name' => 'pw_landscape_l', //Configure style here!
+      'path' => $variables['field_teaser_image'][0]['uri'],
+      ));
+
+    if (!empty($variables['field_teaser_image'][0]['field_image_copyright']) || !empty($variables['field_teaser_image'][0]['field_image_copyright']['und'][0]['value'])) {
+      $variables['has_image_copyright'] = TRUE;
+    }
+  }
+  elseif($variables['view_mode'] == 'teaser') {
+    $variables['theme_hook_suggestions'][] = 'node__'.$variables['node']->type.'__teaser';
+    $variables['theme_hook_suggestions'][] = 'node__'.$variables['node']->nid.'__teaser';
   }
 }
 
