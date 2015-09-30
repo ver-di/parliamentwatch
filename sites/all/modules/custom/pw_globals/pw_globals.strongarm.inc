@@ -1244,7 +1244,8 @@ node/*/edit';
     ),
     'client-block-6578' => array(
       'display' => 'form',
-      'pages_block' => 1,
+      'pages_block' => '1',
+      'confirmation_block' => '0',
     ),
     'client-block-10367' => array(
       'display' => 'form',
@@ -1252,7 +1253,8 @@ node/*/edit';
     ),
     'client-block-10369' => array(
       'display' => 'form',
-      'pages_block' => 1,
+      'pages_block' => '1',
+      'confirmation_block' => '0',
     ),
     'client-block-10446' => array(
       'display' => 'full',
