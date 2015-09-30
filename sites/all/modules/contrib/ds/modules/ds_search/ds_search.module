@@ -108,6 +108,24 @@ function ds_search_snippet($field) {
   if (isset($field['entity']->search_snippet)) {
     return $field['entity']->search_snippet;
   }
+  // Search API Solr
+  if (module_exists('search_api_solr') && $current_searches = search_api_multi_current_search() ) {
+    // Let's assume for now that there is only one current search at any given time.
+    // @TODO: Figure out when this assumption will get us into trouble.
+    $current_search = end($current_searches);
+    $entity_ids = entity_extract_ids($field['entity_type'], $field['entity']);
+    // Intimate knowledge: $current_search[1] contains the results.
+    foreach ($current_search[1]['results'] as $key => $result){
+      if ($entity_ids[0] == $result['id']){
+        if ($result['excerpt']){
+          return $result['excerpt'];
+        }
+        else{
+          return $result['fields']['body:summary'][0];
+        }
+      }
+    }
+  }
   // Original node snippet
   elseif (isset($field['entity']->snippet)) {
     return $field['entity']->snippet;

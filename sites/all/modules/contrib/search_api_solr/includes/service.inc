@@ -1334,7 +1334,9 @@ class SearchApiSolrService extends SearchApiAbstractService {
    *   The snippet(s), properly formatted as HTML.
    */
   protected function formatHighlighting($snippet) {
-    return preg_replace('#\[(/?)HIGHLIGHT\]#', '<$1strong>', $snippet);
+    $snippet = preg_replace('#\[HIGHLIGHT\]#', '<strong class="ds-search-highlight">', $snippet);
+    $snippet = preg_replace('#\[\/HIGHLIGHT\]#', '</strong>', $snippet);
+    return $snippet;
   }
 
   /**
@@ -1681,6 +1683,7 @@ class SearchApiSolrService extends SearchApiAbstractService {
    */
   protected function getHighlightParams($query) {
     $highlight_params = array();
+    $this->options['excerpt'] = 1;
 
     if (!empty($this->options['excerpt']) || !empty($this->options['highlight_data'])) {
       $highlight_params['hl'] = 'true';
@@ -1708,7 +1711,6 @@ class SearchApiSolrService extends SearchApiAbstractService {
         $highlight_params['hl.fl'] = '*';
       }
     }
-
     return $highlight_params;
   }
 
