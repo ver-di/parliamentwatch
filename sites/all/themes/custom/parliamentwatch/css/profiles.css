@@ -97,7 +97,8 @@ html>/**/body .view-id-profile_list_rev .view-content li {
 .user-profile .field-name-field-user-party:before {
     content: ",\0000a0";
 }
-.page-user #page-title, .page-profile #page-title {
+.page-user.context-profile #page-title,
+.page-profile.context-profile #page-title {
     display: none;
 }
 

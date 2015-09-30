@@ -898,6 +898,9 @@ a.ic-print {
 #views-exposed-form-profile-list-rev-grid .ic-info {
     top: 0;
 }
+#views-exposed-form-profile-list-rev-grid .views-exposed-widget {
+  padding: 0 0 1em;
+}
 div.ic-info {
     position: absolute;
     top: 0;
@@ -1047,7 +1050,8 @@ h1#page-title {
 .block-submenutree .view-mode-teaser,
 .block-submenutree .node-teaser,
 .pw-list-item,
-.pw-list-seperated li {
+.pw-list-seperated li,
+.page-search .view-mode-search_result {
     background-color: transparent;
     border-bottom: 1px dotted #f63;
     padding-bottom: 15px !important;
@@ -1056,7 +1060,8 @@ h1#page-title {
 }
 .pw-list-item.views-row-last,
 .pw-list-seperated li:last-child,
-li.pw-list-item:last-child {
+li.pw-list-item:last-child,
+.page-search .view-mode-search_result:last-child {
     border-bottom: 0;
     margin-bottom: 0;
 }
@@ -1277,12 +1282,6 @@ li.pw-list-item:last-child {
 
 /* colorbox */
 
-
-#colorbox #cboxLoadedContent {
-    padding-top: 62px;
-    background-image: url('/sites/all/themes/custom/parliamentwatch/logo.png');
-    background-repeat: no-repeat;
-}
 #cboxOverlay {
     background: #666;
 }
@@ -2015,7 +2014,7 @@ ul.tabs li a:active {
 #edit-field-blogpost-categories-wrapper {
     margin-right: 20px;
 }
-.view-blog .field-body p {
+#zone-content .view-blog .field-body p {
     margin-bottom: 0 !important;
 }
 #view-display-id-block_1 a {
@@ -2901,6 +2900,9 @@ form .webform-component-checkboxes .description {
     margin-bottom: 7em;
     padding: 12px 10px 10px 10px;
     color: #666;
+}
+#region-content .comment-form label {
+    display: block;
 }
 #custom-search-blocks-form-3 label {
   display: none;
