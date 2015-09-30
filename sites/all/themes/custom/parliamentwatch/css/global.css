@@ -3341,10 +3341,11 @@ form .webform-component-checkboxes .description {
   margin-bottom: 2em;
 }
 #webform-client-form-57286 .webform-component--fieldset-statement--statement-wrapper--copy-email {
-  margin: -4.4em 0 0 10px;
+  margin: -4.8em 0 0 10px;
 }
 #webform-client-form-57286 .form-actions {
   text-align: right;
+  padding-top: 1em;
 }
 
 /* /////////////////////////// Share this /////////////////// */
