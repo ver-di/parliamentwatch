@@ -104,10 +104,22 @@ html {
 #newsletter-wrapper form {
   float: right;
 }
+#newsletter-wrapper form,
+#webform-ajax-wrapper-10380 {
+  margin-left: 20px;
+}
+#webform-ajax-wrapper-10380 .webform-confirmation {
+  clear: both;
+  margin-left: 13px;
+}
 #newsletter-wrapper .webform-component,
 #newsletter-wrapper .form-actions {
   float: left;
   margin-left: 10px;
+}
+#newsletter-wrapper .webform-component-email,
+#newsletter-wrapper .webform-component-email input {
+  width: 280px;
 }
 #newsletter-wrapper form * {
   margin-bottom: 0 !important;
