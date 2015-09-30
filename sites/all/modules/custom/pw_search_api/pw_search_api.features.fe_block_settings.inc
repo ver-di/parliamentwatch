@@ -182,7 +182,7 @@ function pw_search_api_default_fe_block_settings() {
 
   $export['views-dd2cb179c08ae616789999b01178b193'] = array(
     'cache' => '-1',
-    'css_class' => '',
+    'css_class' => 'compact-form',
     'custom' => '0',
     'delta' => 'dd2cb179c08ae616789999b01178b193',
     'module' => 'views',

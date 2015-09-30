@@ -45,7 +45,6 @@ function pw_search_api_default_search_api_index() {
         "comment_count_new" : { "type" : "integer" },
         "comments" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "comment" },
         "created" : { "type" : "date" },
-        "edit_url" : { "type" : "uri" },
         "feed_nid" : { "type" : "integer" },
         "field_announce_tab_title" : { "type" : "text" },
         "field_blogpost_blogtags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -58,7 +57,6 @@ function pw_search_api_default_search_api_index() {
         "field_dialogue_message_type" : { "type" : "string" },
         "field_dialogue_recipient" : { "type" : "integer", "entity_type" : "user" },
         "field_dialogue_recipient:field_user_party:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_dialogue_sender_name" : { "type" : "text" },
         "field_dialogue_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_dialogue_topic" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_dialogue_topic:description" : { "type" : "text" },
@@ -100,8 +98,6 @@ function pw_search_api_default_search_api_index() {
         "field_voted" : { "type" : "boolean" },
         "is_new" : { "type" : "boolean" },
         "language" : { "type" : "string" },
-        "log" : { "type" : "text" },
-        "nid" : { "type" : "integer" },
         "promote" : { "type" : "boolean" },
         "revision" : { "type" : "boolean" },
         "search_api_language" : { "type" : "string" },
@@ -110,9 +106,7 @@ function pw_search_api_default_search_api_index() {
         "sticky" : { "type" : "boolean" },
         "title" : { "type" : "text" },
         "type" : { "type" : "string" },
-        "url" : { "type" : "uri" },
         "uuid" : { "type" : "text" },
-        "vid" : { "type" : "integer" },
         "vuuid" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
@@ -275,7 +269,7 @@ function pw_search_api_default_search_api_index() {
     "name" : "Node Index",
     "machine_name" : "node_index",
     "description" : "Index for nodes",
-    "server" : null,
+    "server" : "solr",
     "item_type" : "node",
     "options" : {
       "datasource" : { "bundles" : [
@@ -949,7 +943,7 @@ function pw_search_api_default_search_api_index() {
         }
       }
     },
-    "enabled" : "0",
+    "enabled" : "1",
     "read_only" : "0",
     "rdf_mapping" : []
   }');
@@ -984,11 +978,11 @@ function pw_search_api_default_search_api_index() {
         "field_user_constituency:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_user_education" : { "type" : "text" },
         "field_user_first_letter_lname" : { "type" : "text" },
-        "field_user_fname" : { "type" : "text", "boost" : "2.0" },
+        "field_user_fname" : { "type" : "text", "boost" : "3.0" },
         "field_user_fraction:name" : { "type" : "text" },
         "field_user_gender" : { "type" : "string" },
         "field_user_job_skills" : { "type" : "text" },
-        "field_user_lname" : { "type" : "text", "boost" : "2.0" },
+        "field_user_lname" : { "type" : "text", "boost" : "8.0" },
         "field_user_parliament" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_user_parliament:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_user_party" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },

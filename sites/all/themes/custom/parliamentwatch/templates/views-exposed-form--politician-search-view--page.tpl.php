@@ -17,19 +17,14 @@
 ?>
 <style>
   #views-exposed-form-politician-search-view-page {
-    background: #f4f4f4 none repeat scroll 0 0;
-    border: 1px solid #dedede;
-    border-radius: 3px;
-    box-shadow: 0 0 4px 1px #ebebeb;
-    color: #666;
-    margin-bottom: 7em;
-    padding: 12px 10px 10px;
-    position: relative;
-    margin-bottom: 2em;
+    margin-bottom: 2em !important;
+  }
+  #views-exposed-form-politician-search-view-page .views-exposed-widget {
+    margin: 0 !important;
+    padding: 0 !important;
   }
   .form-item-k {
     float: left;
-    width: 43%;
     box-sizing: border-box;
     padding-right: 10px;
   }
@@ -40,7 +35,6 @@
   }
   #views-exposed-form-politician-search-view-page .form-submit {
     float: left;
-    margin-left: 10px;
     width: 40px;
     height: 40px;
     text-indent: -5000em;
@@ -82,7 +76,7 @@
   ?>
 <?php endif; ?>
 <div class="views-exposed-form">
-  <span class="views-exposed-widgets clear-block">
+  <div class="views-exposed-widgets clear-block">
     <?php foreach($widgets as $id => $widget): ?>
       <span class="views-exposed-widget">
           <?php print $widget->widget; ?>
@@ -91,8 +85,8 @@
     <script language="JavaScript">
       jQuery("#edit-k").attr("placeholder", "Postleitzahl oder Name");
     </script>
-    <span class="views-exposed-widget">
+    <div class="views-exposed-widget">
       <?php print $button ?>
-    </span>
-  </span>
+    </div>
+  </div>
 </div>

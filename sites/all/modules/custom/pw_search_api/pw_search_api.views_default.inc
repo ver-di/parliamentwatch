@@ -266,6 +266,11 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['fields']['node_index']['id'] = 'node_index';
   $handler->display->display_options['fields']['node_index']['table'] = 'search_api_multi';
   $handler->display->display_options['fields']['node_index']['field'] = 'node_index';
+  /* Sortierkriterien: Suche: Relevance */
+  $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_multi';
+  $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
   /* Sortierkriterien: Main Index: Erstellungsdatum (indexed) */
   $handler->display->display_options['sorts']['main_index_created']['id'] = 'main_index_created';
   $handler->display->display_options['sorts']['main_index_created']['table'] = 'search_api_multi';
