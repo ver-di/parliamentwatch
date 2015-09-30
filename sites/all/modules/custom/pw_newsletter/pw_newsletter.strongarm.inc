@@ -118,7 +118,7 @@ function pw_newsletter_strongarm() {
         'sharethis' => array(
           'teaser' => array(
             'weight' => '0',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
           'default' => array(
             'weight' => '0',

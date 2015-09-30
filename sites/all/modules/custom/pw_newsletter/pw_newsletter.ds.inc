@@ -113,6 +113,11 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'newsletter';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'sharethis' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -121,6 +126,30 @@ function pw_newsletter_ds_field_settings_info() {
         'link' => '1',
         'wrapper' => 'h3',
         'class' => '',
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
+    ),
+    'node_link' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'link text' => 'Read more',
+        'wrapper' => 'span',
+        'class' => 'read-more',
         'ft' => array(
           'func' => 'theme_ds_field_reset',
         ),
@@ -281,7 +310,8 @@ function pw_newsletter_ds_layout_settings_info() {
         4 => 'field_teaser_image',
         5 => 'field_blogpost_categories',
         6 => 'body',
-        7 => 'field_politician',
+        7 => 'node_link',
+        8 => 'field_politician',
       ),
     ),
     'fields' => array(
@@ -292,6 +322,7 @@ function pw_newsletter_ds_layout_settings_info() {
       'field_teaser_image' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
       'body' => 'ds_content',
+      'node_link' => 'ds_content',
       'field_politician' => 'ds_content',
     ),
     'classes' => array(),

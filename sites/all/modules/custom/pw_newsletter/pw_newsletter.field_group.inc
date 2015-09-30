@@ -57,6 +57,7 @@ function pw_newsletter_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_teaser_image',
+      2 => 'node_link',
     ),
     'format_type' => 'div',
     'format_settings' => array(
