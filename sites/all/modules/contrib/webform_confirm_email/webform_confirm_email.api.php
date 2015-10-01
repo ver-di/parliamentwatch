@@ -1,9 +1,6 @@
 <?php
 /**
  * @file
- *
- * @author    Matthias Weiss <matthias@more-onion.com>
- * @copyright Copyright (c) 2013 copyright
  */
 
 
@@ -18,7 +15,7 @@
  *   The submission object of the webform submission where the user
  *   just confirmed his/her email address
  */
-function hook_email_confirmed($node, $submission) {
+function hook_webform_confirm_email_email_confirmed($node, $submission) {
   db_query(
     'INSERT INTO {my_confirmed_submission_list} ' .
     '  VALUES (:nid, :sid) ',
@@ -35,15 +32,18 @@ function hook_email_confirmed($node, $submission) {
  *   by nid's (node ID's), it's values are subarrays containing the sid's
  *   (webform submission ID's) that have expired for this nid
  */
-function hook_confirmation_request_expired($expired_submissions) {
-  // delete the webform submissions where the confirmation request
-  // have expired
-  module_load_include('inc', 'webform', 'includes/webform.submissions');
+function hook_webform_confirm_email_request_expired($expired_submissions) {
 
-  foreach ($expired_submissions as $nid => $sids) {
-    $node = node_load((int) $nid);
-    foreach ($sids as $sid) {
-      webform_submission_delete($node, webform_get_submission((int) $nid, (int) $sid));
-    }
-  }
+  $report = count($expired_submissions) . ' confirmation request have expired.';
+  drupal_mail(
+    'example',
+    'notice',
+    'analysis@example.com',
+    language_default(),
+    array(
+      'subject' => 'Report expired submissions',
+      'body'    => $report,
+    ),
+    'cron@example.com'
+  );
 }
