@@ -772,7 +772,6 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'poll' => 'poll',
     'blogpost' => 'blogpost',
-    'newsletter' => 'newsletter',
     'pw_petition' => 'pw_petition',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
@@ -793,6 +792,15 @@ function pw_blog_views_default_views() {
     29859578 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'poll' => 'poll',
+    'blogpost' => 'blogpost',
+    'pw_petition' => 'pw_petition',
+  );
   $handler->display->display_options['path'] = 'taxonomy/term/%';
 
   /* Display: Last entries */
