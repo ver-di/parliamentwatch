@@ -349,7 +349,8 @@ function pw_subsite_default_fe_block_settings() {
     'delta' => '-exp-profile_list_rev-grid',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '*/profile',
+    'pages' => 'profile/*/candidates
+profile/*/deputies',
     'roles' => array(),
     'themes' => array(
       'blank' => array(
