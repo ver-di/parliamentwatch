@@ -60,8 +60,14 @@ jQuery(document).ready(function() {
   $(window).on("scroll",function() {
     if ($(this).scrollTop() > 450){
       $("#newsletter-wrapper.hide-auto").addClass("closed").removeClass("open");
+      if ( $("#newsletter-wrapper").hasClass("hide-auto")){
+        $("#newsletter-trigger").addClass("icon-arrow-up").removeClass("icon-arrow-down");
+      }
     }else{
       $("#newsletter-wrapper.hide-auto").addClass("open").removeClass("closed");
+      if ($("#newsletter-wrapper").hasClass("hide-auto")) {
+        $("#newsletter-trigger").addClass("icon-arrow-down").removeClass("icon-arrow-up");
+      }
     }
   });
 
