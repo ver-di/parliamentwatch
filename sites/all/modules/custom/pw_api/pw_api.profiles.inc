@@ -54,7 +54,7 @@ function pw_api_profile($username, $parliament=FALSE) {
   return $profile;
 }
 
-function pw_api_profiles($parliament, $filename) {
+function pw_api_profiles($parliament) {
 
   // translate uuid into parliament name
   if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $parliament, $uuid)){
@@ -193,7 +193,7 @@ function pw_api_user_to_array($user) {
     $result = $query->execute();
 
     $profile['votes'] = array();
-    if($result['node']){
+    if(isset($result['node'])){
       $votes = node_load_multiple(array_keys($result['node']), array(), TRUE);
       foreach ($votes as $nid => $vote) {
 
@@ -235,7 +235,7 @@ function pw_api_user_to_array($user) {
       ->propertyOrderBy('created', 'DESC');
     $result = $query->execute();
 
-    if($result['node']){
+    if(isset($result['node'])){
       $dialogues = node_load_multiple(array_keys($result['node']), array(), TRUE);
       foreach ($dialogues as $nid => $dialogue) {
 
