@@ -160,37 +160,37 @@ function pw_seo_metatag_export_default() {
     'instance' => 'node',
     'config' => array(
       'title' => array(
-        'value' => '[node:title] | [site:name]',
+        'value' => '[site:name] | [node:title]',
       ),
       'description' => array(
         'value' => '[node:summary]',
       ),
-      'itemprop:description' => array(
-        'value' => '[node:summary]',
-      ),
       'itemprop:name' => array(
-        'value' => '[current-page:title]',
+        'value' => '[node:title]',
       ),
-      'article:modified_time' => array(
-        'value' => '[node:changed:custom:c]',
-      ),
-      'article:published_time' => array(
-        'value' => '[node:created:custom:c]',
-      ),
-      'og:description' => array(
+      'itemprop:description' => array(
         'value' => '[node:summary]',
       ),
       'og:title' => array(
         'value' => '[node:title]',
       ),
+      'og:description' => array(
+        'value' => '[node:summary]',
+      ),
       'og:updated_time' => array(
         'value' => '[node:changed:custom:c]',
       ),
-      'twitter:description' => array(
-        'value' => '[node:summary]',
+      'article:published_time' => array(
+        'value' => '[node:created:custom:c]',
+      ),
+      'article:modified_time' => array(
+        'value' => '[node:changed:custom:c]',
       ),
       'twitter:title' => array(
         'value' => '[node:title]',
+      ),
+      'twitter:description' => array(
+        'value' => '[node:summary]',
       ),
     ),
   );
@@ -260,6 +260,57 @@ function pw_seo_metatag_export_default() {
       ),
       'twitter:image:height' => array(
         'value' => '187',
+      ),
+    ),
+  );
+
+  // Exported Metatag config instance: node:dialogue.
+  $config['node:dialogue'] = array(
+    'instance' => 'node:dialogue',
+    'config' => array(
+      'title' => array(
+        'value' => '[site:name] | Frage an [node:field-dialogue-recipient:field_user_title] [node:field-dialogue-recipient:field_user_fname] [node:field-dialogue-recipient:field_user_lname] - [node:field_parliament]',
+      ),
+      'abstract' => array(
+        'value' => '[node:summary]',
+      ),
+      'robots' => array(
+        'value' => array(
+          'noindex' => 'noindex',
+          'nofollow' => 'nofollow',
+          'noarchive' => 'noarchive',
+          'nosnippet' => 'nosnippet',
+          'noodp' => 'noodp',
+          'noydir' => 'noydir',
+          'noimageindex' => 'noimageindex',
+          'notranslate' => 'notranslate',
+          'index' => 0,
+          'follow' => 0,
+        ),
+      ),
+      'content-language' => array(
+        'value' => 'DE',
+      ),
+      'itemtype' => array(
+        'value' => 'Person',
+      ),
+      'itemprop:name' => array(
+        'value' => '[site:name] | Frage an [node:field-dialogue-recipient:field_user_title] [node:field-dialogue-recipient:field_user_fname] [node:field-dialogue-recipient:field_user_lname] - [node:field_parliament]',
+      ),
+      'og:type' => array(
+        'value' => 'politician',
+      ),
+      'og:title' => array(
+        'value' => '[site:name] | Frage an [node:field-dialogue-recipient:field_user_title] [node:field-dialogue-recipient:field_user_fname] [node:field-dialogue-recipient:field_user_lname] - [node:field_parliament]',
+      ),
+      'og:see_also' => array(
+        'value' => 'https://www.abgeordnetenwatch.de/profile/[node:field-dialogue-recipient]',
+      ),
+      'og:locale' => array(
+        'value' => 'de_DE',
+      ),
+      'twitter:title' => array(
+        'value' => '[site:name] | Frage an [node:field-dialogue-recipient:field_user_title] [node:field-dialogue-recipient:field_user_fname] [node:field-dialogue-recipient:field_user_lname] - [node:field_parliament]',
       ),
     ),
   );
