@@ -10,16 +10,16 @@
 </p>
 <div class="clearfix push-bottom-s">
   <?php if (!empty($field_teaser_image)): ?>
-  <div class="float-left push-right-m pw-landscape-l file file-image">
-    <a href="<?php print $node_url; ?>" title="zum Blogartikel">
-      <?php print render($content['field_teaser_image']); ?>
-    </a>
-    <?php if (!empty($field_teaser_image[0]['field_image_copyright']['und'][0]['value'])): ?>
-      <div class="copyright">
-        <?php print $field_teaser_image[0]['field_image_copyright']['und'][0]['value']; ?>
-      </div>
-    <?php endif; ?>
-  </div>
+    <div class="float-left push-right-m pw-landscape-l file file-image">
+      <a href="<?php print $node_url; ?>" title="zum Blogartikel">
+        <?php print render($content['field_teaser_image']); ?>
+      </a>
+      <?php if (!empty($field_teaser_image[0]['field_image_copyright']['und'][0]['value'])): ?>
+        <div class="copyright">
+          <?php print $field_teaser_image[0]['field_image_copyright']['und'][0]['value']; ?>
+        </div>
+      <?php endif; ?>
+    </div>
   <?php endif; ?>
   <div class="field-body">
     <?php print render($content['body']); ?>
@@ -33,6 +33,8 @@
 <?php endif; ?>
 <div class="clear clearfix">
   <div class="comment-count">
-    <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
+    <a href="<?php print $node_url; ?>#comments" title="Direkt zu den Kommentaren">
+      <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
+    </a>
   </div>
 </div>
