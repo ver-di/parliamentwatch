@@ -3319,6 +3319,9 @@ form .webform-component-checkboxes .description {
   position: relative;
   top: -0.2em;
 }
+#webform-client-form-57286 .form-radio:before {
+  content: "" !important;
+}
 #webform-client-form-57286 .form-radios label,
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label:focus,
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label:active {
@@ -3351,7 +3354,7 @@ form .webform-component-checkboxes .description {
 }
 #webform-client-form-57286 .form-actions {
   text-align: right;
-  padding-top: 1em;
+  padding-top: 2em;
 }
 
 /* /////////////////////////// Share this /////////////////// */
