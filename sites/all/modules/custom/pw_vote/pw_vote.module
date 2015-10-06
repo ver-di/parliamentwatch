@@ -694,7 +694,7 @@ function pw_vote_preprocess_node(&$variables) {
 
 /**
  * Temporary hook to alter behavior of the poll search blocks since the current Solr module
- * does not respect view filters correctly. Should be obsolote with the introduction of Search
+ * does not respect view filters correctly. Should be obsolete with the introduction of Search
  * API modules.
  */
 function pw_vote_views_query_alter(&$view, &$query) {
