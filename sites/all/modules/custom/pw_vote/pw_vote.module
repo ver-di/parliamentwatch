@@ -138,9 +138,13 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
           $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
           break;
       }
-      $welcome_text = format_string($form['submitted']['welcome']['#markup'], array(
+      $welcome_text = $form['submitted']['welcome']['#markup'];
+      $welcome_text = format_string($welcome_text, array(
         '@salutation' => $salutation,
-        '@welcome_message' => $w_vote->field_vote_node->field_passed_welcome_message->value(),
+        '@welcome_message' => $w_vote->field_vote_node->field_petition_welcome_message->value(),
+      ));
+      $welcome_text = format_string($welcome_text, array(
+        '@node_title' => $node->title,
       ));
       $form['submitted']['welcome']['#markup'] = $welcome_text;
 
