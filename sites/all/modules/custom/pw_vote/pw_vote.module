@@ -702,8 +702,8 @@ function pw_vote_views_query_alter(&$view, &$query) {
     $node_id = "*".arg(1)."*";
     $query->add_where(1,'sm_field_vote_node', $node_id, 'LIKE');
   }
-  if ($view->name == 'pw_vote_positions' && $view->current_display == 'block') {
-    $node_id = "*".arg(1)."*";
-    $query->add_where(1,'field_vote_node', $node_id, 'LIKE');
+  if ($view->name == 'pw_vote_positions' && arg(0) == 'node' && is_numeric(arg(1))) {
+    // Adds filter to only show items for the current node.
+    $query->where[1]['conditions'][] = array("field_vote_node", arg(1), "=");
   }
 }
