@@ -60,11 +60,10 @@ function pw_petitions_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'body',
-      1 => 'field_blogpost_blogtags',
-      2 => 'field_teaser_image',
-      3 => 'field_blogpost_categories',
-      4 => 'field_petition_end_date',
-      5 => 'field_petition_partner',
+      1 => 'field_teaser_image',
+      2 => 'field_blogpost_categories',
+      3 => 'field_petition_end_date',
+      4 => 'field_petition_partner',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -123,6 +122,7 @@ function pw_petitions_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_petition_text_parliament',
+      1 => 'field_petition_welcome_message',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
