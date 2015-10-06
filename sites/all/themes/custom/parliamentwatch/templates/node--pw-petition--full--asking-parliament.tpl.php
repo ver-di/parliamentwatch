@@ -25,7 +25,7 @@ if (pw_vote_check_user_allowed()):
   <div class="floatbox floatbox-right">
     <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
     <p class="pushfloat-0">Die Petition hat <?print number_format($field_petition_signings[0]['value'],0,',','.')?> von <?php print number_format($field_petition_required[0]['value'],0,',','.'); ?> benötigten Unterschriften erreicht.</p>
-    <i class="icon-microphone aw-icon-                                                                                                                                                                                                                                                                                                      1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition in der Meinungsumfrage</span></i>
+    <i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition in der Meinungsumfrage</span></i>
     <p class="pushfloat-0">Laut repräsentativer Meinungsumfrage genießt das Anliegen eine Mehrheit in der Bevölkerung.</p>
     <i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition im Parlament</span></i>
     <p class="pushfloat-0">Die Petition wird aktuell im Parlament abgefragt.</p>
