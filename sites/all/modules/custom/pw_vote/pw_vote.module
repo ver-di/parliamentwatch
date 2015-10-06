@@ -140,7 +140,7 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       }
       $welcome_text = format_string($form['submitted']['welcome']['#markup'], array(
         '@salutation' => $salutation,
-        '@node_title' => $node->title,
+        '@welcome_message' => $w_vote->field_vote_node->field_passed_welcome_message->value(),
       ));
       $form['submitted']['welcome']['#markup'] = $welcome_text;
 
@@ -703,7 +703,8 @@ function pw_vote_views_query_alter(&$view, &$query) {
     $query->add_where(1,'sm_field_vote_node', $node_id, 'LIKE');
   }
   if ($view->name == 'pw_vote_positions' && arg(0) == 'node' && is_numeric(arg(1))) {
-    $node_id = arg(1);
-    #$query->add_where(1,'field_vote_node', $node_id, 'LIKE');
+    #$node_id = "*".arg(1)."*";
+    #var_dump($query);
+    #$query->add_where(1,'ds_field_vote_node', $node_id, 'LIKE');
   }
 }
