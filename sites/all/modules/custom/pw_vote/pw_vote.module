@@ -704,6 +704,7 @@ function pw_vote_views_query_alter(&$view, &$query) {
   }
   if ($view->name == 'pw_vote_positions' && arg(0) == 'node' && is_numeric(arg(1))) {
     // Adds filter to only show items for the current node.
+    echo "1";
     $query->where[1]['conditions'][] = array("field_vote_node", arg(1), "=");
   }
 }
