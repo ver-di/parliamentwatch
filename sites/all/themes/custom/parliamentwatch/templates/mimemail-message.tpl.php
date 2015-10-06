@@ -266,7 +266,7 @@ blockquote p:last-child {
       <div id="follow">
         <a href="https://www.abgeordnetenwatch.de/rss/blog.xml" class="rss">Verfolgen Sie unseren Blog und bleiben Sie bei aktuellen politischen Geschehnissen auf dem Laufenden!</a>
         <a href="https://www.facebook.com/abgeordnetenwatch.de" class="facebook">Schauen Sie auf unserer Facebook-Seite vorbei und diskutieren Sie mit!</a>
-        <a href="https://plus.google.com/+abgeordnetenwatch/posts" class="google">Schauen Sie auf unserer Google+ - Seite vorbei und diskutieren Sie mit!</a>
+        <a href="https://plus.google.com/101206126881536002255" class="google">Schauen Sie auf unserer Google+ - Seite vorbei und diskutieren Sie mit!</a>
         <a href="https://twitter.com/a_watch" class="twitter">Auf twitter veröffentlichen wir mehrmals täglich spannende Kurznachrichten. Jetzt unseren twitter-Channel abonnieren!</a>
       </div>
     </div>

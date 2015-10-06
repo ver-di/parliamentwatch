@@ -18,7 +18,7 @@ function pw_vote_menu() {
     'page arguments' => array('pw_vote_generate_votes_form'),
     'access arguments' => array('administer site configuration'),
     'file' => 'pw_vote.admin.inc',
-    );
+  );
   return $items;
 }
 
@@ -57,7 +57,7 @@ function pw_vote_check_user_allowed() {
 
 function pw_vote_form_alter(&$form, &$form_state, $form_id) {
 
-    // modify vote form
+  // modify vote form
   if ($form_id == 'webform_client_form_57286') {
 
     // retrieve uid from url parameter u
@@ -79,12 +79,12 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
     // load entity vote
     $query = new EntityFieldQuery();
     $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'vote')
-    ->fieldCondition('field_vote_node', 'target_id', $node->nid)
-    ->fieldCondition('field_vote_user', 'target_id', $uid)
-    ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
-    ->propertyCondition('status', NODE_PUBLISHED)
-    ->fieldOrderBy('field_vote', 'tid');
+      ->entityCondition('bundle', 'vote')
+      ->fieldCondition('field_vote_node', 'target_id', $node->nid)
+      ->fieldCondition('field_vote_user', 'target_id', $uid)
+      ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->fieldOrderBy('field_vote', 'tid');
     $result = $query->execute();
 
     // vote exists
@@ -120,8 +120,8 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
         $portrait_uri = $file->uri;
       }
       $portrait = theme('image_style', array(
-        'path' => $portrait_uri,
-        'style_name' => 'pw_portrait_l__normal',
+          'path' => $portrait_uri,
+          'style_name' => 'pw_portrait_l__normal',
         )
       );
       $form['submitted']['portrait']['#markup'] = $portrait;
@@ -129,19 +129,19 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
       // replace parameters in welcome text
       switch ($w_vote->field_vote_user->field_user_gender->value()) {
         case 'female':
-        $salutation = 'Sehr geehrte Frau ' . $w_vote->field_vote_user->field_user_lname->value();
-        break;
+          $salutation = 'Sehr geehrte Frau ' . $w_vote->field_vote_user->field_user_lname->value();
+          break;
         case 'male':
-        $salutation = 'Sehr geehrter Herr ' . $w_vote->field_vote_user->field_user_lname->value();
-        break;
+          $salutation = 'Sehr geehrter Herr ' . $w_vote->field_vote_user->field_user_lname->value();
+          break;
         default:
-        $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
-        break;
+          $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
+          break;
       }
       $welcome_text = format_string($form['submitted']['welcome']['#markup'], array(
         '@salutation' => $salutation,
         '@node_title' => $node->title,
-        ));
+      ));
       $form['submitted']['welcome']['#markup'] = $welcome_text;
 
       // set statement if exists
@@ -252,14 +252,14 @@ function pw_vote_mail($key, &$message, $params) {
   // salutation
   switch ($w_vote->field_vote_user->field_user_gender->value()) {
     case 'female':
-    $salutation = 'Sehr geehrte Frau ' . $w_vote->field_vote_user->field_user_lname->value();
-    break;
+      $salutation = 'Sehr geehrte Frau ' . $w_vote->field_vote_user->field_user_lname->value();
+      break;
     case 'male':
-    $salutation = 'Sehr geehrter Herr ' . $w_vote->field_vote_user->field_user_lname->value();
-    break;
+      $salutation = 'Sehr geehrter Herr ' . $w_vote->field_vote_user->field_user_lname->value();
+      break;
     default:
-    $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
-    break;
+      $salutation = 'Guten Tag ' . $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();
+      break;
   }
 
   // url to node e.g. petition
@@ -268,8 +268,11 @@ function pw_vote_mail($key, &$message, $params) {
   // petition number of signings
   $petition_signings = number_format($w_vote->field_vote_node->field_petition_signings->value(), 0, ',', '.');
 
-  // date when we'll show the results
-  $petition_end_date = date('d.m.Y H:i', $w_vote->field_vote_node->field_petition_end_date->value());
+  // deadline for editing
+  $deadline_for_editing = date('d.m.Y H:i', $w_vote->field_vote_node->field_petition_end_date->value());
+
+  // date when we'll show the results (hardcoded: plus one day)
+  $date_show_results = date('d.m.Y', $w_vote->field_vote_node->field_petition_end_date->value()+86400);
 
   // politicians vote
   $your_vote = $w_vote->field_vote->field_votes_label->value();
@@ -279,12 +282,13 @@ function pw_vote_mail($key, &$message, $params) {
 
   // theme & set body
   $message['body'][] = theme('mail_thank_you', array(
-    'salutation' => $salutation,
-    'node_url' => $node_url,
-    'petition_signings' => $petition_signings,
-    'petition_end_date' => $petition_end_date,
-    'your_vote' => $your_vote,
-    'your_statement' => $your_statement,
+      'salutation' => $salutation,
+      'node_url' => $node_url,
+      'petition_signings' => $petition_signings,
+      'deadline_for_editing' => $deadline_for_editing,
+      'date_show_results' => $date_show_results,
+      'your_vote' => $your_vote,
+      'your_statement' => $your_statement,
     )
   );
 }
@@ -300,10 +304,10 @@ function pw_vote_block_info() {
 
   $blocks['voting_behavior'] = array(
     'info' => t('Displays Voting Behavior'),
-    );
+  );
   $blocks['final_result'] = array(
     'info' => t('Displays Final Result'),
-    );
+  );
 
 
   return $blocks;
@@ -319,17 +323,17 @@ function pw_vote_block_view($delta, $arguments = array()) {
   // The $delta parameter tells us which block is being requested.
   switch ($delta) {
     case 'voting_behavior':
-    $node = menu_get_object();
-    if (!empty($node) && !empty($node->field_parliament[$node->language][0]['tid'])) {
-      $block['content'] = pw_vote_voting_behavior($node);
-    }
-    break;
+      $node = menu_get_object();
+      if (!empty($node) && !empty($node->field_parliament[$node->language][0]['tid'])) {
+        $block['content'] = pw_vote_voting_behavior($node);
+      }
+      break;
     case 'final_result_short':
-    $block['content'] = pw_vote_final_result($arguments['nid'], TRUE);
-    break;
+      $block['content'] = pw_vote_final_result($arguments['nid'], TRUE);
+      break;
     case 'final_result_full':
-    $block['content'] = pw_vote_final_result($arguments['nid']);
-    break;
+      $block['content'] = pw_vote_final_result($arguments['nid']);
+      break;
   }
   return $block;
 }
@@ -354,7 +358,7 @@ function pw_vote_final_result($nid, $result_short=FALSE){
   // load vote terms (yes/no/...) from vocabulary
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'taxonomy_term')
-  ->propertyCondition('vid', $voc->vid, '=');
+    ->propertyCondition('vid', $voc->vid, '=');
   if($result_short){
     $query->propertyCondition('name', array('yes', 'no'));
   }
@@ -368,10 +372,10 @@ function pw_vote_final_result($nid, $result_short=FALSE){
     foreach($terms as $term){
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'vote')
-      ->fieldCondition('field_vote_node', 'target_id', $nid)
-      ->fieldCondition('field_vote', 'tid', array($term->tid))
-      ->propertyCondition('status', NODE_PUBLISHED);
+        ->entityCondition('bundle', 'vote')
+        ->fieldCondition('field_vote_node', 'target_id', $nid)
+        ->fieldCondition('field_vote', 'tid', array($term->tid))
+        ->propertyCondition('status', NODE_PUBLISHED);
 
       // store summarized votes
       $sum_votes[$term->tid] = $query->count()->execute();
@@ -425,8 +429,8 @@ function pw_vote_voting_behavior($node) {
   $portrait_info = field_info_field('field_user_picture');
   $image = file_load($portrait_info['settings']['default_image']);
   $portrait_default = theme('image_style', array(
-    'path' => $image->uri,
-    'style_name' => 'pw_portrait_s',
+      'path' => $image->uri,
+      'style_name' => 'pw_portrait_s',
     )
   );
 
@@ -485,11 +489,11 @@ function pw_vote_voting_behavior($node) {
   // pre-fetch all terms for fractions, parties and votes
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'taxonomy_term')
-  ->entityCondition('bundle', array('fraction', 'party', 'votes'));
+    ->entityCondition('bundle', array('fraction', 'party', 'votes'));
   $result_terms = $query->execute();
   $terms = taxonomy_term_load_multiple(array_keys($result_terms['taxonomy_term']));
 
-    // iterate through nodes
+  // iterate through nodes
   while($record = $result->fetchAssoc()) {
 
     // prepare data
@@ -511,8 +515,8 @@ function pw_vote_voting_behavior($node) {
     // theme & add a single vote to fraction array
     if ($record['picture_uri']) {
       $portrait = theme('image_style', array(
-        'path' => $record['picture_uri'],
-        'style_name' => 'pw_portrait_s',
+          'path' => $record['picture_uri'],
+          'style_name' => 'pw_portrait_s',
         )
       );
     }
@@ -520,14 +524,14 @@ function pw_vote_voting_behavior($node) {
       $portrait = $portrait_default;
     }
     $all_votes[$fraction][] = theme('voting_behavior_single_vote', array(
-      'class_name' => $terms[$vote_tid]->name,
-      'firstname' => $record['firstname'],
-      'lastname' => $record['lastname'],
-      'party' => $party,
-      'voting_behavior' => $vote,
-      'portrait' => $portrait,
-      'statement' => $record['statement'],
-      'path_profile' => drupal_get_path_alias('user/'.$record['uid']),
+        'class_name' => $terms[$vote_tid]->name,
+        'firstname' => $record['firstname'],
+        'lastname' => $record['lastname'],
+        'party' => $party,
+        'voting_behavior' => $vote,
+        'portrait' => $portrait,
+        'statement' => $record['statement'],
+        'path_profile' => drupal_get_path_alias('user/'.$record['uid']),
       )
     );
 
@@ -562,7 +566,7 @@ function pw_vote_voting_behavior($node) {
       $buffer_vertical .= $votes_fraction[$i];
       if (($i + 1) % 7 == 0 || sizeof($votes_fraction) - 1 == $i) {
         $buffer_fraction .= theme('voting_behavior_container_vertical', array(
-          'list_voting_behavior' => $buffer_vertical,
+            'list_voting_behavior' => $buffer_vertical,
           )
         );
         $buffer_vertical = '';
@@ -571,18 +575,18 @@ function pw_vote_voting_behavior($node) {
 
     // put vertical containers and sum votes into one fraction container
     $container_parties[$fraction] = theme('voting_behavior_container_fraction', array(
-      'fraction' => $fraction,
-      'fraction_num_members' => sizeof($votes_fraction),
-      'list_voting_behavior' => $buffer_fraction,
-      'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_fractions[$fraction], 'voting_behavior_sum_fraction', $fraction),
+        'fraction' => $fraction,
+        'fraction_num_members' => sizeof($votes_fraction),
+        'list_voting_behavior' => $buffer_fraction,
+        'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_fractions[$fraction], 'voting_behavior_sum_fraction', $fraction),
       )
     );
   }
 
   // put all fraction container together and add overview
   $content = theme('voting_behavior_container_overview', array(
-    'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_overview, 'voting_behavior_sum_overview'),
-    'list_voting_behavior' => implode($container_parties),
+      'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_overview, 'voting_behavior_sum_overview'),
+      'list_voting_behavior' => implode($container_parties),
     )
   );
 
@@ -603,11 +607,11 @@ function pw_vote_voting_behavior_sum_votes($array_sum, $theme_function, $fractio
     $term = taxonomy_term_load($tid);
     $label = field_get_items('taxonomy_term', $term, 'field_votes_label');
     $content .= theme($theme_function, array(
-      'sum' => $sum,
-      'fraction' => $fraction,
-      'class_name' => $term->name,
-      'voting_behavior' => $label[0]['value'],
-      'do_link' => $do_link,
+        'sum' => $sum,
+        'fraction' => $fraction,
+        'class_name' => $term->name,
+        'voting_behavior' => $label[0]['value'],
+        'do_link' => $do_link,
       )
     );
   }
@@ -618,29 +622,29 @@ function pw_vote_theme() {
   return array(
     'voting_behavior_container_overview' => array(
       'template' => 'voting-behavior-container-overview',
-      ),
+    ),
     'voting_behavior_container_overview_fraction' => array(
       'template' => 'voting-behavior-container-overview-fraction',
-      ),
+    ),
     'voting_behavior_container_fraction' => array(
       'template' => 'voting-behavior-container-fraction',
-      ),
+    ),
     'voting_behavior_container_vertical' => array(
       'template' => 'voting-behavior-container-vertical',
-      ),
+    ),
     'voting_behavior_single_vote' => array(
       'template' => 'voting-behavior-single-vote',
-      ),
+    ),
     'voting_behavior_sum_overview' => array(
       'template' => 'voting-behavior-sum-overview',
-      ),
+    ),
     'voting_behavior_sum_fraction' => array(
       'template' => 'voting-behavior-sum-fraction',
-      ),
+    ),
     'mail_thank_you' => array(
       'template' => 'mail-thank-you',
-      ),
-    );
+    ),
+  );
 }
 
 
@@ -677,8 +681,8 @@ function pw_vote_preprocess_node(&$variables) {
     }
 
     $variables['portrait'] = theme('image_style', array(
-      'path' => $portrait_uri,
-      'style_name' => 'pw_portrait_xs',
+        'path' => $portrait_uri,
+        'style_name' => 'pw_portrait_xs',
       )
     );
 
