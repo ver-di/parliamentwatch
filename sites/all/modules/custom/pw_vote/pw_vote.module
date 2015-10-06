@@ -698,4 +698,8 @@ function pw_vote_views_query_alter(&$view, &$query) {
     $node_id = "*".arg(1)."*";
     $query->add_where(1,'sm_field_vote_node', $node_id, 'LIKE');
   }
+  if ($view->name == 'pw_vote_positions' && $view->current_display == 'block') {
+    $node_id = "*".arg(1)."*";
+    $query->add_where(1,'sm_field_vote_node', $node_id, 'LIKE');
+  }
 }
