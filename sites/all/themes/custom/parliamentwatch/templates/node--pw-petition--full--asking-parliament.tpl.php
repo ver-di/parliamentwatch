@@ -1,7 +1,4 @@
 <article<?php print $attributes; ?>>
-<div class="sharethis-wrapper">
-  <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
-</div>
 
 <?php
   // render webform block for politicians if parameter "u" is in url

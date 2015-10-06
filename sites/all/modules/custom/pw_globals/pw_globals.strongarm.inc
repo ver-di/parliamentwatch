@@ -468,11 +468,19 @@ function pw_globals_strongarm() {
             'weight' => '31',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '30',
+            'visible' => FALSE,
+          ),
         ),
         'sharethis' => array(
           'default' => array(
             'weight' => '0',
             'visible' => TRUE,
+          ),
+          'teaser' => array(
+            'weight' => '0',
+            'visible' => FALSE,
           ),
         ),
       ),
