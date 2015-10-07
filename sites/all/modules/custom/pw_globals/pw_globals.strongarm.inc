@@ -222,20 +222,6 @@ function pw_globals_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'custom_search_advanced_type_page_display';
-  $strongarm->value = 1;
-  $export['custom_search_advanced_type_page_display'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'custom_search_advanced_type_webform_display';
-  $strongarm->value = 1;
-  $export['custom_search_advanced_type_webform_display'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_date_and_time';
   $strongarm->value = 'm/d/Y \\a\\t H:i';
   $export['date_format_date_and_time'] = $strongarm;
@@ -465,7 +451,7 @@ function pw_globals_strongarm() {
             'visible' => FALSE,
           ),
           'search_result' => array(
-            'weight' => '31',
+            'weight' => '30',
             'visible' => FALSE,
           ),
         ),
@@ -473,6 +459,10 @@ function pw_globals_strongarm() {
           'default' => array(
             'weight' => '0',
             'visible' => TRUE,
+          ),
+          'search_result' => array(
+            'weight' => '21',
+            'visible' => FALSE,
           ),
         ),
       ),

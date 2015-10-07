@@ -250,6 +250,7 @@ function pw_petitions_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
+          'lb' => 'Benötigte Unterschriften',
           'ow' => TRUE,
           'ow-el' => 'div',
           'ow-cl' => 'medium',

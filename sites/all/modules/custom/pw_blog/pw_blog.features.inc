@@ -39,7 +39,7 @@ function pw_blog_views_api() {
 function pw_blog_node_info() {
   $items = array(
     'blogpost' => array(
-      'name' => t('Blogpost'),
+      'name' => t('Blogartikel'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',

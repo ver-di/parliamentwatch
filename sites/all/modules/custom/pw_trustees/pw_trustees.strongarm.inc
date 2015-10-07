@@ -76,13 +76,6 @@ function pw_trustees_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'custom_search_advanced_type_trustee_display';
-  $strongarm->value = 1;
-  $export['custom_search_advanced_type_trustee_display'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'diff_enable_revisions_page_node_trustee';
   $strongarm->value = 1;
   $export['diff_enable_revisions_page_node_trustee'] = $strongarm;

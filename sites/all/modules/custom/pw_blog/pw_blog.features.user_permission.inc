@@ -100,15 +100,5 @@ function pw_blog_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: moderate spam in nodes of type Blogpost.
-  $permissions['moderate spam in nodes of type Blogpost'] = array(
-    'name' => 'moderate spam in nodes of type Blogpost',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'antispam',
-  );
-
   return $permissions;
 }

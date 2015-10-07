@@ -887,6 +887,9 @@ a.ic-print {
 .views-exposed-form {
     position: relative;
 }
+#views-exposed-form-profile-list-rev-grid label {
+  padding-bottom: 4px;
+}
 .views-exposed-widget.views-reset-button {
     position: absolute;
     top: 0;
@@ -1050,8 +1053,7 @@ h1#page-title {
 .block-submenutree .view-mode-teaser,
 .block-submenutree .node-teaser,
 .pw-list-item,
-.pw-list-seperated li,
-.page-search .view-mode-search_result {
+.pw-list-seperated li {
     background-color: transparent;
     border-bottom: 1px dotted #f63;
     padding-bottom: 15px !important;
@@ -1060,8 +1062,7 @@ h1#page-title {
 }
 .pw-list-item.views-row-last,
 .pw-list-seperated li:last-child,
-li.pw-list-item:last-child,
-.page-search .view-mode-search_result:last-child {
+li.pw-list-item:last-child {
     border-bottom: 0;
     margin-bottom: 0;
 }
@@ -1323,102 +1324,34 @@ li.pw-list-item:last-child,
 
 /* //////////////////////////// search ///////////////////// */
 
-#search-form {
-  padding: 15px 10px;
-  margin-bottom: 3em !important;
+#views-exposed-form-pw-search-api-main-page {
+  padding: 10px;
+  margin-bottom: 1em;
 }
-#search-form .form-text {
-    width: 60%;
-    padding: 12px 10px;
-    font-size: 14px;
-    font-size: 1.4rem;
-    line-height: 1.2em;
-    height: auto;
-    margin: 0;
+#block-views-exp-pw-search-api-main-page .block-title:after {
+  font-family: "awfont20150517";
+  content: "\e83a";
+  padding-left: 1ex;
 }
-#search-form #edit-submit {
-  text-indent: -5000em;
-  background-image: url(../images/sprite.png);
-  background-position: -644px -3909px;
-  height: 41px;
-  height: 4.1rem;
-  width: 41px;
-  width: 4.1rem;
-
-}
-.custom-search-button .form-submit {
-    border: 0;
-    background: url(../images/ic_search.png) no-repeat center;
-    text-indent: -50000px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    width: 18px;
-    height: 18px;
-}
-.spelling-suggestions {
-  margin-bottom: 2em;
+#views-exposed-form-pw-search-api-main-page input,
+#views-exposed-form-pw-search-api-main-page select {
+  width: 100%;
 }
 .ds-search-highlight {
   background: #ff9;
-}
-.view-mode-search_result h4 {
-  margin-bottom: 1em;
-}
-.view-mode-search_result img {
-    outline: 1px solid #ccc;
-}
-.view-mode-search_result .file img {
-    outline: 0;
 }
 .view-mode-search_result .view-mode-user_dialogue_search_snippet {
   display: inline;
 }
 .view-mode-search_result .view-mode-user_dialogue_search_snippet strong:after,
 .view-mode-search_result .view-mode-user_dialogue_search_snippet span:after,
-#user_user_search_result_group_grid_6 .field-title:after,
-#user_user_search_result_group_grid_6 .field-fname:after,
-#node_dialogue_search_result_group_grid_6 span:after,
-#node_dialogue_search_result_group_grid_6 .label-inline:after {
-  content: "\00a0";
-}
-.view-mode-search_result .view-mode-user_dialogue_search_snippet .field-lname:after,
-#user_user_search_result_group_grid_6 .field-lname:after {
+.view-mode-search_result .view-mode-user_dialogue_search_snippet .field-lname:after {
   content: ",\00a0";
 }
 #user_user_search_result_group_grid_6 .field-questionsget:after {
   content: "\00a0 \002F \00a0";
 }
-.user-profile.view-mode-search_result {
-  position: relative;
-}
-.user-profile.view-mode-search_result .link-profile {
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-}
 
-#section-content .pw-custom-search {
-    margin-bottom: 0 !important;
-}
-#section-content .pw-custom-search .form-actions {
-    position: absolute;
-    top: 13px;
-    bottom: 0;
-    right: 7px;
-}
-#section-content .pw-custom-search input.form-text {
-    width: 100%;
-    font-size: 14px;
-    font-size: 1.4rem;
-}
-#section-content .pw-custom-search input.form-submit {
-    background: transparent;
-    height: auto;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-}
 
 /* //////////////////////////// taxonomy /////////////////// */
 
@@ -2005,7 +1938,6 @@ ul.tabs li a:active {
 }
 .views-exposed-widget label {
     display: block;
-    padding-bottom: 4px;
 }
 
 
@@ -2904,30 +2836,6 @@ form .webform-component-checkboxes .description {
 #region-content .comment-form label {
     display: block;
 }
-#custom-search-blocks-form-3 label {
-  display: none;
-}
-.responsive-layout-mobile #custom-search-blocks-form-3 {
-    clear: both;
-    padding-top: 1em;
-}
-#custom-search-blocks-form-3 .custom-search-box.form-text {
-    width: 80%;
-    margin-right: 10px;
-    float: left;
-    height: 40px;
-}
-#custom-search-blocks-form-3 #edit-submit {
-    width: 40px;
-    height: 40px;
-    padding: 0;
-}
-.pw-custom-search form {
-    position: relative;
-    margin-bottom: 2em;
-    padding: 12px 10px 10px 10px;
-    color: #666;
-}
 #region-content #comment-form {
     padding: 12px 10px 40px 10px;
 }
@@ -2937,11 +2845,6 @@ form .webform-component-checkboxes .description {
     bottom: -69px;
     right: 0;
 }
-#region-content .pw-custom-search .form-actions {
-    position: absolute;
-    bottom: -69px;
-    right: 8px;
-}
 
 #user-register-form .description,
 #user-login .description {
@@ -2950,7 +2853,6 @@ form .webform-component-checkboxes .description {
 }
 #user-register-form label,
 #user-login label,
-#search-form label,
 #user-pass label {
     display: block;
 }
@@ -3446,12 +3348,10 @@ form .webform-component-checkboxes .description {
 
 .comment,
 #comment-form,
-#search-form,
 #section-content .compact-form form,
 #section-content form.comment-form,
 #section-content .compact-form form,
-#views-exposed-form-user-constituency-page,
-.pw-custom-search form {
+#views-exposed-form-user-constituency-page {
     background: #f4f4f4;
     border: 1px solid #dedede;
     -webkit-border-radius: 3px;

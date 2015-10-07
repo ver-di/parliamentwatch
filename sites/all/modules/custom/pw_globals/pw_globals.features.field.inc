@@ -248,7 +248,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '30',
+          'weight' => '29',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -344,10 +344,10 @@ function pw_globals_field_default_fields() {
           'weight' => '1',
         ),
         'search_result' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
