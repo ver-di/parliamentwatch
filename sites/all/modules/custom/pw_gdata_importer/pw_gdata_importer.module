@@ -79,8 +79,6 @@ function pw_gdata_importer_feeds_after_parse(FeedsSource $source, FeedsParserRes
           if(!empty($source_headers['Content-Length'])){
             $source_filesize = intval($source_headers['Content-Length']);
             $target_filesize = $target_field[0]['filesize'];
-            dd($source_filesize);
-            dd($target_filesize);
 
             // don't import same file again
             if ($target_filesize == $source_filesize) {
