@@ -40,26 +40,6 @@ function pw_globals_user_default_permissions() {
     'module' => 'webform',
   );
 
-  // Exported permission: administer rh_node.
-  $permissions['administer rh_node'] = array(
-    'name' => 'administer rh_node',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'rabbit_hole',
-  );
-
-  // Exported permission: bypass rh_node.
-  $permissions['bypass rh_node'] = array(
-    'name' => 'bypass rh_node',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'rabbit_hole',
-  );
-
   // Exported permission: create page content.
   $permissions['create page content'] = array(
     'name' => 'create page content',
@@ -220,15 +200,6 @@ function pw_globals_user_default_permissions() {
       0 => 'administrator',
     ),
     'module' => 'antispam',
-  );
-
-  // Exported permission: php redirect rh_node.
-  $permissions['php redirect rh_node'] = array(
-    'name' => 'php redirect rh_node',
-    'roles' => array(
-      0 => 'administrator',
-    ),
-    'module' => 'rabbit_hole',
   );
 
   return $permissions;
