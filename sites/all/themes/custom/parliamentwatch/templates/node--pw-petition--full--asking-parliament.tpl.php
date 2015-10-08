@@ -4,6 +4,11 @@
   // render webform block for politicians if parameter "u" is in url
 if (pw_vote_check_user_allowed()):
   ?>
+<style>
+  #page-title{
+    display: none;
+  }
+</style>
 <div class="clearfix push-bottom-l">
   <?php
   $block = module_invoke('webform', 'block_view', 'client-block-57286');
