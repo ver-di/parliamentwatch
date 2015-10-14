@@ -443,6 +443,66 @@ foo
       'validator' => 'themekey_validator_date_time',
       'page cache' => 1,
     ),
+    'node:drulenium_num_command_errors_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_num_command_errors</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_num_command_failures_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_num_command_failures</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_num_command_passes_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_num_command_passes</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_num_test_failures_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_num_test_failures</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_num_test_passes_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_num_test_passes</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_num_test_total_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_num_test_total</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_result_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">drulenium_result</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_result_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_result</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_revision_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">drulenium_revision</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_revision_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_revision</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_suite_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">drulenium_suite</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_suite_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_suite</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_total_time_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_total_time</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_version_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">drulenium_version</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:drulenium_version_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">drulenium_version</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_announce_background_image_alt' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">alt</em> of the field <em class="placeholder">field_announce_background_image</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -765,6 +825,14 @@ foo
     ),
     'node:field_petition_text_passed_value' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_text_passed</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_welcome_message_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_petition_welcome_message</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_petition_welcome_message_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_welcome_message</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_politician_target_id' => array(
@@ -3094,136 +3162,323 @@ foo
       ),
     ),
     171 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_welcome_message_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_welcome_message',
+        'type' => 'text_long',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    172 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_petition_welcome_message_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_petition_welcome_message',
+        'type' => 'text_long',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    173 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_version_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_version',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    174 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_version_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_version',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    175 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_revision_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_revision',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    176 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_revision_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_revision',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    177 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_result_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_result',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    178 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_result_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_result',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    179 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_total_time_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_total_time',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    180 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_num_test_passes_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_num_test_passes',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    181 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_num_test_failures_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_num_test_failures',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    182 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_num_command_passes_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_num_command_passes',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    183 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_num_command_failures_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_num_command_failures',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    184 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_num_command_errors_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_num_command_errors',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    185 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_num_test_total_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_num_test_total',
+        'type' => 'number_integer',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    186 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_suite_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_suite',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    187 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:drulenium_suite_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'drulenium_suite',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    188 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    172 => array(
+    189 => array(
       'src' => 'comment:cid',
       'dst' => 'node:nid',
       'callback' => 'themekey_comment_cid2nid',
     ),
-    173 => array(
+    190 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    174 => array(
+    191 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    175 => array(
+    192 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
     ),
-    176 => array(
+    193 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    177 => array(
+    194 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    178 => array(
+    195 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    179 => array(
+    196 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    180 => array(
+    197 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    181 => array(
+    198 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    182 => array(
+    199 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    183 => array(
+    200 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    184 => array(
+    201 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    185 => array(
+    202 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    186 => array(
+    203 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    187 => array(
+    204 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    188 => array(
+    205 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    189 => array(
+    206 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    190 => array(
+    207 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    191 => array(
+    208 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    192 => array(
+    209 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    193 => array(
+    210 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    194 => array(
+    211 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    195 => array(
+    212 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    196 => array(
+    213 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    197 => array(
+    214 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
@@ -3371,6 +3626,21 @@ foo
     'node:created' => 'node:created',
     'node:created_date' => 'node:created_date',
     'node:created_date_time' => 'node:created_date_time',
+    'node:drulenium_num_command_errors_value' => 'node:drulenium_num_command_errors_value',
+    'node:drulenium_num_command_failures_value' => 'node:drulenium_num_command_failures_value',
+    'node:drulenium_num_command_passes_value' => 'node:drulenium_num_command_passes_value',
+    'node:drulenium_num_test_failures_value' => 'node:drulenium_num_test_failures_value',
+    'node:drulenium_num_test_passes_value' => 'node:drulenium_num_test_passes_value',
+    'node:drulenium_num_test_total_value' => 'node:drulenium_num_test_total_value',
+    'node:drulenium_result_format' => 'node:drulenium_result_format',
+    'node:drulenium_result_value' => 'node:drulenium_result_value',
+    'node:drulenium_revision_format' => 'node:drulenium_revision_format',
+    'node:drulenium_revision_value' => 'node:drulenium_revision_value',
+    'node:drulenium_suite_format' => 'node:drulenium_suite_format',
+    'node:drulenium_suite_value' => 'node:drulenium_suite_value',
+    'node:drulenium_total_time_value' => 'node:drulenium_total_time_value',
+    'node:drulenium_version_format' => 'node:drulenium_version_format',
+    'node:drulenium_version_value' => 'node:drulenium_version_value',
     'node:field_announce_background_image_alt' => 'node:field_announce_background_image_alt',
     'node:field_announce_background_image_fid' => 'node:field_announce_background_image_fid',
     'node:field_announce_background_image_height' => 'node:field_announce_background_image_height',
@@ -3452,6 +3722,8 @@ foo
     'node:field_petition_text_passed_format' => 'node:field_petition_text_passed_format',
     'node:field_petition_text_passed_summary' => 'node:field_petition_text_passed_summary',
     'node:field_petition_text_passed_value' => 'node:field_petition_text_passed_value',
+    'node:field_petition_welcome_message_format' => 'node:field_petition_welcome_message_format',
+    'node:field_petition_welcome_message_value' => 'node:field_petition_welcome_message_value',
     'node:field_politician_target_id' => 'node:field_politician_target_id',
     'node:field_poll_date_value' => 'node:field_poll_date_value',
     'node:field_poll_external_url_format' => 'node:field_poll_external_url_format',

@@ -359,28 +359,28 @@ function pw_seo_metatag_export_default() {
     'instance' => 'taxonomy_term',
     'config' => array(
       'title' => array(
-        'value' => '[term:name] | [site:name]',
+        'value' => '[site:name] | [term:name]',
       ),
       'description' => array(
-        'value' => '[term:description]',
-      ),
-      'itemprop:description' => array(
         'value' => '[term:description]',
       ),
       'itemprop:name' => array(
         'value' => '[term:name]',
       ),
-      'og:description' => array(
+      'itemprop:description' => array(
         'value' => '[term:description]',
       ),
       'og:title' => array(
         'value' => '[term:name]',
       ),
-      'twitter:description' => array(
+      'og:description' => array(
         'value' => '[term:description]',
       ),
       'twitter:title' => array(
         'value' => '[term:name]',
+      ),
+      'twitter:description' => array(
+        'value' => '[term:description]',
       ),
     ),
   );
