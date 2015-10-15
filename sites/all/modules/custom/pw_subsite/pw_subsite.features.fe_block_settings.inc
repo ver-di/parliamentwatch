@@ -607,5 +607,38 @@ profile/*/deputies',
     'visibility' => '0',
   );
 
+  $export['webform-client-block-104524'] = array(
+    'cache' => '-1',
+    'css_class' => 'pw-promo-block',
+    'custom' => '0',
+    'delta' => 'client-block-104524',
+    'module' => 'webform',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => '0',
+  );
+
   return $export;
 }
