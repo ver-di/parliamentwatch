@@ -10,12 +10,13 @@ jQuery(document).ready(function() {
     $('.view-id-pw_kandidatencheck .view-content').slick({
         autoplay: true,
         autoplaySpeed: 12000,
-        nextArrow: '<button type="button" class="slick-next">'+Drupal.t('Zur nächsten These')+'<span></span></button>',
-        prevArrow: '<button type="button" class="slick-prev"><span></span>'+Drupal.t('Zur vorherigen These')+'</button>'
+        nextArrow: '<button type="button" class="slick-next"><span class="desktop-only">'+Drupal.t('Zur nächsten These')+'</span><span class="slick-pager"></span></button>',
+        prevArrow: '<button type="button" class="slick-prev"><span class="slick-pager"></span><span class="desktop-only">'+Drupal.t('Zur vorherigen These')+'</span></button>'
     });
     // unslick KC    
-    $('.view-id-pw_kandidatencheck .unslick').on('click', function() { // execute on slider change by sliding or cklicking
-        $('.view-id-pw_kandidatencheck .view-content').unslick(          
+    $('.view-id-pw_kandidatencheck .unslick').on('click', function() {
+        $('.view-id-pw_kandidatencheck .view-content').slick(
+            'unslick',          
             goToByScroll("pw-block-user-kc"),
             $('.view-id-pw_kandidatencheck .unslick').hide()        
         );

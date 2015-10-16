@@ -1208,18 +1208,18 @@ li.pw-list-item:last-child,
     color: #666;
     min-height: 25px;
 }
-.slick-prev span,
-.slick-next span {
+.slick-prev span.slick-pager,
+.slick-next span.slick-pager {
     display: block;
     height: 25px;
     width: 25px;
     background-image: url(../images/sprite.png);
 }
-.slick-prev span {
+.slick-prev span.slick-pager {
     float: left;
     margin-right: 7px;
 }
-.slick-next span {
+.slick-next span.slick-pager {
     float: right;
     margin-left: 7px;
 }
@@ -1231,12 +1231,6 @@ li.pw-list-item:last-child,
     font-size: 1.2rem !important;
     line-height: 22px !important;
     line-height: 2.2rem !important;
-}
-.slick-prev {
-    text-align: left;
-}
-.slick-next {
-    text-align: right;
 }
 .slick-prev:hover,
 .slick-next:hover {
