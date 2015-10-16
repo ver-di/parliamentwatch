@@ -146,12 +146,25 @@ html {
     max-width: 280px;
 }
 
+/* kandidatencheck */
 
 #pw-block-user-kc .view-footer .grid-4.alpha {
     text-align: left;
 }
 #pw-block-user-kc .view-footer .grid-4.omega {
     text-align: right;
+}
+.container-12 .view-pw-kandidatencheck .pw-kc-profile-picture {
+    display: block;
+    width: 60px;
+}
+.container-12 .view-pw-kandidatencheck .pw-kc-argumentation {
+    margin-left: 60px;
+}
+
+.slick-prev span.desktop-only,
+.slick-next span.desktop-only {
+    display: inline-block !important;
 }
 
 
