@@ -7,6 +7,7 @@
 @import url("slick.css");
 @import url("jquery.mmenu.all.css");
 @import url("icons/css/awfont20150517.css");
+@import url("block--block--117.css");
 
 /*
 	LAYOUT
@@ -122,28 +123,11 @@ div::-webkit-scrollbar-thumb {
     margin-left: 0;
     margin-right: 0;
 }
-#region-branding {
-    padding: 10px 0 0;
-    border-bottom: 1px solid #f63;
-    background: #fff;
-    z-index: 500;
-    margin: 0;
-}
-#zone-branding .logo-img {
-    left: 20px;
-    margin: -3px auto 10px;
-    max-width: 258px;
-    position: relative;
-    text-align: center;
-}
 #zone-menu-wrapper {
 	display: none;
 }
 .site-name {
     margin-top: 0;
-}
-#region-header-first {
-    display: none;
 }
 #region-content {
     margin-top: 7px;
@@ -370,6 +354,9 @@ blockquote .pw-expander div {
 	right: 0;
 }
 
+.push-bottom-0 {
+    margin-bottom: 0 !important;
+}
 .push-bottom-xxs {
     margin-bottom: 2px !important;
 }
@@ -1396,22 +1383,21 @@ li.pw-list-item:last-child,
   bottom: 15px;
   right: 0;
 }
-
-#section-content .pw-custom-search {
-    margin-bottom: 0 !important;
+.pw-custom-search form {
+    position: relative;
+    padding: 2px 0;
 }
-#section-content .pw-custom-search .form-actions {
+.pw-custom-search .form-actions {
     position: absolute;
-    top: 13px;
-    bottom: 0;
-    right: 7px;
+    bottom: 2px;
+    right: 0;
 }
-#section-content .pw-custom-search input.form-text {
+.pw-custom-search input.form-text {
     width: 100%;
-    font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 12px;
+    font-size: 1.2rem;
 }
-#section-content .pw-custom-search input.form-submit {
+.pw-custom-search input.form-submit {
     background: transparent;
     height: auto;
     -webkit-box-shadow: none;
@@ -1764,20 +1750,30 @@ ul.tabs li a:active {
 
 /* /////////////////////////// region-user-second /////////////////////////// */
 
+#zone-branding {
+  background: #ccc;
+}
 #region-user-second {
-    background: #ccc;
-    margin: 0;
-    padding: 0 10px;
+  padding: 7px 0 2px;
 }
-#region-user-second .block .content li {
-    display: inline-block;
+#region-branding {
+  padding: 10px;
+  background: #fff;
+  z-index: 999;
+  border-bottom: 1px solid #f63;
+  margin: 0;
 }
-#region-user-second .block .content a {
-    display: inline-block;
-    padding: 0 10px;
-    color: #666 !important;
-    font: 9px/21px Lucida Grande,Helvetica,Arial,sans-serif;
-    font: 0.9rem/2.1rem Lucida Grande,Helvetica,Arial,sans-serif;
+#region-branding .logo-img {
+  margin-left: 51px;
+}
+#region-user-second #block-block-20 {
+  text-align: right;
+}
+#region-user-second #block-block-20 .content a {
+  display: inline-block;
+  color: #666 !important;
+  font-weight: normal;
+  line-height: 2em;
 }
 
 /* //////////////////////////// floatbox /////////////////// */
@@ -2930,12 +2926,6 @@ form .webform-component-checkboxes .description {
     height: 40px;
     padding: 0;
 }
-.pw-custom-search form {
-    position: relative;
-    margin-bottom: 2em;
-    padding: 12px 10px 10px 10px;
-    color: #666;
-}
 #region-content #comment-form {
     padding: 12px 10px 40px 10px;
 }
@@ -3461,8 +3451,7 @@ form .webform-component-checkboxes .description {
 #section-content .compact-form form,
 #section-content form.comment-form,
 #section-content .compact-form form,
-#views-exposed-form-user-constituency-page,
-.pw-custom-search form {
+#views-exposed-form-user-constituency-page {
     background: #f4f4f4;
     border: 1px solid #dedede;
     -webkit-border-radius: 3px;
