@@ -46,7 +46,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-pw_transparancy_header'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => '',
     'custom' => '0',
     'machine_name' => 'pw_transparancy_header',
@@ -710,7 +710,7 @@ profile/*/deputies',
     'cache' => '-1',
     'css_class' => 'pw-promo-block',
     'custom' => '0',
-    'delta' => 'client-block-104843',
+    'delta' => 'client-block-104846',
     'module' => 'webform',
     'node_types' => array(),
     'pages' => '',
@@ -735,7 +735,7 @@ profile/*/deputies',
         'weight' => '0',
       ),
     ),
-    'title' => '<none>',
+    'title' => '',
     'visibility' => '0',
   );
 
