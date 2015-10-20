@@ -230,6 +230,7 @@ function pw_api_user_to_array($user) {
           }
            */
           $profile['votes'][$type.'_'.$record->nid]['vote'] = $record->vote_label;
+
           $profile['votes'][$type.'_'.$record->nid]['url'] = url('node/'.$record->nid, array('absolute' => TRUE));
         }
       }

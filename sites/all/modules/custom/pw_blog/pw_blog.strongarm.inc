@@ -134,19 +134,22 @@ function pw_blog_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '10',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
+          'weight' => '9',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '1',
         ),
       ),
       'display' => array(
@@ -175,7 +178,7 @@ function pw_blog_strongarm() {
         'sharethis' => array(
           'full' => array(
             'weight' => '0',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
           'teaser' => array(
             'weight' => '0',

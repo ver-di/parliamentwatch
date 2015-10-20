@@ -552,7 +552,7 @@ function parliamentwatch_breadcrumb_user(&$variables, $user, $parliament_name = 
   }
 }
 
-/////////////////////////// customize comment form (ruth)
+/////////////////////////// customize forms (ruth)
 //////////////////////////////////////////////////////
 
 function parliamentwatch_form_comment_form_alter(&$form, &$form_state) {
@@ -562,6 +562,13 @@ function parliamentwatch_form_comment_form_alter(&$form, &$form_state) {
   }
   $form['actions']['submit']['#value'] = t('Add comment');
   $form['author']['homepage']['#access'] = FALSE;
+}
+function parliamentwatch_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'webform_client_form_104524') {
+    $form['#attributes']['class'][] = 'row';
+    $form['actions']['#attributes']['class'][] = 'col-sm-4';
+    $form['actions']['submit']['#attributes']['class'][] = 'big';
+  }
 }
 
 /////////////////////////// customize RSS block (ruth)

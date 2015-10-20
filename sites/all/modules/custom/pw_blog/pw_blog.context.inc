@@ -40,12 +40,6 @@ function pw_blog_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'custom_search_blocks-1' => array(
-          'module' => 'custom_search_blocks',
-          'delta' => '1',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
         'tagadelic-24' => array(
           'module' => 'tagadelic',
           'delta' => '24',

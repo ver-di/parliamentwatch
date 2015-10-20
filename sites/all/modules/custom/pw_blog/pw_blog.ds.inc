@@ -52,17 +52,10 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blogpost';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'author_linked_to_contact_form' => array(
-      'weight' => '4',
-      'label' => 'inline',
+    'sharethis' => array(
+      'weight' => '0',
+      'label' => 'hidden',
       'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => ' by ',
-          'lb-col' => TRUE,
-        ),
-      ),
     ),
     'sharethis_horizontal' => array(
       'weight' => '7',
@@ -75,7 +68,7 @@ function pw_blog_ds_field_settings_info() {
       ),
     ),
     'blog_petition_teaser' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -84,6 +77,18 @@ function pw_blog_ds_field_settings_info() {
         'ctools' => 'a:3:{s:4:"conf";a:0:{}s:4:"type";s:11:"views_panes";s:7:"subtype";s:24:"pw_petitions-blog_teaser";}',
         'load_terms' => 0,
         'ft' => array(),
+      ),
+    ),
+    'author_linked_to_contact_form' => array(
+      'weight' => '4',
+      'label' => 'inline',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => ' by ',
+          'lb-col' => TRUE,
+        ),
       ),
     ),
     'custom_comment_counter' => array(
@@ -113,7 +118,7 @@ function pw_blog_ds_field_settings_info() {
       ),
     ),
     'comments' => array(
-      'weight' => '7',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -466,11 +471,12 @@ function pw_blog_ds_layout_settings_info() {
         6 => 'group_blog_metainformation',
         7 => 'body',
         8 => 'author_linked_to_contact_form',
-        9 => 'blog_petition_teaser',
-        10 => 'group_blog_social_media',
-        11 => 'field_blogpost_categories',
-        12 => 'sharethis_horizontal',
-        13 => 'comments',
+        9 => 'field_blockreference',
+        10 => 'field_blogpost_categories',
+        11 => 'blog_petition_teaser',
+        12 => 'group_blog_social_media',
+        13 => 'sharethis_horizontal',
+        14 => 'comments',
       ),
     ),
     'fields' => array(
@@ -483,9 +489,10 @@ function pw_blog_ds_layout_settings_info() {
       'group_blog_metainformation' => 'ds_content',
       'body' => 'ds_content',
       'author_linked_to_contact_form' => 'ds_content',
+      'field_blockreference' => 'ds_content',
+      'field_blogpost_categories' => 'ds_content',
       'blog_petition_teaser' => 'ds_content',
       'group_blog_social_media' => 'ds_content',
-      'field_blogpost_categories' => 'ds_content',
       'sharethis_horizontal' => 'ds_content',
       'comments' => 'ds_content',
     ),
