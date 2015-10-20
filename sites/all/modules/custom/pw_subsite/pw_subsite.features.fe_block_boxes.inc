@@ -39,7 +39,7 @@ global $user;
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'pw_transparancy_header';
   $fe_block_boxes->body = '<p>
-	Transparenz statt Lobbyismus - &nbsp;Wir wollen mit ihrer Hilfe Transparenz voranbringen und Lobbyismus zurückdrängen. <a href="/node/10508">Können wir auf sie zählen?</a>
+	Transparenz statt Lobbyismus - Wir wollen mit ihrer Hilfe Transparenz voranbringen und Lobbyismus zurückdrängen. <a href="/node/10508">Können wir auf sie zählen?</a>
 </p>
 ';
 

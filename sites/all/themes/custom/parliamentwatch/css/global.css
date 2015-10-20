@@ -1389,7 +1389,7 @@ li.pw-list-item:last-child,
 }
 .pw-custom-search .form-actions {
     position: absolute;
-    bottom: 2px;
+    bottom: 3px;
     right: 0;
 }
 .pw-custom-search input.form-text {
@@ -1403,6 +1403,7 @@ li.pw-list-item:last-child,
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    filter: none;
 }
 
 /* //////////////////////////// taxonomy /////////////////// */
