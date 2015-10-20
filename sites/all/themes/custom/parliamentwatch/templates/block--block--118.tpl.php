@@ -7,7 +7,7 @@
             <div id="logo-transparenz"></div>
             <div class="content-inner">
               <?php print $content ?>
-              <strong class="counter medium"><?php print "2.312" ?></strong> Förderer unterstützen bereits unsere Arbeit. Seien auch Sie dabei!
+              <strong class="counter medium"><?php print file_get_contents( "/var/www/live_abgeordnetenwatch.de/httpdocs/sites/abgeordnetenwatch.de/files/membership-count.txt" ); ?></strong> Förderer unterstützen bereits unsere Arbeit. Seien auch Sie dabei!
             </div>
           </div>
           <div class="table-cell grid-4 center table-cell-middle desktop-only">
