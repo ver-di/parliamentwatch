@@ -16,20 +16,30 @@ define('PW_DIALOGUES_INTERVAL', 86400); // one day buffer
  * Implements hook_menu().
  */
 function pw_dialogues_menu() {
-  $menu['admin/config/services/pw-dialogues-importer'] = array(
+  $menu['admin/config/pw/dialogues/settings'] = array(
     'title' => 'Dialogue importer',
     'description' => 'Configure the source URL for the dialogue importer.',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('pw_dialogues_settings_form'),
+    'page arguments' => array('pw_dialogues_admin_settings_form'),
     'access arguments' => array('import dialogue_importer feeds'),
-    );
+    'file' => 'pw_dialogues.admin.inc',
+  );
+
+  $menu['admin/config/pw/dialogues'] = array(
+    'title' => 'Dialogue importer',
+    'description' => 'Mass re-import dialogues.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_dialogues_admin_reimport'),
+    'access arguments' => array('import dialogue_importer feeds'),
+    'file' => 'pw_dialogues.admin.inc',
+  );
 
   $menu['api/import/dialogue/%'] = array(
     'title' => 'imports dialogue',
     'access arguments' => array('access content'),
     'page callback' => 'pw_dialogues_triggered_import',
     'type' => MENU_SUGGESTED_ITEM,
-    );
+  );
 
   return $menu;
 }
@@ -65,8 +75,8 @@ function pw_dialogues_triggered_import() {
     // check if dialogue was imported
     $efq_nodes = new EntityFieldQuery();
     $efq_nodes->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'dialogue')
-    ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
+      ->entityCondition('bundle', 'dialogue')
+      ->fieldCondition('field_dialogue_id', 'value', $dialogue_id);
     $result = $efq_nodes->execute();
     $debug_message['result'] = $result;
 
@@ -100,36 +110,6 @@ function pw_dialogues_triggered_import() {
 
   _pw_send_debug_mail('Import ' . $return_value . ': ' . request_uri(), $debug_message);
   print $return_value;
-}
-
-/**
- * Form constructor for the dialogues importer settings form.
- *
- * @ingroup forms
- */
-function pw_dialogues_settings_form($form, &$form_state) {
-  $form['pw_dialogues_source'] = array(
-    '#type' => 'textfield',
-    '#title' => t('XML source API'),
-    '#default_value' => variable_get('pw_dialogues_importer_source', ''),
-    '#description' => t('If set, dialogues will be imported from this URL during cron runs.'),
-    '#element_validate' => array('pw_dialogues_validate_url'),
-    '#size' => 100,
-    );
-
-  return system_settings_form($form);
-}
-
-/**
- * Form element validation handler for pw_dialogues_settings_form().
- */
-function pw_dialogues_validate_url(&$element, &$form_state) {
-  $value = trim($element['#value']);
-  form_set_value($element, $value, $form_state);
-
-  if ($value != '' && !valid_url($value, TRUE)) {
-    form_error($element, t('The URL %url is not valid.', array('%url' => $value)));
-  }
 }
 
 /**
@@ -195,8 +175,8 @@ function pw_dialogues_do_import_questions($source) {
   $dialogue_feed->addConfig(array(
     'FeedsHTTPFetcher' => array(
       'source' => $source,
-      ),
-    ));
+    ),
+  ));
   while (FEEDS_BATCH_COMPLETE != $dialogue_feed->import()) {
     ;
   }
@@ -214,8 +194,8 @@ function pw_dialogues_do_import_answers($source) {
   $message_feed->addConfig(array(
     'FeedsHTTPFetcher' => array(
       'source' => $source,
-      ),
-    ));
+    ),
+  ));
   while (FEEDS_BATCH_COMPLETE != $message_feed->import()) {
     ;
   }
@@ -240,7 +220,7 @@ function pw_dialogues_feeds_processor_targets_alter(&$targets, $entity_type, $bu
       $targets[$name . ':uuid'] = array(
         'name' => t('@label (by UUID)', array('@label' => $instance['label'])),
         'callback' => 'pw_dialogues_feeds_set_target',
-        );
+      );
     }
   }
 
@@ -248,7 +228,7 @@ function pw_dialogues_feeds_processor_targets_alter(&$targets, $entity_type, $bu
     $targets['uid:uuid'] = array(
       'name' => t('uid (by UUID)', array('@label' => $instance['label'])),
       'callback' => 'pw_dialogues_feeds_set_target',
-      );
+    );
   }
 }
 
@@ -275,10 +255,10 @@ function pw_dialogues_feeds_set_target($source, $entity, $target, $value, $mappi
   $language = isset($mapping['language']) ? $mapping['language'] : LANGUAGE_NONE;
 
   $entity_ids = db_select('users', 'u')
-  ->fields('u', array('uuid', 'uid'))
-  ->condition('uuid', array_values($values), 'IN')
-  ->execute()
-  ->fetchAllKeyed();
+    ->fields('u', array('uuid', 'uid'))
+    ->condition('uuid', array_values($values), 'IN')
+    ->execute()
+    ->fetchAllKeyed();
 
   $iterator = 0;
   $field = isset($entity->target) ? $entity->target : array();
@@ -383,3 +363,4 @@ function pw_dialogues_feeds_presave(FeedsSource $source, $entity, $item) {
     }
   }
 }
+
