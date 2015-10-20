@@ -113,7 +113,7 @@
     print $q;
   ?>
 <?php endif; ?>
-<p>Die Positionen Ihrer Wahlkreisabgeordneten erfahren Sie durch Eingabe Ihrer Postleitzahl.</p>
+<p>Die Positionen Ihrer Abgeordneten erfahren Sie über die Suche.</p>
 <div class="views-exposed-form">
     <?php foreach ($widgets as $id => $widget): ?>
       <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?>">
