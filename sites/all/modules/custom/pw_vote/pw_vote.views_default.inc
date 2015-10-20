@@ -95,6 +95,12 @@ function pw_vote_views_default_views() {
     181527986 => '181527986',
   );
   $handler->display->display_options['filters']['rid']['group'] = 1;
+  /* Filterkriterium: Inhalt: Node Reference (field_vote_node) */
+  $handler->display->display_options['filters']['field_vote_node_target_id']['id'] = 'field_vote_node_target_id';
+  $handler->display->display_options['filters']['field_vote_node_target_id']['table'] = 'field_data_field_vote_node';
+  $handler->display->display_options['filters']['field_vote_node_target_id']['field'] = 'field_vote_node_target_id';
+  $handler->display->display_options['filters']['field_vote_node_target_id']['operator'] = 'regular_expression';
+  $handler->display->display_options['filters']['field_vote_node_target_id']['value']['value'] = '.*51264.*';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
