@@ -1270,7 +1270,8 @@ node/*/edit';
     ),
     'client-block-10508' => array(
       'display' => 'form',
-      'pages_block' => 1,
+      'pages_block' => '1',
+      'confirmation_block' => '0',
     ),
     'client-block-57286' => array(
       'display' => 'full',
