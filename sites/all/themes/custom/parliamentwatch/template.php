@@ -564,7 +564,7 @@ function parliamentwatch_form_comment_form_alter(&$form, &$form_state) {
   $form['author']['homepage']['#access'] = FALSE;
 }
 function parliamentwatch_form_alter(&$form, &$form_state, $form_id) {
-  if ($form_id == 'webform_client_form_104524') {
+  if ($form_id == 'webform_client_form_104846') {
     $form['#attributes']['class'][] = 'row';
     $form['actions']['#attributes']['class'][] = 'col-sm-4';
     $form['actions']['submit']['#attributes']['class'][] = 'big';
