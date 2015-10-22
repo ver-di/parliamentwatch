@@ -21,7 +21,7 @@
       </div>
     <?php endif ?>
     <p class="path-profile">
-      <a href="/<?php print $path_profile; ?>?question_form" class="icon-politician">jetzt zur Position befragen</a>
+      <a href="/<?php print $path_profile; ?>#pw_block_user_questionform" class="icon-politician">jetzt zur Position befragen</a>
     </p>
   </div>
 </li>

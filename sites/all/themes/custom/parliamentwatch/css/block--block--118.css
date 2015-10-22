@@ -1,6 +1,7 @@
 #zone-promotion-wrapper {
   border: 1px solid #ccc;
   margin-bottom: 25px;
+  border-width: 0 0 1px 0;
 }
 #block-block-118 {
   position: relative;
@@ -43,6 +44,9 @@
   margin: 0 10px 10px 0;
 }
 @media (min-width: 640px) {  
+  #zone-promotion-wrapper {
+    border-width: 1px 0;
+  }
   #block-block-118 {
     display: table;
     margin: 0;
