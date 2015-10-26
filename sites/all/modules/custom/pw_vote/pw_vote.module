@@ -481,7 +481,6 @@ function pw_vote_voting_behavior($node) {
   $query->join("user_archive_cache", "ua", "f_vote_user.field_vote_user_target_id = ua.uid");
   $query->condition("ua.user_role", "deputy");
   $query->condition("ua.parliament_name", $parliament->name);
-  $query->addExpression('MAX(ua.vid)', 'vid');
 
   // join on first name
   $query->join("field_revision_field_user_fname", "f_user_fname", "ua.vid = f_user_fname.revision_id AND f_user_fname.entity_type = 'user'");
@@ -600,7 +599,7 @@ function pw_vote_voting_behavior($node) {
     // put vertical containers and sum votes into one fraction container
     $container_parties[$fraction] = theme('voting_behavior_container_fraction', array(
         'fraction' => $fraction,
-        'fraction_num_members' => sizeof($votes_fraction),
+        'fraction_num_members' => format_plural(sizeof($votes_fraction), '1 Mitglied', '@count Mitglieder'),
         'list_voting_behavior' => $buffer_fraction,
         'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_fractions[$fraction], 'voting_behavior_sum_fraction', $fraction),
       )
