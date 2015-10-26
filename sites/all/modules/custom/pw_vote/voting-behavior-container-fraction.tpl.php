@@ -1,6 +1,6 @@
 <li class="clearfix push-bottom-m">
   <h4 class="push-bottom-xs">
-    <a title="<?php print $fraction; ?>: Alle Positionen anzeigen" rel="filter-<?php print $fraction ?>-Alle" style="cursor: pointer">
+    <a title="<?php print $fraction; ?>: Alle Positionen anzeigen" rel="filter--<?php print $fraction ?>--Alle" style="cursor: pointer">
       <?php print $fraction; ?>, <?php print $fraction_num_members; ?>
     </a>
   </h4>
