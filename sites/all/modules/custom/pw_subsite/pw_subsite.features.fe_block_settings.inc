@@ -707,7 +707,7 @@ profile/*/deputies',
   );
 
   $export['webform-client-block-104846'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => 'pw-promo-block',
     'custom' => '0',
     'delta' => 'client-block-104846',
