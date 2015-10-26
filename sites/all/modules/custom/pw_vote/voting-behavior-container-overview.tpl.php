@@ -7,6 +7,7 @@
 	</div>
 	<div id="pw-voting-parties" class="visually-hidden-mobile push-bottom-l">
 		<h3>Fraktionen</h3>
+		<p>Jedes Kästchen symbolisiert einen Abgeordneten. Durch einen Klick darauf, erhalten Sie mehr Informationen.</p>
 		<ul>
 			<?php print $list_voting_behavior; ?>
 		</ul>
