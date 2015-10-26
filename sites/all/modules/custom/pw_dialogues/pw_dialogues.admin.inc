@@ -148,6 +148,8 @@ function pw_dialogues_admin_reimport_submit($form, &$form_state) {
 
   $terms = taxonomy_term_load_multiple($parliament_tids);
   foreach ($terms as $parliament) {
+
+    // load all politicians from parliament
     $query = db_select('user_archive_cache', 'uac');
     $query->fields('uac');
     $query->condition('parliament_name', $parliament->name);
@@ -157,8 +159,8 @@ function pw_dialogues_admin_reimport_submit($form, &$form_state) {
     $result_uac = $query->execute();
 
     if($result_uac->rowCount() == 0){
-      drupal_set_message('No users found.', 'warning');
-      return;
+      drupal_set_message('No users found for '.$parliament->name, 'warning');
+      continue;
     }
     while($record = $result_uac->fetchObject()){
 
@@ -188,7 +190,13 @@ function pw_dialogues_admin_reimport_submit($form, &$form_state) {
         node_delete_multiple(array_keys($result_dialogues_before['node']));
       }
 
+      // download xml and import
       $url_import = $baseurl_modsystem.'?user_id='.$user->uuid.'&user_id_e=1&context='.$parliament->name;
+      $headers = get_headers($url_import);
+      if(!strpos($headers[0], '200 OK')){
+        drupal_set_message(format_string('Got @code for @url.', array('@code' => $headers[0], '@url' => $url_import)), 'error');
+        continue;
+      }
       pw_dialogues_do_import_questions($url_import);
       pw_dialogues_do_import_answers($url_import);
 
