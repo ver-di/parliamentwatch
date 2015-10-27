@@ -454,8 +454,8 @@ function _auditfiles_not_in_database_confirm_operation(array $form, array &$form
     $confirm_question,
     'admin/reports/auditfiles/notindatabase',
     $confirm_description,
-    t('Yes'),
-    t('No')
+    'Yes',
+    'No'
   );
 }
 
