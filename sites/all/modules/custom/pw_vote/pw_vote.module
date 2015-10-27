@@ -59,7 +59,6 @@ function pw_vote_form_alter(&$form, &$form_state, $form_id) {
   // modify vote search filters
   if ($form_id == 'views_exposed_form' && $form['#id'] == "views-exposed-form-vote-search-block") {
     $parliament_name = _pw_get_current_parliament_term()->name;
-    drupal_set_message($parliament_name);
     if ($parliament_name == "EU") {
       $form['#info']['filter-search_api_views_fulltext']['label'] = "Suche nach Name";
     }
