@@ -27,11 +27,13 @@
   jQuery(document).ready(
     function() {
      setInterval(function() {
-      //jQuery.ajaxSetup({ cache: false });
+        jQuery.ajaxSetup({ cache: false });
+        jQuery("#mscount").load("/sites/abgeordnetenwatch.de/files/membership-count.txt");
+        jQuery.ajaxSetup({ cache: true });      
       jQuery.get("/sites/abgeordnetenwatch.de/files/membership-count.txt",
         function(count){
             var old_count = document.getElementById('mscount').innerHTML;
-            if (old_count != count){
+            if (old_count < count){
               jQuery("#mscount").fadeOut('slow', function(){                                
                 jQuery('#mscount').html(count);
                 jQuery("#mscount").fadeIn('slow');
