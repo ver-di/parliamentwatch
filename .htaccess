@@ -60,6 +60,10 @@ DirectoryIndex index.php index.html index.htm
     # problems if a non-Drupal PHP file is installed in a subdirectory.
     ExpiresActive Off
   </FilesMatch>
+
+  <FilesMatch membership-count.txt$>
+    ExpiresDefault "access plus 30 seconds"
+  </FilesMatch>
 </IfModule>
 
 # Various rewrite rules.
