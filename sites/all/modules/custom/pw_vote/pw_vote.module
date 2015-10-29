@@ -460,7 +460,7 @@ function pw_vote_voting_behavior($node) {
   // collect data from base (votes, user and term ids for party, fraction and voting behaviour)
   $query = db_select("node", "n");
 
-  // join on target politician get uid
+  // join on target politician to get uid
   $query->addField("f_vote_user", "field_vote_user_target_id", "uid");
   $query->join("field_revision_field_vote_user", "f_vote_user", "n.vid = f_vote_user.revision_id AND f_vote_user.bundle = 'vote'");
 
@@ -502,6 +502,9 @@ function pw_vote_voting_behavior($node) {
   $query->addField("file", "uri", "picture_uri");
   $query->leftJoin("field_revision_field_user_picture", "f_user_picture", "ua.vid = f_user_picture.revision_id AND f_user_picture.entity_type = 'user'");
   $query->leftJoin("file_managed", "file", "f_user_picture.field_user_picture_fid = file.fid");
+
+  // group by uid
+  $query->groupBy('ua.uid');
 
   // get result
   $result = $query->execute();
@@ -596,7 +599,7 @@ function pw_vote_voting_behavior($node) {
     // put vertical containers and sum votes into one fraction container
     $container_parties[$fraction] = theme('voting_behavior_container_fraction', array(
         'fraction' => $fraction,
-        'fraction_num_members' => sizeof($votes_fraction),
+        'fraction_num_members' => format_plural(sizeof($votes_fraction), '1 Mitglied', '@count Mitglieder'),
         'list_voting_behavior' => $buffer_fraction,
         'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_fractions[$fraction], 'voting_behavior_sum_fraction', $fraction),
       )
