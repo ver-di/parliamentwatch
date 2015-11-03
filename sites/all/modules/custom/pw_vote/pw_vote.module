@@ -329,7 +329,6 @@ function pw_vote_block_info() {
     'info' => t('Displays Final Result'),
   );
 
-
   return $blocks;
 }
 
@@ -340,11 +339,12 @@ function pw_vote_block_info() {
 
 function pw_vote_block_view($delta, $arguments = array()) {
 
-  // The $delta parameter tells us which block is being requested.
+  // the $delta parameter tells us which block is being requested.
   switch ($delta) {
     case 'voting_behavior':
       $node = menu_get_object();
-      if (!empty($node) && !empty(field_get_items('node', $node, 'field_parliament'))) {
+      $field_parliament = field_get_items('node', $node, 'field_parliament');
+      if (!empty($node) && !empty($field_parliament)) {
         $block['content'] = pw_vote_voting_behavior($node);
       }
       break;
