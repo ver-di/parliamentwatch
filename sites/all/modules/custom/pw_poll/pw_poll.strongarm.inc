@@ -131,8 +131,8 @@ function pw_poll_strongarm() {
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '-100',
-            'visible' => TRUE,
+            'weight' => '0',
+            'visible' => FALSE,
           ),
           'teaser' => array(
             'weight' => '0',
