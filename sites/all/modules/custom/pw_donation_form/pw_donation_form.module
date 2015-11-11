@@ -27,7 +27,7 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
     $getparams = drupal_get_query_parameters();
 
     // Set default frequency value to monthly if parameter 'recurring' is set.
-    if (isset($getparams["recurring"])) {
+    if (isset($getparams["recurring"]) && ($getparams["recurring"] == 1 || $getparams["recurring"] == "")) {
       $form['submitted']['fieldset_donationform_yourdonation']['donation_frequency']['#default_value'] = "1";
     }
 

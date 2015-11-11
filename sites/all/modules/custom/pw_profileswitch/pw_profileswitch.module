@@ -21,12 +21,13 @@ function pw_profileswitch_user_custom_view($account, $view_mode = 'full', $langc
   // redirect profile to legacy platform if anonymous user
   global $user;
   if($user->uid == 0 && !empty($account->field_user_external_url['und'][0]['url'])){
-    $request_uri = parse_url(request_uri());
-    $redirect_url = $account->field_user_external_url['und'][0]['url'];
-    if($request_uri['query'] == 'question_form'){
-      $redirect_url .= '#question_form';
+
+    $parliament = _pw_get_current_parliament_term();
+    if(!empty($parliament) && $parliament->name == 'Bundestag'){
+      $request_uri = parse_url(request_uri());
+      $redirect_url = $account->field_user_external_url['und'][0]['url'];
+      drupal_goto($redirect_url, array(), 307);
     }
-    drupal_goto($redirect_url, array(), 307);
   }
 
   // set custom page title
@@ -132,7 +133,7 @@ function pw_profileswitch_menu_alter(&$items) {
     'page arguments' => array(1, 3),
     'access callback' => 'user_view_access', // default access callback for users
     'access arguments' => array(1),
-  );
+    );
 }
 
 /**
@@ -152,13 +153,13 @@ function pw_profileswitch_user_view_page($account) {
  */
 function pw_profileswitch_menu() {
   $items['admin/config/pw/pw_profileswitch/settings'] = array(
-      'title' => 'PW Profileswitch settings',
-      'description' => 'Connect User Roles with Display Modes.',
-      'page callback' => 'drupal_get_form',
-      'page arguments' => array('pw_profileswitch_admin_settings'),
-      'access arguments' => array('administer site configuration'),
-      'type' => MENU_NORMAL_ITEM,
-      'file' => 'pw_profileswitch.admin.inc',
-  );
+    'title' => 'PW Profileswitch settings',
+    'description' => 'Connect User Roles with Display Modes.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_profileswitch_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'pw_profileswitch.admin.inc',
+    );
   return $items;
 }

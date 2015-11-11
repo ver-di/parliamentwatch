@@ -11,40 +11,37 @@ html {
 #nav {
     display: none !important;
 }
-#region-branding {
-    padding: 7px 0 0;
-    border-bottom: 0;
-    background: transparent;
-    margin: 0 10px;
-    z-index: auto;
+
+#zone-branding {
+  background: #fff;
 }
-#zone-branding .logo-img {
-    display: inline-block;
-    margin: 1px 7px 11px 0;
-    left: 0;
-    max-width: none;
-    text-align: left;
+#region-branding {
+  padding: 21px 0 28px;
+  border-bottom: 0;
+  margin: 0 10px;
+  z-index: 1;
+  background: transparent;
+}
+#region-branding .logo-img {
+  margin-left: 0;
+}
+#region-user-second {
+  float: right;
+}
+#zone-promotion-wrapper {
+  position: relative;
+  z-index: 99;
 }
 #zone-menu-wrapper {
 	display: block;
 }
-#region-user-second {
-    float: right;
-    background: #fff;
-    margin: 0 -13px 0 0;
-    text-align: right;
-}
-#region-user-second .block .content a {
-    padding: 0 13px;
-    color: #858585 !important;
-}
-#region-header-first {
-    display: block;
-    min-height: 20rem;
-    min-height: 20px;
-}
 #region-sidebar-second {
     float: left;
+}
+
+.pw-custom-search input.form-text {
+    font-size: 14px;
+    font-size: 1.4rem;
 }
 
 
@@ -146,12 +143,25 @@ html {
     max-width: 280px;
 }
 
+/* kandidatencheck */
 
 #pw-block-user-kc .view-footer .grid-4.alpha {
     text-align: left;
 }
 #pw-block-user-kc .view-footer .grid-4.omega {
     text-align: right;
+}
+.container-12 .view-pw-kandidatencheck .pw-kc-profile-picture {
+    display: block;
+    width: 60px;
+}
+.container-12 .view-pw-kandidatencheck .pw-kc-argumentation {
+    margin-left: 60px;
+}
+
+.slick-prev span.desktop-only,
+.slick-next span.desktop-only {
+    display: inline-block !important;
 }
 
 

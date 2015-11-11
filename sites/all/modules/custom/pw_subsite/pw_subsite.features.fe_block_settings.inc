@@ -12,6 +12,39 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
+  $export['block-menu_meta_de'] = array(
+    'cache' => '1',
+    'css_class' => 'small medium desktop-only',
+    'custom' => '0',
+    'machine_name' => 'menu_meta_de',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => 'user_second',
+        'status' => '1',
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'user_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => 'sidebar_first',
+        'status' => '1',
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
   $export['delta_blocks-breadcrumb'] = array(
     'cache' => '5',
     'css_class' => '',
@@ -571,6 +604,39 @@ profile/*/deputies',
       ),
     ),
     'title' => '<none>',
+    'visibility' => '0',
+  );
+
+  $export['webform-client-block-104846'] = array(
+    'cache' => '-1',
+    'css_class' => 'pw-promo-block',
+    'custom' => '0',
+    'delta' => 'client-block-104846',
+    'module' => 'webform',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
     'visibility' => '0',
   );
 

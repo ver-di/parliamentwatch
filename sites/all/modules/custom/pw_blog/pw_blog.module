@@ -5,3 +5,29 @@
  */
 
 include_once 'pw_blog.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function pw_blog_form_views_exposed_form_alter(&$form, &$form_state) {
+  if($form['#id'] == 'views-exposed-form-blog-page-1'){
+    krsort($form['sort_bef_combine']['#options']);
+  }
+}
+
+/**
+ * Implements hook_blockreference_blocks_pre_alter().
+ */
+function pw_blog_blockreference_blocks_pre_alter(&$blocks, $context) {
+  if($context['entity']->type == 'blogpost'){
+    $allowed_block_ids = array('webform:client-block-104846');
+    foreach ($blocks as $id => $block) {
+      // $block->info .= ' (' . $block->module . '/' . $block->delta . ')';
+
+      // leave only specific blocks enabled
+      if (!in_array($id, $allowed_block_ids)) {
+        unset($blocks[$id]);
+      }
+    }
+  }
+}

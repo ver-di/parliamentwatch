@@ -24,9 +24,9 @@ print render($title_suffix);
 </div>
 <div class="pw-responsive-list-contents">
   <i class="icon-ok aw-icon-2x aw-success float-left push-right-s"></i>
-  <div class="medium"><strong>Petition wurde im Bundestag abgefragt</strong></div>
+  <div class="medium"><strong>Petition wurde im Parlament abgefragt</strong></div>
   <?php if ($count_votes > 1): ?>
-    <div class="small light"><?php print $count_votes; ?> MdBs haben Stellung genommen</div>
+    <div class="small light"><?php print $count_votes; ?> Politiker haben Stellung genommen</div>
   <?php endif; ?>
   <?php if ($partner_html): ?>
     <div class="responsive-list-partner-wrapper small light">
@@ -34,5 +34,5 @@ print render($title_suffix);
       <a href="<?php print $signing_url; ?>" class="<?php print ($partner_html)?"colorbox-load ":"";?>" title="zur Petition auf <?php print $field_petition_partner[0]['value']; ?>"><?php print $partner_html; ?></a>
     </div>
   <?php endif; ?>
-  <div class="responsive-list-sign-wrapper"><a href="<?php print $node_url; ?>" class="button">Positionen der MdBs</a></div>
+  <div class="responsive-list-sign-wrapper"><a href="<?php print $node_url; ?>" class="button">Positionen lesen</a></div>
 </div>

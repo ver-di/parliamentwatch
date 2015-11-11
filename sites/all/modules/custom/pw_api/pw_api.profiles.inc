@@ -194,8 +194,48 @@ function pw_api_user_to_array($user) {
 
     $profile['votes'] = array();
     if(isset($result['node'])){
-      $votes = node_load_multiple(array_keys($result['node']), array(), TRUE);
-      foreach ($votes as $nid => $vote) {
+
+      $query = db_select('node', 'n');
+
+      // join taxonomy terms to retrieve voting behaviour
+      $query->join('field_data_field_vote', 'vote', "n.nid = vote.entity_id AND vote.bundle = 'vote'");
+      $query->join('taxonomy_term_data', 'vote_term', "vote.field_vote_tid = vote_term.tid");
+      $query->join('field_data_field_votes_label', 'vote_label', "vote_term.tid = vote_label.entity_id AND vote_label.entity_type = 'taxonomy_term'");
+      $query->addField('vote_label', 'field_votes_label_value', 'vote_label');
+
+      // join target petition or poll to retrieve title, uuid and created date
+      $query->join('field_data_field_vote_node', 'vote_node', "n.nid = vote_node.entity_id AND vote_node.bundle = 'vote'");
+      $query->join('node', 'target_node', "vote_node.field_vote_node_target_id = target_node.nid");
+      $query->fields('target_node', array('title', 'uuid', 'created', 'nid', 'type'));
+
+      // load only vote of current user
+      $query->condition('n.nid', array_keys($result['node']));
+
+      // get results
+      $result = $query->execute();
+
+      // fetch and write results
+      while($record = $result->fetchObject()){
+        if(in_array($record->type, $types_allowed)){
+          $type = str_replace('pw_', '', $record->type);
+          $profile['votes'][$type.'_'.$record->nid] = array();
+          $profile['votes'][$type.'_'.$record->nid]['title'] = $record->title;
+          $profile['votes'][$type.'_'.$record->nid]['uuid'] = $record->uuid;
+          $profile['votes'][$type.'_'.$record->nid]['date'] = date("Y-m-d", $record->created);
+          /*
+           if(isset($w_vote->field_blogpost_categories)){
+            foreach($w_vote->field_blogpost_categories as $key => $category){
+              $profile['votes'][$type.'_'.$nid]['category_'.$key] = $category;
+            }
+          }
+           */
+          $profile['votes'][$type.'_'.$record->nid]['vote'] = $record->vote_label;
+
+          $profile['votes'][$type.'_'.$record->nid]['url'] = url('node/'.$record->nid, array('absolute' => TRUE));
+        }
+      }
+      /*
+       foreach ($votes as $nid => $vote) {
 
         // wrap vote
         $w_vote = entity_metadata_wrapper('node', $vote);
@@ -217,6 +257,7 @@ function pw_api_user_to_array($user) {
           }
         }
       }
+      */
     }
 
     // add data from user_archive_cache meta table

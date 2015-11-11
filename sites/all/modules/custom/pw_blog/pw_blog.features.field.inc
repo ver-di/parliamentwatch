@@ -364,7 +364,152 @@ function pw_blog_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '3',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-blogpost-field_blockreference'.
+  $fields['node-blogpost-field_blockreference'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_blockreference',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'moddelta' => array(
+          0 => 'moddelta',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'blockreference',
+      'settings' => array(
+        'referenceable_modules' => array(),
+      ),
+      'translatable' => '0',
+      'type' => 'blockreference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'blogpost',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Der gewählte Block wird automatisch zwischen dem Text und den Kommentaren ausgegeben.',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'blockreference',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'blockreference_default',
+          'weight' => 8,
+        ),
+        'full' => array(
+          'label' => 'hidden',
+          'module' => 'blockreference',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'blockreference_without_title',
+          'weight' => '5',
+        ),
+        'rss' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_blockreference',
+      'label' => 'Block Referenz',
+      'required' => 0,
+      'settings' => array(
+        'blockreference_modules' => array(
+          'antispam' => 0,
+          'apachesolr_search' => 0,
+          'block' => 'block',
+          'comment' => 0,
+          'context_ui' => 0,
+          'custom_search_blocks' => 0,
+          'delta_blocks' => 0,
+          'devel' => 0,
+          'diff' => 0,
+          'ds_extras' => 0,
+          'facetapi' => 0,
+          'featured_content' => 0,
+          'locale' => 0,
+          'masquerade' => 0,
+          'menu' => 0,
+          'menu_block' => 0,
+          'node' => 0,
+          'piwik_reports' => 0,
+          'pw_login_once' => 0,
+          'pw_vote' => 0,
+          'quicktabs' => 0,
+          'search' => 0,
+          'search_api_page' => 0,
+          'sharethis' => 0,
+          'submenutree' => 0,
+          'system' => 0,
+          'tagadelic' => 0,
+          'tb_megamenu' => 0,
+          'text_resize' => 0,
+          'user' => 0,
+          'user_diff' => 0,
+          'views' => 'views',
+          'webform' => 'webform',
+        ),
+        'exclude_cv' => FALSE,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_select',
+        'weight' => '4',
       ),
     ),
   );
@@ -579,7 +724,7 @@ function pw_blog_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '3',
+        'weight' => '5',
       ),
     ),
   );
@@ -729,7 +874,7 @@ function pw_blog_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'options_buttons',
-        'weight' => '4',
+        'weight' => '6',
       ),
     ),
   );
@@ -906,15 +1051,17 @@ function pw_blog_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Block Referenz');
   t('Body');
   t('Categories');
+  t('Der gewählte Block wird automatisch zwischen dem Text und den Kommentaren ausgegeben.');
   t('Kommentar');
   t('Tags');
   t('Teaser image');

@@ -38,7 +38,8 @@ function pw_search_api_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
-        "body:value" : { "type" : "text" },
+        "body:summary" : { "type" : "text" },
+        "body:value" : { "type" : "text", "boost" : "2.0" },
         "changed" : { "type" : "date" },
         "comment" : { "type" : "integer" },
         "comment_count" : { "type" : "integer" },
@@ -105,9 +106,7 @@ function pw_search_api_default_search_api_index() {
         "status" : { "type" : "integer" },
         "sticky" : { "type" : "boolean" },
         "title" : { "type" : "text" },
-        "type" : { "type" : "string" },
-        "uuid" : { "type" : "text" },
-        "vuuid" : { "type" : "text" }
+        "type" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -128,10 +127,8 @@ function pw_search_api_default_search_api_index() {
           "weight" : "0",
           "settings" : { "fields" : {
               "title" : true,
-              "log" : true,
               "uuid" : true,
               "vuuid" : true,
-              "field_dialogue_sender_name" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -149,10 +146,8 @@ function pw_search_api_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "log" : true,
               "uuid" : true,
               "vuuid" : true,
-              "field_dialogue_sender_name" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -173,10 +168,8 @@ function pw_search_api_default_search_api_index() {
           "weight" : "15",
           "settings" : { "fields" : {
               "title" : true,
-              "log" : true,
               "uuid" : true,
               "vuuid" : true,
-              "field_dialogue_sender_name" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -194,10 +187,8 @@ function pw_search_api_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "log" : true,
               "uuid" : true,
               "vuuid" : true,
-              "field_dialogue_sender_name" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -217,10 +208,8 @@ function pw_search_api_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "log" : true,
               "uuid" : true,
               "vuuid" : true,
-              "field_dialogue_sender_name" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -244,7 +233,9 @@ function pw_search_api_default_search_api_index() {
             "excerpt_length" : "600",
             "exclude_fields" : {
               "field_announce_tab_title" : "field_announce_tab_title",
-              "field_dialogue_sender_name" : "field_dialogue_sender_name",
+              "field_dialogue_recipient:field_user_party:name" : "field_dialogue_recipient:field_user_party:name",
+              "field_dialogue_topic:description" : "field_dialogue_topic:description",
+              "field_dialogue_topic:field_votes_label" : "field_dialogue_topic:field_votes_label",
               "field_donation_progress" : "field_donation_progress",
               "field_petition_partner" : "field_petition_partner",
               "field_petition_recipient" : "field_petition_recipient",
@@ -252,7 +243,6 @@ function pw_search_api_default_search_api_index() {
               "field_poll_external_url" : "field_poll_external_url",
               "field_press_article_publisher" : "field_press_article_publisher",
               "field_sidejob_classification" : "field_sidejob_classification",
-              "log" : "log",
               "uuid" : "uuid",
               "vuuid" : "vuuid"
             },

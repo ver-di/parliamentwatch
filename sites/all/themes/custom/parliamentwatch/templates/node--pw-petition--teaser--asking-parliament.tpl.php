@@ -24,8 +24,8 @@ print render($title_suffix);
 </div>
 <div class="pw-responsive-list-contents">
   <i class="icon-clock aw-icon-2x aw-success float-left push-right-s"></i>
-  <div class="medium"><strong>Petition wird aktuell im Bundestag abgefragt</strong></div>
-  <?php if ($count_votes > 1): ?>
+  <div class="medium"><strong>Petition wird aktuell im Parlament abgefragt</strong></div>
+  <?php if ($count_votes > 100000): ?>
     <div class="small light"><?php print $count_votes; ?> MdBs haben bisher Stellung genommen</div>
   <?php endif; ?>
   <?php if ($partner_html): ?>

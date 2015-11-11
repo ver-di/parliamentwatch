@@ -32,8 +32,7 @@ function pw_vote_feeds_importer_default() {
       'config' => array(
         'sources' => array(
           'xpathparser:0' => 'parliament',
-          'xpathparser:1' => 'systemuuid',
-          'xpathparser:2' => 'systemuuid',
+          'xpathparser:1' => 'concat(voteuuid, \'_\', useruuid)',
           'xpathparser:3' => 'concat(\'Vote by \', firstname, \' \', lastname, \' on \', title)',
           'xpathparser:6' => 'vote',
           'xpathparser:7' => 'argumentation',
@@ -43,7 +42,6 @@ function pw_vote_feeds_importer_default() {
         'rawXML' => array(
           'xpathparser:0' => 0,
           'xpathparser:1' => 0,
-          'xpathparser:2' => 0,
           'xpathparser:3' => 0,
           'xpathparser:6' => 0,
           'xpathparser:7' => 0,
@@ -59,7 +57,6 @@ function pw_vote_feeds_importer_default() {
             'context' => 0,
             'xpathparser:0' => 0,
             'xpathparser:1' => 0,
-            'xpathparser:2' => 0,
             'xpathparser:3' => 0,
             'xpathparser:6' => 0,
             'xpathparser:7' => 0,
@@ -88,31 +85,26 @@ function pw_vote_feeds_importer_default() {
             'unique' => 1,
           ),
           2 => array(
-            'source' => 'xpathparser:2',
-            'target' => 'uuid:uuid',
-            'unique' => FALSE,
-          ),
-          3 => array(
             'source' => 'xpathparser:3',
             'target' => 'title',
             'unique' => FALSE,
           ),
-          4 => array(
+          3 => array(
             'source' => 'xpathparser:6',
             'target' => 'field_vote',
             'unique' => FALSE,
           ),
-          5 => array(
+          4 => array(
             'source' => 'xpathparser:7',
             'target' => 'body',
             'unique' => FALSE,
           ),
-          6 => array(
+          5 => array(
             'source' => 'xpathparser:8',
             'target' => 'field_vote_node',
             'unique' => FALSE,
           ),
-          7 => array(
+          6 => array(
             'source' => 'xpathparser:10',
             'target' => 'field_vote_user:uuid',
             'unique' => FALSE,

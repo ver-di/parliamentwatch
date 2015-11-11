@@ -33,15 +33,15 @@
 ?>
 <style>
   #views-exposed-form-vote-search-block {
-        background: #f4f4f4 none repeat scroll 0 0;
+    background: #f4f4f4 none repeat scroll 0 0;
     border: 1px solid #dedede;
     border-radius: 3px;
     box-shadow: 0 0 4px 1px #ebebeb;
-        color: #666;
+    color: #666;
     margin-bottom: 7em;
     padding: 12px 10px 10px;
     position: relative;
-    margin-bottom: 2em;
+    margin-bottom: 2em !important;
   }
   #edit-search-api-views-fulltext-wrapper {
     float: left;
@@ -68,7 +68,7 @@
   }
   #views-exposed-form-vote-search-block .views-submit-button {
     float: right;
-    margin-top: 2.5em;
+    margin-top: 1.8em;
   }
   #views-exposed-form-vote-search-block .form-submit {
     width: 40px;
@@ -113,7 +113,7 @@
     print $q;
   ?>
 <?php endif; ?>
-<div class="views-exposed-form-description">Die Positionen Ihrer Wahlkreisabgeordneten erfahren Sie durch Eingabe Ihrer Postleitzahl.</div>
+<p>Die Positionen Ihrer Abgeordneten erfahren Sie über die Suche.</p>
 <div class="views-exposed-form">
     <?php foreach ($widgets as $id => $widget): ?>
       <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget views-widget-<?php print $id; ?>">

@@ -21,7 +21,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_webform';
-  $strongarm->value = 'edit-expire';
+  $strongarm->value = 'edit-rabbit-hole';
   $export['additional_settings__active_tab_webform'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -451,6 +451,10 @@ function pw_globals_strongarm() {
             'visible' => FALSE,
           ),
           'search_result' => array(
+            'weight' => '30',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
             'weight' => '30',
             'visible' => FALSE,
           ),
@@ -1252,11 +1256,17 @@ node/*/edit';
     ),
     'client-block-10508' => array(
       'display' => 'form',
-      'pages_block' => 1,
+      'pages_block' => '1',
+      'confirmation_block' => '0',
     ),
     'client-block-57286' => array(
       'display' => 'full',
       'pages_block' => 1,
+    ),
+    'client-block-104846' => array(
+      'display' => 'full',
+      'pages_block' => '1',
+      'confirmation_block' => '0',
     ),
   );
   $export['webform_blocks'] = $strongarm;
