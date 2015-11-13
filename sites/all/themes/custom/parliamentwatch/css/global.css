@@ -347,9 +347,6 @@ blockquote .pw-expander div {
 .absolute.bottom {
 	bottom: 0;
 }
-.pw-list-item .absolute.bottom {
-	bottom: 15px;
-}
 .absolute.right {
 	right: 0;
 }
@@ -2539,7 +2536,6 @@ ul.progress-icons li {
 	}
 	.pw-responsive-list-contents {
 		margin-left: 300px;
-		padding-bottom: 5em;
 	}
 }
 @media (max-width: 639px) {

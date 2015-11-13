@@ -24,17 +24,17 @@
   </div>
 <?php endif; ?>
 <?php endif; ?>
-<div class="clearfix push-bottom-m">
+<div class="clearfix relative push-bottom-m">
   <div class="responsive-list-image-wrapper img-outline">
-    <a href="<?php print $node_url; ?>" title="zur Abstimmung">
-      <?php print render($content['field_teaser_image']); ?>
-    </a>
+    <?php print render($content['field_teaser_image']); ?>
   </div>
-  <div class="pw-responsive-list-contents">
-    <?php print render($content['body']); ?>
-    <p class="text-right">
-      <a class="icon-poll" href="<?php print $node_url; ?>" title="zur Abstimmung"> Details zur Abstimmung</a>
-    </p>
+  <?php if (!empty($content['body'])): ?>
+    <div class="pw-responsive-list-contents push-bottom-xl">
+        <?php print render($content['body']); ?>
+    </div>
+  <?php endif; ?>
+  <div class="text-right absolute bottom right">
+    <a class="icon-poll" href="<?php print $node_url; ?>" title="zur Abstimmung"> Details zur Abstimmung</a>
   </div>
 </div>
 <div class="clear clearfix">
