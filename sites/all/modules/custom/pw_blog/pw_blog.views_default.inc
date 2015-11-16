@@ -12,7 +12,7 @@ function pw_blog_views_default_views() {
 
   $view = new view();
   $view->name = 'blog';
-  $view->description = 'A feed, a page of articles, a block of recent articles, a taxonomypage';
+  $view->description = 'Unser Blog berichtet über das Projekt und nimmt Stellung zu Transparenz, Bürgernähe und Teilhabe in der Politik.';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'PW Blog';
