@@ -43,7 +43,7 @@ function pw_dialogues_views_api() {
 function pw_dialogues_node_info() {
   $items = array(
     'dialogue' => array(
-      'name' => t('Fragen und Antworten'),
+      'name' => t('Dialogue'),
       'base' => 'node_content',
       'description' => t('A dialogue. The node content is the question, comments are answers by the politician or further questions. Node and questions have the same fields.'),
       'has_title' => '1',

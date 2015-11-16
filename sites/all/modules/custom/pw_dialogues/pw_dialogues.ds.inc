@@ -186,14 +186,14 @@ function pw_dialogues_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'from',
+          'lb' => 'von  ',
           'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'span',
           'ow-cl' => 'light',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
-          'ow-def-at' => FALSE,
+          'ow-def-at' => TRUE,
         ),
       ),
     ),
@@ -201,7 +201,7 @@ function pw_dialogues_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'on the subject',
+          'lb' => '  zum Thema  ',
           'lb-col' => TRUE,
           'ow' => TRUE,
           'ow-el' => 'span',
