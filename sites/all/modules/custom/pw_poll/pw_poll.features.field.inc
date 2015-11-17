@@ -225,7 +225,7 @@ function pw_poll_field_default_fields() {
             'trim_length' => '600',
           ),
           'type' => 'text_summary_or_trimmed',
-          'weight' => '4',
+          'weight' => '1',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -341,7 +341,7 @@ function pw_poll_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'taxonomy',
+          'module' => 'ds',
           'settings' => array(
             'linked_field' => array(
               'advanced' => array(
@@ -354,9 +354,11 @@ function pw_poll_field_default_fields() {
               'destination' => '',
               'linked' => 0,
             ),
+            'taxonomy_term_link' => 1,
+            'taxonomy_term_separator' => ', ',
           ),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => '2',
+          'type' => 'ds_taxonomy_separator',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -377,7 +379,7 @@ function pw_poll_field_default_fields() {
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '5',
+          'weight' => '3',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -464,7 +466,7 @@ function pw_poll_field_default_fields() {
             ),
           ),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '5',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -483,7 +485,7 @@ function pw_poll_field_default_fields() {
             ),
           ),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -550,7 +552,7 @@ function pw_poll_field_default_fields() {
           'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'long',
+            'format_type' => 'date_only_short',
             'fromto' => 'both',
             'linked_field' => array(
               'advanced' => array(
@@ -592,7 +594,7 @@ function pw_poll_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => '2',
+          'weight' => '4',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -668,28 +670,15 @@ function pw_poll_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'text_default',
-          'weight' => '7',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'teaser' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '7',
+          'weight' => '34',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -798,24 +787,9 @@ function pw_poll_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'image',
-          'settings' => array(
-            'image_link' => '',
-            'image_style' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'image',
-          'weight' => '0',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '28',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -835,7 +809,7 @@ function pw_poll_field_default_fields() {
             ),
           ),
           'type' => 'file_rendered',
-          'weight' => '3',
+          'weight' => '5',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -944,7 +918,7 @@ function pw_poll_field_default_fields() {
             ),
           ),
           'type' => 'list_default',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'hidden',

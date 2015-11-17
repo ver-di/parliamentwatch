@@ -5,24 +5,24 @@ print theme('status_messages');
 <div class="sharethis-wrapper">
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
-<p>
-  Abstimmung
+<p class="medium">
+  <?php print render($content['field_parliament']); ?> / Abstimmung
   <?php
-  if(!empty($field_poll_date)){
-    $date_object = new DateObject($field_poll_date[0]['value'], new DateTimeZone($field_poll_date[0]['timezone_db']));
-    print ' am '.date_format_date($date_object, 'custom', 'd.m.Y');
+  if(!empty($content['field_poll_date'])){
+    print ' am '.render($content['field_poll_date']);
   }
-  print ' im '.$field_parliament[0]['taxonomy_term']->name;
   ?>
 </p>
-<div class=" push-bottom-m">
-  <?php if (!empty($field_blogpost_categories)): ?>
-    <p class="icon-taxonomy">
-      <?php print _pw_get_linked_terms($field_blogpost_categories); ?>
-    </p>
+<div class="push-bottom-m">
+  <?php if (!empty($content['field_blogpost_categories'])): ?>
+    <div class="icon-taxonomy">
+      <?php print render($content['field_blogpost_categories']); ?>
+    </div>
   <?php endif; ?>
   <p class="comment-count">
-    <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
+    <a href="#comments">
+      <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
+    </a>
   </p>
 </div>
 <?php
@@ -53,14 +53,14 @@ print render(field_view_field('node', $node, 'body', array('label' => 'hidden', 
 $block = module_invoke('block', 'block_view', '12');
 print render($block["content"]);
 ?>
-<?php
-  // render comments if there are any
-$comments = render(comment_node_page_additions($node));
-?>
 <div id="comments" class="comment-wrapper">
   <?php if ($comment_count > 0): ?>
     <h3><?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?> zu "<?php print $title; ?>"</h3>
   <?php endif; ?>
-  <?php print $comments; ?>
+  <?php
+    // render comments if there are any
+  $comments = comment_node_page_additions($node);
+  print render($comments);
+  ?>
 </div>
 </article>
