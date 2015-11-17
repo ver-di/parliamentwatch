@@ -13,14 +13,9 @@ print render($title_suffix);
   <a href="<?php print $node_url; ?>"><?php print $title;?></a>
 </h3>
 <div class="responsive-list-image-wrapper img-outline">
-  <a href="<?php print $node_url; ?>" title="zur Petition">
-    <?php print $themed_image; ?>
-  </a>
-  <?php if ($field_image_copyright): ?>
-    <div class="copyright">
-      <?php print $field_teaser_image[0]['field_image_copyright']['und'][0]['value'] ?>
-    </div>
-  <?php endif; ?>
+  <?php
+  print render($content['field_teaser_image']);
+  ?>
 </div>
 <div class="pw-responsive-list-contents">
   <i class="icon-ok aw-icon-2x aw-success float-left push-right-s"></i>

@@ -996,7 +996,7 @@ function pw_poll_field_default_fields() {
       'bundle' => 'vote',
       'default_value' => array(
         0 => array(
-          'value' => 1,
+          'value' => 0,
         ),
       ),
       'deleted' => '0',

@@ -13,20 +13,15 @@ print render($title_suffix);
   <a href="<?php print $node_url; ?>"><?php print $title;?></a>
 </h3>
 <div class="responsive-list-image-wrapper img-outline">
-  <a href="<?php print $node_url; ?>" title="zur Petition">
-    <?php print $themed_image; ?>
-  </a>
-  <?php if ($field_image_copyright): ?>
-    <div class="copyright">
-      <?php print $field_teaser_image[0]['field_image_copyright']['und'][0]['value'] ?>
-    </div>
-  <?php endif; ?>
+  <?php
+  print render($content['field_teaser_image']);
+  ?>
 </div>
 <div class="pw-responsive-list-contents">
   <i class="icon-clock aw-icon-2x aw-success float-left push-right-s"></i>
   <div class="medium"><strong>Petition wird aktuell im Parlament abgefragt</strong></div>
-  <?php if ($count_votes > 100000): ?>
-    <div class="small light"><?php print $count_votes; ?> MdBs haben bisher Stellung genommen</div>
+  <?php if ($count_votes > 1): ?>
+    <div class="small light"><?php print $count_votes; ?> Politiker haben bisher Stellung genommen</div>
   <?php endif; ?>
   <?php if ($partner_html): ?>
     <div class="responsive-list-partner-wrapper small light">

@@ -109,6 +109,11 @@ function pw_vote_feeds_importer_default() {
             'target' => 'field_vote_node:uuid',
             'unique' => FALSE,
           ),
+          7 => array(
+            'source' => 'Blank source 1',
+            'target' => 'field_voted',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'plain_text',
