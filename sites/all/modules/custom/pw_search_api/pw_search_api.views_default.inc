@@ -240,6 +240,7 @@ function pw_search_api_views_default_views() {
         ),
         'rewrite' => array(
           'filter_rewrite_values' => 'All|Ganze Plattform durchsuchen
+Alle|Ganze Plattform durchsuchen
 0|Ganze Plattform durchsuchen 0',
         ),
       ),
@@ -265,6 +266,14 @@ function pw_search_api_views_default_views() {
     'node' => 'search_result',
     'user' => 'search_result',
   );
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'Suche erfolglos';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Leider liegen für Ihre Anfrage keine Suchergebnisse vor.';
+  $handler->display->display_options['empty']['area']['format'] = 'managed_content';
   /* Feld: Suche: Node Index results */
   $handler->display->display_options['fields']['node_index']['id'] = 'node_index';
   $handler->display->display_options['fields']['node_index']['table'] = 'search_api_multi';
@@ -288,8 +297,10 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['label'] = 'Suchbegriff';
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['operator'] = 'search_api_multi_fulltext_op';
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['identifier'] = 'k';
+  $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['remember_roles'] = array(
-    2 => '2',
+    2 => 0,
     1 => 0,
     3 => 0,
     51622513 => 0,
@@ -387,6 +398,8 @@ function pw_search_api_views_default_views() {
     t('‹ vorherige Seite'),
     t('weiter'),
     t('letzte Seite »'),
+    t('Suche erfolglos'),
+    t('Leider liegen für Ihre Anfrage keine Suchergebnisse vor.'),
     t('Node Index results'),
     t('Suchbegriff'),
     t('Ergebnis beschränken auf'),

@@ -39,7 +39,7 @@ function pw_search_api_default_search_api_index() {
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "body:summary" : { "type" : "text" },
-        "body:value" : { "type" : "text", "boost" : "2.0" },
+        "body:value" : { "type" : "text", "boost" : "8.0" },
         "changed" : { "type" : "date" },
         "comment" : { "type" : "integer" },
         "comment_count" : { "type" : "integer" },
@@ -127,8 +127,6 @@ function pw_search_api_default_search_api_index() {
           "weight" : "0",
           "settings" : { "fields" : {
               "title" : true,
-              "uuid" : true,
-              "vuuid" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -146,8 +144,6 @@ function pw_search_api_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "uuid" : true,
-              "vuuid" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -160,7 +156,7 @@ function pw_search_api_default_search_api_index() {
             },
             "title" : 0,
             "alt" : 1,
-            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
+            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nem = 1.5\\r\\nu = 1.5"
           }
         },
         "search_api_transliteration" : {
@@ -168,8 +164,6 @@ function pw_search_api_default_search_api_index() {
           "weight" : "15",
           "settings" : { "fields" : {
               "title" : true,
-              "uuid" : true,
-              "vuuid" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -187,8 +181,6 @@ function pw_search_api_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "uuid" : true,
-              "vuuid" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -196,7 +188,9 @@ function pw_search_api_default_search_api_index() {
               "field_sidejob_classification" : true,
               "field_poll_external_url" : true,
               "field_press_article_publisher" : true,
-              "field_announce_tab_title" : true
+              "field_announce_tab_title" : true,
+              "body:value" : true,
+              "body:summary" : true
             },
             "spaces" : "[^[:alnum:]]",
             "ignorable" : "[\\u0027]"
@@ -208,8 +202,6 @@ function pw_search_api_default_search_api_index() {
           "settings" : {
             "fields" : {
               "title" : true,
-              "uuid" : true,
-              "vuuid" : true,
               "field_petition_recipient" : true,
               "field_donation_progress" : true,
               "field_petition_partner" : true,
@@ -242,9 +234,7 @@ function pw_search_api_default_search_api_index() {
               "field_petition_starter" : "field_petition_starter",
               "field_poll_external_url" : "field_poll_external_url",
               "field_press_article_publisher" : "field_press_article_publisher",
-              "field_sidejob_classification" : "field_sidejob_classification",
-              "uuid" : "uuid",
-              "vuuid" : "vuuid"
+              "field_sidejob_classification" : "field_sidejob_classification"
             },
             "highlight" : "always"
           }

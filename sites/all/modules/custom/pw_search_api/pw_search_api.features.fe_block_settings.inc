@@ -174,7 +174,7 @@ function pw_search_api_default_fe_block_settings() {
       ),
     ),
     'title' => 'abgeordnetenwatch.de durchsuchen',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   $export['views-dd2cb179c08ae616789999b01178b193'] = array(
