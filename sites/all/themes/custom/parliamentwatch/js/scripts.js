@@ -25,8 +25,6 @@ jQuery(window) // https://www.drupal.org/node/1478648
 		$("#hamburger").click(function() {
 			$("#nav").trigger("open.mm");
 		});
-		$('.responsive-layout-mobile #region-branding').stick_in_parent({parent:'#page'});
-		$('.responsive-layout-normal #region-branding').trigger("sticky_kit:detach");  
 		
 		// remove height for scaled images, leave in place for native images sizes to lazyload nicely
     $('img').each(function() {

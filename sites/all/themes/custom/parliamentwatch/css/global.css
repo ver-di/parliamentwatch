@@ -7,7 +7,6 @@
 @import url("slick.css");
 @import url("jquery.mmenu.all.css");
 @import url("icons/css/awfont20150517.css");
-@import url("block--block--118.css");
 
 /*
 	LAYOUT
@@ -186,9 +185,6 @@ h3 {
     line-height: 2.2rem;
     margin-bottom: 8px;
     margin-bottom: 0.8rem;
-}
-#zone-postscript .block-title {
-    color: #333;
 }
 h2 a:link,
 h2 a:visited,
@@ -459,6 +455,11 @@ blockquote .pw-expander div {
 }
 .pw-landscape-l {
     max-width: 140px;
+}
+.img-rounded,
+.img-rounded > img {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 /* bootstrap styles */
@@ -1754,18 +1755,32 @@ ul.tabs li a:active {
 #zone-branding {
   background: #ccc;
 }
-#region-user-second {
-  padding: 7px 0 2px;
+@media (max-width: 639px) {
+  #region-user-second {
+    border-top: 1px solid #999;
+    bottom: 0;
+    height: 100px;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background: #f7f7f7; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background-image: -moz-linear-gradient(top,  #f7f7f7 0%, #ffffff 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top,  #f7f7f7 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background-image: -o-linear-gradient(top,  #f7f7f7 0%,#ffffff 100%); /* Opera 11.10+ */
+    background-image: -ms-linear-gradient(top,  #f7f7f7 0%,#ffffff 100%); /* IE10+ */
+    background-image: linear-gradient(top,  #f7f7f7 0%,#ffffff 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
+  }
 }
 #region-branding {
-  padding: 10px;
+  padding: 10px 10px 20px;
   background: #fff;
   z-index: 999;
-  border-bottom: 1px solid #f63;
   margin: 0;
-}
-#region-branding .logo-img {
-  margin-left: 51px;
 }
 #region-user-second #block-block-20 {
   text-align: right;
@@ -1991,6 +2006,27 @@ ul.tabs li a:active {
 .views-exposed-widget label {
     display: block;
     padding-bottom: 4px;
+}
+
+
+/* view-pw-testimonials-header */
+
+.view-pw-testimonials-header blockquote {
+  padding: 0;
+  margin-bottom: 0.5em;
+}
+.view-pw-testimonials-header .more-link {
+  text-align: right;
+}
+.view-pw-testimonials-header .more-link a {
+  background: transparent;
+  padding-left: 0;
+}
+.view-pw-testimonials-header .more-link a:after {
+  font-family: "awfont20150517";
+  content: "\e841";
+  font-size: 1.4em;
+  font-weight: normal;
 }
 
 
@@ -3516,57 +3552,46 @@ form .webform-component-checkboxes .description {
 /* /////////////////////////// footer /////////////////// */
 
 #zone-postscript-wrapper {
-    background: #f7f7f7; /* Old browsers */
-    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-    background-image: -moz-linear-gradient(top,  #f7f7f7 0%, #ffffff 100%); /* FF3.6+ */
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-    background-image: -webkit-linear-gradient(top,  #f7f7f7 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-    background-image: -o-linear-gradient(top,  #f7f7f7 0%,#ffffff 100%); /* Opera 11.10+ */
-    background-image: -ms-linear-gradient(top,  #f7f7f7 0%,#ffffff 100%); /* IE10+ */
-    background-image: linear-gradient(top,  #f7f7f7 0%,#ffffff 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#ffffff',GradientType=0 ); /* IE6-8 */
-
-    border-top: 1px solid #d3d3d3;
+    border-top: 1px solid #999;
     padding: 15px 0 30px;
-    padding: 1.5rem 0;
+    padding: 1.5rem 0 0;
     margin-top: 40px;
 }
-#zone-postscript .region {
-    padding-bottom: 15px;
-    padding-bottom: 1.5rem;
+#zone-postscript-wrapper p:last-child {
+  margin-bottom: 20px;
 }
-#zone-postscript h2 {
-    font-family: Lucida Grande, Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    font-size: 1.4rem;
+.socialmedia,
+.socialmedia a {
+  width: 50px;
+  height: 50px;
+  text-indent: -5000em;
 }
-#zone-postscript li {
-    list-style: none;
+.socialmedia {
+  display: inline-block;
 }
-#zone-postscript a {
-    font-weight: normal;
-    color: #666;
-    line-height: 2em;
+.socialmedia a {
+  display: block;
 }
-#region-postscript-fourth a {
-    padding-left: 28px;
-    display: inline-block;
+.socialmedia.facebook {
+    background-position: 0 -1180px;
 }
-#region-postscript-fourth .facebook a {
-    background-position: -930px -1290px;
+.socialmedia.twitter {
+    background-position: -50px -1180px;
 }
-#region-postscript-fourth .twitter a {
-    background-position: -890px -1329px;
+.socialmedia.google {
+    background-position: -100px -1180px;
 }
-#region-postscript-fourth .google a {
-    background-position: -850px -1370px;
+.socialmedia.rss {
+    background-position: -150px -1180px;
 }
-#region-postscript-fourth .rss a {
-    background-position: -810px -1410px;
+#section-footer {
+  margin-bottom: 20px;
 }
-#region-postscript-fourth .block-forward .content a {
-    background-position: -970px -1250px;
+#logo-footer {
+  margin-bottom: 20px;
+}
+#zone-copyright {
+  padding-bottom: 7em;
 }
 
 
@@ -3578,7 +3603,7 @@ form .webform-component-checkboxes .description {
 .item-list ul.pager li.pager-last a,
 .item-list ul.pager li.pager-last span,
 .item-list ul.pager li.pager-next a,
-#region-postscript-fourth a,
+.socialmedia,
 #cboxClose,
 .comment-reply,
 .comment .submitted .author,

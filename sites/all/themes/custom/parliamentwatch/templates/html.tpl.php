@@ -20,5 +20,8 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
+  <div id="zone-copyright" class="light container-12">
+    <div class="grid-12">© 2004-<?php echo date("Y") ?> Parlamentwatch e.V.. Alle Rechte vorbehalten.</div>
+  </div>
 </body>
 </html>
