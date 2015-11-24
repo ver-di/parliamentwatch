@@ -101,7 +101,8 @@ function pw_cleanup_settings_form($form, &$form_state) {
         $result = $efq->entityCondition('entity_type', 'file')
         ->propertyCondition('uri', $file_uri)
         ->execute();
-        if(empty($result['file']) || empty(file_usage_list(reset($result['file'])))){
+        $file_usage = !empty($result['file'])?file_usage_list(reset($result['file'])):FALSE;
+        if(empty($result['file']) || empty($file_usage)){
           $row = array();
           $row['filename'] = $file->filename;
           $row['path'] = str_replace($file_public_path, '.', dirname($file->uri));
