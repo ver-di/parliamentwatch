@@ -74,5 +74,25 @@ global $user;
 
   $export['pw_transparancy_header'] = $fe_block_boxes;
 
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Social Media Footer';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'social_media_footer';
+  $fe_block_boxes->body = '<div class="socialmedia facebook">
+	<a href="https://www.facebook.com/abgeordnetenwatch.de" title="Facebook">Facebook</a>
+</div>
+<div class="socialmedia twitter">
+	<a href="https://twitter.com/a_watch" title="Twitter">Twitter</a>
+</div>
+<div class="socialmedia google">
+	<a href="https://plus.google.com/101206126881536002255/" title="Google+">Google+</a>
+</div>
+<div class="socialmedia rss">
+	<a href="https://www.abgeordnetenwatch.de/rss/blog.xml" title="RSS">RSS</a>
+</div>
+';
+
+  $export['social_media_footer'] = $fe_block_boxes;
+
   return $export;
 }
