@@ -45,6 +45,107 @@ function pw_subsite_default_fe_block_settings() {
     'visibility' => '0',
   );
 
+  $export['block-newsletter_auto'] = array(
+    'cache' => '-1',
+    'css_class' => '',
+    'custom' => '0',
+    'machine_name' => 'newsletter_auto',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(
+      'anonymous user' => '1',
+    ),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '1',
+  );
+
+  $export['block-pw_footer_abstract'] = array(
+    'cache' => '-1',
+    'css_class' => 'medium',
+    'custom' => '0',
+    'machine_name' => 'pw_footer_abstract',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'postscript_first',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
+  $export['block-pw_transparancy_header'] = array(
+    'cache' => '1',
+    'css_class' => '',
+    'custom' => '0',
+    'machine_name' => 'pw_transparancy_header',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
   $export['custom_search_blocks-1'] = array(
     'cache' => '1',
     'css_class' => 'pw-custom-search custom-search-button',
@@ -212,7 +313,7 @@ function pw_subsite_default_fe_block_settings() {
 
   $export['menu-menu-about-us-de'] = array(
     'cache' => '1',
-    'css_class' => '',
+    'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => 'menu-about-us-de',
     'module' => 'menu',
@@ -221,25 +322,25 @@ function pw_subsite_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'blank' => array(
-        'region' => 'sidebar_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'blank',
         'weight' => '-36',
       ),
       'parliamentwatch' => array(
-        'region' => 'postscript_second',
+        'region' => 'footer_first',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '-36',
+        'weight' => '0',
       ),
       'pw_seven' => array(
-        'region' => 'sidebar_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'pw_seven',
         'weight' => '-36',
       ),
     ),
-    'title' => '',
+    'title' => '<none>',
     'visibility' => '0',
   );
 
@@ -254,20 +355,20 @@ function pw_subsite_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'blank' => array(
-        'region' => 'sidebar_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'blank',
         'weight' => '0',
       ),
       'parliamentwatch' => array(
-        'region' => 'postscript_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'parliamentwatch',
         'weight' => '0',
       ),
       'pw_seven' => array(
-        'region' => 'sidebar_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'pw_seven',
         'weight' => '0',
       ),
@@ -353,20 +454,20 @@ function pw_subsite_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'blank' => array(
-        'region' => 'sidebar_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'blank',
         'weight' => '0',
       ),
       'parliamentwatch' => array(
-        'region' => 'postscript_third',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'parliamentwatch',
         'weight' => '0',
       ),
       'pw_seven' => array(
-        'region' => 'sidebar_first',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'pw_seven',
         'weight' => '0',
       ),
@@ -607,6 +708,39 @@ profile/*/deputies',
     'visibility' => '0',
   );
 
+  $export['views-pw_testimonials_header-block'] = array(
+    'cache' => -1,
+    'css_class' => '',
+    'custom' => '0',
+    'delta' => 'pw_testimonials_header-block',
+    'module' => 'views',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'header_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
   $export['views-pw_user_revision_switch-block'] = array(
     'cache' => -1,
     'css_class' => 'relative desktop-only',
@@ -657,8 +791,8 @@ profile/*/deputies',
         'weight' => '-17',
       ),
       'parliamentwatch' => array(
-        'region' => 'sidebar_second',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'parliamentwatch',
         'weight' => '-100',
       ),
