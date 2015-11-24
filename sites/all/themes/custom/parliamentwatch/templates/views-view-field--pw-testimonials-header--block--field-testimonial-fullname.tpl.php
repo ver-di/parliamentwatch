@@ -1,5 +1,6 @@
 <div class="small light views-field-field-testimonial-fullname">
-  <?php print $output; ?> ist eines von <?php print file_get_contents( "/var/www/live_abgeordnetenwatch.de/httpdocs/sites/abgeordnetenwatch.de/files/membership-count.txt" ); ?> Fördermitgliedern von abgeordnetenwatch.de.
+  <?php print $output; ?> <span class="desktop-only inline"> ist eines von <?php // print file_get_contents( "/var/www/live_abgeordnetenwatch.de/httpdocs/sites/abgeordnetenwatch.de/files/membership-count.txt" ); ?> Fördermitgliedern von abgeordnetenwatch.de.</span>
+<!--
   <script>
   jQuery(document).ready(
     function() {
@@ -22,4 +23,5 @@
       }, 30000);
     });
   </script>
+-->
 </div>
