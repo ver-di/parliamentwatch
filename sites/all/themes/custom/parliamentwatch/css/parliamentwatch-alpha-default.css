@@ -1,8 +1,9 @@
 /* This file will hold styles that are loaded using the same media query as the normal grid. */
 /* @import url("mainmenu-default-normal.css"); */
 
+
 html {
-    font-size: 10px;
+  font-size: 10px;
 }
 .desktop-only {
     display: block !important;
@@ -133,7 +134,8 @@ html {
   position: absolute;
   top: -19px;
   right: 0;
-  font-size: 12px;
+  font-size: 14px;
+  font-size: 1.4rem;
   border: 1px solid #f63;
   border-bottom: 0;
   -webkit-border-radius: 3px 3px 0 0;
@@ -148,6 +150,7 @@ html {
 #newsletter-wrapper h3 {
   font-family: Lucida Grande,​ Helvetica,​Arial,​ sans-serif;
   font-size: 17px;
+  font-size: 1.7rem;
   margin-top: 3px 0;
 }
 #newsletter-wrapper h3 .icon-logo-aw {
