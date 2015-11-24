@@ -33,17 +33,5 @@ global $user;
 ?></a>';
 
   $export['menu_meta_de'] = $fe_block_boxes;
-
-  $fe_block_boxes = new stdClass();
-  $fe_block_boxes->info = 'PW Transparenzkampagne Header';
-  $fe_block_boxes->format = 'managed_content';
-  $fe_block_boxes->machine_name = 'pw_transparancy_header';
-  $fe_block_boxes->body = '<p>
-	Wir wollen mit Ihrer Hilfe Transparenz voranbringen und verdeckte Lobbyarbeit zurückdrängen. <a href="/ueber-uns/spendenformular?recurring=1">Können wir auf Sie zählen?</a>
-</p>
-';
-
-  $export['pw_transparancy_header'] = $fe_block_boxes;
-
   return $export;
 }

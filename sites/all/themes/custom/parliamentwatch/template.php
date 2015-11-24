@@ -529,6 +529,32 @@ $output .= '</ul></div>';
 return $output;
 }
 
+/**
+ * Implements hook_breadcrumbs_alter().
+ */
+function parliamentwatch_menu_breadcrumb_alter(&$active_trail, $item){
+  foreach ($active_trail as $index => &$value) {
+
+    // Landtage and Parlamente are the same but we need Landtage for structuring the menu
+    if($value['title'] == 'Landtage'){
+      unset($active_trail[$index]);
+      continue;
+    }
+
+    // remove icon class menu attibutes for rendering as breadcrumb
+    foreach($value['options']['attributes']['class'] as $index_class => $class){
+      if(strpos($class, 'icon') > -1){
+        unset($value['options']['attributes']['class'][$index_class]);
+      }
+    }
+    foreach($value['localized_options']['attributes']['class'] as $index_class => $class){
+      if(strpos($class, 'icon') > -1){
+        unset($value['localized_options']['attributes']['class'][$index_class]);
+      }
+    }
+  }
+}
+
 function parliamentwatch_breadcrumb_user(&$variables, $user, $parliament_name = FALSE, $role = FALSE, $set_profile = TRUE){
   if($role){
     if($role == 'Candidate') {

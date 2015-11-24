@@ -2870,6 +2870,24 @@ form .webform-component-checkboxes .description {
 #region-content .comment-form label {
     display: block;
 }
+#custom-search-blocks-form-3 label {
+  display: none;
+}
+.responsive-layout-mobile #custom-search-blocks-form-3 {
+    clear: both;
+    padding-top: 1em;
+}
+#custom-search-blocks-form-3 .custom-search-box.form-text {
+    width: 80%;
+    margin-right: 10px;
+    float: left;
+    height: 40px;
+}
+#custom-search-blocks-form-3 #edit-submit {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+}
 #region-content #comment-form {
     padding: 12px 10px 40px 10px;
 }

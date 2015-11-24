@@ -630,6 +630,27 @@ function pw_seo_metatag_export_default() {
     ),
   );
 
+  // Exported Metatag config instance: node:newsletter.
+  $config['node:newsletter'] = array(
+    'instance' => 'node:newsletter',
+    'config' => array(
+      'robots' => array(
+        'value' => array(
+          'noindex' => 'noindex',
+          'nofollow' => 'nofollow',
+          'noarchive' => 'noarchive',
+          'nosnippet' => 'nosnippet',
+          'noodp' => 'noodp',
+          'noydir' => 'noydir',
+          'noimageindex' => 'noimageindex',
+          'notranslate' => 'notranslate',
+          'index' => 0,
+          'follow' => 0,
+        ),
+      ),
+    ),
+  );
+
   // Exported Metatag config instance: node:press_release.
   $config['node:press_release'] = array(
     'instance' => 'node:press_release',

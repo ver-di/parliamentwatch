@@ -296,6 +296,7 @@ function _pw_get_linked_terms($terms, $separator=', '){
   }, $terms));
 }
 
+
 /**
  * Custom: Helper, get fullname form user object.
  * @param object $user
@@ -323,3 +324,22 @@ function _pw_wrapper_debug($w) {
   }
   return $values;
 }
+
+/**
+ * for debugging db_select query
+* @param object $query
+ *   db_select query object
+ * @return string
+ *   Full SQL Statement.
+ */
+function _pw_query_debug($query) {
+  $querystring = preg_replace('/[\{|\}]/', '', $query->__toString());
+  foreach($query->getArguments() as $key=> $item){
+    if(!$item) {
+      $item = 'NULL';
+    }
+    $querystring = str_replace($key.')', "'".$item."')",$querystring);
+  }
+  return $querystring;
+}
+
