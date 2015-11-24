@@ -1,14 +1,16 @@
+<pre>
 <?php
 $image = theme('image_style', array(
   'style_name' => 'pw_portrait_xs', //Configure style here!
   'path' => $row->_entity_properties['field_vote_user:entity object']->field_user_picture['und'][0]['uri'],
 ));
 $user_title = $row->_field_data['field_vote_user:field_user_title']['entity']->field_user_title['und'][0]['value'];
-$user_fname = $row->_field_data['field_vote_user:field_user_title']['entity']->field_user_fname['und'][0]['value'];
-$user_lname = $row->_field_data['field_vote_user:field_user_title']['entity']->field_user_lname['und'][0]['value'];
+$user_fname = $row->_field_data['field_vote_user:field_user_fname']['entity']->field_user_fname['und'][0]['value'];
+$user_lname = $row->_field_data['field_vote_user:field_user_lname']['entity']->field_user_lname['und'][0]['value'];
 $user_full_name  = ($user_title)?$user_title." ":"";
 $user_full_name .= $user_fname." ".$user_lname;
 ?>
+</pre>
 <h4 class="push-bottom-xs">
   <a href="/profile/<? echo $row->_entity_properties['field_vote_user:name'][0];?>"><? echo $user_full_name; ?> (<? echo $row->_entity_properties['field_vote_user:field_user_party:name'][0]?>)</a> zu &bdquo;<? echo $row->_entity_properties['field_vote_node:title'][0]; ?>&ldquo;
 </h4>

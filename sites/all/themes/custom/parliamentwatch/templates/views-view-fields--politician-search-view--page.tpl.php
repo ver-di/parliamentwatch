@@ -53,11 +53,11 @@ $answers_give = $user_revision->field_user_answers_give['und'][0]['value'];
     </div>
   </div>
   <div id="user_user_search_result_group_grid_6" class="field-group-format group_grid_6 field-group-div group-grid-6 grid-6 omega speed-fast effect-none">
-    <?php if($has_title): ?><strong class="field-title"><?php print $title;?></strong><?php endif; ?><strong class="field-fname"><?php print $fname;?></strong><strong class="field-lname"><?php print $lname;?></strong><?php print $party;?>
+    <?php if($has_title): ?><strong class="field-title"><?php print $title;?>&nbsp;</strong><?php endif; ?><strong class="field-fname"><?php print $fname;?>&nbsp;</strong><strong class="field-lname"><?php print $lname;?>,&nbsp;</strong><?php print $party;?>
     <div class="small"><?php print $parliament; print (!empty($constituency))?"&nbsp;&ndash;&nbsp;".$constituency:"";?></div>
  </div>
   <div class="text-right">
-        <span class="link-profile"><a href="<?php print $profile_link;?>"><?php print ($has_title)?$title."&nbsp;":"";?><?php print $fname;?>&nbsp;<?php print $lname;?></a>
+        <span class="link-profile"><a href="<?php print $profile_link;?>">Profil öffnen</a>
         </span>
   </div>
 </div>
