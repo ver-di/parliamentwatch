@@ -146,6 +146,39 @@ function pw_subsite_default_fe_block_settings() {
     'visibility' => '0',
   );
 
+  $export['block-social_media_footer'] = array(
+    'cache' => '1',
+    'css_class' => '',
+    'custom' => '0',
+    'machine_name' => 'social_media_footer',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'footer_first',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => 'sidebar_first',
+        'status' => '1',
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '<none>',
+    'visibility' => '0',
+  );
+
   $export['custom_search_blocks-1'] = array(
     'cache' => '1',
     'css_class' => 'pw-custom-search custom-search-button',
