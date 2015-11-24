@@ -56,7 +56,23 @@ function pw_vote_check_user_allowed() {
  */
 
 function pw_vote_form_alter(&$form, &$form_state, $form_id) {
-
+  // modify vote search filters
+  if ($form_id == 'views_exposed_form' && $form['#id'] == "views-exposed-form-vote-search-block") {
+    $parliament_name = _pw_get_current_parliament_term()->name;
+    if ($parliament_name == "EU") {
+      $form['#info']['filter-search_api_views_fulltext']['label'] = "Suche nach Name";
+    }
+    $fractions = db_query("SELECT DISTINCT fraction_name FROM user_archive_cache WHERE parliament_name = :parliament AND user_role = :role", array(':parliament' => $parliament_name, ':role' => 'deputy'));
+    $form['field_vote_user_field_user_fraction']['#options'] = array('All' => t("All"));
+    foreach ($fractions as $fraction) {
+      if ($fraction->fraction_name){
+        $fraction_term = taxonomy_get_term_by_name($fraction->fraction_name,"fraction");
+        reset($fraction_term);
+        $tid = key($fraction_term);
+        $form['field_vote_user_field_user_fraction']['#options'][$tid] = $fraction->fraction_name;
+      }
+    }
+  }
   // modify vote form
   if ($form_id == 'webform_client_form_57286') {
 
@@ -313,7 +329,6 @@ function pw_vote_block_info() {
     'info' => t('Displays Final Result'),
   );
 
-
   return $blocks;
 }
 
@@ -324,11 +339,12 @@ function pw_vote_block_info() {
 
 function pw_vote_block_view($delta, $arguments = array()) {
 
-  // The $delta parameter tells us which block is being requested.
+  // the $delta parameter tells us which block is being requested.
   switch ($delta) {
     case 'voting_behavior':
       $node = menu_get_object();
-      if (!empty($node) && !empty($node->field_parliament[$node->language][0]['tid'])) {
+      $field_parliament = field_get_items('node', $node, 'field_parliament');
+      if (!empty($node) && !empty($field_parliament)) {
         $block['content'] = pw_vote_voting_behavior($node);
       }
       break;
@@ -439,12 +455,13 @@ function pw_vote_voting_behavior($node) {
   );
 
   // load parliament
-  $parliament = taxonomy_term_load($node->field_parliament[LANGUAGE_NONE][0]['tid']);
+  $field_parliament = field_get_items('node', $node, 'field_parliament');
+  $parliament = taxonomy_term_load($field_parliament[0]['tid']);
 
   // collect data from base (votes, user and term ids for party, fraction and voting behaviour)
   $query = db_select("node", "n");
 
-  // join on target politician get uid
+  // join on target politician to get uid
   $query->addField("f_vote_user", "field_vote_user_target_id", "uid");
   $query->join("field_revision_field_vote_user", "f_vote_user", "n.vid = f_vote_user.revision_id AND f_vote_user.bundle = 'vote'");
 
@@ -452,14 +469,14 @@ function pw_vote_voting_behavior($node) {
   $query->join("field_revision_field_vote_node", "f_vote_node", "n.vid = f_vote_node.revision_id AND f_vote_node.bundle = 'vote'");
   $query->condition("f_vote_node.field_vote_node_target_id", $node->nid);
 
-  // join on vote (yes, no, ...) to get tid and sort result
+  // join on vote (yes, no, ...) to get tid and sort the result
   $query->addField("f_vote", "field_vote_tid", "vote_tid");
   $query->join("field_revision_field_vote", "f_vote", "n.vid = f_vote.revision_id AND f_vote.bundle = 'vote'");
   $query->orderBy('f_vote.field_vote_tid');
 
   // join on body to get statement
   $query->addField("f_body", "body_value", "statement");
-  $query->join("field_revision_body", "f_body", "n.vid = f_body.revision_id AND f_body.bundle = 'vote'");
+  $query->leftJoin("field_revision_body", "f_body", "n.vid = f_body.revision_id AND f_body.bundle = 'vote'");
 
   // join on meta table to get correct vid by parliament and role
   $query->join("user_archive_cache", "ua", "f_vote_user.field_vote_user_target_id = ua.uid");
@@ -487,8 +504,13 @@ function pw_vote_voting_behavior($node) {
   $query->leftJoin("field_revision_field_user_picture", "f_user_picture", "ua.vid = f_user_picture.revision_id AND f_user_picture.entity_type = 'user'");
   $query->leftJoin("file_managed", "file", "f_user_picture.field_user_picture_fid = file.fid");
 
+  // group by uid
+  $query->groupBy('ua.uid');
+
   // get result
   $result = $query->execute();
+
+  # _pw_query_debug($query)
 
   // pre-fetch all terms for fractions, parties and votes
   $query = new EntityFieldQuery();
@@ -580,7 +602,7 @@ function pw_vote_voting_behavior($node) {
     // put vertical containers and sum votes into one fraction container
     $container_parties[$fraction] = theme('voting_behavior_container_fraction', array(
         'fraction' => $fraction,
-        'fraction_num_members' => sizeof($votes_fraction),
+        'fraction_num_members' => format_plural(sizeof($votes_fraction), '1 Mitglied', '@count Mitglieder'),
         'list_voting_behavior' => $buffer_fraction,
         'list_voting_behavior_sum' => pw_vote_voting_behavior_sum_votes($sum_votes_fractions[$fraction], 'voting_behavior_sum_fraction', $fraction),
       )

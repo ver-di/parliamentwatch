@@ -25,15 +25,19 @@ print theme('status_messages');
     <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
   </p>
 </div>
-<?php print check_markup($body[0]['summary']); ?>
+<?php
+print render(field_view_field('node', $node, 'body', array('label' => 'hidden', 'type' => 'text_summary_or_trimmed')));
+?>
 <?php if($field_voted): ?>
   <?php
+  // render voting behavior
   $block_voting_behavior = module_invoke('pw_vote', 'block_view', 'voting_behavior');
   print render($block_voting_behavior['content']);
   ?>
   <h3 id="pw_vote_positions">Wie haben Ihre Abgeordneten abgestimmt?</h3>
   <div class="compact-form push-bottom-l">
-    <?php
+    <?
+    // render search block
     $block_search = module_invoke('views', 'block_view', 'vote_search-block');
     print render($block_search['content']);
     ?>
@@ -42,9 +46,10 @@ print theme('status_messages');
 
 <h3>Hintergrund</h3>
 <div class="managed-content clearfix push-bottom-l">
-  <?php print check_markup($body[0]['value']);?>
+  <?php print render($content['body']);?>
 </div>
 <?php
+// share buttons
 $block = module_invoke('block', 'block_view', '12');
 print render($block["content"]);
 ?>

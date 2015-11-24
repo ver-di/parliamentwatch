@@ -262,7 +262,7 @@ function pw_search_api_views_default_views() {
     'node' => 'search_result',
     'user' => 'search_result',
   );
-  /* Feld: Beschädigte/fehlende Behandlungsroutine */
+  /* Feld: Suche: Node Index results */
   $handler->display->display_options['fields']['node_index']['id'] = 'node_index';
   $handler->display->display_options['fields']['node_index']['table'] = 'search_api_multi';
   $handler->display->display_options['fields']['node_index']['field'] = 'node_index';
@@ -366,7 +366,7 @@ function pw_search_api_views_default_views() {
     t('‹ vorherige Seite'),
     t('weiter'),
     t('letzte Seite »'),
-    t('Beschädigte Behandlungsroutine search_api_multi.node_index'),
+    t('Node Index results'),
     t('Suchbegriff'),
     t('Inhaltstyp (indexed)'),
     t('Page'),
@@ -593,6 +593,11 @@ no-show|nicht beteiligt',
   $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['table'] = 'search_api_index_node_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['field'] = 'field_vote_user_field_user_fraction_name';
   $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['link_to_entity'] = 0;
+  /* Sortierkriterien: Indexed Inhalt: Änderungsdatum */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   /* Filterkriterium: Indexed Inhalt: Inhaltstyp */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_node_index';
@@ -668,7 +673,7 @@ no-show|nicht beteiligt',
   $handler->display->display_options['filters']['field_vote']['group'] = 1;
   $handler->display->display_options['filters']['field_vote']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_vote']['expose']['operator_id'] = 'field_vote_op';
-  $handler->display->display_options['filters']['field_vote']['expose']['label'] = 'Stimme';
+  $handler->display->display_options['filters']['field_vote']['expose']['label'] = 'Position';
   $handler->display->display_options['filters']['field_vote']['expose']['operator'] = 'field_vote_op';
   $handler->display->display_options['filters']['field_vote']['expose']['identifier'] = 'field_vote';
   $handler->display->display_options['filters']['field_vote']['expose']['remember_roles'] = array(
@@ -726,7 +731,7 @@ no-show|nicht beteiligt',
     t('Titel (indexed)'),
     t('Suche nach Begriff oder PLZ'),
     t('Fraktion'),
-    t('Stimme'),
+    t('Position'),
     t('Block'),
   );
   $export['vote_search'] = $view;

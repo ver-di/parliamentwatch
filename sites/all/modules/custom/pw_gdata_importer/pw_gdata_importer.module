@@ -6,6 +6,98 @@
 
 include_once 'pw_gdata_importer.features.inc';
 
+
+/**
+ * Implements hook_feeds_processor_targets_alter().
+ */
+function pw_gdata_importer_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
+  if ($bundle_name === NULL) {
+    return;
+  }
+
+  foreach (field_info_instances($entity_type, $bundle_name) as $name => $instance) {
+    $info = field_info_field($name);
+    if ($info['type'] == 'entityreference') {
+      $targets[$name . ':uuid'] = array(
+        'name' => t('@label (by UUID)', array('@label' => $instance['label'])),
+        'callback' => 'pw_gdata_importer_feeds_set_target',
+        );
+    }
+  }
+
+  if (isset($targets['uid'])) {
+    $targets['uid:uuid'] = array(
+      'name' => t('uid (by UUID)', array('@label' => $instance['label'])),
+      'callback' => 'pw_gdata_importer_feeds_set_target',
+      );
+  }
+}
+
+/**
+ * Performs entity reference mapping by UUID.
+ *
+ * @see entityreference_feeds_set_target().
+ */
+function pw_gdata_importer_feeds_set_target($source, $entity, $target, $value, $mapping) {
+  if (empty($value)) {
+    return;
+  }
+
+  if (is_array($value)) {
+    $values = $value;
+  }
+  else {
+    $values = array($value);
+  }
+
+  list($target) = explode(':', $target, 2);
+
+  $info = field_info_field($target);
+
+  $language = isset($mapping['language']) ? $mapping['language'] : LANGUAGE_NONE;
+
+  if($info['settings']['target_type'] == 'user'){
+    $entity_ids = db_select('users', 'u')
+    ->fields('u', array('uuid', 'uid'))
+    ->condition('uuid', array_values($values), 'IN')
+    ->execute()
+    ->fetchAllKeyed();
+  }
+  elseif($info['settings']['target_type'] == 'node'){
+    $entity_ids = db_select('node', 'n')
+    ->fields('n', array('uuid', 'nid'))
+    ->condition('uuid', array_values($values), 'IN')
+    ->execute()
+    ->fetchAllKeyed();
+  }
+  else{
+    return;
+  }
+
+  $iterator = 0;
+  $field = isset($entity->target) ? $entity->target : array();
+  foreach ($entity_ids as $entity_id) {
+    if ($entity_id) {
+      if ($info) {
+        $field[$language][$iterator]['target_id'] = $entity_id;
+      }
+      else {
+        $field = $entity_id;
+      }
+    }
+    else {
+      unset($entity->feeds_item->hash);
+    }
+
+    if (!$info || $info['cardinality'] == 1) {
+      break;
+    }
+    $iterator++;
+  }
+
+  $entity->{$target} = $field;
+}
+
 /**
  *  Implements hook_feeds_after_parse().
  *

@@ -189,7 +189,7 @@ function pw_poll_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
             'linked_field' => array(
@@ -320,7 +320,7 @@ function pw_poll_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(
             'linked_field' => array(
@@ -407,7 +407,7 @@ function pw_poll_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(
             'linked_field' => array(
@@ -487,7 +487,7 @@ function pw_poll_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
             'format_type' => 'long',
@@ -583,7 +583,7 @@ function pw_poll_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
             'linked_field' => array(
@@ -599,7 +599,7 @@ function pw_poll_field_default_fields() {
             ),
           ),
           'type' => 'text_default',
-          'weight' => 7,
+          'weight' => '7',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -707,7 +707,7 @@ function pw_poll_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => '',
@@ -818,7 +818,7 @@ function pw_poll_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(
             'linked_field' => array(
@@ -834,7 +834,7 @@ function pw_poll_field_default_fields() {
             ),
           ),
           'type' => 'list_default',
-          'weight' => 6,
+          'weight' => '6',
         ),
       ),
       'ds_extras_field_template' => '',
