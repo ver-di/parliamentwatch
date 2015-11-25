@@ -294,7 +294,7 @@ function pw_blog_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Read complete blog article',
+        'link text' => 'Blogartikel lesen',
         'wrapper' => 'span',
         'class' => 'read-more',
         'ft' => array(
@@ -305,6 +305,17 @@ function pw_blog_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
         ),
       ),
     ),

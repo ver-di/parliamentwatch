@@ -46,7 +46,7 @@ function pw_poll_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Ganze Abstimmung ansehen',
+        'link text' => 'Abstimmung ansehen',
         'wrapper' => 'span',
         'class' => 'read-more',
         'ft' => array(

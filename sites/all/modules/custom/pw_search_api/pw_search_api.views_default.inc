@@ -296,7 +296,7 @@ Alle|Ganze Plattform durchsuchen
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['operator_id'] = 'search_api_multi_fulltext_op';
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['label'] = 'Suchbegriff';
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['operator'] = 'search_api_multi_fulltext_op';
-  $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['identifier'] = 'k';
+  $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['identifier'] = 's';
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['required'] = TRUE;
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['remember_roles'] = array(
