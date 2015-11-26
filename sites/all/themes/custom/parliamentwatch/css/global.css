@@ -295,7 +295,7 @@ blockquote:after {
 blockquote:before {
     content: open-quote;
     bottom: -25px;
-    padding: 0 5px 0 0;
+    padding: 0 7px 0 0;
 }
 blockquote:after,
 blockquote:before {
