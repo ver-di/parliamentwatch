@@ -113,6 +113,39 @@ function pw_subsite_default_fe_block_settings() {
     'visibility' => '0',
   );
 
+  $export['block-pw_placeholder'] = array(
+    'cache' => -1,
+    'css_class' => 'desktop-only',
+    'custom' => '0',
+    'machine_name' => 'pw_placeholder',
+    'module' => 'block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'blank' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'blank',
+        'weight' => '0',
+      ),
+      'parliamentwatch' => array(
+        'region' => 'sidebar_second',
+        'status' => '1',
+        'theme' => 'parliamentwatch',
+        'weight' => '0',
+      ),
+      'pw_seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'pw_seven',
+        'weight' => '0',
+      ),
+    ),
+    'title' => '',
+    'visibility' => '0',
+  );
+
   $export['block-pw_transparancy_header'] = array(
     'cache' => '1',
     'css_class' => '',

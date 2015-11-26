@@ -63,6 +63,17 @@ global $user;
   $export['pw_footer_abstract'] = $fe_block_boxes;
 
   $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'PW Placeholder (do not delete)';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'pw_placeholder';
+  $fe_block_boxes->body = '<p>
+	&nbsp;
+</p>
+';
+
+  $export['pw_placeholder'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'PW Transparenzkampagne Header';
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'pw_transparancy_header';
