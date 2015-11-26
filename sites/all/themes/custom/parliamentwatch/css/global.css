@@ -100,8 +100,8 @@ html {
 }
 body {
     background: #fff;
-    font: 14px/1.57 Lucida Grande, Helvetica, Arial, sans-serif;
-    font: 1.4rem/1.57 Lucida Grande, Helvetica, Arial, sans-serif;
+    font: 13px/1.57 Lucida Grande, Helvetica, Arial, sans-serif;
+    font: 1.3rem/1.57 Lucida Grande, Helvetica, Arial, sans-serif;
     color: #333;
 }
 body::-webkit-scrollbar,
@@ -174,17 +174,16 @@ h1 {
 h2,
 .h2 {
     color: #f63;
-    font-size: 29px;
-    font-size: 2.9rem;
-    line-height: 31px;
-    line-height: 3.1rem;
+    font-size: 27px;
+    font-size: 2.7rem;
+    line-height: 1.06em;
     letter-spacing: 0.04ex;
     margin-bottom: 9px;
     margin-bottom: 0.9rem;
 }
 .region-sidebar-second .block-title {
-    font-size: 17px;
-    font-size: 1.7rem;
+    font-size: 16px;
+    font-size: 1.6rem;
     margin-bottom: 2px;
     margin-bottom: 0.2rem;
     letter-spacing: 0.01ex;
@@ -192,10 +191,9 @@ h2,
 }
 h3 {
     font-family: 'Times New Roman', Georgia, serif;
-    font-size: 23px;
-    font-size: 2.3rem;
-    line-height: 26px;
-    line-height: 2.6rem;
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 1.13em;
     margin-bottom: 8px;
     margin-bottom: 0.8rem;
 }
@@ -208,8 +206,8 @@ h3 a:visited {
     font-weight: normal;
 }
 h4 {
-    font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 13px;
+    font-size: 1.3rem;
     margin-bottom: 0;
 }
 h4 a:link,
@@ -220,13 +218,12 @@ h4 a:visited {
 .subtitle,
 .small,
 small {
-    font-size: 13px;
-    font-size: 1.3rem;
-    line-height: 18px;
-    line-height: 1.8rem;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.45em;
 }
 .subline {
-    font: 13px/1.38 Lucida Grande, Helvetica, Arial, sans-serif;
+    font: 12px/1.38 Lucida Grande, Helvetica, Arial, sans-serif;
     display: block;
 }
 .bg-white {
@@ -500,24 +497,24 @@ blockquote .pw-expander div {
 /* icons */
 
 .aw-icon-1x {
-	font-size: 14px;
-	font-size: 1.4rem;
+	font-size: 13px;
+	font-size: 1.3rem;
 }
 .aw-icon-2x {
-	font-size: 20px;
-	font-size: 2rem;
+	font-size: 19px;
+	font-size: 1.9rem;
 }
 .aw-icon-3x {
-	font-size: 26px;
-	font-size: 2.6rem;
+	font-size: 25px;
+	font-size: 2.5rem;
 }
 .aw-icon-4x {
-	font-size: 34px;
-	font-size: 3.4rem;
+	font-size: 33px;
+	font-size: 3.3rem;
 }
 .aw-icon-5x {
-	font-size: 42px;
-	font-size: 4.2rem;
+	font-size: 41px;
+	font-size: 4.1rem;
 }
 .aw-icon-circle:before {
 	display: block;
@@ -610,7 +607,7 @@ a.external:hover {
     font-weight: normal;
     font-size: 10px;
     font-size: 1rem;
-    line-height: 1.2em;
+    line-height: 1.1em;
 }
 div.copyright {
   padding-top: 4px;
@@ -631,8 +628,7 @@ div.copyright {
 .shorten span {
     padding-left: 24px;
     display: inline-block;
-    line-height: 18px;
-    line-height: 1.8rem;
+    line-height: 1.34em;
 }
 .shorten span {
     background-position: -40px -2620px;
@@ -1043,8 +1039,8 @@ h1#page-title {
 #breadcrumb * {
     text-decoration: none;
     color: #b0b0b0;
-    font: 13px/1 Lucida Grande, Helvetica, Arial, sans-serif;
-    font: 1.3rem/1 Lucida Grande, Helvetica, Arial, sans-serif;
+    font: 12px/1.1 Lucida Grande, Helvetica, Arial, sans-serif;
+    font: 1.2rem/1.1 Lucida Grande, Helvetica, Arial, sans-serif;
 }
 #breadcrumb li {
     margin-right: 0;
@@ -1095,7 +1091,7 @@ li.pw-list-item:last-child,
 }
 .view-pw-donation-state .donation-amount {
     bottom: 2px;
-    font-size: 13px;
+    font-size: 12px;
     position: absolute;
     right: 7px;
 }
@@ -1360,8 +1356,8 @@ li.pw-list-item:last-child,
 }
 .pw-custom-search input.form-text {
     width: 100%;
-    font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 13px;
+    font-size: 1.3rem;
 }
 .pw-custom-search .form-submit {
     width: 100%;
@@ -1463,8 +1459,8 @@ ul.tabs li a:active {
 .item-list .pager {
     clear: both;
     text-align: center;
-    font-size: 12px;
-    font-size: 1.2rem;
+    font-size: 13px;
+    font-size: 1.3rem;
     padding-bottom: 30px;
     padding-bottom: 3rem;
 }
@@ -1477,16 +1473,16 @@ ul.tabs li a:active {
 .item-list ul.pager li.pager-current {
     background: #c3c3c3;
     display: inline-block;
-    min-width: 25px;
+    min-width: 31px;
     color: #fff;
     text-decoration: none;
-    line-height: 2.5em;
+    line-height: 2.4em;
     font-weight: bold;
 }
 *+html .item-list ul.pager li a,
 *+html .item-list ul.pager li span,
 *+html .item-list ul.pager li.pager-current {
-    width: 25px;
+    width: 31px;
     display: inline;
 }
 *+html .item-list ul.pager li.pager-last {
@@ -1515,8 +1511,8 @@ ul.tabs li a:active {
     background-color: #c3c3c3;
     text-indent: -50000px;
     display: block;
-    width: 25px;
-    height: 25px;
+    width: 31px;
+    height: 31px;
 }
 .item-list ul.pager li.pager-first a span,
 .item-list ul.pager li.pager-last a span {
@@ -1527,23 +1523,23 @@ ul.tabs li a:active {
 .item-list ul.pager li.pager-first span,
 .item-list ul.pager li.pager-first a {
     float: left;
-    padding-left: 36px;
+    padding-left: 40px;
 }
 .item-list ul.pager li.pager-previous a,
 .item-list ul.pager li.pager-first a {
-    background-position: -920px -3655px;
+    background-position: -914px -3655px;
 }
 .item-list ul.pager li.pager-first span,
 .item-list ul.pager li.pager-first a:hover,
 .item-list ul.pager li.pager-first a:focus,
 .item-list ul.pager li.pager-first a:active {
-    background-position: -960px -3615px;
+    background-position: -954px -3615px;
 }
 .item-list ul.pager li.pager-last a,
 .item-list ul.pager li.pager-last span,
 .item-list ul.pager li.pager-next a {
     float: right;
-    padding-right: 33px;
+    padding-right: 40px;
 }
 .item-list ul.pager li.pager-last a,
 .item-list ul.pager li.pager-next a {
@@ -1603,7 +1599,8 @@ ul.tabs li a:active {
     border-radius: 0px 0px 3px 3px;
     display: block;
     float: none;
-    line-height: 2.6rem;
+    line-height: 30px;
+    line-height: 3rem;
     text-align: center;
 }
 .pager-load-more .ajax-progress {
@@ -1809,7 +1806,7 @@ ul.tabs li a:active {
   display: inline-block;
   color: #666 !important;
   font-weight: normal;
-  line-height: 1.5em;
+  line-height: 1.8em;
 }
 
 
@@ -2140,13 +2137,13 @@ img.no-outline,
 }
 .icon-edit {
     padding-left: 26px;
-    background-position: -891px -3210px;
+    background-position: -891px -3209px;
 }
 .comment-count {
-    background-position: -929px -2574px;
+    background-position: -929px -2573px;
 }
 .icon-taxonomy {
-    background-position: -969px -2534px;
+    background-position: -969px -2533px;
     margin-bottom: 5px;
 }
 .node-blogpost .comment-count,
@@ -2781,8 +2778,8 @@ input[type="week"],
     -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
     box-shadow: inset 0px 0px 2px 2px #ececec;
     color: #666;
-    font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 13px;
+    font-size: 1.3rem;
     padding-left: 6px;
     height: 2.5em;
     *line-height: 2.1em; /* IE6 IE7 */
@@ -2800,8 +2797,8 @@ input[type="button"],
 .form-item {
     margin-bottom:8px;
     margin-bottom: 0.8rem;
-    font-size: 14px;
-    font-size: 1.4rem;
+    font-size: 13px;
+    font-size: 1.3rem;
 }
 .views-exposed-widget.views-reset-button input[type="submit"] {
     border: 0;
@@ -2848,10 +2845,9 @@ select {
 }
 form .description {
     color: #999;
-    font-size: 13px;
-    font-size: 1.3rem;
-    line-height: 18px;
-    line-height: 1.8rem;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 1.38em;
     margin: 0 0 0.5em;
 }
 .resizable-textarea .grippie {
@@ -2968,8 +2964,8 @@ form .webform-component-checkboxes .description {
 .views-exposed-widget input[type="submit"],
 .views-exposed-widget input[type="button"],
 .views-exposed-widget a.form-submit {
-    font-size: 13px;
-    font-size: 1.3rem;
+    font-size: 12px;
+    font-size: 1.2rem;
     font-family: Helvetica, Arial, sans-serif;
     padding: 2px 10px;
 }
@@ -3112,7 +3108,7 @@ form .webform-component-checkboxes .description {
     color: #666;
 }
 .answer .more-info.content-inner {
-    padding: 20px 24px;
+    padding: 20px 24px 26px;
 }
 .answer .more-info.content-inner legend {
     position: absolute;
@@ -3324,8 +3320,8 @@ form .webform-component-checkboxes .description {
     margin-top: 23px;
 }
 .announcement.slideshow .views-slideshow-controls-top {
-    padding: 2px 20px;
-    padding: 0.2rem 20px;
+    padding: 3px 20px;
+    padding: 0.3rem 20px;
     margin-bottom: 1px;
     position: absolute;
     width: 93%;
@@ -3358,8 +3354,8 @@ form .webform-component-checkboxes .description {
 }
 .announcement.slideshow .more-link a {
     font-weight: normal;
-    font-size: 13px;
-    font-size: 1.3rem;
+    font-size: 12px;
+    font-size: 1.2rem;
     color: #999;
 }
 
@@ -3749,7 +3745,7 @@ a.external,
 .collapse-processed a.fieldset-title,
 .js .pw-collapsible .fieldset-legend {
     padding-left: 15px;
-    background-position: -647px -2020px;
+    background-position: -647px -2019px;
 }
 .collapse-processed a.fieldset-title:hover,
 .collapse-processed a.fieldset-title:focus,
@@ -3757,11 +3753,11 @@ a.external,
 .js .pw-collapsible .fieldset-legend:hover,
 .js .pw-collapsible .fieldset-legend:focus,
 .js .pw-collapsible .fieldset-legend:active {
-    background-position: -608px -2061px;
+    background-position: -608px -2060px;
 }
 .collapse-processed.collapsed a.fieldset-title,
 .js .pw-collapsible .fieldset-legend {
-    background-position: -810px -1858px;
+    background-position: -810px -1857px;
 }
 .collapse-processed.collapsed a.fieldset-title:hover,
 .collapse-processed.collapsed a.fieldset-title:focus,
@@ -3769,7 +3765,7 @@ a.external,
 .js .pw-collapsible .fieldset-legend:hover,
 .js .pw-collapsible .fieldset-legend:focus,
 .js .pw-collapsible .fieldset-legend:active {
-    background-position: -770px -1898px;
+    background-position: -770px -1897px;
 }
 .more-info.collapse-processed a.fieldset-title {
     padding-left: 26px;
@@ -3778,14 +3774,14 @@ a.external,
     left: 3px;
 }
 .more-info.collapse-processed a.fieldset-title {
-    background-position: -480px -2180px;
+    background-position: -480px -2179px;
     color: #999;
 }
 .more-info.collapse-processed a.fieldset-title:hover,
 .more-info.collapse-processed a.fieldset-title:focus,
 .more-info.collapse-processed a.fieldset-title:active,
 .more-info.collapse-processed.collapsed a.fieldset-title {
-    background-position: -440px -2220px;
+    background-position: -440px -2219px;
     color: #666;
 }
 
