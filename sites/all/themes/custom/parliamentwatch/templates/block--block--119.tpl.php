@@ -10,7 +10,7 @@
         
         <div<?php print $content_attributes; ?>>
           <div id="logo-footer">
-            <img src="/sites/all/themes/custom/parliamentwatch/images/logo-transparent-370x44.png" alt="abgeordnetenwatch.de - Weil Transparenz Vertrauen schafft" width="370" height="44" />
+            <a href="/" title="zur Startseite"><img src="/sites/all/themes/custom/parliamentwatch/images/logo-transparent-370x44.png" alt="abgeordnetenwatch.de - Weil Transparenz Vertrauen schafft" width="370" height="44" /></a>
           </div>
           <?php print $content ?>
         </div>

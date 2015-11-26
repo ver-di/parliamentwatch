@@ -79,16 +79,16 @@ global $user;
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'social_media_footer';
   $fe_block_boxes->body = '<div class="socialmedia facebook">
-	<a href="https://www.facebook.com/abgeordnetenwatch.de" title="Facebook">Facebook</a>
+	<a href="https://www.facebook.com/abgeordnetenwatch.de" title="Facebook" target="_blank">Facebook</a>
 </div>
 <div class="socialmedia twitter">
-	<a href="https://twitter.com/a_watch" title="Twitter">Twitter</a>
+	<a href="https://twitter.com/a_watch" title="Twitter" target="_blank">Twitter</a>
 </div>
 <div class="socialmedia google">
-	<a href="https://plus.google.com/101206126881536002255/" title="Google+">Google+</a>
+	<a href="https://plus.google.com/101206126881536002255/" title="Google+" target="_blank">Google+</a>
 </div>
 <div class="socialmedia rss">
-	<a href="https://www.abgeordnetenwatch.de/rss/blog.xml" title="RSS">RSS</a>
+	<a href="https://www.abgeordnetenwatch.de/rss/blog.xml" title="RSS" target="_blank">RSS</a>
 </div>
 ';
 
