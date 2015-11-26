@@ -13,24 +13,19 @@ print render($title_suffix);
   <a href="<?php print $node_url; ?>" class="<?php print ($partner_html)?"":"";?>"><?php print $title;?></a>
 </h3>
 <div class="responsive-list-image-wrapper img-outline">
-  <a href="<?php print $node_url; ?>" title="zur Petition" class="<?php print ($partner_html)?"":"";?>">
-    <?php print $themed_image; ?>
-  </a>
-  <?php if ($field_image_copyright): ?>
-    <div class="copyright">
-      <?php print $field_teaser_image[0]['field_image_copyright']['und'][0]['value'] ?>
-    </div>
-  <?php endif; ?>
+  <?php
+  print render($content['field_teaser_image']);
+  ?>
 </div>
 <div class="pw-responsive-list-contents">
-    <div>
-        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
-            <span style="width: 100%;" class="pw-progress">Fortschritt: <?php print $field_petition_progress[0]['value']; ?>%</span>
-        </div>
-        <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-donations push-bottom-s" title="Spenden">
-            <span style="width: <?php print $field_donation_progress[0]['value']; ?>%;" class="pw-progress">Fortschritt: <?php print $field_donation_progress[0]['value']; ?>%</span>
-        </div>
+  <div>
+    <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-signings push-bottom-s" title="Unterschriften">
+      <span style="width: 100%;" class="pw-progress">Fortschritt: <?php print $field_petition_progress[0]['value']; ?>%</span>
     </div>
+    <div class="pw-progress-wrapper pw-progress-wrapper-m pw-petition-progress-donations push-bottom-s" title="Spenden">
+      <span style="width: <?php print $field_donation_progress[0]['value']; ?>%;" class="pw-progress">Fortschritt: <?php print $field_donation_progress[0]['value']; ?>%</span>
+    </div>
+  </div>
   <div class="medium"><strong>Kosten Meinungsumfrage: <?php print number_format($field_donation_required[0]['value'],0,',','.'); ?>&nbsp;&euro;</strong></div>
   <div class="small light"><?php print number_format($field_donation_amount[0]['value'],0,',','.'); ?>&nbsp;&euro; wurden bereits gespendet.</div>
   <?php if ($partner_html): ?>

@@ -23,63 +23,86 @@ function pw_api_menu() {
     );
 
   // add parliaments hooks
-  foreach (array('xml', 'json') as $type) {
-    $key = 'api/parliaments.'.$type;
-    $items[$key] = array(
+  foreach (array('xml', 'json') as $file_type) {
+    $key = 'api/parliaments.'.$file_type;
+    $item = array(
       'page callback' => 'pw_api_parliaments',
       'access callback' => TRUE,
-      'delivery callback' => 'pw_api_deliver_'.$type,
+      'delivery callback' => 'pw_api_deliver_'.$file_type,
       'type' => MENU_CALLBACK,
       'file' => 'pw_api.parliaments.inc',
       );
+    $items[$key] = $item;
   }
 
   // add constituency hooks
-  foreach (array('xml', 'json') as $type) {
-    $key = 'api/parliament/%/constituencies.'.$type;
-    $items[$key] = array(
+  foreach (array('xml', 'json') as $file_type) {
+    $key = 'api/parliament/%/constituencies.'.$file_type;
+    $item = array(
       'page callback' => 'pw_api_constituencies',
       'page arguments' => array(2),
       'access callback' => TRUE,
-      'delivery callback' => 'pw_api_deliver_'.$type,
+      'delivery callback' => 'pw_api_deliver_'.$file_type,
       'type' => MENU_CALLBACK,
       'file' => 'pw_api.constituencies.inc',
       );
+    $items[$key] = $item;
+  }
+
+  // add votes hooks
+  foreach (array('xml', 'json') as $file_type) {
+
+    // add petitions
+    $key = 'api/parliament/%/petitions.'.$file_type;
+    $item = array(
+      'page callback' => 'pw_api_petitions',
+      'page arguments' => array(2),
+      'access callback' => TRUE,
+      'delivery callback' => 'pw_api_deliver_'.$file_type,
+      'type' => MENU_CALLBACK,
+      'file' => 'pw_api.votes.inc',
+      );
+    $items[$key] = $item;
+
+    // add polls
+    $key = 'api/parliament/%/polls.'.$file_type;
+    $item['page callback'] = 'pw_api_polls';
+    $items[$key] = $item;
   }
 
   // add profile hooks
-  foreach (array('xml', 'json') as $type) {
-    $key = 'api/profile/%/profile.'.$type;
+  foreach (array('xml', 'json') as $file_type) {
+    $key = 'api/profile/%/profile.'.$file_type;
     $item = array(
       'page callback' => 'pw_api_profile',
       'page arguments' => array(2),
       'access callback' => TRUE,
-      'delivery callback' => 'pw_api_deliver_'.$type,
+      'delivery callback' => 'pw_api_deliver_'.$file_type,
       'type' => MENU_CALLBACK,
       'file' => 'pw_api.profiles.inc',
       );
     $items[$key] = $item;
 
     // add another path for this call
-    $key = 'api/parliament/%/profile/%/profile.'.$type;
+    $key = 'api/parliament/%/profile/%/profile.'.$file_type;
     $item['page arguments'] = array(4, 2);
     $items[$key] = $item;
   }
 
   // add profiles hooks
-  foreach (array('xml', 'json') as $type) {
-    $key = 'api/parliament/%/profiles.'.$type;
+  foreach (array('xml', 'json') as $file_type) {
+    $key = 'api/parliament/%/profiles.'.$file_type;
     $item = array(
       'page callback' => 'pw_api_profiles',
       'page arguments' => array(2),
       'access callback' => TRUE,
-      'delivery callback' => 'pw_api_deliver_'.$type,
+      'delivery callback' => 'pw_api_deliver_'.$file_type,
       'type' => MENU_CALLBACK,
       'file' => 'pw_api.profiles.inc',
       );
     $items[$key] = $item;
-    $items['api/parliament/%/deputies.'.$type] = $items['api/parliament/%/profiles.'.$type];
-    $items['api/parliament/%/candidates.'.$type] = $items['api/parliament/%/profiles.'.$type];
+    $items['api/parliament/%/deputies.'.$file_type] = $items[$key];
+    $items['api/parliament/%/candidates.'.$file_type] = $items[$key];
   }
 
   // add hooks for authorized api based on public api
