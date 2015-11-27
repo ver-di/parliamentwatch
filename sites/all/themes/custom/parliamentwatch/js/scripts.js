@@ -1,7 +1,6 @@
 jQuery(window) // https://www.drupal.org/node/1478648
   .resize(function() {
     jQuery('body').bind('responsivelayout', function(e, d) {
-       console.log("resize");
        location = location;
     });
   })
