@@ -188,6 +188,10 @@ function pw_blog_strongarm() {
             'weight' => '0',
             'visible' => FALSE,
           ),
+          'search_result' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),

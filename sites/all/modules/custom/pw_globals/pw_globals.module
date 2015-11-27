@@ -296,6 +296,7 @@ function _pw_get_linked_terms($terms, $separator=', '){
   }, $terms));
 }
 
+
 /**
  * Custom: Helper, get fullname form user object.
  * @param object $user
@@ -311,6 +312,7 @@ function _pw_get_fullname($user){
     return trim($title[0]['value'].' '.$first_name[0]['value'].' '.$last_name[0]['value']);
   }
 }
+
 
 /**
  * for debugging entity metadata wrapper object

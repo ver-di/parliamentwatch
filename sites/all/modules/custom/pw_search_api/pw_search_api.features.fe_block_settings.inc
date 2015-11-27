@@ -146,16 +146,13 @@ function pw_search_api_default_fe_block_settings() {
 
   $export['views--exp-pw_search_api_main-page'] = array(
     'cache' => '-1',
-    'css_class' => '',
+    'css_class' => 'compact-form',
     'custom' => '0',
     'delta' => '-exp-pw_search_api_main-page',
     'module' => 'views',
     'node_types' => array(),
     'pages' => '',
-    'roles' => array(
-      'administrator' => '3',
-      'Content Manager' => '51622513',
-    ),
+    'roles' => array(),
     'themes' => array(
       'blank' => array(
         'region' => '',
@@ -176,8 +173,8 @@ function pw_search_api_default_fe_block_settings() {
         'weight' => '0',
       ),
     ),
-    'title' => '',
-    'visibility' => '0',
+    'title' => 'abgeordnetenwatch.de durchsuchen',
+    'visibility' => '1',
   );
 
   $export['views-dd2cb179c08ae616789999b01178b193'] = array(

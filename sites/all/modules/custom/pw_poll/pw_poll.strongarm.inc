@@ -92,7 +92,7 @@ function pw_poll_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'colorbox' => array(
         'custom_settings' => FALSE,
@@ -135,6 +135,10 @@ function pw_poll_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),

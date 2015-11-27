@@ -199,7 +199,7 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Jetzt suchen';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
@@ -226,7 +226,7 @@ function pw_search_api_views_default_views() {
       ),
     ),
     'main_index_type' => array(
-      'bef_format' => 'bef',
+      'bef_format' => 'default',
       'more_options' => array(
         'bef_select_all_none' => FALSE,
         'bef_collapsible' => 0,
@@ -240,6 +240,7 @@ function pw_search_api_views_default_views() {
         ),
         'rewrite' => array(
           'filter_rewrite_values' => 'All|Ganze Plattform durchsuchen
+Alle|Ganze Plattform durchsuchen
 0|Ganze Plattform durchsuchen 0',
         ),
       ),
@@ -256,12 +257,23 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
   $handler->display->display_options['style_plugin'] = 'list';
-  $handler->display->display_options['style_options']['row_class'] = 'clearfix';
+  $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['row_plugin'] = 'search_api_multi';
   $handler->display->display_options['row_options']['view_mode'] = array(
     'node' => 'search_result',
     'user' => 'search_result',
   );
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'Suche erfolglos';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'Leider liegen für Ihre Anfrage keine Suchergebnisse vor.';
+  $handler->display->display_options['empty']['area']['format'] = 'managed_content';
   /* Feld: Suche: Node Index results */
   $handler->display->display_options['fields']['node_index']['id'] = 'node_index';
   $handler->display->display_options['fields']['node_index']['table'] = 'search_api_multi';
@@ -284,9 +296,11 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['operator_id'] = 'search_api_multi_fulltext_op';
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['label'] = 'Suchbegriff';
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['operator'] = 'search_api_multi_fulltext_op';
-  $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['identifier'] = 'k';
+  $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['identifier'] = 's';
+  $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['search_api_multi_fulltext']['expose']['remember_roles'] = array(
-    2 => '2',
+    2 => 0,
     1 => 0,
     3 => 0,
     51622513 => 0,
@@ -308,30 +322,48 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['filters']['main_index_type']['id'] = 'main_index_type';
   $handler->display->display_options['filters']['main_index_type']['table'] = 'search_api_multi';
   $handler->display->display_options['filters']['main_index_type']['field'] = 'main_index_type';
+  $handler->display->display_options['filters']['main_index_type']['value'] = array(
+    'poll' => 'poll',
+    'blogpost' => 'blogpost',
+    'page' => 'page',
+    'dialogue' => 'dialogue',
+    'pw_petition' => 'pw_petition',
+  );
   $handler->display->display_options['filters']['main_index_type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['main_index_type']['expose']['operator_id'] = 'main_index_type_op';
-  $handler->display->display_options['filters']['main_index_type']['expose']['label'] = 'Inhaltstyp (indexed)';
+  $handler->display->display_options['filters']['main_index_type']['expose']['label'] = 'Ergebnis beschränken auf';
   $handler->display->display_options['filters']['main_index_type']['expose']['operator'] = 'main_index_type_op';
-  $handler->display->display_options['filters']['main_index_type']['expose']['identifier'] = 'main_index_type';
-  $handler->display->display_options['filters']['main_index_type']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['main_index_type']['expose']['identifier'] = 'typ';
+  $handler->display->display_options['filters']['main_index_type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    29859578 => 0,
+  );
+  $handler->display->display_options['filters']['main_index_type']['expose']['reduce'] = 1;
   $handler->display->display_options['filters']['main_index_type']['group_info']['identifier'] = 'blog';
   $handler->display->display_options['filters']['main_index_type']['group_info']['widget'] = 'radios';
   $handler->display->display_options['filters']['main_index_type']['group_info']['group_items'] = array(
     1 => array(
-      'title' => 'Blog durchsuchen',
+      'title' => 'Inhaltstyp',
       'operator' => '=',
       'value' => array(
+        'poll' => 'poll',
         'blogpost' => 'blogpost',
-        'poll' => 0,
+        'dialogue' => 'dialogue',
+        'page' => 'page',
+        'pw_petition' => 'pw_petition',
         'announcement' => 0,
-        'article' => 0,
         'calendar_entry' => 0,
         'committee_membership' => 0,
-        'dialogue' => 0,
-        'page' => 0,
         'pw_kc_position' => 0,
         'pw_kc_thesis' => 0,
-        'pw_petition' => 0,
+        'newsletter' => 0,
         'press_release' => 0,
         'press_article' => 0,
         'sidejob' => 0,
@@ -353,7 +385,7 @@ function pw_search_api_views_default_views() {
     t('Master'),
     t('Suchergebnisse'),
     t('mehr'),
-    t('Anwenden'),
+    t('Jetzt suchen'),
     t('Zurücksetzen'),
     t('Sortieren nach'),
     t('Aufsteigend'),
@@ -366,9 +398,11 @@ function pw_search_api_views_default_views() {
     t('‹ vorherige Seite'),
     t('weiter'),
     t('letzte Seite »'),
+    t('Suche erfolglos'),
+    t('Leider liegen für Ihre Anfrage keine Suchergebnisse vor.'),
     t('Node Index results'),
     t('Suchbegriff'),
-    t('Inhaltstyp (indexed)'),
+    t('Ergebnis beschränken auf'),
     t('Page'),
   );
   $export['pw_search_api_main'] = $view;

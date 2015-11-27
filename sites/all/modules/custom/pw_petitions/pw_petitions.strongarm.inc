@@ -78,7 +78,7 @@ function pw_petitions_strongarm() {
         'custom_settings' => FALSE,
       ),
       'search_result' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'colorbox' => array(
         'custom_settings' => FALSE,
@@ -128,6 +128,10 @@ function pw_petitions_strongarm() {
           ),
           'full' => array(
             'weight' => '2',
+            'visible' => FALSE,
+          ),
+          'search_result' => array(
+            'weight' => '0',
             'visible' => FALSE,
           ),
         ),

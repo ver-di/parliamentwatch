@@ -33,6 +33,5 @@ global $user;
 ?></a>';
 
   $export['menu_meta_de'] = $fe_block_boxes;
-
   return $export;
 }
