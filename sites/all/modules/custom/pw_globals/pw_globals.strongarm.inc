@@ -1282,6 +1282,11 @@ node/*/edit';
       'pages_block' => '1',
       'confirmation_block' => '0',
     ),
+    'client-block-10380' => array(
+      'display' => 'form',
+      'pages_block' => '1',
+      'confirmation_block' => '0',
+    ),
   );
   $export['webform_blocks'] = $strongarm;
 
