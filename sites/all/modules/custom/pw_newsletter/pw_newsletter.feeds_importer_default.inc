@@ -33,9 +33,9 @@ function pw_newsletter_feeds_importer_default() {
         'sources' => array(
           'xpathparser:0' => 'concat(\'openemm-mailing_id-\',mailing_id)',
           'xpathparser:2' => 'dyn_content',
-          'xpathparser:3' => 'description',
+          'xpathparser:3' => 'dyn_content',
           'xpathparser:4' => 'subject',
-          'xpathparser:5' => 'change_date',
+          'xpathparser:5' => 'send_date',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -47,6 +47,8 @@ function pw_newsletter_feeds_importer_default() {
         'context' => '//row',
         'exp' => array(
           'errors' => 0,
+          'tidy' => 0,
+          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -92,7 +94,7 @@ function pw_newsletter_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '2',
+        'update_existing' => '1',
         'input_format' => 'managed_content',
         'skip_hash_check' => 1,
         'bundle' => 'newsletter',
