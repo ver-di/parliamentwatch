@@ -12,6 +12,30 @@ function pw_poll_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|poll|default';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'poll';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_parliament' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_poll_date' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+  );
+  $export['node|poll|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|poll|search_result';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'poll';
@@ -134,27 +158,6 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'poll';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
-    'sharethis' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-        'linked_field' => array(
-          'linked' => 0,
-          'destination' => '',
-          'advanced' => array(
-            'title' => '',
-            'target' => '',
-            'class' => '',
-            'rel' => '',
-            'text' => '',
-          ),
-        ),
-      ),
-    ),
     'field_blogpost_categories' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -204,6 +207,46 @@ function pw_poll_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|poll|default';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'poll';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'body',
+        1 => 'field_parliament',
+        2 => 'field_blogpost_categories',
+        3 => 'field_poll_date',
+        4 => 'field_voted',
+      ),
+    ),
+    'fields' => array(
+      'body' => 'ds_content',
+      'field_parliament' => 'ds_content',
+      'field_blogpost_categories' => 'ds_content',
+      'field_poll_date' => 'ds_content',
+      'field_voted' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|poll|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|poll|search_result';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'poll';
@@ -243,6 +286,48 @@ function pw_poll_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['node|poll|search_result'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|poll|teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'poll';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'body',
+        1 => 'field_parliament',
+        2 => 'field_blogpost_categories',
+        3 => 'field_poll_date',
+        4 => 'field_teaser_image',
+        5 => 'field_voted',
+      ),
+    ),
+    'fields' => array(
+      'body' => 'ds_content',
+      'field_parliament' => 'ds_content',
+      'field_blogpost_categories' => 'ds_content',
+      'field_poll_date' => 'ds_content',
+      'field_teaser_image' => 'ds_content',
+      'field_voted' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_page_title' => '0',
+    'page_option_title' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['node|poll|teaser'] = $ds_layout;
 
   return $export;
 }
