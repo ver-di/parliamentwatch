@@ -178,8 +178,8 @@ h2,
     font-size: 2.7rem;
     line-height: 1.06em;
     letter-spacing: 0.04ex;
-    margin-bottom: 9px;
-    margin-bottom: 0.9rem;
+    margin-bottom: 18px;
+    margin-bottom: 1.8rem;
 }
 .region-sidebar-second .block-title {
     font-size: 16px;
@@ -2083,6 +2083,10 @@ ul.tabs li a:active {
 #region-content .view-blog .views-exposed-form .views-exposed-widget:not(.views-submit-button) {
     margin-left: 10px;
 }
+.view-blog .icon-more::before {
+    margin-left: 0;
+    margin-right: 0;
+}
 #edit-field-blogpost-categories-wrapper {
     margin-right: 20px;
 }
@@ -3826,6 +3830,10 @@ a.external,
 
 /* reset the alpha-reset.css for lists in the content and display them how they appear in the wysiwig */
 
+.managed-content h3 {
+  margin-top: 17px;
+  margin-top: 1.7rem;
+}
 .managed-content ol,
 .managed-content ul,
 #colorbox ol,
