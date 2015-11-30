@@ -65,4 +65,4 @@ features[variable][] = node_preview_newsletter
 features[variable][] = node_submitted_newsletter
 features[variable][] = pathauto_node_newsletter_pattern
 features[views_view][] = pw_newsletter
-mtime = 1448897242
+mtime = 1448898400
