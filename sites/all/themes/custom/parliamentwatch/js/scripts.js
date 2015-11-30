@@ -1,12 +1,27 @@
+var windowResize={
+  width:0,
+  init:function() {
+      this.width=$(window).width();
+  },
+  checkResize:function(callback) {
+      if( this.width!=$(window).width() ) {
+          callback.apply();
+      }
+  }
+};
+
 jQuery(window) // https://www.drupal.org/node/1478648
-  .resize(function() {
-    jQuery('body').bind('responsivelayout', function(e, d) {
-       location = location;
+  .load(function(){
+    windowResize.init();
+  }
+  )
+  .on("debouncedresize", function() {
+    windowResize.checkResize(function() {
+      location.reload(false);
     });
   })
   .load(function() {
     $('body').bind('responsivelayout', function(e, d) {
-
       $(".responsive-layout-mobile #nav").mmenu({
   			classes: "mm-light",
   			searchfield: {

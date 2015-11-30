@@ -51,6 +51,7 @@ scripts[11] = 'js/jquery.expander.min.js'
 scripts[12] = 'js/jquery.autosize.min.js'
 scripts[13] = 'js/jquery.mmenu.min.all.js'
 scripts[14] = 'js/jquery.visible.min.js'
+scripts[14] = 'js/jquery.debouncedresize.js'
 scripts[200] = 'js/scripts.js'
 
 css[global.css][name] = 'Your custom global styles'
