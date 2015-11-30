@@ -2391,6 +2391,8 @@ table.pw-voting .views-field-nothing {
   height: 11px;
   position: unset;
   margin: 0 2px 2px 0;
+}
+.pw-voting .icon-close {
   cursor: pointer;
 }
 .pw-voting .list_voting_behavior li.vote.no-show > a {
