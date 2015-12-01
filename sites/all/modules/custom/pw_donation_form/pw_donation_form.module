@@ -37,6 +37,12 @@ function pw_donation_form_form_alter(&$form, &$form_state, $form_id) {
       $form['submitted']['fieldset_donationform_civicrm']['civicrm_contribution_campaign_id']['#value'] = $campaign_id;
     }
 
+    // remove donation target if campaign id is present or content type is petition
+    if(isset($campaign_id) || menu_get_object()->type == 'pw_petition'){
+      unset($form['submitted']['fieldset_donationform_yourdonation']['donation_target']);
+      unset($form['submitted']['fieldset_donationform_yourdonation']['donation_target_council']);
+    }
+
     // Set donation amount by parameter
     if (isset($getparams["amount"]) && is_int((int) $getparams["amount"]) && $getparams["amount"] > 0) {
       if (in_array($getparams["amount"], array(
@@ -123,15 +129,19 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
 
   if ($node->nid == 10508) {
 
-    // map ids to relevant components
+    // map ids to components
     $form_values = _pw_webform_get_keyed_fields($node, $submission);
+
+    // uppercase
+    $form_values['payment_sepa_iban'] = strtoupper($form_values['payment_sepa_iban']);
+    $form_values['payment_sepa_bic'] = strtoupper($form_values['payment_sepa_bic']);
 
     // set newsletter group for civicrm
     if (!empty($form_values['option_newsletter'])) {
       $form_values['civicrm_groups'] = 'abgeordnetenwatch.de Newsletter';
     }
 
-    // set amout to be charged based on selected frequency and amount
+    // set amount to be charged based on selected frequency and amount
     if ($form_values['donation_amount'] == 'free') {
       $form_values['civicrm_amount'] = $form_values['donation_free_amount'];
     }
@@ -142,7 +152,7 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
       $form_values['civicrm_amount'] = $form_values['donation_frequency'] * $form_values['donation_amount'];
     }
 
-    // update donation amount when node has related field and submission is new (sid not set)
+    // update node when it has field "donation_amount", but only submission is new (sid not set)
     if(!isset($submission->sid)){
       $donation_node = menu_get_object("node", 1, $form_values['node_path']);
       if ($donation_node && !empty($donation_node->field_donation_amount)) {
@@ -152,6 +162,7 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
     }
 
     // set direct debit or sepa
+    /*
     if (preg_match('/[a-z]{2}/i', $form_values['payment_account'])) {
       $form_values['payment_sepa_holder'] = $form_values['payment_holder'];
       $form_values['payment_sepa_iban'] = $form_values['payment_account'];
@@ -162,6 +173,7 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
       $form_values['payment_direct_debit_account'] = $form_values['payment_account'];
       $form_values['payment_direct_debit_bank'] = $form_values['payment_bank'];
     }
+    */
 
     // set contribution type
     $form_values['civicrm_contribution_type'] = $form_values['donation_frequency'] == 0 ? 'Spende Parlamentwatch e.V.' : 'Fördermitglied';
