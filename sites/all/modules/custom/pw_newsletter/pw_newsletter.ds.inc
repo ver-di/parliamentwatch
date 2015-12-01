@@ -17,6 +17,11 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'newsletter';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'sharethis' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'title' => array(
       'weight' => '5',
       'label' => 'hidden',
@@ -76,7 +81,7 @@ function pw_newsletter_ds_field_settings_info() {
           'func' => 'theme_ds_field_expert',
           'ow' => TRUE,
           'ow-el' => 'div',
-          'ow-cl' => 'push-bottom-l',
+          'ow-cl' => 'push-bottom-l managed-content',
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,

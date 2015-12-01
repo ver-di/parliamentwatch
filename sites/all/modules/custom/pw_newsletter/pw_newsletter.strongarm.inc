@@ -122,7 +122,7 @@ function pw_newsletter_strongarm() {
           ),
           'default' => array(
             'weight' => '0',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
         ),
       ),
