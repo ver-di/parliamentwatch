@@ -13,11 +13,11 @@ $user_full_name .= $user_fname." ".$user_lname;
 ?>
 </pre>
 <h4 class="push-bottom-xs">
-  <a href="/profile/<? echo $row->_entity_properties['field_vote_user:name'][0];?>"><? echo $user_full_name; ?> (<? echo $row->_entity_properties['field_vote_user:field_user_party:name'][0]?>)</a> zu &bdquo;<? echo $row->_entity_properties['field_vote_node:title'][0]; ?>&ldquo;
+  <a href="/profile/<?php print $row->_entity_properties['field_vote_user:name'][0];?>"><?php print $user_full_name; ?> (<?php print $row->_entity_properties['field_vote_user:field_user_party:name'][0]?>)</a> zu &bdquo;<?php print $row->_entity_properties['field_vote_node:title'][0]; ?>&ldquo;
 </h4>
 <div class="push-bottom-s">
     <span class="pw-voting">
-      Position von <? echo $user_full_name; ?>:
+      Position von <?php print $user_full_name; ?>:
       <?php if ($row->_entity_properties['field_vote:name'][0] == "yes"): ?>
         <span class="yes block vote">dafür gestimmt</span>
       <?php endif; ?>
@@ -34,16 +34,16 @@ $user_full_name .= $user_fname." ".$user_lname;
 </div>
 <div class="float-left pw-kc-profile-picture push-bottom-s">
   <div class="file-image">
-    <a href="/profile/<? echo $row->_entity_properties['field_vote_user:name'][0];?>" title="Profil öffnen"><? echo $image ?></a>
+    <a href="/profile/<?php print $row->_entity_properties['field_vote_user:name'][0];?>" title="Profil öffnen"><?php print $image ?></a>
   </div>
 </div>
 <div class="statement">
   <?php if (strlen($row->_entity_properties['body:value']) > 0): ?>
     <blockquote>
-      <div class="pw-expander"><div><? echo check_markup($row->_entity_properties['body:value']); ?></div></div>
+      <div class="pw-expander"><div><?php print check_markup($row->_entity_properties['body:value']); ?></div></div>
     </blockquote>
   <?php endif ?>
 </div>
 <div class="text-right">
-  <a href="/profile/<? echo $row->_entity_properties['field_vote_user:name'][0];?>?question_form" class="icon-politician">jetzt zur Position befragen</a>
+  <a href="/profile/<?php print $row->_entity_properties['field_vote_user:name'][0];?>?question_form" class="icon-politician">jetzt zur Position befragen</a>
 </div>

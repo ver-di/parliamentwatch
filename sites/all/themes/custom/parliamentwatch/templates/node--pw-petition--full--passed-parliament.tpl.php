@@ -15,9 +15,9 @@ if (pw_vote_check_user_allowed()):
     <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
   </div>
 <?php endif; ?>
-<p class="medium">Adressat: <? print $field_petition_recipient[0]['value'] ?></p>
+<p class="medium">Adressat: <?php print $field_petition_recipient[0]['value'] ?></p>
 
-<? print check_markup($field_petition_text_passed[0]['summary']); ?>
+<?php print check_markup($field_petition_text_passed[0]['summary']); ?>
 
 <?php if (!empty($field_blogpost_categories)): ?>
   <p class="icon-taxonomy push-bottom-m">
@@ -41,12 +41,12 @@ print render($block['content']);
 
 <h3>Hintergrund</h3>
 <div class="managed-content clearfix push-bottom-l">
-  <? print check_markup($field_petition_text_passed[0]['value']); ?>
+  <?php print check_markup($field_petition_text_passed[0]['value']); ?>
 </div>
 
-<h3>Inhalt der Bürger-Petition (gestartet von <? print $field_petition_starter[0]['value']; ?>)</h3>
+<h3>Inhalt der Bürger-Petition (gestartet von <?php print $field_petition_starter[0]['value']; ?>)</h3>
 <p class="managed-content">
-  Lesen Sie die Original-Petition auf <? print l($field_petition_external_url[0]['url'], $field_petition_external_url[0]['url']); ?>
+  Lesen Sie die Original-Petition auf <?php print l($field_petition_external_url[0]['url'], $field_petition_external_url[0]['url']); ?>
 </p>
 
 <?php
@@ -55,7 +55,7 @@ if ($comments):
   ?>
 <div id="comments" class="comment-wrapper">
   <h3>Ich habe die Petition unterschrieben, weil...</h3>
-  <? print $comments; ?>
+  <?php print $comments; ?>
 </div>
 <?php endif; ?>
 </article>
