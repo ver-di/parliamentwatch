@@ -23,7 +23,7 @@ function pw_subsite_default_fe_block_settings() {
     'roles' => array(),
     'themes' => array(
       'blank' => array(
-        'region' => 'sidebar_first',
+        'region' => 'branding',
         'status' => '1',
         'theme' => 'blank',
         'weight' => '-36',
