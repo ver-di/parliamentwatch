@@ -14,7 +14,7 @@ function pw_subsite_default_fe_block_boxes() {
   $fe_block_boxes->info = 'Navi Meta DE';
   $fe_block_boxes->format = 'php_code';
   $fe_block_boxes->machine_name = 'menu_meta_de';
-  $fe_block_boxes->body = '		<a class="header_login" href="<?php
+  $fe_block_boxes->body = '<a class="header_login" href="<?php
 global $user;
  if($user->uid ==0 ){
    print(\'/user\');
@@ -33,5 +33,6 @@ global $user;
 ?></a>';
 
   $export['menu_meta_de'] = $fe_block_boxes;
+
   return $export;
 }
