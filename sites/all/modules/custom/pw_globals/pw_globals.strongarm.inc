@@ -507,10 +507,6 @@ function pw_globals_strongarm() {
             'weight' => '30',
             'visible' => FALSE,
           ),
-          'teaser' => array(
-            'weight' => '30',
-            'visible' => FALSE,
-          ),
         ),
         'sharethis' => array(
           'default' => array(

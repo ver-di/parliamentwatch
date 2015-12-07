@@ -51,7 +51,7 @@ function pw_globals_node_info() {
       'base' => 'node_content',
       'description' => t('Ein Zitat mit Bild eines Förderers oder Benutzers von abgeordnetenwatch.de'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'webform' => array(
