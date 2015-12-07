@@ -420,6 +420,366 @@ function pw_globals_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-pw_testimonial-field_testimonial_fullname'.
+  $fields['node-pw_testimonial-field_testimonial_fullname'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_testimonial_fullname',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '32',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'pw_testimonial',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Bitte im Format "Titel Vorname Nachname" eingeben.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'text_default',
+          'weight' => '0',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_testimonial_fullname',
+      'label' => 'Vollständiger Name',
+      'required' => 1,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 'copyright',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'exclude_cv' => FALSE,
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => 1,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '1',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-pw_testimonial-field_testimonial_portrait'.
+  $fields['node-pw_testimonial-field_testimonial_portrait'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_testimonial_portrait',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'fid' => array(
+          'columns' => array(
+            'fid' => 'fid',
+          ),
+          'table' => 'file_managed',
+        ),
+      ),
+      'indexes' => array(
+        'fid' => array(
+          0 => 'fid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'image',
+      'settings' => array(
+        'default_image' => 0,
+        'uri_scheme' => 'public',
+      ),
+      'translatable' => '0',
+      'type' => 'image',
+    ),
+    'field_instance' => array(
+      'bundle' => 'pw_testimonial',
+      'deleted' => '0',
+      'description' => 'Zielformat ist quadratisch als klassisches Schulterstück bzw. Büste.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => 'content',
+            'image_style' => 'pw_thumbnail_70',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'image',
+          'weight' => '2',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_testimonial_portrait',
+      'label' => 'Porträt',
+      'required' => 1,
+      'settings' => array(
+        'alt_field' => 0,
+        'default_image' => 0,
+        'exclude_cv' => FALSE,
+        'file_directory' => 'testmonial-portraits',
+        'file_extensions' => 'png jpg jpeg',
+        'max_filesize' => '500 KB',
+        'max_resolution' => '',
+        'min_resolution' => '140x140',
+        'title_field' => 0,
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'media',
+        'settings' => array(
+          'allowed_schemes' => array(
+            'private' => 0,
+            'public' => 'public',
+            'youtube' => 0,
+          ),
+          'allowed_types' => array(
+            'application' => 0,
+            'audio' => 0,
+            'document' => 0,
+            'image' => 'image',
+            'video' => 0,
+          ),
+          'browser_plugins' => array(
+            'media_default--media_browser_1' => 'media_default--media_browser_1',
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
+            'media_internet' => 0,
+            'upload' => 'upload',
+            'youtube' => 0,
+          ),
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'progress_indicator' => 'throbber',
+        ),
+        'type' => 'media_generic',
+        'weight' => '2',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-pw_testimonial-field_testimonial_quote'.
+  $fields['node-pw_testimonial-field_testimonial_quote'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_testimonial_quote',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'pw_testimonial',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Was macht abgeordnetenwatch.de so besonders?',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'text_default',
+          'weight' => '1',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_testimonial_quote',
+      'label' => 'Zitat',
+      'required' => 1,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 'copyright',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'exclude_cv' => FALSE,
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => '200',
+          'maxlength_js_enforce' => 1,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '2',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '3',
+      ),
+    ),
+  );
+
   // Exported field: 'node-webform-body'.
   $fields['node-webform-body'] = array(
     'field_config' => array(
@@ -1962,6 +2322,7 @@ function pw_globals_field_default_fields() {
   // Included for use with string extractors like potx.
   t('AC Descriptor');
   t('Area Codes');
+  t('Bitte im Format "Titel Vorname Nachname" eingeben.');
   t('Body');
   t('Candidate-Check activated');
   t('Comment');
@@ -1972,10 +2333,15 @@ function pw_globals_field_default_fields() {
   t('Footer');
   t('Number');
   t('Parliament');
+  t('Porträt');
   t('Premium Profile Price');
   t('Teaser image');
   t('Valid Date');
+  t('Vollständiger Name');
+  t('Was macht abgeordnetenwatch.de so besonders?');
   t('Wird im Megamenü und auf Übersichtsseiten angezeigt.');
+  t('Zielformat ist quadratisch als klassisches Schulterstück bzw. Büste.');
+  t('Zitat');
   t('constituency number or similar identifier ');
   t('rename constituency like from Wahlkreis to Stimmkreis.');
 

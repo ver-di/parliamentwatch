@@ -173,3 +173,12 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
     $form_values['civicrm_description'] = 'Webform - ' . date('Y-m-d H:i');
   }
 }
+
+
+function pw_donation_form_block_view_alter(&$data, $block){
+  if ($block->delta === "pw_testimonials_header-block"){
+    drupal_add_js("pw_donation_form_update_counter.js");
+    $member_counter = file_get_contents( "/mnt/nfs/xfiles/membership-count.txt" );
+    $data['content']['#markup'] = str_replace('%count%', $member_counter, $data['content']['#markup']);
+  }
+}

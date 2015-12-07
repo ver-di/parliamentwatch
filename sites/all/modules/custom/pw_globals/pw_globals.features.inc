@@ -27,6 +27,13 @@ function pw_globals_ctools_plugin_api() {
 }
 
 /**
+ * Implements hook_views_api().
+ */
+function pw_globals_views_api() {
+  return array("version" => "3.0");
+}
+
+/**
  * Implements hook_node_info().
  */
 function pw_globals_node_info() {
@@ -37,6 +44,14 @@ function pw_globals_node_info() {
       'description' => t('Benutzen Sie <em>Einfache Seiten</em> für statischen Inhalt, wie z.B. eine „Über uns“ Seite.'),
       'has_title' => '1',
       'title_label' => t('Titel'),
+      'help' => '',
+    ),
+    'pw_testimonial' => array(
+      'name' => t('Testimonial'),
+      'base' => 'node_content',
+      'description' => t('Ein Zitat mit Bild eines Förderers oder Benutzers von abgeordnetenwatch.de'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'webform' => array(

@@ -260,6 +260,28 @@ function pw_profiles_strongarm() {
             'weight' => '15',
             'visible' => TRUE,
           ),
+          'user_dialogue_search_snippet' => array(
+            'weight' => '50',
+            'visible' => FALSE,
+          ),
+        ),
+        'twitter' => array(
+          'user_candidate' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'user_deputy' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'user_premium' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'user_dialogue_search_snippet' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),
