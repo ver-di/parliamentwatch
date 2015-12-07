@@ -13,7 +13,7 @@ function pw_poll_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['block-polls_other_positions'] = array(
-    'cache' => -1,
+    'cache' => '5',
     'css_class' => 'pw-block-eyecatcher-1',
     'custom' => '0',
     'machine_name' => 'polls_other_positions',
@@ -22,7 +22,10 @@ function pw_poll_default_fe_block_settings() {
       0 => 'poll',
     ),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => '3',
+      'Content Manager' => '51622513',
+    ),
     'themes' => array(
       'blank' => array(
         'region' => '',
