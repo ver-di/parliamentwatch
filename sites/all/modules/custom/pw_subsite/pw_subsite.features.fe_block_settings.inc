@@ -13,7 +13,7 @@ function pw_subsite_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['block-menu_meta_de'] = array(
-    'cache' => '1',
+    'cache' => '-1',
     'css_class' => 'small medium desktop-only',
     'custom' => '0',
     'machine_name' => 'menu_meta_de',
@@ -45,43 +45,8 @@ function pw_subsite_default_fe_block_settings() {
     'visibility' => '0',
   );
 
-  $export['block-newsletter_auto'] = array(
-    'cache' => '-1',
-    'css_class' => '',
-    'custom' => '0',
-    'machine_name' => 'newsletter_auto',
-    'module' => 'block',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(
-      'anonymous user' => '1',
-    ),
-    'themes' => array(
-      'blank' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'blank',
-        'weight' => '0',
-      ),
-      'parliamentwatch' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'parliamentwatch',
-        'weight' => '0',
-      ),
-      'pw_seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'pw_seven',
-        'weight' => '0',
-      ),
-    ),
-    'title' => '',
-    'visibility' => '1',
-  );
-
   $export['block-pw_footer_abstract'] = array(
-    'cache' => '-1',
+    'cache' => -1,
     'css_class' => 'medium',
     'custom' => '0',
     'machine_name' => 'pw_footer_abstract',
@@ -213,7 +178,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['custom_search_blocks-1'] = array(
-    'cache' => '1',
+    'cache' => '-1',
     'css_class' => 'pw-custom-search custom-search-button',
     'custom' => '0',
     'delta' => '1',

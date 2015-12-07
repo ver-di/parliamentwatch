@@ -1411,86 +1411,81 @@ foo
   $strongarm->name = 'themekey_maps';
   $strongarm->value = array(
     0 => array(
-      'src' => 'comment:cid',
-      'dst' => 'node:nid',
-      'callback' => 'themekey_comment_cid2nid',
-    ),
-    1 => array(
       'src' => 'system:dummy',
       'dst' => 'locale:language_from_browser',
       'callback' => 'themekey_locale_dummy2language_from_browser',
     ),
-    2 => array(
+    1 => array(
       'src' => 'node:nid',
       'dst' => 'node:changed',
       'callback' => 'themekey_node_nid2changed',
     ),
-    3 => array(
+    2 => array(
       'src' => 'node:nid',
       'dst' => 'node:created',
       'callback' => 'themekey_node_nid2created',
     ),
-    4 => array(
+    3 => array(
       'src' => 'node:changed',
       'dst' => 'node:changed_date_time',
       'callback' => 'themekey_node_timestamp2datetime',
     ),
-    5 => array(
+    4 => array(
       'src' => 'node:created',
       'dst' => 'node:created_date_time',
       'callback' => 'themekey_node_timestamp2datetime',
     ),
-    6 => array(
+    5 => array(
       'src' => 'node:changed',
       'dst' => 'node:changed_date',
       'callback' => 'themekey_node_timestamp2date',
     ),
-    7 => array(
+    6 => array(
       'src' => 'node:created',
       'dst' => 'node:created_date',
       'callback' => 'themekey_node_timestamp2date',
     ),
-    8 => array(
+    7 => array(
       'src' => 'node:nid',
       'dst' => 'node:language',
       'callback' => 'themekey_node_nid2language',
     ),
-    9 => array(
+    8 => array(
       'src' => 'node:nid',
       'dst' => 'node:vid',
       'callback' => 'themekey_node_nid2vid',
     ),
-    10 => array(
+    9 => array(
       'src' => 'node:nid',
       'dst' => 'node:promote',
       'callback' => 'themekey_node_nid2promote',
     ),
-    11 => array(
+    10 => array(
       'src' => 'node:nid',
       'dst' => 'node:sticky',
       'callback' => 'themekey_node_nid2sticky',
     ),
-    12 => array(
+    11 => array(
       'src' => 'node:nid',
       'dst' => 'node:type',
       'callback' => 'themekey_node_nid2type',
     ),
-    13 => array(
+    12 => array(
       'src' => 'node:nid',
       'dst' => 'node:uid',
       'callback' => 'themekey_node_nid2uid',
     ),
-    14 => array(
+    13 => array(
       'src' => 'node:nid',
       'dst' => 'node:title',
       'callback' => 'themekey_node_nid2title',
     ),
-    15 => array(
+    14 => array(
       'src' => 'drupal:get_q',
       'dst' => 'node:type',
       'callback' => 'themekey_node_get_q2type',
     ),
-    16 => array(
+    15 => array(
       'src' => 'node:nid',
       'dst' => 'node:body_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1501,7 +1496,7 @@ foo
         'translatable' => '1',
       ),
     ),
-    17 => array(
+    16 => array(
       'src' => 'node:nid',
       'dst' => 'node:body_summary',
       'callback' => 'themekey_node_nid2field_value',
@@ -1512,7 +1507,7 @@ foo
         'translatable' => '1',
       ),
     ),
-    18 => array(
+    17 => array(
       'src' => 'node:nid',
       'dst' => 'node:body_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -1523,7 +1518,7 @@ foo
         'translatable' => '1',
       ),
     ),
-    19 => array(
+    18 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_annotation_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1534,7 +1529,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    20 => array(
+    19 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_annotation_summary',
       'callback' => 'themekey_node_nid2field_value',
@@ -1545,7 +1540,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    21 => array(
+    20 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_annotation_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -1556,7 +1551,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    22 => array(
+    21 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_documents_url',
       'callback' => 'themekey_node_nid2field_value',
@@ -1567,7 +1562,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    23 => array(
+    22 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_documents_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -1578,7 +1573,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    24 => array(
+    23 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_documents_attributes',
       'callback' => 'themekey_node_nid2field_value',
@@ -1589,7 +1584,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    25 => array(
+    24 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_id_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1600,7 +1595,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    26 => array(
+    25 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_message_id_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1611,7 +1606,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    27 => array(
+    26 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_message_type_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1622,7 +1617,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    28 => array(
+    27 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_recipient_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -1633,7 +1628,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    29 => array(
+    28 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_sender_name_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1644,7 +1639,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    30 => array(
+    29 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_sender_name_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -1655,7 +1650,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    31 => array(
+    30 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_trustee_image_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -1666,7 +1661,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    32 => array(
+    31 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_trustee_image_alt',
       'callback' => 'themekey_node_nid2field_value',
@@ -1677,7 +1672,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    33 => array(
+    32 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_trustee_image_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -1688,7 +1683,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    34 => array(
+    33 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_trustee_image_width',
       'callback' => 'themekey_node_nid2field_value',
@@ -1699,7 +1694,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    35 => array(
+    34 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_trustee_image_height',
       'callback' => 'themekey_node_nid2field_value',
@@ -1710,7 +1705,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    36 => array(
+    35 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_teaser_image_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -1721,7 +1716,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    37 => array(
+    36 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_teaser_image_alt',
       'callback' => 'themekey_node_nid2field_value',
@@ -1732,7 +1727,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    38 => array(
+    37 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_teaser_image_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -1743,7 +1738,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    39 => array(
+    38 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_teaser_image_width',
       'callback' => 'themekey_node_nid2field_value',
@@ -1754,7 +1749,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    40 => array(
+    39 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_teaser_image_height',
       'callback' => 'themekey_node_nid2field_value',
@@ -1765,7 +1760,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    41 => array(
+    40 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_attachment_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -1776,7 +1771,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    42 => array(
+    41 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_attachment_display',
       'callback' => 'themekey_node_nid2field_value',
@@ -1787,7 +1782,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    43 => array(
+    42 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_attachment_description',
       'callback' => 'themekey_node_nid2field_value',
@@ -1798,7 +1793,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    44 => array(
+    43 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_date_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1809,7 +1804,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    45 => array(
+    44 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_link_url',
       'callback' => 'themekey_node_nid2field_value',
@@ -1820,7 +1815,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    46 => array(
+    45 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_link_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -1831,7 +1826,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    47 => array(
+    46 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_link_attributes',
       'callback' => 'themekey_node_nid2field_value',
@@ -1842,7 +1837,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    48 => array(
+    47 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_publisher_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1853,7 +1848,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    49 => array(
+    48 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_publisher_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -1864,7 +1859,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    50 => array(
+    49 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_video_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -1875,7 +1870,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    51 => array(
+    50 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_video_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -1886,7 +1881,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    52 => array(
+    51 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_video_data',
       'callback' => 'themekey_node_nid2field_value',
@@ -1897,7 +1892,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    53 => array(
+    52 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_release_body_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1908,7 +1903,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    54 => array(
+    53 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_release_body_summary',
       'callback' => 'themekey_node_nid2field_value',
@@ -1919,7 +1914,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    55 => array(
+    54 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_release_body_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -1930,7 +1925,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    56 => array(
+    55 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_release_date_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -1941,7 +1936,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    57 => array(
+    56 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_sound_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -1952,7 +1947,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    58 => array(
+    57 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_sound_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -1963,7 +1958,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    59 => array(
+    58 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_press_article_sound_data',
       'callback' => 'themekey_node_nid2field_value',
@@ -1974,7 +1969,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    60 => array(
+    59 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_parliament_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -1985,7 +1980,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    61 => array(
+    60 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_blogpost_blogtags_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -1996,7 +1991,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    62 => array(
+    61 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_tags_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2007,7 +2002,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    63 => array(
+    62 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_topic_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2018,7 +2013,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    64 => array(
+    63 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_blogpost_categories_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2029,7 +2024,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    65 => array(
+    64 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_election_programme_open_url',
       'callback' => 'themekey_node_nid2field_value',
@@ -2040,7 +2035,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    66 => array(
+    65 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_election_programme_open_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2051,7 +2046,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    67 => array(
+    66 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_election_programme_open_attributes',
       'callback' => 'themekey_node_nid2field_value',
@@ -2062,7 +2057,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    68 => array(
+    67 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pdf_download_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2073,7 +2068,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    69 => array(
+    68 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pdf_download_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2084,7 +2079,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    70 => array(
+    69 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pdf_download_data',
       'callback' => 'themekey_node_nid2field_value',
@@ -2095,7 +2090,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    71 => array(
+    70 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_taxonomy_party_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2106,7 +2101,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    72 => array(
+    71 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_country',
       'callback' => 'themekey_node_nid2field_value',
@@ -2117,7 +2112,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    73 => array(
+    72 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_administrative_area',
       'callback' => 'themekey_node_nid2field_value',
@@ -2128,7 +2123,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    74 => array(
+    73 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_sub_administrative_area',
       'callback' => 'themekey_node_nid2field_value',
@@ -2139,7 +2134,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    75 => array(
+    74 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_locality',
       'callback' => 'themekey_node_nid2field_value',
@@ -2150,7 +2145,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    76 => array(
+    75 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_dependent_locality',
       'callback' => 'themekey_node_nid2field_value',
@@ -2161,7 +2156,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    77 => array(
+    76 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_postal_code',
       'callback' => 'themekey_node_nid2field_value',
@@ -2172,7 +2167,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    78 => array(
+    77 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_thoroughfare',
       'callback' => 'themekey_node_nid2field_value',
@@ -2183,7 +2178,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    79 => array(
+    78 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_premise',
       'callback' => 'themekey_node_nid2field_value',
@@ -2194,7 +2189,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    80 => array(
+    79 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_sub_premise',
       'callback' => 'themekey_node_nid2field_value',
@@ -2205,7 +2200,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    81 => array(
+    80 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_organisation_name',
       'callback' => 'themekey_node_nid2field_value',
@@ -2216,7 +2211,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    82 => array(
+    81 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_name_line',
       'callback' => 'themekey_node_nid2field_value',
@@ -2227,7 +2222,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    83 => array(
+    82 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_first_name',
       'callback' => 'themekey_node_nid2field_value',
@@ -2238,7 +2233,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    84 => array(
+    83 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_last_name',
       'callback' => 'themekey_node_nid2field_value',
@@ -2249,7 +2244,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    85 => array(
+    84 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_address_data',
       'callback' => 'themekey_node_nid2field_value',
@@ -2260,7 +2255,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    86 => array(
+    85 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_calendar_entry_date_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2271,7 +2266,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    87 => array(
+    86 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_teaserbody_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2282,7 +2277,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    88 => array(
+    87 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_teaserbody_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2293,7 +2288,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    89 => array(
+    88 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_url_url',
       'callback' => 'themekey_node_nid2field_value',
@@ -2304,7 +2299,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    90 => array(
+    89 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_url_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2315,7 +2310,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    91 => array(
+    90 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_slider_url_attributes',
       'callback' => 'themekey_node_nid2field_value',
@@ -2326,7 +2321,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    92 => array(
+    91 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_content_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2337,7 +2332,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    93 => array(
+    92 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_content_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2348,7 +2343,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    94 => array(
+    93 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_recipient_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2359,7 +2354,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    95 => array(
+    94 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_recipient_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2370,7 +2365,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    96 => array(
+    95 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_required_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2381,7 +2376,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    97 => array(
+    96 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_signings_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2392,7 +2387,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    98 => array(
+    97 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2403,7 +2398,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    99 => array(
+    98 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_alt',
       'callback' => 'themekey_node_nid2field_value',
@@ -2414,7 +2409,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    100 => array(
+    99 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2425,7 +2420,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    101 => array(
+    100 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_width',
       'callback' => 'themekey_node_nid2field_value',
@@ -2436,7 +2431,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    102 => array(
+    101 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_background_image_height',
       'callback' => 'themekey_node_nid2field_value',
@@ -2447,7 +2442,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    103 => array(
+    102 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_body_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2458,7 +2453,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    104 => array(
+    103 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_body_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2469,7 +2464,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    105 => array(
+    104 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_link_url',
       'callback' => 'themekey_node_nid2field_value',
@@ -2480,7 +2475,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    106 => array(
+    105 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_link_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2491,7 +2486,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    107 => array(
+    106 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_link_attributes',
       'callback' => 'themekey_node_nid2field_value',
@@ -2502,7 +2497,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    108 => array(
+    107 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_tab_title_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2513,7 +2508,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    109 => array(
+    108 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_announce_tab_title_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2524,7 +2519,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    110 => array(
+    109 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pw_kc_thesis_reference_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -2535,7 +2530,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    111 => array(
+    110 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pw_kc_user_reference_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -2546,7 +2541,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    112 => array(
+    111 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_pw_kc_vote_reference_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2557,7 +2552,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    113 => array(
+    112 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_webform_footer_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2568,7 +2563,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    114 => array(
+    113 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_webform_footer_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2579,7 +2574,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    115 => array(
+    114 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_share_sum_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2590,7 +2585,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    116 => array(
+    115 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_dialogue_before_election_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2601,7 +2596,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    117 => array(
+    116 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_committee_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2612,7 +2607,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    118 => array(
+    117 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_job_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2623,7 +2618,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    119 => array(
+    118 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_politician_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -2634,7 +2629,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    120 => array(
+    119 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_valid_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2645,7 +2640,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    121 => array(
+    120 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_valid_value2',
       'callback' => 'themekey_node_nid2field_value',
@@ -2656,7 +2651,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    122 => array(
+    121 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_duration_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2667,7 +2662,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    123 => array(
+    122 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sectors_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2678,7 +2673,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    124 => array(
+    123 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_country',
       'callback' => 'themekey_node_nid2field_value',
@@ -2689,7 +2684,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    125 => array(
+    124 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_administrative_area',
       'callback' => 'themekey_node_nid2field_value',
@@ -2700,7 +2695,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    126 => array(
+    125 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_sub_administrative_area',
       'callback' => 'themekey_node_nid2field_value',
@@ -2711,7 +2706,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    127 => array(
+    126 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_locality',
       'callback' => 'themekey_node_nid2field_value',
@@ -2722,7 +2717,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    128 => array(
+    127 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_dependent_locality',
       'callback' => 'themekey_node_nid2field_value',
@@ -2733,7 +2728,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    129 => array(
+    128 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_postal_code',
       'callback' => 'themekey_node_nid2field_value',
@@ -2744,7 +2739,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    130 => array(
+    129 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_thoroughfare',
       'callback' => 'themekey_node_nid2field_value',
@@ -2755,7 +2750,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    131 => array(
+    130 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_premise',
       'callback' => 'themekey_node_nid2field_value',
@@ -2766,7 +2761,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    132 => array(
+    131 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_sub_premise',
       'callback' => 'themekey_node_nid2field_value',
@@ -2777,7 +2772,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    133 => array(
+    132 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_organisation_name',
       'callback' => 'themekey_node_nid2field_value',
@@ -2788,7 +2783,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    134 => array(
+    133 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_name_line',
       'callback' => 'themekey_node_nid2field_value',
@@ -2799,7 +2794,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    135 => array(
+    134 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_first_name',
       'callback' => 'themekey_node_nid2field_value',
@@ -2810,7 +2805,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    136 => array(
+    135 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_last_name',
       'callback' => 'themekey_node_nid2field_value',
@@ -2821,7 +2816,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    137 => array(
+    136 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_address_data',
       'callback' => 'themekey_node_nid2field_value',
@@ -2832,7 +2827,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    138 => array(
+    137 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_classification_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2843,7 +2838,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    139 => array(
+    138 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_classification_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2854,7 +2849,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    140 => array(
+    139 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_income_amount_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2865,7 +2860,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    141 => array(
+    140 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_income_amount_max_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2876,7 +2871,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    142 => array(
+    141 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_income_interval_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2887,7 +2882,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    143 => array(
+    142 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_sidejob_organization_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -2898,7 +2893,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    144 => array(
+    143 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_donation_amount_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2909,7 +2904,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    145 => array(
+    144 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_donation_progress_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2920,7 +2915,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    146 => array(
+    145 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_donation_required_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2931,7 +2926,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    147 => array(
+    146 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_end_date_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2942,7 +2937,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    148 => array(
+    147 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_external_url_url',
       'callback' => 'themekey_node_nid2field_value',
@@ -2953,7 +2948,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    149 => array(
+    148 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_external_url_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -2964,7 +2959,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    150 => array(
+    149 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_external_url_attributes',
       'callback' => 'themekey_node_nid2field_value',
@@ -2975,7 +2970,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    151 => array(
+    150 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_partner_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -2986,7 +2981,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    152 => array(
+    151 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_partner_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -2997,7 +2992,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    153 => array(
+    152 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_status_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3008,7 +3003,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    154 => array(
+    153 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_donation_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3019,7 +3014,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    155 => array(
+    154 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_donation_summary',
       'callback' => 'themekey_node_nid2field_value',
@@ -3030,7 +3025,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    156 => array(
+    155 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_donation_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3041,7 +3036,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    157 => array(
+    156 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_parliament_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3052,7 +3047,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    158 => array(
+    157 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_parliament_summary',
       'callback' => 'themekey_node_nid2field_value',
@@ -3063,7 +3058,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    159 => array(
+    158 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_parliament_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3074,7 +3069,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    160 => array(
+    159 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_vote_tid',
       'callback' => 'themekey_node_nid2field_value',
@@ -3085,7 +3080,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    161 => array(
+    160 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_vote_node_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -3096,7 +3091,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    162 => array(
+    161 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_vote_user_target_id',
       'callback' => 'themekey_node_nid2field_value',
@@ -3107,7 +3102,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    163 => array(
+    162 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_starter_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3118,7 +3113,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    164 => array(
+    163 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_starter_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3129,7 +3124,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    165 => array(
+    164 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_passed_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3140,7 +3135,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    166 => array(
+    165 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_passed_summary',
       'callback' => 'themekey_node_nid2field_value',
@@ -3151,7 +3146,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    167 => array(
+    166 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_text_passed_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3162,7 +3157,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    168 => array(
+    167 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_poll_date_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3173,7 +3168,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    169 => array(
+    168 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_poll_external_url_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3184,7 +3179,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    170 => array(
+    169 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_poll_external_url_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3195,7 +3190,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    171 => array(
+    170 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_voted_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3206,7 +3201,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    172 => array(
+    171 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_welcome_message_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3217,7 +3212,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    173 => array(
+    172 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_petition_welcome_message_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3228,7 +3223,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    174 => array(
+    173 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_version_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3239,7 +3234,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    175 => array(
+    174 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_version_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3250,7 +3245,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    176 => array(
+    175 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_revision_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3261,7 +3256,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    177 => array(
+    176 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_revision_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3272,7 +3267,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    178 => array(
+    177 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_result_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3283,7 +3278,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    179 => array(
+    178 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_result_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3294,7 +3289,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    180 => array(
+    179 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_total_time_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3305,7 +3300,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    181 => array(
+    180 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_num_test_passes_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3316,7 +3311,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    182 => array(
+    181 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_num_test_failures_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3327,7 +3322,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    183 => array(
+    182 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_num_command_passes_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3338,7 +3333,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    184 => array(
+    183 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_num_command_failures_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3349,7 +3344,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    185 => array(
+    184 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_num_command_errors_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3360,7 +3355,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    186 => array(
+    185 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_num_test_total_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3371,7 +3366,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    187 => array(
+    186 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_suite_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3382,7 +3377,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    188 => array(
+    187 => array(
       'src' => 'node:nid',
       'dst' => 'node:drulenium_suite_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3393,7 +3388,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    189 => array(
+    188 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_blockreference_moddelta',
       'callback' => 'themekey_node_nid2field_value',
@@ -3404,7 +3399,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    190 => array(
+    189 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_testimonial_fullname_value',
       'callback' => 'themekey_node_nid2field_value',
@@ -3415,7 +3410,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    191 => array(
+    190 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_testimonial_fullname_format',
       'callback' => 'themekey_node_nid2field_value',
@@ -3426,29 +3421,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    192 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_testimonial_quote_value',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_testimonial_quote',
-        'type' => 'text_long',
-        'column' => 'value',
-        'translatable' => '0',
-      ),
-    ),
-    193 => array(
-      'src' => 'node:nid',
-      'dst' => 'node:field_testimonial_quote_format',
-      'callback' => 'themekey_node_nid2field_value',
-      'args' => array(
-        'field_name' => 'field_testimonial_quote',
-        'type' => 'text_long',
-        'column' => 'format',
-        'translatable' => '0',
-      ),
-    ),
-    194 => array(
+    191 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_testimonial_portrait_fid',
       'callback' => 'themekey_node_nid2field_value',
@@ -3459,7 +3432,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    195 => array(
+    192 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_testimonial_portrait_alt',
       'callback' => 'themekey_node_nid2field_value',
@@ -3470,7 +3443,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    196 => array(
+    193 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_testimonial_portrait_title',
       'callback' => 'themekey_node_nid2field_value',
@@ -3481,7 +3454,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    197 => array(
+    194 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_testimonial_portrait_width',
       'callback' => 'themekey_node_nid2field_value',
@@ -3492,7 +3465,7 @@ foo
         'translatable' => '0',
       ),
     ),
-    198 => array(
+    195 => array(
       'src' => 'node:nid',
       'dst' => 'node:field_testimonial_portrait_height',
       'callback' => 'themekey_node_nid2field_value',
@@ -3503,135 +3476,162 @@ foo
         'translatable' => '0',
       ),
     ),
-    199 => array(
-      'src' => 'system:dummy',
-      'dst' => 'overlay:mode',
-      'callback' => 'themekey_overlay_dummy2mode',
-    ),
-    200 => array(
+    196 => array(
       'src' => 'node:nid',
-      'dst' => 'path:node_alias',
-      'callback' => 'themekey_path_nid2alias',
+      'dst' => 'node:field_testimonial_quote_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_quote',
+        'type' => 'text_long',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
     ),
-    201 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:query_param',
-      'callback' => 'themekey_dummy2query_param',
-    ),
-    202 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:cookie',
-      'callback' => 'themekey_dummy2cookie',
-    ),
-    203 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:http_header',
-      'callback' => 'themekey_dummy2http_header',
-    ),
-    204 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:post',
-      'callback' => 'themekey_dummy2post',
-    ),
-    205 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:query_string',
-      'callback' => 'themekey_dummy2query_string',
-    ),
-    206 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:date_time',
-      'callback' => 'themekey_dummy2date_time',
-    ),
-    207 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:date',
-      'callback' => 'themekey_dummy2date',
-    ),
-    208 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:month',
-      'callback' => 'themekey_dummy2month',
-    ),
-    209 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:time',
-      'callback' => 'themekey_dummy2time',
-    ),
-    210 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:day_of_week',
-      'callback' => 'themekey_dummy2day_of_week',
-    ),
-    211 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:day_of_month',
-      'callback' => 'themekey_dummy2day_of_month',
-    ),
-    212 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:user_browser',
-      'callback' => 'themekey_dummy2user_browser',
-    ),
-    213 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:user_os',
-      'callback' => 'themekey_dummy2user_os',
-    ),
-    214 => array(
-      'src' => 'system:user_browser',
-      'dst' => 'system:user_browser_simplified',
-      'callback' => 'themekey_user_browser2user_browser_simplified',
-    ),
-    215 => array(
-      'src' => 'system:user_os',
-      'dst' => 'system:user_os_simplified',
-      'callback' => 'themekey_user_os2user_os_simplified',
-    ),
-    216 => array(
-      'src' => 'system:dummy',
-      'dst' => 'system:session',
-      'callback' => 'themekey_dummy2session',
-    ),
-    217 => array(
-      'src' => 'taxonomy:tid',
-      'dst' => 'taxonomy:vid',
-      'callback' => 'themekey_taxonomy_tid2vid',
-    ),
-    218 => array(
-      'src' => 'taxonomy:tid',
-      'dst' => 'taxonomy:tid_and_childs',
-      'callback' => 'themekey_taxonomy_tid2tid_and_parents',
-    ),
-    219 => array(
+    197 => array(
       'src' => 'node:nid',
-      'dst' => 'taxonomy:tid',
-      'callback' => 'themekey_taxonomy_nid2tid',
+      'dst' => 'node:field_testimonial_quote_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_quote',
+        'type' => 'text_long',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
     ),
-    220 => array(
-      'src' => 'taxonomy:tid',
-      'dst' => 'taxonomy:name',
-      'callback' => 'themekey_taxonomy_tid2name',
-    ),
-    221 => array(
+    198 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    222 => array(
+    199 => array(
+      'src' => 'comment:cid',
+      'dst' => 'node:nid',
+      'callback' => 'themekey_comment_cid2nid',
+    ),
+    200 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    223 => array(
+    201 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    224 => array(
+    202 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
+    ),
+    203 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:query_param',
+      'callback' => 'themekey_dummy2query_param',
+    ),
+    204 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:cookie',
+      'callback' => 'themekey_dummy2cookie',
+    ),
+    205 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:http_header',
+      'callback' => 'themekey_dummy2http_header',
+    ),
+    206 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:post',
+      'callback' => 'themekey_dummy2post',
+    ),
+    207 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:query_string',
+      'callback' => 'themekey_dummy2query_string',
+    ),
+    208 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:date_time',
+      'callback' => 'themekey_dummy2date_time',
+    ),
+    209 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:date',
+      'callback' => 'themekey_dummy2date',
+    ),
+    210 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:month',
+      'callback' => 'themekey_dummy2month',
+    ),
+    211 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:time',
+      'callback' => 'themekey_dummy2time',
+    ),
+    212 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:day_of_week',
+      'callback' => 'themekey_dummy2day_of_week',
+    ),
+    213 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:day_of_month',
+      'callback' => 'themekey_dummy2day_of_month',
+    ),
+    214 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:user_browser',
+      'callback' => 'themekey_dummy2user_browser',
+    ),
+    215 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:user_os',
+      'callback' => 'themekey_dummy2user_os',
+    ),
+    216 => array(
+      'src' => 'system:user_browser',
+      'dst' => 'system:user_browser_simplified',
+      'callback' => 'themekey_user_browser2user_browser_simplified',
+    ),
+    217 => array(
+      'src' => 'system:user_os',
+      'dst' => 'system:user_os_simplified',
+      'callback' => 'themekey_user_os2user_os_simplified',
+    ),
+    218 => array(
+      'src' => 'system:dummy',
+      'dst' => 'system:session',
+      'callback' => 'themekey_dummy2session',
+    ),
+    219 => array(
+      'src' => 'node:nid',
+      'dst' => 'path:node_alias',
+      'callback' => 'themekey_path_nid2alias',
+    ),
+    220 => array(
+      'src' => 'taxonomy:tid',
+      'dst' => 'taxonomy:vid',
+      'callback' => 'themekey_taxonomy_tid2vid',
+    ),
+    221 => array(
+      'src' => 'taxonomy:tid',
+      'dst' => 'taxonomy:tid_and_childs',
+      'callback' => 'themekey_taxonomy_tid2tid_and_parents',
+    ),
+    222 => array(
+      'src' => 'node:nid',
+      'dst' => 'taxonomy:tid',
+      'callback' => 'themekey_taxonomy_nid2tid',
+    ),
+    223 => array(
+      'src' => 'taxonomy:tid',
+      'dst' => 'taxonomy:name',
+      'callback' => 'themekey_taxonomy_tid2name',
+    ),
+    224 => array(
+      'src' => 'system:dummy',
+      'dst' => 'overlay:mode',
+      'callback' => 'themekey_overlay_dummy2mode',
     ),
   );
   $export['themekey_maps'] = $strongarm;
@@ -3641,16 +3641,16 @@ foo
   $strongarm->api_version = 1;
   $strongarm->name = 'themekey_modules';
   $strongarm->value = array(
-    0 => 'admin_menu',
-    1 => 'comment',
-    2 => 'locale',
-    3 => 'node',
-    4 => 'overlay',
-    5 => 'path',
-    6 => 'system',
+    0 => 'locale',
+    1 => 'node',
+    2 => 'user',
+    3 => 'comment',
+    4 => 'views',
+    5 => 'system',
+    6 => 'path',
     7 => 'taxonomy',
-    8 => 'user',
-    9 => 'views',
+    8 => 'overlay',
+    9 => 'admin_menu',
   );
   $export['themekey_modules'] = $strongarm;
 
@@ -3698,6 +3698,15 @@ foo
       'fit' => 6,
     ),
     4 => array(
+      'path' => 'user/#/edit',
+      'callbacks' => array(),
+      'wildcards' => array(
+        1 => 'profile:uid',
+      ),
+      'weight' => 2,
+      'fit' => 5,
+    ),
+    5 => array(
       'path' => 'comment/#/edit',
       'callbacks' => array(),
       'wildcards' => array(
@@ -3706,20 +3715,11 @@ foo
       'weight' => 2,
       'fit' => 5,
     ),
-    5 => array(
+    6 => array(
       'path' => 'comment/#/delete',
       'callbacks' => array(),
       'wildcards' => array(
         1 => 'comment:cid',
-      ),
-      'weight' => 2,
-      'fit' => 5,
-    ),
-    6 => array(
-      'path' => 'user/#/edit',
-      'callbacks' => array(),
-      'wildcards' => array(
-        1 => 'profile:uid',
       ),
       'weight' => 2,
       'fit' => 5,
