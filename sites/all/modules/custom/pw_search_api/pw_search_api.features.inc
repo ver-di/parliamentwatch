@@ -39,7 +39,7 @@ function pw_search_api_default_search_api_index() {
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "body:summary" : { "type" : "text" },
-        "body:value" : { "type" : "text", "boost" : "8.0" },
+        "body:value" : { "type" : "text" },
         "changed" : { "type" : "date" },
         "comment" : { "type" : "integer" },
         "comment_count" : { "type" : "integer" },
@@ -110,9 +110,18 @@ function pw_search_api_default_search_api_index() {
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "-10",
-          "settings" : { "default" : "1", "bundles" : [] }
+          "settings" : {
+            "default" : "0",
+            "bundles" : {
+              "poll" : "poll",
+              "blogpost" : "blogpost",
+              "dialogue" : "dialogue",
+              "page" : "page",
+              "pw_petition" : "pw_petition"
+            }
+          }
         },
         "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
@@ -156,7 +165,7 @@ function pw_search_api_default_search_api_index() {
             },
             "title" : 0,
             "alt" : 1,
-            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nem = 1.5\\r\\nu = 1.5"
+            "tags" : ""
           }
         },
         "search_api_transliteration" : {
