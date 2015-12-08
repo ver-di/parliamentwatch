@@ -7,7 +7,7 @@
  <input title="Geben Sie die Begriffe ein, nach denen Sie suchen." class="custom-search-box form-text" placeholder="Suchwort" type="text" id="edit-custom-search-blocks-form-1--2" name="s" value="<?php print drupal_get_query_parameters()["s"]; ?>" size="15" maxlength="128" data-thmr="thmr_689" style="outline: none;">
 </div>
 <div class="form-actions form-wrapper" id="edit-actions--2" data-thmr="thmr_699">
-    <button type="submit" id="edit-submit" class="form-submit" name="op" value="suchen"><span class="mobile-only inline">suchen </span><span class="icon-search aw-icon-2x desktop-only"></span></button>
+    <button type="submit" id="edit-submit" class="form-submit"><span class="mobile-only inline">suchen </span><span class="icon-search aw-icon-2x desktop-only"></span></button>
   </div></div></form>
     </div>
   </div>
