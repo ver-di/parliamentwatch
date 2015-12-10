@@ -3394,6 +3394,9 @@ form .webform-component-checkboxes .description {
 .responsive-layout-mobile #webform-client-form-10380 input {
   width: 100%;
 }
+#webform-client-form-10380 div {
+    float: left;
+}
 
 /* /////////////////////////// node footer /////////////////// */
 
