@@ -25,7 +25,7 @@ function pw_globals_views_default_views() {
   $handler->display->display_options['css_class'] = 'relative push-bottom-m';
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['use_more_always'] = TRUE;
-  $handler->display->display_options['use_more_text'] = 'Jetzt Fördermitglied werden';
+  $handler->display->display_options['use_more_text'] = 'Jetzt fördern';
   $handler->display->display_options['link_display'] = 'custom_url';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -137,7 +137,7 @@ function pw_globals_views_default_views() {
   $handler->display->display_options['link_url'] = 'node/10508';
   $translatables['pw_testimonials_header'] = array(
     t('Master'),
-    t('Jetzt Fördermitglied werden'),
+    t('Jetzt fördern'),
     t('Anwenden'),
     t('Zurücksetzen'),
     t('Sortieren nach'),
