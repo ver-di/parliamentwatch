@@ -13,7 +13,7 @@ function pw_subsite_default_fe_block_settings() {
   $export['version'] = '2.0';
 
   $export['block-menu_meta_de'] = array(
-    'cache' => '-1',
+    'cache' => '1',
     'css_class' => 'small medium desktop-only',
     'custom' => '0',
     'machine_name' => 'menu_meta_de',
@@ -178,7 +178,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['custom_search_blocks-1'] = array(
-    'cache' => '-1',
+    'cache' => '5',
     'css_class' => 'pw-custom-search custom-search-button',
     'custom' => '0',
     'delta' => '1',
