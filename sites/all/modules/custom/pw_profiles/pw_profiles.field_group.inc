@@ -287,6 +287,8 @@ function pw_profiles_field_group_info() {
       8 => 'field_user_fraction',
       9 => 'field_user_valid_from',
       10 => 'field_user_valid_until',
+      11 => 'field_user_joined',
+      12 => 'field_user_retired',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

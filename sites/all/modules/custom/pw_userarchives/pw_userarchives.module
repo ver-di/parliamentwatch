@@ -10,8 +10,11 @@
 function pw_userarchives_cron($uid = NULL) {
 
   $query = check_user_archives_database($uid);
+  if(empty($query)){
+    return;
+  }
 
-  // Delete the archive entries for the chosen users first:
+  // Delete the archive entries for the chosen users first
   $res = $query->execute();
   while ($row = $res->fetchAssoc()) {
     db_delete('user_archive_cache')
@@ -107,7 +110,7 @@ function pw_userarchives_cron($uid = NULL) {
  *
  * The return query object is build in two steps.
  * 1. Fetch highest and actual vid of every grouped item.
- * 2. Modify query object and re-fetch data.
+ * 2. Modify query object and re-fetch data using the vids.
  *
  * @return $query SelectQuery
  */
@@ -120,15 +123,15 @@ function check_user_archives_database($uid = NULL) {
   $query->addExpression('MAX(ur.vid)', 'vid');
 
   // join taxonomy terms to get parliament name
-  $query->join('field_revision_field_user_parliament', 'u_parl', 'ur.uid = u_parl.entity_id AND ur.vid = u_parl.revision_id');
+  $query->join('field_revision_field_user_parliament', 'u_parl', "u_parl.entity_type = 'user' AND ur.vid = u_parl.revision_id");
   $query->join('taxonomy_term_data', 'td', 'td.tid = u_parl.field_user_parliament_tid');
 
   // join fractions to get fraction tid
-  $query->leftJoin('field_revision_field_user_fraction', 'fraction_tid', 'fraction_tid.entity_id = ur.uid AND fraction_tid.revision_id = ur.vid');
+  $query->leftJoin('field_revision_field_user_fraction', 'fraction_tid', "fraction_tid.entity_type = 'user' AND fraction_tid.revision_id = ur.vid");
   $query->leftJoin('taxonomy_term_data', 'fraction_name', 'fraction_name.tid = fraction_tid.field_user_fraction_tid');
 
   // join revisionable roles to get user_role
-  $query->join('field_revision_field_user_roles_for_view_mode_s', 'role_tid', 'role_tid.entity_id = ur.uid AND role_tid.revision_id = ur.vid');
+  $query->join('field_revision_field_user_roles_for_view_mode_s', 'role_tid', "role_tid.entity_type = 'user' AND role_tid.revision_id = ur.vid");
   $query->join('taxonomy_term_data', 'role_name', 'role_name.tid = role_tid.field_user_roles_for_view_mode_s_tid');
 
   // query conditions
@@ -142,6 +145,11 @@ function check_user_archives_database($uid = NULL) {
 
   // fetch all vids as flat array
   $vids = $query->execute()->fetchCol();
+
+  // return if no revision were found (e.g. non-politician)
+  if(empty($vids)){
+    return;
+  }
 
   // second step: modify query and get items by vids
 
@@ -163,16 +171,16 @@ function check_user_archives_database($uid = NULL) {
   $query->addExpression('LOWER(role_name.name)', 'user_role');
 
   // join parliament election to get timestamp for elections
-  $query->join('field_revision_field_parliament_election', 'pe', 'pe.entity_type=\'taxonomy_term\' AND pe.entity_id = u_parl.field_user_parliament_tid');
+  $query->join('field_revision_field_parliament_election', 'pe', "pe.entity_type='taxonomy_term' AND pe.entity_id = u_parl.field_user_parliament_tid");
   $query->addExpression('UNIX_TIMESTAMP(pe.field_parliament_election_value)', 'timestamp');
 
   // join valid to get valid from
-  $query->leftJoin('field_revision_field_user_valid_from', 'user_valid_from', 'user_valid_from.entity_id = ur.uid AND user_valid_from.revision_id = ur.vid');
-  $query->addField('user_valid_from', 'field_user_valid_from_value', 'valid_from');
+  $query->leftJoin('field_revision_field_user_joined', 'user_joined', "user_joined.entity_type = 'user' AND user_joined.revision_id = ur.vid");
+  $query->addField('user_joined', 'field_user_joined_value', 'user_joined');
 
   // join valid to get valid until
-  $query->leftJoin('field_revision_field_user_valid_until', 'user_valid_until', 'user_valid_until.entity_id = ur.uid AND user_valid_until.revision_id = ur.vid');
-  $query->addField('user_valid_until', 'field_user_valid_until_value', 'valid_until');
+  $query->leftJoin('field_revision_field_user_retired', 'user_retired', "user_retired.entity_type = 'user' AND user_retired.revision_id = ur.vid");
+  $query->addField('user_retired', 'field_user_retired_value', 'user_retired');
 
   return $query;
 }

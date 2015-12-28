@@ -109,12 +109,12 @@ function pw_userarchives_update_7103() {
 }
 
 /**
- * Adds further columns valid_from and valid_until
+ * Adds further columns user_joined and user_retired
  */
 function pw_userarchives_update_7104() {
-  db_add_field('user_archive_cache', 'valid_from', array('type' => 'varchar', 'mysql_type' => 'DATE', 'description' => 'Date entering the parliament.'));
-  db_add_field('user_archive_cache', 'valid_until', array('type' => 'varchar', 'mysql_type' => 'DATE', 'description' => 'Date leaving the parliament.'));
-  db_add_index('user_archive_cache', 'valid_from', array('valid_from'));
-  db_add_index('user_archive_cache', 'valid_until', array('valid_until'));
+  db_add_field('user_archive_cache', 'user_joined', array('type' => 'varchar', 'mysql_type' => 'DATE', 'description' => 'Date entering the parliament.'));
+  db_add_field('user_archive_cache', 'user_retired', array('type' => 'varchar', 'mysql_type' => 'DATE', 'description' => 'Date leaving the parliament.'));
+  db_add_index('user_archive_cache', 'user_joined', array('user_joined'));
+  db_add_index('user_archive_cache', 'user_retired', array('user_retired'));
 }
 
