@@ -1,6 +1,7 @@
 #webform-client-form-10508 #edit-submitted-fieldset-donationform-yourdonation-donation-frequency .form-item,
 #webform-client-form-10508 #edit-submitted-fieldset-donationform-yourdonation-donation-amount .form-item,
-#webform-client-form-10508 #edit-submitted-fieldset-donationform-paymentinfo-option-receipt .form-item {
+#webform-client-form-10508 #edit-submitted-fieldset-donationform-paymentinfo-option-receipt .form-item,
+#webform-client-form-10508 #edit-submitted-fieldset-donationform-paymentinfo-payment-kto-or-iban .form-item {
     float: left;
     margin-right: 20px;
 }
@@ -9,7 +10,9 @@
 }
 #webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-amount,
 #webform-client-form-10508 .webform-component--fieldset-donationform-yourdonation--donation-target,
-#webform-client-form-10508 .webform-component--fieldset-donationform-yourdata--option-newsletter {
+#webform-client-form-10508 .webform-component--fieldset-donationform-yourdata--option-newsletter,
+#webform-client-form-10508 .webform-component--fieldset-donationform-paymentinfo--payment-direct-debit-holder,
+#webform-client-form-10508 .webform-component--fieldset-donationform-paymentinfo--payment-sepa-holder {
     clear: both;
     padding-top: 1em;
 }
@@ -74,7 +77,7 @@ responsive layout for mobile
 .responsive-layout-mobile #webform-client-form-10508 #edit-submitted-fieldset-donationform-paymentinfo-option-receipt .form-item {
     float: none;
     margin: 0 0 0.2em;
-} 
+}
 .responsive-layout-mobile #webform-client-form-10508 .form-text {
     width: 100%;
 }
@@ -104,9 +107,4 @@ responsive layout for mobile
 .responsive-layout-mobile #webform-client-form-10508 .webform-component--fieldset-donationform-paymentinfo--payment-accordion--payment-tab-sepa--payment-sepa-holder label {
     line-height: 1.1em;
     margin-top: 0.7em;
-}
-.page-node-51914 .webform-component--fieldset-donationform-yourdonation--donation-frequency,
-.page-node-51914 .webform-component--fieldset-donationform-yourdonation--donation-target,
-.page-node-51914 .webform-component--fieldset-donationform-yourdonation .fieldset-description {
-    display: none;
 }

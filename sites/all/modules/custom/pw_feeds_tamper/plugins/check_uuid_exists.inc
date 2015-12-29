@@ -31,10 +31,10 @@ function check_uuid_exists_form($importer, $element_key, $settings) {
 }
 
 function check_uuid_exists($source, $item_key, $element_key, &$field, $settings) {
-  $uuid = $field;
+  $uuid = trim($field);
   $entity = entity_uuid_load($settings['entity_type'], array($uuid));
   if(empty($entity)){
-    drupal_set_message(ucfirst($settings['entity_type']) . ' not found for UUID ' . $uuid . '.', 'error');
+    drupal_set_message(ucfirst($settings['entity_type']) . ' not found for UUID "' . $uuid . '".', 'error');
     $field = '';
   }
 }

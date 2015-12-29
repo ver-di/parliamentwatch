@@ -55,23 +55,21 @@ function pw_gdata_importer_feeds_set_target($source, $entity, $target, $value, $
   $info = field_info_field($target);
 
   $language = isset($mapping['language']) ? $mapping['language'] : LANGUAGE_NONE;
-
-  if($info['settings']['target_type'] == 'user'){
-    $entity_ids = db_select('users', 'u')
-    ->fields('u', array('uuid', 'uid'))
-    ->condition('uuid', array_values($values), 'IN')
-    ->execute()
-    ->fetchAllKeyed();
-  }
-  elseif($info['settings']['target_type'] == 'node'){
+  if($info['settings']['target_type'] == 'node'){
     $entity_ids = db_select('node', 'n')
     ->fields('n', array('uuid', 'nid'))
     ->condition('uuid', array_values($values), 'IN')
     ->execute()
     ->fetchAllKeyed();
   }
+
+  // default is user
   else{
-    return;
+    $entity_ids = db_select('users', 'u')
+    ->fields('u', array('uuid', 'uid'))
+    ->condition('uuid', array_values($values), 'IN')
+    ->execute()
+    ->fetchAllKeyed();
   }
 
   $iterator = 0;

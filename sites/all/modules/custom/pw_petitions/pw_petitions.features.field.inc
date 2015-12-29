@@ -2617,7 +2617,7 @@ $entity_field[0][\'value\'] = $result;',
             ),
           ),
           'type' => 'text_default',
-          'weight' => 28,
+          'weight' => '28',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -2734,7 +2734,7 @@ $entity_field[0][\'value\'] = $result;',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'image_link' => 'content',

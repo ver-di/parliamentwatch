@@ -158,6 +158,7 @@ features[image][] = pw_portrait_ms
 features[image][] = pw_portrait_s
 features[image][] = pw_portrait_xs
 features[image][] = pw_thumbnail
+features[image][] = pw_thumbnail_70
 features[linkit_profiles][] = full
 features[linkit_profiles][] = managed_content
 features[user_permission][] = add media from remote sources
