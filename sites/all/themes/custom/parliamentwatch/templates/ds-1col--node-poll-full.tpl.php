@@ -5,26 +5,28 @@ print theme('status_messages');
 <div class="sharethis-wrapper">
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
-<p class="medium">
-  <?php print render($content['field_parliament']); ?> / Abstimmung
-  <?php
-  if(!empty($content['field_poll_date'])){
-    print ' am '.render($content['field_poll_date']);
-  }
-  ?>
-</p>
-<div class="push-bottom-m">
-  <?php if (!empty($content['field_blogpost_categories'])): ?>
-    <div class="icon-taxonomy">
-      <?php print render($content['field_blogpost_categories']); ?>
-    </div>
+<ul class="icon-list medium">
+  <li>
+    <i class="icon-eu fixed-width-icon"></i>
+    <?php print render($content['field_parliament']); ?>
+  </li>
+  <?php if(!empty($content['field_poll_date'])): ?>
+    <li>
+      <i class="icon-clock fixed-width-icon"></i>
+      <?php print render($content['field_poll_date']); ?>
+    </li>
   <?php endif; ?>
-  <p class="comment-count">
-    <a href="#comments">
-      <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
-    </a>
-  </p>
-</div>
+  <?php if (!empty($content['field_blogpost_categories'])): ?>
+    <li>
+      <i class="icon-tags fixed-width-icon"></i>
+      <?php print render($content['field_blogpost_categories']); ?>
+    </li>
+  <?php endif; ?>
+  <li>
+    <i class="icon-dialogue fixed-width-icon"></i>
+    <a href="#comments"><?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?></a>
+  </li>
+</ul>
 <?php
 print render(field_view_field('node', $node, 'body', array('label' => 'hidden', 'type' => 'text_summary_or_trimmed')));
 ?>

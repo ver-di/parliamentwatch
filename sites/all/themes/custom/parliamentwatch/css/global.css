@@ -810,7 +810,7 @@ a.link-calendar,
     background-position: -240px -2418px;
 }
 .view-calendar .more-link {
-   float: right;
+ float: right;
 }
 .link-calendar a:hover,
 a.link-calendar:hover,
@@ -1798,17 +1798,17 @@ ul.tabs li a:active {
 @media (max-width: 479px) {
   .floatbox {
     width: 100%;
-  }
+}
 }
 @media (min-width: 480px) {
   .floatbox {
     width: 220px;
-  }
+}
 }
 @media (min-width: 639px) {
   .floatbox {
     width: 270px;
-  }
+}
 }
 .floatbox h3 {
     background-position: -810px -2688px;
@@ -1954,7 +1954,7 @@ ul.tabs li a:active {
     color: #666;
 }
 .views-exposed-form .form-item {
-   padding: 1px 0;
+ padding: 1px 0;
 }
 .region-sidebar-second .views-exposed-form .form-text {
     width: 89%;
@@ -2107,6 +2107,22 @@ img.no-outline,
 .icon-taxonomy {
     background-position: -969px -2533px;
     margin-bottom: 5px;
+}
+ul.icon-list li{
+    float: left;
+    display: block;
+    width: 300px;
+}
+ul.icon-list:after {
+    clear: both;
+    content: ".";
+    display: block;
+    visibility: hidden;
+}
+.fixed-width-icon{
+  width: 2.2em;
+  text-align: center;
+  display: inline-block;
 }
 .node-blogpost .comment-count,
 .node-blogpost .field-type-taxonomy-term-reference {
@@ -2430,20 +2446,20 @@ html.js fieldset.collapsed {
     left: -10px;
     bottom: 14px;
     bottom: 1.4rem;
-  }
+}
 
-  .pw-arrow-box:after,
-  .pw-arrow-box:before {
-  	left: 14px;
-  }
-  .pw-arrow-box:after {
-  	border-width: 10px;
-  	margin-left: -10px;
-  }
-  .pw-arrow-box:before {
-  	border-width: 11px;
-  	margin-left: -11px;
-  }
+.pw-arrow-box:after,
+.pw-arrow-box:before {
+ left: 14px;
+}
+.pw-arrow-box:after {
+ border-width: 10px;
+ margin-left: -10px;
+}
+.pw-arrow-box:before {
+ border-width: 11px;
+ margin-left: -11px;
+}
 }
 
 /* press */
@@ -2619,26 +2635,26 @@ ul.progress-icons li {
 	}
 }
 /* tribute to IE8 */
-	.responsive-list-image-wrapper {
-		float: left\9;
-	}
-	.pw-responsive-list-contents {
-		margin-left: 300px\9;
-	}
-	.responsive-list-partner-wrapper {
-		position: absolute\9;
-		bottom: 15px\9;
-		left: 300px\9;
-	}
-	.responsive-list-sign-wrapper {
-		position: absolute\9;
-		bottom: 15px\9;
-		right: 0\9;
-	}
-	.view-pw-petitions .progress-icons + a {
-		display: block\9;
-		margin-left: 4.5em\9;
-	}
+.responsive-list-image-wrapper {
+  float: left\9;
+}
+.pw-responsive-list-contents {
+  margin-left: 300px\9;
+}
+.responsive-list-partner-wrapper {
+  position: absolute\9;
+  bottom: 15px\9;
+  left: 300px\9;
+}
+.responsive-list-sign-wrapper {
+  position: absolute\9;
+  bottom: 15px\9;
+  right: 0\9;
+}
+.view-pw-petitions .progress-icons + a {
+  display: block\9;
+  margin-left: 4.5em\9;
+}
 /* // tribute to IE8 */
 
 /* /////////////////////////// forms /////////////////// */
@@ -2675,7 +2691,7 @@ label.error {
 }
 .messages.error.messages-inline {
   margin-top: -6px;
-	margin-top: -0.6rem;
+  margin-top: -0.6rem;
 }
 textarea.error,
 select.error,
@@ -3775,7 +3791,7 @@ a.external,
     height: 1px;
     overflow: hidden;
     position: absolute !important;
-  }
+}
 }
 .js .responsive-layout-mobile .pw-expandable-mobile h2,
 .js .responsive-layout-mobile .pw-expandable-mobile h3 {
