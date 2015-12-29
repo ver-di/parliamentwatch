@@ -1,47 +1,101 @@
-jQuery(window) // https://www.drupal.org/node/1478648
-	// fire mmenu and sticky events for mobile only
-  .on( "resize load", function() {
-    jQuery('body').bind('responsivelayout', function(e, d) {
-		$(".responsive-layout-mobile #nav").mmenu({
-			classes: "mm-light",         
-			searchfield: {
-				add: true,
-				search: true,
-				placeholder: Drupal.t('Menüpunkt suchen'),
-				noResults: Drupal.t('Keine Ergebnisse gefunden.')
-			},
-			counters: {
-				add: true,
-				update: true
-			}
-		})
-		.on( "opening.mm", function() {
-			var scrollTop = $(window).scrollTop();
-			$('#region-branding').css('top',scrollTop);
-		})
-		.on( "closed.mm", function() {
-			$('#region-branding').css('top',0);
-		});      
-		$("#hamburger").click(function() {
-			$("#nav").trigger("open.mm");
-		});
-		$('.responsive-layout-mobile #region-branding').stick_in_parent({parent:'#page'});
-		$('.responsive-layout-normal #region-branding').trigger("sticky_kit:detach");  
-		
-		// remove height for scaled images, leave in place for native images sizes to lazyload nicely
-    $('img').each(function() {
-      if($(this).width() < $(this).naturalWidth()) {
-        $(this).removeAttr('height').css('height','auto');
+var windowResize={
+  width:0,
+  init:function() {
+      this.width=$(window).width();
+  },
+  checkResize:function(callback) {
+      if( this.width!=$(window).width() ) {
+          callback.apply();
       }
+  }
+};
+
+jQuery(window) // https://www.drupal.org/node/1478648
+  .load(function(){
+    windowResize.init();
+  }
+  )
+  .on("debouncedresize", function() {
+    windowResize.checkResize(function() {
+      location.reload(false);
+    });
+  })
+  .load(function() {
+    $('body').bind('responsivelayout', function(e, d) {
+      $(".responsive-layout-mobile #nav").mmenu({
+  			classes: "mm-light",
+  			searchfield: {
+  				add: true,
+  				search: true,
+  				placeholder: Drupal.t('Menüpunkt suchen'),
+  				noResults: Drupal.t('Keine Ergebnisse gefunden.')
+  			},
+  			counters: {
+  				add: true,
+  				update: true
+  			},
+  			offCanvas: {
+          position  : "bottom",
+          zposition : "front"
+        },
+        slidingSubmenus: false
+  		})
+  		.on('opening.mm', function() {
+  			$('#region-user-second .trigger').next('.content').hide();
+    		$('#region-user-second .trigger').removeClass('open');
+  		});
+
+  		$("#hamburger").click(function() {
+  			$("#nav").trigger("open.mm");
+  		});
+
+  		  		// open search and newsletter layer in mobile footer
+  		$('.responsive-layout-mobile .trigger').on('click', function(e) {
+    		$('#region-user-second .trigger').not(this).next('.content').slideDown().hide();
+    		$('#region-user-second .trigger').not(this).removeClass('open');
+        $(this).next('.content').slideToggle();
+        $(this).toggleClass('open');
+      });
+
+      // toggle newsletter layer
+      if($(this).hasClass("responsive-layout-normal")) {
+        $(window).on("scroll",function() {
+          if ($(this).scrollTop() > 450){
+            $(".responsive-layout-normal #newsletter-wrapper.hide-auto").addClass("closed").removeClass("open");
+            if ( $(".responsive-layout-normal #newsletter-wrapper").hasClass("hide-auto")){
+              $(".responsive-layout-normal #newsletter-trigger span.desktop-only").addClass("icon-arrow-up").removeClass("icon-arrow-down");
+            }
+          }else{
+            $(".responsive-layout-normal #newsletter-wrapper.hide-auto").addClass("open").removeClass("closed");
+            if ($(".responsive-layout-normal #newsletter-wrapper").hasClass("hide-auto")) {
+              $(".responsive-layout-normal #newsletter-trigger span.desktop-only").addClass("icon-arrow-down").removeClass("icon-arrow-up");
+            }
+          }
+        });
+
+        $(".responsive-layout-normal #newsletter-trigger").on('click', function(e){
+          e.preventDefault();
+          $(".responsive-layout-normal #newsletter-wrapper").removeClass("hide-auto");
+          $(".responsive-layout-normal #newsletter-wrapper").toggleClass("open").toggleClass("closed");
+          $(".responsive-layout-normal #newsletter-trigger span.desktop-only").toggleClass("icon-arrow-up icon-arrow-down");
+        });
+      }
+
     });
   });
-});
 
+jQuery(document).ready(function() {
 
-jQuery(document).ready(function() {		
+  $('html').removeClass('no-js');
 
-  $('html').removeClass('no-js');  
-  
+	// remove height for scaled images, leave in place for native images sizes to lazyload nicely
+
+  $('img').each(function() {
+    if($(this).width() < $(this).naturalWidth()) {
+      $(this).removeAttr('height').css('height','auto');
+    }
+  });
+
   function toggle_details() {
     $('.toggle-details').on('click', function(e) {
       e.preventDefault();
@@ -54,29 +108,7 @@ jQuery(document).ready(function() {
     $('.toggle-details').unbind('click');
     toggle_details();
   });
-  
-// toggle newsletter layer 
-  
-  $(window).on("scroll",function() {
-    if ($(this).scrollTop() > 450){
-      $("#newsletter-wrapper.hide-auto").addClass("closed").removeClass("open");
-      if ( $("#newsletter-wrapper").hasClass("hide-auto")){
-        $("#newsletter-trigger").addClass("icon-arrow-up").removeClass("icon-arrow-down");
-      }
-    }else{
-      $("#newsletter-wrapper.hide-auto").addClass("open").removeClass("closed");
-      if ($("#newsletter-wrapper").hasClass("hide-auto")) {
-        $("#newsletter-trigger").addClass("icon-arrow-down").removeClass("icon-arrow-up");
-      }
-    }
-  });
 
-  $("#newsletter-trigger").on('click', function(e){
-    e.preventDefault();
-    $("#newsletter-wrapper").removeClass("hide-auto");
-    $("#newsletter-wrapper").toggleClass("open").toggleClass("closed");
-    $("#newsletter-trigger").toggleClass("icon-arrow-up icon-arrow-down");
-  });
 
 // show voting details on click
 
@@ -85,20 +117,20 @@ jQuery(document).ready(function() {
       $(this).addClass('visited');
       var opacity = $(this).next('.item-politician').css('opacity');
       var initial = $(this).next('.item-politician').css('left');
-      
+
       // move container into viewport to load image
       $(this).next('.item-politician').css('left','');
-      
+
       // hide all other items
       $(this).parents('ul').find('.pw-arrow-box-trigger').not(this).next('.item-politician').css({opacity: 0, visibility: 'hidden'});
-      
+
       // show/hide actual container
       if(opacity == '1' && initial != '-90000px'){
         $(this).next('.item-politician').css({opacity: 0, visibility: 'hidden'});
       } else if (opacity == '0' || initial == '-90000px'){
         $(this).next('.item-politician').css({opacity: 0, visibility: 'visible'}).animate({opacity:1},2500);
       }
-      
+
       // scroll page to see full container
       if($(this).next('.item-politician').visible() == false){
         $('html, body').animate({
@@ -109,11 +141,11 @@ jQuery(document).ready(function() {
         $(window).scroll();
       }
     });
-    
+
     $('li .item.vote .pw-arrow-box-trigger').on('click', function(e) {
       e.preventDefault();
     });
-    
+
     // close container
     $('li .item-politician .icon-close').on('click', function(e) {
       $(this).parents('.item-politician').css({opacity: 0, visibility: 'hidden'});
@@ -147,7 +179,7 @@ jQuery(document).ready(function() {
 
     $(".view-pw-kandidatencheck .views_slideshow_controls_text_next a").text(Drupal.t('next thesis'));
     $(".view-pw-kandidatencheck .views_slideshow_controls_text_previous a").text(Drupal.t('previous thesis'));
-     
+
 // attach values of bef slider to handles
 
     $('.slider-filter-processed .views-widget .form-item label').hide(); // hide values
@@ -170,7 +202,7 @@ jQuery(document).ready(function() {
 
 
 // slice text and add expander link (http://plugins.learningjquery.com/expander/)
-        
+
     $(window).load(function () { //https://drupal.org/node/1478648
         var t_readmore = 'weiterlesen';
         var t_readless = '';
@@ -195,7 +227,7 @@ jQuery(document).ready(function() {
 
 
 ////// Make blocks expandable only for responsive mobile version
-        
+
     $(window).load(function () { //https://drupal.org/node/1478648
         $('.responsive-layout-mobile #pw-block-user-basics h2').addClass('pw-mobile-expanded');
         $('.responsive-layout-mobile #pw-block-user-basics h3').addClass('pw-mobile-expanded');
@@ -205,7 +237,7 @@ jQuery(document).ready(function() {
             $(this).toggleClass('pw-mobile-expanded');
         });
     });
-    
+
 
 ////// switch view mode in questions and answers
 
@@ -313,7 +345,7 @@ jQuery(document).ready(function() {
         // for anchor
         var link_title = jQuery(this).closest('div').attr('title');
         jQuery(this).append('<span class="sharethis-wrapper"><span class="st_sharethis_hcount" onhover="false" st_title="'+link_title+'" st_url="'+st_url+'" displayText="'+link_title+'"></span></span>');
-    
+
     });
 
 ////// call check url if sharethisbutton is clicked
@@ -348,7 +380,7 @@ jQuery(document).ready(function() {
 
 ////// Info icon
 
-    jQuery(document).on("click",".ic-info",function(){  
+    jQuery(document).on("click",".ic-info",function(){
         jQuery(this).find(".info-content").fadeToggle("slow", "linear");
         jQuery(".ic-info .info-content").not(jQuery('.info-content', this)).fadeOut("slow", "linear");
     });
@@ -359,8 +391,8 @@ jQuery(document).ready(function() {
     jQuery(".external").click(function(){
         jQuery(this).attr('target', '_blank');
     });
-    
-    
+
+
 ////// Scroll to "Questions and Answers"
 
     function goToByScroll(id){
@@ -370,9 +402,9 @@ jQuery(document).ready(function() {
         goToByScroll("pw-block-questions-and-answers");
         return false;
     });
-    
-    
-    jQuery(".pw-collapsible .fieldset-wrapper").hide();       
+
+
+    jQuery(".pw-collapsible .fieldset-wrapper").hide();
     jQuery(".pw-collapsible .fieldset-legend").click(function () {
         $(this).parent().parent().find('.fieldset-wrapper').slideToggle("fast",function(){
             $.colorbox.resize({
@@ -382,11 +414,11 @@ jQuery(document).ready(function() {
     });
 
     jQuery('body').bind('responsivelayout', function() {
-        
+
         jQuery(".responsive-layout-mobile .link-question").click(function () {
             goToByScroll("pw_block_user_questionform");
             return false;
-        });        
+        });
         /*jQuery(".responsive-layout-normal .link-question").click(function () {
             $(".responsive-layout-normal .link-question").colorbox({
                 inline:true,
@@ -399,7 +431,7 @@ jQuery(document).ready(function() {
                 }
             });
         });*/
-    
+
     } );
     jQuery(".anchor-to-top a").click(function () {
         goToByScroll("page");

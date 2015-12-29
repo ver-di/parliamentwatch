@@ -4,6 +4,9 @@
 
 /* user page */
 
+.page-user .form-submit.big.link-question {
+    margin: 1em 0 0;
+}
 div.horizontal-tabs .field-item.even,
 div.horizontal-tabs tr.odd {
     background: none repeat scroll 0 0 #DBDBDB;

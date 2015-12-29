@@ -1744,7 +1744,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question [php]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-m';
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
   /* Feld: Excluded | User: Answers Give */
   $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
@@ -2036,7 +2036,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-m';
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
   /* Feld: User: Link: profile link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
@@ -2288,7 +2288,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question [php]';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-m';
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
   /* Feld: Excluded | User: Answers Give */
   $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
@@ -2548,7 +2548,7 @@ print "<div class=\\"copyright\\">".$data->field_field_user_picture[0][\'raw\'][
   $handler->display->display_options['fields']['nothing_1']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_1']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['nothing_1']['element_wrapper_class'] = 'center push-bottom-m';
   $handler->display->display_options['fields']['nothing_1']['element_default_classes'] = FALSE;
   /* Feld: User: Link: profile link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
@@ -2755,7 +2755,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['nothing_2']['element_class'] = 'form-submit big link-question';
   $handler->display->display_options['fields']['nothing_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_2']['element_wrapper_type'] = 'p';
-  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-l';
+  $handler->display->display_options['fields']['nothing_2']['element_wrapper_class'] = 'center push-bottom-m';
   $handler->display->display_options['fields']['nothing_2']['element_default_classes'] = FALSE;
   /* Feld: User: Link: profile link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
