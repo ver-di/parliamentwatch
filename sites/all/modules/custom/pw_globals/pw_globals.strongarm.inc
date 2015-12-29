@@ -97,7 +97,8 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'clientside_validation_path_list';
-  $strongarm->value = 'admin/structure/views/*';
+  $strongarm->value = 'admin/structure/views/*
+admin/structure/taxonomy/*';
   $export['clientside_validation_path_list'] = $strongarm;
 
   $strongarm = new stdClass();

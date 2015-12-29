@@ -111,15 +111,15 @@ function parliamentwatch_preprocess_node(&$variables) {
 }
 
 /*
- * use custom template for login form
+ * custom theme functions
  */
 function parliamentwatch_theme(&$existing, $type, $theme, $path) {
-  $hooks['user_login'] = array(
-    'template' => 'templates/user-login',
-    'render element' => 'form',
-    // other theme registration code...
+  return array(
+    'user_login' => array(
+      'template' => 'templates/user-login',
+      'render element' => 'form',
+      ),
     );
-  return $hooks;
 }
 
 /*

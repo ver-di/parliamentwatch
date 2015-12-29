@@ -7,7 +7,7 @@ print theme('status_messages');
 </div>
 <ul class="icon-list medium">
   <li>
-    <i class="icon-eu fixed-width-icon"></i>
+    <i class="<?php print render(field_view_field('taxonomy_term', $field_parliament[0]['taxonomy_term'], 'field_icon_class', array('label' => 'hidden'))); ?> fixed-width-icon"></i>
     <?php print render($content['field_parliament']); ?>
   </li>
   <?php if(!empty($content['field_poll_date'])): ?>

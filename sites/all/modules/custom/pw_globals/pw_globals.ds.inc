@@ -195,6 +195,23 @@ function pw_globals_ds_field_settings_info() {
   );
   $export['node|page|teaser'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|parliaments|default';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'parliaments';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_icon_class' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+  );
+  $export['taxonomy_term|parliaments|default'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -397,6 +414,50 @@ function pw_globals_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['node|page|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|parliaments|default';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'parliaments';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'description',
+        1 => 'field_parliament_valid',
+        2 => 'field_parliament_election',
+        3 => 'field_premium_profile_price',
+        4 => 'field_candidate_check_activated',
+        5 => 'field_parliament_filter_disabled',
+        6 => 'field_parliament_constit_rename',
+        7 => 'field_icon_class',
+      ),
+    ),
+    'fields' => array(
+      'description' => 'ds_content',
+      'field_parliament_valid' => 'ds_content',
+      'field_parliament_election' => 'ds_content',
+      'field_premium_profile_price' => 'ds_content',
+      'field_candidate_check_activated' => 'ds_content',
+      'field_parliament_filter_disabled' => 'ds_content',
+      'field_parliament_constit_rename' => 'ds_content',
+      'field_icon_class' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['taxonomy_term|parliaments|default'] = $ds_layout;
 
   return $export;
 }
