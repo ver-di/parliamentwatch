@@ -16,8 +16,6 @@ function pw_sidejobs_taxonomy_default_vocabularies() {
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
-      'language' => 'und',
-      'i18n_mode' => '4',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -83,35 +81,10 @@ function pw_sidejobs_taxonomy_default_vocabularies() {
     'sidejob_sectors' => array(
       'name' => 'Sidejob Sectors',
       'machine_name' => 'sidejob_sectors',
-      'description' => '',
-      'hierarchy' => '0',
-      'module' => 'taxonomy',
-      'weight' => '0',
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
-    'sidejob_sectors' => array(
-      'name' => 'Sidejob Sectors',
-      'machine_name' => 'sidejob_sectors',
       'description' => 'Sectors for Content Type Sidejob',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',
-      'language' => 'und',
-      'i18n_mode' => '0',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
