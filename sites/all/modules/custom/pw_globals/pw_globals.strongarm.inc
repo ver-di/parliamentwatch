@@ -98,7 +98,8 @@ function pw_globals_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'clientside_validation_path_list';
   $strongarm->value = 'admin/structure/views/*
-admin/structure/taxonomy/*';
+admin/structure/taxonomy/*
+user/*';
   $export['clientside_validation_path_list'] = $strongarm;
 
   $strongarm = new stdClass();
