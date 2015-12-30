@@ -622,19 +622,20 @@ function sharethis_include_js() {
       $st_js .= 'var ' . $name . ' = ' . drupal_json_encode($value) . ';';
     }
     drupal_add_js($st_js, 'inline');
-    
+
 	if((isset($_SERVER['HTTPS']) && strtolower($_SERVER['HTTPS']) == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) == 'https')) {
 		$external = "https://ws.sharethis.com/button/buttons.js";
 	} else {
 		$external = "http://w.sharethis.com/button/buttons.js";
 	}
 
-    drupal_add_js($external, 'external');
-    
+    // drupal_add_js($external, 'external');
+    drupal_add_js($external, array('type' => 'external', 'group' => JS_LIBRARY));
+
     $stlight = get_stLight_options($data_options);
     $st_js = "if (stLight !== undefined) { stLight.options($stlight); }";
     drupal_add_js($st_js, 'inline');
-    
+
     $has_run = TRUE;
   }
   return $has_run;
