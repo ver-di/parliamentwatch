@@ -174,10 +174,10 @@ function pw_calendar_entries_strongarm() {
           'weight' => '3',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'feeds' => array(
           'weight' => '0',

@@ -31,6 +31,7 @@ features[field][] = node-committee_membership-field_politician
 features[field][] = node-committee_membership-field_valid
 features[field][] = node-speech-body
 features[field][] = node-speech-field_duration
+features[field][] = node-speech-field_link
 features[field][] = node-speech-field_parliament
 features[field][] = node-speech-field_politician
 features[field][] = node-speech-field_valid
