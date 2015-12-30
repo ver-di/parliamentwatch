@@ -50,12 +50,6 @@
             <div><?php print $result[$row_count]->field_body[0]['rendered']['#markup']; ?></div>
           <?php endif; ?>
         <h4 class="push-bottom-s">Gesamtergebnis</h4>
-          <!--p>
-            <span class="yes vote block">155 dafür gestimmt</span>
-            <span class="no vote block">162 dagegen gestimmt</span>
-            <span class="abstain vote block">161 enthalten</span>
-            <span class="no-show vote block">155 nicht beteiligt</span>
-          </p-->
           <ul class="clearfix push-bottom-s">
             <?php
             $block_result = module_invoke('pw_vote', 'block_view', 'final_result_full', array('nid' => $result[$row_count]->field_field_vote_node[0]['raw']['target_id']));
