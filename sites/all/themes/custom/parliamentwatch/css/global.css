@@ -2245,19 +2245,19 @@ ul.icon-list:after {
 	margin-left: -31px;
 }
 
-table.pw-voting {
+table.pw-voting, table.pw-sidejobs {
   width: 100%;
 }
-table.pw-voting th {
+table.pw-voting th, table.pw-sidejobs th {
   white-space: nowrap;
 }
-table.pw-voting td {
+table.pw-voting td, table.pw-sidejobs td {
   vertical-align: middle;
 }
-table.pw-voting.zebra .views-row-odd {
+table.pw-voting.zebra .views-row-odd, table.pw-sidejobs.zebra .views-row-odd {
     background: #fff;
 }
-table.pw-voting.zebra .odd {
+table.pw-voting.zebra .odd, table.pw-sidejobs.zebra .odd {
     background: #f4f4f4 !important;
 }
 table.pw-voting .views-field-field-petition-end-date,

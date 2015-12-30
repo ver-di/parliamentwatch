@@ -439,7 +439,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Basics',
-    'weight' => '49',
+    'weight' => '52',
     'children' => array(
       0 => 'group_user_basics_additional',
       1 => 'group_user_basics_data',
@@ -808,7 +808,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Polls',
-    'weight' => '50',
+    'weight' => '53',
     'children' => array(
       0 => 'group_user_polls_archive',
       1 => 'group_user_polls_current',
@@ -1103,7 +1103,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'User Roles',
-    'weight' => '51',
+    'weight' => '54',
     'children' => array(
       0 => 'group_user_roles_archive',
       1 => 'group_user_roles_current',

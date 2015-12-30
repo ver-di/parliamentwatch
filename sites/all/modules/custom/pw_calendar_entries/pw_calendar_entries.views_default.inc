@@ -24,6 +24,7 @@ function pw_calendar_entries_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Politische Funktionen von ';
   $handler->display->display_options['css_class'] = 'clearfix';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -35,8 +36,20 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'load_more';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Elemente pro Seite';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ vorherige Seite';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'weiter';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'letzte Seite »';
+  $handler->display->display_options['pager']['options']['more_button_text'] = 'Alle Anzeigen';
+  $handler->display->display_options['pager']['options']['effects']['speed'] = 'slow';
+  $handler->display->display_options['pager']['options']['load_all'] = 1;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Feld: Inhalt: Date */
@@ -393,41 +406,42 @@ else return TRUE;
   /* Display: Sidejobs */
   $handler = $view->new_display('block', 'Sidejobs', 'sidejobs');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Nebentätigkeiten und Ehrenamtliche Tätigkeiten von [php]';
+  $handler->display->display_options['title'] = 'Nebentätigkeiten und Ehrenamtliche Tätigkeiten';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'field_valid' => 'field_valid',
-    'field_political_role' => 'field_political_role',
-    'field_sidejob_sector' => 'field_sidejob_sector',
-    'field_sidejob_classification' => 'field_sidejob_classification',
+    'field_job' => 'field_job',
+    'field_sidejob_organization' => 'field_sidejob_organization',
+    'field_sidejob_income_amount' => 'field_sidejob_income_amount',
+    'field_sidejob_income_amount_max' => 'field_sidejob_income_amount_max',
     'field_sidejob_income_interval' => 'field_sidejob_income_interval',
+    'nothing' => 'nothing',
     'php' => 'php',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
-    'field_valid' => array(
+    'field_job' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_political_role' => array(
+    'field_sidejob_organization' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_sidejob_sector' => array(
+    'field_sidejob_income_amount' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_sidejob_classification' => array(
+    'field_sidejob_income_amount_max' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -441,12 +455,19 @@ else return TRUE;
       'separator' => '',
       'empty_column' => 0,
     ),
+    'nothing' => array(
+      'align' => 'views-align-left',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'php' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
   );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  $handler->display->display_options['style_options']['empty_table'] = TRUE;
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -540,23 +561,6 @@ else return TRUE;
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_job] [field_sidejob_organization] Verdienst: [field_sidejob_income_amount][field_sidejob_income_amount_max] [field_sidejob_income_interval] ';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Feld: Excluded | PHP | FName + LName */
-  $handler->display->display_options['fields']['php']['id'] = 'php';
-  $handler->display->display_options['fields']['php']['table'] = 'views';
-  $handler->display->display_options['fields']['php']['field'] = 'php';
-  $handler->display->display_options['fields']['php']['ui_name'] = 'Excluded | PHP | FName + LName';
-  $handler->display->display_options['fields']['php']['label'] = '';
-  $handler->display->display_options['fields']['php']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
-  $handler->display->display_options['fields']['php']['php_output'] = '<?php 
-$user = _pw_get_current_user();
-$fname =  $user->field_user_fname[\'und\'][0][\'value\'];
-$lname =  $user->field_user_lname[\'und\'][0][\'value\'];
-echo $fname." ".$lname;
-?>';
-  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
-  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
@@ -622,7 +626,7 @@ return $tid;';
   $handler->display->display_options['filters']['field_sectors_tid']['field'] = 'field_sectors_tid';
   $handler->display->display_options['filters']['field_sectors_tid']['operator'] = 'not';
   $handler->display->display_options['filters']['field_sectors_tid']['value'] = array(
-    17345 => '17345',
+    17347 => '17347',
   );
   $handler->display->display_options['filters']['field_sectors_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_sectors_tid']['vocabulary'] = 'sidejob_sectors';
@@ -808,6 +812,14 @@ return $tid;';
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
+    t('Elemente pro Seite'),
+    t('- Alle -'),
+    t('Offset'),
+    t('« erste Seite'),
+    t('‹ vorherige Seite'),
+    t('weiter'),
+    t('letzte Seite »'),
+    t('Alle Anzeigen'),
     t('Alle'),
     t('Political Roles'),
     t('Politische Funktionen von [php] '),
@@ -820,7 +832,7 @@ return $tid;';
     t('[field_job],  '),
     t('[field_committee] [field_sidejob_organization] [field_job] [field_sidejob_address] '),
     t('Sidejobs'),
-    t('Nebentätigkeiten und Ehrenamtliche Tätigkeiten von [php]'),
+    t('Nebentätigkeiten und Ehrenamtliche Tätigkeiten'),
     t('<div class="print"></div>
 <div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden"><?php print t(\'Nebeneinkünfte in der Legislaturperiode \'); ?></div></div>
 <div id="sidejobs" class="add-sharethis" title="<?php print t(\'Sidejobs of \'); ?> [php]"></div>'),
