@@ -776,11 +776,10 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Income Amount',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
-        'suffix' => '',
+        'suffix' => ' €',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -858,11 +857,10 @@ function pw_sidejobs_field_default_fields() {
       'label' => 'Income Amount Max',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
-        'suffix' => '',
+        'suffix' => ' €',
         'user_register_form' => FALSE,
       ),
       'widget' => array(

@@ -45,19 +45,19 @@
     </tr>
     <tr <?php if ($row_classes[$row_count]) { print 'class="js-hide toggle-details-content ' . implode(' ', $row_classes[$row_count]) .'"';  } ?> >
       <td colspan="4">
-          <?php if(sizeof($result[$row_count]->field_body) > 0 && strlen($result[$row_count]->field_body[0]['rendered']['#markup']) > 0) : ?>
-            <h4>Zusammenfassung</h4>
-            <div><?php print $result[$row_count]->field_body[0]['rendered']['#markup']; ?></div>
-          <?php endif; ?>
+        <?php if(sizeof($result[$row_count]->field_body) > 0 && strlen($result[$row_count]->field_body[0]['rendered']['#markup']) > 0) : ?>
+          <h4>Zusammenfassung</h4>
+          <div><?php print $result[$row_count]->field_body[0]['rendered']['#markup']; ?></div>
+        <?php endif; ?>
         <h4 class="push-bottom-s">Gesamtergebnis</h4>
-          <ul class="clearfix push-bottom-s">
-            <?php
-            $block_result = module_invoke('pw_vote', 'block_view', 'final_result_full', array('nid' => $result[$row_count]->field_field_vote_node[0]['raw']['target_id']));
-            print render($block_result['content']);
-            ?>
-          </ul>
-        </td>
-      </tr>
-    <?php endforeach; ?>
-  </tbody>
+        <ul class="clearfix push-bottom-s">
+          <?php
+          $block_result = module_invoke('pw_vote', 'block_view', 'final_result_full', array('nid' => $result[$row_count]->field_field_vote_node[0]['raw']['target_id']));
+          print render($block_result['content']);
+          ?>
+        </ul>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+</tbody>
 </table>

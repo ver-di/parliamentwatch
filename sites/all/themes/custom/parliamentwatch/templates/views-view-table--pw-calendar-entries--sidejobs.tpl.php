@@ -43,6 +43,11 @@
         </td>
       <?php endforeach; ?>
     </tr>
-    <?php endforeach; ?>
-  </tbody>
+    <tr <?php if ($row_classes[$row_count]) { print 'class="js-hide toggle-details-content ' . implode(' ', $row_classes[$row_count]) .'"';  } ?> >
+      <td colspan="4"> Max. Einkommen
+
+      </td>
+    </tr>
+  <?php endforeach; ?>
+</tbody>
 </table>
