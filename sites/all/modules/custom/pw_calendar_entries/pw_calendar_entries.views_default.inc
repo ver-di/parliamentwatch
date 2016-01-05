@@ -37,7 +37,7 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'load_more';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
@@ -77,6 +77,15 @@ function pw_calendar_entries_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
+  /* Sortierkriterien: Inhalt: Income Min Total (field_sidejob_income_min_total) */
+  $handler->display->display_options['sorts']['field_sidejob_income_min_total_value']['id'] = 'field_sidejob_income_min_total_value';
+  $handler->display->display_options['sorts']['field_sidejob_income_min_total_value']['table'] = 'field_data_field_sidejob_income_min_total';
+  $handler->display->display_options['sorts']['field_sidejob_income_min_total_value']['field'] = 'field_sidejob_income_min_total_value';
+  $handler->display->display_options['sorts']['field_sidejob_income_min_total_value']['order'] = 'DESC';
+  /* Sortierkriterien: Inhalt: Organization (field_sidejob_organization) */
+  $handler->display->display_options['sorts']['field_sidejob_organization_tid']['id'] = 'field_sidejob_organization_tid';
+  $handler->display->display_options['sorts']['field_sidejob_organization_tid']['table'] = 'field_data_field_sidejob_organization';
+  $handler->display->display_options['sorts']['field_sidejob_organization_tid']['field'] = 'field_sidejob_organization_tid';
   /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -410,22 +419,16 @@ else return TRUE;
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
-    'field_job' => 'field_job',
     'field_sidejob_organization' => 'field_sidejob_organization',
-    'field_sidejob_income_amount' => 'field_sidejob_income_amount',
-    'field_sidejob_income_amount_max' => 'field_sidejob_income_amount_max',
+    'field_sidejob_income_min_total' => 'field_sidejob_income_min_total',
+    'nothing_1' => 'nothing_1',
+    'field_job' => 'field_job',
+    'field_sectors' => 'field_sectors',
+    'field_sidejob_address' => 'field_sidejob_address',
     'field_sidejob_income_interval' => 'field_sidejob_income_interval',
-    'nothing' => 'nothing',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'field_sidejob_income_min_total';
   $handler->display->display_options['style_options']['info'] = array(
-    'field_job' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
     'field_sidejob_organization' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
@@ -433,14 +436,31 @@ else return TRUE;
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_sidejob_income_amount' => array(
+    'field_sidejob_income_min_total' => array(
       'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nothing_1' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_job' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_sidejob_income_amount_max' => array(
+    'field_sectors' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_sidejob_address' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -448,14 +468,9 @@ else return TRUE;
       'empty_column' => 0,
     ),
     'field_sidejob_income_interval' => array(
-      'sortable' => 1,
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nothing' => array(
-      'align' => 'views-align-left',
       'separator' => '',
       'empty_column' => 0,
     ),
@@ -488,7 +503,6 @@ else return TRUE;
   $handler->display->display_options['fields']['field_sidejob_organization']['label'] = 'Auftraggeber';
   $handler->display->display_options['fields']['field_sidejob_organization']['alter']['text'] = '[field_sidejob_organization],';
   $handler->display->display_options['fields']['field_sidejob_organization']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_sidejob_organization']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_sidejob_organization']['settings'] = array(
     'linked_field' => array(
       'linked' => 0,
@@ -502,14 +516,13 @@ else return TRUE;
       ),
     ),
   );
-  /* Feld: Inhalt: Income Amount */
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['id'] = 'field_sidejob_income_amount';
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['table'] = 'field_data_field_sidejob_income_amount';
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['field'] = 'field_sidejob_income_amount';
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['label'] = 'Nebenverdienst';
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['alter']['text'] = '[field_sidejob_income_amount] €';
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_sidejob_income_amount']['settings'] = array(
+  /* Feld: Inhalt: Income Min Total */
+  $handler->display->display_options['fields']['field_sidejob_income_min_total']['id'] = 'field_sidejob_income_min_total';
+  $handler->display->display_options['fields']['field_sidejob_income_min_total']['table'] = 'field_data_field_sidejob_income_min_total';
+  $handler->display->display_options['fields']['field_sidejob_income_min_total']['field'] = 'field_sidejob_income_min_total';
+  $handler->display->display_options['fields']['field_sidejob_income_min_total']['label'] = 'Nebenverdienst (Summe)';
+  $handler->display->display_options['fields']['field_sidejob_income_min_total']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_income_min_total']['settings'] = array(
     'thousand_separator' => '.',
     'decimal_separator' => ',',
     'scale' => '0',
@@ -526,14 +539,97 @@ else return TRUE;
       ),
     ),
   );
-  /* Feld: Inhalt: Income Interval */
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['id'] = 'field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['table'] = 'field_data_field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['field'] = 'field_sidejob_income_interval';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['label'] = 'Intervall';
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_sidejob_income_interval']['settings'] = array(
-    'thousand_separator' => '',
+  /* Feld: Toggle Details */
+  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
+  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Toggle Details';
+  $handler->display->display_options['fields']['nothing_1']['label'] = '';
+  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<a href="#" class="toggle-details" title="Details zu Nebentätigkeit anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>';
+  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_sectors']['id'] = 'field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['table'] = 'field_data_field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['field'] = 'field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_sectors']['label'] = 'Branchen';
+  $handler->display->display_options['fields']['field_sectors']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_sectors']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sectors']['empty'] = '-';
+  $handler->display->display_options['fields']['field_sectors']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_sectors']['settings'] = array(
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_sectors']['delta_offset'] = '0';
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_sidejob_address']['id'] = 'field_sidejob_address';
+  $handler->display->display_options['fields']['field_sidejob_address']['table'] = 'field_data_field_sidejob_address';
+  $handler->display->display_options['fields']['field_sidejob_address']['field'] = 'field_sidejob_address';
+  $handler->display->display_options['fields']['field_sidejob_address']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_sidejob_address']['label'] = 'Adresse';
+  $handler->display->display_options['fields']['field_sidejob_address']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_sidejob_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_sidejob_address']['type'] = 'addressfield_citystate';
+  $handler->display->display_options['fields']['field_sidejob_address']['settings'] = array(
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_job']['id'] = 'field_job';
+  $handler->display->display_options['fields']['field_job']['table'] = 'field_data_field_job';
+  $handler->display->display_options['fields']['field_job']['field'] = 'field_job';
+  $handler->display->display_options['fields']['field_job']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_job']['label'] = 'Tätigkeit';
+  $handler->display->display_options['fields']['field_job']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_job']['alter']['text'] = '[field_job], ';
+  $handler->display->display_options['fields']['field_job']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_job']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_job']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_job']['settings'] = array(
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_sidejob_income_min']['id'] = 'field_sidejob_income_min';
+  $handler->display->display_options['fields']['field_sidejob_income_min']['table'] = 'field_data_field_sidejob_income_min';
+  $handler->display->display_options['fields']['field_sidejob_income_min']['field'] = 'field_sidejob_income_min';
+  $handler->display->display_options['fields']['field_sidejob_income_min']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_sidejob_income_min']['label'] = 'Min. Nebenverdienst';
+  $handler->display->display_options['fields']['field_sidejob_income_min']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_sidejob_income_min']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_income_min']['settings'] = array(
+    'thousand_separator' => '.',
+    'decimal_separator' => ',',
+    'scale' => '0',
     'prefix_suffix' => 1,
     'linked_field' => array(
       'linked' => 0,
@@ -547,41 +643,129 @@ else return TRUE;
       ),
     ),
   );
-  /* Feld: Excluded | Income Amount Max */
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['id'] = 'field_sidejob_income_amount_max';
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['table'] = 'field_data_field_sidejob_income_amount_max';
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['field'] = 'field_sidejob_income_amount_max';
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['ui_name'] = 'Excluded | Income Amount Max';
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['label'] = '';
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['alter']['text'] = ' - [field_sidejob_income_amount_max] €,';
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_sidejob_income_amount_max']['settings'] = array(
-    'thousand_separator' => ' ',
-    'decimal_separator' => '.',
-    'scale' => '2',
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_sidejob_income_max']['id'] = 'field_sidejob_income_max';
+  $handler->display->display_options['fields']['field_sidejob_income_max']['table'] = 'field_data_field_sidejob_income_max';
+  $handler->display->display_options['fields']['field_sidejob_income_max']['field'] = 'field_sidejob_income_max';
+  $handler->display->display_options['fields']['field_sidejob_income_max']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_sidejob_income_max']['label'] = 'Max. Nebenverdienst';
+  $handler->display->display_options['fields']['field_sidejob_income_max']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_sidejob_income_max']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_income_max']['settings'] = array(
+    'thousand_separator' => '.',
+    'decimal_separator' => ',',
+    'scale' => '0',
     'prefix_suffix' => 1,
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
   );
-  /* Feld: Excluded | Job */
-  $handler->display->display_options['fields']['field_job']['id'] = 'field_job';
-  $handler->display->display_options['fields']['field_job']['table'] = 'field_data_field_job';
-  $handler->display->display_options['fields']['field_job']['field'] = 'field_job';
-  $handler->display->display_options['fields']['field_job']['ui_name'] = 'Excluded | Job';
-  $handler->display->display_options['fields']['field_job']['label'] = '';
-  $handler->display->display_options['fields']['field_job']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_job']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_job']['alter']['text'] = '[field_job], ';
-  $handler->display->display_options['fields']['field_job']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_job']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: Global: Details */
-  $handler->display->display_options['fields']['nothing_1']['id'] = 'nothing_1';
-  $handler->display->display_options['fields']['nothing_1']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing_1']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing_1']['ui_name'] = 'Global: Details';
-  $handler->display->display_options['fields']['nothing_1']['label'] = '';
-  $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '<a href="#" class="toggle-details" title="Details zu Nebentätigkeit anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>';
-  $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['id'] = 'field_sidejob_income_interval';
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['table'] = 'field_data_field_sidejob_income_interval';
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['field'] = 'field_sidejob_income_interval';
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['label'] = 'Intervall';
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['alter']['text'] = '[field_sidejob_income_interval]';
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_income_interval']['settings'] = array(
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_sidejob_income_max_total']['id'] = 'field_sidejob_income_max_total';
+  $handler->display->display_options['fields']['field_sidejob_income_max_total']['table'] = 'field_data_field_sidejob_income_max_total';
+  $handler->display->display_options['fields']['field_sidejob_income_max_total']['field'] = 'field_sidejob_income_max_total';
+  $handler->display->display_options['fields']['field_sidejob_income_max_total']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_sidejob_income_max_total']['label'] = 'Max. Nebenverdienst (absolut)';
+  $handler->display->display_options['fields']['field_sidejob_income_max_total']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_sidejob_income_max_total']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_income_max_total']['settings'] = array(
+    'thousand_separator' => '.',
+    'decimal_separator' => ',',
+    'scale' => '0',
+    'prefix_suffix' => 1,
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_sidejob_date_start']['id'] = 'field_sidejob_date_start';
+  $handler->display->display_options['fields']['field_sidejob_date_start']['table'] = 'field_data_field_sidejob_date_start';
+  $handler->display->display_options['fields']['field_sidejob_date_start']['field'] = 'field_sidejob_date_start';
+  $handler->display->display_options['fields']['field_sidejob_date_start']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_sidejob_date_start']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_sidejob_date_start']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_date_start']['settings'] = array(
+    'format_type' => 'date_only_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Details */
+  $handler->display->display_options['fields']['field_sidejob_date_end']['id'] = 'field_sidejob_date_end';
+  $handler->display->display_options['fields']['field_sidejob_date_end']['table'] = 'field_data_field_sidejob_date_end';
+  $handler->display->display_options['fields']['field_sidejob_date_end']['field'] = 'field_sidejob_date_end';
+  $handler->display->display_options['fields']['field_sidejob_date_end']['ui_name'] = 'Details';
+  $handler->display->display_options['fields']['field_sidejob_date_end']['element_class'] = 'row-details';
+  $handler->display->display_options['fields']['field_sidejob_date_end']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_sidejob_date_end']['settings'] = array(
+    'format_type' => 'date_only_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: Inhalt: Politician (field_politician) */
   $handler->display->display_options['arguments']['field_politician_target_id']['id'] = 'field_politician_target_id';
@@ -859,12 +1043,20 @@ return $tid;';
 <div id="sidejobs" class="add-sharethis" title="<?php print t(\'Sidejobs of \'); ?> [php]"></div>'),
     t('Auftraggeber'),
     t('[field_sidejob_organization],'),
-    t('Nebenverdienst'),
-    t('[field_sidejob_income_amount] €'),
-    t('Intervall'),
-    t(' - [field_sidejob_income_amount_max] €,'),
-    t('[field_job], '),
+    t('Nebenverdienst (Summe)'),
     t('<a href="#" class="toggle-details" title="Details zu Nebentätigkeit anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>'),
+    t('Branchen'),
+    t('-'),
+    t('Adresse'),
+    t('Tätigkeit'),
+    t('[field_job], '),
+    t('Min. Nebenverdienst'),
+    t('Max. Nebenverdienst'),
+    t('Intervall'),
+    t('[field_sidejob_income_interval]'),
+    t('Max. Nebenverdienst (absolut)'),
+    t('Date Start'),
+    t('Date End'),
     t('Speeches'),
     t('Gehaltene Reden von [php]'),
     t('<div class="print"></div>
