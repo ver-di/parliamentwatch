@@ -27,7 +27,7 @@ function pw_globals_menu() {
     'description' => 'Custom settings for Parliamentwatch.',
     'access arguments' => array('administer site configuration'),
     'type' => MENU_NORMAL_ITEM,
-  );
+    );
   return $items;
 }
 
@@ -117,46 +117,46 @@ function _pw_get_current_parliament_term() {
 
       // load by archived user profile
       case 'profile':
-        $user = user_load_by_name(arg(1));
-        $user_id = $user->uid;
-        $vid = arg(3);
-        $user = user_revision_load($user_id, $vid);
-        if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
-          $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
-          $term_parliament = taxonomy_term_load($term_parliament_id);
-        }
-        break;
+      $user = user_load_by_name(arg(1));
+      $user_id = $user->uid;
+      $vid = arg(3);
+      $user = user_revision_load($user_id, $vid);
+      if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
+        $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
+        $term_parliament = taxonomy_term_load($term_parliament_id);
+      }
+      break;
 
       // load by user profile
       case 'user':
-        $user = menu_get_object('user');
-        if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
-          $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
-          $term_parliament = taxonomy_term_load($term_parliament_id);
-        }
-        break;
+      $user = menu_get_object('user');
+      if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
+        $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
+        $term_parliament = taxonomy_term_load($term_parliament_id);
+      }
+      break;
 
       // load by node
       case 'node':
-        $node = menu_get_object();
-        if (isset($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
-          $term_parliament_id = $node->field_parliament[LANGUAGE_NONE][0]['tid'];
-          $term_parliament = taxonomy_term_load($term_parliament_id);
-        }
-        break;
+      $node = menu_get_object();
+      if (isset($node->field_parliament[LANGUAGE_NONE][0]['tid'])) {
+        $term_parliament_id = $node->field_parliament[LANGUAGE_NONE][0]['tid'];
+        $term_parliament = taxonomy_term_load($term_parliament_id);
+      }
+      break;
 
       // load by taxonomy
       case 'taxonomy':
-        $taxonomy_term = menu_get_object('taxonomy_term', 2);
-        if($taxonomy_term->vocabulary_machine_name == 'parliaments'){
-          $term_parliament = $taxonomy_term;
-        }
-        elseif (isset($taxonomy_term->field_parliament[LANGUAGE_NONE][0]['tid'])) {
-          $term_parliament_id = $taxonomy_term->field_parliament[LANGUAGE_NONE][0]['tid'];
-          $term_parliament = taxonomy_term_load($term_parliament_id);
-        }
+      $taxonomy_term = menu_get_object('taxonomy_term', 2);
+      if($taxonomy_term->vocabulary_machine_name == 'parliaments'){
+        $term_parliament = $taxonomy_term;
+      }
+      elseif (isset($taxonomy_term->field_parliament[LANGUAGE_NONE][0]['tid'])) {
+        $term_parliament_id = $taxonomy_term->field_parliament[LANGUAGE_NONE][0]['tid'];
+        $term_parliament = taxonomy_term_load($term_parliament_id);
+      }
 
-        break;
+      break;
     }
   }
 
@@ -183,17 +183,28 @@ function _pw_is_parliament_active($parliament=FALSE) {
   }
 
   // run against all dates stored in parliament term
-  $parliament_is_valid = FALSE;
   foreach ($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid) {
-    $has_no_end_date = $date_parliament_valid['value'] == $date_parliament_valid['value2'];
-    $parliament_is_valid = strtotime($date_parliament_valid['value']) < time() &&
-      (strtotime($date_parliament_valid['value2']) > time() ||
-        $has_no_end_date);
-    if ($parliament_is_valid) {
+    if (_pw_is_between_dates($date_parliament_valid)) {
       return TRUE;
     }
   }
   return FALSE;
+}
+
+
+/**
+ * Custom: Checks if a timestamp (date) is between start and end date of a date field
+ * @param array $date_field
+ *   date field with start and end date as value and value2
+ * @return boolean
+ */
+function _pw_is_between_dates($date_field, $timestamp=FALSE){
+  if(!$timestamp){
+    $timestamp = time();
+  }
+  $has_no_end_date = $date_field['value'] == $date_field['value2'];
+  $is_between_dates = strtotime($date_field['value']) < $timestamp && (strtotime($date_field['value2']) > $timestamp || $has_no_end_date);
+  return $is_between_dates;
 }
 
 /**
@@ -205,18 +216,18 @@ function _pw_get_current_user() {
     switch (arg(0)) {
       // load by archived user profile
       case 'profile':
-        $user = user_load_by_name(arg(1));
-        $user_id = $user->uid;
-        $vid = arg(3);
-        $user = user_revision_load($user_id, $vid);
-        break;
+      $user = user_load_by_name(arg(1));
+      $user_id = $user->uid;
+      $vid = arg(3);
+      $user = user_revision_load($user_id, $vid);
+      break;
 
       // load by user profile
       case 'user':
-        $user = menu_get_object('user');
-        break;
+      $user = menu_get_object('user');
+      break;
       default:
-        $user = FALSE;
+      $user = FALSE;
     }
   }
   return $user;
@@ -233,19 +244,19 @@ function _pw_get_parliament_term_tid_by_nid($nid) {
   switch ($node_type) {
 
     case 'sidejob':
-      $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
-      return $tid;
-      break;
+    $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
+    return $tid;
+    break;
 
     case 'committee_membership':
-      $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
-      return $tid;
-      break;
+    $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
+    return $tid;
+    break;
 
     case 'speech':
-      $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
-      return $tid;
-      break;
+    $tid = $selected_node->field_parliament[LANGUAGE_NONE][0]['tid'];
+    return $tid;
+    break;
   }
   return FALSE;
 }
@@ -258,8 +269,8 @@ function _pw_webform_get_keyed_fields($webform_node, $submission) {
 
   // query db to retrieve webform components
   $sql = "SELECT wf_comp.cid, wf_comp.form_key
-            FROM webform_component wf_comp
-            WHERE wf_comp.nid = :nid";
+  FROM webform_component wf_comp
+  WHERE wf_comp.nid = :nid";
   $form_fields = db_query($sql, array(':nid' => $webform_node->nid))->fetchAllAssoc('cid');
 
   // map ids to relevant components
