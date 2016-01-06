@@ -1738,7 +1738,6 @@ function pw_profiles_field_default_fields() {
       'label' => 'Constituency Won',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -3670,7 +3669,6 @@ function pw_profiles_field_default_fields() {
       'label' => 'List Won',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
