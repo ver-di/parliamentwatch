@@ -389,6 +389,33 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_deputy';
   $ds_fieldsetting->settings = array(
+    'calendar_entries_sidejobs' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'pw-expandable-mobile clear clearfix push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => 'id="pw-block-user-sidejobs"',
+          'ow-def-at' => FALSE,
+        ),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
+    ),
     'bundestagsradar' => array(
       'weight' => '9',
       'label' => 'hidden',
@@ -1556,22 +1583,23 @@ function pw_profiles_ds_layout_settings_info() {
         1 => 'user_basic_info',
         2 => 'user_vote_polls',
         3 => 'user_vote_petition',
+        4 => 'calendar_entries_sidejobs',
       ),
       'right_1' => array(
-        4 => 'user_revision_switch',
-        5 => 'user_wrong_data',
-        6 => 'user_profile_api_link',
-        7 => 'masquerade',
-        8 => 'bundestagsradar',
+        5 => 'user_revision_switch',
+        6 => 'user_wrong_data',
+        7 => 'user_profile_api_link',
+        8 => 'masquerade',
+        9 => 'bundestagsradar',
       ),
       'left_2' => array(
-        9 => 'user_questions_and_answers',
-        10 => 'question_form',
+        10 => 'user_questions_and_answers',
+        11 => 'question_form',
       ),
       'ds_hidden' => array(
-        11 => 'field_user_fname',
-        12 => 'field_user_lname',
-        13 => 'field_user_party',
+        12 => 'field_user_fname',
+        13 => 'field_user_lname',
+        14 => 'field_user_party',
       ),
     ),
     'fields' => array(
@@ -1579,6 +1607,7 @@ function pw_profiles_ds_layout_settings_info() {
       'user_basic_info' => 'left_1',
       'user_vote_polls' => 'left_1',
       'user_vote_petition' => 'left_1',
+      'calendar_entries_sidejobs' => 'left_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
       'user_profile_api_link' => 'right_1',

@@ -191,17 +191,28 @@ function _pw_is_parliament_active($parliament=FALSE) {
   }
 
   // run against all dates stored in parliament term
-  $parliament_is_valid = FALSE;
   foreach ($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid) {
-    $has_no_end_date = $date_parliament_valid['value'] == $date_parliament_valid['value2'];
-    $parliament_is_valid = strtotime($date_parliament_valid['value']) < time() &&
-    (strtotime($date_parliament_valid['value2']) > time() ||
-      $has_no_end_date);
-    if ($parliament_is_valid) {
+    if (_pw_is_between_dates($date_parliament_valid)) {
       return TRUE;
     }
   }
   return FALSE;
+}
+
+
+/**
+ * Custom: Checks if a timestamp (date) is between start and end date of a date field
+ * @param array $date_field
+ *   date field with start and end date as value and value2
+ * @return boolean
+ */
+function _pw_is_between_dates($date_field, $timestamp=FALSE){
+  if(!$timestamp){
+    $timestamp = time();
+  }
+  $has_no_end_date = $date_field['value'] == $date_field['value2'];
+  $is_between_dates = strtotime($date_field['value']) < $timestamp && (strtotime($date_field['value2']) > $timestamp || $has_no_end_date);
+  return $is_between_dates;
 }
 
 /**

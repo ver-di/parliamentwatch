@@ -9,29 +9,6 @@
  */
 function pw_sidejobs_taxonomy_default_vocabularies() {
   return array(
-    'income_interval' => array(
-      'name' => 'Income Interval',
-      'machine_name' => 'income_interval',
-      'description' => '',
-      'hierarchy' => '0',
-      'module' => 'taxonomy',
-      'weight' => '0',
-      'rdf_mapping' => array(
-        'rdftype' => array(
-          0 => 'skos:ConceptScheme',
-        ),
-        'name' => array(
-          'predicates' => array(
-            0 => 'dc:title',
-          ),
-        ),
-        'description' => array(
-          'predicates' => array(
-            0 => 'rdfs:comment',
-          ),
-        ),
-      ),
-    ),
     'sidejob_jobs' => array(
       'name' => 'Sidejob Jobs',
       'machine_name' => 'sidejob_jobs',
