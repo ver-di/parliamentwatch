@@ -50,11 +50,12 @@ function pw_newsletter_field_default_fields() {
         0 => array(
           'summary' => '',
           'value' => '',
-          'format' => 'managed_content',
+          'format' => 'newsletter',
         ),
       ),
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Der Text der Zusammenfassung wird auf der Webseite auf der Übersicht des Archivs verwendet.
+Der Body enthält die Einleitung des Newsletters für Mail und Webseite.',
       'display' => array(
         'default' => array(
           'label' => 'hidden',
@@ -109,7 +110,8 @@ function pw_newsletter_field_default_fields() {
             'filtered_html' => 0,
             'full_html' => 0,
             'html_mail' => 0,
-            'managed_content' => 'managed_content',
+            'managed_content' => 0,
+            'newsletter' => 'newsletter',
             'php_code' => 0,
             'plain_text' => 0,
           ),
@@ -131,6 +133,9 @@ function pw_newsletter_field_default_fields() {
               ),
               'managed_content' => array(
                 'weight' => '-10',
+              ),
+              'newsletter' => array(
+                'weight' => '0',
               ),
               'php_code' => array(
                 'weight' => '-6',
@@ -158,7 +163,7 @@ function pw_newsletter_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
@@ -268,6 +273,94 @@ function pw_newsletter_field_default_fields() {
         ),
         'type' => 'options_buttons',
         'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-newsletter-field_newsletter_paragraph'.
+  $fields['node-newsletter-field_newsletter_paragraph'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_newsletter_paragraph',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'paragraphs',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'paragraphs',
+    ),
+    'field_instance' => array(
+      'bundle' => 'newsletter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'paragraphs',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'view_mode' => 'full',
+          ),
+          'type' => 'paragraphs_view',
+          'weight' => '32',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'exclude_cv' => 0,
+      'field_name' => 'field_newsletter_paragraph',
+      'label' => 'Abschnitt',
+      'required' => 0,
+      'settings' => array(
+        'add_mode' => 'button',
+        'allowed_bundles' => array(
+          'paragraphs_pw_block' => 'paragraphs_pw_block',
+          'paragraphs_pw_blog' => 'paragraphs_pw_blog',
+          'paragraphs_pw_content' => 'paragraphs_pw_content',
+        ),
+        'bundle_weights' => array(
+          'paragraphs_pw_block' => '-4',
+          'paragraphs_pw_blog' => '-5',
+          'paragraphs_pw_content' => '-6',
+        ),
+        'default_edit_mode' => 'open',
+        'exclude_cv' => FALSE,
+        'title' => 'Paragraph',
+        'title_multiple' => 'Paragraphs',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'paragraphs',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'paragraphs_embed',
+        'weight' => '3',
       ),
     ),
   );
@@ -465,9 +558,9 @@ function pw_newsletter_field_default_fields() {
         'exclude_cv' => FALSE,
         'file_directory' => 'newsletter',
         'file_extensions' => 'png gif jpg jpeg',
-        'max_filesize' => '',
+        'max_filesize' => '2 MB',
         'max_resolution' => '',
-        'min_resolution' => '',
+        'min_resolution' => '280x187',
         'title_field' => 0,
         'user_register_form' => FALSE,
       ),
@@ -488,10 +581,10 @@ function pw_newsletter_field_default_fields() {
             'video' => 0,
           ),
           'browser_plugins' => array(
-            'media_default--media_browser_1' => 0,
-            'media_default--media_browser_my_files' => 0,
+            'media_default--media_browser_1' => 'media_default--media_browser_1',
+            'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
             'media_internet' => 0,
-            'upload' => 0,
+            'upload' => 'upload',
             'youtube' => 0,
           ),
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
@@ -505,8 +598,11 @@ function pw_newsletter_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Abschnitt');
   t('Bitte wählen Sie die Kategorien, welche die Themen im Newsletter bestmöglich beschreiben. Zur Verfügung stehen die selben Kategorien, die z.B. auch Blogartikeln, Abstimmungen und Petitionen zugeordnet werden.');
   t('Body');
+  t('Der Text der Zusammenfassung wird auf der Webseite auf der Übersicht des Archivs verwendet.
+Der Body enthält die Einleitung des Newsletters für Mail und Webseite.');
   t('Dieses Bild wird nur für die Darstellung auf der Webseite benutzt.');
   t('Teaser image');
   t('Themen');

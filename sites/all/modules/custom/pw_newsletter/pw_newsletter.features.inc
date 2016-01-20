@@ -53,3 +53,49 @@ function pw_newsletter_node_info() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_paragraphs_info().
+ */
+function pw_newsletter_paragraphs_info() {
+  $items = array(
+    'paragraphs_pw_block' => array(
+      'name' => 'Block',
+      'bundle' => 'paragraphs_pw_block',
+      'locked' => '1',
+    ),
+    'paragraphs_pw_blog' => array(
+      'name' => 'Blog Artikel',
+      'bundle' => 'paragraphs_pw_blog',
+      'locked' => '1',
+    ),
+    'paragraphs_pw_content' => array(
+      'name' => 'Textabschnitt',
+      'bundle' => 'paragraphs_pw_content',
+      'locked' => '1',
+    ),
+    'paragraphs_pw_donate' => array(
+      'name' => 'Spendenaufruf',
+      'bundle' => 'paragraphs_pw_donate',
+      'locked' => '1',
+    ),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_weight_features_default_settings().
+ */
+function pw_newsletter_weight_features_default_settings() {
+  $settings = array();
+
+  $settings['newsletter'] = array(
+    'enabled' => '0',
+    'range' => '20',
+    'menu_weight' => '0',
+    'default' => '0',
+    'sync_translations' => '0',
+  );
+
+  return $settings;
+}
