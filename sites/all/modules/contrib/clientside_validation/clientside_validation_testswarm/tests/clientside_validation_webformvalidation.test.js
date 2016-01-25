@@ -6,9 +6,11 @@
    * Field Validation.
    */
   var validator = {};
-  $(document).bind('clientsideValidationInitialized', function(){
+  $(document).bind('clientsideValidationInitialized', function(e, cv_instance) {
     var formid = Drupal.settings.clientsideValidationTestswarm.formID;
-    validator = Drupal.myClientsideValidation.validators[formid];
+    if (cv_instance.form_id === formid) {
+      validator = cv_instance.validator;
+    }
   });
   Drupal.tests.cvwebformvalidation = {
     getInfo: function() {
@@ -271,14 +273,12 @@
       },
       requireOneOf: function ($, Drupal, window, document, undefined) {
         return function() {
-          QUnit.expect(24);
+          QUnit.expect(8);
           // Validate the empty form.
           validator.form();
 
           // Check for the "Requireone 1", "Requireone 2" and "Requireone 3" errors.
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-1].error:visible').length, 1, Drupal.t('Error label found for "Requireone 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-2].error:visible').length, 1, Drupal.t('Error label found for "Requireone 2"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-3].error:visible').length, 1, Drupal.t('Error label found for "Requireone 3"'));
+          QUnit.equal($('label[for="submitted[requireone_fieldset][requireone_1]_group"].error:visible').length, 1, Drupal.t('Error label found for "Requireone 1"'));
 
           // Fill in a value in "Requireone 1".
           $('#edit-submitted-requireone-fieldset-requireone-1').val("a");
@@ -287,9 +287,7 @@
           validator.form();
 
           // Check for the "Requireone 1", "Requireone 2" and "Requireone 3" errors.
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-1].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-2].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 2"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-3].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 3"'));
+          QUnit.equal($('label[for="submitted[requireone_fieldset][requireone_1]_group"].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 1"'));
 
           // Clear the value of "Requireone 1".
           $('#edit-submitted-requireone-fieldset-requireone-1').val("");
@@ -298,9 +296,7 @@
           validator.form();
 
           // Check for the "Requireone 1", "Requireone 2" and "Requireone 3" errors.
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-1].error:visible').length, 1, Drupal.t('Error label found for "Requireone 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-2].error:visible').length, 1, Drupal.t('Error label found for "Requireone 2"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-3].error:visible').length, 1, Drupal.t('Error label found for "Requireone 3"'));
+          QUnit.equal($('label[for="submitted[requireone_fieldset][requireone_1]_group"].error:visible').length, 1, Drupal.t('Error label found for "Requireone 1"'));
 
           // Fill in a value in "Requireone 2".
           $('#edit-submitted-requireone-fieldset-requireone-2').val("a");
@@ -309,9 +305,7 @@
           validator.form();
 
           // Check for the "Requireone 1", "Requireone 2" and "Requireone 3" errors.
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-1].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-2].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 2"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-3].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 3"'));
+          QUnit.equal($('label[for="submitted[requireone_fieldset][requireone_1]_group"].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 1"'));
 
           // Clear the value of "Requireone 2".
           $('#edit-submitted-requireone-fieldset-requireone-2').val("");
@@ -320,9 +314,7 @@
           validator.form();
 
           // Check for the "Requireone 1", "Requireone 2" and "Requireone 3" errors.
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-1].error:visible').length, 1, Drupal.t('Error label found for "Requireone 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-2].error:visible').length, 1, Drupal.t('Error label found for "Requireone 2"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-3].error:visible').length, 1, Drupal.t('Error label found for "Requireone 3"'));
+          QUnit.equal($('label[for="submitted[requireone_fieldset][requireone_1]_group"].error:visible').length, 1, Drupal.t('Error label found for "Requireone 1"'));
 
           // Fill in a value in "Requireone 3".
           $('#edit-submitted-requireone-fieldset-requireone-3').val("a");
@@ -331,9 +323,7 @@
           validator.form();
 
           // Check for the "Requireone 1", "Requireone 2" and "Requireone 3" errors.
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-1].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-2].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 2"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-3].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 3"'));
+          QUnit.equal($('label[for="submitted[requireone_fieldset][requireone_1]_group"].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 1"'));
 
           // Clear the value of "Requireone 3".
           $('#edit-submitted-requireone-fieldset-requireone-3').val("");
@@ -342,9 +332,7 @@
           validator.form();
 
           // Check for the "Requireone 1", "Requireone 2" and "Requireone 3" errors.
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-1].error:visible').length, 1, Drupal.t('Error label found for "Requireone 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-2].error:visible').length, 1, Drupal.t('Error label found for "Requireone 2"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-3].error:visible').length, 1, Drupal.t('Error label found for "Requireone 3"'));
+          QUnit.equal($('label[for="submitted[requireone_fieldset][requireone_1]_group"].error:visible').length, 1, Drupal.t('Error label found for "Requireone 1"'));
 
           // Fill in a value in "Requireone 1", "Requireone 2" and "Requireone 3".
           $('#edit-submitted-requireone-fieldset-requireone-1').val("a");
@@ -355,71 +343,7 @@
           validator.form();
 
           // Check for the "Requireone 1", "Requireone 2" and "Requireone 3" errors.
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-1].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-2].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 2"'));
-          QUnit.equal($('label[for=edit-submitted-requireone-fieldset-requireone-3].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 3"'));
-        };
-      },
-      requireOneOfTwo: function ($, Drupal, window, document, undefined) {
-        return function() {
-          QUnit.expect(12);
-          // Validate the empty form.
-          validator.form();
-
-          // Check for the "RequireoneOfTwo 1" and "RequireoneOfTwo 2" errors.
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1].error:visible').length, 1, Drupal.t('Error label found for "RequireoneOfTwo 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2].error:visible').length, 1, Drupal.t('Error label found for "RequireoneOfTwo 2"'));
-
-          // Fill in a value in "RequireoneOfTwo 1".
-          $('#edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1').val("a");
-
-          // Validate the form.
-          validator.form();
-
-          // Check for the "RequireoneOfTwo 1" and "RequireoneOfTwo 2" errors.
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1].error:visible').length, 0, Drupal.t('Error label not found for "RequireoneOfTwo 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2].error:visible').length, 0, Drupal.t('Error label not found for "RequireoneOfTwo 2"'));
-
-          // Clear the value of "RequireoneOfTwo 1".
-          $('#edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1').val("");
-
-          // Validate the form.
-          validator.form();
-
-          // Check for the "RequireoneOfTwo 1" and "RequireoneOfTwo 2" errors.
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1].error:visible').length, 1, Drupal.t('Error label found for "RequireoneOfTwo 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2].error:visible').length, 1, Drupal.t('Error label found for "RequireoneOfTwo 2"'));
-
-          // Fill in a value in "RequireoneOfTwo 2".
-          $('#edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2').val("a");
-
-          // Validate the form.
-          validator.form();
-
-          // Check for the "RequireoneOfTwo 1" and "RequireoneOfTwo 2" errors.
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1].error:visible').length, 0, Drupal.t('Error label not found for "RequireoneOfTwo 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2].error:visible').length, 0, Drupal.t('Error label not found for "RequireoneOfTwo 2"'));
-
-          // Clear the value of "RequireoneOfTwo 2".
-          $('#edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2').val("");
-
-          // Validate the form.
-          validator.form();
-
-          // Check for the "RequireoneOfTwo 1" and "RequireoneOfTwo 2" errors.
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1].error:visible').length, 1, Drupal.t('Error label found for "RequireoneOfTwo 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2].error:visible').length, 1, Drupal.t('Error label found for "RequireoneOfTwo 2"'));
-
-          // Fill in a value in "RequireoneOfTwo 1" and "RequireoneOfTwo 2".
-          $('#edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1').val("a");
-          $('#edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2').val("a");
-
-          // Validate the form.
-          validator.form();
-
-          // Check for the "RequireoneOfTwo 1" and "RequireoneOfTwo 2" errors.
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-1].error:visible').length, 0, Drupal.t('Error label not found for "RequireoneOfTwo 1"'));
-          QUnit.equal($('label[for=edit-submitted-requireoneoftwo-fieldset-requireoneoftwo-2].error:visible').length, 0, Drupal.t('Error label not found for "RequireoneOfTwo 2"'));
+          QUnit.equal($('label[for="submitted[requireone_fieldset][requireone_1]_group"].error:visible').length, 0, Drupal.t('Error label not found for "Requireone 1"'));
         };
       },
       plainText: function ($, Drupal, window, document, undefined) {
@@ -520,7 +444,7 @@
           // Check for the "Equal to" and "Must equal" errors.
           QUnit.equal($('label[for=edit-submitted-equal-fieldset-equal-to].error:visible').length, 0, Drupal.t('Error label not found for "Equal to"'));
           QUnit.equal($('label[for=edit-submitted-equal-fieldset-must-equal].error:visible').length, 0, Drupal.t('Error label not found for "Must equal"'));
-          
+
           //Change the second value.
           $('#edit-submitted-equal-fieldset-must-equal').val('1abc');
 
@@ -545,14 +469,12 @@
       },
       unique:  function ($, Drupal, window, document, undefined) {
         return function() {
-          QUnit.expect(18);
+          QUnit.expect(6);
           // Validate the empty form.
           validator.form();
 
           // Check for the "Unique 1", "Unique 2" and "Unique 3" errors.
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-1].error:visible').length, 1, Drupal.t('Error label found for "Unique 1"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-2].error:visible').length, 1, Drupal.t('Error label found for "Unique 2"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-3].error:visible').length, 1, Drupal.t('Error label found for "Unique 3"'));
+          QUnit.equal($('label[for="submitted[unique_fieldset][unique_1]_group"].error:visible').length, 1, Drupal.t('Error label found for Unique"'));
 
           // Fill the same value in "Unique 1", "Unique 2" and "Unique 3".
           $('#edit-submitted-unique-fieldset-unique-1').val("a");
@@ -563,9 +485,7 @@
           validator.form();
 
           // Check for the "Unique 1", "Unique 2" and "Unique 3" errors.
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-1].error:visible').length, 1, Drupal.t('Error label found for "Unique 1"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-2].error:visible').length, 1, Drupal.t('Error label found for "Unique 2"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-3].error:visible').length, 0, Drupal.t('Error label not found for "Unique 3"'));
+          QUnit.equal($('label[for="submitted[unique_fieldset][unique_1]_group"].error:visible').length, 1, Drupal.t('Error label found for Unique'));
 
           // Fill the same value in "Unique 1" and "Unique 2".
           $('#edit-submitted-unique-fieldset-unique-1').val("a");
@@ -576,9 +496,7 @@
           validator.form();
 
           // Check for the "Unique 1", "Unique 2" and "Unique 3" errors.
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-1].error:visible').length, 1, Drupal.t('Error label found for "Unique 1"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-2].error:visible').length, 0, Drupal.t('Error label not found for "Unique 2"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-3].error:visible').length, 0, Drupal.t('Error label not found for "Unique 3"'));
+          QUnit.equal($('label[for="submitted[unique_fieldset][unique_1]_group"].error:visible').length, 1, Drupal.t('Error label found for Unique'));
 
           // Fill the same value in "Unique 2" and "Unique 3".
           $('#edit-submitted-unique-fieldset-unique-1').val("b");
@@ -589,9 +507,7 @@
           validator.form();
 
           // Check for the "Unique 1", "Unique 2" and "Unique 3" errors.
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-1].error:visible').length, 0, Drupal.t('Error label not found for "Unique 1"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-2].error:visible').length, 1, Drupal.t('Error label found for "Unique 2"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-3].error:visible').length, 0, Drupal.t('Error label not found for "Unique 3"'));
+          QUnit.equal($('label[for="submitted[unique_fieldset][unique_1]_group"].error:visible').length, 1, Drupal.t('Error label found for Unique'));
 
           // Fill the same value in "Unique 1", "Unique 2" and "Unique 3".
           $('#edit-submitted-unique-fieldset-unique-1').val("a");
@@ -602,9 +518,7 @@
           validator.form();
 
           // Check for the "Unique 1", "Unique 2" and "Unique 3" errors.
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-1].error:visible').length, 1, Drupal.t('Error label found for "Unique 1"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-2].error:visible').length, 0, Drupal.t('Error label found for "Unique 2"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-3].error:visible').length, 0, Drupal.t('Error label not found for "Unique 3"'));
+          QUnit.equal($('label[for="submitted[unique_fieldset][unique_1]_group"].error:visible').length, 1, Drupal.t('Error label found for "Unique 1"'));
 
           // Fill different values in "Unique 1", "Unique 2" and "Unique 3".
           $('#edit-submitted-unique-fieldset-unique-1').val("a");
@@ -615,9 +529,7 @@
           validator.form();
 
           // Check for the "Unique 1", "Unique 2" and "Unique 3" errors.
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-1].error:visible').length, 0, Drupal.t('Error label found for "Unique 1"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-2].error:visible').length, 0, Drupal.t('Error label found for "Unique 2"'));
-          QUnit.equal($('label[for=edit-submitted-unique-fieldset-unique-3].error:visible').length, 0, Drupal.t('Error label not found for "Unique 3"'));
+          QUnit.equal($('label[for="submitted[unique_fieldset][unique_1]_group"].error:visible').length, 0, Drupal.t('Error label found for "Unique 1"'));
         };
       },
       specificVal: function ($, Drupal, window, document, undefined) {

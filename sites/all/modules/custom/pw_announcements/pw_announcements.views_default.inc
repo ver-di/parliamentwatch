@@ -226,6 +226,8 @@ return $term->tid;';
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'slideshow');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'announcement slideshow small';
 
   /* Display: Seite */
   $handler = $view->new_display('page', 'Seite', 'page_1');

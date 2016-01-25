@@ -1075,6 +1075,42 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">width</em> of the field <em class="placeholder">field_teaser_image</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_testimonial_fullname_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_testimonial_fullname</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_testimonial_fullname_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_testimonial_fullname</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_testimonial_portrait_alt' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">alt</em> of the field <em class="placeholder">field_testimonial_portrait</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_testimonial_portrait_fid' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">fid</em> of the field <em class="placeholder">field_testimonial_portrait</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_testimonial_portrait_height' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">height</em> of the field <em class="placeholder">field_testimonial_portrait</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_testimonial_portrait_title' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">title</em> of the field <em class="placeholder">field_testimonial_portrait</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_testimonial_portrait_width' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">width</em> of the field <em class="placeholder">field_testimonial_portrait</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_testimonial_quote_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_testimonial_quote</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_testimonial_quote_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_testimonial_quote</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_trustee_image_alt' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">alt</em> of the field <em class="placeholder">field_trustee_image</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -3364,136 +3400,235 @@ foo
       ),
     ),
     189 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_fullname_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_fullname',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    190 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_fullname_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_fullname',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    191 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_portrait_fid',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_portrait',
+        'type' => 'image',
+        'column' => 'fid',
+        'translatable' => '0',
+      ),
+    ),
+    192 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_portrait_alt',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_portrait',
+        'type' => 'image',
+        'column' => 'alt',
+        'translatable' => '0',
+      ),
+    ),
+    193 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_portrait_title',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_portrait',
+        'type' => 'image',
+        'column' => 'title',
+        'translatable' => '0',
+      ),
+    ),
+    194 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_portrait_width',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_portrait',
+        'type' => 'image',
+        'column' => 'width',
+        'translatable' => '0',
+      ),
+    ),
+    195 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_portrait_height',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_portrait',
+        'type' => 'image',
+        'column' => 'height',
+        'translatable' => '0',
+      ),
+    ),
+    196 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_quote_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_quote',
+        'type' => 'text_long',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    197 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_testimonial_quote_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_testimonial_quote',
+        'type' => 'text_long',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    198 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    190 => array(
+    199 => array(
       'src' => 'comment:cid',
       'dst' => 'node:nid',
       'callback' => 'themekey_comment_cid2nid',
     ),
-    191 => array(
+    200 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    192 => array(
+    201 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    193 => array(
+    202 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
     ),
-    194 => array(
+    203 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    195 => array(
+    204 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    196 => array(
+    205 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    197 => array(
+    206 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    198 => array(
+    207 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    199 => array(
+    208 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    200 => array(
+    209 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    201 => array(
+    210 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    202 => array(
+    211 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    203 => array(
+    212 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    204 => array(
+    213 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    205 => array(
+    214 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    206 => array(
+    215 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    207 => array(
+    216 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    208 => array(
+    217 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    209 => array(
+    218 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    210 => array(
+    219 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    211 => array(
+    220 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    212 => array(
+    221 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    213 => array(
+    222 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    214 => array(
+    223 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    215 => array(
+    224 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
@@ -3799,6 +3934,15 @@ foo
     'node:field_teaser_image_height' => 'node:field_teaser_image_height',
     'node:field_teaser_image_title' => 'node:field_teaser_image_title',
     'node:field_teaser_image_width' => 'node:field_teaser_image_width',
+    'node:field_testimonial_fullname_format' => 'node:field_testimonial_fullname_format',
+    'node:field_testimonial_fullname_value' => 'node:field_testimonial_fullname_value',
+    'node:field_testimonial_portrait_alt' => 'node:field_testimonial_portrait_alt',
+    'node:field_testimonial_portrait_fid' => 'node:field_testimonial_portrait_fid',
+    'node:field_testimonial_portrait_height' => 'node:field_testimonial_portrait_height',
+    'node:field_testimonial_portrait_title' => 'node:field_testimonial_portrait_title',
+    'node:field_testimonial_portrait_width' => 'node:field_testimonial_portrait_width',
+    'node:field_testimonial_quote_format' => 'node:field_testimonial_quote_format',
+    'node:field_testimonial_quote_value' => 'node:field_testimonial_quote_value',
     'node:field_trustee_image_alt' => 'node:field_trustee_image_alt',
     'node:field_trustee_image_fid' => 'node:field_trustee_image_fid',
     'node:field_trustee_image_height' => 'node:field_trustee_image_height',

@@ -34,5 +34,59 @@ global $user;
 
   $export['menu_meta_de'] = $fe_block_boxes;
 
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'PW Footer Kurzbeschreibung';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'pw_footer_abstract';
+  $fe_block_boxes->body = '<p>
+	abgeordnetenwatch.de ist eine unabhängige und überparteiliche Internetplattform, auf der Bürgerinnen und Bürger die Abgeordneten im Bundestag, dem Europäischen Parlament sowie in zahlreichen Landesparlamenten öffentlich befragen können. Neben den Fragen und Antworten dokumentieren wir u.a. auch das Abstimmungsverhalten bei wichtigen Parlamentsentscheidungen. Außerdem widmen wir uns in einem Rechercheblog Themen wie Nebentätigkeiten der Abgeordneten, Parteispenden und Lobbyismus.
+</p>
+';
+
+  $export['pw_footer_abstract'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'PW Placeholder (do not delete)';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'pw_placeholder';
+  $fe_block_boxes->body = '<p>
+	&nbsp;
+</p>
+';
+
+  $export['pw_placeholder'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'PW Transparenzkampagne Header';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'pw_transparancy_header';
+  $fe_block_boxes->body = '<p>
+	Der Bundestag hat Berufung gegen unsere erfolgreiche Transparenzklage eingelegt.<br />
+ <a href="https://www.abgeordnetenwatch.de/ueber-uns/spendenformular?recurring=1&pk_campaign=Foerderer&pk_kwd=Header">Mit Ihnen zusammen stehen wir den langwierigen Prozess durch!</a>
+</p>
+';
+
+  $export['pw_transparancy_header'] = $fe_block_boxes;
+
+  $fe_block_boxes = new stdClass();
+  $fe_block_boxes->info = 'Social Media Footer';
+  $fe_block_boxes->format = 'managed_content';
+  $fe_block_boxes->machine_name = 'social_media_footer';
+  $fe_block_boxes->body = '<div class="socialmedia facebook">
+	<a href="https://www.facebook.com/abgeordnetenwatch.de" title="Facebook" target="_blank">Facebook</a>
+</div>
+<div class="socialmedia twitter">
+	<a href="https://twitter.com/a_watch" title="Twitter" target="_blank">Twitter</a>
+</div>
+<div class="socialmedia google">
+	<a href="https://plus.google.com/101206126881536002255/" title="Google+" target="_blank">Google+</a>
+</div>
+<div class="socialmedia rss">
+	<a href="https://www.abgeordnetenwatch.de/rss/blog.xml" title="RSS" target="_blank">RSS</a>
+</div>
+';
+
+  $export['social_media_footer'] = $fe_block_boxes;
+
   return $export;
 }
