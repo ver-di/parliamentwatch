@@ -201,7 +201,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '60',
+            'weight' => '63',
             'visible' => FALSE,
           ),
           'user_candidate' => array(
@@ -227,7 +227,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '44',
+            'weight' => '47',
             'visible' => FALSE,
           ),
           'search_result' => array(
@@ -271,7 +271,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '0',
+            'weight' => '38',
             'visible' => FALSE,
           ),
           'user_premium' => array(

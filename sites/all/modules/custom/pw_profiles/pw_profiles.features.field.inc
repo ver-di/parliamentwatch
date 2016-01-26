@@ -756,7 +756,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '69',
+          'weight' => '72',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -900,7 +900,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '56',
+          'weight' => '59',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1013,7 +1013,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '75',
+          'weight' => '78',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1121,7 +1121,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '66',
+          'weight' => '69',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1233,7 +1233,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '54',
+          'weight' => '57',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1339,7 +1339,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '62',
+          'weight' => '65',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -1505,7 +1505,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '10',
+        'weight' => '14',
       ),
     ),
   );
@@ -1711,7 +1711,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '41',
+          'weight' => '44',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1738,7 +1738,6 @@ function pw_profiles_field_default_fields() {
       'label' => 'Constituency Won',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -1749,7 +1748,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
-        'weight' => '13',
+        'weight' => '17',
       ),
     ),
   );
@@ -1814,7 +1813,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '73',
+          'weight' => '76',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -1970,7 +1969,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '47',
+          'weight' => '50',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2052,7 +2051,7 @@ function pw_profiles_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '12',
+        'weight' => '16',
       ),
     ),
   );
@@ -2124,7 +2123,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '72',
+          'weight' => '75',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2247,7 +2246,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '67',
+          'weight' => '70',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2626,7 +2625,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '36',
+          'weight' => '39',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2733,7 +2732,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '61',
+          'weight' => '64',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2835,7 +2834,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '70',
+          'weight' => '73',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -2984,7 +2983,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '55',
+          'weight' => '58',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -3071,6 +3070,138 @@ function pw_profiles_field_default_fields() {
     ),
   );
 
+  // Exported field: 'user-user-field_user_joined'.
+  $fields['user-user-field_user_joined'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_joined',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 0,
+          'minute' => 0,
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => '',
+        'todate' => '',
+        'tz_handling' => 'none',
+      ),
+      'translatable' => '0',
+      'type' => 'datetime',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => 44,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_candidate' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_dialogue_search_snippet' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'exclude_cv' => 0,
+      'field_name' => 'field_user_joined',
+      'label' => 'Joined Parliament',
+      'required' => 0,
+      'settings' => array(
+        'default_value' => 'blank',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
+        'exclude_cv' => FALSE,
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'display_all_day' => 0,
+          'increment' => '15',
+          'input_format' => 'd.m.Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'text_parts' => array(),
+          'year_range' => '-10:+3',
+        ),
+        'type' => 'date_popup',
+        'weight' => '9',
+      ),
+    ),
+  );
+
   // Exported field: 'user-user-field_user_links_more'.
   $fields['user-user-field_user_links_more'] = array(
     'field_config' => array(
@@ -3145,7 +3276,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '52',
+          'weight' => '55',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3287,7 +3418,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '39',
+          'weight' => '43',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3395,7 +3526,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '57',
+          'weight' => '60',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3511,7 +3642,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '37',
+          'weight' => '40',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -3538,7 +3669,6 @@ function pw_profiles_field_default_fields() {
       'label' => 'List Won',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -3549,7 +3679,7 @@ function pw_profiles_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
-        'weight' => '14',
+        'weight' => '18',
       ),
     ),
   );
@@ -3835,7 +3965,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '63',
+          'weight' => '66',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'inline',
@@ -3984,7 +4114,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '58',
+          'weight' => '61',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -4327,7 +4457,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '45',
+          'weight' => '48',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4504,7 +4634,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '53',
+          'weight' => '56',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4663,7 +4793,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '42',
+          'weight' => '45',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4815,7 +4945,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '68',
+          'weight' => '71',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -4893,7 +5023,7 @@ function pw_profiles_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '61',
+        'weight' => '31',
       ),
     ),
   );
@@ -5003,7 +5133,7 @@ function pw_profiles_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '11',
+        'weight' => '15',
       ),
     ),
   );
@@ -5074,7 +5204,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '64',
+          'weight' => '67',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5224,7 +5354,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '46',
+          'weight' => '49',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5383,7 +5513,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '59',
+          'weight' => '62',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5418,7 +5548,7 @@ $entity_field[0][\'value\'] = $result;',
         'module' => 'computed_field',
         'settings' => array(),
         'type' => 'computed',
-        'weight' => '30',
+        'weight' => '31',
       ),
     ),
   );
@@ -5496,7 +5626,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '38',
+          'weight' => '42',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5647,7 +5777,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '65',
+          'weight' => '68',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5689,6 +5819,138 @@ $entity_field[0][\'value\'] = $result;',
         ),
         'type' => 'number',
         'weight' => '28',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_user_retired'.
+  $fields['user-user-field_user_retired'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_retired',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'date',
+      'settings' => array(
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 0,
+          'minute' => 0,
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => '',
+        'todate' => '',
+        'tz_handling' => 'none',
+      ),
+      'translatable' => '0',
+      'type' => 'datetime',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'date',
+          'settings' => array(
+            'format_type' => 'long',
+            'fromto' => 'both',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+          ),
+          'type' => 'date_default',
+          'weight' => 45,
+        ),
+        'search_result' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_candidate' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_dialogue_search_snippet' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'exclude_cv' => 0,
+      'field_name' => 'field_user_retired',
+      'label' => 'Retired Parliament',
+      'required' => 0,
+      'settings' => array(
+        'default_value' => 'blank',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
+        'exclude_cv' => FALSE,
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'date',
+        'settings' => array(
+          'display_all_day' => 0,
+          'increment' => '15',
+          'input_format' => 'd.m.Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'text_parts' => array(),
+          'year_range' => '-10:+3',
+        ),
+        'type' => 'date_popup',
+        'weight' => '10',
       ),
     ),
   );
@@ -5759,7 +6021,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '48',
+          'weight' => '51',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -5887,7 +6149,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '43',
+          'weight' => '46',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'hidden',
@@ -6047,7 +6309,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '71',
+          'weight' => '74',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -6190,7 +6452,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '74',
+          'weight' => '77',
         ),
         'user_dialogue_search_snippet' => array(
           'label' => 'above',
@@ -6237,7 +6499,7 @@ $entity_field[0][\'value\'] = $result;',
           'year_range' => '-100:+10',
         ),
         'type' => 'date_select',
-        'weight' => '9',
+        'weight' => '11',
       ),
     ),
   );
@@ -6274,6 +6536,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Hier können Sie einen Freitext über Ihre Person eintragen, z.B. eine Biographie oder einen Lebenslauf. Der Text wird in Ihrem Profil veröffentlicht.');
   t('If this field is filled, question form will be closed and content of this field will be shown to visitor.');
   t('Image Gallery');
+  t('Joined Parliament');
   t('Last name');
   t('List');
   t('List Position');
@@ -6294,6 +6557,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Question Form Closed By Reason');
   t('QuestionAnswerRatio');
   t('Questions Get');
+  t('Retired Parliament');
   t('Roles (revisionable)');
   t('Title');
   t('Title Text');

@@ -68,19 +68,19 @@ function pw_sidejobs_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '18',
         ),
         'redirect' => array(
-          'weight' => '13',
+          'weight' => '16',
         ),
         'xmlsitemap' => array(
-          'weight' => '30',
+          'weight' => '19',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => '20',
         ),
         'rabbit_hole' => array(
           'weight' => '0',
@@ -134,6 +134,41 @@ function pw_sidejobs_strongarm() {
   $strongarm->name = 'node_submitted_sidejob';
   $strongarm->value = 0;
   $export['node_submitted_sidejob'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_module_sidejob';
+  $strongarm->value = 'rh_node';
+  $export['rh_module_sidejob'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_action_sidejob';
+  $strongarm->value = '3';
+  $export['rh_node_action_sidejob'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_override_sidejob';
+  $strongarm->value = 0;
+  $export['rh_node_override_sidejob'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_response_sidejob';
+  $strongarm->value = '301';
+  $export['rh_node_redirect_response_sidejob'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'rh_node_redirect_sidejob';
+  $strongarm->value = 'profile/[node:field_politician]';
+  $export['rh_node_redirect_sidejob'] = $strongarm;
 
   return $export;
 }
