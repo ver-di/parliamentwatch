@@ -17,11 +17,13 @@
 function parliamentwatch_preprocess_node(&$variables) {
   if ($variables['type'] == 'pw_petition') {
     $node = $variables['node'];
-    $petition_status = field_get_items('node', $node, 'field_petition_status');
 
+    // default theme suggestion
+    $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
+
+    $petition_status = field_get_items('node', $node, 'field_petition_status');
     if (!empty($petition_status) && $petition_status[0]['value'] != "open_for_signings") {
       $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'] . '__' . $petition_status[0]['value'];
-
 
       if ($petition_status[0]['value'] == "collecting_donations"){
         // Load donation form
@@ -56,9 +58,6 @@ function parliamentwatch_preprocess_node(&$variables) {
       $rendered_block = _block_render_blocks(array($block));
       $rendered_block['webform_client-block-10369']->subject = "";
     }
-
-    // default theme suggestion
-    $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
 
     // Due to our complicated block modification above, we need to re-render the block.
     if (empty($petition_status) || $petition_status[0]['value'] == "collecting_donations" || $petition_status[0]['value'] == "open_for_signings"){
