@@ -335,7 +335,8 @@ blockquote .pw-expander div {
 .text-left {
     text-align: left;
 }
-.center {
+.center,
+.text-center {
     text-align: center;
 }
 .text-right {
@@ -2004,7 +2005,8 @@ ul.tabs li a:active {
 
 /* view-pw-testimonials-header */
 
-.view-pw-testimonials-header blockquote {
+.view-pw-testimonials-header blockquote,
+.field-name-field-pg-testimonial-er blockquote {
   padding: 0;
   margin-bottom: 0.5em;
 }
@@ -2170,6 +2172,68 @@ img.no-outline,
     float: left;
     margin: 0 14px 7px 0;
     outline: 1px solid #ccc;
+}
+
+/* node newsletter */
+
+.node-newsletter .eyecatcher {
+  background: #f8f8f8;
+  border: 1px solid #999;
+  border-width: 1px 0;
+  margin: 0 -10px 60px;
+  padding: 12px 10px;
+}
+.node-newsletter .eyecatcher h3,
+.node-newsletter .eyecatcher h3 a {
+  color: #f63;
+}
+.node-newsletter ul {
+  margin-left: 0 !important;
+  margin-bottom: 1em;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.node-newsletter ul li {  
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  padding-left: 15px;
+  background-position: -770px -1896px;
+  margin-bottom: 0.3em;
+}
+.node-newsletter .entity-paragraphs-item,
+.node-newsletter .field-name-field-pg-blog-er .field-item {
+  margin-bottom: 3em;
+}
+.node-newsletter .social-media {
+  position: absolute;
+  right: 10px;
+  top: 0;
+}
+.node-newsletter .eyecatcher .social-media {
+  top: 12px;
+}
+.node-newsletter .eyecatcher .read-more {
+  float: right;
+}
+.node-newsletter .social-media .facebook,
+.node-newsletter .social-media .twitter {
+  text-indent: -5000em;
+  background: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png);
+  display: inline-block;
+  float: left;
+  margin-left: 4px;
+  width: 24px;
+  height: 24px;
+}
+.node-newsletter .social-media .facebook {
+  background-position: 0 -1232px;
+}
+.node-newsletter .social-media .twitter {
+  background-position: -24px -1232px;
+}
+.node-newsletter .entity-paragraphs-item .social-media + h3,
+.node-newsletter .node-testimonial blockquote  {
+  margin-right: 60px;
 }
 
 
