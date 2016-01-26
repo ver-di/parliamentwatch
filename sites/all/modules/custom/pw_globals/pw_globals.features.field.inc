@@ -477,6 +477,25 @@ function pw_globals_field_default_fields() {
           'type' => 'text_default',
           'weight' => '0',
         ),
+        'pw_newsletter' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'text_default',
+          'weight' => '2',
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
@@ -604,6 +623,27 @@ function pw_globals_field_default_fields() {
           'type' => 'image',
           'weight' => '2',
         ),
+        'pw_newsletter' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'pw_thumbnail_70',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'image',
+          'weight' => '0',
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
@@ -692,6 +732,25 @@ function pw_globals_field_default_fields() {
       'description' => 'Was macht abgeordnetenwatch.de so besonders?',
       'display' => array(
         'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'text_default',
+          'weight' => '1',
+        ),
+        'pw_newsletter' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(

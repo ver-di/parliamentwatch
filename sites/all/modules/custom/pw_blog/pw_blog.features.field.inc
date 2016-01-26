@@ -244,6 +244,26 @@ function pw_blog_field_default_fields() {
           'type' => 'text_default',
           'weight' => '5',
         ),
+        'pw_newsletter' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'trim_length' => '600',
+          ),
+          'type' => 'text_summary_or_trimmed',
+          'weight' => '2',
+        ),
         'rss' => array(
           'label' => 'hidden',
           'module' => 'text',
@@ -402,22 +422,9 @@ function pw_blog_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'blockreference',
-          'settings' => array(
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'blockreference_default',
-          'weight' => 8,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -438,6 +445,12 @@ function pw_blog_field_default_fields() {
           'type' => 'blockreference_without_title',
           'weight' => '5',
         ),
+        'pw_newsletter' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '32',
+        ),
         'rss' => array(
           'label' => 'above',
           'settings' => array(),
@@ -448,7 +461,7 @@ function pw_blog_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -643,6 +656,12 @@ function pw_blog_field_default_fields() {
           'type' => 'taxonomy_term_reference_link',
           'weight' => '3',
         ),
+        'pw_newsletter' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '30',
+        ),
         'rss' => array(
           'label' => 'above',
           'settings' => array(),
@@ -775,22 +794,8 @@ function pw_blog_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'shs',
-          'settings' => array(
-            'linked' => FALSE,
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'shs_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '1',
         ),
         'full' => array(
@@ -822,6 +827,12 @@ function pw_blog_field_default_fields() {
           ),
           'type' => 'textformatter_list',
           'weight' => '6',
+        ),
+        'pw_newsletter' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '31',
         ),
         'rss' => array(
           'label' => 'above',
@@ -948,6 +959,26 @@ function pw_blog_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '30',
+        ),
+        'pw_newsletter' => array(
+          'label' => 'hidden',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'pw_file_landscape_l',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'file_rendered',
+          'weight' => '1',
         ),
         'rss' => array(
           'label' => 'above',

@@ -556,6 +556,9 @@ function pw_globals_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'pw_newsletter' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -582,6 +585,10 @@ function pw_globals_strongarm() {
         'sharethis' => array(
           'default' => array(
             'weight' => '-100',
+            'visible' => FALSE,
+          ),
+          'pw_newsletter' => array(
+            'weight' => '0',
             'visible' => FALSE,
           ),
         ),
