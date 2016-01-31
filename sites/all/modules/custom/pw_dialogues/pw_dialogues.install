@@ -24,3 +24,13 @@ function pw_dialogues_uninstall() {
   variable_del('pw_dialogues_importer_last_import');
   variable_del('pw_dialogues_importer_source');
 }
+
+/**
+ * Configure display of dialogue nodes and comments.
+ */
+function pw_dialogues_update_7001() {
+  $topic = field_info_instance('node', 'field_dialogue_topic', 'dialogue');
+  $topic['display']['default']['label'] = 'inline';
+  $topic['display']['default']['type'] = 'taxonomy_term_reference_plain';
+  field_update_instance($topic);
+}
