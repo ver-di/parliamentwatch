@@ -3110,9 +3110,9 @@ form .webform-component-checkboxes .description {
     position: relative;
 }
 
-.view-profile-questions-answers .sharethis-wrapper,
 #quicktabs-tabpage-politicians_answer-1 .sharethis-wrapper,
-.node-type-dialogue .sharethis-wrapper {
+.node-type-dialogue .sharethis-wrapper,
+.node-dialogue .sharethis-wrapper {
     top: 2em;
 }
 .view-answers .comment.answer .sharethis-wrapper {

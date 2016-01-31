@@ -286,3 +286,32 @@ function pw_dialogues_feeds_presave(FeedsSource $source, $entity, $item) {
   }
 }
 
+/**
+ * Implements template_preprocess_node().
+ */
+function pw_dialogues_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ($node->type == 'dialogue') {
+    $variables['classes_array'][] = 'question';
+    $variables['submitted'] = format_date($node->created, 'date_only_short');
+    $variables['title'] = t('Question from @name', array('@name' => $node->field_dialogue_sender_name[LANGUAGE_NONE][0]['safe_value']));
+    $variables['title_attributes_array']['class'][] = 'bubble';
+  }
+}
+
+/**
+ * Implements template_preprocess_comment().
+ */
+function pw_dialogues_preprocess_comment(&$variables) {
+  $node = $variables['node'];
+  $account = user_load($variables['comment']->uid);
+  if ($node->type == 'dialogue') {
+    $variables['classes_array'][] = 'answer';
+    $variables['permalink'] = url("node/$node->nid", array('absolute' => TRUE));
+    $variables['picture'] = render(file_view(file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']), 'pw_file_portrait_s'));
+    $variables['title'] = t('Answer by @first_name @last_name', array(
+      '@first_name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'],
+      '@last_name' => $account->field_user_lname[LANGUAGE_NONE][0]['value'],
+    ));
+  }
+}
