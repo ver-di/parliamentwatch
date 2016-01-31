@@ -253,30 +253,6 @@ function pw_dialogues_entity_presave($entity, $type) {
     variable_set('pathauto_update_action', $alias_action);
   }
 
-  // delete dialogue answer if its status is 0
-  /*
-  elseif ($type == 'comment' && $entity->status == 0) {
-    //entity_delete($type, $entity->cid);
-
-    // look for empty answers and delete them
-    $cids_to_delete = db_query("SELECT c.cid
-                       FROM comment c
-                       INNER JOIN field_data_comment_body body ON c.cid = body.entity_id AND body.bundle = 'comment_node_dialogue'
-                       LEFT OUTER JOIN field_data_field_dialogue_comment_body c_body ON c_body.entity_type = 'comment' AND c.cid = c_body.entity_id
-                       WHERE c_body.field_dialogue_comment_body_value IS NULL")->fetchCol();
-    if (!empty($cids_to_delete)) {
-      comment_delete_multiple($cids_to_delete);
-      watchdog('pw_dialogues_entity_presave', 'empty answers deleted, cids: ' . implode(', ', $cids_to_delete));
-    }
-
-    //if (!empty($result)) {
-    //$cids_to_delete = array_keys($result['comment']);
-    //comment_delete_multiple($cids_to_delete);
-    //watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
-    //}
-
-  }
-  */
 }
 
 /**
