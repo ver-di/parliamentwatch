@@ -45,7 +45,17 @@ function pw_dialogues_menu() {
 }
 
 /**
- * Implements hook_menu().
+ * Implements hook_node_view().
+ */
+function pw_dialogues_node_view($node, $view_mode) {
+  if ($node->type != 'dialogue' || $view_mode != 'default') {
+    return;
+  }
+  $node->content['comments'] = comment_node_page_additions($node);
+}
+
+/**
+ * Menu callback; imports questions.
  */
 function pw_dialogues_triggered_import() {
   drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
