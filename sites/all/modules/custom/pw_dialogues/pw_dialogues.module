@@ -45,6 +45,27 @@ function pw_dialogues_menu() {
 }
 
 /**
+ * Implements hook_block_info().
+ */
+function pw_dialogues_block_info() {
+  $blocks['questions-and-answers'] = array(
+    'info' => t('Questions and answers'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function pw_dialogues_block_view($delta) {
+  switch ($delta) {
+    case 'questions-and-answers':
+      return pw_dialogues_questions_and_answers_block();
+  }
+}
+
+/**
  * Implements hook_node_view().
  */
 function pw_dialogues_node_view($node, $view_mode) {
@@ -324,4 +345,32 @@ function pw_dialogues_preprocess_comment(&$variables) {
       '@last_name' => $account->field_user_lname[LANGUAGE_NONE][0]['value'],
     ));
   }
+}
+
+/**
+ * Displays the questions and answers seciton of a profile.
+ */
+function pw_dialogues_questions_and_answers_block() {
+  $block = array();
+  $account = menu_get_object('user');
+
+  if (!$account) {
+    return;
+  }
+
+  $q = search_api_query('node_index');
+  $q->condition('type', 'dialogue');
+  $q->condition('field_dialogue_recipient', $account->uid);
+  $q->condition('comment_count', 0, '>');
+  $q->sort('created', 'DESC');
+  $q->range(NULL, 10);
+  $response = $q->execute();
+
+  $block['subject'] = t('Questions for @first_name @last_name', array(
+    '@first_name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'],
+    '@last_name' => $account->field_user_lname[LANGUAGE_NONE][0]['value'],
+  ));
+  $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
+
+  return $block;
 }
