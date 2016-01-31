@@ -324,11 +324,12 @@ function pw_dialogues_preprocess_comment(&$variables) {
 }
 
 /**
- * Displays the questions and answers seciton of a profile.
+ * Displays the questions and answers section of a profile.
  */
 function pw_dialogues_questions_and_answers_block() {
   $block = array();
   $account = menu_get_object('user');
+  $limit = 10;
 
   if (!$account) {
     return;
@@ -339,14 +340,20 @@ function pw_dialogues_questions_and_answers_block() {
   $q->condition('field_dialogue_recipient', $account->uid);
   $q->condition('comment_count', 0, '>');
   $q->sort('created', 'DESC');
-  $q->range(NULL, 10);
+  $q->range(pager_find_page(10) * 10, $limit);
   $response = $q->execute();
+
+  pager_default_initialize($response['result count'], $limit, 10);
 
   $block['subject'] = t('Questions for @first_name @last_name', array(
     '@first_name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'],
     '@last_name' => $account->field_user_lname[LANGUAGE_NONE][0]['value'],
   ));
   $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
+  $block['content']['pager'] = array(
+    '#theme' => 'pager',
+    '#element' => 10,
+  );
 
   return $block;
 }
