@@ -73,7 +73,7 @@ function pw_newsletter_field_default_fields() {
             ),
           ),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -430,7 +430,7 @@ function pw_newsletter_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '31',
+          'weight' => '32',
         ),
         'teaser' => array(
           'label' => 'hidden',

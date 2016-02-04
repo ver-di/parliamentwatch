@@ -21,7 +21,7 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => '',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_blogpost_categories',
       1 => 'author_linked_to_contact_form',
@@ -50,10 +50,11 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metainformation',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_blogpost_blogtags',
-      1 => 'custom_comment_counter',
+      1 => 'sharebuttons',
+      2 => 'custom_comment_counter',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -111,7 +112,7 @@ function pw_blog_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Social Media',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'sharethis_horizontal',
     ),

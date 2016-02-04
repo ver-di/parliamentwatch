@@ -10,6 +10,11 @@
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
 <div class="push-bottom-m">
+  <p>
+  <?php
+    $block = module_invoke('block', 'block_view', '12');
+    print render($block["content"]);
+  ?></p>
   <p class="medium">Adressat: <?php print $field_petition_recipient[0]['value'] ?></p>
   <?php if (!empty($field_blogpost_categories)): ?>
     <p class="icon-taxonomy push-bottom-m">
@@ -18,7 +23,6 @@
       ?>
     </p>
   <?php endif; ?>
-
   <div class="clearfix push-bottom-l managed-content">
     <?php print $body[0]['value']; ?>
   </div>

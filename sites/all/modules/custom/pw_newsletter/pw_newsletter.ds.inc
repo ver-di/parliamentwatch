@@ -17,6 +17,33 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'newsletter';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'sharebuttons' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
+    ),
     'sharethis' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -264,20 +291,22 @@ function pw_newsletter_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'sharethis',
         1 => 'post_date',
-        2 => 'group_meta',
-        3 => 'field_blogpost_categories',
-        4 => 'field_politician',
-        5 => 'body',
+        2 => 'field_blogpost_categories',
+        3 => 'sharebuttons',
+        4 => 'group_meta',
+        5 => 'field_politician',
+        6 => 'body',
       ),
       'ds_hidden' => array(
-        6 => 'title',
+        7 => 'title',
       ),
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
       'post_date' => 'ds_content',
-      'group_meta' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
+      'sharebuttons' => 'ds_content',
+      'group_meta' => 'ds_content',
       'field_politician' => 'ds_content',
       'body' => 'ds_content',
       'title' => 'ds_hidden',
