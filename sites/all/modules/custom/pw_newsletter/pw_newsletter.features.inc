@@ -59,11 +59,6 @@ function pw_newsletter_node_info() {
  */
 function pw_newsletter_paragraphs_info() {
   $items = array(
-    'paragraphs_pw_block' => array(
-      'name' => 'Block',
-      'bundle' => 'paragraphs_pw_block',
-      'locked' => '1',
-    ),
     'paragraphs_pw_blog' => array(
       'name' => 'Blog Artikel',
       'bundle' => 'paragraphs_pw_blog',
@@ -77,6 +72,11 @@ function pw_newsletter_paragraphs_info() {
     'paragraphs_pw_donate' => array(
       'name' => 'Spendenaufruf',
       'bundle' => 'paragraphs_pw_donate',
+      'locked' => '1',
+    ),
+    'paragraphs_pw_testmonial' => array(
+      'name' => 'Fördermitglied Störer',
+      'bundle' => 'paragraphs_pw_testmonial',
       'locked' => '1',
     ),
   );

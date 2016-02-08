@@ -40,7 +40,7 @@ function pw_newsletter_filter_default_formats() {
         'weight' => '-47',
         'status' => '1',
         'settings' => array(
-          'allowed_html' => '<a> <strong><blockquote><ul><ol><li><h2><h3><div><span>',
+          'allowed_html' => '<a> <strong><blockquote><ul><ol><li><h2><h3><div><span><p><sub><sup>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),
