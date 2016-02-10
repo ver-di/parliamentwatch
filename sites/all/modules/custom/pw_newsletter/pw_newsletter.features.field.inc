@@ -74,7 +74,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             ),
           ),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -523,7 +523,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '31',
+          'weight' => '32',
         ),
         'teaser' => array(
           'label' => 'hidden',

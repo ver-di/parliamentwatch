@@ -131,6 +131,12 @@ function pw_globals_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'pw_testimonial' => 'pw_testimonial',
   );
+  /* Filterkriterium: Inhalt: Anzeige Monat (field_testimonial_month) */
+  $handler->display->display_options['filters']['field_testimonial_month_value']['id'] = 'field_testimonial_month_value';
+  $handler->display->display_options['filters']['field_testimonial_month_value']['table'] = 'field_data_field_testimonial_month';
+  $handler->display->display_options['filters']['field_testimonial_month_value']['field'] = 'field_testimonial_month_value';
+  $handler->display->display_options['filters']['field_testimonial_month_value']['granularity'] = 'month';
+  $handler->display->display_options['filters']['field_testimonial_month_value']['default_date'] = 'now';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');

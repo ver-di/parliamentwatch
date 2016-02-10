@@ -89,6 +89,33 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'newsletter';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'sharebuttons' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'push-bottom-l',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
+    ),
     'sharethis' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -493,7 +520,7 @@ function pw_newsletter_ds_layout_settings_info() {
         7 => 'field_newsletter_paragraph',
       ),
       'ds_hidden' => array(
-        6 => 'title',
+        7 => 'title',
       ),
     ),
     'fields' => array(

@@ -58,7 +58,7 @@ function pw_sidejobs_taxonomy_default_vocabularies() {
     'sidejob_sectors' => array(
       'name' => 'Sidejob Sectors',
       'machine_name' => 'sidejob_sectors',
-      'description' => '',
+      'description' => 'Sectors for Content Type Sidejob',
       'hierarchy' => '0',
       'module' => 'taxonomy',
       'weight' => '0',

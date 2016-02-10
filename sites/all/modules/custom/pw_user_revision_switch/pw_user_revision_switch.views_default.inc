@@ -28,6 +28,8 @@ function pw_user_revision_switch_views_default_views() {
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['pure_distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
@@ -119,8 +121,7 @@ return $result;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'access user profiles';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
@@ -252,18 +253,29 @@ return $result;
   $handler->display->display_options['fields']['field_user_election_result-revision_id']['alter']['text'] = ', Ergebnis: [field_user_election_result-revision_id] %';
   $handler->display->display_options['fields']['field_user_election_result-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_election_result-revision_id']['hide_empty'] = TRUE;
-  /* Feld: Constituency */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['relationship'] = 'field_user_constituency_tid';
-  $handler->display->display_options['fields']['name']['ui_name'] = 'Constituency';
-  $handler->display->display_options['fields']['name']['label'] = 'Wahlkreis';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '[name][field_user_election_result-revision_id]';
-  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['name']['empty'] = '-';
+  /* Feld: Benutzer (Historische Daten): Constituency */
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['label'] = 'Wahlkreis';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['alter']['text'] = '[field_user_constituency-revision_id][field_user_election_result-revision_id]';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['settings'] = array(
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   /* Feld: Taxonomie-Begriff: Name */
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_term_data';
@@ -2827,7 +2839,7 @@ return $term->tid;';
     t('Wohnort'),
     t(', Ergebnis: [field_user_election_result-revision_id] %'),
     t('Wahlkreis'),
-    t('[name][field_user_election_result-revision_id]'),
+    t('[field_user_constituency-revision_id][field_user_election_result-revision_id]'),
     t('Liste'),
     t('[field_user_list-revision_id], Platz [name_1]'),
     t('About'),

@@ -15,6 +15,11 @@ if (pw_vote_check_user_allowed()):
     <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
   </div>
 <?php endif; ?>
+<p>
+  <?php
+    $block = module_invoke('block', 'block_view', '12');
+    print render($block["content"]);
+?></p>
 <p class="medium">Adressat: <?php print $field_petition_recipient[0]['value'] ?></p>
 
 <?php print check_markup($field_petition_text_passed[0]['summary']); ?>

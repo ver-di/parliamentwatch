@@ -107,7 +107,7 @@ function pw_sidejobs_field_default_fields() {
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -200,7 +200,7 @@ function pw_sidejobs_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '6',
+        'weight' => '9',
       ),
     ),
   );
@@ -292,7 +292,7 @@ function pw_sidejobs_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -393,7 +393,7 @@ function pw_sidejobs_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'entityreference_autocomplete',
-        'weight' => '4',
+        'weight' => '6',
       ),
     ),
   );
@@ -486,7 +486,7 @@ function pw_sidejobs_field_default_fields() {
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -582,7 +582,7 @@ function pw_sidejobs_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'addressfield_standard',
-        'weight' => '12',
+        'weight' => '17',
       ),
     ),
   );
@@ -708,43 +708,55 @@ function pw_sidejobs_field_default_fields() {
           'size' => '3',
         ),
         'type' => 'text_textfield',
-        'weight' => '11',
+        'weight' => '15',
       ),
     ),
   );
 
-  // Exported field: 'node-sidejob-field_sidejob_income_amount'.
-  $fields['node-sidejob-field_sidejob_income_amount'] = array(
+  // Exported field: 'node-sidejob-field_sidejob_date_end'.
+  $fields['node-sidejob-field_sidejob_date_end'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_sidejob_income_amount',
+      'field_name' => 'field_sidejob_date_end',
       'field_permissions' => array(
         'type' => '0',
       ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
-      'module' => 'number',
+      'module' => 'date',
       'settings' => array(
-        'decimal_separator' => ',',
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 0,
+          'minute' => 0,
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => '',
+        'todate' => '',
+        'tz_handling' => 'none',
       ),
       'translatable' => '0',
-      'type' => 'number_float',
+      'type' => 'datetime',
     ),
     'field_instance' => array(
       'bundle' => 'sidejob',
-      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'number',
+          'module' => 'date',
           'settings' => array(
-            'decimal_separator' => '.',
+            'format_type' => 'long',
+            'fromto' => 'both',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -756,12 +768,12 @@ function pw_sidejobs_field_default_fields() {
               'destination' => '',
               'linked' => 0,
             ),
-            'prefix_suffix' => TRUE,
-            'scale' => 2,
-            'thousand_separator' => ' ',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
           ),
-          'type' => 'number_decimal',
-          'weight' => 6,
+          'type' => 'date_default',
+          'weight' => 24,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -772,61 +784,79 @@ function pw_sidejobs_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_sidejob_income_amount',
-      'label' => 'Income Amount',
+      'field_name' => 'field_sidejob_date_end',
+      'label' => 'Date End',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
-        'max' => '',
-        'min' => '',
-        'prefix' => '',
-        'suffix' => '',
+        'default_value' => 'blank',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 0,
-        'module' => 'number',
+        'active' => 1,
+        'module' => 'date',
         'settings' => array(
+          'display_all_day' => 0,
+          'increment' => '15',
+          'input_format' => 'd.m.Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'text_parts' => array(),
+          'year_range' => '-100:+100',
         ),
-        'type' => 'number',
-        'weight' => '8',
+        'type' => 'date_popup',
+        'weight' => '5',
       ),
     ),
   );
 
-  // Exported field: 'node-sidejob-field_sidejob_income_amount_max'.
-  $fields['node-sidejob-field_sidejob_income_amount_max'] = array(
+  // Exported field: 'node-sidejob-field_sidejob_date_start'.
+  $fields['node-sidejob-field_sidejob_date_start'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_sidejob_income_amount_max',
+      'field_name' => 'field_sidejob_date_start',
       'field_permissions' => array(
         'type' => '0',
       ),
       'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
-      'module' => 'number',
+      'module' => 'date',
       'settings' => array(
-        'decimal_separator' => ',',
+        'cache_count' => '4',
+        'cache_enabled' => 0,
+        'granularity' => array(
+          'day' => 'day',
+          'hour' => 0,
+          'minute' => 0,
+          'month' => 'month',
+          'second' => 0,
+          'year' => 'year',
+        ),
+        'timezone_db' => '',
+        'todate' => '',
+        'tz_handling' => 'none',
       ),
       'translatable' => '0',
-      'type' => 'number_float',
+      'type' => 'datetime',
     ),
     'field_instance' => array(
       'bundle' => 'sidejob',
-      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'number',
+          'module' => 'date',
           'settings' => array(
-            'decimal_separator' => '.',
+            'format_type' => 'long',
+            'fromto' => 'both',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -838,12 +868,12 @@ function pw_sidejobs_field_default_fields() {
               'destination' => '',
               'linked' => 0,
             ),
-            'prefix_suffix' => TRUE,
-            'scale' => 2,
-            'thousand_separator' => ' ',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
           ),
-          'type' => 'number_decimal',
-          'weight' => 12,
+          'type' => 'date_default',
+          'weight' => 23,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -854,25 +884,31 @@ function pw_sidejobs_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_sidejob_income_amount_max',
-      'label' => 'Income Amount Max',
+      'field_name' => 'field_sidejob_date_start',
+      'label' => 'Date Start',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
-        'max' => '',
-        'min' => '',
-        'prefix' => '',
-        'suffix' => '',
+        'default_value' => 'blank',
+        'default_value2' => 'same',
+        'default_value_code' => '',
+        'default_value_code2' => '',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
-        'active' => 0,
-        'module' => 'number',
+        'active' => 1,
+        'module' => 'date',
         'settings' => array(
+          'display_all_day' => 0,
+          'increment' => '15',
+          'input_format' => 'd.m.Y - H:i:s',
+          'input_format_custom' => '',
+          'label_position' => 'above',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'text_parts' => array(),
+          'year_range' => '-100:+100',
         ),
-        'type' => 'number',
-        'weight' => '9',
+        'type' => 'date_popup',
+        'weight' => '4',
       ),
     ),
   );
@@ -889,12 +925,100 @@ function pw_sidejobs_field_default_fields() {
         'type' => '0',
       ),
       'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'einmalig',
+          1 => 'monatlich',
+          12 => 'jährlich',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'sidejob',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 22,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_sidejob_income_interval',
+      'label' => 'Income Interval',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_select',
+        'weight' => '14',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-sidejob-field_sidejob_income_max'.
+  $fields['node-sidejob-field_sidejob_income_max'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_sidejob_income_max',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
       'indexes' => array(),
       'locked' => '0',
       'module' => 'number',
-      'settings' => array(),
+      'settings' => array(
+        'decimal_separator' => ',',
+      ),
       'translatable' => '0',
-      'type' => 'number_integer',
+      'type' => 'number_float',
     ),
     'field_instance' => array(
       'bundle' => 'sidejob',
@@ -919,11 +1043,11 @@ function pw_sidejobs_field_default_fields() {
               'linked' => 0,
             ),
             'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
+            'scale' => 2,
+            'thousand_separator' => '',
           ),
-          'type' => 'number_integer',
-          'weight' => 7,
+          'type' => 'number_decimal',
+          'weight' => 18,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -934,15 +1058,176 @@ function pw_sidejobs_field_default_fields() {
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
-      'field_name' => 'field_sidejob_income_interval',
-      'label' => 'Income Interval',
+      'field_name' => 'field_sidejob_income_max',
+      'label' => 'Income Max',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'max' => '',
         'min' => '',
         'prefix' => '',
-        'suffix' => '',
+        'suffix' => ' €',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'number',
+        'weight' => '12',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-sidejob-field_sidejob_income_max_total'.
+  $fields['node-sidejob-field_sidejob_income_max_total'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_sidejob_income_max_total',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(
+        'decimal_separator' => ',',
+      ),
+      'translatable' => '0',
+      'type' => 'number_float',
+    ),
+    'field_instance' => array(
+      'bundle' => 'sidejob',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'prefix_suffix' => TRUE,
+            'scale' => 2,
+            'thousand_separator' => '',
+          ),
+          'type' => 'number_decimal',
+          'weight' => 19,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_sidejob_income_max_total',
+      'label' => 'Income Max Total',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => ' €',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'number',
+        'weight' => '13',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-sidejob-field_sidejob_income_min'.
+  $fields['node-sidejob-field_sidejob_income_min'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_sidejob_income_min',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(
+        'decimal_separator' => ',',
+      ),
+      'translatable' => '0',
+      'type' => 'number_float',
+    ),
+    'field_instance' => array(
+      'bundle' => 'sidejob',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'prefix_suffix' => TRUE,
+            'scale' => 2,
+            'thousand_separator' => '',
+          ),
+          'type' => 'number_decimal',
+          'weight' => 21,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_sidejob_income_min',
+      'label' => 'Income Min',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => ' €',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -953,6 +1238,87 @@ function pw_sidejobs_field_default_fields() {
         ),
         'type' => 'number',
         'weight' => '10',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-sidejob-field_sidejob_income_min_total'.
+  $fields['node-sidejob-field_sidejob_income_min_total'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_sidejob_income_min_total',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(
+        'decimal_separator' => ',',
+      ),
+      'translatable' => '0',
+      'type' => 'number_float',
+    ),
+    'field_instance' => array(
+      'bundle' => 'sidejob',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'prefix_suffix' => TRUE,
+            'scale' => 2,
+            'thousand_separator' => '',
+          ),
+          'type' => 'number_decimal',
+          'weight' => 20,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_sidejob_income_min_total',
+      'label' => 'Income Min Total',
+      'required' => 0,
+      'settings' => array(
+        'max' => '',
+        'min' => '',
+        'prefix' => '',
+        'suffix' => ' €',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'number',
+        'weight' => '11',
       ),
     ),
   );
@@ -1038,113 +1404,14 @@ function pw_sidejobs_field_default_fields() {
       ),
       'widget' => array(
         'active' => 1,
-        'module' => 'options',
+        'module' => 'taxonomy',
         'settings' => array(
+          'autocomplete_path' => 'taxonomy/autocomplete',
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => 60,
         ),
-        'type' => 'options_select',
-        'weight' => '5',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-sidejob-field_valid'.
-  $fields['node-sidejob-field_valid'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_valid',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'date',
-      'settings' => array(
-        'cache_count' => '4',
-        'cache_enabled' => 0,
-        'granularity' => array(
-          'day' => 'day',
-          'hour' => 0,
-          'minute' => 0,
-          'month' => 'month',
-          'second' => 0,
-          'year' => 'year',
-        ),
-        'timezone_db' => '',
-        'todate' => 'optional',
-        'tz_handling' => 'none',
-      ),
-      'translatable' => '0',
-      'type' => 'datetime',
-    ),
-    'field_instance' => array(
-      'bundle' => 'sidejob',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'date',
-          'settings' => array(
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-          ),
-          'type' => 'date_default',
-          'weight' => 9,
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_valid',
-      'label' => 'Date',
-      'required' => 0,
-      'settings' => array(
-        'default_value' => 'now',
-        'default_value2' => 'same',
-        'default_value_code' => '',
-        'default_value_code2' => '',
-        'exclude_cv' => FALSE,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'date',
-        'settings' => array(
-          'display_all_day' => 0,
-          'increment' => '15',
-          'input_format' => 'd.m.Y - H:i:s',
-          'input_format_custom' => '',
-          'label_position' => 'above',
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'text_parts' => array(),
-          'year_range' => '-3:+3',
-        ),
-        'type' => 'date_popup',
-        'weight' => '3',
+        'type' => 'taxonomy_autocomplete',
+        'weight' => '7',
       ),
     ),
   );
@@ -1154,10 +1421,13 @@ function pw_sidejobs_field_default_fields() {
   t('Address');
   t('Body');
   t('Classification');
-  t('Date');
-  t('Income Amount');
-  t('Income Amount Max');
+  t('Date End');
+  t('Date Start');
   t('Income Interval');
+  t('Income Max');
+  t('Income Max Total');
+  t('Income Min');
+  t('Income Min Total');
   t('Job');
   t('Organization');
   t('Parliament');

@@ -223,7 +223,7 @@ function pw_blog_field_default_fields() {
             ),
           ),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '5',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -443,7 +443,7 @@ function pw_blog_field_default_fields() {
             ),
           ),
           'type' => 'blockreference_without_title',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'pw_newsletter' => array(
           'label' => 'above',
@@ -635,7 +635,7 @@ function pw_blog_field_default_fields() {
             'textformatter_type' => 'comma',
           ),
           'type' => 'textformatter_list',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'print' => array(
           'label' => 'hidden',
@@ -958,7 +958,7 @@ function pw_blog_field_default_fields() {
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '30',
+          'weight' => '32',
         ),
         'pw_newsletter' => array(
           'label' => 'hidden',

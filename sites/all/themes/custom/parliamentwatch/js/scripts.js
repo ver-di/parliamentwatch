@@ -319,7 +319,9 @@ jQuery(document).ready(function() {
 
 ////// change sharethis defaults
 
-    stLight.options({newOrZero:"zero"});
+    if(typeof stLight != "undefined"){
+      stLight.options({newOrZero:"zero"});
+    }
 
 ////// add a sharethis link to an anchor
 
