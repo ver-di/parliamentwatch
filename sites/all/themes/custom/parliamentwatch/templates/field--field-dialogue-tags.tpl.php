@@ -45,7 +45,7 @@
  */
 ?>
 <div class="icon-taxonomy">
-  <?php print $label; ?>:
+  <?php print t('Tags'); ?>:
   <?php foreach ($items as $delta => $item): ?>
     <?php print render($item); ?>
   <?php endforeach; ?>

@@ -45,5 +45,5 @@
  */
 ?>
 <div class="topic float-right">
-  <?php print $label; ?>: <?php print render($items[0]); ?>
+  <?php print t('Topic'); ?>: <?php print render($items[0]); ?>
 </div>

@@ -45,6 +45,6 @@
  */
 ?>
 <div class="pw-response-time">
-  <?php print $label; ?>:
+  <?php print t('Response time'); ?>:
   <strong><?php print render($items[0]); ?></strong>
 </div>
