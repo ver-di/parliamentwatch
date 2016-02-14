@@ -364,6 +364,7 @@ function pw_dialogues_questions_and_answers_block() {
     '#theme' => 'pager',
     '#element' => 10,
   );
+  $block['content']['#attached']['js'][] = drupal_get_path('module', 'pw_dialogues') . '/pw_dialogues.js';
 
   return $block;
 }
@@ -396,7 +397,7 @@ function pw_dialogues_questions_and_answers_search_block() {
 
   $form = array(
     '#type' => 'form',
-    '#action' => '',
+    '#action' => '#block-pw-dialogues-qa',
     '#method' => 'GET',
     '#attributes' => array('class' => array('form-search')),
   );
