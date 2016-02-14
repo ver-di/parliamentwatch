@@ -232,28 +232,36 @@ function tb_megamenu_theme($existing, $type, $theme, $path) {
  * Implementation of hook_block_view()
  */
 function tb_megamenu_block_view($delta = 0) {
-  static $added_js_css = false;
-  if(!$added_js_css) {
-    $added_js_css = true;
-    if(module_exists('fontawesome') && file_exists(libraries_get_path('fontawesome') . '/css/font-awesome.css')) {
-      tb_megamenu_add_css(libraries_get_path('fontawesome') . '/css/font-awesome.css');
-    }else{
-      drupal_add_css(FONT_AWESOME_44, array(
-        'type' => 'external'
-      ));
-    }
+  $path = drupal_get_path('module', 'tb_megamenu');
 
-    tb_megamenu_add_css(drupal_get_path('module', 'tb_megamenu') . '/css/bootstrap.css');
-    tb_megamenu_add_css(drupal_get_path('module', 'tb_megamenu') . '/css/base.css');
-    tb_megamenu_add_css(drupal_get_path('module', 'tb_megamenu') . '/css/default.css');
-    tb_megamenu_add_css(drupal_get_path('module', 'tb_megamenu') . '/css/compatibility.css');
-    drupal_add_js(drupal_get_path('module', 'tb_megamenu') . '/js/tb-megamenu-frontend.js');
-    drupal_add_js(drupal_get_path('module', 'tb_megamenu') . '/js/tb-megamenu-touch.js');
-  }
-  return array('content' => array(
+  $block = array();
+  $block['subject'] = NULL;
+  $block['content'] = array(
     '#type' => 'markup',
-    '#markup' =>  theme('tb_megamenu', array('menu_name' => $delta))
-  ));
+    '#markup' => theme('tb_megamenu', array('menu_name' => $delta)),
+    '#attached' => array(
+      'js' => array(
+        "{$path}/js/tb-megamenu-frontend.js",
+        "{$path}/js/tb-megamenu-touch.js",
+      ),
+      'css' => array(
+        "{$path}/css/chosen/chosen.css",
+        "{$path}/css/bootstrap.css",
+        "{$path}/css/bootstrap-responsive.css",
+        "{$path}/css/base.css",
+        "{$path}/css/default.css",
+        "{$path}/fonts/font-awesome/css/font-awesome.css",
+        "{$path}/fonts/font-awesome/css/font-awesome-ie7.css" => array(
+          'browsers' => array(
+            'IE' => 'IE7',
+            '!IE' => FALSE
+          ),
+        ),
+      ),
+    ),
+  );
+
+  return $block;
 }
 
 /*
