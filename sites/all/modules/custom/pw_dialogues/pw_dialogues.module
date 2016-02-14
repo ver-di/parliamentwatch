@@ -311,6 +311,8 @@ function pw_dialogues_feeds_presave(FeedsSource $source, $entity, $item) {
 function pw_dialogues_preprocess_node(&$variables) {
   $node = $variables['node'];
   if ($node->type == 'dialogue') {
+    drupal_add_js('misc/form.js');
+    drupal_add_js('misc/collapse.js');
     $variables['classes_array'][] = 'question';
     $variables['submitted'] = format_date($node->created, 'date_only_short');
     $variables['title'] = t('Question from @name', array('@name' => $node->field_dialogue_sender_name[LANGUAGE_NONE][0]['safe_value']));
