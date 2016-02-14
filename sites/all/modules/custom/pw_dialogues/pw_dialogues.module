@@ -48,7 +48,7 @@ function pw_dialogues_menu() {
  * Implements hook_block_info().
  */
 function pw_dialogues_block_info() {
-  $blocks['questions-and-answers'] = array(
+  $blocks['qa'] = array(
     'info' => t('Questions and answers'),
     'cache' => DRUPAL_NO_CACHE,
   );
@@ -60,7 +60,7 @@ function pw_dialogues_block_info() {
  */
 function pw_dialogues_block_view($delta) {
   switch ($delta) {
-    case 'questions-and-answers':
+    case 'qa':
       return pw_dialogues_questions_and_answers_block();
   }
 }
