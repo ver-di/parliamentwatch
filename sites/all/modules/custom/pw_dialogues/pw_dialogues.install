@@ -34,3 +34,18 @@ function pw_dialogues_update_7001() {
   $topic['display']['default']['type'] = 'taxonomy_term_reference_plain';
   field_update_instance($topic);
 }
+
+/**
+ * Configure topic facet.
+ */
+function pw_dialogues_update_7002() {
+  $adapter = facetapi_adapter_load('search_api@node_index');
+  $facet = facetapi_facet_load('field_dialogue_topic', 'search_api@node_index');
+
+  $block_realm = facetapi_realm_load('block');
+  $adapter->getFacet($facet)->getSettings($block_relam)->settings['widget'] = 'facetapi_checkbox_links';
+  facetapi_save_facet_enabled($adapter, $block_realm, $facet);
+
+  $adapter->getFacet($facet)->getSettings(NULL)->settings['operator'] = 'or';
+  facetapi_save_facet_disabled($adapter, array(), $facet);
+}
