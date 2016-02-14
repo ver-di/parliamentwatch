@@ -49,3 +49,20 @@ function pw_dialogues_update_7002() {
   $adapter->getFacet($facet)->getSettings(NULL)->settings['operator'] = 'or';
   facetapi_save_facet_disabled($adapter, array(), $facet);
 }
+
+/**
+ * Add body to node index.
+ */
+function pw_dialogues_update_7003() {
+  $index = search_api_index_load('node_index');
+  $options = $index->options;
+  $options['fields'] = array_merge($index->options['fields'], array(
+    'body:value' => array('type' => 'text'),
+    'comments:field_dialogue_comment_body:value' => array('type' => 'text'),
+  ));
+  $options['additional fields'] = array(
+    'comments' => 'comments',
+    'comments:field_dialogue_comment_body' => 'comments:field_dialogue_comment_body',
+  );
+  $index->update(array('options' => $options));
+}

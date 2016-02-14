@@ -353,6 +353,14 @@ function pw_dialogues_questions_and_answers_block() {
   $q->condition('type', 'dialogue');
   $q->condition('field_dialogue_recipient', $account->uid);
   $q->condition('comment_count', 0, '>');
+
+  if (drupal_get_query_parameters()['keywords']) {
+    $f = $q->createFilter('OR');
+    $f->condition('body:value', drupal_get_query_parameters()['keywords']);
+    $f->condition('comments:field_dialogue_comment_body:value', drupal_get_query_parameters()['keywords']);
+    $q->filter($f);
+  }
+
   $q->sort('created', 'DESC');
   $q->range(pager_find_page(10) * 10, $limit);
   $response = $q->execute();
