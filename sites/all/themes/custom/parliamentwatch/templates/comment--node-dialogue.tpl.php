@@ -75,7 +75,7 @@
   <fieldset class="more-info content-inner collapsible collapsed">
     <legend>
       <span class="fieldset-legend">
-        <?php print (t('More information about this answer')); ?>
+        <?php print t('More information about this answer'); ?>
       </span>
     </legend>
     <div class="fieldset-wrapper">
