@@ -359,10 +359,6 @@ function pw_dialogues_questions_and_answers_block() {
 
   pager_default_initialize($response['result count'], $limit, 10);
 
-  $block['subject'] = t('Questions for @first_name @last_name', array(
-    '@first_name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'],
-    '@last_name' => $account->field_user_lname[LANGUAGE_NONE][0]['value'],
-  ));
   $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
   $block['content']['pager'] = array(
     '#theme' => 'pager',
