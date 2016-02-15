@@ -626,6 +626,12 @@ function pw_globals_field_default_fields() {
           'type' => 'date_default',
           'weight' => 3,
         ),
+        'pw_newsletter' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'node',

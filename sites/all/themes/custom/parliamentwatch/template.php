@@ -110,6 +110,13 @@ function parliamentwatch_preprocess_node(&$variables) {
     $variables['theme_hook_suggestions'][] = 'node__'.$variables['node']->type.'__teaser';
     $variables['theme_hook_suggestions'][] = 'node__'.$variables['node']->nid.'__teaser';
   }
+
+  // Testimonials in newsletter
+  if($variables['type'] == 'pw_testimonial' && $variables['view_mode'] == 'pw_newsletter') {
+    $member_counter = pw_donation_membership_count();
+    $member_counter = number_format($member_counter, 0, ',', '.');
+    $variables['count_memberships'] = $member_counter;
+  }
 }
 
 /*

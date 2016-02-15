@@ -6,7 +6,7 @@
   </div>
   <div class="float-left img-rounded push-right-m"><?php print render($content['field_testimonial_portrait']); ?></div>
   <blockquote class="medium"><?php print render($content['field_testimonial_quote']); ?></blockquote>
-  <p class="small light push-bottom-xs"><?php print render($content['field_testimonial_fullname']); ?> ist eines von <span id="mscount">%count%</span> Fördermitgliedern von abgeordnetenwatch.de</p>
+  <p class="small light push-bottom-xs"><?php print render($content['field_testimonial_fullname']); ?> ist eines von <span id="mscount"><?php print $count_memberships; ?></span> Fördermitgliedern von abgeordnetenwatch.de</p>
   <div class="text-right"><a href="<?php print $node_url; ?>">Jetzt Fördermitglied werden <span class="icon-thanks aw-icon-2x"></span></a></div>
-  
+
 </div>

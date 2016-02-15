@@ -402,4 +402,3 @@ function _pw_query_debug($query) {
   }
   return $querystring;
 }
-
