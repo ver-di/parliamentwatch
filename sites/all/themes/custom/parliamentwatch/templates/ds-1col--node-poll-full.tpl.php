@@ -5,6 +5,14 @@ print theme('status_messages');
 <div class="sharethis-wrapper">
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
+<p><?php
+  $block = module_invoke('block', 'block_view', '12');
+  print render($block["content"]);
+?>
+<span class="comment-count">
+  <a href="#comments"><?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?></a>
+</span>
+</p>
 <ul class="icon-list medium">
   <li>
     <i class="<?php print render(field_view_field('taxonomy_term', $field_parliament[0]['taxonomy_term'], 'field_icon_class', array('label' => 'hidden'))); ?> fixed-width-icon"></i>
@@ -22,10 +30,6 @@ print theme('status_messages');
       <?php print render($content['field_blogpost_categories']); ?>
     </li>
   <?php endif; ?>
-  <li>
-    <i class="icon-dialogue fixed-width-icon"></i>
-    <a href="#comments"><?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?></a>
-  </li>
 </ul>
 <?php
 print render(field_view_field('node', $node, 'body', array('label' => 'hidden', 'type' => 'text_summary_or_trimmed')));

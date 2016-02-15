@@ -272,6 +272,24 @@ else{
   );
   $export['custom_comment_counter'] = $ds_field;
 
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'sharebuttons';
+  $ds_field->label = 'Sharebuttons';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'blogpost|full
+poll|full
+pw_petition|full
+newsletter|*';
+  $ds_field->properties = array(
+    'block' => 'block|12',
+    'block_render' => '3',
+  );
+  $export['sharebuttons'] = $ds_field;
+
   return $export;
 }
 
