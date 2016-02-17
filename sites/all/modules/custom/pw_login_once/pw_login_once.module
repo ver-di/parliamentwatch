@@ -537,7 +537,7 @@ function pw_login_once_get_link($account, $path = NULL) {
   $timestamp = REQUEST_TIME;
   return url(
     "politician-login/" . $account->uid . "/" . $timestamp . "/" .
-      user_pass_rehash($account->pass, $timestamp, $account->login),
+      user_pass_rehash($account->pass, $timestamp, $account->login, $account->uid),
     array(
       'query' => array('destination' => $path),
       'absolute' => TRUE,
@@ -697,7 +697,7 @@ function pw_login_once_page($uid, $timestamp, $hashed_pass) {
         drupal_set_message(t('You have tried to use a one-time login link that has expired. Please use the log in form to supply your username and password.'));
         drupal_goto('user/login');
       }
-      elseif ($account->uid && $timestamp > $account->login && $timestamp < $current && $hashed_pass == user_pass_rehash($account->pass, $timestamp, $account->login)) {
+      elseif ($account->uid && $timestamp > $account->login && $timestamp < $current && $hashed_pass == user_pass_rehash($account->pass, $timestamp, $account->login, $account->uid)) {
 
         $action = pw_login_once_get_action_path();
 
