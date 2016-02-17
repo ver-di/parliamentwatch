@@ -111,6 +111,15 @@ function pw_api_user_to_array($user) {
     $profile['meta']['edited'] = date('Y-m-d H:i', $user->revision_timestamp);
     $profile['meta']['uuid'] = $w_user->uuid->value();
     $profile['meta']['username'] = $w_user->name->value();
+
+    // publish roles for authorized users
+    if(user_access('access authorized api')){
+      $roles = array();
+      foreach($w_user->field_user_roles_for_view_mode_s as $role){
+        $roles[] = $role->value()->name;
+      }
+      $profile['meta']['roles'] = implode(',', $roles);
+    }
     $profile['meta']['url'] = url('profile/' . $w_user->name->value(), array('absolute' => TRUE));
     $profile['personal'] = array();
     $profile['personal']['degree'] = $w_user->field_user_title->value();
