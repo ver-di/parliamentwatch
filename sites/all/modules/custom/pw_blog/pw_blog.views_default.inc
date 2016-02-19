@@ -605,7 +605,6 @@ function pw_blog_views_default_views() {
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Datum';
-  $handler->display->display_options['sorts']['created']['granularity'] = 'hour';
   /* Sortierkriterien: Inhalt: Anzahl an Kommentaren */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
