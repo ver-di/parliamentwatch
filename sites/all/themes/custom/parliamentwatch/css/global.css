@@ -486,12 +486,6 @@ blockquote .pw-expander div {
   display: inline-block;
 }
 
-/* scroll_to_top */
-
-#back-top {
-  bottom: 55px;
-}
-
 /* icons */
 
 .aw-icon-1x {
@@ -3508,6 +3502,13 @@ form .webform-component-checkboxes .description {
     margin-right: 72px;
 }
 
+
+/* Mobile Share-This Widget*/
+
+#stToolPop {
+    right: 11px !important;
+    bottom: 140px !important;
+}
 
 /* /////////////////////////// RSS /////////////////// */
 
