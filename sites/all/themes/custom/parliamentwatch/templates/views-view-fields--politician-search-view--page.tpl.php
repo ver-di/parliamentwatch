@@ -23,7 +23,14 @@ $fname = $row->_entity_properties['entity object']->field_user_fname['und'][0]['
 $lname = $row->_entity_properties['entity object']->field_user_lname['und'][0]['safe_value'];
 $party = taxonomy_term_load($row->_entity_properties['entity object']->field_user_party['und'][0]['tid'])->name;
 $parliament = taxonomy_term_load($row->_entity_properties['entity object']->field_user_parliament['und'][0]['tid'])->name;
-$constituency = taxonomy_term_load($row->_entity_properties['entity object']->field_user_constituency['und'][0]['tid'])->name;
+  $constituencies = array();
+  foreach ($row->_entity_properties['entity object']->field_user_constituency['und'] as $key => $value) {
+    $consituency_term = taxonomy_term_load($value['tid']);
+    $constituencies[] = $consituency_term->name;
+  }
+  $constituency = implode(', ', $constituencies);
+
+#$constituency = taxonomy_term_load($row->_entity_properties['entity object']->field_user_constituency['und'][0]['tid'])->name;
 
 $uid = $row->_entity_properties['uid'];
 $roles = $elements['#account']->roles; //TODO: Aus Entity-Object laden
