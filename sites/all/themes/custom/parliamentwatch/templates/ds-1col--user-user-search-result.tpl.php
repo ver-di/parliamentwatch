@@ -15,7 +15,12 @@
   $lname = $elements['#account']->field_user_lname['und'][0]['safe_value'];
   $party = taxonomy_term_load($elements['#account']->field_user_party['und'][0]['tid'])->name;
   $parliament = taxonomy_term_load($elements['#account']->field_user_parliament['und'][0]['tid'])->name;
-  $constituency = taxonomy_term_load($elements['#account']->field_user_constituency['und'][0]['tid'])->name;
+  $constituencies = array();
+  foreach ($elements['#account']->field_user_constituency['und'] as $key => $value) {
+    $consituency_term = taxonomy_term_load($value['tid']);
+    $constituencies[] = $consituency_term->name;
+  }
+  $constituency = implode(', ', $constituencies);
 
   $uid = $elements['#account']->uid;
   $roles = $elements['#account']->roles;
@@ -35,7 +40,6 @@
   $questions_get = $user_revision->field_user_questions_get['und'][0]['value'];
   $answers_give = $user_revision->field_user_answers_give['und'][0]['value'];
 ?>
-
 <div <?php print $attributes; ?> class="ds-1col <?php print $classes; ?> clearfix">
   <div class="grid-2 alpha">
     <div class="arrow-item">
