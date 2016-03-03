@@ -505,6 +505,8 @@ function pw_blog_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
     'hide_page_title' => '0',
     'page_option_title' => '',
     'hide_sidebars' => 0,

@@ -130,6 +130,9 @@ function pw_blog_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'pw_newsletter' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -164,7 +167,7 @@ function pw_blog_strongarm() {
           ),
           'default' => array(
             'weight' => '10',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
           'search_result' => array(
             'weight' => '29',
@@ -172,6 +175,10 @@ function pw_blog_strongarm() {
           ),
           'teaser' => array(
             'weight' => '5',
+            'visible' => FALSE,
+          ),
+          'pw_newsletter' => array(
+            'weight' => '33',
             'visible' => FALSE,
           ),
         ),
@@ -190,6 +197,10 @@ function pw_blog_strongarm() {
           ),
           'search_result' => array(
             'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'pw_newsletter' => array(
+            'weight' => '22',
             'visible' => FALSE,
           ),
         ),

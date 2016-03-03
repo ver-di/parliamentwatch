@@ -45,5 +45,15 @@ function pw_newsletter_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: use text format newsletter.
+  $permissions['use text format newsletter'] = array(
+    'name' => 'use text format newsletter',
+    'roles' => array(
+      0 => 'Content Manager',
+      1 => 'administrator',
+    ),
+    'module' => 'filter',
+  );
+
   return $permissions;
 }
