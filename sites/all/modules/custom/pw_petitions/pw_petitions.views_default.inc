@@ -22,7 +22,7 @@ function pw_petitions_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Petitionen';
+  $handler->display->display_options['title'] = 'PetitionPlus';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -214,6 +214,8 @@ function pw_petitions_views_default_views() {
 
   /* Display: Menu Block */
   $handler = $view->new_display('block', 'Menu Block', 'menu_block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Petitionen';
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -842,7 +844,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['summary_options']['items_per_page'] = '25';
   $translatables['pw_petitions'] = array(
     t('Master'),
-    t('Petitionen'),
+    t('PetitionPlus'),
     t('mehr'),
     t('Anwenden'),
     t('Zurücksetzen'),
@@ -861,6 +863,7 @@ function pw_petitions_views_default_views() {
     t('Block'),
     t('Block Progress'),
     t('Menu Block'),
+    t('Petitionen'),
     t('alle Petitionen'),
     t('Zeichnen Sie die Petitionen von abgeordnetenwatch.de und bitten Sie über Ihre Netzwerke auch interessierte Freunde und Bekannte dies zu tun. Gemeinsam für mehr Transparenz und gegen Korruption! <a href="/petitionen" class="read-more">alle Petitionen</a>'),
     t('Diese Petition mitzeichnen'),
