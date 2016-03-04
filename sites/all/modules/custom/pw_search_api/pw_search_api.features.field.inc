@@ -78,6 +78,12 @@ function pw_search_api_field_default_fields() {
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'pw_newsletter' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'rss' => array(
           'label' => 'above',
           'settings' => array(),

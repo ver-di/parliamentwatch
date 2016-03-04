@@ -282,7 +282,7 @@ Alle|Ganze Plattform durchsuchen
   $handler->display->display_options['sorts']['politician_index_search_api_url']['id'] = 'politician_index_search_api_url';
   $handler->display->display_options['sorts']['politician_index_search_api_url']['table'] = 'search_api_multi';
   $handler->display->display_options['sorts']['politician_index_search_api_url']['field'] = 'politician_index_search_api_url';
-  /* Sortierkriterien: Main Index: Ordinal date for search results (indexed) */
+  /* Sortierkriterien: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['sorts']['main_index_field_search_sort_date']['id'] = 'main_index_field_search_sort_date';
   $handler->display->display_options['sorts']['main_index_field_search_sort_date']['table'] = 'search_api_multi';
   $handler->display->display_options['sorts']['main_index_field_search_sort_date']['field'] = 'main_index_field_search_sort_date';
