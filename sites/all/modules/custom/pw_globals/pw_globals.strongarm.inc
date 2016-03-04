@@ -777,7 +777,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lazyloader_exclude_option';
-  $strongarm->value = 'exclude';
+  $strongarm->value = 'include';
   $export['lazyloader_exclude_option'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -791,10 +791,9 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lazyloader_paths';
-  $strongarm->value = 'media/*/format-form
-admin/*
-node/add/*
-node/*/edit';
+  $strongarm->value = '/petitionen/
+/petitions/
+/abstimmungen/';
   $export['lazyloader_paths'] = $strongarm;
 
   $strongarm = new stdClass();
