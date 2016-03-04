@@ -14,7 +14,7 @@ function pw_menu_default_fe_block_settings() {
 
   $export['tb_megamenu-menu-main-menu-de'] = array(
     'cache' => -1,
-    'css_class' => 'desktop-only small',
+    'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => 'menu-main-menu-de',
     'module' => 'tb_megamenu',

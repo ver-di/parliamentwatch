@@ -15,6 +15,9 @@ sites/*/files
 sites/*/private/*
 sites/sites.php
 
+# Ignore receipts path
+/r
+
 # Ignore development stuff
 /.idea/
 /nbproject/private/
