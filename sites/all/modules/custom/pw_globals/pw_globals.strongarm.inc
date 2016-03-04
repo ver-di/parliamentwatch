@@ -275,7 +275,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_date_and_time';
-  $strongarm->value = 'm/d/Y \\a\\t H:i';
+  $strongarm->value = 'd.m.Y \\u\\m H:i';
   $export['date_format_date_and_time'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -289,7 +289,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_long';
-  $strongarm->value = 'l, j F, Y - H:i';
+  $strongarm->value = 'l, j. F Y - G:i';
   $export['date_format_long'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -303,7 +303,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_short';
-  $strongarm->value = 'm/d/Y - H:i';
+  $strongarm->value = 'd.m.Y - H:i';
   $export['date_format_short'] = $strongarm;
 
   $strongarm = new stdClass();
