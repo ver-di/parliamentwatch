@@ -263,6 +263,66 @@ function pw_dialogues_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'dialogues_profle';
+  $ds_field->label = 'Dialogues Profle';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'pw_dialogues|qa',
+    'block_render' => '1',
+  );
+  $export['dialogues_profle'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'dialogues_profle_filters_header';
+  $ds_field->label = 'Dialogues Profle Filters Header';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'pw_dialogues|qa-filters-header',
+    'block_render' => '1',
+  );
+  $export['dialogues_profle_filters_header'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'dialogues_profle_filters_topic';
+  $ds_field->label = 'Dialogues Profle Filters Topic';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'facetapi|s1PZxwvHKXsRSM8SoIMDUhDoQKfSk1QZ',
+    'block_render' => '1',
+  );
+  $export['dialogues_profle_filters_topic'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'dialogues_profle_keyword_search';
+  $ds_field->label = 'Dialogues Profle Keyword Search';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'pw_dialogues|qa-filters-search',
+    'block_render' => '1',
+  );
+  $export['dialogues_profle_keyword_search'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'short_profile_dialogue';
   $ds_field->label = 'Short profile dialogue';
   $ds_field->field_type = 6;
