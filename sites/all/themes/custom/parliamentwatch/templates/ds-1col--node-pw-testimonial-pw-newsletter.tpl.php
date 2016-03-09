@@ -1,4 +1,4 @@
-<?php $node_url=url($path='node/39917', array('absolute' => TRUE)); ?>
+<?php $node_url=url($path='node/10508', array('absolute' => TRUE)); ?>
 <div class="node-testimonial eyecatcher relative">
   <div class="social-media">
     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook">facebook</a>
