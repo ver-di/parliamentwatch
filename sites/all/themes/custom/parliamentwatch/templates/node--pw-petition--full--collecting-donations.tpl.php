@@ -30,7 +30,7 @@
       <i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition im Parlament</span></i>
       <p class="pushfloat-0">Abfrage der Petition im Parlament.</p>
     </div>
-    <?php print check_markup($field_petition_text_donation[0]['value']); ?>
+    <?php print render($field_petition_text_donation[0]['value']); ?>
     <div class="pw-progress-wrapper pw-progress-wrapper-l grid-5 alpha">
       <div class="pw-progress" style="width: <?php print $field_donation_progress[0]['value'];?>%;"></div>
     </div>
@@ -58,3 +58,9 @@ if ($comments):
 </div>
 <?php endif; ?>
 </article>
+<style type="text/css">
+  .webform-component--fieldset-donationform-yourdonation--donation-frequency {
+    visibility: hidden;
+    display: none;
+  }
+</style>
