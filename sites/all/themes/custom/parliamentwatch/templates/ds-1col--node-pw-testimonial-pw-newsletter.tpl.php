@@ -1,8 +1,8 @@
 <?php $node_url=url($path='node/10508', array('absolute' => TRUE)); ?>
 <div class="node-testimonial eyecatcher relative">
   <div class="social-media">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook">facebook</a>
-    <a href="https://twitter.com/intent/tweet?text=Jetzt Fördermitglied von abgeordnetenwatch.de werden&url=<?php print $node_url; ?>" class="twitter">twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank">facebook</a>
+    <a href="https://twitter.com/intent/tweet?text=Jetzt Fördermitglied von abgeordnetenwatch.de werden&url=<?php print $node_url; ?>" class="twitter" target="_blank">twitter</a>
   </div>
   <div class="float-left img-rounded push-right-m"><?php print render($content['field_testimonial_portrait']); ?></div>
   <blockquote class="medium"><?php print render($content['field_testimonial_quote']); ?></blockquote>

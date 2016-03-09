@@ -4,8 +4,8 @@
 <div class="relative clearfix entity-paragraphs-item <?php print $classes; ?>">
   <?php if (!empty($content['field_pg_content_link'])): ?>
   <div class="social-media">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook">facebook</a>
-    <a href="https://twitter.com/intent/tweet?text=<?php print $field_pg_content_title[0]['safe_value']; ?>&url=<?php print $node_url; ?>" class="twitter">twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank">facebook</a>
+    <a href="https://twitter.com/intent/tweet?text=<?php print $field_pg_content_title[0]['safe_value']; ?>&url=<?php print $node_url; ?>" class="twitter" target="_blank">twitter</a>
   </div>
   <?php endif; ?>
   <?php hide($content['field_pg_class']); ?>
