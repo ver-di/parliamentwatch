@@ -85,6 +85,7 @@ DirectoryIndex index.php index.html index.htm
 
   # CUSTOM: redirect frontpage
   RewriteCond %{HTTP_HOST} .*\.abgeordnetenwatch.de
+  RewriteCond %{QUERY_STRING} ^$
   RewriteRule ^/$|^$ http://www.abgeordnetenwatch.de [L,R=301]
 
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
