@@ -129,7 +129,7 @@ function pw_user_revision_switch_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
-    'block' => 'views|pw_user_revision_switch-block_1',
+    'block' => 'views|pw_user_revision_switch-block',
     'block_render' => '1',
   );
   $export['user_revision_switch'] = $ds_field;

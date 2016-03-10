@@ -5,3 +5,17 @@
  */
 
 include_once 'pw_user_revision_switch.features.inc';
+
+
+/**
+ * Looks up the used metrics for the current parliament.
+ */
+function pw_user_revision_switch_is_shown_metric($metric, $parliament_name){
+  $parliament_term = current(taxonomy_get_term_by_name($parliament_name, 'parliaments'));
+  foreach ($parliament_term->field_shown_metrics['und'] as $value){
+    if ($value["value"] == $metric){
+      return true;
+    }
+  }
+  return false;
+}
