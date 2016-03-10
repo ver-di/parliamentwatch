@@ -301,9 +301,23 @@ form#views-exposed-form-profile-list-solr-constituency.compact-form {
     color: #333;
     font-size: 2rem;
 }
-.user-profile .ds-right-2 {
-    margin-top: 37px;
-    margin-top: 3.7rem;
+.user-profile .ds-right-2 .block {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.user-profile .ds-right-2 a {
+    color: #999;
+    font-weight: normal;
+    vertical-align: middle;
+}
+.user-profile .ds-right-2 a:hover {
+    color: #666;
+}
+.user-profile .ds-right-2 .block-facetapi .block-title {
+    color: #333;
+    font-family: 'Lucida Grande', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
 }
 .field-name-same-constituency {
     border: 1px dotted #dbdbdb;

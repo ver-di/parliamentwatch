@@ -45,7 +45,50 @@ function pw_dialogues_menu() {
 }
 
 /**
- * Implements hook_menu().
+ * Implements hook_block_info().
+ */
+function pw_dialogues_block_info() {
+  $blocks['qa'] = array(
+    'info' => t('Questions and answers'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  $blocks['qa-filters-header'] = array(
+    'info' => t('Questions and answers filters header'),
+    'cache' => DRUPAL_CACHE_PER_ROLE,
+  );
+  $blocks['qa-filters-search'] = array(
+    'info' => t('Questions and answers keyword search'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function pw_dialogues_block_view($delta) {
+  switch ($delta) {
+    case 'qa':
+      return pw_dialogues_questions_and_answers_block();
+    case 'qa-filters-header':
+      return pw_dialogues_questions_and_answers_filters_header_block();
+    case 'qa-filters-search':
+      return pw_dialogues_questions_and_answers_search_block();
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function pw_dialogues_node_view($node, $view_mode) {
+  if ($node->type != 'dialogue' || $view_mode != 'default') {
+    return;
+  }
+  $node->content['comments'] = comment_node_page_additions($node);
+}
+
+/**
+ * Menu callback; imports questions.
  */
 function pw_dialogues_triggered_import() {
   drupal_add_http_header('Content-type', 'text/plain; charset=utf8');
@@ -222,30 +265,6 @@ function pw_dialogues_entity_presave($entity, $type) {
     variable_set('pathauto_update_action', $alias_action);
   }
 
-  // delete dialogue answer if its status is 0
-  /*
-  elseif ($type == 'comment' && $entity->status == 0) {
-    //entity_delete($type, $entity->cid);
-
-    // look for empty answers and delete them
-    $cids_to_delete = db_query("SELECT c.cid
-                       FROM comment c
-                       INNER JOIN field_data_comment_body body ON c.cid = body.entity_id AND body.bundle = 'comment_node_dialogue'
-                       LEFT OUTER JOIN field_data_field_dialogue_comment_body c_body ON c_body.entity_type = 'comment' AND c.cid = c_body.entity_id
-                       WHERE c_body.field_dialogue_comment_body_value IS NULL")->fetchCol();
-    if (!empty($cids_to_delete)) {
-      comment_delete_multiple($cids_to_delete);
-      watchdog('pw_dialogues_entity_presave', 'empty answers deleted, cids: ' . implode(', ', $cids_to_delete));
-    }
-
-    //if (!empty($result)) {
-    //$cids_to_delete = array_keys($result['comment']);
-    //comment_delete_multiple($cids_to_delete);
-    //watchdog('pw_dialogues_cron', 'empty answers deleted, cids: '.implode(', ', $cids_to_delete));
-    //}
-
-  }
-  */
 }
 
 /**
@@ -286,3 +305,127 @@ function pw_dialogues_feeds_presave(FeedsSource $source, $entity, $item) {
   }
 }
 
+/**
+ * Implements template_preprocess_node().
+ */
+function pw_dialogues_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  if ($node->type == 'dialogue') {
+    drupal_add_js('misc/form.js');
+    drupal_add_js('misc/collapse.js');
+    $variables['classes_array'][] = 'question';
+    $variables['submitted'] = format_date($node->created, 'date_only_short');
+    $variables['title'] = t('Question from @name', array('@name' => $node->field_dialogue_sender_name[LANGUAGE_NONE][0]['safe_value']));
+    $variables['title_attributes_array']['class'][] = 'bubble';
+  }
+}
+
+/**
+ * Implements template_preprocess_comment().
+ */
+function pw_dialogues_preprocess_comment(&$variables) {
+  $node = $variables['node'];
+  $account = user_load($variables['comment']->uid);
+  if ($node->type == 'dialogue') {
+    $variables['classes_array'][] = 'answer';
+    $variables['permalink'] = url("node/$node->nid", array('absolute' => TRUE));
+    $variables['picture'] = render(file_view(file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']), 'pw_file_portrait_s'));
+    $variables['title'] = t('Answer by @first_name @last_name', array(
+      '@first_name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'],
+      '@last_name' => $account->field_user_lname[LANGUAGE_NONE][0]['value'],
+    ));
+  }
+}
+
+/**
+ * Displays the questions and answers section of a profile.
+ */
+function pw_dialogues_questions_and_answers_block() {
+  $block = array();
+  $account = menu_get_object('user');
+  $limit = 10;
+
+  if (!$account) {
+    return;
+  }
+
+  $q = search_api_query('node_index');
+  $q->condition('type', 'dialogue');
+  $q->condition('field_dialogue_recipient', $account->uid);
+  $q->condition('comment_count', 0, '>');
+
+  if (drupal_get_query_parameters()['keywords']) {
+    $f = $q->createFilter('OR');
+    $f->condition('body:value', drupal_get_query_parameters()['keywords']);
+    $f->condition('comments:field_dialogue_comment_body:value', drupal_get_query_parameters()['keywords']);
+    $q->filter($f);
+  }
+
+  $q->sort('created', 'DESC');
+  $q->range(pager_find_page(10) * 10, $limit);
+  $response = $q->execute();
+
+  pager_default_initialize($response['result count'], $limit, 10);
+
+  $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
+  $block['content']['pager'] = array(
+    '#theme' => 'pager',
+    '#element' => 10,
+  );
+  $block['content']['#attached']['js'][] = drupal_get_path('module', 'pw_dialogues') . '/pw_dialogues.js';
+
+  return $block;
+}
+
+/**
+ * Displays heading for questions and answers filter section.
+ */
+function pw_dialogues_questions_and_answers_filters_header_block() {
+  $block = array();
+
+  $block['subject'] = t('Filter questions and answers');
+  $block['content']['clear'] = array(
+    '#theme' => 'html_tag',
+    '#tag' => 'a',
+    '#value' => t('Remove all filters'),
+    '#attributes' => array(
+      'href' => url($_GET['q']) . '#block-pw-dialogues-qa',
+    ),
+  );
+
+  return $block;
+}
+
+/**
+ * Displays the keywords filter for questions and answers.
+ */
+function pw_dialogues_questions_and_answers_search_block() {
+  $block = array();
+  $parameters = drupal_get_query_parameters();
+
+  $form = array(
+    '#type' => 'form',
+    '#action' => '#block-pw-dialogues-qa',
+    '#method' => 'GET',
+    '#attributes' => array('class' => array('form-search')),
+  );
+  $form['keywords'] = array(
+    '#type' => 'textfield',
+    '#name' => 'keywords',
+    '#title' => t('Filter questions and answers by keyword'),
+    '#value' => isset($parameters['keywords']) ? $parameters['keywords'] : '',
+    '#attributes' => array(
+      'placeholder' => t('Enter keyword'),
+      'class' => array('form-search-keywords'),
+    ),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+    '#attributes' => array('class' => array('form-search-submit')),
+  );
+
+  $block['content']['form'] = $form;
+
+  return $block;
+}

@@ -2341,7 +2341,7 @@ $display_output = rtrim($display_output);',
           'weight' => '0',
         ),
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'taxonomy',
           'settings' => array(
             'linked_field' => array(
@@ -2356,7 +2356,7 @@ $display_output = rtrim($display_output);',
               'linked' => 0,
             ),
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '1',
         ),
         'full' => array(
@@ -2643,7 +2643,7 @@ $display_output = rtrim($display_output);',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '0',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',

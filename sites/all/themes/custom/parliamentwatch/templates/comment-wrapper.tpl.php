@@ -36,7 +36,7 @@
  */
 ?>
 <div id="comments" class="<?php print $classes; ?>"<?php print $attributes; ?>>
-  <?php if ($content['comments'] && $node->type != 'forum'): ?>
+  <?php if ($content['comments'] && !in_array($node->type, array('forum', 'dialogue'))): ?>
     <?php print render($title_prefix); ?>
     <h2 class="title"><?php print t('Comments'); ?></h2>
     <?php print render($title_suffix); ?>
@@ -47,7 +47,7 @@
   <?php if ($content['comment_form']): ?>
     <h2 class="title comment-form"><?php print t('Add new comment'); ?></h2>
     <?php print render($content['comment_form']); ?>
-    <?php 
+    <?php
         $mandatory = '<div class="mandatory">'.t('* Mandatory').'</div>';
         print $mandatory;
     ?>
