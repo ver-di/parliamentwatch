@@ -38,7 +38,7 @@
     <?php if ($partner_html): ?>
         <div class="responsive-list-partner-wrapper small light">
             <p class="push-bottom-xs">Diese Petition läuft auf:</p>
-            <a href="<?php print $signing_url; ?>" class="<?php print ($partner_html)?"colorbox-load ":"";?>" title="zur Petition auf <?php print $field_petition_partner[0]['value']; ?>"><?php print $partner_html; ?></a>
+            <a href="<?php print $signing_url; ?>" class="<?php print ($partner_html)?"colorbox-load ":"";?>"><?php print $partner_html; ?></a>
         </div>
     <?php endif; ?>
     <div class="responsive-list-sign-wrapper"><a href="<?php print $signing_url; ?>" class="<?php print ($partner_html)?"colorbox-load ":"";?>button">Unterschreiben</a></div>
