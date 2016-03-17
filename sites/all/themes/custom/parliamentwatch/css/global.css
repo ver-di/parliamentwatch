@@ -2730,6 +2730,8 @@ ul.progress-icons li {
 		margin-left: 4.5em;
 	}
 }
+
+
 /* tribute to IE8 */
 .responsive-list-image-wrapper {
   float: left\9;
@@ -2752,6 +2754,82 @@ ul.progress-icons li {
   margin-left: 4.5em\9;
 }
 /* // tribute to IE8 */
+
+/* Vote - Petition search block */
+
+#views-exposed-form-vote-search-block {
+background: #f4f4f4 none repeat scroll 0 0;
+border: 1px solid #dedede;
+border-radius: 3px;
+box-shadow: 0 0 4px 1px #ebebeb;
+color: #666;
+margin-bottom: 7em;
+padding: 12px 10px 10px;
+position: relative;
+margin-bottom: 2em !important;
+}
+#edit-search-api-views-fulltext-wrapper {
+float: left;
+padding-right: 10px;
+float: left;
+width: 41%;
+}
+#edit-field-vote-user-field-user-party-wrapper,
+#edit-field-vote-user-field-user-fraction-wrapper,
+#edit-field-vote-wrapper {
+float: left;
+width: 25%;
+box-sizing: border-box;
+padding-right: 10px;
+}
+
+#edit-search-api-views-fulltext-wrapper input,
+#edit-field-vote-user-field-user-party-wrapper select,
+#edit-field-vote-user-field-user-fraction-wrapper select,
+#edit-field-vote-wrapper select {
+width: 100%;
+height: 40px;
+margin-bottom: 0;
+}
+#views-exposed-form-vote-search-block .views-submit-button {
+float: right;
+margin-top: 1.5em;
+}
+#views-exposed-form-vote-search-block .form-submit {
+width: 40px;
+height: 40px;
+text-indent: -5000em;
+background: url('../images/ic_search_fff.png') no-repeat;
+}
+
+@media (max-width: 639px) {
+  #edit-keyword-wrapper {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+  #edit-ss-vote-user-party-wrapper,
+  #edit-ss-vote-user-fraction-wrapper,
+  #edit-ss-vote-user-vote-text-wrapper {
+    float: left;
+    width: 50%;
+  }
+  #edit-ss-vote-user-party-wrapper,
+  #edit-ss-vote-user-fraction-wrapper {
+    padding-right: 5px;
+  }
+  #edit-ss-vote-user-vote-text-wrapper {
+    padding-left: 5px;
+    padding-right: 0;
+  }
+  #views-exposed-form-vote-search-block .views-submit-button {
+    clear: left;
+  }
+  #views-exposed-form-vote-search-block .views-exposed-widget {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
 
 /* /////////////////////////// forms /////////////////// */
 
