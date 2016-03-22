@@ -1280,6 +1280,87 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
     ),
   );
 
+  // Exported field: 'paragraphs_item-paragraphs_pw_content-field_pg_donate_targetgroup'.
+  $fields['paragraphs_item-paragraphs_pw_content-field_pg_donate_targetgroup'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_pg_donate_targetgroup',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'donator' => 'Spender',
+          'sponsor' => 'Förderer',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paragraphs_pw_content',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 5,
+        ),
+        'paragraphs_editor_preview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'paragraphs_item',
+      'field_name' => 'field_pg_donate_targetgroup',
+      'label' => 'Zielgruppe',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_buttons',
+        'weight' => '7',
+      ),
+    ),
+  );
+
   // Exported field: 'paragraphs_item-paragraphs_pw_donate-field_pg_content_body'.
   $fields['paragraphs_item-paragraphs_pw_donate-field_pg_content_body'] = array(
     'field_config' => array(
@@ -1636,6 +1717,74 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         ),
         'type' => 'options_select',
         'weight' => '35',
+      ),
+    ),
+  );
+
+  // Exported field: 'paragraphs_item-paragraphs_pw_testmonial-field_pg_donate_targetgroup'.
+  $fields['paragraphs_item-paragraphs_pw_testmonial-field_pg_donate_targetgroup'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_pg_donate_targetgroup',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'donator' => 'Spender',
+          'sponsor' => 'Förderer',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paragraphs_pw_testmonial',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '1',
+        ),
+        'paragraphs_editor_preview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'paragraphs_item',
+      'field_name' => 'field_pg_donate_targetgroup',
+      'label' => 'Zielgruppe',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_buttons',
+        'weight' => '33',
       ),
     ),
   );
