@@ -19,7 +19,6 @@ features[ctools][] = quicktabs:quicktabs:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
-features[field][] = taxonomy_term-parliaments-field_shown_metrics
 features[quicktabs][] = politicians_answer
 features[variable][] = tvi_vocab_parliaments
 features[views_view][] = pw_taxonomy_term_parliament
