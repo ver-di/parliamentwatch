@@ -197,15 +197,15 @@ function pw_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'user_premium' => array(
-            'weight' => '62',
+            'weight' => '69',
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '63',
+            'weight' => '67',
             'visible' => FALSE,
           ),
           'user_candidate' => array(
-            'weight' => '62',
+            'weight' => '69',
             'visible' => FALSE,
           ),
           'user_search' => array(
@@ -223,11 +223,11 @@ function pw_profiles_strongarm() {
         ),
         'mimemail' => array(
           'user_premium' => array(
-            'weight' => '42',
+            'weight' => '49',
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '47',
+            'weight' => '51',
             'visible' => FALSE,
           ),
           'search_result' => array(
@@ -243,7 +243,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_candidate' => array(
-            'weight' => '42',
+            'weight' => '49',
             'visible' => FALSE,
           ),
         ),
@@ -253,11 +253,11 @@ function pw_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'user_candidate' => array(
-            'weight' => '9',
+            'weight' => '6',
             'visible' => TRUE,
           ),
           'user_premium' => array(
-            'weight' => '15',
+            'weight' => '12',
             'visible' => TRUE,
           ),
           'user_dialogue_search_snippet' => array(
@@ -267,15 +267,15 @@ function pw_profiles_strongarm() {
         ),
         'twitter' => array(
           'user_candidate' => array(
-            'weight' => '0',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'user_deputy' => array(
-            'weight' => '38',
+            'weight' => '42',
             'visible' => FALSE,
           ),
           'user_premium' => array(
-            'weight' => '0',
+            'weight' => '28',
             'visible' => FALSE,
           ),
           'user_dialogue_search_snippet' => array(
