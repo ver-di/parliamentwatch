@@ -43,7 +43,7 @@ function pw_dialogues_update_7002() {
   $facet = facetapi_facet_load('field_dialogue_topic', 'search_api@node_index');
 
   $block_realm = facetapi_realm_load('block');
-  $adapter->getFacet($facet)->getSettings($block_relam)->settings['widget'] = 'facetapi_checkbox_links';
+  $adapter->getFacet($facet)->getSettings($block_realm)->settings['widget'] = 'facetapi_checkbox_links';
   facetapi_save_facet_enabled($adapter, $block_realm, $facet);
 
   $adapter->getFacet($facet)->getSettings(NULL)->settings['operator'] = 'or';
