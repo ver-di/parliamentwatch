@@ -2604,6 +2604,87 @@ function pw_globals_field_default_fields() {
     ),
   );
 
+  // Exported field: 'taxonomy_term-parliaments-field_shown_metrics'.
+  $fields['taxonomy_term-parliaments-field_shown_metrics'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_shown_metrics',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'questions' => 'Fragen und Antworten',
+          'sidejobs' => 'Nebentätigkeiten',
+          'speeches' => 'Gehaltene Reden',
+          'voting_behavior' => 'Abstimmungsverhalten',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'parliaments',
+      'default_value' => array(
+        0 => array(
+          'value' => 'questions',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 9,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_shown_metrics',
+      'label' => 'Dargestellte Metriken',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_buttons',
+        'weight' => '43',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('AC Descriptor');
@@ -2614,6 +2695,7 @@ function pw_globals_field_default_fields() {
   t('Candidate-Check activated');
   t('Comment');
   t('Constituency Rename');
+  t('Dargestellte Metriken');
   t('Election');
   t('Electoral Region');
   t('Filter Disabled');
