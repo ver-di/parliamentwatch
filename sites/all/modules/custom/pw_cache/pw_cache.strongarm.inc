@@ -649,9 +649,7 @@ profile/[node:field-dialogue-recipient]';
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_user_custom_pages';
   $strongarm->value = '[user:field-user-parliament]/profile
-[user:field-user-parliament]
-baden-wuerttemberg
-baden-wuerttemberg/profile';
+[user:field-user-parliament]';
   $export['expire_user_custom_pages'] = $strongarm;
 
   $strongarm = new stdClass();
