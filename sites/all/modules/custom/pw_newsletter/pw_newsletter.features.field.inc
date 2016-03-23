@@ -1284,7 +1284,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
   $fields['paragraphs_item-paragraphs_pw_content-field_pg_donate_targetgroup'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_pg_donate_targetgroup',
@@ -1644,7 +1644,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
   $fields['paragraphs_item-paragraphs_pw_donate-field_pg_donate_targetgroup'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_pg_donate_targetgroup',
@@ -1725,7 +1725,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
   $fields['paragraphs_item-paragraphs_pw_testmonial-field_pg_donate_targetgroup'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_pg_donate_targetgroup',
