@@ -9,6 +9,6 @@
     <?php print render($content['field_pg_content_body']); ?>
   </div>
   <div class="text-center">
-    <a href="<?php print $node_url; ?>" class="button">Jetzt spenden</a>
+    <?php print render($content['field_pg_content_link']); ?>
   </div>
 </div>

@@ -437,6 +437,13 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'paragraphs_pw_donate';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'field_pg_content_body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
     'field_pg_content_title' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -444,10 +451,10 @@ function pw_newsletter_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_pg_content_body' => array(
+    'field_pg_content_link' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_expert',
         ),
       ),
     ),
@@ -681,11 +688,13 @@ function pw_newsletter_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_pg_content_title',
         1 => 'field_pg_content_body',
+        2 => 'field_pg_content_link',
       ),
     ),
     'fields' => array(
       'field_pg_content_title' => 'ds_content',
       'field_pg_content_body' => 'ds_content',
+      'field_pg_content_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
