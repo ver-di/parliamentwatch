@@ -232,7 +232,7 @@ function pw_globals_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<a href="/feedback?url=[node:nid]&width=600&height=400" class="colorbox-node" title="<?php t(\'give feedback\'); ?>">[node:author]</a>',
+      'value' => '<a href="/feedback?url=[node:nid]&width=600&height=400" class="colorbox-node" title="<?php t(\'give feedback\'); ?>">[node:author:field-user-fname] [node:author:field-user-lname]</a>',
       'format' => 'php_code',
     ),
     'use_token' => 1,
