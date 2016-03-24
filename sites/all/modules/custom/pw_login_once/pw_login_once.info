@@ -2,7 +2,7 @@ name = PW Login Once
 description = "Provides functionality for permitted users to send a one-time login link to other users."
 package = Other
 core = 7.x
-version = "7.x-2.8+pw-20141217"
+version = "7.x-2.8+pw-20160324"
 project = "login_one_time"
 datestamp = "1418600132"
 
