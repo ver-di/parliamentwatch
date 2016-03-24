@@ -450,7 +450,7 @@ return $term->tid;';
   /* Display: Petitions */
   $handler = $view->new_display('block', 'Petitions', 'petitions');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Abstimmungsverhalten im Petitions-Check';
+  $handler->display->display_options['title'] = 'Abstimmungsverhalten bei PetitionPlus';
 
   /* Display: Polls */
   $handler = $view->new_display('block', 'Polls', 'polls');
@@ -683,7 +683,7 @@ return $term->tid;';
     t('Argumentation'),
     t('Alle'),
     t('Petitions'),
-    t('Abstimmungsverhalten im Petitions-Check'),
+    t('Abstimmungsverhalten bei PetitionPlus'),
     t('Polls'),
     t('zur Abstimmung'),
     t('Abstimmung'),
