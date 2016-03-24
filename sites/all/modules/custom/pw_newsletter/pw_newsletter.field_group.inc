@@ -25,6 +25,7 @@ function pw_newsletter_field_group_info() {
     'children' => array(
       0 => 'field_blogpost_categories',
       1 => 'field_politician',
+      2 => 'sharebuttons',
     ),
     'format_type' => 'div',
     'format_settings' => array(

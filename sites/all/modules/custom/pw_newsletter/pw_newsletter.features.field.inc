@@ -230,7 +230,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             'taxonomy_term_separator' => ', ',
           ),
           'type' => 'ds_taxonomy_separator',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'inline',
@@ -433,7 +433,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             ),
           ),
           'type' => 'entityreference_label',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'inline',
