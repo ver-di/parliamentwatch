@@ -114,4 +114,4 @@ features[variable][] = rh_node_redirect_newsletter
 features[variable][] = rh_node_redirect_response_newsletter
 features[views_view][] = pw_newsletter
 features[weight][] = newsletter
-mtime = 1458747621
+mtime = 1458836379

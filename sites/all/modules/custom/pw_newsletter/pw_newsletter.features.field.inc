@@ -746,7 +746,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '4',
@@ -1316,23 +1316,10 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'list',
-          'settings' => array(
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'list_default',
-          'weight' => 5,
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'paragraphs_editor_preview' => array(
           'label' => 'above',
