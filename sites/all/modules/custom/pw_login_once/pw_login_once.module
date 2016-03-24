@@ -438,7 +438,7 @@ function pw_login_once_user_options($autocomplete = NULL) {
     $where = '';
     if ($autocomplete) {
       $where = " AND u.name LIKE :autocomplete";
-      $args[':autocomplete'] = '%' . $autocomplete . '.%';
+      $args[':autocomplete'] = '%' . $autocomplete . '%';
     }
     $result = db_query(
       'SELECT u.name AS name FROM {users} u'
@@ -449,7 +449,7 @@ function pw_login_once_user_options($autocomplete = NULL) {
       $args
     );
     foreach ($result as $row) {
-      $options[$row->name] = $row->name;
+      $options[$row->name] = check_plain($row->name);
     }
   }
 
