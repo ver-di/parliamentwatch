@@ -427,6 +427,13 @@ function pw_newsletter_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_pg_donate_targetgroup' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
   );
   $export['paragraphs_item|paragraphs_pw_content|default'] = $ds_fieldsetting;
 
@@ -445,6 +452,13 @@ function pw_newsletter_ds_field_settings_info() {
       ),
     ),
     'field_pg_content_title' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_pg_donate_targetgroup' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
@@ -656,6 +670,7 @@ function pw_newsletter_ds_layout_settings_info() {
         1 => 'field_pg_content_img',
         2 => 'field_pg_content_body',
         3 => 'field_pg_content_link',
+        4 => 'field_pg_donate_targetgroup',
       ),
     ),
     'fields' => array(
@@ -663,6 +678,7 @@ function pw_newsletter_ds_layout_settings_info() {
       'field_pg_content_img' => 'ds_content',
       'field_pg_content_body' => 'ds_content',
       'field_pg_content_link' => 'ds_content',
+      'field_pg_donate_targetgroup' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -690,12 +706,14 @@ function pw_newsletter_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_pg_content_title',
         1 => 'field_pg_content_body',
-        2 => 'field_pg_content_link',
+        2 => 'field_pg_donate_targetgroup',
+        3 => 'field_pg_content_link',
       ),
     ),
     'fields' => array(
       'field_pg_content_title' => 'ds_content',
       'field_pg_content_body' => 'ds_content',
+      'field_pg_donate_targetgroup' => 'ds_content',
       'field_pg_content_link' => 'ds_content',
     ),
     'classes' => array(),

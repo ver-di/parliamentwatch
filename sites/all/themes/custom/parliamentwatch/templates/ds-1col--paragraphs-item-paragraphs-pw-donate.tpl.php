@@ -1,5 +1,5 @@
-<?php $node_url=url($path='node/10508', array('absolute' => TRUE)); ?>
-<div class="relative entity-paragraphs-item">
+<?php $node_url=url('node/10508', array('absolute' => TRUE)); ?>
+<div class="relative entity-paragraphs-item <?php print render($content['field_pg_donate_targetgroup']); ?>">
   <div class="social-media">
     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank">facebook</a>
     <a href="https://twitter.com/intent/tweet?text=Jetzt für abgeordnetenwatch.de spenden&url=<?php print $node_url; ?>" class="twitter" target="_blank">twitter</a>

@@ -1,7 +1,7 @@
 <?php if (!empty($content['field_pg_content_link'])): ?>
-  <?php $node_url=url($path=$field_pg_content_link[0]['url'], array('absolute' => TRUE)); ?>
+  <?php $node_url=url($field_pg_content_link[0]['url'], array('absolute' => TRUE)); ?>
 <?php endif; ?>
-<div class="relative clearfix entity-paragraphs-item <?php print $classes; ?>">
+<div class="relative clearfix entity-paragraphs-item <?php print $classes; ?> <?php print render($content['field_pg_donate_targetgroup']); ?>">
   <?php if (!empty($content['field_pg_content_link'])): ?>
   <div class="social-media">
     <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank">facebook</a>
