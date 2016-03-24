@@ -342,7 +342,7 @@ function pw_dialogues_preprocess_comment(&$variables) {
  */
 function pw_dialogues_questions_and_answers_block() {
   $block = array();
-  $account = menu_get_object('user');
+  $account = _pw_get_current_user();
   $limit = 10;
 
   if (!$account) {
