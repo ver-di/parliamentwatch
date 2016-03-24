@@ -368,14 +368,17 @@ function pw_profiles_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'block',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
+        'ft' => array(),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
         ),
       ),
     ),
@@ -552,6 +555,40 @@ function pw_profiles_ds_field_settings_info() {
           'ow-def-at' => FALSE,
         ),
       ),
+    ),
+    'dialogues_profle' => array(
+      'weight' => '10',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
+    ),
+    'dialogues_profle_filters_header' => array(
+      'weight' => '12',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'dialogues_profle_filters_topic' => array(
+      'weight' => '14',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'dialogues_profle_keyword_search' => array(
+      'weight' => '13',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
   );
   $export['user|user|user_deputy'] = $ds_fieldsetting;
@@ -856,6 +893,40 @@ function pw_profiles_ds_field_settings_info() {
           'ow-def-at' => FALSE,
         ),
       ),
+    ),
+    'dialogues_profle' => array(
+      'weight' => '13',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+        'linked_field' => array(
+          'linked' => 0,
+          'destination' => '',
+          'advanced' => array(
+            'title' => '',
+            'target' => '',
+            'class' => '',
+            'rel' => '',
+            'text' => '',
+          ),
+        ),
+      ),
+    ),
+    'dialogues_profle_filters_header' => array(
+      'weight' => '16',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'dialogues_profle_filters_topic' => array(
+      'weight' => '18',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'dialogues_profle_keyword_search' => array(
+      'weight' => '17',
+      'label' => 'hidden',
+      'format' => 'default',
     ),
   );
   $export['user|user|user_premium'] = $ds_fieldsetting;
