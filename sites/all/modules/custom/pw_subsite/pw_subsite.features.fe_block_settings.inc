@@ -740,8 +740,8 @@ profile/*/deputies',
   );
 
   $export['views-pw_testimonials_header-block'] = array(
-    'cache' => -1,
-    'css_class' => '',
+    'cache' => '-1',
+    'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => 'pw_testimonials_header-block',
     'module' => 'views',
