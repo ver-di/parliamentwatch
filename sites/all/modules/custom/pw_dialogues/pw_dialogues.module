@@ -325,7 +325,7 @@ function pw_dialogues_preprocess_node(&$variables) {
  */
 function pw_dialogues_preprocess_comment(&$variables) {
   $node = $variables['node'];
-  $account = user_load($variables['comment']->uid);
+  $account = _pw_get_current_user();
   if ($node->type == 'dialogue') {
     $variables['classes_array'][] = 'answer';
     $variables['permalink'] = url("node/$node->nid", array('absolute' => TRUE));
