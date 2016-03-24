@@ -329,11 +329,16 @@ function pw_dialogues_preprocess_comment(&$variables) {
   if ($node->type == 'dialogue') {
     $variables['classes_array'][] = 'answer';
     $variables['permalink'] = url("node/$node->nid", array('absolute' => TRUE));
-    $variables['picture'] = render(file_view(file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']), 'pw_file_portrait_s'));
     $variables['title'] = t('Answer by @first_name @last_name', array(
       '@first_name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'],
       '@last_name' => $account->field_user_lname[LANGUAGE_NONE][0]['value'],
     ));
+    $file = file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']);
+    if (!$file) {
+      $info = field_info_field('field_user_picture');
+      $file = file_load($info['settings']['default_image']);
+    }
+    $variables['picture'] = render(file_view($file, 'pw_file_portrait_s'));
   }
 }
 
@@ -367,13 +372,15 @@ function pw_dialogues_questions_and_answers_block() {
 
   pager_default_initialize($response['result count'], $limit, 10);
 
-  $block['subject'] = t('Questions to @name', array('@name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'] . ' ' . $account->field_user_lname[LANGUAGE_NONE][0]['value']));
-  $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
-  $block['content']['pager'] = array(
-    '#theme' => 'pager',
-    '#element' => 10,
-  );
-  $block['content']['#attached']['js'][] = drupal_get_path('module', 'pw_dialogues') . '/pw_dialogues.js';
+  if (!empty($response['results'])) {
+    $block['subject'] = t('Questions to @name', array('@name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'] . ' ' . $account->field_user_lname[LANGUAGE_NONE][0]['value']));
+    $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
+    $block['content']['pager'] = array(
+      '#theme' => 'pager',
+      '#element' => 10,
+    );
+    $block['content']['#attached']['js'][] = drupal_get_path('module', 'pw_dialogues') . '/pw_dialogues.js';
+  }
 
   return $block;
 }
