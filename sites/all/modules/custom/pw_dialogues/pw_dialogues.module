@@ -351,10 +351,7 @@ function pw_dialogues_preprocess_comment(&$variables) {
   if ($node->type == 'dialogue') {
     $variables['classes_array'][] = 'answer';
     $variables['permalink'] = url("node/$node->nid", array('absolute' => TRUE));
-    $variables['title'] = t('Answer by @first_name @last_name', array(
-      '@first_name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'],
-      '@last_name' => $account->field_user_lname[LANGUAGE_NONE][0]['value'],
-    ));
+    $variables['title'] = t('Answer by @name', array('@name' => _pw_get_fullname($account)));
     $file = file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']);
     if (!$file) {
       $info = field_info_field('field_user_picture');
@@ -414,7 +411,7 @@ function pw_dialogues_questions_and_answers_block() {
   pager_default_initialize($response['result count'], $limit, 10);
 
   if (!empty($response['results'])) {
-    $block['subject'] = t('Questions to @name', array('@name' => $account->field_user_fname[LANGUAGE_NONE][0]['value'] . ' ' . $account->field_user_lname[LANGUAGE_NONE][0]['value']));
+    $block['subject'] = t('Questions to @name', array('@name' => _pw_get_fullname($account)));
     $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
     $block['content']['pager'] = array(
       '#theme' => 'pager',
