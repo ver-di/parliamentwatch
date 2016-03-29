@@ -435,7 +435,7 @@ function pw_dialogues_questions_and_answers_filters_header_block() {
     '#tag' => 'a',
     '#value' => t('Remove all filters'),
     '#attributes' => array(
-      'href' => url($_GET['q']) . '#block-pw-dialogues-qa',
+      'href' => url($_GET['q']) . '#pw-block-questions-and-answers',
     ),
   );
 
@@ -451,7 +451,7 @@ function pw_dialogues_questions_and_answers_search_block() {
 
   $form = array(
     '#type' => 'form',
-    '#action' => '#block-pw-dialogues-qa',
+    '#action' => '#pw-block-questions-and-answers',
     '#method' => 'GET',
     '#attributes' => array('class' => array('form-search')),
   );
