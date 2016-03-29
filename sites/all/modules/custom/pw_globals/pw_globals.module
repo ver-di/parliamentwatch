@@ -371,6 +371,11 @@ function _pw_uac_add_conditions(&$query, $conditions = array()){
   if(array_key_exists('parliament', $conditions)){
     $query->condition($alias_uac.'.parliament_name', $conditions['parliament']);
   }
+
+  // condition uid
+  if(array_key_exists('uid', $conditions)){
+    $query->condition($alias_uac.'.uid', $conditions['uid']);
+  }
 }
 
 
