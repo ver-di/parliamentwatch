@@ -63,6 +63,15 @@ function parliamentwatch_preprocess_node(&$variables) {
     if (empty($petition_status) || $petition_status[0]['value'] == "collecting_donations" || $petition_status[0]['value'] == "open_for_signings"){
       $variables["main_node_form"] = drupal_render(_block_get_renderable_array($rendered_block));
     }
+    elseif ($petition_status[0]['value'] == "asking_parliament"){
+      #$block = module_invoke('webform', 'block_view', 'client-block-111889');
+      #$variables["main_node_form"] =  render($block['content']);
+
+      $blockObject = block_load('webform', 'client-block-111889');
+      $block = _block_get_renderable_array(_block_render_blocks(array($blockObject)));
+      $variables["main_node_form"] = drupal_render($block);
+    }
+
     switch ($variables['field_petition_partner'][0]['value']) {
       case "change.org":
       $variables['partner_html'] = theme('image', array(

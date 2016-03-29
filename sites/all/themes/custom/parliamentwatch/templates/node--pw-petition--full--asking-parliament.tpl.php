@@ -29,7 +29,7 @@ if (pw_vote_check_user_allowed()):
 <div class="managed-content clearfix push-bottom-l">
   <div class="floatbox floatbox-right">
     <i class="icon-signing aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Unterschriften werden gesammelt</span></i>
-    <p class="pushfloat-0">Die Petition hat <?print number_format($field_petition_signings[0]['value'],0,',','.')?> von <?php print number_format($field_petition_required[0]['value'],0,',','.'); ?> benötigten Unterschriften erreicht.</p>
+    <p class="pushfloat-0">Die Petition hat <?php print number_format($field_petition_signings[0]['value'],0,',','.')?> von <?php print number_format($field_petition_required[0]['value'],0,',','.'); ?> benötigten Unterschriften erreicht.</p>
     <i class="icon-microphone aw-icon-1x aw-icon-circle aw-icon-circle-disabled float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition in der Meinungsumfrage</span></i>
     <p class="pushfloat-0">Laut repräsentativer Meinungsumfrage genießt das Anliegen eine Mehrheit in der Bevölkerung.</p>
     <i class="icon-politician aw-icon-1x aw-icon-circle aw-icon-circle-brand float-left push-right-s push-bottom-xs"><span class="element-invisible">Petition im Parlament</span></i>
@@ -37,7 +37,12 @@ if (pw_vote_check_user_allowed()):
   </div>
   <?php print check_markup($field_petition_text_parliament[0]['value']); ?>
 </div>
-
+<?php if (!pw_vote_check_user_allowed()): ?>
+  <div class="block block-webform compact-form">
+    <?php print theme('status_messages'); ?>
+    <?php print $main_node_form; ?>
+  </div>
+<?php endif; ?>
 <?php
     // render block of latest positions
 $block = module_invoke('views', 'block_view', 'pw_vote_positions-block');
