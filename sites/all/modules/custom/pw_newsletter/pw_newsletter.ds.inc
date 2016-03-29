@@ -475,6 +475,30 @@ function pw_newsletter_ds_field_settings_info() {
   );
   $export['paragraphs_item|paragraphs_pw_donate|default'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'paragraphs_item|paragraphs_pw_testmonial|default';
+  $ds_fieldsetting->entity_type = 'paragraphs_item';
+  $ds_fieldsetting->bundle = 'paragraphs_pw_testmonial';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_pg_donate_targetgroup' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_pg_content_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+  );
+  $export['paragraphs_item|paragraphs_pw_testmonial|default'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -729,6 +753,40 @@ function pw_newsletter_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['paragraphs_item|paragraphs_pw_donate|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'paragraphs_item|paragraphs_pw_testmonial|default';
+  $ds_layout->entity_type = 'paragraphs_item';
+  $ds_layout->bundle = 'paragraphs_pw_testmonial';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_pg_testimonial_er',
+        1 => 'field_pg_donate_targetgroup',
+        2 => 'field_pg_content_link',
+      ),
+    ),
+    'fields' => array(
+      'field_pg_testimonial_er' => 'ds_content',
+      'field_pg_donate_targetgroup' => 'ds_content',
+      'field_pg_content_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['paragraphs_item|paragraphs_pw_testmonial|default'] = $ds_layout;
 
   return $export;
 }
