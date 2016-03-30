@@ -282,7 +282,7 @@ Alle|Ganze Plattform durchsuchen
   $handler->display->display_options['sorts']['politician_index_search_api_url']['id'] = 'politician_index_search_api_url';
   $handler->display->display_options['sorts']['politician_index_search_api_url']['table'] = 'search_api_multi';
   $handler->display->display_options['sorts']['politician_index_search_api_url']['field'] = 'politician_index_search_api_url';
-  /* Sortierkriterien: Beschädigte/fehlende Behandlungsroutine */
+  /* Sortierkriterien: Main Index: Ordinal date for search results (indexed) */
   $handler->display->display_options['sorts']['main_index_field_search_sort_date']['id'] = 'main_index_field_search_sort_date';
   $handler->display->display_options['sorts']['main_index_field_search_sort_date']['table'] = 'search_api_multi';
   $handler->display->display_options['sorts']['main_index_field_search_sort_date']['field'] = 'main_index_field_search_sort_date';
@@ -530,7 +530,7 @@ no-show|nicht beteiligt',
   $handler->display->display_options['fields']['field_politician']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_politician']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_politician']['bypass_access'] = 0;
-  /* Feld: Indexed Inhalt: The main body text » Text */
+  /* Feld: The main body text: Text (indexed) */
   $handler->display->display_options['fields']['body_value']['id'] = 'body_value';
   $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_node_index';
   $handler->display->display_options['fields']['body_value']['field'] = 'body_value';
@@ -601,7 +601,7 @@ no-show|nicht beteiligt',
   $handler->display->display_options['fields']['field_vote']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_vote']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_vote']['bypass_access'] = 0;
-  /* Feld: Indexed Inhalt: The main body text » Text */
+  /* Feld: The main body text: Text (indexed) */
   $handler->display->display_options['fields']['body_value_1']['id'] = 'body_value_1';
   $handler->display->display_options['fields']['body_value_1']['table'] = 'search_api_index_node_index';
   $handler->display->display_options['fields']['body_value_1']['field'] = 'body_value';
@@ -749,7 +749,7 @@ no-show|nicht beteiligt',
     t(','),
     t('Parliament'),
     t('Politician'),
-    t('The main body text » Text'),
+    t('Text (indexed)'),
     t('Node Reference'),
     t('Constituency (indexed)'),
     t('First Name (indexed)'),
