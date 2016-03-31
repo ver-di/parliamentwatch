@@ -395,7 +395,7 @@ function pw_dialogues_questions_and_answers_block() {
   $q = search_api_query('node_index');
   $q->condition('type', 'dialogue');
   $q->condition('field_dialogue_recipient', $account->uid);
-  $q->condition('comment_count', 0, '>');
+  //$q->condition('comment_count', 0, '>');
 
   if (drupal_get_query_parameters()['keywords']) {
     $f = $q->createFilter('OR');
@@ -467,7 +467,7 @@ function pw_dialogues_questions_and_answers_search_block() {
   );
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('Search'),
+    '#value' => t('search'),
     '#attributes' => array('class' => array('form-search-submit')),
   );
 
