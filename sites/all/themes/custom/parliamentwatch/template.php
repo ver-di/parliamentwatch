@@ -67,7 +67,7 @@ function parliamentwatch_preprocess_node(&$variables) {
       #$block = module_invoke('webform', 'block_view', 'client-block-111889');
       #$variables["main_node_form"] =  render($block['content']);
 
-      $blockObject = block_load('webform', 'client-block-111889');
+      $blockObject = block_load('webform', 'client-block-111918');
       $block = _block_get_renderable_array(_block_render_blocks(array($blockObject)));
       $variables["main_node_form"] = drupal_render($block);
     }
