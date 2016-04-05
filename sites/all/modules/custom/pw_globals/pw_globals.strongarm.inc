@@ -791,9 +791,11 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lazyloader_paths';
-  $strongarm->value = '/petitionen/
-/petitions/
-/abstimmungen/';
+  $strongarm->value = 'petitionen/*
+petitions/*
+*/petitionen/*
+*/petitions/*
+*/abstimmungen/*';
   $export['lazyloader_paths'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -18,9 +18,9 @@ function pw_newsletter_ckeditor_profile_defaults() {
         'uicolor' => 'default',
         'uicolor_user' => 'default',
         'toolbar' => '[
-    [\'Source\',\'Cut\',\'Copy\',\'SpellChecker\',\'Undo\',\'Redo\',\'Find\',\'Replace\',\'RemoveFormat\',\'linkit\',\'Link\',\'Unlink\',\'Maximize\'],
+    [\'Source\',\'Cut\',\'Copy\',\'SpellChecker\',\'Undo\',\'Redo\',\'Find\',\'Replace\',\'RemoveFormat\',\'linkit\',\'Media\',\'Link\',\'Unlink\',\'Maximize\'],
     \'/\',
-    [\'Format\',\'Bold\',\'Subscript\',\'Superscript\',\'NumberedList\',\'BulletedList\',\'Blockquote\',\'SpecialChar\']
+    [\'Styles\',\'Format\',\'Bold\',\'Subscript\',\'Superscript\',\'NumberedList\',\'BulletedList\',\'Blockquote\',\'SpecialChar\']
 ]',
         'expand' => 't',
         'width' => '100%',
@@ -75,6 +75,18 @@ function pw_newsletter_ckeditor_profile_defaults() {
                 'icon' => 'linkit.png',
               ),
             ),
+          ),
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for inserting images from Drupal media module',
+            'path' => '%plugin_dir%media/',
+            'buttons' => array(
+              'Media' => array(
+                'label' => 'Media',
+                'icon' => 'images/icon.gif',
+              ),
+            ),
+            'default' => 'f',
           ),
         ),
       ),

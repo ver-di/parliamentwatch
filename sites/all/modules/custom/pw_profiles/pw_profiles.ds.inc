@@ -376,17 +376,6 @@ function pw_profiles_ds_field_settings_info() {
             'text' => '',
           ),
         ),
-        'linked_field' => array(
-          'linked' => 0,
-          'destination' => '',
-          'advanced' => array(
-            'title' => '',
-            'target' => '',
-            'class' => '',
-            'rel' => '',
-            'text' => '',
-          ),
-        ),
       ),
     ),
     'dialogues_profle_filters_header' => array(
@@ -1589,9 +1578,9 @@ function pw_profiles_ds_layout_settings_info() {
       'right_2' => array(
         9 => 'dialogues_profle_filters_header',
         10 => 'dialogues_profle_keyword_search',
-        11 => 'dialogues_profle_filters_topic',
       ),
       'ds_hidden' => array(
+        11 => 'dialogues_profle_filters_topic',
         12 => 'field_user_party',
       ),
     ),
@@ -1607,7 +1596,7 @@ function pw_profiles_ds_layout_settings_info() {
       'question_form' => 'left_2',
       'dialogues_profle_filters_header' => 'right_2',
       'dialogues_profle_keyword_search' => 'right_2',
-      'dialogues_profle_filters_topic' => 'right_2',
+      'dialogues_profle_filters_topic' => 'ds_hidden',
       'field_user_party' => 'ds_hidden',
     ),
     'classes' => array(),
@@ -1660,9 +1649,9 @@ function pw_profiles_ds_layout_settings_info() {
       'right_2' => array(
         12 => 'dialogues_profle_filters_header',
         13 => 'dialogues_profle_keyword_search',
-        14 => 'dialogues_profle_filters_topic',
       ),
       'ds_hidden' => array(
+        14 => 'dialogues_profle_filters_topic',
         15 => 'field_user_fname',
         16 => 'field_user_lname',
         17 => 'field_user_party',
@@ -1683,7 +1672,7 @@ function pw_profiles_ds_layout_settings_info() {
       'question_form' => 'left_2',
       'dialogues_profle_filters_header' => 'right_2',
       'dialogues_profle_keyword_search' => 'right_2',
-      'dialogues_profle_filters_topic' => 'right_2',
+      'dialogues_profle_filters_topic' => 'ds_hidden',
       'field_user_fname' => 'ds_hidden',
       'field_user_lname' => 'ds_hidden',
       'field_user_party' => 'ds_hidden',
@@ -1777,9 +1766,9 @@ function pw_profiles_ds_layout_settings_info() {
       'right_2' => array(
         15 => 'dialogues_profle_filters_header',
         16 => 'dialogues_profle_keyword_search',
-        17 => 'dialogues_profle_filters_topic',
       ),
       'ds_hidden' => array(
+        17 => 'dialogues_profle_filters_topic',
         18 => 'field_user_party',
       ),
     ),
@@ -1801,7 +1790,7 @@ function pw_profiles_ds_layout_settings_info() {
       'question_form' => 'left_2',
       'dialogues_profle_filters_header' => 'right_2',
       'dialogues_profle_keyword_search' => 'right_2',
-      'dialogues_profle_filters_topic' => 'right_2',
+      'dialogues_profle_filters_topic' => 'ds_hidden',
       'field_user_party' => 'ds_hidden',
     ),
     'classes' => array(),
