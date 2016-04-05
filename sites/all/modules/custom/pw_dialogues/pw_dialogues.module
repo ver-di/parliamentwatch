@@ -386,15 +386,18 @@ function pw_dialogues_preprocess_comment_placeholder(&$variables) {
 function pw_dialogues_questions_and_answers_block() {
   $block = array();
   $account = _pw_get_current_user();
+  $parliament = _pw_get_current_parliament_term();
   $limit = 10;
 
-  if (!$account) {
+  if (!$account || !$parliament) {
     return;
   }
+
 
   $q = search_api_query('node_index');
   $q->condition('type', 'dialogue');
   $q->condition('field_dialogue_recipient', $account->uid);
+  $q->condition('field_parliament:name', $parliament->name);
   //$q->condition('comment_count', 0, '>');
 
   if (drupal_get_query_parameters()['keywords']) {
