@@ -264,7 +264,7 @@ function pw_vote_mail($key, &$message, $params) {
   $w_vote = $params['w_vote'];
 
   // set subject
-  $message['subject'] = 'Vielen Dank für Ihre Teilnahme am Petitions-Check!';
+  $message['subject'] = 'Vielen Dank für Ihre Teilnahme an PetitionPlus!';
 
   // recipient name
   $recipient_name = $w_vote->field_vote_user->field_user_fname->value() . ' ' . $w_vote->field_vote_user->field_user_lname->value();

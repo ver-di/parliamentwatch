@@ -1,8 +1,8 @@
 <h2><?php print $salutation; ?>,</h2>
 
-<p>vielen Dank, dass Sie Ihren Standpunkt beim Petitions-Check mitgeteilt haben! </p>
+<p>vielen Dank, dass Sie Ihren Standpunkt bei PetitionPlus mitgeteilt haben.</p>
 
-<h3>Ihre Angaben im Petitions-Check</h3>
+<h3>Ihre Angaben zur PetitionPlus:</h3>
 
 <p><strong>Stimmverhalten:</strong> <?php print $your_vote; ?></p>
 
