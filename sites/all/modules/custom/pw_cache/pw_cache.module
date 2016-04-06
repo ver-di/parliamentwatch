@@ -91,13 +91,23 @@ function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
             // called url: scheme from host + host from target server + path
             $cache_url = $url_host['scheme'] . '://' . $url_server['host'] . '/' . $path;
 
-            // send host information and X-Refresh header.
+            // ssl context options
+            $context = array(
+             'ssl' => array(
+               'verify_peer'   => false,
+               'verify_peer_name'   => false,
+               )
+             );
+            $sslContext = stream_context_create($context);
+
+            // send host information, X-Refresh header and SSL Context.
             $options = array(
               'headers' => array(
                 'Host' => $url_host['host'],
                 'X-Refresh' => 1,
-              ),
-            );
+                ),
+              'context' => $sslContext,
+              );
             httprl_request($cache_url, $options);
           }
         }
