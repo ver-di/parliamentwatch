@@ -488,6 +488,92 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
     ),
   );
 
+  // Exported field: 'node-newsletter-field_show'.
+  $fields['node-newsletter-field_show'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_show',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'newsletter',
+      'default_value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 33,
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_show',
+      'label' => 'Inhalt in Übersicht anzeigen',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_onoff',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'node-newsletter-field_teaser_image'.
   $fields['node-newsletter-field_teaser_image'] = array(
     'field_config' => array(
@@ -2179,6 +2265,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
   t('Diese URL erzeugt auch die Social Media Icons');
   t('Dieses Bild wird nur für die Darstellung auf der Webseite benutzt.');
   t('Geben Sie den Titel der Blogartikel ein, dessen Teaser Sie anzeigen wollen.');
+  t('Inhalt in Übersicht anzeigen');
   t('Klasse');
   t('Link');
   t('Teaser image');
