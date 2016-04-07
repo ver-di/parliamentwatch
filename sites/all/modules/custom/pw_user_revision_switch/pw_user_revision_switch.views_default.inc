@@ -1803,7 +1803,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '<div class="pw-dialogues-link">[nothing]</div>
-[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. Ggfs. werden auf dieser Profilseite auch ältere Fragen und Antworten angezeigt.</div></div>';
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. </div></div>';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_class'] = 'float-left bubble tiny';
@@ -1814,6 +1814,17 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 0,
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: User revision: Vid */
@@ -2345,7 +2356,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '<div class="pw-dialogues-link">[nothing]</div>
-[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. Ggfs. werden auf dieser Profilseite auch ältere Fragen und Antworten angezeigt.</div></div>';
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. </div></div>';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_class'] = 'float-left bubble tiny';
@@ -2356,6 +2367,17 @@ return $result;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 0,
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
   );
 
   /* Display: Short Profile Deputy Subpage */
@@ -2883,7 +2905,7 @@ return $term->tid;';
     t('Frage stellen'),
     t('Zu den Fragen und Antworten'),
     t('<div class="pw-dialogues-link">[nothing]</div>
-[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. Ggfs. werden auf dieser Profilseite auch ältere Fragen und Antworten angezeigt.</div></div>'),
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. </div></div>'),
     t('<div class="pw-dialogues-link">An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt</div>
 [field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]'),
     t('Short Profile Premium Subpage'),
