@@ -390,9 +390,10 @@ function pw_dialogues_questions_and_answers_block() {
   $parliament = _pw_get_current_parliament_term();
   $limit = 10;
 
-  if (!$account) {
+  if (!$account || !$parliament) {
     return;
   }
+
 
   $q = search_api_query('node_index');
   $q->condition('type', 'dialogue');
