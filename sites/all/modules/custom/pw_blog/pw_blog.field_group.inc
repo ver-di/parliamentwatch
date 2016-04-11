@@ -53,8 +53,8 @@ function pw_blog_field_group_info() {
     'weight' => '4',
     'children' => array(
       0 => 'field_blogpost_blogtags',
-      1 => 'sharebuttons',
-      2 => 'custom_comment_counter',
+      1 => 'custom_comment_counter',
+      2 => 'sharebuttons',
     ),
     'format_type' => 'div',
     'format_settings' => array(

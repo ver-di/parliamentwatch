@@ -32,9 +32,8 @@
   </div>
 <?php endif; ?>
 <div class="clear clearfix">
-  <div class="comment-count">
-    <a href="<?php print $node_url; ?>#comments" title="Direkt zu den Kommentaren">
-      <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
-    </a>
-  </div>
+  <a href="#comments" class="medium">
+    <i class="icon-icon-comment"></i>
+    <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
+  </a>
 </div>

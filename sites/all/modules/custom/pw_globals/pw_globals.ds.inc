@@ -256,13 +256,13 @@ function pw_globals_ds_custom_fields_info() {
 // Load and print comment count
 $node = node_load(arg(1));
 if($node->comment_count == 0){
-    print \'<a href="#comments" title="\'.t(\'go to comments\').\'">\'.t(\'no comments yet\').\'</a>\';
+    print \'<a href="#comments" class="medium" title="\'.t(\'go to comments\').\'"><i class="icon-icon-comment"></i> \'.t(\'no comments yet\').\'</a>\';
 }
 else if($node->comment_count == 1){
-    print \'<a href="#comments" title="\'.t("go to comments").\'">\'.t("1 comment").\'</a>\';
+    print \'<a href="#comments" class="medium" title="\'.t("go to comments").\'"><i class="icon-icon-comment"></i> \'.t("1 comment").\'</a>\';
 }
 else{
-    print  \'<a href="#comments" title="\'.t("go to comments").\'">\'.$node->comment_count.t(" comments").\'</a>\';
+    print  \'<a href="#comments" class="medium" title="\'.t("go to comments").\'"><i class="icon-icon-comment"></i> \'.$node->comment_count.t(" comments").\'</a>\';
 }
 
 ?>',

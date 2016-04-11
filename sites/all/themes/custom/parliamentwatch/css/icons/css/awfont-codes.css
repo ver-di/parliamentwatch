@@ -80,3 +80,6 @@
 .icon-voting:before { content: '\e84e'; } /* '' */
 .icon-bundestag:before { content: '\e84f'; } /* '' */
 .icon-checkbox-unchecked:before { content: '\e850'; } /* '' */
+.icon-icon-calendar:before { content: '\e851'; } /* '' */
+.icon-icon-comment:before { content: '\e852'; } /* '' */
+.icon-icon-nl_registration:before { content: '\e853'; } /* '' */

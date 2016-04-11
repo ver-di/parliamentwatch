@@ -6,7 +6,7 @@
 @import url("pw_kandidatencheck.css");
 @import url("slick.css");
 @import url("jquery.mmenu.all.css");
-@import url("icons/css/awfont20150517.css");
+@import url("icons/css/awfont.css");
 
 /*
 	LAYOUT
@@ -1275,7 +1275,7 @@ li.pw-list-item:last-child {
   margin-bottom: 1em;
 }
 #block-views-exp-pw-search-api-main-page .block-title:after {
-  font-family: "awfont20150517";
+  font-family: "awfont";
   content: "\e83a";
   padding-left: 1ex;
 }
@@ -2035,7 +2035,7 @@ ul.tabs li a:active {
   padding-left: 0;
 }
 .view-pw-testimonials-header .more-link a:after {
-  font-family: "awfont20150517";
+  font-family: "awfont";
   content: "\e841";
   font-size: 1.4em;
   font-weight: normal;
@@ -2878,7 +2878,7 @@ form .messages.error:not(.messages-inline):before {
 }
 form .error:before {
     color: #fe0002;
-    font-family: "awfont20150517";
+    font-family: "awfont";
     content: "\e823";
     font-size: 1.2em;
     margin-right: 4px;
@@ -3643,6 +3643,10 @@ form .webform-component-checkboxes .description {
 .view-mode-user_deputy h1,
 .view-mode-user_premium h1 {
     margin-right: 72px;
+}
+
+.sharebuttons{
+  margin-bottom: 20px;
 }
 
 

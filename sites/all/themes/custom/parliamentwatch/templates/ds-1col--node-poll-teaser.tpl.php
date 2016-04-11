@@ -30,7 +30,7 @@
   </div>
   <?php if (!empty($content['body'])): ?>
     <div class="pw-responsive-list-contents push-bottom-xl">
-        <?php print render($content['body']); ?>
+      <?php print render($content['body']); ?>
     </div>
   <?php endif; ?>
   <div class="text-right absolute bottom right">
@@ -43,9 +43,8 @@
       <?php print render($content['field_blogpost_categories']); ?>
     </div>
   <?php endif; ?>
-  <div class="comment-count">
-    <a href="<?php print $node_url; ?>#comments" title="zu den Kommentaren der Abstimmung">
-      <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
-    </a>
-  </div>
+  <a href="#comments" class="medium">
+    <i class="icon-icon-comment"></i>
+    <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
+  </a>
 </div>
