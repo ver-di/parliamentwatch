@@ -93,19 +93,19 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
 
         // no start date was found - publish last end date
         elseif(!empty($parliament_end_date)){
-          $body_markup = '<div class="pw-messages warning">Die Fragefunktion ist diesem Profil wurde am :date_end geschlossen.</div>';
+          $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde am :date_end geschlossen.</div>';
           $body_markup = str_replace(':date_end', date('d.m.Y H:i', strtotime($parliament_end_date)), $body_markup);
         }
         // no dates were found - publish general message
         else{
-          $body_markup = '<div class="pw-messages warning">Die Fragefunktion ist diesem Profil wurde geschlossen.</div>';
+          $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde geschlossen.</div>';
         }
       }
     }
 
     // check user valid dates in case there was no message set before
     if(empty($body_markup)){
-      $body_markup = '<div class="pw-messages warning">Die Fragefunktion ist diesem Profil wurde am :date_end geschlossen.</div>';
+      $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde am :date_end geschlossen.</div>';
     }
 
     */
