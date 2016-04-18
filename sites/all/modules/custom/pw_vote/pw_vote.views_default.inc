@@ -59,6 +59,11 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid']['required'] = TRUE;
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
+  $handler->display->display_options['relationships']['field_vote_node_target_id']['id'] = 'field_vote_node_target_id';
+  $handler->display->display_options['relationships']['field_vote_node_target_id']['table'] = 'field_data_field_vote_node';
+  $handler->display->display_options['relationships']['field_vote_node_target_id']['field'] = 'field_vote_node_target_id';
+  $handler->display->display_options['relationships']['field_vote_node_target_id']['required'] = TRUE;
   /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -95,12 +100,6 @@ function pw_vote_views_default_views() {
     181527986 => '181527986',
   );
   $handler->display->display_options['filters']['rid']['group'] = 1;
-  /* Filterkriterium: Inhalt: Node Reference (field_vote_node) */
-  $handler->display->display_options['filters']['field_vote_node_target_id']['id'] = 'field_vote_node_target_id';
-  $handler->display->display_options['filters']['field_vote_node_target_id']['table'] = 'field_data_field_vote_node';
-  $handler->display->display_options['filters']['field_vote_node_target_id']['field'] = 'field_vote_node_target_id';
-  $handler->display->display_options['filters']['field_vote_node_target_id']['operator'] = 'regular_expression';
-  $handler->display->display_options['filters']['field_vote_node_target_id']['value']['value'] = '.*51264.*';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
@@ -122,6 +121,7 @@ function pw_vote_views_default_views() {
     t('letzte Seite »'),
     t('Weitere Positionen anzeigen'),
     t('Autor'),
+    t('Inhalt entity referenced from field_vote_node'),
     t('Block'),
   );
   $export['pw_vote_positions'] = $view;
