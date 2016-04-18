@@ -729,9 +729,8 @@ function pw_vote_views_query_alter(&$view, &$query) {
     $query->add_where(1,'sm_field_vote_node', $node_id, 'LIKE');
   }
   if ($view->name == 'pw_vote_positions' && arg(0) == 'node' && is_numeric(arg(1))) {
-    #$node_id = "*".arg(1)."*";
-    #var_dump($query);
-    #$query->add_where(1,'ds_field_vote_node', $node_id, 'LIKE');
+    $node_id = menu_get_object()->nid;
+    $query->add_where(1,'field_data_field_vote_node.field_vote_node_target_id', $node_id, '=');
   }
 }
 
