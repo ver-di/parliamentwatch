@@ -94,3 +94,14 @@ function subscribe_to_newsletter(){
 }
 }
 
+/**
+ * Implements hook_form_alter().
+ */
+function pw_newsletter_form_alter(&$form, &$form_state, $form_id) {
+
+  if($form_id == 'newsletter_node_form' && is_null($form['nid']['#value'])){
+
+    // set default value for piwik campaign
+    $form["field_piwik_campaign"][LANGUAGE_NONE][0]['value']['#default_value'] = "nl".date("Ymd");
+  }
+}
