@@ -386,20 +386,16 @@ function pw_dialogues_preprocess_comment_placeholder(&$variables) {
 function pw_dialogues_questions_and_answers_block() {
   $block = array();
   $account = _pw_get_current_user();
-  $is_candidate = _pw_user_has_role($account, 'Candidate');
-  $parliament = _pw_get_current_parliament_term();
   $limit = 10;
 
-  if (!$account || !$parliament) {
+  if (!$account) {
     return;
   }
-
 
   $q = search_api_query('node_index');
   $q->condition('type', 'dialogue');
   $q->condition('field_dialogue_recipient', $account->uid);
-  $q->condition('field_parliament:name', $parliament->name);
-  $q->condition('field_dialogue_before_election', $is_candidate);
+  $q->condition('comment_count', 0, '>');
 
   if (drupal_get_query_parameters()['keywords']) {
     $f = $q->createFilter('OR');
@@ -471,11 +467,29 @@ function pw_dialogues_questions_and_answers_search_block() {
   );
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => t('search'),
+    '#value' => t('Search'),
     '#attributes' => array('class' => array('form-search-submit')),
   );
 
   $block['content']['form'] = $form;
 
   return $block;
+}
+
+/**
+ * Provides a human readable base path for all profile pages with dialogue filters.
+ */
+function pw_dialogues_facetapi_pretty_paths_base_path_provider() {
+  $base_path_providers = array(
+    'pwcustom' => array(
+      'handler' => array(
+        'label' => t('PW Custom base path provider'),
+        'class' => 'PwDialoguesCustomBasePathProvider',
+        'description' => 'Custom version for dialogues on profile pages.',
+      ),
+    ),
+  );
+  // Allow other modules to alter the base path provider definitions.
+  drupal_alter('facetapi_pretty_paths_base_path_provider', $base_path_providers);
+  return $base_path_providers;
 }
