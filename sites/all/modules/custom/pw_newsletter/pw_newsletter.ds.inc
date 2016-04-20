@@ -122,7 +122,7 @@ function pw_newsletter_ds_field_settings_info() {
       ),
     ),
     'title' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -212,6 +212,11 @@ function pw_newsletter_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_reset',
         ),
+      ),
+    ),
+    'field_piwik_campaign' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );
@@ -561,12 +566,13 @@ function pw_newsletter_ds_layout_settings_info() {
         2 => 'sharebuttons',
         3 => 'group_meta',
         4 => 'field_blogpost_categories',
-        5 => 'field_politician',
-        6 => 'body',
+        5 => 'field_piwik_campaign',
+        6 => 'field_politician',
+        7 => 'body',
         8 => 'field_newsletter_paragraph',
       ),
       'ds_hidden' => array(
-        7 => 'title',
+        9 => 'title',
       ),
     ),
     'fields' => array(
@@ -575,10 +581,11 @@ function pw_newsletter_ds_layout_settings_info() {
       'sharebuttons' => 'ds_content',
       'group_meta' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
+      'field_piwik_campaign' => 'ds_content',
       'field_politician' => 'ds_content',
       'body' => 'ds_content',
-      'title' => 'ds_hidden',
       'field_newsletter_paragraph' => 'ds_content',
+      'title' => 'ds_hidden',
     ),
     'classes' => array(),
     'wrappers' => array(

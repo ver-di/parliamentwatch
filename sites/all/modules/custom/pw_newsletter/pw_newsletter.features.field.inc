@@ -61,7 +61,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
-            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -217,7 +216,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'inline',
           'module' => 'ds',
           'settings' => array(
-            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -309,7 +307,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'module' => 'paragraphs',
           'settings' => array(
-            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -324,7 +321,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             'view_mode' => 'full',
           ),
           'type' => 'paragraphs_view',
-          'weight' => '32',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -406,10 +403,10 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'bundle' => 'newsletter',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Bitte keine Leer-, Sonderzeichen oder Umlaute verwenden.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
             'linked_field' => array(
@@ -425,7 +422,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             ),
           ),
           'type' => 'text_default',
-          'weight' => 34,
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -557,7 +554,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'inline',
           'module' => 'entityreference',
           'settings' => array(
-            'field_delimiter' => '',
             'link' => 1,
             'linked_field' => array(
               'advanced' => array(
@@ -662,22 +658,9 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
-          'settings' => array(
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'list_default',
-          'weight' => 33,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '34',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -749,7 +732,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '32',
+          'weight' => '33',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -2389,6 +2372,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
   // Included for use with string extractors like potx.
   t('Abschnitt');
   t('Bild');
+  t('Bitte keine Leer-, Sonderzeichen oder Umlaute verwenden.');
   t('Bitte wählen Sie die Kategorien, welche die Themen im Newsletter bestmöglich beschreiben. Zur Verfügung stehen die selben Kategorien, die z.B. auch Blogartikeln, Abstimmungen und Petitionen zugeordnet werden.');
   t('Blogartikel');
   t('Body');
