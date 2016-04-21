@@ -106,6 +106,9 @@ function pw_poll_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'pw_newsletter' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

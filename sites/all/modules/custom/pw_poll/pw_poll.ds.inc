@@ -17,6 +17,13 @@ function pw_poll_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'poll';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'field_blogpost_categories' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
     'field_parliament' => array(
       'formatter_settings' => array(
         'ft' => array(
