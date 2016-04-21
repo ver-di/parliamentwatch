@@ -31,11 +31,6 @@ function pw_newsletter_filter_default_formats() {
           'protocol_style' => 'full',
         ),
       ),
-      'media_filter' => array(
-        'weight' => '-48',
-        'status' => '1',
-        'settings' => array(),
-      ),
       'filter_html' => array(
         'weight' => '-47',
         'status' => '1',
