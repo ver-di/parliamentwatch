@@ -19,4 +19,3 @@ class PwDialoguesCustomBasePathProvider implements FacetApiPrettyPathsBasePathPr
   }
 
 }
- 

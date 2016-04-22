@@ -61,7 +61,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
-            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -164,7 +163,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'summary_rows' => 5,
         ),
         'type' => 'text_textarea_with_summary',
-        'weight' => '2',
+        'weight' => '4',
       ),
     ),
   );
@@ -217,7 +216,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'inline',
           'module' => 'ds',
           'settings' => array(
-            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -275,7 +273,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '5',
+        'weight' => '7',
       ),
     ),
   );
@@ -309,7 +307,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'module' => 'paragraphs',
           'settings' => array(
-            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -324,7 +321,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             'view_mode' => 'full',
           ),
           'type' => 'paragraphs_view',
-          'weight' => '32',
+          'weight' => '5',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -365,7 +362,140 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'paragraphs_embed',
-        'weight' => '3',
+        'weight' => '5',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-newsletter-field_piwik_campaign'.
+  $fields['node-newsletter-field_piwik_campaign'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_piwik_campaign',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '100',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'newsletter',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Bitte keine Leer-, Sonderzeichen oder Umlaute verwenden.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'text_default',
+          'weight' => '3',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_piwik_campaign',
+      'label' => 'Piwik Campaign',
+      'required' => 0,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 'copyright',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'html_mail' => 'html_mail',
+            'managed_content' => 'managed_content',
+            'newsletter' => 'newsletter',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'html_mail' => array(
+                'weight' => '0',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'newsletter' => array(
+                'weight' => '0',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '2',
       ),
     ),
   );
@@ -424,7 +554,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'inline',
           'module' => 'entityreference',
           'settings' => array(
-            'field_delimiter' => '',
             'link' => 1,
             'linked_field' => array(
               'advanced' => array(
@@ -483,7 +612,80 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'size' => '150',
         ),
         'type' => 'entityreference_autocomplete_tags',
-        'weight' => '4',
+        'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'node-newsletter-field_show'.
+  $fields['node-newsletter-field_show'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_show',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'newsletter',
+      'default_value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '34',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'node',
+      'field_name' => 'field_show',
+      'label' => 'Inhalt in Übersicht anzeigen',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_onoff',
+        'weight' => '1',
       ),
     ),
   );
@@ -530,7 +732,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '32',
+          'weight' => '33',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -599,7 +801,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '1',
+        'weight' => '3',
       ),
     ),
   );
@@ -2170,6 +2372,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
   // Included for use with string extractors like potx.
   t('Abschnitt');
   t('Bild');
+  t('Bitte keine Leer-, Sonderzeichen oder Umlaute verwenden.');
   t('Bitte wählen Sie die Kategorien, welche die Themen im Newsletter bestmöglich beschreiben. Zur Verfügung stehen die selben Kategorien, die z.B. auch Blogartikeln, Abstimmungen und Petitionen zugeordnet werden.');
   t('Blogartikel');
   t('Body');
@@ -2179,8 +2382,10 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
   t('Diese URL erzeugt auch die Social Media Icons');
   t('Dieses Bild wird nur für die Darstellung auf der Webseite benutzt.');
   t('Geben Sie den Titel der Blogartikel ein, dessen Teaser Sie anzeigen wollen.');
+  t('Inhalt in Übersicht anzeigen');
   t('Klasse');
   t('Link');
+  t('Piwik Campaign');
   t('Teaser image');
   t('Testimonial');
   t('Themen');

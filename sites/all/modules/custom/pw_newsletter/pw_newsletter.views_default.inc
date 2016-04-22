@@ -298,10 +298,20 @@ function pw_newsletter_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'newsletter' => 'newsletter',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filterkriterium: Inhalt: Inhalt in Übersicht anzeigen (field_show) */
+  $handler->display->display_options['filters']['field_show_value']['id'] = 'field_show_value';
+  $handler->display->display_options['filters']['field_show_value']['table'] = 'field_data_field_show';
+  $handler->display->display_options['filters']['field_show_value']['field'] = 'field_show_value';
+  $handler->display->display_options['filters']['field_show_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_show_value']['group'] = 1;
   /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
+  $handler->display->display_options['filters']['field_blogpost_categories_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['expose']['operator_id'] = 'field_blogpost_categories_tid_op';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['expose']['label'] = 'Themen';

@@ -188,7 +188,7 @@ function pw_election_programmes_field_default_fields() {
       'exclude_cv' => 0,
       'field_name' => 'field_election_programme_open',
       'label' => 'Link',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'attributes' => array(
           'class' => 'read-more',
@@ -201,7 +201,6 @@ function pw_election_programmes_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'enable' => 0,
           'insert_plugin' => '',
@@ -494,7 +493,6 @@ function pw_election_programmes_field_default_fields() {
       'label' => 'Party',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(

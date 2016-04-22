@@ -75,16 +75,6 @@ function pw_content_authoring_layout_user_default_permissions() {
     'module' => 'ckeditor',
   );
 
-  // Exported permission: import media.
-  $permissions['import media'] = array(
-    'name' => 'import media',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'media',
-  );
-
   // Exported permission: show format selection for comment.
   $permissions['show format selection for comment'] = array(
     'name' => 'show format selection for comment',

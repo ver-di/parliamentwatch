@@ -1,69 +1,7 @@
-﻿/**
- * @license Copyright (c) 2003-2013, CKSource - Frederico Knabben. All rights reserved.
- * For licensing, see LICENSE.html or http://ckeditor.com/license
- */
-
-// Register a templates definition set named "default".
-CKEDITOR.addTemplates( 'default', {
-	// The name of sub folder which hold the shortcut preview images of the
-	// templates.
-	imagesPath: CKEDITOR.getUrl( CKEDITOR.plugins.getPath( 'templates' ) + 'templates/images/' ),
-
-	// The templates definitions.
-	templates: [
-    	{
-    		title: 'Floatbox',
-    		image: 'template1.gif',
-    		description: 'A floating box on the left with headline.',
-    		html: '<div class="floatbox floatbox-left">' +
-    			'<h3>' +
-                    'Title goes here' +
-    			'</h3>' +
-    			'<h4>' +
-                        'Subtitle goes here' +
-    			'</h4>' +
-    			'<ul>' +
-                    '<li>List item 1</li>' +
-                    '<li>List item 2</li>' +
-                    '<li>List item 3</li>' +
-    			'</ul>' +
-    			'</div>'
-    	},
-		{
-    		title: 'Floatbox',
-    		image: 'template4.gif',
-    		description: 'A floating box on the right with headline.',
-    		html: '<div class="floatbox floatbox-right">' +
-    			'<h3>' +
-                    'Title goes here' +
-    			'</h3>' +
-    			'<h4>' +
-                        'Subtitle goes here' +
-    			'</h4>' +
-    			'<ul>' +
-                    '<li>List item 1</li>' +
-                    '<li>List item 2</li>' +
-                    '<li>List item 3</li>' +
-    			'</ul>' +
-    			'</div>'
-    	},
-		{
-    		title: 'Image container with ©opyright',
-    		image: 'template1.gif',
-    		description: 'A container with an image and a subline floating to the left.',
-    		html: '<div class="file-image float-left">' +
-                    '<img src="/sites/all/modules/contrib/ckeditor/ckeditor/plugins/templates/templates/images/template1.gif">' +
-                    '<div class="copyright">©opyright</div>' +
-    			'</div>'
-    	},
-		{
-    		title: 'Image container with ©opyright',
-    		image: 'template4.gif',
-    		description: 'A container with an image and a subline floating to the right.',
-    		html: '<div class="file-image float-right">' +
-                    '<img src="/sites/all/modules/contrib/ckeditor/ckeditor/plugins/templates/templates/images/template4.gif">' +
-                    '<div class="copyright">©opyright</div>' +
-    			'</div>'
-    	}
-	]
-});
+﻿/*
+ Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
+ For licensing, see LICENSE.md or http://ckeditor.com/license
+*/
+CKEDITOR.addTemplates("default",{imagesPath:CKEDITOR.getUrl(CKEDITOR.plugins.getPath("templates")+"templates/images/"),templates:[{title:"Image and Title",image:"template1.gif",description:"One main image with a title and text that surround the image.",html:'\x3ch3\x3e\x3cimg src\x3d" " alt\x3d"" style\x3d"margin-right: 10px" height\x3d"100" width\x3d"100" align\x3d"left" /\x3eType the title here\x3c/h3\x3e\x3cp\x3eType the text here\x3c/p\x3e'},{title:"Strange Template",image:"template2.gif",description:"A template that defines two colums, each one with a title, and some text.",
+html:'\x3ctable cellspacing\x3d"0" cellpadding\x3d"0" style\x3d"width:100%" border\x3d"0"\x3e\x3ctr\x3e\x3ctd style\x3d"width:50%"\x3e\x3ch3\x3eTitle 1\x3c/h3\x3e\x3c/td\x3e\x3ctd\x3e\x3c/td\x3e\x3ctd style\x3d"width:50%"\x3e\x3ch3\x3eTitle 2\x3c/h3\x3e\x3c/td\x3e\x3c/tr\x3e\x3ctr\x3e\x3ctd\x3eText 1\x3c/td\x3e\x3ctd\x3e\x3c/td\x3e\x3ctd\x3eText 2\x3c/td\x3e\x3c/tr\x3e\x3c/table\x3e\x3cp\x3eMore text goes here.\x3c/p\x3e'},{title:"Text and Table",image:"template3.gif",description:"A title with some text and a table.",
+html:'\x3cdiv style\x3d"width: 80%"\x3e\x3ch3\x3eTitle goes here\x3c/h3\x3e\x3ctable style\x3d"width:150px;float: right" cellspacing\x3d"0" cellpadding\x3d"0" border\x3d"1"\x3e\x3ccaption style\x3d"border:solid 1px black"\x3e\x3cstrong\x3eTable title\x3c/strong\x3e\x3c/caption\x3e\x3ctr\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3c/tr\x3e\x3ctr\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3c/tr\x3e\x3ctr\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3ctd\x3e\x26nbsp;\x3c/td\x3e\x3c/tr\x3e\x3c/table\x3e\x3cp\x3eType the text here\x3c/p\x3e\x3c/div\x3e'}]});

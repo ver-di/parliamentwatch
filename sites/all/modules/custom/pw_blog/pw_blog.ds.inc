@@ -52,25 +52,13 @@ function pw_blog_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'blogpost';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'author_linked_to_contact_form' => array(
-      'weight' => '4',
-      'label' => 'inline',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => ' by ',
-          'lb-col' => TRUE,
-        ),
-      ),
-    ),
-    'sharebuttons' => array(
-      'weight' => '0',
+    'custom_comment_counter' => array(
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_expert',
+          'func' => 'theme_ds_field_reset',
         ),
         'linked_field' => array(
           'linked' => 0,
@@ -100,19 +88,25 @@ function pw_blog_ds_field_settings_info() {
         ),
       ),
     ),
-    'custom_comment_counter' => array(
-      'weight' => '1',
+    'author_linked_to_contact_form' => array(
+      'weight' => '4',
+      'label' => 'inline',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => ' by ',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+    'sharebuttons' => array(
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'span',
-          'ow-cl' => 'comment-count',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
         ),
         'linked_field' => array(
           'linked' => 0,
@@ -523,15 +517,15 @@ function pw_blog_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'sharethis',
-        1 => 'sharebuttons',
+        0 => 'sharebuttons',
+        1 => 'sharethis',
         2 => 'custom_comment_counter',
         3 => 'title',
         4 => 'field_blogpost_blogtags',
-        5 => 'group_blog_author',
-        6 => 'post_date',
-        7 => 'group_blog_metainformation',
-        8 => 'author_linked_to_contact_form',
+        5 => 'post_date',
+        6 => 'group_blog_author',
+        7 => 'author_linked_to_contact_form',
+        8 => 'group_blog_metainformation',
         9 => 'body',
         10 => 'field_blockreference',
         11 => 'field_blogpost_categories',
@@ -541,15 +535,15 @@ function pw_blog_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'sharethis' => 'ds_content',
       'sharebuttons' => 'ds_content',
+      'sharethis' => 'ds_content',
       'custom_comment_counter' => 'ds_content',
       'title' => 'ds_content',
       'field_blogpost_blogtags' => 'ds_content',
-      'group_blog_author' => 'ds_content',
       'post_date' => 'ds_content',
-      'group_blog_metainformation' => 'ds_content',
+      'group_blog_author' => 'ds_content',
       'author_linked_to_contact_form' => 'ds_content',
+      'group_blog_metainformation' => 'ds_content',
       'body' => 'ds_content',
       'field_blockreference' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',

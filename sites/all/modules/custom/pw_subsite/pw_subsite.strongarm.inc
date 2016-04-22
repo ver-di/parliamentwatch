@@ -863,6 +863,14 @@ foo
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_petition_welcome_message</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
+    'node:field_piwik_campaign_format' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">format</em> of the field <em class="placeholder">field_piwik_campaign</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_piwik_campaign_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_piwik_campaign</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
     'node:field_politician_target_id' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">target_id</em> of the field <em class="placeholder">field_politician</em>. The value will be converted in its string representation.',
       'page cache' => 1,
@@ -977,6 +985,10 @@ foo
     ),
     'node:field_share_sum_value' => array(
       'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_share_sum</em>. The value will be converted in its string representation.',
+      'page cache' => 1,
+    ),
+    'node:field_show_value' => array(
+      'description' => 'Node: Field Value - The (simple scalar) value of the column <em class="placeholder">value</em> of the field <em class="placeholder">field_show</em>. The value will be converted in its string representation.',
       'page cache' => 1,
     ),
     'node:field_sidejob_address_administrative_area' => array(
@@ -3679,136 +3691,169 @@ foo
       ),
     ),
     210 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_piwik_campaign_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_piwik_campaign',
+        'type' => 'text',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    211 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_piwik_campaign_format',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_piwik_campaign',
+        'type' => 'text',
+        'column' => 'format',
+        'translatable' => '0',
+      ),
+    ),
+    212 => array(
+      'src' => 'node:nid',
+      'dst' => 'node:field_show_value',
+      'callback' => 'themekey_node_nid2field_value',
+      'args' => array(
+        'field_name' => 'field_show',
+        'type' => 'list_boolean',
+        'column' => 'value',
+        'translatable' => '0',
+      ),
+    ),
+    213 => array(
       'src' => 'profile:uid',
       'dst' => 'themekey_ui:author_triggers_theme',
       'callback' => 'themekey_user_profile2theme',
     ),
-    211 => array(
+    214 => array(
       'src' => 'comment:cid',
       'dst' => 'node:nid',
       'callback' => 'themekey_comment_cid2nid',
     ),
-    212 => array(
+    215 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:vid',
       'callback' => 'themekey_views_getq2vid',
     ),
-    213 => array(
+    216 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:machine_name',
       'callback' => 'themekey_views_getq2machine_name',
     ),
-    214 => array(
+    217 => array(
       'src' => 'drupal:get_q',
       'dst' => 'views:human_name',
       'callback' => 'themekey_views_getq2human_name',
     ),
-    215 => array(
+    218 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_param',
       'callback' => 'themekey_dummy2query_param',
     ),
-    216 => array(
+    219 => array(
       'src' => 'system:dummy',
       'dst' => 'system:cookie',
       'callback' => 'themekey_dummy2cookie',
     ),
-    217 => array(
+    220 => array(
       'src' => 'system:dummy',
       'dst' => 'system:http_header',
       'callback' => 'themekey_dummy2http_header',
     ),
-    218 => array(
+    221 => array(
       'src' => 'system:dummy',
       'dst' => 'system:post',
       'callback' => 'themekey_dummy2post',
     ),
-    219 => array(
+    222 => array(
       'src' => 'system:dummy',
       'dst' => 'system:query_string',
       'callback' => 'themekey_dummy2query_string',
     ),
-    220 => array(
+    223 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date_time',
       'callback' => 'themekey_dummy2date_time',
     ),
-    221 => array(
+    224 => array(
       'src' => 'system:dummy',
       'dst' => 'system:date',
       'callback' => 'themekey_dummy2date',
     ),
-    222 => array(
+    225 => array(
       'src' => 'system:dummy',
       'dst' => 'system:month',
       'callback' => 'themekey_dummy2month',
     ),
-    223 => array(
+    226 => array(
       'src' => 'system:dummy',
       'dst' => 'system:time',
       'callback' => 'themekey_dummy2time',
     ),
-    224 => array(
+    227 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_week',
       'callback' => 'themekey_dummy2day_of_week',
     ),
-    225 => array(
+    228 => array(
       'src' => 'system:dummy',
       'dst' => 'system:day_of_month',
       'callback' => 'themekey_dummy2day_of_month',
     ),
-    226 => array(
+    229 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_browser',
       'callback' => 'themekey_dummy2user_browser',
     ),
-    227 => array(
+    230 => array(
       'src' => 'system:dummy',
       'dst' => 'system:user_os',
       'callback' => 'themekey_dummy2user_os',
     ),
-    228 => array(
+    231 => array(
       'src' => 'system:user_browser',
       'dst' => 'system:user_browser_simplified',
       'callback' => 'themekey_user_browser2user_browser_simplified',
     ),
-    229 => array(
+    232 => array(
       'src' => 'system:user_os',
       'dst' => 'system:user_os_simplified',
       'callback' => 'themekey_user_os2user_os_simplified',
     ),
-    230 => array(
+    233 => array(
       'src' => 'system:dummy',
       'dst' => 'system:session',
       'callback' => 'themekey_dummy2session',
     ),
-    231 => array(
+    234 => array(
       'src' => 'node:nid',
       'dst' => 'path:node_alias',
       'callback' => 'themekey_path_nid2alias',
     ),
-    232 => array(
+    235 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:vid',
       'callback' => 'themekey_taxonomy_tid2vid',
     ),
-    233 => array(
+    236 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:tid_and_childs',
       'callback' => 'themekey_taxonomy_tid2tid_and_parents',
     ),
-    234 => array(
+    237 => array(
       'src' => 'node:nid',
       'dst' => 'taxonomy:tid',
       'callback' => 'themekey_taxonomy_nid2tid',
     ),
-    235 => array(
+    238 => array(
       'src' => 'taxonomy:tid',
       'dst' => 'taxonomy:name',
       'callback' => 'themekey_taxonomy_tid2name',
     ),
-    236 => array(
+    239 => array(
       'src' => 'system:dummy',
       'dst' => 'overlay:mode',
       'callback' => 'themekey_overlay_dummy2mode',
@@ -4061,6 +4106,8 @@ foo
     'node:field_petition_text_passed_value' => 'node:field_petition_text_passed_value',
     'node:field_petition_welcome_message_format' => 'node:field_petition_welcome_message_format',
     'node:field_petition_welcome_message_value' => 'node:field_petition_welcome_message_value',
+    'node:field_piwik_campaign_format' => 'node:field_piwik_campaign_format',
+    'node:field_piwik_campaign_value' => 'node:field_piwik_campaign_value',
     'node:field_politician_target_id' => 'node:field_politician_target_id',
     'node:field_poll_date_value' => 'node:field_poll_date_value',
     'node:field_poll_external_url_format' => 'node:field_poll_external_url_format',
@@ -4090,6 +4137,7 @@ foo
     'node:field_search_sort_date_value' => 'node:field_search_sort_date_value',
     'node:field_sectors_tid' => 'node:field_sectors_tid',
     'node:field_share_sum_value' => 'node:field_share_sum_value',
+    'node:field_show_value' => 'node:field_show_value',
     'node:field_sidejob_address_administrative_area' => 'node:field_sidejob_address_administrative_area',
     'node:field_sidejob_address_country' => 'node:field_sidejob_address_country',
     'node:field_sidejob_address_data' => 'node:field_sidejob_address_data',
