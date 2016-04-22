@@ -13,20 +13,22 @@ function pw_newsletter_ckeditor_profile_defaults() {
       'name' => 'Newsletter',
       'settings' => array(
         'ss' => '2',
-        'default' => 't',
-        'show_toggle' => 't',
-        'uicolor' => 'default',
-        'uicolor_user' => 'default',
         'toolbar' => '[
     [\'Source\',\'Cut\',\'Copy\',\'SpellChecker\',\'Undo\',\'Redo\',\'Find\',\'Replace\',\'RemoveFormat\',\'linkit\',\'Media\',\'Link\',\'Unlink\',\'Maximize\'],
     \'/\',
     [\'Styles\',\'Format\',\'Bold\',\'Subscript\',\'Superscript\',\'NumberedList\',\'BulletedList\',\'Blockquote\',\'SpecialChar\']
 ]',
         'expand' => 't',
+        'default' => 't',
+        'show_toggle' => 't',
+        'uicolor' => 'default',
+        'uicolor_user' => 'default',
         'width' => '100%',
         'lang' => 'en',
         'auto_lang' => 't',
         'language_direction' => 'default',
+        'allowed_content' => 't',
+        'extraAllowedContent' => '',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
         'font_format' => 'p;div;h2;h3;h4',
@@ -50,21 +52,12 @@ function pw_newsletter_ckeditor_profile_defaults() {
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
         'UserFilesAbsolutePath' => '%d%b%f/',
-        'ckeditor_load_method' => 'ckeditor.js',
-        'ckeditor_load_time_out' => '0',
         'forcePasteAsPlainText' => 't',
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
         'js_conf' => '',
         'loadPlugins' => array(
-          'autogrow' => array(
-            'name' => 'autogrow',
-            'desc' => 'Erweiterungsmodul für automatische Größenanpassung',
-            'path' => '%editor_path%plugins/autogrow/',
-            'buttons' => FALSE,
-            'default' => 'f',
-          ),
           'linkit' => array(
             'name' => 'linkit',
             'desc' => 'Support für Linkit-Modul',
@@ -79,11 +72,11 @@ function pw_newsletter_ckeditor_profile_defaults() {
           'media' => array(
             'name' => 'media',
             'desc' => 'Plugin for inserting images from Drupal media module',
-            'path' => '%plugin_dir%media/',
+            'path' => '%base_path%sites/all/modules/contrib/media/modules/media_wysiwyg/wysiwyg_plugins/media_ckeditor/',
             'buttons' => array(
               'Media' => array(
-                'label' => 'Media',
                 'icon' => 'images/icon.gif',
+                'label' => 'Add media',
               ),
             ),
             'default' => 'f',

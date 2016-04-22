@@ -993,6 +993,7 @@ function pw_calendar_entries_field_default_fields() {
       'label' => 'link',
       'required' => 0,
       'settings' => array(
+        'absolute_url' => 1,
         'attributes' => array(
           'class' => '',
           'configurable_title' => 0,
@@ -1005,11 +1006,13 @@ function pw_calendar_entries_field_default_fields() {
         ),
         'enable_tokens' => 1,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'rel_remove' => 'default',
         'title' => 'optional',
+        'title_label_use_field_label' => FALSE,
         'title_maxlength' => '128',
         'title_value' => '',
         'url' => 0,

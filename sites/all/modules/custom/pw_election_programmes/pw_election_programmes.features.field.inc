@@ -190,6 +190,7 @@ function pw_election_programmes_field_default_fields() {
       'label' => 'Link',
       'required' => 0,
       'settings' => array(
+        'absolute_url' => 1,
         'attributes' => array(
           'class' => 'read-more',
           'configurable_title' => 1,
@@ -202,11 +203,13 @@ function pw_election_programmes_field_default_fields() {
         ),
         'enable_tokens' => 1,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'rel_remove' => 'default',
         'title' => 'value',
+        'title_label_use_field_label' => FALSE,
         'title_maxlength' => '128',
         'title_value' => 'Wahlprogramm durchblättern',
         'url' => 0,

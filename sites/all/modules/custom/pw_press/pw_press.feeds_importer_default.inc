@@ -22,6 +22,11 @@ function pw_press_feeds_importer_default() {
       'config' => array(
         'allowed_extensions' => 'csv',
         'direct' => 0,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
       ),
     ),
     'parser' => array(
@@ -29,12 +34,12 @@ function pw_press_feeds_importer_default() {
       'config' => array(
         'delimiter' => ';',
         'no_headers' => 0,
+        'encoding' => 'UTF-8',
       ),
     ),
     'processor' => array(
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'content_type' => 'press_article',
         'expire' => '-1',
         'author' => '1',
         'authorize' => 1,
@@ -88,6 +93,10 @@ function pw_press_feeds_importer_default() {
         'update_existing' => '1',
         'input_format' => 'managed_content',
         'skip_hash_check' => 0,
+        'insert_new' => '1',
+        'update_non_existent' => 'skip',
+        'bundle' => 'press_article',
+        'language' => 'und',
       ),
     ),
     'content_type' => '',
@@ -111,6 +120,11 @@ function pw_press_feeds_importer_default() {
       'config' => array(
         'allowed_extensions' => 'txt csv tsv xml opml html htm',
         'direct' => FALSE,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
       ),
     ),
     'parser' => array(
@@ -145,7 +159,6 @@ function pw_press_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'content_type' => 'press_release',
         'expire' => '-1',
         'author' => '1',
         'mappings' => array(
@@ -174,6 +187,10 @@ function pw_press_feeds_importer_default() {
         'input_format' => 'managed_content',
         'skip_hash_check' => 0,
         'authorize' => 1,
+        'insert_new' => '1',
+        'update_non_existent' => 'skip',
+        'bundle' => 'press_release',
+        'language' => 'und',
       ),
     ),
     'content_type' => '',

@@ -57,6 +57,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -76,6 +77,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -101,6 +103,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -120,6 +123,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -139,6 +143,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -158,6 +163,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -177,6 +183,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -196,6 +203,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -215,6 +223,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -234,6 +243,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -259,6 +269,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -278,6 +289,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -297,6 +309,7 @@ function pw_content_authoring_layout_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -311,6 +324,12 @@ function pw_content_authoring_layout_field_default_fields() {
           ),
           'type' => 'text_default',
           'weight' => '0',
+        ),
+        'wysiwyg' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
       ),
       'ds_extras_field_template' => '',
@@ -359,8 +378,9 @@ function pw_content_authoring_layout_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => 'raw_url',
+          'profile' => '',
         ),
         'text_processing' => '1',
         'user_register_form' => FALSE,

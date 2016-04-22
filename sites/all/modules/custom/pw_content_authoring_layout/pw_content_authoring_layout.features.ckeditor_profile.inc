@@ -253,15 +253,11 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
       'name' => 'ManagedContent',
       'settings' => array(
         'ss' => '2',
-        'default' => 't',
-        'show_toggle' => 't',
-        'uicolor' => 'default',
-        'uicolor_user' => 'default',
         'toolbar' => '[
     [\'Source\',\'ShowBlocks\'],
     [\'RemoveFormat\',\'SpellChecker\',\'Scayt\'],
     [\'Undo\',\'Redo\',\'Find\',\'Replace\'],
-    [\'Media\',\'MediaEmbed\',\'linkit\',\'Unlink\',\'Anchor\',\'Table\',\'SpecialChar\'],
+    [\'Media\',\'MediaEmbed\',\'linkit\',\'Link\',\'Unlink\',\'Anchor\',\'Table\',\'SpecialChar\'],
     [\'Maximize\'],
     \'/\',
     [\'Templates\',\'Format\',\'Styles\',\'CreateDiv\'],
@@ -271,10 +267,16 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
     [\'JustifyLeft\',\'JustifyCenter\',\'JustifyRight\',\'JustifyBlock\']
 ]',
         'expand' => 't',
+        'default' => 't',
+        'show_toggle' => 't',
+        'uicolor' => 'default',
+        'uicolor_user' => 'default',
         'width' => '100%',
         'lang' => 'en',
         'auto_lang' => 't',
         'language_direction' => 'default',
+        'allowed_content' => 't',
+        'extraAllowedContent' => '',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
         'font_format' => 'p;div;h3;h4',
@@ -298,8 +300,6 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
         'UserFilesAbsolutePath' => '%d%b%f/',
-        'ckeditor_load_method' => 'ckeditor.js',
-        'ckeditor_load_time_out' => '0',
         'forcePasteAsPlainText' => 't',
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
@@ -315,7 +315,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
           ),
           'linkit' => array(
             'name' => 'linkit',
-            'desc' => 'Support for Linkit module',
+            'desc' => 'Support für Linkit-Modul',
             'path' => '%base_path%sites/all/modules/contrib/linkit/editors/ckeditor/',
             'buttons' => array(
               'linkit' => array(
@@ -327,18 +327,18 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
           'media' => array(
             'name' => 'media',
             'desc' => 'Plugin for inserting images from Drupal media module',
-            'path' => '%plugin_dir%media/',
+            'path' => '%base_path%sites/all/modules/contrib/media/modules/media_wysiwyg/wysiwyg_plugins/media_ckeditor/',
             'buttons' => array(
               'Media' => array(
-                'label' => 'Media',
                 'icon' => 'images/icon.gif',
+                'label' => 'Add media',
               ),
             ),
             'default' => 'f',
           ),
           'mediaembed' => array(
             'name' => 'mediaembed',
-            'desc' => 'Plugin for inserting Drupal embeded media',
+            'desc' => 'Plugin for embedding HTML snippets',
             'path' => '%plugin_dir%mediaembed/',
             'buttons' => array(
               'MediaEmbed' => array(

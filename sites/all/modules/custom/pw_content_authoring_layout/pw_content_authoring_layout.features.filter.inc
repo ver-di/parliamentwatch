@@ -106,6 +106,11 @@ http://beta.abgeordnetenwatch.de/
         'status' => '1',
         'settings' => array(),
       ),
+      'media_filter' => array(
+        'weight' => '-45',
+        'status' => '1',
+        'settings' => array(),
+      ),
       'filter_htmlcorrector' => array(
         'weight' => '-42',
         'status' => '1',
@@ -165,6 +170,11 @@ http://beta.abgeordnetenwatch.de/
     'status' => '1',
     'weight' => '-10',
     'filters' => array(
+      'media_filter' => array(
+        'weight' => '-50',
+        'status' => '1',
+        'settings' => array(),
+      ),
       'filter_autop' => array(
         'weight' => '-49',
         'status' => '1',

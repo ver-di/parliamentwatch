@@ -304,6 +304,7 @@ function pw_slider_field_default_fields() {
       'label' => 'Beschreibung mit LInk',
       'required' => 1,
       'settings' => array(
+        'absolute_url' => 1,
         'attributes' => array(
           'class' => '',
           'configurable_title' => 1,
@@ -315,8 +316,8 @@ function pw_slider_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
-        'exclude_cv' => FALSE,
         'title' => 'required',
+        'title_label_use_field_label' => FALSE,
         'title_maxlength' => '128',
         'title_value' => '',
         'url' => 0,

@@ -54,6 +54,7 @@ function pw_vote_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -73,6 +74,7 @@ function pw_vote_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -200,6 +202,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'list',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -292,6 +295,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -311,6 +315,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'shs',
           'settings' => array(
+            'field_delimiter' => '',
             'linked' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -397,6 +402,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -416,6 +422,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'shs',
           'settings' => array(
+            'field_delimiter' => '',
             'linked' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -514,6 +521,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -534,6 +542,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -627,6 +636,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -647,6 +657,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -731,6 +742,7 @@ function pw_vote_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -794,8 +806,9 @@ function pw_vote_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,

@@ -10,30 +10,14 @@
 function pw_content_authoring_layout_default_linkit_profiles() {
   $export = array();
 
-  $linkit_profile = new stdClass();
+  $linkit_profile = new LinkitProfile();
   $linkit_profile->disabled = FALSE; /* Edit this to true to make a default linkit_profile disabled initially */
   $linkit_profile->api_version = 1;
   $linkit_profile->name = 'full';
   $linkit_profile->admin_title = 'Full';
+  $linkit_profile->admin_description = '';
+  $linkit_profile->profile_type = '2';
   $linkit_profile->data = array(
-    'plugins' => array(
-      'entity:taxonomy_term' => array(
-        'weight' => '0',
-        'enabled' => 1,
-      ),
-      'entity:node' => array(
-        'weight' => '0',
-        'enabled' => 1,
-      ),
-      'entity:file' => array(
-        'weight' => '0',
-        'enabled' => 1,
-      ),
-      'entity:user' => array(
-        'weight' => '0',
-        'enabled' => 1,
-      ),
-    ),
     'entity:node' => array(
       'result_description' => '',
       'bundles' => array(
@@ -49,7 +33,6 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'webform' => 0,
       ),
       'group_by_bundle' => 1,
-      'reverse_menu_trail' => 0,
       'include_unpublished' => 1,
     ),
     'entity:file' => array(
@@ -61,13 +44,13 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'video' => 0,
       ),
       'group_by_bundle' => 1,
-      'reverse_menu_trail' => 0,
       'show_scheme' => 1,
       'group_by_scheme' => 0,
       'image_extra_info' => array(
         'thumbnail' => 'thumbnail',
         'dimensions' => 'dimensions',
       ),
+      'url_type' => 'entity',
     ),
     'entity:taxonomy_term' => array(
       'result_description' => '',
@@ -87,11 +70,9 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'dialogue_topics' => 0,
       ),
       'group_by_bundle' => 1,
-      'reverse_menu_trail' => 0,
     ),
     'entity:user' => array(
       'result_description' => '',
-      'reverse_menu_trail' => 0,
     ),
     'autocomplete' => array(
       'charLimit' => 3,
@@ -120,20 +101,7 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'enabled' => 1,
       ),
     ),
-  );
-  $linkit_profile->role_rids = array(
-    3 => 1,
-  );
-  $linkit_profile->weight = 0;
-  $export['full'] = $linkit_profile;
-
-  $linkit_profile = new stdClass();
-  $linkit_profile->disabled = FALSE; /* Edit this to true to make a default linkit_profile disabled initially */
-  $linkit_profile->api_version = 1;
-  $linkit_profile->name = 'managed_content';
-  $linkit_profile->admin_title = 'Managed content';
-  $linkit_profile->data = array(
-    'plugins' => array(
+    'search_plugins' => array(
       'entity:taxonomy_term' => array(
         'weight' => '0',
         'enabled' => 1,
@@ -151,6 +119,47 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'enabled' => 1,
       ),
     ),
+    'attribute_plugins' => array(
+      'rel' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'class' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'accesskey' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'id' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'title' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'target' => array(
+        'enabled' => 0,
+        'weight' => -10,
+      ),
+    ),
+    'insert_plugin' => array(
+      'plugin' => 'raw_url',
+      'url_method' => 1,
+    ),
+  );
+  $export['full'] = $linkit_profile;
+
+  $linkit_profile = new LinkitProfile();
+  $linkit_profile->disabled = FALSE; /* Edit this to true to make a default linkit_profile disabled initially */
+  $linkit_profile->api_version = 1;
+  $linkit_profile->name = 'managed_content';
+  $linkit_profile->admin_title = 'Managed content';
+  $linkit_profile->admin_description = '';
+  $linkit_profile->profile_type = '2';
+  $linkit_profile->data = array(
     'entity:node' => array(
       'result_description' => '',
       'bundles' => array(
@@ -166,7 +175,6 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'webform' => 0,
       ),
       'group_by_bundle' => 1,
-      'reverse_menu_trail' => 0,
       'include_unpublished' => 1,
     ),
     'entity:file' => array(
@@ -178,13 +186,13 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'video' => 0,
       ),
       'group_by_bundle' => 1,
-      'reverse_menu_trail' => 0,
       'show_scheme' => 1,
       'group_by_scheme' => 0,
       'image_extra_info' => array(
         'thumbnail' => 'thumbnail',
         'dimensions' => 'dimensions',
       ),
+      'url_type' => 'entity',
     ),
     'entity:taxonomy_term' => array(
       'result_description' => '',
@@ -204,11 +212,9 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'dialogue_topics' => 0,
       ),
       'group_by_bundle' => 0,
-      'reverse_menu_trail' => 0,
     ),
     'entity:user' => array(
       'result_description' => '',
-      'reverse_menu_trail' => 0,
     ),
     'autocomplete' => array(
       'charLimit' => 3,
@@ -237,11 +243,55 @@ function pw_content_authoring_layout_default_linkit_profiles() {
         'enabled' => 1,
       ),
     ),
+    'search_plugins' => array(
+      'entity:taxonomy_term' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'entity:node' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'entity:file' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'entity:user' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+    ),
+    'attribute_plugins' => array(
+      'rel' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'class' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'accesskey' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'id' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'title' => array(
+        'weight' => '0',
+        'enabled' => 1,
+      ),
+      'target' => array(
+        'enabled' => 0,
+        'weight' => -10,
+      ),
+    ),
+    'insert_plugin' => array(
+      'plugin' => 'raw_url',
+      'url_method' => 1,
+    ),
   );
-  $linkit_profile->role_rids = array(
-    51622513 => 1,
-  );
-  $linkit_profile->weight = 0;
   $export['managed_content'] = $linkit_profile;
 
   return $export;

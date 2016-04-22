@@ -52,6 +52,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -130,6 +131,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -210,6 +212,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -229,6 +232,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -254,6 +258,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -353,6 +358,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'file_entity',
           'settings' => array(
+            'field_delimiter' => '',
             'file_view_mode' => 'pw_file_landscape_l',
             'linked_field' => array(
               'advanced' => array(
@@ -462,6 +468,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -481,6 +488,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -544,8 +552,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -606,6 +615,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -706,6 +716,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => 'content',
             'image_style' => 'pw_thumbnail_70',
             'linked_field' => array(
@@ -727,6 +738,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => '',
             'image_style' => 'pw_thumbnail_70',
             'linked_field' => array(
@@ -835,6 +847,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -854,6 +867,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -917,8 +931,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -1174,8 +1189,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 1,
-          'insert_plugin' => 'html_link',
+          'profile' => 'managed_content',
         ),
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -1451,8 +1467,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -2082,8 +2099,9 @@ function pw_globals_field_default_fields() {
           ),
         ),
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -2207,8 +2225,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
