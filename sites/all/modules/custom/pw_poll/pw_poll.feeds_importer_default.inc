@@ -25,6 +25,7 @@ function pw_poll_feeds_importer_default() {
         'designated_hub' => '',
         'request_timeout' => NULL,
         'auto_scheme' => 'http',
+        'accept_invalid_cert' => FALSE,
       ),
     ),
     'parser' => array(
@@ -70,7 +71,6 @@ function pw_poll_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsCommentProcessor',
       'config' => array(
-        'node_type' => 'poll',
         'input_format' => 'filtered_html',
         'update_existing' => '1',
         'expire' => '-1',
@@ -117,8 +117,12 @@ function pw_poll_feeds_importer_default() {
           ),
         ),
         'author' => '1',
-        'skip_hash_check' => FALSE,
-        'bundle' => NULL,
+        'skip_hash_check' => 0,
+        'bundle' => 'comment_node_poll',
+        'insert_new' => '1',
+        'update_non_existent' => 'skip',
+        'language' => 'und',
+        'authorize' => 1,
       ),
     ),
     'content_type' => '',
