@@ -22,7 +22,7 @@ function set_fraction_to_party($source, $item_key, $element_key, &$field, $setti
 
   $party = trim($source->current_item['xpathparser:24']);
   $roles = $source->current_item['xpathparser:4'];
-  if(ereg('Deputy', $roles) && empty($field)){
+  if(in_array('Deputy', $roles) && empty($field)){
     $field = $party;
   }
 }
