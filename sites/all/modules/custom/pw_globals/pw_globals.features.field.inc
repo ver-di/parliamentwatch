@@ -1004,6 +1004,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1023,6 +1024,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1106,6 +1108,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1125,6 +1128,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1251,6 +1255,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1332,6 +1337,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1409,6 +1415,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1534,6 +1541,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1620,6 +1628,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1702,6 +1711,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1788,6 +1798,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1874,6 +1885,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1954,6 +1966,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'list',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2038,6 +2051,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2162,6 +2176,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2288,6 +2303,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -2386,6 +2402,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'list',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2467,6 +2484,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -2491,6 +2509,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -2579,6 +2598,7 @@ function pw_globals_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2668,6 +2688,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'list',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
