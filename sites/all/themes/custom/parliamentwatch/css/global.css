@@ -2086,17 +2086,23 @@ ul.tabs li a:active {
     padding-right: 35px;
 }
 .file-image.float-left,
-.media-image-left {
-    margin-right: 14px;
-    float: left;
-}
-.media-image-left {
-    margin-bottom: 7px;
-}
 .file-image.float-right {
-    margin-left: 14px;
-    margin-bottom: 7px;
+    float: none;
 }
+@media (min-width: 480px) {
+    .file-image.float-left,
+    .media-image-left {
+        margin-right: 14px;
+        margin-bottom: 7px;
+        float: left;
+    }
+    .file-image.float-right {
+        margin-left: 14px;
+        margin-bottom: 7px;
+        float: right;
+    }
+}
+
 .portrait-s.file-image.float-left + blockquote
 .portrait-s.file-image.float-left + .statement {
     margin-left: 84px;
