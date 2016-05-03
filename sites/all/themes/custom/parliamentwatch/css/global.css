@@ -3748,6 +3748,21 @@ form .webform-component-checkboxes .description {
 .comment ul.inline li {
     display: inline-block;
 }
+.comment a.external {
+    display: inline-block;
+    text-overflow: ellipsis;
+    max-width: calc(100vw - 110px);
+    overflow: hidden;
+    white-space: nowrap;
+}
+.comment @media (min-width: 640px) {
+    a.external {
+        display: inline;
+        max-width: none;
+        overflow: auto;
+        white-space: normal;
+    }
+}
 .links.inline a,
 .submitted {
     color: #666;
