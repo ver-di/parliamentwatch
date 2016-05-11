@@ -125,10 +125,13 @@ function _pw_get_current_parliament_term() {
 
       // load by archived user profile
       case 'profile':
-        $user = user_load_by_name(arg(1));
+      case 'user':
+        /*$user = user_load_by_name(arg(1));
         $user_id = $user->uid;
         $vid = arg(3);
         $user = user_revision_load($user_id, $vid);
+        */
+        $user = _pw_get_current_user();
         if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
           $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
           $term_parliament = taxonomy_term_load($term_parliament_id);
@@ -136,13 +139,13 @@ function _pw_get_current_parliament_term() {
         break;
 
       // load by user profile
-      case 'user':
-        $user = menu_get_object('user');
+        /*$user = menu_get_object('user');
         if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
           $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
           $term_parliament = taxonomy_term_load($term_parliament_id);
         }
         break;
+        */
 
       // load by node
       case 'node':
@@ -407,4 +410,27 @@ function _pw_query_debug($query) {
     $querystring = str_replace($key.')', "'".$item."')",$querystring);
   }
   return $querystring;
+}
+
+/**
+ * flattens array
+ * @param array
+ * @param keep_key
+ * @return array $array
+ */
+function _pw_array_flatten($array, $keep_key=TRUE) {
+  $return = array();
+  foreach ($array as $key => $value) {
+    if (is_array($value)){
+      $return = array_merge($return, _pw_array_flatten($value, $keep_key));
+    }
+    elseif($keep_key){
+      $return[$key] = $value;
+    }
+    else{
+      $return[] = $value;
+    }
+  }
+
+  return $return;
 }

@@ -18,8 +18,8 @@ function pw_userarchives_cron($uid = NULL) {
   $res = $query->execute();
   while ($row = $res->fetchAssoc()) {
     db_delete('user_archive_cache')
-    ->condition('uid', $row['uid'])
-    ->execute();
+      ->condition('uid', $row['uid'])
+      ->execute();
   }
 
   // Insert new archive entries:
@@ -78,23 +78,23 @@ function pw_userarchives_cron($uid = NULL) {
 
     // update all tables
     db_update('user_archive_cache')
-    ->fields(array(
-      'number_of_questions' => $questionResult['count'],
-      'number_of_answers' => $answerResult['count']
+      ->fields(array(
+        'number_of_questions' => $questionResult['count'],
+        'number_of_answers' => $answerResult['count']
       ))
-    ->condition('uid', $row['uid'])
-    ->condition('vid', $row['vid'])
-    ->execute();
+      ->condition('uid', $row['uid'])
+      ->condition('vid', $row['vid'])
+      ->execute();
     db_update('field_revision_field_user_answers_give')
-    ->fields(array('field_user_answers_give_value' => $answerResult['count']))
-    ->condition('entity_id', $row['uid'])
-    ->condition('revision_id', $row['vid'])
-    ->execute();
+      ->fields(array('field_user_answers_give_value' => $answerResult['count']))
+      ->condition('entity_id', $row['uid'])
+      ->condition('revision_id', $row['vid'])
+      ->execute();
     db_update('field_revision_field_user_questions_get')
-    ->fields(array('field_user_questions_get_value' => $questionResult['count']))
-    ->condition('entity_id', $row['uid'])
-    ->condition('revision_id', $row['vid'])
-    ->execute();
+      ->fields(array('field_user_questions_get_value' => $questionResult['count']))
+      ->condition('entity_id', $row['uid'])
+      ->condition('revision_id', $row['vid'])
+      ->execute();
   }
 
   // delete old revisions - buggy
@@ -102,7 +102,6 @@ function pw_userarchives_cron($uid = NULL) {
 
   return "Done";
 }
-
 
 /**
  * Creates schema for user archive if necessary, selects and returns users and
@@ -218,6 +217,39 @@ function pw_delete_old_user_revisions() {
     watchdog('pw_userarchives', ':number_of_revisions user revisions deleted which were older than :days_buffer days and were not associated with user_archive_cache', array(
       ':number_of_revisions' => $number_of_revisions,
       ':days_buffer' => $days_buffer
-      ));
+    ));
+  }
+}
+
+/**
+ * Chaecks and resets user revision to actual (newest) profile
+ * @param $uid
+ */
+function pw_reset_actuale_profile($uid) {
+  $user = user_load($uid);
+  $query = db_select('user_archive_cache', 'uac');
+  $query->addField('uac', 'vid');
+  $query->condition('uac.uid', $uid);
+  $query->orderBy('uac.timestamp', 'DESC');
+  $query->orderBy('uac.user_role=\'deputy\'', 'DESC');
+  $query->orderBy('uac.vid', 'DESC');
+  $result = $query->execute()->fetchAssoc();
+  $newest_vid = $result['vid'];
+  print 'user: '.$user->vid."\n";
+  print 'uac: '.$newest_vid."\n";
+  if($user->vid == $newest_vid){
+    $user_revision = user_revision_load($uid, $newest_vid);
+    $role_tids = _pw_array_flatten($user_revision->field_user_roles_for_view_mode_s, FALSE);
+    $roles_terms = taxonomy_term_load_multiple($role_tids);
+    print_r($user_revision->roles);
+    $user_revision->roles = [];
+    foreach($roles_terms as $role_term){
+      $role =  user_role_load_by_name($role_term->name);
+      $user_revision->roles[$role->rid] = $role->name;
+    }
+    $user_revision->revision = 1;
+    $user_revision->log = t('Copy of the revision from %date.', array('%date' => format_date($user_revision->revision_timestamp)));
+    user_save($user_revision, (array) $user_revision);
+    watchdog('user', 'reverted %title revision %revision.', array('%title' => $user_revision->name, '%revision' => $user_revision->vid));
   }
 }
