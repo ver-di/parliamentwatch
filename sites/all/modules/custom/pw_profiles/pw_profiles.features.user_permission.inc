@@ -472,17 +472,6 @@ function pw_profiles_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: delete own files.
-  $permissions['delete own files'] = array(
-    'name' => 'delete own files',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'Politician',
-      2 => 'administrator',
-    ),
-    'module' => 'file_entity',
-  );
-
   // Exported permission: edit any calendar_entry content.
   $permissions['edit any calendar_entry content'] = array(
     'name' => 'edit any calendar_entry content',
@@ -491,16 +480,6 @@ function pw_profiles_user_default_permissions() {
       1 => 'administrator',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: edit any files.
-  $permissions['edit any files'] = array(
-    'name' => 'edit any files',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
-    ),
-    'module' => 'file_entity',
   );
 
   // Exported permission: edit field_user_about.
@@ -1349,18 +1328,6 @@ function pw_profiles_user_default_permissions() {
       1 => 'administrator',
     ),
     'module' => 'field_permissions',
-  );
-
-  // Exported permission: edit own files.
-  $permissions['edit own files'] = array(
-    'name' => 'edit own files',
-    'roles' => array(
-      0 => 'Content Manager',
-      1 => 'Deputy',
-      2 => 'Premium User',
-      3 => 'administrator',
-    ),
-    'module' => 'file_entity',
   );
 
   // Exported permission: use text format copyright.
