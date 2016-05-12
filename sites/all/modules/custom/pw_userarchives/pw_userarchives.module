@@ -64,7 +64,7 @@ function pw_userarchives_cron($uid = NULL) {
     $answerQuery = db_select('comment', 'c');
     $answerQuery->addExpression('COUNT(DISTINCT c.nid)', 'count');
     $answerQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'comment\' AND f.entity_id = c.cid');
-    $answerQuery->join('field_data_field_dialogue_is_standard_reply', 'standard_reply', 'standard_reply.entity_type = \'comment\' AND standard_reply.entity_id = c.cid');
+    $answerQuery->leftJoin('field_data_field_dialogue_is_standard_reply', 'standard_reply', 'standard_reply.entity_type = \'comment\' AND standard_reply.entity_id = c.cid AND standard_reply.field_dialogue_is_standard_reply_value = 0');
     $answerQuery->join('node', 'n', 'n.nid=c.nid');
     $answerQuery->join('field_data_field_dialogue_before_election', 'before_election', 'before_election.entity_type = \'node\' AND before_election.entity_id=n.nid');
     $answerQuery->join('field_revision_field_parliament', 'p', 'p.entity_type = \'node\' AND p.entity_id=n.nid');
@@ -72,7 +72,7 @@ function pw_userarchives_cron($uid = NULL) {
     $answerQuery->condition('c.uid', $row['uid']);
     $answerQuery->condition('c.status', 1);
     $answerQuery->condition('rn.name', $row['parliament_name']);
-    $answerQuery->condition('standard_reply.field_dialogue_is_standard_reply_value', 0);
+    //$answerQuery->condition('standard_reply.field_dialogue_is_standard_reply_value', 0);
     $answerQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
     $answerResult = $answerQuery->execute()->fetchAssoc();
 
