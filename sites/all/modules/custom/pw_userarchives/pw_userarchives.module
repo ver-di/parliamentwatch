@@ -232,7 +232,7 @@ function pw_delete_old_user_revisions() {
 function pw_reset_actuale_profile($uid) {
 
   // load current profile
-  $user = user_load($uid);
+  $user = user_load($uid, TRUE);
 
   if(!$user){
     return;
