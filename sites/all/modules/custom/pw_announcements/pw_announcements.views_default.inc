@@ -207,6 +207,7 @@ return $term->tid;';
   $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
   );
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate']['fail'] = 'ignore';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
