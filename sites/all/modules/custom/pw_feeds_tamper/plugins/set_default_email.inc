@@ -48,16 +48,22 @@ function pw_set_default_email($source, $item_key, $element_key, &$field, $settin
     foreach ($source->current_item as $value) {
 
       // try to find string politician which indicates it's the field for roles
-      if (stripos($value, 'Politician') !== FALSE) {
+      if (is_string($value) && stripos($value, 'Politician') !== FALSE) {
         $a_roles = explode(',', $value);
+      }
+
+      // roles are already an array
+      elseif (is_array($value)) {
+        $a_roles = $value;
+      }
+      if(isset($a_roles)) {
         $a_roles = array_map('trim', $a_roles);
         $a_roles = array_map('ucfirst', $a_roles);
-
-        // if role candidate was found set generic email
-        if (in_array('Candidate', $a_roles)) {
+        if(in_array('Politician', $a_roles) && in_array('Candidate', $a_roles)){
           $field = $generic_email;
           break;
         }
+        unset($a_roles);
       }
     }
   }

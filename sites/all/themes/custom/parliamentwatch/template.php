@@ -39,11 +39,11 @@ function parliamentwatch_preprocess_node(&$variables) {
       if ($variables['view_mode'] == 'teaser' && in_array($petition_status[0]['value'], array('asking_parliament', 'passed_parliament'))) {
         $query = new EntityFieldQuery();
         $query->entityCondition('entity_type', 'node')
-        ->entityCondition('bundle', 'vote')
-        ->fieldCondition('field_vote_node', 'target_id', $node->nid)
-        ->fieldCondition('field_voted', 'value', 1)
-        ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
-        ->propertyCondition('status', NODE_PUBLISHED);
+          ->entityCondition('bundle', 'vote')
+          ->fieldCondition('field_vote_node', 'target_id', $node->nid)
+          ->fieldCondition('field_voted', 'value', 1)
+          ->fieldCondition('field_parliament', 'tid', $node->field_parliament[LANGUAGE_NONE][0]['tid'])
+          ->propertyCondition('status', NODE_PUBLISHED);
         $variables["count_votes"] = $query->count()->execute();
       }
     }
@@ -74,42 +74,42 @@ function parliamentwatch_preprocess_node(&$variables) {
 
     switch ($variables['field_petition_partner'][0]['value']) {
       case "change.org":
-      $variables['partner_html'] = theme('image', array(
-        'path' => drupal_get_path('theme', 'parliamentwatch') . '/images/logo-change.png',
-        'width' => 119,
-        'height' => 23,
-        'alt' => 'Change.org',
+        $variables['partner_html'] = theme('image', array(
+          'path' => drupal_get_path('theme', 'parliamentwatch') . '/images/logo-change.png',
+          'width' => 119,
+          'height' => 23,
+          'alt' => 'Change.org',
         ));
-      $variables['signing_url'] = url("https://secured.abgeordnetenwatch.de/tools/newsletter.php", array(
-        'external' => TRUE,
-        'query' => array(
-          'width' => 800,
-          'height' => 450,
-          'iframe' => TRUE,
-          'continue' => $variables['field_petition_external_url'][0]['url'],
+        $variables['signing_url'] = url("https://secured.abgeordnetenwatch.de/tools/newsletter.php", array(
+          'external' => TRUE,
+          'query' => array(
+            'width' => 800,
+            'height' => 450,
+            'iframe' => TRUE,
+            'continue' => $variables['field_petition_external_url'][0]['url'],
           )
         ));
-      if (empty($petition_status) || $petition_status[0]['value'] == "open_for_signings") {
+        if (empty($petition_status) || $petition_status[0]['value'] == "open_for_signings") {
           // If the petition is run by an external service, all links from
           // the node need to point to that URL. To avoid having to access
           // the nitty-gritty of all elements in use, we simply override
           // the node url in
-        $variables['node_url'] = $variables['signing_url'];
-      }
-      #elseif ($petition_status != "passed_parliament") {
-      #  $variables['signing_url'] = $variables['node_url'];
-      #}
-      break;
+          $variables['node_url'] = $variables['signing_url'];
+        }
+        #elseif ($petition_status != "passed_parliament") {
+        #  $variables['signing_url'] = $variables['node_url'];
+        #}
+        break;
       default:
-      $variables['partner_html'] = "";
-      $variables['signing_url'] = $variables['node_url'];
-      break;
+        $variables['partner_html'] = "";
+        $variables['signing_url'] = $variables['node_url'];
+        break;
     }
 
     $variables['themed_image'] = theme('image_style', array(
       'style_name' => 'pw_landscape_l', //Configure style here!
       'path' => $variables['field_teaser_image'][0]['uri'],
-      ));
+    ));
 
     if (!empty($variables['field_teaser_image'][0]['field_image_copyright']) || !empty($variables['field_teaser_image'][0]['field_image_copyright']['und'][0]['value'])) {
       $variables['has_image_copyright'] = TRUE;
@@ -136,8 +136,8 @@ function parliamentwatch_theme(&$existing, $type, $theme, $path) {
     'user_login' => array(
       'template' => 'templates/user-login',
       'render element' => 'form',
-      ),
-    );
+    ),
+  );
 }
 
 /*
@@ -295,7 +295,7 @@ function abgeordnetenwatch_pager_link($variables) {
         t('‹ previous') => t('Go to previous page'),
         t('next ›') => t('Go to next page'),
         t('last »') => t('Go to last page'),
-        );
+      );
     }
     if (isset($titles[$text])) {
       $attributes['title'] = $titles[$text];
@@ -323,9 +323,9 @@ function parliamentwatch_qt_quicktabs_tabset($vars) {
   $variables = array(
     'attributes' => array(
       'class' => 'quicktabs-tabs quicktabs-style-'.$vars['tabset']['#options']['style'],
-      ),
+    ),
     'items' => array(),
-    );
+  );
   foreach (element_children($vars['tabset']['tablinks']) as $key) {
     $item = array();
     if (is_array($vars['tabset']['tablinks'][$key])) {
@@ -426,125 +426,127 @@ function parliamentwatch_delta_blocks_breadcrumb($variables) {
 
       // view profile fields
       elseif($menu_item['page_arguments'][0] == 'pw_user_profile_fields_rev'){
-       $user = user_load_by_name($menu_item['page_arguments'][2]);
-       $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
-       parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role);
-     }
+        $user = user_load_by_name($menu_item['page_arguments'][2]);
+        $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
+        parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role);
+      }
 
       // view profile fields
-     elseif($menu_item['page_arguments'][0] == 'pw_user_profile_fields_rev'){
-       $user = user_load_by_name($menu_item['page_arguments'][2]);
-       $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
-       parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role);
-     }
-   }
-
-   // nodes and user profiles
-   else{
-
-      // add profiles overview to profile
-    if(arg(0) == 'user' || arg(0) == 'profile'){
-      $user = _pw_get_current_user();
-      $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
-      parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role, FALSE);
+      elseif($menu_item['page_arguments'][0] == 'pw_user_profile_fields_rev'){
+        $user = user_load_by_name($menu_item['page_arguments'][2]);
+        $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
+        parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role);
+      }
     }
 
+    // nodes and user profiles
+    else{
+
+      // add profiles overview to profile
+      if(arg(0) == 'user' || arg(0) == 'profile'){
+        $user = _pw_get_current_user();
+        $role = _pw_user_has_role($user, 'Candidate')?'Candidate':'Deputy';
+        parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role, FALSE);
+      }
+
       // add parent path to nodes
-    elseif (arg(0) == 'node') {
-      switch($menu_item['page_arguments'][0]->type){
-        case 'pw_petition':
-        $variables['breadcrumb'][] = l('Petitionen', 'petitions/'.$parliament_name);
-        break;
-        case 'poll':
-        $variables['breadcrumb'][] = l('Abstimmungen', 'polls/'.$parliament_name);
-        break;
-        case 'blogpost':
-        $variables['breadcrumb'][] = l('Blog', 'blog');
-        break;
-        case 'newsletter':
-        $variables['breadcrumb'][] = l('Newsletter', 'newsletter');
-        break;
-        case 'press_release':
-        $variables['breadcrumb'][] = l('Über uns', 'ueber-uns');
-        $variables['breadcrumb'][] = l('Pressemitteilungen', 'about/press/press-releases');
-        break;
-        case 'dialogue':
-        $recipient_uid = $menu_item['page_arguments'][0]->field_dialogue_recipient[LANGUAGE_NONE][0]['target_id'];
-        if(isset($parliament_name) && !empty($recipient_uid)){
+      elseif (arg(0) == 'node') {
+        switch($menu_item['page_arguments'][0]->type){
+          case 'pw_petition':
+            $variables['breadcrumb'][] = l('Petitionen', 'petitions/'.$parliament_name);
+            break;
+          case 'poll':
+            $variables['breadcrumb'][] = l('Abstimmungen', 'polls/'.$parliament_name);
+            break;
+          case 'blogpost':
+            $variables['breadcrumb'][] = l('Blog', 'blog');
+            break;
+          case 'newsletter':
+            $variables['breadcrumb'][] = l('Newsletter', 'newsletter');
+            break;
+          case 'press_release':
+            $variables['breadcrumb'][] = l('Über uns', 'ueber-uns');
+            $variables['breadcrumb'][] = l('Pressemitteilungen', 'about/press/press-releases');
+            break;
+          case 'dialogue':
+            $is_candidate = $menu_item['page_arguments'][0]->field_dialogue_before_election[LANGUAGE_NONE][0]['value'] == 1;
+            $recipient_uid = $menu_item['page_arguments'][0]->field_dialogue_recipient[LANGUAGE_NONE][0]['target_id'];
+            if(isset($parliament_name) && !empty($recipient_uid)){
 
-            // find revision by uid and parliament
-          $query = db_select('user_archive_cache', 'uac');
-          $query->fields('uac', array('uid', 'vid', 'user_role', 'actual_profile'));
-          $query->condition("parliament_name", $parliament_name);
-          $query->condition("uid", $recipient_uid);
-          $result = $query->execute();
-          if($result->rowCount() > 0){
-            $uac_obj = $result->fetchObject();
-            $user = user_revision_load($recipient_uid, $uac_obj->vid);
-            $role = ucfirst($uac_obj->user_role);
-            $is_actual_profile = $uac_obj->actual_profile == 1;
+              // find revision by uid and parliament
+              $query = db_select('user_archive_cache', 'uac');
+              $query->fields('uac', array('uid', 'vid', 'user_role', 'actual_profile'));
+              $query->condition("parliament_name", $parliament_name);
+              $query->condition("user_role", $is_candidate?'candidate':'deputy');
+              $query->condition("uid", $recipient_uid);
+              $result = $query->execute();
+              if($result->rowCount() > 0){
+                $uac_obj = $result->fetchObject();
+                $user = user_revision_load($recipient_uid, $uac_obj->vid);
+                $role = ucfirst($uac_obj->user_role);
+                $is_actual_profile = $uac_obj->actual_profile == 1;
 
-              // add parliament and profile to breadcrumb
-            parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role, !$is_actual_profile);
-          }
+                // add parliament and profile to breadcrumb
+                parliamentwatch_breadcrumb_user($variables, $user, $parliament_name, $role, !$is_actual_profile);
+              }
+            }
+            break;
+          case 'calendar_entry':
+            $author_uid = $menu_item['page_arguments'][0]->uid;
+            $user = user_load($author_uid);
+
+            // add only profile to breadcrumb
+            parliamentwatch_breadcrumb_user($variables, $user);
+
+            // add calendar overview
+            $variables['breadcrumb'][] = l('Wahlkampftermine', 'profile/'.$user->name.'/calendar');
+            break;
         }
-        break;
-        case 'calendar_entry':
-        $author_uid = $menu_item['page_arguments'][0]->uid;
-        $user = user_load($author_uid);
-
-          // add only profile to breadcrumb
-        parliamentwatch_breadcrumb_user($variables, $user);
-
-          // add calendar overview
-        $variables['breadcrumb'][] = l('Wahlkampftermine', 'profile/'.$user->name.'/calendar');
-        break;
       }
     }
   }
-}
 
   // load active trail
-$active_trail = menu_get_active_trail();
-$last_item = end($active_trail);
+  $active_trail = menu_get_active_trail();
+  $last_item = end($active_trail);
 
   // add current item
-    //if ($variables['breadcrumb_current'] && current_path() != $last_item['href']) {
-$title = drupal_get_title();
-if(!empty($title)) {
-  $variables['breadcrumb'][] = l($title, current_path(), array('html' => TRUE));
-}
-else {
-  $variables['breadcrumb'][] = l($last_item['link_title'], current_path(), array('html' => TRUE));
-}
-    //}
+  //if ($variables['breadcrumb_current'] && current_path() != $last_item['href']) {
+  $title = drupal_get_title();
+  if(!empty($title)) {
+    $variables['breadcrumb'][] = l($title, current_path(), array('html' => TRUE));
+  }
+  else {
+    $variables['breadcrumb'][] = l($last_item['link_title'], current_path(), array('html' => TRUE));
+  }
+  //}
   // create output
-$output = '<div id="breadcrumb" class="clearfix"><ul class="breadcrumb">';
-$switch = array('odd' => 'even', 'even' => 'odd');
-$zebra = 'even';
-$last = count($variables['breadcrumb']) - 1;
+  $output = '<div id="breadcrumb" class="clearfix"><ul class="breadcrumb">';
+  $switch = array('odd' => 'even', 'even' => 'odd');
+  $zebra = 'even';
+  $last = count($variables['breadcrumb']) - 1;
 
-foreach ($variables['breadcrumb'] as $key => $item) {
-  $zebra = $switch[$zebra];
-  $attributes['class'] = array('depth-'.($key + 1), $zebra);
-  if ($key == 0) {
-    $attributes['class'][] = 'first';
+  foreach ($variables['breadcrumb'] as $key => $item) {
+    $zebra = $switch[$zebra];
+    $attributes['class'] = array('depth-'.($key + 1), $zebra);
+    if ($key == 0) {
+      $attributes['class'][] = 'first';
+    }
+    if ($key == $last) {
+      $attributes['class'][] = 'last';
+    }
+    if ($key != $last) {
+      $output .= '<li'.drupal_attributes($attributes).'>'.$item.' / </li>';
+    }
+    else{
+      $output .= '<li'.drupal_attributes($attributes).'>'.$item.'</li>';
+    }
   }
-  if ($key == $last) {
-    $attributes['class'][] = 'last';
-  }
-  if ($key != $last) {
-    $output .= '<li'.drupal_attributes($attributes).'>'.$item.' / </li>';
-  }
-  else{
-    $output .= '<li'.drupal_attributes($attributes).'>'.$item.'</li>';
-  }
-}
 
-$output .= '</ul></div>';
+  $output .= '</ul></div>';
   //}
 
-return $output;
+  return $output;
 }
 
 /**
@@ -583,10 +585,7 @@ function parliamentwatch_breadcrumb_user(&$variables, $user, $parliament_name = 
     }
   }
   if($set_profile){
-    $user_title = field_get_items('user', $user, 'field_user_title');
-    $user_first_name = field_get_items('user', $user, 'field_user_fname');
-    $user_last_name = field_get_items('user', $user, 'field_user_lname');
-    $user_full_name = trim($user_title[0]['value'].' '.$user_first_name[0]['value'].' '.$user_last_name[0]['value']);
+    $user_full_name = _pw_get_fullname($user);
     if($set_archive_path){
       $variables['breadcrumb'][] = l($user_full_name, 'profile/'.$user->name.'/archive/'.$user->vid);
     }
@@ -634,13 +633,13 @@ function parliamentwatch_tagadelic_weighted(array $vars) {
 
   foreach ($terms as $term) {
     $output .= l($term->name, 'taxonomy/term/'.$term->tid, array(
-      'attributes' => array(
-        'class' => array("tagadelic", "level".$term->weight),
-        'rel' => 'tag',
-        'title'  => $term->description,
+          'attributes' => array(
+            'class' => array("tagadelic", "level".$term->weight),
+            'rel' => 'tag',
+            'title'  => $term->description,
+          )
         )
-      )
-    )." \n";
+      )." \n";
   }
   //if (count($terms) >= variable_get('tagadelic_block_tags_'.$vars['voc']->vid, 12)) {
   //  $output .= theme('more_link', array('title' => t('more tags'), 'url' => "tagadelic/chunk/{$vars['voc']->vid}"));
@@ -714,7 +713,7 @@ function parliamentwatch_pager($variables) {
   }else {
     $new_li_next = $li_next;
     $new_li_last = str_replace(t('next ›'),	t('next ›'),	$new_li_next);
-        //$new_li_last = t('next ›').' '.$new_li_last;
+    //$new_li_last = t('next ›').' '.$new_li_last;
   }
 
   if ($pager_total[$element] > 1) {
@@ -722,13 +721,13 @@ function parliamentwatch_pager($variables) {
     $items[] = array(
       'class' => array('pager-first'),
       'data' => $new_li_first,
-      );
+    );
 //    }
 //    if ($li_previous) {
     $items[] = array(
       'class' => '',
       'data' => t('Page'),
-      );
+    );
 //    }
 
     // When there is more than one page, create the pager list.
@@ -737,7 +736,7 @@ function parliamentwatch_pager($variables) {
         $items[] = array(
           'class' => array('pager-ellipsis'),
           'data' => $first.' …',
-          );
+        );
       }
       // Now generate the actual pager piece.
       for (; $i <= $pager_last && $i <= $pager_max; $i++) {
@@ -745,26 +744,26 @@ function parliamentwatch_pager($variables) {
           $items[] = array(
             'class' => array('pager-item'),
             'data' => theme('pager_previous', array('text' => $i, 'element' => $element, 'interval' => ($pager_current - $i), 'parameters' => $parameters)),
-            );
+          );
         }
         if ($i == $pager_current) {
           $items[] = array(
             'class' => array('pager-current'),
             'data' => $i,
-            );
+          );
         }
         if ($i > $pager_current) {
           $items[] = array(
             'class' => array('pager-item'),
             'data' => theme('pager_next', array('text' => $i, 'element' => $element, 'interval' => ($i - $pager_current), 'parameters' => $parameters)),
-            );
+          );
         }
       }
       if ($i < $pager_max+1) {
         $items[] = array(
           'class' => array('pager-ellipsis'),
           'data' => '… '.$last,
-          );
+        );
       }
     }
     // End generation.
@@ -772,18 +771,18 @@ function parliamentwatch_pager($variables) {
       $items[] = array(
         'class' => array('pager-next'),
         'data' => '',
-        );
+      );
     }
 //    if ($li_last) {
     $items[] = array(
       'class' => array('pager-last'),
       'data' => $new_li_last,
-      );
+    );
 //    }
     return '<h2 class="element-invisible">'.t('Pages').'</h2>'.theme('item_list', array(
       'items' => $items,
       'attributes' => array('class' => array('pager')),
-      ));
+    ));
   }
 }
 

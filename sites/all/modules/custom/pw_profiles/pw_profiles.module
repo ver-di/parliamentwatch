@@ -323,6 +323,11 @@ function pw_profiles_ds_pre_render_alter(&$layout_render_array, $context) {
  */
 function pw_profiles_user_update(&$edit, $account, $category) {
 
+  // custom abort flag to prevent circular updates
+  if(isset($account->abort_update) && $account->abort_update){
+    return;
+  }
+
   // check if username was changed and update path then
   if ($account->name != $account->original->name) {
     $path = path_load(array('source' => 'user/' . $account->uid));
