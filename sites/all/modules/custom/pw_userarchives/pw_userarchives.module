@@ -27,9 +27,13 @@ function pw_userarchives_cron($uid = NULL) {
   $dbconnection->from($query)->execute(); // INSERT INTO ... FROM SELECT ...
 
   // set actual / newest profile
-  // fetch keys to reduce result to uids only
-  $result_uids = array_keys($query->execute()->fetchAllKeyed());
+  $result_uids = array_unique($query->execute()->fetchAllKeyed());
   foreach ($result_uids as $uid) {
+
+    // restore to newest profile, especially after importing older profiles
+    pw_reset_actuale_profile($uid);
+
+    // update meta table
     db_query('UPDATE user_archive_cache uac
       INNER JOIN users u ON uac.vid = u.vid
       SET actual_profile = 1
@@ -226,7 +230,15 @@ function pw_delete_old_user_revisions() {
  * @param $uid
  */
 function pw_reset_actuale_profile($uid) {
-  $user = user_load($uid);
+
+  // load current profile
+  $user = user_load($uid, TRUE);
+
+  if(!$user){
+    return;
+  }
+
+  // load newest profile
   $query = db_select('user_archive_cache', 'uac');
   $query->addField('uac', 'vid');
   $query->condition('uac.uid', $uid);
@@ -235,19 +247,25 @@ function pw_reset_actuale_profile($uid) {
   $query->orderBy('uac.vid', 'DESC');
   $result = $query->execute()->fetchAssoc();
   $newest_vid = $result['vid'];
-  print 'user: '.$user->vid."\n";
-  print 'uac: '.$newest_vid."\n";
-  if($user->vid == $newest_vid){
+
+  // check if current vid is newest
+  if($user->vid != $newest_vid){
+
+    // load full revision
     $user_revision = user_revision_load($uid, $newest_vid);
+
+    // retrieve roles and add them to user object
     $role_tids = _pw_array_flatten($user_revision->field_user_roles_for_view_mode_s, FALSE);
     $roles_terms = taxonomy_term_load_multiple($role_tids);
-    print_r($user_revision->roles);
     $user_revision->roles = [];
     foreach($roles_terms as $role_term){
       $role =  user_role_load_by_name($role_term->name);
       $user_revision->roles[$role->rid] = $role->name;
     }
     $user_revision->revision = 1;
+
+    // add custom abort flag to prevent from circular updates
+    $user_revision->abort_update = 1;
     $user_revision->log = t('Copy of the revision from %date.', array('%date' => format_date($user_revision->revision_timestamp)));
     user_save($user_revision, (array) $user_revision);
     watchdog('user', 'reverted %title revision %revision.', array('%title' => $user_revision->name, '%revision' => $user_revision->vid));
