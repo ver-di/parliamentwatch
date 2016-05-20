@@ -38,9 +38,9 @@ $user_full_name .= $user_fname." ".$user_lname;
   </div>
 </div>
 <div class="statement">
-  <?php if (strlen($row->_entity_properties['body:value']) > 0): ?>
+  <?php if (strlen($row->_entity_properties['body:value'][0]) > 0): ?>
     <blockquote>
-      <div class="pw-expander"><div><?php print check_markup($row->_entity_properties['body:value']); ?></div></div>
+      <div class="pw-expander"><div><?php print check_markup($row->_entity_properties['body:value'][0]); ?></div></div>
     </blockquote>
   <?php endif ?>
 </div>

@@ -410,7 +410,7 @@ Alle|Ganze Plattform durchsuchen
   $view->name = 'vote_search';
   $view->description = '';
   $view->tag = 'default';
-  $view->base_table = 'search_api_index_node_index';
+  $view->base_table = 'search_api_index_vote_index';
   $view->human_name = 'Vote Search';
   $view->core = 7;
   $view->api_version = '3.0';
@@ -514,126 +514,126 @@ no-show|nicht beteiligt',
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Feld: Indexed Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   /* Feld: Indexed Inhalt: Parliament */
   $handler->display->display_options['fields']['field_parliament']['id'] = 'field_parliament';
-  $handler->display->display_options['fields']['field_parliament']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_parliament']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_parliament']['field'] = 'field_parliament';
   $handler->display->display_options['fields']['field_parliament']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_parliament']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_parliament']['bypass_access'] = 0;
   /* Feld: Indexed Inhalt: Politician */
   $handler->display->display_options['fields']['field_politician']['id'] = 'field_politician';
-  $handler->display->display_options['fields']['field_politician']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_politician']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_politician']['field'] = 'field_politician';
   $handler->display->display_options['fields']['field_politician']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_politician']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_politician']['bypass_access'] = 0;
   /* Feld: The main body text: Text (indexed) */
   $handler->display->display_options['fields']['body_value']['id'] = 'body_value';
-  $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['body_value']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['body_value']['field'] = 'body_value';
   $handler->display->display_options['fields']['body_value']['link_to_entity'] = 0;
   /* Feld: Indexed Inhalt: Node Reference */
   $handler->display->display_options['fields']['field_vote_node']['id'] = 'field_vote_node';
-  $handler->display->display_options['fields']['field_vote_node']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_node']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_node']['field'] = 'field_vote_node';
   $handler->display->display_options['fields']['field_vote_node']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_vote_node']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_vote_node']['bypass_access'] = 0;
   /* Feld: Politician Reference: Constituency (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_constituency']['id'] = 'field_vote_user_field_user_constituency';
-  $handler->display->display_options['fields']['field_vote_user_field_user_constituency']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_constituency']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_constituency']['field'] = 'field_vote_user_field_user_constituency';
   $handler->display->display_options['fields']['field_vote_user_field_user_constituency']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_vote_user_field_user_constituency']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_vote_user_field_user_constituency']['bypass_access'] = 0;
   /* Feld: Politician Reference: First Name (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_fname']['id'] = 'field_vote_user_field_user_fname';
-  $handler->display->display_options['fields']['field_vote_user_field_user_fname']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_fname']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_fname']['field'] = 'field_vote_user_field_user_fname';
   /* Feld: Politician Reference: Gender (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_gender']['id'] = 'field_vote_user_field_user_gender';
-  $handler->display->display_options['fields']['field_vote_user_field_user_gender']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_gender']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_gender']['field'] = 'field_vote_user_field_user_gender';
   /* Feld: Politician Reference: Last name (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_lname']['id'] = 'field_vote_user_field_user_lname';
-  $handler->display->display_options['fields']['field_vote_user_field_user_lname']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_lname']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_lname']['field'] = 'field_vote_user_field_user_lname';
   /* Feld: Politician Reference: Name (indexed) */
   $handler->display->display_options['fields']['field_vote_user_name']['id'] = 'field_vote_user_name';
-  $handler->display->display_options['fields']['field_vote_user_name']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_name']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_name']['field'] = 'field_vote_user_name';
   $handler->display->display_options['fields']['field_vote_user_name']['link_to_entity'] = 0;
   /* Feld: Politician Reference: Parliament (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_parliament']['id'] = 'field_vote_user_field_user_parliament';
-  $handler->display->display_options['fields']['field_vote_user_field_user_parliament']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_parliament']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_parliament']['field'] = 'field_vote_user_field_user_parliament';
   $handler->display->display_options['fields']['field_vote_user_field_user_parliament']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_vote_user_field_user_parliament']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_vote_user_field_user_parliament']['bypass_access'] = 0;
   /* Feld: Politician Reference: Party (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_party']['id'] = 'field_vote_user_field_user_party';
-  $handler->display->display_options['fields']['field_vote_user_field_user_party']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_party']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_party']['field'] = 'field_vote_user_field_user_party';
   $handler->display->display_options['fields']['field_vote_user_field_user_party']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_vote_user_field_user_party']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_vote_user_field_user_party']['bypass_access'] = 0;
   /* Feld: Politician Reference: Title (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_title']['id'] = 'field_vote_user_field_user_title';
-  $handler->display->display_options['fields']['field_vote_user_field_user_title']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_title']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_title']['field'] = 'field_vote_user_field_user_title';
   /* Feld: Politician Reference: URL (indexed) */
   $handler->display->display_options['fields']['field_vote_user_url']['id'] = 'field_vote_user_url';
-  $handler->display->display_options['fields']['field_vote_user_url']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_url']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_url']['field'] = 'field_vote_user_url';
   $handler->display->display_options['fields']['field_vote_user_url']['link_to_entity'] = 0;
   /* Feld: Politician Reference » Constituency » Area Codes: Name (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_constituency_field_constituency_area_codes_name']['id'] = 'field_vote_user_field_user_constituency_field_constituency_area_codes_name';
-  $handler->display->display_options['fields']['field_vote_user_field_user_constituency_field_constituency_area_codes_name']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_constituency_field_constituency_area_codes_name']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_constituency_field_constituency_area_codes_name']['field'] = 'field_vote_user_field_user_constituency_field_constituency_area_codes_name';
   $handler->display->display_options['fields']['field_vote_user_field_user_constituency_field_constituency_area_codes_name']['link_to_entity'] = 0;
   /* Feld: Indexed Inhalt: Vote */
   $handler->display->display_options['fields']['field_vote']['id'] = 'field_vote';
-  $handler->display->display_options['fields']['field_vote']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote']['field'] = 'field_vote';
   $handler->display->display_options['fields']['field_vote']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_vote']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_vote']['bypass_access'] = 0;
   /* Feld: The main body text: Text (indexed) */
   $handler->display->display_options['fields']['body_value_1']['id'] = 'body_value_1';
-  $handler->display->display_options['fields']['body_value_1']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['body_value_1']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['body_value_1']['field'] = 'body_value';
   $handler->display->display_options['fields']['body_value_1']['link_to_entity'] = 0;
   /* Feld: Parliament: Name (indexed) */
   $handler->display->display_options['fields']['field_parliament_name']['id'] = 'field_parliament_name';
-  $handler->display->display_options['fields']['field_parliament_name']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_parliament_name']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_parliament_name']['field'] = 'field_parliament_name';
   $handler->display->display_options['fields']['field_parliament_name']['link_to_entity'] = 0;
   /* Feld: Politician Reference » Party: Name (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_party_name']['id'] = 'field_vote_user_field_user_party_name';
-  $handler->display->display_options['fields']['field_vote_user_field_user_party_name']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_party_name']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_party_name']['field'] = 'field_vote_user_field_user_party_name';
   $handler->display->display_options['fields']['field_vote_user_field_user_party_name']['link_to_entity'] = 0;
   /* Feld: Node Reference: Titel (indexed) */
   $handler->display->display_options['fields']['field_vote_node_title']['id'] = 'field_vote_node_title';
-  $handler->display->display_options['fields']['field_vote_node_title']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_node_title']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_node_title']['field'] = 'field_vote_node_title';
   $handler->display->display_options['fields']['field_vote_node_title']['link_to_entity'] = 0;
   /* Feld: Politician Reference » Fraction: Name (indexed) */
   $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['id'] = 'field_vote_user_field_user_fraction_name';
-  $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['field'] = 'field_vote_user_field_user_fraction_name';
   $handler->display->display_options['fields']['field_vote_user_field_user_fraction_name']['link_to_entity'] = 0;
   /* Sortierkriterien: Indexed Inhalt: Änderungsdatum */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
-  $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   /* Filterkriterium: Indexed Inhalt: Inhaltstyp */
   $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'vote' => 'vote',
@@ -641,7 +641,7 @@ no-show|nicht beteiligt',
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filterkriterium: Suche: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['group'] = 1;
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
@@ -667,7 +667,7 @@ no-show|nicht beteiligt',
   );
   /* Filterkriterium: Politician Reference: Fraction (indexed) */
   $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['id'] = 'field_vote_user_field_user_fraction';
-  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['field'] = 'field_vote_user_field_user_fraction';
   $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['value'] = array(
     19744 => '19744',
@@ -695,7 +695,7 @@ no-show|nicht beteiligt',
   $handler->display->display_options['filters']['field_vote_user_field_user_fraction']['expose']['reduce'] = 1;
   /* Filterkriterium: Indexed Inhalt: Vote */
   $handler->display->display_options['filters']['field_vote']['id'] = 'field_vote';
-  $handler->display->display_options['filters']['field_vote']['table'] = 'search_api_index_node_index';
+  $handler->display->display_options['filters']['field_vote']['table'] = 'search_api_index_vote_index';
   $handler->display->display_options['filters']['field_vote']['field'] = 'field_vote';
   $handler->display->display_options['filters']['field_vote']['value'] = array(
     19669 => '19669',
