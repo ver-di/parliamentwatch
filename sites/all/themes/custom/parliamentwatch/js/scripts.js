@@ -157,7 +157,17 @@ jQuery(document).ready(function() {
         history.go(0);
     });
 
+// Set equal-Height for slide-show items
+    if ($('#block-views-pw-announcement-slideshow').length) {
+        var slideShowHeight = $('#views_slideshow_cycle_main_pw_announcement-slideshow').height();
 
+        console.log(slideShowHeight);
+        $('.views-slideshow-cycle-main-frame-row').each(function(){
+            $(this).height(slideShowHeight);
+            $(this).find('.views-slideshow-cycle-main-frame-row-item').height(slideShowHeight);
+            $(this).find('.wrapper').height(slideShowHeight);
+        });
+    }
 // expand active user revision block in user revision switch
 
     if ($('#block-views-pw-announcement-slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title').length < 2) {
@@ -179,6 +189,7 @@ jQuery(document).ready(function() {
 
     $(".view-pw-kandidatencheck .views_slideshow_controls_text_next a").text(Drupal.t('next thesis'));
     $(".view-pw-kandidatencheck .views_slideshow_controls_text_previous a").text(Drupal.t('previous thesis'));
+
 
 // attach values of bef slider to handles
 

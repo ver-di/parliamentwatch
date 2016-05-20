@@ -46,7 +46,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-pw_footer_abstract'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => 'medium',
     'custom' => '0',
     'machine_name' => 'pw_footer_abstract',
