@@ -3,7 +3,11 @@ description = profile display
 core = 7.x
 package = Features
 php = 5.2.4
+<<<<<<< HEAD
 version = 7.x-1.0-20160713
+=======
+version = 7.x-1.0-20160523
+>>>>>>> 62b87a2... AW-3347: Fixed floating issues after bootstrap-udate
 project = pw_profiles
 dependencies[] = addressfield
 dependencies[] = addressfield_tokens
@@ -478,4 +482,8 @@ features[views_view][] = polls_profile
 features[views_view][] = profile_list_rev
 features[views_view][] = pw_user_blocks
 features[views_view][] = user_tweets
+<<<<<<< HEAD
 mtime = 1468412335
+=======
+mtime = 1464005062
+>>>>>>> 62b87a2... AW-3347: Fixed floating issues after bootstrap-udate
