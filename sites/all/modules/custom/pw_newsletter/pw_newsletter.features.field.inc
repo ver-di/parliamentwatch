@@ -1622,7 +1622,12 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
     ),
     'field_instance' => array(
       'bundle' => 'paragraphs_pw_donate',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => '',
+          'format' => 'managed_content',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -1706,7 +1711,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'enable' => 0,
           'profile' => '',
         ),
-        'text_processing' => '0',
+        'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
       'widget' => array(
