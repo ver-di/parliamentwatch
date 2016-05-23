@@ -161,7 +161,6 @@ jQuery(document).ready(function() {
     if ($('#block-views-pw-announcement-slideshow').length) {
         var slideShowHeight = $('#views_slideshow_cycle_main_pw_announcement-slideshow').height();
 
-        console.log(slideShowHeight);
         $('.views-slideshow-cycle-main-frame-row').each(function(){
             $(this).height(slideShowHeight);
             $(this).find('.views-slideshow-cycle-main-frame-row-item').height(slideShowHeight);
