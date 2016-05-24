@@ -3,12 +3,12 @@
 /**
  * This module overrides the default interface for twitter presented to a logged
  * in politician by a more convenient one.
- * 
+ *
  */
 
 /**
  * Removes "Twitter accounts" sub menu from user
- * @param type $items 
+ * @param type $items
  */
 function pw_twitter_menu_alter(&$items) {
   unset($items["user/%user/edit/twitter"]);
@@ -19,7 +19,7 @@ function pw_twitter_menu_alter(&$items) {
  * for another user and does _not_ override it in case.
  * @param type $new_value
  * @param type $account
- * @return type 
+ * @return type
  */
 function pw_twitter_save($new_value, $account) {
   // load twitter module functions (#AW-1553)
@@ -31,7 +31,7 @@ function pw_twitter_save($new_value, $account) {
       array('@screen_name' => $new_value)));
     return false;
   }
-  
+
   $twitter = twitter_connect();
   if (!$twitter) {
     // Gdata import fails on empty $twitter objects, #AW-1553.
@@ -55,7 +55,7 @@ function pw_twitter_save($new_value, $account) {
 
 /**
  * Deletes all twitter accounts (can only be one) added to a user with account $account
- * @param type $account 
+ * @param type $account
  */
 function pw_twitter_delete($account) {
   // load twitter module functions (#AW-1553)
@@ -73,25 +73,37 @@ function pw_twitter_delete($account) {
 
 /**
  * If a user is saved, this function checks whether a twitter account was added
- * or deleted. If it has changed, it is entered into the fields provided by the 
+ * or deleted. If it has changed, it is entered into the fields provided by the
  * twitter module
  */
 function pw_twitter_user_presave(&$edit, $account, $category) {
   if (array_key_exists('field_user_twitter_account', $edit)) {
-    $new_value = $edit["field_user_twitter_account"]["und"]["0"]["value"];
-    $original = $account->original->field_user_twitter_account;
-    $old_value = $original["und"]["0"]["value"];
+    if(isset($edit["field_user_twitter_account"][LANGUAGE_NONE][0]["value"])){
+     $new_value = $edit["field_user_twitter_account"][LANGUAGE_NONE][0]["value"];
+    }
+    else{
+      $new_value = '';
+    }
+    if(isset($account->original)){
+      $original = $account->original->field_user_twitter_account;
+      $old_value = $original[LANGUAGE_NONE][0]["value"];
+    }
+    else{
+      $old_value = '';
+    }
     $saved = false;
-    if ($old_value == "" && $new_value != "") { // a new twitter account is initially set. Save it:
+    if ($old_value == '' && $new_value != '') { // a new twitter account is initially set. Save it:
       $saved = pw_twitter_save($new_value, $account);
-    } else if ($old_value != "" && $new_value != "" && $old_value != $new_value) {
+    }
+    else if ($old_value != '' && $new_value != '' && $old_value != $new_value) {
       pw_twitter_delete($account);
       $saved = pw_twitter_save($new_value, $account);
-    } else if ($old_value != "" && $new_value == "") {
+    }
+    else if ($old_value != '' && $new_value == '') {
       pw_twitter_delete($account);
     }
     if (!$saved) { // reset field if account is not saved properly
-      $edit["field_user_twitter_account"]["und"]["0"]["value"] = "";
+      $edit["field_user_twitter_account"][LANGUAGE_NONE][0]["value"] = '';
     }
   }
 }
