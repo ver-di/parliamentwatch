@@ -986,8 +986,10 @@ function pw_profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'computed_field',
       'settings' => array(
-        'code' => '$entity_field[0][\'value\'] = ( time() - strtotime($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\']) ) / 86400 / 365.25;
-',
+        'code' => '$entity_field[0][\'value\'] = \'\';
+if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
+  $entity_field[0][\'value\'] = ( time() - strtotime($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\']) ) / 86400 / 365.25;
+}',
         'database' => array(
           'data_default' => '',
           'data_index' => 0,
@@ -1058,13 +1060,14 @@ function pw_profiles_field_default_fields() {
       'label' => 'Age',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 0,
         'module' => 'computed_field',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'computed',
         'weight' => '51',
       ),
@@ -5527,15 +5530,13 @@ function pw_profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'computed_field',
       'settings' => array(
-        'code' => '$answers = $entity->field_user_answers_give[LANGUAGE_NONE][0][\'value\'];
-$questions = $entity-> field_user_questions_get[LANGUAGE_NONE][0][\'value\'];
+        'code' => '$answers = isset($entity->field_user_answers_give[LANGUAGE_NONE][0][\'value\'])?$entity->field_user_answers_give[LANGUAGE_NONE][0][\'value\']:0;
+$questions = isset($entity-> field_user_questions_get[LANGUAGE_NONE][0][\'value\'])?$entity-> field_user_questions_get[LANGUAGE_NONE][0][\'value\']:0;
 
-if($questions != 0)
-{
+if($questions != 0) {
   $result = ($answers / $questions) * 100;
 }
-else
-{
+else {
   $result = 0;
 }
 
@@ -5610,13 +5611,14 @@ $entity_field[0][\'value\'] = $result;',
       'label' => 'QuestionAnswerRatio',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 0,
         'module' => 'computed_field',
-        'settings' => array(),
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
         'type' => 'computed',
         'weight' => '31',
       ),
