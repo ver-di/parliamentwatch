@@ -45,5 +45,5 @@ $user_full_name .= $user_fname." ".$user_lname;
   <?php endif ?>
 </div>
 <div class="text-right">
-  <a href="/profile/<?php print $row->_entity_properties['field_vote_user:name'][0];?>?question_form" class="icon-politician">jetzt zur Position befragen</a>
+  <a href="/profile/<?php print $row->_entity_properties['field_vote_user:name'][0];?>#pw_block_user_questionform" class="icon-politician">jetzt zur Position befragen</a>
 </div>
