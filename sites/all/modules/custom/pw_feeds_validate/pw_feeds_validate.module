@@ -102,6 +102,6 @@ function pw_feeds_validate_feeds_after_save(FeedsSource $source, $entity, $item,
   if ($source->id == 'gdata_profiles_importer_v2') {
 
     // throw success message
-    drupal_set_message($entity->uuid . ', ' . l($entity->name, 'user/' . $entity->uid) . ' imported.');
+    drupal_set_message($entity->uuid.', '.$entity->name.', https://stage.abgeordnetenwatch.de/user/'.$entity->uid.' imported.');
   }
 }
