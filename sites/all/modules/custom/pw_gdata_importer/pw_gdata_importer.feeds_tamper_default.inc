@@ -47,7 +47,7 @@ return $user->field_user_address[\'und\'][0][\'locality\'];',
   $feeds_tamper->importer = 'csv_importer';
   $feeds_tamper->source = 'county';
   $feeds_tamper->plugin_id = 'replace_county_code';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Replace German county name to abbrev';
   $export['csv_importer-county-replace_county_code'] = $feeds_tamper;
@@ -262,7 +262,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->importer = 'gdata_parliaments_importer';
   $feeds_tamper->source = 'xpathparser:1';
   $feeds_tamper->plugin_id = 'required';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Pflichtfeld';
   $export['gdata_parliaments_importer-xpathparser_1-required'] = $feeds_tamper;
@@ -537,7 +537,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:37';
   $feeds_tamper->plugin_id = 'set_fraction_to_party';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Set Fraction To Party If Empty';
   $export['gdata_profiles_importer_v2-xpathparser_37-set_fraction_to_party'] = $feeds_tamper;
@@ -672,7 +672,7 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper->importer = 'gdata_profiles_updater';
   $feeds_tamper->source = 'xpathparser:7';
   $feeds_tamper->plugin_id = 'set_default_email';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Set Default E-Mail';
   $export['gdata_profiles_updater-xpathparser_7-set_default_email'] = $feeds_tamper;
