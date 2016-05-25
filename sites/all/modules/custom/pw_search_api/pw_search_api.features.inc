@@ -1022,6 +1022,7 @@ function pw_search_api_default_search_api_index() {
         "field_user_title" : { "type" : "text" },
         "last_access" : { "type" : "date" },
         "last_login" : { "type" : "date" },
+        "name" : { "type" : "text" },
         "roles" : { "type" : "list\\u003Ctext\\u003E" },
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
