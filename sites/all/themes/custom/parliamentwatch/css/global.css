@@ -3872,6 +3872,10 @@ form .webform-component-checkboxes .description {
 .comment .submitted .author {
     float: left;
     margin-bottom: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
 }
 .comment-reply {
     background-position: -610px -2896px;
@@ -3885,27 +3889,15 @@ form .webform-component-checkboxes .description {
 .comment .field-name-comment-body {
     padding: 0 10px 10px 10px;
 }
+.comment .field-name-comment-body a {
+    word-wrap: break-word;
+}
 .comment ul.links {
     border-top: 1px solid #fff;
     padding: 1.8em 10px;
 }
 .comment ul.inline li {
     display: inline-block;
-}
-.comment a.external {
-    display: inline-block;
-    text-overflow: ellipsis;
-    max-width: calc(100vw - 110px);
-    overflow: hidden;
-    white-space: nowrap;
-}
-.comment @media (min-width: 640px) {
-    a.external {
-        display: inline;
-        max-width: none;
-        overflow: auto;
-        white-space: normal;
-    }
 }
 .links.inline a,
 .submitted {
