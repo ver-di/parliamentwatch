@@ -986,7 +986,7 @@ function pw_profiles_field_default_fields() {
       'locked' => '0',
       'module' => 'computed_field',
       'settings' => array(
-        'code' => '$entity_field[0][\'value\'] = \'\';
+        'code' => '$entity_field[0][\'value\'] = 0;
 if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
   $entity_field[0][\'value\'] = ( time() - strtotime($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\']) ) / 86400 / 365.25;
 }',
