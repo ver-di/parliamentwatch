@@ -21,8 +21,33 @@ function set_fraction_to_party_form($importer, $element_key, $settings) {
 function set_fraction_to_party($source, $item_key, $element_key, &$field, $settings) {
 
   $party = trim($source->current_item['xpathparser:24']);
+  $parliament = trim($source->current_item['xpathparser:25']);
   $roles = $source->current_item['xpathparser:4'];
   if(in_array('Deputy', $roles) && empty($field)){
     $field = $party;
+
+    // overwrite default for EU and Bundestag
+    if(ereg('EU', $parliament)){
+      if(in_array($party, array('CDU', 'CSU'))){
+        $field = 'CDU/CSU (EVP)';
+      }
+      elseif(in_array($party, array('SPD'))){
+        $field = 'SPD (S&D)';
+      }
+      elseif(in_array($party, array('AfD', 'ALFA', 'FAMILIEN-PARTEI'))){
+        $field = 'AfD/ALFA/FAMILIEN-PARTEI (EKR)';
+      }
+      elseif(in_array($party, array('FDP', 'FREIE WÄHLER'))){
+        $field = 'DIE LINKE (GUE/NGL)';
+      }
+      elseif(in_array($party, array('DIE GRÜNEN', 'PIRATEN', 'ÖDP'))){
+        $field = 'DIE GRÜNEN/PIRATEN/ÖDP (Grüne/EFA)';
+      }
+    }
+    elseif(ereg('Bundestag', $parliament)){
+      if(in_array($party, array('CDU', 'CSU'))){
+        $field = 'CDU/CSU';
+      }
+    }
   }
 }
