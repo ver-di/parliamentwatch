@@ -75,6 +75,12 @@ html>/**/body .view-id-profile_list_rev .view-content li {
     background: url(/sites/abgeordnetenwatch.de/files/default_images/profile-picture-default.jpg) no-repeat;
     outline: 1px solid #ccc;
 }
+.view-id-profile_list_rev .profile-list-compact-info .link-profile {
+    clear: both;
+}
+.view-id-profile_list_rev .profile-list-compact-info .profile-list-compact-info-text {
+    float: left;
+}
 
 .block-views-profile-questions-answers-block .link-report {
     width: 100%;
@@ -152,13 +158,13 @@ html>/**/body .view-id-profile_list_rev .view-content li {
 .profiles-list-compact-wrapper:focus .element-hidden .profile-image,
 .profiles-list-compact-wrapper:active .element-hidden .profile-image {
     float: left;
-    margin: 0 14px 0 0;
+    margin: 0 14px 14px 0;
 }
 .col-last .profiles-list-compact-wrapper:hover .element-hidden .profile-image,
 .col-last .profiles-list-compact-wrapper:focus .element-hidden .profile-image,
 .col-last .profiles-list-compact-wrapper:active .element-hidden .profile-image {
     float: right;
-    margin: 0 0 0 14px;
+    margin: 0 0 14px 14px;
 }
 
 

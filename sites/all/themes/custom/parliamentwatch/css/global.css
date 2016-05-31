@@ -2631,11 +2631,9 @@ table.pw-voting .views-field-nothing {
 .pw-voting .item-politician .statement {
     max-height: 200px;
     overflow-y: auto;
-}
-.pw-voting .item-politician .statement {
     margin-bottom: 3.5em;
     margin-left: 84px;
-    width: 516px;
+    width: 470px;
 }
 .view-pw-vote-search .statement,
 .view-pw-vote-positions .statement {
