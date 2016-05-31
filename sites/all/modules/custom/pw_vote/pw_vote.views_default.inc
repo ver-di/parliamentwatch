@@ -446,6 +446,12 @@ return $term->tid;';
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'pw_petition' => 'pw_petition',
   );
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'field_vote_node_target_id';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
 
   /* Display: Petitions */
   $handler = $view->new_display('block', 'Petitions', 'petitions');
@@ -653,6 +659,12 @@ return $term->tid;';
     'poll' => 'poll',
   );
   $handler->display->display_options['filters']['type_1']['group'] = 1;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'field_vote_node_target_id';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
   $translatables['pw_vote_profile'] = array(
     t('Master'),
     t('Abstimmungsverhalten'),
