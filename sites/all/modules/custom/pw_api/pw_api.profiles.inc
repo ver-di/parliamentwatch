@@ -49,7 +49,7 @@ function pw_api_profile($username, $parliament=FALSE) {
     return MENU_NOT_FOUND;
   }
 
-  $profile = array('profile' => pw_api_user_to_array($user));
+  $profile = array('profile' => pw_api_user_to_array($user, array('votes', 'dialogues')));
 
   return $profile;
 }
@@ -92,7 +92,7 @@ function pw_api_profiles($parliament) {
   return $profiles;
 }
 
-function pw_api_user_to_array($user) {
+function pw_api_user_to_array($user, $activities = array()) {
 
   $profile = array();
 
@@ -196,45 +196,46 @@ function pw_api_user_to_array($user) {
     $profile['committees'] = array();
 
     // add votes
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'vote')
-    ->fieldCondition('field_parliament', 'tid', $w_user->field_user_parliament->tid->value())
-    ->fieldCondition('field_vote_user', 'target_id', $w_user->uid->value())
-    ->propertyCondition('status', NODE_PUBLISHED)
-    ->propertyOrderBy('created', 'DESC');
-    $result = $query->execute();
-
-    $profile['votes'] = array();
-    if(isset($result['node'])){
-
-      $query = db_select('node', 'n');
-
-      // join taxonomy terms to retrieve voting behaviour
-      $query->join('field_data_field_vote', 'vote', "n.nid = vote.entity_id AND vote.bundle = 'vote'");
-      $query->join('taxonomy_term_data', 'vote_term', "vote.field_vote_tid = vote_term.tid");
-      $query->join('field_data_field_votes_label', 'vote_label', "vote_term.tid = vote_label.entity_id AND vote_label.entity_type = 'taxonomy_term'");
-      $query->addField('vote_label', 'field_votes_label_value', 'vote_label');
-
-      // join target petition or poll to retrieve title, uuid and created date
-      $query->join('field_data_field_vote_node', 'vote_node', "n.nid = vote_node.entity_id AND vote_node.bundle = 'vote'");
-      $query->join('node', 'target_node', "vote_node.field_vote_node_target_id = target_node.nid");
-      $query->fields('target_node', array('title', 'uuid', 'created', 'nid', 'type'));
-
-      // load only vote of current user
-      $query->condition('n.nid', array_keys($result['node']));
-
-      // get results
+    if(in_array('votes', $activities)){
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'vote')
+      ->fieldCondition('field_parliament', 'tid', $w_user->field_user_parliament->tid->value())
+      ->fieldCondition('field_vote_user', 'target_id', $w_user->uid->value())
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyOrderBy('created', 'DESC');
       $result = $query->execute();
 
-      // fetch and write results
-      while($record = $result->fetchObject()){
-        if(in_array($record->type, $types_allowed)){
-          $type = str_replace('pw_', '', $record->type);
-          $profile['votes'][$type.'_'.$record->nid] = array();
-          $profile['votes'][$type.'_'.$record->nid]['title'] = $record->title;
-          $profile['votes'][$type.'_'.$record->nid]['uuid'] = $record->uuid;
-          $profile['votes'][$type.'_'.$record->nid]['date'] = date("Y-m-d", $record->created);
+      $profile['votes'] = array();
+      if(isset($result['node'])){
+
+        $query = db_select('node', 'n');
+
+        // join taxonomy terms to retrieve voting behaviour
+        $query->join('field_data_field_vote', 'vote', "n.nid = vote.entity_id AND vote.bundle = 'vote'");
+        $query->join('taxonomy_term_data', 'vote_term', "vote.field_vote_tid = vote_term.tid");
+        $query->join('field_data_field_votes_label', 'vote_label', "vote_term.tid = vote_label.entity_id AND vote_label.entity_type = 'taxonomy_term'");
+        $query->addField('vote_label', 'field_votes_label_value', 'vote_label');
+
+        // join target petition or poll to retrieve title, uuid and created date
+        $query->join('field_data_field_vote_node', 'vote_node', "n.nid = vote_node.entity_id AND vote_node.bundle = 'vote'");
+        $query->join('node', 'target_node', "vote_node.field_vote_node_target_id = target_node.nid");
+        $query->fields('target_node', array('title', 'uuid', 'created', 'nid', 'type'));
+
+        // load only vote of current user
+        $query->condition('n.nid', array_keys($result['node']));
+
+        // get results
+        $result = $query->execute();
+
+        // fetch and write results
+        while($record = $result->fetchObject()){
+          if(in_array($record->type, $types_allowed)){
+            $type = str_replace('pw_', '', $record->type);
+            $profile['votes'][$type.'_'.$record->nid] = array();
+            $profile['votes'][$type.'_'.$record->nid]['title'] = $record->title;
+            $profile['votes'][$type.'_'.$record->nid]['uuid'] = $record->uuid;
+            $profile['votes'][$type.'_'.$record->nid]['date'] = date("Y-m-d", $record->created);
           /*
            if(isset($w_vote->field_blogpost_categories)){
             foreach($w_vote->field_blogpost_categories as $key => $category){
@@ -247,6 +248,7 @@ function pw_api_user_to_array($user) {
           $profile['votes'][$type.'_'.$record->nid]['url'] = url('node/'.$record->nid, array('absolute' => TRUE));
         }
       }
+    }
       /*
        foreach ($votes as $nid => $vote) {
 
@@ -274,40 +276,40 @@ function pw_api_user_to_array($user) {
     }
 
     // add data from user_archive_cache meta table
-    $result = db_query("SELECT number_of_questions, number_of_answers FROM user_archive_cache WHERE vid = :vid", array(':vid' => $w_user->vid->value()))->fetchAssoc();
-    $profile['questions'] = array();
-    //$profile['questions']['got'] = $result['number_of_questions'];
-    //$profile['questions']['answered'] = $result['number_of_answers'];
+    if(in_array('questions', $activities)){
+      $result = db_query("SELECT number_of_questions, number_of_answers FROM user_archive_cache WHERE vid = :vid", array(':vid' => $w_user->vid->value()))->fetchAssoc();
+      $profile['questions'] = array();
 
-    // add dialogues
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'dialogue')
-    ->fieldCondition('field_parliament', 'tid', $w_user->field_user_parliament->tid->value())
-    ->fieldCondition('field_dialogue_recipient', 'target_id', $w_user->uid->value())
-    ->propertyCondition('status', NODE_PUBLISHED)
-    ->propertyOrderBy('created', 'DESC');
-    $result = $query->execute();
+      // add dialogues
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'dialogue')
+      ->fieldCondition('field_parliament', 'tid', $w_user->field_user_parliament->tid->value())
+      ->fieldCondition('field_dialogue_recipient', 'target_id', $w_user->uid->value())
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyOrderBy('created', 'DESC');
+      $result = $query->execute();
 
-    if(isset($result['node'])){
-      $dialogues = node_load_multiple(array_keys($result['node']), array(), TRUE);
-      foreach ($dialogues as $nid => $dialogue) {
+      if(isset($result['node'])){
+        $dialogues = node_load_multiple(array_keys($result['node']), array(), TRUE);
+        foreach ($dialogues as $nid => $dialogue) {
 
-        // wrap dialogue
-        $w_dialogue = entity_metadata_wrapper('node', $dialogue);
+          // wrap dialogue
+          $w_dialogue = entity_metadata_wrapper('node', $dialogue);
 
-        $profile['questions']['question_'.$nid] = array();
-        $profile['questions']['question_'.$nid]['id'] = $w_dialogue->field_dialogue_id->value();
-        $profile['questions']['question_'.$nid]['date'] = date("Y-m-d", $w_dialogue->created->value());
-        $profile['questions']['question_'.$nid]['category'] = $w_dialogue->field_dialogue_topic->label();
-        $profile['questions']['question_'.$nid]['url'] = url('node/'.$nid, array('absolute' => TRUE));
+          $profile['questions']['question_'.$nid] = array();
+          $profile['questions']['question_'.$nid]['id'] = $w_dialogue->field_dialogue_id->value();
+          $profile['questions']['question_'.$nid]['date'] = date("Y-m-d", $w_dialogue->created->value());
+          $profile['questions']['question_'.$nid]['category'] = $w_dialogue->field_dialogue_topic->label();
+          $profile['questions']['question_'.$nid]['url'] = url('node/'.$nid, array('absolute' => TRUE));
 
-        // add answers
-        $profile['questions']['question_'.$nid]['answers'] = array();
-        foreach ($w_dialogue->comments as $key => $answer) {
-          $profile['questions']['question_'.$nid]['answers']['answer_'.$key] = array();
-          $profile['questions']['question_'.$nid]['answers']['answer_'.$key]['date'] = date("Y-m-d", $answer->created->value());
-          $profile['questions']['question_'.$nid]['answers']['answer_'.$key]['summary'] = $answer->field_dialogue_comment_body->summary->value();
+          // add answers
+          $profile['questions']['question_'.$nid]['answers'] = array();
+          foreach ($w_dialogue->comments as $key => $answer) {
+            $profile['questions']['question_'.$nid]['answers']['answer_'.$key] = array();
+            $profile['questions']['question_'.$nid]['answers']['answer_'.$key]['date'] = date("Y-m-d", $answer->created->value());
+            $profile['questions']['question_'.$nid]['answers']['answer_'.$key]['summary'] = $answer->field_dialogue_comment_body->summary->value();
+          }
         }
       }
     }
