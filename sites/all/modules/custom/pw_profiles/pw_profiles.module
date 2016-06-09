@@ -15,7 +15,7 @@ function pw_profiles_update_7104() {
     'length' => 255,
     'not null' => TRUE,
     'default' => '',
-    ));
+  ));
 }
 
 /**
@@ -26,7 +26,7 @@ function pw_profiles_update_7103() {
     'input_output_type',
     'input_role_name',
     'input_parliament_name'
-    ));
+  ));
 }
 
 /**
@@ -36,60 +36,60 @@ function pw_profiles_update_7103() {
 function pw_profiles_schema() {
   $schema['user_filter_cache'] = array(
     'fields' =>
-    array(
-      'output_tid' =>
       array(
-        'type' => 'int',
-        'unsigned' => TRUE,
-        'not null' => TRUE,
-        'default' => 0,
-        ),
-      'output_name' =>
-      array(
-        'type' => 'varchar',
-        'length' => 45,
-        'not null' => TRUE,
-        'default' => '',
-        ),
-      'input_output_type' =>
-      array(
-        'type' => 'varchar',
-        'length' => 45,
-        'not null' => TRUE,
-        'default' => '',
-        ),
-      'input_role_name' =>
-      array(
-        'type' => 'varchar',
-        'length' => 45,
-        'not null' => TRUE,
-        'default' => '',
-        ),
-      'input_parliament_name' =>
-      array(
-        'type' => 'varchar',
-        'length' => 45,
-        'not null' => TRUE,
-        'default' => '',
-        ),
+        'output_tid' =>
+          array(
+            'type' => 'int',
+            'unsigned' => TRUE,
+            'not null' => TRUE,
+            'default' => 0,
+          ),
+        'output_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_output_type' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_role_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_parliament_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
       ),
     'indexes' =>
-    array(),
+      array(),
     'unique_keys' =>
-    array(
-      'uniqueness' =>
       array(
-        0 => 'output_tid',
-        1 => 'output_name',
-        2 => 'input_output_type',
-        3 => 'input_role_name',
-        4 => 'input_parliament_name',
-        ),
+        'uniqueness' =>
+          array(
+            0 => 'output_tid',
+            1 => 'output_name',
+            2 => 'input_output_type',
+            3 => 'input_role_name',
+            4 => 'input_parliament_name',
+          ),
       ),
     'module' => 'pw_profiles',
     'name' => 'user_filter_cache',
-    );
-return $schema;
+  );
+  return $schema;
 }
 
 /**
@@ -112,7 +112,7 @@ function pw_profiles_cron() {
     WHERE u.status<>0");
 
 // CONSTITUENCIES - recreate the items
-db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tconstituency.tid as output_tid, tconstituency.name as output_name, 'constituency' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tconstituency.tid as output_tid, tconstituency.name as output_name, 'constituency' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
   FROM users AS u
   INNER JOIN user_revision AS urev ON u.uid = urev.uid
   INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
@@ -124,7 +124,7 @@ db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_t
   WHERE u.status<>0");
 
 // LISTS - recreate the items
-db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tlist.tid as output_tid, tlist.name as output_name, 'list' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tlist.tid as output_tid, tlist.name as output_name, 'list' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
   FROM users AS u
   INNER JOIN user_revision AS urev ON u.uid = urev.uid
   INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
@@ -136,7 +136,7 @@ db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_t
   WHERE u.status<>0");
 
   // LIST POSITIONS - recreate the items
-db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tlistposition.tid as output_tid, tlistposition.name as output_name, 'listposition' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name) SELECT DISTINCT tlistposition.tid as output_tid, tlistposition.name as output_name, 'listposition' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
   FROM users AS u
   INNER JOIN user_revision AS urev ON u.uid = urev.uid
   INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
@@ -156,7 +156,7 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
     $form['views_embedder'] = array(
       '#value' => views_embed_view('calendar', $display_id = 'block_2'),
       '#weight' => 0,
-      );
+    );
     $form['#validate'][] = 'my_user_register_validate';
     $form['account']['name']['#description'] = t('Only lowercase letters (a-z), numbers and dash are allowed.');
   }
@@ -229,9 +229,9 @@ function pw_profiles_views_query_alter(&$view, &$query) {
     $user_role = arg(2) == 'candidates'?'candidate':'deputy';
     $subquery = db_select('user_archive_cache', 'uac');
     _pw_uac_add_conditions($subquery, array(
-      'parliament' => $parliament->name,
-      'roles' => $user_role,
-      'date' => date('Y-m-d'),
+        'parliament' => $parliament->name,
+        'roles' => $user_role,
+        'date' => date('Y-m-d'),
       )
     );
     $subquery->addField('uac', 'vid');
@@ -288,7 +288,9 @@ function pw_profiles_views_pre_render(&$view) {
     if (!empty($parliament)) {
       $field_rename_value = field_get_items('taxonomy_term', $parliament, 'field_parliament_constit_rename');
       if (!empty($field_rename_value)) {
-        $view->field['name']->options['label'] = $field_rename_value[0]['value'];
+        if(isset($view->field['field_user_constituency-revision_id'])){
+          $view->field['field_user_constituency-revision_id']->options['label'] = $field_rename_value[0]['value'];
+        }
       }
     }
   }
