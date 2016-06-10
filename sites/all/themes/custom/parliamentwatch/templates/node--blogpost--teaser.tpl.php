@@ -1,3 +1,7 @@
+<?php
+  $author = user_load($node->uid);
+  $author_name = $author->field_user_fname['und'][0]['value'] . " " . $author->field_user_lname['und'][0]['value'];
+?>
 <div class="sharethis-wrapper">
   <span class="st_sharethis_hcount" st_url="https://www.abgeordnetenwatch.de<?php print $node_url; ?>" st_title="<?php print $title; ?>" displayText="sharethis"></span>
 </div>
@@ -5,7 +9,7 @@
 <p class="medium">
   Veröffentlicht am <?php print format_date($node->created, 'custom', 'd.m.Y'); ?>
   um <?php print format_date($node->created, 'custom', 'H:i'); ?>
-  von <a href="/feedback?url=<?php print $nid; ?>&amp;width=600&amp;height=400" class="colorbox-node"><?php print $node->name; ?></a> in
+  von <a href="/feedback?url=<?php print $nid; ?>&amp;width=600&amp;height=400" class="colorbox-node"><?php print $author_name; ?></a> in
   <?php print render($content['field_blogpost_categories']); ?>
 </p>
 <div class="clearfix push-bottom-s">
