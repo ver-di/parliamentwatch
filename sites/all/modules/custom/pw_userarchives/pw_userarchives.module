@@ -203,8 +203,8 @@ function pw_delete_old_user_revisions($uid = NULL) {
   $query->join('field_revision_field_user_roles_for_view_mode_s', 'ro', 'ro.entity_id=ur.uid AND ro.revision_id=ur.vid');
   $query->join('taxonomy_term_data', 'rn', 'rn.tid=ro.field_user_roles_for_view_mode_s_tid');
   $query->leftJoin('user_archive_cache', 'uac', 'ur.uid = uac.uid AND ur.vid = uac.vid');
+  $query->join('users', 'u', 'ur.uid = u.uid AND ur.vid != u.vid');
   if($uid !== NULL) {
-    $query->join('users', 'u', 'ur.uid = u.uid AND ur.vid != u.vid');
     $query->condition('ur.uid', $uid);
   }
   $query->condition('ur.timestamp', $time_buffer, '<');
