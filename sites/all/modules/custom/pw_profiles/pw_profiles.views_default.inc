@@ -4541,8 +4541,15 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset_1']['children'] = array(
     0 => 'field_user_picture-revision_id',
-    1 => 'fieldset_3',
-    2 => 'vid',
+    1 => 'field_user_fname-revision_id',
+    2 => 'field_user_lname-revision_id',
+    3 => 'field_user_party-revision_id_1',
+    4 => 'field_user_parliament-revision_id',
+    5 => 'field_user_constituency-revision_id',
+    6 => 'nothing',
+    7 => 'nothing_1',
+    8 => 'field_user_qanda_ratio-revision_id',
+    9 => 'vid',
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'element-hidden profile-list-compact-info';
@@ -4564,22 +4571,6 @@ return FALSE;';
     'image_style' => 'pw_portrait_l__normal',
     'image_link' => '',
   );
-  /* Feld: Global: Feldgruppe */
-  $handler->display->display_options['fields']['fieldset_3']['id'] = 'fieldset_3';
-  $handler->display->display_options['fields']['fieldset_3']['table'] = 'views';
-  $handler->display->display_options['fields']['fieldset_3']['field'] = 'fieldset';
-  $handler->display->display_options['fields']['fieldset_3']['children'] = array(
-    0 => 'field_user_fname-revision_id',
-    1 => 'field_user_lname-revision_id',
-    2 => 'field_user_party-revision_id_1',
-    3 => 'field_user_parliament-revision_id',
-    4 => 'field_user_constituency-revision_id',
-    5 => 'nothing',
-    6 => 'nothing_1',
-    7 => 'field_user_qanda_ratio-revision_id',
-  );
-  $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
-  $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'profile-list-compact-info-text';
   /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';

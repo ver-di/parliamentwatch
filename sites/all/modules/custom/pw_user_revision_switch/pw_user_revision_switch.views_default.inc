@@ -2214,10 +2214,11 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (Historische Daten): Constituency Won */
+  /* Feld: Excluded | Constituency Won */
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['table'] = 'field_revision_field_user_constituency_won';
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['field'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['ui_name'] = 'Excluded | Constituency Won';
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['alter_text'] = TRUE;
@@ -2225,10 +2226,25 @@ return $result;
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['empty_zero'] = TRUE;
-  /* Feld: Benutzer (Historische Daten): List Won */
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['settings'] = array(
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Excluded | List Won */
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['id'] = 'field_user_list_won-revision_id';
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['table'] = 'field_revision_field_user_list_won';
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['field'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['ui_name'] = 'Excluded | List Won';
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['alter_text'] = TRUE;
@@ -2236,6 +2252,82 @@ return $result;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['settings'] = array(
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Excluded | Joined Parliament */
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['id'] = 'field_user_joined-revision_id';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['table'] = 'field_revision_field_user_joined';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['field'] = 'field_user_joined-revision_id';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['ui_name'] = 'Excluded | Joined Parliament';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['alter']['text'] = ', nachgerückt am [field_user_joined-revision_id]';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['settings'] = array(
+    'format_type' => 'date_only_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Excluded | Retired Parliament */
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['id'] = 'field_user_retired-revision_id';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['table'] = 'field_revision_field_user_retired';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['field'] = 'field_user_retired-revision_id';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['ui_name'] = 'Excluded | Retired Parliament';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['alter']['text'] = ', ausgeschieden am [field_user_retired-revision_id]';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['settings'] = array(
+    'format_type' => 'date_only_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
   /* Feld: Excluded | Taxonomie: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -2293,7 +2385,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
-  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id]';
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id][field_user_joined-revision_id][field_user_retired-revision_id]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-xs';
@@ -2913,6 +3005,9 @@ return $term->tid;';
     t('Short Profile Deputy Mainpage'),
     t('User Profile Fields'),
     t('<div class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>'),
+    t(', nachgerückt am [field_user_joined-revision_id]'),
+    t(', ausgeschieden am [field_user_retired-revision_id]'),
+    t('[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id][field_user_joined-revision_id][field_user_retired-revision_id]'),
     t('Short Profile Deputy Subpage'),
     t('Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat abgeordnetenwatch einmalig mit 179 Euro (149 Euro als Frühbucherrabatt).'),
     t('Short Profile Dialogue'),
