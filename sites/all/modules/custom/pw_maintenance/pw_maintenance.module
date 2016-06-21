@@ -9,6 +9,7 @@
 
 function pw_maintenance_menu() {
   $items = array();
+
   $items['admin/config/pw/maintenance'] = array(
     'title' => 'PW Maintenance',
     'description' => 'Tools for maintenance.',
@@ -18,7 +19,8 @@ function pw_maintenance_menu() {
 
   $items['admin/config/pw/maintenance/clear_constituencies'] = array(
     'title' => 'Clear Constituencies',
-    'description' => 'deletes constituencies which have no users in relation and are not a parent of other constituencies.',
+    'description' => 'deletes constituencies which have no users in relation, are not a parent of other constituencies and 
+    a an other constituency with the same name exists.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('pw_maintenance_clear_constituencies'),
     'type' => MENU_DEFAULT_LOCAL_TASK,
@@ -29,7 +31,7 @@ function pw_maintenance_menu() {
     'title' => 'Clear User Revisions',
     'description' => 'deletes all user revisions which are not in relation to any profile.',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('pw_maintenance_clear_constituencies'),
+    'page arguments' => array('pw_maintenance_clear_user_revisions'),
     'type' => MENU_LOCAL_TASK,
     'file' => 'pw_maintenance.admin.inc',
     );
