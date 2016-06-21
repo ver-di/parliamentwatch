@@ -505,6 +505,10 @@ function parliamentwatch_delta_blocks_breadcrumb($variables) {
       }
     }
   }
+  // rewrite frontpage
+  elseif (drupal_is_front_page()){
+    return '&nbsp;';
+  }
 
   // load active trail
   $active_trail = menu_get_active_trail();
