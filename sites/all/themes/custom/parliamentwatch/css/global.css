@@ -3881,6 +3881,11 @@ form .webform-component-checkboxes .description {
     overflow: hidden;
     width: 100%;
 }
+@media(min-width:640px) {
+    .comment .submitted .author {
+        width: auto;
+    }
+}
 .comment-reply {
     background-position: -610px -2896px;
     padding-left: 20px;
