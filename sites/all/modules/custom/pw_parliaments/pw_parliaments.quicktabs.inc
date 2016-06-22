@@ -35,6 +35,14 @@ function pw_parliaments_quicktabs_default_quicktabs() {
       'weight' => '-99',
       'type' => 'view',
     ),
+    2 => array(
+      'vid' => 'pw_polls',
+      'display' => 'page',
+      'args' => '',
+      'title' => 'Abstimmungen',
+      'weight' => '-98',
+      'type' => 'view',
+    ),
   );
   $quicktabs->renderer = 'quicktabs';
   $quicktabs->style = 'nostyle';
@@ -42,6 +50,7 @@ function pw_parliaments_quicktabs_default_quicktabs() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Abstimmungen');
   t('Antworten');
   t('Fragen');
   t('Politiker antworten!');
