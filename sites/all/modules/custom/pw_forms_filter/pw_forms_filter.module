@@ -1,14 +1,83 @@
 <?php
 
 /**
- * @file pw_forms_filter_alter.module
- * TODO: Enter file description here.
+ * @file pw_forms_filter.module
  */
+
+
+/**
+ * This function maintains the cache table user_filter_cache
+ */
+function pw_forms_filter_cron() {
+
+  // first delete all items
+  db_query('TRUNCATE TABLE {user_filter_cache}');
+
+  // parties
+  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name)
+    SELECT DISTINCT tparty.tid as output_tid, tparty.name as output_name, 'party' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+    FROM users AS u
+    INNER JOIN user_revision AS urev ON u.uid = urev.uid
+    INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
+    INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
+    INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
+    INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
+    INNER JOIN field_revision_field_user_party AS uparty ON uparty.entity_type = 'user' AND u.uid = uparty.entity_id AND urev.vid = uparty.revision_id
+    INNER JOIN taxonomy_term_data AS tparty ON uparty.field_user_party_tid = tparty.tid
+    WHERE u.status<>0");
+
+  // constituencies
+  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name)
+  SELECT DISTINCT tconstituency.tid as output_tid, tconstituency.name as output_name, 'constituency' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  FROM users AS u
+  INNER JOIN user_revision AS urev ON u.uid = urev.uid
+  INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
+  INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
+  INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
+  INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
+  INNER JOIN field_revision_field_user_constituency AS uconstituency ON uconstituency.entity_type = 'user' AND u.uid = uconstituency.entity_id AND urev.vid = uconstituency.revision_id
+  INNER JOIN taxonomy_term_data AS tconstituency ON uconstituency.field_user_constituency_tid = tconstituency.tid
+  WHERE u.status<>0");
+
+  // lists
+  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name)
+  SELECT DISTINCT tlist.tid as output_tid, tlist.name as output_name, 'list' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  FROM users AS u
+  INNER JOIN user_revision AS urev ON u.uid = urev.uid
+  INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
+  INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
+  INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
+  INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
+  INNER JOIN field_revision_field_user_list AS ulist ON ulist.entity_type = 'user' AND u.uid = ulist.entity_id AND urev.vid = ulist.revision_id
+  INNER JOIN taxonomy_term_data AS tlist ON ulist.field_user_list_tid = tlist.tid
+  WHERE u.status<>0");
+
+  // list positions
+  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name)
+  SELECT DISTINCT tlistposition.tid as output_tid, tlistposition.name as output_name, 'listposition' as input_output_type, trole.name as input_role_name, tparl.name as input_parliament_name
+  FROM users AS u
+  INNER JOIN user_revision AS urev ON u.uid = urev.uid
+  INNER JOIN field_revision_field_user_roles_for_view_mode_s AS ur ON ur.entity_type = 'user' AND u.uid = ur.entity_id AND urev.vid = ur.revision_id
+  INNER JOIN taxonomy_term_data AS trole ON ur.field_user_roles_for_view_mode_s_tid = trole.tid
+  INNER JOIN field_revision_field_user_parliament AS uparl ON uparl.entity_type = 'user' AND u.uid = uparl.entity_id AND urev.vid = uparl.revision_id
+  INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
+  INNER JOIN field_revision_field_user_list_position AS ulistposition ON ulistposition.entity_type = 'user' AND u.uid = ulistposition.entity_id AND urev.vid = ulistposition.revision_id
+  INNER JOIN taxonomy_term_data AS tlistposition ON ulistposition.field_user_list_position_tid = tlistposition.tid
+  WHERE u.status<>0");
+
+  // electoral regions
+  db_query("INSERT INTO user_filter_cache (output_tid, output_name, input_output_type, input_role_name, input_parliament_name)
+  SELECT DISTINCT tregion.tid as output_tid, tregion.name as output_name, 'electoral_region' as input_output_type, ufc.input_role_name, ufc.input_parliament_name
+  FROM user_filter_cache AS ufc
+  INNER JOIN field_revision_field_electoral_region AS eregion ON eregion.entity_type = 'taxonomy_term' AND ufc.output_tid = eregion.entity_id
+  INNER JOIN taxonomy_term_data AS tregion ON eregion.field_electoral_region_tid = tregion.tid
+  ");
+}
 
 /**
  * Implements hook_form_alter()..
  */
-function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
+function pw_forms_filter_form_alter(&$form, &$form_state, $form_id) {
 
   // profiles overview
   if ($form_id == 'views_exposed_form' && $form_state['view']->name == 'profile_list_rev' && $form_state['view']->current_display == 'grid') {
@@ -56,9 +125,9 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
 
     // parties - query database
     if (isset($form['field_user_party_tid'])) {
-      $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache} 
-              WHERE input_output_type='party' 
-              AND input_role_name=:role_name 
+      $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache}
+              WHERE input_output_type='party'
+              AND input_role_name=:role_name
               AND input_parliament_name=:parliament_name";
       $result = db_query($sql, $a_parameter);
       $terms = $result->fetchAll();
@@ -76,11 +145,33 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
       $form['field_user_party_tid']['#options'] = $options;
     }
 
+
+    // electoral regions - query database
+    if (isset($form['field_electoral_region_tid'])) {
+      $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache}
+              WHERE input_output_type='electoral_region'
+              AND input_role_name=:role_name
+              AND input_parliament_name=:parliament_name";
+      $result = db_query($sql, $a_parameter);
+      $terms = $result->fetchAll();
+      $options = array();
+      foreach ($terms as $term) {
+        $options[$term->tid] = $term->name;
+        // checks url and sets filter
+        if (!$form_was_submitted && in_array($term->name, $url_parameters)) {
+          $form_state['input']['field_electoral_region_tid'] = $term->tid;
+        }
+      }
+      natsort($options);
+      $options = array('All' => 'Alle') + $options;
+      $form['field_electoral_region_tid']['#options'] = $options;
+    }
+
     // constituencies - query database
     if (isset($form['field_user_constituency_tid'])) {
-      $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache} 
-              WHERE input_output_type='constituency' 
-              AND input_role_name=:role_name 
+      $sql = "SELECT output_tid as tid, output_name as name FROM {user_filter_cache}
+              WHERE input_output_type='constituency'
+              AND input_role_name=:role_name
               AND input_parliament_name=:parliament_name";
       $result = db_query($sql, $a_parameter);
       $terms = $result->fetchAll();
@@ -112,7 +203,7 @@ function pw_forms_filter_alter_form_alter(&$form, &$form_state, $form_id) {
               AND input_parliament_name=:parliament_name";
       $result = db_query($sql, $a_parameter);
       $terms = $result->fetchAll();
-      $options = array('All' => 'Alle');
+      $options = array();
       foreach ($terms as $term) {
         $options[$term->tid] = $term->name;
         // checks url and sets filter

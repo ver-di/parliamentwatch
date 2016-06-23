@@ -1,5 +1,5 @@
-name = PW Forms Filter Alter
+name = PW Forms Filter
 description = alters views filter
 core = 7.x
-version = 7.x-1.0-20150430
+version = 7.x-1.0-20160623
 package = Parliamentwatch

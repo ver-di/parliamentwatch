@@ -3339,6 +3339,26 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
   $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
+  /* Beziehung: Benutzer (Historische Daten): List (field_user_list) */
+  $handler->display->display_options['relationships']['field_user_list_tid']['id'] = 'field_user_list_tid';
+  $handler->display->display_options['relationships']['field_user_list_tid']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['relationships']['field_user_list_tid']['field'] = 'field_user_list_tid';
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
+  /* Beziehung: Taxonomie-Begriff: Taxonomie-Begriff die Electoral Region benutzt */
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['id'] = 'reverse_field_electoral_region_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['field'] = 'reverse_field_electoral_region_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['relationship'] = 'field_user_constituency_tid';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['label'] = 'field_electoral_region_constituency';
+  /* Beziehung: Taxonomie-Begriff: Taxonomie-Begriff die Electoral Region benutzt */
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['id'] = 'reverse_field_electoral_region_taxonomy_term_1';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['field'] = 'reverse_field_electoral_region_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['relationship'] = 'field_user_list_tid';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['label'] = 'field_electoral_region_list';
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -4678,6 +4698,10 @@ return FALSE;';
   $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
   $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -4942,6 +4966,38 @@ return FALSE;';
       'value' => 'TH',
     ),
   );
+  /* Filterkriterium: Taxonomie-Begriff: Electoral Region (field_electoral_region) */
+  $handler->display->display_options['filters']['field_electoral_region_tid']['id'] = 'field_electoral_region_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['table'] = 'field_data_field_electoral_region';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['field'] = 'field_electoral_region_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['relationship'] = 'field_user_constituency_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_electoral_region_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['operator_id'] = 'field_electoral_region_tid_op';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['label'] = 'Electoral Region';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['operator'] = 'field_electoral_region_tid_op';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['identifier'] = 'field_electoral_region_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    29859578 => 0,
+  );
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group_info']['label'] = 'Electoral Region (field_electoral_region)';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group_info']['identifier'] = 'field_electoral_region_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_electoral_region_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['vocabulary'] = 'electoral_region';
   /* Filterkriterium: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
@@ -5747,6 +5803,10 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('Begriff aus field_user_parliament'),
     t('Get all revisions from an user.'),
     t('Bild von field_user_picture'),
+    t('Begriff aus field_user_list'),
+    t('Begriff aus field_user_constituency'),
+    t('field_electoral_region_constituency'),
+    t('field_electoral_region_list'),
     t('Feldgruppe'),
     t('[field_user_picture-revision_id_1]'),
     t('<strong>[field_user_fname-revision_id_1]'),
@@ -5787,6 +5847,8 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('[field_user_qanda_ratio-revision_id-value] % Antwortquote'),
     t('Bundesland'),
     t('Bundesland auswählen'),
+    t('Electoral Region'),
+    t('Electoral Region (field_electoral_region)'),
     t('Wahlkreis'),
     t('Liste'),
     t('Listenplatz'),
