@@ -4974,7 +4974,7 @@ return FALSE;';
   $handler->display->display_options['filters']['field_electoral_region_tid']['group'] = 2;
   $handler->display->display_options['filters']['field_electoral_region_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['operator_id'] = 'field_electoral_region_tid_op';
-  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['label'] = 'Electoral Region';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['label'] = 'Nach Gebiet filtern';
   $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['operator'] = 'field_electoral_region_tid_op';
   $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['identifier'] = 'field_electoral_region_tid';
   $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['remember_roles'] = array(
@@ -5847,7 +5847,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('[field_user_qanda_ratio-revision_id-value] % Antwortquote'),
     t('Bundesland'),
     t('Bundesland auswählen'),
-    t('Electoral Region'),
+    t('Nach Gebiet filtern'),
     t('Electoral Region (field_electoral_region)'),
     t('Wahlkreis'),
     t('Liste'),
