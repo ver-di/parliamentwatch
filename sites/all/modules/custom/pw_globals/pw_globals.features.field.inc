@@ -2379,6 +2379,7 @@ function pw_globals_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           'field_user_address_administrative_area' => 'administrative area',
+          'field_electoral_region_tid' => 'electoral region',
           'field_user_list_tid' => 'list',
           'field_user_list_position_tid' => 'list position',
           'field_user_constituency_tid' => 'constituency',
@@ -2393,6 +2394,9 @@ function pw_globals_field_default_fields() {
       'default_value' => array(
         0 => array(
           'value' => 'field_user_address_administrative_area',
+        ),
+        1 => array(
+          'value' => 'field_electoral_region_tid',
         ),
       ),
       'deleted' => '0',
