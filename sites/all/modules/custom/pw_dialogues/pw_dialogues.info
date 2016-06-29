@@ -28,7 +28,6 @@ dependencies[] = textformatter
 dependencies[] = uuid
 dependencies[] = views
 dependencies[] = views_content
-dependencies[] = views_field_view
 dependencies[] = views_load_more
 configure = admin/config/services/pw-dialogues-importer
 features[ctools][] = ds:ds:1
