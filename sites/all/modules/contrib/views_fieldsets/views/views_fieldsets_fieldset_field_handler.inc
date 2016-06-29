@@ -62,11 +62,11 @@ class views_fieldsets_fieldset_field_handler extends views_handler_field {
     unset($element['#dependency']);
     $element['#title'] = t('Fieldset title');
     $element['#required'] = TRUE;
-    $element['#description'] = t('The back-end admin label and default front-end fieldset legend. You can override the fieldset legend by rewriting below.');
+    $element['#description'] = t('The back-end admin label and default front-end fieldset legend/details summary. You can override it by rewriting below. Will be translated either way.');
 
     // Open 'alter' fieldset.
     $form['alter']['#collapsed'] = $form['alter']['#collapsible'] = FALSE;
-    $form['alter']['#description'] = t('This will alter the fieldset <code>&lt;legend&gt;</code>. Default would be the above <em>Fieldset title</em>.');
+    $form['alter']['#description'] = t('This will alter the fieldset <code>&lt;legend&gt;</code> or details <code>&lt;summary&gt;</code>. Default would be the above <em>Fieldset title</em>.');
 
     // Hide most 'alter' stuff.
     foreach (element_children($form['alter']) as $name) {
@@ -84,10 +84,7 @@ class views_fieldsets_fieldset_field_handler extends views_handler_field {
       '#tree' => TRUE,
     );
 
-    $fieldset_types = array(
-      'fieldset' => '<fieldset>',
-      'div' => '<div>',
-    );
+    $fieldset_types = _views_fieldsets_types();
     $form['fieldset']['type'] = array(
       '#type' => 'select',
       '#title' => t('Display type'),
@@ -100,7 +97,7 @@ class views_fieldsets_fieldset_field_handler extends views_handler_field {
       '#type' => 'textfield',
       '#title' => t('HTML classes'),
       '#default_value' => $this->options['fieldset']['classes'],
-	  '#description' => t('The usual Views row tokens are available.'),
+	  '#description' => t('The usual Views row tokens are available. If you leave this empty, the untranslated <em>Fieldset title</em> will be added.'),
     );
 
     $form['fieldset']['id'] = array(
