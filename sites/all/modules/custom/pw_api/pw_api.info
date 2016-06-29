@@ -8,7 +8,6 @@ dependencies[] = ctools
 dependencies[] = features
 dependencies[] = pw_profiles
 dependencies[] = views
-dependencies[] = views_json
 dependencies[] = views_php
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:1
