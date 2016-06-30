@@ -35,11 +35,6 @@ function better_exposed_filters_theme($existing, $type, $theme, $path) {
       'render element' => 'element',
       'file' => 'better_exposed_filters.theme',
     ),
-    'select_as_slider' => array(
-      'function' => 'theme_select_as_slider',
-      'render element' => 'element',
-      'file' => 'better_exposed_filters.theme',
-    ),
     'select_as_tree' => array(
       'function' => 'theme_select_as_tree',
       'render element' => 'element',
@@ -80,11 +75,12 @@ function better_exposed_filters_views_api() {
  * Unpacks sort_by and sort_order from the sort_bef_combine element.
  */
 function bef_sort_combine_submit($form, &$form_state) {
-  if (empty($form_state['values']['sort_bef_combine'])) {
+  $combine_param = $form_state['#combine_param'];
+  if (empty($form_state['values'][$combine_param])) {
     $form_state['values']['sort_by'] = $form_state['values']['sort_order'] = '';
   }
   else {
-    list($form_state['values']['sort_by'], $form_state['values']['sort_order']) = explode(' ', $form_state['values']['sort_bef_combine']);
+    list($form_state['values']['sort_by'], $form_state['values']['sort_order']) = explode(' ', $form_state['values'][$combine_param]);
   }
 
   // And pass this along to Views.
@@ -183,4 +179,22 @@ function _better_exposed_filters_slider_selected($element, &$form_state) {
 function _better_exposed_filters_get_num_decimal_places($number) {
   $str = (string) $number;
   return strlen(substr(strrchr($str, '.'), 1));
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function better_exposed_filters_preprocess_views_view(&$variables) {
+  $filters = array();
+  foreach ($variables['view']->filter as $filter) {
+    if ($filter->options['exposed']) {
+      $identifier = $filter->options['is_grouped'] ? $filter->options['group_info']['identifier'] : $filter->options['expose']['identifier'];
+      $filters[$identifier] = array(
+        'required' => $filter->options['expose']['required'] ? TRUE : FALSE,
+      );
+    }
+  }
+
+  $bef_js['views'][$variables['view']->name]['displays'][$variables['view']->current_display]['filters'] = $filters;
+  drupal_add_js(array('better_exposed_filters' => $bef_js), 'setting');
 }
