@@ -15,11 +15,11 @@ jQuery(window) // https://www.drupal.org/node/1478648
     windowResize.init();
   }
   )
-  .on("debouncedresize", function() {
-    windowResize.checkResize(function() {
-      location.reload(false);
-    });
-  })
+  // .on("debouncedresize", function() {
+  //   windowResize.checkResize(function() {
+  //     location.reload(false);
+  //   });
+  // })
   .load(function() {
     $('body').bind('responsivelayout', function(e, d) {
       $(".responsive-layout-mobile #nav").mmenu({

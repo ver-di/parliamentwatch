@@ -189,7 +189,7 @@ function pw_donation_form_webform_submission_presave($node, &$submission) {
 
 function pw_donation_form_block_view_alter(&$data, $block){
   if ($block->delta === "pw_testimonials_header-block"){
-    drupal_add_js("pw_donation_form_update_counter.js");
+    drupal_add_js(drupal_get_path('module', 'pw_donation_form') . '/pw_donation_form_update_counter.js');
     $member_counter = pw_donation_membership_count();
     $member_counter = number_format($member_counter, 0, ',', '.');
     $data['content']['#markup'] = str_replace('%count%', $member_counter, $data['content']['#markup']);
