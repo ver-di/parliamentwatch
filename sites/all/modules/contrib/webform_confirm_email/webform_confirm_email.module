@@ -244,16 +244,17 @@ function webform_confirm_email_confirmation($node,
     }
   }
 
-  drupal_goto(
-    $redirect_url,
-    array(
-      'query' => array(
-        'sid'     => $submission->sid,
-        'confirm' => TRUE,
-        'token'   => md5($submission->submitted . $submission->sid . drupal_get_private_key()),
-      ),
-    )
+  $redirect = array(
+    'path' => $redirect_url,
+    'code' => 302,
+    'query' => array(
+      'sid'     => $submission->sid,
+      'confirm' => TRUE,
+      'token'   => md5($submission->submitted . $submission->sid . drupal_get_private_key()),
+    ),
   );
+  drupal_alter('webform_confirm_email_confirmation_redirect', $redirect, $node, $submission);
+  drupal_goto($redirect['path'], $redirect, $redirect['code']);
 }
 
 /**
@@ -586,7 +587,7 @@ function webform_confirm_email_cron() {
     '  INNER JOIN {webform_confirm_email} confirm ' .
     '    ON code.nid = confirm.nid ' .
     '  WHERE confirm.request_lifetime IS NOT NULL ' .
-    '  GROUP BY confirm.nid '
+    '  GROUP BY confirm.nid, confirm.request_lifetime, confirm.delete_submissions'
     )->fetchAllAssoc('nid');
 
   if (!empty($nids_lifetime)) {
@@ -860,4 +861,43 @@ function webform_confirm_email_views_api() {
     'api'  => 3.0,
     'path' => drupal_get_path('module', 'webform_confirm_email') . '/views',
   );
+}
+
+/**
+ * Implements hook_node_export_alter().
+ */
+function webform_confirm_email_node_export_alter(array &$nodes, $format) {
+
+  $module = 'webform_confirm_email';
+
+  foreach ($nodes as $i => &$node) {
+    foreach ($node->webform['emails'] as $eid => &$email) {
+      $email[$module] = db_select($module)
+        ->fields($module)
+        ->condition('nid', $node->nid)
+        ->condition('eid', $eid)
+        ->execute()
+        ->fetch();
+    }
+  }
+}
+
+/**
+ * Implements hook_node_export_after_import_alter().
+ */
+function webform_confirm_email_node_export_after_import_alter(array &$nodes, $format, $save) {
+
+  $module = 'webform_confirm_email';
+
+  foreach ($nodes as $node) {
+    foreach ($node->webform['emails'] as $eid => $email) {
+
+      $email['nid'] = $node->nid;
+
+      if (is_object($email[$module])) {
+        $email[$module]->nid = $node->nid;
+        drupal_write_record($module, $email[$module]);
+      }
+    }
+  }
 }
