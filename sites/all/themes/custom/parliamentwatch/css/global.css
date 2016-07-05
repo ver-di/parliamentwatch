@@ -2279,6 +2279,21 @@ ul.icon-list:after {
 .node-blogpost .field-type-taxonomy-term-reference {
     clear: both;
 }
+.cke_editable ul,
+.node-blogpost ul {
+  margin-left: 0 !important;
+  margin-bottom: 1em;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.cke_editable ul li,
+.node-blogpost ul li {
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  padding-left: 15px;
+  background-position: -770px -1896px;
+  margin-bottom: 0.3em;
+}
 .pane-blog .field-type-taxonomy-term-reference {
     position: relative;
     top: 4px;
@@ -4185,10 +4200,6 @@ a.external,
 #colorbox ol,
 #colorbox ul {
     unicode-bidi: embed;
-}
-.managed-content li,
-#colorbox li {
-    display:list-itrem;
 }
 .managed-content ul,
 .managed-content ol,
