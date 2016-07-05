@@ -10,8 +10,8 @@
 function classy_paragraphs_test_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-cp_test_landing_page-body'
-  $field_instances['node-cp_test_landing_page-body'] = array(
+  // Exported field_instance: 'node-cp_test_landing_page-field_cp_body'
+  $field_instances['node-cp_test_landing_page-field_cp_body'] = array(
     'bundle' => 'cp_test_landing_page',
     'default_value' => NULL,
     'deleted' => 0,
@@ -35,7 +35,7 @@ function classy_paragraphs_test_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'body',
+    'field_name' => 'field_cp_body',
     'label' => 'Body',
     'required' => FALSE,
     'settings' => array(

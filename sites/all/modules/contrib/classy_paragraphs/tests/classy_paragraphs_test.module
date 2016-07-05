@@ -7,7 +7,7 @@
 include_once 'classy_paragraphs_test.features.inc';
 
 /**
- * Implements hook_classy_paragraph_list_options().
+ * Implements hook_classy_paragraphs_list_options().
  */
 function classy_paragraphs_test_classy_paragraphs_list_options($options, $field, $instance) {
   $options['test-loud-value'] = t('Test Loud Label');

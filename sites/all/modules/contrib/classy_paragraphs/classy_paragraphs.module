@@ -34,7 +34,7 @@ function classy_paragraphs_get_options($field, $instance) {
  * Implements template_preprocess_entity()
  */
 function classy_paragraphs_preprocess_entity(&$variables) {
-  if ($variables['entity_type'] == CLASSY_PARAGRAPHS_ENTITY_TYPE && $variables['view_mode'] == CLASSY_PARAGRAPHS_VIEW_MODE) {
+  if ($variables['entity_type'] == CLASSY_PARAGRAPHS_ENTITY_TYPE) {
     $classes = classy_paragraphs_get_classes($variables['paragraphs_item']);
     foreach ($classes as $class) {
       $variables['classes_array'][] = drupal_html_class($class);
