@@ -64,7 +64,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
     'CKEditor Global Profile' => array(
       'name' => 'CKEditor Global Profile',
       'settings' => array(
-        'skin' => 'kama',
+        'skin' => 'moono',
         'ckeditor_path' => '%m/ckeditor',
         'ckeditor_local_path' => '',
         'ckeditor_plugins_path' => '%m/plugins',
@@ -320,14 +320,14 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
             'buttons' => array(
               'linkit' => array(
                 'label' => 'Linkit',
-                'icon' => 'linkit.png',
+                'icon' => 'icons/linkit.png',
               ),
             ),
           ),
           'media' => array(
             'name' => 'media',
-            'desc' => 'Plugin for inserting images from Drupal media module',
-            'path' => '%base_path%sites/all/modules/contrib/media/modules/media_wysiwyg/wysiwyg_plugins/media_ckeditor/',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/contrib/media_ckeditor/js/plugins/media/',
             'buttons' => array(
               'Media' => array(
                 'icon' => 'images/icon.gif',
