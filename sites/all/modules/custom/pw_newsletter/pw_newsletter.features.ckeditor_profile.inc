@@ -14,9 +14,16 @@ function pw_newsletter_ckeditor_profile_defaults() {
       'settings' => array(
         'ss' => '2',
         'toolbar' => '[
-    [\'Source\',\'Cut\',\'Copy\',\'SpellChecker\',\'Undo\',\'Redo\',\'Find\',\'Replace\',\'RemoveFormat\',\'linkit\',\'Media\',\'Link\',\'Unlink\',\'Maximize\'],
+    [\'Source\'],
+    [\'RemoveFormat\',\'SpellChecker\',\'Scayt\'],
+    [\'Undo\',\'Redo\',\'Find\',\'Replace\'],
+    [\'Media\',\'linkit\',\'Link\',\'Unlink\'],
+    [\'Maximize\'],
     \'/\',
-    [\'Styles\',\'Format\',\'Bold\',\'Subscript\',\'Superscript\',\'NumberedList\',\'BulletedList\',\'Blockquote\',\'SpecialChar\']
+    [\'Templates\',\'Format\',\'Styles\'],
+    [\'Bold\',\'Subscript\',\'Superscript\'],
+    [\'NumberedList\',\'BulletedList\'],
+    [\'Blockquote\',\'SpecialChar\']
 ]',
         'expand' => 't',
         'default' => 't',
@@ -56,8 +63,16 @@ function pw_newsletter_ckeditor_profile_defaults() {
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
-        'js_conf' => '',
+        'js_conf' => 'config.templates_replaceContent = false;
+config.allowedContent = true;',
         'loadPlugins' => array(
+          'counter' => array(
+            'name' => 'counter',
+            'desc' => 'Plugin to count symbols, symbols without blanks and words',
+            'path' => '%plugin_dir%counter/',
+            'buttons' => FALSE,
+            'default' => 'f',
+          ),
           'linkit' => array(
             'name' => 'linkit',
             'desc' => 'Support für Linkit-Modul',
@@ -77,6 +92,18 @@ function pw_newsletter_ckeditor_profile_defaults() {
               'Media' => array(
                 'icon' => 'images/icon.gif',
                 'label' => 'Add media',
+              ),
+            ),
+            'default' => 'f',
+          ),
+          'mediaembed' => array(
+            'name' => 'mediaembed',
+            'desc' => 'Plugin for embedding HTML snippets',
+            'path' => '%plugin_dir%mediaembed/',
+            'buttons' => array(
+              'MediaEmbed' => array(
+                'label' => 'MediaEmbed',
+                'icon' => 'images/icon.png',
               ),
             ),
             'default' => 'f',

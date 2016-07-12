@@ -83,3 +83,24 @@ ul li {
   background-position: -770px -1896px;
   margin-bottom: 0.2em;
 }
+
+
+/* Images */
+
+.file-image.float-left,
+.file-image.float-right {
+    float: none;
+}
+@media (min-width: 480px) {
+    .file-image.float-left,
+    .media-image-left {
+        margin-right: 14px;
+        margin-bottom: 7px;
+        float: left;
+    }
+    .file-image.float-right {
+        margin-left: 14px;
+        margin-bottom: 7px;
+        float: right;
+    }
+}
