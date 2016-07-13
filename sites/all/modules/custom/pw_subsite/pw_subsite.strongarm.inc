@@ -39,7 +39,7 @@ function pw_subsite_strongarm() {
     'domain' => '',
     'prefix' => 'de',
     'weight' => '0',
-    'javascript' => 'YEUYFQDULxhcQTLax8aPhIR7EdrXuKNymVkpw6UAxik',
+    'javascript' => 'fBAMf9UKe7FA_JmDB996GKS7R_OwVd3S6yOuQOE76YI',
   );
   $export['language_default'] = $strongarm;
 
@@ -4267,6 +4267,26 @@ foo
   $strongarm->name = 'theme_default';
   $strongarm->value = 'parliamentwatch';
   $export['theme_default'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_menu_link_menu-about-us-de';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_menu_link_menu-about-us-de'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_menu_link_menu-support-us-de';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_menu_link_menu-support-us-de'] = $strongarm;
 
   return $export;
 }
