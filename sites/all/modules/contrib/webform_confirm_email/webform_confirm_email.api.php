@@ -47,3 +47,21 @@ function hook_webform_confirm_email_request_expired($expired_submissions) {
     'cron@example.com'
   );
 }
+
+/**
+ * Alter the redirect after a successful confirmation.
+ *
+ * @param $redirect
+ *  An associative representing the redirect. Using the following keys.
+ *   - 'path': The path argument for drupal_goto().
+ *   - 'code': The code argument for drupal_goto().
+ *   The other keys are identical with the options argument for drupal_goto().
+ * @param $node
+ *   The node object of the webform for which an email was confirmed.
+ * @param $submission
+ *   The submission object of hereby confirmed submission.
+ */
+function hook_webform_confirm_email_confirmation_redirect_alter(&$redirect, $node, $submission) {
+  // Add a share=node/{nid} as query-parameter to the URL.
+  $redirect['query']['share'] = "node/{$node->nid}";
+}

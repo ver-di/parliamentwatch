@@ -52,7 +52,6 @@ dependencies[] = twitter
 dependencies[] = uuid
 dependencies[] = viewfield
 dependencies[] = views
-dependencies[] = views_autocomplete_filters
 dependencies[] = views_between_dates_filter
 dependencies[] = views_bulk_operations
 dependencies[] = views_content
