@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function pw_profiles_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -29,17 +29,18 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Basics ID Wrapper',
       'instance_settings' => array(
-        'classes' => 'add-sharethis clear-both',
+        'classes' => 'add-sharethis clear-both group-basics field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_full_group_basics',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_basics|user|user|default'] = $field_group;
+  $field_groups['group_basics|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -66,17 +67,18 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Grid 6 Wrapper',
       'instance_settings' => array(
-        'classes' => 'grid-6 omega',
+        'classes' => 'grid-6 omega group-grid-6 field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_search_result_group_grid_6',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_grid_6|user|user|search_result'] = $field_group;
+  $field_groups['group_grid_6|user|user|search_result'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -99,12 +101,12 @@ function pw_profiles_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-managed-content field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_managed_content|user|user|form'] = $field_group;
+  $field_groups['group_managed_content|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -125,17 +127,18 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Polls ID Wrapper',
       'instance_settings' => array(
-        'classes' => 'add-sharethis clear-both',
+        'classes' => 'add-sharethis clear-both group-polls field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_full_group_polls',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_polls|user|user|default'] = $field_group;
+  $field_groups['group_polls|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -155,12 +158,12 @@ function pw_profiles_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-premium field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_premium|user|user|form'] = $field_group;
+  $field_groups['group_premium|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -183,17 +186,18 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Mouseover',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-profiles-mouseover field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_pw_profiles_list_compact_group_profiles_mouseover',
       ),
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_profiles_mouseover|user|user|pw_profiles_list_compact'] = $field_group;
+  $field_groups['group_profiles_mouseover|user|user|pw_profiles_list_compact'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -214,17 +218,18 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Roles ID Wrapper',
       'instance_settings' => array(
-        'classes' => 'add-sharethis clear-both',
+        'classes' => 'add-sharethis clear-both group-roles field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_full_group_roles',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_roles|user|user|default'] = $field_group;
+  $field_groups['group_roles|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -255,13 +260,13 @@ function pw_profiles_field_group_info() {
       'label' => 'Admin Settings',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-admin field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_user_admin|user|user|form'] = $field_group;
+  $field_groups['group_user_admin|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -295,13 +300,13 @@ function pw_profiles_field_group_info() {
       'label' => 'Political Affiliation',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-affiliation field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_user_affiliation|user|user|form'] = $field_group;
+  $field_groups['group_user_affiliation|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -320,13 +325,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Additional',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-basics-additional field-group-htab',
         'description' => 'Additional Links',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_user_basics_additional|user|user|default'] = $field_group;
+  $field_groups['group_user_basics_additional|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -346,11 +351,11 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-basics-additional field-group-htab',
       ),
     ),
   );
-  $export['group_user_basics_additional|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_basics_additional|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -372,13 +377,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Basics',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-basics-basics field-group-htab',
         'description' => 'Basic information',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_user_basics_basics|user|user|default'] = $field_group;
+  $field_groups['group_user_basics_basics|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -400,11 +405,11 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-basics-data field-group-htab',
       ),
     ),
   );
-  $export['group_user_basics_data|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_basics_data|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -426,11 +431,11 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-basics field-group-htabs',
       ),
     ),
   );
-  $export['group_user_basics|user|user|default'] = $field_group;
+  $field_groups['group_user_basics|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -452,11 +457,11 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-basics field-group-htabs',
       ),
     ),
   );
-  $export['group_user_basics|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_basics|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -478,13 +483,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Political Roles',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-commitee-tab field-group-htab',
         'description' => 'Political Roles',
       ),
       'formatter' => 'closed',
     ),
   );
-  $export['group_user_commitee_tab|user|user|default'] = $field_group;
+  $field_groups['group_user_commitee_tab|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -505,11 +510,11 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-commitee field-group-htabs',
       ),
     ),
   );
-  $export['group_user_commitee|user|user|default'] = $field_group;
+  $field_groups['group_user_commitee|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -533,13 +538,13 @@ function pw_profiles_field_group_info() {
       'label' => 'Dialogue Data',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-dialogue field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_user_dialogue|user|user|form'] = $field_group;
+  $field_groups['group_user_dialogue|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -562,17 +567,18 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Name',
       'instance_settings' => array(
-        'classes' => 'h2 push-bottom-xxs',
+        'classes' => 'h2 push-bottom-xxs group-user-name field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_full_group_user_name',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_user_name|user|user|default'] = $field_group;
+  $field_groups['group_user_name|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -596,11 +602,12 @@ function pw_profiles_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => '',
+        'classes' => ' group-user-name field-group-div',
+        'id' => 'user_user_premium_user_group_user_name',
       ),
     ),
   );
-  $export['group_user_name|user|user|premium_user'] = $field_group;
+  $field_groups['group_user_name|user|user|premium_user'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -623,17 +630,18 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'User name',
       'instance_settings' => array(
-        'classes' => 'h3',
+        'classes' => 'h3 group-user-name field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_user_search_group_user_name',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_user_name|user|user|user_search'] = $field_group;
+  $field_groups['group_user_name|user|user|user_search'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -667,13 +675,13 @@ function pw_profiles_field_group_info() {
       'label' => 'Personal Data',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-personal-data field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_user_personal_data|user|user|form'] = $field_group;
+  $field_groups['group_user_personal_data|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -693,11 +701,11 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-polls-archive field-group-htab',
       ),
     ),
   );
-  $export['group_user_polls_archive|user|user|default'] = $field_group;
+  $field_groups['group_user_polls_archive|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -719,11 +727,11 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-polls-archive field-group-htab',
       ),
     ),
   );
-  $export['group_user_polls_archive|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_polls_archive|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -745,11 +753,11 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-polls-current field-group-htab',
       ),
     ),
   );
-  $export['group_user_polls_current|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_polls_current|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -769,11 +777,11 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-polls-last field-group-htab',
       ),
     ),
   );
-  $export['group_user_polls_last|user|user|default'] = $field_group;
+  $field_groups['group_user_polls_last|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -795,11 +803,11 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-polls field-group-htabs',
       ),
     ),
   );
-  $export['group_user_polls|user|user|default'] = $field_group;
+  $field_groups['group_user_polls|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -821,11 +829,11 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-polls field-group-htabs',
       ),
     ),
   );
-  $export['group_user_polls|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_polls|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -847,13 +855,13 @@ function pw_profiles_field_group_info() {
       'label' => 'About me',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-premium-about field-group-tab',
         'description' => '',
       ),
       'formatter' => 'closed',
     ),
   );
-  $export['group_user_premium_about|user|user|form'] = $field_group;
+  $field_groups['group_user_premium_about|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -875,13 +883,13 @@ function pw_profiles_field_group_info() {
       'label' => 'Premium Fields',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-premium-fields field-group-fieldset',
         'description' => 'Profilfoto, Social-Media, Bildergalerie, Kalender, Biografie, politische Ziele',
       ),
       'formatter' => 'collapsed',
     ),
   );
-  $export['group_user_premium_fields|user|user|form'] = $field_group;
+  $field_groups['group_user_premium_fields|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -903,12 +911,12 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-gallery field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_user_premium_gallery|user|user|form'] = $field_group;
+  $field_groups['group_user_premium_gallery|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -930,12 +938,12 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-goals field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_user_premium_goals|user|user|form'] = $field_group;
+  $field_groups['group_user_premium_goals|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -957,12 +965,12 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-links field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_user_premium_links|user|user|form'] = $field_group;
+  $field_groups['group_user_premium_links|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -982,12 +990,12 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-picture field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_user_premium_picture|user|user|form'] = $field_group;
+  $field_groups['group_user_premium_picture|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1009,12 +1017,12 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-twitter field-group-tab',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_user_premium_twitter|user|user|form'] = $field_group;
+  $field_groups['group_user_premium_twitter|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1039,11 +1047,11 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-premium field-group-tabs',
       ),
     ),
   );
-  $export['group_user_premium|user|user|form'] = $field_group;
+  $field_groups['group_user_premium|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1063,11 +1071,11 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-roles-archive field-group-htab',
       ),
     ),
   );
-  $export['group_user_roles_archive|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_roles_archive|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1090,11 +1098,11 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-roles-current field-group-htab',
       ),
     ),
   );
-  $export['group_user_roles_current|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_roles_current|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1116,11 +1124,51 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-roles field-group-htabs',
       ),
     ),
   );
-  $export['group_user_roles|user|user|user_deputy'] = $field_group;
+  $field_groups['group_user_roles|user|user|user_deputy'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('About me');
+  t('Additional');
+  t('Admin Settings');
+  t('Basics');
+  t('Basics ID Wrapper');
+  t('Commitee Fieldgroup');
+  t('Dialogue Data');
+  t('External Links');
+  t('Grid 6 Wrapper');
+  t('Image Gallery');
+  t('Last poll');
+  t('Managed Content');
+  t('Mouseover');
+  t('Name');
+  t('Personal Data');
+  t('Political Affiliation');
+  t('Political Goals');
+  t('Political Roles');
+  t('Polls');
+  t('Polls ID Wrapper');
+  t('Polls archive');
+  t('Premium');
+  t('Premium Fields');
+  t('Premium fields');
+  t('Profile picture');
+  t('Roles ID Wrapper');
+  t('Twitter');
+  t('User Basics');
+  t('User Basics Additional');
+  t('User Basics Data');
+  t('User Polls');
+  t('User Polls Archive');
+  t('User Polls Current');
+  t('User Roles');
+  t('User Roles Archive');
+  t('User Roles Current');
+  t('User name');
+
+  return $field_groups;
 }

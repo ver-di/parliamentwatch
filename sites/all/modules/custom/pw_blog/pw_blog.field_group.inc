@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function pw_blog_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -31,13 +31,13 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => '',
       'instance_settings' => array(
-        'classes' => 'push-bottom-m medium',
+        'classes' => 'push-bottom-m medium group-blog-author field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_blog_author|node|blogpost|full'] = $field_group;
+  $field_groups['group_blog_author|node|blogpost|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -60,17 +60,18 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'Metainformation',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-blog-metainformation field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_blogpost_full_group_blog_metainformation',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_blog_metainformation|node|blogpost|full'] = $field_group;
+  $field_groups['group_blog_metainformation|node|blogpost|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -89,17 +90,18 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'PW list item',
       'instance_settings' => array(
-        'classes' => 'pw-list-item',
+        'classes' => 'pw-list-item group-blog-searchitem field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_blogpost_search_result_group_blog_searchitem',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_blog_searchitem|node|blogpost|search_result'] = $field_group;
+  $field_groups['group_blog_searchitem|node|blogpost|search_result'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -120,17 +122,18 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'Social Media',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-blog-social-media field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_blogpost_full_group_blog_social_media',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_blog_social_media|node|blogpost|full'] = $field_group;
+  $field_groups['group_blog_social_media|node|blogpost|full'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -153,13 +156,14 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'Grid 6 Wrapper',
       'instance_settings' => array(
-        'classes' => 'grid-6 omega',
+        'classes' => 'grid-6 omega group-grid-6 field-group-div',
         'description' => '',
+        'id' => 'node_blogpost_search_result_group_grid_6',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_grid_6|node|blogpost|search_result'] = $field_group;
+  $field_groups['group_grid_6|node|blogpost|search_result'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -178,17 +182,26 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'Body',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-search-blog-body field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_blogpost_search_result_group_search_blog_body',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_search_blog_body|node|blogpost|search_result'] = $field_group;
+  $field_groups['group_search_blog_body|node|blogpost|search_result'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Body');
+  t('Grid 6 Wrapper');
+  t('Metainformation');
+  t('PW list item');
+  t('Social Media');
+
+  return $field_groups;
 }

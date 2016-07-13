@@ -140,19 +140,10 @@ function pw_seo_metatag_export_default() {
       'og:longitude' => array(
         'value' => '',
       ),
-      'og:street-address' => array(
-        'value' => '',
-      ),
       'og:locality' => array(
         'value' => '',
       ),
       'og:region' => array(
-        'value' => '',
-      ),
-      'og:postal-code' => array(
-        'value' => '',
-      ),
-      'og:country-name' => array(
         'value' => '',
       ),
       'og:email' => array(
@@ -224,9 +215,6 @@ function pw_seo_metatag_export_default() {
       'book:tag' => array(
         'value' => '',
       ),
-      'og:video' => array(
-        'value' => '',
-      ),
       'og:video:secure_url' => array(
         'value' => '',
       ),
@@ -285,9 +273,6 @@ function pw_seo_metatag_export_default() {
         'value' => '[current-page:title]',
       ),
       'twitter:description' => array(
-        'value' => '',
-      ),
-      'twitter:image:src' => array(
         'value' => '',
       ),
       'twitter:image:width' => array(
@@ -363,6 +348,18 @@ function pw_seo_metatag_export_default() {
         'value' => '',
       ),
       'twitter:data2' => array(
+        'value' => '',
+      ),
+      'twitter:image' => array(
+        'value' => '',
+      ),
+      'og:street_address' => array(
+        'value' => '',
+      ),
+      'og:postal_code' => array(
+        'value' => '',
+      ),
+      'og:country_name' => array(
         'value' => '',
       ),
     ),
@@ -567,14 +564,14 @@ function pw_seo_metatag_export_default() {
       'twitter:title' => array(
         'value' => '[site:name] | [node:title]',
       ),
-      'twitter:image:src' => array(
-        'value' => '[node:field-teaser-image:file:url]',
-      ),
       'twitter:image:width' => array(
         'value' => '280',
       ),
       'twitter:image:height' => array(
         'value' => '187',
+      ),
+      'twitter:image' => array(
+        'value' => '[node:field-teaser-image:file:url]',
       ),
     ),
   );
@@ -769,7 +766,7 @@ function pw_seo_metatag_export_default() {
       'twitter:title' => array(
         'value' => '[site:name] | Profil von [user:field-user-title] [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[site:url]sites/abgeordnetenwatch.de/files/styles/pw_portrait_l__normal/public/users/[user:field-user-picture:file]',
       ),
     ),

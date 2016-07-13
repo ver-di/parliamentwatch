@@ -468,16 +468,7 @@ function pw_profiles_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'calendar_entry',
-      'default_value' => array(
-        0 => array(
-          'element_key' => 'node|calendar_entry|field_calendar_entry_address|und|0',
-          'thoroughfare' => '',
-          'premise' => '',
-          'postal_code' => '',
-          'locality' => '',
-          'country' => 'DE',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -522,6 +513,7 @@ function pw_profiles_field_default_fields() {
         'module' => 'addressfield',
         'settings' => array(
           'available_countries' => array(),
+          'default_country' => '',
           'format_handlers' => array(
             'address' => 'address',
             'address-hide-country' => 0,
@@ -595,6 +587,7 @@ function pw_profiles_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => '4',
@@ -882,17 +875,7 @@ function pw_profiles_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'user',
-      'default_value' => array(
-        0 => array(
-          'element_key' => 'user|user|field_user_address|und|0',
-          'thoroughfare' => '',
-          'premise' => '',
-          'postal_code' => '',
-          'locality' => '',
-          'administrative_area' => '',
-          'country' => 'DE',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -955,6 +938,7 @@ function pw_profiles_field_default_fields() {
           'available_countries' => array(
             'DE' => 'DE',
           ),
+          'default_country' => '',
           'format_handlers' => array(
             'address' => 'address',
             'address-hide-country' => 0,
@@ -3170,6 +3154,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => 44,
@@ -5957,6 +5942,7 @@ $entity_field[0][\'value\'] = $result;',
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => 45,

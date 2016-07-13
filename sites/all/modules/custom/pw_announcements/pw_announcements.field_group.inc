@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function pw_announcements_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -31,17 +31,18 @@ function pw_announcements_field_group_info() {
     'format_settings' => array(
       'label' => '',
       'instance_settings' => array(
-        'classes' => 'pushfloat-2',
+        'classes' => 'pushfloat-2 group-announce-content field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_announcement_full_group_announce_content',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_announce_content|node|announcement|default'] = $field_group;
+  $field_groups['group_announce_content|node|announcement|default'] = $field_group;
 
-  return $export;
+  return $field_groups;
 }

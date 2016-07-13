@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function pw_globals_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -31,17 +31,22 @@ function pw_globals_field_group_info() {
     'format_settings' => array(
       'label' => 'Arrow Wrapper',
       'instance_settings' => array(
-        'classes' => 'arrow-item',
+        'classes' => 'arrow-item group-arrow-wrapper field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_page_search_result_group_arrow_wrapper',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_arrow_wrapper|node|page|search_result'] = $field_group;
+  $field_groups['group_arrow_wrapper|node|page|search_result'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Arrow Wrapper');
+
+  return $field_groups;
 }

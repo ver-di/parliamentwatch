@@ -66,6 +66,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -148,6 +149,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'link',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -167,6 +169,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'link',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -277,6 +280,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -359,6 +363,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'mediafield',
           'settings' => array(
+            'field_delimiter' => '',
             'file_view_mode' => 'default',
             'linked_field' => array(
               'advanced' => array(
@@ -379,6 +384,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'mediafield',
           'settings' => array(
+            'field_delimiter' => '',
             'file_view_mode' => 'default',
             'linked_field' => array(
               'advanced' => array(
@@ -550,6 +556,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => '',
             'image_style' => 'pw_landscape_l__normal',
             'linked_field' => array(
@@ -571,6 +578,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => '',
             'image_style' => 'pw_landscape_m',
             'linked_field' => array(

@@ -518,17 +518,7 @@ function pw_sidejobs_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'sidejob',
-      'default_value' => array(
-        0 => array(
-          'element_key' => 'node|sidejob|field_sidejob_address|und|0',
-          'thoroughfare' => '',
-          'premise' => '',
-          'postal_code' => '',
-          'locality' => '',
-          'administrative_area' => '',
-          'country' => 'DE',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -579,6 +569,7 @@ function pw_sidejobs_field_default_fields() {
           'available_countries' => array(
             'DE' => 'DE',
           ),
+          'default_country' => '',
           'format_handlers' => array(
             'address' => 'address',
             'address-hide-country' => 'address-hide-country',
@@ -781,6 +772,7 @@ function pw_sidejobs_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => 24,
@@ -882,6 +874,7 @@ function pw_sidejobs_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => 23,

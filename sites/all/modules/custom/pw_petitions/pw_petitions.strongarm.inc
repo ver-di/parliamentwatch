@@ -187,9 +187,40 @@ function pw_petitions_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_petition_de_pattern';
+  $strongarm->value = '[node:field-parliament]/petitionen/[node:title]';
+  $export['pathauto_node_pw_petition_de_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_petition_pattern';
+  $strongarm->value = '[node:field-parliament]/petitionen/[node:title]';
+  $export['pathauto_node_pw_petition_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_petition_und_pattern';
+  $strongarm->value = '[node:field-parliament]/petitionen/[node:title]';
+  $export['pathauto_node_pw_petition_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'rh_node_override_pw_petition';
   $strongarm->value = 1;
   $export['rh_node_override_pw_petition'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_pw_petition';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_pw_petition'] = $strongarm;
 
   return $export;
 }

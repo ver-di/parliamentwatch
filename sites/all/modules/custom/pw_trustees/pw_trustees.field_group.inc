@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function pw_trustees_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -31,17 +31,22 @@ function pw_trustees_field_group_info() {
     'format_settings' => array(
       'label' => 'Grid 6 Wrapper',
       'instance_settings' => array(
-        'classes' => 'grid-6 omega',
+        'classes' => 'grid-6 omega group-grid-6 field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_trustee_search_result_group_grid_6',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_grid_6|node|trustee|search_result'] = $field_group;
+  $field_groups['group_grid_6|node|trustee|search_result'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Grid 6 Wrapper');
+
+  return $field_groups;
 }

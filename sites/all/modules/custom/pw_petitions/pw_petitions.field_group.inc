@@ -8,7 +8,7 @@
  * Implements hook_field_group_info().
  */
 function pw_petitions_field_group_info() {
-  $export = array();
+  $field_groups = array();
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -34,17 +34,18 @@ function pw_petitions_field_group_info() {
     'format_settings' => array(
       'label' => 'Grid 6 Wrapper',
       'instance_settings' => array(
-        'classes' => 'grid-6 omega',
+        'classes' => 'grid-6 omega group-grid-6 field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_pw_petition_search_result_group_grid_6',
       ),
       'formatter' => 'open',
     ),
   );
-  $export['group_grid_6|node|pw_petition|search_result'] = $field_group;
+  $field_groups['group_grid_6|node|pw_petition|search_result'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -70,12 +71,12 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-petition-content field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_petition_content|node|pw_petition|form'] = $field_group;
+  $field_groups['group_petition_content|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -100,13 +101,13 @@ function pw_petitions_field_group_info() {
       'label' => 'Phase 2: donations',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-petition-donation field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_petition_donation|node|pw_petition|form'] = $field_group;
+  $field_groups['group_petition_donation|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -129,13 +130,13 @@ function pw_petitions_field_group_info() {
       'label' => 'Phase 3: sent to parliament',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-petition-parliament field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_petition_parliament|node|pw_petition|form'] = $field_group;
+  $field_groups['group_petition_parliament|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -157,12 +158,12 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-petition-passed field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_petition_passed|node|pw_petition|form'] = $field_group;
+  $field_groups['group_petition_passed|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -185,12 +186,12 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-petition-recipient field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
   );
-  $export['group_petition_recipient|node|pw_petition|form'] = $field_group;
+  $field_groups['group_petition_recipient|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -217,13 +218,23 @@ function pw_petitions_field_group_info() {
       'label' => 'Phase 1:  signing',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-petition-signing field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',
     ),
   );
-  $export['group_petition_signing|node|pw_petition|form'] = $field_group;
+  $field_groups['group_petition_signing|node|pw_petition|form'] = $field_group;
 
-  return $export;
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Description');
+  t('Grid 6 Wrapper');
+  t('Phase 1:  signing');
+  t('Phase 2: donations');
+  t('Phase 3: sent to parliament');
+  t('Phase 4: Passed Parliament');
+  t('Recipients');
+
+  return $field_groups;
 }

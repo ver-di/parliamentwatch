@@ -189,6 +189,13 @@ function pw_announcements_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_announcement_de_pattern';
+  $strongarm->value = 'news/[node:created:custom:Y-m-d]/[node:title]';
+  $export['pathauto_node_announcement_de_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_announcement_pattern';
   $strongarm->value = 'announcement/[node:created:custom:Y-m-d]/[node:title]';
   $export['pathauto_node_announcement_pattern'] = $strongarm;
@@ -220,6 +227,16 @@ function pw_announcements_strongarm() {
   $strongarm->name = 'save_continue_announcement';
   $strongarm->value = 'Speichern und Felder hinzufügen';
   $export['save_continue_announcement'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_announcement';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_announcement'] = $strongarm;
 
   return $export;
 }
