@@ -1,0 +1,292 @@
+<?php
+/**
+ * @file
+ * Code for the Profiles feature.
+ */
+
+include_once 'pw_profiles.features.inc';
+
+/**
+ * Enlarges field output_name field in table user_filter_cache to 255 characters:
+ */
+function pw_profiles_update_7104() {
+  db_change_field('user_filter_cache', 'output_name', 'output_name', array(
+    'type' => 'varchar',
+    'length' => 255,
+    'not null' => TRUE,
+    'default' => '',
+  ));
+}
+
+/**
+ * Add index to the table to optimize select queries from pw_forms_filter_alter:
+ */
+function pw_profiles_update_7103() {
+  db_add_index('user_filter_cache', 'pw_forms_filter_alter_ix', array(
+    'input_output_type',
+    'input_role_name',
+    'input_parliament_name'
+  ));
+}
+
+/**
+ * (Un-)Installs the needed cache table for user filters
+ * @return array
+ */
+function pw_profiles_schema() {
+  $schema['user_filter_cache'] = array(
+    'fields' =>
+      array(
+        'output_tid' =>
+          array(
+            'type' => 'int',
+            'unsigned' => TRUE,
+            'not null' => TRUE,
+            'default' => 0,
+          ),
+        'output_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_output_type' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_role_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+        'input_parliament_name' =>
+          array(
+            'type' => 'varchar',
+            'length' => 45,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+      ),
+    'indexes' =>
+      array(),
+    'unique_keys' =>
+      array(
+        'uniqueness' =>
+          array(
+            0 => 'output_tid',
+            1 => 'output_name',
+            2 => 'input_output_type',
+            3 => 'input_role_name',
+            4 => 'input_parliament_name',
+          ),
+      ),
+    'module' => 'pw_profiles',
+    'name' => 'user_filter_cache',
+  );
+  return $schema;
+}
+
+function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == "user_profile_form") {
+    unset($form["locale"]);
+    $view = views_get_view('calendar');
+    $view->set_display('block_2');
+    $form['views_embedder'] = array(
+      '#value' => views_embed_view('calendar', $display_id = 'block_2'),
+      '#weight' => 0,
+    );
+    $form['#validate'][] = 'my_user_register_validate';
+    $form['account']['name']['#description'] = t('Only lowercase letters (a-z), numbers and dash are allowed.');
+  }
+  elseif ($form_id == "user_revision_edit_form") {
+    unset($form["field_user_external_url"]);
+    unset($form["antispam_moderator"]);
+    unset($form["ckeditor"]);
+    unset($form["mimemail"]);
+    unset($form["overlay_control"]);
+    unset($form["xmlsitemap"]);
+  }
+}
+
+function my_user_register_validate($form, &$form_state) {
+  if (isset($form_state['input']['name'])) {
+    $username = $form_state['input']['name'];
+    if (!preg_match('/^[a-z0-9\-]+$/', $username)) {
+      form_set_error('name', t($form['account']['name']['#description']));
+    }
+  }
+}
+
+/**
+ * FFI: Saves changes to the user role in the corresponding taxonomy.
+ * This is important for the profile switch that relies on this taxonomy.
+ */
+function pw_profiles_user_presave(&$edit, $account, $category) {
+  // fetch the chosen roles from $edit['roles']:
+  $roleIdArray = array();
+
+  // $edit['roles'] is unset if user_save() is called programmatically with
+  // modifications that do not include the roles. In order to reset the roles
+  // anyway, we load the roles from the $account:
+  if (!isset($edit['roles'])) {
+    foreach ($account->roles as $key => $value) {
+      $edit['roles'][$key] = $key;
+    }
+  }
+  foreach ($edit['roles'] as $key => $value) {
+    if (!empty($value)) {
+      $roleIdArray[] = $key;
+    }
+  }
+  // reset the $edit['field_user_roles_for_view_mode_s']['und'] array:
+  $edit['field_user_roles_for_view_mode_s']['und'] = array();
+
+  foreach ($roleIdArray as $roleId) {
+    $role = user_role_load($roleId);
+    $roleName = $role->name; // i.e., Politician
+    // search for this roleName in the taxonomy:
+    $taxonomyArray = taxonomy_get_term_by_name($roleName, 'pw_profile_roles_for_view_mode_switch');
+    foreach ($taxonomyArray as $taxonomy) {
+      $tid = $taxonomy->tid;
+      $edit['field_user_roles_for_view_mode_s']['und'][] = array('tid' => "$tid");
+      break; // If there are several taxonomies with the same name that's a data error.
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ * reduces views result to one user (politician) instead of many caused by user revisions
+ */
+function pw_profiles_views_query_alter(&$view, &$query) {
+
+  if ($view->name == 'profile_list_rev') {
+
+    // combine filter on electoral regions by list AND constituency
+    if(sizeof($query->where[2]['conditions']) > 0 && strpos($query->where[2]['conditions'][0]['field'], 'taxonomy_term_data_field_revision_field_user_constituency__field_data_field_electoral_region2') > -1) {
+      $query->add_where(2, 'taxonomy_term_data_field_revision_field_user_list.tid', $query->where[2]['conditions'][0]['value'], '=');
+    }
+
+    // query for all vids of this parliament / role and reduce result to MAX(vid) per uid
+    $parliament = _pw_get_current_parliament_term();
+    $user_role = arg(2) == 'candidates'?'candidate':'deputy';
+    $subquery = db_select('user_archive_cache', 'uac');
+    _pw_uac_add_conditions($subquery, array(
+        'parliament' => $parliament->name,
+        'roles' => $user_role,
+        'date' => date('Y-m-d'),
+      )
+    );
+    $subquery->addField('uac', 'vid');
+    $result_vids = $subquery->execute()->fetchCol();
+
+    // add vids as condition to views query
+    $query->add_where(0, 'user_revision.vid', $result_vids);
+
+    // add the group by on the user id field to prevent duplicates caused by user revisions
+    /*
+    $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
+    $query->add_groupby('users_uid');
+    */
+
+    // set custom title for overview page
+    if($view->name == 'profile_list_rev' && $view->current_display == 'grid'){
+      $role_name = $user_role == 'candidate'?'Kandidierende':'Abgeordnete';
+      if(stripos($parliament->name, 'Bundestag') > -1){
+        $text = $user_role == 'candidate'?'@role für den @parliament':'@role aus dem @parliament';
+      }
+      elseif(stripos($parliament->name, 'Saarland') > -1){
+        $text = '@role für das @parliament';
+      }
+      elseif(substr($parliament->name, 0, 2) == "EU"){
+        $text = '@role für die @parliament';
+      }
+      else{
+        $text = '@role für @parliament';
+      }
+      $view->build_info['title'] = format_string($text, array('@role' => $role_name, '@parliament' => $parliament->name));
+    }
+
+  }
+}
+
+/**
+ *  Implements hook_views_pre_render().
+ *  Overwrites label of constituency in basic infos view in specific cases like "Stimmkreis" for Bremen.
+ */
+function pw_profiles_views_pre_render(&$view) {
+  if ($view->name == 'pw_user_profile_fields_rev' && $view->current_display == 'basic_info') {
+    $parliament = _pw_get_current_parliament_term();
+    if (!empty($parliament)) {
+      $field_rename_value = field_get_items('taxonomy_term', $parliament, 'field_parliament_constit_rename');
+      if (!empty($field_rename_value)) {
+        if(isset($view->field['field_user_constituency-revision_id'])){
+          $view->field['field_user_constituency-revision_id']->options['label'] = $field_rename_value[0]['value'];
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_ds_pre_render_alter().
+ * Trys to find string "[field_user_fname]" in question and answers view in profiles.
+ * If found don't render the fields user_questions_and_answers and question_and_answers_filter .
+ */
+function pw_profiles_ds_pre_render_alter(&$layout_render_array, $context) {
+  if (isset($layout_render_array['left_2'])) {
+    foreach ($layout_render_array['left_2'] as $index => $render_array) {
+      if ($render_array['#field_name'] == 'user_questions_and_answers' && strpos($render_array['#items'][0]['value'], '[field_user_fname]')) {
+        unset($layout_render_array['left_2'][$index]);
+        if (isset($layout_render_array['right_2'])) {
+          foreach ($layout_render_array['right_2'] as $index => $render_array) {
+            if ($render_array['#field_name'] == 'question_and_answers_filter') {
+              unset($layout_render_array['right_2'][$index]);
+              break;
+            }
+          }
+          break;
+        }
+      }
+    }
+  }
+}
+
+/**
+ *  Implements hook_user_update().
+ */
+function pw_profiles_user_update(&$edit, $account, $category) {
+
+  // custom abort flag to prevent circular updates
+  if(isset($account->abort_update) && $account->abort_update){
+    return;
+  }
+
+  // check if username was changed and update path then
+  if ($account->name != $account->original->name) {
+    $path = path_load(array('source' => 'user/' . $account->uid));
+    if ($path) {
+      $path['alias'] = 'profile/' . $account->name;
+      path_save($path);
+    }
+    $user_revisions = user_revision_list($account);
+    foreach ($user_revisions as $user_revision) {
+      if ($user_revision->name != $account->name) {
+        $revision_edit = array();
+        $revision_edit['name'] = $account->name;
+        _user_revision_edit_save($user_revision, $revision_edit);
+      }
+    }
+  }
+
+  // trigger user archive cron
+  if (function_exists('pw_userarchives_cron') && $account->uid) {
+    pw_userarchives_cron($account->uid);
+  }
+}
