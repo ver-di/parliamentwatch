@@ -1,0 +1,11 @@
+name = PW Question Form
+description = Custom Question Webform
+core = 7.x
+php = 5.2.4
+version = 7.x-1.0-20150922
+project = pw_question_form
+dependencies[] = ctools
+dependencies[] = pw_globals
+dependencies[] = webform
+dependencies[] = webform_ajax
+dependencies[] = webform_term_opts

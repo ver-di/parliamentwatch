@@ -1,0 +1,120 @@
+<?php
+
+/*
+ * Implements hook_schema().
+ */
+
+function pw_userarchives_schema() {
+
+  $schema['user_archive_cache'] = array(
+    'description' => 'TODO: please describe this table!',
+    'fields' => array(
+      'id' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'serial',
+        'not null' => TRUE,
+        ),
+      'uid' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'int',
+        'not null' => TRUE,
+        ),
+      'user_name' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'varchar',
+        'length' => '100',
+        'not null' => TRUE,
+        ),
+      'vid' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'int',
+        'not null' => TRUE,
+        ),
+      'parliament_name' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'varchar',
+        'length' => '100',
+        'not null' => TRUE,
+        ),
+      'number_of_questions' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'int',
+        'not null' => FALSE,
+        ),
+      'number_of_answers' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'int',
+        'not null' => FALSE,
+        ),
+      'number_of_sideline_jobs' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'int',
+        'not null' => FALSE,
+        ),
+      'number_of_speeches' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'int',
+        'not null' => FALSE,
+        ),
+      'number_of_missed_votings' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'int',
+        'not null' => FALSE,
+        ),
+      'timestamp' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'int',
+        'not null' => FALSE,
+        ),
+      ),
+'primary key' => array('id'),
+);
+
+return $schema;
+}
+
+/**
+ * Adds further column user_role
+ */
+function pw_userarchives_update_7100() {
+  db_add_field('user_archive_cache', 'user_role', array('type' => 'varchar', 'length' => '45', 'not null' => FALSE, 'description' => 'Role of user: candidate or deputy.'));
+}
+
+
+/**
+ * Add indicies for uid, user_name, user_role, vid, parliament_name to table user_archive_cache.
+ */
+function pw_userarchives_update_7101() {
+  db_add_index('user_archive_cache', 'uid', array('uid'));
+  db_add_index('user_archive_cache', 'user_name', array('user_name'));
+  db_add_index('user_archive_cache', 'user_role', array('user_role'));
+  db_add_index('user_archive_cache', 'vid', array('vid'));
+  db_add_index('user_archive_cache', 'parliament_name', array('parliament_name'));
+}
+
+/**
+ * Adds further column fraction_name
+ */
+function pw_userarchives_update_7102() {
+  db_add_field('user_archive_cache', 'fraction_name', array('type' => 'varchar', 'length' => '100', 'description' => 'Fracion of user.'));
+  db_add_index('user_archive_cache', 'fraction_name', array('fraction_name'));
+}
+
+/**
+ * Adds further column actual_profile
+ */
+function pw_userarchives_update_7103() {
+  db_add_field('user_archive_cache', 'actual_profile', array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'size' => 'tiny', 'description' => 'Boolean if profile is newest.'));
+  db_add_index('user_archive_cache', 'actual_profile', array('actual_profile'));
+}
+
+/**
+ * Adds further columns user_joined and user_retired
+ */
+function pw_userarchives_update_7104() {
+  db_add_field('user_archive_cache', 'user_joined', array('type' => 'varchar', 'mysql_type' => 'DATE', 'description' => 'Date entering the parliament.'));
+  db_add_field('user_archive_cache', 'user_retired', array('type' => 'varchar', 'mysql_type' => 'DATE', 'description' => 'Date leaving the parliament.'));
+  db_add_index('user_archive_cache', 'user_joined', array('user_joined'));
+  db_add_index('user_archive_cache', 'user_retired', array('user_retired'));
+}
+

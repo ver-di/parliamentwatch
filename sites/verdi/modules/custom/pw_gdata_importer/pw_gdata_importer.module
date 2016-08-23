@@ -1,0 +1,202 @@
+<?php
+/**
+ * @file
+ * Code for the PW GData Importer feature.
+ */
+
+include_once 'pw_gdata_importer.features.inc';
+
+
+/**
+ * Implements hook_feeds_processor_targets_alter().
+ */
+function pw_gdata_importer_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
+  if ($bundle_name === NULL) {
+    return;
+  }
+
+  foreach (field_info_instances($entity_type, $bundle_name) as $name => $instance) {
+    $info = field_info_field($name);
+    if ($info['type'] == 'entityreference') {
+      $targets[$name . ':uuid'] = array(
+        'name' => t('@label (by UUID)', array('@label' => $instance['label'])),
+        'callback' => 'pw_gdata_importer_feeds_set_target',
+        );
+    }
+  }
+
+  if (isset($targets['uid'])) {
+    $targets['uid:uuid'] = array(
+      'name' => t('uid (by UUID)', array('@label' => $instance['label'])),
+      'callback' => 'pw_gdata_importer_feeds_set_target',
+      );
+  }
+}
+
+/**
+ * Performs entity reference mapping by UUID.
+ *
+ * @see entityreference_feeds_set_target().
+ */
+function pw_gdata_importer_feeds_set_target($source, $entity, $target, $value, $mapping) {
+  if (empty($value)) {
+    return;
+  }
+
+  if (is_array($value)) {
+    $values = $value;
+  }
+  else {
+    $values = array($value);
+  }
+
+  list($target) = explode(':', $target, 2);
+
+  $info = field_info_field($target);
+
+  $language = isset($mapping['language']) ? $mapping['language'] : LANGUAGE_NONE;
+  if($info['settings']['target_type'] == 'node'){
+    $entity_ids = db_select('node', 'n')
+    ->fields('n', array('uuid', 'nid'))
+    ->condition('uuid', array_values($values), 'IN')
+    ->execute()
+    ->fetchAllKeyed();
+  }
+
+  // default is user
+  else{
+    $entity_ids = db_select('users', 'u')
+    ->fields('u', array('uuid', 'uid'))
+    ->condition('uuid', array_values($values), 'IN')
+    ->execute()
+    ->fetchAllKeyed();
+  }
+
+  $iterator = 0;
+  $field = isset($entity->target) ? $entity->target : array();
+  foreach ($entity_ids as $entity_id) {
+    if ($entity_id) {
+      if ($info) {
+        $field[$language][$iterator]['target_id'] = $entity_id;
+      }
+      else {
+        $field = $entity_id;
+      }
+    }
+    else {
+      unset($entity->feeds_item->hash);
+    }
+
+    if (!$info || $info['cardinality'] == 1) {
+      break;
+    }
+    $iterator++;
+  }
+
+  $entity->{$target} = $field;
+}
+
+/**
+ *  Implements hook_feeds_after_parse().
+ *
+ *  Checks if filesize of source file differs to target filesize.
+ */
+function pw_gdata_importer_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
+
+  // check for importer
+  if ($source->id == 'gdata_profiles_importer_v2' || $source->id == 'petition_updater' && !empty($source->feed_nid)) {
+
+    // set reference to processor
+    $processor = $source->importer->processor;
+
+    // figure out which entity type we have
+    if($source->importer->config['processor']['config']['bundle'] == 'user'){
+      $entity_type = 'user';
+    }
+    elseif(!empty($source->importer->config['content_type'])){
+      $entity_type = 'node';
+    }
+    else{
+      // somethings wrong
+      return;
+    }
+
+    // load by nid if processor is of type feedselfnodeprocessor
+    if(!empty($source->feed_nid)){
+      $target_entity = node_load($source->feed_nid);
+    }
+
+    // identify entity by guid and load it by its uuid
+    else{
+      foreach ($processor->config['mappings'] as $a_field) {
+        if($a_field['target'] == 'guid'){
+          $source_mapping = $a_field['source'];
+          $source_value_guid = $result->items[0][$source_mapping];
+          if(!empty($source_value_guid) && preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/', $source_value_guid)){
+            $entities = entity_uuid_load($entity_type, array($source_value_guid));
+            if(sizeof($entities) > 0){
+              $target_entity = array_pop($entities);
+            }
+          }
+        }
+      }
+    }
+
+    // exit if no entity was found (and go on with import)
+    if(!isset($target_entity) || empty($target_entity)){
+      return;
+    }
+
+    // array with items to unset
+    $keys_to_unset = array();
+
+    // run through all mappings
+    foreach ($processor->config['mappings'] as $key => $a_field) {
+
+      $target_mapping = $a_field['target'];
+      $target_field = field_get_items($entity_type, $target_entity, $target_mapping);
+
+      // check if target field is of type image
+      if (isset($target_field[0]['type']) && $target_field[0]['type'] == 'image') {
+
+        $source_mapping = $a_field['source'];
+        $source_value_url = $result->items[0][$source_mapping];
+
+        // check if source is a valid url
+        if (check_url($source_value_url)) {
+
+          $source_headers = get_headers($source_value_url, TRUE);
+          if(!empty($source_headers['Content-Length'])){
+            $source_filesize = intval($source_headers['Content-Length']);
+            $target_filesize = $target_field[0]['filesize'];
+
+            // don't import same file again
+            if ($target_filesize == $source_filesize) {
+              $keys_to_unset[] = $key;
+            }
+          }
+          else{
+            // prevent from overwriting with file of zero length
+            $keys_to_unset[] = $key;
+          }
+        }
+        else{
+          // prevent from overwriting with empty url
+          $keys_to_unset[] = $key;
+        }
+      }
+    }
+
+    // set changed mappings
+    if (sizeof($keys_to_unset) > 0) {
+
+      // copy protected mappings
+      $new_mappings = array();
+      $new_mappings['mappings'] = $processor->config['mappings'];
+      foreach ($keys_to_unset as $key) {
+        unset($new_mappings['mappings'][$key]);
+      }
+      $processor->addConfig($new_mappings);
+    }
+  }
+}
