@@ -20,8 +20,15 @@ function pw_profiles_user_default_roles() {
   // Exported role: Politician.
   $roles['Politician'] = array(
     'name' => 'Politician',
-    'weight' => '4',
+    'weight' => '3',
     'machine_name' => 'politician',
+  );
+
+  // Exported role: administrator.
+  $roles['administrator'] = array(
+    'name' => 'administrator',
+    'weight' => '2',
+    'machine_name' => '',
   );
 
   return $roles;

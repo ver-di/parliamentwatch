@@ -1,0 +1,154 @@
+<?php
+/**
+ * @file
+ */
+
+include_once 'pw_cache.features.inc';
+
+
+/**
+ * Implements hook_menu().
+ *
+ * @return array
+ */
+function pw_cache_menu() {
+  $items = array();
+  $items['admin/config/pw/pw_cache/settings'] = array(
+    'title' => 'PW Cache settings',
+    'description' => 'List of hosts which will be used to refresh the PW nginx and WaveCDN cache.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_cache_admin_settings'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'pw_cache.admin.inc',
+  );
+  return $items;
+}
+
+
+/**
+ * Implements hook_expire_cache().
+ *
+ */
+function pw_cache_expire_cache($expire_paths) {
+  foreach ($expire_paths as $expire_path) {
+    $expire_path = strtolower($expire_path);
+    db_insert('pw_cache_expire')
+      ->fields(array(
+        'path' => $expire_path,
+        'created' => time(),
+      ))
+      ->execute();
+  }
+}
+
+/**
+ * Implements hook_cron().
+ *
+ */
+
+function pw_cache_cron() {
+
+  // load configs
+  $servers = explode("\n", variable_get('pw_cache_servers', ''));
+  $hosts = explode("\n", variable_get('pw_cache_hosts', ''));
+
+  // load paths to expire
+  $result = db_query('SELECT * FROM pw_cache_expire WHERE created < ' . (time() - 60));
+
+  $expire_paths = array();
+  foreach ($result as $record) {
+
+    // expire each url only once
+    if(!in_array($record->path, $expire_paths)) {
+      $expire_paths[] = $record->path;
+    }
+
+    // delete from db
+    db_query('DELETE FROM pw_cache_expire WHERE id=' . $record->id);
+  }
+
+  // clear nginx cache
+  pw_cache_clearcache_nginx($expire_paths, $servers, $hosts);
+
+  // clear wavecdn cache
+  pw_cache_clearcache_wavecdn($expire_paths, $hosts);
+}
+
+function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
+
+  // build request array
+  foreach ($expire_paths as $path) {
+    foreach ($servers as $server) {
+      foreach ($hosts as $host) {
+        if (check_plain($server) && check_plain($host)) {
+          $server = trim($server);
+          $host = trim($host);
+          if (!empty($server) && !empty($host)) {
+            $url_server = parse_url($server);
+            $url_host = parse_url($host);
+
+            // called url: scheme from host + host from target server + path
+            $cache_url = $url_host['scheme'] . '://' . $url_server['host'] . '/' . $path;
+
+            // ssl context options
+            $context = array(
+             'ssl' => array(
+               'verify_peer'   => false,
+               'verify_peer_name'   => false,
+               )
+             );
+            $sslContext = stream_context_create($context);
+
+            // send host information, X-Refresh header and SSL Context.
+            $options = array(
+              'headers' => array(
+                'Host' => $url_host['host'],
+                'X-Refresh' => 1,
+                ),
+              'context' => $sslContext,
+              );
+            httprl_request($cache_url, $options);
+          }
+        }
+      }
+    }
+  }
+
+  // execute requests.
+  httprl_send_request();
+}
+
+function pw_cache_clearcache_wavecdn($expire_paths, $hosts) {
+
+  // check if credentials were set
+  global $conf;
+  if (!isset($conf['wavecdn_username']) || !isset($conf['wavecdn_password'])) {
+    return FALSE;
+  }
+
+  // build request array
+  $expire_urls = array();
+  foreach ($expire_paths as $path) {
+    $path = strtolower($path);
+    foreach ($hosts as $host) {
+      $host = trim($host);
+      if (!empty($host) && check_plain($host)) {
+        $expire_urls[] = $host . '/' . $path;
+      }
+    }
+  }
+
+  $options = array(
+    'method' => 'POST',
+    'data' => array(
+      'urls' => implode('|', $expire_urls),
+    ),
+    'headers' => array(
+      'Authorization' => 'Basic ' . base64_encode($conf['wavecdn_username'] . ':' . $conf['wavecdn_password'])
+    ),
+  );
+  httprl_request('https://api.wavecdn.com/v3/invalidation', $options);
+  httprl_send_request();
+}
+
