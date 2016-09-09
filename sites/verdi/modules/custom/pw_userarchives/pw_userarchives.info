@@ -5,3 +5,5 @@ package = Parliamentwatch
 php = 5.2.4
 version = 7.x-1.0-20160617
 project = pw_userarchives
+dependencies[] = pw_globals
+

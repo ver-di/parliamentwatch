@@ -11,5 +11,6 @@ dependencies[] = metatag_facebook
 dependencies[] = metatag_google_plus
 dependencies[] = metatag_opengraph
 dependencies[] = metatag_twitter_cards
+dependencies[] = pw_globals
 features[features_api][] = api:1
 mtime = 1468411646
