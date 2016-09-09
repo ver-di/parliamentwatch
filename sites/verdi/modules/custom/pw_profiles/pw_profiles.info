@@ -39,8 +39,6 @@ dependencies[] = views_sort_null_field
 dependencies[] = views_ui
 dependencies[] = webform
 dependencies[] = webform_rules
-<<<<<<< HEAD
-mtime = 1468412335
 features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
