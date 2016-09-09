@@ -15,8 +15,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'create calendar_entry content',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -25,9 +24,8 @@ function pw_profiles_user_default_permissions() {
   $permissions['create field_user_about'] = array(
     'name' => 'create field_user_about',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'administrator',
+      1 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -145,12 +143,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -179,9 +175,8 @@ function pw_profiles_user_default_permissions() {
   $permissions['create field_user_image_gallery'] = array(
     'name' => 'create field_user_image_gallery',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'administrator',
+      1 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -313,9 +308,8 @@ function pw_profiles_user_default_permissions() {
   $permissions['create field_user_political_goals'] = array(
     'name' => 'create field_user_political_goals',
     'roles' => array(
-      0 => 'Premium User',
-      1 => 'administrator',
-      2 => 'anonymous user',
+      0 => 'administrator',
+      1 => 'anonymous user',
     ),
     'module' => 'field_permissions',
   );
@@ -423,9 +417,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'create files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Deputy',
-      2 => 'Premium User',
-      3 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'file_entity',
   );
@@ -445,8 +437,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'delete own calendar_entry content',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -860,8 +851,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own calendar_entry content',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'node',
   );
@@ -871,8 +861,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_about',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -899,10 +888,8 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
+      2 => 'Politician',
+      3 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -953,10 +940,8 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
+      2 => 'Politician',
+      3 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1026,8 +1011,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_image_gallery',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1038,10 +1022,8 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
+      2 => 'Politician',
+      3 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1061,8 +1043,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_links_more',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1104,11 +1085,9 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1155,9 +1134,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_picture',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Deputy',
-      2 => 'Premium User',
-      3 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1177,8 +1154,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_political_goals',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1269,8 +1245,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_twitter_account',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1302,12 +1277,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'filter',
   );
@@ -1328,12 +1301,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1355,12 +1326,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1382,12 +1351,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1398,12 +1365,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1505,12 +1470,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1521,12 +1484,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1537,12 +1498,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1585,12 +1544,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1625,12 +1582,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1641,12 +1596,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1699,12 +1652,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1715,12 +1666,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1773,12 +1722,10 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view field_user_questions_get',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Deputy',
-      2 => 'Politician',
-      3 => 'Premium User',
-      4 => 'administrator',
-      5 => 'anonymous user',
-      6 => 'authenticated user',
+      1 => 'Politician',
+      2 => 'administrator',
+      3 => 'anonymous user',
+      4 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1819,12 +1766,10 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Candidate',
       1 => 'Content Manager',
-      2 => 'Deputy',
-      3 => 'Politician',
-      4 => 'Premium User',
-      5 => 'administrator',
-      6 => 'anonymous user',
-      7 => 'authenticated user',
+      2 => 'Politician',
+      3 => 'administrator',
+      4 => 'anonymous user',
+      5 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1858,10 +1803,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_about',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1905,10 +1849,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_childs',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1918,10 +1861,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_commitee',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2017,10 +1959,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_gender',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2030,10 +1971,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_image_gallery',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2043,10 +1983,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_job_skills',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2088,10 +2027,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_list_position',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2125,10 +2063,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_marriage_status',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2169,10 +2106,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_picture',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2192,10 +2128,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_political_goals',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2205,10 +2140,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_political_roles',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2299,10 +2233,9 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own field_user_twitter_account',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Premium User',
-      2 => 'administrator',
-      3 => 'anonymous user',
-      4 => 'authenticated user',
+      1 => 'administrator',
+      2 => 'anonymous user',
+      3 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -2324,9 +2257,7 @@ function pw_profiles_user_default_permissions() {
     'name' => 'view own files',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'Deputy',
-      2 => 'Premium User',
-      3 => 'administrator',
+      1 => 'administrator',
     ),
     'module' => 'file_entity',
   );
