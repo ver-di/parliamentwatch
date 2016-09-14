@@ -3,7 +3,6 @@
 /*
  * Implements hook_schema().
  */
-
 function pw_userarchives_schema() {
 
   $schema['user_archive_cache'] = array(
@@ -23,6 +22,12 @@ function pw_userarchives_schema() {
         'description' => 'TODO: please describe this field!',
         'type' => 'varchar',
         'length' => '100',
+        'not null' => TRUE,
+        ),
+      'user_role' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'varchar',
+        'length' => '45',
         'not null' => TRUE,
         ),
       'vid' => array(
@@ -59,6 +64,29 @@ function pw_userarchives_schema() {
       'number_of_missed_votings' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
+        'not null' => FALSE,
+        ),
+      'fraction_name' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+        ),
+      'actual_profile' => array(
+        'description' => 'TODO: please describe this field!',
+        'mysql_type' => 'tinyint',
+        'length' => 4,
+        'not null' => TRUE,
+        'default' => 0,
+        ),
+      'user_joined' => array(
+        'description' => 'TODO: please describe this field!',
+        'mysql_type' => 'date',
+        'not null' => FALSE,
+        ),
+      'user_retired' => array(
+        'description' => 'TODO: please describe this field!',
+        'mysql_type' => 'date',
         'not null' => FALSE,
         ),
       'timestamp' => array(
