@@ -852,6 +852,8 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:41' => 'dateretired',
           'xpathparser:42' => 'constituencywon',
           'xpathparser:43' => 'listwon',
+          'xpathparser:44' => 'verdifields',
+          'xpathparser:45' => 'verdiregions',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -893,6 +895,8 @@ function pw_gdata_importer_feeds_importer_default() {
           'xpathparser:41' => 0,
           'xpathparser:42' => 0,
           'xpathparser:43' => 0,
+          'xpathparser:44' => 0,
+          'xpathparser:45' => 0,
         ),
         'context' => '//row',
         'exp' => array(
@@ -940,6 +944,8 @@ function pw_gdata_importer_feeds_importer_default() {
             'xpathparser:41' => 0,
             'xpathparser:42' => 0,
             'xpathparser:43' => 0,
+            'xpathparser:44' => 0,
+            'xpathparser:45' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -1083,7 +1089,8 @@ function pw_gdata_importer_feeds_importer_default() {
           20 => array(
             'source' => 'xpathparser:22',
             'target' => 'field_user_political_roles',
-            'unique' => FALSE,
+            'term_search' => '0',
+            'autocreate' => 1,
             'language' => 'und',
           ),
           21 => array(
@@ -1209,6 +1216,19 @@ function pw_gdata_importer_feeds_importer_default() {
             'source' => 'xpathparser:43',
             'target' => 'field_user_list_won',
             'unique' => FALSE,
+            'language' => 'und',
+          ),
+          41 => array(
+            'source' => 'xpathparser:44',
+            'target' => 'field_verdi_fields',
+            'term_search' => '0',
+            'autocreate' => 1,
+          ),
+          42 => array(
+            'source' => 'xpathparser:45',
+            'target' => 'field_verdi_regions',
+            'term_search' => '0',
+            'autocreate' => 1,
           ),
         ),
         'update_existing' => '2',

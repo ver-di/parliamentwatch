@@ -55,5 +55,51 @@ function pw_profiles_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'verdi_fields' => array(
+      'name' => 'Verdi Fields',
+      'machine_name' => 'verdi_fields',
+      'description' => 'Fachbereiche',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
+    'verdi_regions' => array(
+      'name' => 'Verdi Regions',
+      'machine_name' => 'verdi_regions',
+      'description' => 'verdi Landesbezirke',
+      'hierarchy' => '0',
+      'module' => 'taxonomy',
+      'weight' => '0',
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
   );
 }

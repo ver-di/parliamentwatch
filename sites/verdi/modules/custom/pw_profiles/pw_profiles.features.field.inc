@@ -1125,7 +1125,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '14',
+        'weight' => '71',
       ),
     ),
   );
@@ -1370,7 +1370,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
-        'weight' => '17',
+        'weight' => '74',
       ),
     ),
   );
@@ -1676,7 +1676,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '16',
+        'weight' => '73',
       ),
     ),
   );
@@ -2299,7 +2299,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '7',
+        'weight' => '66',
       ),
     ),
   );
@@ -2837,7 +2837,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'year_range' => '-10:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '9',
+        'weight' => '68',
       ),
     ),
   );
@@ -3325,7 +3325,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
-        'weight' => '18',
+        'weight' => '75',
       ),
     ),
   );
@@ -3805,7 +3805,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '8',
+        'weight' => '67',
       ),
     ),
   );
@@ -4040,7 +4040,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '6',
+        'weight' => '65',
       ),
     ),
   );
@@ -4801,7 +4801,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '15',
+        'weight' => '72',
       ),
     ),
   );
@@ -5625,7 +5625,7 @@ $entity_field[0][\'value\'] = $result;',
           'year_range' => '-10:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '10',
+        'weight' => '69',
       ),
     ),
   );
@@ -6179,7 +6179,147 @@ $entity_field[0][\'value\'] = $result;',
           'year_range' => '-100:+10',
         ),
         'type' => 'date_select',
-        'weight' => '11',
+        'weight' => '70',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_verdi_fields'.
+  $fields['user-user-field_verdi_fields'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_verdi_fields',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'verdi_fields',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 46,
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_verdi_fields',
+      'label' => 'verdi Fields',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '63',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_verdi_regions'.
+  $fields['user-user-field_verdi_regions'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_verdi_regions',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'verdi_regions',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 47,
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_verdi_regions',
+      'label' => 'verdi Regions',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '64',
       ),
     ),
   );
@@ -6244,6 +6384,8 @@ $entity_field[0][\'value\'] = $result;',
   t('Wählen Sie hier Ihren Listenplatz aus.');
   t('direkt gewählt');
   t('eingezogen über Liste');
+  t('verdi Fields');
+  t('verdi Regions');
   t('z.B. "Jurist" oder "Diplom Ingenieur"');
   t('z.B. "selbständiger IT-Berater" oder "Bürgermeister"');
 
