@@ -1,0 +1,85 @@
+//
+// Footer
+// ======
+//
+
+#footer {
+	background: @brightGray;
+	margin-top: 50px;
+	padding-top: 5px;
+	padding-bottom: 60px;
+	.nav {
+		margin: 0 0 20px;
+		padding: 0;
+		list-style: none;
+		@media (min-width: @screen-sm-min) {
+			margin: 0;
+		}
+		li {
+			list-style: none;
+			display: block;
+			float: left;
+			border-right: 1px solid @mediumGray;
+			a {
+				display: block;
+				padding: 15px 10px 30px;
+				text-decoration: none;
+				color: @gray;
+				.transition(color 300ms ease);
+				@media (min-width: @screen-sm-min) {
+					padding: 15px 20px 30px 20px;
+				}
+				&:hover {
+					color: @darkGray;
+				}
+			}
+		}
+	}
+	.social-links {
+		float: right;
+		padding-right: 20px;
+		.social-link-label {
+			float: right;
+			padding-top: 15px;
+			@media (min-width: @screen-lg-min) {
+				float: left;
+				padding-top: 15px;
+			}
+		}
+		ul {
+			float: right;
+			margin: 0;
+			clear: both;
+			padding: 10px 0 0 10px;
+			@media (min-width: @screen-lg-min) {
+				float: left;
+				clear: none;
+			}
+			li {
+				list-style: none;
+				display: block;
+				float: left;
+				margin-left: 20px;
+				a {
+					display: block;
+					text-decoration: none;
+					border-radius: 50%;
+					background: @gray;
+					width: 30px;
+					height: 30px;
+					padding-top: 5px;
+					text-align: center;
+					color: @white;
+					.transition(background 300ms ease);
+				}
+				&.social-link-facebook a { background: #385b9b; }
+				&.social-link-twitter a { background: #23aae1; }
+				&.social-link-feed a { background: #f4b83f; }
+
+				&.social-link-facebook a:hover { background: #385b9b - 20; }
+				&.social-link-twitter a:hover { background: #23aae1 - 20; }
+				&.social-link-feed a:hover { background: #f4b83f - 20; }
+			}
+		}
+	}
+}

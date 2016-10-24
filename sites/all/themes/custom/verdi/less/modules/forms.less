@@ -1,0 +1,28 @@
+//
+// Forms
+// ==========
+//
+
+.form-control {
+  box-shadow: none;
+  &:focus {
+    box-shadow: none;
+    border: 1px solid @brightGray;
+  }
+}
+.input-group .input-group-addon + .form-control {
+  padding-left: 0;
+}
+
+
+.form-footer {
+  padding: 10px 0 20px;
+}
+
+
+// Form-Elements in Modal-Box
+
+.modal .form-control {
+  background: @brightGray + 7;
+  border-color: @brightGray + 7;
+}

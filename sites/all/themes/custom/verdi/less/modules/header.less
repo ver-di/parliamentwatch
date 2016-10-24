@@ -1,0 +1,158 @@
+//
+// Header
+// ======
+//
+
+#header {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 99;
+    @media (min-width: @screen-sm-min) {
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+    .brand {
+        
+        .svg-container {
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin-right: 15px;
+            @media (min-width: 420px) {
+                width: 70px;
+                height: 70px;
+                margin-right: 20px;
+            }
+            @media (min-width: @screen-sm-min) {
+                width: 100px;
+                height: 100px;
+                margin-right: 30px;
+            }
+            @media (min-width: @screen-md-min) {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        @brand-typo-size: 13.5px;
+
+        .brand-typo {
+            float: left;
+            margin-top: 5px;
+            span {
+                white-space: nowrap;
+                display: block;
+                font-weight: 300;
+                padding-bottom: 0px;
+            }
+            .brand-typo-before { font-size: (@brand-typo-size * .6); }
+            .brand-typo-main   { font-size: @brand-typo-size; margin-top: -(@brand-typo-size * .5); margin-bottom: -(@brand-typo-size * .5); }
+            .brand-typo-after  { font-size: (@brand-typo-size * .5); }
+
+            @media (min-width: 420px) {
+                margin-top: 16px;
+                .brand-typo-before { font-size: (@brand-typo-size * .8); }
+                .brand-typo-main   { font-size: @brand-typo-size * 1.4; margin-top: -(@brand-typo-size * .45); margin-bottom: -(@brand-typo-size * .4); }
+                .brand-typo-after  { font-size: (@brand-typo-size * .7); }
+            }
+            @media (min-width: @screen-sm-min) {
+                margin-top: 30px;
+                span {
+                    padding-bottom: 5px;
+                }
+                .brand-typo-before { font-size: (@brand-typo-size * 1); }
+                .brand-typo-main   { font-size: @brand-typo-size * 1.7; margin-top: -(@brand-typo-size * .3); margin-bottom: -(@brand-typo-size * .3); }
+                .brand-typo-after  { font-size: (@brand-typo-size * .9); }
+            }
+            @media (min-width: @screen-md-min) {
+                margin-top: 68px;
+                span {
+                    white-space: nowrap;
+                    display: block;
+                    font-weight: 300;
+                    padding-bottom: 7px;
+                }
+                .brand-typo-before { font-size: (@brand-typo-size * 1.2); }
+                .brand-typo-main   { font-size: @brand-typo-size * 2.1; margin-top: -(@brand-typo-size * .1); margin-bottom: -(@brand-typo-size * .1); }
+                .brand-typo-after  { font-size: (@brand-typo-size * 1); }
+            }
+            a {
+                color: @darkGray;
+                text-decoration: none;
+            }
+        }
+    }
+    .header_bg {
+        background: @white;
+        position: absolute;
+        left: -80px;
+        right: -80px;
+        top: -100px;
+        bottom: 0;
+        .box-shadow(0 10px 30px rgba(0,0,0,.1));
+        @media (min-width: @screen-sm-min) {
+            .rotate(-8.5deg);
+        }
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+
+        background-image: url(../images/header_back_bg.png);
+        background-color: @brand-primary;
+        border-bottom: 3px solid @brand-primary - 60;
+        background-repeat: no-repeat;
+        background-position: right bottom; 
+    }
+
+
+    // Menu
+    .navbar {
+        margin: 0;
+        .navbar-nav {
+            @media (min-width: @screen-md-min) {
+                position: absolute;
+                right: 0;
+                top: 50px;
+            }
+            > li {
+                > a {
+                    font-size: 16px;
+                    font-weight: 300;
+                    color: @gray;
+                    border: 2px solid @white;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+                    @media (min-width: @screen-lg-min) {
+                        font-size: 20px;
+                    }
+                    &:hover {
+                        background: none;
+                        color: @black;
+                    }
+                }
+                &.active > a {
+                    color: @black;
+                    border: 2px solid @brightGray;
+                }
+            }
+        }
+    }
+
+    // Mobile menu trigger
+    .navbar-toggle {
+        margin-top: 15px;
+        margin-right: 0px;
+        .icon-bar {
+            background-color: #888;
+        }
+    }
+
+}

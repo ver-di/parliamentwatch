@@ -49,3 +49,15 @@ gdata
 
 # Ignore google webmaster tools
 googleb9537432b2dce52c.html
+
+# Ignore theme-spepcific source-files
+sites/all/themes/custom/verdi/bootstrap/
+
+# Ignore macOS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

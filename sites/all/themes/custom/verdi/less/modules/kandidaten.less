@@ -1,0 +1,460 @@
+//
+// Kandidaten
+// ==========
+//
+
+.kassen-filter {
+	padding-top: 20px;
+	padding-bottom: 30px;
+	h3 {
+		font-size: 12px;
+		font-weight: 300;
+		text-align: center;
+		@media (min-width: @screen-sm-min) {
+			padding-left: 25px;
+			text-align: left;
+		}
+		@media (min-width: @screen-md-min) {
+			padding-left: 40px;
+		}
+	}
+	.kassen-filter-item-group {
+		float: left;
+		position: relative;
+		margin-bottom: 20px;
+		&:nth-child(1n) {
+			width: 100%;
+			@media (min-width: @screen-sm-min) {
+				width: 65%;
+			}
+			@media (min-width: @screen-sm-min) {
+				&:after {
+					content: '\f142';
+					font-family: 'FontAwesome';
+					display: block;
+
+					position: absolute;
+					top: 50%;
+					right: -4px;
+					color: #999;
+					margin-top: 10px;
+					.translate3d(0,-50%,0);
+					@media (min-width: @screen-sm-min) {
+						right: -10px;
+					}
+				}
+			}
+		}
+		&:nth-child(2n) {
+			width: 80%;
+			@media (min-width: @screen-sm-min) {
+				width: 25%;
+			}
+			.kassen-filter-item {
+				width: 80%;
+				float: none;
+				@media (min-width: @screen-sm-min) {
+					width: 100%;
+				}
+				label img {
+					position: static;
+					top: 0;
+					.translate3d(0,0,0);
+				}
+			}
+		}
+		.kassen-filter-item {
+			width: 50%;
+			margin-bottom: 20px;
+			float: left;
+			text-align: center;
+			padding-left: 10px;
+			padding-right: 10px;
+			@media (min-width: @screen-sm-min) {
+				width: 25%;
+				margin-bottom: 0;
+			}
+			@media (min-width: @screen-md-min) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			@media (min-width: @screen-lg-min) {
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+			label {
+				position: relative;
+				margin: 0;
+				cursor: pointer;
+				input {
+					display: none;
+				}
+				img {
+					margin: 0 auto;
+					position: relative;
+					top: 50%;
+					opacity: .6;
+                    .transition(all 400ms ease);
+					.translate3d(0,-50%,0);
+				}
+				&:hover img {
+					opacity: 1;
+				}
+			}
+			&:nth-child(2n) {
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+			&:nth-child(3n) {
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+			@media (min-width: @screen-md-min) {
+				&:nth-child(2n) {
+					padding-left: 40px;
+					padding-right: 40px;
+				}
+				&:nth-child(3n) {
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+			}
+		}
+	}
+	.kassen-filter-item-action {
+		width: 20%;
+		float: left;
+		text-align: center;
+		padding-top: 26px;
+		@media (min-width: @screen-sm-min) {
+			width: 10%;
+		}
+		.btn {
+			color: #666;
+			font-size: 22px;
+		}
+	}
+}
+
+
+
+.candidate-teaser {
+	margin-bottom: 30px;
+	position: relative;
+	.candidate-teaser-item {
+		padding: 20px 20px 30px;
+		margin-bottom: 20px;
+		background: @brightGray;
+		text-align: center;
+		.circle-image {
+			margin: 0 auto 20px;
+		}
+		h3 {
+			font-size: 20px;
+			margin: 0 0 5px;
+			color: @darkGray;
+		}
+		h3 + p {
+			font-size: 12px;
+			color: @darkGray;
+			padding-bottom: 20px;
+			position: relative;
+			&:after {
+		        content: '';
+		        position: absolute;
+		        left: 10%;
+		        bottom: 0;
+		        right: 10%;
+		        border-bottom: 1px solid @mediumGray;
+		    }
+		}
+		.candidate-teaser-item-stats {
+			padding: 10px 15px 25px;
+			margin: 0 auto;
+			@media (min-width: 490px) {
+				max-width: 60%;
+			}
+			@media (min-width: @screen-sm-min) {
+				max-width: none;
+			}
+			.col-xs-5,
+			.col-xs-7 {
+				padding: 0; 
+			}
+			.candidate-teaser-item-stats-count {
+				text-align: right;
+				.value {
+					font-weight: 500;
+					font-size: 30px;
+					line-height: 30px;
+					display: block;
+					float: left;
+					margin-right: 10px;
+				}
+				.label {
+					display: block;
+					font-size: 15px;
+					margin-top: 3px;
+					float: left;
+					line-height: 30px;
+				}
+			}
+			.candidate-teaser-item-stats-countasked {
+				.gauge-widget {
+					float: left;
+					position: relative;
+					margin-right: 10px;
+					.gauge {
+						margin-top: -4px;
+					}
+					.gauge-value {
+						position: absolute;
+						top: 10px;
+						left: 0;
+						right: 0;
+						font-size: 12px;
+					}
+				}
+				.label {
+					display: block;
+					font-size: 15px;
+					margin-top: 3px;
+					float: left;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		opacity: .7;
+		background: none;
+		margin-top: -40px;
+		.transition(opacity 400ms ease);
+		.fa {
+			font-size: 75px;
+		}
+		&.swiper-button-disabled {
+			opacity: .3;
+		}
+	}
+	.swiper-button-prev {
+		left: -60px;
+	}
+	.swiper-button-next {
+		right: -60px;
+	}
+}
+
+
+
+// Candidate specific Elements
+
+// Candidate insurance-logo
+
+.candidate-detail-logo {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	max-width: 150px;
+	@media (min-width: @screen-sm-min) {
+		margin-top: 20px;
+		max-width: 180px;
+	}
+}
+
+// Candidate intro-view
+
+.candidate-intro {
+	background: @brightGray;
+	padding: 20px;
+	position: relative;
+	@media (min-width: @screen-sm-min) {
+		padding: 30px;
+	}
+	.candidate-detail-image {
+		.white-box;
+		border: 8px solid @white;
+	}
+	figcaption {
+		padding: 8px;
+	}
+	.h1, h1, p {
+		@media (min-width: @screen-sm-min) {
+			padding-right: 130px;
+		}
+	}
+	.h1, h1 {
+		margin-bottom: 0;
+	}
+	.btn-primary {
+		display: block;
+		@media (min-width: @screen-sm-min) {
+			position: absolute;
+			right: 15px;
+			top: 30px;
+		}
+	}
+	.candidate-detail-stats {
+		margin-top: 25px;
+		padding-top: 25px;
+		border-top: 1px solid @gray;
+		.candidate-detail-stats-count {
+			text-align: right;
+			margin-right: 40px;
+			margin-bottom: 25px;
+			@media (min-width: @screen-sm-min) {
+				margin-bottom: 0;
+			}
+			.value {
+				font-weight: 500;
+				font-size: 45px;
+				line-height: 45px;
+				display: block;
+				float: left;
+				margin-right: 10px;
+			}
+			.label {
+				display: block;
+				font-size: 20px;
+				margin-top: 3px;
+				float: left;
+				line-height: 45px;
+			}
+		}
+		.candidate-detail-stats-countasked {
+			.gauge-widget {
+				float: left;
+				position: relative;
+				margin-right: 10px;
+				.gauge {
+					margin-top: -8px;
+				}
+				.gauge-value {
+					position: absolute;
+					top: 14px;
+					left: 0;
+					right: 0;
+					font-size: 12px;
+					text-align: center;
+				}
+			}
+			.label {
+				display: block;
+				font-size: 20px;
+				margin-top: 3px;
+				float: left;
+				line-height: 45px;
+			}
+		}
+	}
+	blockquote + .candidate-detail-stats {
+		margin-top: 0;
+	}
+}
+
+
+// Candidate detail-view
+
+.candidate-detail {
+	color: @darkGray;
+	h1 {
+		margin: 18px 0 0 0;
+	}
+	.candidate-detail-tabs {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		position: relative;
+		.nav-tabs {
+			border-bottom: 1px solid @mediumGray;
+			li {
+				overflow: hidden;
+				padding: 0 5px 0 0;
+				a {
+					border-color: @white;
+					border-bottom-color: transparent;
+					border-radius: 0;
+					padding: 22px 12px 18px;
+					font-size: 15px;
+					color: @gray;
+					@media (min-width: @screen-sm-min) {
+						padding: 22px 30px 18px;
+						font-size: 16px;
+					}
+					&:hover {
+						background: none;
+						color: @brand-primary;
+					}
+					&:focus {
+						background: none;
+					}
+				}
+				&.active a {
+					.box-shadow(2px 10px 8px rgba(0,0,0,.2));
+					color: @darkGray;
+					&:focus,
+					&:hover {
+						background: @white;
+					}
+				}
+			}
+
+			+ .btn-primary {
+				position: absolute;
+				right: 0;
+				top: 37px;
+			}
+		}
+
+		.tab-pane {
+			padding-top: 40px;
+			.masonry-filter {
+				padding-bottom: 40px;
+				.checkbox {
+					text-align: center;
+					@media (min-width: @screen-sm-min) {
+						text-align: right;
+						margin-top: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	.question-item {
+		background: @brightGray;
+		padding: 15px 1px;
+		margin-bottom: 30px;
+		> p { padding: 0 15px 5px; margin: 0; line-height: 1.6em; }
+		> h3 {
+			padding: 0 15px 15px;
+			margin: 0;
+			font-size: 1em;
+			line-height: 1.6em;
+			font-weight: 300;
+			a {
+				color: @darkGray;
+				text-decoration: none;
+			}
+		}
+		.text-serif {
+			font-style: italic;
+		}
+		.question-item-answer {
+			background: @white;
+			padding: 15px;
+			margin-bottom: 15px;
+			p {
+				line-height: 1.6em;
+			}
+		}
+		.btn {
+			margin: 0px 15px 3px;
+		}
+	}
+	.masonry-grid {
+		.masonry-item {
+		}
+	}
+}
+
+

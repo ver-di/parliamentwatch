@@ -1,0 +1,134 @@
+/**
+ * Variable Overrides.
+ *
+ * Modify this file to override the Bootstrap Framework variables. You can copy
+ * these variables directly from ../bootstrap/less/variables.less to this file.
+ */
+
+// Set the proper directory for the Bootstrap Glyphicon font.
+@icon-font-path: '../fonts';
+
+//
+// Paths
+// ===========
+//
+@path-build: "../../../build";
+@path-bower: "@{path-build}/bower_components";
+@path-fonts: "../fonts";
+
+
+
+//
+// Fonts
+// ===========
+//
+@font-family-sans-serif:  'dejavu_sanscondensed', sans-serif;
+@font-family-serif-display:  'cpmono_bold', sans-serif;
+@font-family-serif:  Georgia, sans-serif;
+
+
+
+//
+// Components
+// ===========
+//
+@padding-base-vertical:     8px;
+@padding-base-horizontal:   20px;
+
+//
+// Colors
+//
+@white: #fff;
+@brightGray: #f1efea;
+@mediumGray: #e2e4e4;
+@gray: #888;
+@darkGray: #444;
+@blackGray: #222;
+@yellow: #cdd204;
+@red: #ff0000;
+
+@black: #000;
+@black-transp: rgba(0, 0, 0, 0.6);
+
+@blue: #04abf1;
+@brand-primary: #db204b;
+@beige: #db204b;
+// @brand-secondary: #f18703;
+
+
+
+//
+// Font-Size
+//
+@font-size: 13px;
+
+@font-scaling-h1: 2.1;
+@font-scaling-h2: 1.7;
+@font-scaling-h3: 1.4;
+@font-scaling-h4: 1.3;
+@font-scaling-h5: 1.2;
+@font-scaling-h6: 1.1;
+
+
+
+
+//== Grid system
+//
+
+@grid-float-breakpoint:     @screen-md-min;
+
+
+//
+// Forms
+//
+
+@input-bg:                       @brightGray;
+@input-border:                   @brightGray;
+@input-color:                    @darkGray;
+@input-group-addon-bg:           @brightGray;
+@input-group-addon-border-color: @brightGray;
+
+@form-group-margin-bottom:       30px;
+
+@input-color-placeholder:        @gray;
+
+// reset border-radius for form-fields
+
+@input-border-radius:            0;
+@input-border-radius-large:      0;
+@input-border-radius-small:      0;
+
+// set size of form-fields
+
+@input-height-base:              (@line-height-computed + (@padding-base-vertical * 2) + 2);
+@input-height-large:             (ceil(@font-size-large * @line-height-large) + (@padding-large-vertical * 2) + 2);
+@input-height-small:             (floor(@font-size-small * @line-height-small) + (@padding-small-vertical * 2) + 8);
+
+
+//
+// Modals
+//
+@modal-inner-padding:         15px;
+@modal-title-padding:         15px;
+
+@modal-content-bg:                             #fff;
+@modal-content-border-color:                   rgba(0,0,0,0);
+@modal-content-fallback-border-color:          #999;
+
+@modal-backdrop-bg:           @white;
+@modal-backdrop-opacity:      .9;
+@modal-header-border-color:   #e5e5e5;
+@modal-footer-border-color:   @modal-header-border-color;
+
+@modal-lg:                    900px;
+@modal-md:                    600px;
+@modal-sm:                    300px;
+//
+// Buttons
+//
+
+// reset border-radius for buttons
+
+@btn-border-radius-base:         4;
+@btn-border-radius-large:        4;
+@btn-border-radius-small:        4;
