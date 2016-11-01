@@ -9,15 +9,17 @@
     .swiper-slide {
         position: relative;
         overflow: hidden;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: right center;
-        @media (min-width: @screen-sm-min) {
-            &.swiper-slide-01 { background-image: url(../images/frontpage/slide_bg_01.jpg) }
-            &.swiper-slide-02 { background-image: url(../images/frontpage/slide_bg_01.jpg) }
-            &.swiper-slide-03 { background-image: url(../images/frontpage/slide_bg_01.jpg) }
-        }
+        .swiper-slide-bg {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right center;
 
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
         .swiper-slide-content-wrapper {
             padding: 30px 20px 15px 20px;
             color: @white;
@@ -74,6 +76,10 @@
                 padding-bottom: 25px;
                 @media (min-width: @screen-sm-min) {
                     padding-bottom: 0px;
+                }
+                h2 a {
+                    color: @white;
+                    text-decoration: none;
                 }
                 .btn {
                     margin-top: 25px;

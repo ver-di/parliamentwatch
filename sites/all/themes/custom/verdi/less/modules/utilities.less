@@ -350,11 +350,12 @@ blockquote,
 // Panel Accordion
 
 .panel-group {
-    margin: 30px 0;
+    margin: 0 0 30px;
     .panel {
         background: none;
         border-color: transparent;
         border-radius: 0;
+        position: relative;
         .box-shadow(none);
     }
     .panel-heading {
@@ -387,16 +388,13 @@ blockquote,
                 position: absolute;
                 left:0;
             }
-            &.collapsed {
-                &:before {
-                    content: '\f067';
-                }
+            &.collapsed:before {
+                content: '\f067';
             }
             &:hover {
                 color: @darkGray + 20;
             }
         }
-
     }
     .panel-body {
         max-width: 730px;

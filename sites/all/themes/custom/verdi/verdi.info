@@ -3,6 +3,7 @@ description = Uses the Bootstrap Framework Less source files and must be compile
 core = 7.x
 base theme = bootstrap
 
+settings[jquery_update_jquery_version] = 1.9
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Regions
@@ -43,6 +44,18 @@ scripts[] = 'bootstrap/js/popover.js'
 scripts[] = 'bootstrap/js/scrollspy.js'
 scripts[] = 'bootstrap/js/tab.js'
 scripts[] = 'bootstrap/js/transition.js'
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts - Custom
+;;;;;;;;;;;;;;;;;;;;;
+scripts[] = 'javaScript/contrib/modernizr.js'
+scripts[] = 'javaScript/contrib/gauge.min.js'
+scripts[] = 'javaScript/contrib/select2.min.js'
+scripts[] = 'javaScript/contrib/swiper.jquery.min.js'
+scripts[] = 'javaScript/contrib/jquery.matchHeight-min.js'
+scripts[] = 'javaScript/contrib/isotope.pkgd.min.js'
+
+scripts[] = 'javaScript/script.js'
 
 ; Disable the CDN provider so compiled source files can be used.
 settings[bootstrap_cdn] = ''

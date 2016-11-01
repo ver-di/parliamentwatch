@@ -1,24 +1,22 @@
 $.fn.gauge = function(opts) {
-  this.each(function() {
-    var $this = $(this),
-        data = $this.data();
+    this.each(function() {
+        var $this = $(this),
+            data = $this.data();
         gaugeValue = $this.parent('.gauge-widget').find('.gauge-value').attr('data-gauge-value');
 
-    if (data.gauge) {
-        data.gauge.stop();
-        delete data.gauge;
-    }
-    if (opts !== false) {
-        data.gauge = new Donut(this).setOptions(opts);
-        data.gauge.maxValue = 100;
-        data.gauge.animationSpeed = 32;
-        data.gauge.set(gaugeValue);
-    }
-  });
-  return this;
+        if (data.gauge) {
+            data.gauge.stop();
+            delete data.gauge;
+        }
+        if (opts !== false) {
+            data.gauge = new Donut(this).setOptions(opts);
+            data.gauge.maxValue = 100;
+            data.gauge.animationSpeed = 32;
+            data.gauge.set(gaugeValue);
+        }
+    });
+    return this;
 };
-
-
 
 //
 // Isotope
@@ -69,7 +67,7 @@ function debounce( fn, threshold ) {
 
 
 $(document).ready(function() {
-    
+
     // frontpage header
 
     var frontpageHeader = new Swiper('#frontpage-slider .swiper-container', {
@@ -78,6 +76,7 @@ $(document).ready(function() {
         speed: 400,
         spaceBetween: 20
     });
+    $('#frontpage-slider .swiper-slide-content-wrapper').matchHeight();
 
     // question modal
 
@@ -104,8 +103,8 @@ $(document).ready(function() {
             strokeWidth: 0.035,
             color: '#000000'
         },
-        limitMax: 'true', 
-        colorStart: '#db204b', 
+        limitMax: 'true',
+        colorStart: '#db204b',
         colorStop: '#b4173b',
         strokeColor: '#EEEEEE',
         generateGradient: true
