@@ -233,17 +233,6 @@ function pw_globals_field_default_fields() {
           'module' => 'text',
           'settings' => array(
             'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
           ),
           'type' => 'text_default',
           'weight' => '0',
@@ -344,29 +333,9 @@ function pw_globals_field_default_fields() {
         ),
         'default' => array(
           'label' => 'above',
-          'module' => 'date',
-          'settings' => array(
-            'field_delimiter' => '',
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_remaining_days' => FALSE,
-          ),
-          'type' => 'date_default',
-          'weight' => 2,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
         ),
         'search_result' => array(
           'label' => 'above',

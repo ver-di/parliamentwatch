@@ -279,7 +279,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
         'extraAllowedContent' => '',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
-        'font_format' => 'p;div;h3;h4',
+        'font_format' => 'p;div;h2;h3;h4',
         'custom_formatting' => 't',
         'formatting' => array(
           'custom_formatting_options' => array(
@@ -315,7 +315,7 @@ function pw_content_authoring_layout_ckeditor_profile_defaults() {
           ),
           'linkit' => array(
             'name' => 'linkit',
-            'desc' => 'Support für Linkit-Modul',
+            'desc' => 'Support for Linkit module',
             'path' => '%base_path%sites/all/modules/contrib/linkit/editors/ckeditor/',
             'buttons' => array(
               'linkit' => array(
