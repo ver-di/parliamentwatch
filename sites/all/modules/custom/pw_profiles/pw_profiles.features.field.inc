@@ -343,293 +343,6 @@ function pw_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-calendar_entry-body'.
-  $fields['node-calendar_entry-body'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(
-        0 => 'node',
-      ),
-      'field_name' => 'body',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'profile2_private' => FALSE,
-      ),
-      'translatable' => '1',
-      'type' => 'text_with_summary',
-    ),
-    'field_instance' => array(
-      'bundle' => 'calendar_entry',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'text_default',
-          'weight' => '6',
-        ),
-        'teaser' => array(
-          'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-            'trim_length' => 600,
-          ),
-          'type' => 'text_summary_or_trimmed',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'node',
-      'field_name' => 'body',
-      'label' => 'Body',
-      'required' => FALSE,
-      'settings' => array(
-        'display_summary' => TRUE,
-        'exclude_cv' => FALSE,
-        'text_processing' => 1,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'module' => 'text',
-        'settings' => array(
-          'rows' => 20,
-          'summary_rows' => 5,
-        ),
-        'type' => 'text_textarea_with_summary',
-        'weight' => '31',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-calendar_entry-field_calendar_entry_address'.
-  $fields['node-calendar_entry-field_calendar_entry_address'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_calendar_entry_address',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'addressfield',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'addressfield',
-    ),
-    'field_instance' => array(
-      'bundle' => 'calendar_entry',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'addressfield_tokens',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'addressfield_linear',
-          'weight' => '5',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_calendar_entry_address',
-      'label' => 'Address',
-      'required' => 0,
-      'settings' => array(
-        'exclude_cv' => FALSE,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'addressfield',
-        'settings' => array(
-          'available_countries' => array(),
-          'default_country' => '',
-          'format_handlers' => array(
-            'address' => 'address',
-            'address-hide-country' => 0,
-            'organisation' => 0,
-            'name-full' => 0,
-            'name-oneline' => 0,
-          ),
-        ),
-        'type' => 'addressfield_standard',
-        'weight' => '32',
-      ),
-    ),
-  );
-
-  // Exported field: 'node-calendar_entry-field_calendar_entry_date'.
-  $fields['node-calendar_entry-field_calendar_entry_date'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_calendar_entry_date',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'date',
-      'settings' => array(
-        'cache_count' => '4',
-        'cache_enabled' => 0,
-        'granularity' => array(
-          'day' => 'day',
-          'hour' => 'hour',
-          'minute' => 'minute',
-          'month' => 'month',
-          'second' => 0,
-          'year' => 'year',
-        ),
-        'timezone_db' => 'UTC',
-        'todate' => '',
-        'tz_handling' => 'site',
-      ),
-      'translatable' => '0',
-      'type' => 'datetime',
-    ),
-    'field_instance' => array(
-      'bundle' => 'calendar_entry',
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'field_delimiter' => '',
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_remaining_days' => FALSE,
-          ),
-          'type' => 'date_default',
-          'weight' => '4',
-        ),
-        'teaser' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'node',
-      'field_name' => 'field_calendar_entry_date',
-      'label' => 'Date',
-      'required' => 0,
-      'settings' => array(
-        'default_value' => 'now',
-        'default_value2' => 'same',
-        'default_value_code' => '',
-        'default_value_code2' => '',
-        'exclude_cv' => FALSE,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'date',
-        'settings' => array(
-          'display_all_day' => 1,
-          'increment' => '15',
-          'input_format' => 'd/m/Y - H:i:s',
-          'input_format_custom' => '',
-          'label_position' => 'above',
-          'text_parts' => array(),
-          'year_range' => '-3:+3',
-        ),
-        'type' => 'date_popup',
-        'weight' => '33',
-      ),
-    ),
-  );
-
   // Exported field: 'taxonomy_term-list_position-field_int_list_postiion'.
   $fields['taxonomy_term-list_position-field_int_list_postiion'] = array(
     'field_config' => array(
@@ -749,7 +462,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '18',
+          'weight' => '23',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -854,106 +567,6 @@ function pw_profiles_field_default_fields() {
     ),
   );
 
-  // Exported field: 'user-user-field_user_address'.
-  $fields['user-user-field_user_address'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_user_address',
-      'field_permissions' => array(
-        'type' => '2',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(),
-      'locked' => '0',
-      'module' => 'addressfield',
-      'settings' => array(),
-      'translatable' => '0',
-      'type' => 'addressfield',
-    ),
-    'field_instance' => array(
-      'bundle' => 'user',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '21',
-        ),
-        'search_result' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '62',
-        ),
-        'user_candidate' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '81',
-        ),
-        'user_deputy' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '63',
-        ),
-        'user_dialogue_search_snippet' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '31',
-        ),
-        'user_premium' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '81',
-        ),
-        'user_search' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '21',
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'user',
-      'field_name' => 'field_user_address',
-      'label' => 'Address',
-      'required' => 0,
-      'settings' => array(
-        'exclude_cv' => FALSE,
-        'user_register_form' => 0,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'addressfield',
-        'settings' => array(
-          'available_countries' => array(
-            'DE' => 'DE',
-          ),
-          'default_country' => '',
-          'format_handlers' => array(
-            'address' => 'address',
-            'address-hide-country' => 0,
-            'organisation' => 0,
-            'name-oneline' => 0,
-            'name-full' => 0,
-          ),
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
-        'type' => 'addressfield_standard',
-        'weight' => '45',
-      ),
-    ),
-  );
-
   // Exported field: 'user-user-field_user_age'.
   $fields['user-user-field_user_age'] = array(
     'field_config' => array(
@@ -999,7 +612,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '26',
+          'weight' => '28',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -1091,7 +704,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '15',
+          'weight' => '7',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -1212,10 +825,19 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '12',
+          'label' => 'inline',
+          'module' => 'date',
+          'settings' => array(
+            'field_delimiter' => '',
+            'format_type' => 'year_only',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+            'show_remaining_days' => 0,
+          ),
+          'type' => 'date_default',
+          'weight' => '15',
         ),
         'full' => array(
           'label' => 'above',
@@ -1321,7 +943,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '10',
+          'weight' => '19',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1434,10 +1056,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '4',
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '20',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1512,7 +1137,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '14',
+        'weight' => '71',
       ),
     ),
   );
@@ -1563,9 +1188,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '15',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '22',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1686,23 +1314,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'list_default',
-          'weight' => '37',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -1757,7 +1371,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
-        'weight' => '17',
+        'weight' => '74',
       ),
     ),
   );
@@ -1804,7 +1418,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '24',
+          'weight' => '26',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -1946,23 +1560,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'text_default',
-          'weight' => '33',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -2063,7 +1663,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '16',
+        'weight' => '73',
       ),
     ),
   );
@@ -2111,7 +1711,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '22',
+          'weight' => '25',
         ),
         'premium_user' => array(
           'label' => 'above',
@@ -2241,9 +1841,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '16',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '25',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -2384,10 +1987,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '21',
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '13',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -2613,24 +2219,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'taxonomy',
           'settings' => array(
             'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
           ),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 41,
+          'weight' => '17',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -2686,7 +2281,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '7',
+        'weight' => '66',
       ),
     ),
   );
@@ -2731,7 +2326,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '9',
+          'weight' => '17',
         ),
         'full' => array(
           'label' => 'above',
@@ -2839,7 +2434,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '19',
+          'weight' => '24',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -2967,9 +2562,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '14',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '16',
         ),
         'full' => array(
           'label' => 'inline',
@@ -3135,29 +2733,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'date',
-          'settings' => array(
-            'field_delimiter' => '',
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_remaining_days' => FALSE,
-          ),
-          'type' => 'date_default',
-          'weight' => 44,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '11',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -3224,7 +2802,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'year_range' => '-10:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '9',
+        'weight' => '68',
       ),
     ),
   );
@@ -3270,23 +2848,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'link',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'link_default',
-          'weight' => '6',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -3415,24 +2979,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(
             'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
           ),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 40,
+          'weight' => '3',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -3537,10 +3090,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => 'Wählen Sie hier Ihren Listenplatz aus.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '20',
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '5',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -3641,23 +3197,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'list_default',
-          'weight' => '38',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -3712,7 +3254,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
-        'weight' => '18',
+        'weight' => '75',
       ),
     ),
   );
@@ -3756,10 +3298,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '22',
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '14',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -3980,7 +3525,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '11',
+          'weight' => '20',
         ),
         'full' => array(
           'label' => 'inline',
@@ -4092,7 +3637,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '28',
+          'weight' => '30',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -4192,7 +3737,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '8',
+        'weight' => '67',
       ),
     ),
   );
@@ -4245,7 +3790,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '23',
+          'weight' => '14',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -4391,7 +3936,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         ),
         'user_search' => array(
           'label' => 'above',
-          'module' => 'shs',
+          'module' => 'taxonomy',
           'settings' => array(
             'field_delimiter' => '',
             'linked' => FALSE,
@@ -4407,7 +3952,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
               'linked' => 0,
             ),
           ),
-          'type' => 'shs_default',
+          'type' => 'taxonomy_term_reference_link',
           'weight' => '0',
         ),
       ),
@@ -4427,7 +3972,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '6',
+        'weight' => '65',
       ),
     ),
   );
@@ -4472,23 +4017,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'text_default',
-          'weight' => '30',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -4621,7 +4152,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'locked' => '0',
       'module' => 'image',
       'settings' => array(
-        'default_image' => '13596',
+        'default_image' => 0,
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -4633,26 +4164,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => 'Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu auf "Auswählen", suchen Sie dann eine Bilddatei von Ihrem Computer aus und klicken Sie auf "Abschicken".',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
             'field_delimiter' => '',
             'image_link' => '',
             'image_style' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
           ),
           'type' => 'image',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -4731,8 +4251,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
-        'default_image' => 0,
-        'exclude_cv' => FALSE,
+        'default_image' => '4',
         'file_directory' => 'users',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '1 MB',
@@ -4746,12 +4265,10 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'module' => 'media',
         'settings' => array(
           'allowed_schemes' => array(
-            'private' => 0,
             'public' => 'public',
             'youtube' => 0,
           ),
           'allowed_types' => array(
-            'application' => 0,
             'audio' => 0,
             'document' => 0,
             'image' => 'image',
@@ -4762,10 +4279,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
             'media_internet' => 'media_internet',
             'upload' => 'upload',
-            'youtube' => 0,
           ),
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
         'weight' => '5',
@@ -4812,24 +4326,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
             'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
           ),
           'type' => 'text_default',
-          'weight' => '32',
+          'weight' => '5',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -4982,7 +4485,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '17',
+          'weight' => '22',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -5128,10 +4631,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => 'Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '5',
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '21',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -5188,7 +4694,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '15',
+        'weight' => '72',
       ),
     ),
   );
@@ -5235,7 +4741,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '13',
+          'weight' => '21',
         ),
         'full' => array(
           'label' => 'above',
@@ -5377,23 +4883,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'text_default',
-          'weight' => '29',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -5551,7 +5043,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '27',
+          'weight' => '29',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -5650,23 +5142,9 @@ $entity_field[0][\'value\'] = $result;',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'text_default',
-          'weight' => 39,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '10',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -5799,9 +5277,16 @@ $entity_field[0][\'value\'] = $result;',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '14',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'field_delimiter' => '',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => '',
+          ),
+          'type' => 'number_integer',
+          'weight' => '2',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -5883,6 +5368,112 @@ $entity_field[0][\'value\'] = $result;',
     ),
   );
 
+  // Exported field: 'user-user-field_user_quote'.
+  $fields['user-user-field_user_quote'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_quote',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '3',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'field_name' => 'field_user_quote',
+      'label' => 'Quote',
+      'required' => 0,
+      'settings' => array(
+        'better_formats' => array(
+          'allowed_formats' => array(
+            'copyright' => 'copyright',
+            'filtered_html' => 'filtered_html',
+            'full_html' => 'full_html',
+            'managed_content' => 'managed_content',
+            'php_code' => 'php_code',
+            'plain_text' => 'plain_text',
+          ),
+          'allowed_formats_toggle' => 0,
+          'default_order_toggle' => 0,
+          'default_order_wrapper' => array(
+            'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
+              'filtered_html' => array(
+                'weight' => '-9',
+              ),
+              'full_html' => array(
+                'weight' => '-8',
+              ),
+              'managed_content' => array(
+                'weight' => '-10',
+              ),
+              'php_code' => array(
+                'weight' => '-6',
+              ),
+              'plain_text' => array(
+                'weight' => '-7',
+              ),
+            ),
+          ),
+        ),
+        'linkit' => array(
+          'button_text' => 'Search',
+          'enable' => 0,
+          'profile' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '76',
+      ),
+    ),
+  );
+
   // Exported field: 'user-user-field_user_retired'.
   $fields['user-user-field_user_retired'] = array(
     'field_config' => array(
@@ -5923,29 +5514,9 @@ $entity_field[0][\'value\'] = $result;',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'date',
-          'settings' => array(
-            'field_delimiter' => '',
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_remaining_days' => FALSE,
-          ),
-          'type' => 'date_default',
-          'weight' => 45,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '12',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -6012,7 +5583,7 @@ $entity_field[0][\'value\'] = $result;',
           'year_range' => '-10:+3',
         ),
         'type' => 'date_popup',
-        'weight' => '10',
+        'weight' => '69',
       ),
     ),
   );
@@ -6065,7 +5636,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '8',
+          'weight' => '16',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -6164,24 +5735,13 @@ $entity_field[0][\'value\'] = $result;',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(
             'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
           ),
           'type' => 'text_default',
-          'weight' => '31',
+          'weight' => '12',
         ),
         'search_result' => array(
           'label' => 'hidden',
@@ -6355,9 +5915,12 @@ $entity_field[0][\'value\'] = $result;',
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '23',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '2',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -6501,7 +6064,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => '25',
+          'weight' => '27',
         ),
         'search_result' => array(
           'label' => 'above',
@@ -6566,7 +6129,147 @@ $entity_field[0][\'value\'] = $result;',
           'year_range' => '-100:+10',
         ),
         'type' => 'date_select',
-        'weight' => '11',
+        'weight' => '70',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_verdi_fields'.
+  $fields['user-user-field_verdi_fields'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_verdi_fields',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'verdi_fields',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '18',
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_verdi_fields',
+      'label' => 'verdi Fields',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '63',
+      ),
+    ),
+  );
+
+  // Exported field: 'user-user-field_verdi_regions'.
+  $fields['user-user-field_verdi_regions'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_verdi_regions',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'verdi_regions',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '19',
+        ),
+      ),
+      'entity_type' => 'user',
+      'field_name' => 'field_verdi_regions',
+      'label' => 'verdi Regions',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_buttons',
+        'weight' => '64',
       ),
     ),
   );
@@ -6574,20 +6277,17 @@ $entity_field[0][\'value\'] = $result;',
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
-  t('Address');
   t('Age');
   t('Alt Text');
   t('Answers Give');
   t('Because system user roles are not revisionable, this fields stores a copy of the user role.');
   t('Birthday');
   t('Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). Aus technischen Gründen kann es bis zu 30min dauern, bis diese Information in Ihrem Profil angezeigt wird.');
-  t('Body');
   t('Children');
   t('Committee');
   t('Constituency');
   t('Constituency Result');
   t('Constituency Won');
-  t('Date');
   t('Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
   t('Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
   t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
@@ -6624,6 +6324,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Question Form Closed By Reason');
   t('QuestionAnswerRatio');
   t('Questions Get');
+  t('Quote');
   t('Retired Parliament');
   t('Roles (revisionable)');
   t('Title');
@@ -6634,6 +6335,8 @@ $entity_field[0][\'value\'] = $result;',
   t('Wählen Sie hier Ihren Listenplatz aus.');
   t('direkt gewählt');
   t('eingezogen über Liste');
+  t('verdi Fields');
+  t('verdi Regions');
   t('z.B. "Jurist" oder "Diplom Ingenieur"');
   t('z.B. "selbständiger IT-Berater" oder "Bürgermeister"');
 

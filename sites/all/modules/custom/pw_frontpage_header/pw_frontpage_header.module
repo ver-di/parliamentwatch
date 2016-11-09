@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PW Frontpage Header feature.
+ */
+
+include_once 'pw_frontpage_header.features.inc';

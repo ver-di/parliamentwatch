@@ -17,13 +17,6 @@ function pw_profiles_user_default_roles() {
     'machine_name' => 'candidate',
   );
 
-  // Exported role: Deputy.
-  $roles['Deputy'] = array(
-    'name' => 'Deputy',
-    'weight' => '5',
-    'machine_name' => 'deputy',
-  );
-
   // Exported role: Politician.
   $roles['Politician'] = array(
     'name' => 'Politician',
@@ -31,11 +24,11 @@ function pw_profiles_user_default_roles() {
     'machine_name' => 'politician',
   );
 
-  // Exported role: Premium User.
-  $roles['Premium User'] = array(
-    'name' => 'Premium User',
-    'weight' => '7',
-    'machine_name' => 'user_premium',
+  // Exported role: administrator.
+  $roles['administrator'] = array(
+    'name' => 'administrator',
+    'weight' => '2',
+    'machine_name' => '',
   );
 
   return $roles;

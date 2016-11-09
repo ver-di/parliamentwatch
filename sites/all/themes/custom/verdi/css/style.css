@@ -7049,6 +7049,9 @@ blockquote:after,
   margin-top: 3px;
   float: left;
   line-height: 45px;
+  color: #444444;
+  padding: 0;
+  font-weight: 400;
 }
 .candidate-intro .candidate-detail-stats .candidate-detail-stats-countasked .gauge-widget {
   float: left;
@@ -7072,6 +7075,9 @@ blockquote:after,
   margin-top: 3px;
   float: left;
   line-height: 45px;
+  color: #444444;
+  padding: 0;
+  font-weight: 400;
 }
 .candidate-intro blockquote + .candidate-detail-stats {
   margin-top: 0;

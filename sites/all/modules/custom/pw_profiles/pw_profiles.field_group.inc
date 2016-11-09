@@ -21,7 +21,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Basics ID Wrapper',
-    'weight' => '2',
+    'weight' => '15',
     'children' => array(
       0 => 'group_user_basics',
     ),
@@ -41,6 +41,303 @@ function pw_profiles_field_group_info() {
     ),
   );
   $field_groups['group_basics|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_info_list|user|user|default';
+  $field_group->group_name = 'group_candidate_info_list';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_tabs_info_row';
+  $field_group->data = array(
+    'label' => 'Info-List',
+    'weight' => '14',
+    'children' => array(
+      0 => 'field_user_birthday',
+      1 => 'field_user_commitee',
+      2 => 'field_user_constituency',
+      3 => 'field_user_fname',
+      4 => 'field_user_fraction',
+      5 => 'field_user_job_skills',
+      6 => 'field_user_lname',
+      7 => 'field_user_political_roles',
+      8 => 'field_user_title',
+      9 => 'field_verdi_fields',
+      10 => 'field_verdi_regions',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Info-List',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-candidate-info-list field-group-html-element dl-horizontal dl-horizontal-list  col-xs-12 col-sm-8',
+        'element' => 'dl',
+        'show_label' => '0',
+        'label_element' => '',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_candidate_info_list|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_info_sidebar|user|user|default';
+  $field_group->group_name = 'group_candidate_info_sidebar';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_tabs_info_row';
+  $field_group->data = array(
+    'label' => 'Candidate Tabs Info Sidebar',
+    'weight' => '15',
+    'children' => array(
+      0 => 'field_user_twitter_account',
+      1 => 'twitter',
+      2 => 'candidate_social_links',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Candidate Tabs Info Sidebar',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-candidate-info-sidebar field-group-html-element col-xs-12 col-sm-4',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_candidate_info_sidebar|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_intro_info|user|user|default';
+  $field_group->group_name = 'group_candidate_intro_info';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_intro_left';
+  $field_group->data = array(
+    'label' => 'Candidate Intro Info',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_user_list',
+      1 => 'field_user_list_position',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Candidate Intro Info',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => '',
+        'element' => 'p',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_candidate_intro_info|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_intro_left|user|user|default';
+  $field_group->group_name = 'group_candidate_intro_left';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_intro_row';
+  $field_group->data = array(
+    'label' => 'Candidate Intro Left',
+    'weight' => '45',
+    'children' => array(
+      0 => 'field_user_quote',
+      1 => 'candidate_stats_questions_get',
+      2 => 'group_user_name',
+      3 => 'group_candidate_intro_info',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Candidate Intro Left',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-candidate-intro-left field-group-div col-xs-12 col-sm-8',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_candidate_intro_left|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_intro_right|user|user|default';
+  $field_group->group_name = 'group_candidate_intro_right';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_intro_row';
+  $field_group->data = array(
+    'label' => 'Candidate Intro Right',
+    'weight' => '44',
+    'children' => array(
+      0 => 'field_user_picture',
+      1 => 'field_user_picture_copyright',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Candidate Intro Right',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-candidate-intro-right field-group-div col-xs-12 col-sm-4',
+        'element' => 'figure',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_candidate_intro_right|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_intro_row|user|user|default';
+  $field_group->group_name = 'group_candidate_intro_row';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_intro';
+  $field_group->data = array(
+    'label' => 'Candidate Intro Row',
+    'weight' => '43',
+    'children' => array(
+      0 => 'group_candidate_intro_right',
+      1 => 'group_candidate_intro_left',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Candidate Intro Row',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-candidate-intro-row field-group-div row row-rtl',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_candidate_intro_row|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_tabs_info_row|user|user|default';
+  $field_group->group_name = 'group_candidate_tabs_info_row';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_tabs_info';
+  $field_group->data = array(
+    'label' => 'Candidate Tabs Info Row',
+    'weight' => '13',
+    'children' => array(
+      0 => 'group_candidate_info_list',
+      1 => 'group_candidate_info_sidebar',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Candidate Tabs Info Row',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-candidate-tabs-info-row field-group-html-element row',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_candidate_tabs_info_row|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_tabs_questions|user|user|default';
+  $field_group->group_name = 'group_candidate_tabs_questions';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_tabs_wrapper';
+  $field_group->data = array(
+    'label' => 'Fragen & Antworten',
+    'weight' => '12',
+    'children' => array(
+      0 => 'field_user_first_letter_lname',
+      1 => 'name',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Fragen & Antworten',
+      'instance_settings' => array(
+        'id' => 'tab_questions_answers',
+        'classes' => 'group-candidate-tabs-questions field-group-htab tab-pane active',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'attributes' => 'role="tabpanel"',
+      ),
+    ),
+  );
+  $field_groups['group_candidate_tabs_questions|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_candidate_tabs_wrapper|user|user|default';
+  $field_group->group_name = 'group_candidate_tabs_wrapper';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = 'group_candidate_tabs';
+  $field_group->data = array(
+    'label' => 'Candidate Tabs Wrapper',
+    'weight' => '2',
+    'children' => array(
+      0 => 'group_candidate_tabs_questions',
+      1 => 'group_candidate_tabs_info',
+    ),
+    'format_type' => 'div',
+    'format_settings' => array(
+      'label' => 'Candidate Tabs Wrapper',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'group-candidate-tabs-wrapper field-group-div tab-content',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'none',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $field_groups['group_candidate_tabs_wrapper|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -107,38 +404,6 @@ function pw_profiles_field_group_info() {
     ),
   );
   $field_groups['group_managed_content|user|user|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_polls|user|user|default';
-  $field_group->group_name = 'group_polls';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'default';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Polls ID Wrapper',
-    'weight' => '4',
-    'children' => array(
-      0 => 'group_user_polls',
-    ),
-    'format_type' => 'div',
-    'format_settings' => array(
-      'label' => 'Polls ID Wrapper',
-      'instance_settings' => array(
-        'classes' => 'add-sharethis clear-both group-polls field-group-div',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-        'id' => 'user_user_full_group_polls',
-      ),
-      'formatter' => 'open',
-    ),
-  );
-  $field_groups['group_polls|user|user|default'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -210,7 +475,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Roles ID Wrapper',
-    'weight' => '3',
+    'weight' => '13',
     'children' => array(
       0 => 'group_user_commitee',
     ),
@@ -244,16 +509,13 @@ function pw_profiles_field_group_info() {
     'label' => 'Admin Settings',
     'weight' => '15',
     'children' => array(
-      0 => 'field_user_first_letter_lname',
-      1 => 'field_user_external_url',
+      0 => 'field_user_external_url',
+      1 => 'field_user_first_letter_lname',
       2 => 'field_user_roles_for_view_mode_s',
-      3 => 'field_share_sum',
-      4 => 'ckeditor',
-      5 => 'piwik',
-      6 => 'redirect',
-      7 => 'timezone',
-      8 => 'xmlsitemap',
-      9 => 'locale',
+      3 => 'ckeditor',
+      4 => 'redirect',
+      5 => 'timezone',
+      6 => 'locale',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -282,18 +544,18 @@ function pw_profiles_field_group_info() {
     'weight' => '10',
     'children' => array(
       0 => 'field_user_commitee',
-      1 => 'field_user_parliament',
-      2 => 'field_user_party',
-      3 => 'field_user_political_roles',
-      4 => 'field_user_valid',
-      5 => 'field_user_election_result',
-      6 => 'field_user_constituency_won',
-      7 => 'field_user_list_won',
-      8 => 'field_user_fraction',
-      9 => 'field_user_valid_from',
-      10 => 'field_user_valid_until',
-      11 => 'field_user_joined',
-      12 => 'field_user_retired',
+      1 => 'field_user_constituency_won',
+      2 => 'field_user_election_result',
+      3 => 'field_user_fraction',
+      4 => 'field_user_joined',
+      5 => 'field_user_list_won',
+      6 => 'field_user_parliament',
+      7 => 'field_user_party',
+      8 => 'field_user_political_roles',
+      9 => 'field_user_retired',
+      10 => 'field_user_valid',
+      11 => 'field_verdi_fields',
+      12 => 'field_verdi_regions',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -369,10 +631,7 @@ function pw_profiles_field_group_info() {
   $field_group->data = array(
     'label' => 'Basics',
     'weight' => '13',
-    'children' => array(
-      0 => 'field_user_job_skills',
-      1 => 'field_user_constituency',
-    ),
+    'children' => array(),
     'format_type' => 'htab',
     'format_settings' => array(
       'label' => 'Basics',
@@ -422,7 +681,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = 'group_basics';
   $field_group->data = array(
     'label' => 'Basics',
-    'weight' => '7',
+    'weight' => '31',
     'children' => array(
       0 => 'group_user_basics_additional',
       1 => 'group_user_basics_basics',
@@ -475,10 +734,7 @@ function pw_profiles_field_group_info() {
   $field_group->data = array(
     'label' => 'Political Roles',
     'weight' => '1',
-    'children' => array(
-      0 => 'field_user_commitee',
-      1 => 'field_user_political_roles',
-    ),
+    'children' => array(),
     'format_type' => 'htab',
     'format_settings' => array(
       'label' => 'Political Roles',
@@ -530,8 +786,8 @@ function pw_profiles_field_group_info() {
     'weight' => '14',
     'children' => array(
       0 => 'field_user_answers_give',
-      1 => 'field_user_questions_get',
-      2 => 'field_user_qanda_ratio',
+      1 => 'field_user_qanda_ratio',
+      2 => 'field_user_questions_get',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -554,28 +810,24 @@ function pw_profiles_field_group_info() {
   $field_group->entity_type = 'user';
   $field_group->bundle = 'user';
   $field_group->mode = 'default';
-  $field_group->parent_name = '';
+  $field_group->parent_name = 'group_candidate_intro_left';
   $field_group->data = array(
     'label' => 'Name',
     'weight' => '1',
     'children' => array(
-      0 => 'field_user_fname',
-      1 => 'field_user_lname',
-      2 => 'field_user_party',
+      0 => 'candidate_full_name',
     ),
-    'format_type' => 'div',
+    'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Name',
       'instance_settings' => array(
-        'classes' => 'h2 push-bottom-xxs group-user-name field-group-div',
-        'description' => '',
+        'id' => '',
+        'classes' => 'group-user-name field-group-div',
+        'element' => 'h1',
         'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'fast',
-        'id' => 'user_user_full_group_user_name',
+        'label_element' => '',
+        'attributes' => '',
       ),
-      'formatter' => 'open',
     ),
   );
   $field_groups['group_user_name|user|user|default'] = $field_group;
@@ -656,19 +908,18 @@ function pw_profiles_field_group_info() {
     'label' => 'Personal Data',
     'weight' => '9',
     'children' => array(
-      0 => 'field_user_birthday',
-      1 => 'field_user_childs',
-      2 => 'field_user_job_skills',
-      3 => 'field_user_marriage_status',
-      4 => 'field_user_pseudonym',
-      5 => 'field_user_address',
-      6 => 'field_user_constituency',
-      7 => 'field_user_education',
-      8 => 'field_user_list_position',
-      9 => 'field_user_age',
-      10 => 'field_user_phone',
+      0 => 'field_user_age',
+      1 => 'field_user_birthday',
+      2 => 'field_user_childs',
+      3 => 'field_user_constituency',
+      4 => 'field_user_education',
+      5 => 'field_user_job_skills',
+      6 => 'field_user_list',
+      7 => 'field_user_list_position',
+      8 => 'field_user_marriage_status',
+      9 => 'field_user_phone',
+      10 => 'field_user_pseudonym',
       11 => 'field_user_public_mail',
-      12 => 'field_user_list',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -682,158 +933,6 @@ function pw_profiles_field_group_info() {
     ),
   );
   $field_groups['group_user_personal_data|user|user|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_polls_archive|user|user|default';
-  $field_group->group_name = 'group_user_polls_archive';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'default';
-  $field_group->parent_name = 'group_user_polls';
-  $field_group->data = array(
-    'label' => 'Polls archive',
-    'weight' => '32',
-    'children' => array(),
-    'format_type' => 'htab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => ' group-user-polls-archive field-group-htab',
-      ),
-    ),
-  );
-  $field_groups['group_user_polls_archive|user|user|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_polls_archive|user|user|user_deputy';
-  $field_group->group_name = 'group_user_polls_archive';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'user_deputy';
-  $field_group->parent_name = 'group_user_polls';
-  $field_group->data = array(
-    'label' => 'User Polls Archive',
-    'weight' => '34',
-    'children' => array(
-      0 => 'polls_archive_view',
-    ),
-    'format_type' => 'htab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => ' group-user-polls-archive field-group-htab',
-      ),
-    ),
-  );
-  $field_groups['group_user_polls_archive|user|user|user_deputy'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_polls_current|user|user|user_deputy';
-  $field_group->group_name = 'group_user_polls_current';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'user_deputy';
-  $field_group->parent_name = 'group_user_polls';
-  $field_group->data = array(
-    'label' => 'User Polls Current',
-    'weight' => '7',
-    'children' => array(
-      0 => 'polls_profile_last',
-    ),
-    'format_type' => 'htab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => ' group-user-polls-current field-group-htab',
-      ),
-    ),
-  );
-  $field_groups['group_user_polls_current|user|user|user_deputy'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_polls_last|user|user|default';
-  $field_group->group_name = 'group_user_polls_last';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'default';
-  $field_group->parent_name = 'group_user_polls';
-  $field_group->data = array(
-    'label' => 'Last poll',
-    'weight' => '31',
-    'children' => array(),
-    'format_type' => 'htab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => ' group-user-polls-last field-group-htab',
-      ),
-    ),
-  );
-  $field_groups['group_user_polls_last|user|user|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_polls|user|user|default';
-  $field_group->group_name = 'group_user_polls';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'default';
-  $field_group->parent_name = 'group_polls';
-  $field_group->data = array(
-    'label' => 'Polls',
-    'weight' => '1',
-    'children' => array(
-      0 => 'group_user_polls_archive',
-      1 => 'group_user_polls_last',
-    ),
-    'format_type' => 'htabs',
-    'format_settings' => array(
-      'formatter' => '',
-      'instance_settings' => array(
-        'classes' => ' group-user-polls field-group-htabs',
-      ),
-    ),
-  );
-  $field_groups['group_user_polls|user|user|default'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_user_polls|user|user|user_deputy';
-  $field_group->group_name = 'group_user_polls';
-  $field_group->entity_type = 'user';
-  $field_group->bundle = 'user';
-  $field_group->mode = 'user_deputy';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'User Polls',
-    'weight' => '57',
-    'children' => array(
-      0 => 'group_user_polls_archive',
-      1 => 'group_user_polls_current',
-    ),
-    'format_type' => 'htabs',
-    'format_settings' => array(
-      'formatter' => '',
-      'instance_settings' => array(
-        'classes' => ' group-user-polls field-group-htabs',
-      ),
-    ),
-  );
-  $field_groups['group_user_polls|user|user|user_deputy'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -1137,12 +1236,20 @@ function pw_profiles_field_group_info() {
   t('Admin Settings');
   t('Basics');
   t('Basics ID Wrapper');
+  t('Candidate Intro Info');
+  t('Candidate Intro Left');
+  t('Candidate Intro Right');
+  t('Candidate Intro Row');
+  t('Candidate Tabs Info Row');
+  t('Candidate Tabs Info Sidebar');
+  t('Candidate Tabs Wrapper');
   t('Commitee Fieldgroup');
   t('Dialogue Data');
   t('External Links');
+  t('Fragen & Antworten');
   t('Grid 6 Wrapper');
   t('Image Gallery');
-  t('Last poll');
+  t('Info-List');
   t('Managed Content');
   t('Mouseover');
   t('Name');
@@ -1150,9 +1257,6 @@ function pw_profiles_field_group_info() {
   t('Political Affiliation');
   t('Political Goals');
   t('Political Roles');
-  t('Polls');
-  t('Polls ID Wrapper');
-  t('Polls archive');
   t('Premium');
   t('Premium Fields');
   t('Premium fields');
@@ -1162,9 +1266,6 @@ function pw_profiles_field_group_info() {
   t('User Basics');
   t('User Basics Additional');
   t('User Basics Data');
-  t('User Polls');
-  t('User Polls Archive');
-  t('User Polls Current');
   t('User Roles');
   t('User Roles Archive');
   t('User Roles Current');

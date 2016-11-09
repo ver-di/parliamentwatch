@@ -93,8 +93,8 @@ function pw_profiles_strongarm() {
       'display' => array(
         'summary' => array(
           'default' => array(
-            'weight' => '0',
-            'visible' => TRUE,
+            'weight' => '18',
+            'visible' => FALSE,
           ),
           'user_premium' => array(
             'weight' => '69',
@@ -181,6 +181,10 @@ function pw_profiles_strongarm() {
           'user_dialogue_search_snippet' => array(
             'weight' => '0',
             'visible' => FALSE,
+          ),
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
           ),
         ),
       ),

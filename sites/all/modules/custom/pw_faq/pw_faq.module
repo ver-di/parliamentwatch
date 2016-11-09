@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the PW FAQ feature.
+ */
+
+include_once 'pw_faq.features.inc';
