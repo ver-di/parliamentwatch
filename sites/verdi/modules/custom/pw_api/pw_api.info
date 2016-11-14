@@ -1,0 +1,12 @@
+name = PW API
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.0-20161114
+project = pw_api
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = pw_profiles
+features[features_api][] = api:1
+features[user_permission][] = access authorized api
+mtime = 1468412335
