@@ -11,7 +11,7 @@
  */
 function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
 
-  if ($form_id == 'webform_client_form_10446') {
+  if ($form_id == 'webform_client_form_8') {
 
     // add custom validations
     $form['#validate'][] = 'pw_question_form_form_validate';
@@ -37,9 +37,6 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     // load full parliament term
     $parliament = taxonomy_term_load($user->field_user_parliament[LANGUAGE_NONE][0]['tid']);
 
-    // election date
-    $date_election = $parliament->field_parliament_election[LANGUAGE_NONE][0]['value'];
-
     $body_markup = '';
 
     // question form closed by reason
@@ -47,68 +44,9 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     if(!empty($field_closed_by_reason)){
       $body_markup = '<div class="pw-messages warning">'.$field_closed_by_reason[0]['value'].'</div>';
     }
-    elseif(!_pw_is_profile_consultable()){
-      $body_markup = '<div class="pw-messages warning">Die Fragefunktion ist diesem Profil wurde geschlossen.</div>';
+    elseif(!_pw_is_profile_consultable($user)){
+      $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde geschlossen.</div>';
     }
-
-    /*
-
-    // check if user is candidate but election date was reached
-    if(empty($body_markup) && _pw_user_has_role($user, 'Candidate') && !empty($date_election)){
-
-      // day before election - close question form
-      $day_before_election = strtotime($date_election) - 6*60*60;
-      if(time() > $day_before_election && $user->name != 'jakob-maria-mierscheid'){
-        $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde einen Tag vor der Wahl, am :day_before_election, geschlossen.</div>';
-        $body_markup = str_replace(':day_before_election', date('d.m.Y H:i', $day_before_election), $body_markup);
-      }
-    }
-
-    // check parliament valid dates in case there was no message set before
-    if(empty($body_markup)){
-
-      // check parliament is within valid dates
-      $parliament_is_valid = _pw_is_parliament_active($parliament);
-      if(!$parliament_is_valid){
-
-        $parliament_end_date = '';
-        foreach($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid){
-
-          // found start date
-          if(strtotime($date_parliament_valid['value']) > time()){
-            $parliament_date_start = $date_parliament_valid['value'];
-          }
-
-          // save latest end date
-          elseif($date_parliament_valid['value2'] > $parliament_end_date){
-            $parliament_end_date = $date_parliament_valid['value2'];
-          }
-        }
-
-        // start date was found - announce start date but keep form closed
-        if(isset($parliament_date_start)){
-          $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wird ab dem :date_start frei geschaltet sein. Bitte gedulden Sie sich so lange.</div>';
-          $body_markup = str_replace(':date_start', date('d.m.Y H:i', strtotime($parliament_date_start)), $body_markup);
-        }
-
-        // no start date was found - publish last end date
-        elseif(!empty($parliament_end_date)){
-          $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde am :date_end geschlossen.</div>';
-          $body_markup = str_replace(':date_end', date('d.m.Y H:i', strtotime($parliament_end_date)), $body_markup);
-        }
-        // no dates were found - publish general message
-        else{
-          $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde geschlossen.</div>';
-        }
-      }
-    }
-
-    // check user valid dates in case there was no message set before
-    if(empty($body_markup)){
-      $body_markup = '<div class="pw-messages warning">Die Fragefunktion in diesem Profil wurde am :date_end geschlossen.</div>';
-    }
-
-    */
 
     // show message
     $form['#node']->content['body'][0]['#markup'] = $body_markup;
@@ -132,24 +70,26 @@ function pw_question_form_form_alter(&$form, &$form_state, $form_id) {
     $form['submitted']['recipient_parliament']['#value'] = $parliament->name;
 
     // query for subject terms tagged with same parliament as user has
-    $query = new EntityFieldQuery();
-    $query->entityCondition('entity_type', 'taxonomy_term')
-    ->entityCondition('bundle', 'dialogue_topics')
-    ->fieldCondition('field_parliament', 'tid', $parliament->tid)
-    ->propertyOrderBy('name');
-    $result = $query->execute();
-    $topic_tids = array_keys($result['taxonomy_term']);
+    if(isset($form['submitted']['subject'])){
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'taxonomy_term')
+        ->entityCondition('bundle', 'dialogue_topics')
+        ->fieldCondition('field_parliament', 'tid', $parliament->tid)
+        ->propertyOrderBy('name');
+      $result = $query->execute();
+      $topic_tids = array_keys($result['taxonomy_term']);
 
-    $a_options = array();
-    if(!empty($topic_tids)){
+      $a_options = array();
+      if(!empty($topic_tids)){
 
-      // add subjects to form element
-      $subject_terms = taxonomy_term_load_multiple($topic_tids, 'dialogue_topics');
-      foreach($subject_terms as $subject_key => $subject_term){
-        $a_options[$subject_term->name] = $subject_term->name;
+        // add subjects to form element
+        $subject_terms = taxonomy_term_load_multiple($topic_tids, 'dialogue_topics');
+        foreach($subject_terms as $subject_key => $subject_term){
+          $a_options[$subject_term->name] = $subject_term->name;
+        }
       }
+      $form['submitted']['subject']['#options'] = $a_options;
     }
-    $form['submitted']['subject']['#options'] = $a_options;
   }
 }
 
@@ -177,12 +117,14 @@ function pw_question_form_form_validate($form_id, $form_values){
  * name of the recipient of the question.
  */
 function pw_question_form_preprocess_node(&$variables) {
-  if ($variables['nid'] == '10446' && $variables['type'] == 'webform') {
-    $currentUser = _pw_get_current_user();
-    if ($currentUser) {
-      $pw_question_form_form_title = ($currentUser->field_user_title['und'][0]['value']) ? $currentUser->field_user_title['und'][0]['value'] . " " : "";
-      $pw_question_form_form_title .= $currentUser->field_user_fname['und'][0]['value'] . " " . $currentUser->field_user_lname['und'][0]['value'];
-      $variables['title'] = "Ihre Frage an $pw_question_form_form_title stellen";
+  if ($variables['nid'] == '8' && $variables['type'] == 'webform') {
+    $user = _pw_get_current_user();
+    if(!$user && isset(drupal_get_query_parameters()['recipient'])){
+      $user = user_load_by_name(drupal_get_query_parameters()['recipient']);
+    }
+    if ($user) {
+      $fullname = _pw_get_fullname($user);
+      $variables['title'] = "Ihre Frage an $fullname stellen";
     }
   }
 }

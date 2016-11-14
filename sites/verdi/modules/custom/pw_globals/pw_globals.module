@@ -60,9 +60,9 @@ function _pw_is_profile_consultable($user=FALSE) {
     $profile_consultable = FALSE;
     if(!isset($user->field_user_question_form_closed) || empty($user->field_user_question_form_closed)){
 
-      if(_pw_is_parliament_active()){
+      $parliament = taxonomy_term_load($user->field_user_parliament['und'][0]['tid']);
+      if(_pw_is_parliament_active($parliament)){
         if(_pw_user_has_role($user, 'Candidate')){
-          $parliament = _pw_get_current_parliament_term();
           if(!$parliament){
             return FALSE;
           }
