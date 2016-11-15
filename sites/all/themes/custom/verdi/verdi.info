@@ -25,6 +25,7 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
+stylesheets[all][] = css/colorbox_custom.css
 stylesheets[all][] = css/style.css
 
 
