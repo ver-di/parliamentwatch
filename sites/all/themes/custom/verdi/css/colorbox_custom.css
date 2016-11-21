@@ -40,7 +40,6 @@
     #cboxMiddleLeft{ display: none; }
     #cboxMiddleRight{ display: none; }
     #cboxContent{background:#fff; overflow:hidden;}
-        .node-webform.modal { display: block; position: static;}
         .cboxIframe{background:#fff;}
         #cboxError{padding:50px; border:1px solid #ccc;}
         #cboxLoadedContent{}

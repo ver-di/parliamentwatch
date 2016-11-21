@@ -43,6 +43,9 @@ $('.masonry-filter .checkbox label').on( 'click', function() {
 });
 
 // filter: Text-Search
+
+
+
 // use value of search field to filter
 var $quicksearch = $('.quicksearch').keyup( debounce( function() {
     qsRegex = new RegExp( $quicksearch.val(), 'gi' );
@@ -119,7 +122,7 @@ $(document).ready(function() {
     $('.js-select2').select2();
 
     // insurance-filter (Kassen-Filter)
-    $('.kassen-filter-item label').matchHeight();
+    $('.kassen-filter-item').matchHeight();
 
     // Candidate Swiper
     var candidateSwiper = new Swiper('.candidate-teaser .swiper-container', {

@@ -211,13 +211,17 @@
 	}
 	.question-form-head-title {
 		clear: both;
+		padding-top: 5px;
 		@media (min-width: @screen-sm-min) {
 			float: left;
 			clear: none;
-			padding-top: 5px;
+			padding-top: 10px;
+			padding-bottom: 5px;
 		}
 		@media (min-width: @screen-md-min) {
-			padding-top: 10px;
+			padding-top: 16px;
+			bottom: 10px;
+
 		}
 		h4 {
 			margin: 0;
@@ -306,6 +310,28 @@
 			.select2-selection  {
 				padding-left: 40px;
 			}
+		}
+	}
+}
+
+
+/* Question-Form in colorbox-modal */
+
+.node-webform.modal {
+	display: block;
+	position: static;
+	.form-actions {
+		padding: 0 15px 20px;
+		@media (min-width: @screen-sm-min) {
+			width: 50%;
+			float: left;
+			clear: none;
+			text-align: right;
+		}
+		.button-primary {
+			.btn-primary;
+			.btn-mobile-block;
+			border-radius: 0;
 		}
 	}
 }

@@ -6212,8 +6212,13 @@ blockquote:after,
 }
 @media (min-width: 768px) {
   #header {
-    padding-top: 20px;
-    padding-bottom: 50px;
+    padding-bottom: 45px;
+  }
+}
+@media (min-width: 992px) {
+  #header {
+    padding-top: 15px;
+    padding-bottom: 60px;
   }
 }
 #header .brand .svg-container {
@@ -6221,30 +6226,32 @@ blockquote:after,
   height: 50px;
   float: left;
   margin-right: 15px;
+  margin-top: 5px;
 }
-@media (min-width: 420px) {
+@media (min-width: 430px) {
   #header .brand .svg-container {
     width: 70px;
     height: 70px;
+    margin-top: 0px;
     margin-right: 20px;
   }
 }
 @media (min-width: 768px) {
   #header .brand .svg-container {
     width: 100px;
-    height: 100px;
+    height: 84px;
     margin-right: 30px;
   }
 }
 @media (min-width: 992px) {
   #header .brand .svg-container {
     width: 160px;
-    height: 160px;
+    height: 136px;
   }
 }
 #header .brand .brand-typo {
   float: left;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 #header .brand .brand-typo span {
   white-space: nowrap;
@@ -6263,9 +6270,9 @@ blockquote:after,
 #header .brand .brand-typo .brand-typo-after {
   font-size: 6.75px;
 }
-@media (min-width: 420px) {
+@media (min-width: 430px) {
   #header .brand .brand-typo {
-    margin-top: 16px;
+    margin-top: 6px;
   }
   #header .brand .brand-typo .brand-typo-before {
     font-size: 10.8px;
@@ -6281,7 +6288,7 @@ blockquote:after,
 }
 @media (min-width: 768px) {
   #header .brand .brand-typo {
-    margin-top: 30px;
+    margin-top: 14px;
   }
   #header .brand .brand-typo span {
     padding-bottom: 5px;
@@ -6300,7 +6307,7 @@ blockquote:after,
 }
 @media (min-width: 992px) {
   #header .brand .brand-typo {
-    margin-top: 68px;
+    margin-top: 37px;
   }
   #header .brand .brand-typo span {
     white-space: nowrap;
@@ -6362,8 +6369,8 @@ blockquote:after,
 @media (min-width: 992px) {
   #header .navbar .navbar-nav {
     position: absolute;
-    right: 0;
-    top: 50px;
+    right: 20px;
+    top: 62px;
   }
 }
 #header .navbar .navbar-nav > li > a {
@@ -6390,6 +6397,11 @@ blockquote:after,
 #header .navbar-toggle {
   margin-top: 15px;
   margin-right: 0px;
+}
+@media (min-width: 768px) {
+  #header .navbar-toggle {
+    margin-top: 25px;
+  }
 }
 #header .navbar-toggle .icon-bar {
   background-color: #888;
@@ -6769,7 +6781,7 @@ blockquote:after,
     width: 100%;
   }
 }
-.kassen-filter .kassen-filter-item-group:nth-child(2n) .kassen-filter-item label img {
+.kassen-filter .kassen-filter-item-group:nth-child(2n) .kassen-filter-item img {
   position: static;
   top: 0;
   -webkit-transform: translate3d(0, 0, 0);
@@ -6782,6 +6794,7 @@ blockquote:after,
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
+  position: relative;
 }
 @media (min-width: 768px) {
   .kassen-filter .kassen-filter-item-group .kassen-filter-item {
@@ -6801,27 +6814,22 @@ blockquote:after,
     padding-right: 30px;
   }
 }
-.kassen-filter .kassen-filter-item-group .kassen-filter-item label {
-  position: relative;
-  margin: 0;
-  cursor: pointer;
-}
-.kassen-filter .kassen-filter-item-group .kassen-filter-item label input {
+.kassen-filter .kassen-filter-item-group .kassen-filter-item input {
   display: none;
 }
-.kassen-filter .kassen-filter-item-group .kassen-filter-item label img {
+.kassen-filter .kassen-filter-item-group .kassen-filter-item img {
   margin: 0 auto;
   position: relative;
   top: 50%;
-  opacity: .6;
+  opacity: .4;
   -webkit-transition: all 400ms ease;
   -o-transition: all 400ms ease;
   transition: all 400ms ease;
   -webkit-transform: translate3d(0, -50%, 0);
   transform: translate3d(0, -50%, 0);
 }
-.kassen-filter .kassen-filter-item-group .kassen-filter-item label:hover img {
-  opacity: 1;
+.kassen-filter .kassen-filter-item-group .kassen-filter-item:hover img {
+  opacity: .8;
 }
 .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(2n) {
   padding-left: 25px;
@@ -6840,6 +6848,9 @@ blockquote:after,
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+.kassen-filter .kassen-filter-item-group .kassen-filter-item.active img {
+  opacity: 1;
 }
 .kassen-filter .kassen-filter-item-action {
   width: 20%;
@@ -6873,6 +6884,10 @@ blockquote:after,
   font-size: 20px;
   margin: 0 0 5px;
   color: #444444;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  white-space: nowrap;
 }
 .candidate-teaser .candidate-teaser-item h3 + p {
   font-size: 12px;
@@ -6923,6 +6938,9 @@ blockquote:after,
   margin-top: 3px;
   float: left;
   line-height: 30px;
+  font-weight: 500;
+  color: #444444;
+  margin: 0;
 }
 .candidate-teaser .candidate-teaser-item .candidate-teaser-item-stats .candidate-teaser-item-stats-countasked .gauge-widget {
   float: left;
@@ -6945,6 +6963,9 @@ blockquote:after,
   margin-top: 3px;
   float: left;
   line-height: 30px;
+  font-weight: 500;
+  color: #444444;
+  margin: 0;
 }
 .candidate-teaser .swiper-button-next,
 .candidate-teaser .swiper-button-prev {
@@ -7050,8 +7071,8 @@ blockquote:after,
   float: left;
   line-height: 45px;
   color: #444444;
-  padding: 0;
   font-weight: 400;
+  padding: 0;
 }
 .candidate-intro .candidate-detail-stats .candidate-detail-stats-countasked .gauge-widget {
   float: left;
@@ -7076,8 +7097,8 @@ blockquote:after,
   float: left;
   line-height: 45px;
   color: #444444;
-  padding: 0;
   font-weight: 400;
+  padding: 0;
 }
 .candidate-intro blockquote + .candidate-detail-stats {
   margin-top: 0;
@@ -7427,17 +7448,20 @@ blockquote:after,
 }
 .question-form-head .question-form-head-title {
   clear: both;
+  padding-top: 5px;
 }
 @media (min-width: 768px) {
   .question-form-head .question-form-head-title {
     float: left;
     clear: none;
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
   }
 }
 @media (min-width: 992px) {
   .question-form-head .question-form-head-title {
-    padding-top: 10px;
+    padding-top: 16px;
+    bottom: 10px;
   }
 }
 .question-form-head .question-form-head-title h4 {
@@ -7524,5 +7548,88 @@ blockquote:after,
 }
 .question-form-head .question-form-head-fields .candidate-search-select-two .select2-selection {
   padding-left: 40px;
+}
+/* Question-Form in colorbox-modal */
+.node-webform.modal {
+  display: block;
+  position: static;
+}
+.node-webform.modal .form-actions {
+  padding: 0 15px 20px;
+}
+@media (min-width: 768px) {
+  .node-webform.modal .form-actions {
+    width: 50%;
+    float: left;
+    clear: none;
+    text-align: right;
+  }
+}
+.node-webform.modal .form-actions .button-primary {
+  color: #ffffff;
+  background-color: #db204b;
+  border-color: #c51d43;
+  border-bottom: 3px solid #a90019;
+  display: block;
+  width: 100%;
+  border-radius: 0;
+}
+.node-webform.modal .form-actions .button-primary:focus,
+.node-webform.modal .form-actions .button-primary.focus {
+  color: #ffffff;
+  background-color: #af193c;
+  border-color: #560c1d;
+}
+.node-webform.modal .form-actions .button-primary:hover {
+  color: #ffffff;
+  background-color: #af193c;
+  border-color: #8f1531;
+}
+.node-webform.modal .form-actions .button-primary:active,
+.node-webform.modal .form-actions .button-primary.active,
+.open > .dropdown-toggle.node-webform.modal .form-actions .button-primary {
+  color: #ffffff;
+  background-color: #af193c;
+  border-color: #8f1531;
+}
+.node-webform.modal .form-actions .button-primary:active:hover,
+.node-webform.modal .form-actions .button-primary.active:hover,
+.open > .dropdown-toggle.node-webform.modal .form-actions .button-primary:hover,
+.node-webform.modal .form-actions .button-primary:active:focus,
+.node-webform.modal .form-actions .button-primary.active:focus,
+.open > .dropdown-toggle.node-webform.modal .form-actions .button-primary:focus,
+.node-webform.modal .form-actions .button-primary:active.focus,
+.node-webform.modal .form-actions .button-primary.active.focus,
+.open > .dropdown-toggle.node-webform.modal .form-actions .button-primary.focus {
+  color: #ffffff;
+  background-color: #8f1531;
+  border-color: #560c1d;
+}
+.node-webform.modal .form-actions .button-primary:active,
+.node-webform.modal .form-actions .button-primary.active,
+.open > .dropdown-toggle.node-webform.modal .form-actions .button-primary {
+  background-image: none;
+}
+.node-webform.modal .form-actions .button-primary.disabled:hover,
+.node-webform.modal .form-actions .button-primary[disabled]:hover,
+fieldset[disabled] .node-webform.modal .form-actions .button-primary:hover,
+.node-webform.modal .form-actions .button-primary.disabled:focus,
+.node-webform.modal .form-actions .button-primary[disabled]:focus,
+fieldset[disabled] .node-webform.modal .form-actions .button-primary:focus,
+.node-webform.modal .form-actions .button-primary.disabled.focus,
+.node-webform.modal .form-actions .button-primary[disabled].focus,
+fieldset[disabled] .node-webform.modal .form-actions .button-primary.focus {
+  background-color: #db204b;
+  border-color: #c51d43;
+}
+.node-webform.modal .form-actions .button-primary .badge {
+  color: #db204b;
+  background-color: #ffffff;
+}
+@media (min-width: 768px) {
+  .node-webform.modal .form-actions .button-primary {
+    width: auto;
+    display: inline-block;
+  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -56,11 +56,12 @@
 				@media (min-width: @screen-sm-min) {
 					width: 100%;
 				}
-				label img {
+				img {
 					position: static;
 					top: 0;
 					.translate3d(0,0,0);
 				}
+
 			}
 		}
 		.kassen-filter-item {
@@ -70,6 +71,8 @@
 			text-align: center;
 			padding-left: 10px;
 			padding-right: 10px;
+
+			position: relative;
 			@media (min-width: @screen-sm-min) {
 				width: 25%;
 				margin-bottom: 0;
@@ -82,24 +85,19 @@
 				padding-left: 30px;
 				padding-right: 30px;
 			}
-			label {
+			input {
+				display: none;
+			}
+			img {
+				margin: 0 auto;
 				position: relative;
-				margin: 0;
-				cursor: pointer;
-				input {
-					display: none;
-				}
-				img {
-					margin: 0 auto;
-					position: relative;
-					top: 50%;
-					opacity: .6;
-                    .transition(all 400ms ease);
-					.translate3d(0,-50%,0);
-				}
-				&:hover img {
-					opacity: 1;
-				}
+				top: 50%;
+				opacity: .4;
+				.transition(all 400ms ease);
+				.translate3d(0,-50%,0);
+			}
+			&:hover img {
+				opacity: .8;
 			}
 			&:nth-child(2n) {
 				padding-left: 25px;
@@ -117,6 +115,11 @@
 				&:nth-child(3n) {
 					padding-left: 20px;
 					padding-right: 20px;
+				}
+			}
+			&.active {
+				img {
+					opacity: 1;
 				}
 			}
 		}
@@ -153,6 +156,11 @@
 			font-size: 20px;
 			margin: 0 0 5px;
 			color: @darkGray;
+
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: block;
+			white-space: nowrap;
 		}
 		h3 + p {
 			font-size: 12px;
@@ -197,6 +205,9 @@
 					margin-top: 3px;
 					float: left;
 					line-height: 30px;
+					font-weight: 500;
+					color: @darkGray;
+					margin: 0;
 				}
 			}
 			.candidate-teaser-item-stats-countasked {
@@ -221,6 +232,9 @@
 					margin-top: 3px;
 					float: left;
 					line-height: 30px;
+					font-weight: 500;
+					color: @darkGray;
+					margin: 0;
 				}
 			}
 		}
