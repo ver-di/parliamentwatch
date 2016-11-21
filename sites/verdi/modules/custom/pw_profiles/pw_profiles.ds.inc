@@ -476,7 +476,7 @@ else{
 ?>
 
 <div class="candidate-detail-stats clearfix">
-    <?php if($stats[\'number_of_questions\'] == 0): ?>
+    <?php if($stats[\'number_of_questions\'] > 0): ?>
       <div class="pull-left candidate-detail-stats-count clearfix">
           <span class="value"><?php print $stats[\'number_of_questions\']; ?></span>
           <span class="label">Fragen</span>
