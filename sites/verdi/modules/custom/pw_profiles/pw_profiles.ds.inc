@@ -458,18 +458,39 @@ function pw_profiles_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<div class="candidate-detail-stats clearfix">
-    <div class="pull-left candidate-detail-stats-count clearfix">
-        <span class="value">[user:field_user_questions_get]</span>
-        <span class="label">Fragen</span>
-    </div>
-    <div class="pull-left candidate-detail-stats-countasked">
-        <div class="gauge-widget">
-            <canvas class="gauge" width="60" height="60"></canvas>
-            <div class="gauge-value" data-gauge-value="[user:field_user_answers_give]">[user:field_user_answers_give]%</div>
-        </div>
-        <span class="label">Beantwortet</span>
-    </div>
+      'value' => '<?php
+  $user = _pw_get_current_user();
+  $stats = db_select(\'user_archive_cache\', \'uac\')
+    ->fields(\'uac\', array(\'number_of_questions\', \'number_of_answers\'))
+    ->condition(\'uid\', $user->uid)
+    ->condition(\'vid\', $user->vid)
+    ->execute()
+    ->fetchAssoc();
+
+if($stats[\'number_of_questions\'] == 0){
+  $stats[\'percent_answered\'] = 0;
+}
+else{
+  $stats[\'percent_answered\'] = round($stats[\'number_of_answers\'] / $stats[\'number_of_questions\'] * 100);
+}
+?>
+
+<div class="candidate-detail-stats clearfix">
+    <?php if($stats[\'number_of_questions\'] == 0): ?>
+      <div class="pull-left candidate-detail-stats-count clearfix">
+          <span class="value"><?php print $stats[\'number_of_questions\']; ?></span>
+          <span class="label">Fragen</span>
+      </div>
+      <div class="pull-left candidate-detail-stats-countasked">
+          <div class="gauge-widget">
+              <canvas class="gauge" width="60" height="60"></canvas>
+              <div class="gauge-value" data-gauge-value="<?php print $stats[\'percent_answered\']; ?>"><?php print $stats[\'percent_answered\']; ?>%</div>
+          </div>
+          <span class="label">beantwortet</span>
+      </div>
+      <?php else: ?>
+        <div>Stelle die erste Frage an <?php print $user->field_user_gender[LANGUAGE_NONE][0][\'value\'] == \'female\'?\'die Kandidatin\':\'den Kandidaten\'; ?></div>
+      <?php endif; ?>
 </div>',
       'format' => 'php_code',
     ),
@@ -609,6 +630,64 @@ function pw_profiles_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['user|user|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|user_slider_item';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'user_slider_item';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_user_picture',
+        1 => 'candidate_full_name',
+        2 => 'group_candidate_slider_info',
+        3 => 'candidate_sl_stats_questions_get',
+        4 => 'button_candidate',
+        5 => 'field_user_list',
+        6 => 'field_user_list_position',
+      ),
+    ),
+    'fields' => array(
+      'field_user_picture' => 'ds_content',
+      'candidate_full_name' => 'ds_content',
+      'group_candidate_slider_info' => 'ds_content',
+      'candidate_sl_stats_questions_get' => 'ds_content',
+      'button_candidate' => 'ds_content',
+      'field_user_list' => 'ds_content',
+      'field_user_list_position' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['user|user|user_slider_item'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function pw_profiles_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'user_slider_item';
+  $ds_view_mode->label = 'User Slider-Item';
+  $ds_view_mode->entities = array(
+    'user' => 'user',
+  );
+  $export['user_slider_item'] = $ds_view_mode;
 
   return $export;
 }
