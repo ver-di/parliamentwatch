@@ -53,6 +53,9 @@ function pw_profiles_strongarm() {
       'user_dialogue_search_snippet' => array(
         'custom_settings' => TRUE,
       ),
+      'user_slider_item' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -120,6 +123,14 @@ function pw_profiles_strongarm() {
             'weight' => '4',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '18',
+            'visible' => FALSE,
+          ),
+          'user_slider_item' => array(
+            'weight' => '39',
+            'visible' => FALSE,
+          ),
         ),
         'mimemail' => array(
           'user_premium' => array(
@@ -146,6 +157,14 @@ function pw_profiles_strongarm() {
             'weight' => '49',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'user_slider_item' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
         'masquerade' => array(
           'user_deputy' => array(
@@ -164,6 +183,8 @@ function pw_profiles_strongarm() {
             'weight' => '50',
             'visible' => FALSE,
           ),
+          'full' => NULL,
+          'user_slider_item' => NULL,
         ),
         'twitter' => array(
           'user_candidate' => array(
@@ -185,6 +206,14 @@ function pw_profiles_strongarm() {
           'default' => array(
             'weight' => '1',
             'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+          'user_slider_item' => array(
+            'weight' => '9',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -232,6 +261,13 @@ function pw_profiles_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_calendar_entry_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_calendar_entry_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_list_position_pattern';
   $strongarm->value = '';
   $export['pathauto_taxonomy_term_list_position_pattern'] = $strongarm;
@@ -246,8 +282,22 @@ function pw_profiles_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_verdi_fields_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_verdi_fields_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_verdi_regions_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_verdi_regions_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_user_pattern';
-  $strongarm->value = 'users/[user:name]';
+  $strongarm->value = 'profil/[user:name]';
   $export['pathauto_user_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

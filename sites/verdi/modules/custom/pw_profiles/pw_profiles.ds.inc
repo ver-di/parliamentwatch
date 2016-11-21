@@ -282,6 +282,76 @@ function pw_profiles_ds_field_settings_info() {
   );
   $export['user|user|default'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'user|user|user_slider_item';
+  $ds_fieldsetting->entity_type = 'user';
+  $ds_fieldsetting->bundle = 'user';
+  $ds_fieldsetting->view_mode = 'user_slider_item';
+  $ds_fieldsetting->settings = array(
+    'button_candidate' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+        'field_delimiter' => '',
+      ),
+    ),
+    'candidate_full_name' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'h3',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+        'field_delimiter' => '',
+      ),
+    ),
+    'candidate_sl_stats_questions_get' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_user_list' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_user_list_position' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_user_picture' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'circle-image',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['user|user|user_slider_item'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -290,6 +360,24 @@ function pw_profiles_ds_field_settings_info() {
  */
 function pw_profiles_ds_custom_fields_info() {
   $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'button_candidate';
+  $ds_field->label = 'Button Candidate';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<a href="[user:url] " class="btn btn-primary" title="Hier erfahren Sie mehr über den Kandidaten [user:field_user_fname] [user:field_user_lname]">Zum Kandidaten</a>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['button_candidate'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -308,6 +396,38 @@ function pw_profiles_ds_custom_fields_info() {
     'use_token' => 1,
   );
   $export['candidate_full_name'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'candidate_sl_stats_questions_get';
+  $ds_field->label = 'Candidate Slider Stats';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<div class="candidate-teaser-item-stats">
+    <div class="row">
+        <div class="col-xs-5 candidate-teaser-item-stats-count clearfix">
+            <span class="value">[user:field_user_questions_get]</span>
+            <span class="label">Fragen</span>
+        </div>
+        <div class="col-xs-7 candidate-teaser-item-stats-countasked">
+            <div class="gauge-widget">
+                <canvas class="gauge" width="45" height="45"></canvas>
+                <div class="gauge-value" data-gauge-value="[user:field_user_answers_give]">[user:field_user_answers_give]%</div>
+            </div>
+            <span class="label">Beantwortet</span>
+        </div>
+    </div>
+</div>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['candidate_sl_stats_questions_get'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -372,10 +492,10 @@ function pw_profiles_ds_custom_fields_info() {
   <li role="presentation" class="active"><a href="#tab-questions-answers" aria-controls="questions-answers" role="tab" data-toggle="tab" aria-expanded="true">Fragen &amp; Antworten</a></li>
   <li role="presentation" class=""><a href="#tab-personal-description" aria-controls="personal-description" role="tab" data-toggle="tab" aria-expanded="false">Steckbrief</a></li>
 </ul>
-<a href="#" class="btn btn-primary btn-lg hidden-xs" data-toggle="modal" data-target="#modal_question" type="button">Jetzt Frage stellen</a>',
+<a href="/node/8?recipient=[user:name]" class="btn btn-primary btn-lg colorbox-node">Jetzt Frage stellen</a>',
       'format' => 'php_code',
     ),
-    'use_token' => 0,
+    'use_token' => 1,
   );
   $export['candidate_tab_navigation'] = $ds_field;
 

@@ -127,6 +127,40 @@ $(document).ready(function() {
         nextButton: '.candidate-teaser .swiper-button-next',
         slidesPerView: 'auto'
     });
+    // Candidate Swiper - Filter
+    $('[data-kassen-filter]').click(function(event) {
+        var filterValue = $(this).attr('data-kassen-filter');
+
+        // Filter-button active style
+        $('[data-kassen-filter]').removeClass('active');
+        $(this).addClass('active');
+
+        // Hide all Items
+        $('.candidate-teaser .swiper-slide').hide();
+
+        // Check for filterd Items and show them
+        $('.candidate-teaser .swiper-slide').each(function( key, value ) {
+            var filterdItem = $(this).children('.candidate-teaser-item').children('p').children('a').text().substring(6).replace(/ /g,"_").replace(/-/g,"_").toLowerCase();
+            if (filterdItem == 'dak_gesundheit' && filterValue == 'dak_gesundheit') {
+                $(this).show();
+            }
+            if (filterdItem == 'kkh' && filterValue == 'kkh') {
+                $(this).show();
+            }
+            if (filterdItem == 'tk' && filterValue == 'tk') {
+                $(this).show();
+            }
+            if (filterdItem == 'barmer' && filterValue == 'barmer') {
+                $(this).show();
+            }
+            if (filterdItem == 'drv_bund' && filterValue == 'drv_bund') {
+                $(this).show();
+            }
+            candidateSwiper.update();
+        });
+        return false;
+    });
+
 
 
     // Gauges
