@@ -4428,7 +4428,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'locked' => '0',
       'module' => 'image',
       'settings' => array(
-        'default_image' => 0,
+        'default_image' => '11',
         'uri_scheme' => 'public',
       ),
       'translatable' => '0',
@@ -4549,7 +4549,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'required' => 0,
       'settings' => array(
         'alt_field' => 0,
-        'default_image' => '4',
+        'default_image' => 0,
         'file_directory' => 'users',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '1 MB',
@@ -4563,6 +4563,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'module' => 'media',
         'settings' => array(
           'allowed_schemes' => array(
+            'private' => 0,
             'public' => 'public',
             'youtube' => 0,
           ),
