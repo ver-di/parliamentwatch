@@ -224,7 +224,7 @@ function _pw_is_between_dates($date_field, $timestamp=FALSE){
 function _pw_get_current_user() {
   switch (arg(0)) {
     // load by archived user profile
-    case 'profile':
+    case 'profil':
 
       // Load uid by username and vid
       $query = db_select('user_archive_cache', 'uac');
