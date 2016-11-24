@@ -347,17 +347,22 @@ function pw_dialogues_preprocess_node(&$variables) {
  */
 function pw_dialogues_preprocess_comment(&$variables) {
   $node = $variables['node'];
-  $account = _pw_get_current_user();
   if ($node->type == 'dialogue') {
+    $recipient_id = $node->field_dialogue_recipient['und'][0]['target_id'];
+    $recipient_user = user_load($recipient_id);
     $variables['classes_array'][] = 'answer';
     $variables['permalink'] = url("node/$node->nid", array('absolute' => TRUE));
-    $variables['title'] = t('Answer by @name', array('@name' => _pw_get_fullname($account)));
-    $file = file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']);
+    if($recipient_user){
+      $variables['title'] = t('Answer by @name', array('@name' => _pw_get_fullname($recipient_user)));
+    }
+    $file = file_load($recipient_user->field_user_picture[LANGUAGE_NONE][0]['fid']);
     if (!$file) {
       $info = field_info_field('field_user_picture');
       $file = file_load($info['settings']['default_image']);
     }
-    $variables['picture'] = render(file_view($file, 'pw_file_portrait_s'));
+    if($file){
+      $variables['picture'] = render(file_view($file, 'pw_file_portrait_s'));
+    }
   }
 }
 
