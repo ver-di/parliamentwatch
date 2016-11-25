@@ -1949,12 +1949,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-          ),
-          'type' => 'text_default',
-          'weight' => '25',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
         ),
         'full' => array(
           'label' => 'above',
