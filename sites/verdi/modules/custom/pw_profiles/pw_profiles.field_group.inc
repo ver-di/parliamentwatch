@@ -160,8 +160,8 @@ function pw_profiles_field_group_info() {
     'children' => array(
       0 => 'field_user_quote',
       1 => 'candidate_stats_questions_get',
-      2 => 'group_user_name',
-      3 => 'group_candidate_intro_info',
+      2 => 'group_candidate_intro_info',
+      3 => 'group_user_name',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -224,8 +224,8 @@ function pw_profiles_field_group_info() {
     'label' => 'Candidate Intro Row',
     'weight' => '43',
     'children' => array(
-      0 => 'group_candidate_intro_right',
-      1 => 'group_candidate_intro_left',
+      0 => 'group_candidate_intro_left',
+      1 => 'group_candidate_intro_right',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -411,8 +411,8 @@ function pw_profiles_field_group_info() {
     'label' => 'Candidate Tabs Wrapper',
     'weight' => '2',
     'children' => array(
-      0 => 'group_candidate_tabs_questions',
-      1 => 'group_candidate_tabs_info',
+      0 => 'group_candidate_tabs_info',
+      1 => 'group_candidate_tabs_questions',
     ),
     'format_type' => 'div',
     'format_settings' => array(

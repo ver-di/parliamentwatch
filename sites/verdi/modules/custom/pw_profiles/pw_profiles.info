@@ -53,6 +53,7 @@ features[ds_fields][] = candidate_sl_stats_questions_get
 features[ds_fields][] = candidate_social_links
 features[ds_fields][] = candidate_stats_questions_get
 features[ds_fields][] = candidate_tab_navigation
+features[ds_fields][] = dialogues_profile
 features[ds_layout_settings][] = user|user|default
 features[ds_layout_settings][] = user|user|user_slider_item
 features[ds_view_modes][] = user_slider_item

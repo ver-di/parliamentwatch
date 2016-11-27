@@ -71,6 +71,11 @@ function pw_profiles_ds_field_settings_info() {
         'field_delimiter' => '',
       ),
     ),
+    'dialogues_profile' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'field_user_birthday' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -533,6 +538,21 @@ else{
     'use_token' => 1,
   );
   $export['candidate_tab_navigation'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'dialogues_profile';
+  $ds_field->label = 'Dialogues Profile';
+  $ds_field->field_type = 6;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'block' => 'pw_dialogues|qa',
+    'block_render' => '1',
+  );
+  $export['dialogues_profile'] = $ds_field;
 
   return $export;
 }

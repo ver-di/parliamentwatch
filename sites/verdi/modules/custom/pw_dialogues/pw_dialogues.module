@@ -347,17 +347,22 @@ function pw_dialogues_preprocess_node(&$variables) {
  */
 function pw_dialogues_preprocess_comment(&$variables) {
   $node = $variables['node'];
-  $account = _pw_get_current_user();
   if ($node->type == 'dialogue') {
+    $recipient_id = $node->field_dialogue_recipient['und'][0]['target_id'];
+    $recipient_user = user_load($recipient_id);
     $variables['classes_array'][] = 'answer';
     $variables['permalink'] = url("node/$node->nid", array('absolute' => TRUE));
-    $variables['title'] = t('Answer by @name', array('@name' => _pw_get_fullname($account)));
-    $file = file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']);
+    if($recipient_user){
+      $variables['title'] = t('Answer by @name', array('@name' => _pw_get_fullname($recipient_user)));
+    }
+    $file = file_load($recipient_user->field_user_picture[LANGUAGE_NONE][0]['fid']);
     if (!$file) {
       $info = field_info_field('field_user_picture');
       $file = file_load($info['settings']['default_image']);
     }
-    $variables['picture'] = render(file_view($file, 'pw_file_portrait_s'));
+    if($file){
+      $variables['picture'] = render(file_view($file, 'pw_file_portrait_s'));
+    }
   }
 }
 
@@ -394,31 +399,55 @@ function pw_dialogues_questions_and_answers_block() {
     return;
   }
 
-  $q = search_api_query('node_index');
-  $q->condition('type', 'dialogue');
-  $q->condition('field_dialogue_recipient', $account->uid);
-  $q->condition('field_parliament:name', $parliament->name);
-  $q->condition('field_dialogue_before_election', $is_candidate);
+  // get dialogue nids by solr or otherwise by database
+  $dialogue_nids = array();
+  if(module_exists('search_api') && $q = search_api_query('node_index')){
+    $q->condition('type', 'dialogue');
+    $q->condition('field_dialogue_recipient', $account->uid);
+    $q->condition('field_parliament:name', $parliament->name);
+    $q->condition('field_dialogue_before_election', $is_candidate);
 
-  if (drupal_get_query_parameters()['keywords']) {
-    $f = $q->createFilter('OR');
-    $f->condition('body:value', drupal_get_query_parameters()['keywords']);
-    $f->condition('comments:field_dialogue_comment_body:value', drupal_get_query_parameters()['keywords']);
-    $q->filter($f);
+    if (drupal_get_query_parameters()['keywords']) {
+      $f = $q->createFilter('OR');
+      $f->condition('body:value', drupal_get_query_parameters()['keywords']);
+      $f->condition('comments:field_dialogue_comment_body:value', drupal_get_query_parameters()['keywords']);
+      $q->filter($f);
+    }
+
+    $q->sort('created', 'DESC');
+    $q->range(pager_find_page(10) * 10, $limit);
+    $response = $q->execute();
+
+    if(!empty($response['results'])) {
+      $dialogue_nids = array_keys($response['results']);
+    }
+  }
+  else{
+    $q = new EntityFieldQuery();
+    $q->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'dialogue')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_parliament', 'tid', $parliament->tid)
+    ->fieldCondition('field_dialogue_recipient', 'target_id', $account->uid)
+    ->fieldCondition('field_dialogue_before_election', 'value', $is_candidate)
+    ->range(pager_find_page(10) * 10, $limit)
+    ->propertyOrderBy('created', 'DESC');
+    $result = $q->execute();
+
+    if(isset($result['node'])){
+      $dialogue_nids = array_keys($result['node']);
+    }
   }
 
-  $q->sort('created', 'DESC');
-  $q->range(pager_find_page(10) * 10, $limit);
-  $response = $q->execute();
+  // if more than one pager exists, set an its pager id here
+  // and in block pager config as #element too
+  pager_default_initialize(sizeof($dialogue_nids), $limit);
 
-  pager_default_initialize($response['result count'], $limit, 10);
-
-  if (!empty($response['results'])) {
+  if(!empty($dialogue_nids)) {
     $block['subject'] = t('Questions to @name', array('@name' => _pw_get_fullname($account)));
-    $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
+    $block['content'] = node_view_multiple(node_load_multiple($dialogue_nids), 'teaser');
     $block['content']['pager'] = array(
       '#theme' => 'pager',
-      '#element' => 10,
     );
     $block['content']['#attached']['js'][] = drupal_get_path('module', 'pw_dialogues') . '/pw_dialogues.js';
   }
