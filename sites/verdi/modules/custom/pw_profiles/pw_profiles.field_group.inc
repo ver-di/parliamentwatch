@@ -21,7 +21,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Basics ID Wrapper',
-    'weight' => '15',
+    'weight' => '19',
     'children' => array(
       0 => 'group_user_basics',
     ),
@@ -255,7 +255,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Candidate Intro',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'group_candidate_intro_row',
     ),
@@ -349,7 +349,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = 'group_candidate_tabs_wrapper';
   $field_group->data = array(
     'label' => 'Steckbrief',
-    'weight' => '14',
+    'weight' => '24',
     'children' => array(
       0 => 'group_candidate_tabs_info_row',
     ),
@@ -379,10 +379,9 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = 'group_candidate_tabs_wrapper';
   $field_group->data = array(
     'label' => 'Fragen & Antworten',
-    'weight' => '12',
+    'weight' => '23',
     'children' => array(
-      0 => 'field_user_first_letter_lname',
-      1 => 'name',
+      0 => 'pw_dialogue_questions_block',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -443,7 +442,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Candidate Tabs',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'candidate_tab_navigation',
       1 => 'group_candidate_tabs_wrapper',
@@ -601,7 +600,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Roles ID Wrapper',
-    'weight' => '13',
+    'weight' => '17',
     'children' => array(
       0 => 'group_user_commitee',
     ),

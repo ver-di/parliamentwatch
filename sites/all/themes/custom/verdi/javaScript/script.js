@@ -45,11 +45,14 @@ $('.masonry-filter .checkbox label').on( 'click', function() {
 // filter: Text-Search
 
 
-
 // use value of search field to filter
 var $quicksearch = $('.quicksearch').keyup( debounce( function() {
     qsRegex = new RegExp( $quicksearch.val(), 'gi' );
     $grid.isotope();
+
+    // Highlight matching Keywords
+    $(".masonry-grid").mark($quicksearch.val());
+
 }, 200 ) );
 
 // debounce so filtering doesn't happen every millisecond
@@ -68,6 +71,7 @@ function debounce( fn, threshold ) {
 }
 
 
+
 // Colorbox responsive
 // https://www.drupal.org/node/2154099
 
@@ -76,7 +80,7 @@ function debounce( fn, threshold ) {
   $.colorbox.settings.onLoad = function() {
     colorboxResize();
   }
-   
+
   //Customize colorbox dimensions
   var colorboxResize = function(resize) {
     var width = "90%";
@@ -164,7 +168,23 @@ $(document).ready(function() {
         return false;
     });
 
+    // Candidate Swiper filter
+    $('.kassen-filter-item-action .btn').on( 'click', function() {
+        $(this).toggleClass('active');
+        $('.kassen-filter-search').toggleClass('open');
 
+        return false;
+    });
+
+
+    $('#candidate_search_input').keyup( debounce( function() {
+        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+        $grid.isotope();
+
+        // Highlight matching Keywords
+        $(".masonry-grid").mark($quicksearch.val());
+
+    }, 200 ) );
 
     // Gauges
     var opts = {

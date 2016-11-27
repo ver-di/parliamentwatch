@@ -124,6 +124,18 @@
 			}
 		}
 	}
+	.kassen-filter-search {
+		height: 0;
+		overflow: hidden;
+		.transition(height 300ms ease);
+		@media (min-width: @screen-md-min) {
+			width: 50%;
+			float: right;
+		}
+		&.open {
+			height: 50px;
+		}
+	}
 	.kassen-filter-item-action {
 		width: 20%;
 		float: left;
@@ -135,6 +147,12 @@
 		.btn {
 			color: #666;
 			font-size: 22px;
+			opacity: .6;
+			&:active,
+			&.active {
+				opacity: 1;
+				box-shadow: none;
+			}
 		}
 	}
 }

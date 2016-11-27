@@ -6157,6 +6157,10 @@ blockquote:after,
     float: right;
   }
 }
+mark {
+  background: orange;
+  color: black;
+}
 .btn-default {
   border-radius: 4px;
   background: #f1efea;
@@ -6852,6 +6856,22 @@ blockquote:after,
 .kassen-filter .kassen-filter-item-group .kassen-filter-item.active img {
   opacity: 1;
 }
+.kassen-filter .kassen-filter-search {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height 300ms ease;
+  -o-transition: height 300ms ease;
+  transition: height 300ms ease;
+}
+@media (min-width: 992px) {
+  .kassen-filter .kassen-filter-search {
+    width: 50%;
+    float: right;
+  }
+}
+.kassen-filter .kassen-filter-search.open {
+  height: 50px;
+}
 .kassen-filter .kassen-filter-item-action {
   width: 20%;
   float: left;
@@ -6866,6 +6886,12 @@ blockquote:after,
 .kassen-filter .kassen-filter-item-action .btn {
   color: #666;
   font-size: 22px;
+  opacity: .6;
+}
+.kassen-filter .kassen-filter-item-action .btn:active,
+.kassen-filter .kassen-filter-item-action .btn.active {
+  opacity: 1;
+  box-shadow: none;
 }
 .candidate-teaser {
   margin-bottom: 30px;

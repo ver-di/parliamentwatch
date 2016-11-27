@@ -96,7 +96,7 @@ function pw_profiles_strongarm() {
       'display' => array(
         'summary' => array(
           'default' => array(
-            'weight' => '18',
+            'weight' => '23',
             'visible' => FALSE,
           ),
           'user_premium' => array(

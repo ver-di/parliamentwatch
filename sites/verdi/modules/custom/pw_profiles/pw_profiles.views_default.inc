@@ -44,42 +44,36 @@ function pw_profiles_views_default_views() {
     <div class="kassen-filter-item-group clearfix">
         <h3>Krankenversicherung:</h3>
         <div class="kassen-filter-item" data-kassen-filter="dak_gesundheit">
-            <label for="filter_dak">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/dak.png" alt="DAK" class="img-responsive">
-                <input type="checkbox" id="filter_dak">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/dak.png" alt="DAK" class="img-responsive">
         </div>
         <div class="kassen-filter-item" data-kassen-filter="kkh">
-            <label for="filter_kkh">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/kkh.png" alt="KKH" class="img-responsive">
-                <input type="checkbox" id="filter_kkh">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/kkh.png" alt="KKH" class="img-responsive">
         </div>
         <div class="kassen-filter-item" data-kassen-filter="tk">
-            <label for="filter_tk">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/tk.png" alt="TK" class="img-responsive">
-                <input type="checkbox" id="filter_tk">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/tk.png" alt="TK" class="img-responsive">
         </div>
         <div class="kassen-filter-item" data-kassen-filter="barmer">
-            <label for="filter_barmer">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/barmer.png" alt="Barmer" class="img-responsive">
-                <input type="checkbox" id="filter_barmer">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/barmer.png" alt="Barmer" class="img-responsive">
         </div>
     </div>
     <div class="kassen-filter-item-group clearfix" data-kassen-filter="drv_bund">
         <h3>Rentenversicherung:</h3>
         <div class="kassen-filter-item">
-            <label for="filter_drv">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/drv.png" alt="Deutsche Rentenversicherung" class="img-responsive">
-                <input type="checkbox" id="filter_drv">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/drv.png" alt="Deutsche Rentenversicherung" class="img-responsive">
         </div>
     </div>
     <div class="kassen-filter-item-action">
         <a class="btn btn-lg" href=""><i class="fa fa-search"></i></a>
     </div>
+    <div class="col-xs-12">
+        <div class="kassen-filter-search">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                <input type="text" class="form-control input-lg" id="candidate_search_input" placeholder="Suchbegriff eingeben">
+            </div>
+        </div>
+    </div>
+    
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
   /* Field: User: Name */
@@ -126,42 +120,36 @@ function pw_profiles_views_default_views() {
     <div class="kassen-filter-item-group clearfix">
         <h3>Krankenversicherung:</h3>
         <div class="kassen-filter-item" data-kassen-filter="dak_gesundheit">
-            <label for="filter_dak">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/dak.png" alt="DAK" class="img-responsive">
-                <input type="checkbox" id="filter_dak">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/dak.png" alt="DAK" class="img-responsive">
         </div>
         <div class="kassen-filter-item" data-kassen-filter="kkh">
-            <label for="filter_kkh">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/kkh.png" alt="KKH" class="img-responsive">
-                <input type="checkbox" id="filter_kkh">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/kkh.png" alt="KKH" class="img-responsive">
         </div>
         <div class="kassen-filter-item" data-kassen-filter="tk">
-            <label for="filter_tk">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/tk.png" alt="TK" class="img-responsive">
-                <input type="checkbox" id="filter_tk">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/tk.png" alt="TK" class="img-responsive">
         </div>
         <div class="kassen-filter-item" data-kassen-filter="barmer">
-            <label for="filter_barmer">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/barmer.png" alt="Barmer" class="img-responsive">
-                <input type="checkbox" id="filter_barmer">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/barmer.png" alt="Barmer" class="img-responsive">
         </div>
     </div>
     <div class="kassen-filter-item-group clearfix" data-kassen-filter="drv_bund">
         <h3>Rentenversicherung:</h3>
         <div class="kassen-filter-item">
-            <label for="filter_drv">
-                <img src="/sites/all/themes/custom/verdi/images/kassen_logo/drv.png" alt="Deutsche Rentenversicherung" class="img-responsive">
-                <input type="checkbox" id="filter_drv">
-            </label>
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/drv.png" alt="Deutsche Rentenversicherung" class="img-responsive">
         </div>
     </div>
     <div class="kassen-filter-item-action">
         <a class="btn btn-lg" href=""><i class="fa fa-search"></i></a>
     </div>
+    <div class="col-xs-12">
+        <div class="kassen-filter-search">
+            <div class="input-group">
+                <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                <input type="text" class="form-control input-lg" id="candidate_search_input" placeholder="Suchbegriff eingeben">
+            </div>
+        </div>
+    </div>
+    
 </div>'),
     t('Block'),
   );

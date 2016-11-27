@@ -31,6 +31,7 @@ function pw_dialogues_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -292,6 +293,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['hide_attachment_summary'] = TRUE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
@@ -445,6 +447,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     0 => 'bfzgpesxoluceqsd',
   );
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
@@ -1248,6 +1251,11 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('Master'),
     t('Questions & Answers'),
     t('weiterlesen'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
     t('Elemente pro Seite'),
     t('- Alle -'),
     t('Offset'),
@@ -1710,6 +1718,208 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('View panes'),
   );
   $export['pw_dialogue_answers'] = $view;
+
+  $view = new view();
+  $view->name = 'pw_dialogue_questions';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'PW Dialogue Questions';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'PW Dialogue Questions';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<form action="#" class="masonry-filter">
+    <div class="row">
+        <div class="col-xs-12 col-sm-5">
+            <div class="form-group">
+                <label for="question_search_input" class="sr-only">Suche</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <input type="text" class="form-control input-lg quicksearch" id="question_search_input" placeholder="Suchbegriff eingeben">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-7">
+            <div class="checkbox">
+                <label data-filter=".answered">
+                    <input type="checkbox"> Nur beantwortete Anzeigen
+                </label>
+            </div>
+        </div>
+    </div>
+</form>';
+  $handler->display->display_options['header']['area']['format'] = 'php_code';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
+  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['required'] = TRUE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Field: Recipient (field_dialogue_recipient) */
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_argument_type'] = 'user';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['default_argument_options']['user'] = FALSE;
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['validate']['type'] = 'user';
+  $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['validate']['fail'] = 'empty';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'dialogue' => 'dialogue',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['pw_dialogue_questions'] = array(
+    t('Master'),
+    t('PW Dialogue Questions'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('<form action="#" class="masonry-filter">
+    <div class="row">
+        <div class="col-xs-12 col-sm-5">
+            <div class="form-group">
+                <label for="question_search_input" class="sr-only">Suche</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+                    <input type="text" class="form-control input-lg quicksearch" id="question_search_input" placeholder="Suchbegriff eingeben">
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-7">
+            <div class="checkbox">
+                <label data-filter=".answered">
+                    <input type="checkbox"> Nur beantwortete Anzeigen
+                </label>
+            </div>
+        </div>
+    </div>
+</form>'),
+    t('User entity referenced from field_dialogue_recipient'),
+    t('All'),
+    t('Block'),
+  );
+  $export['pw_dialogue_questions'] = $view;
+
+  $view = new view();
+  $view->name = 'pw_dialogue_questions_answer';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'comment';
+  $view->human_name = 'PW Dialogue Questions - Answer';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'PW Dialogue Questions - Answer';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access comments';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'comment';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Relationship: Comment: Content */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'comment';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  /* Field: Comment: Title */
+  $handler->display->display_options['fields']['subject']['id'] = 'subject';
+  $handler->display->display_options['fields']['subject']['table'] = 'comment';
+  $handler->display->display_options['fields']['subject']['field'] = 'subject';
+  $handler->display->display_options['fields']['subject']['label'] = '';
+  $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: Comment: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'comment';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Comment: Approved */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'comment';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
+  $handler->display->display_options['filters']['status_node']['table'] = 'node';
+  $handler->display->display_options['filters']['status_node']['field'] = 'status';
+  $handler->display->display_options['filters']['status_node']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['status_node']['value'] = 1;
+  $handler->display->display_options['filters']['status_node']['group'] = 1;
+  $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['pw_dialogue_questions_answer'] = array(
+    t('Master'),
+    t('PW Dialogue Questions - Answer'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Content'),
+    t('Block'),
+  );
+  $export['pw_dialogue_questions_answer'] = $view;
 
   return $export;
 }
