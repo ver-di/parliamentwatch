@@ -254,7 +254,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_short';
-  $strongarm->value = 'd.m.Y - H:i';
+  $strongarm->value = 'd.m.Y';
   $export['date_format_short'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1162,15 +1162,8 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'site_frontpage';
-  $strongarm->value = 'node';
-  $export['site_frontpage'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'site_name';
-  $strongarm->value = 'sozialversicherung.watch';
+  $strongarm->value = 'sozialwahlwatch.de';
   $export['site_name'] = $strongarm;
 
   $strongarm = new stdClass();

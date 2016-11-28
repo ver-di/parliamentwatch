@@ -116,8 +116,9 @@ function pw_dialogues_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'body',
-      1 => 'group_dialouge_question_info',
-      2 => 'group_dialouge_answer',
+      1 => 'button_dialogue',
+      2 => 'group_dialouge_question_info',
+      3 => 'group_dialouge_answer',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -172,6 +173,99 @@ function pw_dialogues_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_question_answer|node|dialogue|full';
+  $field_group->group_name = 'group_question_answer';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dialogue';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Question Answer',
+    'weight' => '1',
+    'children' => array(
+      0 => 'comments',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Question Answer',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'question-answer',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_question_answer|node|dialogue|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_question_intro_submitted|node|dialogue|full';
+  $field_group->group_name = 'group_question_intro_submitted';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dialogue';
+  $field_group->mode = 'full';
+  $field_group->parent_name = 'group_question_intro';
+  $field_group->data = array(
+    'label' => 'Question Intro Submitted',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_dialogue_sender_name',
+      1 => 'dialogues_asked',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Question Intro Submitted',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => '',
+        'element' => 'p',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_question_intro_submitted|node|dialogue|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_question_intro|node|dialogue|full';
+  $field_group->group_name = 'group_question_intro';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dialogue';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Question Intro',
+    'weight' => '0',
+    'children' => array(
+      0 => 'body',
+      1 => 'dialogues_arrow_navigation',
+      2 => 'group_question_intro_submitted',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Question Intro',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'question-intro',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_question_intro|node|dialogue|full'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_sender|node|dialogue|search_result';
   $field_group->group_name = 'group_sender';
   $field_group->entity_type = 'node';
@@ -209,6 +303,9 @@ function pw_dialogues_field_group_info() {
   t('Dialouge Question');
   t('Dialouge Question Info');
   t('Grid 6 Wrapper');
+  t('Question Answer');
+  t('Question Intro');
+  t('Question Intro Submitted');
   t('Sender Wrapper');
 
   return $field_groups;
