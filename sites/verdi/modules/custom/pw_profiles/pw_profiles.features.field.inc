@@ -4549,7 +4549,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'default_image' => 0,
         'file_directory' => 'users',
         'file_extensions' => 'png gif jpg jpeg',
-        'max_filesize' => '1 MB',
+        'max_filesize' => '',
         'max_resolution' => '',
         'min_resolution' => '',
         'title_field' => 0,
