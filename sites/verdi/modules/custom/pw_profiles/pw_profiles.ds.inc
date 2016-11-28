@@ -486,10 +486,7 @@ function pw_profiles_ds_custom_fields_info() {
     ->execute()
     ->fetchAssoc();
 
-if($stats[\'number_of_questions\'] == 0){
-  $stats[\'percent_answered\'] = 0;
-}
-else{
+if(isset($stats[\'number_of_questions\']) && $stats[\'number_of_questions\'] > 0){
   $stats[\'percent_answered\'] = round($stats[\'number_of_answers\'] / $stats[\'number_of_questions\'] * 100);
 }
 ?>
@@ -507,7 +504,7 @@ else{
           </div>
           <span class="label">beantwortet</span>
       </div>
-      <?php else: ?>
+      <?php elseif(!empty($user->field_user_gender)): ?>
         <div>Stelle die erste Frage an <?php print $user->field_user_gender[LANGUAGE_NONE][0][\'value\'] == \'female\'?\'die Kandidatin\':\'den Kandidaten\'; ?></div>
       <?php endif; ?>
 </div>',

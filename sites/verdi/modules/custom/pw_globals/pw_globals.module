@@ -95,9 +95,11 @@ function _pw_is_profile_consultable($user=FALSE) {
 function _pw_user_has_role($user, $role) {
   $term_role = taxonomy_get_term_by_name($role, 'pw_profile_roles_for_view_mode_switch');
   $tid_role = key($term_role);
-  foreach ($user->field_user_roles_for_view_mode_s[LANGUAGE_NONE] as $user_role) {
-    if ($tid_role == $user_role['tid']) {
-      return TRUE;
+  if(!empty($user->field_user_roles_for_view_mode_s)){
+    foreach ($user->field_user_roles_for_view_mode_s[LANGUAGE_NONE] as $user_role) {
+      if ($tid_role == $user_role['tid']) {
+        return TRUE;
+      }
     }
   }
   return FALSE;
@@ -139,13 +141,13 @@ function _pw_get_current_parliament_term() {
         break;
 
       // load by user profile
-        /*$user = menu_get_object('user');
-        if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
-          $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
-          $term_parliament = taxonomy_term_load($term_parliament_id);
-        }
-        break;
-        */
+      /*$user = menu_get_object('user');
+      if (isset($user->field_user_parliament[LANGUAGE_NONE][0]['tid'])) {
+        $term_parliament_id = $user->field_user_parliament[LANGUAGE_NONE][0]['tid'];
+        $term_parliament = taxonomy_term_load($term_parliament_id);
+      }
+      break;
+      */
 
       // load by node
       case 'node':
