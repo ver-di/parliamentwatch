@@ -506,6 +506,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '28',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '28',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -674,6 +680,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '33',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '33',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -797,6 +809,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '75',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '11',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -944,6 +962,21 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'date_default',
           'weight' => '15',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'date',
+          'settings' => array(
+            'field_delimiter' => '',
+            'format_type' => 'year_only',
+            'fromto' => 'both',
+            'multiple_from' => '',
+            'multiple_number' => '',
+            'multiple_to' => '',
+            'show_remaining_days' => 0,
+          ),
+          'type' => 'date_default',
+          'weight' => '15',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1057,6 +1090,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '73',
         ),
         'user_profile' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '24',
+        ),
+        'user_profile_small' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
@@ -1207,6 +1246,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '20',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '20',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1353,6 +1401,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'taxonomy_term_reference_link',
           'weight' => '23',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '23',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1474,6 +1531,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '12',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '12',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1589,6 +1652,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '62',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '31',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1751,6 +1820,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '54',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '10',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1929,6 +2004,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '30',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '30',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2072,6 +2153,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '68',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '20',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -2301,6 +2388,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'text_default',
           'weight' => '13',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '13',
+        ),
         'user_search' => array(
           'label' => 'above',
           'module' => 'text',
@@ -2495,6 +2591,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'taxonomy_term_reference_link',
           'weight' => '17',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '17',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2609,6 +2714,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '70',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '22',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -2729,6 +2840,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '84',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '29',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -2899,6 +3016,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '16',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '16',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3058,6 +3184,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '15',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '15',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3192,6 +3324,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
+          'weight' => '7',
+        ),
+        'user_profile_small' => array(
+          'label' => 'hidden',
+          'module' => 'link',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'link_default',
           'weight' => '7',
         ),
         'user_search' => array(
@@ -3351,6 +3492,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'taxonomy_term_reference_link',
           'weight' => '3',
         ),
+        'user_profile_small' => array(
+          'label' => 'hidden',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '3',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3489,6 +3639,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'taxonomy_term_reference_link',
           'weight' => '5',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '5',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3605,6 +3764,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '48',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '13',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -3792,6 +3957,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'text_default',
           'weight' => '14',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '14',
+        ),
         'user_search' => array(
           'label' => 'above',
           'module' => 'text',
@@ -3969,6 +4143,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '25',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '25',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -4127,6 +4307,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '76',
         ),
         'user_profile' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '35',
+        ),
+        'user_profile_small' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
@@ -4364,6 +4550,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '18',
         ),
+        'user_profile_small' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '18',
+        ),
         'user_search' => array(
           'label' => 'above',
           'module' => 'taxonomy',
@@ -4494,6 +4686,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '50',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '9',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -4696,6 +4894,17 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'image',
           'weight' => '4',
         ),
+        'user_profile_small' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'field_delimiter' => '',
+            'image_link' => '',
+            'image_style' => '',
+          ),
+          'type' => 'image',
+          'weight' => '4',
+        ),
         'user_search' => array(
           'label' => 'above',
           'module' => 'image',
@@ -4862,6 +5071,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '51',
         ),
         'user_profile' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '5',
+        ),
+        'user_profile_small' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
@@ -5041,6 +5259,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '27',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '27',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -5214,6 +5438,15 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '21',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '21',
+        ),
         'user_search' => array(
           'label' => 'hidden',
           'settings' => array(),
@@ -5331,6 +5564,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '67',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '26',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -5487,6 +5726,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '52',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '8',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -5668,6 +5913,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '34',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '34',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -5782,6 +6033,12 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '45',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '14',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -5965,6 +6222,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '6',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -6058,6 +6321,15 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '3',
         ),
         'user_profile' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '3',
+        ),
+        'user_profile_small' => array(
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
@@ -6219,6 +6491,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '16',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '16',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -6352,6 +6630,12 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '55',
         ),
         'user_profile' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '21',
+        ),
+        'user_profile_small' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -6506,6 +6790,15 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '53',
         ),
         'user_profile' => array(
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '12',
+        ),
+        'user_profile_small' => array(
           'label' => 'inline',
           'module' => 'text',
           'settings' => array(
@@ -6686,6 +6979,15 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '10',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '10',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -6848,6 +7150,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '32',
         ),
+        'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '32',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -6959,6 +7267,15 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '18',
         ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => '18',
+        ),
         'user_slider_item' => array(
           'label' => 'inline',
           'settings' => array(),
@@ -7048,6 +7365,15 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
+          'weight' => '19',
+        ),
+        'user_profile_small' => array(
+          'label' => 'inline',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'taxonomy_term_reference_link',
           'weight' => '19',
         ),
         'user_slider_item' => array(

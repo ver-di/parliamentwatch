@@ -17,6 +17,17 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'candidate_stats_questions_get' => array(
+      'weight' => '4',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+        'field_delimiter' => '',
+      ),
+    ),
     'candidate_header' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -29,17 +40,6 @@ function pw_profiles_ds_field_settings_info() {
     ),
     'candidate_social_links' => array(
       'weight' => '8',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-        'field_delimiter' => '',
-      ),
-    ),
-    'candidate_stats_questions_get' => array(
-      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -575,20 +575,20 @@ function pw_profiles_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'dialogues_profile',
-        1 => 'candidate_header',
-        2 => 'candidate_full_name',
+        1 => 'candidate_full_name',
+        2 => 'candidate_header',
         3 => 'candidate_tab_navigation',
-        4 => 'group_user_name',
-        5 => 'group_candidate_intro',
+        4 => 'group_candidate_intro',
+        5 => 'group_user_name',
         6 => 'group_candidate_intro_info',
         7 => 'group_candidate_tabs_wrapper',
         8 => 'group_candidate_tabs',
         9 => 'field_user_list',
         10 => 'field_user_quote',
-        11 => 'field_user_picture',
-        12 => 'candidate_stats_questions_get',
-        13 => 'field_user_picture_copyright',
-        14 => 'field_user_list_position',
+        11 => 'candidate_stats_questions_get',
+        12 => 'field_user_picture',
+        13 => 'field_user_list_position',
+        14 => 'field_user_picture_copyright',
         15 => 'field_user_links_more',
         16 => 'candidate_social_links',
         17 => 'twitter',
@@ -616,20 +616,20 @@ function pw_profiles_ds_layout_settings_info() {
     ),
     'fields' => array(
       'dialogues_profile' => 'ds_content',
-      'candidate_header' => 'ds_content',
       'candidate_full_name' => 'ds_content',
+      'candidate_header' => 'ds_content',
       'candidate_tab_navigation' => 'ds_content',
-      'group_user_name' => 'ds_content',
       'group_candidate_intro' => 'ds_content',
+      'group_user_name' => 'ds_content',
       'group_candidate_intro_info' => 'ds_content',
       'group_candidate_tabs_wrapper' => 'ds_content',
       'group_candidate_tabs' => 'ds_content',
       'field_user_list' => 'ds_content',
       'field_user_quote' => 'ds_content',
-      'field_user_picture' => 'ds_content',
       'candidate_stats_questions_get' => 'ds_content',
-      'field_user_picture_copyright' => 'ds_content',
+      'field_user_picture' => 'ds_content',
       'field_user_list_position' => 'ds_content',
+      'field_user_picture_copyright' => 'ds_content',
       'field_user_links_more' => 'ds_content',
       'candidate_social_links' => 'ds_content',
       'twitter' => 'ds_content',
@@ -718,6 +718,68 @@ function pw_profiles_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|user_profile_small';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'user_profile_small';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_user_list',
+        1 => 'field_user_quote',
+        2 => 'field_user_picture',
+        3 => 'field_user_picture_copyright',
+        4 => 'field_user_list_position',
+        5 => 'field_user_links_more',
+        6 => 'twitter',
+        7 => 'field_user_twitter_account',
+        8 => 'field_user_title',
+        9 => 'field_user_fname',
+        10 => 'field_user_lname',
+        11 => 'field_user_birthday',
+        12 => 'field_user_job_skills',
+        13 => 'field_user_fraction',
+        14 => 'field_verdi_fields',
+        15 => 'field_verdi_regions',
+        16 => 'field_user_commitee',
+        17 => 'field_user_political_roles',
+        18 => 'field_user_constituency',
+      ),
+    ),
+    'fields' => array(
+      'field_user_list' => 'ds_content',
+      'field_user_quote' => 'ds_content',
+      'field_user_picture' => 'ds_content',
+      'field_user_picture_copyright' => 'ds_content',
+      'field_user_list_position' => 'ds_content',
+      'field_user_links_more' => 'ds_content',
+      'twitter' => 'ds_content',
+      'field_user_twitter_account' => 'ds_content',
+      'field_user_title' => 'ds_content',
+      'field_user_fname' => 'ds_content',
+      'field_user_lname' => 'ds_content',
+      'field_user_birthday' => 'ds_content',
+      'field_user_job_skills' => 'ds_content',
+      'field_user_fraction' => 'ds_content',
+      'field_verdi_fields' => 'ds_content',
+      'field_verdi_regions' => 'ds_content',
+      'field_user_commitee' => 'ds_content',
+      'field_user_political_roles' => 'ds_content',
+      'field_user_constituency' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['user|user|user_profile_small'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'user|user|user_slider_item';
   $ds_layout->entity_type = 'user';
   $ds_layout->bundle = 'user';
@@ -773,6 +835,15 @@ function pw_profiles_ds_view_modes_info() {
     'user' => 'user',
   );
   $export['user_profile'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'user_profile_small';
+  $ds_view_mode->label = 'User Profile Small';
+  $ds_view_mode->entities = array(
+    'user' => 'user',
+  );
+  $export['user_profile_small'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;

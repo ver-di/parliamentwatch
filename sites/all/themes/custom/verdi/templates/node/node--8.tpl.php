@@ -90,6 +90,9 @@
     </div>
   </div>
   <?php endif; ?>
+  <?php
+  print render($user_profile_small);
+  ?>
   <div class="modal-body">
     <div class="row">
       <?php
