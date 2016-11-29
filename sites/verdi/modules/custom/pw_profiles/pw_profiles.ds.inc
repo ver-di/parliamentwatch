@@ -702,6 +702,15 @@ function pw_profiles_ds_view_modes_info() {
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'user_profile';
+  $ds_view_mode->label = 'User Profile';
+  $ds_view_mode->entities = array(
+    'user' => 'user',
+  );
+  $export['user_profile'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
   $ds_view_mode->view_mode = 'user_slider_item';
   $ds_view_mode->label = 'User Slider-Item';
   $ds_view_mode->entities = array(

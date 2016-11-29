@@ -57,6 +57,7 @@ function pw_globals_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | Deine Wahlentscheidung bei den Sozialwahlen 2017',
@@ -100,6 +101,7 @@ function pw_globals_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [node:title]',
@@ -143,6 +145,7 @@ function pw_globals_metatag_export_default() {
   // Exported Metatag config instance: taxonomy_term.
   $config['taxonomy_term'] = array(
     'instance' => 'taxonomy_term',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [term:name]',
@@ -174,6 +177,7 @@ function pw_globals_metatag_export_default() {
   // Exported Metatag config instance: user.
   $config['user'] = array(
     'instance' => 'user',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | Profil von [user:field-user-title] [user:field-user-fname] [user:field_user_lname], [user:field-user-parliament]',

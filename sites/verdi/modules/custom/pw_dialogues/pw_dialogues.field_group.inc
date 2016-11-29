@@ -181,7 +181,7 @@ function pw_dialogues_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Question Answer',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'comments',
     ),
@@ -242,7 +242,7 @@ function pw_dialogues_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Question Intro',
-    'weight' => '0',
+    'weight' => '1',
     'children' => array(
       0 => 'body',
       1 => 'dialogues_arrow_navigation',

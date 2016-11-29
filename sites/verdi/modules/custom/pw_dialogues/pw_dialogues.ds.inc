@@ -70,6 +70,11 @@ function pw_dialogues_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_dialogue_recipient' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_dialogue_sender_name' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -276,19 +281,21 @@ function pw_dialogues_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'group_question_intro',
+        0 => 'field_dialogue_recipient',
         1 => 'comments',
-        2 => 'group_question_answer',
-        3 => 'group_question_intro_submitted',
-        4 => 'body',
-        5 => 'dialogues_arrow_navigation',
-        6 => 'field_dialogue_sender_name',
-        7 => 'dialogues_asked',
+        2 => 'group_question_intro',
+        3 => 'group_question_answer',
+        4 => 'group_question_intro_submitted',
+        5 => 'body',
+        6 => 'dialogues_arrow_navigation',
+        7 => 'field_dialogue_sender_name',
+        8 => 'dialogues_asked',
       ),
     ),
     'fields' => array(
-      'group_question_intro' => 'ds_content',
+      'field_dialogue_recipient' => 'ds_content',
       'comments' => 'ds_content',
+      'group_question_intro' => 'ds_content',
       'group_question_answer' => 'ds_content',
       'group_question_intro_submitted' => 'ds_content',
       'body' => 'ds_content',
