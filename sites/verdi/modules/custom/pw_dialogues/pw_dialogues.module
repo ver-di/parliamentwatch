@@ -361,7 +361,8 @@ function pw_dialogues_preprocess_comment(&$variables) {
       $file = file_load($info['settings']['default_image']);
     }
     if($file){
-      $variables['picture'] = render(file_view($file, 'pw_file_portrait_s'));
+      $file_view = file_view($file, 'pw_file_portrait_s');
+      $variables['picture'] = render($file_view);
     }
   }
 }

@@ -243,7 +243,7 @@ function _pw_get_current_user() {
       break;
     case 'node':
       $node = menu_get_object();
-      if($node->type = 'dialogue'){
+      if($node && $node->type = 'dialogue'){
         $field_dialogue_recipient = field_get_items('node', $node, 'field_dialogue_recipient');
         if(!empty($field_dialogue_recipient)){
           $user = user_load($field_dialogue_recipient[0]['target_id']);
