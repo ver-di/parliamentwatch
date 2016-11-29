@@ -5,6 +5,18 @@
  * helper functions for question form.
  */
 
+/**
+ * Implements hook_menu().
+ */
+function pw_question_form_menu() {
+  $menu['/profil/%/frage-stellen'] = array(
+    'title' => 'Frage stellen',
+    'page callback' => 'node_view',
+    'page arguments' => arg(1),
+  );
+
+  return $menu;
+}
 
 /**
  * Implements hook_form_alter()..

@@ -289,6 +289,21 @@ function pw_profiles_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'user|user|user_profile';
+  $ds_fieldsetting->entity_type = 'user';
+  $ds_fieldsetting->bundle = 'user';
+  $ds_fieldsetting->view_mode = 'user_profile';
+  $ds_fieldsetting->settings = array(
+    'candidate_stats_questions_get' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['user|user|user_profile'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'user|user|user_slider_item';
   $ds_fieldsetting->entity_type = 'user';
   $ds_fieldsetting->bundle = 'user';
@@ -650,6 +665,56 @@ function pw_profiles_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['user|user|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|user_profile';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'user_profile';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'candidate_stats_questions_get',
+        1 => 'field_user_list',
+        2 => 'field_user_quote',
+        3 => 'field_user_picture',
+        4 => 'field_user_list_position',
+        5 => 'field_user_picture_copyright',
+        6 => 'field_user_title',
+        7 => 'field_user_fname',
+        8 => 'field_user_lname',
+        9 => 'field_user_birthday',
+        10 => 'field_user_fraction',
+        11 => 'field_user_constituency',
+      ),
+    ),
+    'fields' => array(
+      'candidate_stats_questions_get' => 'ds_content',
+      'field_user_list' => 'ds_content',
+      'field_user_quote' => 'ds_content',
+      'field_user_picture' => 'ds_content',
+      'field_user_list_position' => 'ds_content',
+      'field_user_picture_copyright' => 'ds_content',
+      'field_user_title' => 'ds_content',
+      'field_user_fname' => 'ds_content',
+      'field_user_lname' => 'ds_content',
+      'field_user_birthday' => 'ds_content',
+      'field_user_fraction' => 'ds_content',
+      'field_user_constituency' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['user|user|user_profile'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
