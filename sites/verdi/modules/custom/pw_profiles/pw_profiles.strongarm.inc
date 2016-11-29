@@ -69,7 +69,7 @@ function pw_profiles_strongarm() {
           'weight' => '15',
         ),
         'account' => array(
-          'weight' => '6',
+          'weight' => '0',
         ),
         'timezone' => array(
           'weight' => '14',
@@ -87,10 +87,10 @@ function pw_profiles_strongarm() {
           'weight' => '20',
         ),
         'masquerade' => array(
-          'weight' => '17',
+          'weight' => '10',
         ),
         'metatags' => array(
-          'weight' => '16',
+          'weight' => '9',
         ),
       ),
       'display' => array(
@@ -185,6 +185,10 @@ function pw_profiles_strongarm() {
           ),
           'full' => NULL,
           'user_slider_item' => NULL,
+          'default' => array(
+            'weight' => '50',
+            'visible' => FALSE,
+          ),
         ),
         'twitter' => array(
           'user_candidate' => array(
@@ -204,7 +208,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '1',
+            'weight' => '9',
             'visible' => TRUE,
           ),
           'full' => array(

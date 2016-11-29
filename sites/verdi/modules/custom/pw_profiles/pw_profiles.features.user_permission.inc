@@ -1020,10 +1020,8 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_job_skills'] = array(
     'name' => 'edit own field_user_job_skills',
     'roles' => array(
-      0 => 'Candidate',
-      1 => 'Content Manager',
-      2 => 'Politician',
-      3 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1042,8 +1040,10 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_links_more'] = array(
     'name' => 'edit own field_user_links_more',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Politician',
+      3 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1062,9 +1062,8 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_list_position'] = array(
     'name' => 'edit own field_user_list_position',
     'roles' => array(
-      0 => 'Candidate',
-      1 => 'Content Manager',
-      2 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1133,8 +1132,10 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_picture'] = array(
     'name' => 'edit own field_user_picture',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      0 => 'Candidate',
+      1 => 'Content Manager',
+      2 => 'Politician',
+      3 => 'administrator',
     ),
     'module' => 'field_permissions',
   );

@@ -95,9 +95,10 @@ function pw_profiles_field_group_info() {
     'label' => 'Candidate Tabs Info Sidebar',
     'weight' => '15',
     'children' => array(
-      0 => 'field_user_twitter_account',
-      1 => 'twitter',
-      2 => 'candidate_social_links',
+      0 => 'field_user_links_more',
+      1 => 'field_user_twitter_account',
+      2 => 'twitter',
+      3 => 'candidate_social_links',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -381,7 +382,7 @@ function pw_profiles_field_group_info() {
     'label' => 'Fragen & Antworten',
     'weight' => '23',
     'children' => array(
-      0 => 'pw_dialogue_questions_block',
+      0 => 'dialogues_profile',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -513,10 +514,11 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Managed Content',
-    'weight' => '13',
+    'weight' => '6',
     'children' => array(
       0 => 'field_user_gender',
-      1 => 'field_user_question_form_closed',
+      1 => 'field_user_picture_copyright',
+      2 => 'field_user_question_form_closed',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -541,7 +543,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Premium',
-    'weight' => '11',
+    'weight' => '5',
     'children' => array(),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -632,7 +634,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Admin Settings',
-    'weight' => '15',
+    'weight' => '8',
     'children' => array(
       0 => 'field_user_external_url',
       1 => 'field_user_first_letter_lname',
@@ -666,7 +668,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Political Affiliation',
-    'weight' => '10',
+    'weight' => '2',
     'children' => array(
       0 => 'field_user_commitee',
       1 => 'field_user_constituency_won',
@@ -908,7 +910,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dialogue Data',
-    'weight' => '14',
+    'weight' => '7',
     'children' => array(
       0 => 'field_user_answers_give',
       1 => 'field_user_qanda_ratio',
@@ -1031,30 +1033,34 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal Data',
-    'weight' => '9',
+    'weight' => '1',
     'children' => array(
       0 => 'field_user_age',
       1 => 'field_user_birthday',
       2 => 'field_user_childs',
       3 => 'field_user_constituency',
       4 => 'field_user_education',
-      5 => 'field_user_job_skills',
-      6 => 'field_user_list',
-      7 => 'field_user_list_position',
-      8 => 'field_user_marriage_status',
-      9 => 'field_user_phone',
-      10 => 'field_user_pseudonym',
-      11 => 'field_user_public_mail',
+      5 => 'field_user_fname',
+      6 => 'field_user_job_skills',
+      7 => 'field_user_list',
+      8 => 'field_user_lname',
+      9 => 'field_user_marriage_status',
+      10 => 'field_user_phone',
+      11 => 'field_user_picture',
+      12 => 'field_user_pseudonym',
+      13 => 'field_user_public_mail',
+      14 => 'field_user_title',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
       'label' => 'Personal Data',
       'instance_settings' => array(
         'required_fields' => 1,
+        'id' => '',
         'classes' => ' group-user-personal-data field-group-fieldset',
         'description' => '',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_user_personal_data|user|user|form'] = $field_group;
@@ -1097,20 +1103,24 @@ function pw_profiles_field_group_info() {
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
-    'label' => 'Premium Fields',
-    'weight' => '12',
+    'label' => 'Additional Fields',
+    'weight' => '3',
     'children' => array(
-      0 => 'group_user_premium',
+      0 => 'field_user_links_more',
+      1 => 'field_user_list_position',
+      2 => 'field_user_quote',
+      3 => 'group_user_premium',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'label' => 'Premium Fields',
+      'label' => 'Additional Fields',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => ' group-user-premium-fields field-group-fieldset',
-        'description' => 'Profilfoto, Social-Media, Bildergalerie, Kalender, Biografie, politische Ziele',
+        'id' => '',
+        'classes' => ' group-user-additional-fields field-group-fieldset',
+        'description' => '',
       ),
-      'formatter' => 'collapsed',
+      'formatter' => 'open',
     ),
   );
   $field_groups['group_user_premium_fields|user|user|form'] = $field_group;
@@ -1181,9 +1191,7 @@ function pw_profiles_field_group_info() {
   $field_group->data = array(
     'label' => 'External Links',
     'weight' => '19',
-    'children' => array(
-      0 => 'field_user_links_more',
-    ),
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -1207,7 +1215,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Profile picture',
-    'weight' => '17',
+    'weight' => '11',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -1259,7 +1267,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = 'group_user_premium_fields';
   $field_group->data = array(
     'label' => 'Premium fields',
-    'weight' => '8',
+    'weight' => '62',
     'children' => array(
       0 => 'group_user_premium_about',
       1 => 'group_user_premium_gallery',
@@ -1358,6 +1366,7 @@ function pw_profiles_field_group_info() {
   // Included for use with string extractors like potx.
   t('About me');
   t('Additional');
+  t('Additional Fields');
   t('Admin Settings');
   t('Basics');
   t('Basics ID Wrapper');
@@ -1386,7 +1395,6 @@ function pw_profiles_field_group_info() {
   t('Political Goals');
   t('Political Roles');
   t('Premium');
-  t('Premium Fields');
   t('Premium fields');
   t('Profile picture');
   t('Roles ID Wrapper');

@@ -690,7 +690,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'computed',
-        'weight' => '51',
+        'weight' => '12',
       ),
     ),
   );
@@ -951,7 +951,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'year_range' => '-70:+0',
         ),
         'type' => 'date_popup',
-        'weight' => '50',
+        'weight' => '11',
       ),
     ),
   );
@@ -1054,7 +1054,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'module' => 'number',
         'settings' => array(),
         'type' => 'number',
-        'weight' => '53',
+        'weight' => '14',
       ),
     ),
   );
@@ -1328,7 +1328,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '56',
+        'weight' => '16',
       ),
     ),
   );
@@ -1599,7 +1599,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '48',
+        'weight' => '9',
       ),
     ),
   );
@@ -1892,6 +1892,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'title' => 'none',
         'title_label_use_field_label' => FALSE,
         'title_maxlength' => '128',
+        'title_predefined' => '',
         'title_value' => '',
         'url' => 0,
         'user_register_form' => 0,
@@ -2296,7 +2297,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '25',
         ),
         'type' => 'text_textfield',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -2802,7 +2803,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
-            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -2820,9 +2820,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
               'full_html' => array(
                 'weight' => '-8',
               ),
-              'html_mail' => array(
-                'weight' => '0',
-              ),
               'managed_content' => array(
                 'weight' => '-10',
               ),
@@ -2835,7 +2832,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'button_text' => 'Search',
           'enable' => 0,
@@ -2848,12 +2844,10 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'maxlength_js' => 0,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '47',
+        'weight' => '8',
       ),
     ),
   );
@@ -3024,9 +3018,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => 'Hier können Sie beliebige Links ergänzen, die in Ihrem Profil öffentlich angezeigt werden sollen.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
+          'label' => 'hidden',
+          'module' => 'link',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'link_default',
           'weight' => '7',
         ),
         'full' => array(
@@ -3087,6 +3084,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'absolute_url' => 1,
         'attributes' => array(
           'class' => '',
+          'configurable_class' => 0,
           'configurable_title' => 0,
           'rel' => '',
           'target' => '_blank',
@@ -3096,7 +3094,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 0,
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'button_text' => 'Search',
           'enable' => 0,
@@ -3104,7 +3101,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         ),
         'rel_remove' => 'default',
         'title' => 'optional',
-        'title_label_use_field_label' => FALSE,
+        'title_label_use_field_label' => 0,
         'title_maxlength' => '128',
         'title_value' => '',
         'url' => 0,
@@ -3114,11 +3111,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'widget' => array(
         'active' => 0,
         'module' => 'link',
-        'settings' => array(
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
+        'settings' => array(),
         'type' => 'link_field',
-        'weight' => '58',
+        'weight' => '61',
       ),
     ),
   );
@@ -3247,7 +3242,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '54',
+        'weight' => '15',
       ),
     ),
   );
@@ -3366,17 +3361,14 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'label' => 'List Position',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
+        'settings' => array(),
         'type' => 'options_select',
-        'weight' => '55',
+        'weight' => '59',
       ),
     ),
   );
@@ -3724,7 +3716,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -3833,7 +3825,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_select',
-        'weight' => '52',
+        'weight' => '13',
       ),
     ),
   );
@@ -4393,7 +4385,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '46',
+        'weight' => '7',
       ),
     ),
   );
@@ -4745,7 +4737,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '6',
+        'weight' => '61',
       ),
     ),
   );
@@ -5182,7 +5174,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '49',
+        'weight' => '10',
       ),
     ),
   );
@@ -5342,7 +5334,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '44',
+        'weight' => '6',
       ),
     ),
   );
@@ -5769,7 +5761,7 @@ $entity_field[0][\'value\'] = $result;',
       'entity_types' => array(),
       'field_name' => 'field_user_quote',
       'field_permissions' => array(
-        'type' => '0',
+        'type' => '2',
       ),
       'foreign keys' => array(
         'format' => array(
@@ -5876,7 +5868,7 @@ $entity_field[0][\'value\'] = $result;',
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '76',
+        'weight' => '60',
       ),
     ),
   );
@@ -6316,7 +6308,7 @@ $entity_field[0][\'value\'] = $result;',
           'size' => '25',
         ),
         'type' => 'text_textfield',
-        'weight' => '1',
+        'weight' => '2',
       ),
     ),
   );
@@ -6366,7 +6358,7 @@ $entity_field[0][\'value\'] = $result;',
             'field_delimiter' => '',
           ),
           'type' => 'text_default',
-          'weight' => '2',
+          'weight' => '10',
         ),
         'full' => array(
           'label' => 'above',
