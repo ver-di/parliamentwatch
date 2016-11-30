@@ -4,6 +4,8 @@ core = 7.x
 base theme = bootstrap
 
 settings[jquery_update_jquery_version] = 1.9
+settings[bootstrap_forms_smart_descriptions] = 0
+settings[verdi_forms_smart_descriptions] = 0
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;; Regions

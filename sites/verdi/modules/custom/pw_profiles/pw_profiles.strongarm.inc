@@ -102,7 +102,7 @@ function pw_profiles_strongarm() {
       'display' => array(
         'summary' => array(
           'default' => array(
-            'weight' => '23',
+            'weight' => '24',
             'visible' => FALSE,
           ),
           'user_premium' => array(
@@ -208,7 +208,7 @@ function pw_profiles_strongarm() {
           'full' => NULL,
           'user_slider_item' => NULL,
           'default' => array(
-            'weight' => '50',
+            'weight' => '38',
             'visible' => FALSE,
           ),
           'user_profile' => array(

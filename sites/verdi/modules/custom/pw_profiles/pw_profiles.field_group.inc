@@ -21,7 +21,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Basics ID Wrapper',
-    'weight' => '19',
+    'weight' => '20',
     'children' => array(
       0 => 'group_user_basics',
     ),
@@ -98,7 +98,6 @@ function pw_profiles_field_group_info() {
       0 => 'field_user_links_more',
       1 => 'field_user_twitter_account',
       2 => 'twitter',
-      3 => 'candidate_social_links',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -792,7 +791,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Roles ID Wrapper',
-    'weight' => '17',
+    'weight' => '18',
     'children' => array(
       0 => 'group_user_commitee',
     ),

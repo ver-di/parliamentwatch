@@ -45,15 +45,20 @@
  */
 ?>
 <?php if(sizeof($items) > 0): ?>
-  <strong>Erfahren Sie mehr auf den sozialen Profilen des Kandierenden</strong>
-  <ul>
+  <p><strong>Erfahren Sie mehr auf den sozialen Profilen des Kandierenden</strong></p>
+  <ul class="social-list">
     <?php foreach ($items as $delta => $item): ?>
       <?php
         // prepare icon
         $host = strtolower(parse_url($item['#element']['url'], PHP_URL_HOST));
         $icon_name = preg_replace("/^\w*\.?(\w+)\.[^\.]+$/U", "$1", $host);
       ?>
-      <li class="custom-icon-<?php print $icon_name; ?>"><?php print render($item); ?></li>
+      <li class="social-list-<?php print $icon_name; ?>">
+          <a href="<?php print $item['#element']['url'] ?>" target="_blank" class="clearfix">
+            <span class="social-list-icon"><span class="fa fa-<?php print $icon_name; ?>"></span></span>
+            <span class="social-list-text"><?php print $item['#element']['title'] ?></span>
+          </a>
+      </li>
     <?php endforeach; ?>
   </ul>
 <?php endif; ?>
