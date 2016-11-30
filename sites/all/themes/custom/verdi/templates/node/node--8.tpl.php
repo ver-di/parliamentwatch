@@ -80,16 +80,6 @@
  */
 ?>
 <article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> modal clearfix"<?php print $attributes; ?>>
-  <?php if ((!$page && !empty($title)) || !empty($title_prefix) || !empty($title_suffix) || $display_submitted): ?>
-  <div class="modal-header">
-    <div class="question-form-head clearfix">
-      <div class="question-form-head-label">Deine Frage an:</div>
-      <div class="question-form-head-title">
-        <h4><?php print $title; ?></h4>
-      </div>
-    </div>
-  </div>
-  <?php endif; ?>
   <?php
   print render($user_profile_small);
   ?>

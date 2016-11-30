@@ -338,6 +338,7 @@ blockquote,
     font-size: 24px;
     border-right: 1px solid #ddd;
     margin-top: 2px;
+    cursor: pointer;
     @media screen and (min-width: @screen-sm-min) {
         float: right;
         padding: 20px 30px;
@@ -435,4 +436,20 @@ blockquote,
 mark {
     background: orange;
     color: black;
+}
+
+
+// Tabs Primary
+
+.tabs--primary {
+    margin-top: 30px;
+    @media (min-width: @screen-sm-min) {
+        margin-top: 40px;
+        text-align: right;
+    }
+    > li {
+        margin-bottom: -1px;
+        display: inline-block;
+        float: none;
+    }
 }

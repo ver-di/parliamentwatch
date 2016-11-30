@@ -17,8 +17,8 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'candidate_stats_questions_get' => array(
-      'weight' => '4',
+    'candidate_header' => array(
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -28,10 +28,16 @@ function pw_profiles_ds_field_settings_info() {
         'field_delimiter' => '',
       ),
     ),
-    'candidate_header' => array(
-      'weight' => '0',
+    'dialogue_filter' => array(
+      'weight' => '22',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+        'field_delimiter' => '',
+      ),
     ),
     'candidate_full_name' => array(
       'weight' => '0',
@@ -40,6 +46,17 @@ function pw_profiles_ds_field_settings_info() {
     ),
     'candidate_social_links' => array(
       'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+        'field_delimiter' => '',
+      ),
+    ),
+    'candidate_stats_questions_get' => array(
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -61,9 +78,21 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'dialogues_profile' => array(
-      'weight' => '0',
+      'weight' => '23',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'row masonry-grid',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+        'field_delimiter' => '',
+      ),
     ),
     'field_user_birthday' => array(
       'formatter_settings' => array(
@@ -294,13 +323,123 @@ function pw_profiles_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'user';
   $ds_fieldsetting->view_mode = 'user_profile';
   $ds_fieldsetting->settings = array(
-    'candidate_stats_questions_get' => array(
+    'candidate_full_name' => array(
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+        'field_delimiter' => '',
+      ),
+    ),
+    'candidate_stats_questions_get' => array(
+      'weight' => '8',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_user_list' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_user_list_position' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => '. Liste verdi, Platz ',
+          'lb-el' => 'span',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+    'field_user_picture' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'candidate-detail-image',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+    'field_user_picture_copyright' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'figcaption',
+          'ow-cl' => 'text-right small',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
     ),
   );
   $export['user|user|user_profile'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'user|user|user_profile_small';
+  $ds_fieldsetting->entity_type = 'user';
+  $ds_fieldsetting->bundle = 'user';
+  $ds_fieldsetting->view_mode = 'user_profile_small';
+  $ds_fieldsetting->settings = array(
+    'candidate_full_name' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'h4',
+          'fi-cl' => '',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+        'field_delimiter' => '',
+      ),
+    ),
+    'field_user_list_position' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'lb' => '. Liste verdi, Platz ',
+          'lb-el' => 'span',
+          'lb-col' => TRUE,
+        ),
+      ),
+    ),
+    'field_user_picture' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => 'question-form-head-image',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+          'fi' => TRUE,
+          'fi-el' => 'div',
+          'fi-cl' => 'circle-image',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['user|user|user_profile_small'] = $ds_fieldsetting;
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
@@ -574,62 +713,62 @@ function pw_profiles_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'dialogues_profile',
-        1 => 'candidate_full_name',
-        2 => 'candidate_header',
-        3 => 'candidate_tab_navigation',
+        0 => 'candidate_full_name',
+        1 => 'candidate_header',
+        2 => 'candidate_tab_navigation',
+        3 => 'group_user_name',
         4 => 'group_candidate_intro',
-        5 => 'group_user_name',
+        5 => 'group_candidate_tabs_wrapper',
         6 => 'group_candidate_intro_info',
-        7 => 'group_candidate_tabs_wrapper',
-        8 => 'group_candidate_tabs',
-        9 => 'field_user_list',
-        10 => 'field_user_quote',
+        7 => 'group_candidate_tabs',
+        8 => 'field_user_list',
+        9 => 'field_user_quote',
+        10 => 'field_user_picture',
         11 => 'candidate_stats_questions_get',
-        12 => 'field_user_picture',
+        12 => 'field_user_picture_copyright',
         13 => 'field_user_list_position',
-        14 => 'field_user_picture_copyright',
-        15 => 'field_user_links_more',
-        16 => 'candidate_social_links',
-        17 => 'twitter',
-        18 => 'field_user_twitter_account',
-        19 => 'field_user_title',
-        20 => 'group_candidate_tabs_info_row',
-        21 => 'field_user_fname',
+        14 => 'field_user_links_more',
+        15 => 'candidate_social_links',
+        16 => 'twitter',
+        17 => 'field_user_twitter_account',
+        18 => 'field_user_title',
+        19 => 'group_candidate_tabs_info_row',
+        20 => 'field_user_fname',
+        21 => 'group_candidate_info_list',
         22 => 'field_user_lname',
-        23 => 'group_candidate_info_list',
+        23 => 'field_user_birthday',
         24 => 'group_candidate_info_sidebar',
-        25 => 'field_user_birthday',
-        26 => 'field_user_job_skills',
-        27 => 'field_user_fraction',
-        28 => 'field_verdi_fields',
-        29 => 'field_verdi_regions',
-        30 => 'field_user_commitee',
-        31 => 'field_user_political_roles',
+        25 => 'field_user_job_skills',
+        26 => 'field_user_fraction',
+        27 => 'field_verdi_fields',
+        28 => 'field_verdi_regions',
+        29 => 'field_user_commitee',
+        30 => 'field_user_political_roles',
+        31 => 'dialogue_filter',
         32 => 'field_user_constituency',
-        33 => 'group_candidate_tabs_questions',
-        34 => 'group_candidate_tabs_info',
-        35 => 'group_candidate_intro_row',
-        36 => 'group_candidate_intro_right',
-        37 => 'group_candidate_intro_left',
+        33 => 'dialogues_profile',
+        34 => 'group_candidate_tabs_questions',
+        35 => 'group_candidate_tabs_info',
+        36 => 'group_candidate_intro_row',
+        37 => 'group_candidate_intro_right',
+        38 => 'group_candidate_intro_left',
       ),
     ),
     'fields' => array(
-      'dialogues_profile' => 'ds_content',
       'candidate_full_name' => 'ds_content',
       'candidate_header' => 'ds_content',
       'candidate_tab_navigation' => 'ds_content',
-      'group_candidate_intro' => 'ds_content',
       'group_user_name' => 'ds_content',
-      'group_candidate_intro_info' => 'ds_content',
+      'group_candidate_intro' => 'ds_content',
       'group_candidate_tabs_wrapper' => 'ds_content',
+      'group_candidate_intro_info' => 'ds_content',
       'group_candidate_tabs' => 'ds_content',
       'field_user_list' => 'ds_content',
       'field_user_quote' => 'ds_content',
-      'candidate_stats_questions_get' => 'ds_content',
       'field_user_picture' => 'ds_content',
-      'field_user_list_position' => 'ds_content',
+      'candidate_stats_questions_get' => 'ds_content',
       'field_user_picture_copyright' => 'ds_content',
+      'field_user_list_position' => 'ds_content',
       'field_user_links_more' => 'ds_content',
       'candidate_social_links' => 'ds_content',
       'twitter' => 'ds_content',
@@ -637,17 +776,19 @@ function pw_profiles_ds_layout_settings_info() {
       'field_user_title' => 'ds_content',
       'group_candidate_tabs_info_row' => 'ds_content',
       'field_user_fname' => 'ds_content',
-      'field_user_lname' => 'ds_content',
       'group_candidate_info_list' => 'ds_content',
-      'group_candidate_info_sidebar' => 'ds_content',
+      'field_user_lname' => 'ds_content',
       'field_user_birthday' => 'ds_content',
+      'group_candidate_info_sidebar' => 'ds_content',
       'field_user_job_skills' => 'ds_content',
       'field_user_fraction' => 'ds_content',
       'field_verdi_fields' => 'ds_content',
       'field_verdi_regions' => 'ds_content',
       'field_user_commitee' => 'ds_content',
       'field_user_political_roles' => 'ds_content',
+      'dialogue_filter' => 'ds_content',
       'field_user_constituency' => 'ds_content',
+      'dialogues_profile' => 'ds_content',
       'group_candidate_tabs_questions' => 'ds_content',
       'group_candidate_tabs_info' => 'ds_content',
       'group_candidate_intro_row' => 'ds_content',
@@ -676,33 +817,31 @@ function pw_profiles_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'candidate_stats_questions_get',
-        1 => 'field_user_list',
-        2 => 'field_user_quote',
+        0 => 'group_candidate_intro_row',
+        1 => 'candidate_full_name',
+        2 => 'group_candidate_intro_right',
         3 => 'field_user_picture',
-        4 => 'field_user_list_position',
+        4 => 'group_candidate_intro_left',
         5 => 'field_user_picture_copyright',
-        6 => 'field_user_title',
-        7 => 'field_user_fname',
-        8 => 'field_user_lname',
-        9 => 'field_user_birthday',
-        10 => 'field_user_fraction',
-        11 => 'field_user_constituency',
+        6 => 'group_user_name',
+        7 => 'group_candidate_intro_info',
+        8 => 'candidate_stats_questions_get',
+        9 => 'field_user_list',
+        10 => 'field_user_list_position',
       ),
     ),
     'fields' => array(
+      'group_candidate_intro_row' => 'ds_content',
+      'candidate_full_name' => 'ds_content',
+      'group_candidate_intro_right' => 'ds_content',
+      'field_user_picture' => 'ds_content',
+      'group_candidate_intro_left' => 'ds_content',
+      'field_user_picture_copyright' => 'ds_content',
+      'group_user_name' => 'ds_content',
+      'group_candidate_intro_info' => 'ds_content',
       'candidate_stats_questions_get' => 'ds_content',
       'field_user_list' => 'ds_content',
-      'field_user_quote' => 'ds_content',
-      'field_user_picture' => 'ds_content',
       'field_user_list_position' => 'ds_content',
-      'field_user_picture_copyright' => 'ds_content',
-      'field_user_title' => 'ds_content',
-      'field_user_fname' => 'ds_content',
-      'field_user_lname' => 'ds_content',
-      'field_user_birthday' => 'ds_content',
-      'field_user_fraction' => 'ds_content',
-      'field_user_constituency' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -726,54 +865,30 @@ function pw_profiles_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_user_list',
-        1 => 'field_user_quote',
-        2 => 'field_user_picture',
-        3 => 'field_user_picture_copyright',
-        4 => 'field_user_list_position',
-        5 => 'field_user_links_more',
-        6 => 'twitter',
-        7 => 'field_user_twitter_account',
-        8 => 'field_user_title',
-        9 => 'field_user_fname',
-        10 => 'field_user_lname',
-        11 => 'field_user_birthday',
-        12 => 'field_user_job_skills',
-        13 => 'field_user_fraction',
-        14 => 'field_verdi_fields',
-        15 => 'field_verdi_regions',
-        16 => 'field_user_commitee',
-        17 => 'field_user_political_roles',
-        18 => 'field_user_constituency',
+        0 => 'field_user_picture',
+        1 => 'candidate_full_name',
+        2 => 'group_candidate_modal_head_list',
+        3 => 'group_candidate_modal_head_info',
+        4 => 'field_user_list',
+        5 => 'field_user_list_position',
       ),
     ),
     'fields' => array(
-      'field_user_list' => 'ds_content',
-      'field_user_quote' => 'ds_content',
       'field_user_picture' => 'ds_content',
-      'field_user_picture_copyright' => 'ds_content',
+      'candidate_full_name' => 'ds_content',
+      'group_candidate_modal_head_list' => 'ds_content',
+      'group_candidate_modal_head_info' => 'ds_content',
+      'field_user_list' => 'ds_content',
       'field_user_list_position' => 'ds_content',
-      'field_user_links_more' => 'ds_content',
-      'twitter' => 'ds_content',
-      'field_user_twitter_account' => 'ds_content',
-      'field_user_title' => 'ds_content',
-      'field_user_fname' => 'ds_content',
-      'field_user_lname' => 'ds_content',
-      'field_user_birthday' => 'ds_content',
-      'field_user_job_skills' => 'ds_content',
-      'field_user_fraction' => 'ds_content',
-      'field_verdi_fields' => 'ds_content',
-      'field_verdi_regions' => 'ds_content',
-      'field_user_commitee' => 'ds_content',
-      'field_user_political_roles' => 'ds_content',
-      'field_user_constituency' => 'ds_content',
     ),
     'classes' => array(),
-    'wrappers' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
     'layout_link_custom' => '',
   );
   $export['user|user|user_profile_small'] = $ds_layout;

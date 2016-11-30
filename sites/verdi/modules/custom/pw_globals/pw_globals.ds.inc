@@ -21,12 +21,13 @@ function pw_globals_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<div class="row">
+      'value' => '<div class="candidate-header">
+<div class="row">
     <div class="col-xs-12">
-        <img src="/sites/all/themes/custom/verdi/images/kassen_logo/drv.png" alt="Deutsche Rentenversicherung" class="img-responsive pull-right candidate-detail-logo">
-        [term:field_parliament_logo]
-        <a href="kandidat.html" class="back-button"><i class="fa fa-angle-left"></i></a>
+        <img src="[user:field-user-parliament:field_parliament_logo]" alt="[user:field-user-parliament:name]" class="img-responsive pull-right candidate-detail-logo">
+        <a href="#" class="back-button"><i class="fa fa-angle-left"></i></a>
     </div>
+</div>
 </div>',
       'format' => 'php_code',
     ),

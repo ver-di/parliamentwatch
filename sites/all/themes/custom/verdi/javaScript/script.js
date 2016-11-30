@@ -46,13 +46,13 @@ $('.masonry-filter .checkbox label').on( 'click', function() {
 
 
 // use value of search field to filter
-var $quicksearch = $('.quicksearch').keyup( debounce( function() {
+var $quicksearch = $('#question_search_input').keyup( debounce( function() {
     qsRegex = new RegExp( $quicksearch.val(), 'gi' );
     $grid.isotope();
 
     // Highlight matching Keywords
+    $(".masonry-grid").unmark();
     $(".masonry-grid").mark($quicksearch.val());
-
 }, 200 ) );
 
 // debounce so filtering doesn't happen every millisecond
@@ -176,14 +176,7 @@ $(document).ready(function() {
         return false;
     });
 
-
     $('#candidate_search_input').keyup( debounce( function() {
-        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-        $grid.isotope();
-
-        // Highlight matching Keywords
-        $(".masonry-grid").mark($quicksearch.val());
-
     }, 200 ) );
 
     // Gauges
@@ -206,6 +199,16 @@ $(document).ready(function() {
     $('.gauge-widget .gauge').gauge(opts);
 
 
+    // Candidate-Detail
+
+    // Back-Button
+
+    $('.candidate-header .back-button').on( 'click', function() {
+
+        window.history.back();
+
+        return false;
+    });
 
 });
 
