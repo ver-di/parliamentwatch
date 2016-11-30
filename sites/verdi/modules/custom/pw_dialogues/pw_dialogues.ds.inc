@@ -72,6 +72,26 @@ function pw_dialogues_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|dialogue|dialogue_answer_teaser';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'dialogue';
+  $ds_fieldsetting->view_mode = 'dialogue_answer_teaser';
+  $ds_fieldsetting->settings = array(
+    'node_link' => array(
+      'weight' => '5',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'post_date' => array(
+      'weight' => '2',
+      'label' => 'above',
+      'format' => 'ds_post_date_short',
+    ),
+  );
+  $export['node|dialogue|dialogue_answer_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|dialogue|full';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'dialogue';
@@ -402,6 +422,42 @@ function pw_dialogues_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|dialogue|dialogue_answer_teaser';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'dialogue';
+  $ds_layout->view_mode = 'dialogue_answer_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_dialogue_recipient',
+        1 => 'field_dialogue_sender_name',
+        2 => 'post_date',
+        3 => 'body',
+        4 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'field_dialogue_recipient' => 'ds_content',
+      'field_dialogue_sender_name' => 'ds_content',
+      'post_date' => 'ds_content',
+      'body' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|dialogue|dialogue_answer_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|dialogue|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'dialogue';
@@ -491,6 +547,24 @@ function pw_dialogues_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|dialogue|teaser'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function pw_dialogues_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'dialogue_answer_teaser';
+  $ds_view_mode->label = 'Dialogue Answer Teaser';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['dialogue_answer_teaser'] = $ds_view_mode;
 
   return $export;
 }
