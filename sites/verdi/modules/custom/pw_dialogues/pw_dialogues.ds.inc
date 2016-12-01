@@ -175,13 +175,6 @@ function pw_dialogues_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_dialogue_recipient' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
     'field_dialogue_sender_name' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -462,11 +455,10 @@ function pw_dialogues_ds_layout_settings_info() {
         1 => 'group_dialouge_question_info',
         2 => 'body',
         3 => 'field_dialogue_sender_name',
-        4 => 'group_dialouge_answer',
-        5 => 'dialogues_asked',
+        4 => 'dialogues_asked',
+        5 => 'group_dialouge_answer',
         6 => 'button_dialogue',
-        7 => 'field_dialogue_recipient',
-        8 => 'group_dialouge_answer_info',
+        7 => 'group_dialouge_answer_info',
       ),
     ),
     'fields' => array(
@@ -474,10 +466,9 @@ function pw_dialogues_ds_layout_settings_info() {
       'group_dialouge_question_info' => 'ds_content',
       'body' => 'ds_content',
       'field_dialogue_sender_name' => 'ds_content',
-      'group_dialouge_answer' => 'ds_content',
       'dialogues_asked' => 'ds_content',
+      'group_dialouge_answer' => 'ds_content',
       'button_dialogue' => 'ds_content',
-      'field_dialogue_recipient' => 'ds_content',
       'group_dialouge_answer_info' => 'ds_content',
     ),
     'classes' => array(),
