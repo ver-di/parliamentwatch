@@ -12,4 +12,5 @@
     <?php endif; ?>
 
     <?php print $ds_content; ?>
+    <?php print render($content['comments']); ?>
 </<?php print $ds_content_wrapper ?>>
