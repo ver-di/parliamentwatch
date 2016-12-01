@@ -300,7 +300,7 @@ function pw_dialogues_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<span class="text-magenta">[comment:field_dialogue_recipient]</span> antworte',
+      'value' => '<span class="text-magenta">[comment:author:field-user-fname] [comment:author:field-user-lname]</span> antworte',
       'format' => 'php_code',
     ),
     'use_token' => 1,
