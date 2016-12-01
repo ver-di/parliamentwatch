@@ -64,8 +64,8 @@ function pw_dialogues_block_info() {
     'info' => t('Questions and answers'),
     'cache' => DRUPAL_NO_CACHE,
   );
-  $blocks['qa-answers-teasers'] = array(
-    'info' => t('Answers Teasers'),
+  $blocks['qa-questions-teasers'] = array(
+    'info' => t('Questions Teasers'),
     'cache' => DRUPAL_NO_CACHE,
   );
   $blocks['qa-filters-header'] = array(
@@ -86,8 +86,8 @@ function pw_dialogues_block_view($delta) {
   switch ($delta) {
     case 'qa':
       return pw_dialogues_questions_and_answers_block();
-    case 'qa-answer-teasers':
-      return pw_dialogues_answers_teasers_block();
+    case 'qa-questions-teasers':
+      return pw_dialogues_questions_teasers_block();
     case 'qa-filters-header':
       return pw_dialogues_questions_and_answers_filters_header_block();
     case 'qa-filters-search':
@@ -436,9 +436,9 @@ function pw_dialogues_questions_and_answers_block() {
 }
 
 /**
- * Displays the answers as teaser
+ * Displays the questions as teasers
  */
-function pw_dialogues_answers_teasers_block(){
+function pw_dialogues_questions_teasers_block(){
   $block = array();
   $parliament = _pw_get_current_parliament_term();
   $limit = 10;
@@ -455,7 +455,7 @@ function pw_dialogues_answers_teasers_block(){
 
   if(!empty($dialogue_nids)) {
     $block['subject'] = t('Answers');
-    $block['content'] = node_view_multiple(node_load_multiple($dialogue_nids), 'teaser');
+    $block['content'] = node_view_multiple(node_load_multiple($dialogue_nids), 'teaser_landing');
     $block['content']['pager'] = array(
       '#theme' => 'pager',
     );
@@ -484,7 +484,7 @@ function pw_dialogues_get_dialogue_nids($parliament = FALSE, $account = FALSE, $
     if($parliament) {
       $q->condition('field_parliament:name', $parliament->name);
     }
-    if($is_candidate){
+    if(isset($is_candidate)){
       $q->condition('field_dialogue_before_election', $is_candidate);
     }
 
@@ -514,7 +514,7 @@ function pw_dialogues_get_dialogue_nids($parliament = FALSE, $account = FALSE, $
     if($account) {
       $q->fieldCondition('field_dialogue_recipient', 'target_id', $account->uid);
     }
-    if($is_candidate) {
+    if(isset($is_candidate)) {
       $q->fieldCondition('field_dialogue_before_election', 'value', $is_candidate);
     }
     $q->range(pager_find_page(10) * 10, $limit);

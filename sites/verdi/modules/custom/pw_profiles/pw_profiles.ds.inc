@@ -28,17 +28,6 @@ function pw_profiles_ds_field_settings_info() {
         'field_delimiter' => '',
       ),
     ),
-    'dialogue_filter' => array(
-      'weight' => '22',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-        'field_delimiter' => '',
-      ),
-    ),
     'candidate_full_name' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -79,6 +68,17 @@ function pw_profiles_ds_field_settings_info() {
           'ow-def-cl' => FALSE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+        'field_delimiter' => '',
+      ),
+    ),
+    'dialogue_filter' => array(
+      'weight' => '22',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
         ),
         'field_delimiter' => '',
       ),
@@ -432,6 +432,21 @@ function pw_profiles_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'user|user|user_profile_teaser';
+  $ds_fieldsetting->entity_type = 'user';
+  $ds_fieldsetting->bundle = 'user';
+  $ds_fieldsetting->view_mode = 'user_profile_teaser';
+  $ds_fieldsetting->settings = array(
+    'candidate_full_name' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['user|user|user_profile_teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'user|user|user_slider_item';
   $ds_fieldsetting->entity_type = 'user';
   $ds_fieldsetting->bundle = 'user';
@@ -720,12 +735,12 @@ function pw_profiles_ds_layout_settings_info() {
         15 => 'twitter',
         16 => 'field_user_twitter_account',
         17 => 'field_user_title',
-        18 => 'group_candidate_tabs_info_row',
-        19 => 'field_user_fname',
-        20 => 'group_candidate_info_list',
-        21 => 'field_user_lname',
-        22 => 'field_user_birthday',
-        23 => 'group_candidate_info_sidebar',
+        18 => 'field_user_fname',
+        19 => 'group_candidate_tabs_info_row',
+        20 => 'field_user_lname',
+        21 => 'group_candidate_info_list',
+        22 => 'group_candidate_info_sidebar',
+        23 => 'field_user_birthday',
         24 => 'field_user_job_skills',
         25 => 'field_user_fraction',
         26 => 'field_verdi_fields',
@@ -733,9 +748,9 @@ function pw_profiles_ds_layout_settings_info() {
         28 => 'field_user_commitee',
         29 => 'field_user_political_roles',
         30 => 'dialogue_filter',
-        31 => 'dialogues_profile',
+        31 => 'group_candidate_tabs_questions',
         32 => 'field_user_constituency',
-        33 => 'group_candidate_tabs_questions',
+        33 => 'dialogues_profile',
         34 => 'group_candidate_tabs_info',
         35 => 'group_candidate_intro_row',
         36 => 'group_candidate_intro_right',
@@ -761,12 +776,12 @@ function pw_profiles_ds_layout_settings_info() {
       'twitter' => 'ds_content',
       'field_user_twitter_account' => 'ds_content',
       'field_user_title' => 'ds_content',
-      'group_candidate_tabs_info_row' => 'ds_content',
       'field_user_fname' => 'ds_content',
-      'group_candidate_info_list' => 'ds_content',
+      'group_candidate_tabs_info_row' => 'ds_content',
       'field_user_lname' => 'ds_content',
-      'field_user_birthday' => 'ds_content',
+      'group_candidate_info_list' => 'ds_content',
       'group_candidate_info_sidebar' => 'ds_content',
+      'field_user_birthday' => 'ds_content',
       'field_user_job_skills' => 'ds_content',
       'field_user_fraction' => 'ds_content',
       'field_verdi_fields' => 'ds_content',
@@ -774,9 +789,9 @@ function pw_profiles_ds_layout_settings_info() {
       'field_user_commitee' => 'ds_content',
       'field_user_political_roles' => 'ds_content',
       'dialogue_filter' => 'ds_content',
-      'dialogues_profile' => 'ds_content',
-      'field_user_constituency' => 'ds_content',
       'group_candidate_tabs_questions' => 'ds_content',
+      'field_user_constituency' => 'ds_content',
+      'dialogues_profile' => 'ds_content',
       'group_candidate_tabs_info' => 'ds_content',
       'group_candidate_intro_row' => 'ds_content',
       'group_candidate_intro_right' => 'ds_content',
@@ -882,6 +897,36 @@ function pw_profiles_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'user|user|user_profile_teaser';
+  $ds_layout->entity_type = 'user';
+  $ds_layout->bundle = 'user';
+  $ds_layout->view_mode = 'user_profile_teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_user_picture',
+        1 => 'candidate_full_name',
+      ),
+    ),
+    'fields' => array(
+      'field_user_picture' => 'ds_content',
+      'candidate_full_name' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['user|user|user_profile_teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'user|user|user_slider_item';
   $ds_layout->entity_type = 'user';
   $ds_layout->bundle = 'user';
@@ -946,6 +991,15 @@ function pw_profiles_ds_view_modes_info() {
     'user' => 'user',
   );
   $export['user_profile_small'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'user_profile_teaser';
+  $ds_view_mode->label = 'User Profile Teaser';
+  $ds_view_mode->entities = array(
+    'user' => 'user',
+  );
+  $export['user_profile_teaser'] = $ds_view_mode;
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;

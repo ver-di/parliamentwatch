@@ -98,6 +98,9 @@ function pw_dialogues_strongarm() {
       'dialogue_answer_teaser' => array(
         'custom_settings' => TRUE,
       ),
+      'teaser_landing' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -140,6 +143,10 @@ function pw_dialogues_strongarm() {
             'weight' => '10',
             'visible' => TRUE,
           ),
+          'teaser_landing' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'sharethis' => array(
           'full' => array(
@@ -151,6 +158,7 @@ function pw_dialogues_strongarm() {
             'visible' => FALSE,
           ),
           'dialogue_answer_teaser' => NULL,
+          'teaser_landing' => NULL,
         ),
       ),
     ),
