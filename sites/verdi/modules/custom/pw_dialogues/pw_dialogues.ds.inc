@@ -395,6 +395,32 @@ function pw_dialogues_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'comment|comment_node_dialogue|teaser';
+  $ds_layout->entity_type = 'comment';
+  $ds_layout->bundle = 'comment_node_dialogue';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_dialogue_comment_body',
+      ),
+    ),
+    'fields' => array(
+      'field_dialogue_comment_body' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['comment|comment_node_dialogue|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|dialogue|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'dialogue';
@@ -482,6 +508,24 @@ function pw_dialogues_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|dialogue|teaser'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function pw_dialogues_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'teaser';
+  $ds_view_mode->label = 'Teaser';
+  $ds_view_mode->entities = array(
+    'comment' => 'comment',
+  );
+  $export['teaser'] = $ds_view_mode;
 
   return $export;
 }
