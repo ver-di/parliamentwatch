@@ -95,6 +95,12 @@ function pw_dialogues_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'dialogue_answer_teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'teaser_landing' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -133,6 +139,14 @@ function pw_dialogues_strongarm() {
             'weight' => '42',
             'visible' => FALSE,
           ),
+          'dialogue_answer_teaser' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'teaser_landing' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
         ),
         'sharethis' => array(
           'full' => array(
@@ -143,6 +157,8 @@ function pw_dialogues_strongarm() {
             'weight' => '0',
             'visible' => FALSE,
           ),
+          'dialogue_answer_teaser' => NULL,
+          'teaser_landing' => NULL,
         ),
       ),
     ),

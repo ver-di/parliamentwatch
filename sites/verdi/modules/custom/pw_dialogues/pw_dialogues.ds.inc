@@ -175,13 +175,6 @@ function pw_dialogues_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_dialogue_recipient' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
     'field_dialogue_sender_name' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -197,6 +190,26 @@ function pw_dialogues_ds_field_settings_info() {
     ),
   );
   $export['node|dialogue|teaser'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|dialogue|teaser_landing';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'dialogue';
+  $ds_fieldsetting->view_mode = 'teaser_landing';
+  $ds_fieldsetting->settings = array(
+    'node_link' => array(
+      'weight' => '5',
+      'label' => 'above',
+      'format' => 'default',
+    ),
+    'post_date' => array(
+      'weight' => '3',
+      'label' => 'above',
+      'format' => 'ds_post_date_short',
+    ),
+  );
+  $export['node|dialogue|teaser_landing'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -300,7 +313,7 @@ function pw_dialogues_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<span class="text-magenta">[comment:field_dialogue_recipient]</span> antworte',
+      'value' => '<span class="text-magenta">[comment:author:field-user-fname] [comment:author:field-user-lname]</span> antworte',
       'format' => 'php_code',
     ),
     'use_token' => 1,
@@ -402,6 +415,32 @@ function pw_dialogues_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'comment|comment_node_dialogue|teaser';
+  $ds_layout->entity_type = 'comment';
+  $ds_layout->bundle = 'comment_node_dialogue';
+  $ds_layout->view_mode = 'teaser';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_dialogue_comment_body',
+      ),
+    ),
+    'fields' => array(
+      'field_dialogue_comment_body' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => TRUE,
+    'layout_link_attribute' => FALSE,
+    'layout_link_custom' => '',
+  );
+  $export['comment|comment_node_dialogue|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|dialogue|full';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'dialogue';
@@ -462,11 +501,10 @@ function pw_dialogues_ds_layout_settings_info() {
         1 => 'group_dialouge_question_info',
         2 => 'body',
         3 => 'field_dialogue_sender_name',
-        4 => 'group_dialouge_answer',
-        5 => 'dialogues_asked',
+        4 => 'dialogues_asked',
+        5 => 'group_dialouge_answer',
         6 => 'button_dialogue',
-        7 => 'field_dialogue_recipient',
-        8 => 'group_dialouge_answer_info',
+        7 => 'group_dialouge_answer_info',
       ),
     ),
     'fields' => array(
@@ -474,10 +512,9 @@ function pw_dialogues_ds_layout_settings_info() {
       'group_dialouge_question_info' => 'ds_content',
       'body' => 'ds_content',
       'field_dialogue_sender_name' => 'ds_content',
-      'group_dialouge_answer' => 'ds_content',
       'dialogues_asked' => 'ds_content',
+      'group_dialouge_answer' => 'ds_content',
       'button_dialogue' => 'ds_content',
-      'field_dialogue_recipient' => 'ds_content',
       'group_dialouge_answer_info' => 'ds_content',
     ),
     'classes' => array(),
@@ -491,6 +528,70 @@ function pw_dialogues_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|dialogue|teaser'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|dialogue|teaser_landing';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'dialogue';
+  $ds_layout->view_mode = 'teaser_landing';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_dialogue_recipient',
+        1 => 'field_dialogue_sender_name',
+        2 => 'post_date',
+        3 => 'body',
+        4 => 'node_link',
+      ),
+    ),
+    'fields' => array(
+      'field_dialogue_recipient' => 'ds_content',
+      'field_dialogue_sender_name' => 'ds_content',
+      'post_date' => 'ds_content',
+      'body' => 'ds_content',
+      'node_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+  );
+  $export['node|dialogue|teaser_landing'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function pw_dialogues_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'teaser';
+  $ds_view_mode->label = 'Teaser';
+  $ds_view_mode->entities = array(
+    'comment' => 'comment',
+  );
+  $export['teaser'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'teaser_landing';
+  $ds_view_mode->label = 'Teaser Landing';
+  $ds_view_mode->entities = array(
+    'comment' => 'comment',
+    'node' => 'node',
+  );
+  $export['teaser_landing'] = $ds_view_mode;
 
   return $export;
 }

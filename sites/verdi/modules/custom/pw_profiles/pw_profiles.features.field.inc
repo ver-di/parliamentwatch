@@ -512,6 +512,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '48',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '48',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -686,6 +692,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '53',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '53',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -815,6 +827,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '23',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '33',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -959,6 +977,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '18',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '18',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1078,6 +1102,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '39',
         ),
         'user_profile_small' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '44',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
@@ -1234,6 +1264,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '26',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '26',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1383,6 +1419,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '28',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '28',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1510,6 +1552,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '34',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '34',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -1631,6 +1679,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '46',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '51',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1799,6 +1853,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '21',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '32',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -1983,6 +2043,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '50',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '50',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2132,6 +2198,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '34',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '40',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -2364,6 +2436,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '21',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '21',
+        ),
         'user_search' => array(
           'label' => 'above',
           'module' => 'text',
@@ -2561,6 +2639,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '23',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '23',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -2681,6 +2765,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '37',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '42',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -2807,6 +2897,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '44',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '49',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -2983,6 +3079,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '22',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '22',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3148,6 +3250,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '37',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '37',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3285,6 +3393,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '17',
         ),
         'user_profile_small' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '15',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
@@ -3456,6 +3570,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'taxonomy_term_reference_link',
           'weight' => '2',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '2',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3603,6 +3723,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'taxonomy_term_reference_link',
           'weight' => '3',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '3',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -3725,6 +3851,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '25',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '35',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -3915,6 +4047,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '20',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '20',
+        ),
         'user_search' => array(
           'label' => 'above',
           'module' => 'text',
@@ -4098,6 +4236,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '45',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '45',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -4262,6 +4406,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '50',
         ),
         'user_profile_small' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '55',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
@@ -4505,6 +4655,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '39',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '39',
+        ),
         'user_search' => array(
           'label' => 'above',
           'module' => 'taxonomy',
@@ -4641,6 +4797,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '20',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '31',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -4854,6 +5016,17 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'image',
           'weight' => '0',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'field_delimiter' => '',
+            'image_link' => '',
+            'image_style' => 'pw_thumbnail_large',
+          ),
+          'type' => 'image',
+          'weight' => '0',
+        ),
         'user_search' => array(
           'label' => 'above',
           'module' => 'image',
@@ -5034,6 +5207,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '14',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '14',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -5206,6 +5385,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '42',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '47',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -5390,6 +5575,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'type' => 'hidden',
           'weight' => '27',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '27',
+        ),
         'user_search' => array(
           'label' => 'hidden',
           'settings' => array(),
@@ -5513,6 +5704,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '41',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '46',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -5675,6 +5872,12 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'weight' => '18',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '30',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -5862,6 +6065,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '54',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '54',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -5982,6 +6191,12 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '26',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '36',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -6171,6 +6386,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '29',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '29',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -6270,6 +6491,12 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '1',
         ),
         'user_profile_small' => array(
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '13',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'hidden',
           'settings' => array(),
           'type' => 'hidden',
@@ -6434,6 +6661,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '38',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '38',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -6573,6 +6806,12 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '36',
         ),
         'user_profile_small' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '41',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
@@ -6733,6 +6972,12 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '10',
         ),
         'user_profile_small' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '19',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',
@@ -6916,6 +7161,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '17',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '17',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -7084,6 +7335,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '52',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '52',
+        ),
         'user_search' => array(
           'label' => 'above',
           'settings' => array(),
@@ -7201,6 +7458,12 @@ $entity_field[0][\'value\'] = $result;',
           'type' => 'hidden',
           'weight' => '24',
         ),
+        'user_profile_teaser' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '24',
+        ),
         'user_slider_item' => array(
           'label' => 'inline',
           'settings' => array(),
@@ -7293,6 +7556,12 @@ $entity_field[0][\'value\'] = $result;',
           'weight' => '32',
         ),
         'user_profile_small' => array(
+          'label' => 'inline',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '25',
+        ),
+        'user_profile_teaser' => array(
           'label' => 'inline',
           'settings' => array(),
           'type' => 'hidden',

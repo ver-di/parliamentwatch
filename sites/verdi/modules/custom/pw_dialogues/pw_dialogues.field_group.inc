@@ -22,9 +22,7 @@ function pw_dialogues_field_group_info() {
   $field_group->data = array(
     'label' => 'Dialouge Answer Info',
     'weight' => '22',
-    'children' => array(
-      0 => 'field_dialogue_recipient',
-    ),
+    'children' => array(),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Dialouge Answer Info',
