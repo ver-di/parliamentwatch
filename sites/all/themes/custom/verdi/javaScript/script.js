@@ -139,7 +139,7 @@ $(document).ready(function() {
         var filterValue = $(this).attr('data-kassen-filter');
 
         // Show Swiper
-        $('.candidate-teaser .swiper-container').show();
+        $('.candidate-teaser .swiper-container, .candidate-teaser .swiper-button-prev, .candidate-teaser .swiper-button-next').show();
 
         // Filter-button active style
         $('[data-kassen-filter]').removeClass('active');

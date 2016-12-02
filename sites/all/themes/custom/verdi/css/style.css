@@ -6763,7 +6763,9 @@ mark {
   margin-bottom: 30px;
   position: relative;
 }
-.candidate-teaser .swiper-container {
+.candidate-teaser .swiper-container,
+.candidate-teaser .swiper-button-next,
+.candidate-teaser .swiper-button-prev {
   display: none;
 }
 .candidate-teaser .candidate-teaser-item {
