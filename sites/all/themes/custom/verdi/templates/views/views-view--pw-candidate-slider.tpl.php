@@ -57,6 +57,8 @@
         <div class="swiper-wrapper">
           <?php print $rows; ?>
         </div>
+          <div class="swiper-button-prev"><i class="fa fa-angle-left"></i></div>
+          <div class="swiper-button-next"><i class="fa fa-angle-right"></i></div>
       </div>
     <?php elseif ($empty): ?>
       <div class="view-empty">
@@ -90,8 +92,7 @@
       </div>
     <?php endif; ?>
 
-    <div class="swiper-button-prev"><i class="fa fa-angle-left"></i></div>
-    <div class="swiper-button-next"><i class="fa fa-angle-right"></i></div>
+
 
   </div><?php /* class view */ ?>
 </div>

@@ -138,6 +138,9 @@ $(document).ready(function() {
     $('[data-kassen-filter]').click(function(event) {
         var filterValue = $(this).attr('data-kassen-filter');
 
+        // Show Swiper
+        $('.candidate-teaser .swiper-container').show();
+
         // Filter-button active style
         $('[data-kassen-filter]').removeClass('active');
         $(this).addClass('active');
