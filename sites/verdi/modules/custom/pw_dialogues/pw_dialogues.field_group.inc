@@ -76,10 +76,10 @@ function pw_dialogues_field_group_info() {
   $field_group->entity_type = 'node';
   $field_group->bundle = 'dialogue';
   $field_group->mode = 'teaser';
-  $field_group->parent_name = 'group_dialouge_question';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dialouge Question Info',
-    'weight' => '1',
+    'weight' => '0',
     'children' => array(
       0 => 'field_dialogue_sender_name',
       1 => 'dialogues_asked',
@@ -102,6 +102,37 @@ function pw_dialogues_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_dialouge_question_info|node|dialogue|teaser_landing';
+  $field_group->group_name = 'group_dialouge_question_info';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dialogue';
+  $field_group->mode = 'teaser_landing';
+  $field_group->parent_name = 'group_dialouge_question';
+  $field_group->data = array(
+    'label' => 'Dialouge Question Info',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_dialogue_sender_name',
+      1 => 'dialogues_asked',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Dialouge Question Info',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'date',
+        'element' => 'p',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_dialouge_question_info|node|dialogue|teaser_landing'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_dialouge_question|node|dialogue|teaser';
   $field_group->group_name = 'group_dialouge_question';
   $field_group->entity_type = 'node';
@@ -110,12 +141,9 @@ function pw_dialogues_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Dialouge Question',
-    'weight' => '0',
+    'weight' => '4',
     'children' => array(
-      0 => 'body',
-      1 => 'button_dialogue',
-      2 => 'group_dialouge_answer',
-      3 => 'group_dialouge_question_info',
+      0 => 'group_dialouge_answer',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -131,6 +159,38 @@ function pw_dialogues_field_group_info() {
     ),
   );
   $field_groups['group_dialouge_question|node|dialogue|teaser'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_dialouge_question|node|dialogue|teaser_landing';
+  $field_group->group_name = 'group_dialouge_question';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'dialogue';
+  $field_group->mode = 'teaser_landing';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Dialouge Question',
+    'weight' => '1',
+    'children' => array(
+      0 => 'body',
+      1 => 'node_link',
+      2 => 'group_dialouge_question_info',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Dialouge Question',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'question-teaser-item-content',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+      ),
+    ),
+  );
+  $field_groups['group_dialouge_question|node|dialogue|teaser_landing'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */

@@ -141,7 +141,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_profile' => array(
-            'weight' => '38',
+            'weight' => '40',
             'visible' => FALSE,
           ),
           'user_profile_small' => array(
@@ -149,7 +149,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_profile_teaser' => array(
-            'weight' => '43',
+            'weight' => '45',
             'visible' => FALSE,
           ),
         ),
@@ -223,7 +223,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_profile' => array(
-            'weight' => '51',
+            'weight' => '53',
             'visible' => FALSE,
           ),
           'user_profile_small' => array(
@@ -231,7 +231,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_profile_teaser' => array(
-            'weight' => '56',
+            'weight' => '57',
             'visible' => FALSE,
           ),
         ),
@@ -265,7 +265,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_profile' => array(
-            'weight' => '19',
+            'weight' => '21',
             'visible' => FALSE,
           ),
           'user_profile_small' => array(
@@ -273,7 +273,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_profile_teaser' => array(
-            'weight' => '16',
+            'weight' => '18',
             'visible' => FALSE,
           ),
         ),
