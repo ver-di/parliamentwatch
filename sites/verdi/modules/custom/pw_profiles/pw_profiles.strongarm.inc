@@ -137,7 +137,7 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'user_slider_item' => array(
-            'weight' => '39',
+            'weight' => '44',
             'visible' => FALSE,
           ),
           'user_profile' => array(
@@ -217,7 +217,10 @@ function pw_profiles_strongarm() {
             'visible' => FALSE,
           ),
           'full' => NULL,
-          'user_slider_item' => NULL,
+          'user_slider_item' => array(
+            'weight' => '55',
+            'visible' => FALSE,
+          ),
           'default' => array(
             'weight' => '38',
             'visible' => FALSE,
@@ -261,7 +264,7 @@ function pw_profiles_strongarm() {
             'visible' => TRUE,
           ),
           'user_slider_item' => array(
-            'weight' => '9',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'user_profile' => array(

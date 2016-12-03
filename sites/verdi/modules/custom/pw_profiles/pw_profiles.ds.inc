@@ -503,11 +503,6 @@ function pw_profiles_ds_field_settings_info() {
         'field_delimiter' => '',
       ),
     ),
-    'candidate_sl_stats_questions_get' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'candidate_full_name' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -523,6 +518,18 @@ function pw_profiles_ds_field_settings_info() {
           'fi-odd-even' => FALSE,
         ),
         'field_delimiter' => '',
+      ),
+    ),
+    'candidate_sl_stats_questions_get' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+    'field_user_gender' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
       ),
     ),
     'field_user_list' => array(
@@ -1009,8 +1016,9 @@ function pw_profiles_ds_layout_settings_info() {
         2 => 'group_candidate_slider_info',
         3 => 'candidate_sl_stats_questions_get',
         4 => 'button_candidate',
-        5 => 'field_user_list',
-        6 => 'field_user_list_position',
+        5 => 'field_user_gender',
+        6 => 'field_user_list',
+        7 => 'field_user_list_position',
       ),
     ),
     'fields' => array(
@@ -1019,6 +1027,7 @@ function pw_profiles_ds_layout_settings_info() {
       'group_candidate_slider_info' => 'ds_content',
       'candidate_sl_stats_questions_get' => 'ds_content',
       'button_candidate' => 'ds_content',
+      'field_user_gender' => 'ds_content',
       'field_user_list' => 'ds_content',
       'field_user_list_position' => 'ds_content',
     ),
