@@ -133,7 +133,6 @@ function pw_frontpage_header_strongarm() {
   $strongarm->name = 'node_options_frontpage_header';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_frontpage_header'] = $strongarm;
 
@@ -150,6 +149,13 @@ function pw_frontpage_header_strongarm() {
   $strongarm->name = 'node_submitted_frontpage_header';
   $strongarm->value = 0;
   $export['node_submitted_frontpage_header'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_frontpage_header_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_frontpage_header_pattern'] = $strongarm;
 
   return $export;
 }
