@@ -535,7 +535,13 @@ function pw_profiles_ds_field_settings_info() {
     'field_user_list' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_reset',
+          'func' => 'theme_ds_field_expert',
+          'fi' => TRUE,
+          'fi-el' => 'span',
+          'fi-cl' => 'text-magenta',
+          'fi-at' => '',
+          'fi-def-at' => FALSE,
+          'fi-odd-even' => FALSE,
         ),
       ),
     ),
@@ -1034,6 +1040,7 @@ function pw_profiles_ds_layout_settings_info() {
     'classes' => array(),
     'wrappers' => array(
       'ds_content' => 'div',
+      'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

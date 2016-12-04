@@ -150,7 +150,7 @@ $(document).ready(function() {
 
         // Check for filterd Items and show them
         $('.candidate-teaser .swiper-slide').each(function( key, value ) {
-            var filterdItem = $(this).children('.candidate-teaser-item').children('p').children('a').text().substring(6).replace(/ /g,"_").replace(/-/g,"_").toLowerCase();
+            var filterdItem = $(this).children('.candidate-teaser-item').children('p').children('.text-magenta').text().substring(6).replace(/ /g,"_").replace(/-/g,"_").toLowerCase();
             if (filterdItem == 'dak_gesundheit' && filterValue == 'dak_gesundheit') {
                 $(this).show();
             }

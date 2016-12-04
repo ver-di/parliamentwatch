@@ -6863,6 +6863,7 @@ mark {
   font-weight: 500;
   color: #444444;
   margin: 0;
+  padding: 0;
 }
 .candidate-teaser .swiper-button-next,
 .candidate-teaser .swiper-button-prev {

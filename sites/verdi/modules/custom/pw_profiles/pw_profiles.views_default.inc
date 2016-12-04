@@ -81,6 +81,10 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Sort criterion: User: List Position (field_user_list_position) */
+  $handler->display->display_options['sorts']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
+  $handler->display->display_options['sorts']['field_user_list_position_tid']['table'] = 'field_data_field_user_list_position';
+  $handler->display->display_options['sorts']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
   /* Filter criterion: User: Active */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';

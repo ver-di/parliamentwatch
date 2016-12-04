@@ -3591,7 +3591,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '8',
         ),
       ),
