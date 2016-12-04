@@ -110,6 +110,9 @@ function debounce( fn, threshold ) {
 
 
 $(document).ready(function() {
+    /**
+     * Frontpage
+     */
 
     // frontpage header
 
@@ -121,9 +124,6 @@ $(document).ready(function() {
     });
     $('#frontpage-slider .swiper-slide-content-wrapper').matchHeight();
 
-    // question modal
-
-    $('.js-select2').select2();
 
     // insurance-filter (Kassen-Filter)
     $('.kassen-filter-item').matchHeight();
@@ -182,6 +182,16 @@ $(document).ready(function() {
     $('#candidate_search_input').keyup( debounce( function() {
     }, 200 ) );
 
+
+    // Frontpage: Recent Questions & Answers
+
+    $(".question-teaser-item .question").dotdotdot({
+        watch: true,
+        callback: function( isTruncated, orgContent ) {
+            $('.question-teaser-item').matchHeight();
+        }
+    });
+
     // Gauges
     var opts = {
         lines: 12,
@@ -213,5 +223,9 @@ $(document).ready(function() {
         return false;
     });
 
+
+    // question modal
+
+    $('.js-select2').select2();
 });
 

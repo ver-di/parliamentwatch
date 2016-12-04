@@ -56,6 +56,7 @@ scripts[] = 'javaScript/contrib/gauge.min.js'
 scripts[] = 'javaScript/contrib/select2.min.js'
 scripts[] = 'javaScript/contrib/swiper.jquery.min.js'
 scripts[] = 'javaScript/contrib/jquery.mark.min.js'
+scripts[] = 'javaScript/contrib/jquery.dotdotdot.min.js'
 scripts[] = 'javaScript/contrib/jquery.matchHeight-min.js'
 scripts[] = 'javaScript/contrib/isotope.pkgd.min.js'
 
