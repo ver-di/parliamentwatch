@@ -1199,7 +1199,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '20',
         ),
         'full' => array(
@@ -1354,7 +1354,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '23',
         ),
         'full' => array(
@@ -2585,7 +2585,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '17',
         ),
         'full' => array(
@@ -3513,7 +3513,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '3',
         ),
         'full' => array(
@@ -3561,7 +3561,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '9',
         ),
         'user_profile_small' => array(
@@ -3666,7 +3666,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '5',
         ),
         'full' => array(
@@ -3714,7 +3714,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '10',
         ),
         'user_profile_small' => array(
@@ -5007,7 +5007,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
             'image_link' => '',
-            'image_style' => '',
+            'image_style' => 'pw_portrait_large',
           ),
           'type' => 'image',
           'weight' => '3',
@@ -5528,7 +5528,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '21',
         ),
         'full' => array(
@@ -6480,7 +6480,7 @@ $entity_field[0][\'value\'] = $result;',
             'field_delimiter' => '',
           ),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -7441,7 +7441,7 @@ $entity_field[0][\'value\'] = $result;',
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '18',
         ),
         'full' => array(
@@ -7544,7 +7544,7 @@ $entity_field[0][\'value\'] = $result;',
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '19',
         ),
         'full' => array(

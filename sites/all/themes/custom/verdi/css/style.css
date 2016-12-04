@@ -6935,7 +6935,7 @@ mark {
   .candidate-intro .h1,
   .candidate-intro h1,
   .candidate-intro p {
-    padding-right: 130px;
+    padding-right: 160px;
   }
 }
 .candidate-intro .h1,
@@ -7013,6 +7013,9 @@ mark {
 }
 .candidate-intro blockquote + .candidate-detail-stats {
   margin-top: 0;
+}
+.candidate-intro-small .btn-primary {
+  top: 10px;
 }
 .candidate-detail {
   color: #444444;
@@ -7233,7 +7236,7 @@ mark {
 }
 @media (min-width: 768px) {
   .question-detail .h1 {
-    padding-right: 130px;
+    padding-right: 160px;
   }
 }
 .question-detail .question-intro {

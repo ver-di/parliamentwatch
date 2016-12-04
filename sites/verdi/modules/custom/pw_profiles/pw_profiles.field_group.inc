@@ -190,9 +190,10 @@ function pw_profiles_field_group_info() {
     'weight' => '45',
     'children' => array(
       0 => 'field_user_quote',
-      1 => 'candidate_stats_questions_get',
-      2 => 'group_candidate_intro_info',
-      3 => 'group_user_name',
+      1 => 'button_modal_question',
+      2 => 'candidate_stats_questions_get',
+      3 => 'group_candidate_intro_info',
+      4 => 'group_user_name',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -224,9 +225,10 @@ function pw_profiles_field_group_info() {
     'label' => 'Candidate Intro Left',
     'weight' => '3',
     'children' => array(
-      0 => 'candidate_stats_questions_get',
-      1 => 'group_candidate_intro_info',
-      2 => 'group_user_name',
+      0 => 'button_modal_question',
+      1 => 'candidate_stats_questions_get',
+      2 => 'group_candidate_intro_info',
+      3 => 'group_user_name',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -1161,8 +1163,7 @@ function pw_profiles_field_group_info() {
     'label' => 'Name',
     'weight' => '1',
     'children' => array(
-      0 => 'button_modal_question',
-      1 => 'candidate_full_name',
+      0 => 'candidate_full_name',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
