@@ -6318,6 +6318,10 @@ mark {
   line-height: 29px;
   color: #444444;
 }
+.front .node-type-page #content .block-system {
+  max-width: none;
+  padding: 0;
+}
 #footer {
   background: #f1efea;
   margin-top: 50px;
