@@ -1519,12 +1519,9 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'list',
-          'settings' => array(
-            'field_delimiter' => '',
-          ),
-          'type' => 'list_default',
-          'weight' => '4',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
         ),
         'parliament_logo' => array(
           'label' => 'hidden',
@@ -1599,11 +1596,8 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-          ),
-          'type' => 'text_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '8',
         ),
         'parliament_logo' => array(
@@ -1719,12 +1713,9 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'text',
-          'settings' => array(
-            'field_delimiter' => '',
-          ),
-          'type' => 'text_default',
-          'weight' => '6',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '7',
         ),
         'parliament_logo' => array(
           'label' => 'hidden',
@@ -1841,18 +1832,9 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'field_delimiter' => '',
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_remaining_days' => FALSE,
-          ),
-          'type' => 'date_default',
-          'weight' => '2',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'parliament_logo' => array(
           'label' => 'hidden',
@@ -1940,12 +1922,9 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'list',
-          'settings' => array(
-            'field_delimiter' => '',
-          ),
-          'type' => 'list_default',
-          'weight' => '5',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'parliament_logo' => array(
           'label' => 'hidden',
@@ -2012,14 +1991,18 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'image',
+          'module' => 'colorbox',
           'settings' => array(
+            'colorbox_caption' => 'auto',
+            'colorbox_caption_custom' => '',
+            'colorbox_gallery' => 'post',
+            'colorbox_gallery_custom' => '',
+            'colorbox_image_style' => '',
+            'colorbox_node_style' => '',
             'field_delimiter' => '',
-            'image_link' => '',
-            'image_style' => '',
           ),
-          'type' => 'image',
-          'weight' => '10',
+          'type' => 'colorbox',
+          'weight' => '0',
         ),
         'parliament_logo' => array(
           'label' => 'hidden',
@@ -2102,17 +2085,8 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'date',
-          'settings' => array(
-            'field_delimiter' => '',
-            'format_type' => 'long',
-            'fromto' => 'both',
-            'multiple_from' => '',
-            'multiple_number' => '',
-            'multiple_to' => '',
-            'show_remaining_days' => FALSE,
-          ),
-          'type' => 'date_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '1',
         ),
         'full' => array(
@@ -2212,15 +2186,8 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'field_delimiter' => '',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '3',
         ),
         'parliament_logo' => array(
@@ -2298,11 +2265,8 @@ function pw_globals_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
-          'settings' => array(
-            'field_delimiter' => '',
-          ),
-          'type' => 'list_default',
+          'settings' => array(),
+          'type' => 'hidden',
           'weight' => '9',
         ),
         'parliament_logo' => array(
