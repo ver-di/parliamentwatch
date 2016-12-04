@@ -14,7 +14,6 @@
     <div class="question-item">
         <?php print $ds_content; ?>
         <div class="question-item-answer">
-            <p class="small"><i class="fa fa-reply"></i> <span class="text-magenta">Maria Musterfrau</span> antwortete am 26.12.2016</p>
             <?php print render($content['comments']); ?>
         </div>
         <?php print render($content['button_dialogue']); ?>
