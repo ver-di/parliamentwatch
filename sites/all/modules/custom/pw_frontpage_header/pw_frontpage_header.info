@@ -1,7 +1,8 @@
 name = PW Frontpage Header
 core = 7.x
 package = Features
-version = 7.x-1.0-20161109
+php = 5.2.4
+version = 7.x-1.0-20161204
 project = pw_frontpage_header
 dependencies[] = features
 dependencies[] = link
@@ -29,4 +30,6 @@ features[variable][] = menu_parent_frontpage_header
 features[variable][] = node_options_frontpage_header
 features[variable][] = node_preview_frontpage_header
 features[variable][] = node_submitted_frontpage_header
+features[variable][] = pathauto_node_frontpage_header_pattern
 features[views_view][] = pw_frontpage_header
+mtime = 1479979061
