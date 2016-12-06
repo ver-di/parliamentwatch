@@ -927,7 +927,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'show_remaining_days' => 0,
           ),
           'type' => 'date_default',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'full' => array(
           'label' => 'above',
@@ -999,14 +999,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_birthday',
-      'label' => 'Birthday',
+      'label' => 'Geburtstag',
       'required' => 0,
       'settings' => array(
         'default_value' => 'blank',
         'default_value2' => 'same',
         'default_value_code' => '',
         'default_value_code2' => '',
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -1018,7 +1017,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'input_format' => 'd.m.Y - H:i:s',
           'input_format_custom' => '',
           'label_position' => 'above',
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'no_fieldset' => 0,
           'text_parts' => array(),
           'year_range' => '-70:+0',
         ),
@@ -1355,7 +1354,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '23',
+          'weight' => '22',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1706,14 +1705,14 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_education',
-      'label' => 'Education',
+      'label' => 'Ausbildung',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
+            'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
-            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -1722,14 +1721,14 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'default_order_toggle' => 0,
           'default_order_wrapper' => array(
             'formats' => array(
+              'copyright' => array(
+                'weight' => '0',
+              ),
               'filtered_html' => array(
                 'weight' => '-9',
               ),
               'full_html' => array(
                 'weight' => '-8',
-              ),
-              'html_mail' => array(
-                'weight' => '0',
               ),
               'managed_content' => array(
                 'weight' => '-10',
@@ -1743,7 +1742,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'button_text' => 'Search',
           'enable' => 0,
@@ -1756,8 +1754,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'maxlength_js' => 0,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -2480,7 +2476,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
-            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -2498,9 +2493,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
               'full_html' => array(
                 'weight' => '-8',
               ),
-              'html_mail' => array(
-                'weight' => '0',
-              ),
               'managed_content' => array(
                 'weight' => '-10',
               ),
@@ -2513,7 +2505,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'button_text' => 'Search',
           'enable' => 0,
@@ -2526,8 +2517,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'maxlength_js' => 0,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '25',
         ),
         'type' => 'text_textfield',
@@ -3018,7 +3007,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'field_delimiter' => '',
           ),
           'type' => 'text_default',
-          'weight' => '16',
+          'weight' => '15',
         ),
         'full' => array(
           'label' => 'inline',
@@ -3423,7 +3412,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_links_more',
-      'label' => 'External Links',
+      'label' => 'Meine Links',
       'required' => 0,
       'settings' => array(
         'absolute_url' => 1,
@@ -3570,7 +3559,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '2',
         ),
         'user_profile_teaser' => array(
@@ -3723,7 +3712,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'settings' => array(
             'field_delimiter' => '',
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '3',
         ),
         'user_profile_teaser' => array(
@@ -4094,7 +4083,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
-            'html_mail' => 0,
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -4112,9 +4100,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
               'full_html' => array(
                 'weight' => '-8',
               ),
-              'html_mail' => array(
-                'weight' => '0',
-              ),
               'managed_content' => array(
                 'weight' => '-10',
               ),
@@ -4127,7 +4112,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'button_text' => 'Search',
           'enable' => 0,
@@ -4140,8 +4124,6 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'maxlength_js' => 0,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -6469,7 +6451,11 @@ $entity_field[0][\'value\'] = $result;',
     ),
     'field_instance' => array(
       'bundle' => 'user',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => 'Wir sind die Guten!',
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -6519,8 +6505,8 @@ $entity_field[0][\'value\'] = $result;',
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_quote',
-      'label' => 'Quote',
-      'required' => 0,
+      'label' => 'Mein Motto',
+      'required' => 1,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
@@ -6562,7 +6548,7 @@ $entity_field[0][\'value\'] = $result;',
           'profile' => '',
         ),
         'text_processing' => '0',
-        'user_register_form' => 0,
+        'user_register_form' => 1,
       ),
       'widget' => array(
         'active' => 1,
@@ -7014,7 +7000,6 @@ $entity_field[0][\'value\'] = $result;',
             'copyright' => 0,
             'filtered_html' => 'filtered_html',
             'full_html' => 'full_html',
-            'html_mail' => 'html_mail',
             'managed_content' => 'managed_content',
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
@@ -7032,9 +7017,6 @@ $entity_field[0][\'value\'] = $result;',
               'full_html' => array(
                 'weight' => '-8',
               ),
-              'html_mail' => array(
-                'weight' => '0',
-              ),
               'managed_content' => array(
                 'weight' => '-10',
               ),
@@ -7047,7 +7029,6 @@ $entity_field[0][\'value\'] = $result;',
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'button_text' => 'Search',
           'enable' => 0,
@@ -7060,8 +7041,6 @@ $entity_field[0][\'value\'] = $result;',
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'maxlength_js' => 0,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '25',
         ),
         'type' => 'text_textfield',
@@ -7442,7 +7421,7 @@ $entity_field[0][\'value\'] = $result;',
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '18',
+          'weight' => '19',
         ),
         'full' => array(
           'label' => 'inline',
@@ -7545,7 +7524,7 @@ $entity_field[0][\'value\'] = $result;',
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '19',
+          'weight' => '18',
         ),
         'full' => array(
           'label' => 'inline',
@@ -7604,8 +7583,8 @@ $entity_field[0][\'value\'] = $result;',
   t('Age');
   t('Alt Text');
   t('Answers Give');
+  t('Ausbildung');
   t('Because system user roles are not revisionable, this fields stores a copy of the user role.');
-  t('Birthday');
   t('Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). Aus technischen Gründen kann es bis zu 30min dauern, bis diese Information in Ihrem Profil angezeigt wird.');
   t('Children');
   t('Committee');
@@ -7615,12 +7594,11 @@ $entity_field[0][\'value\'] = $result;',
   t('Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
   t('Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
   t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
-  t('Education');
-  t('External Links');
   t('External URL');
   t('First Letter of Lastname');
   t('First Name');
   t('Fraction');
+  t('Geburtstag');
   t('Gender');
   t('Hier können Sie beliebige Links ergänzen, die in Ihrem Profil öffentlich angezeigt werden sollen.');
   t('Hier können Sie ein Foto für Ihr Profil hochladen. Klicken Sie dazu auf "Auswählen", suchen Sie dann eine Bilddatei von Ihrem Computer aus und klicken Sie auf "Abschicken".');
@@ -7633,6 +7611,8 @@ $entity_field[0][\'value\'] = $result;',
   t('List Position');
   t('List Won');
   t('Marriage status');
+  t('Mein Motto');
+  t('Meine Links');
   t('Parliament');
   t('Party');
   t('Phone');
@@ -7648,7 +7628,6 @@ $entity_field[0][\'value\'] = $result;',
   t('Question Form Closed By Reason');
   t('QuestionAnswerRatio');
   t('Questions Get');
-  t('Quote');
   t('Retired Parliament');
   t('Roles (revisionable)');
   t('Title');

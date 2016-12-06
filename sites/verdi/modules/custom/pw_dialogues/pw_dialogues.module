@@ -355,7 +355,7 @@ function pw_dialogues_preprocess_node(&$variables) {
     drupal_add_js('misc/collapse.js');
     $variables['classes_array'][] = 'question';
     $variables['submitted'] = format_date($node->created, 'date_only_short');
-    $variables['title'] = t('Question from @name', array('@name' => $node->field_dialogue_sender_name[LANGUAGE_NONE][0]['safe_value']));
+    //$variables['title'] = t('Question from @name', array('@name' => $node->field_dialogue_sender_name[LANGUAGE_NONE][0]['safe_value']));
     $variables['title_attributes_array']['class'][] = 'bubble';
   }
 }
@@ -424,7 +424,7 @@ function pw_dialogues_questions_and_answers_block() {
   pager_default_initialize(sizeof($dialogue_nids), $limit);
 
   if(!empty($dialogue_nids)) {
-    $block['subject'] = t('Questions to @name', array('@name' => _pw_get_fullname($account)));
+    $block['subject'] = '<none>'; #t('Questions to @name', array('@name' => _pw_get_fullname($account)));
     $block['content'] = node_view_multiple(node_load_multiple($dialogue_nids), 'teaser');
     $block['content']['pager'] = array(
       '#theme' => 'pager',

@@ -78,6 +78,14 @@ function pw_dialogues_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'comment_node_dialogue';
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
+    'author_full_name' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'post_date' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -506,12 +514,14 @@ function pw_dialogues_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'author',
-        1 => 'post_date',
-        2 => 'field_dialogue_comment_body',
+        0 => 'author_full_name',
+        1 => 'author',
+        2 => 'post_date',
+        3 => 'field_dialogue_comment_body',
       ),
     ),
     'fields' => array(
+      'author_full_name' => 'ds_content',
       'author' => 'ds_content',
       'post_date' => 'ds_content',
       'field_dialogue_comment_body' => 'ds_content',
@@ -590,18 +600,18 @@ function pw_dialogues_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'group_dialouge_question_info',
         1 => 'body',
-        2 => 'field_dialogue_sender_name',
+        3 => 'field_dialogue_sender_name',
         4 => 'dialogues_asked',
       ),
       'ds_hidden' => array(
-        3 => 'button_dialogue',
+        2 => 'button_dialogue',
       ),
     ),
     'fields' => array(
       'group_dialouge_question_info' => 'ds_content',
       'body' => 'ds_content',
-      'field_dialogue_sender_name' => 'ds_content',
       'button_dialogue' => 'ds_hidden',
+      'field_dialogue_sender_name' => 'ds_content',
       'dialogues_asked' => 'ds_content',
     ),
     'classes' => array(),

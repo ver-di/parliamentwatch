@@ -244,8 +244,6 @@ function pw_profiles_user_default_permissions() {
     'name' => 'create field_user_lname',
     'roles' => array(
       0 => 'administrator',
-      1 => 'anonymous user',
-      2 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -981,7 +979,6 @@ function pw_profiles_user_default_permissions() {
     'roles' => array(
       0 => 'Content Manager',
       1 => 'administrator',
-      2 => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
@@ -1082,11 +1079,8 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_lname'] = array(
     'name' => 'edit own field_user_lname',
     'roles' => array(
-      0 => 'Candidate',
-      1 => 'Content Manager',
-      2 => 'Politician',
-      3 => 'administrator',
-      4 => 'authenticated user',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1132,10 +1126,8 @@ function pw_profiles_user_default_permissions() {
   $permissions['edit own field_user_picture'] = array(
     'name' => 'edit own field_user_picture',
     'roles' => array(
-      0 => 'Candidate',
-      1 => 'Content Manager',
-      2 => 'Politician',
-      3 => 'administrator',
+      0 => 'Content Manager',
+      1 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1235,9 +1227,7 @@ function pw_profiles_user_default_permissions() {
   // Exported permission: edit own field_user_title.
   $permissions['edit own field_user_title'] = array(
     'name' => 'edit own field_user_title',
-    'roles' => array(
-      0 => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 
