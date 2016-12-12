@@ -5962,6 +5962,19 @@ svg {
   border-radius: 50%;
   box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.2);
 }
+.small-logo {
+  background-image: url("../images/verdi_logo_small.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+@media (min-width: 768px) {
+  .small-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
 figcaption {
   padding: 5px 0;
 }
@@ -6897,14 +6910,14 @@ mark {
   }
 }
 #frontpage-slider .swiper-pagination {
-  right: 20px;
-  bottom: 25px;
+  right: 30px;
+  bottom: 30px;
   left: auto;
   width: auto;
 }
 @media (min-width: 768px) {
   #frontpage-slider .swiper-pagination {
-    bottom: 15px;
+    bottom: 30px;
   }
 }
 #frontpage-slider .swiper-pagination .swiper-pagination-bullet {
@@ -6918,6 +6931,29 @@ mark {
 }
 #frontpage-slider .swiper-pagination .swiper-pagination-bullet-active {
   background: #fff;
+}
+#frontpage-slider .swiper-pagination:after {
+  content: '';
+  left: -55px;
+  top: -12px;
+  position: absolute;
+  background-image: url("../images/verdi_logo_small.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+@media (min-width: 768px) {
+  #frontpage-slider .swiper-pagination:after {
+    left: -65px;
+    top: -15px;
+  }
+}
+@media (min-width: 768px) {
+  #frontpage-slider .swiper-pagination:after {
+    width: 50px;
+    height: 50px;
+  }
 }
 .viola-teaser {
   margin-bottom: 30px;
@@ -7921,4 +7957,10 @@ fieldset[disabled] .node-webform.modal .form-actions .button-primary.focus {
     width: auto;
     display: inline-block;
   }
+}
+.node-webform.modal .collapsing .panel.padded,
+.node-webform.modal .collapse .panel.padded {
+  padding: 10px;
+  margin-bottom: 20px;
+  position: relative;
 }

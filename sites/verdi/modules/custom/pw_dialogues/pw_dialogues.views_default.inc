@@ -1872,6 +1872,14 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'comment';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = '<p class="text-center">Bisher wurde noch keine Frage eingereicht.</p>
+<p class="text-center"><a href="/node/8?recipient=[user:name]" class="btn btn-primary colorbox-node">Jetzt Frage stellen</a></p>';
+  $handler->display->display_options['empty']['area']['format'] = 'php_code';
   /* Relationship: Comment: Content */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
@@ -1916,6 +1924,8 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('<p class="text-center">Bisher wurde noch keine Frage eingereicht.</p>
+<p class="text-center"><a href="/node/8?recipient=[user:name]" class="btn btn-primary colorbox-node">Jetzt Frage stellen</a></p>'),
     t('Content'),
     t('Block'),
   );

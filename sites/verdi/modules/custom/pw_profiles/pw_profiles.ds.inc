@@ -443,6 +443,13 @@ function pw_profiles_ds_field_settings_info() {
         'field_delimiter' => '',
       ),
     ),
+    'field_user_list' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
     'field_user_list_position' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -985,8 +992,8 @@ function pw_profiles_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_user_picture',
         1 => 'candidate_full_name',
-        2 => 'group_candidate_modal_head_list',
-        3 => 'group_candidate_modal_head_info',
+        2 => 'group_candidate_modal_head_info',
+        3 => 'group_candidate_modal_head_list',
         4 => 'field_user_list',
         5 => 'field_user_list_position',
       ),
@@ -994,14 +1001,15 @@ function pw_profiles_ds_layout_settings_info() {
     'fields' => array(
       'field_user_picture' => 'ds_content',
       'candidate_full_name' => 'ds_content',
-      'group_candidate_modal_head_list' => 'ds_content',
       'group_candidate_modal_head_info' => 'ds_content',
+      'group_candidate_modal_head_list' => 'ds_content',
       'field_user_list' => 'ds_content',
       'field_user_list_position' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
       'ds_content' => 'div',
+      'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
