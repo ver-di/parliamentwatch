@@ -36,5 +36,5 @@
  * @ingroup themeable
  */
 ?>
-<p class="small"><i class="fa fa-reply"></i> <span class="text-magenta"><?php print render($content['author']); ?></span> antwortete am <?php print render($content['post_date']); ?></p>
+<p class="small"><i class="fa fa-reply"></i> <span class="text-magenta"><?php print render($content['field_dialogue_sender_fullname']); ?></span> antwortete am <?php print render($content['post_date']); ?></p>
 <?php print render($content['field_dialogue_comment_body']); ?>
