@@ -64,10 +64,9 @@ function pw_faq_field_default_fields() {
           'module' => 'text',
           'settings' => array(
             'field_delimiter' => '',
-            'trim_length' => 600,
           ),
-          'type' => 'text_summary_or_trimmed',
-          'weight' => 0,
+          'type' => 'text_default',
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'node',
