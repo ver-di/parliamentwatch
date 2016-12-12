@@ -89,12 +89,14 @@ function pw_dialogues_ds_field_settings_info() {
         'field_delimiter' => '',
       ),
     ),
-    'author' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'field_dialogue_comment_body' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_dialogue_sender_fullname' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
@@ -506,13 +508,13 @@ function pw_dialogues_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'author',
+        0 => 'field_dialogue_sender_fullname',
         1 => 'post_date',
         2 => 'field_dialogue_comment_body',
       ),
     ),
     'fields' => array(
-      'author' => 'ds_content',
+      'field_dialogue_sender_fullname' => 'ds_content',
       'post_date' => 'ds_content',
       'field_dialogue_comment_body' => 'ds_content',
     ),
@@ -590,18 +592,18 @@ function pw_dialogues_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'group_dialouge_question_info',
         1 => 'body',
-        2 => 'field_dialogue_sender_name',
+        3 => 'field_dialogue_sender_name',
         4 => 'dialogues_asked',
       ),
       'ds_hidden' => array(
-        3 => 'button_dialogue',
+        2 => 'button_dialogue',
       ),
     ),
     'fields' => array(
       'group_dialouge_question_info' => 'ds_content',
       'body' => 'ds_content',
-      'field_dialogue_sender_name' => 'ds_content',
       'button_dialogue' => 'ds_hidden',
+      'field_dialogue_sender_name' => 'ds_content',
       'dialogues_asked' => 'ds_content',
     ),
     'classes' => array(),

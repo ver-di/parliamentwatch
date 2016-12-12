@@ -98,7 +98,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 text-left small">
           <p>
-          Die Website Sozialwahlwatch.de versteht sich als Dialogplattform zwischen Kandidierenden zu den Sozialwahlen und den Wählerinnen und Wählern. Die Website ist kein Beratungsangebot für persönliche Versicherungsfälle. Sofern Sie auf der Suche nach Beratungsleistungen sind, empfehlen wir Ihnen folgende Anlaufstellen.<br>
+          Die Website Sozialversicherung.watch versteht sich als Dialogplattform zwischen Kandidierenden zu den Sozialwahlen und den Wählerinnen und Wählern. Die Website ist kein Beratungsangebot für persönliche Versicherungsfälle. Sofern Sie auf der Suche nach Beratungsleistungen sind, empfehlen wir Ihnen folgende Anlaufstellen<br>
           <a href="#" type="button" data-toggle="collapse" data-target="#question_info_anlaufstellen" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Anlaufstellen anzeigen</a>
         </p>
         <div id="question_info_anlaufstellen" class="collapse">
@@ -109,7 +109,7 @@
           </div>
         </div>
         <p>
-          Die Freischaltung von Fragen kann je nach Nutzeraufkommen u.U. einige Stunden dauern, da alle eingehenden Fragen von einem Moderatorenteam überprüft werden. Ich habe den Moderations-Codex gelesen und sichergestellt, dass meine Frage nicht gegen diesen verstößt.<br>
+          Wir gehen davon aus, dass Du den Moderationscodex gelesen hast und sicherstellst, dass Deine Frage nicht gegen diesen verstößt.<br>
           <a href="#" type="button" data-toggle="collapse" data-target="#question_info_codex" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Moderations-Codex anzeigen</a>
         </p>
         <div id="question_info_codex" class="collapse">
@@ -122,7 +122,7 @@
       </div>
       <div class="col-xs-12 col-sm-6 text-left small">
         <p>
-          Die Nutzung von Sozialwahlwatch.de ist grundsätzlich frei, eine vorherige Registrierung ist nicht erforderlich. Durch die Nutzung der Webseiten erklären Sie sich damit einverstanden, an die Nutzungsbedingungen in der jeweils geltenden Fassung gebunden zu sein.
+          Die Nutzung von Sozialversicherung.watch ist grundsätzlich frei, eine vorherige Registrierung ist nicht erforderlich. Durch die Nutzung der Webseiten erklärst Du Dich damit einverstanden, an die Nutzungsbedingungen in der jeweils geltenden Fassung gebunden zu sein.
           <a href="#" type="button" data-toggle="collapse" data-target="#question_info_nutzungsbedingungen" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Nutzungsbedingungen</a>
         </p>
         <div id="question_info_nutzungsbedingungen" class="collapse">
@@ -133,7 +133,7 @@
           </div>
         </div>
         <p>
-          Falls meine Frage nicht freigeschaltet werden kann, werde ich darüber von einem Moderator informiert. Aus Gründen der Rechtssicherheit wird Ihre IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhalten Sie in unserer
+          Falls Deine Frage nicht freigeschaltet werden kann, wirst Du darüber vom Moderationsteam informiert. Aus Gründen der Rechtssicherheit wird Deine IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhältst Du in unserer
           <a href="#" type="button" data-toggle="collapse" data-target="#question_info_datenschutz" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Datenschutzerklärung</a>
         </p>
           <div id="question_info_datenschutz" class="collapse">

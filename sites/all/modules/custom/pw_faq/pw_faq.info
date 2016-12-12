@@ -1,6 +1,7 @@
 name = PW FAQ
 core = 7.x
 package = Features
+php = 5.2.4
 version = 7.x-1.0-20161109
 project = pw_faq
 dependencies[] = features
@@ -25,4 +26,6 @@ features[variable][] = menu_parent_faq_item
 features[variable][] = node_options_faq_item
 features[variable][] = node_preview_faq_item
 features[variable][] = node_submitted_faq_item
+features[variable][] = pathauto_node_faq_item_pattern
 features[views_view][] = faq
+mtime = 1481542640
