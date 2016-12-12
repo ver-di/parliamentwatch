@@ -104,11 +104,12 @@
         }
     }
     .swiper-pagination {
-        right: 30px;
-        bottom: 30px;
+        right: 25px;
+        bottom: 25px;
         left: auto;
         width: auto;
         @media (min-width: @screen-sm-min) {
+            right: 30px;
             bottom: 30px;
         }
         .swiper-pagination-bullet {
@@ -120,17 +121,14 @@
         .swiper-pagination-bullet-active {
             background: #fff;
         }
-
         &:after {
-            content: '';
-            left: -55px;
-            top: -12px;
             @media (min-width: @screen-sm-min) {
+                position: absolute;
+                content: '';
                 left: -65px;
                 top: -15px;
+                .small-logo;
             }
-            position: absolute;
-            .small-logo;
         }
     }
 }

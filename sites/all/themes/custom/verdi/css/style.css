@@ -6913,13 +6913,14 @@ mark {
   }
 }
 #frontpage-slider .swiper-pagination {
-  right: 30px;
-  bottom: 30px;
+  right: 25px;
+  bottom: 25px;
   left: auto;
   width: auto;
 }
 @media (min-width: 768px) {
   #frontpage-slider .swiper-pagination {
+    right: 30px;
     bottom: 30px;
   }
 }
@@ -6935,24 +6936,20 @@ mark {
 #frontpage-slider .swiper-pagination .swiper-pagination-bullet-active {
   background: #fff;
 }
-#frontpage-slider .swiper-pagination:after {
-  content: '';
-  left: -55px;
-  top: -12px;
-  position: absolute;
-  background-image: url("../images/verdi_logo_small.png");
-  background-size: 100% auto;
-  background-repeat: no-repeat;
-  width: 40px;
-  height: 40px;
-}
 @media (min-width: 768px) {
   #frontpage-slider .swiper-pagination:after {
+    position: absolute;
+    content: '';
     left: -65px;
     top: -15px;
+    background-image: url("../images/verdi_logo_small.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (min-width: 768px) {
   #frontpage-slider .swiper-pagination:after {
     width: 50px;
     height: 50px;
