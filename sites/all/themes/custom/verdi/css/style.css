@@ -5938,6 +5938,9 @@ svg {
   -moz-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
+.gray-box {
+  background: #f1efea;
+}
 .circle-image {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   border: 5px solid #ffffff;

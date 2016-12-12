@@ -46,14 +46,14 @@ $('.masonry-filter .checkbox label').on( 'click', function() {
 
 
 // use value of search field to filter
-var $quicksearch = $('#question_search_input').keyup( debounce( function() {
-    qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-    $grid.isotope();
-
-    // Highlight matching Keywords
-    $(".masonry-grid").unmark();
-    $(".masonry-grid").mark($quicksearch.val());
-}, 200 ) );
+// var $quicksearch = $('#question_search_input').keyup( debounce( function() {
+//     qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+//     $grid.isotope();
+//
+//     // Highlight matching Keywords
+//     $(".masonry-grid").unmark();
+//     $(".masonry-grid").mark($quicksearch.val());
+// }, 200 ) );
 
 // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
@@ -110,6 +110,7 @@ function debounce( fn, threshold ) {
 
 
 $(document).ready(function() {
+
     /**
      * Frontpage
      */
@@ -138,7 +139,7 @@ $(document).ready(function() {
     $('[data-kassen-filter]').click(function(event) {
         var filterValue = $(this).attr('data-kassen-filter');
 
-        // Show Swiper
+        // Show Swiper if filter is pressed
         $('.candidate-teaser .swiper-container, .candidate-teaser .swiper-button-prev, .candidate-teaser .swiper-button-next').show();
 
         // Filter-button active style
@@ -179,8 +180,46 @@ $(document).ready(function() {
         return false;
     });
 
-    $('#candidate_search_input').keyup( debounce( function() {
+    // Candidate Swiper search
+    var $quicksearch = $('#candidate_search_input').keyup( debounce( function() {
+        qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+
+        console.log($quicksearch.val());
+
+        $('.candidate-teaser .swiper-slide').hide();
+
+        // Highlight matching Keywords
+        $(".candidate-teaser-item h3").unmark();
+        $(".candidate-teaser-item h3").mark($quicksearch.val(), {
+            "className": "highlight candidate-teaser-highlight",
+            "done": function(count){
+                if (count == '0') {
+                    $('.candidate-teaser-no-result').remove();
+                    $('.candidate-teaser.view .row').append('<div class="col-xs-12"><div class="candidate-teaser-no-result gray-box padded"><p class="text-center">Leider konnte kein Kandidat gefunden werden.</p></div></div>')
+                } else {
+                    $('.candidate-teaser-no-result').remove();
+                    $('.candidate-teaser-highlight').parents('.swiper-slide').show();
+                    candidateSwiper.update();
+                }
+            }
+        });
+
+        // Deselect other Filter
+        $('[data-kassen-filter]').removeClass('active');
+
+
+        // Check if input is empty
+        if (!$quicksearch.val() == '') {
+            // Show Swiper if input is filled
+            $('.candidate-teaser .swiper-container, .candidate-teaser .swiper-button-prev, .candidate-teaser .swiper-button-next').show();
+            candidateSwiper.update();
+        } else {
+            // Hide Swiper if input is empty
+            $('.candidate-teaser .swiper-container, .candidate-teaser .swiper-button-prev, .candidate-teaser .swiper-button-next, .candidate-teaser-no-result').hide();
+        }
+
     }, 200 ) );
+
 
 
     // Frontpage: Recent Questions & Answers
