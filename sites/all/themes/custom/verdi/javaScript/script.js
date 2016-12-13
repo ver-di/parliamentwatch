@@ -25,12 +25,15 @@ $.fn.gauge = function(opts) {
 // quick search regex
 var qsRegex;
 
-var $grid = $('.masonry-grid').isotope({
-    itemSelector: '.masonry-item',
-    filter: function() {
-        return qsRegex ? $(this).text().match( qsRegex ) : true;
-    }
-});
+if ($('.masonry-grid .masonry-item').length > 0) {
+    var $grid = $('.masonry-grid').isotope({
+        itemSelector: '.masonry-item',
+        filter: function() {
+            return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
+    });
+}
+
 
 // filter: Checkbox for answered questions
 $('.masonry-filter .checkbox label').on( 'click', function() {
@@ -46,14 +49,14 @@ $('.masonry-filter .checkbox label').on( 'click', function() {
 
 
 // use value of search field to filter
-// var $quicksearch = $('#question_search_input').keyup( debounce( function() {
-//     qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-//     $grid.isotope();
-//
-//     // Highlight matching Keywords
-//     $(".masonry-grid").unmark();
-//     $(".masonry-grid").mark($quicksearch.val());
-// }, 200 ) );
+var $quicksearchQuestion = $('#question_search_input').keyup( debounce( function() {
+    qsRegex = new RegExp( $quicksearchQuestion.val(), 'gi' );
+    $grid.isotope();
+
+    // Highlight matching Keywords
+    $(".masonry-grid").unmark();
+    $(".masonry-grid").mark($quicksearchQuestion.val());
+}, 200 ) );
 
 // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
