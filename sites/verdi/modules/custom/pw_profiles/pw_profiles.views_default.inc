@@ -74,6 +74,10 @@ function pw_profiles_views_default_views() {
     
 </div>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
+  /* Relationship: User: List Position (field_user_list_position) */
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['table'] = 'field_data_field_user_list_position';
+  $handler->display->display_options['relationships']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -81,10 +85,11 @@ function pw_profiles_views_default_views() {
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: User: List Position (field_user_list_position) */
-  $handler->display->display_options['sorts']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
-  $handler->display->display_options['sorts']['field_user_list_position_tid']['table'] = 'field_data_field_user_list_position';
-  $handler->display->display_options['sorts']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
+  /* Sort criterion: Taxonomy term: Name */
+  $handler->display->display_options['sorts']['name']['id'] = 'name';
+  $handler->display->display_options['sorts']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['name']['field'] = 'name';
+  $handler->display->display_options['sorts']['name']['relationship'] = 'field_user_list_position_tid';
   /* Filter criterion: User: Active */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
@@ -153,6 +158,7 @@ function pw_profiles_views_default_views() {
     </div>
     
 </div>'),
+    t('term from field_user_list_position'),
     t('Block'),
   );
   $export['pw_candidate_slider'] = $view;
