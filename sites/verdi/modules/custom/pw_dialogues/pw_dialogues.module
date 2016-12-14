@@ -53,6 +53,9 @@ function pw_dialogues_theme() {
       'template' => 'comment-placeholder',
       'render element' => 'elements',
     ),
+    'empty_dialogues' => array(
+      'template' => 'empty-dialogues',
+    ),
   );
 }
 
@@ -430,6 +433,12 @@ function pw_dialogues_questions_and_answers_block() {
       '#theme' => 'pager',
     );
     $block['content']['#attached']['js'][] = drupal_get_path('module', 'pw_dialogues') . '/pw_dialogues.js';
+  }
+  else{
+    $block['content'] = theme('empty_dialogues', array(
+      'recipient_name' => $account->name,
+      )
+    );
   }
 
   return $block;
