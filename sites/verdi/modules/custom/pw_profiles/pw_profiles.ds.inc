@@ -697,15 +697,16 @@ function pw_profiles_ds_custom_fields_info() {
       'value' => '<div class="candidate-teaser-item-stats">
     <div class="row">
         <div class="col-xs-5 candidate-teaser-item-stats-count clearfix">
-            <span class="value">[user:field_user_questions_get]</span>
-            <span class="label">Fragen</span>
+            <!--span class="value">[user:field_user_questions_get]</span-->
+            <!--span class="label">Fragen</span-->
         </div>
         <div class="col-xs-7 candidate-teaser-item-stats-countasked">
             <div class="gauge-widget">
                 <canvas class="gauge" width="45" height="45"></canvas>
-                <div class="gauge-value" data-gauge-value="[user:field_user_answers_give]">[user:field_user_answers_give]%</div>
+                <!--div class="gauge-value" data-gauge-value="[user:field_user_answers_give]">[user:field_user_answers_give]%</div-->
+                <div class="gauge-value">Stell die erste Frage!</div>
             </div>
-            <span class="label">Beantwortet</span>
+            <!--span class="label">Beantwortet</span-->
         </div>
     </div>
 </div>',
