@@ -104,18 +104,19 @@
         <div id="question_info_anlaufstellen" class="collapse">
           <div class="panel padded">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid at aut autem culpa deleniti, dicta dolore esse explicabo ipsa minus natus nisi nobis odit sed similique soluta, veritatis vitae!
+              <strong>Krankenversicherungen:</strong> Die Beratung von Versicherten ist eine Serviceaufgabe der Krankenkassen vor Ort. Bitte wende Dich an Deine Kasse. Bist Du mit einer Leistung nicht zufrieden? Dann lege schriftlich Widerspruch bei Deiner Kasse ein. Dieses Schreiben wird dann einem der zahlreichen Widerspruchausausschüsse vorgelegt werden, an denen unsere Vertreterinnen und Vertreter beteiligt sind, um Deine Interessen zu wahren.<br /><br />
+              <strong>Rentenversicherungen:</strong> Hier erreichen Sie die <a href="http://arbeitsmarkt-und-sozialpolitik.verdi.de/service/versichertenberatung" target="_blank">ver.di-Versichertenberater/-innen der Deutschen Rentenversicherung Bund</a>
             </p>
           </div>
         </div>
         <p>
           Wir gehen davon aus, dass Du den Moderationscodex gelesen hast und sicherstellst, dass Deine Frage nicht gegen diesen verstößt.<br>
-          <a href="#" type="button" data-toggle="collapse" data-target="#question_info_codex" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Moderations-Codex anzeigen</a>
+          <a href="#" type="button" data-toggle="collapse" data-target="#question_info_codex" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Moderations-Codex anzeigen</a>
         </p>
         <div id="question_info_codex" class="collapse">
           <div class="panel padded">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid at aut autem culpa deleniti, dicta dolore esse explicabo ipsa minus natus nisi nobis odit sed similique soluta, veritatis vitae!
+              <?php print render($node_codex['body']); ?>
             </p>
           </div>
         </div>
@@ -134,7 +135,7 @@
         </div>
         <p>
           Falls Deine Frage nicht freigeschaltet werden kann, wirst Du darüber vom Moderationsteam informiert. Aus Gründen der Rechtssicherheit wird Deine IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhältst Du in unserer
-          <a href="#" type="button" data-toggle="collapse" data-target="#question_info_datenschutz" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Datenschutzerklärung</a>
+          <a href="#" type="button" data-toggle="collapse" data-target="#question_info_datenschutz" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Datenschutzerklärung</a>
         </p>
           <div id="question_info_datenschutz" class="collapse">
             <div class="panel padded">

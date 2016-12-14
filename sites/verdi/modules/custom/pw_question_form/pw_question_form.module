@@ -125,6 +125,10 @@ function pw_question_form_preprocess_node(&$variables) {
       $fullname = _pw_get_fullname($user);
       $variables['title'] = "Ihre Frage an $fullname stellen";
       $variables['user_profile_small'] = user_view($user, 'user_profile_small');
+
+      // add node codex
+      $node = node_load(92);
+      $variables['node_codex'] = node_view($node);
     }
   }
 }
