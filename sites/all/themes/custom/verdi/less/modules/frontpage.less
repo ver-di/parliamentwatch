@@ -147,4 +147,57 @@
     img {
         margin-left: auto;
     }
+    .viola-teaser-intro {
+        padding-left: 10px;
+    }
+    .viola-teaser-videos {
+        border-top: 1px solid @mediumGray;
+        background: @brightGray;
+        margin: 0;
+        padding: 30px 15px;
+        a {
+            display: block;
+            position: relative;
+            &:before {
+                content: '';
+                display: block;
+
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0,0,0,.2);
+                .transition(all 100ms linear);
+            }
+            &:after {
+                content: '';
+                font-family: FontAwesome;
+                display: block;
+                text-shadow: 0 5px 5px  rgba(0,0,0,.4);
+
+                text-align: center;
+                color: #fff;
+                font-size: 60px;
+                font-weight: 300;
+
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 50%;
+                .translate(0, -50%);
+                .transition(all 100ms linear);
+            }
+
+            &:hover {
+                &:before {
+                    background: rgba(0,0,0,.3);
+                }
+                &:after {
+                    text-shadow: 0 3px 3px  rgba(0,0,0,.4);
+                    .translate(0, -48%);
+                }
+            }
+        }
+    }
 }
