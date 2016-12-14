@@ -333,7 +333,16 @@ function pw_dialogues_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<form action="#" class="masonry-filter">
+      'value' => '<?php
+  $parliament = _pw_get_current_parliament_term();
+  $account = _pw_get_current_user();
+  $dialogue_nids = pw_dialogues_get_dialogue_nids($parliament, $account);
+  if(empty($dialogue_nids)){
+    return;
+  }
+?>
+
+<form action="#" class="masonry-filter">
     <div class="row">
         <div class="col-xs-12 col-sm-5">
             <div class="form-group">
