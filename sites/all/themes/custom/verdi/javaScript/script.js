@@ -128,6 +128,11 @@ $(document).ready(function() {
     });
     $('#frontpage-slider .swiper-slide-content-wrapper').matchHeight();
 
+    console.log($('#frontpage-slider .swiper-slide').length);
+
+    if ($('#frontpage-slider .swiper-slide').length <= 1) {
+        $('#frontpage-slider').addClass('single-slide');
+    }
 
     // insurance-filter (Kassen-Filter)
     $('.kassen-filter-item').matchHeight();
