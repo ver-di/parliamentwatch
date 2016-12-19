@@ -122,7 +122,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 text-left small">
-        <p>
+        <!--p>
           Die Nutzung von Sozialversicherung.watch ist grundsätzlich frei, eine vorherige Registrierung ist nicht erforderlich. Durch die Nutzung der Webseiten erklärst Du Dich damit einverstanden, an die Nutzungsbedingungen in der jeweils geltenden Fassung gebunden zu sein.
           <a href="#" type="button" data-toggle="collapse" data-target="#question_info_nutzungsbedingungen" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Nutzungsbedingungen</a>
         </p>
@@ -132,15 +132,48 @@
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid at aut autem culpa deleniti, dicta dolore esse explicabo ipsa minus natus nisi nobis odit sed similique soluta, veritatis vitae!
             </p>
           </div>
-        </div>
+        </div-->
         <p>
-          Falls Deine Frage nicht freigeschaltet werden kann, wirst Du darüber vom Moderationsteam informiert. Aus Gründen der Rechtssicherheit wird Deine IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhältst Du in unserer
-          <a href="#" type="button" data-toggle="collapse" data-target="#question_info_datenschutz" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Datenschutzerklärung</a>
+          Falls Deine Frage nicht freigeschaltet werden kann, wirst Du darüber vom Moderationsteam informiert. Aus Gründen der Rechtssicherheit wird Deine IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. <br />
+          <a href="#" type="button" data-toggle="collapse" data-target="#question_info_datenschutz" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Datenschutzerklärung anzeigen</a>
         </p>
           <div id="question_info_datenschutz" class="collapse">
             <div class="panel padded">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid at aut autem culpa deleniti, dicta dolore esse explicabo ipsa minus natus nisi nobis odit sed similique soluta, veritatis vitae!
+                Sozialversicherung.watch nimmt den Schutz Ihrer persönlichen Daten sehr ernst und hält sich strikt an die Regeln der Datenschutzgesetze. In keinem Fall werden die erhobenen Daten verkauft und nur mit Ihrer Zustimmung an Dritte weitergegeben.<br /><br />
+
+Die Nutzung von Sozialversicherung.watch ist grundsätzlich frei, eine vorherige Registrierung ist nicht erforderlich.<br /><br />
+
+Die nachfolgende Erklärung gibt Ihnen einen Überblick darüber, wie wir den Datenschutz gewährleisten und welche Art von Daten zu welchem Zweck erhoben werden.<br /><br />
+
+1. Erhebung personenbezogener Daten<br />
+Ein zentraler Bestandteil der genannten Portale ist das Befragen von Kandidierende zu den Sozialwahlen durch Bürgerinnen und Bürger. Um von der Fragefunktion Gebrauch zu machen, werden folgende Daten abgefragt:<br /><br />
+
+Nachname<br />
+Vorname<br />
+E-Mail-Adresse (wird nicht veröffentlicht)<br />
+Nur bei der vollständigen Eingabe dieser Daten können die Fragen auf Sozialversicherung.watch freigeschaltet werden.<br /><br />
+
+2. Zweckbestimmung für die Erhebung personenbezogener Daten<br />
+sozialversicherung.watch ist kein Meinungsforum. Durch den Online-Dialog zwischen Bürgerinnen und Bürgern und den Kandidierenden soll transparenter und bürgernäher werden. Dazu gehört auch gegenseitige Transparenz der mitwirkenden Akteure: Den Fragestellern sind durch die Angaben in den Kandidierendenprofilen wesentliche Angaben des befragten Kandidierenden bekannt. Dies muss auch umgekehrt gelten. Darum leiten wir Vornamen und Familiennamen an die Kandidierenden weiter. Der vollständige Name wird verschlüsselt und für google nicht auffindbar im Zusammenhang mit der gestellten Frage veröffentlicht. Die E-Mail-Adresse wird nicht veröffentlicht oder an die Kandidierenden weitergegeben. Sie dienen dazu, mit dem Fragesteller Kontakt aufnehmen zu können. Außerdem werden Fragesteller (wie auch Kandidierende) in dem Fall per E-Mail benachrichtigt, in dem eine Frage gegen den Moderationscodex verstößt und nicht auf Sozialversicherung.watch freigeschaltet wird.<br /><br />
+
+3. Speicherung der IP<br />
+Aus Gründen der Rechtssicherheit wird die IP des Besuchers, in Kombination mit dem Datum, dann gespeichert, wenn er sich auf Sozialversicherung.watch inhaltlich beteiligt, beispielsweise indem er Kandidierende befragt. Die IP Adressen werden nach fünf Tagen gelöscht.<br /><br />
+
+4. Server-Logfiles<br />
+Bei jedem Seitenaufruf von Sozialversicherung.watch werden Browser-Informationen der Besucherinnen und Besucher automatisch an uns weitergeleitet. Dazu gehören Angaben zu Browser-Typ, Betriebssystem, IP, Uhrzeit und zuvor besuchte Seiten (referrers). Diese Daten sind für den Betreiber von Sozialversicherung.watch nicht bestimmten Personen zuzuordnen. Die Daten werden nicht mit anderen Datenquellen zusammengeführt, die Logfiles werden zudem nach einer statistischen Auswertung gelöscht.<br /><br />
+
+5. Cookies<br />
+Auf Sozialversicherung.watch werden an mehreren Stellen so genannte Cookies verwendet. Sie dienen dazu, unser Angebot nutzerfreundlicher und effektiver zu machen.<br />
+Durch die Einstellung des Internet-Browsers können Nutzerinnen und Nutzer selbst entscheiden, ob sie Cookies akzeptieren, beim Setzen eines Cookies jeweils informiert werden möchten oder ob Sie alle Cookies ablehnen. Sozialversicherung.watch ist auch bei deaktivierten Cookies vollkommen funktionstüchtig.<br /><br />
+
+6. Weiterführende Links<br />
+Trotz sorgfältiger Prüfung können wir keine Gewähr für die Inhalte verlinkter Webseiten übernehmen. Dies gilt für alle auf Sozialversicherung.watch angezeigten Links bzw. verlinkte Banner.<br /><br />
+
+7. Datenschutzerklärung zur Nutzung von Piwik<br />
+Diese Website benutzt Piwik, eine Open-Source-Software zur statistischen Auswertung der Besucherzugriffe. Piwik verwendet sog. "Cookies”, Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieses Internetangebotes werden auf dem Server des Anbieters in Deutschland gespeichert. Die IP-Adresse wird sofort nach der Verarbeitung und vor deren Speicherung anonymisiert.<br /><br />
+
+Sie können die Installation der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich nutzen können.<br />
               </p>
             </div>
           </div>
