@@ -6970,6 +6970,13 @@ mark {
     height: 50px;
   }
 }
+#frontpage-slider.single-slide .swiper-pagination .swiper-pagination-bullet {
+  display: none;
+}
+#frontpage-slider.single-slide .swiper-pagination:after {
+  left: -45px;
+  top: -35px;
+}
 .viola-teaser {
   margin-bottom: 30px;
 }
