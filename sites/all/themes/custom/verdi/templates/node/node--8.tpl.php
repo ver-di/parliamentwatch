@@ -122,7 +122,7 @@
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 text-left small">
-        <p>
+        <!--p>
           Die Nutzung von Sozialversicherung.watch ist grundsätzlich frei, eine vorherige Registrierung ist nicht erforderlich. Durch die Nutzung der Webseiten erklärst Du Dich damit einverstanden, an die Nutzungsbedingungen in der jeweils geltenden Fassung gebunden zu sein.
           <a href="#" type="button" data-toggle="collapse" data-target="#question_info_nutzungsbedingungen" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Nutzungsbedingungen</a>
         </p>
@@ -132,15 +132,15 @@
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid at aut autem culpa deleniti, dicta dolore esse explicabo ipsa minus natus nisi nobis odit sed similique soluta, veritatis vitae!
             </p>
           </div>
-        </div>
+        </div-->
         <p>
-          Falls Deine Frage nicht freigeschaltet werden kann, wirst Du darüber vom Moderationsteam informiert. Aus Gründen der Rechtssicherheit wird Deine IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. Weitere Informationen erhältst Du in unserer
-          <a href="#" type="button" data-toggle="collapse" data-target="#question_info_datenschutz" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Datenschutzerklärung</a>
+          Falls Deine Frage nicht freigeschaltet werden kann, wirst Du darüber vom Moderationsteam informiert. Aus Gründen der Rechtssicherheit wird Deine IP-Adresse gespeichert, aber nicht veröffentlicht oder an Dritte weitergegeben. <br />
+          <a href="#" type="button" data-toggle="collapse" data-target="#question_info_datenschutz" aria-expanded="false" aria-controls="question_info"><i class="fa fa-angle-right"></i> Datenschutzerklärung anzeigen</a>
         </p>
           <div id="question_info_datenschutz" class="collapse">
             <div class="panel padded">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid at aut autem culpa deleniti, dicta dolore esse explicabo ipsa minus natus nisi nobis odit sed similique soluta, veritatis vitae!
+                <?php print render($node_privacy_policy['body']); ?>
               </p>
             </div>
           </div>

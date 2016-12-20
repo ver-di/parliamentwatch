@@ -129,6 +129,10 @@ function pw_question_form_preprocess_node(&$variables) {
       // add node codex
       $node = node_load(92);
       $variables['node_codex'] = node_view($node);
+
+      // add node privacy policy
+      $node = node_load(158);
+      $variables['node_privacy_policy'] = node_view($node);
     }
   }
 }
