@@ -6700,6 +6700,11 @@ mark {
   padding: 15px 0 10px;
   margin: 0;
 }
+@media (min-width: 768px) {
+  #content #main-content + .alert {
+    margin-top: 80px;
+  }
+}
 #footer {
   background: #f1efea;
   margin-top: 50px;
