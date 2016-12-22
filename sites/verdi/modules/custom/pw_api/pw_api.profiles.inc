@@ -49,7 +49,7 @@ function pw_api_profile($username, $parliament=FALSE) {
     return MENU_NOT_FOUND;
   }
 
-  $profile = array('profile' => pw_api_user_to_array($user, array('votes', 'dialogues')));
+  $profile = array('profile' => pw_api_user_to_array($user, array('dialogues')));
 
   return $profile;
 }
