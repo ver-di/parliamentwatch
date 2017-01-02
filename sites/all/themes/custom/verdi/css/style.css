@@ -7596,11 +7596,6 @@ mark {
   padding: 15px;
   margin-bottom: 15px;
 }
-.candidate-detail .question-item .question-item-answer h3 {
-  font-size: 14px;
-  line-height: 24px;
-  margin: 0;
-}
 .candidate-detail .question-item .question-item-answer p {
   line-height: 1.6em;
 }
