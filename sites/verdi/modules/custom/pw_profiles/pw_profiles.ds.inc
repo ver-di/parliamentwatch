@@ -769,7 +769,7 @@ if(isset($stats[\'number_of_questions\']) && $stats[\'number_of_questions\'] > 0
     <?php if($stats[\'number_of_questions\'] > 0): ?>
       <div class="pull-left candidate-detail-stats-count clearfix">
           <span class="value"><?php print $stats[\'number_of_questions\']; ?></span>
-          <span class="label">Fragen</span>
+          <span class="label">Frage<?php if($stats[\'number_of_questions\'] > 1): ?>n<?php endif; ?></span>
       </div>
       <div class="pull-left candidate-detail-stats-countasked">
           <div class="gauge-widget">
