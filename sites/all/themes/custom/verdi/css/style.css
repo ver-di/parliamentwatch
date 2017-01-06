@@ -7078,16 +7078,14 @@ mark {
   position: relative;
   margin-bottom: 20px;
 }
-.kassen-filter .kassen-filter-item-group:nth-child(1n) {
+.kassen-filter .kassen-filter-item-group:nth-child(1) {
   width: 100%;
 }
 @media (min-width: 768px) {
-  .kassen-filter .kassen-filter-item-group:nth-child(1n) {
+  .kassen-filter .kassen-filter-item-group:nth-child(1) {
     width: 65%;
   }
-}
-@media (min-width: 768px) {
-  .kassen-filter .kassen-filter-item-group:nth-child(1n):after {
+  .kassen-filter .kassen-filter-item-group:nth-child(1):after {
     content: '\f142';
     font-family: 'FontAwesome';
     display: block;
@@ -7101,32 +7099,44 @@ mark {
   }
 }
 @media (min-width: 768px) and (min-width: 768px) {
-  .kassen-filter .kassen-filter-item-group:nth-child(1n):after {
+  .kassen-filter .kassen-filter-item-group:nth-child(1):after {
     right: -10px;
   }
 }
-.kassen-filter .kassen-filter-item-group:nth-child(2n) {
+@media (max-width: 767px) {
+  .kassen-filter .kassen-filter-item-group:nth-child(1) .kassen-filter-item img {
+    max-height: 45px;
+    max-width: 130px;
+  }
+}
+.kassen-filter .kassen-filter-item-group:nth-child(2) {
   width: 80%;
 }
 @media (min-width: 768px) {
-  .kassen-filter .kassen-filter-item-group:nth-child(2n) {
+  .kassen-filter .kassen-filter-item-group:nth-child(2) {
     width: 25%;
   }
 }
-.kassen-filter .kassen-filter-item-group:nth-child(2n) .kassen-filter-item {
+.kassen-filter .kassen-filter-item-group:nth-child(2) .kassen-filter-item {
   width: 80%;
   float: none;
 }
 @media (min-width: 768px) {
-  .kassen-filter .kassen-filter-item-group:nth-child(2n) .kassen-filter-item {
+  .kassen-filter .kassen-filter-item-group:nth-child(2) .kassen-filter-item {
     width: 100%;
   }
 }
-.kassen-filter .kassen-filter-item-group:nth-child(2n) .kassen-filter-item img {
+.kassen-filter .kassen-filter-item-group:nth-child(2) .kassen-filter-item img {
   position: static;
   top: 0;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+}
+@media (max-width: 767px) {
+  .kassen-filter .kassen-filter-item-group:nth-child(2) .kassen-filter-item img {
+    max-height: 45px;
+    max-width: 170px;
+  }
 }
 .kassen-filter .kassen-filter-item-group .kassen-filter-item {
   width: 50%;
