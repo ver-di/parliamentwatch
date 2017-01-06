@@ -710,7 +710,6 @@ function pw_profiles_ds_custom_fields_info() {
             <div class="gauge-widget">
                 <canvas class="gauge" width="45" height="45"></canvas>
                 <!--div class="gauge-value" data-gauge-value="[user:field_user_answers_give]">[user:field_user_answers_give]%</div-->
-                <div class="gauge-value">Stell die erste Frage!</div>
             </div>
             <!--span class="label">Beantwortet</span-->
         </div>

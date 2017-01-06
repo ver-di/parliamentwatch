@@ -244,7 +244,7 @@ function pw_dialogues_ds_field_settings_info() {
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
-        'link text' => 'Antwort lesen',
+        'link text' => 'Ganze Frage lesen',
         'wrapper' => '',
         'class' => '',
         'ft' => array(
