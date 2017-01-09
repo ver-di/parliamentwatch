@@ -64,18 +64,31 @@ function pw_content_authoring_layout_filter_default_formats() {
         'status' => '1',
         'settings' => array(
           'settings_source' => 'global',
-          'local_paths' => 'https://live.de.parliamentwatch.org/
+          'local_paths' => '',
+          'protocol_style' => 'full',
+          'local_settings' => array(
+            'protocol_style' => 'path',
+            'local_paths' => 'https://live.de.parliamentwatch.org/
 https://beta.abgeordnetenwatch.de/
 http://live.de.parliamentwatch.org/
 http://beta.abgeordnetenwatch.de/
 /',
-          'protocol_style' => 'path',
+          ),
         ),
       ),
       'filter_autop' => array(
         'weight' => '-40',
         'status' => '1',
         'settings' => array(),
+      ),
+      'pw_crypt' => array(
+        'weight' => '0',
+        'status' => '1',
+        'settings' => array(
+          'allowed_html' => '',
+          'filter_html_help' => 1,
+          'filter_html_nofollow' => 0,
+        ),
       ),
     ),
   );

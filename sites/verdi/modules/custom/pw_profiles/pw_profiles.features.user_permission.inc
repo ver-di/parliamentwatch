@@ -1251,6 +1251,25 @@ function pw_profiles_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: post comments.
+  $permissions['post comments'] = array(
+    'name' => 'post comments',
+    'roles' => array(
+      0 => 'authenticated user',
+    ),
+    'module' => 'comment',
+  );
+
+  // Exported permission: skip comment approval.
+  $permissions['skip comment approval'] = array(
+    'name' => 'skip comment approval',
+    'roles' => array(
+      0 => 'anonymous user',
+      1 => 'authenticated user',
+    ),
+    'module' => 'comment',
+  );
+
   // Exported permission: use text format copyright.
   $permissions['use text format copyright'] = array(
     'name' => 'use text format copyright',
