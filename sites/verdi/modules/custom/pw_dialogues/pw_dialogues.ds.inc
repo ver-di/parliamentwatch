@@ -354,11 +354,11 @@ function pw_dialogues_ds_custom_fields_info() {
             </div>
         </div>
         <div class="col-xs-12 col-sm-7">
-            <div class="checkbox">
+            <!--div class="checkbox">
                 <label data-filter=".answered">
                     <input type="checkbox"> Nur beantwortete Anzeigen
                 </label>
-            </div>
+            </div-->
         </div>
     </div>
 </form>',
