@@ -927,7 +927,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'show_remaining_days' => 0,
           ),
           'type' => 'date_default',
-          'weight' => '16',
+          'weight' => '17',
         ),
         'full' => array(
           'label' => 'above',
@@ -1199,7 +1199,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '20',
+          'weight' => '21',
         ),
         'full' => array(
           'label' => 'hidden',
@@ -1354,7 +1354,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '22',
+          'weight' => '23',
         ),
         'full' => array(
           'label' => 'inline',
@@ -1630,10 +1630,13 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'description' => 'z.B. "Jurist" oder "Diplom Ingenieur"',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '32',
+          'label' => 'inline',
+          'module' => 'text',
+          'settings' => array(
+            'field_delimiter' => '',
+          ),
+          'type' => 'text_default',
+          'weight' => '15',
         ),
         'full' => array(
           'label' => 'above',
@@ -1757,7 +1760,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '9',
+        'weight' => '8',
       ),
     ),
   );
@@ -2575,7 +2578,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '17',
+          'weight' => '18',
         ),
         'full' => array(
           'label' => 'inline',
@@ -3007,7 +3010,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'field_delimiter' => '',
           ),
           'type' => 'text_default',
-          'weight' => '15',
+          'weight' => '16',
         ),
         'full' => array(
           'label' => 'inline',
@@ -3093,7 +3096,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_job_skills',
-      'label' => 'Professional Qualification',
+      'label' => 'Beruflicher Hintergrund',
       'required' => 0,
       'settings' => array(
         'better_formats' => array(
@@ -3145,7 +3148,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '8',
+        'weight' => '9',
       ),
     ),
   );
@@ -3447,7 +3450,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '61',
+        'weight' => '62',
       ),
     ),
   );
@@ -5502,7 +5505,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'bundle' => 'user',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => 'Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.',
+      'description' => 'Welche Funktionen haben Sie schon in der Selbstverwaltung ausgefüllt, bitte durch Kommata getrennt.',
       'display' => array(
         'default' => array(
           'label' => 'inline',
@@ -5511,7 +5514,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '21',
+          'weight' => '22',
         ),
         'full' => array(
           'label' => 'inline',
@@ -5586,10 +5589,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
       'ds_extras_field_template' => '',
       'entity_type' => 'user',
       'field_name' => 'field_user_political_roles',
-      'label' => 'Political Roles',
+      'label' => 'Erfahrung in der Selberverwaltung',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -5597,11 +5599,10 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         'module' => 'taxonomy',
         'settings' => array(
           'autocomplete_path' => 'taxonomy/autocomplete',
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => 60,
         ),
         'type' => 'taxonomy_autocomplete',
-        'weight' => '72',
+        'weight' => '61',
       ),
     ),
   );
@@ -7421,7 +7422,7 @@ $entity_field[0][\'value\'] = $result;',
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '19',
+          'weight' => '20',
         ),
         'full' => array(
           'label' => 'inline',
@@ -7524,7 +7525,7 @@ $entity_field[0][\'value\'] = $result;',
             'field_delimiter' => '',
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => '18',
+          'weight' => '19',
         ),
         'full' => array(
           'label' => 'inline',
@@ -7585,6 +7586,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Answers Give');
   t('Ausbildung');
   t('Because system user roles are not revisionable, this fields stores a copy of the user role.');
+  t('Beruflicher Hintergrund');
   t('Bitte geben Sie hier Ihren Twitter-Account an (nur der Name ohne @). Aus technischen Gründen kann es bis zu 30min dauern, bis diese Information in Ihrem Profil angezeigt wird.');
   t('Children');
   t('Committee');
@@ -7594,6 +7596,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Die Bildergalerie ermöglicht Ihnen Fotos z.B. aus dem Wahlkampf in Ihrem Profil zu veröffentlichen.');
   t('Die Telefonnummer dient zur einfachen Kontaktaufnahme, wird nicht veröffentlicht.');
   t('Diese E-Mail Adresse wird öffentlich in Profil angezeigt.');
+  t('Erfahrung in der Selberverwaltung');
   t('External URL');
   t('First Letter of Lastname');
   t('First Name');
@@ -7618,10 +7621,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Phone');
   t('Picture copyright');
   t('Political Goals');
-  t('Political Roles');
-  t('Politische Rollen wie z.B. Parlamentarischer Geschäftsführer, Fraktionsvorsitzender, etc.');
   t('Position');
-  t('Professional Qualification');
   t('Profile picture');
   t('Pseudonym');
   t('Public Mail');
@@ -7635,6 +7635,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Tragen Sie hier Ihre politischen Ziele ein. Diese werden in Ihrem Profil veröffentlicht.');
   t('Twitter');
   t('Valid');
+  t('Welche Funktionen haben Sie schon in der Selbstverwaltung ausgefüllt, bitte durch Kommata getrennt.');
   t('Wählen Sie hier Ihren Listenplatz aus.');
   t('direkt gewählt');
   t('eingezogen über Liste');

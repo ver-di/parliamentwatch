@@ -1018,7 +1018,8 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_job_skills',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'administrator',
+      1 => 'Politician',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );
@@ -1157,7 +1158,8 @@ function pw_profiles_user_default_permissions() {
     'name' => 'edit own field_user_political_roles',
     'roles' => array(
       0 => 'Content Manager',
-      1 => 'administrator',
+      1 => 'Politician',
+      2 => 'administrator',
     ),
     'module' => 'field_permissions',
   );

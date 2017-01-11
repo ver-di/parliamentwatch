@@ -58,14 +58,15 @@ function pw_profiles_field_group_info() {
       0 => 'field_user_birthday',
       1 => 'field_user_commitee',
       2 => 'field_user_constituency',
-      3 => 'field_user_fname',
-      4 => 'field_user_fraction',
-      5 => 'field_user_job_skills',
-      6 => 'field_user_lname',
-      7 => 'field_user_political_roles',
-      8 => 'field_user_title',
-      9 => 'field_verdi_fields',
-      10 => 'field_verdi_regions',
+      3 => 'field_user_education',
+      4 => 'field_user_fname',
+      5 => 'field_user_fraction',
+      6 => 'field_user_job_skills',
+      7 => 'field_user_lname',
+      8 => 'field_user_political_roles',
+      9 => 'field_user_title',
+      10 => 'field_verdi_fields',
+      11 => 'field_verdi_regions',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -190,8 +191,8 @@ function pw_profiles_field_group_info() {
     'weight' => '45',
     'children' => array(
       0 => 'field_user_quote',
-      1 => 'button_modal_question',
-      2 => 'candidate_stats_questions_get',
+      1 => 'candidate_stats_questions_get',
+      2 => 'button_modal_question',
       3 => 'group_candidate_intro_info',
       4 => 'group_user_name',
     ),
@@ -602,8 +603,8 @@ function pw_profiles_field_group_info() {
     'label' => 'Fragen & Antworten',
     'weight' => '23',
     'children' => array(
-      0 => 'dialogues_profile',
-      1 => 'dialogue_filter',
+      0 => 'dialogue_filter',
+      1 => 'dialogues_profile',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -899,11 +900,10 @@ function pw_profiles_field_group_info() {
       5 => 'field_user_list_won',
       6 => 'field_user_parliament',
       7 => 'field_user_party',
-      8 => 'field_user_political_roles',
-      9 => 'field_user_retired',
-      10 => 'field_user_valid',
-      11 => 'field_verdi_fields',
-      12 => 'field_verdi_regions',
+      8 => 'field_user_retired',
+      9 => 'field_user_valid',
+      10 => 'field_verdi_fields',
+      11 => 'field_verdi_regions',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1359,8 +1359,9 @@ function pw_profiles_field_group_info() {
     'children' => array(
       0 => 'field_user_links_more',
       1 => 'field_user_list_position',
-      2 => 'field_user_quote',
-      3 => 'group_user_premium',
+      2 => 'field_user_political_roles',
+      3 => 'field_user_quote',
+      4 => 'group_user_premium',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -1518,7 +1519,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = 'group_user_premium_fields';
   $field_group->data = array(
     'label' => 'Premium fields',
-    'weight' => '62',
+    'weight' => '63',
     'children' => array(
       0 => 'group_user_premium_about',
       1 => 'group_user_premium_gallery',

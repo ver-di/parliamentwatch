@@ -45,13 +45,16 @@
  */
 ?>
 <?php if(sizeof($items) > 0): ?>
-  <p><strong>Erfahren Sie mehr auf den sozialen Profilen des Kandierenden</strong></p>
+  <p><strong>Weiterführende Links</strong></p>
   <ul class="social-list">
     <?php foreach ($items as $delta => $item): ?>
       <?php
         // prepare icon
         $host = strtolower(parse_url($item['#element']['url'], PHP_URL_HOST));
         $icon_name = preg_replace("/^\w*\.?(\w+)\.[^\.]+$/U", "$1", $host);
+        if(!in_array($icon_name, array('xing', 'linkedin', 'facebook', 'twitter'))){
+          $icon_name = 'link';
+        }
       ?>
       <li class="social-list-<?php print $icon_name; ?>">
           <a href="<?php print $item['#element']['url'] ?>" target="_blank" class="clearfix">
