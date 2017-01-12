@@ -139,12 +139,14 @@ function pw_profiles_menu() {
 function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == "user_profile_form") {
     unset($form["locale"]);
+    /*
     $view = views_get_view('calendar');
     $view->set_display('block_2');
     $form['views_embedder'] = array(
       '#value' => views_embed_view('calendar', 'block_2'),
       '#weight' => 0,
     );
+    */
     $form['#validate'][] = 'pw_profiles_form_validate';
     $form['account']['name']['#description'] = t('Only lowercase letters (a-z), numbers and dash are allowed.');
 
@@ -393,6 +395,11 @@ function pw_profiles_block_info() {
     'cache' => DRUPAL_CACHE_PER_PAGE | DRUPAL_CACHE_PER_ROLE,
   );
 
+  $blocks['profile-slider'] = array(
+    'info' => t('Profile slider'),
+    'cache' => DRUPAL_CACHE_PER_PAGE | DRUPAL_CACHE_PER_ROLE,
+  );
+
   return $blocks;
 }
 
@@ -402,6 +409,9 @@ function pw_profiles_block_info() {
 function pw_profiles_block_view($delta) {
   if ($delta == 'filters' && menu_get_item()['page_callback'] == 'pw_profiles_page') {
     return pw_profiles_filters_block();
+  }
+  elseif ($delta == 'profile-slider'){
+    return pw_profiles_slider_block();
   }
 }
 
@@ -441,10 +451,11 @@ function pw_profiles_preprocess_user_profile(&$variables){
 
   // add formatted questions and answers
   if(isset($variables['elements']['#account']->number_of_questions)){
-    $num_questions = $variables['elements']['#account']->number_of_questions;
-    $num_answers = $variables['elements']['#account']->number_of_answers;
-    $variables['questions'] = format_plural($num_questions, t('@num_questions Question'), t('@num_questions Questions'), array('@num_questions' => $num_questions));
-    $variables['answers'] = format_plural($num_answers, t('@num_answers Answer'), t('@num_answers Answers'), array('@num_answers' => $num_answers));
+    $count_questions = $variables['elements']['#account']->number_of_questions;
+    $count_answers = $variables['elements']['#account']->number_of_answers;
+    $variables['count_questions'] = $count_questions;
+    $variables['count_answers'] = $count_answers;
+    $variables['precent_answered'] = $count_questions > 0?round($count_answers / $count_questions * 100):0;
   }
 }
 
@@ -487,6 +498,58 @@ function pw_profiles_page($parliament_name, $role_name) {
   }
 
   return $build;
+}
+
+
+/**
+ * Displays a list of profiles as slider.
+ *
+ * Selects user revisions based on parliament and role.
+ *
+ * @param string $parliament_name
+ *   The parliament name
+ *
+ * @param string $role_name
+ *   The role
+ *
+ * @return array
+ *   The render array
+ */
+function pw_profiles_slider_block() {
+
+  $filters = array('date' => date('Y-m-d'));
+  $parliament = _pw_get_current_parliament_term();
+  if($parliament){
+    $field_election_date = field_get_items('taxonomy_term', $parliament, 'field_election_date');
+    $role_name = !empty($field_election_date) && $field_election_date[0]['value'] > date('Y-m-d') ? 'candidate' : 'deputy';
+    $filters += array(
+      'roles' => $role_name,
+      'parliament' => $parliament->name,
+    );
+  }
+  $filters += drupal_get_query_parameters();
+
+  $users = pw_profiles_user_load_multiple($filters);
+
+  if (empty($users)) {
+    $build =  array(
+      '#markup' => t('No results matching your criteria were found.'),
+    );
+  }
+  else {
+
+    $block = array();
+    #$block['subject'] = '<none>';
+    $block['header'] = "Test Test";
+    $block['content'] = entity_view('user', $users, 'user_slider_item');
+    #$block['content']['#attached']['js'][] = drupal_get_path('module', 'pw_dialogues') . '/pw_dialogues.js';
+    #$build = entity_view('user', $users, 'user_slider_item');
+    #$build['user']['#theme_wrappers'] = array('container');
+    #$build['user']['#attributes']['class'] = array('profile-list', 'clearfix');
+    #$build['pager'] = array('#theme' => 'pager', '#weight' => 5);
+  }
+
+  return $block;
 }
 
 /**
@@ -542,23 +605,28 @@ function pw_profiles_page_title($parliament_name, $role_name) {
 function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
   $users = array();
 
-  $query = pw_profiles_user_revision_query($filters)->extend('PagerDefault')->limit($limit);
+  $query = pw_profiles_user_revision_query($filters);
+  if($limit !== NULL){
+    $query->extend('PagerDefault')->limit($limit);
+  }
   if (empty($filters['last_name'])) {
     $query->join('field_revision_field_user_lname', 'fuln', 'fuln.revision_id = ur.vid');
+  }
+  if (empty($filters['list_position'])) {
+    $query->join('field_revision_field_user_list_position', 'fulp', 'fulp.revision_id = ur.vid');
+    $query->join('taxonomy_term_data', 'tdlp', 'fulp.field_user_list_position_tid = tdlp.tid');
   }
   $query->leftJoin('field_revision_field_user_picture', 'fupic', 'fupic.revision_id = ur.vid');
   $query->addExpression('CASE WHEN fupic.field_user_picture_fid IS NOT NULL THEN 1 ELSE 0 END', 'picture_uploaded');
   $query
-    ->orderBy('uac.number_of_answers', 'DESC')
-    ->orderBy('uac.number_of_questions', 'DESC')
-    ->orderBy('picture_uploaded', 'DESC')
+    ->orderBy('CAST(tdlp.name AS UNSIGNED)')
     ->orderBy('fuln.field_user_lname_value');
-
+#    ->orderBy('uac.number_of_answers', 'DESC')
+#    ->orderBy('uac.number_of_questions', 'DESC')
+#    ->orderBy('picture_uploaded', 'DESC')
+#    ->orderBy('fuln.field_user_lname_value');
   foreach ($query->execute()->fetchAll() as $row) {
     $users[$row->uid] = $row;
-    if($row->uid == 29050){
-      $x = $row;
-    }
   }
 
   field_attach_load_revision('user', $users);
