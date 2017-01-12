@@ -603,8 +603,8 @@ function pw_profiles_field_group_info() {
     'label' => 'Fragen & Antworten',
     'weight' => '23',
     'children' => array(
-      0 => 'dialogues_profile',
-      1 => 'dialogue_filter',
+      0 => 'dialogue_filter',
+      1 => 'dialogues_profile',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

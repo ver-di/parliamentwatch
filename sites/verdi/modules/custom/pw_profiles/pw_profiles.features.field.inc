@@ -7703,11 +7703,13 @@ $entity_field[0][\'value\'] = $result;',
       'display' => array(
         'default' => array(
           'label' => 'inline',
-          'module' => 'taxonomy',
+          'module' => 'ds',
           'settings' => array(
             'field_delimiter' => '',
+            'taxonomy_term_link' => 0,
+            'taxonomy_term_separator' => ', ',
           ),
-          'type' => 'taxonomy_term_reference_plain',
+          'type' => 'ds_taxonomy_separator',
           'weight' => '20',
         ),
         'full' => array(
