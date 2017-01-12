@@ -65,6 +65,9 @@ function pw_profiles_strongarm() {
       'user_profile_teaser' => array(
         'custom_settings' => TRUE,
       ),
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
