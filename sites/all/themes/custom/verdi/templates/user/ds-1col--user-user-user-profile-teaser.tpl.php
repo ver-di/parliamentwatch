@@ -6,6 +6,6 @@
  */
 ?>
     <div class="question-teaser-item-head clearfix">
-        Befragt wurde
+        Beantwortet von
         <?php print $ds_content; ?>
     </div>
