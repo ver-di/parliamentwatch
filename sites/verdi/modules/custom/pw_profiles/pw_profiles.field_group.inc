@@ -224,10 +224,10 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = 'group_candidate_intro_row';
   $field_group->data = array(
     'label' => 'Candidate Intro Left',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
-      0 => 'button_modal_question',
-      1 => 'candidate_stats_questions_get',
+      0 => 'candidate_stats_questions_get',
+      1 => 'button_modal_question',
       2 => 'group_candidate_intro_info',
       3 => 'group_user_name',
     ),
@@ -288,7 +288,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = 'group_candidate_intro_row';
   $field_group->data = array(
     'label' => 'Candidate Intro Right',
-    'weight' => '2',
+    'weight' => '1',
     'children' => array(
       0 => 'field_user_picture',
       1 => 'field_user_picture_copyright',
@@ -603,8 +603,8 @@ function pw_profiles_field_group_info() {
     'label' => 'Fragen & Antworten',
     'weight' => '23',
     'children' => array(
-      0 => 'dialogues_profile',
-      1 => 'dialogue_filter',
+      0 => 'dialogue_filter',
+      1 => 'dialogues_profile',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
@@ -1222,7 +1222,7 @@ function pw_profiles_field_group_info() {
     'label' => 'Name',
     'weight' => '1',
     'children' => array(
-      0 => 'candidate_full_name',
+      0 => 'linked_user_name',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(

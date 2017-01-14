@@ -45,7 +45,7 @@ function pw_globals_ds_custom_fields_info() {
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
   $ds_field->field = 'candidate_header';
-  $ds_field->label = 'Candidate Header';
+  $ds_field->label = 'Candidate Header Profile';
   $ds_field->field_type = 5;
   $ds_field->entities = array(
     'user' => 'user',
@@ -57,7 +57,7 @@ function pw_globals_ds_custom_fields_info() {
 <div class="row">
     <div class="col-xs-12">
         <div class="candidate-detail-logo-wrapper"><img src="[user:field-user-parliament:field_parliament_logo]" alt="[user:field-user-parliament:name]" class="img-responsive candidate-detail-logo"></div>
-        <a href="#" class="back-button"><i class="fa fa-angle-left"></i></a>
+        <a href="[site:url]" class="back-button"><i class="fa fa-angle-left"></i> <span>Zur Übersicht</span></a>
     </div>
 </div>
 </div>',
@@ -66,6 +66,49 @@ function pw_globals_ds_custom_fields_info() {
     'use_token' => 1,
   );
   $export['candidate_header'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'candidate_header_question';
+  $ds_field->label = 'Candidate Header Question';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<div class="candidate-header">
+<div class="row">
+    <div class="col-xs-12">
+        <div class="candidate-detail-logo-wrapper"><img src="[user:field-user-parliament:field_parliament_logo]" alt="[user:field-user-parliament:name]" class="img-responsive candidate-detail-logo"></div>
+        <a href="[user:url]" class="back-button"><i class="fa fa-angle-left"></i> <span>Zum Kandidaten</span></a>
+    </div>
+</div>
+</div>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['candidate_header_question'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'linked_user_name';
+  $ds_field->label = 'Linked User-Name';
+  $ds_field->field_type = 5;
+  $ds_field->entities = array(
+    'user' => 'user',
+  );
+  $ds_field->ui_limit = '';
+  $ds_field->properties = array(
+    'code' => array(
+      'value' => '<a href="[user:url]" title="Zum Profil von [user:field_user_fname] [user:field_user_lname]">[user:field_user_fname] [user:field_user_lname]</a>',
+      'format' => 'php_code',
+    ),
+    'use_token' => 1,
+  );
+  $export['linked_user_name'] = $ds_field;
 
   return $export;
 }

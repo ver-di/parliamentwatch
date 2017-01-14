@@ -232,12 +232,7 @@ $(document).ready(function() {
 
     // Frontpage: Recent Questions & Answers
 
-    $(".question-teaser-item .question").dotdotdot({
-        watch: true,
-        callback: function( isTruncated, orgContent ) {
-            $('.question-teaser-item').matchHeight();
-        }
-    });
+    $('.question-teaser-item').matchHeight();
 
     // Gauges
     var opts = {

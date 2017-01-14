@@ -1226,7 +1226,7 @@ $display_output = rtrim($display_output);',
           'module' => 'text',
           'settings' => array(
             'field_delimiter' => '',
-            'trim_length' => 600,
+            'trim_length' => '600',
           ),
           'type' => 'text_summary_or_trimmed',
           'weight' => '3',

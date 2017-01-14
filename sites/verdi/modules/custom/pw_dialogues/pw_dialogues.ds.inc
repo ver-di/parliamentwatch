@@ -263,12 +263,11 @@ function pw_dialogues_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'p',
-          'fi-cl' => 'question',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
+          'fis' => TRUE,
+          'fis-el' => 'div',
+          'fis-cl' => 'question',
+          'fis-at' => '',
+          'fis-def-at' => FALSE,
         ),
       ),
     ),
@@ -406,7 +405,7 @@ function pw_dialogues_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<span class="text-magenta">[comment:author:field-user-fname] [comment:author:field-user-lname]</span> antworte',
+      'value' => '<a href="[comment:author:url]" class="text-magenta">[comment:author:field-user-fname] [comment:author:field-user-lname]</a> antwortete',
       'format' => 'php_code',
     ),
     'use_token' => 1,
