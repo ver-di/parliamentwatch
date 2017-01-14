@@ -513,6 +513,29 @@ function pw_dialogues_get_dialogue_nids($parliament = FALSE, $account = FALSE, $
     }
   }
   else{
+    $query = db_select('node', 'n');
+    $query->fields('n', array('nid'));
+    $query->condition('n.status', 1);
+    if($parliament) {
+      $query->join('field_data_field_parliament', 'fp', "fp.entity_type = 'node' AND fp.entity_id = n.nid");
+      $query->condition('fp.field_parliament_tid', $parliament->tid);
+    }
+    if($account) {
+      $query->join('field_data_field_dialogue_recipient', 'fr', "fr.entity_type = 'node' AND fr.entity_id = n.nid");
+      $query->condition('fr.field_dialogue_recipient_target_id', $account->uid);
+    }
+    if(isset($is_candidate)) {
+      $query->join('field_data_field_dialogue_before_election', 'fbe', "fbe.entity_type = 'node' AND fbe.entity_id = n.nid");
+      $query->condition('fbe.field_dialogue_before_election_value', $is_candidate);
+    }
+    $query->join('comment', 'c', "c.nid = n.nid");
+    $query->condition('c.status', 1);
+    $query->groupBy('c.nid');
+    $query->orderBy('c.created', 'DESC');
+    $query->range(pager_find_page(10) * 10, $limit);
+    $dialogue_nids = $query->execute()->fetchCol();
+
+    /*
     $q = new EntityFieldQuery();
     $q->entityCondition('entity_type', 'node');
     $q->entityCondition('bundle', 'dialogue');
@@ -533,6 +556,7 @@ function pw_dialogues_get_dialogue_nids($parliament = FALSE, $account = FALSE, $
     if(isset($result['node'])){
       $dialogue_nids = array_keys($result['node']);
     }
+    */
   }
   return $dialogue_nids;
 }

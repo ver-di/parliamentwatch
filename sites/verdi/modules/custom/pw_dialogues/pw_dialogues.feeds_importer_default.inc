@@ -38,7 +38,7 @@ function pw_dialogues_feeds_importer_default() {
           'xpathparser:0' => 'concat(\'Frage von \', sender)',
           'xpathparser:1' => 'tags/tags_item',
           'xpathparser:2' => 'recipient.external_id',
-          'xpathparser:3' => 'updated',
+          'xpathparser:3' => 'inserted_date',
           'xpathparser:5' => 'type',
           'xpathparser:6' => 'id',
           'xpathparser:7' => 'concat(\'dialogue-\',../@id)',

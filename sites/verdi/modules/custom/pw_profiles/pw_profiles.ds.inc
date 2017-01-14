@@ -308,7 +308,7 @@ function pw_profiles_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'lb' => 'ver.di Fachbereich',
+          'lb' => 'ver.di Fachbereiche',
           'lb-el' => 'dt',
           'lb-col' => TRUE,
           'fis' => TRUE,
