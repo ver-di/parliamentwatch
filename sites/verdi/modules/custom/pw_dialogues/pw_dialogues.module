@@ -420,7 +420,7 @@ function pw_dialogues_questions_and_answers_block() {
     return;
   }
 
-  $dialogue_nids = pw_dialogues_get_dialogue_nids($parliament, $account, $limit);
+  $dialogue_nids = pw_dialogues_get_dialogue_nids($parliament, $account, $limit, FALSE);
 
   // if more than one pager exists, set an its pager id here
   // and in block pager config as #element too
@@ -452,7 +452,7 @@ function pw_dialogues_questions_teasers_block(){
   $parliament = _pw_get_current_parliament_term();
   $limit = 10;
 
-  $dialogue_nids = pw_dialogues_get_dialogue_nids($parliament, FALSE, $limit);
+  $dialogue_nids = pw_dialogues_get_dialogue_nids($parliament, FALSE, $limit, TRUE);
 
   if(empty($dialogue_nids)){
     return;
@@ -477,7 +477,7 @@ function pw_dialogues_questions_teasers_block(){
 /**
  * Fetch nids from database
  */
-function pw_dialogues_get_dialogue_nids($parliament = FALSE, $account = FALSE, $limit = 10) {
+function pw_dialogues_get_dialogue_nids($parliament = FALSE, $account = FALSE, $limit = 10, $only_answered = FALSE) {
 
   if($account){
     $is_candidate = _pw_user_has_role($account, 'Candidate');
@@ -528,10 +528,15 @@ function pw_dialogues_get_dialogue_nids($parliament = FALSE, $account = FALSE, $
       $query->join('field_data_field_dialogue_before_election', 'fbe', "fbe.entity_type = 'node' AND fbe.entity_id = n.nid");
       $query->condition('fbe.field_dialogue_before_election_value', $is_candidate);
     }
-    $query->join('comment', 'c', "c.nid = n.nid");
-    $query->condition('c.status', 1);
-    $query->groupBy('c.nid');
-    $query->orderBy('c.created', 'DESC');
+    if($only_answered){
+      $query->join('comment', 'c', "c.nid = n.nid");
+      $query->condition('c.status', 1);
+      $query->groupBy('c.nid');
+      $query->orderBy('c.created', 'DESC');
+    }
+    else{
+      $query->orderBy('n.created', 'DESC');
+    }
     $query->range(pager_find_page(10) * 10, $limit);
     $dialogue_nids = $query->execute()->fetchCol();
 
