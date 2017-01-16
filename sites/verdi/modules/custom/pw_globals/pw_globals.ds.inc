@@ -57,7 +57,7 @@ function pw_globals_ds_custom_fields_info() {
 <div class="row">
     <div class="col-xs-12">
         <div class="candidate-detail-logo-wrapper"><img src="[user:field-user-parliament:field_parliament_logo]" alt="[user:field-user-parliament:name]" class="img-responsive candidate-detail-logo"></div>
-        <a href="[site:url]" class="back-button"><i class="fa fa-angle-left"></i> <span>Zur Übersicht</span></a>
+        <a href="[site:url]" class="back-button"><i class="fa fa-angle-left"></i> <span>zur Übersicht</span></a>
     </div>
 </div>
 </div>',
@@ -78,11 +78,17 @@ function pw_globals_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<div class="candidate-header">
+      'value' => '<?php
+  $user = _pw_get_current_user();
+  $field_user_gender = field_get_items(\'user\', $user, \'field_user_gender\');
+  $link_text = $field_user_gender[0][\'value\'] == \'female\'?\'zur Kandidatin\':\'zum Kandidaten\';
+?>
+
+<div class="candidate-header">
 <div class="row">
     <div class="col-xs-12">
         <div class="candidate-detail-logo-wrapper"><img src="[user:field-user-parliament:field_parliament_logo]" alt="[user:field-user-parliament:name]" class="img-responsive candidate-detail-logo"></div>
-        <a href="[user:url]" class="back-button"><i class="fa fa-angle-left"></i> <span>Zum Kandidaten</span></a>
+        <a href="[user:url]" class="back-button"><i class="fa fa-angle-left"></i> <span><?php print $link_text; ?></span></a>
     </div>
 </div>
 </div>',
