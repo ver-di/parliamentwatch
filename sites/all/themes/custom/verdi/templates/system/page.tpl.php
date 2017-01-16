@@ -154,7 +154,7 @@
             <div class="col-xs-12 col-sm-8">
                 <?php print render($page['footer']); ?>
             </div>
-            <div class="col-xs-12 col-sm-4">
+            <!-- <div class="col-xs-12 col-sm-4">
                 <div class="social-links clearfix">
                     <div class="social-link-label">Sie finden uns auch auf:</div>
                     <ul class="clearfix">
@@ -163,7 +163,7 @@
                         <li class="social-link-feed"><a href="#"><i class="fa fa-feed"></i></a></li>
                     </ul>
                 </div>
-            </div>
+            </div> -->
         </div>
     </footer>
     <?php endif; ?>

@@ -253,19 +253,6 @@ $(document).ready(function() {
 
     $('.gauge-widget .gauge').gauge(opts);
 
-
-    // Candidate-Detail
-
-    // Back-Button
-
-    $('.candidate-header .back-button').on( 'click', function() {
-
-        window.history.back();
-
-        return false;
-    });
-
-
     // question modal
 
     $('.js-select2').select2();
