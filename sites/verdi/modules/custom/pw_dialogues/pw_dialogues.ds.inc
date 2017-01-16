@@ -385,7 +385,7 @@ function pw_dialogues_ds_custom_fields_info() {
         <li><a href="http://twitter.com/home?status=[node:url]" class="social-bar-twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://plus.google.com/share?url=[node:url]" class="social-bar-google" target="_blank"><i class="fa fa-google-plus"></i></a></li>
         <li class="visible-xs"><a href="whatsapp://send" data-text="Frage an " data-href="[node:url]" class="social-bar-whatsapp" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
-        <li><a href="mailto:?&subject=KandidatenCheck&body=Meine%20Frage%20an%20,%20findest%20du%20auf%20[node:url]" class="social-bar-mail"><i class="fa fa-envelope" target="_blank"></i></a></li>
+        <li><a href="mailto:?&subject=Sozialversicherung.watch&body=Meine%20Frage%20findest%20Du%20auf%20[node:url]" class="social-bar-mail"><i class="fa fa-envelope" target="_blank"></i></a></li>
     </ul>
 </div>',
       'format' => 'php_code',
