@@ -95,7 +95,7 @@
                         <p>
                             <a href="<?php print $front_page; ?>" title="Zurück zur Startseite von sozialversicherung.watch">
                                 <span class="brand-typo-before">Wir schaffen Transparenz:</span>
-                                <span class="brand-typo-main">Sozialversicherung.watch</span>
+                                <span class="brand-typo-main">sozialversicherung.watch</span>
                                 <span class="brand-typo-after">Das Portal zu Deiner Selbstverwaltung.</span>
                             </a>
                         </p>
