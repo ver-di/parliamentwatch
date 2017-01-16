@@ -57,7 +57,7 @@ function pw_globals_ds_custom_fields_info() {
 <div class="row">
     <div class="col-xs-12">
         <div class="candidate-detail-logo-wrapper"><img src="[user:field-user-parliament:field_parliament_logo]" alt="[user:field-user-parliament:name]" class="img-responsive candidate-detail-logo"></div>
-        <a href="[site:url]" class="back-button"><i class="fa fa-angle-left"></i> <span>Zur Übersicht</span></a>
+        <a href="[site:url]" class="back-button"><i class="fa fa-angle-left"></i> <span>zur Übersicht</span></a>
     </div>
 </div>
 </div>',
