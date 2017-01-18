@@ -423,7 +423,7 @@ function pw_profiles_entity_info_alter(&$entity_info) {
     'label' => t('Teaser'),
     'custom settings' => TRUE,
   );
-  $entity_info['user']['uri callback'] = 'pw_profiles_user_uri';
+  #$entity_info['user']['uri callback'] = 'pw_profiles_user_uri';
 }
 
 /**
@@ -437,7 +437,7 @@ function pw_profiles_entity_info_alter(&$entity_info) {
  */
 function pw_profiles_user_uri($user) {
   if (isset($user->actual_profile) && $user->actual_profile == 0) {
-    $path = 'profile/' . $user->name . '/archive/' . $user->vid;
+    $path = 'profil/' . $user->name . '/archive/' . $user->vid;
   }
   else {
     $path = 'user/' . $user->uid;
@@ -450,12 +450,21 @@ function pw_profiles_user_uri($user) {
 function pw_profiles_preprocess_user_profile(&$variables){
 
   // add formatted questions and answers
-  if(isset($variables['elements']['#account']->number_of_questions)){
-    $count_questions = $variables['elements']['#account']->number_of_questions;
-    $count_answers = $variables['elements']['#account']->number_of_answers;
+  $account = $variables['elements']['#account'];
+  if(isset($account->number_of_questions)){
+    $count_questions = $account->number_of_questions;
+    $count_answers = $account->number_of_answers;
     $variables['count_questions'] = $count_questions;
     $variables['count_answers'] = $count_answers;
     $variables['precent_answered'] = $count_questions > 0?round($count_answers / $count_questions * 100):0;
+  }
+
+  // add link to archived or current profile
+  if (isset($account->actual_profile) && $account->actual_profile == 0) {
+    $variables['profile_uri'] = 'profil/' . $account->name . '/archiv/' . $account->vid;
+  }
+  else {
+    $variables['profile_uri'] = 'user/' . $account->uid;
   }
 }
 
@@ -538,18 +547,18 @@ function pw_profiles_slider_block() {
   }
   else {
 
-    $block = array();
-    #$block['subject'] = '<none>';
-    $block['header'] = "Test Test";
-    $block['content'] = entity_view('user', $users, 'user_slider_item');
-    #$block['content']['#attached']['js'][] = drupal_get_path('module', 'pw_dialogues') . '/pw_dialogues.js';
-    #$build = entity_view('user', $users, 'user_slider_item');
-    #$build['user']['#theme_wrappers'] = array('container');
-    #$build['user']['#attributes']['class'] = array('profile-list', 'clearfix');
-    #$build['pager'] = array('#theme' => 'pager', '#weight' => 5);
+    $build = array('content' => array('user' => array()));
+    usort($users, 'pw_profiles_sort_list_position');
+    foreach($users as $user){
+      $build['content']['user'][] = user_view($user, 'user_slider_item');
+    }
   }
 
-  return $block;
+  return $build;
+}
+
+function pw_profiles_sort_list_position($user_a, $user_b){
+  return $user_a->list_position > $user_b->list_position;
 }
 
 /**
@@ -613,8 +622,9 @@ function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
     $query->join('field_revision_field_user_lname', 'fuln', 'fuln.revision_id = ur.vid');
   }
   if (empty($filters['list_position'])) {
-    $query->join('field_revision_field_user_list_position', 'fulp', 'fulp.revision_id = ur.vid');
-    $query->join('taxonomy_term_data', 'tdlp', 'fulp.field_user_list_position_tid = tdlp.tid');
+    $query->leftJoin('field_revision_field_user_list_position', 'fulp', 'fulp.revision_id = ur.vid');
+    $query->leftJoin('taxonomy_term_data', 'tdlp', 'fulp.field_user_list_position_tid = tdlp.tid');
+    $query->addField('tdlp', 'name', 'list_position');
   }
   $query->leftJoin('field_revision_field_user_picture', 'fupic', 'fupic.revision_id = ur.vid');
   $query->addExpression('CASE WHEN fupic.field_user_picture_fid IS NOT NULL THEN 1 ELSE 0 END', 'picture_uploaded');
@@ -625,13 +635,28 @@ function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
 #    ->orderBy('uac.number_of_questions', 'DESC')
 #    ->orderBy('picture_uploaded', 'DESC')
 #    ->orderBy('fuln.field_user_lname_value');
+
+  // nested array of users for the case that users have multiple profiles.
+  // profiles must be identified by entity_id (not revision_id) for field_attach_load_revision.
   foreach ($query->execute()->fetchAll() as $row) {
-    $users[$row->uid] = $row;
+    $nested_index = 0;
+    while(true){
+      if(!key_exists($nested_index, $users)){
+        $users[$nested_index] = array();
+      }
+      if(!key_exists($row->uid, $users[$nested_index])){
+        break;
+      }
+      $nested_index++;
+    }
+    $users[$nested_index][$row->uid] = $row;
   }
-
-  field_attach_load_revision('user', $users);
-
-  return $users;
+  $users_return = array();
+  foreach($users as $users_nested){
+    field_attach_load_revision('user', $users_nested);
+    $users_return = array_merge($users_return, array_values($users_nested));
+  }
+  return $users_return;
 }
 
 /**

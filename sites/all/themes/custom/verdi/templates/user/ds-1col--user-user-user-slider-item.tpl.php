@@ -46,7 +46,7 @@
     $link_text = $field_user_gender[0]['value'] == 'female'?'zur Kandidatin':'zum Kandidaten';
     print l(
       $link_text,
-      'user/'.$elements['#account']->uid,
+      $variables['profile_uri'],
       array(
         'attributes' => array(
           'class' => 'btn btn-primary',
