@@ -372,6 +372,7 @@ profile/[comment:node:field-dialogue-recipient]';
   $strongarm->value = array(
     'menu-calendar-options-menu' => '0',
     'devel' => '0',
+    'menu-footer-menu' => '0',
     'main-menu' => '0',
     'management' => '0',
     'navigation' => '0',
