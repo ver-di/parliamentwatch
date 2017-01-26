@@ -131,7 +131,7 @@ function pw_cache_strongarm() {
   $strongarm->name = 'expire_comment_custom_pages_dialogue';
   $strongarm->value = '[comment:node:field-parliament]
 [comment:node:field-parliament]/profile
-profile/[comment:node:field-dialogue-recipient]';
+profil/[comment:node:field-dialogue-recipient]';
   $export['expire_comment_custom_pages_dialogue'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -166,7 +166,7 @@ profile/[comment:node:field-dialogue-recipient]';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_comment_front_page_dialogue';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['expire_comment_front_page_dialogue'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -463,7 +463,7 @@ profile/[comment:node:field-dialogue-recipient]';
   $strongarm->name = 'expire_node_custom_pages_dialogue';
   $strongarm->value = '[node:field-parliament]
 [node:field-parliament]/profile
-profile/[node:field-dialogue-recipient]';
+profil/[node:field-dialogue-recipient]';
   $export['expire_node_custom_pages_dialogue'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -498,7 +498,7 @@ profile/[node:field-dialogue-recipient]';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_node_front_page_dialogue';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['expire_node_front_page_dialogue'] = $strongarm;
 
   $strongarm = new stdClass();
