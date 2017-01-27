@@ -53,7 +53,10 @@
 				img {
 					position: absolute;
 					top: 50%;
-					.translate(0,-50%);
+                    left: 50%;
+                    width: auto;
+                    max-height: 40px;
+                    .translate(-50%,-50%);
 				}
 			}
 			.question-teaser-item-head-image {
@@ -90,9 +93,7 @@
 				font-size: 15px;
 				line-height: 22px;
 				padding-right: 20px;
-
-				max-height: 150px;
-				overflow: hidden;
+				padding-bottom: 15px;
 			}
 		}
 	}
@@ -117,6 +118,10 @@
 		@media (min-width: @screen-sm-min) {
 			padding-right: 160px;
 		}
+        a {
+          text-decoration: none;
+          color: @gray;
+        }
 	}
 	.question-intro {
 		background: @brightGray;

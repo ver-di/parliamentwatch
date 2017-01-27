@@ -149,23 +149,22 @@
 
 
     <?php if (!empty($page['footer'])): ?>
-    <footer id="footer">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8">
-                <?php print render($page['footer']); ?>
-            </div>
-            <!-- <div class="col-xs-12 col-sm-4">
-                <div class="social-links clearfix">
-                    <div class="social-link-label">Sie finden uns auch auf:</div>
-                    <ul class="clearfix">
-                        <li class="social-link-facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li class="social-link-twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li class="social-link-feed"><a href="#"><i class="fa fa-feed"></i></a></li>
-                    </ul>
+        <footer id="footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                  <?php print render($page['footer']); ?>
                 </div>
-            </div> -->
-        </div>
-    </footer>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="social-links clearfix">
+                        <div class="social-link-label">Sie finden uns auch auf:</div>
+                        <ul class="clearfix">
+                            <li class="social-link-facebook"><a href="https://www.facebook.com/verdi/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="social-link-twitter"><a href="https://twitter.com/_verdi" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     <?php endif; ?>
 </div>
 
