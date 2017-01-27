@@ -7750,10 +7750,13 @@ mark {
 .question-teaser .question-teaser-item .question-teaser-item-head .question-teaser-item-head-brand img {
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
-  transform: translate(0, -50%);
+  left: 50%;
+  width: auto;
+  max-height: 40px;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .question-teaser .question-teaser-item .question-teaser-item-head .question-teaser-item-head-image {
   position: absolute;

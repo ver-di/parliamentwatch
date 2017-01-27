@@ -161,24 +161,6 @@ $(document).ready(function() {
         $('.candidate-teaser .swiper-slide').each(function( key, value ) {
             var filterdItem = $(this).children('.candidate-teaser-item').children('p').children('.text-magenta').text().replace(/ /g,"_").replace(/-/g,"_").toLowerCase();
 
-            console.log(filterdItem);
-
-            // if (filterdItem == 'dak_gesundheit' && filterValue == 'dak_gesundheit') {
-            //     $(this).show();
-            // }
-            // if (filterdItem == 'kkh' && filterValue == 'kkh') {
-            //     $(this).show();
-            // }
-            // if (filterdItem == 'tk' && filterValue == 'tk') {
-            //     $(this).show();
-            // }
-            // if (filterdItem == 'barmer' && filterValue == 'barmer') {
-            //     $(this).show();
-            // }
-            // if (filterdItem == 'drv_bund' && filterValue == 'drv_bund') {
-            //     $(this).show();
-            // }
-
             if (filterdItem.match("^dak_gesundheit") && filterValue == 'dak_gesundheit') {
                 $(this).show();
             }
@@ -194,7 +176,6 @@ $(document).ready(function() {
             if (filterdItem.match("^drv_bund") && filterValue == 'drv_bund') {
                 $(this).show();
             }
-
             candidateSwiper.update();
         });
         return false;
