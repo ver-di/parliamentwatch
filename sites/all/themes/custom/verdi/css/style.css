@@ -7102,15 +7102,30 @@ mark {
 }
 .kassen-filter .kassen-filter-item-group {
   float: left;
-  position: relative;
   margin-bottom: 20px;
+  padding-top: 40px;
+}
+.kassen-filter .kassen-filter-item-group h3 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: -30px;
+}
+@media (min-width: 768px) {
+  .kassen-filter .kassen-filter-item-group {
+    padding-top: 0;
+  }
+  .kassen-filter .kassen-filter-item-group h3 {
+    position: static;
+    margin-top: 0;
+  }
 }
 .kassen-filter .kassen-filter-item-group:nth-child(1) {
   width: 100%;
 }
 @media (min-width: 768px) {
   .kassen-filter .kassen-filter-item-group:nth-child(1) {
-    width: 65%;
+    width: 60%;
   }
   .kassen-filter .kassen-filter-item-group:nth-child(1):after {
     content: '\f142';
@@ -7141,7 +7156,7 @@ mark {
 }
 @media (min-width: 768px) {
   .kassen-filter .kassen-filter-item-group:nth-child(2) {
-    width: 25%;
+    width: 30%;
   }
 }
 .kassen-filter .kassen-filter-item-group:nth-child(2) .kassen-filter-item {
@@ -7176,7 +7191,7 @@ mark {
 }
 @media (min-width: 768px) {
   .kassen-filter .kassen-filter-item-group .kassen-filter-item {
-    width: 25%;
+    width: 33.333%;
     margin-bottom: 0;
   }
 }
@@ -7229,6 +7244,10 @@ mark {
   .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(3n) {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(5n) {
+    padding-left: 40px;
+    padding-right: 40px;
   }
   .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(4) {
     padding-left: 50px;

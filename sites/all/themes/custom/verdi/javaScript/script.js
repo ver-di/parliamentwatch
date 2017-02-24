@@ -135,7 +135,9 @@ $(document).ready(function() {
     }
 
     // insurance-filter (Kassen-Filter)
-    $('.kassen-filter-item').matchHeight();
+    $('.kassen-filter-item').matchHeight({
+        byRow: false
+    });
 
     // Candidate Swiper
     var candidateSwiper = new Swiper('.candidate-teaser .swiper-container', {

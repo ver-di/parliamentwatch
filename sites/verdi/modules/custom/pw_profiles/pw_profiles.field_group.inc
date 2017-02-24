@@ -226,17 +226,16 @@ function pw_profiles_field_group_info() {
     'label' => 'Candidate Intro Left',
     'weight' => '2',
     'children' => array(
-      0 => 'candidate_stats_questions_get',
-      1 => 'button_modal_question',
-      2 => 'group_candidate_intro_info',
-      3 => 'group_user_name',
+      0 => 'button_modal_question',
+      1 => 'group_candidate_intro_info',
+      2 => 'group_user_name',
     ),
     'format_type' => 'html-element',
     'format_settings' => array(
       'label' => 'Candidate Intro Left',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-candidate-intro-left field-group-div col-xs-12 col-sm-8',
+        'classes' => 'group-candidate-intro-left field-group-div col-xs-12 col-sm-10',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
@@ -298,7 +297,7 @@ function pw_profiles_field_group_info() {
       'label' => 'Candidate Intro Right',
       'instance_settings' => array(
         'id' => '',
-        'classes' => 'group-candidate-intro-right field-group-div col-xs-12 col-sm-4',
+        'classes' => 'group-candidate-intro-right field-group-div col-xs-12 col-sm-2',
         'element' => 'div',
         'show_label' => '0',
         'label_element' => 'div',
