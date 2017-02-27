@@ -7168,12 +7168,6 @@ mark {
     width: 100%;
   }
 }
-.kassen-filter .kassen-filter-item-group:nth-child(2) .kassen-filter-item img {
-  position: static;
-  top: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-}
 @media (max-width: 767px) {
   .kassen-filter .kassen-filter-item-group:nth-child(2) .kassen-filter-item img {
     max-height: 45px;
@@ -7187,6 +7181,7 @@ mark {
   text-align: center;
   padding-left: 10px;
   padding-right: 10px;
+  padding-bottom: 20px;
   position: relative;
 }
 @media (min-width: 768px) {
@@ -7233,31 +7228,40 @@ mark {
   padding-right: 10px;
 }
 .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(4) {
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 @media (min-width: 992px) {
-  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(2n) {
+  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(2) {
     padding-left: 40px;
     padding-right: 40px;
   }
-  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(3n) {
+  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(3) {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(5n) {
+  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(4) {
+    padding-left: 55px;
+    padding-right: 55px;
+  }
+  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(5) {
     padding-left: 40px;
     padding-right: 40px;
   }
-  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(4) {
+}
+@media (min-width: 1200px) {
+  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(2),
+  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(5) {
     padding-left: 50px;
     padding-right: 50px;
   }
-}
-@media (min-width: 1200px) {
   .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(4) {
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .kassen-filter .kassen-filter-item-group .kassen-filter-item:nth-child(6) {
+    padding-left: 30px;
+    padding-right: 30px;
   }
 }
 .kassen-filter .kassen-filter-item-group .kassen-filter-item.active img {
@@ -7429,7 +7433,7 @@ mark {
     position: absolute;
     background: none;
     padding: 0;
-    margin-top: -40px;
+    margin-top: 100px;
     -webkit-transition: opacity 400ms ease;
     -o-transition: opacity 400ms ease;
     transition: opacity 400ms ease;
@@ -7447,6 +7451,7 @@ mark {
 @media (min-width: 1280px) {
   .candidate-teaser .swiper-button-prev {
     margin-left: 0;
+    margin-top: 100px;
     float: none;
     left: -60px;
   }
@@ -7459,6 +7464,7 @@ mark {
 @media (min-width: 1280px) {
   .candidate-teaser .swiper-button-next {
     margin-right: 0;
+    margin-top: 100px;
     float: none;
     right: -60px;
   }

@@ -178,6 +178,9 @@ $(document).ready(function() {
             if (filterdItem.match("^drv_bund") && filterValue == 'drv_bund') {
                 $(this).show();
             }
+            if (filterdItem.match("^hkk_") && filterValue == 'hkk') {
+                $(this).show();
+            }
             candidateSwiper.update();
         });
         return false;
