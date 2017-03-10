@@ -135,7 +135,9 @@ $(document).ready(function() {
     }
 
     // insurance-filter (Kassen-Filter)
-    $('.kassen-filter-item').matchHeight();
+    $('.kassen-filter-item').matchHeight({
+        byRow: false
+    });
 
     // Candidate Swiper
     var candidateSwiper = new Swiper('.candidate-teaser .swiper-container', {
@@ -174,6 +176,9 @@ $(document).ready(function() {
                 $(this).show();
             }
             if (filterdItem.match("^drv_bund") && filterValue == 'drv_bund') {
+                $(this).show();
+            }
+            if (filterdItem.match("^hkk_") && filterValue == 'hkk') {
                 $(this).show();
             }
             candidateSwiper.update();

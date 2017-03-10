@@ -60,6 +60,9 @@
           <div class="kassen-filter-item" data-kassen-filter="tk">
             <img src="/sites/all/themes/custom/verdi/images/kassen_logo/tk.png" alt="TK" class="img-responsive">
           </div>
+          <div class="kassen-filter-item" data-kassen-filter="hkk">
+            <img src="/sites/all/themes/custom/verdi/images/kassen_logo/hkk.png" alt="KKH" class="img-responsive">
+          </div>
           <div class="kassen-filter-item active" data-kassen-filter="barmer">
             <img src="/sites/all/themes/custom/verdi/images/kassen_logo/barmer.png" alt="Barmer" class="img-responsive">
           </div>
