@@ -8201,12 +8201,13 @@ fieldset[disabled] .node-webform.modal .form-actions .button-primary.focus {
     background-image: url(../images/survey_teaser_bg_tablet.jpg);
     background-position: right top;
     background-size: auto;
-    padding: 30px;
+    padding: 20px;
     margin-top: 30px;
   }
 }
 @media (min-width: 992px) {
   .survey-teaser {
+    padding: 30px;
     background-image: url(../images/survey_teaser_bg.jpg);
   }
 }
