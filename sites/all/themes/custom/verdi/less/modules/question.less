@@ -340,7 +340,6 @@
 	}
 }
 
-
 /* Question-Form in colorbox-modal */
 
 .node-webform.modal {
@@ -370,3 +369,52 @@
 		}
 	}
 }
+
+/* Survey-Teaser */
+
+.survey-teaser {
+	margin-top: 20px;
+	padding: 20px;
+	padding-bottom: 95%;
+	background-color: #df2757;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+
+	background-image: url(../images/survey_teaser_bg_mobile.jpg);
+	background-size: 100% auto;
+
+	@media (min-width: @screen-sm-min) {
+		background-image: url(../images/survey_teaser_bg_tablet.jpg);
+		background-position: right top;
+		background-size: auto;
+		padding: 30px;
+		margin-top: 30px;
+	}
+	@media (min-width: @screen-md-min) {
+		background-image: url(../images/survey_teaser_bg.jpg);
+	}
+	@media (min-width: @screen-lg-min) {
+		padding: 30px 40px;
+	}
+	h2 {
+		font-size: 24px;
+		font-weight: bold;
+
+		color: @white;
+		@media (min-width: @screen-sm-min) {
+			font-size: 30px;
+		}
+	}
+	p {
+		color: @white;
+	}
+}
+
+	/* Survey-Teaser on confirmation-page */
+	@media (min-width: @screen-sm-min) {
+		.page-node-89 .node-page,
+		.page-node-89 .survey-teaser {
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+	}
