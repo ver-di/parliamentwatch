@@ -664,7 +664,11 @@ function pw_profiles_ds_custom_fields_info() {
   $ds_field->ui_limit = '';
   $ds_field->properties = array(
     'code' => array(
-      'value' => '<a href="/node/8?recipient=[user:name]" class="btn btn-primary colorbox-node">Jetzt Frage stellen</a>',
+      'value' => '<?php
+if(_pw_is_profile_consultable()){
+  print \'<a href="/node/8?recipient=[user:name]" class="btn btn-primary colorbox-node">Jetzt Frage stellen</a>\';
+}
+?>',
       'format' => 'php_code',
     ),
     'use_token' => 1,
@@ -802,7 +806,11 @@ if(isset($stats[\'number_of_questions\']) && $stats[\'number_of_questions\'] > 0
   <li role="presentation" class="active"><a href="#tab-questions-answers" aria-controls="questions-answers" role="tab" data-toggle="tab" aria-expanded="true">Fragen &amp; Antworten</a></li>
   <li role="presentation" class=""><a href="#tab-personal-description" aria-controls="personal-description" role="tab" data-toggle="tab" aria-expanded="false">Steckbrief</a></li>
 </ul>
-<a href="/node/8?recipient=[user:name]" class="btn btn-primary btn-lg colorbox-node">Jetzt Frage stellen</a>',
+<?php
+if(_pw_is_profile_consultable()){
+  print \'<a href="/node/8?recipient=[user:name]" class="btn btn-primary btn-lg colorbox-node">Jetzt Frage stellen</a>\';
+}
+?>',
       'format' => 'php_code',
     ),
     'use_token' => 1,
