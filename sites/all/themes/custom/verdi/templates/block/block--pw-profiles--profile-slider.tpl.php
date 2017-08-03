@@ -49,7 +49,7 @@
   <div class="row">
     <div class="view-header">
       <div class="kassen-filter clearfix">
-        <div class="kassen-filter-item-group clearfix">
+        <!-- <div class="kassen-filter-item-group clearfix">
           <h3>Krankenversicherung:</h3>
           <div class="kassen-filter-item" data-kassen-filter="dak_gesundheit">
             <img src="/sites/all/themes/custom/verdi/images/kassen_logo/dak.png" alt="DAK" class="img-responsive">
@@ -72,6 +72,9 @@
           <div class="kassen-filter-item">
             <img src="/sites/all/themes/custom/verdi/images/kassen_logo/drv.png" alt="Deutsche Rentenversicherung" class="img-responsive">
           </div>
+        </div> -->
+        <div class="kassen-filter-item-label">
+          Kandidaten der BARMER Krankenkasse
         </div>
         <div class="kassen-filter-item-action">
           <a class="btn btn-lg" href=""><i class="fa fa-search"></i></a>

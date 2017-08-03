@@ -558,7 +558,13 @@ function pw_profiles_slider_block() {
 }
 
 function pw_profiles_sort_list_position($user_a, $user_b){
-  return $user_a->list_position > $user_b->list_position;
+  if ($user_a->field_user_parliament['und'][0]['tid'] == 5 && $user_b->field_user_parliament['und'][0]['tid'] != 5){
+    return false;
+  }
+  if ($user_b->field_user_parliament['und'][0]['tid'] == 5 && $user_a->field_user_parliament['und'][0]['tid'] != 5){
+    return true;
+  }
+  return $user_a->list_postiton > $user_b->list_postiton;
 }
 
 /**

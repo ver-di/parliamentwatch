@@ -7107,6 +7107,13 @@ mark {
     padding-left: 40px;
   }
 }
+.kassen-filter .kassen-filter-item-label {
+  float: left;
+  padding-left: 15px;
+  width: 90%;
+  padding-top: 33px;
+  font-size: 27px;
+}
 .kassen-filter .kassen-filter-item-group {
   float: left;
   margin-bottom: 20px;
@@ -7315,11 +7322,6 @@ mark {
   margin-bottom: 30px;
   position: relative;
 }
-.candidate-teaser .swiper-container,
-.candidate-teaser .swiper-button-next,
-.candidate-teaser .swiper-button-prev {
-  display: none;
-}
 .candidate-teaser .candidate-teaser-item {
   padding: 20px 20px 30px;
   margin-bottom: 20px;
@@ -7458,7 +7460,7 @@ mark {
 @media (min-width: 1280px) {
   .candidate-teaser .swiper-button-prev {
     margin-left: 0;
-    margin-top: 100px;
+    margin-top: 0px;
     float: none;
     left: -60px;
   }
@@ -7471,7 +7473,7 @@ mark {
 @media (min-width: 1280px) {
   .candidate-teaser .swiper-button-next {
     margin-right: 0;
-    margin-top: 100px;
+    margin-top: 0px;
     float: none;
     right: -60px;
   }
@@ -7574,7 +7576,7 @@ mark {
   line-height: 45px;
   display: block;
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 .candidate-intro .candidate-detail-stats .candidate-detail-stats-count .label {
   display: block;
