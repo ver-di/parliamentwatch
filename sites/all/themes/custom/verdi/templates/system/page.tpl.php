@@ -115,9 +115,9 @@
     </header>
 
     <?php if (!empty($page['header'])): ?>
-    <header role="banner" id="page-header">
+    <div id="page-header">
         <?php print render($page['header']); ?>
-    </header> <!-- /#page-header -->
+    </div> <!-- /#page-header -->
     <?php endif; ?>
 
 
