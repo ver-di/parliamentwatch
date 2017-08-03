@@ -72,7 +72,7 @@ function pw_cache_cron() {
   pw_cache_clearcache_nginx($expire_paths, $servers, $hosts);
 
   // clear wavecdn cache
-  pw_cache_clearcache_wavecdn($expire_paths, $hosts);
+  // pw_cache_clearcache_wavecdn($expire_paths, $hosts);
 }
 
 function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
@@ -88,8 +88,12 @@ function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
             $url_server = parse_url($server);
             $url_host = parse_url($host);
 
+            // cid to clear it from drupal page cache first
+            $drupal_cache_cid = $url_host['scheme'] . '://' . $url_host['host'] . '/' . $path;
+            cache_clear_all($drupal_cache_cid, 'cache_page');
+
             // called url: scheme from host + host from target server + path
-            $cache_url = $url_host['scheme'] . '://' . $url_server['host'] . '/' . $path;
+            $nginx_cache_url = $url_host['scheme'] . '://' . $url_server['host'] . '/' . $path;
 
             // ssl context options
             $context = array(
@@ -108,7 +112,7 @@ function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
                 ),
               'context' => $sslContext,
               );
-            httprl_request($cache_url, $options);
+            httprl_request($nginx_cache_url, $options);
           }
         }
       }
