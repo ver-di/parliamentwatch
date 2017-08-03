@@ -74,7 +74,7 @@
           </div>
         </div> -->
         <div class="kassen-filter-item-label">
-          Kandidaten der BARMER Krankenkasse
+          Die ver.di-Kandidatinnen und -Kandidaten bei der BARMER
         </div>
         <div class="kassen-filter-item-action">
           <a class="btn btn-lg" href=""><i class="fa fa-search"></i></a>
