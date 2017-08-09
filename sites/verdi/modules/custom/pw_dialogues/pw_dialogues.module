@@ -468,7 +468,9 @@ function pw_dialogues_questions_teasers_block(){
 
   if(!empty($dialogue_nids)) {
     $block['subject'] = t('Answers');
-    $block['content'] = node_view_multiple(node_load_multiple($dialogue_nids), 'teaser_landing');
+    $nodes = node_load_multiple($dialogue_nids);
+    uasort($nodes, 'pw_dialogues_sort_teasers');
+    $block['content'] = node_view_multiple($nodes, 'teaser_landing');
     $block['content']['pager'] = array(
       '#theme' => 'pager',
     );
@@ -476,6 +478,16 @@ function pw_dialogues_questions_teasers_block(){
   }
 
   return $block;
+}
+
+function pw_dialogues_sort_teasers($dialogue_a, $dialogue_b){
+  if ($dialogue_a->field_parliament['und'][0]['tid'] == 5 && $dialogue_b->field_parliament['und'][0]['tid'] != 5){
+    return -1;
+  }
+  if ($dialogue_a->field_parliament['und'][0]['tid'] != 5 && $dialogue_b->field_parliament['und'][0]['tid'] == 5){
+    return 1;
+  }
+  return 0;
 }
 
 /**
