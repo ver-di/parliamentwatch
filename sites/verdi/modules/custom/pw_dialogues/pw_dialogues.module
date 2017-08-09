@@ -487,7 +487,7 @@ function pw_dialogues_sort_teasers($dialogue_a, $dialogue_b){
   if ($dialogue_a->field_parliament['und'][0]['tid'] != 5 && $dialogue_b->field_parliament['und'][0]['tid'] == 5){
     return 1;
   }
-  return 0;
+  return ($dialogue_a->changed > $dialogue_b->changed) ? -1 : 1;
 }
 
 /**
