@@ -550,7 +550,9 @@ function pw_profiles_slider_block() {
     $build = array('content' => array('user' => array()));
     usort($users, 'pw_profiles_sort_list_position');
     foreach($users as $user){
-      $build['content']['user'][] = user_view($user, 'user_slider_item');
+      if ($user->field_user_parliament['und'][0]['tid'] == 5) {
+        $build['content']['user'][] = user_view($user, 'user_slider_item');
+      }
     }
   }
 
@@ -558,13 +560,7 @@ function pw_profiles_slider_block() {
 }
 
 function pw_profiles_sort_list_position($user_a, $user_b){
-  if ($user_a->field_user_parliament['und'][0]['tid'] == 5 && $user_b->field_user_parliament['und'][0]['tid'] != 5){
-    return false;
-  }
-  if ($user_b->field_user_parliament['und'][0]['tid'] == 5 && $user_a->field_user_parliament['und'][0]['tid'] != 5){
-    return true;
-  }
-  return $user_a->list_postiton > $user_b->list_postiton;
+  return $user_b->list_postiton > $user_a->list_postiton;
 }
 
 /**
