@@ -560,7 +560,16 @@ function pw_profiles_slider_block() {
 }
 
 function pw_profiles_sort_list_position($user_a, $user_b){
-  return $user_b->list_postiton > $user_a->list_postiton;
+  if ($user_a->field_user_parliament['und'][0]['tid'] == 5 && $user_b->field_user_parliament['und'][0]['tid'] != 5){
+    return -1;
+  }
+  if ($user_b->field_user_parliament['und'][0]['tid'] == 5 && $user_a->field_user_parliament['und'][0]['tid'] != 5){
+    return 1;
+  }
+  if ($user_a->list_position == $user_b->list_position){
+    return 0;
+  }
+  return ($user_a->list_position < $user_b->list_position) ? -1 : 1;
 }
 
 /**
